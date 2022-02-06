@@ -51,7 +51,7 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@remix-run/dev@^1.1.3":
+"@remix-run/dev@^1.1.1":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@remix-run/dev/-/dev-1.1.3.tgz#f019339b7ffc09588fcd905eddb5fce0213f908b"
   integrity sha512-VW2mWmK1r7aOVpPERvQe81tOk5LA5+NoE8s8xfNPkqcjFob3wpKN/EV+wP5f2mpczRg2RfyG2DlFEArIniY9qA==
@@ -96,14 +96,14 @@
     node-fetch "^2.6.1"
     source-map "^0.7.3"
 
-"@remix-run/react@^1.1.3":
+"@remix-run/react@^1.1.1":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@remix-run/react/-/react-1.1.3.tgz#a65b7e2448645e66973faef01fc1735363aba029"
   integrity sha512-1vYwRi4qQGJLByZR15o47TRZ3/xT3+vhM97UCPJPu4GtzbPldNYLuQlVmAzWWjGuQmSqmwWv818U/+U7rke18g==
   dependencies:
     react-router-dom "^6.2.1"
 
-"@remix-run/serve@^1.1.3":
+"@remix-run/serve@^1.1.1":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@remix-run/serve/-/serve-1.1.3.tgz#5a3305016756144005a72afc4d27cb1893b4876a"
   integrity sha512-fPvVzMXhOnGmKarhdhSxI0iXXfB3g1Fh3+IpV5IT0WpRyU+3dQ8y9wPZXbdUJhDAFIXz8V+Qn8yVIYOFAlEqaQ==
@@ -124,6 +124,14 @@
     react-router-dom "^6.2.1"
     set-cookie-parser "^2.4.8"
     source-map "^0.7.3"
+
+"@remix-run/vercel@^1.1.1":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@remix-run/vercel/-/vercel-1.1.3.tgz#77f03caa4dff5323691ea0954961fdcd26775cb6"
+  integrity sha512-nOtO0FjneLwINrLqow3fwLibb97gpwkK0QgxPtabm3qzJ/JRsEwt/7IDNBicA8u8GnNyr9476yedYlT90nT5/Q==
+  dependencies:
+    "@remix-run/node" "1.1.3"
+    "@remix-run/server-runtime" "1.1.3"
 
 "@rollup/pluginutils@^4.0.0":
   version "4.1.2"
@@ -2657,7 +2665,7 @@ remark-rehype@^9.0.0:
     mdast-util-to-hast "^11.0.0"
     unified "^10.0.0"
 
-remix@^1.1.3:
+remix@^1.1.1:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/remix/-/remix-1.1.3.tgz#f0fde35aaea4c357646307762184c75bf1bea232"
   integrity sha512-rhXWJwBlZwAR/DmE7Jw1jwcm3r6I2v4G+TD6pinNmUb1P522tvFAqsMXO/VB25ozK/8/9gOkd67CiRJVQ9wgiw==

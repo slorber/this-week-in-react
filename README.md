@@ -1,27 +1,17 @@
-# [ThisWeekInReact.com](https://ThisWeekInReact.com)
+# Remix Newsletter Signup Form
 
-- [Remix Docs](https://remix.run/docs)
+A fun, accessible newsletter signup form with Remix and ConvertKit.
 
-## Development
+## Preview
 
-From your terminal:
+Open this example on [CodeSandbox](https://codesandbox.com):
 
-```sh
-npm run dev
-```
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/remix-run/remix/tree/main/examples/newsletter-signup)
 
-This starts your app in development mode, rebuilding assets on file changes.
+## Example
 
-## Deployment
+Everything lives in `routes/newsletter.tsx`
 
-First, build your app for production:
+## Related Links
 
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
+Link to documentation or other related examples.
