@@ -96,14 +96,14 @@
     node-fetch "^2.6.1"
     source-map "^0.7.3"
 
-"@remix-run/react@^1.1.1":
+"@remix-run/react@^1.1.3":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@remix-run/react/-/react-1.1.3.tgz#a65b7e2448645e66973faef01fc1735363aba029"
   integrity sha512-1vYwRi4qQGJLByZR15o47TRZ3/xT3+vhM97UCPJPu4GtzbPldNYLuQlVmAzWWjGuQmSqmwWv818U/+U7rke18g==
   dependencies:
     react-router-dom "^6.2.1"
 
-"@remix-run/serve@^1.1.1":
+"@remix-run/serve@^1.1.3":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@remix-run/serve/-/serve-1.1.3.tgz#5a3305016756144005a72afc4d27cb1893b4876a"
   integrity sha512-fPvVzMXhOnGmKarhdhSxI0iXXfB3g1Fh3+IpV5IT0WpRyU+3dQ8y9wPZXbdUJhDAFIXz8V+Qn8yVIYOFAlEqaQ==
@@ -125,7 +125,7 @@
     set-cookie-parser "^2.4.8"
     source-map "^0.7.3"
 
-"@remix-run/vercel@^1.1.1":
+"@remix-run/vercel@^1.1.3":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@remix-run/vercel/-/vercel-1.1.3.tgz#77f03caa4dff5323691ea0954961fdcd26775cb6"
   integrity sha512-nOtO0FjneLwINrLqow3fwLibb97gpwkK0QgxPtabm3qzJ/JRsEwt/7IDNBicA8u8GnNyr9476yedYlT90nT5/Q==
