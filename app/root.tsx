@@ -8,6 +8,8 @@ import {
 } from "remix";
 import type { MetaFunction } from "remix";
 import styles from "./styles.css";
+import tailwind from "./tailwind.css";
+
 
 export const meta: MetaFunction = () => {
   return { title: "New Remix App" };
@@ -20,6 +22,7 @@ export function links() {
       href: "https://unpkg.com/modern-normalize@1.1.0/modern-normalize.css",
     },
     { rel: "stylesheet", href: styles },
+    { rel: "stylesheet", href: tailwind }
   ];
 }
 

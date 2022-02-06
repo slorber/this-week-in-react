@@ -76,6 +76,10 @@ export default function Index() {
           <button type="submit">
             {state === "submitting" ? "Subscribing..." : "Subscribe"}
           </button>
+
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Button TW
+          </button>
         </fieldset>
 
         <p id="error-message">
@@ -93,3 +97,4 @@ export default function Index() {
     </main>
   );
 }
+
