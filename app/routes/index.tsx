@@ -56,13 +56,26 @@ export const action: ActionFunction = async ({ request, context }) => {
   try {
     const revueSecretKey = getRevueSecretKey(context);
     const formData = await request.formData();
+    let email;
 
-    const email = formData.get("email") as string;
-    if (!email) {
+    try {
+      email = formData.get("email") as string;
+      if (!email) {
+        return json(
+          {
+            error: true,
+            message: "Email is required to subscribe!",
+          },
+          {
+            status: 400,
+          }
+        );
+      }
+    } catch (e) {
       return json(
         {
           error: true,
-          message: "Email is required to subscribe!",
+          message: `Can't read formData email: ${e}`,
         },
         {
           status: 400,
@@ -70,8 +83,35 @@ export const action: ActionFunction = async ({ request, context }) => {
       );
     }
 
-    const result = await subscribeToRevue({ email, revueSecretKey });
-    const data = await result.json();
+    let result;
+    try {
+      result = await subscribeToRevue({ email, revueSecretKey });
+    } catch (e) {
+      return json(
+        {
+          error: true,
+          message: `Can't call subscribeToRevue: ${e}`,
+        },
+        {
+          status: 500,
+        }
+      );
+    }
+
+    let data;
+    try {
+      data = await result.json();
+    } catch (e) {
+      return json(
+        {
+          error: true,
+          message: `Can't read Revue JSON: ${e}`,
+        },
+        {
+          status: 500,
+        }
+      );
+    }
 
     console.log("Revue result", { status: result.status, data });
 
@@ -98,9 +138,7 @@ export const action: ActionFunction = async ({ request, context }) => {
     return json(
       {
         error: true,
-        message: `Unexpected action error: ${(e as Error).message}\n${
-          (e as Error).stack
-        }`,
+        message: `Unexpected action error: ${e}`,
       },
       {
         status: 500,
