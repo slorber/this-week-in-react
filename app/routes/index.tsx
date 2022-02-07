@@ -28,44 +28,57 @@ async function subscribeToRevue({ email }: { email: string }) {
 }
 
 export const action: ActionFunction = async ({ request }) => {
-  const formData = await request.formData();
+  try {
+    const formData = await request.formData();
 
-  const email = formData.get("email") as string;
-  if (!email) {
+    const email = formData.get("email") as string;
+    if (!email) {
+      return json(
+        {
+          error: true,
+          message: "Email is required to subscribe!",
+        },
+        {
+          status: 400,
+        }
+      );
+    }
+
+    const result = await subscribeToRevue({ email });
+    const data = await result.json();
+
+    console.log("Revue result", { status: result.status, data });
+
+    if (result.status !== 200) {
+      return json(
+        {
+          error: true,
+          message: data?.error?.email?.join?.(", ") || "Something went wrong",
+        },
+        {
+          status: result.status,
+        }
+      );
+    }
+
+    return {
+      subscription: {
+        subscribed: true,
+        data,
+      },
+    };
+  } catch (e) {
+    console.error(e);
     return json(
       {
         error: true,
-        message: "Email is required",
+        message: `Unexpected action error: ${(e as Error).message}`,
       },
       {
-        status: 400,
+        status: 500,
       }
     );
   }
-
-  const result = await subscribeToRevue({ email });
-  const data = await result.json();
-
-  console.log("Revue result", { status: result.status, data });
-
-  if (result.status !== 200) {
-    return json(
-      {
-        error: true,
-        message: data?.error?.email?.join?.(", ") || "Something went wrong",
-      },
-      {
-        status: result.status,
-      }
-    );
-  }
-
-  return {
-    subscription: {
-      subscribed: true,
-      data,
-    },
-  };
 };
 
 export default function Index() {
