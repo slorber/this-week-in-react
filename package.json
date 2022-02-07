@@ -11,7 +11,7 @@
     "dev:css": "tailwindcss -o ./app/tailwind.css --watch",
     "setup:node": "remix setup node",
     "setup:cf": "remix setup cloudflare-pages",
-    "postinstall": "remix setup node"
+    "postinstall": "yarn setup:cf"
   },
   "dependencies": {
     "@remix-run/cloudflare-pages": "^1.1.3",
