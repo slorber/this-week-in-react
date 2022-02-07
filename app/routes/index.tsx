@@ -2,30 +2,72 @@ import { useEffect, useRef } from "react";
 import type {
   ActionFunction} from "remix";
 import {
-  Form,
+  Form, json,
   Link,
   useActionData,
   useTransition,
 } from "remix";
 
-export const action: ActionFunction = async ({ request }) => {
-  await new Promise((res) => setTimeout(res, 1000));
-  const formData = await request.formData();
-  const email = formData.get("email");
+import BannerSrc from "./ThisWeekInReact-banner.png"
 
-  const API_KEY = "...";
-  const FORM_ID = "...";
-  const API = "https://api.convertkit.com/v3";
+async function subscribeToRevue({email}:{email: string}) {
 
-  const res = await fetch(`${API}/forms/${FORM_ID}/subscribe`, {
-    method: "post",
-    body: JSON.stringify({ email, api_key: API_KEY }),
+  const REVUE_SUBSCRIBE_API = 'https://www.getrevue.co/api/v2/subscribers'
+  const REVUE_SECRET_KEY = process.env.REVUE_SECRET_KEY;
+
+  if ( !REVUE_SECRET_KEY ) {
+    throw new Error('REVUE_SECRET_KEY is not set');
+  }
+
+  const revueFormData = new FormData()
+  revueFormData.append('email', email)
+  revueFormData.append('double_opt_in', 'true')
+  const result = await fetch(REVUE_SUBSCRIBE_API, {
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json; charset=utf-8",
+      Authorization: `Token ${REVUE_SECRET_KEY}`
     },
-  });
+    body: revueFormData
+  })
 
-  return res.json();
+  return result;
+}
+
+
+export const action: ActionFunction = async ({ request }) => {
+  // await new Promise((res) => setTimeout(res, 1000));
+
+  const formData = await request.formData();
+
+  const email = formData.get("email") as string;
+  if (!email) {
+    return json({
+      error: true,
+      message: "Email is required",
+    },{
+      status: 400,
+    });
+  }
+
+  const result = await subscribeToRevue({email});
+  const data = await result.json()
+
+  console.log({result,data})
+
+  if (result.status !== 200) {
+    return json({
+      error: true,
+      message: data?.error?.email?.join?.(", ") || "Something went wrong",
+    },{
+      status: result.status,
+    });
+  }
+
+  return {
+    subscription: {
+      subscribed: true,
+      data
+    }};
 };
 
 export default function Index() {
@@ -38,6 +80,8 @@ export default function Index() {
     : actionData?.error
     ? "error"
     : "idle";
+
+  console.log({actionData,transition, state})
 
   const inputRef = useRef<HTMLInputElement>(null);
   const successRef = useRef<HTMLHeadingElement>(null);
@@ -62,29 +106,29 @@ export default function Index() {
   return (
     <main>
       <Form replace method="post" aria-hidden={state === "success"}>
-        <h2>Subscribe!</h2>
-        <p>Don't miss any of the action!</p>
-        <fieldset>
+        <h1 className="text-3xl font-bold	">This Week In React</h1>
+        <h2 className="text-2xl mt-4">Subscribe!</h2>
+        <p className="">Don't miss any of the action!</p>
+        <fieldset className="mt-4 mb-4 flex flex-row">
           <input
+              className={`p-2 grow ${state === "error" ? "border-red-500" : ""}`}
             aria-label="Email address"
             aria-describedby="error-message"
             ref={inputRef}
             type="email"
             name="email"
-            placeholder="you@example.com"
+            placeholder="the-best@react.dev"
           />
-          <button type="submit">
+          <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             {state === "submitting" ? "Subscribing..." : "Subscribe"}
-          </button>
-
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Button TW
           </button>
         </fieldset>
 
-        <p id="error-message">
+        <p id="error-message" className="text-red-500">
           {state === "error" ? actionData.message : <>&nbsp;</>}
         </p>
+
+        <img className="mt-4" src={BannerSrc}/>
       </Form>
 
       <div aria-hidden={state !== "success"}>
