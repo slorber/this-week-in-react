@@ -86,7 +86,6 @@ export const action: ActionFunction = async ({ request, context }) => {
     let result: Response;
     try {
       result = await subscribeToRevue({ email, revueSecretKey });
-      return result;
     } catch (e) {
       return json(
         {
