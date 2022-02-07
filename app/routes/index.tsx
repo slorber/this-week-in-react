@@ -98,7 +98,9 @@ export const action: ActionFunction = async ({ request, context }) => {
     return json(
       {
         error: true,
-        message: `Unexpected action error: ${(e as Error).message}`,
+        message: `Unexpected action error: ${(e as Error).message}\n${
+          (e as Error).stack
+        }`,
       },
       {
         status: 500,
