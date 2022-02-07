@@ -9,6 +9,8 @@
     "start": "yarn dev",
     "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
     "dev:css": "tailwindcss -o ./app/tailwind.css --watch",
+    "setup:node": "remix setup node",
+    "setup:cf": "remix setup cloudflare-pages",
     "postinstall": "remix setup node"
   },
   "dependencies": {
