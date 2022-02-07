@@ -102,10 +102,17 @@ export const action: ActionFunction = async ({ request, context }) => {
     try {
       data = await result.json();
     } catch (e) {
+      const text = await (async function () {
+        try {
+          return await result.text();
+        } catch (e) {
+          return `N/A: ${e}`;
+        }
+      })();
       return json(
         {
           error: true,
-          message: `Can't read Revue JSON: ${e}`,
+          message: `Can't read Revue JSON: ${e}\nStatus=${result.status}\nText=${text}`,
         },
         {
           status: 500,
