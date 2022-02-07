@@ -8,31 +8,33 @@ declare global {
   export const REVUE_SECRET_KEY: string | undefined;
 }
 
-async function subscribeToRevue({ email }: { email: string }) {
-  const REVUE_SUBSCRIBE_API = "https://www.getrevue.co/api/v2/subscribers";
-
-  // See https://gomakethings.com/how-to-use-environment-variables-with-cloudflare-workers-and-vanilla-js/
-
-  const revueSecretKey: string | undefined =
-    typeof REVUE_SECRET_KEY !== "undefined"
+function getRevueSecretKey(context: any): string {
+  // context is provided by functions/[[path]].js
+  // requires wrangler --binding / forwarding env variables
+  const revueSecretKey =
+    context?.env?.REVUE_SECRET_KEY ??
+    // See https://gomakethings.com/how-to-use-environment-variables-with-cloudflare-workers-and-vanilla-js/
+    (typeof REVUE_SECRET_KEY !== "undefined"
       ? REVUE_SECRET_KEY
       : typeof process !== "undefined"
       ? process.env.REVUE_SECRET_KEY
-      : undefined;
-
-  /*
-  const revueSecretKey: string | undefined =
-    typeof process !== "undefined"
-      ? process.env.REVUE_SECRET_KEY
-      : typeof REVUE_SECRET_KEY !== "undefined"
-      ? REVUE_SECRET_KEY
-      : undefined;
-
-   */
+      : undefined);
 
   if (!revueSecretKey) {
     throw new Error("REVUE_SECRET_KEY env is not set");
   }
+
+  return revueSecretKey;
+}
+
+async function subscribeToRevue({
+  email,
+  revueSecretKey,
+}: {
+  email: string;
+  revueSecretKey: string;
+}) {
+  const REVUE_SUBSCRIBE_API = "https://www.getrevue.co/api/v2/subscribers";
 
   const revueFormData = new FormData();
   revueFormData.append("email", email);
@@ -49,8 +51,10 @@ async function subscribeToRevue({ email }: { email: string }) {
   return result;
 }
 
-export const action: ActionFunction = async ({ request }) => {
+export const action: ActionFunction = async ({ request, context }) => {
+  console.log("ActionFunction context", { context });
   try {
+    const revueSecretKey = getRevueSecretKey(context);
     const formData = await request.formData();
 
     const email = formData.get("email") as string;
@@ -66,7 +70,7 @@ export const action: ActionFunction = async ({ request }) => {
       );
     }
 
-    const result = await subscribeToRevue({ email });
+    const result = await subscribeToRevue({ email, revueSecretKey });
     const data = await result.json();
 
     console.log("Revue result", { status: result.status, data });
