@@ -83,9 +83,10 @@ export const action: ActionFunction = async ({ request, context }) => {
       );
     }
 
-    let result;
+    let result: Response;
     try {
       result = await subscribeToRevue({ email, revueSecretKey });
+      return result;
     } catch (e) {
       return json(
         {
@@ -101,7 +102,7 @@ export const action: ActionFunction = async ({ request, context }) => {
     if (result.status >= 500) {
       const text = await (async function () {
         try {
-          return (await result.text()) ?? "No Text";
+          return (await result.text()) || "No Text";
         } catch (e) {
           return `N/A: ${e}`;
         }
