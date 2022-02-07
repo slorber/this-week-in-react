@@ -12,9 +12,12 @@ async function subscribeToRevue({ email }: { email: string }) {
   const REVUE_SUBSCRIBE_API = "https://www.getrevue.co/api/v2/subscribers";
 
   // See https://gomakethings.com/how-to-use-environment-variables-with-cloudflare-workers-and-vanilla-js/
-  const REVUE_SECRET_KEY = process
-    ? process.env.REVUE_SECRET_KEY
-    : CF_REVUE_SECRET_KEY;
+  const REVUE_SECRET_KEY: string | undefined =
+    typeof process !== "undefined"
+      ? process.env.REVUE_SECRET_KEY
+      : typeof CF_REVUE_SECRET_KEY !== "undefined"
+      ? CF_REVUE_SECRET_KEY
+      : undefined;
 
   if (!REVUE_SECRET_KEY) {
     throw new Error("REVUE_SECRET_KEY is not set");
