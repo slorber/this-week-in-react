@@ -101,7 +101,7 @@ export const action: ActionFunction = async ({ request, context }) => {
     if (result.status >= 500) {
       const text = await (async function () {
         try {
-          return await result.text();
+          return (await result.text()) ?? "No Text";
         } catch (e) {
           return `N/A: ${e}`;
         }
@@ -109,7 +109,9 @@ export const action: ActionFunction = async ({ request, context }) => {
       return json(
         {
           error: true,
-          message: `Error while calling Revue. ${result.status} ${text}`,
+          message: `Error while calling Revue. ${result.status} ${
+            text ?? "no text()"
+          }`,
         },
         {
           status: 500,
