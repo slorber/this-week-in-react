@@ -56,8 +56,8 @@ export const action: ActionFunction = async ({ request, context }) => {
   try {
     const revueSecretKey = getRevueSecretKey(context);
     const formData = await request.formData();
-    let email;
 
+    let email;
     try {
       email = formData.get("email") as string;
       if (!email) {
@@ -98,10 +98,7 @@ export const action: ActionFunction = async ({ request, context }) => {
       );
     }
 
-    let data;
-    try {
-      data = await result.json();
-    } catch (e) {
+    if (result.status >= 500) {
       const text = await (async function () {
         try {
           return await result.text();
@@ -112,7 +109,22 @@ export const action: ActionFunction = async ({ request, context }) => {
       return json(
         {
           error: true,
-          message: `Can't read Revue JSON: ${e}\nStatus=${result.status}\nText=${text}`,
+          message: `Error while calling Revue. ${status} ${text}`,
+        },
+        {
+          status: result.status,
+        }
+      );
+    }
+
+    let data;
+    try {
+      data = await result.json();
+    } catch (e) {
+      return json(
+        {
+          error: true,
+          message: `${result.status} => can't read Revue JSON: ${e}`,
         },
         {
           status: 500,
