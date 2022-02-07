@@ -5,22 +5,22 @@ import { Form, json, Link, useActionData, useTransition } from "remix";
 import BannerSrc from "~/ThisWeekInReact-banner.png";
 
 declare global {
-  export const CF_REVUE_SECRET_KEY: string;
+  export const REVUE_SECRET_KEY: string;
 }
 
 async function subscribeToRevue({ email }: { email: string }) {
   const REVUE_SUBSCRIBE_API = "https://www.getrevue.co/api/v2/subscribers";
 
   // See https://gomakethings.com/how-to-use-environment-variables-with-cloudflare-workers-and-vanilla-js/
-  const REVUE_SECRET_KEY: string | undefined =
+  const RevueSecretKey: string | undefined =
     typeof process !== "undefined"
       ? process.env.REVUE_SECRET_KEY
-      : typeof CF_REVUE_SECRET_KEY !== "undefined"
-      ? CF_REVUE_SECRET_KEY
+      : typeof REVUE_SECRET_KEY !== "undefined"
+      ? REVUE_SECRET_KEY
       : undefined;
 
-  if (!REVUE_SECRET_KEY) {
-    throw new Error("REVUE_SECRET_KEY is not set");
+  if (!RevueSecretKey) {
+    throw new Error("REVUE_SECRET_KEY env is not set");
   }
 
   const revueFormData = new FormData();
