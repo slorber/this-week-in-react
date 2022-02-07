@@ -109,7 +109,7 @@ export const action: ActionFunction = async ({ request, context }) => {
       return json(
         {
           error: true,
-          message: `Error while calling Revue. ${status} ${text}`,
+          message: `Error while calling Revue. ${result.status} ${text}`,
         },
         {
           status: result.status,
