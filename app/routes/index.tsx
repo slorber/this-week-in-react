@@ -112,7 +112,7 @@ export const action: ActionFunction = async ({ request, context }) => {
           message: `Error while calling Revue. ${result.status} ${text}`,
         },
         {
-          status: result.status,
+          status: 500,
         }
       );
     }
@@ -141,7 +141,7 @@ export const action: ActionFunction = async ({ request, context }) => {
           message: data?.error?.email?.join?.(", ") || "Something went wrong",
         },
         {
-          status: result.status,
+          status: 500,
         }
       );
     }
