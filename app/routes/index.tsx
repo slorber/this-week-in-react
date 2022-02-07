@@ -1,87 +1,84 @@
 import { useEffect, useRef } from "react";
-import type {
-  ActionFunction} from "remix";
-import {
-  Form, json,
-  Link,
-  useActionData,
-  useTransition,
-} from "remix";
+import type { ActionFunction } from "remix";
+import { Form, json, Link, useActionData, useTransition } from "remix";
 
-import BannerSrc from "./ThisWeekInReact-banner.png"
+import BannerSrc from "~/ThisWeekInReact-banner.png";
 
-async function subscribeToRevue({email}:{email: string}) {
-
-  const REVUE_SUBSCRIBE_API = 'https://www.getrevue.co/api/v2/subscribers'
+async function subscribeToRevue({ email }: { email: string }) {
+  const REVUE_SUBSCRIBE_API = "https://www.getrevue.co/api/v2/subscribers";
   const REVUE_SECRET_KEY = process.env.REVUE_SECRET_KEY;
 
-  if ( !REVUE_SECRET_KEY ) {
-    throw new Error('REVUE_SECRET_KEY is not set');
+  if (!REVUE_SECRET_KEY) {
+    throw new Error("REVUE_SECRET_KEY is not set");
   }
 
-  const revueFormData = new FormData()
-  revueFormData.append('email', email)
-  revueFormData.append('double_opt_in', 'true')
+  const revueFormData = new FormData();
+  revueFormData.append("email", email);
+  revueFormData.append("double_opt_in", "true");
+
   const result = await fetch(REVUE_SUBSCRIBE_API, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      Authorization: `Token ${REVUE_SECRET_KEY}`
+      Authorization: `Token ${REVUE_SECRET_KEY}`,
     },
-    body: revueFormData
-  })
+    body: revueFormData,
+  });
 
   return result;
 }
 
-
 export const action: ActionFunction = async ({ request }) => {
-  // await new Promise((res) => setTimeout(res, 1000));
-
   const formData = await request.formData();
 
   const email = formData.get("email") as string;
   if (!email) {
-    return json({
-      error: true,
-      message: "Email is required",
-    },{
-      status: 400,
-    });
+    return json(
+      {
+        error: true,
+        message: "Email is required",
+      },
+      {
+        status: 400,
+      }
+    );
   }
 
-  const result = await subscribeToRevue({email});
-  const data = await result.json()
+  const result = await subscribeToRevue({ email });
+  const data = await result.json();
 
-  console.log({result,data})
+  console.log("Revue result", { status: result.status, data });
 
   if (result.status !== 200) {
-    return json({
-      error: true,
-      message: data?.error?.email?.join?.(", ") || "Something went wrong",
-    },{
-      status: result.status,
-    });
+    return json(
+      {
+        error: true,
+        message: data?.error?.email?.join?.(", ") || "Something went wrong",
+      },
+      {
+        status: result.status,
+      }
+    );
   }
 
   return {
     subscription: {
       subscribed: true,
-      data
-    }};
+      data,
+    },
+  };
 };
 
 export default function Index() {
   const actionData = useActionData();
   const transition = useTransition();
-  const state: "idle" | "success" | "error" | "submitting" = transition.submission
-    ? "submitting"
-    : actionData?.subscription
-    ? "success"
-    : actionData?.error
-    ? "error"
-    : "idle";
-
-  console.log({actionData,transition, state})
+  const state: "idle" | "success" | "error" | "submitting" =
+    transition.submission
+      ? "submitting"
+      : actionData?.subscription
+      ? "success"
+      : actionData?.error
+      ? "error"
+      : "idle";
 
   const inputRef = useRef<HTMLInputElement>(null);
   const successRef = useRef<HTMLHeadingElement>(null);
@@ -111,7 +108,7 @@ export default function Index() {
         <p className="">Don't miss any of the action!</p>
         <fieldset className="mt-4 mb-4 flex flex-row">
           <input
-              className={`p-2 grow ${state === "error" ? "border-red-500" : ""}`}
+            className={`p-2 grow ${state === "error" ? "border-red-500" : ""}`}
             aria-label="Email address"
             aria-describedby="error-message"
             ref={inputRef}
@@ -119,7 +116,10 @@ export default function Index() {
             name="email"
             placeholder="the-best@react.dev"
           />
-          <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
             {state === "submitting" ? "Subscribing..." : "Subscribe"}
           </button>
         </fieldset>
@@ -128,7 +128,7 @@ export default function Index() {
           {state === "error" ? actionData.message : <>&nbsp;</>}
         </p>
 
-        <img className="mt-4" src={BannerSrc}/>
+        <img className="mt-4" src={BannerSrc} />
       </Form>
 
       <div aria-hidden={state !== "success"}>
@@ -141,4 +141,3 @@ export default function Index() {
     </main>
   );
 }
-
