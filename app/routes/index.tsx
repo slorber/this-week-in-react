@@ -1,8 +1,8 @@
-import { useEffect, useRef } from "react";
 import type { ActionFunction } from "remix";
-import { Form, json, Link, useActionData, useTransition } from "remix";
+import { Form, json, useActionData, useTransition } from "remix";
 
 import BannerSrc from "~/ThisWeekInReact-banner.png";
+import TwitterCards from "~/components/TwitterCards";
 
 declare global {
   export const REVUE_SECRET_KEY: string | undefined;
@@ -168,7 +168,7 @@ export const action: ActionFunction = async ({ request, context }) => {
   }
 };
 
-export default function Index() {
+function HeaderForm() {
   const actionData = useActionData();
   const transition = useTransition();
   const state: "idle" | "success" | "error" | "submitting" =
@@ -180,64 +180,102 @@ export default function Index() {
       ? "error"
       : "idle";
 
-  const inputRef = useRef<HTMLInputElement>(null);
-  const successRef = useRef<HTMLHeadingElement>(null);
-  const mounted = useRef<boolean>(false);
-
-  useEffect(() => {
-    if (state === "error") {
-      inputRef.current?.focus();
-    }
-
-    if (state === "idle" && mounted.current) {
-      inputRef.current?.select();
-    }
-
-    if (state === "success") {
-      successRef.current?.focus();
-    }
-
-    mounted.current = true;
-  }, [state]);
-
   return (
-    <main>
-      <Form replace method="post" aria-hidden={state === "success"}>
-        <h1 className="text-3xl font-bold	">This Week In React</h1>
-        <h2 className="text-2xl mt-4">Subscribe!</h2>
-        <p className="">Don't miss any of the action!</p>
-        <fieldset className="mt-4 mb-4 flex flex-row">
+    <Form replace method="post" aria-hidden={state === "success"}>
+      {state !== "success" && (
+        <fieldset className="mt-4 mb-2 flex flex-row rounded-md sm:rounded-lg shadow-2xl overflow-hidden">
           <input
-            className={`p-2 grow ${state === "error" ? "border-red-500" : ""}`}
+            className={`text-md sm:text-xl w-44 sm:w-80 sm:w-96 p-2 sm:p-4 grow ${
+              state === "error" ? "border-red-500" : ""
+            }`}
             aria-label="Email address"
             aria-describedby="error-message"
-            ref={inputRef}
             type="email"
             name="email"
-            placeholder="the-best@react.dev"
+            placeholder="my-email@react.dev"
           />
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="text-md sm:text-xl w-24 sm:w-32 bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 sm:p-4"
           >
-            {state === "submitting" ? "Subscribing..." : "Subscribe"}
+            {state === "submitting" ? "..." : "Subscribe"}
           </button>
         </fieldset>
+      )}
 
-        <p id="error-message" className="text-red-500">
-          {state === "error" ? actionData.message : <>&nbsp;</>}
-        </p>
+      {state === "success" && (
+        <div className="mt-4 text-slate-100">
+          <h2 className="text-2xl">🥳️ You're almost subscribed!</h2>
+          <p className="mt-2">
+            Please check your email to confirm your subscription.
+          </p>
+        </div>
+      )}
 
-        <img className="mt-4" src={BannerSrc} />
-      </Form>
+      <p id="error-message" className="text-red-500">
+        {state === "error" ? actionData.message : <>&nbsp;</>}
+      </p>
+    </Form>
+  );
+}
 
-      <div aria-hidden={state !== "success"}>
-        <h2 ref={successRef} tabIndex={-1}>
-          You're subscribed!
-        </h2>
-        <p>Please check your email to confirm your subscription.</p>
-        <Link to=".">Start over</Link>
-      </div>
+export default function Index() {
+  return (
+    <main>
+      <header className="relative">
+        <div className="p-2 sm:p-4">
+          <div className="relative mx-auto w-full max-w-[1000px]">
+            <div>
+              <img className="rounded-lg shadow-2xl" src={BannerSrc} />
+            </div>
+
+            <p className="text-xl sm:text-2xl mt-8 text-slate-100 text-center max-w-3xl mx-auto">
+              Stay up-to-date with React!
+            </p>
+            <p className="text-md mt-2 text-center font-medium text-slate-400">
+              One email per week{" ⸱ "}
+              <a
+                href="https://www.getrevue.co/profile/thisweekinreact"
+                className="text-sky-400 hover:text-sky-500"
+              >
+                Archive
+              </a>
+            </p>
+
+            <div className="mt-4 flex justify-center space-x-6 text-sm">
+              <HeaderForm />
+            </div>
+          </div>
+        </div>
+      </header>
+      <TwitterCardsSection />
     </main>
+  );
+}
+
+function TwitterCardsSection() {
+  return (
+    <section className="">
+      <h2 className="text-xl sm:text-2xl mt-2 text-slate-100 text-center max-w-3xl mx-auto">
+        Join thousands of{" "}
+        <a
+          href="https://twitter.com/sebastienlorber/timelines/1448942785814466561"
+          target="_blank"
+          className="text-sky-400 hover:text-sky-500"
+        >
+          satisfied readers
+        </a>
+      </h2>
+      <div className="w-full flex flex-row flex-wrap justify-center	">
+        {TwitterCards.map((card, i) => (
+          <div
+            key={i}
+            className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 p-2 sm:p-4"
+          >
+            {card}
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
