@@ -215,7 +215,7 @@ function SubscribeForm({
   return (
     <Form replace method="post" aria-hidden={state === "success"}>
       {state !== "success" && (
-        <fieldset className="mt-4 mb-2 flex flex-row rounded-md sm:rounded-lg shadow-2xl overflow-hidden">
+        <fieldset className="mt-4 mb-2 flex flex-row rounded-md sm:rounded-lg shadow-2xl overflow-hidden m-auto max-w-[600px]">
           <input
             className={`text-md sm:text-xl w-44 sm:w-80 md:w-96 p-2 sm:p-4 grow ${
               state === "error" ? "border-red-500" : ""
