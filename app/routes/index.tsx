@@ -214,9 +214,11 @@ function HeaderForm() {
         </div>
       )}
 
-      <p id="error-message" className="text-red-500">
-        {state === "error" ? actionData.message : <>&nbsp;</>}
-      </p>
+      {state === "error" && (
+        <p id="error-message" className="text-red-500">
+          {actionData.message}
+        </p>
+      )}
     </Form>
   );
 }
@@ -268,7 +270,7 @@ export default function Index() {
 function TwitterCardsSection() {
   return (
     <section className="w-full max-w-[1800px] m-auto lg:px-2 xl:px-4 2xl:px-10 py-2">
-      <h2 className="text-xl sm:text-2xl mt-2 text-slate-100 text-center max-w-3xl mx-auto">
+      <h2 className="text-xl sm:text-2xl text-slate-100 text-center max-w-3xl mx-auto">
         Join thousands of{" "}
         <AppLink
           to="https://twitter.com/sebastienlorber/timelines/1448942785814466561"
@@ -277,7 +279,7 @@ function TwitterCardsSection() {
           satisfied readers
         </AppLink>
       </h2>
-      <div className="flex flex-row flex-wrap justify-center">
+      <div className="flex flex-row flex-wrap justify-center pt-1">
         {TwitterCards.map((card, i) => (
           <div
             key={i}

@@ -22,7 +22,7 @@ export default function TwitterCard({
       href={href}
       target={"_blank"}
       className={clsx(
-        "block w-full mx-auto p-4 relative bg-slate-700 border border-slate-600 hover:border-slate-500 transition-colors transition-shadow shadow-xl hover:shadow-2xl rounded-lg text-white",
+        "block w-full mx-auto p-4 relative bg-slate-700 transition border border-slate-700 hover:border-slate-500 shadow-xl hover:shadow-2xl rounded-lg text-white",
         className
       )}
     >

@@ -181,39 +181,42 @@ export default [
     <SebastienLorber /> !
   </TwitterCard>,
   <TwitterCard
-    username="kaddiya"
-    href="https://twitter.com/kaddiya/status/1346411458033111040"
-    avatarSrc="https://pbs.twimg.com/profile_images/1135484665148596225/7tEr3JYj_400x400.jpg"
-    fullName="Ameya Kulkarni"
+    username="ElaziziYoussouf"
+    href="https://twitter.com/ElaziziYoussouf/status/1338448625677066240"
+    avatarSrc="https://pbs.twimg.com/profile_images/1209891793531224069/H_QPoHD4_400x400.jpg"
+    fullName="Youssouf El Azizi
+"
   >
-    Quality High Info Density Digest
+    Always enjoy reading <SebastienLorber /> newsletter 👌; thank you for
+    sharing 🙏
   </TwitterCard>,
   <TwitterCard
-    username="jessejafa"
-    href="https://twitter.com/jessejafa/status/1346403583512760321"
-    avatarSrc="https://pbs.twimg.com/profile_images/1260439523303055360/_c_P5Svp_400x400.jpg"
-    fullName="Jesse Jafa"
+    username="thoughtspile"
+    href="https://twitter.com/thoughtspile/status/1465754473045835784"
+    avatarSrc="https://pbs.twimg.com/profile_images/1445454362944311318/93O52S2s_400x400.jpg"
+    fullName="Vladimir"
   >
-    I love this newsletter so much. I think I even prefer it comes it tweet
-    form, makes it more social.
+    Always happy to take a break ☕️ from code plumbing with Sebastien's weekly
+    digest, and even happier when I'm in it.
   </TwitterCard>,
   <TwitterCard
-    username="__marcin_"
-    href="https://twitter.com/__marcin_/status/1480988303130304526"
-    avatarSrc="https://pbs.twimg.com/profile_images/1120713390710771717/Yyt9iNYG_400x400.png"
-    fullName="Marcin Dziewulski"
+    username="HamatoYogi"
+    href="https://twitter.com/HamatoYogi/status/1338543770791501824"
+    avatarSrc="https://pbs.twimg.com/profile_images/1403375405332041733/YKzFiS7g_400x400.jpg"
+    fullName="Yoav Ganbar
+"
   >
-    The most comprehensive newsletter for React (Native) developers. If you
-    still don't subscribe to it, then do it now, every week great stuff will
-    land in your inbox!
+    A great add to your reading list because there's too much to read 😅. Great
+    as always <SebastienLorber /> 💯
   </TwitterCard>,
   <TwitterCard
-    username="MohsenKamranii"
-    href="https://twitter.com/MohsenKamranii/status/1479262314071089153"
-    avatarSrc="https://pbs.twimg.com/profile_images/1477755850915663873/MJdhEYQF_400x400.jpg"
-    fullName="MohsenKamranii"
+    username="thiboad"
+    href="https://twitter.com/thiboad/status/1478329538228760576"
+    avatarSrc="https://pbs.twimg.com/profile_images/1407959042157420546/YXOJGoNL_400x400.jpg"
+    fullName="thiboad"
   >
-    A fantastic place to stay up to date with the world of #ReactJS
+    💡 I'm sponsoring <SebastienLorber /> because he does a great job which
+    saves us a lot of time with his newsletters.
   </TwitterCard>,
   <TwitterCard
     username="mehieltwit"
@@ -227,6 +230,57 @@ export default [
     to level it up this year and really wish you all the best Seb!
   </TwitterCard>,
   <TwitterCard
+    username="__marcin_"
+    href="https://twitter.com/__marcin_/status/1480988303130304526"
+    avatarSrc="https://pbs.twimg.com/profile_images/1120713390710771717/Yyt9iNYG_400x400.png"
+    fullName="Marcin Dziewulski"
+  >
+    The most comprehensive newsletter for React (Native) developers. If you
+    still don't subscribe to it, then do it now, every week great stuff will
+    land in your inbox!
+  </TwitterCard>,
+  <TwitterCard
+    username="MarkLyn29583754"
+    href="https://twitter.com/MarkLyn29583754/status/1491840493319122944"
+    avatarSrc="https://pbs.twimg.com/profile_images/1141406927622037504/F9DhdoBH_400x400.png"
+    fullName="Mark Lynch"
+  >
+    This is why I subscribe to <SebastienLorber /> newsletter. Has more detailed
+    comments than the twitter thread and Sebastien is like an ESPN commentator
+    breaking down news in an entertaining and accurate way for React/ReactNative
+  </TwitterCard>,
+  <TwitterCard
+    username="Thierryskoda"
+    href="https://twitter.com/Thierryskoda/status/1440272076800094211"
+    avatarSrc="https://pbs.twimg.com/profile_images/1493598145489555463/bSdvkfhh_400x400.png"
+    fullName="Thierry Skoda"
+  >
+    Really recommend following <SebastienLorber /> ! Been following him for over
+    a year and his weekly recap are so perfect! I feel that I never miss out on
+    anything. 🙏 Also, the little TLDR for each post are so perfect. I would pay
+    for those $$
+  </TwitterCard>,
+  <TwitterCard
+    username="EddyVinckk"
+    href="https://twitter.com/EddyVinckk/status/1491377688673587203"
+    avatarSrc="https://pbs.twimg.com/profile_images/1138896006114885636/vMphA1Gl_400x400.jpg"
+    fullName="Eddy Vinck"
+  >
+    Just found out about your newsletter, thanks for writing it! I just
+    subscribed and skimmed a few of the recommended articles, and they're great!
+    😀
+  </TwitterCard>,
+  <TwitterCard
+    username="ddunderfelt"
+    href="https://twitter.com/ddunderfelt/status/1361680222840627200"
+    avatarSrc="https://pbs.twimg.com/profile_images/1470070405436170246/5gaePqjQ_400x400.jpg"
+    fullName="Daniel
+"
+  >
+    Holy macaroni these threads are great! I like to think I’m pretty “keyed in”
+    to new stuff but I’m learning a lot! Keep up the good work Seb! 👍
+  </TwitterCard>,
+  <TwitterCard
     username="wbroek"
     href="https://twitter.com/wbroek/status/1479017874798829569"
     avatarSrc="https://pbs.twimg.com/profile_images/568535435/wouterk_400x400.jpg"
@@ -234,15 +288,6 @@ export default [
   >
     Thank you <SebastienLorber /> for the great resource; if you do react you
     should definitely take a look
-  </TwitterCard>,
-  <TwitterCard
-    username="thiboad"
-    href="https://twitter.com/thiboad/status/1478329538228760576"
-    avatarSrc="https://pbs.twimg.com/profile_images/1407959042157420546/YXOJGoNL_400x400.jpg"
-    fullName="thiboad"
-  >
-    💡 I'm sponsoring <SebastienLorber /> because he does a great job which
-    saves us a lot of time with his newsletters.
   </TwitterCard>,
   <TwitterCard
     username="Ashish_feels"
@@ -264,24 +309,29 @@ export default [
     [...]
   </TwitterCard>,
   <TwitterCard
-    username="HamatoYogi"
-    href="https://twitter.com/HamatoYogi/status/1338543770791501824"
-    avatarSrc="https://pbs.twimg.com/profile_images/1403375405332041733/YKzFiS7g_400x400.jpg"
-    fullName="Yoav Ganbar
-"
+    username="kaddiya"
+    href="https://twitter.com/kaddiya/status/1346411458033111040"
+    avatarSrc="https://pbs.twimg.com/profile_images/1135484665148596225/7tEr3JYj_400x400.jpg"
+    fullName="Ameya Kulkarni"
   >
-    A great add to your reading list because there's too much to read 😅. Great
-    as always <SebastienLorber /> 💯
+    Quality High Info Density Digest
   </TwitterCard>,
   <TwitterCard
-    username="ElaziziYoussouf"
-    href="https://twitter.com/ElaziziYoussouf/status/1338448625677066240"
-    avatarSrc="https://pbs.twimg.com/profile_images/1209891793531224069/H_QPoHD4_400x400.jpg"
-    fullName="Youssouf El Azizi
-"
+    username="jessejafa"
+    href="https://twitter.com/jessejafa/status/1346403583512760321"
+    avatarSrc="https://pbs.twimg.com/profile_images/1260439523303055360/_c_P5Svp_400x400.jpg"
+    fullName="Jesse Jafa"
   >
-    Always enjoy reading <SebastienLorber /> newsletter 👌; thank you for
-    sharing 🙏
+    I love this newsletter so much. I think I even prefer it comes it tweet
+    form, makes it more social.
+  </TwitterCard>,
+  <TwitterCard
+    username="MohsenKamranii"
+    href="https://twitter.com/MohsenKamranii/status/1479262314071089153"
+    avatarSrc="https://pbs.twimg.com/profile_images/1477755850915663873/MJdhEYQF_400x400.jpg"
+    fullName="MohsenKamranii"
+  >
+    A fantastic place to stay up to date with the world of #ReactJS
   </TwitterCard>,
   <TwitterCard
     username="NickDima"
@@ -293,31 +343,12 @@ export default [
     Check out <SebastienLorber /> ‘s weekly recaps. Very good stuff!
   </TwitterCard>,
   <TwitterCard
-    username="thoughtspile"
-    href="https://twitter.com/thoughtspile/status/1465754473045835784"
-    avatarSrc="https://pbs.twimg.com/profile_images/1445454362944311318/93O52S2s_400x400.jpg"
-    fullName="Vladimir"
-  >
-    Always happy to take a break ☕️ from code plumbing with Sebastien's weekly
-    digest, and even happier when I'm in it.
-  </TwitterCard>,
-  <TwitterCard
     username="alireza94"
     href="https://twitter.com/alireza94/status/1453021570050543636"
     avatarSrc="https://pbs.twimg.com/profile_images/1466173184831590403/3TPtkJW7_400x400.jpg"
     fullName="Alireza Ahmadi"
   >
     Thanks for curating these threads every week. I enjoy reading them.
-  </TwitterCard>,
-  <TwitterCard
-    username="EddyVinckk"
-    href="https://twitter.com/EddyVinckk/status/1491377688673587203"
-    avatarSrc="https://pbs.twimg.com/profile_images/1138896006114885636/vMphA1Gl_400x400.jpg"
-    fullName="Eddy Vinck"
-  >
-    Just found out about your newsletter, thanks for writing it! I just
-    subscribed and skimmed a few of the recommended articles, and they're great!
-    😀
   </TwitterCard>,
   <TwitterCard
     username="davesnx"
@@ -357,43 +388,12 @@ export default [
     yep! the summarized content is really high quality
   </TwitterCard>,
   <TwitterCard
-    username="ddunderfelt"
-    href="https://twitter.com/ddunderfelt/status/1361680222840627200"
-    avatarSrc="https://pbs.twimg.com/profile_images/1470070405436170246/5gaePqjQ_400x400.jpg"
-    fullName="Daniel
-"
-  >
-    Holy macaroni these threads are great! I like to think I’m pretty “keyed in”
-    to new stuff but I’m learning a lot! Keep up the good work Seb! 👍
-  </TwitterCard>,
-  <TwitterCard
     username="superpatell"
     href="https://twitter.com/superpatell/status/1386728943110303747"
     avatarSrc="https://pbs.twimg.com/profile_images/1296070291337207810/2LyTsBbC_400x400.jpg"
     fullName="jp3"
   >
     I love this weekly thread!!
-  </TwitterCard>,
-  <TwitterCard
-    username="MarkLyn29583754"
-    href="https://twitter.com/MarkLyn29583754/status/1491840493319122944"
-    avatarSrc="https://pbs.twimg.com/profile_images/1141406927622037504/F9DhdoBH_400x400.png"
-    fullName="Mark Lynch"
-  >
-    This is why I subscribe to <SebastienLorber /> newsletter. Has more detailed
-    comments than the twitter thread and Sebastien is like an ESPN commentator
-    breaking down news in an entertaining and accurate way for React/ReactNative
-  </TwitterCard>,
-  <TwitterCard
-    username="Thierryskoda"
-    href="https://twitter.com/Thierryskoda/status/1440272076800094211"
-    avatarSrc="https://pbs.twimg.com/profile_images/1493598145489555463/bSdvkfhh_400x400.png"
-    fullName="Thierry Skoda"
-  >
-    Really recommend following <SebastienLorber /> ! Been following him for over
-    a year and his weekly recap are so perfect! I feel that I never miss out on
-    anything. 🙏 Also, the little TLDR for each post are so perfect. I would pay
-    for those $$
   </TwitterCard>,
   <TwitterCard
     username="aulneau_"
