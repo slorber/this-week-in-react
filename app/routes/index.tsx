@@ -6,6 +6,7 @@ import TwitterCards from "~/components/TwitterCards";
 import AppLink from "~/components/AppLink";
 import TwitterIcon from "~/components/TwitterIcon";
 import clsx from "clsx";
+import { useEffect, useState } from "react";
 
 export const meta: MetaFunction = () => {
   const title = "This Week In React";
@@ -187,7 +188,11 @@ export const action: ActionFunction = async ({ request, context }) => {
   }
 };
 
-function HeaderForm() {
+function SubscribeForm({
+  onSubscribe,
+}: {
+  onSubscribe?: (email: string) => void;
+}) {
   const actionData = useActionData();
   const transition = useTransition();
   const state: "idle" | "success" | "error" | "submitting" =
@@ -198,6 +203,14 @@ function HeaderForm() {
       : actionData?.error
       ? "error"
       : "idle";
+
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    if (state === "success") {
+      onSubscribe?.(email);
+    }
+  }, [state, email]);
 
   return (
     <Form replace method="post" aria-hidden={state === "success"}>
@@ -212,6 +225,8 @@ function HeaderForm() {
             type="email"
             name="email"
             placeholder="my-email@react.dev"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <button
             type="submit"
@@ -223,10 +238,12 @@ function HeaderForm() {
       )}
 
       {state === "success" && (
-        <div className="mt-4 text-slate-100">
-          <h2 className="text-2xl">🥳️ You're almost subscribed!</h2>
-          <p className="mt-2">
-            Please check your email to confirm your subscription.
+        <div className="text-center my-8">
+          <h2 className="text-2xl text-slate-100">
+            🥳️ You're almost subscribed!
+          </h2>
+          <p className="mt-2 text-orange-400">
+            ⚠️ Please confirm your subscription: check your emails
           </p>
         </div>
       )}
@@ -248,7 +265,11 @@ function Space() {
   return <span className="mx-1" />;
 }
 
-export default function Index() {
+export default function Index({
+  onSubscribe,
+}: {
+  onSubscribe?: (email: string) => void;
+}) {
   return (
     <main>
       <header className="p-2 pb-0 sm:p-4 sm:pb-0">
@@ -277,7 +298,7 @@ export default function Index() {
             </div>
           </p>
           <div className="mt-4 flex justify-center space-x-6 text-sm">
-            <HeaderForm />
+            <SubscribeForm onSubscribe={onSubscribe} />
           </div>
         </div>
       </header>
