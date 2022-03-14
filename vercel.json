@@ -3,5 +3,17 @@
     "env": {
       "ENABLE_FILE_SYSTEM_API": "1"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://www.getrevue.co/profile/thisweekinreact",
+      "permanent": false
+    },
+    {
+      "source": "/revue",
+      "destination": "https://www.getrevue.co/profile/thisweekinreact",
+      "permanent": true
+    }
+  ]
 }
