@@ -1,16 +1,11 @@
 import TwitterCard from "~/components/TwitterCard";
-import { AppLinkClassName } from "~/components/AppLink";
+import { AppLinkButton } from "~/components/AppLink";
 
 function SebastienLorber() {
   return (
-    <button
-      onClick={() => {
-        window.open("https://twitter.com/sebastienlorber", "_blank");
-      }}
-      className={AppLinkClassName}
-    >
+    <AppLinkButton href="https://twitter.com/sebastienlorber">
       @sebastienlorber
-    </button>
+    </AppLinkButton>
   );
 }
 
@@ -99,14 +94,6 @@ export default [
     hit up Seb, he publishes a great React+RN newsletter!
   </TwitterCard>,
   <TwitterCard
-    username="appfactory"
-    href="https://twitter.com/appfactory/status/1320666979490058240"
-    avatarSrc="https://pbs.twimg.com/profile_images/1384539886980681738/XIT9pYbY_400x400.jpg"
-    fullName="Peter Cilliers-Pistorius"
-  >
-    Basically every tweet was interesting to me. :)
-  </TwitterCard>,
-  <TwitterCard
     username="johnny_reilly"
     href="https://twitter.com/johnny_reilly/status/1477359594087321600"
     avatarSrc="https://pbs.twimg.com/profile_images/552803871567790081/rPdTN64o_400x400.jpeg"
@@ -116,6 +103,16 @@ export default [
     React’ newsletter, it's worth your interest. There's a lot of news and only
     so much time. Sebastien helps us learn the things we need to learn which is
     ❤️💥
+  </TwitterCard>,
+  <TwitterCard
+    username="amanhimself"
+    href="https://twitter.com/amanhimself/status/1450753646082150401"
+    avatarSrc="https://pbs.twimg.com/profile_images/1114245323197644801/k-1T-qbD_400x400.jpg"
+    fullName="Aman Mittal"
+  >
+    My goto gateway for what’s happening in React World has been
+    <SebastienLorber /> ’s weekly tweet thread. And now he has a newsletter for
+    that 👀
   </TwitterCard>,
   <TwitterCard
     username="NoriSte"
@@ -137,14 +134,12 @@ export default [
     As always, a high quality thread for developers working with React 😍
   </TwitterCard>,
   <TwitterCard
-    username="amanhimself"
-    href="https://twitter.com/amanhimself/status/1450753646082150401"
-    avatarSrc="https://pbs.twimg.com/profile_images/1114245323197644801/k-1T-qbD_400x400.jpg"
-    fullName="Aman Mittal"
+    username="appfactory"
+    href="https://twitter.com/appfactory/status/1320666979490058240"
+    avatarSrc="https://pbs.twimg.com/profile_images/1384539886980681738/XIT9pYbY_400x400.jpg"
+    fullName="Peter Cilliers-Pistorius"
   >
-    My goto gateway for what’s happening in React World has been
-    <SebastienLorber /> ’s weekly tweet thread. And now he has a newsletter for
-    that 👀
+    Basically every tweet was interesting to me. :)
   </TwitterCard>,
   <TwitterCard
     username="Panda_Program"

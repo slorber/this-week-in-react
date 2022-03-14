@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import TwitterIcon from "./TwitterIcon";
 import clsx from "clsx";
+import { AppLinkButton } from "~/components/AppLink";
 
 export default function TwitterCard({
   className,
@@ -34,7 +35,11 @@ export default function TwitterCard({
         />
         <div className="flex-1">
           <p className="font-bold text-md ">{fullName}</p>
-          <p className="text-sky-300">@{username}</p>
+          <p>
+            <AppLinkButton href={`https://twitter.com/${username}`}>
+              {username}
+            </AppLinkButton>
+          </p>
         </div>
         <div>
           <TwitterIcon />

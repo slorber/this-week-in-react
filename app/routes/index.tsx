@@ -5,6 +5,7 @@ import BannerSrc from "~/ThisWeekInReact-banner.png";
 import TwitterCards from "~/components/TwitterCards";
 import AppLink from "~/components/AppLink";
 import TwitterIcon from "~/components/TwitterIcon";
+import clsx from "clsx";
 
 export const meta: MetaFunction = () => {
   const title = "This Week In React";
@@ -203,7 +204,7 @@ function HeaderForm() {
       {state !== "success" && (
         <fieldset className="mt-4 mb-2 flex flex-row rounded-md sm:rounded-lg shadow-2xl overflow-hidden">
           <input
-            className={`text-md sm:text-xl w-44 sm:w-80 sm:w-96 p-2 sm:p-4 grow ${
+            className={`text-md sm:text-xl w-44 sm:w-80 md:w-96 p-2 sm:p-4 grow ${
               state === "error" ? "border-red-500" : ""
             }`}
             aria-label="Email address"
@@ -239,12 +240,12 @@ function HeaderForm() {
   );
 }
 
-function Separator() {
-  return <span className="mx-2 md:mx-4">{"⸱"}</span>;
+function Separator({ className }: { className?: string }) {
+  return <span className={clsx(className, "mx-2 md:mx-4")}>{"⸱"}</span>;
 }
 
 function Space() {
-  return <span className="mx-0.5 md:mx-1" />;
+  return <span className="mx-1" />;
 }
 
 export default function Index() {
@@ -259,19 +260,21 @@ export default function Index() {
             Stay up-to-date with React!
           </p>
           <p className="text-md mt-2 text-center font-medium text-slate-200">
-            One email per week
-            <Separator />
-            <AppLink to="https://www.getrevue.co/profile/thisweekinreact">
-              📨
-              <Space />
-              Archive
-            </AppLink>
-            <Separator />
-            <AppLink to="https://slo.im/thread">
-              <TwitterIcon className="inline" />
-              <Space />
-              Thread
-            </AppLink>
+            <span>One email per week</span>
+            <Separator className="hidden sm:inline" />
+            <div className="pt-1 sm:inline sm:pt-0">
+              <AppLink to="https://www.getrevue.co/profile/thisweekinreact">
+                📨
+                <Space />
+                Archive
+              </AppLink>
+              <Separator />
+              <AppLink to="https://slo.im/thread">
+                <TwitterIcon className="inline" />
+                <Space />
+                Thread
+              </AppLink>
+            </div>
           </p>
           <div className="mt-4 flex justify-center space-x-6 text-sm">
             <HeaderForm />
@@ -285,7 +288,7 @@ export default function Index() {
 
 function TwitterCardsSection() {
   return (
-    <section className="w-full max-w-[1800px] m-auto lg:px-2 xl:px-4 2xl:px-10 py-2">
+    <section className="w-full max-w-[1800px] m-auto lg:px-2 xl:px-4 2xl:px-10 py-6">
       <h2 className="text-xl sm:text-2xl text-slate-100 text-center max-w-3xl mx-auto">
         Join thousands of{" "}
         <AppLink
