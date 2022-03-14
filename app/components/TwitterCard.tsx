@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import TwitterIcon from "./TwitterIcon";
+import clsx from "clsx";
 
 export default function TwitterCard({
   className,
@@ -18,13 +19,14 @@ export default function TwitterCard({
 }) {
   return (
     <a
-      className={`block w-full mx-auto p-4 relative bg-slate-700 shadow-2xl rounded-lg text-white ${
-        className ?? ""
-      }`}
       href={href}
       target={"_blank"}
+      className={clsx(
+        "block w-full mx-auto p-4 relative bg-slate-700 border border-slate-600 hover:border-slate-500 transition-colors transition-shadow shadow-xl hover:shadow-2xl rounded-lg text-white",
+        className
+      )}
     >
-      <div className="flex">
+      <div className=" flex">
         <img
           className="rounded-full w-12 h-12 mr-2"
           src={avatarSrc}
@@ -38,7 +40,7 @@ export default function TwitterCard({
           <TwitterIcon />
         </div>
       </div>
-      <p className="text-md md:text-lg mt-2 font-medium text-slate-300">
+      <p className="text-sm lg:text-base mt-2 font-light text-white">
         {children}
       </p>
     </a>

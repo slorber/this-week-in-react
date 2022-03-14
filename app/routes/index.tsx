@@ -3,6 +3,8 @@ import { Form, json, useActionData, useTransition } from "remix";
 
 import BannerSrc from "~/ThisWeekInReact-banner.png";
 import TwitterCards from "~/components/TwitterCards";
+import AppLink from "~/components/AppLink";
+import TwitterIcon from "~/components/TwitterIcon";
 
 declare global {
   export const REVUE_SECRET_KEY: string | undefined;
@@ -219,32 +221,42 @@ function HeaderForm() {
   );
 }
 
+function Separator() {
+  return <span className="mx-2 md:mx-4">{"⸱"}</span>;
+}
+
+function Space() {
+  return <span className="mx-0.5 md:mx-1" />;
+}
+
 export default function Index() {
   return (
     <main>
-      <header className="relative">
-        <div className="p-2 sm:p-4">
-          <div className="relative mx-auto w-full max-w-[1000px]">
-            <div>
-              <img className="rounded-lg shadow-2xl" src={BannerSrc} />
-            </div>
-
-            <p className="text-xl sm:text-2xl mt-8 text-slate-100 text-center max-w-3xl mx-auto">
-              Stay up-to-date with React!
-            </p>
-            <p className="text-md mt-2 text-center font-medium text-slate-400">
-              One email per week{" ⸱ "}
-              <a
-                href="https://www.getrevue.co/profile/thisweekinreact"
-                className="text-sky-400 hover:text-sky-500"
-              >
-                Archive
-              </a>
-            </p>
-
-            <div className="mt-4 flex justify-center space-x-6 text-sm">
-              <HeaderForm />
-            </div>
+      <header className="p-2 pb-0 sm:p-4 sm:pb-0">
+        <div className="mx-auto w-full max-w-[1000px]">
+          <div>
+            <img className="rounded-lg shadow-2xl" src={BannerSrc} />
+          </div>
+          <p className="text-xl sm:text-2xl mt-8 text-slate-100 text-center max-w-3xl mx-auto">
+            Stay up-to-date with React!
+          </p>
+          <p className="text-md mt-2 text-center font-medium text-slate-200">
+            One email per week
+            <Separator />
+            <AppLink to="https://www.getrevue.co/profile/thisweekinreact">
+              📨
+              <Space />
+              Archive
+            </AppLink>
+            <Separator />
+            <AppLink to="https://slo.im/thread">
+              <TwitterIcon className="inline" />
+              <Space />
+              Thread
+            </AppLink>
+          </p>
+          <div className="mt-4 flex justify-center space-x-6 text-sm">
+            <HeaderForm />
           </div>
         </div>
       </header>
@@ -255,22 +267,21 @@ export default function Index() {
 
 function TwitterCardsSection() {
   return (
-    <section className="">
+    <section className="w-full max-w-[1800px] m-auto lg:px-2 xl:px-4 2xl:px-10 py-2">
       <h2 className="text-xl sm:text-2xl mt-2 text-slate-100 text-center max-w-3xl mx-auto">
         Join thousands of{" "}
-        <a
-          href="https://twitter.com/sebastienlorber/timelines/1448942785814466561"
+        <AppLink
+          to="https://twitter.com/sebastienlorber/timelines/1448942785814466561"
           target="_blank"
-          className="text-sky-400 hover:text-sky-500"
         >
           satisfied readers
-        </a>
+        </AppLink>
       </h2>
-      <div className="w-full flex flex-row flex-wrap justify-center	">
+      <div className="flex flex-row flex-wrap justify-center">
         {TwitterCards.map((card, i) => (
           <div
             key={i}
-            className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 p-2 sm:p-4"
+            className="basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 p-0.5 md:p-1 xl:p-2 2xl:p-4"
           >
             {card}
           </div>
