@@ -1,10 +1,26 @@
-import type { ActionFunction } from "remix";
+import type { ActionFunction, MetaFunction } from "remix";
 import { Form, json, useActionData, useTransition } from "remix";
 
 import BannerSrc from "~/ThisWeekInReact-banner.png";
 import TwitterCards from "~/components/TwitterCards";
 import AppLink from "~/components/AppLink";
 import TwitterIcon from "~/components/TwitterIcon";
+
+export const meta: MetaFunction = () => {
+  const title = "This Week In React";
+  const description = `Weekly newsletter for React professionals`;
+  return {
+    title,
+    description,
+    keywords: "reactjs,reactnative,typescript,nodejs",
+    "twitter:image": BannerSrc,
+    "twitter:card": "summary_large_image",
+    "twitter:creator": "@sebastienlorber",
+    "twitter:site": "@sebastienlorber",
+    "twitter:title": "This Week In React",
+    "twitter:description": description,
+  };
+};
 
 declare global {
   export const REVUE_SECRET_KEY: string | undefined;
