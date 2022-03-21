@@ -71,122 +71,144 @@ async function subscribeToRevue({
   return result;
 }
 
-export const action: ActionFunction = async ({ request, context }) => {
-  console.log("ActionFunction context", { context });
-  try {
-    const revueSecretKey = getRevueSecretKey(context);
-    const formData = await request.formData();
-
-    let email;
+export const createActionFunction: ({
+  source,
+}: {
+  source: "homepage" | "twitter" | "reddit" | "facebook" | "instagram";
+}) => ActionFunction =
+  ({ source }) =>
+  async ({ request, context }) => {
+    console.log("Revue action called", { source });
     try {
-      email = formData.get("email") as string;
-      if (!email) {
+      const revueSecretKey = getRevueSecretKey(context);
+      const formData = await request.formData();
+
+      let email;
+      try {
+        email = formData.get("email") as string;
+        if (!email) {
+          return json(
+            {
+              error: true,
+              message: "Email is required to subscribe!",
+            },
+            {
+              status: 400,
+            }
+          );
+        }
+      } catch (e) {
         return json(
           {
             error: true,
-            message: "Email is required to subscribe!",
+            message: `Can't read formData email: ${e}`,
           },
           {
             status: 400,
           }
         );
       }
-    } catch (e) {
-      return json(
-        {
-          error: true,
-          message: `Can't read formData email: ${e}`,
-        },
-        {
-          status: 400,
-        }
-      );
-    }
 
-    let result: Response;
-    try {
-      result = await subscribeToRevue({ email, revueSecretKey });
-    } catch (e) {
-      return json(
-        {
-          error: true,
-          message: `Can't call subscribeToRevue: ${e}`,
-        },
-        {
-          status: 500,
-        }
-      );
-    }
+      console.log("attempt to subscribe to revue with email", {
+        source,
+        email,
+      });
 
-    if (result.status >= 500) {
-      const text = await (async function () {
-        try {
-          return (await result.text()) || "No Text";
-        } catch (e) {
-          return `N/A: ${e}`;
-        }
-      })();
-      return json(
-        {
-          error: true,
-          message: `Error while calling Revue. ${result.status} ${
-            text ?? "no text()"
-          }`,
-        },
-        {
-          status: 500,
-        }
-      );
-    }
-
-    let data;
-    try {
-      data = await result.json();
-    } catch (e) {
-      return json(
-        {
-          error: true,
-          message: `${result.status} => can't read Revue JSON: ${e}`,
-        },
-        {
-          status: 500,
-        }
-      );
-    }
-
-    console.log("Revue result", { status: result.status, data });
-
-    if (result.status !== 200) {
-      return json(
-        {
-          error: true,
-          message: data?.error?.email?.join?.(", ") || "Something went wrong",
-        },
-        {
-          status: 500,
-        }
-      );
-    }
-
-    return {
-      subscription: {
-        subscribed: true,
-        data,
-      },
-    };
-  } catch (e) {
-    console.error(e);
-    return json(
-      {
-        error: true,
-        message: `Unexpected action error: ${e}`,
-      },
-      {
-        status: 500,
+      let result: Response;
+      try {
+        result = await subscribeToRevue({ email, revueSecretKey });
+      } catch (e) {
+        return json(
+          {
+            error: true,
+            message: `Can't call subscribeToRevue: ${e}`,
+          },
+          {
+            status: 500,
+          }
+        );
       }
-    );
-  }
-};
+
+      if (result.status >= 500) {
+        const text = await (async function () {
+          try {
+            return (await result.text()) || "No Text";
+          } catch (e) {
+            return `N/A: ${e}`;
+          }
+        })();
+        return json(
+          {
+            error: true,
+            message: `Error while calling Revue. ${result.status} ${
+              text ?? "no text()"
+            }`,
+          },
+          {
+            status: 500,
+          }
+        );
+      }
+
+      let data;
+      try {
+        data = await result.json();
+      } catch (e) {
+        return json(
+          {
+            error: true,
+            message: `${result.status} => can't read Revue JSON: ${e}`,
+          },
+          {
+            status: 500,
+          }
+        );
+      }
+
+      console.log("Revue result", {
+        source,
+        email,
+        status: result.status,
+        data,
+      });
+
+      if (result.status !== 200) {
+        return json(
+          {
+            error: true,
+            message: data?.error?.email?.join?.(", ") || "Something went wrong",
+          },
+          {
+            status: 500,
+          }
+        );
+      }
+
+      console.log("Revue subscription ok", { source, email });
+
+      return {
+        subscription: {
+          subscribed: true,
+          data,
+        },
+      };
+    } catch (e) {
+      console.error(e);
+      return json(
+        {
+          error: true,
+          message: `Unexpected action error: ${e}`,
+        },
+        {
+          status: 500,
+        }
+      );
+    }
+  };
+
+export const action: ActionFunction = createActionFunction({
+  source: "homepage",
+});
 
 function SubscribeForm({
   onSubscribe,

@@ -1,5 +1,6 @@
-export { action, meta } from "./index";
-import Index from "./index";
+import Index, { createActionFunction, meta } from "./index";
+
+export { meta } from "./index";
 
 const TwitterTracker = `
 !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
@@ -18,7 +19,11 @@ declare global {
   }
 }
 
-export default function IndexReddit() {
+export const action = createActionFunction({
+  source: "twitter",
+});
+
+export default function IndexTwitter() {
   return (
     <>
       <Index
