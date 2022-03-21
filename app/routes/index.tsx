@@ -239,7 +239,8 @@ function SubscribeForm({
       {state !== "success" && (
         <fieldset className="mt-4 mb-2 flex flex-row rounded-md sm:rounded-lg shadow-2xl overflow-hidden m-auto max-w-[600px]">
           <input
-            className={`text-md sm:text-xl w-44 sm:w-80 md:w-96 p-2 sm:p-4 grow ${
+            autoFocus
+            className={`text-md sm:text-xl w-56 sm:w-80 md:w-96 p-2 sm:p-4 grow ${
               state === "error" ? "border-red-500" : ""
             }`}
             aria-label="Email address"
@@ -299,10 +300,10 @@ export default function Index({
           <div>
             <img className="rounded-lg shadow-2xl" src={BannerSrc} />
           </div>
-          <p className="text-xl sm:text-2xl mt-8 text-slate-100 text-center max-w-3xl mx-auto">
+          <div className="text-xl sm:text-2xl mt-12 text-slate-100 text-center max-w-3xl mx-auto">
             Stay up-to-date with React!
-          </p>
-          <p className="text-md mt-2 text-center font-medium text-slate-200">
+          </div>
+          <div className="text-md mt-2 text-center font-medium text-slate-200">
             <span>One email per week</span>
             <Separator className="hidden sm:inline" />
             <div className="pt-1 sm:inline sm:pt-0">
@@ -318,8 +319,8 @@ export default function Index({
                 Thread
               </AppLink>
             </div>
-          </p>
-          <div className="mt-4 flex justify-center space-x-6 text-sm">
+          </div>
+          <div className="mt-8 mb-8 flex justify-center space-x-6 text-sm">
             <SubscribeForm onSubscribe={onSubscribe} />
           </div>
         </div>
