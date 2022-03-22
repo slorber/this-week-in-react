@@ -230,6 +230,10 @@ function SubscribeForm({
 
   useEffect(() => {
     if (state === "success") {
+      // TODO remove when shitty Revue issue get fixed
+      alert(
+        "Almost subscribed!\n\nPlease look in your SPAM for the confirmation email\nTemporary email provider issue :/"
+      );
       onSubscribe?.(email);
     }
   }, [state, email]);
