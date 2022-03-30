@@ -74,7 +74,13 @@ async function subscribeToRevue({
 export const createActionFunction: ({
   source,
 }: {
-  source: "homepage" | "twitter" | "reddit" | "facebook" | "instagram";
+  source:
+    | "homepage"
+    | "twitter"
+    | "reddit"
+    | "facebook"
+    | "instagram"
+    | "google";
 }) => ActionFunction =
   ({ source }) =>
   async ({ request, context }) => {
