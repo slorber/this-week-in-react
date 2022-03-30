@@ -14,7 +14,7 @@ declare global {
   }
 }
 
-const meta: MetaFunction = createMeta({
+export const meta: MetaFunction = createMeta({
   // TODO ?
 });
 
