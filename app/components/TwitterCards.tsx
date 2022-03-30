@@ -13,7 +13,7 @@ export default [
   <TwitterCard
     username="threepointone"
     href="https://twitter.com/threepointone/status/1493894062293794817"
-    avatarSrc="https://pbs.twimg.com/profile_images/1498765039590944769/qpi4A7qr_400x400.jpg"
+    avatarSrc="https://pbs.twimg.com/profile_images/1506926754585526274/5xdHUvjE_400x400.jpg"
     fullName="Sunil Pai"
   >
     The one React newsletter/source of "what's new" that I follow (and was into
