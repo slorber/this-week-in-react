@@ -1,5 +1,11 @@
 import type { ActionFunction, MetaFunction } from "remix";
-import { Form, json, useActionData, useTransition } from "remix";
+import {
+  Form,
+  json,
+  useActionData,
+  useTransition,
+  HtmlMetaDescriptor,
+} from "remix";
 
 import BannerSrc from "~/ThisWeekInReact-banner.png";
 import TwitterCards from "~/components/TwitterCards";
@@ -8,21 +14,26 @@ import TwitterIcon from "~/components/TwitterIcon";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 
-export const meta: MetaFunction = () => {
-  const title = "This Week In React";
-  const description = `Weekly newsletter for React professionals`;
-  return {
-    title,
-    description,
-    keywords: "reactjs,reactnative,typescript,nodejs",
-    "twitter:image": BannerSrc,
-    "twitter:card": "summary_large_image",
-    "twitter:creator": "@sebastienlorber",
-    "twitter:site": "@sebastienlorber",
-    "twitter:title": "This Week In React",
-    "twitter:description": description,
+export const createMeta: (meta?: HtmlMetaDescriptor) => MetaFunction = () => {
+  return () => {
+    const title = "This Week In React";
+    const description = `Weekly newsletter for React professionals`;
+    return {
+      title,
+      description,
+      keywords: "reactjs,reactnative,typescript,nodejs",
+      "twitter:image": BannerSrc,
+      "twitter:card": "summary_large_image",
+      "twitter:creator": "@sebastienlorber",
+      "twitter:site": "@sebastienlorber",
+      "twitter:title": "This Week In React",
+      "twitter:description": description,
+      ...meta,
+    };
   };
 };
+
+export const meta: MetaFunction = createMeta();
 
 declare global {
   export const REVUE_SECRET_KEY: string | undefined;

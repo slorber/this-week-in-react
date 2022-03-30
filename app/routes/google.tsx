@@ -1,15 +1,40 @@
-import Index, { createActionFunction, meta } from "./index";
+import Index, { createActionFunction, createMeta } from "./index";
+import { MetaFunction } from "remix";
 
-export { meta } from "./index";
+const GoogleTracker = `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-224278710-1');
+`;
+
+declare global {
+  interface Window {
+    gtag: any;
+  }
+}
+
+const meta: MetaFunction = createMeta({
+  // TODO ?
+});
 
 export const action = createActionFunction({
-  source: "google",
+  source: "twitter",
 });
 
 export default function IndexTwitter() {
   return (
     <>
       <Index onSubscribe={(email) => {}} />
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-224278710-1"
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: GoogleTracker,
+        }}
+      />
     </>
   );
 }
