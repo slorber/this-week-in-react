@@ -21,7 +21,7 @@ export const meta: MetaFunction = createMeta({
 });
 
 export const action = createActionFunction({
-  source: "twitter",
+  source: "google",
 });
 
 export default function IndexTwitter() {
