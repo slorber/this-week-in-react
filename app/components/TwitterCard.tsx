@@ -6,18 +6,19 @@ import { AppLinkButton } from "~/components/AppLink";
 export default function TwitterCard({
   className,
   href,
-  avatarSrc,
+  // avatarSrc,
   fullName,
   username,
   children,
 }: {
   className?: string;
   href: string;
-  avatarSrc: string;
+  avatarSrc?: string; // TODO remove if unavatar.io/twitter/$username works fine
   fullName: string;
   username: string;
   children: ReactNode;
 }) {
+  const avatarSrc = `https://unavatar.io/twitter/${username}`;
   return (
     <a
       href={href}
