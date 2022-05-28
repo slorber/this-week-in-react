@@ -86,6 +86,7 @@ export const createActionFunction: ({
   source,
 }: {
   source:
+    | null
     | "homepage"
     | "twitter"
     | "reddit"
@@ -93,8 +94,10 @@ export const createActionFunction: ({
     | "instagram"
     | "google";
 }) => ActionFunction =
-  ({ source }) =>
-  async ({ request, context }) => {
+  ({ source: sourceAttribute }) =>
+  async ({ request, context, params }) => {
+    const source: string = sourceAttribute ?? params.source ?? "unknown";
+
     console.log("Revue action called", { source });
     try {
       const revueSecretKey = getRevueSecretKey(context);
