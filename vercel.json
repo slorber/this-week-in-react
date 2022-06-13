@@ -22,6 +22,21 @@
       "source": "/archive",
       "destination": "https://www.getrevue.co/profile/thisweekinreact",
       "permanent": true
+    },
+    {
+      "source": "/sponsor",
+      "destination": "https://gist.github.com/slorber/cb732fb5d0a002c4d73236a9baeba7bb",
+      "permanent": true
+    },
+    {
+      "source": "/sponsor/en",
+      "destination": "https://gist.github.com/slorber/cb732fb5d0a002c4d73236a9baeba7bb",
+      "permanent": true
+    },
+    {
+      "source": "/sponsor/fr",
+      "destination": "https://gist.github.com/slorber/4015b388edbe9743048fe98d12604326",
+      "permanent": true
     }
   ]
 }
