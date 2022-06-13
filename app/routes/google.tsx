@@ -24,7 +24,7 @@ export const action = createActionFunction({
   source: "google",
 });
 
-export default function IndexTwitter() {
+export default function IndexGoogle() {
   return (
     <>
       <Index

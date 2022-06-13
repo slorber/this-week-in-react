@@ -92,7 +92,8 @@ export const createActionFunction: ({
     | "reddit"
     | "facebook"
     | "instagram"
-    | "google";
+    | "google"
+    | "quora";
 }) => ActionFunction =
   ({ source: sourceAttribute }) =>
   async ({ request, context, params }) => {
