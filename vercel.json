@@ -17,6 +17,11 @@
       "source": "/revue",
       "destination": "https://www.getrevue.co/profile/thisweekinreact",
       "permanent": true
+    },
+    {
+      "source": "/archive",
+      "destination": "https://www.getrevue.co/profile/thisweekinreact",
+      "permanent": true
     }
   ]
 }
