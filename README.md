@@ -1,17 +1,10 @@
-# Remix Newsletter Signup Form
+# [This Week In React](https://thisweekinreact.com/site-repo)
 
-A fun, accessible newsletter signup form with Remix and ConvertKit.
+Open-source site of best newsletter to stay up-to-date with React.
 
-## Preview
+Sign-up now!
+[Sign-up now!](https://thisweekinreact.com/site-repo)
 
-Open this example on [CodeSandbox](https://codesandbox.com):
+---
 
-[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/remix-run/remix/tree/main/examples/newsletter-signup)
-
-## Example
-
-Everything lives in `routes/newsletter.tsx`
-
-## Related Links
-
-Link to documentation or other related examples.
+[![CleanShot 2022-06-17 at 19 04 09](https://user-images.githubusercontent.com/749374/174345069-35d4e32f-4803-4e68-b0a5-a1d91ecbf0df.png)](https://thisweekinreact.com/site-repo)
