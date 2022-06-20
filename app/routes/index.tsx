@@ -22,6 +22,8 @@ export const createMeta: (meta?: HtmlMetaDescriptor) => MetaFunction = () => {
       title,
       description,
       keywords: "reactjs,reactnative,typescript,nodejs",
+
+      // TODO not ideal banner ratio, see https://socialsharepreview.com/?url=https://thisweekinreact.com/subscribe
       "og:image": BannerSrc,
       "twitter:image": BannerSrc,
       "twitter:card": "summary_large_image",
