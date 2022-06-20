@@ -22,6 +22,7 @@ export const createMeta: (meta?: HtmlMetaDescriptor) => MetaFunction = () => {
       title,
       description,
       keywords: "reactjs,reactnative,typescript,nodejs",
+      "og:image": BannerSrc,
       "twitter:image": BannerSrc,
       "twitter:card": "summary_large_image",
       "twitter:creator": "@sebastienlorber",
