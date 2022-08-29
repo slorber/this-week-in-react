@@ -57,11 +57,20 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      announcementBar: {
+        id: "subscribe-now-v1",
+        content: "NOOP - to swizzle",
+        backgroundColor: "#fafbfc",
+        textColor: "#091E42",
+        isCloseable: true,
+      },
       navbar: {
         title: "This Week In React",
         logo: {
           alt: "This Week In React Logo",
-          src: "/img/TWIR_LOGO_SIMPLE.png",
+          src: "/img/TWIR_LOGO_SIMPLE_NOBG.png",
+          width: 32,
+          height: 32,
         },
         items: [
           { to: "/articles", label: "Articles", position: "left" },
