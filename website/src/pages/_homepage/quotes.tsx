@@ -104,6 +104,22 @@ export default function HomepageQuotes() {
       >
         My goto gateway for what’s happening in React
       </Quote>
+      <Quote
+        url="https://twitter.com/johnny_reilly/status/1477359594087321600"
+        handle="johnny_reilly"
+        name="John Reilly"
+        job="Group Principal Engineer at Investec"
+      >
+        Sebastien helps us learn the things we need to learn
+      </Quote>
+      <Quote
+        url="https://twitter.com/mcavaliere/status/1371512182178000897"
+        handle="mcavaliere"
+        name="Mike Cavaliere"
+        job="Senior Engineering Strategist at Echobind"
+      >
+        I can see important React news at a glance.
+      </Quote>
 
       {isFrench && (
         <>
@@ -131,7 +147,7 @@ export default function HomepageQuotes() {
             job="Tech Lead chez Wild Code School"
             profileUrl="https://www.linkedin.com/in/damienbuchet/"
           >
-            sa newsletter est juste parfaite - inscrivez-vous
+            Sa newsletter est juste parfaite - inscrivez-vous
           </Quote>
           <Quote
             url="https://www.linkedin.com/feed/update/urn:li:activity:6894694552519659523/"
@@ -213,22 +229,6 @@ export default function HomepageQuotes() {
       )}
 
       <Quote
-        url="https://twitter.com/johnny_reilly/status/1477359594087321600"
-        handle="johnny_reilly"
-        name="John Reilly"
-        job="Group Principal Engineer at Investec"
-      >
-        Sebastien helps us learn the things we need to learn
-      </Quote>
-      <Quote
-        url="https://twitter.com/mcavaliere/status/1371512182178000897"
-        handle="mcavaliere"
-        name="Mike Cavaliere"
-        job="Senior Engineering Strategist at Echobind"
-      >
-        I can see important React news at a glance.
-      </Quote>
-      <Quote
         url="https://twitter.com/ane_naiz/status/1442606436207497216"
         handle="ane_naiz"
         name="Ane Diaz"
@@ -262,6 +262,14 @@ export default function HomepageQuotes() {
         Your threads and newletter are a gem !
       </Quote>
       <Quote
+        url="https://twitter.com/wbroek/status/1479017874798829569"
+        handle="wbroek"
+        name="Wouter Broek"
+        job="Software Development Manager at Amazon Web Services"
+      >
+        If you do react you should definitely take a look
+      </Quote>
+      <Quote
         url="https://twitter.com/fredmaiaarantes/status/1545399680783323136"
         handle="fredmaiaarantes"
         name="Fred Maia Arantes"
@@ -271,12 +279,20 @@ export default function HomepageQuotes() {
         newsletter!
       </Quote>
       <Quote
-        url="https://twitter.com/appfactory/status/1346400236034523139"
-        handle="appfactory"
-        name="Peter Cilliers-Pistorius"
-        job="RedwoodJS & Snaplet Co-creator"
+        url="https://twitter.com/wbroek/status/1479017874798829569"
+        handle="wbroek"
+        name="Wouter Broek"
+        job="Software Development Manager at Amazon Web Services"
       >
-        Hello internet, this is your daily dose of development.
+        If you do react you should definitely take a look
+      </Quote>
+      <Quote
+        url="https://twitter.com/ndubien/status/1445627346275373056"
+        handle="ndubien"
+        name="Nicolas Dubien"
+        job="Software Engineer at Pigment"
+      >
+        A high quality thread for developers working with React 😍
       </Quote>
       <Quote
         url="https://twitter.com/jamonholmgren/status/1488926895450198017"
