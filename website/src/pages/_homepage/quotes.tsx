@@ -102,7 +102,7 @@ export default function HomepageQuotes() {
         name="Aman Mittal"
         job="Developer & Tech Writer"
       >
-        My goto gateway for what’s happening in React World
+        My goto gateway for what’s happening in React
       </Quote>
 
       {isFrench && (
