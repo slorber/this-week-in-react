@@ -11,7 +11,7 @@ function Header() {
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
-        <img src="/img/TWIR_LOGO_SIMPLE_NOBG.png" style={{ maxWidth: 200 }} />
+        <img src="/img/TWIR_LOGO_SIMPLE_NOBG.png" style={{ maxWidth: 160 }} />
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
@@ -19,7 +19,14 @@ function Header() {
             className="button button--secondary button--lg"
             to="/newsletter"
           >
-            Newsletter
+            📨 Newsletter
+          </Link>
+          <Link
+            className="button button--secondary button--lg"
+            to="https://slo.im/thread"
+            style={{ marginLeft: "2rem" }}
+          >
+            <img src={"/svg/twitter.svg"} /> Thread
           </Link>
         </div>
       </div>
