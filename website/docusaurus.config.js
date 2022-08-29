@@ -49,7 +49,7 @@ const config = {
         path: "articles",
         showReadingTime: true,
         routeBasePath: "/articles",
-        blogSidebarTitle: "All posts",
+        blogSidebarTitle: "Articles",
         blogSidebarCount: "ALL",
       },
     ],
@@ -60,7 +60,7 @@ const config = {
         path: "newsletter",
         routeBasePath: "/newsletter",
         showReadingTime: true,
-        blogSidebarTitle: "All posts",
+        blogSidebarTitle: "Issues",
         blogSidebarCount: "ALL",
       },
     ],
@@ -87,7 +87,7 @@ const config = {
         items: [
           { to: "/articles", label: "Articles", position: "left" },
           { to: "/newsletter", label: "Newsletter", position: "left" },
-          { to: "/advertise", label: "Advertise", position: "left" },
+          { to: "/sponsoring", label: "sponsoring", position: "left" },
           { type: "localeDropdown", position: "right" },
         ],
       },
@@ -106,8 +106,8 @@ const config = {
                 to: "/newsletter",
               },
               {
-                label: "Advertise",
-                href: "/advertise",
+                label: "sponsoring",
+                href: "/sponsoring",
               },
               {
                 label: "Discord",

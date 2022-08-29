@@ -1,0 +1,6 @@
+{
+  "link.item.label.Sponsoring": {
+    "message": "Sponsoriser",
+    "description": "The label of footer link with label=sponsoring linking to /sponsoring"
+  }
+}
