@@ -41,6 +41,8 @@ const config = {
         path: "articles",
         showReadingTime: true,
         routeBasePath: "/articles",
+        blogSidebarTitle: "All posts",
+        blogSidebarCount: "ALL",
       },
     ],
     [
@@ -50,6 +52,8 @@ const config = {
         path: "newsletter",
         routeBasePath: "/newsletter",
         showReadingTime: true,
+        blogSidebarTitle: "All posts",
+        blogSidebarCount: "ALL",
       },
     ],
   ],
