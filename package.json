@@ -1,42 +1,33 @@
 {
+  "name": "this-week-in-react",
+  "version": "0.0.0",
+  "license": "Sébastien Lorber",
   "private": true,
-  "name": "remix-app",
-  "description": "",
-  "license": "",
+  "workspaces": [
+    "landing",
+    "website"
+  ],
   "scripts": {
-    "build": "npm run build:css && remix build",
-    "build:css": "tailwindcss -o ./app/tailwind.css",
-    "build:vercel": "yarn setup:node && yarn build",
-    "start": "yarn dev",
-    "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
-    "dev:css": "tailwindcss -o ./app/tailwind.css --watch",
-    "setup:node": "remix setup node",
-    "setup:cf": "remix setup cloudflare-pages",
-    "postinstall": "yarn setup:node"
+    "start:landing": "yarn workspace landing start",
+    "start:website": "yarn workspace website start"
   },
   "dependencies": {
-    "@remix-run/react": "^1.1.3",
-    "@remix-run/serve": "^1.1.3",
-    "@remix-run/vercel": "^1.1.3",
-    "clsx": "^1.1.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "remix": "^1.1.1"
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.1.1",
-    "@remix-run/node": "^1.1.3",
-    "@types/react": "^17.0.24",
-    "@types/react-dom": "^17.0.9",
-    "concurrently": "^7.0.0",
-    "postcss": "^8.4.6",
-    "prettier": "^2.5.1",
-    "tailwindcss": "^3.0.18",
-    "typescript": "^4.1.2"
-  },
-  "engines": {
-    "node": ">=14"
-  },
-  "prettier": {},
-  "sideEffects": false
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.7.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.1",
+    "image-size": "^1.0.2",
+    "jest": "^28.1.3",
+    "lerna": "^5.3.0",
+    "lint-staged": "^13.0.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "typescript": "~4.8.2"
+  }
 }

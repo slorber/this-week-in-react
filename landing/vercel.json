@@ -37,6 +37,11 @@
       "source": "/sponsor/fr",
       "destination": "https://gist.github.com/slorber/4015b388edbe9743048fe98d12604326",
       "permanent": true
+    },
+    {
+      "source": "/fr/sponsor",
+      "destination": "https://gist.github.com/slorber/4015b388edbe9743048fe98d12604326",
+      "permanent": true
     }
   ]
 }

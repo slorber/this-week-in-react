@@ -1,12 +1,6 @@
 node_modules
 .idea
 yarn-error.log
-
-/.cache
-/build
-/public/build
 .env
-
-/app/tailwind.css
 
 
