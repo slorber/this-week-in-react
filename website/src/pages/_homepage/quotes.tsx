@@ -175,6 +175,47 @@ export default function HomepageQuotes() {
       )}
 
       <Quote
+        url="https://twitter.com/johnny_reilly/status/1477359594087321600"
+        handle="johnny_reilly"
+        name="John Reilly"
+        job="Group Principal Engineer at Investec"
+      >
+        Sebastien helps us learn the things we need to learn
+      </Quote>
+      <Quote
+        url="https://twitter.com/mcavaliere/status/1371512182178000897"
+        handle="mcavaliere"
+        name="Mike Cavaliere"
+        job="Senior Engineering Strategist at Echobind"
+      >
+        I can see important React news at a glance.
+      </Quote>
+      <Quote
+        url="https://twitter.com/ane_naiz/status/1442606436207497216"
+        handle="ane_naiz"
+        name="Ane Diaz"
+        job="Software Engineer at Datadog"
+      >
+        I won't miss any information from now on 😊😎
+      </Quote>
+      <Quote
+        url="https://twitter.com/elijahmanor/status/1528748108330504193"
+        handle="elijahmanor"
+        name="Elijah Manor"
+        job="Senior Software Engineer at Planview"
+      >
+        If you are a React dev, this is a newsletter you should check out
+      </Quote>
+      <Quote
+        url="https://twitter.com/asidorenko_/status/1479029650496102402"
+        handle="asidorenko_"
+        name="Alex Sidorenko"
+        job="Senior Software Engineer - Blogger"
+      >
+        Probably the best resource out there if you want to stay up to date with
+        React community news
+      </Quote>
+      <Quote
         url="https://twitter.com/beaussan/status/1488578333851930627"
         handle="beaussan"
         name="Nicolas Beaussart"
@@ -192,54 +233,20 @@ export default function HomepageQuotes() {
         newsletter!
       </Quote>
       <Quote
-        url="https://twitter.com/ane_naiz/status/1442606436207497216"
-        handle="ane_naiz"
-        name="Ane Diaz"
-        job="Software Engineer at Datadog"
-      >
-        I won't miss any information from now on 😊😎
-      </Quote>
-      <Quote
-        url="https://twitter.com/johnny_reilly/status/1477359594087321600"
-        handle="johnny_reilly"
-        name="John Reilly"
-        job="Group Principal Engineer at Investec"
-      >
-        Sebastien helps us learn the things we need to learn
-      </Quote>
-      <Quote
-        url="https://twitter.com/mcavaliere/status/1371512182178000897"
-        handle="mcavaliere"
-        name="Mike Cavaliere"
-        job="Senior Engineering Strategist at Echobind"
-      >
-        I can see important React news at a glance.
-      </Quote>
-      <Quote
-        url="https://twitter.com/elijahmanor/status/1529154947081809921"
-        handle="elijahmanor"
-        name="Elijah Manor"
-        job="Senior Software Engineer at Planview"
-      >
-        React reminder, consider following this newsletter if you do not
-        already. JAM packed with news goodies
-      </Quote>
-      <Quote
-        url="https://twitter.com/asidorenko_/status/1479029650496102402"
-        handle="asidorenko_"
-        name="Alex Sidorenko"
-        job="Senior Software Engineer - Blogger"
-      >
-        This is probably the best resource out there if you want to stay up to
-        date with React community news
-      </Quote>
-      <Quote
         url="https://twitter.com/appfactory/status/1346400236034523139"
         handle="appfactory"
         name="Peter Cilliers-Pistorius"
         job="RedwoodJS & Snaplet Co-creator"
       >
         Hello internet, this is your daily dose of development.
+      </Quote>
+      <Quote
+        url="https://twitter.com/jamonholmgren/status/1488926895450198017"
+        handle="jamonholmgren"
+        name="Jamon Holmgren"
+        job="Founder/CTO of Infinite Red"
+      >
+        hit up Seb, he publishes a great React+RN newsletter!
       </Quote>
       <Quote
         url="https://twitter.com/frankdilo/status/1391828520922279936"
@@ -254,9 +261,17 @@ export default function HomepageQuotes() {
         url="https://twitter.com/ElaziziYoussouf/status/1338448625677066240"
         handle="ElaziziYoussouf"
         name="Youssouf El Azizi"
-        job="Senior Front-end Engineer at Hasura"
+        job="Mobile Tribe lead at OBytes"
       >
         Always enjoy reading @sebastienlorber newsletter 👌
+      </Quote>
+      <Quote
+        url="https://twitter.com/__marcin_/status/1480988303130304526"
+        handle="__marcin_"
+        name="Marcin Dziewulski"
+        job="Senior Software Engineer at Intent"
+      >
+        The most comprehensive newsletter for React (Native) developers
       </Quote>
       <Quote
         url="https://twitter.com/Danny_H_W/status/1468285893203144713"
@@ -272,7 +287,7 @@ export default function HomepageQuotes() {
         name="Thierry Skoda"
         job="Developer at Hack House Web3"
       >
-        I feel that I never miss out on anything.
+        I feel that I never miss out on anything
       </Quote>
     </section>
   );
