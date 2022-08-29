@@ -87,7 +87,7 @@ const config = {
         items: [
           { to: "/articles", label: "Articles", position: "left" },
           { to: "/newsletter", label: "Newsletter", position: "left" },
-          { to: "/sponsoring", label: "sponsoring", position: "left" },
+          { to: "/sponsoring", label: "Sponsoring", position: "left" },
           { type: "localeDropdown", position: "right" },
         ],
       },
