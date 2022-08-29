@@ -1,0 +1,130 @@
+---
+slug: 114
+title: "#114: 🎉 official launch of Docusaurus 2.0 🥳️"
+authors: [slorber]
+date: 08-01-2022
+image: /img/TWIR_POST.png
+---
+
+This Week In React #114: 🎉 official launch of Docusaurus 2.0 🥳️
+
+![](/img/TWIR_POST.png)
+
+<!-- truncate -->
+
+Hello everyone!
+
+🎉 It is the [**official launch of Docusaurus 2.0**](https://docusaurus.io/blog/2022/08/01/announcing-docusaurus-2.0?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)!
+
+It is the **Meta Open Source (Facebook)** project I maintain: a documentation static-site-generator, based on Node.js and React. It allows you to focus on content: just write Markdown files. Docusaurus is truly customizable and respects your company's branding. It is already powering many great docs sites you know: React-Native, Supabase, Redux, Tauri, Electron, Courier, Ionic, Figma, Snapchat, Prettier, Babel, Solana, Cardano...
+
+🙏 We are also launching [**ProductHunt**](https://www.producthunt.com/posts/docusaurus-2-0?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter), [**Hacker News**](https://news.ycombinator.com/item?id=32303052&utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter) and [**Twitter**](https://twitter.com/docusaurus/status/1554000364432769025?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter): if you like the project, please **vote** and share your opinion 😃
+
+🎙️ My podcast on Docusaurus with [The Developer's Bakery](https://thebakery.dev/39/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter) just came out too 😉
+
+---
+
+[![](https://s3.amazonaws.com/revue/items/images/017/224/019/mail/social-card.png?1659345670)](https://docusaurus.io/blog/2022/08/01/announcing-docusaurus-2.0?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+
+**Note**: make sure to read the official [**Announcing Docusaurus 2.0**](https://docusaurus.io/blog/2022/08/01/announcing-docusaurus-2.0) post: it is more detailed than this one, which is my personal summary.
+
+## What is Docusaurus?
+
+Meta has a lot of internal/external projects, which have to be documented each time. It's hard enough to write docs, and if you have to customize a site each time, it becomes a time sink.
+
+In 2017 they started copy/pasting a Jekyll template for each project, but it quickly became difficult to maintain.
+
+In 2017, they decided to create Docusaurus, a React-based static site generator in Node.js, which will "hide" the technical stack of the site and allow to **focus on the content**: writing **Markdown** files. It is a bit like Create-React-App, but for creating content sites: docs, blog, landing pages...
+
+The v1 of Docusaurus quickly became popular, used by React-Native, Jest, Babel, Prettier...
+
+
+![Sites using Docusaurus v1](https://s3.amazonaws.com/revue/items/images/017/224/025/original/v1.gif?1659345706)
+
+
+---
+
+## Toward Docusaurus v2
+
+Following the release of v1, Meta realized some limitations of v1:
+
+-   uses React but only on the server side: no hydration nor Single-Page-App navigation
+-   the repo was quite monolithic, difficult to maintain and test
+-   not very extensible, there was no plugin system
+-   the theming was relatively limited, and v1 sites look very similar
+
+In 2018, Meta decided to **re-create Docusaurus from scratch**, with a brand new architecture:
+
+-   React used client and server side (like Next.js, Remix, Gatsby...)
+-   Plugin system: allows the community to contribute useful features (OpenAPI integration, local search engine, Sass support...)
+-   Much more flexible theming system: possible to override any React component of the theme
+-   MDX (Markdown + React) to make your documentation interactive
+
+Docusaurus 2.0 has been in alpha/beta for **4 years** 🤪, and we finally released the **first stable version**! We delayed this release because it wasn't obvious to respect Semantic Versioning before.
+
+Today, Docusaurus v2 is available with a lot of features, and it would be difficult to list them all: docs, blog, versioning, theming, dark mode, i18n, a11y, SEO, TypeScript, PWA, Algolia DocSearch, MDX...
+
+
+---
+
+## Who uses Docusaurus 2.0?
+
+A lot of companies have already adopted Docusaurus 2.0 despite the fact that it is in beta. The v2 is already much more popular than the v1, and we have almost half of the npm downloads of Gatsby!
+
+![npm growth](https://s3.amazonaws.com/revue/items/images/017/224/035/mail/npm-downloads.png?1659345822)
+
+
+Our [**site showcase**](https://docusaurus.io/showcase?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter) already contains almost 300 sites.
+
+And it is far from being exhaustive since so many sites have not yet been added: [Figma](https://www.figma.com/plugin-docs/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter), [Snapchat](https://docs.snap.com/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter), [Courier](https://www.courier.com/docs/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter), [1Password](https://developer.1password.com/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)...
+
+Not to mention the many internal sites of companies like Microsoft, LinkedIn, Shopify...
+
+Some examples:
+
+-   **Big tech**: Microsoft, Snapchat, Shopify, LinkedIn, Meta, SAP, ByteDance, Lacework, Palo Alto Network...
+-   **Startups**: Supabase, Ionic, Hasura, Figma, Courier, CodeSandbox, StackBlitz, Redis, Algolia, Hashnode...
+-   **OSS**: React-Native, Redux, React-Navigation, Jest, Testing Library, Gulp, Babel, Lerna, pnpm, Electron, Tauri...
+-   **Web3**: Iota, Solana, Cardano, Neo, SushiSwap...
+
+We also have a lot of sites with beautiful customizations that really respect the brand image of the company.
+
+
+![Sites using Docusaurus v2](https://s3.amazonaws.com/revue/items/images/017/224/051/original/showcase-2.gif?1659345869)
+
+---
+
+## My role in all this?
+
+Two years ago, I was scrolling on Twitter when I came across this:
+
+
+[![](https://user-images.githubusercontent.com/749374/182660849-cc39d9d0-85ad-481c-a681-743a9c5b20c7.png)](https://twitter.com/sebastienlorber/status/1232059882091749376)
+
+**Pro tip**: join Twitter and be open 😄 It can lead to interesting career opportunities!
+
+I thought it was a great opportunity: working for Facebook as a freelancer on an open-source project doesn't happen every day. It was supposed to last 3 months, but it ended up lasting much longer: I've been working on Docusaurus for more than 2 years now!
+
+I have the chance to work in a very flexible way, with great autonomy, which also allows me to run this newsletter on the side.
+
+It's really cool to see Docusaurus becoming popular, I really feel like my work has a real impact. I hope I've inspired you to try this tool and I can't wait to see the sites you create! Don't forget to send them to our [site showcase](https://docusaurus.io/showcase?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)!
+
+---
+
+## Help us
+
+I would really appreciate if you could help us **make the launch a success**. An upvote, retweet, or comment helps us a lot!
+
+The main platforms we are launching on:
+
+-   [Twitter](https://twitter.com/docusaurus/status/1554000364432769025?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   [Product Hunt](https://www.producthunt.com/posts/docusaurus-2-0?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   [Hacker News](https://news.ycombinator.com/item?id=32303052&utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+
+Thanks and see you soon with some fresh React news :)
+
+
+![Our cutest mascot Slash 💕](https://s3.amazonaws.com/revue/items/images/017/224/190/mail/CleanShot_2022-08-01_at_11.08.03_402x.png?1659346116)
+
+Our cutest mascot Slash 💕
+

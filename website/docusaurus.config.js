@@ -76,6 +76,7 @@ const config = {
           { to: "/articles", label: "Articles", position: "left" },
           { to: "/newsletter", label: "Newsletter", position: "left" },
           { to: "/advertise", label: "Advertise", position: "left" },
+          { type: "localeDropdown", position: "right" },
         ],
       },
       footer: {

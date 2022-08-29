@@ -1,0 +1,131 @@
+---
+slug: 112
+title: "#112: Astro, Radix, Remix, Next.js, MDX, Storybook, Expo 46, Skia, TanStack, TC39, Docusaurus..."
+authors: [slorber]
+date: 07-13-2022
+image: /img/TWIR_POST.png
+---
+
+This Week In React #112: Astro, Radix, Remix, Next.js, MDX, Storybook, Expo 46, Skia, TanStack, TC39, Docusaurus...
+
+![](/img/TWIR_POST.png)
+
+<!-- truncate -->
+
+Hi everyone!
+
+Looks like a lot of devs are already on vacation 😎. On my side I will also skip some editions this summer to rest.
+
+This week, we have a good variety of React and React-Native content. A lot of very positive feedback from the community on [Bun](https://bun.sh/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)!
+
+On my side, [Docusaurus](https://github.com/facebook/docusaurus?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter) 2.0 should be released soon, after 4 years of alpha/beta. I hope you will help me to make the launch a success! I'm thinking of sending you a different email for the occasion, to better present this tool I'm working on for Facebook.
+
+🙏 **Support the newsletter:**
+
+-   😘 **Recommend it to your friends**: it really helps!
+-   💸 [**Sponsor This Week In React**](https://gist.github.com/slorber/cb732fb5d0a002c4d73236a9baeba7bb?utm_campaign=thisweekinreact&utm_medium=email&utm_source=Revue%20newsletter)
+-   😍 [**Write testimonials on Twitter**](https://twitter.com/sebastienlorber/timelines/1448942785814466561?utm_campaign=thisweekinreact&utm_medium=email&utm_source=Revue%20newsletter)
+-   🧵 [**Retweet the latest Twitter thread**](https://slo.im/thread?utm_campaign=thisweekinreact&utm_medium=email&utm_source=Revue%20newsletter)
+-   📨 Reply to this [**email**](mailto:lorber.sebastien@gmail.com?utm_campaign=thisweekinreact&utm_medium=email&utm_source=Revue%20newsletter): feedback is welcome
+-   👥 Follow on [**LinkedIn**](https://www.linkedin.com/company/this-week-in-react/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+
+---
+
+## React
+
+[**Statements Vs. Expressions**](https://www.joshwcomeau.com/javascript/statements-vs-expressions/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+
+Josh Comeau is preparing his next course on React. He proposes to go back to the basics of JavaScript, and thus allow a better understanding of how JSX works, which only works with expressions. On the same topic, I would love to see the [do-expressions](https://github.com/tc39/proposal-do-expressions?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter) proposal progress 😇.
+
+[**How to build connected components in Storybook**](https://storybook.js.org/blog/how-to-build-connected-components-in-storybook/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+
+An official Storybook article that explains well all you can do with decorators: add a layout, global providers, mock a Redux store or requests... It can help to add "connected" components to your Storybook that otherwise can't be rendered due to context dependencies.
+
+[**How I Estimate NPM Package Market Share (and how Redux usage compares to other libraries)**](https://blog.isquaredsoftware.com/2022/07/npm-package-market-share-estimates/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+
+Mark Erikson (Redux) explains how he analyzes npm package usage trends, based on various more or less reliable tools. Download stats are often related to CI builds. He uses React state managers as an example. He now estimates Redux / React usage at 33% (previously 45-50%)
+
+[**Actionless and Stateless Reducers in React**](https://julesblom.com/writing/actionless-and-stateless-reducers?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+
+useReducer() is not reserved for complex cases: it can also be used for very simple state machines, like changing a boolean from false to true.
+
+**Extras:**
+
+-   📜 [Next.js: open external links in a New Tab](https://www.seancdavis.com/posts/open-external-nextlink-links-in-a-new-tab/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter): it can be interesting to create your own Link abstraction on top of the underlying framework to add extra behavior
+-   📜 [The Unlocked Possibilities of the :has() Selector](https://blog.jim-nielsen.com/2022/unlocked-possibilities-of-has-selector/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter): CSS feature. Interesting comparison with React rendering at the end.
+-   📜 [Atomic Forms in React](https://reaper.is/writing/20220709-atomic-forms?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter): presents a bit Jotai-Form and the difference with more traditional approaches like Formik.
+-   📜 [Create a simple cookie with Remix](https://jonmeyers.io/blog/create-a-simple-cookie-with-remix?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter): shows that the use of cookie in Remix is relatively simple, and close to the HTTP protocol
+-   📜 [Yelp - Migrating from Styleguidist to Storybook](https://engineeringblog.yelp.com/2022/07/migrating-from-styleguidist-to-storybook.html?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   📜 [Fresh: The Next-Gen JavaScript Web Framework](https://hxrsh.in/blog/fresh?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   📜 [Rendering long lists using virtualization with React](https://wanago.io/2022/06/27/long-lists-react-virtualization/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   📜 [Component Code Coverage in Cypress v10](https://glebbahmutov.com/blog/component-code-coverage/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   🧑‍🎨 [Remix + Bun demo](https://twitter.com/ebey_jacob/status/1544608334736592896?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   🧑‍🎨 [React-on-the-edge](https://github.com/vercel-labs/react-on-the-edge?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter): Vercel demo that shows how to use React SSR (without Next.js) with the Edge Runtime. With or without streaming.
+-   🐦 [Remix loader type inference](https://twitter.com/kentcdodds/status/1545048020663750661?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter): PR merged to facilitate typesafe usage of the useLoaderData() hook 👌
+-   🐦 [Bun + React SSR](https://twitter.com/jarredsumner/status/1544580094328418304?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter): significant performance gains
+-   📦 [RemixBlocks](https://javascript.plainenglish.io/remixblocks-ready-to-use-remix-tailwind-css-routes-and-ui-blocks-470a6db70915?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter): I find the idea interesting: nested routes Remix are full-stack which makes them a good candidate for copy/paste, quite similar to Tailwind.
+-   📦 [react-obsidian](https://github.com/wix-incubator/react-obsidian?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter): dependency injection for React
+-   📦 [remix-bossa-nova-stack](https://github.com/clerkinc/remix-bossa-nova-stack?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   📦 [Preact 10.9](https://github.com/preactjs/preact/releases/tag/10.9.0?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   📦 [Next.js 12.2.1](https://github.com/vercel/next.js/releases/tag/v12.2.1?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   📣 [Vercel: Hydrogen can now be deployed with 0 config](https://vercel.com/changelog/hydrogen-projects-can-now-be-deployed-with-zero-configuration?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+
+---
+
+## 💸 Sponsors
+
+💡 [How to sponsor this newsletter](https://thisweekinreact.com/sponsor)
+
+[**Storetasker: Freelance Shopify Devs network**](https://www.storetasker.com/become-an-expert?utm_campaign=thisweekinreact&utm_medium=thisweekinreact&utm_source=thisweekinreact)
+
+Hey! This is Tim from Storetasker. We run the best Shopify dev freelance network. I would love for you to apply if you enjoy building Shopify sites or are excited about leveraging Shopify's **cutting-edge React framework** for building custom storefronts: [**Hydrogen**](https://hydrogen.shopify.dev/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter).
+
+Accepted devs on the network work on a freelance basis, and we present them with great opportunities to work on some of the best Shopify brands (Alo Yoga, Chubbies, JUDY & many many more). 
+
+The great thing about Storetasker is that devs aren't in competition with each other - they just pick up the jobs that match their interests. Beyond that - it's a very tight-knit community. 
+
+Feel free to apply directly via this [link](https://www.storetasker.com/become-an-expert?utm_campaign=thisweekinreact&utm_medium=thisweekinreact&utm_source=thisweekinreact) to join.
+
+[**TechTree - Introducing This Week in React Bounty Board**](https://techtree.dev/t/sHBrozirH3xSY8jP3M7gGv?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+
+TechTree is building the first **social-economic platform for developers** - a place to help you unlock the real value of your knowledge and network!
+
+The first major feature on TechTree is Bounties, a tool to help you **earn money by referring your friends** to open roles at top VC backed tech startups or find a job that might be right for you!
+
+To help show you around, I have gone ahead and created my very own Bounty board - **a selection of remote, React related roles for you to apply to or refer your network to**. There has been over $300k worth of Bounties claimed on TechTree so far!
+
+Looking to hire React developers? You can post Bounties of your own to be featured on my Bounty board! Read more and get started [here](https://www.notion.so/techtreedev/Share-your-jobs-on-my-Bounty-board-c51d2d97d9f3421bab103c42097907ae?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter).
+
+---
+
+## React-Native
+
+-   📜 [Expo: sunsetting the CLI Web UI](https://blog.expo.dev/sunsetting-the-web-ui-for-expo-cli-ab12936d2206?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter): the CLI web UI will disappear. Not a big deal, it was limited anyway compared to the CLI features.
+-   🧑‍🎨 [useAnimatedSentor travel cards parallax](https://twitter.com/lima_lucas3/status/1545956814650499072?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter): demo with a very nice visual result 😎
+-   📦 [react-native-keyboard-controller 1.0](https://github.com/kirillzyusko/react-native-keyboard-controller?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter): synchronizes keyboard visibility with animated values 👌
+-   📦 [vision-camera-plugin-builder](https://twitter.com/mrousavy/status/1544982270997852160?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter): reduces the boilerplate for the creation of a vision camera plugin.
+-   📦 [React-Native MacOS 0.68](https://twitter.com/ReactNativeMSFT/status/1545289039187611650?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   🎥 [It's After Effects, but in Remotion](https://www.youtube.com/watch?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter&v=-7MOoWN2_nk): William Candillon shows how React-Native-Skia runs on the web with Remotion. You can follow and apply the After Effect tutorials, not written for us at first.
+-   📊 [FlatList vs FlashList profiling](https://twitter.com/almouro/status/1544669919479996416?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   🐦 [Reanimated now supports V8](https://twitter.com/swmansion/status/1546872761045229568?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   🐦 [Expo EAS + App Store Connect v2](https://twitter.com/Baconbrix/status/1546760343405330434?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   🐦 [BottomSheet + FlashList integration](https://twitter.com/gorhom/status/1546256656639614977?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+
+---
+
+## Other
+
+-   [Agenda for the 91st meeting of Ecma TC39](https://github.com/tc39/agendas/blob/main/2022/07.md?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   [New Node.js security releases](https://nodejs.org/en/blog/vulnerability/july-2022-security-releases/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   [Simplify your full-stack applications with XState](https://blog.theodo.com/2022/07/simplify-your-applications-with-xstate/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   [The many faces of themeable design systems](https://bradfrost.com/blog/post/the-many-faces-of-themeable-design-systems/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   [Avoiding `<img>` layout shifts: aspect-ratio vs width & height attributes](https://jakearchibald.com/2022/img-aspect-ratio/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   [Fireship + Bun: JavaScript just got way faster](https://www.youtube.com/watch?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter&v=FMhScnY0dME)
+-   [Bao.js: A fast, minimalist web framework for the Bun JavaScript runtime.](https://github.com/mattreid1/baojs?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   [The Future of CSS: Variable Units, powered by Custom Properties](https://www.bram.us/2022/07/08/the-future-of-css-variable-units-powered-by-custom-properties/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   [Parcel CSS 1.11](https://twitter.com/devongovett/status/1545142100483719168?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   [Announcing support for WASI on Cloudflare Workers](https://blog.cloudflare.com/announcing-wasi-on-workers/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+-   [Why Your Cached JavaScript Is Still Slow and Incurs Performance Overhead](https://www.webperf.tips/tip/cached-js-misconceptions/?utm_campaign=This%20Week%20In%20React&utm_medium=email&utm_source=Revue%20newsletter)
+
+![](https://user-images.githubusercontent.com/749374/178690238-2de46b69-5b32-4037-97d1-5a1c7bd23f97.png)
+
