@@ -124,6 +124,35 @@ export default function HomepageQuotes() {
             Toujours aussi riche cette newsletter 💌
           </Quote>
           <Quote
+            url="https://www.linkedin.com/feed/update/urn:li:activity:6905211472721317888/"
+            handle={null}
+            avatarUrl="https://github.com/dbuchet.png"
+            name="Damien Buchet"
+            job="Tech Lead chez Wild Code School"
+            profileUrl="https://www.linkedin.com/in/damienbuchet/"
+          >
+            sa newsletter est juste parfaite - inscrivez-vous
+          </Quote>
+          <Quote
+            url="https://www.linkedin.com/feed/update/urn:li:activity:6894694552519659523/"
+            handle={null}
+            avatarUrl="https://github.com/sylvain-pauly.png"
+            name="Sylvain Pauly"
+            job="Senior Front-end Software Engineer chez Yousign"
+            profileUrl="https://www.linkedin.com/in/sylvainpauly/"
+          >
+            Du contenu en français de qualité !
+          </Quote>
+          <Quote
+            url="https://www.linkedin.com/feed/update/urn:li:activity:6899716385652514816/"
+            handle={null}
+            name="Pierre V."
+            job="Master Tech Lead chez frog France (CapGemini)"
+            profileUrl="https://www.linkedin.com/in/pierver/"
+          >
+            Une newsletter hebdomadaire indispensable
+          </Quote>
+          <Quote
             url="https://twitter.com/alexsoyes/status/1531289336922001408"
             handle="alexsoyes"
             name="Alexandre Soyer"
@@ -142,10 +171,19 @@ export default function HomepageQuotes() {
           <Quote
             url="https://twitter.com/Console_buche/status/1488598916396421124"
             handle="Console_buche"
-            name="Sebastien - console_buche"
-            job="Développeur chez Frontend TenableSecurity"
+            name="Sebastien Dubourg"
+            job="Développeur Frontend chez TenableSecurity"
           >
             Ces newsletter sont vraiment super
+          </Quote>
+          <Quote
+            url="https://www.linkedin.com/feed/update/urn:li:activity:6899717336786354176/"
+            handle={null}
+            name="Elena Battisti"
+            job="Développeuse Web Front-End chez Meilleurs Agents "
+            profileUrl="https://www.linkedin.com/in/elenabattisti/"
+          >
+            Un outil de veille très précieux
           </Quote>
           <Quote
             url="https://twitter.com/__martin_gs__/status/1460664479503499275"
@@ -159,7 +197,7 @@ export default function HomepageQuotes() {
             url="https://twitter.com/LeMathisBarre/status/1472198211204890624"
             handle="LeMathisBarre"
             name="Mathis Barré"
-            job="Développeur React et React Native"
+            job="Développeur React et React Native chez Beapp"
           >
             Je n'ai jamais trouvé mieux
           </Quote>
@@ -288,6 +326,14 @@ export default function HomepageQuotes() {
         job="Developer at Hack House Web3"
       >
         I feel that I never miss out on anything
+      </Quote>
+      <Quote
+        url="https://www.linkedin.com/feed/update/urn:li:activity:6892034593856577536/"
+        handle="dev_bogdan"
+        name="Adrian Bogdan"
+        job="Software Engineer at Moojo"
+      >
+        I am learning a lot from Sebastien Lorber
       </Quote>
     </section>
   );

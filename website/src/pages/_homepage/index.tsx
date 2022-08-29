@@ -5,13 +5,18 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import Quotes from "./quotes";
 import styles from "./index.module.css";
+import { useBaseUrlUtils } from "@docusaurus/core/lib/client/exports/useBaseUrl";
 
 function Header() {
   const { siteConfig } = useDocusaurusContext();
+  const { withBaseUrl } = useBaseUrlUtils();
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
-        <img src="/img/TWIR_LOGO_SIMPLE_NOBG.png" style={{ maxWidth: 160 }} />
+        <img
+          src={withBaseUrl("/img/TWIR_LOGO_SIMPLE_NOBG.png")}
+          style={{ maxWidth: 160 }}
+        />
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
@@ -26,7 +31,7 @@ function Header() {
             to="https://slo.im/thread"
             style={{ marginLeft: "2rem" }}
           >
-            <img src={"/svg/twitter.svg"} /> Thread
+            <img src={withBaseUrl("/svg/twitter.svg")} /> Thread
           </Link>
         </div>
       </div>
