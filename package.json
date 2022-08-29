@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "start:landing": "yarn workspace landing start",
-    "start:website": "yarn workspace website start"
+    "start:website": "yarn workspace website start",
+    "build:website": "yarn workspace website build"
   },
   "dependencies": {
   },
