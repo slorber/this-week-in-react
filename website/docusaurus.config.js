@@ -72,6 +72,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      image: "/img/TWIR_POST.png",
       announcementBar: {
         id: "subscribe-now-v1",
         content: "NOOP - to swizzle",
