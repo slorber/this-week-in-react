@@ -23,15 +23,31 @@ function Header() {
           <Link
             className="button button--secondary button--lg"
             to="/newsletter"
+            style={{
+              paddingLeft: "1.4rem",
+              paddingRight: "1.6rem",
+            }}
           >
             📨 Newsletter
           </Link>
           <Link
             className="button button--secondary button--lg"
             to="https://slo.im/thread"
-            style={{ marginLeft: "2rem" }}
+            style={{
+              marginLeft: "1rem",
+              paddingLeft: "1.4rem",
+              paddingRight: "1.6rem",
+              display: "flex",
+              alignItems: "center",
+            }}
           >
-            <img src={withBaseUrl("/svg/twitter.svg")} /> Thread
+            <img
+              src={withBaseUrl("/svg/twitter.svg")}
+              width={20}
+              height={20}
+              style={{ marginRight: 5 }}
+            />{" "}
+            Thread
           </Link>
         </div>
       </div>
