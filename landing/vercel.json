@@ -40,22 +40,22 @@
     },
     {
       "source": "/sponsor",
-      "destination": "https://gist.github.com/slorber/cb732fb5d0a002c4d73236a9baeba7bb",
+      "destination": "https://thisweekinreact.com/sponsoring",
       "permanent": true
     },
     {
       "source": "/sponsor/en",
-      "destination": "https://gist.github.com/slorber/cb732fb5d0a002c4d73236a9baeba7bb",
+      "destination": "https://thisweekinreact.com/sponsoring",
       "permanent": true
     },
     {
       "source": "/sponsor/fr",
-      "destination": "https://gist.github.com/slorber/4015b388edbe9743048fe98d12604326",
+      "destination": "https://thisweekinreact.com/fr/sponsoring",
       "permanent": true
     },
     {
       "source": "/fr/sponsor",
-      "destination": "https://gist.github.com/slorber/4015b388edbe9743048fe98d12604326",
+      "destination": "https://thisweekinreact.com/fr/sponsoring",
       "permanent": true
     },
     {
