@@ -1,4 +1,9 @@
-import { newsletterStats, sponsorshipCalendarLink } from "@site/src/newsletter";
+import {
+  newsletterStats,
+  sponsorshipCalendarLink,
+  lastIssueLink,
+} from "@site/src/newsletter";
+import {PrimaryAdExample, SecondaryAdExample} from "@site/src/components/AdExamples";
 
 # Sponsor the newsletter
 
@@ -126,11 +131,19 @@ The newsletter structure stays the same every week, offering 3 sponsorship ad pl
 - 🔗 Other news
 - 🤣 Funny meme
 
-Each placement has a price and constraints.
+<span>
+  Check our{" "}
+  <b>
+    <a href={lastIssueLink}>last newsletter issue</a>
+  </b> to get a better idea!
+</span>
+
 
 :::tip
 
-Ensure your ad copy respect the placement constraints thanks to this [character counter](https://wordcounter.net/character-count).
+Each placement has a different price and ad copy constraints.
+
+Ensure your ad copy respect the constraints with this online [character counter](https://wordcounter.net/character-count).
 
 :::
 
@@ -147,6 +160,8 @@ This sponsorship ad placement offers a generous ad copy length, near in the firs
 - **Body**: 900 characters max, max 2 links, max 3 line breaks, decent usage of bold/smileys/list
 - **Image**: small icon/logo allowed
 
+<PrimaryAdExample/>
+
 </details>
 
 <SponsoringTabsFirstSponsor />
@@ -160,9 +175,11 @@ This sponsorship ad placement appears in the middle of the newsletter, just unde
 <details>
   <summary>Ad constraints and example</summary>
 
-  - **Title**: 55 characters max, 1 link
-  - **Body**: 600 characters max, max 1 link, max 2 line breaks, decent usage of bold/smileys/list
-  - **Image**: 🚫
+- **Title**: 55 characters max, 1 link
+- **Body**: 600 characters max, max 1 link, max 2 line breaks, decent usage of bold/smileys/list
+- **Image**: 🚫
+
+<SecondaryAdExample/>
 
 </details>
 
@@ -177,9 +194,9 @@ A newsletter issue can contain **up to 4 job offers**.
 <details>
   <summary>Ad constraints and example</summary>
 
-  - **Title**: 55 characters max, 1 link
-  - **Body**: 200 characters max, 0 link, raw/unstyled text
-  - **Image**: 🚫
+- **Title**: 55 characters max, 1 link
+- **Body**: 200 characters max, 0 link, raw/unstyled text
+- **Image**: 🚫
 
 </details>
 
@@ -272,24 +289,7 @@ You can book a sponsorship offer without providing the ad copy immediately. We k
 
 Send us your ad copy by email as rich text, including the links and formatting:
 
-<BrowserWindow>
-
-<h2>
-  <a href="https://en.wikipedia.org/wiki/Acme_Corporation">
-    Acme Corporation - The best SaaS in the world
-  </a>
-</h2>
-
-The Acme corporation offers the best React products in the world. This is perfect for **React and React-Native developers** reading this newsletter.
-We have a lot of great JS SDKs and API clients, covering every possible stack you might want to use:
-
-- JavaScript & Node.js
-- React & React-Native
-- Expo config plugin
-
-Check **[all our SDKs](https://animationschooldaily.com/evolution-of-a-peg/)** now! They all have an outstanding **native TypeScript support**!
-
-</BrowserWindow>
+<PrimaryAdExample/>
 
 :::
 

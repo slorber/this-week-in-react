@@ -1,4 +1,8 @@
+// TODO currently hardcoded in some places
 export const sponsorshipCalendarLink = "https://thisweekinreact.com/calendar";
+
+// TODO automate this!
+export const lastIssueLink = "/newsletter/115";
 
 export type NewsletterSegment = {
   name: string;
