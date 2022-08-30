@@ -4,7 +4,11 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
+:root {
+  --twir-dark: #282c34;
+  --twir-deepdark: #20232a;
+}
+
 :root {
   --ifm-color-primary: #0080a3;
   --ifm-color-primary-dark: #007393;
@@ -13,15 +17,8 @@
   --ifm-color-primary-light: #008db3;
   --ifm-color-primary-lighter: #0093bb;
   --ifm-color-primary-lightest: #00a6d4;
-
-
-
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
-
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+:root[data-theme="dark"] {
   --ifm-color-primary: #00c8ff;
   --ifm-color-primary-dark: #00b4e6;
   --ifm-color-primary-darker: #00aad9;
@@ -29,17 +26,15 @@
   --ifm-color-primary-light: #1acdff;
   --ifm-color-primary-lighter: #26d0ff;
   --ifm-color-primary-lightest: #4dd8ff;
-
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
 :root {
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
-
-[data-theme='dark'] {
+:root[data-theme="dark"] {
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-background-color: var(--twir-dark);
 }
 
 html.plugin-blog h2 {
@@ -48,7 +43,6 @@ html.plugin-blog h2 {
 html.plugin-blog.blog-post-page h1 {
   font-size: 2rem;
 }
-
 
 .navbar__link--active:after {
   --navbar-border-overflow: 5px;

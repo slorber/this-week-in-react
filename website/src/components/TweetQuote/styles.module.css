@@ -14,7 +14,7 @@
 
 .tweetQuote blockquote {
   font-weight: 200;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.4;
   position: relative;
   border: none;
@@ -51,7 +51,7 @@
 
 [data-theme='dark'] .tweetQuote blockquote::before,
 [data-theme='dark'] .tweetQuote blockquote::after {
-  color: #3b3b3b;
+  color: #4f4f4f;
 }
 
 .tweetQuote p {

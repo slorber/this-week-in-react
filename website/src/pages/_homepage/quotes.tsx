@@ -66,8 +66,7 @@ export default function HomepageQuotes() {
         name="Stefano Magni"
         job="Senior Front-end Engineer at Hasura"
       >
-        It's like reading a summary instead of scanning Twitter for every
-        React-related valuable news
+        It's like reading a summary instead of scanning Twitter
       </Quote>
       <Quote
         url="https://twitter.com/ericclemmons/status/1519304291609198592"
@@ -251,7 +250,7 @@ export default function HomepageQuotes() {
         job="Senior Software Engineer - Blogger"
       >
         Probably the best resource out there if you want to stay up to date with
-        React community news
+        React
       </Quote>
       <Quote
         url="https://twitter.com/beaussan/status/1488578333851930627"

@@ -1,9 +1,29 @@
-
 .heroBanner {
   padding: 1rem 0 2rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+
+  /*
+  Gradient designed with
+  https://www.joshwcomeau.com/gradient-generator/
+  */
+  background-image: linear-gradient(
+    110deg,
+    hsl(193deg 100% 50%) 0%,
+    hsl(193deg 100% 45%) 19%,
+    hsl(193deg 100% 40%) 27%,
+    hsl(193deg 100% 35%) 34%,
+    hsl(193deg 100% 32%) 41%,
+    hsl(193deg 100% 32%) 47%,
+    hsl(193deg 100% 32%) 53%,
+    hsl(193deg 100% 32%) 59%,
+    hsl(190deg 100% 33%) 66%,
+    hsl(185deg 100% 34%) 73%,
+    hsl(176deg 100% 35%) 81%,
+    hsl(167deg 98% 38%) 100%
+  );
+  color: white;
 }
 
 @media screen and (max-width: 996px) {
