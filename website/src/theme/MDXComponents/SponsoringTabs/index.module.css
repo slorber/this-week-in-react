@@ -1,0 +1,17 @@
+.tabs {
+  border: transparent solid thin;
+  box-shadow: var(--ifm-global-shadow-md);
+  border-radius: 0.6rem;
+  padding: 1rem;
+}
+
+html[data-theme="dark"] .tabs {
+  border-color: var(--ifm-color-emphasis-200);
+  box-shadow: var(--ifm-global-shadow-xl);
+}
+
+.tab {
+  min-width: 8rem;
+  display: flex;
+  justify-content: center;
+}

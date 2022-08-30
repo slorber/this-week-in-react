@@ -5,7 +5,7 @@ import TweetQuote from "@site/src/components/TweetQuote";
 
 import styles from "./quotes.module.css";
 
-function Quote(props: ComponentProps<typeof TweetQuote>) {
+export function Quote(props: ComponentProps<typeof TweetQuote>) {
   return (
     <div className={styles.quoteContainer}>
       <TweetQuote {...props} />
@@ -13,11 +13,9 @@ function Quote(props: ComponentProps<typeof TweetQuote>) {
   );
 }
 
-export default function HomepageQuotes() {
-  const { i18n } = useDocusaurusContext();
-  const isFrench = i18n.currentLocale === "fr";
-  return (
-    <section className={clsx("container", styles.quotesContainer)}>
+export const AllQuotes = {
+  en: {
+    wcandillon: (
       <Quote
         url="https://twitter.com/wcandillon/status/1263825118557593600"
         handle="wcandillon"
@@ -27,6 +25,8 @@ export default function HomepageQuotes() {
         If you are not signed-up to @sebastienlorber mailing-list, you are
         missing out 🙌🏻
       </Quote>
+    ),
+    threepointone: (
       <Quote
         url="https://twitter.com/threepointone/status/1493894062293794817"
         handle="threepointone"
@@ -35,6 +35,8 @@ export default function HomepageQuotes() {
       >
         The one React newsletter/source of "what's new" that I follow
       </Quote>
+    ),
+    kentcdodds: (
       <Quote
         url="https://twitter.com/kentcdodds/status/1389240652324474880"
         handle="kentcdodds"
@@ -43,6 +45,8 @@ export default function HomepageQuotes() {
       >
         These threads you do are awesome
       </Quote>
+    ),
+    sebmarkbage: (
       <Quote
         url="https://twitter.com/sebmarkbage/status/1557365971182145543"
         handle="sebmarkbage"
@@ -52,6 +56,8 @@ export default function HomepageQuotes() {
         Feels like such an institution that has always been there and will
         always be there
       </Quote>
+    ),
+    yangshunz: (
       <Quote
         url="https://twitter.com/yangshunz/status/1511641180907323393"
         handle="yangshunz"
@@ -60,6 +66,8 @@ export default function HomepageQuotes() {
       >
         Really useful for me as someone who doesn't use Twitter that often
       </Quote>
+    ),
+    NoriSte: (
       <Quote
         url="https://twitter.com/NoriSte/status/1448145180461355008"
         handle="NoriSte"
@@ -68,6 +76,8 @@ export default function HomepageQuotes() {
       >
         It's like reading a summary instead of scanning Twitter
       </Quote>
+    ),
+    ericclemmons: (
       <Quote
         url="https://twitter.com/ericclemmons/status/1519304291609198592"
         handle="ericclemmons"
@@ -77,6 +87,8 @@ export default function HomepageQuotes() {
         The closest thing we have to Oscars is @sebastienlorber ’s weekly
         roundup
       </Quote>
+    ),
+    swmansion: (
       <Quote
         url="https://twitter.com/swmansion/status/1496225215730397187"
         handle="swmansion"
@@ -86,14 +98,8 @@ export default function HomepageQuotes() {
         A high-quality newsletter with all the most important news from the
         React world
       </Quote>
-      <Quote
-        url="https://twitter.com/Jonsamp/status/1471222654338314240"
-        handle="Jonsamp"
-        name="Jon Samp"
-        job="Software Developer at Expo"
-      >
-        This newsletter might just replace Twitter for me 😂
-      </Quote>
+    ),
+    amanhimself: (
       <Quote
         url="https://twitter.com/amanhimself/status/1450753646082150401"
         handle="amanhimself"
@@ -102,6 +108,18 @@ export default function HomepageQuotes() {
       >
         My goto gateway for what’s happening in React
       </Quote>
+    ),
+    Jonsamp: (
+      <Quote
+        url="https://twitter.com/Jonsamp/status/1471222654338314240"
+        handle="Jonsamp"
+        name="Jon Samp"
+        job="Software Developer at Expo"
+      >
+        This newsletter might just replace Twitter for me 😂
+      </Quote>
+    ),
+    johnnyreilly: (
       <Quote
         url="https://twitter.com/johnny_reilly/status/1477359594087321600"
         handle="johnny_reilly"
@@ -110,6 +128,8 @@ export default function HomepageQuotes() {
       >
         Sebastien helps us learn the things we need to learn
       </Quote>
+    ),
+    mcavaliere: (
       <Quote
         url="https://twitter.com/mcavaliere/status/1371512182178000897"
         handle="mcavaliere"
@@ -118,115 +138,9 @@ export default function HomepageQuotes() {
       >
         I can see important React news at a glance.
       </Quote>
+    ),
 
-      {isFrench && (
-        <>
-          <Quote
-            url="https://twitter.com/xavier_seignard/status/1511793034979168261"
-            handle="xavier_seignard"
-            name="Xavier Seignard"
-            job="Senior Software Engineer chez Alan"
-          >
-            Un bijou de newsletter, comme d'hab 👌
-          </Quote>
-          <Quote
-            url="https://twitter.com/lauthieb/status/1498725922127626250"
-            handle="lauthieb"
-            name="Laurent Thiebault"
-            job="Engineering Manager chez Decathlon"
-          >
-            Toujours aussi riche cette newsletter 💌
-          </Quote>
-          <Quote
-            url="https://www.linkedin.com/feed/update/urn:li:activity:6856274186218876928/"
-            handle="lereacteurIO"
-            name="Xavier Colombel"
-            job="CEO chez Le Reacteur Coding Bootcamp"
-            profileUrl="https://github.com/XavierColombel.png"
-          >
-            La meilleure newsletter qui traite de l'écosystème React
-          </Quote>
-          <Quote
-            url="https://www.linkedin.com/feed/update/urn:li:activity:6905211472721317888/"
-            handle={null}
-            avatarUrl="https://github.com/dbuchet.png"
-            name="Damien Buchet"
-            job="Tech Lead chez Wild Code School"
-            profileUrl="https://www.linkedin.com/in/damienbuchet/"
-          >
-            Sa newsletter est juste parfaite
-          </Quote>
-          <Quote
-            url="https://www.linkedin.com/feed/update/urn:li:activity:6894694552519659523/"
-            handle={null}
-            avatarUrl="https://github.com/sylvain-pauly.png"
-            name="Sylvain Pauly"
-            job="Senior Front-end Software Engineer chez Yousign"
-            profileUrl="https://www.linkedin.com/in/sylvainpauly/"
-          >
-            Du contenu en français de qualité !
-          </Quote>
-          <Quote
-            url="https://www.linkedin.com/feed/update/urn:li:activity:6899716385652514816/"
-            handle={null}
-            name="Pierre V."
-            job="Master Tech Lead chez frog France (CapGemini)"
-            profileUrl="https://www.linkedin.com/in/pierver/"
-          >
-            Une newsletter hebdomadaire indispensable
-          </Quote>
-          <Quote
-            url="https://twitter.com/alexsoyes/status/1531289336922001408"
-            handle="alexsoyes"
-            name="Alexandre Soyer"
-            job="Freelance - Bloggeur sur alexsoyes.com"
-          >
-            Une mine d'or en termes de curation
-          </Quote>
-          <Quote
-            url="https://twitter.com/arkerone/status/1528776694567473152"
-            handle="arkerone"
-            name="Axel Shaita"
-            job="Tech lead - Bloggeur sur codeheroes.fr"
-          >
-            Vous ne trouverez pas mieux pour faire votre veille
-          </Quote>
-          <Quote
-            url="https://twitter.com/Console_buche/status/1488598916396421124"
-            handle="Console_buche"
-            name="Sebastien Dubourg"
-            job="Développeur Frontend chez TenableSecurity"
-          >
-            Ces newsletter sont vraiment super
-          </Quote>
-          <Quote
-            url="https://www.linkedin.com/feed/update/urn:li:activity:6899717336786354176/"
-            handle={null}
-            name="Elena Battisti"
-            job="Développeuse Web Front-End chez Meilleurs Agents "
-            profileUrl="https://www.linkedin.com/in/elenabattisti/"
-          >
-            Un outil de veille très précieux
-          </Quote>
-          <Quote
-            url="https://twitter.com/LeMathisBarre/status/1472198211204890624"
-            handle="LeMathisBarre"
-            name="Mathis Barré"
-            job="Développeur React et React Native chez Beapp"
-          >
-            Je n'ai jamais trouvé mieux
-          </Quote>
-          <Quote
-            url="https://twitter.com/_smontlouis/status/1524429506190221313"
-            handle="_smontlouis"
-            name="Stéphane Montlouis"
-            job="Lead front-end developer chez EMCITV"
-          >
-            100% de mes news react viennent de chez toi
-          </Quote>
-        </>
-      )}
-
+    ane_naiz: (
       <Quote
         url="https://twitter.com/ane_naiz/status/1442606436207497216"
         handle="ane_naiz"
@@ -235,6 +149,8 @@ export default function HomepageQuotes() {
       >
         I won't miss any information from now on 😊😎
       </Quote>
+    ),
+    elijahmanor: (
       <Quote
         url="https://twitter.com/elijahmanor/status/1528748108330504193"
         handle="elijahmanor"
@@ -243,6 +159,8 @@ export default function HomepageQuotes() {
       >
         If you are a React dev, this is a newsletter you should check out
       </Quote>
+    ),
+    asidorenko_: (
       <Quote
         url="https://twitter.com/asidorenko_/status/1479029650496102402"
         handle="asidorenko_"
@@ -252,6 +170,8 @@ export default function HomepageQuotes() {
         Probably the best resource out there if you want to stay up to date with
         React
       </Quote>
+    ),
+    beaussan: (
       <Quote
         url="https://twitter.com/beaussan/status/1488578333851930627"
         handle="beaussan"
@@ -260,6 +180,8 @@ export default function HomepageQuotes() {
       >
         Your threads and newletter are a gem !
       </Quote>
+    ),
+    wbroek: (
       <Quote
         url="https://twitter.com/wbroek/status/1479017874798829569"
         handle="wbroek"
@@ -268,6 +190,8 @@ export default function HomepageQuotes() {
       >
         If you do react you should definitely take a look
       </Quote>
+    ),
+    fredmaiaarantes: (
       <Quote
         url="https://twitter.com/fredmaiaarantes/status/1545399680783323136"
         handle="fredmaiaarantes"
@@ -276,14 +200,8 @@ export default function HomepageQuotes() {
       >
         If you are into React, you should subscribe
       </Quote>
-      <Quote
-        url="https://twitter.com/wbroek/status/1479017874798829569"
-        handle="wbroek"
-        name="Wouter Broek"
-        job="Software Development Manager at Amazon Web Services"
-      >
-        If you do react you should definitely take a look
-      </Quote>
+    ),
+    ndubien: (
       <Quote
         url="https://twitter.com/ndubien/status/1445627346275373056"
         handle="ndubien"
@@ -292,6 +210,8 @@ export default function HomepageQuotes() {
       >
         A high quality thread for developers working with React 😍
       </Quote>
+    ),
+    jamonholmgren: (
       <Quote
         url="https://twitter.com/jamonholmgren/status/1488926895450198017"
         handle="jamonholmgren"
@@ -300,6 +220,8 @@ export default function HomepageQuotes() {
       >
         hit up Seb, he publishes a great React+RN newsletter!
       </Quote>
+    ),
+    frankdilo: (
       <Quote
         url="https://twitter.com/frankdilo/status/1391828520922279936"
         handle="frankdilo"
@@ -308,6 +230,8 @@ export default function HomepageQuotes() {
       >
         A great follow. These weekly recap threads are a great format.
       </Quote>
+    ),
+    ElaziziYoussouf: (
       <Quote
         url="https://twitter.com/ElaziziYoussouf/status/1338448625677066240"
         handle="ElaziziYoussouf"
@@ -316,6 +240,8 @@ export default function HomepageQuotes() {
       >
         Always enjoy reading @sebastienlorber newsletter 👌
       </Quote>
+    ),
+    __marcin_: (
       <Quote
         url="https://twitter.com/__marcin_/status/1480988303130304526"
         handle="__marcin_"
@@ -324,6 +250,8 @@ export default function HomepageQuotes() {
       >
         The most comprehensive newsletter for React (Native) developers
       </Quote>
+    ),
+    Danny_H_W: (
       <Quote
         url="https://twitter.com/Danny_H_W/status/1468285893203144713"
         handle="Danny_H_W"
@@ -332,6 +260,8 @@ export default function HomepageQuotes() {
       >
         Your weekly newsletter is my favourite source of tech news
       </Quote>
+    ),
+    Thierryskoda: (
       <Quote
         url="https://twitter.com/Thierryskoda/status/1440272076800094211"
         handle="Thierryskoda"
@@ -340,6 +270,8 @@ export default function HomepageQuotes() {
       >
         I feel that I never miss out on anything
       </Quote>
+    ),
+    dev_bogdan: (
       <Quote
         url="https://www.linkedin.com/feed/update/urn:li:activity:6892034593856577536/"
         handle="dev_bogdan"
@@ -348,6 +280,187 @@ export default function HomepageQuotes() {
       >
         I am learning a lot from Sebastien Lorber
       </Quote>
+    ),
+  },
+
+  fr: {
+    xavier_seignard: (
+      <Quote
+        url="https://twitter.com/xavier_seignard/status/1511793034979168261"
+        handle="xavier_seignard"
+        name="Xavier Seignard"
+        job="Senior Software Engineer chez Alan"
+      >
+        Un bijou de newsletter, comme d'hab 👌
+      </Quote>
+    ),
+    lauthieb: (
+      <Quote
+        url="https://twitter.com/lauthieb/status/1498725922127626250"
+        handle="lauthieb"
+        name="Laurent Thiebault"
+        job="Engineering Manager chez Decathlon"
+      >
+        Toujours aussi riche cette newsletter 💌
+      </Quote>
+    ),
+    lereacteurIO: (
+      <Quote
+        url="https://www.linkedin.com/feed/update/urn:li:activity:6856274186218876928/"
+        handle="lereacteurIO"
+        name="Xavier Colombel"
+        job="CEO chez Le Reacteur Coding Bootcamp"
+        profileUrl="https://github.com/XavierColombel.png"
+      >
+        La meilleure newsletter qui traite de l'écosystème React
+      </Quote>
+    ),
+    dbuchet: (
+      <Quote
+        url="https://www.linkedin.com/feed/update/urn:li:activity:6905211472721317888/"
+        handle={null}
+        avatarUrl="https://github.com/dbuchet.png"
+        name="Damien Buchet"
+        job="Tech Lead chez Wild Code School"
+        profileUrl="https://www.linkedin.com/in/damienbuchet/"
+      >
+        Sa newsletter est juste parfaite
+      </Quote>
+    ),
+    sylvainpauly: (
+      <Quote
+        url="https://www.linkedin.com/feed/update/urn:li:activity:6894694552519659523/"
+        handle={null}
+        avatarUrl="https://github.com/sylvain-pauly.png"
+        name="Sylvain Pauly"
+        job="Senior Front-end Software Engineer chez Yousign"
+        profileUrl="https://www.linkedin.com/in/sylvainpauly/"
+      >
+        Du contenu en français de qualité !
+      </Quote>
+    ),
+    pierver: (
+      <Quote
+        url="https://www.linkedin.com/feed/update/urn:li:activity:6899716385652514816/"
+        handle={null}
+        name="Pierre V."
+        job="Master Tech Lead chez frog France (CapGemini)"
+        profileUrl="https://www.linkedin.com/in/pierver/"
+      >
+        Une newsletter hebdomadaire indispensable
+      </Quote>
+    ),
+    alexsoyes: (
+      <Quote
+        url="https://twitter.com/alexsoyes/status/1531289336922001408"
+        handle="alexsoyes"
+        name="Alexandre Soyer"
+        job="Freelance - Bloggeur sur alexsoyes.com"
+      >
+        Une mine d'or en termes de curation
+      </Quote>
+    ),
+    arkerone: (
+      <Quote
+        url="https://twitter.com/arkerone/status/1528776694567473152"
+        handle="arkerone"
+        name="Axel Shaita"
+        job="Tech lead - Bloggeur sur codeheroes.fr"
+      >
+        Vous ne trouverez pas mieux pour faire votre veille
+      </Quote>
+    ),
+    Console_buche: (
+      <Quote
+        url="https://twitter.com/Console_buche/status/1488598916396421124"
+        handle="Console_buche"
+        name="Sebastien Dubourg"
+        job="Développeur Frontend chez TenableSecurity"
+      >
+        Ces newsletter sont vraiment super
+      </Quote>
+    ),
+    elenabattisti: (
+      <Quote
+        url="https://www.linkedin.com/feed/update/urn:li:activity:6899717336786354176/"
+        handle={null}
+        name="Elena Battisti"
+        job="Développeuse Web Front-End chez Meilleurs Agents "
+        profileUrl="https://www.linkedin.com/in/elenabattisti/"
+      >
+        Un outil de veille très précieux
+      </Quote>
+    ),
+    LeMathisBarre: (
+      <Quote
+        url="https://twitter.com/LeMathisBarre/status/1472198211204890624"
+        handle="LeMathisBarre"
+        name="Mathis Barré"
+        job="Développeur React et React Native chez Beapp"
+      >
+        Je n'ai jamais trouvé mieux
+      </Quote>
+    ),
+    _smontlouis: (
+      <Quote
+        url="https://twitter.com/_smontlouis/status/1524429506190221313"
+        handle="_smontlouis"
+        name="Stéphane Montlouis"
+        job="Lead front-end developer chez EMCITV"
+      >
+        100% de mes news react viennent de chez toi
+      </Quote>
+    ),
+  },
+};
+
+export default function HomepageQuotes() {
+  const { i18n } = useDocusaurusContext();
+  const isFrench = i18n.currentLocale === "fr";
+  return (
+    <section className={clsx("container", styles.quotesContainer)}>
+      {AllQuotes.en.wcandillon}
+      {AllQuotes.en.threepointone}
+      {AllQuotes.en.kentcdodds}
+      {AllQuotes.en.sebmarkbage}
+      {AllQuotes.en.yangshunz}
+      {AllQuotes.en.NoriSte}
+      {AllQuotes.en.ericclemmons}
+      {AllQuotes.en.swmansion}
+      {AllQuotes.en.Jonsamp}
+      {AllQuotes.en.amanhimself}
+      {AllQuotes.en.johnnyreilly}
+      {AllQuotes.en.mcavaliere}
+      {isFrench && (
+        <>
+          {AllQuotes.fr.xavier_seignard}
+          {AllQuotes.fr.lauthieb}
+          {AllQuotes.fr.lereacteurIO}
+          {AllQuotes.fr.dbuchet}
+          {AllQuotes.fr.sylvainpauly}
+          {AllQuotes.fr.pierver}
+          {AllQuotes.fr.alexsoyes}
+          {AllQuotes.fr.arkerone}
+          {AllQuotes.fr.Console_buche}
+          {AllQuotes.fr.elenabattisti}
+          {AllQuotes.fr.LeMathisBarre}
+          {AllQuotes.fr._smontlouis}
+        </>
+      )}
+      {AllQuotes.en.ane_naiz}
+      {AllQuotes.en.elijahmanor}
+      {AllQuotes.en.asidorenko_}
+      {AllQuotes.en.beaussan}
+      {AllQuotes.en.wbroek}
+      {AllQuotes.en.fredmaiaarantes}
+      {AllQuotes.en.ndubien}
+      {AllQuotes.en.jamonholmgren}
+      {AllQuotes.en.frankdilo}
+      {AllQuotes.en.ElaziziYoussouf}
+      {AllQuotes.en.__marcin_}
+      {AllQuotes.en.Danny_H_W}
+      {AllQuotes.en.Thierryskoda}
+      {AllQuotes.en.dev_bogdan}
     </section>
   );
 }
