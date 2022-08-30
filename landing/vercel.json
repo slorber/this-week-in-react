@@ -24,6 +24,21 @@
       "permanent": true
     },
     {
+      "source": "/calendar",
+      "destination": "https://docs.google.com/spreadsheets/d/16aQqZV4pJbrm0zvvT9qFm0B1NwLUPQuVFzijt4zSJCk/edit#gid=0",
+      "permanent": true
+    },
+    {
+      "source": "/ih",
+      "destination": "https://www.indiehackers.com/product/french-react-newsletter",
+      "permanent": true
+    },
+    {
+      "source": "/testimonials",
+      "destination": "https://twitter.com/sebastienlorber/timelines/1448942785814466561",
+      "permanent": true
+    },
+    {
       "source": "/sponsor",
       "destination": "https://gist.github.com/slorber/cb732fb5d0a002c4d73236a9baeba7bb",
       "permanent": true

@@ -1,3 +1,5 @@
+export const sponsorshipCalendarLink = "https://thisweekinreact.com/calendar";
+
 export type NewsletterSegment = {
   name: string;
   subscribersCount: number;
@@ -5,7 +7,7 @@ export type NewsletterSegment = {
   clickRate: number;
 };
 
-export type NewsletterStats = {
+export type Newsletter = {
   fr: NewsletterSegment;
   en: NewsletterSegment;
   all: NewsletterSegment;
@@ -34,10 +36,8 @@ const all: NewsletterSegment = {
   clickRate: 32,
 };
 
-const newsletterStats: NewsletterStats = {
+export const newsletterStats: Newsletter = {
   all,
   en,
   fr,
 };
-
-export default newsletterStats;

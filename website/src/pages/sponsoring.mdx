@@ -1,8 +1,8 @@
-import newsletterStats from "@site/src/newsletterStats";
+import { newsletterStats, sponsorshipCalendarLink } from "@site/src/newsletter";
 
 # Sponsor the newsletter
 
-Reach a **qualified and engaged** audience of **experimented React developers** with an ad in our [weekly newsletter](/newsletter) full of React news.
+Reach a **qualified and engaged** audience of **experimented React developers** with an ad in our [weekly newsletter](/newsletter).
 
 ---
 
@@ -13,10 +13,12 @@ Reach a **qualified and engaged** audience of **experimented React developers** 
     <b>Advertise</b>: a product, course, conference, job offer...
   </li>
   <li>
-    <b>Placements</b>: 1st sponsor, 2nd sponsor, job offers, dedicated issue, custom...
+    <b>Placements</b>: 1st sponsor, 2nd sponsor, job offers, dedicated issue,
+    custom...
   </li>
   <li>
-    <b>Subscribers count</b>: <span>{newsletterStats.all.subscribersCount}</span>
+    <b>Subscribers count</b>:{" "}
+    <span>{newsletterStats.all.subscribersCount}</span>
   </li>
   <li>
     <b>Open-rate</b>: <span>{newsletterStats.all.openRate}%</span>
@@ -31,21 +33,41 @@ Reach a **qualified and engaged** audience of **experimented React developers** 
     <b>Segmented</b>: your ad can target a specific language segment
   </li>
   <li>
-    <b>Readers from</b>: Meta, Google, Microsoft, GitHub, Shopify, Amazon, Stripe, Cloudflare, ByteDance, Figma, Uber...
+    <b>Readers at</b>: Meta, Google, Microsoft, GitHub, Shopify, Amazon, Stripe,
+    Cloudflare, ByteDance, Figma, Uber...
   </li>
+  <li>
+    <b>Popular offer</b>:{" "}
+    <a href="#sponsor-1st">
+      1st sponsor - 4 issues - sent to all subscribers - 1000€
+    </a>
+  </li>
+  <li>
+    <b>
+      <a href={sponsorshipCalendarLink}>Sponsorship calendar</a>
+    </b>
+    : check for the next availabilities
+  </li>
+  <li>
+    <b>
+      <a href="#order-process">Order now!</a>
+    </b>
+  </li>
+
 </ul>
 
 ---
 
-## Audience
+## Audience {#audience}
 
 The audience of our [weekly newsletter](/newsletter) is **qualitative and engaged**, with open-rates way above the industry standard.
 
-### 📜 Content
+### 📜 Content {#content}
 
 Our editorial line assumes our readers are:
+
 - **React developers**: we cover the whole React ecosystem
-- **React-Native** developers: there's a dedicated section in the newsletter
+- **React-Native developers**: there's a dedicated section in the newsletter
 - **experienced**: they know React well and are not interested in beginner-friendly content
 - **passionate**: they want to stay on top of their favorite technology
 - **open-minded**: they also want to know about non-React news that are relevant to them
@@ -53,43 +75,220 @@ Our editorial line assumes our readers are:
 
 :::info This newsletter is different
 
-This is not a typical weekly React curation newsletter. Instead, it is a weekly curation of news ***for*** React developers.
+This is not a typical weekly React curation newsletter. Instead, it is a weekly curation of news **_for_** React developers.
 
-We focus on what's **really new** in an **exhaustive** way. There's usually **a lof of external links**, but readers aren't expected to click on all of them: simply reading the headlines and comments provide value to them.
+We focus on what's **really new** in an **exhaustive** way. There's usually **a lof of external links**, but readers aren't expected to click all of them: simply reading the headlines and comments usually provide enough value.
 
 We filter heavily content that does not match our editorial line, and generally exclude:
-- content produced for SEO reasons based on keyword analysis
+
+- content produced for SEO, based on keyword analysis
 - listicles, 101's, verbose step-by-step tutorials
-- UI libraries and npm packages
+- most UI libraries and npm packages
 
 :::
 
-<br/>
+<br />
 
-### 📈 Stats
+### 📈 Stats {#stats}
 
-<SponsoringTabsStats/>
+<SponsoringTabsStats />
 
-<br/>
+<br />
 
 :::tip About the open-rate
 
 In practice, the open-rate is likely higher because:
+
 - [iOS 15 prevents email tracking](https://phoscreative.com/articles/ios15-email-marketing/)
 - [Gmail long emails clipping prevent tracking pixel load](https://convertkit.com/sender-reputation)
 - Popular tools among our audience: [StoopInbox](https://stoopinbox.com/), [Kill The Newsletter](https://kill-the-newsletter.com/), [FeedBin](https://feedbin.com/), [ReadWise](https://readwise.io/), [Feedly](https://feedly.com/), [Newsletterss](https://newsletterss.com/), [Mailbrew](https://mailbrew.com/), [ProtonMail](https://proton.me/), [Apple Private Relay Email](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_js/communicating_using_the_private_email_relay_service), [Firefox Relay](https://relay.firefox.com/)...
 
 :::
 
-<br/>
+<br />
 
-### 🗣 Testimonials
+### 🗣 Testimonials {#testimonials}
 
-Readers regularly express their satisfaction reading our content ([full Twitter testimonials list](https://twitter.com/sebastienlorber/timelines/1448942785814466561)). We hand-picked some of them:
+Readers regularly express their satisfaction (see our [full Twitter testimonials list](https://twitter.com/sebastienlorber/timelines/1448942785814466561)). A sample of our testimonials:
 
-<SponsoringTabsTestimonials/>
+<SponsoringTabsTestimonials />
 
+---
 
+## Placements {#placements}
+
+The newsletter structure stays the same every week, offering 3 sponsorship ad placements:
+
+- 🔗 React news
+- [**🥇 1st sponsor**](#sponsor-1st)
+- 🔗 React-Native news
+- [**🥈 2nd sponsor**](#sponsor-2nd)
+- [**🧑‍💻 Job offers**](#sponsor-jobs)
+- 🔗 Other news
+- 🤣 Funny meme
+
+Each placement has a price and constraints.
+
+:::tip
+
+Ensure your ad copy respect the placement constraints thanks to this [character counter](https://wordcounter.net/character-count).
+
+:::
+
+<br />
+
+### 🥇 1st sponsor {#sponsor-1st}
+
+This sponsorship ad placement offers a generous ad copy length, near in the first half of the newsletter.
+
+<details>
+  <summary>Ad constraints and example</summary>
+
+- **Title**: 55 characters max, 1 link
+- **Body**: 900 characters max, max 2 links, max 3 line breaks, decent usage of bold/smileys/list
+- **Image**: small icon/logo allowed
+
+</details>
+
+<SponsoringTabsFirstSponsor />
+
+<br />
+
+### 🥈 2nd sponsor {#sponsor-2nd}
+
+This sponsorship ad placement appears in the middle of the newsletter, just under the React-Native section.
+
+<details>
+  <summary>Ad constraints and example</summary>
+
+  - **Title**: 55 characters max, 1 link
+  - **Body**: 600 characters max, max 1 link, max 2 line breaks, decent usage of bold/smileys/list
+  - **Image**: 🚫
+
+</details>
+
+<SponsoringTabsSecondSponsor />
+
+<br />
+
+### ‍💻 Job Offers {#sponsor-jobs}
+
+A newsletter issue can contain **up to 4 job offers**.
+
+<details>
+  <summary>Ad constraints and example</summary>
+
+  - **Title**: 55 characters max, 1 link
+  - **Body**: 200 characters max, 0 link, raw/unstyled text
+  - **Image**: 🚫
+
+</details>
+
+<SponsoringTabsJobSponsor />
+
+<br />
+
+### 🧑‍🎨 Custom
+
+Reach out to [sponsor@thisweekinreact.com](mailto:sponsor@thisweekinreact.com?subject=Custom%20sponsorship%20offering) to discuss in details your sponsorship need.
+
+We can offer premium sponsorship opportunities:
+
+- Sponsorship placements on the occasional [articles](/articles) that we write and send to our subscribers
+- A sponsored honest review of your product
+- A sponsored issue 100% dedicated to your product (max 1/month)
+
+---
+
+## Order process {#order-process}
+
+To order a sponsorship slot, follow these steps:
+
+- Select your [target audience](#audience): one of All / 🇬🇧 / 🇫🇷
+- Select your [placement](#placement) and number of issues
+- Select available dates on the [public sponsorship calendar](https://thisweekinreact.com/calendar)
+- Prepare your company details for invoicing
+- Email us at [sponsor@thisweekinreact.com](mailto:sponsor@thisweekinreact.com?subject=Sponsorship)
+- We emit an invoice and finalize the booking of the adverting slots
+
+<details>
+
+<summary>We suggest using this order email template</summary>
+
+```txt
+Hi
+
+We would like to sponsor This Week In React.
+
+Booking informations:
+- Target audience: all
+- Sponsorship placement: 1st sponsor
+- Number of issues: 4
+- Price: 1000€
+
+Requested dates (dd/MM/yyyy):
+- 06/09/2022
+- 27/09/2022
+- 04/10/2022
+- 11/10/2022
+
+We are flexible for the dates: yes / no
+
+Company details for invoicing:
+- Name: ACME Corp
+- Street: 42 Software Street,
+- Postal code: 94102
+- City: San Francisco
+- VAT / tax number (if applicable):
+- Contact email: marketing@acme.com
+
+If this booking order is valid, please send us an invoice asap.
+
+We will send the ad copy before the 31/08/2022
+```
+
+</details>
+
+Once the order is complete:
+
+- You pay the invoice under 30 days
+- You provide the ad copy
+- We review and validate the ad copy
+- We send the ad in the newsletters 🎉
+
+:::info
+
+You can book a sponsorship offer without providing the ad copy immediately. We kindly ask you to:
+
+- provide an estimated date to send the ad copy: we will schedule a recall
+- provide the final ad copy at least one week before the publication
+
+:::
+
+:::tip
+
+Send us your ad copy by email as rich text, including the links and formatting:
+
+<BrowserWindow>
+
+<h2>
+  <a href="https://en.wikipedia.org/wiki/Acme_Corporation">
+    Acme Corporation - The best SaaS in the world
+  </a>
+</h2>
+
+The Acme corporation offers the best React products in the world. This is perfect for **React and React-Native developers** reading this newsletter.
+We have a lot of great JS SDKs and API clients, covering every possible stack you might want to use:
+
+- JavaScript & Node.js
+- React & React-Native
+- Expo config plugin
+
+Check **[all our SDKs](https://animationschooldaily.com/evolution-of-a-peg/)** now! They all have an outstanding **native TypeScript support**!
+
+</BrowserWindow>
+
+:::
 
 ---
 
@@ -107,7 +306,7 @@ The audience of this newsletter is more qualitative than quantitative. Make sure
 
 ### ❌ Bad fit
 
-- Reach an audience **of junior** React developers
+- Reach an audience of **junior** React developers
 - Promote something **irrelevant** to React developers
 
 :::info
@@ -118,9 +317,76 @@ We will tell you if we think your ad is not a good fit.
 
 ---
 
-## Placements
+## Past Sponsors
 
----
+These companies previously sponsored the newsletter:
+
+- **Products**: Retool, Stream, Storyblok, Axiom, Meteor, Hashnode, React-Bricks, RemixTape, Storetasker, Cambly, Indy, TechTree...
+- **Conferences**: App.js, React Brussels, BeJS...
+- **Job offers**: Cajoo, Front, Cycle, Showtime, Luko, Matters, Maki, Nabla, Pelico, Shotgun, Pricemoov, Germinal, WeCasa, iFeelSmart, BAM, My Little Team...
 
 ## FAQ
 
+<details>
+  <summary>Why are some dates marked as unavailable</summary>
+
+This newsletter is mostly run by a [single person](https://twitter.com/sebastienlorber) who sometimes has to take vacations 😅
+
+I prefer to be pessimistic and open sponsorship slots once I'm sure I will be available.
+
+</details>
+
+<details>
+  <summary>Are the sponsorship dates contractual?</summary>
+
+The respect of sponsorship dates are a best effort and **not contractual**, unless we sign a contract.
+
+This newsletter is mostly run by a [single person](https://twitter.com/sebastienlorber), and unexpected life events can happen.
+
+That can lead to offset the upcoming sponsorship slots. In practice, your dates shouldn't be delayed by more than issue (usually 1 week).
+
+We will let you know if publication dates are postponed, and look for a solution together in case your dates are not flexible.
+
+</details>
+
+<details>
+  <summary>Why are some dates marked as unavailable</summary>
+
+This newsletter is mostly run by a [single person](https://twitter.com/sebastienlorber) who sometimes has to take vacations 😅 I prefer to be pessimistic and open sponsorship slots once I'm sure I will be available.
+
+</details>
+
+<details>
+  <summary>Do you provide tracking / reporting?</summary>
+
+We don't provide any kind reporting by default: it is a manual and time-consuming process.
+
+To measure the result of your newsletter campaign, we suggest:
+
+- to provide your own tracking links to count clicks: use [bit.ly](https://bit.ly/)!
+- to intercept the `utm_` querystring parameters we automatically add to all external links
+
+In the future, we will look into providing a good reporting.
+
+</details>
+
+<details>
+  <summary>Why are prices higher for a single issue?</summary>
+
+To keep a positive ROI, we have to take into account the time it takes to manage sponsors: explanations, booking, invoicing, ad copy reviews, questions...
+
+</details>
+
+<details>
+  <summary>
+Why is the sponsorship calendar public?
+  </summary>
+
+This newsletter is being built in public, in a transparent way:
+
+- The [sponsorship calendar](https://thisweekinreact.com/calendar) is public
+- The [Indie Hackers product page](https://thisweekinreact.com/ih) provides monthly reportings on turnover, growth...
+
+In case you don't want your company's name to appear in our public calendar, please give us a company alias name.
+
+</details>

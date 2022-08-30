@@ -3,8 +3,8 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import styles from "./index.module.css";
 import clsx from "clsx";
-import newsletterStats, { NewsletterSegment } from "@site/src/newsletterStats";
-import { Quote, AllQuotes } from "@site/src/pages/_homepage/quotes";
+import { newsletterStats, NewsletterSegment } from "@site/src/newsletter";
+import { AllQuotes } from "@site/src/pages/_homepage/quotes";
 
 export default function SponsoringTabs({ children }) {
   const array = React.Children.toArray(children);
@@ -137,6 +137,161 @@ export function SponsoringTabsTestimonials() {
         {AllQuotes.fr.sylvainpauly}
         {AllQuotes.fr.pierver}
       </SponsoringTabsTestimonialsTabItem>
+    </SponsoringTabs>
+  );
+}
+
+function IssueSubscriberCount({ count }: { count: number }) {
+  return (
+    <span>
+      Each issue will be sent to ~ <b>{count}</b> subscribers
+    </span>
+  );
+}
+
+export function SponsoringTabsFirstSponsor() {
+  return (
+    <SponsoringTabs>
+      <>
+        <IssueSubscriberCount count={newsletterStats.all.subscribersCount} />
+        <ul>
+          <li>
+            <b>1 issue</b>: 400€
+          </li>
+          <li>
+            <b>4 issues</b>: 1000€
+          </li>
+          <li>
+            <b>8 issues</b>: 1800€
+          </li>
+        </ul>
+      </>
+      <>
+        <IssueSubscriberCount count={newsletterStats.en.subscribersCount} />
+        <ul>
+          <li>
+            <b>1 issue</b>: 250€
+          </li>
+          <li>
+            <b>4 issues</b>: 600€
+          </li>
+          <li>
+            <b>8 issues</b>: 1100€
+          </li>
+        </ul>
+      </>
+      <>
+        <IssueSubscriberCount count={newsletterStats.fr.subscribersCount} />
+        <ul>
+          <li>
+            <b>1 issue</b>: 250€
+          </li>
+          <li>
+            <b>4 issues</b>: 550€
+          </li>
+          <li>
+            <b>8 issues</b>: 1000€
+          </li>
+        </ul>
+      </>
+    </SponsoringTabs>
+  );
+}
+
+export function SponsoringTabsSecondSponsor() {
+  return (
+    <SponsoringTabs>
+      <>
+        <IssueSubscriberCount count={newsletterStats.all.subscribersCount} />
+        <ul>
+          <li>
+            <b>1 issue</b>: 400€
+          </li>
+          <li>
+            <b>4 issues</b>: 1000€
+          </li>
+          <li>
+            <b>8 issues</b>: 1800€
+          </li>
+        </ul>
+      </>
+      <>
+        <IssueSubscriberCount count={newsletterStats.en.subscribersCount} />
+        <ul>
+          <li>
+            <b>1 issue</b>: 250€
+          </li>
+          <li>
+            <b>4 issues</b>: 600€
+          </li>
+          <li>
+            <b>8 issues</b>: 1100€
+          </li>
+        </ul>
+      </>
+      <>
+        <IssueSubscriberCount count={newsletterStats.fr.subscribersCount} />
+        <ul>
+          <li>
+            <b>1 issue</b>: 200€
+          </li>
+          <li>
+            <b>4 issues</b>: 500€
+          </li>
+          <li>
+            <b>8 issues</b>: 800€
+          </li>
+        </ul>
+      </>
+    </SponsoringTabs>
+  );
+}
+
+export function SponsoringTabsJobSponsor() {
+  return (
+    <SponsoringTabs>
+      <>
+        <IssueSubscriberCount count={newsletterStats.all.subscribersCount} />
+        <ul>
+          <li>
+            <b>4 issues</b>: 500€
+          </li>
+          <li>
+            <b>8 issues</b>: 800€
+          </li>
+          <li>
+            <b>12 issues</b>: 1000€
+          </li>
+        </ul>
+      </>
+      <>
+        <IssueSubscriberCount count={newsletterStats.en.subscribersCount} />
+        <ul>
+          <li>
+            <b>4 issues</b>: 300€
+          </li>
+          <li>
+            <b>8 issues</b>: 500€
+          </li>
+          <li>
+            <b>12 issues</b>: 700€
+          </li>
+        </ul>
+      </>
+      <>
+        <IssueSubscriberCount count={newsletterStats.fr.subscribersCount} />
+        <ul>
+          <li>
+            <b>4 issues</b>: 300€
+          </li>
+          <li>
+            <b>8 issues</b>: 500€
+          </li>
+          <li>
+            <b>12 issues</b>: 700€
+          </li>
+        </ul>
+      </>
     </SponsoringTabs>
   );
 }
