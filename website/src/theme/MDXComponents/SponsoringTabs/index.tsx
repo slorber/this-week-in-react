@@ -122,12 +122,12 @@ export function SponsoringTabsTestimonials() {
         {AllQuotes.fr.xavier_seignard}
       </SponsoringTabsTestimonialsTabItem>
       <SponsoringTabsTestimonialsTabItem>
-        {AllQuotes.en.ericclemmons}
-        {AllQuotes.en.ane_naiz}
         {AllQuotes.en.johnnyreilly}
-        {AllQuotes.en.mcavaliere}
+        {AllQuotes.en.ane_naiz}
         {AllQuotes.en.Jonsamp}
         {AllQuotes.en.fredmaiaarantes}
+        {AllQuotes.en.mcavaliere}
+        {AllQuotes.en.ericclemmons}
       </SponsoringTabsTestimonialsTabItem>
       <SponsoringTabsTestimonialsTabItem>
         {AllQuotes.fr.lauthieb}
