@@ -22,13 +22,22 @@
 
 @media screen and (max-width: 700px) {
   .quoteContainer {
-    margin: 1rem 0;
+    margin: 0.4rem 0.4rem;
   }
 }
 
 .quoteContainer blockquote {
-  min-height: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+/*
+For large screens, make all 1/2 line quotes the same height
+ */
+@media screen and (min-width: 996px) {
+  .quoteContainer {
+    min-height: 3.5rem;
+  }
+}
+

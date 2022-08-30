@@ -92,8 +92,7 @@ export default function HomepageQuotes() {
         name="Jon Samp"
         job="Software Developer at Expo"
       >
-        Such a great source of React/tech news. This newsletter might just
-        replace Twitter for me 😂
+        This newsletter might just replace Twitter for me 😂
       </Quote>
       <Quote
         url="https://twitter.com/amanhimself/status/1450753646082150401"
@@ -139,6 +138,15 @@ export default function HomepageQuotes() {
             Toujours aussi riche cette newsletter 💌
           </Quote>
           <Quote
+            url="https://www.linkedin.com/feed/update/urn:li:activity:6856274186218876928/"
+            handle="lereacteurIO"
+            name="Xavier Colombel"
+            job="CEO chez Le Reacteur Coding Bootcamp"
+            profileUrl="https://github.com/XavierColombel.png"
+          >
+            La meilleure newsletter qui traite de l'écosystème React
+          </Quote>
+          <Quote
             url="https://www.linkedin.com/feed/update/urn:li:activity:6905211472721317888/"
             handle={null}
             avatarUrl="https://github.com/dbuchet.png"
@@ -146,7 +154,7 @@ export default function HomepageQuotes() {
             job="Tech Lead chez Wild Code School"
             profileUrl="https://www.linkedin.com/in/damienbuchet/"
           >
-            Sa newsletter est juste parfaite - inscrivez-vous
+            Sa newsletter est juste parfaite
           </Quote>
           <Quote
             url="https://www.linkedin.com/feed/update/urn:li:activity:6894694552519659523/"
@@ -199,14 +207,6 @@ export default function HomepageQuotes() {
             profileUrl="https://www.linkedin.com/in/elenabattisti/"
           >
             Un outil de veille très précieux
-          </Quote>
-          <Quote
-            url="https://twitter.com/__martin_gs__/status/1460664479503499275"
-            handle="__martin_gs__"
-            name="Martin GS"
-            job="Développeur Front-End"
-          >
-            Une des meilleures newsletter
           </Quote>
           <Quote
             url="https://twitter.com/LeMathisBarre/status/1472198211204890624"
@@ -274,8 +274,7 @@ export default function HomepageQuotes() {
         name="Fred Maia Arantes"
         job="CEO at MeteorJS"
       >
-        If you are into React, you should subscribe to the @sebastienlorber
-        newsletter!
+        If you are into React, you should subscribe
       </Quote>
       <Quote
         url="https://twitter.com/wbroek/status/1479017874798829569"
@@ -307,8 +306,7 @@ export default function HomepageQuotes() {
         name="Francesco Di Lorenzo"
         job="Co-founder of Mailbrew & Typefully"
       >
-        @sebastienlorber is a great follow. These weekly recap threads are a
-        great format.
+        A great follow. These weekly recap threads are a great format.
       </Quote>
       <Quote
         url="https://twitter.com/ElaziziYoussouf/status/1338448625677066240"
