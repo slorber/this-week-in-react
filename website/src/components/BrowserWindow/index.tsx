@@ -14,15 +14,20 @@ interface Props {
   children: ReactNode;
   url?: string;
   minHeight?: number;
+  className?: string;
 }
 
 export default function BrowserWindow({
   children,
   minHeight,
   url = "http://localhost:3000",
+  className,
 }: Props): JSX.Element {
   return (
-    <div className={styles.browserWindow} style={{ minHeight }}>
+    <div
+      className={clsx(styles.browserWindow, className)}
+      style={{ minHeight }}
+    >
       <div className={styles.browserWindowHeader}>
         <div className={styles.buttons}>
           <span className={styles.dot} style={{ background: "#f25f58" }} />

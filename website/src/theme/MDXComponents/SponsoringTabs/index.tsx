@@ -141,11 +141,16 @@ export function SponsoringTabsTestimonials() {
   );
 }
 
-function IssueSubscriberCount({ count }: { count: number }) {
+function SponsoringTabsFirstSponsorHeader({ count }: { count: number }) {
   return (
-    <span>
-      Each issue will be sent to ~ <b>{count}</b> subscribers
-    </span>
+    <>
+      <div>
+        <b>Audience size</b>: ~{count}
+      </div>
+      <div>
+        <b>Price:</b>
+      </div>
+    </>
   );
 }
 
@@ -153,7 +158,9 @@ export function SponsoringTabsFirstSponsor() {
   return (
     <SponsoringTabs>
       <>
-        <IssueSubscriberCount count={newsletterStats.all.subscribersCount} />
+        <SponsoringTabsFirstSponsorHeader
+          count={newsletterStats.all.subscribersCount}
+        />
         <ul>
           <li>
             <b>1 issue</b>: 400€
@@ -167,7 +174,9 @@ export function SponsoringTabsFirstSponsor() {
         </ul>
       </>
       <>
-        <IssueSubscriberCount count={newsletterStats.en.subscribersCount} />
+        <SponsoringTabsFirstSponsorHeader
+          count={newsletterStats.en.subscribersCount}
+        />
         <ul>
           <li>
             <b>1 issue</b>: 250€
@@ -181,7 +190,9 @@ export function SponsoringTabsFirstSponsor() {
         </ul>
       </>
       <>
-        <IssueSubscriberCount count={newsletterStats.fr.subscribersCount} />
+        <SponsoringTabsFirstSponsorHeader
+          count={newsletterStats.fr.subscribersCount}
+        />
         <ul>
           <li>
             <b>1 issue</b>: 250€
@@ -202,7 +213,9 @@ export function SponsoringTabsSecondSponsor() {
   return (
     <SponsoringTabs>
       <>
-        <IssueSubscriberCount count={newsletterStats.all.subscribersCount} />
+        <SponsoringTabsFirstSponsorHeader
+          count={newsletterStats.all.subscribersCount}
+        />
         <ul>
           <li>
             <b>1 issue</b>: 400€
@@ -216,7 +229,9 @@ export function SponsoringTabsSecondSponsor() {
         </ul>
       </>
       <>
-        <IssueSubscriberCount count={newsletterStats.en.subscribersCount} />
+        <SponsoringTabsFirstSponsorHeader
+          count={newsletterStats.en.subscribersCount}
+        />
         <ul>
           <li>
             <b>1 issue</b>: 250€
@@ -230,7 +245,9 @@ export function SponsoringTabsSecondSponsor() {
         </ul>
       </>
       <>
-        <IssueSubscriberCount count={newsletterStats.fr.subscribersCount} />
+        <SponsoringTabsFirstSponsorHeader
+          count={newsletterStats.fr.subscribersCount}
+        />
         <ul>
           <li>
             <b>1 issue</b>: 200€
@@ -251,8 +268,13 @@ export function SponsoringTabsJobSponsor() {
   return (
     <SponsoringTabs>
       <>
-        <IssueSubscriberCount count={newsletterStats.all.subscribersCount} />
+        <SponsoringTabsFirstSponsorHeader
+          count={newsletterStats.all.subscribersCount}
+        />
         <ul>
+          <li>
+            <b>1 issues</b>: 🚫 N/A
+          </li>
           <li>
             <b>4 issues</b>: 500€
           </li>
@@ -265,8 +287,13 @@ export function SponsoringTabsJobSponsor() {
         </ul>
       </>
       <>
-        <IssueSubscriberCount count={newsletterStats.en.subscribersCount} />
+        <SponsoringTabsFirstSponsorHeader
+          count={newsletterStats.en.subscribersCount}
+        />
         <ul>
+          <li>
+            <b>1 issues</b>: 🚫 N/A
+          </li>
           <li>
             <b>4 issues</b>: 300€
           </li>
@@ -279,8 +306,13 @@ export function SponsoringTabsJobSponsor() {
         </ul>
       </>
       <>
-        <IssueSubscriberCount count={newsletterStats.fr.subscribersCount} />
+        <SponsoringTabsFirstSponsorHeader
+          count={newsletterStats.fr.subscribersCount}
+        />
         <ul>
+          <li>
+            <b>1 issues</b>: 🚫 N/A
+          </li>
           <li>
             <b>4 issues</b>: 300€
           </li>

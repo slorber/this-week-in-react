@@ -1,6 +1,7 @@
 import React from "react";
 import BrowserWindow from "../BrowserWindow";
 import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
+import styles from "./index.module.css";
 
 function AdExample({ type }: { type: "primary" | "secondary" }) {
   const { withBaseUrl } = useBaseUrlUtils();
@@ -24,15 +25,7 @@ function AdExample({ type }: { type: "primary" | "secondary" }) {
         marginBottom: "1rem",
       }}
     >
-      <img
-        alt="ACME Corporation logo"
-        src={acmeLogoUrl}
-        style={{
-          flex: 0,
-          maxWidth: 120,
-          marginRight: "1rem",
-        }}
-      />
+      <img alt="ACME Corporation logo" src={acmeLogoUrl} />
       {title}
     </div>
   ) : (
@@ -40,7 +33,10 @@ function AdExample({ type }: { type: "primary" | "secondary" }) {
   );
 
   return (
-    <BrowserWindow url="mailto:sponsor@thisweekinreact.com">
+    <BrowserWindow
+      url="mailto:sponsor@thisweekinreact.com"
+      className={styles.adExampleWindow}
+    >
       {header}
       <p>
         The ACME corporation offers the best React products in the world. This
@@ -84,7 +80,10 @@ export function SecondaryAdExample() {
 
 export function JobAdExample() {
   return (
-    <BrowserWindow url="mailto:sponsor@thisweekinreact.com">
+    <BrowserWindow
+      url="mailto:sponsor@thisweekinreact.com"
+      className={styles.adExampleWindow}
+    >
       <h2 style={{ flex: 1 }}>
         <a href="https://www.g2i.co/">G2i - 100% Remote JavaScript Jobs</a>
       </h2>
