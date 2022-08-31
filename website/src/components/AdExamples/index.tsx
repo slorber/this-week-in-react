@@ -81,3 +81,17 @@ export function PrimaryAdExample() {
 export function SecondaryAdExample() {
   return <AdExample type="secondary" />;
 }
+
+export function JobAdExample() {
+  return (
+    <BrowserWindow url="mailto:sponsor@thisweekinreact.com">
+      <h2 style={{ flex: 1 }}>
+        <a href="https://www.g2i.co/">G2i - 100% Remote JavaScript Jobs</a>
+      </h2>
+      The only hiring platform that puts developer health first. We connect
+      React and React Native freelancers with great companies committed to
+      improving developers’ mental, physical, and emotional health and
+      well-being.
+    </BrowserWindow>
+  );
+}
