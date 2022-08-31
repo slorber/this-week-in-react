@@ -29,11 +29,6 @@
       "permanent": true
     },
     {
-      "source": "/ih",
-      "destination": "https://www.indiehackers.com/product/french-react-newsletter",
-      "permanent": true
-    },
-    {
       "source": "/testimonials",
       "destination": "https://twitter.com/sebastienlorber/timelines/1448942785814466561",
       "permanent": true
