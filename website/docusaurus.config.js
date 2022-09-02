@@ -97,7 +97,7 @@ const config = {
             label: "Thread",
             position: "left",
           },
-          { to: "/sponsoring", label: "💸 Sponsoring", position: "left" },
+          { to: "/sponsor", label: "💸 Sponsor", position: "left" },
           { type: "localeDropdown", position: "right" },
         ],
       },
@@ -120,8 +120,8 @@ const config = {
                 to: "https://slo.im/thread",
               },
               {
-                label: "💸 Sponsoring",
-                href: "/sponsoring",
+                label: "💸 Sponsor",
+                href: "/sponsor",
               },
               {
                 label: "👥 Discord",

@@ -22,8 +22,6 @@ function TwitterThread(props) {
   return <DefaultNavbarItem {...props} label={label} />;
 }
 
-console.log("test");
-
 export default {
   ...ComponentTypes,
   "custom-twitterThread": TwitterThread,

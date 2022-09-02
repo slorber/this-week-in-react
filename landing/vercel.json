@@ -34,23 +34,23 @@
       "permanent": true
     },
     {
-      "source": "/sponsor",
-      "destination": "https://thisweekinreact.com/sponsoring",
+      "source": "/sponsoring",
+      "destination": "https://thisweekinreact.com/sponsor",
       "permanent": true
     },
     {
-      "source": "/sponsor/en",
-      "destination": "https://thisweekinreact.com/sponsoring",
+      "source": "/sponsoring/en",
+      "destination": "https://thisweekinreact.com/sponsor",
       "permanent": true
     },
     {
-      "source": "/sponsor/fr",
-      "destination": "https://thisweekinreact.com/fr/sponsoring",
+      "source": "/sponsoring/fr",
+      "destination": "https://thisweekinreact.com/fr/sponsor",
       "permanent": true
     },
     {
-      "source": "/fr/sponsor",
-      "destination": "https://thisweekinreact.com/fr/sponsoring",
+      "source": "/fr/sponsoring",
+      "destination": "https://thisweekinreact.com/fr/sponsor",
       "permanent": true
     },
     {

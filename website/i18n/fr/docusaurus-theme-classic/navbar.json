@@ -1,6 +1,6 @@
 {
-  "item.label.sponsoring": {
+  "item.label.sponsor": {
     "message": "Sponsoriser",
-    "description": "Navbar item with label sponsoring"
+    "description": "Navbar item with label sponsor"
   }
 }
