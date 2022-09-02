@@ -163,7 +163,7 @@ export function SponsoringTabsFirstSponsor() {
         />
         <ul>
           <li>
-            <b>1 issue</b>: 400€
+            <b>1 issue</b>: 450€
           </li>
           <li>
             <b>4 issues</b>: 1000€
@@ -179,7 +179,7 @@ export function SponsoringTabsFirstSponsor() {
         />
         <ul>
           <li>
-            <b>1 issue</b>: 250€
+            <b>1 issue</b>: 300€
           </li>
           <li>
             <b>4 issues</b>: 600€
@@ -221,10 +221,10 @@ export function SponsoringTabsSecondSponsor() {
             <b>1 issue</b>: 400€
           </li>
           <li>
-            <b>4 issues</b>: 1000€
+            <b>4 issues</b>: 900€
           </li>
           <li>
-            <b>8 issues</b>: 1800€
+            <b>8 issues</b>: 1600€
           </li>
         </ul>
       </>
@@ -237,10 +237,10 @@ export function SponsoringTabsSecondSponsor() {
             <b>1 issue</b>: 250€
           </li>
           <li>
-            <b>4 issues</b>: 600€
+            <b>4 issues</b>: 550€
           </li>
           <li>
-            <b>8 issues</b>: 1100€
+            <b>8 issues</b>: 1000€
           </li>
         </ul>
       </>
@@ -256,7 +256,7 @@ export function SponsoringTabsSecondSponsor() {
             <b>4 issues</b>: 500€
           </li>
           <li>
-            <b>8 issues</b>: 800€
+            <b>8 issues</b>: 850€
           </li>
         </ul>
       </>
