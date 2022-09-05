@@ -62,7 +62,7 @@ Click on any hash link above: the `CurrentPathname` component will re-render, de
 
 :::tip
 
-Whenever a hook returns data that you don't display, think about React re-renders. A tiny `useLocation()` call added at the top of a React tree could ruin your whole app's performance.
+Whenever a hook returns data that you don't even display, think about React re-renders. If you don't pay attention, a tiny `useLocation()` call added at the top of a React tree could ruin your whole app's performance.
 
 :::
 
@@ -124,8 +124,8 @@ It turns out that the browser history can also be considered as an external data
 
 React-Router expose everything we need to wire `useSyncExternalStore`:
 
-- access the browser history with [`useHistory`](https://v5.reactrouter.com/web/api/Hooks/usehistory)
-- subscribe for history updates with [`history.listen()`](https://github.com/remix-run/history/blob/main/docs/api-reference.md#history.listen)
+- access the browser history with [`useHistory()`](https://v5.reactrouter.com/web/api/Hooks/usehistory)
+- subscribe for history updates with [`history.listen(callback)`](https://github.com/remix-run/history/blob/main/docs/api-reference.md#history.listen)
 - access a snapshot of the current location with [`history.location`](https://github.com/remix-run/history/blob/main/docs/api-reference.md#historylocation)
 
 :::caution
