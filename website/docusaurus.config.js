@@ -17,6 +17,8 @@ const config = {
   onBrokenMarkdownLinks: "warn",
   favicon: "/favicon/favicon.ico",
 
+  themes: ["@docusaurus/theme-live-codeblock"],
+
   i18n: {
     defaultLocale: "en",
     locales: ["en", "fr"],
