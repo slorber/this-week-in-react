@@ -14,7 +14,11 @@ In this interactive article, I want to present a problem you might already have:
 
 <!-- truncate -->
 
-import { App, AppFixed, ScrollApp } from "./useSyncExternalStoreDemos";
+import {
+  App,
+  AppFixed,
+  ScrollApp,
+} from "./useSyncExternalStoreDemos";
 
 ## Over-returning hooks
 
@@ -139,20 +143,26 @@ The implementation of `useHistorySelector()` relatively simple:
 ```tsx
 function useHistorySelector(selector) {
   const history = useHistory();
-  return useSyncExternalStore(history.listen, () => selector(history));
+  return useSyncExternalStore(history.listen, () =>
+    selector(history)
+  );
 }
 ```
 
-Let's use this new `useHistorySelector` hook in our app:
+Let's use it in our app:
 
 ```tsx
 function CurrentPathname() {
-  const pathname = useHistorySelector((history) => history.location.pathname);
+  const pathname = useHistorySelector(
+    (history) => history.location.pathname
+  );
   return <div>{pathname}</div>;
 }
 
 function CurrentHash() {
-  const hash = useHistorySelector((history) => history.location.hash);
+  const hash = useHistorySelector(
+    (history) => history.location.hash
+  );
   return <div>{hash}</div>;
 }
 ```
@@ -161,23 +171,26 @@ function CurrentHash() {
 
 Now, when you click on a hash link above, the `CurrentPathname` component will **not re-render** anymore!
 
-## Other use-cases
+## Another example: `scrollY`
 
 There are so many external data sources that we can subscribe to, and implementing your own selector system on top might enable you to optimize React re-renders.
 
 For example, let's consider we want to use the `scrollY` position of a page. We can implement this custom React hook:
 
 ```tsx
-function useScrollY(selector = (id) => id) {
-  const subscribe = useCallback((onStoreChange) => {
-    window.addEventListener("scroll", onStoreChange);
-    return () => window.removeEventListener("scroll", onStoreChange);
-  }, []);
+// A constant/memoized fn prevents unsubscribe/resubscribe
+// In practice: not a big deal
+function subscribe(onStoreChange) {
+  window.addEventListener("scroll", onStoreChange);
+  return () =>
+    window.removeEventListener("scroll", onStoreChange);
+}
 
+function useScrollY(selector = (id) => id) {
   return useSyncExternalStore(
     subscribe,
     () => selector(window.scrollY),
-    () => undefined // Can't read scroll positiuon on the server
+    () => undefined // Can't read scrollY on the server
   );
 }
 ```
@@ -192,7 +205,9 @@ function ScrollY() {
 
 function ScrollYRounded() {
   const to = 100;
-  const scrollYRounded = useScrollY((y) => Math.round(y / to) * to);
+  const scrollYRounded = useScrollY(
+    (y) => Math.round(y / to) * to
+  );
   return <div>{scrollYRounded}</div>;
 }
 ```
@@ -201,18 +216,22 @@ function ScrollYRounded() {
 
 Scroll the page and see how the components above re-render? One is re-rendering less than the other!
 
+:::caution
+
+When you don't need a `scrollY` pixel precision level, returning a wide range value such as `scrollY` can also be considered as over-returning. Consider returning a narrower value.
+
+:::
+
 :::tip
 
-You can also optimize React re-renders by **not over-returning**. But returning a wide range value such as `scrollY` is also a form of over-returning. If you don't need a `1px` scroll precision level, consider returning a narrower value, such as a boolean or an enum/union type.
+For example: a `useResponsiveBreakpoint()` hook that only returns a limited set of values (`small`, `medium` or `large`) will be more optimized than a `useViewportWidth()` hook.
 
-For example: a `useResponsiveBreakpoint()` hook that only returns a limited set of values (`small`, `medium` or `large`) will be more optimized than `useViewportWidth()` returning the current.
-
-If your React component only handles `large` screens differently, consider creating an even narrower `useIsLargeScreen()` hook that does not trigger a re-render on a `small` -> `medium` screen resize.
+If your React component only handles `large` screens differently, consider creating an even narrower `useIsLargeScreen()` hook returning a boolean value.
 
 :::
 
 ## Conclusion
 
-I hope this article convinced you to take a second look at `useSyncExternalStore()`. I feel it is currently underused in the React ecosystem, and deserves a bit more love. There are a lot of external data sources that you can subscribe to.
+I hope this article convinced you to take a second look at `useSyncExternalStore()`. I feel it is currently underused in the React ecosystem, and deserves a bit more love. There are many external data sources that you can subscribe to.
 
-If you still haven't upgraded to React 18, there's a npm [use-sync-external-store](https://www.npmjs.com/package/use-sync-external-store) shim that you can already use today in older versions.
+If you still haven't upgraded to React 18, there's a npm [use-sync-external-store](https://www.npmjs.com/package/use-sync-external-store) shim that you can already use today in older versions. There is also a `use-sync-external-store/with-selector` export in case you need to return a memoized non-primitive value.
