@@ -146,17 +146,17 @@ function ScrollY() {
   return <RenderBox title="ScrollY">{scrollY}</RenderBox>;
 }
 
-function ScrollYRounded() {
+function ScrollYFloored() {
   const to = 100;
-  const scrollYRounded = useScrollY((y) => Math.round(y / to) * to);
-  return <RenderBox title="ScrollY Rounded">{scrollYRounded}</RenderBox>;
+  const scrollYFloored = useScrollY((y) => Math.floor(y / to) * to);
+  return <RenderBox title="ScrollY Floored">{scrollYFloored}</RenderBox>;
 }
 
 export const ScrollApp = React.memo(function App() {
   return (
     <BrowserWindow>
       <ScrollY />
-      <ScrollYRounded />
+      <ScrollYFloored />
     </BrowserWindow>
   );
 });

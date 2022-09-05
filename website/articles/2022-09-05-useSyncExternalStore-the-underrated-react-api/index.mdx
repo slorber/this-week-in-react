@@ -179,7 +179,7 @@ For example, let's consider we want to use the `scrollY` position of a page. We 
 
 ```tsx
 // A constant/memoized fn prevents unsubscribe/resubscribe
-// In practice: not a big deal
+// In practice it is not a big deal
 function subscribe(onStoreChange) {
   window.addEventListener("scroll", onStoreChange);
   return () =>
@@ -195,7 +195,7 @@ function useScrollY(selector = (id) => id) {
 }
 ```
 
-Now we can use this hook with or without a selector:
+We can now use this hook with an optional selector:
 
 ```tsx
 function ScrollY() {
@@ -203,12 +203,12 @@ function ScrollY() {
   return <div>{scrollY}</div>;
 }
 
-function ScrollYRounded() {
+function ScrollYFloored() {
   const to = 100;
-  const scrollYRounded = useScrollY(
-    (y) => Math.round(y / to) * to
+  const scrollYFloored = useScrollY(
+    (y) => Math.floor(y / to) * to
   );
-  return <div>{scrollYRounded}</div>;
+  return <div>{scrollYFloored}</div>;
 }
 ```
 
@@ -216,17 +216,13 @@ function ScrollYRounded() {
 
 Scroll the page and see how the components above re-render? One is re-rendering less than the other!
 
-:::caution
+:::info
 
-When you don't need a `scrollY` pixel precision level, returning a wide range value such as `scrollY` can also be considered as over-returning. Consider returning a narrower value.
-
-:::
-
-:::tip
+When you don't need a `scrollY` 1 pixel precision level, returning a wide range value such as `scrollY` can also be considered as over-returning. Consider returning a narrower value.
 
 For example: a `useResponsiveBreakpoint()` hook that only returns a limited set of values (`small`, `medium` or `large`) will be more optimized than a `useViewportWidth()` hook.
 
-If your React component only handles `large` screens differently, consider creating an even narrower `useIsLargeScreen()` hook returning a boolean value.
+If a React component only handles `large` screens differently, consider creating an even narrower `useIsLargeScreen()` hook returning a boolean value.
 
 :::
 
