@@ -1,4 +1,7 @@
-
+:root {
+    --render-box-border: solid var(--ifm-color-emphasis-300) 2px;
+    --render-box-border-radius: 5px;
+}
 
 .rerender {
     animation: rerender 600ms linear forwards;
@@ -11,12 +14,31 @@
     color: lime;
 }
 
-.component {
+.renderBox {
     animation: blink 600ms ease-out forwards;
+    position: relative;
+    border: var(--render-box-border);
+    border-radius: var(--render-box-border-radius);
+    box-shadow: var(--ifm-global-shadow-md);
+    margin-bottom: 1rem;
+    overflow: hidden;
 }
 
-[data-theme="dark"] .component {
+.renderBox {
+    animation: blink 600ms ease-out forwards;
+}
+[data-theme="dark"] .renderBox {
     animation: blinkDark 600ms ease-out forwards;
+}
+
+.renderTitle {
+    font-size: 20px;
+    font-weight: bold;
+    border-width: 2px;
+    border-bottom: var(--render-box-border);
+    border-right: var(--render-box-border);
+    border-bottom-right-radius: var(--render-box-border-radius);
+    padding: 0.4rem;
 }
 
 @keyframes rerender {

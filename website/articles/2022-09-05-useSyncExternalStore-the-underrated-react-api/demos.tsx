@@ -3,8 +3,7 @@ import { useSyncExternalStore as useSyncExternalStoreShim } from "use-sync-exter
 import { useLocation, useHistory } from "@docusaurus/router";
 import Link from "@docusaurus/Link";
 import BrowserWindow from "@site/src/components/BrowserWindow";
-import styles from "./index.module.css";
-import clsx from "clsx";
+import RenderBox from "@site/src/components/RenderBox";
 
 function useSyncExternalStore<Snapshot>(
   subscribe: (onStoreChange: () => void) => () => void,
@@ -12,59 +11,6 @@ function useSyncExternalStore<Snapshot>(
   getServerSnapshot?: () => Snapshot
 ): Snapshot {
   return useSyncExternalStoreShim(subscribe, getSnapshot, getServerSnapshot);
-}
-
-function RenderIndicator() {
-  return <span className={clsx(styles.rerender)}>Render</span>;
-}
-
-function RenderBox({
-  title,
-  children,
-}: {
-  title: string;
-  children: ReactNode;
-}) {
-  const renderKey = Math.random();
-
-  const border = "solid grey 2px";
-  const borderRadius = 5;
-
-  return (
-    <div
-      key={renderKey}
-      className={clsx(
-        styles.component
-        // "bg-gray-900 rounded text-white p-4 border-2 border-gray-400 relative mt-4"
-      )}
-      style={{
-        position: "relative",
-        border,
-        borderRadius: 5,
-        boxShadow: "var(--ifm-global-shadow-md)",
-        marginBottom: "1rem",
-        overflow: "hidden",
-      }}
-    >
-      <div>
-        <span
-          style={{
-            fontSize: 24,
-            fontWeight: "bold",
-            borderWidth: 2,
-            borderBottom: border,
-            borderRight: border,
-            borderBottomRightRadius: borderRadius,
-            padding: "0.4rem",
-          }}
-        >
-          {title}
-        </span>
-        <RenderIndicator />
-      </div>
-      <div style={{ marginTop: "0.5rem", padding: "0.5rem" }}>{children}</div>
-    </div>
-  );
 }
 
 function CurrentPathname() {
