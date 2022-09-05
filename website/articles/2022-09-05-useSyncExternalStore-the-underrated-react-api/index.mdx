@@ -181,16 +181,19 @@ For example, let's consider we want to use the `scrollY` position of a page. We 
 // A memoized constant fn prevents unsubscribe/resubscribe
 // In practice it is not a big deal
 function subscribe(onStoreChange) {
-  window.addEventListener("scroll", onStoreChange);
+  global.window?.addEventListener("scroll", onStoreChange);
   return () =>
-    window.removeEventListener("scroll", onStoreChange);
+    global.window?.removeEventListener(
+      "scroll",
+      onStoreChange
+    );
 }
 
 function useScrollY(selector = (id) => id) {
   return useSyncExternalStore(
     subscribe,
-    () => selector(window.scrollY),
-    () => undefined // Can't read scrollY on the server
+    () => selector(global.window?.scrollY),
+    () => undefined
   );
 }
 ```
@@ -205,8 +208,8 @@ function ScrollY() {
 
 function ScrollYFloored() {
   const to = 100;
-  const scrollYFloored = useScrollY(
-    (y) => Math.floor(y / to) * to
+  const scrollYFloored = useScrollY((y) =>
+    y ? Math.floor(y / to) * to : undefined
   );
   return <div>{scrollYFloored}</div>;
 }

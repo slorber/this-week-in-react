@@ -128,28 +128,34 @@ export const AppFixed = React.memo(function App() {
   );
 });
 
-function useScrollY(selector = (id) => id) {
-  const subscribe = useCallback((onStoreChange) => {
-    window.addEventListener("scroll", onStoreChange);
-    return () => window.removeEventListener("scroll", onStoreChange);
-  }, []);
+function subscribe(onStoreChange) {
+  global.window?.addEventListener("scroll", onStoreChange);
+  return () => global.window?.removeEventListener("scroll", onStoreChange);
+}
 
+function useScrollY(selector = (id) => id) {
   return useSyncExternalStore(
     subscribe,
-    () => selector(window.scrollY),
-    () => undefined // Can't read scroll positiuon on the server
+    () => selector(global.window?.scrollY),
+    () => undefined
   );
 }
 
 function ScrollY() {
   const scrollY = useScrollY();
-  return <RenderBox title="ScrollY">{scrollY}</RenderBox>;
+  return <RenderBox title="ScrollY">{scrollY ?? "undefined"}</RenderBox>;
 }
 
 function ScrollYFloored() {
   const to = 100;
-  const scrollYFloored = useScrollY((y) => Math.floor(y / to) * to);
-  return <RenderBox title="ScrollY Floored">{scrollYFloored}</RenderBox>;
+  const scrollYFloored = useScrollY((y) =>
+    y ? Math.floor(y / to) * to : undefined
+  );
+  return (
+    <RenderBox title="ScrollY Floored">
+      {scrollYFloored ?? "undefined"}
+    </RenderBox>
+  );
 }
 
 export const ScrollApp = React.memo(function App() {
