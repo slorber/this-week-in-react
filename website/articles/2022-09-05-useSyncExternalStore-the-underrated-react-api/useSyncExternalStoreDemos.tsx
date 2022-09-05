@@ -105,32 +105,58 @@ type History = ReturnType<typeof useHistory>;
 
 function useHistorySelector<Result>(selector: (history: History) => Result) {
   const history = useHistory();
-
-  // Memoizing the callback is important, otherwise React re-subscribes
-  const subscribe = useCallback(
-    (onStoreChange) => {
-      // Notify React when external store changes
-      const unsubscribe = history.listen(onStoreChange);
-      // Give React a way to unsubscribe
-      return () => unsubscribe();
-    },
-    [history]
-  );
-
-  return useSyncExternalStore(subscribe, () => selector(history));
+  return useSyncExternalStore(history.listen, () => selector(history));
 }
 
-function CurrentPathnameFixed() {
+function CurrentPathnameOptimized() {
   const pathname = useHistorySelector((history) => history.location.pathname);
   return <RenderBox title="Pathname">{pathname}</RenderBox>;
+}
+
+function CurrentHashOptimized() {
+  const hash = useHistorySelector((history) => history.location.hash);
+  return <RenderBox title="Hash">{hash || "undefined"}</RenderBox>;
 }
 
 export const AppFixed = React.memo(function App() {
   return (
     <BrowserWindow>
-      <CurrentPathnameFixed />
-      <CurrentHash />
+      <CurrentPathnameOptimized />
+      <CurrentHashOptimized />
       <Links />
+    </BrowserWindow>
+  );
+});
+
+function useScrollY(selector = (id) => id) {
+  const subscribe = useCallback((onStoreChange) => {
+    window.addEventListener("scroll", onStoreChange);
+    return () => window.removeEventListener("scroll", onStoreChange);
+  }, []);
+
+  return useSyncExternalStore(
+    subscribe,
+    () => selector(window.scrollY),
+    () => undefined // Can't read scroll positiuon on the server
+  );
+}
+
+function ScrollY() {
+  const scrollY = useScrollY();
+  return <RenderBox title="ScrollY">{scrollY}</RenderBox>;
+}
+
+function ScrollYRounded() {
+  const to = 100;
+  const scrollYRounded = useScrollY((y) => Math.round(y / to) * to);
+  return <RenderBox title="ScrollY Rounded">{scrollYRounded}</RenderBox>;
+}
+
+export const ScrollApp = React.memo(function App() {
+  return (
+    <BrowserWindow>
+      <ScrollY />
+      <ScrollYRounded />
     </BrowserWindow>
   );
 });
