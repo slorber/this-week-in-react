@@ -12,18 +12,23 @@ const sample = `function subscribe(callback) {
 }
 
 function useOnlineStatus() {
-  // ✅ Good: Subscribing to an external store with a built-in Hook
   return useSyncExternalStore(
-    subscribe, // React won't resubscribe for as long as you pass the same function
-    () => navigator.onLine, // How to get the value on the client
-    () => true // How to get the value on the server
+    subscribe,
+    () => navigator.onLine,
+    () => true
   );
 }
 
 function ChatIndicator() {
   const isOnline = useOnlineStatus();
   // ...
-}`;
+}
+
+function useSyncExternalStore<Snapshot>(
+  subscribe: (onStoreChange: () => void) => () => void,
+  getSnapshot: () => Snapshot,
+  getServerSnapshot?: () => Snapshot
+): Snapshot;`;
 
 export default function EmailCodeBlock(props: any) {
   const ref = useRef<HTMLDivElement>();
@@ -59,7 +64,7 @@ export default function EmailCodeBlock(props: any) {
     });
 
     const innerHTML = pre.innerHTML;
-    const emailHTML = `<pre style="background-color: #f6f8fa; font-size: ${fontSize}px; line-height: ${lineHeight}px; border-radius: 3px; padding: 3px; margin: 0; border: 0;">
+    const emailHTML = `<pre style="background-color: #f6f8fa; font-size: ${fontSize}px; line-height: ${lineHeight}px; border-radius: 5px; padding: 5px; margin: 0; border: 0;">
 <code style="font-size: ${fontSize}px; line-height: ${lineHeight}px;">${innerHTML}</code></pre>`;
     console.log({ emailHTML });
     await navigator.clipboard.writeText(emailHTML);
