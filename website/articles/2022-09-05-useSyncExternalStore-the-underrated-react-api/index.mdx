@@ -6,11 +6,11 @@ authors: [slorber]
 
 # useSyncExternalStore - The underrated React API
 
-You might have heard of [`useSyncExternalStore()`](https://reactjs.org/docs/hooks-reference.html#usesyncexternalstore), a new React 18 hook to **subscribe to external data sources**. This hook is often used internally by state management libraries - like [Redux](https://github.com/reduxjs/react-redux/pull/1808) - to implement a **selector system** that is [compatible with React 18 Concurrent features](https://github.com/reactwg/react-18/discussions/70).
+You might have heard of [`useSyncExternalStore()`](https://reactjs.org/docs/hooks-reference.html#usesyncexternalstore), a new React 18 hook to **subscribe to external data sources**. It is often used internally by state management libraries - like [Redux](https://github.com/reduxjs/react-redux/pull/1808) - to implement a **selector system**.
 
 But what about using `useSyncExternalStore()` in your own application code?
 
-In this interactive article, I want to you a problem you might already have: **over-returning React hooks triggering useless React re-renders**. We will see how `useSyncExternalStore()` can be a good solution.
+In this interactive article, I want to present you a problem: **over-returning React hooks triggering useless React re-renders**. We will see how `useSyncExternalStore()` can be a good fix.
 
 <!-- truncate -->
 
