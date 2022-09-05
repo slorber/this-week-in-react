@@ -1,0 +1,61 @@
+---
+slug: useSyncExternalStore-the-underrated-react-api
+title: useSyncExternalStore - The Underrated React API
+authors: [slorber]
+---
+
+# useSyncExternalStore - The Underrated React API
+
+Blog post intro
+
+<!-- truncate -->
+
+import { App, AppFixed } from "./useSyncExternalStoreDemos";
+
+## Problem
+
+Let's consider an app using React-Router:
+
+```tsx
+function CurrentPathname() {
+  const { pathname } = useLocation();
+  return <div>{pathname}</div>;
+}
+
+function CurrentHash() {
+  const { hash } = useLocation();
+  return <div>{hash}</div>;
+}
+
+function Links() {
+  return (
+    <div>
+      <Link to="#link1">#link1</Link>
+      <Link to="#link2">#link2</Link>
+      <Link to="#link3">#link3</Link>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <div>
+      <CurrentPathname />
+      <CurrentHash />
+      <Links />
+    </div>
+  );
+}
+```
+
+The problem might not be obvious at first,
+
+<App />
+
+## Official doc
+
+https://beta.reactjs.org/learn/you-might-not-need-an-effect#subscribing-to-an-external-store
+
+## Solution
+
+<AppFixed />

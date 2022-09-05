@@ -1,0 +1,58 @@
+
+
+.rerender {
+    animation: rerender 600ms linear forwards;
+    font-weight: bold;
+    margin-left: 5px;
+    color: green;
+}
+
+[data-theme="dark"] .rerender {
+    color: lime;
+}
+
+.component {
+    animation: blink 600ms ease-out forwards;
+}
+
+[data-theme="dark"] .component {
+    animation: blinkDark 600ms ease-out forwards;
+}
+
+@keyframes rerender {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(2px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-2px);
+    }
+}
+
+@keyframes blink {
+    0% {
+        background-color: rgba(0, 0, 0, 0.03);
+    }
+    50% {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.03);
+    }
+}
+
+@keyframes blinkDark {
+    0% {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+    50% {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
