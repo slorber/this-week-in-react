@@ -6,11 +6,11 @@ authors: [slorber]
 
 # useSyncExternalStore - The underrated React API
 
-You might have heard of [`useSyncExternalStore()`](https://reactjs.org/docs/hooks-reference.html#usesyncexternalstore), a new React 18 hook to **subscribe to external data sources**. You might already know that this hook is used internally by state management libraries - like [Redux](https://github.com/reduxjs/react-redux/pull/1808) - to implement a **selector system** that is [compatible with **React 18 Concurrent features**](https://github.com/reactwg/react-18/discussions/70).
+You might have heard of [`useSyncExternalStore()`](https://reactjs.org/docs/hooks-reference.html#usesyncexternalstore), a new React 18 hook to **subscribe to external data sources**. This hook is often used internally by state management libraries - like [Redux](https://github.com/reduxjs/react-redux/pull/1808) - to implement a **selector system** that is [compatible with React 18 Concurrent features](https://github.com/reactwg/react-18/discussions/70).
 
-But what about **using `useSyncExternalStore()` in your own application code**?
+But what about using `useSyncExternalStore()` in your own application code?
 
-In this interactive article, I want to present a problem you might already have: **over-returning React hooks** triggering useless React re-renders.
+In this interactive article, I want to you a problem you might already have: **over-returning React hooks triggering useless React re-renders**. We will see how `useSyncExternalStore()` can be a good solution.
 
 <!-- truncate -->
 
@@ -18,11 +18,11 @@ import { App, AppFixed, ScrollApp } from "./demos";
 
 ## Over-returning hooks
 
-Let's illustrate the problem of over-returning React hooks with the [`useLocation()`](https://reactrouter.com/en/main/hooks/use-location) hook from React-Router.
+Let's illustrate the problem with [`useLocation()`](https://reactrouter.com/en/main/hooks/use-location) from React-Router.
 
-This hook returns an object with a lot of attributes (`pathname`, `hash`, `search`...), and you might actually not read all of them. Just calling the hook will trigger re-renders when any of these attributes is updated.
+This hook returns an object with many attributes (`pathname`, `hash`, `search`...), but you might not read all of them. Just calling the hook will trigger re-renders when any of these attributes is updated.
 
-Let's consider this React-Router app:
+Let's consider this app:
 
 ```tsx
 function CurrentPathname() {
@@ -58,17 +58,17 @@ function App() {
 
 <App />
 
-Click on any hash link above: the `CurrentPathname` component will re-render, despite not even reading the `hash` attribute.
+On any hash link click, the `CurrentPathname` component will re-render, even if it's not even using the `hash` attribute 😅.
 
 :::tip
 
-Whenever a hook returns data that you don't even display, think about React re-renders. If you don't pay attention, a tiny `useLocation()` call added at the top of a React tree could ruin your whole app's performance.
+Whenever a hook returns data that you don't display, think about React re-renders. If you don't pay attention, a tiny `useLocation()` call added at the top of a React tree could harm your app's performance.
 
 :::
 
 :::info
 
-The goal is not to criticize React-Router, but rather to illustrate the problem. `useLocation()` was just a good pragmatic candidate to create an interactive blog post. Other internal APIs and third-party libraries might also over-return.
+The goal is not to criticize React-Router, but rather to illustrate the problem. `useLocation()` is just a good pragmatic candidate to create this interactive blog post. Your own React hooks and other third-party libraries might also over-return.
 
 :::
 
@@ -91,7 +91,7 @@ function useSyncExternalStore<Snapshot>(
 ): Snapshot;
 ```
 
-This might feel a bit abstract. This [beta doc page](https://beta.reactjs.org/learn/you-might-not-need-an-effect#subscribing-to-an-external-store) gives a good example:
+This feels a bit abstract. This [beta doc page](https://beta.reactjs.org/learn/you-might-not-need-an-effect#subscribing-to-an-external-store) gives a good example:
 
 ```tsx
 function subscribe(callback) {
