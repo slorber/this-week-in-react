@@ -28,14 +28,18 @@ function TwitterThreadCTA({ twitterThreadUrl }: { twitterThreadUrl: string }) {
 }
 
 export default function ContentWrapper(props) {
-  const { frontMatter } = useBlogPost();
+  const { frontMatter, isBlogPostPage } = useBlogPost();
   return (
     <>
       <Content {...props} />
-      {frontMatter.twitterThreadUrl && (
-        <TwitterThreadCTA twitterThreadUrl={frontMatter.twitterThreadUrl} />
+      {isBlogPostPage && (
+        <>
+          {frontMatter.twitterThreadUrl && (
+            <TwitterThreadCTA twitterThreadUrl={frontMatter.twitterThreadUrl} />
+          )}
+          <SubscribeFormEmbed />
+        </>
       )}
-      <SubscribeFormEmbed />
     </>
   );
 }
