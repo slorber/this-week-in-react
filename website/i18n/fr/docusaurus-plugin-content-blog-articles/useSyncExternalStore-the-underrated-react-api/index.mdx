@@ -11,7 +11,7 @@ Tu as peut-être entendu parler de [`useSyncExternalStore()`](https://reactjs.or
 
 Mais pourquoi pas utiliser `useSyncExternalStore()` dans ton propre code?
 
-Dans cet article interactif, je veux te présenter un problème : **les hooks React retournent trop et déclenchant des re-renders inutiles**. Nous allons voir comment `useSyncExternalStore()` peut être une bonne solution.
+Dans cet article interactif, je veux te présenter un problème : **les hooks React retournent qui trop et déclenchant des re-renders inutiles**. Nous allons voir comment `useSyncExternalStore()` peut être une bonne solution.
 
 <!-- truncate -->
 
@@ -167,7 +167,7 @@ function CurrentHash() {
 
 Maintenant, quand on clique sur un lien hash, le composant `CurrentPathname` ne sera **plus re-rendu** !
 
-## Another example: `scrollY`
+## Un autre exemple: `scrollY`
 
 Il existe un grand nombre de sources de données externes auxquelles nous pouvons nous abonner, pour lesquelles l'implémentation d'un système de sélection pourrait te permettre d'optimiser les rendus de React.
 
