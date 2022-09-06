@@ -9,7 +9,7 @@
   },
   "redirects": [
     {
-      "source": "/",
+      "source": "/LEGACY_REDIRECT_TODO_DELETE",
       "destination": "https://www.getrevue.co/profile/thisweekinreact",
       "permanent": false
     },
