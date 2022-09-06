@@ -1,22 +1,27 @@
 ---
 slug: useSyncExternalStore-the-underrated-react-api
-title: useSyncExternalStore - The underrated React API
+title: useSyncExternalStore - L'API React sous-estimée
 authors: [slorber]
+date: 2022-09-06
 ---
 
-# useSyncExternalStore - The underrated React API
+# useSyncExternalStore - L'API React sous-estimée
 
-You might have heard of [`useSyncExternalStore()`](https://reactjs.org/docs/hooks-reference.html#usesyncexternalstore), a new React 18 hook to **subscribe to external data sources**. It is often used internally by state management libraries - like [Redux](https://github.com/reduxjs/react-redux/pull/1808) - to implement a **selector system**.
+Tu as peut-être entendu parler de [`useSyncExternalStore()`](https://reactjs.org/docs/hooks-reference.html#usesyncexternalstore), un nouveau hook de React 18 permettant de s'abonner à des **sources de données externes**. Il est souvent utilisé en interne par les bibliothèques de gestion d'état - comme [Redux](https://github.com/reduxjs/react-redux/pull/1808) - pour mettre en œuvre un **système de sélecteur**.
 
-But what about using `useSyncExternalStore()` in your own application code?
+Mais pourquoi pas utiliser `useSyncExternalStore()` dans ton propre code?
 
-In this interactive article, I want to present you a problem: **over-returning React hooks triggering useless React re-renders**. We will see how `useSyncExternalStore()` can be a good fix.
+Dans cet article interactif, je veux vous présenter un problème : **les hooks React retournent trop et déclenchant des re-renders inutiles**. Nous allons voir comment `useSyncExternalStore()` peut être une bonne solution.
 
 <!-- truncate -->
 
 <SubscribeFormEmbed />
 
-import { App, AppFixed, ScrollApp } from "./demos";
+import {
+  App,
+  AppFixed,
+  ScrollApp,
+} from "@site/articles/useSyncExternalStore-the-underrated-react-api/demos";
 
 ## Over-returning hooks
 
@@ -140,9 +145,7 @@ The implementation of `useHistorySelector()` relatively simple:
 ```tsx
 function useHistorySelector(selector) {
   const history = useHistory();
-  return useSyncExternalStore(history.listen, () =>
-    selector(history)
-  );
+  return useSyncExternalStore(history.listen, () => selector(history));
 }
 ```
 
@@ -150,16 +153,12 @@ Let's use it in our app:
 
 ```tsx
 function CurrentPathname() {
-  const pathname = useHistorySelector(
-    (history) => history.location.pathname
-  );
+  const pathname = useHistorySelector((history) => history.location.pathname);
   return <div>{pathname}</div>;
 }
 
 function CurrentHash() {
-  const hash = useHistorySelector(
-    (history) => history.location.hash
-  );
+  const hash = useHistorySelector((history) => history.location.hash);
   return <div>{hash}</div>;
 }
 ```
@@ -179,11 +178,7 @@ For example, let's consider we want to use the `scrollY` position of a page. We 
 // In practice it is not a big deal
 function subscribe(onStoreChange) {
   global.window?.addEventListener("scroll", onStoreChange);
-  return () =>
-    global.window?.removeEventListener(
-      "scroll",
-      onStoreChange
-    );
+  return () => global.window?.removeEventListener("scroll", onStoreChange);
 }
 
 function useScrollY(selector = (id) => id) {
