@@ -276,7 +276,7 @@ export function SponsoringTabsJobSponsor() {
             <b>1 issues</b>: 🚫 N/A
           </li>
           <li>
-            <b>4 issues</b>: 500€
+            <b>4 issues</b>: 600€
           </li>
           <li>
             <b>8 issues</b>: 800€
@@ -295,7 +295,7 @@ export function SponsoringTabsJobSponsor() {
             <b>1 issues</b>: 🚫 N/A
           </li>
           <li>
-            <b>4 issues</b>: 300€
+            <b>4 issues</b>: 350€
           </li>
           <li>
             <b>8 issues</b>: 500€
@@ -314,7 +314,7 @@ export function SponsoringTabsJobSponsor() {
             <b>1 issues</b>: 🚫 N/A
           </li>
           <li>
-            <b>4 issues</b>: 300€
+            <b>4 issues</b>: 350€
           </li>
           <li>
             <b>8 issues</b>: 500€
