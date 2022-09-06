@@ -12,7 +12,7 @@ Tu as peut-être entendu parler de [`useSyncExternalStore()`](https://reactjs.or
 
 Mais pourquoi pas utiliser `useSyncExternalStore()` dans ton propre code?
 
-Dans cet article interactif, je veux te présenter un problème : **les hooks React retournent qui trop et déclenchant des re-renders inutiles**. Nous allons voir comment `useSyncExternalStore()` peut être une bonne solution.
+Dans cet article interactif, je souhaite te présenter un problème : **les hooks React retournent qui trop et déclenchant des re-renders inutiles**. On va aussi voir comment `useSyncExternalStore()` peut être une bonne solution.
 
 <!-- truncate -->
 
@@ -146,7 +146,9 @@ L'implémentation de `useHistorySelector()` est relativement simple:
 ```tsx
 function useHistorySelector(selector) {
   const history = useHistory();
-  return useSyncExternalStore(history.listen, () => selector(history));
+  return useSyncExternalStore(history.listen, () =>
+    selector(history)
+  );
 }
 ```
 
@@ -154,12 +156,16 @@ Utilisons-le dans notre application:
 
 ```tsx
 function CurrentPathname() {
-  const pathname = useHistorySelector((history) => history.location.pathname);
+  const pathname = useHistorySelector(
+    (history) => history.location.pathname
+  );
   return <div>{pathname}</div>;
 }
 
 function CurrentHash() {
-  const hash = useHistorySelector((history) => history.location.hash);
+  const hash = useHistorySelector(
+    (history) => history.location.hash
+  );
   return <div>{hash}</div>;
 }
 ```
@@ -178,8 +184,15 @@ Par exemple, supposons que nous voulons utiliser la position `scrollY` d'une pag
 // Une fonction constante permet d'éviter la re-souscription
 // En pratique, c'est souvent pas un problème
 function subscribe(onStoreChange) {
-  global.window?.addEventListener("scroll", onStoreChange);
-  return () => global.window?.removeEventListener("scroll", onStoreChange);
+  global.window?.addEventListener(
+    "scroll",
+    onStoreChange
+  );
+  return () =>
+    global.window?.removeEventListener(
+      "scroll",
+      onStoreChange
+    );
 }
 
 function useScrollY(selector = (id) => id) {

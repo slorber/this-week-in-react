@@ -15,12 +15,12 @@ function useSyncExternalStore<Snapshot>(
 
 function CurrentPathname() {
   const { pathname } = useLocation();
-  return <RenderBox title="Pathname">{pathname}</RenderBox>;
+  return <RenderBox title="CurrentPathname">{pathname}</RenderBox>;
 }
 
 function CurrentHash() {
   const { hash } = useLocation();
-  return <RenderBox title="Hash">{hash || "undefined"}</RenderBox>;
+  return <RenderBox title="CurrentHash">{hash || "undefined"}</RenderBox>;
 }
 
 function Links() {
@@ -56,12 +56,12 @@ function useHistorySelector<Result>(selector: (history: History) => Result) {
 
 function CurrentPathnameOptimized() {
   const pathname = useHistorySelector((history) => history.location.pathname);
-  return <RenderBox title="Pathname">{pathname}</RenderBox>;
+  return <RenderBox title="CurrentPathname">{pathname}</RenderBox>;
 }
 
 function CurrentHashOptimized() {
   const hash = useHistorySelector((history) => history.location.hash);
-  return <RenderBox title="Hash">{hash || "undefined"}</RenderBox>;
+  return <RenderBox title="CurrentHash">{hash || "undefined"}</RenderBox>;
 }
 
 export const AppFixed = React.memo(function App() {

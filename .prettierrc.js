@@ -6,5 +6,11 @@ module.exports = {
         printWidth: 60,
       },
     },
+    {
+      files: "website/i18n/**/*.{md,mdx}",
+      options: {
+        printWidth: 60,
+      },
+    },
   ],
 };
