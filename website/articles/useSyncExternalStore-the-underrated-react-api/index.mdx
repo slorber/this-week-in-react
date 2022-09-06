@@ -75,7 +75,7 @@ Whenever a hook returns data that you don't display, think about React re-render
 
 :::info
 
-The goal is not to criticize React-Router, but rather to illustrate the problem. `useLocation()` is just a good pragmatic candidate to create this interactive blog post. Your own React hooks and other third-party libraries might also over-return.
+The goal is not to criticize React-Router, but rather to illustrate the problem. `useLocation()` is just a good pragmatic candidate to create this interactive article. Your own React hooks and other third-party libraries might also over-return.
 
 :::
 
@@ -227,13 +227,13 @@ When you don't need a `scrollY` 1 pixel precision level, returning a wide range 
 
 For example: a `useResponsiveBreakpoint()` hook that only returns a limited set of values (`small`, `medium` or `large`) will be more optimized than a `useViewportWidth()` hook.
 
-If a React component only handles `large` screens differently, consider creating an even narrower `useIsLargeScreen()` hook returning a boolean value.
+If a React component only handles `large` screens differently, you can create an even narrower `useIsLargeScreen()` hook returning a boolean.
 
 :::
 
 ## Conclusion
 
-I hope this article convinced you to take a second look at `useSyncExternalStore()`. I feel it is currently underused in the React ecosystem, and deserves a bit more love. There are many external data sources that you can subscribe to.
+I hope this article convinced you to take a second look at `useSyncExternalStore()`. I feelthis hook is currently underused in the React ecosystem, and deserves a bit more attention. There are many external data sources that you can subscribe to.
 
 If you still haven't upgraded to React 18, there's a npm [use-sync-external-store](https://www.npmjs.com/package/use-sync-external-store) shim that you can already use today in older versions. There is also a `use-sync-external-store/with-selector` export in case you need to return a memoized non-primitive value.
 
