@@ -4,6 +4,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./hero.module.css";
 import { useBaseUrlUtils } from "@docusaurus/core/lib/client/exports/useBaseUrl";
+import SubscribeForm from "@site/src/components/SubscribeForm";
 
 export default function Hero() {
   const { siteConfig } = useDocusaurusContext();
@@ -45,6 +46,7 @@ export default function Hero() {
             Thread
           </Link>
         </div>
+        <SubscribeForm style={{ margin: "0 auto", marginTop: "1rem" }} />
       </div>
     </header>
   );
