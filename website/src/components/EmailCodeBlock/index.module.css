@@ -2,6 +2,7 @@
 /*
 Shitty workaround to hide the preview!
  */
-.emailCodeBlock > div > div:nth-child(3), div:nth-child(4) {
+.emailCodeBlock > div > div:nth-child(3),
+.emailCodeBlock > div > div:nth-child(4) {
     display: none;
 }
