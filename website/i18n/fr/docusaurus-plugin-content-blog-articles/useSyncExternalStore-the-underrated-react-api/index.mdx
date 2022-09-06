@@ -8,11 +8,11 @@ twitterThreadUrl: "https://slo.im/t/articles/useSyncExternalStore"
 
 # useSyncExternalStore - L'API React sous-estimée
 
-Tu as peut-être entendu parler de [`useSyncExternalStore()`](https://reactjs.org/docs/hooks-reference.html#usesyncexternalstore), un nouveau hook de React 18 permettant de s'abonner à des **sources de données externes**. Il est souvent utilisé en interne par les bibliothèques de gestion d'état - comme [Redux](https://github.com/reduxjs/react-redux/pull/1808) - pour mettre en œuvre un **système de sélecteur**.
+Tu as peut-être entendu parler de [`useSyncExternalStore()`](https://reactjs.org/docs/hooks-reference.html#usesyncexternalstore), un nouveau hook de React 18 permettant de s'abonner à des **sources de données externes**. Il est souvent utilisé en interne par les bibliothèques de gestion d'état - comme [Redux](https://github.com/reduxjs/react-redux/pull/1808) - pour mettre en place un **système de sélecteurs**.
 
 Mais pourquoi pas utiliser `useSyncExternalStore()` dans ton propre code?
 
-Dans cet article interactif, je souhaite te présenter un problème : **les hooks React retournent qui trop et déclenchant des re-renders inutiles**. On va aussi voir comment `useSyncExternalStore()` peut être une bonne solution.
+Dans cet article interactif, je souhaite te présenter un problème : **les hooks React qui retournent trop et déclenchant des re-renders inutiles**. On va aussi voir comment `useSyncExternalStore()` peut être une bonne solution.
 
 <!-- truncate -->
 
@@ -184,10 +184,7 @@ Par exemple, supposons que nous voulons utiliser la position `scrollY` d'une pag
 // Une fonction constante permet d'éviter la re-souscription
 // En pratique, c'est souvent pas un problème
 function subscribe(onStoreChange) {
-  global.window?.addEventListener(
-    "scroll",
-    onStoreChange
-  );
+  global.window?.addEventListener("scroll", onStoreChange);
   return () =>
     global.window?.removeEventListener(
       "scroll",
