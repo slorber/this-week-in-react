@@ -75,6 +75,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: "/img/TWIR_POST.png",
+      /*
       announcementBar: {
         id: "subscribe-now-v1",
         content: "NOOP - to swizzle",
@@ -82,6 +83,7 @@ const config = {
         textColor: "#091E42",
         isCloseable: true,
       },
+       */
       navbar: {
         title: "This Week In React",
         logo: {
