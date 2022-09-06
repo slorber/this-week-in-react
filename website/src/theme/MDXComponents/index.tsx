@@ -13,8 +13,11 @@ import SponsoringTabs, {
   SponsoringTabsJobSponsor,
 } from "./SponsoringTabs";
 
+import SubscribeFormEmbed from "./SubscribeFormEmbed";
+
 export default {
   ...MDXComponents,
+  SubscribeFormEmbed,
   Tabs,
   TabItem,
   BrowserWindow,

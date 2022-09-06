@@ -1,0 +1,16 @@
+
+.subscribeFormEmbed {
+  border: transparent solid thin;
+  box-shadow: var(--ifm-global-shadow-xl);
+  border-radius: 0.6rem;
+  padding: 1rem;
+}
+
+.subscribeFormEmbed p {
+  margin-bottom: 0.4rem;
+  margin-left: 10px;
+}
+
+html[data-theme="dark"] .subscribeFormEmbed {
+  border-color: var(--ifm-color-emphasis-300);
+}

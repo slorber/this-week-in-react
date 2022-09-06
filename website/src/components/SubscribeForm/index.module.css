@@ -1,3 +1,16 @@
 .subscribeForm {
   max-width: 560px;
 }
+
+/*
+We assume flex gap has good enough support here
+ */
+.subscribeForm :global(.formkit-fields) {
+  gap: 10px !important;
+}
+.subscribeForm :global(.formkit-field) {
+  margin-bottom: 0px !important;
+}
+.subscribeForm :global(.formkit-submit) {
+  margin-bottom: 0px !important;
+}

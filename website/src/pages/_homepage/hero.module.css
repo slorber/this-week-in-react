@@ -1,5 +1,5 @@
 .hero {
-  padding: 1rem 0 0 0;
+  padding: 1rem 0 1rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -32,7 +32,7 @@
 
 @media screen and (max-width: 996px) {
   .hero {
-    padding: 0 0 0 0;
+    padding: 0 0 1rem 0;
   }
   .hero img {
     max-width: 120px;
