@@ -7,11 +7,22 @@
       "ENABLE_FILE_SYSTEM_API": "1"
     }
   },
+  "rewrites": [
+    {
+      "source": "https://revue.thisweekinreact.com/issues/:match*",
+      "destination": "https://www.getrevue.co/profile/thisweekinreact/issues/:match*"
+    }
+  ],
   "redirects": [
     {
-      "source": "/LEGACY_REDIRECT_TODO_DELETE",
-      "destination": "https://www.getrevue.co/profile/thisweekinreact",
-      "permanent": false
+      "source": "https://revue.thisweekinreact.com",
+      "destination": "https://thisweekinreact.com",
+      "permanent": true
+    },
+    {
+      "source": "https://revue.thisweekinreact.com/:match*",
+      "destination": "https://thisweekinreact.com/:match*",
+      "permanent": true
     },
     {
       "source": "/revue",
