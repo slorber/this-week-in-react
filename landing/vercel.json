@@ -7,18 +7,6 @@
       "ENABLE_FILE_SYSTEM_API": "1"
     }
   },
-  "rewrites": [
-    {
-      "source": "/issues/:match*",
-      "has": [
-        {
-          "type": "host",
-          "value": "revue.thisweekinreact.com"
-        }
-      ],
-      "destination": "https://www.getrevue.co/profile/thisweekinreact/issues/:match*"
-    }
-  ],
   "redirects": [
     {
       "source": "/:match*",
