@@ -15,6 +15,10 @@
     {
       "source": "/subscribe",
       "destination": "https://www.getrevue.co/profile/thisweekinreact/subscribe"
+    },
+    {
+      "source": "/commit_subscribe",
+      "destination": "https://www.getrevue.co/profile/thisweekinreact/commit_subscribe"
     }
   ],
   "redirects": [
