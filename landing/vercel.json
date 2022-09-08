@@ -7,9 +7,32 @@
       "ENABLE_FILE_SYSTEM_API": "1"
     }
   },
+  "rewrites": [
+    {
+      "source": "/issues/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "revue.thisweekinreact.com"
+        }
+      ],
+      "destination": "https://www.getrevue.co/profile/thisweekinreact/issues/:path*"
+    }
+  ],
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "revue.thisweekinreact.com"
+        }
+      ],
+      "destination": "https://thisweekinreact.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path((?!issues/).*)*",
       "has": [
         {
           "type": "host",
