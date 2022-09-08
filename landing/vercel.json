@@ -15,22 +15,6 @@
   ],
   "redirects": [
     {
-      "source": "/:path((?!issues/).*)*",
-      "has": [
-        {
-          "type": "host",
-          "value": "revue.thisweekinreact.com"
-        }
-      ],
-      "destination": "https://thisweekinreact.com/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/revue",
-      "destination": "https://www.getrevue.co/profile/thisweekinreact",
-      "permanent": true
-    },
-    {
       "source": "/archive",
       "destination": "https://www.getrevue.co/profile/thisweekinreact",
       "permanent": true
