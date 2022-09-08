@@ -15,17 +15,6 @@
   ],
   "redirects": [
     {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "revue.thisweekinreact.com"
-        }
-      ],
-      "destination": "https://thisweekinreact.com/",
-      "permanent": true
-    },
-    {
       "source": "/archive",
       "destination": "https://www.getrevue.co/profile/thisweekinreact",
       "permanent": true
