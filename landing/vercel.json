@@ -15,6 +15,17 @@
   ],
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "revue.thisweekinreact.com"
+        }
+      ],
+      "destination": "https://thisweekinreact.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/archive",
       "destination": "https://www.getrevue.co/profile/thisweekinreact",
       "permanent": true
@@ -51,6 +62,11 @@
     },
     {
       "source": "/discord",
+      "destination": "https://discord.gg/DMy7wRBhrN",
+      "permanent": true
+    },
+    {
+      "source": "/chat",
       "destination": "https://discord.gg/DMy7wRBhrN",
       "permanent": true
     }
