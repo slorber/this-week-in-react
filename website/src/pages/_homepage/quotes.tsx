@@ -264,7 +264,7 @@ export const AllQuotes = {
     Thierryskoda: (
       <Quote
         url="https://twitter.com/Thierryskoda/status/1440272076800094211"
-        handle="Thierryskoda"
+        handle="thskod"
         name="Thierry Skoda"
         job="Developer at Hack House Web3"
       >
