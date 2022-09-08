@@ -15,14 +15,14 @@
   ],
   "redirects": [
     {
-      "source": "/:path((?!subscribe).*)",
+      "source": "/",
       "has": [
         {
           "type": "host",
           "value": "revue.thisweekinreact.com"
         }
       ],
-      "destination": "https://thisweekinreact.com/:path*",
+      "destination": "https://thisweekinreact.com/",
       "permanent": true
     },
     {
