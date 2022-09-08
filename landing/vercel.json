@@ -7,36 +7,7 @@
       "ENABLE_FILE_SYSTEM_API": "1"
     }
   },
-  "rewrites": [
-    {
-      "source": "/issues/:path*",
-      "destination": "https://www.getrevue.co/profile/thisweekinreact/issues/:path*"
-    },
-    {
-      "source": "/subscribe",
-      "destination": "https://www.getrevue.co/profile/thisweekinreact/subscribe"
-    },
-    {
-      "source": "/commit_subscribe",
-      "destination": "https://www.getrevue.co/profile/thisweekinreact/commit_subscribe"
-    },
-    {
-      "source": "/add_subscriber",
-      "destination": "https://www.getrevue.co/profile/thisweekinreact/add_subscriber"
-    }
-  ],
   "redirects": [
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "revue.thisweekinreact.com"
-        }
-      ],
-      "destination": "https://thisweekinreact.com/:path*",
-      "permanent": true
-    },
     {
       "source": "/archive",
       "destination": "https://www.getrevue.co/profile/thisweekinreact",
