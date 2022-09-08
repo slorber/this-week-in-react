@@ -9,18 +9,25 @@
   },
   "rewrites": [
     {
-      "source": "https://revue.thisweekinreact.com/issues/:match*",
+      "source": "/issues/:match*",
+      "has": [
+        {
+          "type": "host",
+          "value": "revue.thisweekinreact.com"
+        }
+      ],
       "destination": "https://www.getrevue.co/profile/thisweekinreact/issues/:match*"
     }
   ],
   "redirects": [
     {
-      "source": "https://revue.thisweekinreact.com",
-      "destination": "https://thisweekinreact.com",
-      "permanent": true
-    },
-    {
-      "source": "https://revue.thisweekinreact.com/:match*",
+      "source": "/:match*",
+      "has": [
+        {
+          "type": "host",
+          "value": "revue.thisweekinreact.com"
+        }
+      ],
       "destination": "https://thisweekinreact.com/:match*",
       "permanent": true
     },
