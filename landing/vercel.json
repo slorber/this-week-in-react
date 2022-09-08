@@ -9,6 +9,11 @@
   },
   "redirects": [
     {
+      "source": "/testimonials",
+      "destination": "https://twitter.com/sebastienlorber/timelines/1448942785814466561",
+      "permanent": true
+    },
+    {
       "source": "/archive",
       "destination": "https://www.getrevue.co/profile/thisweekinreact",
       "permanent": true
