@@ -8,9 +8,6 @@
     }
   },
   "rewrites": [
-
-  ],
-  "redirects": [
     {
       "source": "/issues/:path*",
       "has": [
@@ -20,7 +17,9 @@
         }
       ],
       "destination": "https://www.getrevue.co/profile/thisweekinreact/issues/:path*"
-    },
+    }
+  ],
+  "redirects": [
     {
       "source": "/",
       "has": [
