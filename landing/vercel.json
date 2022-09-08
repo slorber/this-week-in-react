@@ -9,14 +9,14 @@
   },
   "redirects": [
     {
-      "source": "/:match*",
+      "source": "/:path*",
       "has": [
         {
           "type": "host",
           "value": "revue.thisweekinreact.com"
         }
       ],
-      "destination": "https://thisweekinreact.com/:match*",
+      "destination": "https://thisweekinreact.com/:path*",
       "permanent": true
     },
     {
