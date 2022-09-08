@@ -15,7 +15,7 @@
   ],
   "redirects": [
     {
-      "source": "/:path((?!subscribe/).*)",
+      "source": "/:path((?!subscribe).*)",
       "has": [
         {
           "type": "host",
