@@ -31,6 +31,11 @@
       "permanent": true
     },
     {
+      "source": "/fr/archive",
+      "destination": "https://www.getrevue.co/profile/sebastien-lorber",
+      "permanent": true
+    },
+    {
       "source": "/calendar",
       "destination": "https://docs.google.com/spreadsheets/d/16aQqZV4pJbrm0zvvT9qFm0B1NwLUPQuVFzijt4zSJCk/edit#gid=0",
       "permanent": true

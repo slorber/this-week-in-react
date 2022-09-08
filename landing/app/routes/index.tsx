@@ -335,7 +335,7 @@ export default function Index({
             <span>One email per week</span>
             <Separator className="hidden sm:inline" />
             <div className="pt-1 sm:inline sm:pt-0">
-              <AppLink to="https://www.getrevue.co/profile/thisweekinreact">
+              <AppLink to="https://thisweekinreact.com/newsletter">
                 📨
                 <Space />
                 Archive
