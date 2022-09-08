@@ -8,31 +8,12 @@
     }
   },
   "rewrites": [
-
-  ],
-  "redirects": [
     {
       "source": "/issues/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "revue.thisweekinreact.com"
-        }
-      ],
       "destination": "https://www.getrevue.co/profile/thisweekinreact/issues/:path*"
-    },
-
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "revue.thisweekinreact.com"
-        }
-      ],
-      "destination": "https://thisweekinreact.com/",
-      "permanent": true
-    },
+    }
+  ],
+  "redirects": [
     {
       "source": "/:path((?!issues/).*)*",
       "has": [
