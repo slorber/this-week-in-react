@@ -8,6 +8,13 @@
     }
   },
   "redirects": [
+
+    {
+      "source": "/fr/sponsor",
+      "destination": "/sponsor",
+      "permanent": false
+    },
+
     {
       "source": "/testimonials",
       "destination": "https://twitter.com/sebastienlorber/timelines/1448942785814466561",
