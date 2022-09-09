@@ -8,6 +8,28 @@
     }
   },
   "redirects": [
+
+    {
+      "source": "/fr/sponsor",
+      "destination": "/sponsor",
+      "permanent": false
+    },
+
+    {
+      "source": "/testimonials",
+      "destination": "https://twitter.com/sebastienlorber/timelines/1448942785814466561",
+      "permanent": true
+    },
+    {
+      "source": "/ck",
+      "destination": "https://convertkit.com/?lmref=d0748g",
+      "permanent": true
+    },
+    {
+      "source": "/convertkit",
+      "destination": "https://convertkit.com/?lmref=d0748g",
+      "permanent": true
+    },
     {
       "source": "/archive",
       "destination": "https://www.getrevue.co/profile/thisweekinreact",
