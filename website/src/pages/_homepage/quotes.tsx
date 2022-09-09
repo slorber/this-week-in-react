@@ -72,7 +72,7 @@ export const AllQuotes = {
         url="https://twitter.com/NoriSte/status/1448145180461355008"
         handle="NoriSte"
         name="Stefano Magni"
-        job="Senior Front-end Engineer at Hasura"
+        job="Front-end Tech Lead at Hasura"
       >
         It's like reading a summary instead of scanning Twitter
       </Quote>
@@ -176,7 +176,7 @@ export const AllQuotes = {
         url="https://twitter.com/beaussan/status/1488578333851930627"
         handle="beaussan"
         name="Nicolas Beaussart"
-        job="Engineer at Hasura"
+        job="Principal Engineer at Hasura"
       >
         Your threads and newletter are a gem !
       </Quote>
