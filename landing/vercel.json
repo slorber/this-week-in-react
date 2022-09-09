@@ -14,6 +14,11 @@
       "permanent": true
     },
     {
+      "source": "/ck",
+      "destination": "https://convertkit.com/?lmref=d0748g",
+      "permanent": true
+    },
+    {
       "source": "/archive",
       "destination": "https://www.getrevue.co/profile/thisweekinreact",
       "permanent": true
