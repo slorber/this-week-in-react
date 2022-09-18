@@ -163,19 +163,35 @@ export function SponsoringTabsFirstSponsor() {
         />
         <ul>
           <li>
-            <b>1 issue</b>: 450€
+            <b>1 issue</b>: 500€
           </li>
           <li>
-            <b>4 issues</b>: 1000€
+            <b>4 issues</b>: 1200€
           </li>
           <li>
-            <b>8 issues</b>: 1800€
+            <b>8 issues</b>: 2000€
           </li>
         </ul>
       </>
       <>
         <SponsoringTabsFirstSponsorHeader
           count={newsletterStats.en.subscribersCount}
+        />
+        <ul>
+          <li>
+            <b>1 issue</b>: 400€
+          </li>
+          <li>
+            <b>4 issues</b>: 700€
+          </li>
+          <li>
+            <b>8 issues</b>: 1300€
+          </li>
+        </ul>
+      </>
+      <>
+        <SponsoringTabsFirstSponsorHeader
+          count={newsletterStats.fr.subscribersCount}
         />
         <ul>
           <li>
@@ -186,22 +202,6 @@ export function SponsoringTabsFirstSponsor() {
           </li>
           <li>
             <b>8 issues</b>: 1100€
-          </li>
-        </ul>
-      </>
-      <>
-        <SponsoringTabsFirstSponsorHeader
-          count={newsletterStats.fr.subscribersCount}
-        />
-        <ul>
-          <li>
-            <b>1 issue</b>: 250€
-          </li>
-          <li>
-            <b>4 issues</b>: 550€
-          </li>
-          <li>
-            <b>8 issues</b>: 1000€
           </li>
         </ul>
       </>
