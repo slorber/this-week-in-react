@@ -27,4 +27,5 @@ export default {
   SponsoringTabsFirstSponsor,
   SponsoringTabsSecondSponsor,
   SponsoringTabsJobSponsor,
+  Todo: () => <img src={require("@site/static/img/todo.png").default} alt={"TODO"}/>
 };
