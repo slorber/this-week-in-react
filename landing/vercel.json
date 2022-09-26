@@ -37,12 +37,12 @@
     },
     {
       "source": "/archive",
-      "destination": "https://www.getrevue.co/profile/thisweekinreact",
+      "destination": "https://revue.thisweekinreact.com",
       "permanent": true
     },
     {
       "source": "/fr/archive",
-      "destination": "https://www.getrevue.co/profile/sebastien-lorber",
+      "destination": "https://revue.reacthebdo.fr/",
       "permanent": true
     },
     {
