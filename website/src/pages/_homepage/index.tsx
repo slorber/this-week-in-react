@@ -12,7 +12,7 @@ export default function Home(): JSX.Element {
       description="A weekly newsletter to stay up-to-date with React & React-Native"
     >
       <Hero />
-      <main>
+      <main style={{ marginTop: "1.5rem" }}>
         <Quotes />
       </main>
     </Layout>

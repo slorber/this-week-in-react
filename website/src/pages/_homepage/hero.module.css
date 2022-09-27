@@ -35,6 +35,12 @@
   margin-bottom: 0;
 }
 
+.heroSubscribeForm {
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 @media screen and (max-width: 996px) {
   .hero {
     padding: 0 0 1rem 0;
@@ -46,6 +52,11 @@
     font-size: 1.8rem;
   }
   .hero p {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+  }
+
+  .heroSubscribeForm {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
   }
 }

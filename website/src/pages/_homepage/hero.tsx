@@ -5,6 +5,10 @@ import { useBaseUrlUtils } from "@docusaurus/core/lib/client/exports/useBaseUrl"
 import SubscribeForm from "@site/src/components/SubscribeForm";
 import SimpleTranslate from "@site/src/components/SimpleTranslate";
 
+function HeroSubscribeForm() {
+  return <SubscribeForm className={styles.heroSubscribeForm} />;
+}
+
 export default function Hero() {
   const { withBaseUrl } = useBaseUrlUtils();
   return (
@@ -16,13 +20,11 @@ export default function Hero() {
         </h1>
         <p className="hero__subtitle">
           <SimpleTranslate
-            en="The latest news, directly in your mailbox!"
-            fr="Les dernières news, directement dans ta boite mail !"
+            en="The latest news directly in your inbox!"
+            fr="Les dernières nouvelles directement dans ta boite mail !"
           />
         </p>
-        <SubscribeForm
-          style={{ margin: "0 auto", marginTop: "1rem", marginBottom: "1rem" }}
-        />
+        <HeroSubscribeForm />
       </div>
     </header>
   );
