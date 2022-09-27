@@ -423,22 +423,26 @@ export default function HomepageQuotes() {
         <>
           {AllQuotes.fr.xavier_seignard}
           {AllQuotes.fr.lauthieb}
-          {AllQuotes.fr.lereacteurIO}
-          {AllQuotes.fr.dbuchet}
-          {AllQuotes.fr.sylvainpauly}
-          {AllQuotes.fr.pierver}
-          {AllQuotes.fr.alexsoyes}
-          {AllQuotes.fr.arkerone}
-          {AllQuotes.fr.Console_buche}
-          {AllQuotes.fr.elenabattisti}
-          {AllQuotes.fr.LeMathisBarre}
-          {AllQuotes.fr._smontlouis}
         </>
       )}
       {AllQuotes.en.wcandillon}
       {AllQuotes.en.threepointone}
       {AllQuotes.en.kentcdodds}
       {AllQuotes.en.sebmarkbage}
+      {isFrench && (
+        <>
+          {AllQuotes.fr.lereacteurIO}
+          {AllQuotes.fr.dbuchet}
+          {AllQuotes.fr.alexsoyes}
+          {AllQuotes.fr.arkerone}
+          {AllQuotes.fr.Console_buche}
+          {AllQuotes.fr.elenabattisti}
+          {AllQuotes.fr.sylvainpauly}
+          {AllQuotes.fr.pierver}
+          {AllQuotes.fr.LeMathisBarre}
+          {AllQuotes.fr._smontlouis}
+        </>
+      )}
       {AllQuotes.en.yangshunz}
       {AllQuotes.en.NoriSte}
       {AllQuotes.en.ericclemmons}
