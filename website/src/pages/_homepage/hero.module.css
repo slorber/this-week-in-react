@@ -1,5 +1,5 @@
 .hero {
-  padding: 1rem 0 1rem 0;
+  padding: 2rem 0 1.5rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -28,7 +28,6 @@
 
 .hero img {
   max-width: 200px;
-  margin-top: 1rem;
 }
 
 .hero h1 {
@@ -46,7 +45,7 @@ Not easy to center this CK form properly...
 
 @media screen and (max-width: 996px) {
   .hero {
-    padding: 0 0 1rem 0;
+    padding: 1rem 0 1rem 0;
   }
   .hero img {
     max-width: 140px;
