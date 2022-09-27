@@ -24,10 +24,10 @@ const config = {
     locales: ["en", "fr"],
     localeConfigs: {
       en: {
-        label: "English 🇬🇧",
+        label: "🇬🇧 English",
       },
       fr: {
-        label: "Français 🇫🇷",
+        label: "🇫🇷 Français",
       },
     },
   },

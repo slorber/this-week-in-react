@@ -63,3 +63,10 @@ html.plugin-blog.blog-post-page h1 {
   top: 18px;
   background: var(--ifm-color-primary);
 }
+
+/*
+TODO add navbar item config option to Docusaurus
+ */
+svg[class*="iconLanguage_"] {
+  display: none;
+}
