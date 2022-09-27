@@ -40,7 +40,7 @@ Not easy to center this CK form properly...
 */
 .heroSubscribeForm {
   margin: 0 auto;
-  width: 95vw;
+  width: 90vw;
   max-width: 700px; /* TODO reduce this width without CK stacking the form... (JS sets data-stacked="true")*/
 }
 
