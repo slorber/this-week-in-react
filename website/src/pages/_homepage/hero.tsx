@@ -6,7 +6,11 @@ import SubscribeForm from "@site/src/components/SubscribeForm";
 import SimpleTranslate from "@site/src/components/SimpleTranslate";
 
 function HeroSubscribeForm() {
-  return <SubscribeForm className={styles.heroSubscribeForm} />;
+  return (
+    <div className={styles.heroSubscribeForm}>
+      <SubscribeForm />
+    </div>
+  );
 }
 
 export default function Hero() {
