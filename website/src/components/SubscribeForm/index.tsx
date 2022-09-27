@@ -1,6 +1,6 @@
 import React, { ComponentProps, ReactNode } from "react";
 import clsx from "clsx";
-import useDocusaurusContext from "@docusaurus/core/lib/client/exports/useDocusaurusContext";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 
 export default function SubscribeForm(props: ComponentProps<"div">) {
