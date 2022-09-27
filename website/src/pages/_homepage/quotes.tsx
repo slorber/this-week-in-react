@@ -419,18 +419,6 @@ export default function HomepageQuotes() {
   const isFrench = i18n.currentLocale === "fr";
   return (
     <section className={clsx("container", styles.quotesContainer)}>
-      {AllQuotes.en.wcandillon}
-      {AllQuotes.en.threepointone}
-      {AllQuotes.en.kentcdodds}
-      {AllQuotes.en.sebmarkbage}
-      {AllQuotes.en.yangshunz}
-      {AllQuotes.en.NoriSte}
-      {AllQuotes.en.ericclemmons}
-      {AllQuotes.en.swmansion}
-      {AllQuotes.en.Jonsamp}
-      {AllQuotes.en.amanhimself}
-      {AllQuotes.en.johnnyreilly}
-      {AllQuotes.en.mcavaliere}
       {isFrench && (
         <>
           {AllQuotes.fr.xavier_seignard}
@@ -447,6 +435,18 @@ export default function HomepageQuotes() {
           {AllQuotes.fr._smontlouis}
         </>
       )}
+      {AllQuotes.en.wcandillon}
+      {AllQuotes.en.threepointone}
+      {AllQuotes.en.kentcdodds}
+      {AllQuotes.en.sebmarkbage}
+      {AllQuotes.en.yangshunz}
+      {AllQuotes.en.NoriSte}
+      {AllQuotes.en.ericclemmons}
+      {AllQuotes.en.swmansion}
+      {AllQuotes.en.Jonsamp}
+      {AllQuotes.en.amanhimself}
+      {AllQuotes.en.johnnyreilly}
+      {AllQuotes.en.mcavaliere}
       {AllQuotes.en.ane_naiz}
       {AllQuotes.en.elijahmanor}
       {AllQuotes.en.asidorenko_}

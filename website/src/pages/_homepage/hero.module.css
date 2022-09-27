@@ -27,7 +27,12 @@
 }
 
 .hero img {
-  max-width: 160px;
+  max-width: 200px;
+  margin-top: 1rem;
+}
+
+.hero h1 {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 996px) {
@@ -35,7 +40,7 @@
     padding: 0 0 1rem 0;
   }
   .hero img {
-    max-width: 120px;
+    max-width: 140px;
   }
   .hero h1 {
     font-size: 1.8rem;
@@ -43,10 +48,4 @@
   .hero p {
     font-size: 1.4rem;
   }
-}
-
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

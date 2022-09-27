@@ -93,15 +93,17 @@ const config = {
           height: 32,
         },
         items: [
-          { to: "/articles", label: "📜 Articles", position: "left" },
-          { to: "/newsletter", label: "📨 Newsletter", position: "left" },
-          {
+          { to: "/articles", label: "Articles", position: "left" },
+          { to: "/newsletter", label: "Newsletter", position: "left" },
+          { to: "https://slo.im/thread", label: "Thread", position: "left" },
+          /*{
             type: "custom-twitterThread",
             to: "https://slo.im/thread",
             label: "Thread",
             position: "left",
           },
-          { to: "/sponsor", label: "💸 Sponsor", position: "left" },
+           */
+          { to: "/sponsor", label: "Sponsor", position: "left" },
           { type: "localeDropdown", position: "right" },
         ],
       },

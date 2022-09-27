@@ -1,7 +1,5 @@
 import React from "react";
 import clsx from "clsx";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./hero.module.css";
 import { useBaseUrlUtils } from "@docusaurus/core/lib/client/exports/useBaseUrl";
 import SubscribeForm from "@site/src/components/SubscribeForm";
@@ -18,42 +16,13 @@ export default function Hero() {
         </h1>
         <p className="hero__subtitle">
           <SimpleTranslate
-            en="The latest React news, directly in your mailbox!"
-            fr="Les dernières nouveautés React, directement dans ta boite mail !"
+            en="The latest news, directly in your mailbox!"
+            fr="Les dernières news, directement dans ta boite mail !"
           />
         </p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/newsletter"
-            style={{
-              paddingLeft: "1.4rem",
-              paddingRight: "1.6rem",
-            }}
-          >
-            📨 Newsletter
-          </Link>
-          <Link
-            className="button button--secondary button--lg"
-            to="https://slo.im/thread"
-            style={{
-              marginLeft: "1rem",
-              paddingLeft: "1.4rem",
-              paddingRight: "1.6rem",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src={withBaseUrl("/svg/twitter.svg")}
-              width={20}
-              height={20}
-              style={{ marginRight: 5 }}
-            />{" "}
-            Thread
-          </Link>
-        </div>
-        <SubscribeForm style={{ margin: "0 auto", marginTop: "1rem" }} />
+        <SubscribeForm
+          style={{ margin: "0 auto", marginTop: "1rem", marginBottom: "1rem" }}
+        />
       </div>
     </header>
   );
