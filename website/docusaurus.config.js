@@ -56,7 +56,7 @@ const config = {
         routeBasePath: "/articles",
         blogSidebarTitle: "Articles",
         blogSidebarCount: "ALL",
-        feed: {
+        feedOptions: {
           title: "This Week In React - Articles",
           description: "Articles published on the This Week In React blog",
         },
@@ -71,7 +71,7 @@ const config = {
         showReadingTime: true,
         blogSidebarTitle: "Issues",
         blogSidebarCount: "ALL",
-        feed: {
+        feedOptions: {
           title: "This Week In React - Newsletter",
           description:
             "Weekly issues of the This Week In React curation newsletter",
