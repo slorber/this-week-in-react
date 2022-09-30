@@ -54,8 +54,11 @@ const config = {
         path: "articles",
         showReadingTime: true,
         routeBasePath: "/articles",
+        blogTitle: "Articles",
+        blogDescription: "Articles published on the This Week In React blog",
         blogSidebarTitle: "Articles",
         blogSidebarCount: "ALL",
+        postsPerPage: 10,
         feedOptions: {
           title: "This Week In React - Articles",
           description: "Articles published on the This Week In React blog",
@@ -68,9 +71,13 @@ const config = {
         id: "newsletter",
         path: "newsletter",
         routeBasePath: "/newsletter",
-        showReadingTime: true,
+        showReadingTime: false, // TODO fix issue due to MDX imports
+        blogTitle: "Newsletter",
+        blogDescription:
+          "Weekly issues of the This Week In React curation newsletter",
         blogSidebarTitle: "Issues",
         blogSidebarCount: "ALL",
+        postsPerPage: 10,
         feedOptions: {
           title: "This Week In React - Newsletter",
           description:
