@@ -95,6 +95,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: "/img/TWIR_POST.png",
+      algolia: {
+        appId: "HVX722ICC6",
+        apiKey: "a24fdccebf5c0a3194349b5d4777b3b0",
+        indexName: "thisweekinreact",
+      },
       /*
       announcementBar: {
         id: "subscribe-now-v1",
