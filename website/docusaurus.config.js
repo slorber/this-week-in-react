@@ -75,7 +75,7 @@ const config = {
         id: "newsletter",
         path: "newsletter",
         routeBasePath: "/newsletter",
-        showReadingTime: false, // TODO fix issue due to MDX imports
+        showReadingTime: true,
         blogTitle: "Newsletter",
         blogDescription:
           "Weekly issues of the This Week In React curation newsletter",
