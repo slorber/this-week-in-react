@@ -1,6 +1,6 @@
 ---
 slug: /118
-title: "📨 #118: ..."
+title: "📨 #118: Gatsby, Beta Docs, Reactivity, Lazy Component Maps, Ezno, Whyframe, Reassure, TypeScript, WASM..."
 authors: [slorber]
 date: 12-31-2022
 image: /img/TWIR_POST.png
@@ -52,6 +52,10 @@ La v5 de Gatsby est sortie en alpha avec comme principales nouveautés:
 
 Article interactif qui illustre les problèmes de re-render dans React qui n'est pas optimisé par défaut. Montre comment la librairie Legend-State, basée sur des observables, permet d'apporter la réactivité à React (un peu comme SolidJS). Le code est alors optimisé par défaut et permet d'éviter des re-renders inutiles.
 
+**[Ezno - Experimental compiler](https://kaleidawave.github.io/posts/introducing-ezno/)**
+
+Un nouveau type-checking compiler expérimental pour JavaScript, compatible avec les annotations TypeScript et le JSX de React. Se base sur le "dependent typing" pour faire une analyse statique plus poussée. Le but semble être de pouvoir compiler une app qui ressemble à React dans une forme réactive, et se passer de VDOM. Lecture assez technique.
+
 **[(Lazy) Components Maps](https://julesblom.com/writing/lazy-component-maps)**
 
 Présente une technique utile à connaitre pour favoriser le code-splitting lorsque vous faites du rendu conditionnel. A utiliser en particulier sur de larges enums/union-types, comme les composants type `<Icon name="my-icon-name"/>`.
@@ -59,10 +63,6 @@ Présente une technique utile à connaitre pour favoriser le code-splitting lors
 **[Whyframe](https://whyframe.dev/)**
 
 Une technologie qui permet d'isoler le rendu de composants frontend dans une iframe, qui supporte maintenant [Webpack, Next.js et Docusaurus](https://twitter.com/bluwyoo/status/1576947013450539008). Cela semble pratique pour les sites de documentation de composants, pour que le CSS global du site n'affecte pas le rendu du composant présenté.
-
-**[Ezno - Experimental compiler](https://kaleidawave.github.io/posts/introducing-ezno/)**
-
-Un nouveau type-checking compiler expérimental pour JavaScript, compatible avec les annotations TypeScript et le JSX de React. Se base sur le "dependent typing" pour faire une analyse statique plus poussée. Le but semble être de pouvoir compiler une app qui ressemble à React dans une forme réactive, et se passer de VDOM. Lecture assez technique.
 
 - 📜 [How to use Serverless Functions with SSR](https://paulie.dev/posts/2022/09/how-to-use-serverless-fucntions-with-ssr/): explique comment partager correctement une fonction entre la partie server/client dans Gatsby
 - 📜 [Fastest Frontend Tooling in 2022](https://cpojer.net/posts/fastest-frontend-tooling-in-2022): Christoph Nakazawa justifie les choix derrière son starter minimaliste [vite-ts-react-tailwind-template](https://github.com/cpojer/vite-ts-react-tailwind-template)
@@ -102,8 +102,8 @@ Pour Callstack, 80% des problèmes de performance sur React-Native viennent du J
 - 🎥 [React-Native EU playlist](https://www.youtube.com/watch?v=7QeINTWLUkc&list=PLZ3MwD-soTTE-qcA0MrcvZBdmkHJSIjJX): les vidéos découpées sont en ligne
 - 🎥 [Arc Slider with React-Native Skia, React-Native Gesture Handler and Reanimated 2](https://www.youtube.com/watch?v=fWLyKzEXaJI)
 - 📜 [How to specify pre-processor flags to the JSI-based React Native libraries](https://dev.to/craftzdog/how-to-specify-pre-processor-flags-to-the-jsi-based-react-native-libraries-51m5)
-- 📖 [Expo Router](https://expo.github.io/router/): pour se familiariser avec ce nouveau système
-- 📖 [Doc Expo - App Icons and Splash Screen guides updated](https://twitter.com/amanhimself/status/1575589181237043200)
+- 📖 [Expo Router](https://expo.github.io/router/): la doc est dispo pour se familiariser avec ce nouveau routeur
+- 📖 [Expo App Icons and Splash Screen guides updated](https://twitter.com/amanhimself/status/1575589181237043200)
 - 🎨 [Native iOS bottom sheet demo - iOS detents](https://twitter.com/FernandoTheRojo/status/1575247583634935808)
 - 🎨 [React-Native WishList demo - alpha soon](https://twitter.com/margelo_io/status/1576887456024043520)
 - 🎨 [Experimental support for debugging Reanimated’s worklet runtime (Hermes) in Flipper](https://twitter.com/swmansion/status/1577308811890610176)
