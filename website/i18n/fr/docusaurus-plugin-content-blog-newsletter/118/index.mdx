@@ -9,9 +9,13 @@ draft: true
 
 Salut à tous !
 
-La conférence [React Brussels](https://www.react.brussels/) a lieu dans à peine 2 semaine, le 14 Octobre 2022. Il ne reste que [quelques places disponibles](https://ti.to/bejs/react-brussels-2022/with/in-person-ticket-copy,group-3-tickets-20,group-4-tickets-25,group-5-tickets-30,student-junior-pass?source=undefined), mais il est aussi possible d'y [assister en ligne](https://ti.to/bejs/react-brussels-2022/discount/online_lastweek).
+Bonne nouvelle: l'arrivée prochaine de la nouvelle doc React en beta! Un lien sur l'ancienne doc invite à consulter le nouveau site. Gatsby v5 sort alpha. La tendance du moment: apporter la réactivité à React.
 
-<Todo />
+Quelques contenus React-Native sympa également. On surveille de près l'arrivée de Expo Router, WishList et du support web dans Reassure.
+
+TypeScript fête ses 10 ans. Un mode `--watch` arrive dans Node.js. Du contenu intéressant sur WebAssembly.
+
+La conférence [React Brussels](https://www.react.brussels/) a lieu dans à peine 2 semaine, le 14 Octobre 2022. Il ne reste que [quelques places disponibles](https://ti.to/bejs/react-brussels-2022/with/in-person-ticket-copy,group-3-tickets-20,group-4-tickets-25,group-5-tickets-30,student-junior-pass?source=undefined), mais il est aussi possible d'y [assister en ligne](https://ti.to/bejs/react-brussels-2022/discount/online_lastweek).
 
 <!-- truncate -->
 
@@ -37,8 +41,39 @@ Consultez le [Hub Technologique](https://www.storyblok.com/technologies?utm_sour
 
 ## ⚛️ React {#react}
 
-- [Ryan Florence - Thinking in Remix](https://twitter.com/ryanflorence/status/1574852767113281537)
-- [Beta React docs - All the commonly used APIs documented - link from prod doc](https://twitter.com/dan_abramov/status/1575367224541560833)
+**[Gatsby v5 Alpha](https://www.gatsbyjs.com/blog/gatsby-v5-alpha-is-here-and-its-pretty-exciting/)**
+
+La v5 de Gatsby est sortie en alpha avec comme principales nouveautés:
+
+- le support de [partial hydration](https://www.gatsbyjs.com/blog/a-look-at-partial-hydration-in-gatsby-5/) basé sur les React Server Components et une directive `"client export"` déclarée en haut des composants client
+- la Gatsby Slice API, qui permet d'améliorer significativement les temps de build lorsqu'un composant partagé (layout/navbar/footer) est modifié dans votre CMS
+
+**[Making React fast by default and truly reactive](https://legendapp.com/open-source/legend-state/)**
+
+Article interactif qui illustre les problèmes de re-render dans React qui n'est pas optimisé par défaut. Montre comment la librairie Legend-State, basée sur des observables, permet d'apporter la réactivité à React (un peu comme SolidJS). Le code est alors optimisé par défaut et permet d'éviter des re-renders inutiles.
+
+**[(Lazy) Components Maps](https://julesblom.com/writing/lazy-component-maps)**
+
+Présente une technique utile à connaitre pour favoriser le code-splitting lorsque vous faites du rendu conditionnel. A utiliser en particulier sur de larges enums/union-types, comme les composants type `<Icon name="my-icon-name"/>`.
+
+**[Whyframe](https://whyframe.dev/)**
+
+Une technologie qui permet d'isoler le rendu de composants frontend dans une iframe, qui supporte maintenant [Webpack, Next.js et Docusaurus](https://twitter.com/bluwyoo/status/1576947013450539008). Cela semble pratique pour les sites de documentation de composants, pour que le CSS global du site n'affecte pas le rendu du composant présenté.
+
+**[Ezno - Experimental compiler](https://kaleidawave.github.io/posts/introducing-ezno/)**
+
+Un nouveau type-checking compiler expérimental pour JavaScript, compatible avec les annotations TypeScript et le JSX de React. Se base sur le "dependent typing" pour faire une analyse statique plus poussée. Le but semble être de pouvoir compiler une app qui ressemble à React dans une forme réactive, et se passer de VDOM. Lecture assez technique.
+
+- 📜 [How to use Serverless Functions with SSR](https://paulie.dev/posts/2022/09/how-to-use-serverless-fucntions-with-ssr/): explique comment partager correctement une fonction entre la partie server/client dans Gatsby
+- 📜 [Fastest Frontend Tooling in 2022](https://cpojer.net/posts/fastest-frontend-tooling-in-2022): Christoph Nakazawa justifie les choix derrière son starter minimaliste [vite-ts-react-tailwind-template](https://github.com/cpojer/vite-ts-react-tailwind-template)
+- 📜 [The Orton Effect - dreamy photo effect in CSS and React](https://mikebifulco.com/posts/orton-effect-css-react)
+- 📜 [Mark Erikson - Guide to React Rendering Behavior - updated for React 18](https://twitter.com/acemarke/status/1577301648850014210)
+- 🚧 [no-nested-components ESLint rule](https://github.com/facebook/react/pull/25360): une nouvelle règle pourrait arriver prochainement et éviter de déclarer des composants à la volée (mauvaise pratique).
+- 🧵 [Dan Abramov - "skipping re-renders (eg with memo) is a performance optimization only"](https://twitter.com/dan_abramov/status/1575553047408902147)
+- 🧵 [Andrew Clark - "We've looked very seriously at a WASM rewrite of React"](https://twitter.com/acdlite/status/1576302675766804480)
+- 📖 Beta React docs: [useEffect](https://twitter.com/dan_abramov/status/1575320847279071232) + [useId](https://twitter.com/dan_abramov/status/1577283961763467265) + ["All the commonly used APIs documented"](https://twitter.com/dan_abramov/status/1575367224541560833)
+- 📦 [Redwood v3](https://community.redwoodjs.com/t/redwood-3-0-0-is-now-available/3989) + [What's new in Redwood v3?](https://www.youtube.com/watch?v=o9LFWOxMlTs)
+- 📦 [Supabase Pre-built React Auth UI](https://twitter.com/supabase/status/1577215238792916992)
 
 <SubscribeFormEmbed />
 
@@ -56,7 +91,22 @@ Cambly, c'est la plateforme pour progresser à l'oral en anglais avec des tuteur
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+**[Reassure - Continuous App Performance Monitoring Made Simple](https://www.callstack.com/blog/app-performance-monitoring)**
+
+Pour Callstack, 80% des problèmes de performance sur React-Native viennent du JS, et en particulier d'un mauvais usage de React. Pour y remédier, ils ont créé Reassure, une nouvelle librairie de performance regression testing. Elle s'intègre à votre CI pour éviter que les performances de vos apps ne se dégradent dans le temps. Le [support web](https://github.com/callstack/reassure/issues/39) n'est pas encore disponible.
+
+- 📒 [BAM Mobile Tech Radar 2022](https://www.bam.tech/en-tech-radar): un rapport complet sur le développement mobile en 2022, avec une grosse partie sur React-Native
+- 🔗 [fabric-library-with-custom-cpp-example](https://github.com/callstack/fabric-library-with-custom-cpp-example/)
+- 📦 React-Native [v0.70.2](https://twitter.com/Kelset/status/1577262972396744704) + [v0.69.6](https://twitter.com/titozzz/status/1574744371865346049)
+- 📦 [Jest-Native 5.0](https://github.com/testing-library/jest-native/releases): support natif TypeScript
+- 🎥 [React-Native EU playlist](https://www.youtube.com/watch?v=7QeINTWLUkc&list=PLZ3MwD-soTTE-qcA0MrcvZBdmkHJSIjJX): les vidéos découpées sont en ligne
+- 🎥 [Arc Slider with React-Native Skia, React-Native Gesture Handler and Reanimated 2](https://www.youtube.com/watch?v=fWLyKzEXaJI)
+- 📜 [How to specify pre-processor flags to the JSI-based React Native libraries](https://dev.to/craftzdog/how-to-specify-pre-processor-flags-to-the-jsi-based-react-native-libraries-51m5)
+- 📖 [Expo Router](https://expo.github.io/router/): pour se familiariser avec ce nouveau système
+- 📖 [Doc Expo - App Icons and Splash Screen guides updated](https://twitter.com/amanhimself/status/1575589181237043200)
+- 🎨 [Native iOS bottom sheet demo - iOS detents](https://twitter.com/FernandoTheRojo/status/1575247583634935808)
+- 🎨 [React-Native WishList demo - alpha soon](https://twitter.com/margelo_io/status/1576887456024043520)
+- 🎨 [Experimental support for debugging Reanimated’s worklet runtime (Hermes) in Flipper](https://twitter.com/swmansion/status/1577308811890610176)
 
 ---
 
@@ -94,15 +144,28 @@ Paris 75008 - 2j de TT/sem.
 ## 🔀 Autre {#other}
 
 - [Ten Years of TypeScript](https://devblogs.microsoft.com/typescript/ten-years-of-typescript)
-- [Fastest Frontend Tooling in 2022](https://cpojer.net/posts/fastest-frontend-tooling-in-2022)
+- [TotalTypeScript - Beginner's TypeScript](https://www.totaltypescript.com/tutorials/beginners-typescript)
+- [Why I don't use Prettier](https://antfu.me/posts/why-not-prettier)
 - [Gifs without the .gif - The most performant image and video options](https://css-tricks.com/gifs-without-the-gif-the-most-performant-image-and-video-options-right-now/)
 - [Use cases for CSS comparison functions](https://ishadeed.com/article/use-cases-css-comparison-functions/)
 - [Node.js 18 - `node --watch`](https://github.com/nodejs/node/pull/44366)
+- [Node.js 19 RC.0](https://twitter.com/ruyadorno/status/1575628377372823552)
+- [Astro 1.4](https://astro.build/blog/astro-140/)
+- [Deno 1.26](https://deno.com/blog/v1.26)
+- [Rome 0.10](https://twitter.com/rometools/status/1577296196502278150)
 - [State of CSS Survey 2022](https://stateofcss.com/en-us/)
 - [Progressively enhance for a more resilient web](https://jjenzz.com/progressively-enhance-for-a-more-resilient-web)
+- [New in Chrome 106](https://developer.chrome.com/blog/new-in-chrome-106/)
+- [New to the web platform in September](https://web.dev/web-platform-09-2022/)
+- [Minimize Heap Allocations in Node.js](https://blog.appsignal.com/2022/09/28/minimize-heap-allocations-in-nodejs.html)
+- [Will Serving Real HTML Content Make A Website Faster?](https://blog.webpagetest.org/posts/will-html-content-make-site-faster/)
+- [What’s Stopping WebAssembly from Widespread Adoption?](https://thenewstack.io/whats-stopping-webassembly-from-widespread-adoption/)
+- [Blink - Intent to prototype - CSS Nesting](https://twitter.com/intenttoship/status/1576951638325186565)
+- [Postgres-WASM](https://supabase.com/blog/postgres-wasm)
+- [I turned JS into a compiled language (for fun and Wasm)](https://surma.dev/things/compile-js/)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![Theo T3 best clickbait](/emails/issues/118/meme.png)](https://twitter.com/t3dotgg/status/1576467328606253057)
