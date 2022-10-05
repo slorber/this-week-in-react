@@ -1,6 +1,6 @@
 ---
 slug: /118
-title: "📨 #118: ..."
+title: "📨 #118: Gatsby, Beta Docs, Reactivity, Lazy Maps, Ezno, Whyframe, Reassure, Node.js, TypeScript, WASM..."
 authors: [slorber]
 date: 10-03-2022
 image: /img/TWIR_POST.png
@@ -8,11 +8,11 @@ image: /img/TWIR_POST.png
 
 Hi everyone!
 
-Bonne nouvelle: l'arrivée prochaine de la nouvelle doc React en beta! Un lien sur l'ancienne doc invite à consulter le nouveau site. Gatsby v5 sort alpha. La tendance du moment: apporter la réactivité à React.
+Good news: the new React doc will soon be available in beta! A link on the old doc invites to visit the new site. Gatsby v5 comes out alpha. The current trend: bringing reactivity to React.
 
-Quelques contenus React-Native sympa également. On surveille de près l'arrivée de Expo Router, WishList et du support web dans Reassure.
+Some nice React-Native content too. We are watching closely the progress of Expo Router, WishList and web support in Reassure.
 
-TypeScript fête ses 10 ans. Un mode `--watch` arrive dans Node.js. Du contenu intéressant sur WebAssembly.
+TypeScript celebrates its 10th anniversary. A `--watch` mode is coming in Node.js. Interesting content about WebAssembly.
 
 <!-- truncate -->
 
@@ -40,34 +40,34 @@ Check out [Technology Hub](https://www.storyblok.com/technologies?utm_source=thi
 
 **[Gatsby v5 Alpha](https://www.gatsbyjs.com/blog/gatsby-v5-alpha-is-here-and-its-pretty-exciting/)**
 
-La v5 de Gatsby est sortie en alpha avec comme principales nouveautés:
+The v5 of Gatsby is in alpha with 2 main new features:
 
-- le support de [partial hydration](https://www.gatsbyjs.com/blog/a-look-at-partial-hydration-in-gatsby-5/) basé sur les React Server Components et une directive `"client export"` déclarée en haut des composants client
-- la Gatsby Slices API, qui permet d'améliorer significativement les temps de build lorsqu'un composant partagé (layout/navbar/footer) doit être re-rendu
+- support for [partial hydration](https://www.gatsbyjs.com/blog/a-look-at-partial-hydration-in-gatsby-5/) based on React Server Components and a `"client export"` directive at the top of client components
+- the Gatsby Slices API, which allows to significantly improve build times when a shared component (layout/navbar/footer) should be re-rendered
 
 **[Making React fast by default and truly reactive](https://legendapp.com/open-source/legend-state/)**
 
-Article interactif qui illustre les problèmes de re-render dans React qui n'est pas optimisé par défaut. Montre comment la librairie Legend-State, basée sur des observables, permet d'apporter la réactivité à React (un peu comme SolidJS). Le code est alors optimisé par défaut et permet d'éviter des re-renders inutiles.
+Interactive article that illustrates the problems of re-rendering in React which is not optimized by default. Shows how the Legend-State library, based on observables, allows to bring reactivity to React (a bit like SolidJS). The code is then optimized by default and avoids unnecessary re-renders.
 
 **[Ezno - Experimental compiler](https://kaleidawave.github.io/posts/introducing-ezno/)**
 
-Un nouveau type-checking compiler expérimental pour JavaScript, compatible avec les annotations TypeScript et le JSX de React. Se base sur le "dependent typing" pour faire une analyse statique plus poussée. Le but semble être de pouvoir compiler une app qui ressemble à React dans une forme réactive, et se passer de VDOM. Lecture assez technique.
+A new experimental type-checking compiler for JavaScript, compatible with TypeScript annotations and JSX. Relies on dependent typing to do advanced static analysis and pre-evaluations at compile-time (reminds [prepack](https://prepack.io/)). The goal seems to be to be able to compile an app that looks like React in a reactive form, and skip the VDOM. Quite technical to read.
 
 **[(Lazy) Components Maps](https://julesblom.com/writing/lazy-component-maps)**
 
-Présente une technique utile à connaitre pour favoriser le code-splitting lorsque vous faites du rendu conditionnel. A utiliser en particulier sur de larges enums/union-types, comme les composants type `<Icon name="my-icon-name"/>`.
+Presents a useful technique to know to leverage code-splitting when you do conditional rendering. Especially useful on large enums/union-types, such as an `<Icon name="my-icon-name"/>` component.
 
 **[Whyframe](https://whyframe.dev/)**
 
-Une technologie qui permet d'isoler le rendu de composants frontend dans une iframe, qui supporte maintenant [Webpack, Next.js et Docusaurus](https://twitter.com/bluwyoo/status/1576947013450539008). Cela semble pratique pour les sites de documentation de composants, pour que le CSS global du site n'affecte pas le rendu du composant présenté.
+Allows frontend component rendering to be isolated in an iframe. Now supports [Webpack, Next.js and Docusaurus](https://twitter.com/bluwyoo/status/1576947013450539008). This seems handy for component library documentation sites, ensuring the global CSS of the site does not affect the rendering of the component displayed.
 
 - 📖 Beta React docs: [useEffect](https://twitter.com/dan_abramov/status/1575320847279071232) + [useId](https://twitter.com/dan_abramov/status/1577283961763467265) + ["All the commonly used APIs documented"](https://twitter.com/dan_abramov/status/1575367224541560833)
-- 📜 [How to use Serverless Functions with SSR](https://paulie.dev/posts/2022/09/how-to-use-serverless-fucntions-with-ssr/): explique comment partager correctement une fonction entre la partie server/client dans Gatsby
-- 📜 [Fastest Frontend Tooling in 2022](https://cpojer.net/posts/fastest-frontend-tooling-in-2022): Christoph Nakazawa justifie les choix derrière son starter minimaliste [vite-ts-react-tailwind-template](https://github.com/cpojer/vite-ts-react-tailwind-template)
+- 📜 [How to use Serverless Functions with SSR](https://paulie.dev/posts/2022/09/how-to-use-serverless-fucntions-with-ssr/): explains how to correctly split a function between the server/client part in Gatsby
+- 📜 [Fastest Frontend Tooling in 2022](https://cpojer.net/posts/fastest-frontend-tooling-in-2022): Christoph Nakazawa justifies the choices behind his minimalist starter [vite-ts-react-tailwind-template](https://github.com/cpojer/vite-ts-react-tailwind-template)
 - 📜 [Improving the accessibility of our Next.js site](https://vercel.com/blog/improving-the-accessibility-of-our-nextjs-site)
 - 📜 [The Orton Effect - dreamy photo effect in CSS and React](https://mikebifulco.com/posts/orton-effect-css-react)
 - 📜 [Mark Erikson - Guide to React Rendering Behavior - updated for React 18](https://twitter.com/acemarke/status/1577301648850014210)
-- 🚧 [no-nested-components ESLint rule](https://github.com/facebook/react/pull/25360): une nouvelle règle pourrait arriver prochainement et éviter de déclarer des composants à la volée (mauvaise pratique).
+- 🚧 [no-nested-components ESLint rule](https://github.com/facebook/react/pull/25360): a new rule could come soon and avoid declaring components on the fly
 - 🧵 [Dan Abramov - "skipping re-renders (eg with memo) is a performance optimization only"](https://twitter.com/dan_abramov/status/1575553047408902147)
 - 🧵 [Andrew Clark - "We've looked very seriously at a WASM rewrite of React"](https://twitter.com/acdlite/status/1576302675766804480)
 - [React Spectrum - React Aria - October 4 releases](https://twitter.com/devongovett/status/1577370727849680896)
@@ -100,16 +100,16 @@ IRL tickets are almost **sold-out** ! Be quick, **[Grab yours](https://ti.to/bej
 
 **[Reassure - Continuous App Performance Monitoring Made Simple](https://www.callstack.com/blog/app-performance-monitoring)**
 
-Pour Callstack, 80% des problèmes de performance sur React-Native viennent du JS, et en particulier d'un mauvais usage de React. Pour y remédier, ils ont créé Reassure, une nouvelle librairie de performance regression testing. Elle s'intègre à votre CI pour éviter que les performances de vos apps ne se dégradent dans le temps. Le [support web](https://github.com/callstack/reassure/issues/39) n'est pas encore disponible.
+Callstack estimates 80% of performance problems on React-Native come from JS, and in particular from React misuse. They created Reassure, a new performance regression testing library. It integrates well with your CI to prevent the performance of your apps from degrading over time. The [web support](https://github.com/callstack/reassure/issues/39) is not yet available.
 
-- 📒 [BAM Mobile Tech Radar 2022](https://www.bam.tech/en-tech-radar): un rapport complet sur le développement mobile en 2022, avec une grosse partie sur React-Native
+- 📒 [BAM Mobile Tech Radar 2022](https://www.bam.tech/en-tech-radar): a complete report on mobile development in 2022, with a big part on React-Native
 - 🔗 [fabric-library-with-custom-cpp-example](https://github.com/callstack/fabric-library-with-custom-cpp-example/)
 - 📦 React-Native [v0.70.2](https://twitter.com/Kelset/status/1577262972396744704) + [v0.69.6](https://twitter.com/titozzz/status/1574744371865346049)
-- 📦 [Jest-Native 5.0](https://github.com/testing-library/jest-native/releases): support natif TypeScript
-- 🎥 [React-Native EU playlist](https://www.youtube.com/watch?v=7QeINTWLUkc&list=PLZ3MwD-soTTE-qcA0MrcvZBdmkHJSIjJX): les vidéos découpées sont en ligne
+- 📦 [Jest-Native 5.0](https://github.com/testing-library/jest-native/releases): native TypeScript support
+- 🎥 [React-Native EU playlist](https://www.youtube.com/watch?v=7QeINTWLUkc&list=PLZ3MwD-soTTE-qcA0MrcvZBdmkHJSIjJX): videos are splitted are online
 - 🎥 [Arc Slider with React-Native Skia, React-Native Gesture Handler and Reanimated 2](https://www.youtube.com/watch?v=fWLyKzEXaJI)
 - 📜 [How to specify pre-processor flags to the JSI-based React Native libraries](https://dev.to/craftzdog/how-to-specify-pre-processor-flags-to-the-jsi-based-react-native-libraries-51m5)
-- 📖 [Expo Router](https://expo.github.io/router/): la doc est dispo pour se familiariser avec ce nouveau routeur
+- 📖 [Expo Router](https://expo.github.io/router/): the doc is available to familiarize yourself with this new file-system router
 - 📖 [Expo App Icons and Splash Screen guides updated](https://twitter.com/amanhimself/status/1575589181237043200)
 - 🎨 [Native iOS bottom sheet demo - iOS detents](https://twitter.com/FernandoTheRojo/status/1575247583634935808)
 - 🎨 [React-Native WishList demo - alpha soon](https://twitter.com/margelo_io/status/1576887456024043520)
