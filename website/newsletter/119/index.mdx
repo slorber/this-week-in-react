@@ -1,15 +1,16 @@
 ---
 slug: /119
-title: "📨 #119: ..."
+title: "📨 #119: React OG Images, Tremor, Storybook, Decoupling, Rendering, Data-Fetching, Remix, Qwik, TypeScript, Playwright..."
 authors: [slorber]
 date: 10-11-2022
 image: /img/TWIR_POST.png
-draft: true
 ---
 
 Hi everyone!
 
-<Todo />
+A week with a lot of good and varied React articles. It's calm on the React-Native side.
+
+The [ViteConf](https://viteconf.org/) has just started, there will probably be some announcements for next week ;)
 
 <!-- truncate -->
 
@@ -35,7 +36,36 @@ Check out [Technology Hub](https://www.storyblok.com/technologies?utm_source=thi
 
 ## ⚛️ React {#react}
 
-<Todo />
+**[Vercel OG Image Generation: Fast, dynamic social card images at the Edge](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images)**
+
+Vercel presents a new very efficient solution to generate dynamic social cards in Vercel Edge Functions. Practical: it is possible to use JSX, React components (stateless) and Tailwind without additional config. I recommend [this thread](https://twitter.com/shuding_/status/1579607964549513217) explaining how it all works, very interesting! They even use Yoga, the layout engine from React-Native in WASM 🤭
+
+**[The future of rendering in React](https://prateeksurana.me/blog/future-of-rendering-in-react/)**
+
+Well-illustrated article that presents the rendering patterns of React 18 and above. You will find information about how SSR streaming works, Suspense, React lazy, feature flags implementation with Server Components...
+
+**[Overcoming Popular Issues With React Projects](https://dinosaurs-with-jetpacks.com/posts/react-problems)**
+
+Encourages to decouple our JavaScript apps from the framework (React or other). Promotes a return to more simplicity. Some hot takes that will probably not agree with.
+
+**[Material UI in Storybook](https://storybook.js.org/blog/material-ui-in-storybook/)**
+
+Tutorial with a particularly interesting section that explains how to automate the creation of Storytook controls by reusing the TypeScript types of the underlying UI library. Very useful when forwarding props. Even supports helpers like `Pick` and `Omit`.
+
+- 👤 Sathya Gunasekaran (ex V8) [joins the React core team](https://twitter.com/_gsathya/status/1578816177371250688), most likely to [work on the React-Forget compiler](https://twitter.com/Huxpro/status/1578865666010263552)
+- 👥 [Next.js Conf 2022 speakers](https://twitter.com/vercel/status/1578401243243741185)
+- 📖 Beta docs: [React.Children](https://twitter.com/dan_abramov/status/1578457525628047360) + [useId](https://twitter.com/dan_abramov/status/1577283961763467265) + [createElement](https://twitter.com/dan_abramov/status/1577463721193897985) + [useImperativeHandle](https://twitter.com/dan_abramov/status/1577717226269966336)
+- 📖 [Next.js on Vercel docs improvements](https://twitter.com/leeerob/status/1577788730349436928)
+- 🌶 [React and Next.js is DEAD — Something New is (Finally) Replacing It (For Good)](https://javascript.plainenglish.io/react-and-next-js-is-dead-something-new-is-finally-replacing-it-for-good-c792c48806f6): explains how the Qwik framework presents a superior model to React. Click-bait title, but really interesting article.
+- 📜 [Build a React Custom Renderer - Part 1](https://www.markcodes.dev/posts/build-react-custom-renderer-part-1): new series that shows how to create a React renderer. For now it's quite easy to follow, but it does not yet support updates.
+- 📜 [Remix, React, and State](https://blog.jim-nielsen.com/2022/remix-react-and-state/): gives a mental model for Remix that reconciles the React state in an end-to-end / fullstack way.
+- 📜 [How to write your own state management library](https://judehunter.dev/blog/how-to-write-your-own-state-management-library): useful to understand how a state management library works, and how to implement a selector system.
+- 📜 [How to fetch data in React with performance in mind](https://www.developerway.com/posts/how-to-fetch-data-in-react): explains why data-fetching in React is not as simple as it seems. performance is related to UX/perception. Explain waterfalls, browser request limits...
+- 📜 [Avoid impossible UI states with React, Typescript and xState](https://whereisthemouse.com/avoid-impossible-ui-states-with-react-typescript-and-xstate): TypeScript's discriminated union-types avoid impossible states, and XState avoids impossible state transitions.
+- 📜 [I changed my mind about writing new JavaScript frameworks](https://whitep4nth3r.com/blog/write-a-new-javascript-framework/): there are only 4 frameworks that support both SSG + SSR: Eleventy, Next.js, Gatsby, Redwood.
+- 📜 [How to Use Sandpack for Code Demos](https://www.ctnicholas.dev/articles/how-to-use-sandpack-for-code-demos): article [updated with the latest Sandpack features](https://twitter.com/ctnicholasdev/status/1577683748878884864), this Codesandbox tool to create live code playgrounds. Used by React beta docs, Josh Comeau...
+- 📦 [Tremor 1.0](https://www.tremor.so/): a library of React UI components to create dashboard analytics.
+- 🐦 [W3C Trusted Types + React + XSS](https://twitter.com/sebastienlorber/status/1579485631260286977): a new HTML proposal could provide a native solution to prevent XSS vulnerabilities, and perhaps eventually remove the need for `dangerouslySetInnerHTML`??
 
 <SubscribeFormEmbed />
 
@@ -61,7 +91,12 @@ IRL tickets are unfortunately **sold-out** ! You can still be part of the fun th
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+- 🎥 [Can It Be Done In React-Native - Season 5 Trailer](https://www.youtube.com/watch?v=GArbi97dV08)
+- 🚧 [Expo Router 0.0.26](https://twitter.com/Baconbrix/status/1578805793733763072): [useHref / copy link](https://twitter.com/Baconbrix/status/1578176991441784833) + [Splash Screen Orchestration](https://twitter.com/Baconbrix/status/1577690073906257921)
+- 📖 [React-Native docs fully bilingual - Java + Kotlin](https://twitter.com/reactnative/status/1578332414145105921)
+- 🎨 [Reanimated - useAnimatedKeyboard() demo](https://twitter.com/swmansion/status/1579471824831725571)
+- 📦 [react-native-test-app 2.0](https://twitter.com/lord_sherlock/status/1578312268663906304): Expo Config plugins support
+- 📦 [react-native-quick-sqlite 5.0](https://twitter.com/ospfranco/status/1578145916510273536): promise API
 
 ---
 
@@ -81,10 +116,18 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 ## 🔀 Other {#other}
 
-<Todo />
+- [Playwright Locators APIs inspired by Testing Library](https://twitter.com/diegohaz/status/1578567655493193728)
+- [Deno - The Future of the Web is on the Edge](https://deno.com/blog/the-future-of-web-is-on-the-edge)
+- [New patterns for amazing apps](https://web.dev/new-patterns-for-amazing-apps/)
+- [Optimize long tasks](https://web.dev/optimize-long-tasks/)
+- [Optimizing Interaction to Next Paint (INP)](https://speaking.jeremy.codes/GptKXg/optimizing-interaction-to-next-paint-inp)
+- [Cloudflare Pages gets even faster with Early Hints](https://blog.cloudflare.com/early-hints-on-cloudflare-pages/)
+- [Codesandbox - A Unified CodeSandbox Experience](https://codesandbox.io/post/a-unified-codesandbox-experience)
+- [Safari Technology Preview 155](https://webkit.org/blog/13338/release-notes-for-safari-technology-preview-155/)
+- [Axios 1.0](https://github.com/axios/axios/releases/tag/v1.0.0)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![Kent C. Dodds Twitter edit meme - Rick Rolled](/emails/issues/119/meme.png)](https://twitter.com/kentcdodds/status/1578334293863956480/history)
