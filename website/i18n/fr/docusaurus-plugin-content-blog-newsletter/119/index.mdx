@@ -9,7 +9,11 @@ draft: true
 
 Salut à tous !
 
-ViteConf, Next 13...
+Une semaine avec pas mal de bons articles React. Une innovation Vercel intéressante pour la génération d'images OG.
+
+La ViteConf vient de commencer, il y aura peut-être des annonces la semaine prochaine ;)
+
+Je fais une [présentation Docusaurus ce vendredi avec code.gouv.fr](https://twitter.com/codegouvfr/status/1579407609643532288) (atelier BlueHats organisé par la direction interministérielle du numérique), n'hésitez pas à vous inscrire, c'est ouvert à tous.
 
 BlueHats
 https://communs.numerique.gouv.fr/ateliers/
@@ -41,38 +45,36 @@ Consultez le [Hub Technologique](https://www.storyblok.com/technologies?utm_sour
 
 ## ⚛️ React {#react}
 
-[Remix, React, and State](https://blog.jim-nielsen.com/2022/remix-react-and-state/)
+**[Vercel OG Image Generation: Fast, dynamic social card images at the Edge](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images)**
 
-[How to write your own state management library](https://judehunter.dev/blog/how-to-write-your-own-state-management-library)
+Vercel propose une nouvelle solution très efficace pour générer des social cards dynamiques dans des Vercel Edge Functions. Pratique: il est possible d'utiliser du JSX, des composants React (stateless) et Tailwind sans config additionnelle. Je recommande le [thread de Shu Ding](https://twitter.com/shuding_/status/1579607964549513217) qui explique comment ça marche, vraiment intéressant. Ils utilisent même Yoga, le moteur de layout de React-Native 🤭
 
-[Overcoming Popular Issues With React Projects](https://dinosaurs-with-jetpacks.com/posts/react-problems)
+**[The future of rendering in React](https://prateeksurana.me/blog/future-of-rendering-in-react/)**
 
-[The future of rendering in React](https://prateeksurana.me/blog/future-of-rendering-in-react/)
+Article très bien illustré qui présente les patterns de React 18 et plus. Vous y trouverez des infos sur le fonctionnement du streaming SSR, Suspense, React lazy, l'implémentation de feature flags avec les Server Components...
 
-[Introducing OG Image Generation: Fast, dynamic social card images at the Edge](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images)
+**[Overcoming Popular Issues With React Projects](https://dinosaurs-with-jetpacks.com/posts/react-problems)**
 
-- https://twitter.com/shuding_/status/1579607964549513217
+Incite à découpler un maximum nos apps JavaScript du framework (React ou autre). Prone un retour vers plus de simplicité. Quelques "hot takes" qui ne feront sans doute pas l'unanimité.
 
-- 📦 [Tremor 1.0](https://www.tremor.so/): une librairie de composants UI React pour créer des dashboard analytics.
+**[Material UI in Storybook](https://storybook.js.org/blog/material-ui-in-storybook/)**
+
+Tutoriel avec une section particulièrement intéressante qui explique comment automatiser la création des Storytook controls en réutilisant les types TypeScript de la librairie UI. Très utile lorsqu'on forward des props. Supporte même les helpers comme `Pick` et `Omit`.
 
 - 👤 Sathya Gunasekaran [rejoins la React core team](https://twitter.com/_gsathya/status/1578816177371250688), probablement [travailler sur le compiler React-Forget](https://twitter.com/Huxpro/status/1578865666010263552)
-
-- 📜 [How to fetch data in React with performance in mind](https://www.developerway.com/posts/how-to-fetch-data-in-react)
-
-- 📜 [Avoid impossible UI states with React, Typescript and xState](https://whereisthemouse.com/avoid-impossible-ui-states-with-react-typescript-and-xstate)
-
-- 📜 [I changed my mind about writing new JavaScript frameworks](https://whitep4nth3r.com/blog/write-a-new-javascript-framework/)
-
-- 📜 [Make your React apps fast again](https://avocadev.hashnode.dev/make-your-react-apps-fast-again)
-
-- 📜 [Build a React Custom Renderer - Part 1](https://www.markcodes.dev/posts/build-react-custom-renderer-part-1)
-- 📜 [Material UI in Storybook](https://storybook.js.org/blog/material-ui-in-storybook/)
-- 📜 [How to Use Sandpack for Code Demos - updated](https://www.ctnicholas.dev/articles/how-to-use-sandpack-for-code-demos) + https://twitter.com/ctnicholasdev/status/1577683748878884864
-- 🌶 [React and Next.js is DEAD — Something New is (Finally) Replacing It (For Good)](https://javascript.plainenglish.io/react-and-next-js-is-dead-something-new-is-finally-replacing-it-for-good-c792c48806f6)
 - 📖 Beta docs: [React.Children](https://twitter.com/dan_abramov/status/1578457525628047360) + [useId](https://twitter.com/dan_abramov/status/1577283961763467265) + [createElement](https://twitter.com/dan_abramov/status/1577463721193897985) + [useImperativeHandle](https://twitter.com/dan_abramov/status/1577717226269966336)
 - 📖 [Next.js on Vercel docs improvements](https://twitter.com/leeerob/status/1577788730349436928)
 - 👥 [Next.js Conf 2022 speakers](https://twitter.com/vercel/status/1578401243243741185)
-- 🐦 [W3C Trusted Types + React + XSS](https://twitter.com/sebastienlorber/status/1579485631260286977)
+- 🌶 [React and Next.js is DEAD — Something New is (Finally) Replacing It (For Good)](https://javascript.plainenglish.io/react-and-next-js-is-dead-something-new-is-finally-replacing-it-for-good-c792c48806f6): explique en quoi le framework Qwik présente un modèle supérieur à React. Titre click-bait, mais article réellement intéressant.
+- 📜 [Build a React Custom Renderer - Part 1](https://www.markcodes.dev/posts/build-react-custom-renderer-part-1): nouvelle série qui montre comment créer un renderer React. La première partie ne gère pas encore les updates.
+- 📜 [Remix, React, and State](https://blog.jim-nielsen.com/2022/remix-react-and-state/): donne un modèle mental pour Remix qui réconcilie le state de manière end-to-end / fullstack.
+- 📜 [How to write your own state management library](https://judehunter.dev/blog/how-to-write-your-own-state-management-library): pour comprendre comment une librairie de state management fonctionne, et comment implémenter un système de sélecteurs.
+- 📜 [How to fetch data in React with performance in mind](https://www.developerway.com/posts/how-to-fetch-data-in-react): explique bien pourquoi le data-fetching en React n'est pas si simple qu'il n'en a l'air.
+- 📜 [Avoid impossible UI states with React, Typescript and xState](https://whereisthemouse.com/avoid-impossible-ui-states-with-react-typescript-and-xstate): les discriminated union-types de TypeScript permettent d'éviter les états impossibles, et XState permet d'éviter les transitions d'état impossibles.
+- 📜 [I changed my mind about writing new JavaScript frameworks](https://whitep4nth3r.com/blog/write-a-new-javascript-framework/): il n'y a que 4 frameworks qui supportent à la fois SSG + SSR: Eleventy, Next.js, Gatsby, Redwood.
+- 📜 [How to Use Sandpack for Code Demos](https://www.ctnicholas.dev/articles/how-to-use-sandpack-for-code-demos): article [mis à jour avec les dernières nouveautés Sandpack](https://twitter.com/ctnicholasdev/status/1577683748878884864), l'outil Codesandbox qui permet de créer des code playgrounds.
+- 📦 [Tremor 1.0](https://www.tremor.so/): une librairie de composants UI React pour créer des dashboard analytics.
+- 🐦 [W3C Trusted Types + React + XSS](https://twitter.com/sebastienlorber/status/1579485631260286977): une nouvelle proposal HTML pourrait apporter une solution native pour prévenir les failles XSS, et peut-être se passer à terme de `dangerouslySetInnerHTML`?
 
 <SubscribeFormEmbed />
 
@@ -91,9 +93,8 @@ Cambly, c'est la plateforme pour progresser à l'oral en anglais avec des tuteur
 ## 📱 React-Native {#react-native}
 
 - 🎥 [Can It Be Done In React-Native - Season 5 Trailer](https://www.youtube.com/watch?v=GArbi97dV08)
-- 🚧 [Expo Router 0.0.26](https://twitter.com/Baconbrix/status/1578805793733763072) + https://twitter.com/JI/status/1578186941354287104 + https://twitter.com/Baconbrix/status/1577690073906257921
+- 🚧 [Expo Router 0.0.26](https://twitter.com/Baconbrix/status/1578805793733763072): [useHref / copy link](https://twitter.com/Baconbrix/status/1578176991441784833) + [Splash Screen Orchestration](https://twitter.com/Baconbrix/status/1577690073906257921)
 - 📖 [React-Native docs fully bilingual - Java + Kotlin](https://twitter.com/reactnative/status/1578332414145105921)
-- 🎨 [Expo Router proposal - Splash Screen Orchestration](https://twitter.com/Baconbrix/status/1577690073906257921)
 - 🎨 [Reanimated - useAnimatedKeyboard() demo](https://twitter.com/swmansion/status/1579471824831725571)
 - 📦 [react-native-test-app 2.0](https://twitter.com/lord_sherlock/status/1578312268663906304)
 - 📦 [react-native-quick-sqlite 5.0](https://twitter.com/ospfranco/status/1578145916510273536)
@@ -123,11 +124,9 @@ Paris 75008 - 2j de TT/sem.
 
 ## 🇫🇷 En français {#fr}
 
-Pas de contenu cette semaine 😅
+- 🎥 [Pourquoi je n'utilise pas Create-React-App](https://www.youtube.com/watch?v=PlIJSUkufuk)
 
 💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
-
-[Pourquoi je n'utilise pas Create-React-App](https://www.youtube.com/watch?v=PlIJSUkufuk)
 
 ---
 
@@ -147,8 +146,4 @@ Pas de contenu cette semaine 😅
 
 ## 🤭 Fun {#fun}
 
-https://twitter.com/astrodotbuild/status/1578871432700125185
-
-https://twitter.com/jaredpalmer/status/1578101851114729472
-
-https://twitter.com/kentcdodds/status/1578334293863956480/history
+[![Kent C. Dodds Twitter edit meme - Rick-Rolled](/emails/issues/119/meme.png)](https://twitter.com/kentcdodds/status/1578334293863956480/history)
