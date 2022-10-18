@@ -45,6 +45,20 @@ Vous pouvez le [télécharger ici](https://sizzy.co/?utm_campaign=newsletter&utm
 
 **[React RFC: First class support for promises and async/await](https://github.com/reactjs/rfcs/pull/229)**
 
+Server components ts`async/await`
+
+use for React client comnents, React version of await, can be used in conditions
+
+Other usable types: promise, context, store?, observable: https://github.com/acdlite/rfcs/blob/first-class-promises/text/0000-first-class-support-for-promises.md#other-usable-types
+
+Consistent abstraction => change mind => use different apis for client/server. underestimated how frequently Server Components might need to perform ad hoc asynchronous operations
+
+Help distinguish client/server components => pit of success for designing components
+
+compilation => Crankjs?
+
+=> plus possible de throw une promise
+
 - Remix naive: https://twitter.com/ebey_jacob/status/1581548418039963648
 
 - Ryan carniato https://twitter.com/RyanCarniato/status/1581155827091578880
@@ -77,10 +91,13 @@ Josh
 - 📜 [Prioritise content over components](https://www.simeongriggs.dev/components-considered-harmful-for-content)
 - 📜 [Streaming: is it worth it?](https://www.builder.io/blog/streaming-is-it-worth-it)
 - 📜 [A little semantic HTML trick for React components](https://queen.raae.codes/emails/2022-10-10-semantic-react/)
+- 📜 [Using Web Components With Next (or Any SSR Framework)](https://css-tricks.com/using-web-components-with-next-or-any-ssr-framework/)
+- 📜 [Exploring how virtual DOM is implemented in React](https://indepth.dev/posts/1501/exploring-how-virtual-dom-is-implemented-in-react)
 - 📜 [Moving From React to htmx](https://htmx.org/essays/a-real-world-react-to-htmx-port/) + https://twitter.com/htmx_org/status/1581316329818099712 + https://twitter.com/hn_frontpage/status/1581828152548282368
 - 🧑‍🎓 [Create a 3D site with Game Controls in Spline and React](https://designcode.io/spline2) ([video](https://www.youtube.com/watch?v=uYp_ipIasYE))
 - 🎙️ [Docusaurus 2 is a pretty big deal](https://changelog.com/jsparty/247)
 - 🎥 [In Defense of useEffect](https://www.youtube.com/watch?v=Zw4lJqBphvA)
+- 🎥 [Making React Context Fast!](https://www.youtube.com/watch?v=ZKlXqrcBx88)
 - 🚧 [Streaming SSR in Preact prototype](https://twitter.com/marvinhagemeist/status/1581762567328104448)
 - 🎨 [Satori + React-Three-Fiber demo](https://twitter.com/0xca0a/status/1581751380339232768)
 - 🎨 [Satori + SVG code syntax highlighting demo](https://twitter.com/shuding_/status/1581358324569645056)
@@ -121,12 +138,15 @@ N'hésitez pas à aller voir notre site [premieroctet.com](https://www.premieroc
 https://twitter.com/reactnative/status/1581313958836809729
 
 - 💬 [Restructuring React Native's Public API](https://github.com/react-native-community/discussions-and-proposals/discussions/523)
+- 📜 [Setting up React Native Monorepo with Yarn Workspaces](https://www.callstack.com/blog/setting-up-react-native-monorepo-with-yarn-workspaces)
+- 📜 [How to Use Module Federation with Re.Pack 3](https://www.callstack.com/blog/module-federation-with-re-pack-3)
 - 🚧 [Expo Router 0.0.27](https://twitter.com/Baconbrix/status/1579912795323215872) + https://twitter.com/Baconbrix/status/1579867430775848964 + [Layout API change RFC](https://twitter.com/Baconbrix/status/1582057133939384321)
 - 🚧 [React-Native Bottom Sheet v5 will have web support](https://twitter.com/gorhom/status/1581334529121218561)
 - 🚧 [React-Native Flex gap support coming?](https://twitter.com/Baconbrix/status/1580587087174062080)
 - 📖 [Expo docs improvements](https://twitter.com/amanhimself/status/1580615698321399811): "Running E2E tests on EAS Build now works on Android"
 - 📦 [Metro 0.73.0](https://github.com/facebook/metro/releases/tag/v0.73.0)
 - 📦 [React-Native 0.70.3](https://twitter.com/Kelset/status/1580210635266084864)
+- 🎥 [Flip card Animation in React-Native Re-Animated 2](https://www.youtube.com/watch?v=nVsvcu93488)
 - 🎙️ [React-Native-Radio 248 - Introducing Ignite v8: Maverick!](https://reactnativeradio.com/episodes/rnr-248-introducing-ignite-v8-maverick)
 
 ---
@@ -187,7 +207,9 @@ https://twitter.com/simonplend/status/1580515663638142979
 
 - [Fontaine - Automatic font fallback based on font metrics](https://github.com/unjs/fontaine) + https://twitter.com/danielcroe/status/1581428654479138817
 - [Unplugin - Unified plugin system for Vite, Rollup, Webpack, and more](https://github.com/unjs/unplugin)
+- [CSS - Help pick a syntax for nesting - Survey results](https://developer.chrome.com/blog/help-css-nesting-results/)
 - [Rollup v3](https://github.com/rollup/rollup/releases/tag/v3.0.0)
+- [Jest 29.2](https://github.com/facebook/jest/releases/tag/v29.2.0)
 - [Evan You - How Vite Came to Be - ViteConf 2022 slides](https://docs.google.com/presentation/d/1O09rAOu_wRLHVjukVbBeSlRkLeX-dcYZfsdjPiU4kGQ/edit#slide=id.p)
 - [Obsidian 1.0](https://obsidian.md/1.0)
 - [rRPC-chrome - tRPC adapter for Web Extensions](https://github.com/jlalmes/trpc-chrome)
