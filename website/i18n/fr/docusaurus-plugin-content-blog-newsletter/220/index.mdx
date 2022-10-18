@@ -45,31 +45,11 @@ Vous pouvez le [télécharger ici](https://sizzy.co/?utm_campaign=newsletter&utm
 
 **[React RFC: First class support for promises and async/await](https://github.com/reactjs/rfcs/pull/229)**
 
-Server components ts`async/await`
+L'équipe React a décidé de revenir sur un modèle `async/await` pour simplifier l'usage des Server Components. Problème: il est difficile d'introduire `async/await` pour les composants client pour diverses raisons. JavaScript ne met pas a disposition de méthode `Promise.inspect` pour récupérer le résultat d'une promesse de manière synchrone.
 
-use for React client comnents, React version of await, can be used in conditions
+Ils proposent donc d'introduire une API `use(promise)` coté client. Contrairement aux autres hooks, on peut appeler `use` conditionnellement. Plus tard on pourra l'utiliser avec d'autres "usables" comme le context React (en vrai, on peut déjà [utiliser `useContext` conditionnellement!](https://twitter.com/acdlite/status/1581401077915975680)). Utiliser des APIs différente peut aussi être vu comme une feature: cela permet de bien distinguer les Server Components des Client Components.
 
-Other usable types: promise, context, store?, observable: https://github.com/acdlite/rfcs/blob/first-class-promises/text/0000-first-class-support-for-promises.md#other-usable-types
-
-Consistent abstraction => change mind => use different apis for client/server. underestimated how frequently Server Components might need to perform ad hoc asynchronous operations
-
-Help distinguish client/server components => pit of success for designing components
-
-compilation => Crankjs?
-
-=> plus possible de throw une promise
-
-- Remix naive: https://twitter.com/ebey_jacob/status/1581548418039963648
-
-- Ryan carniato https://twitter.com/RyanCarniato/status/1581155827091578880
-
-- Devon: https://twitter.com/devongovett/status/1581146015486291969
-
-[intégration tRPC](https://twitter.com/alexdotjs/status/1581932629623857153)
-
-[call useContext conditionally](https://twitter.com/acdlite/status/1581401077915975680)
-
-[They Fixed React ?](https://www.youtube.com/watch?v=iOpTdwf96NQ)
+Cette RFC donne lieu a des débats intéressants. On se demande a quoi ressemblera l'intégration avec les librairies de data-fetching. L'usage de générateurs semble adapté au cas de figure, mais ils sont difficiles à utiliser en pratique. On est en attente d'une nouvelle RFC qui proposera une API de cache.
 
 **[The Web’s Next Transition](https://www.epicweb.dev/the-webs-next-transition)**
 
@@ -94,18 +74,18 @@ Josh
 - 📜 [Using Web Components With Next (or Any SSR Framework)](https://css-tricks.com/using-web-components-with-next-or-any-ssr-framework/)
 - 📜 [Exploring how virtual DOM is implemented in React](https://indepth.dev/posts/1501/exploring-how-virtual-dom-is-implemented-in-react)
 - 📜 [Moving From React to htmx](https://htmx.org/essays/a-real-world-react-to-htmx-port/) + https://twitter.com/htmx_org/status/1581316329818099712 + https://twitter.com/hn_frontpage/status/1581828152548282368
+- 🐦 [React tip: isFocused should almost never be a prop](https://twitter.com/DavidKPiano/status/1580179833052876800)
+- 🚧 [Streaming SSR in Preact prototype](https://twitter.com/marvinhagemeist/status/1581762567328104448)
 - 🧑‍🎓 [Create a 3D site with Game Controls in Spline and React](https://designcode.io/spline2) ([video](https://www.youtube.com/watch?v=uYp_ipIasYE))
+- 🎨 [Satori + React-Three-Fiber demo](https://twitter.com/0xca0a/status/1581751380339232768)
+- 🎨 [Satori + SVG code syntax highlighting demo](https://twitter.com/shuding_/status/1581358324569645056)
 - 🎙️ [Docusaurus 2 is a pretty big deal](https://changelog.com/jsparty/247)
 - 🎥 [In Defense of useEffect](https://www.youtube.com/watch?v=Zw4lJqBphvA)
 - 🎥 [Making React Context Fast!](https://www.youtube.com/watch?v=ZKlXqrcBx88)
-- 🚧 [Streaming SSR in Preact prototype](https://twitter.com/marvinhagemeist/status/1581762567328104448)
-- 🎨 [Satori + React-Three-Fiber demo](https://twitter.com/0xca0a/status/1581751380339232768)
-- 🎨 [Satori + SVG code syntax highlighting demo](https://twitter.com/shuding_/status/1581358324569645056)
 - 📦 [Planby - React.js based component for schedules and timelines](https://planby.netlify.app/)
 - 📦 [Gatsby v5 beta](https://twitter.com/GatsbyJS/status/1580288285229735936)
 - 📦 [Astro 1.5](https://twitter.com/astrodotbuild/status/1580611193429168129)
 - 📦 [SWR 2.0 RC](https://github.com/vercel/swr/releases/tag/2.0.0-rc.0)
-- 🐦 [React tip: isFocused should almost never be a prop](https://twitter.com/DavidKPiano/status/1580179833052876800)
 
 <SubscribeFormEmbed />
 
