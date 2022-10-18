@@ -45,7 +45,7 @@ Vous pouvez le [télécharger ici](https://sizzy.co/?utm_campaign=newsletter&utm
 
 **[React RFC: First class support for promises and async/await](https://github.com/reactjs/rfcs/pull/229)**
 
-L'équipe React a décidé de revenir sur un modèle `async/await` pour simplifier l'usage des Server Components. Problème: il est difficile d'introduire `async/await` pour les composants client pour diverses raisons. JavaScript ne met pas a disposition de méthode `Promise.inspect` pour récupérer le résultat d'une promesse de manière synchrone.
+L'équipe React a décidé de revenir sur un modèle `async/await` pour simplifier l'usage des Server Components. Problème: il est difficile de supporter `async/await` sur les composants client. JavaScript ne met pas a disposition de méthode `Promise.inspect` pour récupérer le résultat d'une promesse de manière synchrone.
 
 Ils proposent donc d'introduire une API `use(promise)` coté client. Contrairement aux autres hooks, on peut appeler `use` conditionnellement. Plus tard on pourra l'utiliser avec d'autres "usables" comme le context React (en vrai, on peut déjà [utiliser `useContext` conditionnellement!](https://twitter.com/acdlite/status/1581401077915975680)). Utiliser des APIs différente peut aussi être vu comme une feature: cela permet de bien distinguer les Server Components des Client Components.
 
