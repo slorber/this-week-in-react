@@ -51,27 +51,20 @@ Cette RFC donne lieu a des débats intéressants. On se demande a quoi ressemble
 
 **[The Web’s Next Transition](https://www.epicweb.dev/the-webs-next-transition)**
 
-https://twitter.com/kentcdodds/status/1580395678479814656
-
-**[Storybook - First-class Vite support](https://storybook.js.org/blog/first-class-vite-support-in-storybook/)**
-
-v7 pre-release? https://twitter.com/IanVanSchooten/status/1579884486820782080
-
-https://twitter.com/storybookjs/status/1580578832553488384
-
-https://twitter.com/storybookjs/status/1580579898896584704
+Kent C. Dodds propose une belle rétrospective des 3 grandes architectures web, très bien illustré et documenté. Il met en avant la dernière architecture, tendance du moment: Progressively Enhanced Single-Page-Application. Remix en est une implémentation, avec des abstractions bien pensées qui incitent a émuler le comportement natif du navigateur. Je ne suis pas d'accord sur la nécessité absolue d'un serveur. [Docusaurus](https://github.com/facebook/docusaurus) est aussi une implémentation PESPA qui fonctionne bien sans JavaScript.
 
 **[A World-Class Code Playground with Sandpack](https://www.joshwcomeau.com/react/next-level-playground/)**
 
-Josh
+Josh Comeau vante les mérites de [Sandpack](https://github.com/codesandbox/sandpack), la boite a outils de CodeSandbox qu'il utilise pour créer des code playgrounds intéractifs. Cela à l'air simple d'utilisation et très fléxible!
 
-- 📜 [Lazy-load React components in Remix](https://sergiodxa.com/articles/lazy-load-react-components-in-remix)
-- 📜 [Prioritise content over components](https://www.simeongriggs.dev/components-considered-harmful-for-content)
-- 📜 [Streaming: is it worth it?](https://www.builder.io/blog/streaming-is-it-worth-it)
-- 📜 [A little semantic HTML trick for React components](https://queen.raae.codes/emails/2022-10-10-semantic-react/)
+- 📜 [Streaming: is it worth it?](https://www.builder.io/blog/streaming-is-it-worth-it): les auteurs de Qwik, Solid et Marko expliquent les avantages du streaming, et pourquoi il est difficile d'adopter cette technique. Dans un contexte React, il faut que les librairies utilisées (Helmet, CSS-in-JS, Redux...) soient compatibles pour que le streaming soit efficace.
+- 📜 [Storybook - First-class Vite support](https://storybook.js.org/blog/first-class-vite-support-in-storybook/): la version 7.0 passe prochainement en beta: support Vite sans config, pre-bundling, plus besoin de Webpack, support de nouveaux comme Vue 2, Lit et Svelte...
+- 📜 [Moving From React to htmx](https://htmx.org/essays/a-real-world-react-to-htmx-port/): retour d'expérience (article + video) sur une migration réussie de React vers [htmx](https://htmx.org/). On est dans un contexte backend Python, leurs conclusions seraient sans doutes différentes dans un contexte JavaScript ou tous les devs sont full-stack.
+- 📜 [Prioritise content over components](https://www.simeongriggs.dev/components-considered-harmful-for-content): des idées intéressante sur la modélisation des composants React selon différentes perspectives: designer, developer et créateur de contenu (CMS)
+- 📜 [A little semantic HTML trick for React components](https://queen.raae.codes/emails/2022-10-10-semantic-react/): explique comment respecter la sémantique du HTML en passant l'élément DOM a créer en props.
 - 📜 [Using Web Components With Next (or Any SSR Framework)](https://css-tricks.com/using-web-components-with-next-or-any-ssr-framework/)
 - 📜 [Exploring how virtual DOM is implemented in React](https://indepth.dev/posts/1501/exploring-how-virtual-dom-is-implemented-in-react)
-- 📜 [Moving From React to htmx](https://htmx.org/essays/a-real-world-react-to-htmx-port/) + https://twitter.com/htmx_org/status/1581316329818099712 + https://twitter.com/hn_frontpage/status/1581828152548282368
+- 📜 [Lazy-load React components in Remix](https://sergiodxa.com/articles/lazy-load-react-components-in-remix)
 - 🐦 [React tip: isFocused should almost never be a prop](https://twitter.com/DavidKPiano/status/1580179833052876800)
 - 🚧 [Streaming SSR in Preact prototype](https://twitter.com/marvinhagemeist/status/1581762567328104448)
 - 🧑‍🎓 [Create a 3D site with Game Controls in Spline and React](https://designcode.io/spline2) ([video](https://www.youtube.com/watch?v=uYp_ipIasYE))
@@ -113,7 +106,7 @@ N'hésitez pas à aller voir notre site [premieroctet.com](https://www.premieroc
 
 **[2022: How can we improve React Native?](https://github.com/react-native-community/discussions-and-proposals/discussions/528)**
 
-https://twitter.com/reactnative/status/1581313958836809729
+L'équipe React-Native aimerait avoir avis retour sur ce qu'il faut améliorer dans React-Native. Quelques points mentionnés: le support CSS (Yoga, gap, grid, shadows...), le support cross-platform, les montées de version, le debugging, le clavier, les symlinks Metro...
 
 - 💬 [Restructuring React Native's Public API](https://github.com/react-native-community/discussions-and-proposals/discussions/523)
 - 📜 [Setting up React Native Monorepo with Yarn Workspaces](https://www.callstack.com/blog/setting-up-react-native-monorepo-with-yarn-workspaces)
@@ -152,39 +145,27 @@ Paris 75008 - 2j de TT/sem.
 
 ## 🇫🇷 En français {#fr}
 
-- [Partager son code entre des projets React et React Native sur un monorepo](https://dev.to/simonboisset/partager-son-code-entre-des-projets-react-et-react-native-sur-un-monorepo-3jl)
-- [Apprendre REACT.JS en 1 HEURE | Comprendre l'ESSENTIEL en 2022](https://www.youtube.com/watch?v=mLZDzZgoCC4)
+- 📜 [Partager son code entre des projets React et React Native sur un monorepo](https://dev.to/simonboisset/partager-son-code-entre-des-projets-react-et-react-native-sur-un-monorepo-3jl)
+- 🎥 [Apprendre React.js en 1 heure | Comprendre l'essentiel en 2022](https://www.youtube.com/watch?v=mLZDzZgoCC4)
 
 💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
-
-<Todo />
 
 ---
 
 ## 🔀 Autre {#other}
 
-[StackBlitz Codeflow](https://stackblitz.com/codeflow)
+**[StackBlitz Codeflow](https://stackblitz.com/codeflow)**
 
-https://twitter.com/stackblitz/status/1579877383716319233
+La technologie StackBlitz [WebContainers](https://blog.stackblitz.com/posts/introducing-webcontainers/) permet de faire tourner Node.js dans le navigateur via WebAssembly. On peut executer VS Code, Next.js ou Docusaurus directement dans votre navigateur, et non pas via un conteur Docker distant. Codeflow vient rajouter toute la couche d'intégration avec GitHub qui permet d'ouvrir facilement une pull-request ou de lancer l'execution du code d'une pull-request en local pour une revue de code.
 
-https://thenewstack.io/stackblitz-launches-codeflow-and-announces-figma-investment/
+Ils ont aussi lancé [Web Publisher](https://twitter.com/sebastienlorber/status/1580206198803922945), une vue d'édition simplifiée dédiée à l'édition de doc Markdown. Cela sera très pratique pour les utilisateurs moins techniques qui veulent éditer des fichiers Markdown sur Git et avoir une véritable preview (et non pas l'expérience dégradée de la preview GitHub). C'est un [besoin important pour les utilisateurs Docusaurus](https://twitter.com/ericsimons40/status/1580371754974781440).
 
-https://twitter.com/sebastienlorber/status/1580206198803922945
+**[Fontaine - Automatic font fallback based on font metrics](https://github.com/unjs/fontaine)**
 
-[One-click treat for Open Source maintainers](https://dev.to/stackblitz/one-click-treat-for-open-source-maintainers-49f7)
+Propose d'éviter les layout shifts liés au chargement de font. Fait en sorte que les lettres de la font de fallback aient la même dimension que la font finale, pour que le switch de font n'impacte pas la taille des conteneurs texte. Super idée! 👌
 
-Node 18.11
-
-https://nodejs.org/en/blog/release/v18.11.0/
-
-https://twitter.com/simonplend/status/1580515663638142979
-
-https://twitter.com/matteocollina/status/1580911016506163202
-
-https://twitter.com/simonplend/status/1580515663638142979
-
-- [Fontaine - Automatic font fallback based on font metrics](https://github.com/unjs/fontaine) + https://twitter.com/danielcroe/status/1581428654479138817
-- [Unplugin - Unified plugin system for Vite, Rollup, Webpack, and more](https://github.com/unjs/unplugin)
+- [Node 18.11](https://nodejs.org/en/blog/release/v18.11.0/): apporte le mode --watch et quelques [autres améliorations intéressantes](https://twitter.com/matteocollina/status/1580911016506163202)
+- [Unplugin - Unified plugin system for Vite, Rollup, Webpack, and more](https://github.com/unjs/unplugin): pour créer des plugins qui fonctionnent sur tous les bundlers 🙌
 - [CSS - Help pick a syntax for nesting - Survey results](https://developer.chrome.com/blog/help-css-nesting-results/)
 - [Rollup v3](https://github.com/rollup/rollup/releases/tag/v3.0.0)
 - [Jest 29.2](https://github.com/facebook/jest/releases/tag/v29.2.0)
