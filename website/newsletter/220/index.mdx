@@ -9,16 +9,13 @@ draft: true
 
 Hi everyone!
 
-La newsletter est en retard: une nouvelle RFC React m'a donné beaucoup de lecture 😄 L'article de Kent C. Dodds est assez long également mais vaut le coup. On a 2 articles qui mettent en avant Sandpack en 2 semaines, ça vaut sans doute le coup de s'y intéresser!
+The newsletter is late: a new React RFC gave me a lot of reading 😄 The article by Kent C. Dodds is quite long as well but worth it. We've got 2 articles highlighting Sandpack in 2 weeks, it's probably worth looking into!
 
-Ca bouge bien coté React-Native core également, avec de nouvelles discussions ouvertes. On pourrait même penser qu'après la migration vers la nouvelle architecture et la stabilisation des APIs publiques, il pourrait y avoir une release 1.0?
+It's moving well on the React-Native core side too, with new open discussions. We could even think that after the migration to the new architecture and the stabilization of public APIs, there could be a 1.0 release? It doesn't matter much in practice, but some apparently care deeply about having a major version.
 
-Il y a aussi pas mal de nouveautés intéressantes dans l'écosystème frontend. Je suis particulièrement intéressé par Codeflow, Fontaine et Unplugin qui peuvent avoir un intérêt direct pour Docusaurus.
+There are also quite a few interesting new things in the frontend ecosystem. I'm particularly interested in Codeflow, Fontaine and Unplugin which may be of direct interest to Docusaurus.
 
-En parlant de Docusaurus, voir aussi:
-
-- ma [démo live pour les ateliers BlueHats](https://communs.numerique.gouv.fr/ateliers/docusaurus/) (direction interministérielle du numérique)
-- mon [épisode dans le podcast Changelog JS Party](https://changelog.com/jsparty/247) (en Anglais).
+Speaking of Docusaurus, I was invited to talk about it in the [Changelog JS Party podcast](https://changelog.com/jsparty/247).
 
 <!-- truncate -->
 
@@ -52,23 +49,23 @@ You can [download it here](https://sizzy.co/?utm_campaign=newsletter&utm_source=
 
 **[React RFC: First class support for promises and async/await](https://github.com/reactjs/rfcs/pull/229)**
 
-L'équipe React a décidé de revenir sur un modèle `async/await` pour simplifier l'usage des Server Components. Problème: il est difficile de supporter `async/await` sur les Client Components. Ils proposent donc d'introduire une API `use(promise)` coté client. Contrairement aux autres hooks, on peut appeler `use` conditionnellement. Plus tard on pourra l'utiliser avec d'autres "usables" comme le context React (en vrai, on peut déjà [utiliser `useContext` conditionnellement!](https://twitter.com/acdlite/status/1581401077915975680)). Utiliser des APIs différente peut aussi être vu comme une feature: cela permet de bien distinguer les Server Components des Client Components.
+The React team decided to go back to an `async/await` model to simplify the use of Server Components. Problem: it is difficult to support `async/await` on Client Components. So they propose to introduce a `use(promise)` API on the client side. Unlike other hooks, `use` can be called conditionally. Later it could be used with other "usables" like the React context (in reality, you can already [use `useContext` conditionally!](https://twitter.com/acdlite/status/1581401077915975680)). Using different APIs can also be seen as a feature: it allows to distinguish Server Components from Client Components.
 
-Cette RFC donne lieu a des débats intéressants. On se demande a quoi ressemblera l'intégration avec les librairies de data-fetching. L'usage de générateurs semble adapté au cas de figure, mais ils sont difficiles à utiliser en pratique. On est en attente d'une nouvelle RFC qui proposera une API de cache.
+This RFC gives rise to interesting debates. We wonder what the integration with data-fetching libraries will look like. The use of generators seems to be suitable for this case, but they are difficult to use in practice. We are waiting for a new RFC that will introduce a cache API.
 
 **[The Web’s Next Transition](https://www.epicweb.dev/the-webs-next-transition)**
 
-Kent C. Dodds propose une belle rétrospective des 3 grandes architectures web, très bien illustré et documenté. Il met en avant la dernière architecture, tendance du moment: Progressively Enhanced Single-Page-Application. Remix en est une implémentation, avec des abstractions bien pensées qui incitent a émuler le comportement natif du navigateur. Je ne suis pas d'accord sur la nécessité absolue d'un serveur. [Docusaurus](https://github.com/facebook/docusaurus) est aussi une implémentation PESPA qui fonctionne bien sans JavaScript.
+Kent C. Dodds offers a nice retrospective of the 3 main web architectures, very well illustrated and documented. He highlights the latest architecture, the trend of the moment: Progressively Enhanced Single-Page-Application. Remix is an implementation of this, with well thought abstractions that encourage to emulate the native behavior of the browser. I don't really agree that a server is absolutely necessary. [Docusaurus](https://github.com/facebook/docusaurus) is also a PESPA implementation that works well without JavaScript.
 
 **[A World-Class Code Playground with Sandpack](https://www.joshwcomeau.com/react/next-level-playground/)**
 
-Josh Comeau vante les mérites de [Sandpack](https://github.com/codesandbox/sandpack), la boite a outils de CodeSandbox qu'il utilise pour créer des code playgrounds intéractifs. Cela à l'air simple d'utilisation et très fléxible!
+Josh Comeau praises [Sandpack](https://github.com/codesandbox/sandpack), the CodeSandbox toolkit he uses to create interactive code playgrounds. It looks easy to use and very flexible!
 
-- 📜 [Streaming: is it worth it?](https://www.builder.io/blog/streaming-is-it-worth-it): les auteurs de Qwik, Solid et Marko expliquent les avantages du streaming, et pourquoi il est difficile d'adopter cette technique. Dans un contexte React, il faut que les librairies utilisées (Helmet, CSS-in-JS, Redux...) soient compatibles pour que le streaming soit efficace.
-- 📜 [Storybook - First-class Vite support](https://storybook.js.org/blog/first-class-vite-support-in-storybook/): la version 7.0 passe prochainement en beta: support Vite sans config, pre-bundling, plus besoin de Webpack, support de nouveaux comme Vue 2, Lit et Svelte...
-- 📜 [Moving From React to htmx](https://htmx.org/essays/a-real-world-react-to-htmx-port/): retour d'expérience (article + video) sur une migration réussie de React vers [htmx](https://htmx.org/). On est dans un contexte backend Python, leurs conclusions seraient sans doutes différentes dans un contexte JavaScript ou tous les devs sont full-stack.
-- 📜 [Prioritise content over components](https://www.simeongriggs.dev/components-considered-harmful-for-content): des idées intéressante sur la modélisation des composants React selon différentes perspectives: designer, developer et créateur de contenu (CMS)
-- 📜 [A little semantic HTML trick for React components](https://queen.raae.codes/emails/2022-10-10-semantic-react/): explique comment respecter la sémantique du HTML en passant l'élément DOM a créer en props.
+- 📜 [Streaming: is it worth it?](https://www.builder.io/blog/streaming-is-it-worth-it): the authors of Qwik, Solid and Marko explain the advantages of streaming, and why it is difficult to adopt this technique. In a React context, the libraries used (Helmet, CSS-in-JS, Redux...) must be compatible for streaming to be effective.
+- 📜 [Storybook - First-class Vite support](https://storybook.js.org/blog/first-class-vite-support-in-storybook/): 7.0 will soon be in beta: support for Vite without config, pre-bundling, no more need for Webpack, support for new ones like Vue 2, Lit and Svelte...
+- 📜 [Moving From React to htmx](https://htmx.org/essays/a-real-world-react-to-htmx-port/): feedback (article + video) on a successful migration from React to [htmx](https://htmx.org/). We are in a Python backend context, their conclusions would probably be different in a JavaScript context where all devs are full-stack. The JS dev did the POC and lost his job afterwards 😅.
+- 📜 [Prioritise content over components](https://www.simeongriggs.dev/components-considered-harmful-for-content): interesting ideas on React components design from different perspectives: designer, developer and content author (CMS)
+- 📜 [A little semantic HTML trick for React components](https://queen.raae.codes/emails/2022-10-10-semantic-react/): explains how to respect the semantics of HTML by passing the DOM element to be created in props.
 - 📜 [Using Web Components With Next (or Any SSR Framework)](https://css-tricks.com/using-web-components-with-next-or-any-ssr-framework/)
 - 📜 [Exploring how virtual DOM is implemented in React](https://indepth.dev/posts/1501/exploring-how-virtual-dom-is-implemented-in-react)
 - 📜 [Lazy-load React components in Remix](https://sergiodxa.com/articles/lazy-load-react-components-in-remix)
@@ -107,7 +104,7 @@ Chain React returning for the 4th annual premiere React Native conference in May
 
 **[2022: How can we improve React Native?](https://github.com/react-native-community/discussions-and-proposals/discussions/528)**
 
-L'équipe React-Native aimerait avoir avis retour sur ce qu'il faut améliorer dans React-Native. Quelques points mentionnés: le support CSS (Yoga, gap, grid, shadows...), le support cross-platform, les montées de version, le debugging, le clavier, les symlinks Metro...
+The React-Native team would like to have feedback on what needs to be improved in React-Native. Some points mentioned: CSS support (Yoga, gap, grid, shadows...), cross-platform support, version upgrades, debugging, keyboard, Metro symlinks...
 
 - 💬 [Restructuring React Native's Public API](https://github.com/react-native-community/discussions-and-proposals/discussions/523)
 - 📜 [Setting up React Native Monorepo with Yarn Workspaces](https://www.callstack.com/blog/setting-up-react-native-monorepo-with-yarn-workspaces)
@@ -141,16 +138,16 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 **[StackBlitz Codeflow](https://stackblitz.com/codeflow)**
 
-La technologie StackBlitz [WebContainers](https://blog.stackblitz.com/posts/introducing-webcontainers/) permet de faire tourner Node.js dans le navigateur via WebAssembly. On peut executer VS Code, Next.js ou Docusaurus directement dans votre navigateur, et non pas via un conteur Docker distant. Codeflow vient rajouter toute la couche d'intégration avec GitHub qui permet d'ouvrir facilement une pull-request ou de lancer l'execution du code d'une pull-request en local pour une revue de code.
+The StackBlitz [WebContainers] technology (https://blog.stackblitz.com/posts/introducing-webcontainers/) allows to run Node.js in the browser via WebAssembly. You can run VS Code, Next.js or Docusaurus directly in your browser, and not via a remote Docker container. Codeflow adds the whole layer of integration with GitHub that makes it easy to open, review or edit a pull-request by running it locally in a secure way: extremely useful for open-source projects.
 
-Ils ont aussi lancé Web Publisher, une vue d'édition simplifiée pour éditer des fichiers Markdown (éditeur, preview, bouton save). Très pratique pour contribuer à de la documentation sur Git, même pour les utilisateurs moins techniques. Il y a une véritable preview du contenu, et non pas l'expérience dégradée de la preview GitHub. C'est un [besoin important pour les utilisateurs Docusaurus](https://twitter.com/ericsimons40/status/1580371754974781440).
+They also launched Web Publisher, a simplified editing view for Markdown files (editor, preview, save button). Very handy for contributing to documentation on Git, even for less technical users. There is a real preview of the content, and not the degraded experience of the GitHub Markdown preview. This is an [important need for Docusaurus users](https://twitter.com/ericsimons40/status/1580371754974781440).
 
 **[Fontaine - Automatic font fallback based on font metrics](https://github.com/unjs/fontaine)**
 
-Propose d'éviter les layout shifts liés au chargement d'une font custom. Fait en sorte que la font de fallback ait la même dimension que la font finale, pour que la transition soit douce et n'impacte pas la taille des conteneurs texte. Super idée!
+Permits to avoid layout shifts when loading a custom font. Makes the fallback font the same size as the final font, so that the transition is smooth and does not impact the size of the text containers. Great idea!
 
-- [Node 18.11](https://nodejs.org/en/blog/release/v18.11.0/): apporte le mode --watch et quelques [autres améliorations intéressantes](https://twitter.com/matteocollina/status/1580911016506163202)
-- [Unplugin - Unified plugin system for Vite, Rollup, Webpack, and more](https://github.com/unjs/unplugin): pour créer des plugins qui fonctionnent sur tous les bundlers!
+- [Node 18.11](https://nodejs.org/en/blog/release/v18.11.0/): adds a new `--watch` mode and a [few other cool things](https://twitter.com/matteocollina/status/1580911016506163202)
+- [Unplugin - Unified plugin system for Vite, Rollup, Webpack, and more](https://github.com/unjs/unplugin): to create agnostic plugins that work on all bundlers!
 - [CSS - Help pick a syntax for nesting - Survey results](https://developer.chrome.com/blog/help-css-nesting-results/)
 - [Status update of my tsc port](https://kdy1.dev/posts/2022/10/tsc-port-status) + [Speedy TypeScript type checker public repo](https://twitter.com/kdy1dev/status/1582174891230760960)
 - [TypeRunner - High-performance TypeScript compiler](https://github.com/marcj/TypeRunner)
