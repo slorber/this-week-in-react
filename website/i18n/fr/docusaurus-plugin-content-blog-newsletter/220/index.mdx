@@ -9,11 +9,16 @@ draft: true
 
 Salut à tous !
 
-Prez Docusaurus
-https://communs.numerique.gouv.fr/ateliers/docusaurus/
+La newsletter est en retard: une nouvelle RFC React m'a donné beaucoup de lecture 😄 L'article de Kent C. Dodds est assez long également mais vaut le coup. On a 2 articles qui mettent en avant Sandpack en 2 semaines, ça vaut sans doute le coup de s'y intéresser!
 
-JsParty
-https://changelog.com/jsparty/247
+Ca bouge bien coté React-Native core également, avec de nouvelles discussions ouvertes. On pourrait même penser qu'après la migration vers la nouvelle architecture et la stabilisation des APIs publiques, il pourrait y avoir une release 1.0?
+
+Il y a aussi pas mal de nouveautés intéressantes dans l'écosystème frontend. Je suis particulièrement intéressé par Codeflow, Fontaine et Unplugin qui peuvent avoir un intérêt direct pour Docusaurus.
+
+En parlant de Docusaurus, voir aussi:
+
+- ma [démo live pour les ateliers BlueHats](https://communs.numerique.gouv.fr/ateliers/docusaurus/) (direction interministérielle du numérique)
+- mon [épisode dans le podcast Changelog JS Party](https://changelog.com/jsparty/247) (en Anglais).
 
 <!-- truncate -->
 
@@ -111,7 +116,7 @@ L'équipe React-Native aimerait avoir avis retour sur ce qu'il faut améliorer d
 - 💬 [Restructuring React Native's Public API](https://github.com/react-native-community/discussions-and-proposals/discussions/523)
 - 📜 [Setting up React Native Monorepo with Yarn Workspaces](https://www.callstack.com/blog/setting-up-react-native-monorepo-with-yarn-workspaces)
 - 📜 [How to Use Module Federation with Re.Pack 3](https://www.callstack.com/blog/module-federation-with-re-pack-3)
-- 🚧 [Expo Router 0.0.27](https://twitter.com/Baconbrix/status/1579912795323215872) + https://twitter.com/Baconbrix/status/1579867430775848964 + [Layout API change RFC](https://twitter.com/Baconbrix/status/1582057133939384321)
+- 🚧 [Expo Router 0.0.27](https://twitter.com/Baconbrix/status/1579912795323215872) + [Layout API change RFC](https://twitter.com/Baconbrix/status/1582057133939384321)
 - 🚧 [React-Native Bottom Sheet v5 will have web support](https://twitter.com/gorhom/status/1581334529121218561)
 - 🚧 [React-Native Flex gap support coming?](https://twitter.com/Baconbrix/status/1580587087174062080)
 - 📖 [Expo docs improvements](https://twitter.com/amanhimself/status/1580615698321399811): "Running E2E tests on EAS Build now works on Android"
@@ -158,53 +163,33 @@ Paris 75008 - 2j de TT/sem.
 
 La technologie StackBlitz [WebContainers](https://blog.stackblitz.com/posts/introducing-webcontainers/) permet de faire tourner Node.js dans le navigateur via WebAssembly. On peut executer VS Code, Next.js ou Docusaurus directement dans votre navigateur, et non pas via un conteur Docker distant. Codeflow vient rajouter toute la couche d'intégration avec GitHub qui permet d'ouvrir facilement une pull-request ou de lancer l'execution du code d'une pull-request en local pour une revue de code.
 
-Ils ont aussi lancé [Web Publisher](https://twitter.com/sebastienlorber/status/1580206198803922945), une vue d'édition simplifiée dédiée à l'édition de doc Markdown. Cela sera très pratique pour les utilisateurs moins techniques qui veulent éditer des fichiers Markdown sur Git et avoir une véritable preview (et non pas l'expérience dégradée de la preview GitHub). C'est un [besoin important pour les utilisateurs Docusaurus](https://twitter.com/ericsimons40/status/1580371754974781440).
+Ils ont aussi lancé Web Publisher, une vue d'édition simplifiée pour éditer des fichiers Markdown (éditeur, preview, bouton save). Très pratique pour contribuer à de la documentation sur Git, même pour les utilisateurs moins techniques. Il y a une véritable preview du contenu, et non pas l'expérience dégradée de la preview GitHub. C'est un [besoin important pour les utilisateurs Docusaurus](https://twitter.com/ericsimons40/status/1580371754974781440).
 
 **[Fontaine - Automatic font fallback based on font metrics](https://github.com/unjs/fontaine)**
 
-Propose d'éviter les layout shifts liés au chargement de font. Fait en sorte que les lettres de la font de fallback aient la même dimension que la font finale, pour que le switch de font n'impacte pas la taille des conteneurs texte. Super idée! 👌
+Propose d'éviter les layout shifts liés au chargement d'une font custom. Fait en sorte que la font de fallback ait la même dimension que la font finale, pour que la transition soit douce et n'impacte pas la taille des conteneurs texte. Super idée!
 
 - [Node 18.11](https://nodejs.org/en/blog/release/v18.11.0/): apporte le mode --watch et quelques [autres améliorations intéressantes](https://twitter.com/matteocollina/status/1580911016506163202)
-- [Unplugin - Unified plugin system for Vite, Rollup, Webpack, and more](https://github.com/unjs/unplugin): pour créer des plugins qui fonctionnent sur tous les bundlers 🙌
+- [Unplugin - Unified plugin system for Vite, Rollup, Webpack, and more](https://github.com/unjs/unplugin): pour créer des plugins qui fonctionnent sur tous les bundlers!
 - [CSS - Help pick a syntax for nesting - Survey results](https://developer.chrome.com/blog/help-css-nesting-results/)
-- [Rollup v3](https://github.com/rollup/rollup/releases/tag/v3.0.0)
-- [Jest 29.2](https://github.com/facebook/jest/releases/tag/v29.2.0)
-- [Evan You - How Vite Came to Be - ViteConf 2022 slides](https://docs.google.com/presentation/d/1O09rAOu_wRLHVjukVbBeSlRkLeX-dcYZfsdjPiU4kGQ/edit#slide=id.p)
-- [Obsidian 1.0](https://obsidian.md/1.0)
-- [rRPC-chrome - tRPC adapter for Web Extensions](https://github.com/jlalmes/trpc-chrome)
-- [Status update of my tsc port](https://kdy1.dev/posts/2022/10/tsc-port-status) + https://twitter.com/kdy1dev/status/1580552244964954112 + https://twitter.com/kdy1dev/status/1582174891230760960
+- [Status update of my tsc port](https://kdy1.dev/posts/2022/10/tsc-port-status) + [Speedy TypeScript type checker public repo](https://twitter.com/kdy1dev/status/1582174891230760960)
 - [TypeRunner - High-performance TypeScript compiler](https://github.com/marcj/TypeRunner)
 - [Lerna reborn — What’s new in v6?](https://blog.nrwl.io/lerna-reborn-whats-new-in-v6-10aec6e9091c)
 - [What’s new in Nx 15?](https://blog.nrwl.io/whats-new-in-nx-15-7e14e1ff282d)
 - [JetBrains Fleet - Public Preview](https://blog.jetbrains.com/fleet/2022/10/introducing-the-fleet-public-preview/)
 - [Import maps soon available in all browsers](https://twitter.com/sebastienlorber/status/1582024272788480000)
 - [Bun's, ViteConf talk](https://twitter.com/jarredsumner/status/1581427214691708929)
+- [rRPC-chrome - tRPC adapter for Web Extensions](https://github.com/jlalmes/trpc-chrome)
 - [What is pnpm? Is it really so fast and space-efficient?](https://dev.to/stackblitz/what-is-pnpm-and-is-it-really-so-fast-and-space-efficient-29la)
 - [Intl Explorer - A tool for experimenting and trying out the ECMAScript Internationalization API](https://www.intl-explorer.com/)
 - [Why We Use Babylon.js Instead Of Three.js in 2022](https://www.spotvirtual.com/blog/why-we-use-babylonjs-instead-of-threejs-in-2022)
+- [How Vite Came to Be - ViteConf 2022 slides](https://docs.google.com/presentation/d/1O09rAOu_wRLHVjukVbBeSlRkLeX-dcYZfsdjPiU4kGQ/edit#slide=id.p)
+- [Rollup v3](https://github.com/rollup/rollup/releases/tag/v3.0.0)
+- [Jest 29.2](https://github.com/facebook/jest/releases/tag/v29.2.0)
+- [Obsidian 1.0](https://obsidian.md/1.0)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-https://twitter.com/manucorporat/status/1580191113352470528
-
-https://twitter.com/olafurw/status/1578704185809244160
-
-https://twitter.com/defaced/status/1581917941313830913
-
-https://twitter.com/supabase/status/1581308421240152064
-
-https://twitter.com/housecor/status/1581265437282607104
-
-https://twitter.com/markdalgleish/status/1580827326799310848
-
-https://twitter.com/ossia/status/1580418402727841793
-
-https://twitter.com/Swizec/status/1580339569458696192
-
-https://twitter.com/svgeesus/status/1582142663398420480
-
-+++++
-
-https://twitter.com/floydophone/status/1579990708513308672
+[![Meme - When an ESLint rule is a warning instead of an error. - oh no - anyway (nobody cares)](/emails/issues/220/meme.png)](https://twitter.com/markdalgleish/status/1580827326799310848)
