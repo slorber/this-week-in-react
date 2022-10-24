@@ -15,6 +15,19 @@
       "permanent": false
     },
 
+
+    {
+      "source": "/newsletter/220",
+      "destination": "/newsletter/120",
+      "permanent": true
+    },
+    {
+      "source": "/fr/newsletter/220",
+      "destination": "/fr/newsletter/120",
+      "permanent": true
+    },
+
+
     {
       "source": "/testimonials",
       "destination": "https://twitter.com/sebastienlorber/timelines/1448942785814466561",
