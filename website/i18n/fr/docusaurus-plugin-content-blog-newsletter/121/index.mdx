@@ -9,13 +9,15 @@ draft: true
 
 Salut à tous !
 
-Next.js conf soon
+La semaine je me suis trompé, j'ai envoyé l'édition 220 au lieu de 120 😅 Personne n'a remarqué, ça doit pas être très grave.
 
-https://twitter.com/wcandillon/status/1579534710140964864
+C'est la saison des conférences. Le replay ViteConf est disponible, React Advanced vient juste de se terminer, et d'autres vont suivre.
 
-erreur 220 120
+La conférence Next.js démarre dans quelques heures. On va surement avoir une annonce de Next.js 13, avec les nested layouts, et d'autres trucs cools qui commencent par Turbo 🤭.
 
-<Todo />
+On a aussi tous les clouds qui se sont mis d'accord pour améliorer leur support Next.js en même temps: Netlify, Cloudflare, Microsoft...
+
+Ne manquez pas non plus [la saison 5 des vidéos React-Native de William Candillon](https://twitter.com/wcandillon/status/1579534710140964864) qui démarre aujourd'hui! [Première vidéo](https://www.youtube.com/watch?v=pErnuAx5GjE) déjà dispo.
 
 <!-- truncate -->
 
@@ -47,47 +49,38 @@ Vous pouvez le [télécharger ici](https://sizzy.co/?utm_campaign=newsletter&utm
 
 ## ⚛️ React {#react}
 
-[Building an interactive WebGL experience in Next.js](https://vercel.com/blog/building-an-interactive-webgl-experience-in-next-js)
+**[Why We're Breaking Up with CSS-in-JS](https://dev.to/srmagura/why-were-breaking-up-wiht-css-in-js-4g9b)**
 
-https://twitter.com/anthonyShewDev/status/1583479736231030784
+Sam est un des principaux maintainer d'Emotion, une des libs CSS-in-JS les plus populaires. Il explique les avantages et inconvénients du CSS-in-JS, avec un focus sur les librairies avec runtime. Pour son app Spot, le cout de serialisation des styles était trop élevé. Ils ont remplacé Emotion par des Sass modules (CSS modules + Sass) avec un système de CSS utilitaire. Sur Docusaurus, on utilise CSS modules et je confirme que c'est une bonne alternative no-runtime et relativement simple. La DX n'est pas aussi bonne mais reste cependant largement acceptable.
 
-https://twitter.com/0xca0a/status/1583504417004789763
+Cet article a lancé de nombreuses discussions intéressantes. On sait depuis un moment que les librairies CSS-in-JS avec runtime causent des problèmes de performance. [Dan Abramov confirme](https://twitter.com/dan_abramov/status/1584835028986793984) et [ne veut pas utiliser de runtime sur la nouvelle doc](https://github.com/reactjs/reactjs.org/issues/5115). Ryan Florence mentionne [des problèmes de performance lié à Chakra](https://twitter.com/ryanflorence/status/1582835729360572416), qui utilise Emotion.
 
-[Outstatic - A static CMS for Next.js](https://outstatic.com/)
-https://twitter.com/rauchg/status/1584178905379848193
+Tailwind est aussi une bonne alternative. Pour moi, on peut le ranger Tailwind dans la catégorie CSS-in-JS no-runtime, en particulier dans un contexte React dans lequel le styling Tailwind se fait via du JSX. Certains questionnent sa [maintenabilité](https://twitter.com/hi__mayank/status/1584261503670448128), mais en pratique cela marche plutôt bien.
 
-[Qwik+React Partial Hydration data binding](https://www.youtube.com/watch?v=fLH28rDu97I)
+**[Qwik React](https://qwik.builder.io/qwikcity/integrations/react/)**
 
-https://twitter.com/manucorporat/status/1583503802199441408
-https://twitter.com/QwikDev/status/1583579344622211072
+Qwik est un framework SPA innovant qui [évite les problèmes de performances liés à l'hydratation](https://www.builder.io/blog/hydration-is-pure-overhead). Il peut maintenant s'intégrer avec React par le biais d'une fonction `qwikify$()` pour wrapper n'importe quel composant React. Des directives `client:xyz` (inspiré de Astro) permettent de controller avec beaucoup de granularité quand le composant React sera hydraté. Leur démo intègre Material UI dans une app Qwik. Voir aussi [cette video](https://www.youtube.com/watch?v=fLH28rDu97I). Je trouve que c'est une bonne solution qui permet d'éviter de faire un all-in sur ce nouveau framework. On peut conserver les propriétés cross-platform de React, tout en adoptant Qwik sur le web pour améliorer les performances.
 
-[Fully Typed Web Apps](https://www.epicweb.dev/fully-typed-web-apps)
+**[Building an interactive WebGL experience in Next.js](https://vercel.com/blog/building-an-interactive-webgl-experience-in-next-js)**
 
-[why we’re breaking up with css-in-js](https://bradfrost.com/blog/link/why-were-breaking-up-with-css-in-js/)
+Vercel explique comment ils ont créé une [expérience de signup immersive impressionnante pour la conf Next.js](https://nextjs.org/conf), en se basant sur React-Three-Fiber. Cela reste complexe à comprendre sans expérience 3D / WebGL / Three.js, mais la déconstruction en étapes successives est intéressante et donne un aperçu de l'état d'esprit à adopter pour faire du dev créatif.
 
-https://twitter.com/brad_frost/status/1583079306716385280
-[Why I never understood CSS-in-JS](https://www.silvestar.codes/articles/why-i-never-understood-css-in-js/)
+**[Fully Typed Web Apps](https://www.epicweb.dev/fully-typed-web-apps)**
 
-[let’s talk about web components](https://bradfrost.com/blog/post/lets-talk-about-web-components/)
+Kent C. Dodds explique l'interet d'avoir une app typée de bout en bout, de la DB jusqu'a l'UI, à travers les différentes limites: réseau, localstorage, DB... Il évoque la validation (schema, type guards), la génération de types (Prisma) ou encore les conventions (Remix). Il explique comment cette expérience est possible avec Remix, grâce à l'inférence: il vaut mieux utiliser `typeof` que `as`.
 
-https://twitter.com/brad_frost/status/1583463259478188033
-
-https://twitter.com/ryanflorence/status/1582835729360572416
-
-https://twitter.com/dan_abramov/status/1584835028986793984
-
+- 👀 [React Cache API Pull-Request](https://github.com/facebook/react/pull/25506): expose `React.experimental_cache`
 - 📖 [New beta doc - cloneElement](https://twitter.com/dan_abramov/status/1582814754426433537)
-- 📡 [React Cache API Pull-Request](https://github.com/facebook/react/pull/25506)
-- 📜 [Make use of `use` in React – a new hook is coming](https://vived.io/new-hook-is-coming-to-react-frontend-weekly-vol-109/)
+- 📦 [Vitest Preview](https://www.vitest-preview.com/): permet de debugger visuellement ses tests Vitest, petit frère de [Jest Preview](https://www.jest-preview.com/).
+- 📦 [Outstatic - A static CMS for Next.js](https://outstatic.com/): nouveau CMS open-source basé sur Git, qui s'intègre bien avec Next.js. Editeur user-friendly avec possibilité d'uploader des images.
+- 📜 [Netlify - Background and Scheduled API Routes for Next.js](https://www.netlify.com/blog/new-background-scheduled-api-routes-nextjs/): Netlify utilise ses background functions permettre l'execution plannifiée de routes Next.js (cron expression).
+- 📜 [Cloudflare Pages support for Next.js Edge Runtime](https://blog.cloudflare.com/next-on-pages/): Cloudflare supporte maintenant Next.js, uniquement via le runtime `experimental-edge` qui peut tourner sur les Cloudflare Workers. Leur solution est basée sur [Vercel Build Output API](https://vercel.com/blog/build-output-api), qui semble ouvrir la voie sur une meilleur portabilité des frameworks edge entre différents clouds.
+- [Microsoft - Extending Next.js support in Azure Static Web Apps](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/extending-next-js-support-in-azure-static-web-apps/ba-p/3627975): Azure va maintenant supporter le mode SSR de Next.js (avant: seulement SSG).
+- 📜 [Persist inputs after a form submit in Remix](https://sergiodxa.com/articles/persist-inputs-after-a-form-submit-in-remix): propose une solution compatible progressive enhancement pour garder les valeurs d'un formulaire après une soumission. 2 solutions proposées: retourner les valeurs dans l'action Remix ou utiliser la session flash.
+- 📜 [Currying Layout Component Patterns in Next.js](https://creativedesignsguru.com/currying-nextjs-layout/): suggère de paramétriser la fonction `getLayout` de Next.js pour créer de légères variations de layout sans pour autant unmount/remount.
 - 📜 [Throwing vs. Returning responses in Remix](https://sergiodxa.com/articles/throwing-vs-returning-responses-in-remix)
-- [Vitest Preview](https://twitter.com/hung_dev/status/1584491260773289984)
 - 📜 [Lessons learned from moving to Recoil.js](https://kitemaker.co/blog/lessons-learned-from-moving-to-recoil)
-- 📜 [Currying Layout Component Patterns in Next.js](https://creativedesignsguru.com/currying-nextjs-layout/)
-- 📜 [Persist inputs after a form submit in Remix](https://sergiodxa.com/articles/persist-inputs-after-a-form-submit-in-remix)
 - 📜 [Separate API Layers In React Apps](https://profy.dev/article/react-architecture-api-layer)
-- [Netlify - Background and Scheduled API Routes for Next.js](https://www.netlify.com/blog/new-background-scheduled-api-routes-nextjs/)
-- [Cloudflare Pages support for Next.js Edge Runtime](https://twitter.com/GregBrimble/status/1584530048522293250)
-- [Microsoft - Extending Next.js support in Azure Static Web Apps](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/extending-next-js-support-in-azure-static-web-apps/ba-p/3627975)
 - 🔗 [New website for Storybook](https://twitter.com/storybookjs/status/1583175829009289216)
 - 🎥 [Is the new React use hook a footgun?](https://www.youtube.com/watch?v=ytXM05PVcFU)
 - 🎥 [React Advanced London 2022 - Day 1](https://www.youtube.com/watch?v=1x7mI_xuVVo)
@@ -121,17 +114,17 @@ N'hésitez pas à aller voir notre site [premieroctet.com](https://www.premieroc
 
 ## 📱 React-Native {#react-native}
 
-- 🎥 [Headspace Player - “Can it be done in React Native?”](https://www.youtube.com/watch?v=pErnuAx5GjE)
-- 🤫 [Some rumors going around about Expo SDK 47](https://twitter.com/tsapeta/status/1582831949030522881)
-- 🗣 [The new architecture is here… what now? 3.0](https://twitter.com/Kelset/status/1583416697741975552)
-- 📈 [React-Native performance brenchmarks](https://twitter.com/almouro/status/1584628478963777537)
+- 🎥 [Headspace Player - “Can it be done in React Native?”](https://www.youtube.com/watch?v=pErnuAx5GjE): la saison 5 démarre 🤗
+- 🤫 [Some rumors going around about Expo SDK 47](https://twitter.com/tsapeta/status/1582831949030522881): un SDK prometteur!
+- 🗣 [The new architecture is here… what now? 3.0](https://twitter.com/Kelset/status/1583416697741975552): slides du talk de Lorenzo (Microsoft) à React Advanced.
+- 📈 [React-Native performance brenchmarks](https://twitter.com/almouro/status/1584628478963777537): Alexandre fait des benchmarks quotidiens et compare les performances de l'ancienne VS la nouvelle architecture sur divers scenarios.
 - 📖 [Reassure documentation](https://callstack.github.io/reassure/): nouveau site Docusaurus en ligne 🤗
 - 📖 [Expo Docs Updates - new Flipper plugin integration guide](https://twitter.com/amanhimself/status/1583202477469765633)
-- 🎙️ [RNR 249 - A Redux Maintainer’s Thoughts on RTK vs MST](https://reactnativeradio.com/episodes/rnr-249-a-redux-maintainers-thoughts-on-rtk-vs-mst)
 - 📦 [create-react-native-library 0.25 - Kotlin Turbomodule template](https://twitter.com/satya164/status/1583462129235263490)
 - 📦 [Expo Router 0.0.31](https://twitter.com/Baconbrix/status/1582875434567409664)
 - 📦 [Expo Router 0.0.33](https://twitter.com/Baconbrix/status/1584289284713947136)
-- 📦 [Realm JavaScript v11: A Step Forward for React Native — Hermes Support, Realm React, Flipper, and Much More](https://www.mongodb.com/developer/products/realm/realm-javascript-v11-react-native/)
+- 📦 [Realm JavaScript v11 - Hermes Support, Realm React, Flipper, and Much More](https://www.mongodb.com/developer/products/realm/realm-javascript-v11-react-native/)
+- 🎙️ [RNR 249 - A Redux Maintainer’s Thoughts on RTK vs MST](https://reactnativeradio.com/episodes/rnr-249-a-redux-maintainers-thoughts-on-rtk-vs-mst)
 
 ---
 
@@ -168,18 +161,19 @@ Masteos réinvente l’expérience de l’investissement locatif, en proposant u
 
 ## 🔀 Autre {#other}
 
+- [Let’s talk about web components](https://bradfrost.com/blog/post/lets-talk-about-web-components/): lecture intéressante de Brad Frost sur les Web Components, qui ne sont pas nécessairement incompatibles avec React mais peuvent le compléter (ex: un design system dans une app React). Les difficultés actuelles (SSR) finiront par être surmontées.
 - [Replit App](https://twitter.com/amasad/status/1582754714575257600): nouvelle app pour coder sur son téléphone (faite avec [Expo](https://twitter.com/amasad/status/1582968657675661314)). Il y a des templates pour coder en Next.js.
-- [Introducing Node.js 19](https://www.redhat.com/en/blog/introducing-nodejs-19) - Note: Node.js 18 enters LTS today
-- [Introducing Stately Studio 1.0](https://stately.ai/blog/introducing-stately-studio-10)
-- [Solid 1.6](https://twitter.com/solid_js/status/1583016386984480768)
+- [Introducing Node.js 19](https://www.redhat.com/en/blog/introducing-nodejs-19) - Note: Node.js 18 entre en LTS aujourd'hui
+- [Introducing Stately Studio 1.0](https://stately.ai/blog/introducing-stately-studio-10): l'éditeur pour state machines XState
 - [Vite 4 plans](https://github.com/vitejs/vite/discussions/10570): upgrade to Rollup 3, es2020 compat...
 - [ViteConf 2022 replay](https://viteconf.org/2022/replay)
+- [Turborepo 1.6 - Use Turborepo in non-monorepos](https://twitter.com/turborepo/status/1583518617970233346)
+- [Solid 1.6](https://twitter.com/solid_js/status/1583016386984480768)
 - [Futuristic CSS](https://www.smashingmagazine.com/2022/10/futuristic-css/)
 - [Is There Too Much CSS Now?](https://css-tricks.com/is-there-too-much-css-now/)
 - [npm bin script confusion: Abusing ‘bin’ to hijack ‘node’ command](https://socket.dev/blog/npm-bin-script-confusion)
 - [Tailwind CSS v3.2: Dynamic breakpoints, multi-config, and container queries](https://twitter.com/adamwathan/status/1582793658168152065)
 - [Tailwind CSS v3.2: revisiting my “feature creep” warning](https://www.brycewray.com/posts/2022/10/tailwind-css-v3-2-revisiting-feature-creep-warning/)
-- [Turborepo 1.6 - Use Turborepo in non-monorepos](https://twitter.com/turborepo/status/1583518617970233346)
 - [Can I DevTools - Compare the features of browsers DevTools. ](https://canidev.tools)
 - [Vercel - Regional Edge Functions](https://vercel.com/blog/regional-execution-for-ultra-low-latency-rendering-at-the-edge)
 - [Deno - Which serverless edge platform has the fastest git deployments?](https://deno.com/blog/fastest-git-deploys-to-the-edge)
