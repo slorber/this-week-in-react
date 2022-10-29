@@ -6,6 +6,9 @@
 
 :root {
   --twir-dark: #282c34;
+
+  --ifm-container-width: 1240px;
+  --ifm-container-width-xl: 1420px;
 }
 
 :root {
