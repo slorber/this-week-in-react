@@ -45,12 +45,62 @@ Vous pouvez le [télécharger ici](https://sizzy.co/?utm_campaign=newsletter&utm
 
 **[Next.js 13](https://nextjs.org/blog/next-13)**
 
+https://nextjs.org/docs/basic-features/font-optimization
+
+https://twitter.com/wongmjane/status/1585976145035792389
+
 Next.js 13 introduces some major changes, with a big focus on beginning to reduce the amount of client JavaScript required to run Next.js apps. The biggest is the introduction of the app directory, which can include shared layouts, React Server Components for server-side component rendering, components that support streaming data and new data fetching capabilities.
+
+keynote: https://www.youtube.com/watch?v=NiknNI_0J48
+
+- Matt Kane  [![🐦](https://fonts.gstatic.com/s/e/notoemoji/14.0/1f426/72.png) ponders the deep connection](https://react.statuscode.com/link/130768/519c7901dc) between React and Next.js: *"React is getting inextricably linked to Next.js."*
+
+Next.js Conf 22 is taking place this week and Vercel’s big news all hangs off of the release of Next.js 13 which includes:
+
+Support for an app/ directory to improve routing and layouts – can coexist with existing approaches, so no rapid migration needed.
+Support for React's new Server Components architecture in app/
+A new image component with on-demand optimization and the ability to display images without layout shift.
+A brand new font system.
+An Open Graph (OG) image generation library.
+.. and something that deserves its own item – next!
+
+https://twitter.com/dan_abramov/status/1585076899126345728
+
+https://twitter.com/shadcn/status/1584971527820541953
+
+https://twitter.com/ebey_jacob/status/1585273660956286980
+
+https://twitter.com/devongovett/status/1585463496354865153
+
+https://twitter.com/devongovett/status/1585035737971724288
+
+Fireship https://www.youtube.com/watch?v=_w0Ikk4JY7U
+
+https://twitter.com/pacocoursey/status/1585127915838386176
+
+https://twitter.com/zachleat/status/1584995586918731776
+
+https://twitter.com/pacocoursey/status/1585127915838386176
+
+https://www.youtube.com/watch?v=6mQ3M1CUGnk
 
 **[Introducing Turbopack: Rust-based successor to Webpack](https://vercel.com/blog/turbopack)**
 
 Turbopack is a new bundler written entirely in Rust that Vercel claims is 700x faster than Webpack and 20x faster than Vite. Currently it supports specifically Next.js, but support for Svelte and other frameworks is on the roadmap. In addition, support for Sass and Tailwind are both forthcoming.
 
+A variety of new tools like Vite have appeared boasting improved performance over Webpack, but Vercel is turning up the heat with a Rust-based Webpack ‘successor’ (it shares a creator) and you can try out an alpha today from Next.js 13 (above).
+
+https://twitter.com/youyuxi/status/1585040261922820096
+
+https://twitter.com/jaredpalmer/status/1584971637694222336
+
+https://twitter.com/cramforce/status/1584959388116471808
+
+[Three.js Journey is going React](https://twitter.com/bruno_simon/status/1585222892769497089)
+
+- [RFC: React: Allow anything to be rendered by function components](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/62876)
+- [Asta](https://github.com/yisar/asta): Resumable SSR framework.
+- [Two JavaScripts](https://remysharp.com/2022/10/13/two-javascripts)
 - [Code coverage with Storybook test runner](https://storybook.js.org/blog/code-coverage-with-the-storybook-test-runner/)
 
 - [Add fetch Instrumentation to Dedupe Fetches](https://github.com/facebook/react/pull/25516): welp, today's drama. apparently Seb Markbage recently added a PR to start monkey-patching fetch to add some caching behavior: so folks are protesting: https://www.reddit.com/r/javascript/comments/yex2oj/so_apparently_theres_now_code_in_react_to/ https://github.com/facebook/react/issues/25573
@@ -58,6 +108,7 @@ Turbopack is a new bundler written entirely in Rust that Vercel claims is 700x f
 - [How We Improved React Loading Times by 70% with Next.js](https://www.causal.app/blog/next-js)
 - [Seeding the Query Cache](https://tkdodo.eu/blog/seeding-the-query-cache)
 - [How to Build a Blog with Fresh](https://deno.com/blog/build-a-blog-with-fresh)
+- [Downshift v7.0](https://github.com/downshift-js/downshift/releases/tag/v7.0.0)
 
 <SubscribeFormEmbed />
 
@@ -85,9 +136,13 @@ N'hésitez pas à aller voir notre site [premieroctet.com](https://www.premieroc
 
 ## 📱 React-Native {#react-native}
 
+- [Andrew Clark: "I would love to see Expo adopt Server Components one day. We should really have Server Components for React-Native..."](https://twitter.com/Baconbrix/status/1585058874864062466)
 - [Wix Engineering - Now An Official React Native Partner](https://www.wix.engineering/post/wix-engineering-now-an-official-react-native-partner)
 - [The React Native Show #17 - React Native New Architecture](https://www.callstack.com/podcasts/react-native-new-architecture-ep-17)
 - [The React Native Show Podcast: Coffee Talk #6 - Webpack & Callstack experts’ take on Next.js Conf](https://www.callstack.com/podcasts/webpack-callstack-experts-take-on-next-js-conf-coffee-talk-6)
+- [React-Native-Gesture-Handler 2.8](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.8.0)
+- [The React Native Community Map](https://lifeiswhat.notion.site/The-React-Native-Community-Map-07f3221c294d4c8ab65a13cf1dee6901)
+- [react-native-fast-shadow](https://github.com/alan-eu/react-native-fast-shadow)
 
 ---
 
@@ -114,7 +169,7 @@ Masteos réinvente l’expérience de l’investissement locatif, en proposant u
 
 ## 🇫🇷 En français {#fr}
 
-<Todo />
+- [La résumabilité & le nouveau framework Qwik](https://www.youtube.com/watch?v=urq-fl4DDAI)
 
 💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
 
@@ -134,6 +189,12 @@ Masteos réinvente l’expérience de l’investissement locatif, en proposant u
 
 <Todo />
 
+https://twitter.com/thekitze/status/1584974847306002432
+
 https://twitter.com/deno_land/status/1586032184019648512
+
+https://twitter.com/b_e_n_t_e_n/status/1586197827126177792
+
+https://twitter.com/Rich_Harris/status/1584945971162533891
 
 [![](/emails/issues/121/meme.png)](https://todo)
