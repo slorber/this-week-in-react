@@ -128,15 +128,14 @@ Pour info, je compte créer une page "deals" pour les lecteurs de ma newsletter 
 - 🤔 [React core - Add fetch Instrumentation to Dedupe Fetches](https://github.com/facebook/react/pull/25516): React monkey-patch `fetch`. Fait [polémique](https://github.com/facebook/react/issues/25573).
 - 💬 [RFC: React: Allow anything to be rendered by function components](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/62876)
 - 📜 [Full Stack Components](https://www.epicweb.dev/full-stack-components)
-- 📜 [Deploy Next.js 13 on Netlify Today](https://www.netlify.com/blog/deploy-nextjs-13/)
-- 📜 [Optimization techniques for Rive animations in React apps](https://pixelpoint.io/blog/rive-react-optimizations/)
-- 📜 [Code coverage with Storybook test runner](https://storybook.js.org/blog/code-coverage-with-the-storybook-test-runner/)
-- 📜 [The Gatsby Slice API: High Precision Incremental Builds](https://www.gatsbyjs.com/blog/gatsby-slice-api/)
-- 📜 [How We Improved React Loading Times by 70% with Next.js](https://www.causal.app/blog/next-js)
-- 📜 [Seeding the Query Cache](https://tkdodo.eu/blog/seeding-the-query-cache)
+- 📜 [Optimization techniques for Rive animations in React apps](https://pixelpoint.io/blog/rive-react-optimizations/): Rive est une librairie d'animation plus performante que Lottie. Alex explique comment optimiser le chargement des animations Rive dans une app Gatsby ou Next.js: self-hosting du runtime WASM, Webpack loader, preloading, lazy-loading... Des techniques à connaitre, qui peuvent être utilisée dans d'autres contexts.
+- 📜 [Deploy Next.js 13 on Netlify Today](https://www.netlify.com/blog/deploy-nextjs-13/): Netlify apporte le support des dernières innovations Next.js 13.
+- 📜 [Code coverage with Storybook test runner](https://storybook.js.org/blog/code-coverage-with-the-storybook-test-runner/): résume bien les features de test de Storybook. Il est maintenant possible de générer un rapport de couverture via l'instrumentation [Istanbul](https://istanbul.js.org/)). Le format de reporting est configurable.
+- 📜 [The Gatsby Slice API: High Precision Incremental Builds](https://www.gatsbyjs.com/blog/gatsby-slice-api/): explique comment fonctionne la nouvelle API Gatsby 5 qui permet d'améliorer les performances de build lorsqu'un composant de layout (header, footer) est mis à jour.
+- 📜 [Seeding the Query Cache](https://tkdodo.eu/blog/seeding-the-query-cache): décrit un problème de waterfall possible avec React-Query lors de l'utilisation de Suspense. Propose d'utiliser `prefetchQuery` avant le mount du composant pour optimiser au maximum le chargement. Donne une idée de comment React-Query compte s'intégrer avec les dernières innovations React, même si certains points restent à éclaircir.
 - 📜 [How to Build a Blog with Fresh](https://deno.com/blog/build-a-blog-with-fresh): le framework Preact basé sur Deno
+- 📦 [Gatsby 5](https://twitter.com/GatsbyJS/status/1587136776828772353): la nouvelle version devrait sortir aujourd'hui! Le [Gatsby Valhalla Content Hub](https://twitter.com/GatsbyJS/status/1587489648397410320) devrait rendre possible d'utiliser le data-layer GraphQL de Gatsby dan s d'autres frameworks!
 - 📦 [Asta](https://github.com/yisar/asta): nouveau resumable SSR framework, inspiré de Qwik et Marko, avec une syntaxe React-like. A suivre!
-- 📦 [Gatsby 5](https://twitter.com/GatsbyJS/status/1587136776828772353): devrait sortir aujourd'hui
 - 📦 [TanStack Query 4.14](https://twitter.com/TkDodo/status/1587411685517697028): nouveau plugin ESLint
 - 📦 [Remix Forms 1.0](https://twitter.com/danielweinmann/status/1587465389990084609)
 - 📦 [Docusaurus 2.2](https://twitter.com/docusaurus/status/1586347397667495936): support des diagrammes Mermaid
@@ -184,7 +183,7 @@ On aura plus de détails sur les highlights la semaine prochaine, mais c'est cla
 
 ---
 
-- 💡 [Andrew Clark: "I would love to see Expo adopt Server Components one day. We should really have Server Components for React-Native..."](https://twitter.com/Baconbrix/status/1585058874864062466): si vous me lisez depuis longtemps, vous avez déjà pu voir que l'usage de Server Components sur React-Native m'intéresse particulièrement [depuis un moment](https://twitter.com/sebastienlorber/status/1470810351197433863). Je pense d'ailleurs écrire un article dédié au sujet.
+- 💡 [Andrew Clark: "I would love to see Expo adopt Server Components one day. We should really have Server Components for React-Native..."](https://twitter.com/Baconbrix/status/1585058874864062466): vous savez peut-être que l'usage de Server Components sur React-Native m'intéresse particulièrement [depuis un moment](https://twitter.com/sebastienlorber/status/1470810351197433863), et je suis très content que cela soit enfin "officiel": ils ont aussi un usage pour React-Native!
 - 📦 [React-Native-Gesture-Handler 2.8](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.8.0)
 - 📦 [React-Native-Fast-Shadow](https://github.com/alan-eu/react-native-fast-shadow)
 - 🐦 [React-Native Android improves build speed + `--active-arch-only` flag](https://twitter.com/o_kwasniewski/status/1585270027942502404)
@@ -222,6 +221,10 @@ Masteos réinvente l’expérience de l’investissement locatif, en proposant u
 
 ## 🇫🇷 En français {#fr}
 
+<Todo />
+
+https://www.youtube.com/channel/UC5HDIVwuqoIuKKw-WbQ4CvA/videos
+
 - [La résumabilité & le nouveau framework Qwik](https://www.youtube.com/watch?v=urq-fl4DDAI)
 - [Formatter une date/heure selon les usages locaux](https://delicious-insights.com/fr/articles/js-protip-formater-dates/)
 
@@ -231,7 +234,7 @@ Masteos réinvente l’expérience de l’investissement locatif, en proposant u
 
 ## 🔀 Autre {#other}
 
-- [Babel 7.20](https://babeljs.io/blog/2022/10/27/7.20.0): support de TS 4.9 `satisfies`!
+- [Babel 7.20](https://babeljs.io/blog/2022/10/27/7.20.0): Deno target et support de TS 4.9 `satisfies`!
 - [Node v18.12.0 (LTS)](https://nodejs.org/en/blog/release/v18.12.0/): premiere release LTS v18.
 - [Open-sourcing the new TypeScript type checker](https://kdy1.dev/posts/2022/10/open-sourcing-stc): l'auteur de swc open-source son type-checker qui sera finalement écrit en Rust
 - [npm v9.0.0](https://github.blog/changelog/2022-10-24-npm-v9-0-0-released/)
@@ -246,20 +249,4 @@ Masteos réinvente l’expérience de l’investissement locatif, en proposant u
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-https://twitter.com/thekitze/status/1584974847306002432
-
-https://twitter.com/deno_land/status/1586032184019648512
-
-https://twitter.com/b_e_n_t_e_n/status/1586197827126177792
-
-https://twitter.com/Rich_Harris/status/1584945971162533891
-
-https://twitter.com/manucorporat/status/1585269014166650882
-
-https://twitter.com/WickyNilliams/status/1585003895117742080
-
-https://twitter.com/zachleat/status/1587428512058728448
-
-[![](/emails/issues/121/meme.png)](https://todo)
+[![Next.js 13 - 1299$ price - Apple-like keynote troll](/emails/issues/122/meme.jpg)](https://twitter.com/thekitze/status/1584974847306002432)
