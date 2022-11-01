@@ -125,9 +125,9 @@ Pour info, je compte créer une page "deals" pour les lecteurs de ma newsletter 
 
 ---
 
-- 🤔 [React core - Add fetch Instrumentation to Dedupe Fetches](https://github.com/facebook/react/pull/25516): React monkey-patch `fetch`. Fait [polémique](https://github.com/facebook/react/issues/25573).
+- 🤔 [React core - Add fetch Instrumentation to Dedupe Fetches](https://github.com/facebook/react/pull/25516): le monkey-patching de `fetch` fait [polémique](https://github.com/facebook/react/issues/25573).
 - 💬 [RFC: React: Allow anything to be rendered by function components](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/62876)
-- 📜 [Full Stack Components](https://www.epicweb.dev/full-stack-components)
+- 📜 [Full Stack Components](https://www.epicweb.dev/full-stack-components): Kent C. Dodds explique que Remix permet de créer des composants réellement full stack, qui encapsulent le code frontend et backend dans un même fichier. Les patterns full-stack de Remix ne se limite pas au routing mais peut aussi être utilisée sur des micro-intéractions via le hook `useFetcher`: bouton like, dropdown avec autocomplete...
 - 📜 [Optimization techniques for Rive animations in React apps](https://pixelpoint.io/blog/rive-react-optimizations/): Rive est une librairie d'animation plus performante que Lottie. Alex explique comment optimiser le chargement des animations Rive dans une app Gatsby ou Next.js: self-hosting du runtime WASM, Webpack loader, preloading, lazy-loading... Des techniques à connaitre, qui peuvent être utilisée dans d'autres contexts.
 - 📜 [Deploy Next.js 13 on Netlify Today](https://www.netlify.com/blog/deploy-nextjs-13/): Netlify apporte le support des dernières innovations Next.js 13.
 - 📜 [Code coverage with Storybook test runner](https://storybook.js.org/blog/code-coverage-with-the-storybook-test-runner/): résume bien les features de test de Storybook. Il est maintenant possible de générer un rapport de couverture via l'instrumentation [Istanbul](https://istanbul.js.org/)). Le format de reporting est configurable.
