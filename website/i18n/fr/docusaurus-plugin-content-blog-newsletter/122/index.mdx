@@ -84,11 +84,13 @@ Turbopack est optimisé pour la developer experience, et Vercel annonce que l'ou
 
 - [Jared Palmer](https://twitter.com/jaredpalmer/status/1584971637694222336) explique comment le cache fonctionne et que Turborepo/Turbopack pourraient fusionner.
 - [Evan You](https://twitter.com/youyuxi/status/1585040261922820096) commente et créé une page [Is Turbopack really 10x Faster than Vite?](https://github.com/yyx990803/vite-vs-next-turbo-hmr/discussions/8). Vite n'utilise pas SWC par défaut, et les benchmarks publiés reposent sur l'usage de Babel. Vite pourrait remplacer esbuild/Rollup par Turbopack.
-- [Sebastian McKenzie](https://twitter.com/sebmck/status/1584971938786861056) (Babel/Rome) pointe le gain relativement faible de performance sur un cold start (x4).
+- [Sebastian McKenzie](https://twitter.com/sebmck/status/1584971938786861056) pointe le gain relativement faible de performance sur un cold start (x4).
 - [Devon Govett](https://twitter.com/devongovett/status/1585035737971724288) mentionne que l'architecture est similaire à Parcel.
 - [Amjad Masad](https://twitter.com/amasad/status/1585001646782033921) mentionne que le bundler React-Native Metro utilise un système de cache similaire depuis très longtemps.
 
 ---
+
+[![Remixing Shopify](/emails/issues/122/remixing.jpg)](https://shopify.engineering/remix-joins-shopify)
 
 **[Remix Joins Shopify to Push the Web Forward](https://shopify.engineering/remix-joins-shopify)**
 
@@ -103,7 +105,7 @@ Pour moi, c'est une belle acquisition qui a du sens. Shopify peut se concentrer 
 - [Ryan Florence](https://twitter.com/ryanflorence/status/1587090973594558464) explique que cette acquisition permettra de se concentrer pleinement sur le produit.
 - [Guillermo Rauch](https://twitter.com/rauchg/status/1587104330053664768) dit qu'un frontend devrait être découplé d'un backend headless. [Anthony Frehner](https://twitter.com/frehner_a/status/1587107928099651586) répond que le support Next.js devrait arriver dans Hydrogen UI.
 
-🔗 Liens:
+🔗 Liens utiles:
 
 - 📜 [La roadmap Hydrogen](https://hydrogen.shopify.dev/roadmap/) a été mise à jour et donne de nombreux détails plus techniques.
 - 📜 [Remixing Shopify](https://remix.run/blog/remixing-shopify): l'annonce coté Remix, qui restera un framework open-source React indépendant découplé des usages e-commerce.
@@ -111,24 +113,35 @@ Pour moi, c'est une belle acquisition qui a du sens. Shopify peut se concentrer 
 
 ---
 
+[![Three.js Journey is going React](/emails/issues/122/r3f.jpg)](https://twitter.com/bruno_simon/status/1585222892769497089)
+
 **[Three.js Journey is going React](https://twitter.com/bruno_simon/status/1585222892769497089)**
 
-[Optimization techniques for Rive animations in React apps](https://pixelpoint.io/blog/rive-react-optimizations/)
+Three.js Journey est le cours de référence pour apprendre à créer des scenes 3D sur le web avec Three.js. Bruno Simon vient tout juste de sortir 24h de vidéos supplémentaires basées sur [React-Three-Fiber](https://github.com/pmndrs/react-three-fiber) qui apporte un modèle déclaratif à Three.js. La 3D est en train de prendre de l'ampleur dans nos applications: c'est le bon moment pour s'y mettre si vous voulez savoir faire autre chose que des formulaires et des applications de gestion. J'ai moi même commencé à apprendre avec ce cours en début d'année (cf mon repo [react-three-fiber-journey](https://github.com/slorber/react-three-fiber-journey)) et je ne regrette pas du tout!
 
-- [Gatsby 5](https://twitter.com/GatsbyJS/status/1587136776828772353): devrait sortir aujourd'hui
-- [Deploy Next.js 13 on Netlify Today](https://www.netlify.com/blog/deploy-nextjs-13/)
-- [Docusaurus 2.2](https://twitter.com/docusaurus/status/1586347397667495936)
-- [RFC: React: Allow anything to be rendered by function components](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/62876)
-- [Asta](https://github.com/yisar/asta): Resumable SSR framework.
-- [Two JavaScripts](https://remysharp.com/2022/10/13/two-javascripts)
-- [Code coverage with Storybook test runner](https://storybook.js.org/blog/code-coverage-with-the-storybook-test-runner/)
+Bruno m'a offert un code promo [TWIR](https://threejs-journey.com/join/TWIR) de -30% pour vous le proposer au tarif attractif de 66$ pendant les 10 prochains jours. Je précise que ce n'est pas du contenu sponsorisé, et je ne gagne rien sur les ventes: je trouve ce cours super cool, et cette mise à jour le rend encore plus pertinent pour un dev React.
 
-- [Add fetch Instrumentation to Dedupe Fetches](https://github.com/facebook/react/pull/25516): welp, today's drama. apparently Seb Markbage recently added a PR to start monkey-patching fetch to add some caching behavior: so folks are protesting: https://www.reddit.com/r/javascript/comments/yex2oj/so_apparently_theres_now_code_in_react_to/ https://github.com/facebook/react/issues/25573
-- [The Gatsby Slice API: High Precision Incremental Builds](https://www.gatsbyjs.com/blog/gatsby-slice-api/)
-- [How We Improved React Loading Times by 70% with Next.js](https://www.causal.app/blog/next-js)
-- [Seeding the Query Cache](https://tkdodo.eu/blog/seeding-the-query-cache)
-- [How to Build a Blog with Fresh](https://deno.com/blog/build-a-blog-with-fresh)
-- [Downshift v7.0](https://github.com/downshift-js/downshift/releases/tag/v7.0.0)
+Pour info, je compte créer une page "deals" pour les lecteurs de ma newsletter avec d'autres cours de ce genre et des promos intéressantes (sur lesquelles je ne gagne rien du tout).
+
+---
+
+- 🤔 [React core - Add fetch Instrumentation to Dedupe Fetches](https://github.com/facebook/react/pull/25516): React monkey-patch `fetch`. Fait [polémique](https://github.com/facebook/react/issues/25573).
+- 💬 [RFC: React: Allow anything to be rendered by function components](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/62876)
+- 📜 [Full Stack Components](https://www.epicweb.dev/full-stack-components)
+- 📜 [Deploy Next.js 13 on Netlify Today](https://www.netlify.com/blog/deploy-nextjs-13/)
+- 📜 [Optimization techniques for Rive animations in React apps](https://pixelpoint.io/blog/rive-react-optimizations/)
+- 📜 [Two JavaScripts](https://remysharp.com/2022/10/13/two-javascripts)
+- 📜 [Code coverage with Storybook test runner](https://storybook.js.org/blog/code-coverage-with-the-storybook-test-runner/)
+- 📜 [The Gatsby Slice API: High Precision Incremental Builds](https://www.gatsbyjs.com/blog/gatsby-slice-api/)
+- 📜 [How We Improved React Loading Times by 70% with Next.js](https://www.causal.app/blog/next-js)
+- 📜 [Seeding the Query Cache](https://tkdodo.eu/blog/seeding-the-query-cache)
+- 📜 [How to Build a Blog with Fresh](https://deno.com/blog/build-a-blog-with-fresh)
+- 📦 [Gatsby 5](https://twitter.com/GatsbyJS/status/1587136776828772353): devrait sortir aujourd'hui
+- 📦 [TanStack Query 4.14](https://twitter.com/TkDodo/status/1587411685517697028): nouveau plugin ESLint
+- 📦 [Remix Forms 1.0](https://twitter.com/danielweinmann/status/1587465389990084609)
+- 📦 [Docusaurus 2.2](https://twitter.com/docusaurus/status/1586347397667495936): support des diagrammes Mermaid
+- 📦 [Asta](https://github.com/yisar/asta): Resumable SSR framework.
+- 📦 [Downshift 7.0](https://github.com/downshift-js/downshift/releases/tag/v7.0.0)
 
 <SubscribeFormEmbed />
 
@@ -136,7 +149,7 @@ Pour moi, c'est une belle acquisition qui a du sens. Shopify peut se concentrer 
 
 ## 💸 Sponsor {#sponsor2}
 
-[![premier octet - Agence de développement React](/emails/issues/120/premieroctet.jpg)](https://www.premieroctet.com/?utm_source=react_hebdo)
+[![Premier octet - Agence de développement React](/emails/issues/120/premieroctet.jpg)](https://www.premieroctet.com/?utm_source=react_hebdo)
 
 **[Premier Octet - Agence de développement React](https://www.premieroctet.com/?utm_source=react_hebdo)**
 
@@ -236,5 +249,7 @@ https://twitter.com/Rich_Harris/status/1584945971162533891
 https://twitter.com/manucorporat/status/1585269014166650882
 
 https://twitter.com/WickyNilliams/status/1585003895117742080
+
+https://twitter.com/zachleat/status/1587428512058728448
 
 [![](/emails/issues/121/meme.png)](https://todo)
