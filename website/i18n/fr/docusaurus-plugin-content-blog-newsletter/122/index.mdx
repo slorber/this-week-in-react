@@ -4,7 +4,6 @@ title: "React Hebdo #122: Next.js 13, Turbopack, Remixing Shopify, React-Three-F
 authors: [slorber]
 date: 11-01-2022
 image: /img/TWIR_POST.png
-draft: true
 ---
 
 Salut à tous !
@@ -16,6 +15,8 @@ Quelle belle semaine pleine de rebondissements! Il y en a de tous les cotés:
 - Shopify fait l'acquisition de Remix
 - Gatsby va sortir sa v5 et rendre son data-layer agnostic
 - Le SDK 47 d'Expo est prometteur
+
+Je profite de l'occasion pour tester un nouveau format, dites-moi ce que vous en pensez!
 
 J'ai été invité par le podcast Double Slash (🇫🇷) pour parler de [Docusaurus et de cette newsletter](https://double-slash.dev/podcasts/docusaurus/). D'ailleurs si vous avez des questions, n'hésitez pas ;)
 
@@ -104,7 +105,7 @@ Remix vient de rejoindre Shopify, et sera utilisé dans leur meta-framework Hydr
 
 Pour moi, c'est une belle acquisition qui a du sens. Shopify peut se concentrer sur la proposition de valeur d'Hydrogen plutôt que sur des problématiques d'infrastructure, et bénéficie du progressive enhancement de Remix (particulièrement important pour le e-commerce). Sans compter que Remix est découplé de React, et Shopify travaille sur une librairie agnostique [Hydrogen UI](https://github.com/Shopify/hydrogen-ui): Shopify devrait pouvoir toucher les développeurs de divers frameworks (Vue, Svelte...), sans avoir à imposer React, tout en reposant sur une infrastructure partagée.
 
-💬 Commentaires pertinents:
+💬 Commentaires:
 
 - [Josh Larson](https://twitter.com/jplhomer/status/1587095536833859584) a travaillé sur Hydrogen v1, liste les challenges rencontrés, et ne remet pas en question les bénéfices des React Server Components qui sont mieux implémentés dans Next.js 13 que Hydrogen v1.
 - [Ryan Florence](https://twitter.com/ryanflorence/status/1587171069915385856) mentionne que Shopify ne mise pas contre les Server Components, et qu'ils seront surement ré-introduits dans Remix plus tard.
@@ -136,15 +137,15 @@ Je compte créer prochainement une page "deals" avec d'autres cours de ce genre 
 - 📜 [Full Stack Components](https://www.epicweb.dev/full-stack-components): Kent C. Dodds explique que Remix permet de créer des composants réellement full stack, qui encapsulent le code frontend et backend dans un même fichier. Les patterns full-stack de Remix ne se limite pas au routing mais peut aussi être utilisée sur des micro-intéractions via le hook `useFetcher`: bouton like, dropdown avec autocomplete...
 - 📜 [Optimization techniques for Rive animations in React apps](https://pixelpoint.io/blog/rive-react-optimizations/): Rive est une librairie d'animation plus performante que Lottie. Alex explique comment optimiser le chargement des animations Rive dans une app Gatsby ou Next.js: self-hosting du runtime WASM, Webpack loader, preloading, lazy-loading... Des techniques à connaitre, qui peuvent être utilisée dans d'autres contexts.
 - 📜 [Deploy Next.js 13 on Netlify Today](https://www.netlify.com/blog/deploy-nextjs-13/): Netlify apporte le support des dernières innovations Next.js 13.
-- 📜 [Code coverage with Storybook test runner](https://storybook.js.org/blog/code-coverage-with-the-storybook-test-runner/): résume bien les features de test de Storybook. Il est maintenant possible de générer un rapport de couverture via l'instrumentation [Istanbul](https://istanbul.js.org/)). Le format de reporting est configurable.
+- 📜 [Code coverage with Storybook test runner](https://storybook.js.org/blog/code-coverage-with-the-storybook-test-runner/): résume bien les features de test de Storybook. Il est maintenant possible de générer un rapport de couverture via l'instrumentation [Istanbul](https://istanbul.js.org/). Le format de reporting est configurable.
 - 📜 [The Gatsby Slice API: High Precision Incremental Builds](https://www.gatsbyjs.com/blog/gatsby-slice-api/): explique comment fonctionne la nouvelle API Gatsby 5 qui permet d'améliorer les performances de build lorsqu'un composant de layout (header, footer) est mis à jour.
 - 📜 [Seeding the Query Cache](https://tkdodo.eu/blog/seeding-the-query-cache): décrit un problème de waterfall possible avec React-Query lors de l'utilisation de Suspense. Propose d'utiliser `prefetchQuery` avant le mount du composant pour optimiser au maximum le chargement. Donne une idée de comment React-Query compte s'intégrer avec les dernières innovations React, même si certains points restent à éclaircir.
 - 📜 [How to Build a Blog with Fresh](https://deno.com/blog/build-a-blog-with-fresh): le framework Preact basé sur Deno
 - 📦 [Gatsby 5](https://twitter.com/GatsbyJS/status/1587136776828772353): la nouvelle version devrait sortir aujourd'hui! Le [Gatsby Valhalla Content Hub](https://twitter.com/GatsbyJS/status/1587489648397410320) devrait rendre possible d'utiliser le data-layer GraphQL de Gatsby dan s d'autres frameworks!
+- 📦 [Docusaurus 2.2](https://twitter.com/docusaurus/status/1586347397667495936): support des diagrammes Mermaid
 - 📦 [Asta](https://github.com/yisar/asta): nouveau resumable SSR framework, inspiré de Qwik et Marko, avec une syntaxe React-like. A suivre!
 - 📦 [TanStack Query 4.14](https://twitter.com/TkDodo/status/1587411685517697028): nouveau plugin ESLint
 - 📦 [Remix Forms 1.0](https://twitter.com/danielweinmann/status/1587465389990084609)
-- 📦 [Docusaurus 2.2](https://twitter.com/docusaurus/status/1586347397667495936): support des diagrammes Mermaid
 - 📦 [Downshift 7.0](https://github.com/downshift-js/downshift/releases/tag/v7.0.0)
 
 <SubscribeFormEmbed />
@@ -189,7 +190,7 @@ On aura plus de détails sur les highlights la semaine prochaine, mais c'est cla
 
 ---
 
-- 💡 [Andrew Clark: "I would love to see Expo adopt Server Components one day. We should really have Server Components for React-Native..."](https://twitter.com/Baconbrix/status/1585058874864062466): vous savez peut-être que l'usage de Server Components sur React-Native m'intéresse particulièrement [depuis un moment](https://twitter.com/sebastienlorber/status/1470810351197433863), et je suis très content que cela soit enfin "officiel": ils ont aussi un usage pour React-Native!
+- 💡 [Andrew Clark: "I would love to see Expo adopt Server Components one day. We should really have Server Components for React-Native..."](https://twitter.com/Baconbrix/status/1585058874864062466): vous savez peut-être que l'usage de Server Components sur React-Native m'intéresse particulièrement [depuis un moment](https://twitter.com/sebastienlorber/status/1470810351197433863), et je suis très content que cela soit enfin "officialisé".
 - 📦 [React-Native-Gesture-Handler 2.8](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.8.0)
 - 📦 [React-Native-Fast-Shadow](https://github.com/alan-eu/react-native-fast-shadow)
 - 🐦 [React-Native Android improves build speed + `--active-arch-only` flag](https://twitter.com/o_kwasniewski/status/1585270027942502404)
