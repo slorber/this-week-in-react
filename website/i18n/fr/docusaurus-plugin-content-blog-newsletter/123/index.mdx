@@ -15,6 +15,8 @@ La doc React en beta - 20 pages left: https://youtu.be/93D-XH0tNRY?t=947
 
 Next.js et React-Native: TS par défaut
 
+Je pense que StyleX (lib no-runtime CSS-in-JS de Meta) ne devrait pas tarder à sortir 👃
+
 <Todo />
 
 <!-- truncate -->
@@ -47,29 +49,49 @@ Vous pouvez le [télécharger ici](https://sizzy.co/?utm_campaign=newsletter&utm
 
 ## ⚛️ React {#react}
 
-[StyleX beta](https://stylex-docusaurus-nmn.vercel.app/blog/welcome-to-stylex/)
+[![Gatsby 5: The Fastest Gatsby Yet](/emails/issues/123/gatsby5.png)](https://www.gatsbyjs.com/blog/gatsby-5/)
 
-[React Router-ing Remix](https://remix.run/blog/react-routering-remix)
+**[Gatsby 5: The Fastest Gatsby Yet](https://www.gatsbyjs.com/blog/gatsby-5/)**
 
-https://twitter.com/ryanflorence/status/1588283711908327424
+Gatsby 5.0 vient officiellement de sortir de beta. On y retrouve la Gatsby Slice API qui permet d'améliorer les temps de build lors d'une modification d'un élément de layout (header, footer...), et le support en beta des Server Components qui permettent de supporter l'hydratation partielle. Il y a aussi de nouveaux composants Head/Script, GraphiQL v2.
 
-[Remix + Shopify - Twitter Space](https://twitter.com/i/spaces/1MnxnpombqBGO)
+Gatsby a aussi présenté [Valhalla](https://www.gatsbyjs.com/products/valhalla-content-hub/), un nouveau service sur leur cloud qui propose d'utiliser les plugins source de Gatsby pour créer un content hub et une API unifiée GraphQL découplée de Gatsby. Il est donc [possible d'utiliser Valhalla avec Next.js](<https://github.com/gatsby-inc/valhalla-examples/blob/main/frameworks/nextjs/app/(pets)/page.tsx>).
+
+Les générateurs de site statiques n'ont pas trop la côte en ce moment. Pour autant un site statique convient toujours pour plein de sites, je trouve ça bien qu'au moins un gros acteur continue d'innover dans le domaine. L'API Slice est une bonne idée. J'aurais aimé que Valhalla puisse tourner localement, mais je crois que c'est un service cloud uniquement.
+
+🔗 Liens utiles:
+
+- 📜 [Gatsby 5.0 - Release Notes](https://www.gatsbyjs.com/docs/reference/release-notes/v5.0/)
+- 📜 [Valhalla Content Hub Explained](https://www.gatsbyjs.com/blog/valhalla-content-hub-explained/)
+- 📜 [Gatsby 5 Upgrade. Say No to YOLO](https://www.gatsbyjs.com/blog/gatsby-5-upgrade-say-no-to-yolo/)
+- 📜 [Partial Hydration (Beta) Explained](https://www.gatsbyjs.com/blog/partial-hydration-beta-explained/)
+- 📜 [The Gatsby Slice API: High Precision Incremental Builds](https://www.gatsbyjs.com/blog/gatsby-slice-api/)
+- 🎥 [Valhalla Content Hub video](https://www.youtube.com/watch?v=JvHvwZZAOl0)
+
+---
+
+[![React Router-ing Remix](/emails/issues/123/reactroutering.png)](https://remix.run/blog/react-routering-remix)
+
+**[React Router-ing Remix](https://remix.run/blog/react-routering-remix)**
+
+De nombreuses data APIs de Remix ont été ajoutées dans React-Router 6.4, et bien plus encore. Maintenant c'est au tour de Remix de reposer officiellement sur ces nouvelles APIs de React-Router. L'upgrade se fera en 4 étapes incrémentales et rétrocompatibles livrées dans Remix v1.x avec des feature flags. La vision est de faire en sorte que Remix v2 soit un compiler pour React-Router 6.4.
+
+🔗 Autres liens utiles:
+
+- 🗺 [Remix on Router v6.4](https://github.com/remix-run/remix/issues/4485)
+- 💬 [Remix RFC - v2 meta API](https://github.com/remix-run/remix/discussions/4462)
+- 💬 [Remix RFC - Flat Routes](https://github.com/remix-run/remix/discussions/4482)
+- 🎙️ [Remix + Shopify - Twitter Space](https://twitter.com/i/spaces/1MnxnpombqBGO)
+
+---
 
 [Jamstack Community Survey 2022](https://jamstack.org/survey/2022/)
 
 https://www.netlify.com/blog/jamstack-community-survey-2022/
 
-[Valhalla Content Hub Explained](https://www.gatsbyjs.com/blog/valhalla-content-hub-explained/)
-
-- https://www.gatsbyjs.com/products/valhalla-content-hub/
-- https://github.com/gatsby-inc/valhalla-examples
-  Partial Hydration (Beta) Explained
-
-[Gatsby - Valhalla Content Hub](https://www.youtube.com/watch?v=JvHvwZZAOl0)
+---
 
 - 👀 [React Core PR - Support Promise as a renderable node](https://github.com/facebook/react/pull/25634)
-- 💬 [Remix RFC - v2 meta API](https://github.com/remix-run/remix/discussions/4462)
-- 💬 [Remix RFC - Flat Routes](https://github.com/remix-run/remix/discussions/4482)
 - 📜 [Reduce cumulative layout shift in Docusaurus with fontaine](https://blog.logrocket.com/docusaurus-using-fontaine-reduce-cumulative-layout-shift/): la même technique utilisée par [@next/font](https://nextjs.org/blog/next-13#nextfont) peut être utilisée dans d'autres contexts pour améliorer le score CLS.
 - 📜 [Playing with Astro: Sharing State Between React and Vue Components](https://blog.bitsrc.io/playing-with-astro-sharing-state-between-react-and-vue-components-2d5abc89f4b4)
 - 📜 [Remix Simplifies Things](https://bradgarropy.com/blog/remix-simplifies-things)
