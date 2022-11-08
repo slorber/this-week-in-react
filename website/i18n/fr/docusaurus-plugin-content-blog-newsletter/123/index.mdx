@@ -11,11 +11,9 @@ Salut à tous !
 
 Ne manquez pas non plus la grosse mise à jour du cours Three.js Journey avec les modules React-Three-Fiber. Bruno m'a partagé un code promo ["TWIR"](https://threejs-journey.com/join/TWIR) pour le lancement. Cela sera le 1er cours à figurer sur une prochaine page "deals" que je vais créer.
 
-La doc React en beta - 20 pages left: https://youtu.be/93D-XH0tNRY?t=947
-
 Next.js et React-Native: TS par défaut
 
-Je pense que StyleX (lib no-runtime CSS-in-JS de Meta) ne devrait pas tarder à sortir 👃
+A mon avis, StyleX devrait bientôt sortir 👃
 
 <Todo />
 
@@ -91,21 +89,23 @@ https://www.netlify.com/blog/jamstack-community-survey-2022/
 
 ---
 
+- 📊 [Jamstack Community Survey 2022](https://jamstack.org/survey/2022/): React est utilisé à 71%, Next.js représente 1 projet sur 2, et Remix est en belle croissance, et [Docusaurus se porte bien](https://twitter.com/sebastienlorber/status/1590042329255391232) également 😜
+- 📜 [React Router 6 Deferred Fetch](https://dev.to/infoxicator/react-router-6-deferred-fetch-4k68): article assez cool qui montre comment utiliser l'API `defer` de React-Router/Remix, et met en avant quelques subtilités à comprendre pour la gestion des erreurs et éviter les waterfalls.
+- 📜 [Reduce cumulative layout shift in Docusaurus with fontaine](https://blog.logrocket.com/docusaurus-using-fontaine-reduce-cumulative-layout-shift/): la même technique utilisée par [@next/font](https://nextjs.org/blog/next-13#nextfont) peut être utilisée dans d'autres contexts (pas limité à Docusaurus) pour améliorer le score CLS
+- 📜 [Playing with Astro: Sharing State Between React and Vue Components](https://blog.bitsrc.io/playing-with-astro-sharing-state-between-react-and-vue-components-2d5abc89f4b4): montre comment React et Vue peuvent cohabiter sur une app Astro, et partager un état via les nanostores.
+- 📜 [Remix Simplifies Things](https://bradgarropy.com/blog/remix-simplifies-things): Brad explique pourquoi il aime Remix. Il peut écrire moins de JavaScript/React, et plus de HTML. Utiliser Tailwind semble plus simple que l'API links.
+- 📜 [Why I Ditched Django for NextJS](https://billprin.com/2022/10/30/ditched-django-nextjs.html): Bill était un "Python guy" travaillant sur Google Compute Engine. Finalement, il recommande d'utiliser Next.js (ou du moins JS/TS) et d'éviter Python/Ruby pour des projets web.
+- 📜 [How to Integrate Storybook with Hydrogen](https://wemakewebsites.com/blog/devguide-how-to-integrate-storybook-with-hydrogen/): l'intégration n'est pas si simple et demande de configurer Vite correctement.
+- 📜 [What's New in Next.js 13](https://blog.appsignal.com/2022/11/02/whats-new-in-nextjs-13.html): un bon résumé des nouveautés Next.js 13
+- 📜 [What does CSR, SSR, SSG and ISR means and why should you care?](https://www.flavienbonvin.com/data-building-strategy-for-nextjs-app/): bon résumé des techniques de rendu Next.js existantes (avant les nouveautés Next.js 13)
+- 📜 [Implementing 3D Graphics In React](https://blog.openreplay.com/implementing-3d-graphics-in-react/): intro à React-Three-Fiber
 - 👀 [React Core PR - Support Promise as a renderable node](https://github.com/facebook/react/pull/25634)
-- 📜 [Reduce cumulative layout shift in Docusaurus with fontaine](https://blog.logrocket.com/docusaurus-using-fontaine-reduce-cumulative-layout-shift/): la même technique utilisée par [@next/font](https://nextjs.org/blog/next-13#nextfont) peut être utilisée dans d'autres contexts pour améliorer le score CLS.
-- 📜 [Playing with Astro: Sharing State Between React and Vue Components](https://blog.bitsrc.io/playing-with-astro-sharing-state-between-react-and-vue-components-2d5abc89f4b4)
-- 📜 [Remix Simplifies Things](https://bradgarropy.com/blog/remix-simplifies-things)
-- 📜 [Implementing 3D Graphics In React](https://blog.openreplay.com/implementing-3d-graphics-in-react/)
-- 📜 [Why I Ditched Django for NextJS](https://billprin.com/2022/10/30/ditched-django-nextjs.html)
-- 📜 [What's New in Next.js 13](https://blog.appsignal.com/2022/11/02/whats-new-in-nextjs-13.html)
-- 📜 [What does CSR, SSR, SSG and ISR means and why should you care?](https://www.flavienbonvin.com/data-building-strategy-for-nextjs-app/)
-- 📜 [How to Integrate Storybook with Hydrogen](https://wemakewebsites.com/blog/devguide-how-to-integrate-storybook-with-hydrogen/)
-- 📜 [React Router 6 Deferred Fetch](https://www.infoxicator.com/react-router-6-deferred-fetch)
 - 🎨 [Taxonomy - An open source application using everything new in Next.js 13](https://github.com/shadcn/taxonomy)
+- 🐦 [TanStack Query for Angular](https://twitter.com/NetanelBasal/status/1587704203178295297): React-Query est progressivement porté sur d'autres frameworks
 - 🐦 [scheduler.yield() - Upcoming Web API, useful for React?](https://twitter.com/sebastienlorber/status/1589939130225475584)
 - 🐦 [Next-Auth - `getServerSession()` in Server Components](https://twitter.com/shadcn/status/1589671069732196352)
 - 🧵 [Meet the new `create-next-app`](https://twitter.com/leeerob/status/1589810583444287490)
-- 🧵 [You might not need Context in Server Components in Next.js 13](https://twitter.com/sebmarkbage/status/1587615484870098945)
+- 🧵 [You might not need Context in Server Components in Next.js 13](https://twitter.com/sebmarkbage/status/1587615484870098945): Sebastian donne différentes alternatives au context React pour l'usage dans les Server Components
 - 🎥 [NextJS 13 Warning: Easy Mistake = Infinite Loops](https://www.youtube.com/watch?v=zwQs4wXr9Bg)
 - 📦 [React-Three-Next - updated to Next.js v13](https://twitter.com/onirenaud/status/1587830274175295488)
 - 📦 [Redux ToolKit 1.9](https://github.com/reduxjs/redux-toolkit/releases/tag/v1.9.0)
@@ -193,15 +193,14 @@ Masteos réinvente l’expérience de l’investissement locatif, en proposant u
 
 - [Announcing Rome v10](https://rome.tools/blog/2022/11/08/rome-10.html): première release stable de la toolchain Rome, qui propose de remplacer ESLint/Prettier par une alternative Rust plus rapide et simple à utiliser. Ce qui m'attire le plus, ce n'est pas la vitesse mais surtout la partie sur le Error Recovery et les messages d'erreur.
 - [Introducing the CodeSandbox GitHub App](https://codesandbox.io/post/introducing-the-codesandbox-github-app): propose une intégration pour faciliter les contributions et la review de pull-requests. Cela rappelle [StackBlitz Codeflow](https://stackblitz.com/codeflow) lancé récemment, mais avec une technologie assez différente.
-- [Jest over Vitest](https://bradgarropy.com/blog/jest-over-vitest)
+- [Jest over Vitest](https://bradgarropy.com/blog/jest-over-vitest): Brad décide de rester sur Jest pour l'instant, après une tentative de migration vers Vitest qui n'a pas réellement améliorer la vitesse d'execution et présenté quelques challenges.
 - [Vitest 0.25](https://github.com/vitest-dev/vitest/releases/tag/v0.25.0): permet d'écrire des tests pour ses types TypeScript
-- [TanStack Query for Angular](https://twitter.com/NetanelBasal/status/1587704203178295297): React-Query est progressivement porté sur d'autres frameworks
+- [TypeScript PR - Convert TypeScript to modules](https://twitter.com/sebastienlorber/status/1589958856561434624): dans TypeScript 5.0, tsc sera 10-25% plus rapide
 - [Xata - Serverless Data Platform for modern web builders](https://twitter.com/xata/status/1587794475274969088)
 - [Safari Technology Preview 157](https://webkit.org/blog/13575/release-notes-for-safari-technology-preview-157/)
 - [ESLint - consistent-type-imports](https://github.com/typescript-eslint/typescript-eslint/pull/5050)
 - [Client-side Routing without the JavaScript](https://dev.to/this-is-learning/client-side-routing-without-the-javascript-3k1i)
 - [Performance: Rust and its relationship with Node.js](https://sprkl.dev/performance-rust-node-js/)
-- [TypeScript PR - Convert TypeScript to modules](https://github.com/microsoft/TypeScript/pull/51387)
 - [What is a realm in JavaScript?](https://weizman.github.io/page-what-is-a-realm-in-js/)
 - [Tailwind CSS turns 5 years old](https://twitter.com/adamwathan/status/1587128677724291074)
 - [New to the web platform in October](https://web.dev/web-platform-10-2022/)
