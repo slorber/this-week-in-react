@@ -9,13 +9,15 @@ unlisted: true
 
 Salut à tous !
 
-Ne manquez pas non plus la grosse mise à jour du cours Three.js Journey avec les modules React-Three-Fiber. Bruno m'a partagé un code promo ["TWIR"](https://threejs-journey.com/join/TWIR) pour le lancement. Cela sera le 1er cours à figurer sur une prochaine page "deals" que je vais créer.
+C'était la [Jamstack Conf](https://jamstack.org/conf/) cette semaine, et on a eu quelques annonces sympa pour l'occasion, comme Tanstack Router, Gatsby 5 ou les résultats de leur sondage annuel.
 
-Next.js et React-Native: TS par défaut
+Expo sort son superbe SDK 47. La 1ère release-candidate React-Native 0.70 conduit à quelques soucis de build Android sur des versions précédentes 😅.
 
-A mon avis, StyleX devrait bientôt sortir 👃
+Next.js et React-Native utilisent maintenant TypeScript par défaut sur les nouvelles apps.
 
-<Todo />
+👃 A mon avis, StyleX devrait bientôt sortir.
+
+Dernière chance pour acheter le cours [Three.js Journey](https://threejs-journey.com/) avec le code promo [TWIR](https://threejs-journey.com/join/TWIR) (-30%, expire demain). Il vient d'être [upgradé](https://twitter.com/bruno_simon/status/1585222892769497089) avec 24h de modules pour faire de la 3D avec React-Three-Fiber. J'en profite pour mettre en avant le [blog de Maxime Heckel](https://blog.maximeheckel.com/) qui a suivi le cours l'année dernière et est maintenant capable de faire de la 3D assez cool! Il vient justement de sortir un [article sur les particules](https://blog.maximeheckel.com/posts/the-magical-world-of-particles-with-react-three-fiber-and-shaders/).
 
 <!-- truncate -->
 
@@ -47,6 +49,28 @@ Vous pouvez le [télécharger ici](https://sizzy.co/?utm_campaign=newsletter&utm
 
 ## ⚛️ React {#react}
 
+[![TanStack Router](/emails/issues/123/tanstack-router.png)](https://tanstack.com/router/v1)
+
+[TanStack Router](https://tanstack.com/router/v1)
+
+Tanner dévoile son nouveau projet: un routeur 100% typesafe, et framework-agnostic. Une liste de features impressionnantes, dont:
+
+- URL State Management
+- Built-in Caching
+- Search Param Schema/Validation
+- Auto Prefetching
+- Loaders/Actions
+- Async Elements + Code-Splitting
+
+A première vue, on dirait qu'il y a pas mal d'inspirations venant de Remix ou React-Router, mais l'API est assez différente et ne repose pas sur du JSX, ce qui doit aider pour rendre la solution agnostique et typesafe. Pour l'instant il y a seulement l'adapter React, et la doc est incomplète, mais cela semble assez prometteur!
+
+🔗 **Liens utiles**:
+
+- 🗺 [Tanner Linsley](https://twitter.com/tannerlinsley/status/1590101866385489929) lance son projet sur Twitter avec un super trailer!
+- 🐦 [Ryan Florence](https://twitter.com/ryanflorence/status/1590194770936463362) pourrait s'inspirer de son travail pour rendre Remix plus typesafe
+
+---
+
 [![Gatsby 5: The Fastest Gatsby Yet](/emails/issues/123/gatsby5.png)](https://www.gatsbyjs.com/blog/gatsby-5/)
 
 **[Gatsby 5: The Fastest Gatsby Yet](https://www.gatsbyjs.com/blog/gatsby-5/)**
@@ -57,7 +81,7 @@ Gatsby a aussi présenté [Valhalla](https://www.gatsbyjs.com/products/valhalla-
 
 Les générateurs de site statiques n'ont pas trop la côte en ce moment. Pour autant un site statique convient toujours pour plein de sites, je trouve ça bien qu'au moins un gros acteur continue d'innover dans le domaine. L'API Slice est une bonne idée. J'aurais aimé que Valhalla puisse tourner localement, mais je crois que c'est un service cloud uniquement.
 
-🔗 Liens utiles:
+🔗 **Liens utiles**:
 
 - 📜 [Gatsby 5.0 - Release Notes](https://www.gatsbyjs.com/docs/reference/release-notes/v5.0/)
 - 📜 [Valhalla Content Hub Explained](https://www.gatsbyjs.com/blog/valhalla-content-hub-explained/)
@@ -74,7 +98,7 @@ Les générateurs de site statiques n'ont pas trop la côte en ce moment. Pour a
 
 De nombreuses data APIs de Remix ont été ajoutées dans React-Router 6.4, et bien plus encore. Maintenant c'est au tour de Remix de reposer officiellement sur ces nouvelles APIs de React-Router. L'upgrade se fera en 4 étapes incrémentales et rétrocompatibles livrées dans Remix v1.x avec des feature flags. La vision est de faire en sorte que Remix v2 soit un compiler pour React-Router 6.4.
 
-🔗 Autres liens utiles:
+🔗 **Liens utiles**:
 
 - 🗺 [Remix on Router v6.4](https://github.com/remix-run/remix/issues/4485)
 - 💬 [Remix RFC - v2 meta API](https://github.com/remix-run/remix/discussions/4462)
@@ -83,14 +107,9 @@ De nombreuses data APIs de Remix ont été ajoutées dans React-Router 6.4, et b
 
 ---
 
-[Jamstack Community Survey 2022](https://jamstack.org/survey/2022/)
-
-https://www.netlify.com/blog/jamstack-community-survey-2022/
-
----
-
+- 👀 [React Core PR - Support Promise as a renderable node](https://github.com/facebook/react/pull/25634)
 - 📊 [Jamstack Community Survey 2022](https://jamstack.org/survey/2022/): React est utilisé à 71%, Next.js représente 1 projet sur 2, et Remix est en belle croissance, et [Docusaurus se porte bien](https://twitter.com/sebastienlorber/status/1590042329255391232) également 😜
-- 📜 [React Router 6 Deferred Fetch](https://dev.to/infoxicator/react-router-6-deferred-fetch-4k68): article assez cool qui montre comment utiliser l'API `defer` de React-Router/Remix, et met en avant quelques subtilités à comprendre pour la gestion des erreurs et éviter les waterfalls.
+- 📜 [React Router 6 Deferred Fetch](https://dev.to/infoxicator/react-router-6-deferred-fetch-4k68): article assez cool qui montre comment utiliser l'API `defer`, et met en avant quelques subtilités à comprendre pour la gestion des erreurs et éviter les waterfalls.
 - 📜 [Reduce cumulative layout shift in Docusaurus with fontaine](https://blog.logrocket.com/docusaurus-using-fontaine-reduce-cumulative-layout-shift/): la même technique utilisée par [@next/font](https://nextjs.org/blog/next-13#nextfont) peut être utilisée dans d'autres contexts (pas limité à Docusaurus) pour améliorer le score CLS
 - 📜 [Playing with Astro: Sharing State Between React and Vue Components](https://blog.bitsrc.io/playing-with-astro-sharing-state-between-react-and-vue-components-2d5abc89f4b4): montre comment React et Vue peuvent cohabiter sur une app Astro, et partager un état via les nanostores.
 - 📜 [Remix Simplifies Things](https://bradgarropy.com/blog/remix-simplifies-things): Brad explique pourquoi il aime Remix. Il peut écrire moins de JavaScript/React, et plus de HTML. Utiliser Tailwind semble plus simple que l'API links.
@@ -99,12 +118,12 @@ https://www.netlify.com/blog/jamstack-community-survey-2022/
 - 📜 [What's New in Next.js 13](https://blog.appsignal.com/2022/11/02/whats-new-in-nextjs-13.html): un bon résumé des nouveautés Next.js 13
 - 📜 [What does CSR, SSR, SSG and ISR means and why should you care?](https://www.flavienbonvin.com/data-building-strategy-for-nextjs-app/): bon résumé des techniques de rendu Next.js existantes (avant les nouveautés Next.js 13)
 - 📜 [Implementing 3D Graphics In React](https://blog.openreplay.com/implementing-3d-graphics-in-react/): intro à React-Three-Fiber
-- 👀 [React Core PR - Support Promise as a renderable node](https://github.com/facebook/react/pull/25634)
+- 📜 [The magical world of Particles with React Three Fiber and Shaders](https://blog.maximeheckel.com/posts/the-magical-world-of-particles-with-react-three-fiber-and-shaders/)
 - 🎨 [Taxonomy - An open source application using everything new in Next.js 13](https://github.com/shadcn/taxonomy)
 - 🐦 [TanStack Query for Angular](https://twitter.com/NetanelBasal/status/1587704203178295297): React-Query est progressivement porté sur d'autres frameworks
 - 🐦 [scheduler.yield() - Upcoming Web API, useful for React?](https://twitter.com/sebastienlorber/status/1589939130225475584)
 - 🐦 [Next-Auth - `getServerSession()` in Server Components](https://twitter.com/shadcn/status/1589671069732196352)
-- 🧵 [Meet the new `create-next-app`](https://twitter.com/leeerob/status/1589810583444287490)
+- 🧵 [Meet the new `create-next-app`](https://twitter.com/leeerob/status/1589810583444287490): utilise TypeScript par défaut
 - 🧵 [You might not need Context in Server Components in Next.js 13](https://twitter.com/sebmarkbage/status/1587615484870098945): Sebastian donne différentes alternatives au context React pour l'usage dans les Server Components
 - 🎥 [NextJS 13 Warning: Easy Mistake = Infinite Loops](https://www.youtube.com/watch?v=zwQs4wXr9Bg)
 - 📦 [React-Three-Next - updated to Next.js v13](https://twitter.com/onirenaud/status/1587830274175295488)
@@ -139,20 +158,35 @@ N'hésitez pas à aller voir notre site [premieroctet.com](https://www.premieroc
 
 ## 📱 React-Native {#react-native}
 
-Expo 47?
+[![Expo SDK 47](/emails/issues/123/expo47.png)](https://blog.expo.dev/expo-sdk-47-a0f6f5c038af)
 
+**[Expo SDK 47](https://blog.expo.dev/expo-sdk-47-a0f6f5c038af)**
+
+Le nouveau SDK 47 vient de sortir officiellement, avec un article plus détaillé sur les nouveautés.
+
+- React Native 0.70.5 et React 18.1.0
+- Expo Modules API 1.0 permet de créer très facilement des modules natifs Fabric en Swift/Kotlin
+- Hermes disponible sur Expo Go iOS, experience de debugging simplifiée. Hermes sera le moteur par défaut dans le prochain SDK
+- Support de Fabric dans plusieurs modules Expo
+- Expo Router en beta: le file-system routing pour React-Navigation
+- Diverses améliorations EAS: sécurité end-to-end, M1 workers...
+
+Bref, une très belle release! Avec Expo Modules, cela semble plus simple d'adopter la nouvelle architecture par rapport aux outils officiels comme react-native-codegen qui ne supporte pas encore Swift.
+
+---
+
+- 📦 [React-Native 0.71 RC.0](https://twitter.com/CipolleschiR/status/1588578757857533952): inclus les types TypeScript, utilise TypeScript par défaut pour les nouvelles applications, support Flex gap... Une release qui a aussi [cassé les builds Android](https://twitter.com/reactnative/status/1589296764678705155) (maintenant [réparé](https://twitter.com/reactnative/status/1589394317126565888))
+- 👥 [Open Native: Native Modules, for all](https://github.com/OpenNative/open-native): une initiative intéressante qui propose de dé-dupliquer l'effort de création de modules natifs entre différents écosystèmes (React-Native, Flutter, Capacitor, NativeScript...) via des modules natifs agnostic et des adapters. A suivre!
+- 📜 [Migrating a React Native Library to the New Architecture](https://www.callstack.com/blog/migrating-a-react-native-library-to-the-new-architecture): Oscar a migré React-Native Slider vers Fabric et liste les challenges rencontrés. Il explique les 4 grandes étapes pour migrer une librairie existante, ou en créer une nouvelle.
+- 📜 [Introducing End-to-end Security to EAS Update with Code Signing](https://blog.expo.dev/introducing-end-to-end-security-to-eas-update-with-code-signing-b6a14d0d88d4)
+- 📜 [Flutter vs. React Native: Which is the right cross-platform framework for you?](https://stackoverflow.blog/2022/10/31/comparing-frameworks-for-cross-platform-apps-flutter-vs-react-native/)
 - 💬 [RFC: Metro package exports support](https://github.com/react-native-community/discussions-and-proposals/pull/534) + [Node.js - define "react-native" community condition](https://github.com/nodejs/node/pull/45367)
 - 💬 [RFC: Vision for Layout Conformance/Parity](https://github.com/react-native-community/discussions-and-proposals/pull/540/)
-- 📜 [Introducing End-to-end Security to EAS Update with Code Signing](https://blog.expo.dev/introducing-end-to-end-security-to-eas-update-with-code-signing-b6a14d0d88d4) + https://twitter.com/expo/status/1588581041706393601
-- 📦 [React-Native 0.71 RC.0](https://twitter.com/CipolleschiR/status/1588578757857533952)
-- 📦 [Storybook-Solito](https://github.com/dannyhw/storybook-solito)
-- 🐛 [Build failures on Android](https://twitter.com/reactnative/status/1589296764678705155) + https://twitter.com/reactnative/status/1589394317126565888
-- 📜 [Migrating a React Native Library to the New Architecture](https://www.callstack.com/blog/migrating-a-react-native-library-to-the-new-architecture) + https://twitter.com/thymikee/status/1588217358925053955
 - 🎉 [React-Native - Use TypeScript by default for new applications](https://github.com/facebook/react-native/pull/35165)
-- 📜 [Flutter vs. React Native: Which is the right cross-platform framework for you?](https://stackoverflow.blog/2022/10/31/comparing-frameworks-for-cross-platform-apps-flutter-vs-react-native/)
 - 🎙️ [RNR 251 - Examining React Native 0.70](https://reactnativeradio.com/episodes/rnr-251-examining-react-native-070)
 - 🎥 [React-Native and Bluetooth Low Energy ( BLE ) - Send and Receive Data](https://www.youtube.com/watch?v=jeH2QmZ8T14)
 - 🎥 [Animated FlatList in React Native](https://www.youtube.com/watch?v=3ox0R5jPb04)
+- 📦 [Storybook-Solito](https://github.com/dannyhw/storybook-solito)
 
 ---
 
@@ -179,13 +213,11 @@ Masteos réinvente l’expérience de l’investissement locatif, en proposant u
 
 ## 🇫🇷 En français {#fr}
 
-- [Recapt Octobre 2022](https://buchet.tech/blog/recapt-octobre-2022)
-- [Top 5 Des Erreurs de Hooks React que les débutants font](https://www.youtube.com/watch?v=YmpRcPq9enc)
-- [Pourquoi je n'utilise pas Redux... et tu ne Devrais pas aussi !](https://www.youtube.com/watch?v=IAKln-XQjlQ)
+- 📜 [Recapt Octobre 2022](https://buchet.tech/blog/recapt-octobre-2022)
+- 🎥 [Top 5 Des Erreurs de Hooks React que les débutants font](https://www.youtube.com/watch?v=YmpRcPq9enc)
+- 🎥 [Pourquoi je n'utilise pas Redux... et tu ne Devrais pas aussi !](https://www.youtube.com/watch?v=IAKln-XQjlQ)
 
 💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
-
-<Todo />
 
 ---
 
@@ -197,6 +229,7 @@ Masteos réinvente l’expérience de l’investissement locatif, en proposant u
 - [Vitest 0.25](https://github.com/vitest-dev/vitest/releases/tag/v0.25.0): permet d'écrire des tests pour ses types TypeScript
 - [TypeScript PR - Convert TypeScript to modules](https://twitter.com/sebastienlorber/status/1589958856561434624): dans TypeScript 5.0, tsc sera 10-25% plus rapide
 - [Xata - Serverless Data Platform for modern web builders](https://twitter.com/xata/status/1587794475274969088)
+- [Tina CMS 1.0](https://tina.io/blog/tina-1-0-announcement/)
 - [Safari Technology Preview 157](https://webkit.org/blog/13575/release-notes-for-safari-technology-preview-157/)
 - [ESLint - consistent-type-imports](https://github.com/typescript-eslint/typescript-eslint/pull/5050)
 - [Client-side Routing without the JavaScript](https://dev.to/this-is-learning/client-side-routing-without-the-javascript-3k1i)
@@ -214,14 +247,4 @@ Masteos réinvente l’expérience de l’investissement locatif, en proposant u
 
 ## 🤭 Fun {#fun}
 
-https://twitter.com/LOWCOSTCOSPLAY/status/1586696155630800899
-
-https://twitter.com/swmansion/status/1589571114048851968
-
-https://twitter.com/QwikDev/status/1589533407297404928
-
-https://twitter.com/QwikDev/status/1588098017139490818
-
-https://twitter.com/deno_land/status/1587826557455716352
-
-[![](/emails/issues/122/meme.jpg)](https://twitter.com/TODO)
+[![Last weekend be like - small React-Native 0.71 domino falls larger React-Native dominos of previopus releases](/emails/issues/123/meme.png)](https://twitter.com/swmansion/status/1589571114048851968)
