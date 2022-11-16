@@ -62,7 +62,7 @@ On the same subject, I recommend to read also [Everything about Framer Motion la
 
 **[Timeline of a React Component With Hooks](https://julesblom.com/writing/react-hook-component-timeline)**
 
-An interactive diagram that demonstrates the life cycle of a React component, including hooks, refs, and DOM updates/paint (not available on mobile). Also includes a quiz to test your knowledge, and many quotes/references.
+An interactive diagram that demonstrates the lifecycle of a React component, including hooks, refs, and DOM updates/paint (not available on mobile). Also includes a quiz to test your knowledge, and many quotes/references.
 
 ---
 
@@ -70,7 +70,7 @@ An interactive diagram that demonstrates the life cycle of a React component, in
 
 **[Next.js 13 TypeScript Plugin](https://twitter.com/delba_oliveira/status/1592209522281439232)**
 
-Shu Ding travaille sur un TypeScript language service plugin ([source](https://github.com/vercel/next.js/blob/canary/packages/next/server/next-typescript.ts)) qui améliore significativement la DX de Next.js en apportant de la doc, des nouvelles erreurs et de l'autocomplétion au dessus les conventions Next.js et Server Components. Cela compense l'[impossibilité de typer les exports d'un module ES](https://github.com/microsoft/TypeScript/issues/38511) en TypeScript, feature très demandée par les auteurs de frameworks.
+Shu Ding is working on a TypeScript language service plugin ([source](https://github.com/vercel/next.js/blob/canary/packages/next/server/next-typescript.ts)) that significantly improves Next.js DX by bringing docs, new errors and autocompletion on top of Next.js and Server Components conventions. This compensates nicely the [inability to type exports from an ES module](https://github.com/microsoft/TypeScript/issues/38511) in TypeScript, a feature much requested by framework authors.
 
 ---
 
@@ -84,11 +84,11 @@ An exhaustive article about [vanilla-extract](https://vanilla-extract.style/), t
 
 - 📖 React beta docs: [class component API ref (WIP)](https://twitter.com/dan_abramov/status/1592262830304251908)
 - 🐙 [GitHub UI using React](https://twitter.com/rauchg/status/1591464351990697984) ([Hacker News thread](https://news.ycombinator.com/item?id=33576722)): GitHub seems to use React more and more. They also have a React design system: [Primer React](https://primer.style/react/). The upcoming feature [GitHub Blocks](https://blocks.githubnext.com/) which allows to make the README interactive is also [implemented with MDX](https://twitter.com/idangazit/status/1590726137638195200)
-- 📜 [Fetching data in React: the case of lost Promises](https://www.developerway.com/posts/fetching-in-react-lost-promises): well-illustrated article on the races conditions that can occur when making requests. Gives several techniques to avoid them. I also wrote an [article](https://sebastienlorber.com/handling-api-request-race-conditions-in-react) on the subject 😜 (both are worth reading, quite complementary)
+- 📜 [Fetching data in React: the case of lost Promises](https://www.developerway.com/posts/fetching-in-react-lost-promises): well-illustrated interactive article on the race conditions that can occur when making requests. Gives several techniques to avoid them. I also wrote an [article](https://sebastienlorber.com/handling-api-request-race-conditions-in-react) on the subject 😜 (both are worth reading, quite complementary)
 - 📜 [A Love Letter to React](https://fly.io/blog/love-letter-react/): the creator of Phoenix (Elixir framework) explains how he was inspired by React to create LiveView: a solution to add interactivity on server-side rendered HTML. LiveView reminds me a lot of Remix!
 - 📜 [Open Development for Remix](https://remix.run/blog/open-development): Remix wants the project to be community driven. Everything becomes public: [roadmap](https://github.com/orgs/remix-run/projects/5/views/1)/process, and planning meetings streamed on Youtube.
+- 📜 [Type-safe environment variables on both client and server with Remix](https://dev.to/gugaguichard/type-safe-environment-variables-on-both-client-and-server-with-remix-54l5): interesting solution parsing env variables with Zod and exposing some of them to the client, including type-safety and autocomplete.
 - 📜 [Chromatic - Interaction tests for user behavior](https://www.chromatic.com/blog/interaction-tests-for-user-behavior/): Storybook interaction tests are now integrated with Chromatic SaaS
-- 📜 [Type-safe environment variables on both client and server with Remix](https://dev.to/gugaguichard/type-safe-environment-variables-on-both-client-and-server-with-remix-54l5)
 - 📜 [React Server vs Client components in Next.js 13](https://kulkarniankita.com/react/react-server-client-components)
 - 📜 [What is a state manager](https://www.reatom.dev/general/what-is-state-manager)
 - 📜 [A novel schema-first approach to building forms](https://www.vazco.eu/blog/a-novel-schema-first-approach-to-building-forms)
@@ -122,6 +122,7 @@ refine seamlessly works with any custom design or UI framework you favor. For co
 - 📜 [Expo-router and remote code](https://medium.com/@dan_tamas/expo-router-and-remote-code-e49f31a33b73): shows how to use [react-native-wormhole](https://github.com/cawfree/react-native-wormhole) with Expo Router to consume React-Native components on a remote url. It's quite related to the idea of having [React-Native Server Components](https://twitter.com/Baconbrix/status/1585058874864062466).
 - 🧵 [Expo Modules API thread](https://twitter.com/tsapeta/status/1590353202402115584): Tomasz Sapeta shares some interesting info about the new Expo API for creating modern native modules in Swift/Kotlin, including some future developments like [SwiftUI](https://twitter.com/tsapeta/status/1591003968649728001) / Jetpack Compose support.
 - 📦 [React-Native 0.70.6](https://twitter.com/CipolleschiR/status/1592573159215337472)
+- 📦 [Moti 0.21](https://twitter.com/FernandoTheRojo/status/1592264186960257027)
 - 📦 [JestNative v5.2 matchers - toHaveAccessibilityState()](https://twitter.com/mdj_dev/status/1590724369835524096)
 - 🎙️ [The React Native Show 18 - Module Federation](https://www.callstack.com/podcasts/module-federation)
 - 🎙️ [RNR 252 - Ionic's React Native Portals with Josh Thomas](https://reactnativeradio.com/episodes/rnr-252-ionics-react-native-portals-with-josh-thomas)
@@ -145,7 +146,7 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 ## 🔀 Other {#other}
 
 - [TypeScript 4.9](https://devblogs.microsoft.com/typescript/announcing-typescript-4-9/): with satisfies!
-- [TypeScript satisfies operator](https://tomdohnal.com/posts/typescript-satisfies-keyword): exemple of satisfies coming witn TS 4.9
+- [TypeScript satisfies operator](https://tomdohnal.com/posts/typescript-satisfies-keyword): another example of using satisfies
 - [Qwik Showcase](https://qwik.builder.io/showcase/): great Lighthouse scores
 - [Introducing SolidStart: The SolidJS Framework](https://www.solidjs.com/blog/introducing-solidstart): the SolidJS meta-framework SolidJS is now in beta. It takes some React ecosystem inspirations and bring some novel ideas. See also [Fireship - A Solid Start](https://www.youtube.com/watch?v=DVWu2b7mvFg)
 - [Parcel 2.8](https://twitter.com/devongovett/status/1590378157747875840): great improvements around bundling, perf, HMR, code splitting...
