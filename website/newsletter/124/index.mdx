@@ -9,7 +9,11 @@ unlisted: true
 
 Hi everyone!
 
-<Todo />
+After a few intense weeks, the React ecosystem slows down a bit in terms of major announcements.
+
+We still have some very good articles coming out. The TypeScript plugin for Next.js looks awesome!
+
+The GitHub Universe conference has ended. GitHub seems to be using React more and more, on some views, and also via GitHub Blocks based on MDX.
 
 <!-- truncate -->
 
@@ -45,6 +49,61 @@ You can get started here: [flycode.com/developers](https://www.flycode.com/devel
 
 ## ⚛️ React {#react}
 
+[![Inside Framer's Magic Motion](/emails/issues/124/framer-motion.png)](https://www.nan.fyi/magic-motion)
+
+**[Inside Framer's Magic Motion](https://www.nan.fyi/magic-motion)**
+
+A great interactive article that explains what a layout animation is. It greatly deconstructs the FLIP technique which allows to make this kind of transition perform better via CSS transforms (position, scale). We recreate the layout animation system of Framer Motion step by step.
+
+On the same subject, I recommend to read also [Everything about Framer Motion layout animations](https://blog.maximeheckel.com/posts/framer-motion-layout-animations/).
+
+---
+
+[![Timeline of a React Component With Hooks](/emails/issues/124/timeline.jpg)](https://julesblom.com/writing/react-hook-component-timeline)
+
+**[Timeline of a React Component With Hooks](https://julesblom.com/writing/react-hook-component-timeline)**
+
+An interactive diagram that demonstrates the life cycle of a React component, including hooks, refs, and DOM updates/paint (not available on mobile). Also includes a quiz to test your knowledge, and many quotes/references.
+
+---
+
+[![Next.js 13](/emails/issues/124/nextjs13ts.jpg)](https://twitter.com/delba_oliveira/status/1592209522281439232)
+
+**[Next.js 13 TypeScript Plugin](https://twitter.com/delba_oliveira/status/1592209522281439232)**
+
+Shu Ding travaille sur un TypeScript language service plugin ([source](https://github.com/vercel/next.js/blob/canary/packages/next/server/next-typescript.ts)) qui améliore significativement la DX de Next.js en apportant de la doc, des nouvelles erreurs et de l'autocomplétion au dessus les conventions Next.js et Server Components. Cela compense l'[impossibilité de typer les exports d'un module ES](https://github.com/microsoft/TypeScript/issues/38511) en TypeScript, feature très demandée par les auteurs de frameworks.
+
+---
+
+[![Writing Performant CSS with vanilla-extract](/emails/issues/124/vanilla-extract.png)](https://www.lekoarts.de/javascript/writing-performant-css-with-vanilla-extract)
+
+**[Writing Performant CSS with vanilla-extract](https://www.lekoarts.de/javascript/writing-performant-css-with-vanilla-extract)**
+
+An exhaustive article about [vanilla-extract](https://vanilla-extract.style/), the no-runtime CSS-in-JS library based on TypeScript by Mark Dalgleish (creator of CSS Modules). Mention also its atomic CSS overlay [Sprinkles](https://vanilla-extract.style/documentation/packages/sprinkles/). Examples based on React: reproduction of a Tailwind UI component. Many comparisons with Tailwind and other CSS-in-JS solutions. Well, it looks powerful, but not so simple indeed 😅 We'll have to study this further.
+
+---
+
+- 📖 React beta docs: [class component API ref (WIP)](https://twitter.com/dan_abramov/status/1592262830304251908)
+- 🐙 [GitHub UI using React](https://twitter.com/rauchg/status/1591464351990697984) ([Hacker News thread](https://news.ycombinator.com/item?id=33576722)): GitHub seems to use React more and more. They also have a React design system: [Primer React](https://primer.style/react/). The upcoming feature [GitHub Blocks](https://blocks.githubnext.com/) which allows to make the README interactive is also [implemented with MDX](https://twitter.com/idangazit/status/1590726137638195200)
+- 📜 [Fetching data in React: the case of lost Promises](https://www.developerway.com/posts/fetching-in-react-lost-promises): well-illustrated article on the races conditions that can occur when making requests. Gives several techniques to avoid them. I also wrote an [article](https://sebastienlorber.com/handling-api-request-race-conditions-in-react) on the subject 😜 (both are worth reading, quite complementary)
+- 📜 [A Love Letter to React](https://fly.io/blog/love-letter-react/): the creator of Phoenix (Elixir framework) explains how he was inspired by React to create LiveView: a solution to add interactivity on server-side rendered HTML. LiveView reminds me a lot of Remix!
+- 📜 [Open Development for Remix](https://remix.run/blog/open-development): Remix wants the project to be community driven. Everything becomes public: [roadmap](https://github.com/orgs/remix-run/projects/5/views/1)/process, and planning meetings streamed on Youtube.
+- 📜 [Chromatic - Interaction tests for user behavior](https://www.chromatic.com/blog/interaction-tests-for-user-behavior/): Storybook interaction tests are now integrated with Chromatic SaaS
+- 📜 [Type-safe environment variables on both client and server with Remix](https://dev.to/gugaguichard/type-safe-environment-variables-on-both-client-and-server-with-remix-54l5)
+- 📜 [React Server vs Client components in Next.js 13](https://kulkarniankita.com/react/react-server-client-components)
+- 📜 [What is a state manager](https://www.reatom.dev/general/what-is-state-manager)
+- 📜 [A novel schema-first approach to building forms](https://www.vazco.eu/blog/a-novel-schema-first-approach-to-building-forms)
+- 📜 [Creating fluffy trees with Three.js (part 1)](https://douges.dev/blog/threejs-trees-1)
+- 📊 [I compared deploy speeds for Reflame, Vercel, Netlify, Cloudflare Pages on the same repo](https://blog.reflame.app/i-compared-deploy-speeds-for-reflame-vercel-netlify-cloudflare-pages-on-the-same-repo): the marketing around "instant deploy" is not always true.
+- 💰 [Remotion - We raised CHF 180k to simplify programmatic video!](https://www.remotion.dev/blog/seed-funding): I bring my modest contribution 🤭
+- 🐦 [Comparison between Next.js 12 and the Next.js 13 experimental `app` dir!](https://twitter.com/lydiahallie/status/1591120215189749760)
+- 🗣 [RemixConf 2023 CFP Open](https://twitter.com/remix_run/status/1590513919902507008)
+- 📦 [Fontpie](https://github.com/pixel-point/fontpie): new CLI solution to avoid custom font layout shifts (see this [demo](https://twitter.com/alex_barashkov/status/1590329974409469952) to understand). It makes techniques used in `next/font` framework-agnostic.
+- 📦 [Remix-Vite](https://github.com/sudomf/remix-vite): adds Hot Module Replacement support to Remix
+- 📦 [craco 7.0](https://github.com/dilanx/craco/releases/tag/v7.0.0): allows to customize CRA - CRA v5 support
+- 📦 [Redwood 3.3](https://github.com/redwoodjs/redwood/releases/tag/v3.3.0)
+- 📦 [Rockpack 3.0 - create-react-app on steroids + SSR](https://github.com/AlexSergey/rockpack)
+
 <SubscribeFormEmbed />
 
 ---
@@ -61,7 +120,12 @@ refine seamlessly works with any custom design or UI framework you favor. For co
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+- 📜 [Expo-router and remote code](https://medium.com/@dan_tamas/expo-router-and-remote-code-e49f31a33b73): shows how to use [react-native-wormhole](https://github.com/cawfree/react-native-wormhole) with Expo Router to consume React-Native components on a remote url. It's quite related to the idea of having [React-Native Server Components](https://twitter.com/Baconbrix/status/1585058874864062466).
+- 🧵 [Expo Modules API thread](https://twitter.com/tsapeta/status/1590353202402115584): Tomasz Sapeta shares some interesting info about the new Expo API for creating modern native modules in Swift/Kotlin, including some future developments like [SwiftUI](https://twitter.com/tsapeta/status/1591003968649728001) / Jetpack Compose support.
+- 📦 [React-Native 0.70.6](https://twitter.com/CipolleschiR/status/1592573159215337472)
+- 📦 [JestNative v5.2 matchers - toHaveAccessibilityState()](https://twitter.com/mdj_dev/status/1590724369835524096)
+- 🎙️ [The React Native Show 18 - Module Federation](https://www.callstack.com/podcasts/module-federation)
+- 🎙️ [RNR 252 - Ionic's React Native Portals with Josh Thomas](https://reactnativeradio.com/episodes/rnr-252-ionics-react-native-portals-with-josh-thomas)
 
 ---
 
@@ -81,12 +145,28 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 ## 🔀 Other {#other}
 
-<Todo />
+- [TypeScript 4.9](https://devblogs.microsoft.com/typescript/announcing-typescript-4-9/): with satisfies!
+- [TypeScript satisfies operator](https://tomdohnal.com/posts/typescript-satisfies-keyword): exemple of satisfies coming witn TS 4.9
+- [Qwik Showcase](https://qwik.builder.io/showcase/): great Lighthouse scores
+- [Introducing SolidStart: The SolidJS Framework](https://www.solidjs.com/blog/introducing-solidstart): the SolidJS meta-framework SolidJS is now in beta. It takes some React ecosystem inspirations and bring some novel ideas. See also [Fireship - A Solid Start](https://www.youtube.com/watch?v=DVWu2b7mvFg)
+- [Parcel 2.8](https://twitter.com/devongovett/status/1590378157747875840): great improvements around bundling, perf, HMR, code splitting...
+- [Deno 1.28 - Featuring 1.3 Million New Modules](https://deno.com/blog/v1.28): npm compatibility with security in mind. See also this [video](https://twitter.com/deno_land/status/1592274094963462144).
+- [The evolution of scalable CSS](https://frontendmastery.com/posts/the-evolution-of-scalable-css/): nice retrospective of the evolution of CSS techniques, including CSS-in-JS popularized by React
+- [Why would anyone need JavaScript generator functions?](https://jrsinclair.com/articles/2022/why-would-anyone-need-javascript-generator-functions/)
+- [Stylify - Write CSS Faster](https://stylifycss.com/)
+- [Everything new from GitHub Universe 2022](https://github.blog/2022-11-09-everything-new-from-github-universe-2022/)
+- [Octoverse 2022 - The state of open source software](https://octoverse.github.com/)
+- [Forking Chrome to turn HTML into SVG](https://fathy.fr/html2svg)
+- [This week in stc, 1](https://kdy1.dev/posts/2022/11/stc-update-1)
+- [Change Array By Copy in Chromium](https://twitter.com/robpalmer2/status/1591174422802890754)
+- [ultrahtml 1.0](https://github.com/natemoo-re/ultrahtml)
+- [Announcing Cypress Component Testing GA and Performance Improvements in Cypress 11](https://www.cypress.io/blog/2022/11/08/announcing-cypress-11/)
+- [GreenFrame - measure the carbon footprint of websites](https://marmelab.com/blog/2022/11/09/greenframe-open-source.html)
+- [Doctolib - 10 lessons I learned owning on a Design System for 30+ Product Designers and 200+ Developers](https://medium.com/doctolib/10-lessons-i-learned-owning-on-a-design-system-for-30-product-designers-and-200-developers-c2986e4dbb6f)
+- [Node.js Security Best Practices](https://nodejs.org/en/docs/guides/security/)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/todo)
+[![Meme - BREAKING: JavaScript has been banned from Twitter for impersonating a real programming language.](/emails/issues/124/meme.png)](https://twitter.com/lukaseder/status/1590301562525876225)
