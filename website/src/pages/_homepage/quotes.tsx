@@ -51,7 +51,7 @@ export const AllQuotes = {
         url="https://twitter.com/sebmarkbage/status/1557365971182145543"
         handle="sebmarkbage"
         name="Sebastian Markbåge"
-        job="Engineer at Vercel - ex React core team"
+        job="Engineer at Vercel - React core team"
       >
         Feels like such an institution that has always been there and will
         always be there
