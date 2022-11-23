@@ -1,5 +1,7 @@
 ---
-slug: /blackfriday
+slug: /black-friday
+title: React - Black Friday - 2022
+description: A curated list of Black Friday deals for React developers! 🤗
 ---
 
 <head>
@@ -9,7 +11,7 @@ slug: /blackfriday
 
 # This Week In React - Black Friday 2022
 
-A curated list of Black Friday deals for React developers!
+A curated list of Black Friday deals for React developers 🤗
 
 [![Black Friday 2022 Banner](/img/BLACK_FRIDAY_2022.png)](/blackfriday)
 
