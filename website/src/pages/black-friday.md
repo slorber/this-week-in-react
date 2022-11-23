@@ -5,15 +5,15 @@ description: A curated list of Black Friday deals for React developers! 🤗
 ---
 
 <head>
-  <meta property="og:image" content="https://thisweekinreact.com/img/BLACK_FRIDAY_2022.png"/>
-  <meta name="twitter:image" content="https://thisweekinreact.com/img/BLACK_FRIDAY_2022.png"/>
+  <meta property="og:image" content="https://thisweekinreact.com/img/BLACK_FRIDAY_2022_v2.png"/>
+  <meta name="twitter:image" content="https://thisweekinreact.com/img/BLACK_FRIDAY_2022_v2.png"/>
 </head>
 
 # This Week In React - Black Friday 2022
 
 A curated list of Black Friday deals **for React developers** 🤗
 
-[![Black Friday 2022 Banner](/img/BLACK_FRIDAY_2022.png)](/black-friday)
+[![Black Friday 2022 Banner](/img/BLACK_FRIDAY_2022_v2.png)](/black-friday)
 
 ---
 
