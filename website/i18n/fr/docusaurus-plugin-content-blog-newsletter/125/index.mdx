@@ -91,13 +91,13 @@ Devon (Adobe) vient d'annoncer la sortie de hooks de drag & drop accessibles pou
 ---
 
 - 📖 [Beta docs update - createRef, PureComponents, useDebugValue](https://twitter.com/dan_abramov/status/1593007695703207936) - Dan Abramov arrive à la fin de son travail de documentation, et la nouvelle doc ne devrait pas tarder à officiellement sortir.
+- 📜 [Fetching and caching Supabase data in Next.js 13 Server Components](https://supabase.com/blog/fetching-and-caching-supabase-data-in-next-js-server-components): montre bien avec quelle facilité les React Server Components peuvent être utilisés pour faire des requêtes sur une base Serverless, et donne quelque bons conseils de caching Next.js pour réduire les temps de réponse.
+- 📜 [Conditionally Render Fields Using React Hook Form](https://echobind.com/post/conditionally-render-fields-using-react-hook-form): comment utiliser les fonctions watch et register/unregister pour gérer un champ conditionnel
 - 📜 [Offline dev and testing for Remix](https://github.com/pcattori/blog/blob/main/posts/offline-dev-and-testing-for-remix/index.md): Pedro explique pourquoi il aime Mock Service Worker en dev/test et explique comment l'intégrer avec Remix.
 - 📜 [Migrate from Webpack to Remix](https://remix.run/blog/migrate-from-webpack): l'équipe travaille sur un compiler Webpack pour Remix qui permet de faciliter la migration incrémentale
 - 📜 [Remix site with Valhalla](https://www.gatsbyjs.com/blog/what-is-gatsbys-valhalla-content-hub/): Paul présente Valhalla, le nouveau data layer de Gatsby Cloud, puis explique comment on peut l'utiliser avec un autre que framework que Gatsby, comme Remix. Valhalla expose une API GraphQL publique. La demo appelle cette API depuis un loader Remix via Urql.
 - 📜 [Gatsby - Using the Slice API for Internationalization (i18n)](https://www.gatsbyjs.com/blog/using-the-slice-api-for-internationalization-i18n/)
 - 📜 [useReducer or XState?](https://swizec.com/blog/reader-question-usereducer-or-xstate/)
-- 📜 [Conditionally Render Fields Using React Hook Form](https://echobind.com/post/conditionally-render-fields-using-react-hook-form)
-- 📜 [Fetching and caching Supabase data in Next.js 13 Server Components](https://supabase.com/blog/fetching-and-caching-supabase-data-in-next-js-server-components)
 - 🎥 [React Brussels Playlist](https://www.youtube.com/watch?v=uZnXwuhYZBc&list=PL53Z0yyYnpWjIoe0wNozVbuRXOnVcETPw): nos amis Belge ont publié les videos de la conférence. J'ai bien aimé la [keynote](https://www.youtube.com/watch?v=uZnXwuhYZBc&list=PL53Z0yyYnpWjIoe0wNozVbuRXOnVcETPw&index=2) qui explique comment les meta-frameworks React utilisent les dernières nouveautés React 18 comme Suspense pour data fetching ou les transitions.
 - 🎥 [RIP React Router?](https://www.youtube.com/watch?v=LVzG3nncE4M): met en avant les propriétés typesafe et DX du tout nouveau [TanStack Router](https://tanstack.com/router/v1)
 - 🎥 [Using Fonts in Next.js](https://www.youtube.com/watch?v=L8_98i_bMMA)
@@ -129,16 +129,26 @@ Puisque vous êtes ici, vous aimez sûrement rester à jour avec les dernières 
 
 **[\[Reply\] 2022: How can we improve React Native?](https://github.com/react-native-community/discussions-and-proposals/discussions/546)**
 
-- 📜 [Automatic args in React Native Storybook](https://dev.to/dannyhw/automatic-args-in-react-native-storybook-140a)
-- 📊 [React-Native Yoga Layout VS iOS alternatives](https://twitter.com/Baconbrix/status/1593561645858623488)
-- 📊 [New Reanimated Shared Value implementation](https://twitter.com/kzzzf/status/1594095497123434497)
-- 📖 [Expo Docs update - Universal apps tutorial](https://twitter.com/amanhimself/status/1593669242892988417)
-- 🎨 [React-Native-Skia + VisionCamera Frame Processor demo](https://twitter.com/mrousavy/status/1592943223751999488)
-- 📦 [React-Native-Skia Beta](https://twitter.com/wcandillon/status/1593591452491194370)
-- 📦 [burnt – native toasts & alerts for react native](https://twitter.com/FernandoTheRojo/status/1593632122069291008)
+L'équipe React-Native a répondu officiellement à la discussion sur comment améliorer React-Native. On y apprend de nombreux détails sur la roadmap. L'investissement sur React-Native semble s'accélérer. Les points qui m'intéressent particulièrement sont:
+
+- Metro devrait rattraper son retard (swc, pnpm, symlinks, support ESM "exports"...)
+- Yoga et le support CSS qui va se compléter: flex gap, boxShadow...
+- Le cross-platform, les APIs unifiées, React-Native-Web qui passe sous la direction de Meta
+- Les améliorations de DX: debugging, stacktraces, sourcemaps, LogBox...
+
+---
+
+- 🎨 [React-Native-Skia + VisionCamera Frame Processor demo](https://twitter.com/mrousavy/status/1592943223751999488): démo impressionnante qui permet d'utiliser React-Native-Skia sur les frames de VisionCamera. Permet par exemple d'appliquer des filtres/shaders en temps réel sans écrire de code natif.
+- 📦 [React-Native-Skia 0.1.159](https://twitter.com/wcandillon/status/1593591452491194370): la librairie passe en beta, un rendu sur le UI thread et des performances grandement améliorées
+- 📦 [burnt – native toasts & alerts for react native](https://twitter.com/FernandoTheRojo/status/1593632122069291008): Fernando Rojo a créé sa 1ere librairie React-Native native, basée sur Swift en moins d'une journée, sans connaissance préalable de Swift. Cela montre bien à quel point [Expo Modules API](https://twitter.com/tsapeta/status/1593705970781356035) facilite les choses!
 - 📦 [React-Native-Testing-Library v11.5](https://twitter.com/mdj_dev/status/1593250914965794817)
+- 📜 [Automatic args in React Native Storybook](https://dev.to/dannyhw/automatic-args-in-react-native-storybook-140a)
 - 🎥 [Path Gradients with Skia](https://www.youtube.com/watch?v=7SCzL-XnfUU)
 - 🎥 [Rolling Menu in React-Native Re-Animated 2](https://www.youtube.com/watch?v=sOKMytwWeKE)
+- 📖 [Expo Docs update - Universal apps tutorial](https://twitter.com/amanhimself/status/1593669242892988417)
+- 📊 [New Reanimated Shared Value implementation](https://twitter.com/kzzzf/status/1594095497123434497): des performances améliorées via la reduction d'appels JSI
+- 📊 [React-Native Yoga Layout VS iOS alternatives](https://twitter.com/Baconbrix/status/1593561645858623488): le moteur de layout React-Native est plutot performant!
+- 🐦 [Hirbod - "the Layout Animation rewrite has been merged"](https://twitter.com/nightstomp/status/1593207173496320000)
 - 🐦 [Jamon Holmgren - "at this point there's very little reason _not_ to use Expo"](https://twitter.com/jamonholmgren/status/1593319397573394432)
 
 ---
@@ -169,12 +179,12 @@ Nous cherchons des développeurs(euses) JavaScript passionnés. Vous interviendr
 
 - [An Interactive Guide to Flexbox](https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/): super article de Josh Comeau, a ne pas lire si vous avez faim 😄
 - [Browsers, JSON, and FormData](https://blog.jim-nielsen.com/2022/browsers-json-formdata/): article avec des idées intéressantes sur le progressive enhancement, qui incite à créer des APIS basées sur FormData plutôt que JSON. Ca me parle, et d'ailleurs mes formulaires de signup de la newsletter fonctionnent aussi sans JavaScript 🤗 L'article n'est pas lié à React mais est écrit par Jim qui travaille sur Remix.
+- [Cloudflare Developer Week 2022 announcements](https://blog.cloudflare.com/icymi-developer-week-2022-announcements/): pas mal d'annonces. Je retiens surtout la possibilité de faire des screenshots Puppeteer depuis un Worker edge: cela peut être utile pour Remotion, ou encore générer des social previews de manière efficace, et concurrencer le nouveau [service og image de Vercel](https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation).
 - [Top-level promise handling in Node.js ES modules](https://www.stefanjudis.com/today-i-learned/top-level-promise-handling-in-node-js/): je découvre ce comportement de Node.js pas hyper intuitif et le code exit 13.
 - [State Of JavaScript 2022 Survey](https://survey.devographics.com/survey/state-of-js/2022): content d'y voir [Docusaurus faire son entrée](https://twitter.com/sebastienlorber/status/1594748405280116738) cette année! J'espère que ma newsletter sera dans les resources l'année prochaine, n'hésitez pas à l'envoyer en suggestion 😏
 - [The 2022 State of JavaScript Survey Is Now Open. Here's What's New](https://dev.to/sachagreif/take-the-2022-state-of-javascript-survey-5ap6)
 - [Web technology optimism hour](https://macwright.com/2022/11/18/optimism-updates.html)
 - [Movies app in 7 frameworks - which is fastest and why?](https://www.builder.io/blog/movies-app-in-7-frameworks-which-is-fastest-and-why)
-- [Cloudflare Developer Week 2022 announcements](https://blog.cloudflare.com/icymi-developer-week-2022-announcements/)
 - [HTML Elements Visualized](https://julesblom.com/writing/html-elements)
 - [Complete rewrite of ESLint](https://twitter.com/slicknet/status/1594870586605391872)
 - [MPA View Transitions - First demo - Chrome canary](https://twitter.com/addyosmani/status/1592907811968626688)
@@ -196,10 +206,4 @@ Nous cherchons des développeurs(euses) JavaScript passionnés. Vous interviendr
 
 ## 🤭 Fun {#fun}
 
-https://twitter.com/kentcdodds/status/1592846584383156225?
-
-https://twitter.com/steveruizok/status/1592870019717038081
-
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/todo)
+[![Life is short - Make sure to spend it arguing about JS frameworks with strangers on the internet](/emails/issues/125/meme.png)](https://twitter.com/fireship_dev/status/1587587531154989056)
