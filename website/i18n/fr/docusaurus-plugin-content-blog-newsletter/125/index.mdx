@@ -54,33 +54,54 @@ Vous pouvez commencer ici: [flycode.com/developers](https://www.flycode.com/deve
 
 ## ⚛️ React {#react}
 
+[![tRPC 10](/emails/issues/125/trpc10.jpg)](https://trpc.io/blog/announcing-trpc-10)
+
+**[tRPC 10](https://trpc.io/blog/announcing-trpc-10)**
+
+Belle refonte de tRPC qui améliore grandement la DX et le support IDE. Cette librairie qui facilite les appels backends typesafe fait de plus en plus d'adeptes. Elle peut être facilement utilisée dans l'écosystème React grace aux packages d'intégration (Next.js, React-Query...). J'adore la tagline "Move Fast and Break Nothing" 😄
+
+Pour comprendre l'intérêt, je recommande de lire [Why we ditched GraphQL for tRPC](https://echobind.com/post/why-we-ditched-graphql-for-trpc). Alex explique pourquoi ils ont remplacé GraphQL par tRPC dans leur starter [Bison](https://github.com/echobind/bisonapp), dans un context React. tRPC nécessite beaucoup moins de boilerplate, de codegen TypeScript et de bundle JS, tout en améliorant la DX, le support IDE et simplifiant la gestion du cache. La manière de gérer l'over-fetching est différente: il ne faut pas hésiter à créer une nouvelle procédure. tRPC est idéal pour une app Node.js full-stack en TypeScript avec le code backend/frontend co-localisé (Next.js par exemple). GraphQL reste une bonne solution pour créer une API publique exposée à des partenaires qui n'utilisent pas forcément JavaScript.
+
+J'en profite pour placer également [T3-App](https://create.t3.gg/) qui a aidé à populariser tRPC, et qui dispose enfin d'une doc officielle. Il s'agit d'une stack typée de bout en bout pour Next.js basée sur tRPC, Prisma, Tailwind... La [doc sur l'intégration tRPC](https://create.t3.gg/en/usage/trpc) explique bien les avantages par rapport à une API Route basique de Next.js. Voir aussi [create-t3-turbo](https://github.com/t3-oss/create-t3-turbo) qui rajoute en plus une app Expo dans un monorepo avec Turborepo.
+
+---
+
+[![Working with Zustand](/emails/issues/125/zustand.jpg)](https://tkdodo.eu/blog/working-with-zustand)
+
 **[Working with Zustand](https://tkdodo.eu/blog/working-with-zustand)**
 
 Dominik rappelle d'où l'on vient en terme de state management. Il explique pourquoi il aime Zustand, une solution minimaliste et sans magie, dans la philosophie de React. Il donne quelques astuces pour l'utiliser au mieux, comme exposer des hooks custom, utiliser des selecteurs atomiques, ou encore grouper les actions dans un objet immuable.
 
+---
+
+[![Remix dual reponses](/emails/issues/125/remix-dual.png)](https://blog.jim-nielsen.com/2022/remix-alternate-timeline-of-web-dev/)
+
 **[Remix and the Alternate Timeline of Web Development](https://blog.jim-nielsen.com/2022/remix-alternate-timeline-of-web-dev/)**
 
-Jim explique que Remix a fait quelques pas en arrière et repensé tout le modèle de nos apps frontend. Avec Remix, le support du progressive enhancement ne nécessiter l'écriture de notre app de 2 manières différentes (client + server), car les routes Remix peuvent retourner à la fois du JSON et du HTML.
+Jim explique que Remix a fait quelques pas en arrière pour repensé tout le modèle de nos apps frontend. Avec Remix, le support du progressive enhancement ne nécessiter l'écriture de notre app de 2 manières différentes (client + server) comme avec les autres frameworks, car les routes Remix savent retourner à la fois du JSON et du HTML à partir du même code.
+
+---
+
+[![Taming the dragon: Accessible drag and drop](/emails/issues/125/dnd.jpg)](https://react-spectrum.adobe.com/blog/drag-and-drop.html)
 
 **[Taming the dragon: Accessible drag and drop](https://react-spectrum.adobe.com/blog/drag-and-drop.html)**
 
 Devon (Adobe) vient d'annoncer la sortie de hooks de drag & drop accessibles pour React-Aria et React-Spectrum. Il explique comment le support clavier et screen reader fonctionne pour permettre aux utilisateurs de sélectionner un élément, et trouver les cibles potentielles avec Tab, ou encore l'expérience mobile. Tout cela avec de nombreuses démo vidéos. On sent une nouvelle fois qu'il y a beaucoup de travail derrière cette API React-Aria, qui est la première à tenter de résoudre ce problème complexe.
 
-- 📜 [Offline dev and testing for Remix](https://github.com/pcattori/blog/blob/main/posts/offline-dev-and-testing-for-remix/index.md) + https://twitter.com/pcattori/status/1593039788533501953?utm_source=pocket_saves
-- 📜 [Why we ditched GraphQL for tRPC](https://echobind.com/post/why-we-ditched-graphql-for-trpc)
+---
+
+- 📖 [Beta docs update - createRef, PureComponents, useDebugValue](https://twitter.com/dan_abramov/status/1593007695703207936) - Dan Abramov arrive à la fin de son travail de documentation, et la nouvelle doc ne devrait pas tarder à officiellement sortir.
+- 📜 [Offline dev and testing for Remix](https://github.com/pcattori/blog/blob/main/posts/offline-dev-and-testing-for-remix/index.md): Pedro explique pourquoi il aime Mock Service Worker en dev/test et explique comment l'intégrer avec Remix.
 - 📜 [Migrate from Webpack to Remix](https://remix.run/blog/migrate-from-webpack): l'équipe travaille sur un compiler Webpack pour Remix qui permet de faciliter la migration incrémentale
+- 📜 [Remix site with Valhalla](https://www.gatsbyjs.com/blog/what-is-gatsbys-valhalla-content-hub/): Paul présente Valhalla, le nouveau data layer de Gatsby Cloud, puis explique comment on peut l'utiliser avec un autre que framework que Gatsby, comme Remix. Valhalla expose une API GraphQL publique. La demo appelle cette API depuis un loader Remix via Urql.
 - 📜 [Gatsby - Using the Slice API for Internationalization (i18n)](https://www.gatsbyjs.com/blog/using-the-slice-api-for-internationalization-i18n/)
-- 📜 [Remix site with Valhalla](https://www.gatsbyjs.com/blog/what-is-gatsbys-valhalla-content-hub/)
-- 📜 [Reader question: useReducer or XState?](https://swizec.com/blog/reader-question-usereducer-or-xstate/)
+- 📜 [useReducer or XState?](https://swizec.com/blog/reader-question-usereducer-or-xstate/)
 - 📜 [Conditionally Render Fields Using React Hook Form](https://echobind.com/post/conditionally-render-fields-using-react-hook-form)
 - 📜 [Fetching and caching Supabase data in Next.js 13 Server Components](https://supabase.com/blog/fetching-and-caching-supabase-data-in-next-js-server-components)
-- 📖 [Beta docs update](https://twitter.com/dan_abramov/status/1593007695703207936)
-- 📖 [T3-App](https://create.t3.gg/): nouveau site web et documentation pour ce starter Next.js typesafe, basé sur tRPC, Prisma, Tailwind...
-- 🎥 [React Brussels Playlist](https://www.youtube.com/watch?v=uZnXwuhYZBc&list=PL53Z0yyYnpWjIoe0wNozVbuRXOnVcETPw): nos amis Belge ont publié les videos de la conférence. J'ai bien aimé la [keynote](https://www.youtube.com/watch?v=uZnXwuhYZBc&list=PL53Z0yyYnpWjIoe0wNozVbuRXOnVcETPw&index=2) qui explique comment les frameworks React utilisent les dernières nouveautés React 18 comme Suspense pour data fetching ou les transitions.
+- 🎥 [React Brussels Playlist](https://www.youtube.com/watch?v=uZnXwuhYZBc&list=PL53Z0yyYnpWjIoe0wNozVbuRXOnVcETPw): nos amis Belge ont publié les videos de la conférence. J'ai bien aimé la [keynote](https://www.youtube.com/watch?v=uZnXwuhYZBc&list=PL53Z0yyYnpWjIoe0wNozVbuRXOnVcETPw&index=2) qui explique comment les meta-frameworks React utilisent les dernières nouveautés React 18 comme Suspense pour data fetching ou les transitions.
+- 🎥 [RIP React Router?](https://www.youtube.com/watch?v=LVzG3nncE4M): met en avant les propriétés typesafe et DX du tout nouveau [TanStack Router](https://tanstack.com/router/v1)
 - 🎥 [Using Fonts in Next.js](https://www.youtube.com/watch?v=L8_98i_bMMA)
-- 🎥 [RIP React Router?](https://www.youtube.com/watch?v=LVzG3nncE4M): met en avant le nouveau [TanStack Router](https://tanstack.com/router/v1)
-- 📦 [Remotion 3.3](https://twitter.com/remotion_dev/status/1593156143249260544)
-- 📦 [tRPC 10](https://trpc.io/blog/announcing-trpc-10): grosse refonte de tRPC qui améliore sa DX. Cette librairie qui facilite les appels backends typesafe fait de plus en plus d'adeptes. Elle peut être utilisée dans l'écosystème React grace aux packages d'intégration (Next, React-Query...). J'adore la tagline "Move Fast and Break Nothing" 😄
+- 📦 [Remotion 3.3](https://twitter.com/remotion_dev/status/1593156143249260544): plus besoin d'installer ffmpeg, divers nouveaux packages (font, paths, noise, motion blur), et de belles améliorations DX.
 - 📦 [Openblocks - The Open Source Retool Alternative](https://github.com/openblocks-dev/openblocks)
 - 📦 [Jotai 1.10](https://twitter.com/jotaijs/status/1593647952672608257)
 
@@ -90,7 +111,7 @@ Devon (Adobe) vient d'annoncer la sortie de hooks de drag & drop accessibles pou
 
 ## 💸 Sponsor {#sponsor2}
 
-[![The React Native Show - a podcast series](/emails/issues/125/the-rn-show.png)](https://www.callstack.com/podcast-react-native-show?utm_campaign=Podcast&utm_source=email&utm_content=This_Week_in_React)
+[![The React Native Show - a podcast series](/emails/issues/125/the-rn-show.jpg)](https://www.callstack.com/podcast-react-native-show?utm_campaign=Podcast&utm_source=email&utm_content=This_Week_in_React)
 
 **[The React Native Show - Podcast](https://www.callstack.com/podcast-react-native-show?utm_campaign=Podcast&utm_source=email&utm_content=This_Week_in_React)**
 
