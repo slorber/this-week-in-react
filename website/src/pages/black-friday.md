@@ -23,6 +23,8 @@ Make sure to check this page again on Friday 😜
 
 I'll keep adding interesting deals as they get published!
 
+[Send me an email](mailto:sebastien@thisweekinreact.com?subject=Black%20Friday%20Deal) if a deal is missing! 🙏
+
 :::
 
 ## Courses
