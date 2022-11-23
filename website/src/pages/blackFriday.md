@@ -12,6 +12,7 @@ A curated list of Black Friday deals for React developers!
 - [Testing JavaScript](https://testingjavascript.com/) by Kent C. Dodds: -40%
 - [Just JavaScript](https://justjavascript.com/) by Dan Abramov: -50%
 - [CSS for JavaScript Developers](https://css-for-js.dev/) by Josh Comeau: up to -50%
+- [Testing Accessibility](https://testingaccessibility.com/) by Marcy Sutton: -40%
 - [Practical Accessibility](https://practical-accessibility.today/) by Sara Soueidan: -25% (pre-order, not black friday)
 - [Fireship Pro](https://fireship.io/pro/), -40% (code BLACKFIRE)
 - [Pluralsight](https://www.pluralsight.com/), -50%
