@@ -13,7 +13,7 @@ description: A curated list of Black Friday deals for React developers! 🤗
 
 A curated list of Black Friday deals for React developers 🤗
 
-[![Black Friday 2022 Banner](/img/BLACK_FRIDAY_2022.png)](/blackfriday)
+[![Black Friday 2022 Banner](/img/BLACK_FRIDAY_2022.png)](/black-friday)
 
 ---
 
