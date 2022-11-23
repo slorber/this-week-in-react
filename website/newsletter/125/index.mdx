@@ -8,17 +8,17 @@ image: /img/TWIR_POST.png
 
 Hi everyone!
 
-C'est la semaine du **[Black Friday](/blackfriday)**. J'ai préparé pour vous une page que je vais tenir à jour avec les meilleurs deals pour un dev React. J'en ai déjà trouvé quelques-uns, mais certains ne sont pas encore annoncés, alors revenez vendredi ;)
+This week is **[Black Friday](/blackfriday)**. I created a page with the best deals for a React dev. I already found some of them, but some are not announced yet, so come back on Friday ;)
 
 [![Black Friday 2022 Banner](/img/BLACK_FRIDAY_2022.png)](/blackfriday)
 
-J'ai enfin l'occasion de mettre tRPC à l'honneur, avec des sorties officielles et un super article qui le compare à GraphQL!
+I finally have the opportunity to put tRPC in the spotlight, with official releases and a great article comparing it to GraphQL!
 
-Pour info, il y a un nouveau meetup [React-Native Paris](https://www.meetup.com/fr-FR/meetup-group-xaaafwks/) avec une 1ere date (6 Décembre). Rejoignez aussi le Slack [React-Native Connection](https://reactnativeconnection.slack.com/). Il est probable qu'une conférence sur le développement mobile arrive prochainement 😜 et j'espère bien qu'une conf React fera également son retour!
+We also have some great Remix-related content in general.
 
-Les [vidéos](https://www.youtube.com/watch?v=uZnXwuhYZBc&list=PL53Z0yyYnpWjIoe0wNozVbuRXOnVcETPw) de la conférence React Brussels sont en ligne. Je pense y aller l'année prochaine, histoire de rencontrer la communauté React de Belgique!
+I like the direction React-Native takes!
 
-N'oubliez pas de remplir le sondage [State Of JS](https://survey.devographics.com/survey/state-of-js/2022) qui vient d'ouvrir! content d'y trouver Docusaurus cette année. 🙏 N'hésitez pas à suggérer la newsletter pour les resources 😏 (utilisez le nom Anglais: "This Week In React")
+Don't forget to fill out the [State Of JS](https://survey.devographics.com/survey/state-of-js/2022) survey! Glad Docusaurus made it this year. Feel free to suggest the newsletter for the resources 😏 with some luck it will be featured next year 🙌
 
 <!-- truncate -->
 
@@ -58,11 +58,11 @@ You can get started here: [flycode.com/developers](https://www.flycode.com/devel
 
 **[tRPC 10](https://trpc.io/blog/announcing-trpc-10)**
 
-Belle refonte de tRPC qui améliore grandement la DX et le support IDE. Cette librairie qui facilite les appels backends typesafe fait de plus en plus d'adeptes. Elle peut être facilement utilisée dans l'écosystème React grace aux packages d'intégration (Next.js, React-Query...). J'adore la tagline "Move Fast and Break Nothing" 😄
+Nice refactor of tRPC which greatly improves DX and IDE support. This library that facilitates typesafe backend calls is gaining more and more followers. It can be easily used in the React ecosystem thanks to the integration packages (Next.js, React-Query...). I love the tagline "Move Fast and Break Nothing" 😄
 
-Pour comprendre l'intérêt, je recommande de lire [Why we ditched GraphQL for tRPC](https://echobind.com/post/why-we-ditched-graphql-for-trpc). Alex explique pourquoi ils ont remplacé GraphQL par tRPC dans leur starter [Bison](https://github.com/echobind/bisonapp), dans un context React. tRPC nécessite beaucoup moins de boilerplate, de codegen TypeScript et de bundle JS, tout en améliorant la DX, le support IDE et simplifiant la gestion du cache. La manière de gérer l'over-fetching est différente: il ne faut pas hésiter à créer une nouvelle procédure. tRPC est idéal pour une app Node.js full-stack en TypeScript avec le code backend/frontend co-localisé (Next.js par exemple). GraphQL reste une bonne solution pour créer une API publique exposée à des partenaires qui n'utilisent pas forcément JavaScript.
+To understand the idea, I recommend reading [Why we ditched GraphQL for tRPC](https://echobind.com/post/why-we-ditched-graphql-for-trpc). Alex explains why they replaced GraphQL with tRPC in their [Bison](https://github.com/echobind/bisonapp) starter, in a React context. tRPC requires much less boilerplate, TypeScript codegen and JS bundle, while improving DX, IDE support and simplifying cache management. The way to handle over-fetching is different: you should not hesitate to create a new procedure. tRPC is ideal for a full-stack Node.js app in TypeScript with co-located backend/frontend code (Next.js for example). GraphQL remains a good solution to create a public API exposed to partners who do not necessarily use JavaScript and yet want to benefit from codegen (OpenAPI is also a good solution for this).
 
-J'en profite pour placer également [T3-App](https://create.t3.gg/) qui a aidé à populariser tRPC, et qui dispose enfin d'une doc officielle. Il s'agit d'une stack typée de bout en bout pour Next.js basée sur tRPC, Prisma, Tailwind... La [doc sur l'intégration tRPC](https://create.t3.gg/en/usage/trpc) explique bien les avantages par rapport à une API Route basique de Next.js. Voir aussi [create-t3-turbo](https://github.com/t3-oss/create-t3-turbo) qui rajoute en plus une app Expo dans un monorepo avec Turborepo.
+I take this opportunity to also mention [T3-App](https://create.t3.gg/), an end-to-end typed stack for Next.js based on tRPC, Prisma, Tailwind... It greatly helped tRPC grow in popularity this year, and now has an official docs site. Its [tRPC tdocs](https://create.t3.gg/en/usage/trpc) explain well the advantages compared to a classic Next.js Route API. See also [create-t3-turbo](https://github.com/t3-oss/create-t3-turbo): a Turborepo monorepo with Next.js + Expo, both using tRPC.
 
 ---
 
@@ -70,7 +70,7 @@ J'en profite pour placer également [T3-App](https://create.t3.gg/) qui a aidé 
 
 **[Working with Zustand](https://tkdodo.eu/blog/working-with-zustand)**
 
-Dominik rappelle d'où l'on vient en terme de state management. Il explique pourquoi il aime Zustand, une solution minimaliste et sans magie, dans la philosophie de React. Il donne quelques astuces pour l'utiliser au mieux, comme exposer des hooks custom, utiliser des selecteurs atomiques, ou encore grouper les actions dans un objet immuable.
+Dominik reminds us where we come from in terms of state management. He explains why he likes Zustand, a minimalist and magic-free solution in the React philosophy. He gives some tips on how to best use it, like exposing custom hooks, using atomic selectors, or grouping actions in an immutable object. Good pragmatic tips I can definitively agree with!
 
 ---
 
@@ -78,7 +78,7 @@ Dominik rappelle d'où l'on vient en terme de state management. Il explique pour
 
 **[Remix and the Alternate Timeline of Web Development](https://blog.jim-nielsen.com/2022/remix-alternate-timeline-of-web-dev/)**
 
-Jim explique que Remix a fait quelques pas en arrière pour repensé tout le modèle de nos apps frontend. Avec Remix, le support du progressive enhancement ne nécessiter l'écriture de notre app de 2 manières différentes (client + server) comme avec les autres frameworks, car les routes Remix savent retourner à la fois du JSON et du HTML à partir du même code.
+Jim explains that Remix has taken a few steps back to rethink our entire frontend app model. With Remix, progressive enhancement support does not require writing our app in 2 different ways (client + server) like with other frameworks, as Remix routes can return both JSON and HTML from the same code.
 
 ---
 
@@ -86,22 +86,22 @@ Jim explique que Remix a fait quelques pas en arrière pour repensé tout le mod
 
 **[Taming the dragon: Accessible drag and drop](https://react-spectrum.adobe.com/blog/drag-and-drop.html)**
 
-Devon (Adobe) vient d'annoncer la sortie de hooks de drag & drop accessibles pour React-Aria et React-Spectrum. Il explique comment le support clavier et screen reader fonctionne pour permettre aux utilisateurs de sélectionner un élément, et trouver les cibles potentielles avec Tab, ou encore l'expérience mobile. Tout cela avec de nombreuses démo vidéos. On sent une nouvelle fois qu'il y a beaucoup de travail derrière cette API React-Aria, qui est la première à tenter de résoudre ce problème complexe.
+Devon (Adobe) just announced the release of accessible drag & drop hooks for React-Aria and React-Spectrum. He explains how the keyboard and screen reader support works to allow users to select an element, and find potential targets with Tab, or the mobile experience. All this with many demos. It feels once again that there is a lot of work behind this React-Aria API, which is the first to try to solve this complex problem.
 
 ---
 
-- 📖 [Beta docs update - createRef, PureComponents, useDebugValue](https://twitter.com/dan_abramov/status/1593007695703207936) - Dan Abramov arrive à la fin de son travail de documentation, et la nouvelle doc ne devrait pas tarder à officiellement sortir.
-- 📜 [Fetching and caching Supabase data in Next.js 13 Server Components](https://supabase.com/blog/fetching-and-caching-supabase-data-in-next-js-server-components): montre bien avec quelle facilité les React Server Components peuvent être utilisés pour faire des requêtes sur une base Serverless, et donne quelque bons conseils de caching Next.js pour réduire les temps de réponse.
-- 📜 [Conditionally Render Fields Using React Hook Form](https://echobind.com/post/conditionally-render-fields-using-react-hook-form): comment utiliser les fonctions watch et register/unregister pour gérer un champ conditionnel
-- 📜 [Offline dev and testing for Remix](https://github.com/pcattori/blog/blob/main/posts/offline-dev-and-testing-for-remix/index.md): Pedro explique pourquoi il aime Mock Service Worker en dev/test et explique comment l'intégrer avec Remix.
-- 📜 [Migrate from Webpack to Remix](https://remix.run/blog/migrate-from-webpack): l'équipe travaille sur un compiler Webpack pour Remix qui permet de faciliter la migration incrémentale
-- 📜 [Remix site with Valhalla](https://www.gatsbyjs.com/blog/what-is-gatsbys-valhalla-content-hub/): Paul présente Valhalla, le nouveau data layer de Gatsby Cloud, puis explique comment on peut l'utiliser avec un autre que framework que Gatsby, comme Remix. Valhalla expose une API GraphQL publique. La demo appelle cette API depuis un loader Remix via Urql.
+- 📖 [Beta docs update - createRef, PureComponents, useDebugValue](https://twitter.com/dan_abramov/status/1593007695703207936): Dan Abramov is close to the end of his documentation work, and the new doc will probably be officially released soon.
+- 📜 [Fetching and caching Supabase data in Next.js 13 Server Components](https://supabase.com/blog/fetching-and-caching-supabase-data-in-next-js-server-components): shows how easily React Server Components can be used to make requests on a cloud/serverless DB, and also gives some good Next.js caching tips to reduce response times.
+- 📜 [Conditionally Render Fields Using React Hook Form](https://echobind.com/post/conditionally-render-fields-using-react-hook-form): how to use the watch and register/unregister functions to manage a conditional field
+- 📜 [Offline dev and testing for Remix](https://github.com/pcattori/blog/blob/main/posts/offline-dev-and-testing-for-remix/index.md): Pedro explains why he likes Mock Service Worker in dev/test and explains the way to integrate it with Remix.
+- 📜 [Migrate from Webpack to Remix](https://remix.run/blog/migrate-from-webpack): the team is working on a Webpack compiler for Remix to facilitate incremental migration.
+- 📜 [Remix site with Valhalla](https://www.gatsbyjs.com/blog/what-is-gatsbys-valhalla-content-hub/): Paul introduce Valhalla, the new Gatsby Cloud data layer, and then explains how it can be used with Remix. Valhalla exposes a public GraphQL API. The demo calls this API from a Remix loader via Urql. It looks like it's still the early days of Valhalla, but really curious to see how all this unfold.
 - 📜 [Gatsby - Using the Slice API for Internationalization (i18n)](https://www.gatsbyjs.com/blog/using-the-slice-api-for-internationalization-i18n/)
 - 📜 [useReducer or XState?](https://swizec.com/blog/reader-question-usereducer-or-xstate/)
-- 🎥 [React Brussels Playlist](https://www.youtube.com/watch?v=uZnXwuhYZBc&list=PL53Z0yyYnpWjIoe0wNozVbuRXOnVcETPw): nos amis Belge ont publié les videos de la conférence. J'ai bien aimé la [keynote](https://www.youtube.com/watch?v=uZnXwuhYZBc&list=PL53Z0yyYnpWjIoe0wNozVbuRXOnVcETPw&index=2) qui explique comment les meta-frameworks React utilisent les dernières nouveautés React 18 comme Suspense pour data fetching ou les transitions.
-- 🎥 [RIP React Router?](https://www.youtube.com/watch?v=LVzG3nncE4M): met en avant les propriétés typesafe et DX du tout nouveau [TanStack Router](https://tanstack.com/router/v1)
+- 🎥 [React Brussels Playlist](https://www.youtube.com/watch?v=uZnXwuhYZBc&list=PL53Z0yyYnpWjIoe0wNozVbuRXOnVcETPw): my Belgian friends have published the videos of the conference. I liked the [keynote](https://www.youtube.com/watch?v=uZnXwuhYZBc&list=PL53Z0yyYnpWjIoe0wNozVbuRXOnVcETPw&index=2) where Tejas explains how React meta-frameworks use the latest React 18 features like Suspense for data fetching or transitions.
+- 🎥 [RIP React Router?](https://www.youtube.com/watch?v=LVzG3nncE4M): highlights the great typesafe and DX properties of the brand new [TanStack Router](https://tanstack.com/router/v1)
 - 🎥 [Using Fonts in Next.js](https://www.youtube.com/watch?v=L8_98i_bMMA)
-- 📦 [Remotion 3.3](https://twitter.com/remotion_dev/status/1593156143249260544): plus besoin d'installer ffmpeg, divers nouveaux packages (font, paths, noise, motion blur), et de belles améliorations DX.
+- 📦 [Remotion 3.3](https://twitter.com/remotion_dev/status/1593156143249260544): no more need to install ffmpeg, various new packages (font, paths, noise, motion blur), and nice DX improvements.
 - 📦 [Openblocks - The Open Source Retool Alternative](https://github.com/openblocks-dev/openblocks)
 - 📦 [Jotai 1.10](https://twitter.com/jotaijs/status/1593647952672608257)
 
@@ -129,25 +129,25 @@ Since you are here, you surely like to stay up to date with the greatest React n
 
 **[\[Reply\] 2022: How can we improve React Native?](https://github.com/react-native-community/discussions-and-proposals/discussions/546)**
 
-L'équipe React-Native a répondu officiellement à la discussion sur comment améliorer React-Native. On y apprend de nombreux détails sur la roadmap. L'investissement sur React-Native semble s'accélérer. Les points qui m'intéressent particulièrement sont:
+The React-Native team has officially responded to the discussion on [how to improve React-Native](https://github.com/react-native-community/discussions-and-proposals/discussions/528). We learn many details about the roadmap. The investment on React-Native seems to be accelerating. The points I'm particularly interested in are:
 
-- Metro devrait rattraper son retard (swc, pnpm, symlinks, support ESM "exports"...)
-- Yoga et le support CSS qui va se compléter: flex gap, boxShadow...
-- Le cross-platform, les APIs unifiées, React-Native-Web qui passe sous la direction de Meta
-- Les améliorations de DX: debugging, stacktraces, sourcemaps, LogBox...
+- Metro should catch up: swc, pnpm, symlinks, ESM support "exports"...
+- Yoga and CSS support will be improved: flex gap, boxShadow...
+- Cross-platform, unified APIs, React-Native-Web now under Meta ownership
+- DX improvements: debugging, stacktraces, sourcemaps, LogBox...
 
 ---
 
-- 🎨 [React-Native-Skia + VisionCamera Frame Processor demo](https://twitter.com/mrousavy/status/1592943223751999488): démo impressionnante qui permet d'utiliser React-Native-Skia sur les frames de VisionCamera. Permet par exemple d'appliquer des filtres/shaders en temps réel sans écrire de code natif.
-- 📦 [React-Native-Skia 0.1.159](https://twitter.com/wcandillon/status/1593591452491194370): la librairie passe en beta, un rendu sur le UI thread et des performances grandement améliorées
-- 📦 [burnt – native toasts & alerts for react native](https://twitter.com/FernandoTheRojo/status/1593632122069291008): Fernando Rojo a créé sa 1ere librairie React-Native native, basée sur Swift en moins d'une journée, sans connaissance préalable de Swift. Cela montre bien à quel point [Expo Modules API](https://twitter.com/tsapeta/status/1593705970781356035) facilite les choses!
+- 🎨 [React-Native-Skia + VisionCamera Frame Processor demo](https://twitter.com/mrousavy/status/1592943223751999488): impressive demo that allows to use React-Native-Skia on VisionCamera frames. Allows for example to apply filters/shaders in real time without writing native code.
+- 📦 [React-Native-Skia 0.1.159](https://twitter.com/wcandillon/status/1593591452491194370): the library goes into beta, now rendering on the UI thread, greatly improving performances
+- 📦 [burnt – native toasts & alerts for react native](https://twitter.com/FernandoTheRojo/status/1593632122069291008): Fernando Rojo created his 1st native React-Native library based on Swift in less than a day, without any prior knowledge of Swift. This shows how easy [Expo Modules API](https://twitter.com/tsapeta/status/1593705970781356035) makes things!
 - 📦 [React-Native-Testing-Library v11.5](https://twitter.com/mdj_dev/status/1593250914965794817)
 - 📜 [Automatic args in React Native Storybook](https://dev.to/dannyhw/automatic-args-in-react-native-storybook-140a)
 - 🎥 [Path Gradients with Skia](https://www.youtube.com/watch?v=7SCzL-XnfUU)
 - 🎥 [Rolling Menu in React-Native Re-Animated 2](https://www.youtube.com/watch?v=sOKMytwWeKE)
 - 📖 [Expo Docs update - Universal apps tutorial](https://twitter.com/amanhimself/status/1593669242892988417)
-- 📊 [New Reanimated Shared Value implementation](https://twitter.com/kzzzf/status/1594095497123434497): des performances améliorées via la reduction d'appels JSI
-- 📊 [React-Native Yoga Layout VS iOS alternatives](https://twitter.com/Baconbrix/status/1593561645858623488): le moteur de layout React-Native est plutot performant!
+- 📊 [New Reanimated Shared Value implementation](https://twitter.com/kzzzf/status/1594095497123434497): improved performance through JSI call reduction
+- 📊 [React-Native Yoga Layout VS iOS alternatives](https://twitter.com/Baconbrix/status/1593561645858623488): the React-Native layout engine is quite fast!
 - 🐦 [Hirbod - "the Layout Animation rewrite has been merged"](https://twitter.com/nightstomp/status/1593207173496320000)
 - 🐦 [Jamon Holmgren - "at this point there's very little reason _not_ to use Expo"](https://twitter.com/jamonholmgren/status/1593319397573394432)
 
@@ -173,12 +173,13 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 ## 🔀 Other {#other}
 
-- [An Interactive Guide to Flexbox](https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/): super article de Josh Comeau, a ne pas lire si vous avez faim 😄
-- [Browsers, JSON, and FormData](https://blog.jim-nielsen.com/2022/browsers-json-formdata/): article avec des idées intéressantes sur le progressive enhancement, qui incite à créer des APIS basées sur FormData plutôt que JSON. Ca me parle, et d'ailleurs mes formulaires de signup de la newsletter fonctionnent aussi sans JavaScript 🤗 L'article n'est pas lié à React mais est écrit par Jim qui travaille sur Remix.
-- [Cloudflare Developer Week 2022 announcements](https://blog.cloudflare.com/icymi-developer-week-2022-announcements/): pas mal d'annonces. Je retiens surtout la possibilité de faire des screenshots Puppeteer depuis un Worker edge: cela peut être utile pour Remotion, ou encore générer des social previews de manière efficace, et concurrencer le nouveau [service og image de Vercel](https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation).
-- [Top-level promise handling in Node.js ES modules](https://www.stefanjudis.com/today-i-learned/top-level-promise-handling-in-node-js/): je découvre ce comportement de Node.js pas hyper intuitif et le code exit 13.
-- [State Of JavaScript 2022 Survey](https://survey.devographics.com/survey/state-of-js/2022): content d'y voir [Docusaurus faire son entrée](https://twitter.com/sebastienlorber/status/1594748405280116738) cette année! J'espère que ma newsletter sera dans les resources l'année prochaine, n'hésitez pas à l'envoyer en suggestion 😏
+- [An Interactive Guide to Flexbox](https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/): great article by Josh Comeau, not to be read if you are hungry 😄
+- [Browsers, JSON, and FormData](https://blog.jim-nielsen.com/2022/browsers-json-formdata/): interesting ideas about progressive enhancement, which encourages creating APIS based on FormData rather than JSON. This speaks to me, and by the way my newsletter signup forms also work without JavaScript 🤗 The article is not React related but is written by Jim who works on Remix.
+- [Cloudflare Developer Week 2022 announcements](https://blog.cloudflare.com/icymi-developer-week-2022-announcements/): pa lot of announcements. I especially like the possibility to make Puppeteer screenshots from a Worker edge: this can be useful for Remotion, or generate social previews in an efficient way, and compete with the new [Vercel's og image service](https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation).
+- [Top-level promise handling in Node.js ES modules](https://www.stefanjudis.com/today-i-learned/top-level-promise-handling-in-node-js/): I discover this behavior of Node.js not hyper intuitive and the exit 13 code.
+- [State Of JavaScript 2022 Survey](https://survey.devographics.com/survey/state-of-js/2022): glad to see [Docusaurus making an entry](https://twitter.com/sebastienlorber/status/1594748405280116738) this year! I hope my newsletter will be in the resources next year, feel free to send it as a suggestion 😏
 - [The 2022 State of JavaScript Survey Is Now Open. Here's What's New](https://dev.to/sachagreif/take-the-2022-state-of-javascript-survey-5ap6)
+- [Prettier 2.8: improve --cache CLI option and TypeScript 4.9 satisfies operator!](https://prettier.io/blog/2022/11/23/2.8.0.html): good timing to adopt TS 4.9 (already supported in Babel)
 - [Web technology optimism hour](https://macwright.com/2022/11/18/optimism-updates.html)
 - [Movies app in 7 frameworks - which is fastest and why?](https://www.builder.io/blog/movies-app-in-7-frameworks-which-is-fastest-and-why)
 - [HTML Elements Visualized](https://julesblom.com/writing/html-elements)
@@ -186,7 +187,6 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 - [MPA View Transitions - First demo - Chrome canary](https://twitter.com/addyosmani/status/1592907811968626688)
 - [Mock Service Worker - Fetch API Support Beta](https://github.com/mswjs/msw/discussions/1464)
 - [What’s so great about functional programming anyway?](https://jrsinclair.com/articles/2022/whats-so-great-about-functional-programming-anyway/)
-- [Prettier 2.8: improve --cache CLI option and TypeScript 4.9 satisfies operator!](https://prettier.io/blog/2022/11/23/2.8.0.html)
 - [Angular 15](https://blog.angular.io/angular-v15-is-now-available-df7be7f2f4c8)
 - [Nuxt 3.0](https://nuxt.com/v3)
 - [Playwright 1.28](https://github.com/microsoft/playwright/releases/tag/v1.28.0)
