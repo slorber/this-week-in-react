@@ -11,7 +11,7 @@ slug: /blackfriday
 
 A curated list of Black Friday deals for React developers!
 
-![Black Friday 2022 Banner](/img/BLACK_FRIDAY_2022.png)
+[![Black Friday 2022 Banner](/img/BLACK_FRIDAY_2022.png)](/blackfriday)
 
 ---
 
