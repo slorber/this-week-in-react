@@ -33,8 +33,9 @@ I'll keep adding interesting deals as they get published!
 - [Testing JavaScript](https://testingjavascript.com/) by Kent C. Dodds: -40%
 - [Just JavaScript](https://justjavascript.com/) by Dan Abramov: -50%
 - [CSS for JavaScript Developers](https://css-for-js.dev/) by Josh Comeau: up to -50%
+- [Threejs Journey](https://threejs-journey.com/) by Bruno Simon, -50% (code [2022BLACKFRIDAY](https://threejs-journey.com/join/2022BLACKFRIDAY))
 - [Testing Accessibility](https://testingaccessibility.com/) by Marcy Sutton: -40%
-- [Practical Accessibility](https://practical-accessibility.today/) by Sara Soueidan: -25% (pre-order, not black friday)
+- [Practical Accessibility](https://practical-accessibility.today/) by Sara Soueidan: -25% (pre-order, not Black Friday)
 - [Fireship Pro](https://fireship.io/pro/), -40% (code BLACKFIRE)
 - [Pluralsight](https://www.pluralsight.com/), -50%
 
