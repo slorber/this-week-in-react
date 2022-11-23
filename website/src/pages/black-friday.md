@@ -11,7 +11,7 @@ description: A curated list of Black Friday deals for React developers! 🤗
 
 # This Week In React - Black Friday 2022
 
-A curated list of Black Friday deals for React developers 🤗
+A curated list of Black Friday deals **for React developers** 🤗
 
 [![Black Friday 2022 Banner](/img/BLACK_FRIDAY_2022.png)](/black-friday)
 
@@ -57,5 +57,7 @@ Join **[13259 satisfied readers](https://thisweekinreact.com/testimonials)** - 1
 :::
 
 <SubscribeFormEmbed />
+
+<br/>
 
 [![logo](/img/TWIR_POST.png)](/)
