@@ -1,10 +1,27 @@
 ---
-slug: /black-friday
+slug: /blackfriday
 ---
+
+<head>
+  <meta property="og:image" content="/img/BLACK_FRIDAY_2022.png"/>
+  <meta name="twitter:image" content="/img/BLACK_FRIDAY_2022.png"/>
+</head>
 
 # This Week In React - Black Friday 2022
 
 A curated list of Black Friday deals for React developers!
+
+![Black Friday 2022 Banner](/img/BLACK_FRIDAY_2022.png)
+
+---
+
+:::caution Updated Live
+
+Make sure to check this page again on Friday 😜
+
+I'll keep adding interesting deals as they get published!
+
+:::
 
 ## Courses
 
@@ -34,6 +51,6 @@ Join **[13259 satisfied readers](https://thisweekinreact.com/testimonials)** - 1
 
 :::
 
-[![logo](/img/TWIR_POST.png)](/)
-
 <SubscribeFormEmbed />
+
+[![logo](/img/TWIR_POST.png)](/)
