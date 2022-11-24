@@ -41,11 +41,11 @@ A curated list of Black Friday deals **for React developers** 🤗
 
 - [Egghead](https://egghead.io/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact): -40%
 
-- [Fireship Pro](https://fireship.io/pro/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact), -40% (code BLACKFIRE)
+- [Fireship Pro](https://fireship.io/pro/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact): -40% (code BLACKFIRE)
 
-- [Pluralsight](https://www.pluralsight.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact), -50%
+- [Pluralsight](https://www.pluralsight.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact): -50%
 
-- [Codedamn](https://codedamn.com/) -75%
+- [Codedamn](https://codedamn.com/): -75%
 
 ## Tools
 
