@@ -29,21 +29,22 @@ I'll keep adding interesting deals as they get published!
 
 ## Courses
 
-- [Epic React](https://epicreact.dev/) by Kent C. Dodds: -40%
-- [Testing JavaScript](https://testingjavascript.com/) by Kent C. Dodds: -40%
-- [Just JavaScript](https://justjavascript.com/) by Dan Abramov: -50%
-- [CSS for JavaScript Developers](https://css-for-js.dev/) by Josh Comeau: up to -50%
-- [Threejs Journey](https://threejs-journey.com/) by Bruno Simon, -50% (code [2022BLACKFRIDAY](https://threejs-journey.com/join/2022BLACKFRIDAY))
-- [React - The Road To Enterprise](https://theroadtoenterprise.com/books/react-the-road-to-enterprise?discount_coupon=BLACKFRIDAY) by Thomas Findlay, -40%
-- [Testing Accessibility](https://testingaccessibility.com/) by Marcy Sutton: -40%
-- [Practical Accessibility](https://practical-accessibility.today/) by Sara Soueidan: -25% (pre-order, not Black Friday)
-- [Fireship Pro](https://fireship.io/pro/), -40% (code BLACKFIRE)
-- [Pluralsight](https://www.pluralsight.com/), -50%
+- [Epic React](https://epicreact.dev/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact) by Kent C. Dodds: -40%
+- [Testing JavaScript](https://testingjavascript.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact) by Kent C. Dodds: -40%
+- [Just JavaScript](https://justjavascript.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact) by Dan Abramov: -50%
+- [CSS for JavaScript Developers](https://css-for-js.dev/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact) by Josh Comeau: up to -50%
+- [Threejs Journey](https://threejs-journey.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact) by Bruno Simon, -50% (code [2022BLACKFRIDAY](https://threejs-journey.com/join/2022BLACKFRIDAY))
+- [React - The Road To Enterprise](https://theroadtoenterprise.com/books/react-the-road-to-enterprise?discount_coupon=BLACKFRIDAY&utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact) by Thomas Findlay, -40%
+- [The Full Stack Mobile Development course](https://academy.notjust.dev/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact) by Vadim Savin, discount announced Friday
+- [Testing Accessibility](https://testingaccessibility.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact) by Marcy Sutton: -40%
+- [Practical Accessibility](https://practical-accessibility.today/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact) by Sara Soueidan: -25% (pre-order, not Black Friday)
+- [Fireship Pro](https://fireship.io/pro/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact), -40% (code BLACKFIRE)
+- [Pluralsight](https://www.pluralsight.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact), -50%
 
 ## Tools
 
-- [Sizzy](https://sizzy.co/): responsive browser, -50%
-- [Polypane](https://polypane.app/black-friday/): responsive browser, -30%
+- [Sizzy](https://sizzy.co/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact): responsive browser, -50%
+- [Polypane](https://polypane.app/black-friday/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact): responsive browser, -30%
 
 ---
 
