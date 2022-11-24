@@ -34,6 +34,7 @@ I'll keep adding interesting deals as they get published!
 - [Just JavaScript](https://justjavascript.com/) by Dan Abramov: -50%
 - [CSS for JavaScript Developers](https://css-for-js.dev/) by Josh Comeau: up to -50%
 - [Threejs Journey](https://threejs-journey.com/) by Bruno Simon, -50% (code [2022BLACKFRIDAY](https://threejs-journey.com/join/2022BLACKFRIDAY))
+- [React - The Road To Enterprise](https://theroadtoenterprise.com/books/react-the-road-to-enterprise?discount_coupon=BLACKFRIDAY) by Thomas Findlay, -40%
 - [Testing Accessibility](https://testingaccessibility.com/) by Marcy Sutton: -40%
 - [Practical Accessibility](https://practical-accessibility.today/) by Sara Soueidan: -25% (pre-order, not Black Friday)
 - [Fireship Pro](https://fireship.io/pro/), -40% (code BLACKFIRE)
