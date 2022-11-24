@@ -38,6 +38,7 @@ I'll keep adding interesting deals as they get published!
 - [The Full Stack Mobile Development course](https://academy.notjust.dev/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact) by Vadim Savin, discount announced Friday
 - [Testing Accessibility](https://testingaccessibility.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact) by Marcy Sutton: -40%
 - [Practical Accessibility](https://practical-accessibility.today/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact) by Sara Soueidan: -25% (pre-order, not Black Friday)
+- [Egghead](https://egghead.io/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact): -40%
 - [Fireship Pro](https://fireship.io/pro/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact), -40% (code BLACKFIRE)
 - [Pluralsight](https://www.pluralsight.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact), -50%
 
