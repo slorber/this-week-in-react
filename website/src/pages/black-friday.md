@@ -49,6 +49,8 @@ A curated list of Black Friday deals **for React developers** 🤗
 
 ## Tools
 
+- [Tailwind UI + Refactoring UI](https://tailwindui.com/all-access?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact): -33%
+
 - [Sizzy](https://sizzy.co/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact): responsive browser, -50%
 
 - [Polypane](https://polypane.app/black-friday/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact): responsive browser, -30%
