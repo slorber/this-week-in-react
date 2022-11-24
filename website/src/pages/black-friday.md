@@ -45,7 +45,7 @@ A curated list of Black Friday deals **for React developers** 🤗
 
 - [Pluralsight](https://www.pluralsight.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact): -50%
 
-- [Codedamn](https://codedamn.com/): -75%
+- [Codedamn](https://codedamn.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact): -75%
 
 ## Tools
 
@@ -53,7 +53,7 @@ A curated list of Black Friday deals **for React developers** 🤗
 
 - [Polypane](https://polypane.app/black-friday/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact): responsive browser, -30%
 
-- [Reshaped](https://reshaped.so/): Figma + React design system, -30%
+- [Reshaped](https://reshaped.so/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact): Figma + React design system, -30%
 
 :::caution Updated Live
 
