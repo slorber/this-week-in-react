@@ -15,6 +15,12 @@
       "permanent": false
     },
 
+    {
+      "source": "/blackfriday",
+      "destination": "/black-friday",
+      "permanent": true
+    },
+
 
     {
       "source": "/newsletter/220",
