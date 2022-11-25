@@ -83,7 +83,13 @@ A curated list of Black Friday deals **for React developers** 🤗
 
 - **Author**: Gary Simon
 - **Discount**: 40% (code BF40)
-- Learn UI/UX or CSS
+- Learn UI/UX or CSS.
+
+### 🇫🇷 [BeginReact](https://school.codelynx.dev/go-beginreact?coupon=BF-2022&utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
+
+- **Author**: Melvyn Malherbe
+- **Discount**: 50% (code BF-2022)
+- Un cours en français pour **comprendre** React.
 
 ---
 
