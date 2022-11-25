@@ -22,19 +22,19 @@ A curated list of Black Friday deals **for React developers** 🤗
 ### [Epic React](https://epicreact.dev/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
 - **Author**: Kent C. Dodds
-- **Discount**: -40% - (-50% in [kcdbundle](https://www.kcdbundle.com/))
+- **Discount**: 40% (50% with [kcdbundle](https://www.kcdbundle.com/))
 - One of the best premium React courses out there according to many reviews
 
 ### [Testing JavaScript](https://testingjavascript.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
 - **Author**: Kent C. Dodds
-- **Discount**: -40% - (-50% in [kcdbundle](https://www.kcdbundle.com/))
+- **Discount**: 40% (50% with [kcdbundle](https://www.kcdbundle.com/))
 - Oone of the best premium JS testing courses out there according to many reviews
 
 ### [Just JavaScript](https://justjavascript.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
 - **Author**: Dan Abramov and Maggie Appleton
-- **Discount**: -50%
+- **Discount**: 50%
 - Dan Abramov sharing his own JavaScript mental models in a polished and yet very affordable course
 
 ### [CSS for JavaScript Developers](https://css-for-js.dev/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
@@ -52,26 +52,32 @@ A curated list of Black Friday deals **for React developers** 🤗
 ### [useEffect.dev](https://useeffect.dev/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
 - **Author**: Sébastien Castiel
-- **Discount**: -50% (code USEBLACKFRIDAY)
+- **Discount**: 50% (code USEBLACKFRIDAY)
 - A 13-lessons courses focusing on React hooks
 
 ### [The Full Stack Mobile Development course](https://academy.notjust.dev/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
 - **Author**: Vadim Savin
-- **Discount**: -25%
+- **Discount**: 25%
 - A course to learn full-stack React-Native using AWS Amplify as a backend.
 
 ### [Testing Accessibility](https://testingaccessibility.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
 - **Author**: Marcy Sutton
-- **Discount**: -40%
+- **Discount**: 40%
 - Accessibility is a valuable skill to learn. This course is using React examples.
 
 ### [Practical Accessibility](https://practical-accessibility.today/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
 - **Author**: Marcy Sutton
-- **Discount**: -25% (pre-order, not Black Friday)
+- **Discount**: 25% (pre-order, not Black Friday)
 - Accessibility is a valuable skill to learn.
+
+### [The Complete Flutter Course Bundle](https://codewithandrea.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
+
+- **Author**: Andrea Bizzotto
+- **Discount**: 33%
+- A good opportunity to learn this React-Native competitor and stay open-minded.
 
 ---
 
@@ -79,7 +85,7 @@ A curated list of Black Friday deals **for React developers** 🤗
 
 ### [Egghead](https://egghead.io/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
-- **Discount**: -40%
+- **Discount**: 40%
 - Probably my favorite React learning platform. Lots of free content of high quality.
 
 ### [Fireship Pro](https://fireship.io/pro/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
@@ -89,12 +95,12 @@ A curated list of Black Friday deals **for React developers** 🤗
 
 ### [Pluralsight](https://www.pluralsight.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
-- **Discount**: -50%
+- **Discount**: 50%
 - One of the leading course platforms
 
 ### [Codedamn](https://codedamn.com/codeday?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
-- **Discount**: -75%
+- **Discount**: 75%
 - A platform offering a very generous discount. Various React and JS courses, including some from Brad Traversy.
 
 ---
@@ -104,12 +110,12 @@ A curated list of Black Friday deals **for React developers** 🤗
 ### [React - The Road To Enterprise](https://theroadtoenterprise.com/books/react-the-road-to-enterprise?discount_coupon=BLACKFRIDAY&utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
 - **Author**: Thomas Findlay
-- **Discount**: -40%
+- **Discount**: 40%
 
 ### [A Sceptics Guide to Functional Programming with JavaScript](https://jrsinclair.com/skeptics-guide?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
 - **Author**: James Sinclair
-- **Discount**: -25%
+- **Discount**: 25%
 
 ---
 
@@ -117,7 +123,7 @@ A curated list of Black Friday deals **for React developers** 🤗
 
 ### [Tailwind UI + Refactoring UI](https://tailwindui.com/all-access?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
-- **Discount**: -33%
+- **Discount**: 33%
 - Ideal for those that want to ship beautiful UIs fast based on Tailwind CSS, from the same authors.
 
 ### [Nitro Build](https://nitro.build/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
@@ -127,12 +133,12 @@ A curated list of Black Friday deals **for React developers** 🤗
 
 ### [Sizzy](https://sizzy.co/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
-- **Discount**: -50%
+- **Discount**: 50%
 - A browser that makes web developers more productive. Useful for responsive design, and much more.
 
 ### [Polypane](https://polypane.app/black-friday/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
-- **Discount**: -30%
+- **Discount**: 30%
 - A browser that makes web developers more productive. Useful for responsive design, and much more.
 
 ### [Reshaped](https://reshaped.so/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
@@ -142,18 +148,23 @@ A curated list of Black Friday deals **for React developers** 🤗
 
 ### [RemixFast](https://www.remixfast.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
-- **Discount**: -50%
+- **Discount**: 50%
 - Use RemixFast Visual Builder to build apps at warp speed!
 
 ### [Gravity](https://usegravity.app/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
-- **Discount**: -50%
+- **Discount**: 50%
 - Build a Node.js & React app at warp speed with a SaaS boilerplate
 
 ### [Volca](https://volca.io/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
-- **Discount**: -50%
+- **Discount**: 50%
 - Node.js SaaS Boilerplate with React
+
+### [WallabyJS](https://wallabyjs.com/purchase/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
+
+- **Discount**: 30% - 50%
+- JavaScript testing tools
 
 ---
 
