@@ -123,6 +123,11 @@ A curated list of Black Friday deals **for React developers** 🤗
 - **Author**: James Sinclair
 - **Discount**: 25%
 
+### [Patterns.dev](https://www.patterns.dev/)
+
+- **Author**: Addy Osmani & Lydia Hallie
+- **Discount**: free (not Black Friday but still a great deal 😄)
+
 ---
 
 ## Tools
