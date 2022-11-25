@@ -79,6 +79,12 @@ A curated list of Black Friday deals **for React developers** 🤗
 - **Discount**: 33%
 - A good opportunity to learn this React-Native competitor and stay open-minded.
 
+### [Design Course](https://designcourse.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
+
+- **Author**: Gary Simon
+- **Discount**: 40% (code BF40)
+- Learn UI/UX or CSS
+
 ---
 
 ## Course platforms
