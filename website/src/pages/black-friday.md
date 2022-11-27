@@ -69,7 +69,7 @@ A curated list of Black Friday deals **for React developers** 🤗
 
 ### [Practical Accessibility](https://practical-accessibility.today/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
-- **Author**: Marcy Sutton
+- **Author**: Sara Soueidan
 - **Discount**: 25% (pre-order, not Black Friday)
 - Accessibility is a valuable skill to learn.
 
@@ -114,6 +114,11 @@ A curated list of Black Friday deals **for React developers** 🤗
 
 - **Discount**: 75%
 - A platform offering a very generous discount. Various React and JS courses, including some from Brad Traversy.
+
+### [GreatFrontEnd](https://www.greatfrontend.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
+
+- **Discount**: 20%
+- The ultimate Front End Interview preparation platform.
 
 ---
 
