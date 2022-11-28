@@ -129,6 +129,16 @@ A curated list of Black Friday deals **for React developers** 🤗
 - **Author**: Thomas Findlay
 - **Discount**: 40%
 
+### [Tao of React](https://www.taoofreact.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
+
+- **Author**: Alexander Kondov
+- **Discount**: 50%
+
+### [Tao of Node](https://www.taoofnode.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
+
+- **Author**: Alexander Kondov
+- **Discount**: 50%
+
 ### [A Sceptics Guide to Functional Programming with JavaScript](https://jrsinclair.com/skeptics-guide?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
 - **Author**: James Sinclair
