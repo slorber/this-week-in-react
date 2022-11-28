@@ -150,6 +150,11 @@ A curated list of Black Friday deals **for React developers** 🤗
 - **Author**: James Sinclair
 - **Discount**: 25%
 
+### [Debugging CSS](https://debuggingcss.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
+
+- **Author**: Ahmad Shadeed
+- **Discount**: 50%
+
 ### [Patterns.dev](https://www.patterns.dev/)
 
 - **Author**: Addy Osmani & Lydia Hallie
