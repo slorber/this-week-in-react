@@ -204,6 +204,11 @@ A curated list of Black Friday deals **for React developers** 🤗
 - **Discount**: 30% - 50%
 - JavaScript testing tools
 
+### [Divjoy](https://divjoy.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
+
+- **Discount**: 40%
+- The React codebase generator
+
 ---
 
 :::caution Updated Live
