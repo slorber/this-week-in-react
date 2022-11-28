@@ -61,6 +61,12 @@ A curated list of Black Friday deals **for React developers** 🤗
 - **Discount**: 25%
 - A course to learn full-stack React-Native using AWS Amplify as a backend.
 
+### [React-Native School](https://www.reactnativeschool.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
+
+- **Author**: Spencer Carli
+- **Discount**: 50% (code HALFOFF22)
+- From the fundamentals to managing production apps React Native School helps you master cross platform development.
+
 ### [Testing Accessibility](https://testingaccessibility.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
 - **Author**: Marcy Sutton
