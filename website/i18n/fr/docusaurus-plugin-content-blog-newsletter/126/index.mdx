@@ -49,8 +49,14 @@ Vous pouvez commencer ici: [flycode.com/developers](https://www.flycode.com/deve
 
 ## ⚛️ React {#react}
 
-- 📜 [Is React going anywhere?](https://www.infoxicator.com/is-react-going-anywhere): reflexion intéressante de Ruben, après avoir rencontré un CTO e-commerce qui a décidé d'abandonner React pour du Vanilla JS. Est-ce que React est réellement responsable des mauvaises perfs de son app? Est-ce qu'adopter une alternative est justifié? Est-ce que React va rester leader sur les 5 ou 10 prochaines années?
-- 📜 [Improving React Interaction Times by 4x](https://www.causal.app/blog/react-perf): l'app Causal (cloud spreadsheet) présente des problèmes de performance. Ils nous proposent une analyse détaillée des problèmes et comment ils les ont résolu via le profiler Chrome. Certains problèmes liés à AG Grid (qu'ils ont patché) et d'autres de leur propre code principalement lié à la mémoisation. Ils ont aussi tenté d'utiliser des Web Workers, mais la sérialisation a un cout trop élevé.
+**[Is React going anywhere?](https://www.infoxicator.com/is-react-going-anywhere)**
+
+Reflexion intéressante de Ruben, après avoir rencontré un CTO e-commerce qui a décidé d'abandonner React pour du Vanilla JS. Est-ce que React est réellement responsable des mauvaises perfs de son app? Est-ce qu'adopter une alternative est justifié? Est-ce que React va rester leader sur les 5 ou 10 prochaines années?
+
+**[Improving React Interaction Times by 4x](https://www.causal.app/blog/react-perf)**
+
+L'app de Causal (cloud spreadsheet) présente des problèmes de performance. Ils nous proposent une analyse détaillée des problèmes et comment ils les ont résolu via le profiler Chrome. Certains problèmes liés à AG Grid (qu'ils ont patché) et d'autres de leur propre code principalement lié à la mémoisation. Ils ont aussi tenté d'utiliser des Web Workers, mais la sérialisation avait un cout trop élevé.
+
 - 📜 [Progressively enhance the useFetcher hook in Remix](https://sergiodxa.com/articles/progressively-enhance-the-usefetcher-hook-in-remix): petite astuce pour supporter les users avec/sans JS sur l'API useFetcher de Remix: il faut forcer un redirect pour les users sans JS. Dans le même genre, il est possible de gérer le [progressive enhancement sur un upload de fichiers](https://twitter.com/ebey_jacob/status/1596223682246234113). Tout cela n'est sans doute pas indispensable pour beaucoup d'apps, mais ça reste bon à savoir que cela est possible en cas de besoin.
 - 📜 [Remix Deferred overview](https://gist.github.com/jacob-ebey/9bde9546c1aafaa6bc8c242054b1be26): une explication du fonctionnement de [defer](https://github.com/remix-run/remix/issues/4486) dans Remix, qui va permettre de "téléporter" une promesse du back au front. Pour ceux qui ont envie de comprendre le fonctionnement interne de Remix.
 - 📜 [Solid Final Form – Proof of Concept](https://erikras.com/blog/solid-final-form-poc): Erik explique que sa lib [Final Form](https://final-form.org/react) (populaire il y a quelques années) est découplée de React et montre qu'il est possible de l'utiliser dans un contexte SolidJS.
@@ -93,19 +99,19 @@ Le meilleur ? Tout le monde peut [commencer gratuitement](https://www.yuzu.dev/p
 
 ## 📱 React-Native {#react-native}
 
-[What We Learned from Open-Sourcing FlashList](https://shopify.engineering/what-we-learned-from-open-sourcing-flashlist)
+**[React Native Core Contributor Summit 2022](https://reactnative.dev/blog/2022/11/22/react-native-core-contributor-summit-2022)**
 
-[React Native Core Contributor Summit 2022](https://reactnative.dev/blog/2022/11/22/react-native-core-contributor-summit-2022)
+Une bonne partie des contributeurs React-Native se sont réunis début Septembre à l'occasion de la conférence React-Native EU. Ils ont participé à une série de workshops et nous font un compte rendu. Divers sujets abordés, comme la nouvelle architecture, le bundler Metro ou encore le workflow de release.
 
-[Shopify - Our Solution for Measuring React Native Rendering Times](https://shopify.engineering/measuring-react-native-rendering-times) + https://twitter.com/davebcn87/status/1595819683311226880
+**[Shopify - Our Solution for Measuring React Native Rendering Times](https://shopify.engineering/measuring-react-native-rendering-times)**
 
-[React Native in 2022 and Beyond](https://semaphoreci.com/blog/react-native)
+Présentation du ppackage [react-native-performance](https://github.com/Shopify/react-native-performance) qui permet de générer des rapports (JSON) de performance de type [field/Real User Monitoring](https://web.dev/lab-and-field-data-differences/). Il s'intègre facilement avec React-Navigation. Vous pouvez envoyer ces rapports à un dashboard analytics de votre choix. Cela permet d'identifier un écran spécifique qui a des soucis de performance en production. Cela rappelle les métriques existantes coté web: Core Web Vitals, TTI, INP et les dashboards perf de Vercel/Netlify/Gatsby...
 
-- 🐦 setNativeProps back? https://twitter.com/o_kwasniewski/status/1596090790350303233
-- https://stackoverflow.blog/2022/10/31/comparing-frameworks-for-cross-platform-apps-flutter-vs-react-native/
-
-- [How react-native became performant as native with the new architecture](https://medium.com/ocp-digital-factory/how-react-native-became-performant-as-native-with-the-new-architecture-6e678c3178aa)
-- [How to build a React Native app 5x faster with Nitro](https://blog.nitro.build/how-to-build-a-react-native-app-5x-faster-with-nitro-d7e512b18d90)
+- 📜 [Shopify - What We Learned from Open-Sourcing FlashList](https://shopify.engineering/what-we-learned-from-open-sourcing-flashlist): retour d'expérience sur un lancement open-source réussi chez Shopify. Comme quoi, le marketing est une part importante du succès d'un projet open-source, et il ne faut pas le négliger. Voir aussi mon lancement de [Docusaurus 2.0](https://www.indiehackers.com/post/1-on-product-hunt-thanks-to-newsletters-and-good-timing-2c7d8809d9).
+- 📜 [How to build a React Native app 5x faster with Nitro](https://blog.nitro.build/how-to-build-a-react-native-app-5x-faster-with-nitro-d7e512b18d90): Nitro est un outil (payant, en preview) qui permet de réduire significativement les temps de build CI lorsque seul le code JS à changé.
+- 📜 [React Native in 2022 and Beyond](https://semaphoreci.com/blog/react-native)
+- 📜 [How react-native became performant as native with the new architecture](https://medium.com/ocp-digital-factory/how-react-native-became-performant-as-native-with-the-new-architecture-6e678c3178aa)
+- 🐦 [setNativeProps is back on Fabric?](https://twitter.com/o_kwasniewski/status/1596090790350303233)
 - 🎨 [VisionCamera Frame Processor + Skia - Censor faces demo](https://twitter.com/mrousavy/status/1595746972190883840)
 - 📦 [React-Native 0.71.0-rc.2](https://twitter.com/Kelset/status/1595839212502261760)
 - 📦 [React Native Windows 0.69.14](https://github.com/microsoft/react-native-windows/releases/tag/react-native-windows_v0.69.14)
@@ -137,7 +143,7 @@ Nous cherchons des développeurs(euses) JavaScript passionnés. Vous interviendr
 
 ## 🔀 Autre {#other}
 
-- [Agenda for the 93rd meeting of Ecma TC39](https://github.com/tc39/agendas/blob/main/2022/11.md): un meeting est en cours! Des nouvelles pour la semaine prochaine. La nouvelle proposal [Async Context](https://github.com/legendecas/proposal-async-context) m'intéresse particulièrement!
+- [Agenda for the 93rd meeting of Ecma TC39](https://github.com/tc39/agendas/blob/main/2022/11.md): un meeting est en cours! La nouvelle proposal [Async Context](https://github.com/legendecas/proposal-async-context) m'intéresse particulièrement!
 - [Octoverse 2022 - The state of open source software](https://octoverse.github.com/)
 - [Advanced web font optimization techniques](https://pixelpoint.io/blog/advanced-web-font-optimization-techniques/)
 - [A first look at SolidStart](https://ajcwebdev.com/2022/11/20/a-first-look-at-solidstart/)
@@ -159,18 +165,4 @@ Nous cherchons des développeurs(euses) JavaScript passionnés. Vous interviendr
 
 ## 🤭 Fun {#fun}
 
-https://twitter.com/addyosmani/status/1595470573001314309
-
-https://twitter.com/t3dotgg/status/1595878903012552704
-
-https://twitter.com/dan_abramov/status/1595615054661140481
-
-https://twitter.com/ThePrimeagen/status/1595445811353206793
-
-https://twitter.com/dan_abramov/status/1595436113761558530
-
-https://twitter.com/Steve8708/status/1595434864974913538
-
-https://twitter.com/yangshunz/status/1597396102889644032
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/todo)
+[![alt](/emails/issues/126/meme.jpg)](https://twitter.com/addyosmani/status/1595470573001314309)
