@@ -9,7 +9,7 @@ unlisted: true
 
 Salut à tous !
 
-Black friday?
+Black friday job offers?
 
 Pour info, il y a un nouveau meetup [React-Native Paris](https://www.meetup.com/fr-FR/meetup-group-xaaafwks/) avec une 1ere date (6 Décembre). Rejoignez aussi le Slack [React-Native Connection](https://reactnativeconnection.slack.com/). Il est probable qu'une conférence sur le développement mobile arrive prochainement 😜 et j'espère bien qu'une conf React fera également son retour!
 
@@ -49,47 +49,22 @@ Vous pouvez commencer ici: [flycode.com/developers](https://www.flycode.com/deve
 
 ## ⚛️ React {#react}
 
-[Is React going anywhere?](https://www.infoxicator.com/is-react-going-anywhere)
-
-[How to settle the React memoization debate](https://medium.com/front-end-weekly/how-to-use-memoization-in-react-6ac93c00418c)
-
-[react-three-editor](https://github.com/pmndrs/react-three-editor) - https://twitter.com/0xca0a/status/1597204327873286144
-
-[Eleventy vs Next.js](https://cloudcannon.com/blog/eleventy-vs-next-js/) + https://dev.to/cloudcannon/eleventy-vs-nextjs-30i8
-
-[Progressively enhance the useFetcher hook in Remix](https://sergiodxa.com/articles/progressively-enhance-the-usefetcher-hook-in-remix)
-
-Remix Deferred overview? https://twitter.com/ebey_jacob/status/1596927214712680448
-
-[Solid Final Form – Proof of Concept](https://erikras.com/blog/solid-final-form-poc)
-
-[Improving React Interaction Times by 4x](https://www.causal.app/blog/react-perf)
-
-[Minimal TypeScript Crash Course For React](https://profy.dev/article/react-typescript)
-
-[Data Structures In Frontend JavaScript In The Real World - With React Code Examples](https://profy.dev/article/javascript-data-structures)
-
-[How to update the state of a sibling component in React?](https://alexsidorenko.com/blog/react-siblings/)
-
-tRPC contributing to Remix: https://twitter.com/s4chinraja/status/1596601501887082496 + https://twitter.com/alexdotjs/status/1596604718700466176
-
-React is simple? https://twitter.com/kentcdodds/status/1596516282181963776
-
-Remix progressive enhancement form upload - https://twitter.com/ebey_jacob/status/1596223682246234113
-
-Plasmo extensions? https://blog.plasmo.com/p/migrating-chrome-extension-to-plasmo
-
-[Storybook for full-stack developers](https://storybook.js.org/blog/storybook-for-full-stack-developers/)
-
-[RTK Query Basics: Query Endpoints, Data Flow and TypeScript](https://egghead.io/courses/rtk-query-basics-query-endpoints-data-flow-and-typescript-57ea3c43) + https://twitter.com/phry/status/1595458802001879041
-
-[React Dev, You Need To Know @container!](https://www.youtube.com/watch?v=ypN-Uwshc5M)
-
-[Reactjs Protected Route](https://dev.to/collins87mbathi/reactjs-protected-route-m3j)
-
-[Gatsby 5.1](https://www.gatsbyjs.com/docs/reference/release-notes/v5.1/)
-
-[Ant Design 5.0](https://github.com/ant-design/ant-design/releases/tag/5.0.0) + https://ant.design/docs/blog/css-in-js
+- 📜 [Is React going anywhere?](https://www.infoxicator.com/is-react-going-anywhere): reflexion intéressante de Ruben, après avoir rencontré un CTO e-commerce qui a décidé d'abandonner React pour du Vanilla JS. Est-ce que React est réellement responsable des mauvaises perfs de son app? Est-ce qu'adopter une alternative est justifié? Est-ce que React va rester leader sur les 5 ou 10 prochaines années?
+- 📜 [Improving React Interaction Times by 4x](https://www.causal.app/blog/react-perf): l'app Causal (cloud spreadsheet) présente des problèmes de performance. Ils nous proposent une analyse détaillée des problèmes et comment ils les ont résolu via le profiler Chrome. Certains problèmes liés à AG Grid (qu'ils ont patché) et d'autres de leur propre code principalement lié à la mémoisation. Ils ont aussi tenté d'utiliser des Web Workers, mais la sérialisation a un cout trop élevé.
+- 📜 [Progressively enhance the useFetcher hook in Remix](https://sergiodxa.com/articles/progressively-enhance-the-usefetcher-hook-in-remix): petite astuce pour supporter les users avec/sans JS sur l'API useFetcher de Remix: il faut forcer un redirect pour les users sans JS. Dans le même genre, il est possible de gérer le [progressive enhancement sur un upload de fichiers](https://twitter.com/ebey_jacob/status/1596223682246234113). Tout cela n'est sans doute pas indispensable pour beaucoup d'apps, mais ça reste bon à savoir que cela est possible en cas de besoin.
+- 📜 [Remix Deferred overview](https://gist.github.com/jacob-ebey/9bde9546c1aafaa6bc8c242054b1be26): une explication du fonctionnement de [defer](https://github.com/remix-run/remix/issues/4486) dans Remix, qui va permettre de "téléporter" une promesse du back au front. Pour ceux qui ont envie de comprendre le fonctionnement interne de Remix.
+- 📜 [Solid Final Form – Proof of Concept](https://erikras.com/blog/solid-final-form-poc): Erik explique que sa lib [Final Form](https://final-form.org/react) (populaire il y a quelques années) est découplée de React et montre qu'il est possible de l'utiliser dans un contexte SolidJS.
+- 📜 [How to update the state of a sibling component in React?](https://alexsidorenko.com/blog/react-siblings/): article court qui illustre bien le concept de "Lifting the state up".
+- 📜 [Minimal TypeScript Crash Course For React](https://profy.dev/article/react-typescript): pour débuter sur TypeScript et React.
+- 📜 [Data Structures In Frontend JavaScript In The Real World - With React Code Examples](https://profy.dev/article/javascript-data-structures): pour se familiariser avec les data structures dans un context React
+- 📜 [ArConnect Migrates Its Chrome Extension to the Plasmo Framework](https://blog.plasmo.com/p/migrating-chrome-extension-to-plasmo): retour d'expérience sur l'usage de [Plasmo](https://github.com/PlasmoHQ/plasmo): framework open-source React pour créer des extensions web.
+- 📜 [Storybook for full-stack developers](https://storybook.js.org/blog/storybook-for-full-stack-developers/): une bonne vue d'ensemble de tout ce que l'écosystème Storybook peut faire pour vous.
+- 📜 [Ant Design 5.0 - Component-level CSS-in-JS](https://ant.design/docs/blog/css-in-js): le design system React sort une nouvelle version majeure et explique comment ils ont optimisé leur runtime CSS-in-JS.
+- 🎥 [RTK Query Basics: Query Endpoints, Data Flow and TypeScript](https://egghead.io/courses/rtk-query-basics-query-endpoints-data-flow-and-typescript-57ea3c43) : nouveau cours gratuit sur Egghead par Lenz un des créateurs RTK Query.
+- 🎥 [React Dev, You Need To Know @container!](https://www.youtube.com/watch?v=ypN-Uwshc5M): bonne intro aux containers query, nouvelle feature CSS, présentée dans un context React en vanilla + Tailwind. Il manque encore le support Firefox, mais il y a un polyfill.
+- 🧑‍💻 [Remix PR - Add "jump to definition" support](https://github.com/remix-run/remix/pull/4689): les contributeurs tRPC portent leurs apprentissages sur Remix pour améliorer la DX.
+- 📦 [react-three-editor](https://github.com/pmndrs/react-three-editor): un éditeur de scenes React-Three-Fiber est en cours de création.
+- 📦 [Gatsby 5.1](https://www.gatsbyjs.com/docs/reference/release-notes/v5.1/)
 
 <SubscribeFormEmbed />
 
@@ -125,21 +100,14 @@ Le meilleur ? Tout le monde peut [commencer gratuitement](https://www.yuzu.dev/p
 
 [React Native in 2022 and Beyond](https://semaphoreci.com/blog/react-native)
 
-setNativeProps back? https://twitter.com/o_kwasniewski/status/1596090790350303233
+- 🐦 setNativeProps back? https://twitter.com/o_kwasniewski/status/1596090790350303233
+- https://stackoverflow.blog/2022/10/31/comparing-frameworks-for-cross-platform-apps-flutter-vs-react-native/
 
-[0.71.0-rc.2](https://twitter.com/Kelset/status/1595839212502261760)
-
-[React Native Windows 0.69.14](https://github.com/microsoft/react-native-windows/releases/tag/react-native-windows_v0.69.14)
-
-Frame processing: https://twitter.com/mrousavy/status/1595746972190883840
-
-https://stackoverflow.blog/2022/10/31/comparing-frameworks-for-cross-platform-apps-flutter-vs-react-native/
-
-[How react-native became performant as native with the new architecture](https://medium.com/ocp-digital-factory/how-react-native-became-performant-as-native-with-the-new-architecture-6e678c3178aa)
-
-[How to build a React Native app 5x faster with Nitro](https://blog.nitro.build/how-to-build-a-react-native-app-5x-faster-with-nitro-d7e512b18d90)
-
-[VisionCamera Frame Processor + Skia - Censor faces demo](https://twitter.com/mrousavy/status/1595746972190883840)
+- [How react-native became performant as native with the new architecture](https://medium.com/ocp-digital-factory/how-react-native-became-performant-as-native-with-the-new-architecture-6e678c3178aa)
+- [How to build a React Native app 5x faster with Nitro](https://blog.nitro.build/how-to-build-a-react-native-app-5x-faster-with-nitro-d7e512b18d90)
+- 🎨 [VisionCamera Frame Processor + Skia - Censor faces demo](https://twitter.com/mrousavy/status/1595746972190883840)
+- 📦 [React-Native 0.71.0-rc.2](https://twitter.com/Kelset/status/1595839212502261760)
+- 📦 [React Native Windows 0.69.14](https://github.com/microsoft/react-native-windows/releases/tag/react-native-windows_v0.69.14)
 
 ---
 
