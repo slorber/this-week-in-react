@@ -67,6 +67,12 @@ A curated list of Black Friday deals **for React developers** 🤗
 - **Discount**: 50% (code [HALFOFF22](https://sso.teachable.com/secure/64145/checkout/3878927/react-native-school?coupon_code=HALFOFF22))
 - From the fundamentals to managing production apps React Native School helps you master cross platform development.
 
+### [Advanced React & GraphQL](https://advancedreact.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
+
+- **Author**: Wes Bos
+- **Discount**: 50%
+- Build Full Stack JavaScript Apps with React.js and GraphQL
+
 ### [Testing Accessibility](https://testingaccessibility.com/?utm_source=thisweekinreact&utm_medium=thisweekinreact&utm_campaign=thisweekinreact)
 
 - **Author**: Marcy Sutton
