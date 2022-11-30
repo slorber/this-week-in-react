@@ -1,6 +1,6 @@
 ---
 slug: /126
-title: "React Hebdo #126: ..."
+title: "React Hebdo #126: React performance, Progressive Enhancement, Remix, Storybook, React-Native, FlashList, Nitro, TC39..."
 authors: [slorber]
 date: 11-29-2023
 image: /img/TWIR_POST.png
@@ -59,14 +59,14 @@ L'app de Causal (cloud spreadsheet) présente des problèmes de performance. Ils
 
 - 📜 [Progressively enhance the useFetcher hook in Remix](https://sergiodxa.com/articles/progressively-enhance-the-usefetcher-hook-in-remix): petite astuce pour supporter les users avec/sans JS sur l'API useFetcher de Remix: il faut forcer un redirect pour les users sans JS. Dans le même genre, il est possible de gérer le [progressive enhancement sur un upload de fichiers](https://twitter.com/ebey_jacob/status/1596223682246234113). Tout cela n'est sans doute pas indispensable pour beaucoup d'apps, mais ça reste bon à savoir que cela est possible en cas de besoin.
 - 📜 [Remix Deferred overview](https://gist.github.com/jacob-ebey/9bde9546c1aafaa6bc8c242054b1be26): une explication du fonctionnement de [defer](https://github.com/remix-run/remix/issues/4486) dans Remix, qui va permettre de "téléporter" une promesse du back au front. Pour ceux qui ont envie de comprendre le fonctionnement interne de Remix.
-- 📜 [Solid Final Form – Proof of Concept](https://erikras.com/blog/solid-final-form-poc): Erik explique que sa lib [Final Form](https://final-form.org/react) (populaire il y a quelques années) est découplée de React et montre qu'il est possible de l'utiliser dans un contexte SolidJS.
 - 📜 [How to update the state of a sibling component in React?](https://alexsidorenko.com/blog/react-siblings/): article court qui illustre bien le concept de "Lifting the state up".
 - 📜 [Minimal TypeScript Crash Course For React](https://profy.dev/article/react-typescript): pour débuter sur TypeScript et React.
 - 📜 [Data Structures In Frontend JavaScript In The Real World - With React Code Examples](https://profy.dev/article/javascript-data-structures): pour se familiariser avec les data structures dans un context React
 - 📜 [ArConnect Migrates Its Chrome Extension to the Plasmo Framework](https://blog.plasmo.com/p/migrating-chrome-extension-to-plasmo): retour d'expérience sur l'usage de [Plasmo](https://github.com/PlasmoHQ/plasmo): framework open-source React pour créer des extensions web.
 - 📜 [Storybook for full-stack developers](https://storybook.js.org/blog/storybook-for-full-stack-developers/): une bonne vue d'ensemble de tout ce que l'écosystème Storybook peut faire pour vous.
+- 📜 [Solid Final Form – Proof of Concept](https://erikras.com/blog/solid-final-form-poc): Erik explique que sa lib [Final Form](https://final-form.org/react) (populaire il y a quelques années) est découplée de React et montre qu'il est possible de l'utiliser dans un contexte SolidJS.
 - 📜 [Ant Design 5.0 - Component-level CSS-in-JS](https://ant.design/docs/blog/css-in-js): le design system React sort une nouvelle version majeure et explique comment ils ont optimisé leur runtime CSS-in-JS.
-- 🎥 [On the merits & limitations of React & single-page apps](https://www.youtube.com/watch?v=ChfjZV-aA_Y): débat de 2 heures entre Alex Russell et Theo Browne. Je n'ai pas encore eu le temps de regarder mais cela devrait être très intéressant. Alex est bien connu pour ses critiques envers React et les SPA.
+- 🎥 [On the merits & limitations of React & single-page apps](https://www.youtube.com/watch?v=ChfjZV-aA_Y): débat de 2 heures entre Alex Russell et Theo Browne. Je n'ai pas eu le temps de regarder, mais cela devrait être très intéressant. Alex est bien connu pour ses critiques envers React et les SPA, et Theo devrait être un bon défenseur de l'écosystème React.
 - 🎥 [React Dev, You Need To Know @container!](https://www.youtube.com/watch?v=ypN-Uwshc5M): bonne intro aux containers query, nouvelle feature CSS, présentée dans un context React en vanilla + Tailwind. Il manque encore le support Firefox, mais il y a un polyfill.
 - 🎥 [RTK Query Basics: Query Endpoints, Data Flow and TypeScript](https://egghead.io/courses/rtk-query-basics-query-endpoints-data-flow-and-typescript-57ea3c43) : nouveau cours gratuit sur Egghead par Lenz un des créateurs RTK Query.
 - 🧑‍💻 [Remix PR - Add "jump to definition" support](https://github.com/remix-run/remix/pull/4689): les contributeurs tRPC portent leurs apprentissages sur Remix pour améliorer la DX.
@@ -144,8 +144,8 @@ Nous cherchons des développeurs(euses) JavaScript passionnés. Vous interviendr
 ## 🔀 Autre {#other}
 
 - [Agenda for the 93rd meeting of Ecma TC39](https://github.com/tc39/agendas/blob/main/2022/11.md): un meeting est en cours! La nouvelle proposal [Async Context](https://github.com/legendecas/proposal-async-context) m'intéresse particulièrement!
+- [Advanced web font optimization techniques](https://pixelpoint.io/blog/advanced-web-font-optimization-techniques/): explique bien comment optimiser ses fonts: réduire la taille, éviter les layouts shifts et ajuster l'alignement vertical.
 - [Octoverse 2022 - The state of open source software](https://octoverse.github.com/)
-- [Advanced web font optimization techniques](https://pixelpoint.io/blog/advanced-web-font-optimization-techniques/)
 - [A first look at SolidStart](https://ajcwebdev.com/2022/11/20/a-first-look-at-solidstart/)
 - [How to split JavaScript strings into sentences, words or graphemes with "Intl.Segmenter"](https://www.stefanjudis.com/today-i-learned/how-to-split-javascript-strings-with-intl-segmenter/)
 - [How we lost our slick new npm package name (and then got it back)](https://reactflow.dev/blog/reactflow-npm-package-name/)
