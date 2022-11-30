@@ -1,10 +1,9 @@
 ---
 slug: /126
-title: "React Hebdo #126: React performance, Progressive Enhancement, Remix, Storybook, React-Native, FlashList, Nitro, TC39..."
+title: "React Hebdo #126: React Perf, Progressive Enhancement, Remix, Storybook, React-Native, FlashList, Nitro, TC39..."
 authors: [slorber]
 date: 11-29-2023
 image: /img/TWIR_POST.png
-unlisted: true
 ---
 
 Salut à tous !
@@ -69,8 +68,8 @@ L'app de Causal (cloud spreadsheet) présente des problèmes de performance. Ils
 - 📜 [Solid Final Form – Proof of Concept](https://erikras.com/blog/solid-final-form-poc): Erik explique que sa lib [Final Form](https://final-form.org/react) (populaire il y a quelques années) est découplée de React et montre qu'il est possible de l'utiliser dans un contexte SolidJS.
 - 📜 [Ant Design 5.0 - Component-level CSS-in-JS](https://ant.design/docs/blog/css-in-js): le design system React sort une nouvelle version majeure et explique comment ils ont optimisé leur runtime CSS-in-JS.
 - 🎥 [On the merits & limitations of React & single-page apps](https://www.youtube.com/watch?v=ChfjZV-aA_Y): débat de 2 heures entre Alex Russell et Theo Browne. Je n'ai pas eu le temps de regarder, mais cela devrait être très intéressant. Alex est bien connu pour ses critiques envers React et les SPA, et Theo devrait être un bon défenseur de l'écosystème React.
-- 🎥 [React Dev, You Need To Know @container!](https://www.youtube.com/watch?v=ypN-Uwshc5M): bonne intro aux containers query, nouvelle feature CSS, présentée dans un context React en vanilla + Tailwind. Il manque encore le support Firefox, mais il y a un polyfill.
-- 🎥 [RTK Query Basics: Query Endpoints, Data Flow and TypeScript](https://egghead.io/courses/rtk-query-basics-query-endpoints-data-flow-and-typescript-57ea3c43) : nouveau cours gratuit sur Egghead par Lenz un des créateurs RTK Query.
+- 🎥 [React Dev, You Need To Know @container!](https://www.youtube.com/watch?v=ypN-Uwshc5M): bonne intro aux containers query, nouvelle feature CSS, présentée dans un context React en vanilla CSS + Tailwind. Il manque encore le support Firefox, mais il y a un polyfill.
+- 🎥 [RTK Query Basics: Query Endpoints, Data Flow and TypeScript](https://egghead.io/courses/rtk-query-basics-query-endpoints-data-flow-and-typescript-57ea3c43): nouveau cours gratuit sur Egghead par Lenz un des créateurs RTK Query.
 - 🧑‍💻 [Remix PR - Add "jump to definition" support](https://github.com/remix-run/remix/pull/4689): les contributeurs tRPC portent leurs apprentissages sur Remix pour améliorer la DX.
 - 📦 [react-three-editor](https://github.com/pmndrs/react-three-editor): un éditeur de scenes React-Three-Fiber est en cours de création.
 - 📦 [Gatsby 5.1](https://www.gatsbyjs.com/docs/reference/release-notes/v5.1/)
@@ -107,7 +106,7 @@ Une bonne partie des contributeurs React-Native se sont réunis début Septembre
 
 **[Shopify - Our Solution for Measuring React Native Rendering Times](https://shopify.engineering/measuring-react-native-rendering-times)**
 
-Présentation du ppackage [react-native-performance](https://github.com/Shopify/react-native-performance) qui permet de générer des rapports (JSON) de performance de type [field/Real User Monitoring](https://web.dev/lab-and-field-data-differences/). Il s'intègre facilement avec React-Navigation. Vous pouvez envoyer ces rapports à un dashboard analytics de votre choix. Cela permet d'identifier un écran spécifique qui a des soucis de performance en production. Cela rappelle les métriques existantes coté web: Core Web Vitals, TTI, INP et les dashboards perf de Vercel/Netlify/Gatsby...
+Présentation du package [react-native-performance](https://github.com/Shopify/react-native-performance) qui permet de générer des rapports (JSON) de performance de type [field/Real User Monitoring](https://web.dev/lab-and-field-data-differences/). Il s'intègre facilement avec React-Navigation. Vous pouvez envoyer ces rapports à un dashboard analytics de votre choix. Cela permet d'identifier un écran spécifique qui a des soucis de performance en production. Cela rappelle les métriques existantes coté web: Core Web Vitals, TTI, INP et les dashboards perf de Vercel/Netlify/Gatsby...
 
 - 📜 [Shopify - What We Learned from Open-Sourcing FlashList](https://shopify.engineering/what-we-learned-from-open-sourcing-flashlist): retour d'expérience sur un lancement open-source réussi chez Shopify. Comme quoi, le marketing est une part importante du succès d'un projet open-source, et il ne faut pas le négliger. Voir aussi mon lancement de [Docusaurus 2.0](https://www.indiehackers.com/post/1-on-product-hunt-thanks-to-newsletters-and-good-timing-2c7d8809d9).
 - 📜 [How to build a React Native app 5x faster with Nitro](https://blog.nitro.build/how-to-build-a-react-native-app-5x-faster-with-nitro-d7e512b18d90): Nitro est un outil (payant, en preview) qui permet de réduire significativement les temps de build CI lorsque seul le code JS à changé.

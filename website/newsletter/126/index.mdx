@@ -1,15 +1,18 @@
 ---
 slug: /126
-title: "This Week In React #126: React performance, Progressive Enhancement, Remix, Storybook, React-Native, FlashList, Nitro, TC39..."
+title: "This Week In React #126: React Perf, Progressive Enhancement, Remix, Storybook, React-Native, FlashList, Nitro, TC39..."
 authors: [slorber]
 date: 11-29-2023
 image: /img/TWIR_POST.png
-unlisted: true
 ---
 
 Hi everyone!
 
-<Todo />
+As you might expect with Thanksgiving, it's a rather quiet week in terms of React news.
+
+It's the end of [Black Friday](https://thisweekinreact.com/black-friday), but some offers are still valid.
+
+If your company is recruiting, I also offer a [**discount of -50% on job offers sponsoring packages**](https://thisweekinreact.com/sponsor#sponsor-jobs). Don't hesitate to talk to your HR or your manager, it helps me a lot!
 
 <!-- truncate -->
 
@@ -45,7 +48,29 @@ You can get started here: [flycode.com/developers](https://www.flycode.com/devel
 
 ## ⚛️ React {#react}
 
-<Todo />
+**[Is React going anywhere?](https://www.infoxicator.com/is-react-going-anywhere)**
+
+Interesting reflection from Ruben, after meeting an e-commerce CTO who decided to abandon React for Vanilla JS. Is React really responsible for the poor performance of his app? Is adopting an alternative justified? Will React remain the leader for the next 5 or 10 years?
+
+**[Improving React Interaction Times by 4x](https://www.causal.app/blog/react-perf)**
+
+Causal's cloud spreadsheet app had performance issues. They give us a detailed analysis of the problems and how they solved them via the Chrome profiler. Some issues related to AG Grid (which they patched). Others from their own code mainly related to memoization. They also tried to use Web Workers, but serialization was too expensive.
+
+- 📜 [Progressively enhance the useFetcher hook in Remix](https://sergiodxa.com/articles/progressively-enhance-the-usefetcher-hook-in-remix): little trick to support users with/without JS on Remix's useFetcher API: force a redirect for users without JS. In the same way, it is possible to handle [progressive enhancement on a file upload](https://twitter.com/ebey_jacob/status/1596223682246234113). All this is probably not essential for many apps, but it's good to know that it's possible if needed.
+- 📜 [Remix Deferred overview](https://gist.github.com/jacob-ebey/9bde9546c1aafaa6bc8c242054b1be26): an explanation of how [defer](https://github.com/remix-run/remix/issues/4486) works in Remix, which will allow to "teleport" a promise from the back to the front. For those who want to understand the inner workings of Remix.
+- 📜 [How to update the state of a sibling component in React?](https://alexsidorenko.com/blog/react-siblings/): short article that illustrates well the concept of "Lifting the state up".
+- 📜 [Minimal TypeScript Crash Course For React](https://profy.dev/article/react-typescript): to get started with TypeScript and React.
+- 📜 [Data Structures In Frontend JavaScript In The Real World - With React Code Examples](https://profy.dev/article/javascript-data-structures): to become familiar with data structures in a React context.
+- 📜 [ArConnect Migrates Its Chrome Extension to the Plasmo Framework](https://blog.plasmo.com/p/migrating-chrome-extension-to-plasmo): feedback on the use of [Plasmo](https://github.com/PlasmoHQ/plasmo): open-source React framework to create web extensions.
+- 📜 [Storybook for full-stack developers](https://storybook.js.org/blog/storybook-for-full-stack-developers/): a good overview of all that the Storybook ecosystem can do for you.
+- 📜 [Solid Final Form – Proof of Concept](https://erikras.com/blog/solid-final-form-poc): Erik explains that his lib [Final Form](https://final-form.org/react) (popular a few years ago) is decoupled from React and shows that it is possible to use it in a SolidJS context.
+- 📜 [Ant Design 5.0 - Component-level CSS-in-JS](https://ant.design/docs/blog/css-in-js): the React design system releases a new major version and explains how they have optimized their CSS-in-JS runtime.
+- 🎥 [On the merits & limitations of React & single-page apps](https://www.youtube.com/watch?v=ChfjZV-aA_Y): 2 hours debate between Alex Russell and Theo Browne. I haven't had time to watch yet. Alex is well known for his criticism of React and SPAs, and Theo should be a good defender of the React ecosystem.
+- 🎥 [React Dev, You Need To Know @container!](https://www.youtube.com/watch?v=ypN-Uwshc5M): good introduction to query containers, new CSS feature, presented in a React context in vanilla CSS + Tailwind. Firefox support is still missing, but there is a polyfill.
+- 🎥 [RTK Query Basics: Query Endpoints, Data Flow and TypeScript](https://egghead.io/courses/rtk-query-basics-query-endpoints-data-flow-and-typescript-57ea3c43): new free course on Egghead by Lenz one of the creators of RTK Query.
+- 🧑‍💻 [Remix PR - Add "jump to definition" support](https://github.com/remix-run/remix/pull/4689): tRPC contributors port their TypeScript learnings to Remix to improve its DX.
+- 📦 [react-three-editor](https://github.com/pmndrs/react-three-editor): a React-Three-Fiber scene editor is being created.
+- 📦 [Gatsby 5.1](https://www.gatsbyjs.com/docs/reference/release-notes/v5.1/)
 
 <SubscribeFormEmbed />
 
@@ -73,7 +98,22 @@ Best thing? Anyone can [start for free](https://www.yuzu.dev/pricing)!
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+**[React Native Core Contributor Summit 2022](https://reactnative.dev/blog/2022/11/22/react-native-core-contributor-summit-2022)**
+
+A good part of the React-Native contributors met at the beginning of September for the React-Native EU conference. They participated in a series of workshops and give us a report. Various topics were discussed, such as the new architecture, the Metro bundler or the release workflow.
+
+**[Shopify - Our Solution for Measuring React Native Rendering Times](https://shopify.engineering/measuring-react-native-rendering-times)**
+
+Presentation of the [react-native-performance](https://github.com/Shopify/react-native-performance) package which allows to generate [field / Real User Monitoring](https://web.dev/lab-and-field-data-differences/) performance reports (in JSON). It integrates easily with React-Navigation. You can send these reports to an analytics dashboard of your choice. This allows you to identify a specific screen that has performance issues in production. It reminds of existing web metrics: Core Web Vitals, TTI, INP and the Vercel/Netlify/Gatsby perf dashboards...
+
+- 📜 [Shopify - What We Learned from Open-Sourcing FlashList](https://shopify.engineering/what-we-learned-from-open-sourcing-flashlist): feedback on a successful open-source launch at Shopify. Marketing and planning is an important part of the success, and should not be neglected. See also my launch of [Docusaurus 2.0](https://www.indiehackers.com/post/1-on-product-hunt-thanks-to-newsletters-and-good-timing-2c7d8809d9).
+- 📜 [How to build a React Native app 5x faster with Nitro](https://blog.nitro.build/how-to-build-a-react-native-app-5x-faster-with-nitro-d7e512b18d90): Nitro is a tool (paid, in preview) that allows to significantly reduce React-Native CI build times when only the JS code has changed.
+- 📜 [React Native in 2022 and Beyond](https://semaphoreci.com/blog/react-native)
+- 📜 [How react-native became performant as native with the new architecture](https://medium.com/ocp-digital-factory/how-react-native-became-performant-as-native-with-the-new-architecture-6e678c3178aa)
+- 🐦 [setNativeProps is back on Fabric?](https://twitter.com/o_kwasniewski/status/1596090790350303233)
+- 🎨 [VisionCamera Frame Processor + Skia - Censor faces demo](https://twitter.com/mrousavy/status/1595746972190883840)
+- 📦 [React-Native 0.71.0-rc.2](https://twitter.com/Kelset/status/1595839212502261760)
+- 📦 [React Native Windows 0.69.14](https://github.com/microsoft/react-native-windows/releases/tag/react-native-windows_v0.69.14)
 
 ---
 
@@ -97,12 +137,26 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 ## 🔀 Other {#other}
 
-<Todo />
+- [Agenda for the 93rd meeting of Ecma TC39](https://github.com/tc39/agendas/blob/main/2022/11.md): a meeting is in progress! I'm particularly interested in the new [Async Context] proposal (https://github.com/legendecas/proposal-async-context)!
+- [Advanced web font optimization techniques](https://pixelpoint.io/blog/advanced-web-font-optimization-techniques/): explains well how to optimize your fonts: reduce the size, avoid layout shifts and adjust the vertical alignment.
+- [Octoverse 2022 - The state of open source software](https://octoverse.github.com/)
+- [A first look at SolidStart](https://ajcwebdev.com/2022/11/20/a-first-look-at-solidstart/)
+- [How to split JavaScript strings into sentences, words or graphemes with "Intl.Segmenter"](https://www.stefanjudis.com/today-i-learned/how-to-split-javascript-strings-with-intl-segmenter/)
+- [How we lost our slick new npm package name (and then got it back)](https://reactflow.dev/blog/reactflow-npm-package-name/)
+- [JavaScript from ES6 to ES12 in 2022](https://medium.com/@bluetch/javascript-es6-es7-es8-es9-es10-es11-and-es12-519d8be7d48c)
+- [Color Formats in CSS](https://www.joshwcomeau.com/css/color-formats/)
+- [TypeScript 5.0 is coming...](https://www.youtube.com/watch?v=PTU-H6Wwbh8)
+- [The Complete Guide to the Fastify Plugin System](https://www.nearform.com/blog/complete-guide-fastify-plugin-system/)
+- [GitHub Copilot CLI](https://githubnext.com/projects/copilot-cli/)
+- [Wasmer 3.0](https://wasmer.io/posts/announcing-wasmer-3.0)
+- [WebAssembly: TinyGo vs Rust vs AssemblyScript](https://ecostack.dev/posts/wasm-tinygo-vs-rust-vs-assemblyscript/)
+- [The large, small, and dynamic viewport units](https://web.dev/viewport-units/)
+- [Node.js Architecture Pitfalls to Avoid](https://blog.appsignal.com/2022/11/23/nodejs-architecture-pitfalls-to-avoid.html)
+- [Cloudflare - Server-side render full stack applications with Pages Functions](https://blog.cloudflare.com/pages-full-stack-frameworks/)
+- [Vercel - Edge Config: Ultra-low latency data at the edge](https://vercel.com/blog/edge-config-ultra-low-latency-data-at-the-edge)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/todo)
+[![alt](/emails/issues/126/meme.png)](https://twitter.com/addyosmani/status/1595470573001314309)
