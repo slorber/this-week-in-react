@@ -1,6 +1,6 @@
 ---
 slug: /127
-title: "React Hebdo #127: ..."
+title: "React Hebdo #127: Nextra, React-Query, React Documentary, Storybook, Remix, Tamagui, Solito, TC39, Rome..."
 authors: [slorber]
 date: 12-06-2022
 image: /img/TWIR_POST.png
@@ -15,9 +15,11 @@ Nextra v2 est un sérieux challenger pour Docusaurus!
 
 Un beau documentaire React est en cours de réalisation, et le trailer est disponible 🙌
 
-Ca bouge bien également coté React-Native! Il y a de belles releases, un sondage State of React-Native en préparation.
+Ça bouge bien également coté React-Native! Il y a de belles releases, un sondage State of React-Native en préparation.
 
 Pour cette édition, j'ai mis les images en dessous du titre/texte, n'hésites pas à me dire si c'est mieux comme ça?
+
+Le 1er meetup [React-Native Paris](https://www.meetup.com/fr-FR/meetup-group-xaaafwks/) a eu lieu hier soir, et j'ai pu rencontrer certains d'entre vous 👋 **Une conférence React-Native-Connection est prévue à Paris le 1er Juin**, et je vais participer à la sélection des talks. Pour en savoir plus, rejoignez le [Slack](https://join.slack.com/t/reactnativeconnection/shared_invite/zt-1j5jigyph-MJURqXxpWHXTcYSH8PwhrQ) (lien corrigé 😜).
 
 <!-- truncate -->
 
@@ -53,19 +55,19 @@ Vous pouvez commencer ici: [flycode.com/developers](https://www.flycode.com/deve
 
 ## ⚛️ React {#react}
 
+**[Nextra 2.0](https://nextra.site/)**
+
+Nextra est un outil pour faciliter la création de sites de documentations, basé sur Next.js, et créé par un ingénieur Vercel. La v2 vient de sortir avec un super redesign et une belle liste de features (MDX 2, Tailwind, search, i18n, a11y, code highlighting...). Reposer sur Next.js permet de bénéficier une infrastructure moderne et les dernières innovations Next.js, mais aussi de créer des pages dynamiques (SSR, ISR) associées aux pages statiques de documentation. C'est un concurrent très serieux à [Docusaurus](https://docusaurus.io/), l'outil sur lequel je travaille.
+
+[![Nextra 2.0](/emails/issues/127/nextra.jpg)](https://nextra.site/)
+
+---
+
 **[Inside React Query](https://tkdodo.eu/blog/inside-react-query)**
 
 Dominik explique comment React-Query fonctionne, et détaille les relations entre ses différents éléments: QueryClient, QueryCache, Query, Persister, QueryObserver... Beaucoup de ces éléments ne dépendant pas de React, et c'est ce qui permet à TanStack Query de facilement supporter d'autres frameworks comme SolidJS avec des adapters.
 
 [![Inside React Query](/emails/issues/127/react-query.png)](https://tkdodo.eu/blog/inside-react-query)
-
----
-
-**[Nextra 2.0](https://nextra.site/)**
-
-Nextra est un outil pour faciliter la création de sites de documentations, basé sur Next.js, et créé par un ingénieur Vercel. La v2 vient de sortir avec un super redesign et une belle liste de features (MDX 2, Tailwind, search, i18n, a11y, code highlighting...). Reposer sur Next.js permet de bénéficier une infrastructure moderne , et la possibilité d'utiliser les dernières features de Next.js, y compris des pages dynamiques (SSR, ISR) associées à des pages statiques de documentation. C'est un concurrent très serieux à [Docusaurus](https://docusaurus.io/), l'outil sur lequel je travaille.
-
-[![Nextra 2.0](/emails/issues/127/nextra.jpg)](https://nextra.site/)
 
 ---
 
@@ -139,6 +141,8 @@ Sur JavaScriptBoard.com, tu t'inscris et ne reçois que les offres d'emploi qui 
 - 📦 [Preact-Native](https://github.com/barelyhuman/preact-native): un dev veut faire fonctionner Preact avec React-Native. Cela semble complexe, et mis en [stand-by](https://reaper.is/writing/20221204-decisions-and-updates-november-2022).
 - 📦 [create-react-native-library 0.27.2](https://twitter.com/satya164/status/1598774126805766144): support RN 0.71, Fabric template...
 - 📦 [React-Native 0.71.0-RC.3](https://twitter.com/Kelset/status/1598018432229777408)
+- 📦 [Airbnb - Announcing Lottie 4.0 for iOS](https://medium.com/airbnb-engineering/announcing-lottie-4-0-for-ios-d4d226862a54)
+- 📦 [Maestro](https://github.com/mobile-dev-inc/maestro): outil de tests end-2-end blackbox qui gagne en popularité (comparable à Appium)
 - 💬 [Expo Router RFC - Shared Routes](https://twitter.com/Baconbrix/status/1598074538298048512)
 - 💬 [VisionCamera 3.0 discussion](https://github.com/mrousavy/react-native-vision-camera/issues/1376)
 - 🐦 [Krzysztof Magiera - "Next version of reanimated will finally have proper stack trace support."](https://twitter.com/kzzzf/status/1598828117509910528)
@@ -182,6 +186,10 @@ De très belles proposals pour JavaScript ont progressé la semaine dernière, e
 ---
 
 - [Container Queries in Firefox 109](https://twitter.com/jensimmons/status/1598798281513000960): dispo dans tous les navigateurs 🙌
+- [Announcing Rome v11](https://rome.tools/blog/2022/12/06/rome11/): support TS 4.9 satisfies
+- [2022 - State of CSS - Survey results](https://2022.stateofcss.com/en-US/)
+- [2022 - State of Rust - Survey open](https://twitter.com/rustlang/status/1600078615143911425)
+- [ESLint RFC - Language Plugins](https://github.com/eslint/rfcs/pull/99)
 - [Tailwind is a Leaky Abstraction](https://jakelazaroff.com/words/tailwind-is-a-leaky-abstraction/)
 - [What working with Tailwind CSS every day for 2 years looks like](https://www.themosaad.com/blog/two-years-of-tailwind-css)
 - [How TypeScript 4.9 `satisfies` Your Prisma Workflows](https://www.prisma.io/blog/satisfies-operator-ur8ys8ccq7zb)
@@ -189,10 +197,15 @@ De très belles proposals pour JavaScript ont progressé la semaine dernière, e
 - [Fast is good, instant is better!](https://calendar.perfplanet.com/2022/fast-is-good-instant-is-better/)
 - [Speeding up the JavaScript ecosystem - one library at a time](https://marvinh.dev/blog/speeding-up-javascript-ecosystem/)
 - [Electron 22.0](https://www.electronjs.org/blog/electron-22-0)
+- [Cypress 12](https://www.cypress.io/blog/2022/12/06/announcing-cypress-12/)
+- [Nx 15.3 — Standalone Projects, Vite, Task Graph and more!](https://blog.nrwl.io/nx-15-3-standalone-projects-vite-task-graph-and-more-3ed23f7827ed)
 - [Lightning CSS 1.17](https://github.com/parcel-bundler/lightningcss/releases/tag/v1.17.0)
 - [New to the web platform in November](https://web.dev/web-platform-11-2022/)
 - [Getting the most from GitHub Copilot](https://shift.infinite.red/getting-the-most-from-github-copilot-8f7b32014748)
 - [Top Announcements of AWS re:Invent 2022](https://aws.amazon.com/fr/blogs/aws/top-announcements-of-aws-reinvent-2022/)
+- [ChatGPT helped me design a brand new programming language](https://judehunter.dev/blog/chatgpt-helped-me-design-a-brand-new-programming-language)
+- [Frontend Engineer Archetypes](https://cpojer.net/posts/frontend-engineering-archetypes)
+- [Bahuu - state machine-based UI framework](https://github.com/tjkandala/baahu)
 
 ---
 
