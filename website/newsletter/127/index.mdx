@@ -1,15 +1,22 @@
 ---
 slug: /127
-title: "This Week In React #127: ..."
+title: "This Week In React #127: Nextra, React-Query, React Documentary, Storybook, Remix, Tamagui, Solito, TC39, Rome..."
 authors: [slorber]
 date: 12-06-2022
 image: /img/TWIR_POST.png
-unlisted: true
 ---
 
 Hi everyone!
 
-<Todo />
+We have some nice articles this week. I liked to discover how React-Query is implemented, or the latest Storybook news.
+
+Nextra v2 is a serious challenger for Docusaurus!
+
+A nice React documentary is being created, and the trailer is available 🙌
+
+It's also quite active on React-Native side! There are some great releases, a State of React-Native survey in the works.
+
+For this edition, I put the images below the title/text, don't hesitate to tell me if it's better like that or if you prefer above?
 
 <!-- truncate -->
 
@@ -45,7 +52,53 @@ You can get started here: [flycode.com/developers](https://www.flycode.com/devel
 
 ## ⚛️ React {#react}
 
-<Todo />
+**[Nextra 2.0](https://nextra.site/)**
+
+Nextra is a tool to facilitate the creation of documentation sites, based on Next.js, and created by a Vercel engineer. v2 has just been released with a great redesign and a nice list of features (MDX 2, Tailwind, search, i18n, a11y, code highlighting...). Relying on Next.js allows to benefit from a modern infrastructure and the latest Next.js innovations, but also to create more dynamic pages (SSR, ISR) associated to static documentation pages. It is a very serious competitor to [Docusaurus](https://docusaurus.io/), the tool I am working on.
+
+[![Nextra 2.0](/emails/issues/127/nextra.jpg)](https://nextra.site/)
+
+---
+
+**[Inside React Query](https://tkdodo.eu/blog/inside-react-query)**
+
+Dominik explains how React-Query works, and details the relationships between its different elements: QueryClient, QueryCache, Query, Persister, QueryObserver... Many of these elements do not depend on React, and this is what allows TanStack Query to easily support other frameworks like SolidJS thanks to adapters.
+
+[![Inside React Query](/emails/issues/127/react-query.png)](https://tkdodo.eu/blog/inside-react-query)
+
+---
+
+**[NextJS, SvelteKit, Remix and the future of Storybook](https://storybook.js.org/blog/framework-api/)**
+
+Storybook 7.0 will have a new Framework API. It will allow the creation of "Framework packages" (example: `@storybook/nextjs`) that pre-configure your Storybook for a given stack (builder, renderer, app settings), and that you can extend. The support of several frameworks based on Vite is ready. Next.js and SvelteKit frameworks are coming soon, and a Remix support is considered.
+
+[![NextJS, SvelteKit, Remix and the future of Storybook](/emails/issues/127/storybook-frameworks.png)](https://storybook.js.org/blog/framework-api/)
+
+---
+
+- 🍿 [React.js - The Documentary - Trailer](https://www.youtube.com/watch?v=gmp0istg5xo): a documentary about React should be released in February. In the meantime you can check this 2min trailer. A nice list of guests have participated. I'm really looking forward to seeing this, and remembering the early years of React. This [parody](https://www.youtube.com/watch?v=Ov0alO_k_1k) also made me laugh ;)
+- 📖 Beta docs: [useTransition](https://twitter.com/dan_abramov/status/1598468389340585984) + [Suspense](https://twitter.com/dan_abramov/status/1598412132827435008) + [useDeferredValue](https://twitter.com/dan_abramov/status/1598414645244534784)
+- 📜 [Lessons learned: how I’d rebuild a social web app like Twitter today](https://paularmstrong.dev/blog/2022/11/28/lessons-learned-how-i-would-rebuild-twitter-today/): Paul worked on the Twitter web app. He wonders what choices he would make for it today. He would use Tailwind instead of React-Native-Web, which presents some pragmatic difficulties, and Twitter doesn't use React-Native so the cross-platform benefits are limited. He would also use a more reactive framework like SolidJS or Preact + Signals. Many other interesting points: Vite, Module Federation, Client Hints, Deno...
+- 📜 [React vs React Native: How Different Are They, Really?](https://echobind.com/post/react-vs-react-native-how-different-are-they): details the many similarities and differences between React (DOM) and React-Native. A good resource for web developers who might be tempted to learn React-Native and want to know how much knowledge they will be able to reuse, but also for managers looking to understand what it takes to adopt React-Native.
+- 📜 [Different Dimensions of Remix Deploy Targets](https://andre-landgraf.dev/blog/2022-12-03_different-dimensions-of-remix-deploy-targets): Remix can be deployed on different platforms, thanks to its adapters. This article analyzes each target platform along several dimensions and helps us to make an informed choice.
+- 📜 [Component Testing in Storybook](https://bradfrost.com/blog/link/component-testing-in-storybook/): Brad Frost gives his positive opinion on the latest Storybook testing features presented in [this video](https://www.youtube.com/watch?v=wEa6W8uUGSA). I also agree that Jest alone is not a suitable tool for visual rendering.
+- 📜 [React Conditional Rendering With Type Safety and Exhaustive Checking](https://www.lloydatkinson.net/posts/2022/react-conditional-rendering-with-type-safety-and-exhaustive-checking/): React + TypeScript tip useful to know to make sure not to forget any case of an union-type (waiting for a real pattern matching support).
+- 📜 [How we migrated from Redux to TanStack Query and Redux Toolkit](https://tech.storyly.io/how-we-migrated-from-redux-to-tanstack-query-and-redux-toolkit-ac9be2f445be): the story of 2 quite different projects based on Redux, and migrated incrementally to distinct solutions: RTK and React-Query.
+- 📜 [Why you should reconsider prefetching in Remix](https://www.themosaad.com/blog/reconsider-prefetching-in-remix): an interesting reflection on the impact of a very fast but inconsistent navigation (ie sometimes slower without prefetching). I have a mixed opinion on the conclusion: we should be able to keep prefetching and make the UX consistent.
+- 📜 [Add rolling sessions to Remix](https://sergiodxa.com/articles/add-rolling-sessions-to-remix)
+- 📜 [The Children Prop Pattern in React](https://www.craftvalue.io/blog/react-children-prop-pattern)
+- 🎥 [TanStack Router: Type safe routing and URL state management for your applications](https://www.youtube.com/watch?v=qUZm3gbMOeo): Tanner presents his new 100% typesafe and agnostic router. I make the [same observation as him](https://twitter.com/sebastienlorber/status/1555493419128168449): the existing APIs (Next.js, React-Router) do not facilitate the creation of apps that use query-strings a lot, and a new typesafe solution is welcome.
+- 🎥 [React Streaming In Depth! NextJS! Remix! DIY!](https://www.youtube.com/watch?v=o3JWb04DRIs): long video that details how streaming works with React, via the Next.js and Remix frameworks. Also offers a home-made implementation (not for production).
+- 🎥 [Remix - Roadmap Planning #1](https://www.youtube.com/watch?v=YSo0vKqAWtk): first public roadmapping session for the framework, as announced in [Open Development for Remix](https://remix.run/blog/open-development).
+- 🎥 [ChatGPT refactoring php + jquery to Next.js](https://twitter.com/thekitze/status/1598414259137880066): this new AI is impressive and has devs talking a lot this week on Twitter!
+- 🎨 [HTML + React-Three-Fiber demo](https://twitter.com/0xca0a/status/1599367266448994304): cela semble de plus en plus facile, et performant, d'intégrer du HTML dans une scene 3D avec React-Three-Fiber.
+- 🐦 [Nodejs.dev adopting Next.js?](https://twitter.com/ovflowd/status/1599417661242232832): the Node.js doc could migrate from Gatsby to Next.js
+- 🐦 [React Server Components + MDX](https://twitter.com/sebastienlorber/status/1598615824927002624): the impact of RSC is potentially important for content sites using MDX, like Docusaurus or Nextra ;)
+- 📨 [React.holiday](https://react.holiday/): ephemeral avent newsletter of 25 short emails about new features of Next.js 13
+- 📦 [Papanasi 1.0](https://twitter.com/CKGrafico/status/1597585206034169857): v1 release of this innovative UI components library. It is based on [Mitosis](https://github.com/builderio/mitosis), which allows to compile code to all frameworks at once: React, Vue, Svelte, Solid...
+- 📦 [Jotai 1.11](https://twitter.com/jotaijs/status/1598366077527810048)
+- 📦 [Gatsby 5.2](https://www.gatsbyjs.com/docs/reference/release-notes/v5.2/)
+- 📦 [Redwood 3.5](https://github.com/redwoodjs/redwood/releases/tag/v3.5.0)
 
 <SubscribeFormEmbed />
 
@@ -78,7 +131,19 @@ At JavaScriptBoard.com you sign up and only receive job offers that match YOUR r
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+- 📊 [State of React Native](https://stateofreactnative.com/): Software Mansion is preparing a survey around React-Native and invites us to contribute to the questions asked: [2022 Call for Questions](https://github.com/software-mansion/state-of-react-native/discussions/1).
+- 📦 [Tamagui v1 Release Candidate](https://tamagui.dev/blog/version-one-release-candidate): Tamagui is a promising solution based on a compiler to style its React components in a universal way (mobile and web). The move to RC marks the stabilization of the APIs.
+- 📦 [Solito v2](https://solito.dev/v2): cross-platform navigation solution. Next.js 13 support + SolitoImage component.
+- 📦 [Reanimated 3.0-rc.8](https://twitter.com/kzzzf/status/1598394289570156544): new and much more efficient implementation of Shared Values
+- 📦 [Preact-Native](https://github.com/barelyhuman/preact-native): a dev wants to run Preact with React-Native. This seems complex, and put on [stand-by](https://reaper.is/writing/20221204-decisions-and-updates-november-2022).
+- 📦 [create-react-native-library 0.27.2](https://twitter.com/satya164/status/1598774126805766144): supports RN 0.71, Fabric template...
+- 📦 [React-Native 0.71.0-RC.3](https://twitter.com/Kelset/status/1598018432229777408): 0.71 should come soon!
+- 📦 [Airbnb - Announcing Lottie 4.0 for iOS](https://medium.com/airbnb-engineering/announcing-lottie-4-0-for-ios-d4d226862a54)
+- 📦 [Maestro](https://github.com/mobile-dev-inc/maestro): end-2-end blackbox testing tool that is gaining popularity (comparable to Appium)
+- 💬 [Expo Router RFC - Shared Routes](https://twitter.com/Baconbrix/status/1598074538298048512)
+- 💬 [VisionCamera 3.0 discussion](https://github.com/mrousavy/react-native-vision-camera/issues/1376)
+- 🐦 [Krzysztof Magiera - "Next version of reanimated will finally have proper stack trace support."](https://twitter.com/kzzzf/status/1598828117509910528)
+- 🎥 [Confetti Animation with React-Native Skia](https://www.youtube.com/watch?v=qOhYFDOEOmo)
 
 ---
 
@@ -102,12 +167,40 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 ## 🔀 Other {#other}
 
-<Todo />
+**[Updates from the 93rd TC39 meeting](https://dev.to/hemanth/updates-from-the-93rd-tc39-meeting-2n8f)**
+
+Some very nice proposals for JavaScript have progressed last week, in particular:
+
+- [Set Methods](https://twitter.com/robpalmer2/status/1597947853598785537) in stage 3: union, intersection, difference... 🙌
+- [Iterator Helpers](https://github.com/tc39/proposal-iterator-helpers) in stage 3: map, flatMap, filter, reduce...
+- Intl APIs that continue to complement each other.
+
+---
+
+- [Container Queries in Firefox 109](https://twitter.com/jensimmons/status/1598798281513000960): finally in all major browsers 🙌
+- [Announcing Rome v11](https://rome.tools/blog/2022/12/06/rome11/): supports TS 4.9 satisfies
+- [2022 - State of CSS - Survey results](https://2022.stateofcss.com/en-US/)
+- [2022 - State of Rust - Survey open](https://twitter.com/rustlang/status/1600078615143911425)
+- [ESLint RFC - Language Plugins](https://github.com/eslint/rfcs/pull/99)
+- [Tailwind is a Leaky Abstraction](https://jakelazaroff.com/words/tailwind-is-a-leaky-abstraction/)
+- [What working with Tailwind CSS every day for 2 years looks like](https://www.themosaad.com/blog/two-years-of-tailwind-css)
+- [How TypeScript 4.9 `satisfies` Your Prisma Workflows](https://www.prisma.io/blog/satisfies-operator-ur8ys8ccq7zb)
+- [Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/blog/prerender-pages/)
+- [Fast is good, instant is better!](https://calendar.perfplanet.com/2022/fast-is-good-instant-is-better/)
+- [Speeding up the JavaScript ecosystem - one library at a time](https://marvinh.dev/blog/speeding-up-javascript-ecosystem/)
+- [Electron 22.0](https://www.electronjs.org/blog/electron-22-0)
+- [Cypress 12](https://www.cypress.io/blog/2022/12/06/announcing-cypress-12/)
+- [Nx 15.3 — Standalone Projects, Vite, Task Graph and more!](https://blog.nrwl.io/nx-15-3-standalone-projects-vite-task-graph-and-more-3ed23f7827ed)
+- [Lightning CSS 1.17](https://github.com/parcel-bundler/lightningcss/releases/tag/v1.17.0)
+- [New to the web platform in November](https://web.dev/web-platform-11-2022/)
+- [Getting the most from GitHub Copilot](https://shift.infinite.red/getting-the-most-from-github-copilot-8f7b32014748)
+- [Top Announcements of AWS re:Invent 2022](https://aws.amazon.com/fr/blogs/aws/top-announcements-of-aws-reinvent-2022/)
+- [ChatGPT helped me design a brand new programming language](https://judehunter.dev/blog/chatgpt-helped-me-design-a-brand-new-programming-language)
+- [Frontend Engineer Archetypes](https://cpojer.net/posts/frontend-engineering-archetypes)
+- [Bahuu - state machine-based UI framework](https://github.com/tjkandala/baahu)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/todo)
+[![alt](/emails/issues/127/meme.png)](https://twitter.com/jaredpalmer/status/1599765374265749504)
