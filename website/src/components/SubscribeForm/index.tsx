@@ -1,16 +1,84 @@
-import React, { ComponentProps, ReactNode } from "react";
+import React, { ComponentProps, ReactNode, useEffect, useRef } from "react";
 import clsx from "clsx";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 
+function addField(form: HTMLFormElement, name: string, value: string | null) {
+  if (!value) {
+    return;
+  }
+  const input = document.createElement("input");
+  input.setAttribute("type", "hidden");
+  input.setAttribute("name", `fields[${name}]`);
+  input.setAttribute("value", value);
+  form.appendChild(input);
+}
+
+function getAppendOnlySearch(): string {
+  try {
+    const key = "appendOnlySearchParams";
+
+    const storageParams = new URLSearchParams(localStorage.getItem(key) ?? "");
+    const currentParams = new URLSearchParams(window.location.search);
+
+    const appendOnlySearch = new URLSearchParams({
+      ...Object.fromEntries(storageParams),
+      ...Object.fromEntries(currentParams),
+    })
+      .toString()
+      // normalize
+      .toLowerCase();
+
+    localStorage.setItem(key, appendOnlySearch);
+
+    console.log("appendOnlySearch", appendOnlySearch);
+    return appendOnlySearch;
+  } catch (e) {
+    console.error("getAppendOnlySearch failure", e);
+    return "";
+  }
+}
+
+// TODO save values in a cookie/storage so that values are preserved when navigating?
+function prepareFormHiddenElements(form: HTMLFormElement) {
+  try {
+    const appendOnlySearch = getAppendOnlySearch();
+    const searchParams = new URLSearchParams(appendOnlySearch);
+
+    addField(form, "utm_source", searchParams.get("utm_source"));
+    addField(form, "utm_medium", searchParams.get("utm_medium"));
+    addField(form, "utm_campaign", searchParams.get("utm_campaign"));
+    addField(form, "utm_content", searchParams.get("utm_content"));
+    addField(form, "utm_term", searchParams.get("utm_term"));
+
+    addField(form, "qs_search", document.location.search);
+    addField(form, "qs_search_append_only", appendOnlySearch);
+
+    addField(form, "qs_ref", searchParams.get("ref"));
+    addField(form, "qs_reference", searchParams.get("reference"));
+
+    addField(form, "document_referrer", document.referrer);
+  } catch (e) {
+    console.error("can't add ConvertKit hidden fields", e);
+  }
+}
+
 export default function SubscribeForm(props: ComponentProps<"div">) {
+  const ref = useRef<HTMLDivElement>();
   const { i18n } = useDocusaurusContext();
   const formHtml =
     i18n.currentLocale === "fr"
       ? subscribeHtmlConvertKitFormFrench
       : subscribeHtmlConvertKitFormEnglish;
+
+  useEffect(() => {
+    const form = ref.current!.querySelector("form");
+    form && prepareFormHiddenElements(form);
+  }, []);
+
   return (
     <div
+      ref={ref}
       {...props}
       className={clsx(props.className, styles.subscribeForm)}
       dangerouslySetInnerHTML={{ __html: formHtml }}
