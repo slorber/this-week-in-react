@@ -16,10 +16,6 @@ module.exports = function pluginGoogleTagManager(context, options) {
       actions.setGlobalData(options);
     },
 
-    getClientModules() {
-      // return isProd ? ["./gtm"] : [];
-    },
-
     injectHtmlTags() {
       if (!isProd) {
         return {};
