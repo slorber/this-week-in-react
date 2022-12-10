@@ -51,6 +51,7 @@ const config = {
   ],
 
   plugins: [
+    ["./plugins/gtm", { trackingID: "GTM-TRTJQ6M" }],
     [
       "content-blog",
       {
