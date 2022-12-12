@@ -51,8 +51,7 @@ function prepareFormHiddenElements(form: HTMLFormElement) {
     addField(form, "utm_content", searchParams.get("utm_content"));
     addField(form, "utm_term", searchParams.get("utm_term"));
 
-    addField(form, "qs_search", document.location.search);
-    addField(form, "qs_search_append_only", appendOnlySearch);
+    addField(form, "qs_params", appendOnlySearch);
 
     addField(form, "qs_ref", searchParams.get("ref"));
     addField(form, "qs_reference", searchParams.get("reference"));
