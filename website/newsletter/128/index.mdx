@@ -1,17 +1,16 @@
 ---
 slug: /128
-title: "This Week In React #128: SWR, Vite, Codux, Next.js, Forget, Nylon, Paper, align-deps, INP, Zod, Tauri..."
+title: "This Week In React #128: SWR, Vite, Codux, Storybook, Next.js, Forget, Nylon, Paper, align-deps, INP, Zod, Tauri..."
 authors: [slorber]
 date: 12-13-2022
 image: /img/TWIR_POST.png
-unlisted: true
 ---
 
 Hi everyone!
 
-On rentre dans la période des fêtes de Noel, et les bloggers React réduisent la cadence. De mon coté, je vais sauter 2 éditions.
+We are entering the Christmas season, and React bloggers are reducing the pace. On my side, I will skip 2 editions.
 
-On a tout de même quelques releases et articles sympa à découvrir. J'ai beaucoup aimé celui sur les font layout shifts.
+Still, we have some nice releases and articles to discover. I really liked the article about font layout shifts.
 
 <!-- truncate -->
 
@@ -47,13 +46,13 @@ Get started here: [ReactBricks.com](https://reactbricks.com/?utm_source=this_wee
 
 **[SWR 2.0](https://swr.vercel.app/blog/swr-v2)**
 
-Nouvelle version majeure pour la librairie de data-fetching de chez Vercel. On y retrouve diverses améliorations, dont:
+New major release for the Vercel data-fetching library. Various improvements listed, including:
 
-- Nouveau hook `useSWRMutation`
-- Optimistic UI simplifié
-- Des extensions [SWR DevTools](https://swr-devtools.vercel.app/)
-- Une API impérative de preloading
-- Support React 18 amélioré
+- New `useSWRMutation` hook
+- Simplified Optimistic UI
+- Browser extensions: [SWR DevTools](https://swr-devtools.vercel.app/)
+- An imperative preloading API
+- Improved React 18 support
 
 ---
 
@@ -66,6 +65,11 @@ Vite est un outil frontend qui continue de gagner en popularité. Cette dernièr
 - [vite-plugin-react](https://github.com/vitejs/vite-plugin-react): esbuild + Babel
 - [vite-plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc): replace Babel par SWC en dev, ce qui semble améliorer le cold start et le HMR
 
+Vite is a frontend tool that keeps growing in popularity. This latest version now uses Rollup 3, which greatly simplifies the management of Vite's internal assets. There are now 2 React plugins with different tradeoffs:
+
+- [vite-plugin-react](https://github.com/vitejs/vite-plugin-react): esbuild + Babel
+- [vite-plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc): replace Babel by SWC in dev, which seems to improve cold start and HMR
+
 ---
 
 [![Codux - Visual IDE for React projects](/emails/issues/128/codux.jpg)](https://dev.to/codux/introducing-codux-15j5)
@@ -74,15 +78,17 @@ Vite est un outil frontend qui continue de gagner en popularité. Cette dernièr
 
 Nadav est co-founder de Wix et nous présente son nouveau projet, un IDE visuel pour React (et bientôt d'autres frameworks). Il ne s'agit pas de replacer votre IDE actuel, mais plutôt de le compléter. Codux permet de travailler sur un composant en isolation, incluant l'édition de props et styles via une interface visuelle. La video [Meet Codux](https://www.youtube.com/watch?v=KG6i6cCz0P0) devrait aider à mieux comprendre. Cela fait un peu penser à Storybook, mais avec l'édition en plus, et une synchronisation bidirectionnelle avec votre code.
 
+Nadav is co-founder of Wix and presents us his new project, a visual IDE for React (and soon other frameworks). It's not about replacing your current IDE, but rather about completing it. Codux allows you to work on a component in isolation, including editing props and styles via a visual interface. The video [Meet Codux](https://www.youtube.com/watch?v=KG6i6cCz0P0) should help you understand better. It's a bit like Storybook, but with the ability to edit, and a bidirectional synchronization with your code.
+
 ---
 
 - 📖 Beta docs: [team page updated](https://twitter.com/reactjs/status/1601328677677338624) + [useTransition demo](https://twitter.com/dan_abramov/status/1600709819648069632) + [useSyncExternalStore API ref](https://twitter.com/dan_abramov/status/1600530747550564354)
-- 📖 [New Supabase Docs, built with Next.js](https://supabase.com/blog/new-supabase-docs-built-with-nextjs): la doc de Supabase migre de Docusaurus vers Next.js, suite aux besoins grandissants de faire du sur mesure. Ils donnent tout de même un retour d'expérience très positif sur Docusaurus.
+- 📖 [New Supabase Docs, built with Next.js](https://supabase.com/blog/new-supabase-docs-built-with-nextjs): Supabase's doc is migrating from Docusaurus to Next.js, due to the growing need to build something custom. Nevertheless, they give a very positive feedback on Docusaurus.
 - 📖 [React Router website repository public](https://twitter.com/remix_run/status/1600979694622367744)
 - 📖 [React-Spring - New doc site](https://twitter.com/_josh_ellis_/status/1602253329526128641)
-- 📜 [Integrate Next.js and Storybook automatically](https://storybook.js.org/blog/integrate-nextjs-and-storybook-automatically/): présente le fonctionnement du support automatique de Next.js via la nouvelle [Framework API](https://storybook.js.org/blog/framework-api/) qui arrive dans Storybook 7 (maintenant en [beta](https://github.com/storybookjs/storybook/releases/tag/v7.0.0-beta.0)). Storybook est capable de mieux comprendre votre projet Next.js. Plus besoin d'ajouter des décorateurs pour le support de la navigation ou des composants Link et Image. Le support va continuer de s'améliorer dans le temps: Server Components, next/font...
-- 📜 [Optimizing Web Fonts in Next.js 13](https://www.lydiahallie.io/blog/optimizing-webfonts-in-nextjs-13): probablement l'article le mieux illustré sur les font layout shifts. Explique à la fin comment Next.js optimise tout ça pour nous.
-- 📜 [Migrating a large, open-source React application to Next.js and Vercel](https://vercel.com/blog/migrating-a-large-open-source-react-application-to-next-js-and-vercel): Vercel fait un POC de migration du site open-source de la BBC, pour s'amuser 😄 Ils mettent en avant les avantages obtenus rien qu'en étant sur une stack Next.js.
+- 📜 [Integrate Next.js and Storybook automatically](https://storybook.js.org/blog/integrate-nextjs-and-storybook-automatically/): introduce the automatic support of Next.js via the new [Framework API](https://storybook.js.org/blog/framework-api/) that comes in Storybook 7 (now in [beta](https://github.com/storybookjs/storybook/releases/tag/v7.0.0-beta.0)). Storybook is able to understand your Next.js project better. No more need to add decorators/addons for navigation, Link and Image components. The support will continue to improve over time: Server Components, next/font...
+- 📜 [Optimizing Web Fonts in Next.js 13](https://www.lydiahallie.io/blog/optimizing-webfonts-in-nextjs-13): probably the best illustrated article explaining font layout shifts. Explains at the end how Next.js optimizes this for us automatically. Worth reading!
+- 📜 [Migrating a large, open-source React application to Next.js and Vercel](https://vercel.com/blog/migrating-a-large-open-source-react-application-to-next-js-and-vercel): Vercel is doing a POC of migrating the BBC's open-source site, just for fun 😄 They're highlighting the benefits gained just by being on a Next.js stack and call BBC to action if they want to pursue this migration.
 - 📜 [The Evolution of urql](https://formidable.com/blog/2022/evolution-of-urql/)
 - 📜 [Avoid These Common Pitfalls Of React useState](https://profy.dev/article/react-usestate-pitfalls)
 - 📜 [Publishing Docusaurus to dev.to with the dev.to API](https://dev.to/johnnyreilly/publishing-docusaurus-to-devto-with-the-devto-api-9bg)
@@ -90,12 +96,12 @@ Nadav est co-founder de Wix et nous présente son nouveau projet, un IDE visuel 
 - 📜 [Using Path Matching in React Router](https://www.taniarascia.com/path-matching-in-react-router/)
 - 📜 [Testing API Calls in useEffect using React Testing Library and Jest](https://www.taniarascia.com/how-to-test-useeffect-api-call/)
 - 💬 [Improve React Query hydration, Streaming SSR & Server Components](https://github.com/TanStack/query/discussions/4623)
-- 🐦 [Xuan Huang - "Forget is in good hands as we now have a team behind it"](https://twitter.com/Huxpro/status/1601345567493214208): Xuan mentionne aussi son départ de Meta
+- 🐦 [Xuan Huang - "Forget is in good hands as we now have a team behind it"](https://twitter.com/Huxpro/status/1601345567493214208): Xuan also mentions that he left Meta
 - 🎨 [React-Three-Editor demo - Threejs Journey scene](https://twitter.com/0xca0a/status/1601315795006410752)
-- 🐦 ["I fixed vanilla-extract/sprinkles using a vite plugin"](https://twitter.com/astahmer_dev/status/1601246126396428289): nouveau plugin Vite qui pourrait réduire significativement le CSS émis par Vanilla-Extract / Sprinkles
+- 🐦 ["I fixed vanilla-extract/sprinkles using a vite plugin"](https://twitter.com/astahmer_dev/status/1601246126396428289): new Vite plugin that could significantly reduce the CSS emitted by Vanilla-Extract / Sprinkles
 - 🐦 [Ryan Florence - "Next.js isn't really OSS"](https://twitter.com/ryanflorence/status/1600526114010845184)
-- 📦 [React-Nylon](https://github.com/CodyJasonBennett/react-nylon) + [Four](https://github.com/CodyJasonBennett/four): bientôt une [alternative plus légère à Three.js et React-Three-Fiber](https://twitter.com/0xca0a/status/1602286391777546242)?
-- 📦 [Remix 1.8](https://github.com/remix-run/remix/releases/tag/remix%401.8.0): le "React-Router-ing" progresse bien
+- 📦 [React-Nylon](https://github.com/CodyJasonBennett/react-nylon) + [Four](https://github.com/CodyJasonBennett/four): something is cooking. Soon, a lightweight [Three.js / React-Three-Fiber alternative?](https://twitter.com/0xca0a/status/1602286391777546242)?
+- 📦 [Remix 1.8](https://github.com/remix-run/remix/releases/tag/remix%401.8.0): the "React-Router-ing" is progressing
 - 📦 [Chakra UI Figma Kit](https://twitter.com/chakra_ui/status/1602683717830512641)
 - 🎥 [Modern Component Library with React & Storybook](https://www.youtube.com/playlist?list=PLKBvDYynKmlWa59k8pnw-EHac2_miPagh)
 - 🎥 [MaterialUI + Qwikify demo](https://twitter.com/Steve8708/status/1601257653367209984)
@@ -122,18 +128,18 @@ Upon completion you will get free access to our Virtual Goody Bag. Don't forget 
 
 ## 📱 React-Native {#react-native}
 
-- 📜 [React Native Paper 5.0 – What’s New?](https://www.callstack.com/blog/react-native-paper-5-0): support de Material Design 3 "Meterial You", mais conserve aussi la possibilité de rester sur Material Design 2. Il y a de nouveaux composants, et la possibilité d'intégrer facilement la lib avec React-Navigation.
-- 📜 [Microsoft - Announcing the evolution of dep-check: align-deps](https://devblogs.microsoft.com/react-native/2022-11-30-announcing-align-deps/): nouvelle version de l'outil dep-check de Microsoft qui permet d'assurer que son monorepo utilise les bonnes versions de package. Renommé à cause d'un conflit avec depcheck. L'outil peut maintenant être plus facilement utilisé sur un projet autre que React-Native.
-- 📜 [Introducing: Maestro Studio](https://blog.mobile.dev/introducing-maestro-studio-96454c7ca98a): pour créer des tests end-2-end black box via une interface
-- 🔗 [Microsoft - React-Native Devblog](https://devblogs.microsoft.com/react-native/): nouveau blog dédié à React-Native sur le site de Microsoft.
-- 🎨 [@expo-image demo](https://twitter.com/tsapeta/status/1600888339619799042): Software Mansion travaille sur une alternative à react-native-fast-image
-- 🎨 [React-Native-Skia-Gesture demo](https://twitter.com/reactiive_/status/1600494808048467973): detection de gestures pour les éléments d'un canvas Skia
-- 📦 [android-performance-profiler](https://twitter.com/almouro/status/1600887206952198144): nouvelle API disponible
+- 📜 [React Native Paper 5.0 – What’s New?](https://www.callstack.com/blog/react-native-paper-5-0): add Material Design 3 "Meterial You" support, but also keeps the possibility to stay on Material Design 2. There are new components, and helpers to easily integrate the lib with React-Navigation.
+- 📜 [Microsoft - Announcing the evolution of dep-check: align-deps](https://devblogs.microsoft.com/react-native/2022-11-30-announcing-align-deps/): new version of the dep-check tool from Microsoft that allows to ensure that its monorepo uses the right package versions. Renamed because of a conflict with depcheck. Can now be more easily used on a project other than React-Native.
+- 📜 [Introducing: Maestro Studio](https://blog.mobile.dev/introducing-maestro-studio-96454c7ca98a): to create end-2-end black box tests via an interface
+- 🔗 [Microsoft - React-Native Devblog](https://devblogs.microsoft.com/react-native/): new blog dedicated to React-Native on the Microsoft website.
+- 🎨 [@expo-image demo](https://twitter.com/tsapeta/status/1600888339619799042): Software Mansion is working on an alternative to react-native-fast-image
+- 🎨 [React-Native-Skia-Gesture demo](https://twitter.com/reactiive_/status/1600494808048467973): gesture detector for Skia canvas elements
+- 📦 [android-performance-profiler](https://twitter.com/almouro/status/1600887206952198144): new API available
 - 📦 [expo-router@next - Shared Routes + Layout Clones (experimental)](https://twitter.com/Baconbrix/status/1601362300891328513)
 - 🎙️ [RNR 253 - We React to News: Kotlin's got a new daddy](https://reactnativeradio.com/episodes/rnr-253-we-react-to-news)
 - 🎥 [File-based navigation for Expo and React Native](https://www.youtube.com/watch?v=PW4-79MgSO0)
 - 📖 [Expo docs updates](https://twitter.com/amanhimself/status/1601177437546897408)
-- 🐦 ["Apple is preparing to allow alternative app stores and side-loading on iOS"](https://twitter.com/markgurman/status/1602744671737942016) + ["And allow non-Safari browser engines"](https://twitter.com/cramforce/status/1602765963937472513): cela semble important pour React-Native même si pour l'instant cela semble limité à l'Europe.
+- 🐦 ["Apple is preparing to allow alternative app stores and side-loading on iOS"](https://twitter.com/markgurman/status/1602744671737942016) + ["And allow non-Safari browser engines"](https://twitter.com/cramforce/status/1602765963937472513): this seems important for React-Native even if for the moment it seems limited to Europe.
 
 ---
 
@@ -157,13 +163,13 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 ## 🔀 Other {#other}
 
-- [Optimize Interaction to Next Paint](https://web.dev/optimize-inp/): les devs Google nous expliquent comment améliorer les performances sur les interactions de nos apps (la nouvelle métrique INP). Cela semble particulièrement intéressant pour nos SPAs React.
-- [2022 In Review: What’s New In Web Performance?](https://www.debugbear.com/blog/2022-in-web-performance): une belle vue d'ensemble des nouveautés webperf de 2022. Les prévisions 2023 indiquent des travaux pour mieux mesurer les performances des SPA, au lieu de se contenter des métriques du chargement initial de la page. Je découvre le repo [soft-navigations](https://github.com/WICG/soft-navigations)
-- [Ecma International welcomes new members](https://www.ecma-international.org/news/ecma-international-welcomes-new-members-6/): dont Shopify et Vercel
-- [Zod 3.20](https://twitter.com/colinhacks/status/1602238724120924160): content de voir la coercion arriver, très pratique pour convertir certains params query-string (exemple: ?pageSize=10) en nombres automatiquement.
-- [Vitest 0.27.7](https://github.com/vitest-dev/vitest/releases/tag/v0.25.7): support Vite 4
-- [Tauri Mobile Alpha Release](https://tauri.app/blog/2022/12/09/tauri-mobile-alpha): si je comprends bien c'est de la WebView, nouveau concurrent à Cordova/Capacitor? 🤔
-- [New npm features for secure publishing and safe consumption](https://github.blog/2022-12-06-new-npm-features-for-secure-publishing-and-safe-consumption/): enfin un code explorer sur le site npm!
+- [Optimize Interaction to Next Paint](https://web.dev/optimize-inp/): Google devs explain us how to improve the performance on our apps interactions (the new INP metric). This is particularly interesting for our React SPAs.
+- [2022 In Review: What’s New In Web Performance?](https://www.debugbear.com/blog/2022-in-web-performance):A nice overview of what's new in webperf in 2022. The 2023 predictions indicate work to better measure SPA performance, instead of just the initial page load metrics. TIL about the [soft-navigations](https://github.com/WICG/soft-navigations) repo.
+- [Ecma International welcomes new members](https://www.ecma-international.org/news/ecma-international-welcomes-new-members-6/): welcoming Shopify and Vercel
+- [Zod 3.20](https://twitter.com/colinhacks/status/1602238724120924160): glad to see the coercion coming, very useful to convert some query-string params (example: ?pageSize=10) into numbers automatically.
+- [Vitest 0.27.7](https://github.com/vitest-dev/vitest/releases/tag/v0.25.7): Vite 4 support
+- [Tauri Mobile Alpha Release](https://tauri.app/blog/2022/12/09/tauri-mobile-alpha): if I understand correctly it is using a WebView - new competitor to Cordova/Capacitor? 🤔
+- [New npm features for secure publishing and safe consumption](https://github.blog/2022-12-06-new-npm-features-for-secure-publishing-and-safe-consumption/): finally a code explorer on the npm site!
 - [WebKit Features in Safari 16.2](https://webkit.org/blog/13591/webkit-features-in-safari-16-2/)
 - [Bun 0.3.0](https://bun.sh/blog/bun-v0.3.0)
 - [Alma - a digital playground for generative graphics](https://twitter.com/emilwidlund/status/1600815398672211969)
