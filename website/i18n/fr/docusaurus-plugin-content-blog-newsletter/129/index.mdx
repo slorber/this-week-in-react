@@ -41,46 +41,60 @@ Commencez ici: [ReactBricks.com](https://reactbricks.com/?utm_source=this_week_i
 
 ## ⚛️ React {#react}
 
-[Downgrade to MPA if users prefer reduced data in Remix](https://sergiodxa.com/articles/downgrade-to-mpa-if-users-prefer-reduced-data-in-remix) + https://twitter.com/sergiodxa/status/1603792055255416833
+**[Storybook 7.0 beta](https://storybook.js.org/blog/7-0-beta/)**
 
-[Storybook 7.0 beta](https://storybook.js.org/blog/7-0-beta/)
+Storybook annonce officiellement la sortie de la v7 en beta. La version finale sortira dans quelques mois. C'est une très grosse mise à jour avec un plan de migration et des outils prévus pour nous aider à upgrader. Quelques nouveautés:
 
-https://twitter.com/storybookjs/status/1603773143201775618
+- Améliorations de design, de performance
+- Tests: interaction testing, Playwright, coverage reporting
+- Documentation en MDX 2
+- Component Story Format 3.0
+- Frameworks API: Vite, Next.js, SvelteKit
 
-[React Router 6.5 + Remix 1.9](https://twitter.com/remix_run/status/1603887581770354688)
+---
 
-[Remix Flat Routes 0.5.1](https://twitter.com/kiliman/status/1603845269895921664)
+**[OpenNEXT - Open source Next.js serverless adapter](https://github.com/serverless-stack/open-next)**
 
-[OpenNEXT](https://github.com/serverless-stack/open-next)
+Un projet qui vise à améliorer la portabilité de Next.js vers les plateformes serverless, en incluant **toutes** les features (SSR, mais aussi ISR, middleware, Image Optimization). Pour le moment, OpenNEXT permet de déployer sur AWS.
 
-https://open-next.js.org/
+Pour Ryan Florence, [Next.js n'est pas vraiment open-source](https://twitter.com/ryanflorence/status/1600526114010845184), et cela conduit a des débats intéressants. La vidéo de Theo Browne résume bien la situation: [Is NextJS A Trap? Vendor Lock In Rant](https://www.youtube.com/watch?v=mhdO8f_45CA).
 
-React Email: https://twitter.com/zenorocha/status/1603406791630520320
+---
 
-NodeToy: https://twitter.com/nodetoy/status/1603114419348590593 https://twitter.com/Andersonmancini/status/1603156986660638723
+**[React Email](https://react.email/)**
 
-? https://twitter.com/alexdotjs/status/1603419413251649536
+Nouvelle solution pour créer des emails basé sur React et TypeScript. En pratique, il s'agit d'un renderer et d'un ensemble de composants headless compatibles avec les clients emails populaires, ainsi que d'une interface pour développer ses emails avec une bonne DX. La [démo](https://demo.react.email/) reproduit des emails populaires: Vercel, Airbnb, Stripe... Cela me fait penser à [React-MJML](https://github.com/wix-incubator/mjml-react): il va falloir comprendre quand utiliser quelle solution 😄.
+
+---
+
+**[React Router 6.5](https://github.com/remix-run/react-router/releases/tag/react-router%406.5.0) + [Remix 1.9](https://github.com/remix-run/remix/releases/tag/remix%401.9.0)**
+
+2 releases liées qui marquent la [fin du projet de React-Routering Remix](https://twitter.com/ryanflorence/status/1604257159876730881) (déplacement du code Remix dans React-Router), et la réintroduction des [optional route segments](https://twitter.com/remix_run/status/1603887581770354688)
+
+---
 
 - 📖 Beta docs: [useLayoutEffect](https://twitter.com/dan_abramov/status/1603772620641431553)
-- 👀 [useEvent => useEffectEvent](https://twitter.com/sebastienlorber/status/1603817244387348480)
-- 🎅 [GitHub Unwrapped 2022](https://www.githubunwrapped.com/)
+- 👀 [useEvent => useEffectEvent](https://twitter.com/sebastienlorber/status/1603817244387348480): cette API attendue pour React est renommée et le scope réduit.
+- 🎅 [GitHub Unwrapped 2022](https://www.githubunwrapped.com/): génère une vidéo qui récapitule votre activité GitHub en 2022. La vidéo est produite avec React et [Remotion](https://remotion.dev/) (projet open-source: [github-unwrapped-2022](https://github.com/remotion-dev/github-unwrapped-2022)).
+- 🎨 [NodeToy 2.0 beta](https://nodetoy.co/): pour les devs créatifs, ce nouvel éditeur de shaders est compatible React-Three-Fiber, via [react-nodetoy](https://github.com/NodeToy/react-nodetoy)
+- 📜 [Downgrade to MPA if users prefer reduced data in Remix](https://sergiodxa.com/articles/downgrade-to-mpa-if-users-prefer-reduced-data-in-remix): explique comment dégrader Remix de SPA vers MPA de manière conditionnelle, en fonction du header `Save-Dat: on`. Un levier intéressant à utiliser pour les performances des apps/pages avec des session courtes.
+- 📜 [SvelteKit Auth: Bringing NextAuth.js to all frameworks](https://vercel.com/blog/announcing-sveltekit-auth): c'est au tour de NextAuth de devenir agnostic. Le projet devient Auth.js et supporte maintenant Next.js + SvelteKit.
 - 📜 [Next, Nest, Nuxt… Nust?](https://www.twilio.com/blog/comparing-nextjs-nestjs-nuxt-gatsby)
 - 📜 [Why does onClick={x()} causes "too many re-renders" error in React?](https://alexsidorenko.com/blog/onclick-too-many-re-renders/)
 - 📜 [The Most Popular CSS-in-JS Libraries in 2022](https://stackdiary.com/css-in-js-libraries/)
 - 📜 [Svelte vs React: Which framework to learn in 2023?](https://scrimba.com/articles/svelte-vs-react/)
 - 📜 [Applying Design Patterns in React: Strategy Pattern](https://dev.to/itshugo/applying-design-patterns-in-react-strategy-pattern-enn)
 - 📜 [Conditional wrapping in React](https://daily-dev-tips.com/posts/conditional-wrapping-in-react/)
-- 📜 [Announcing SvelteKit Auth: Bringing NextAuth.js to all frameworks](https://vercel.com/blog/announcing-sveltekit-auth): https://twitter.com/balazsorban44/status/1603082914362986496
-- 🎥 [Is NextJS A Trap? Vendor Lock In Rant](https://www.youtube.com/watch?v=mhdO8f_45CA)
-- 🎥 [Reflections on a career managing React with Tom Occhino](https://www.youtube.com/watch?v=C1m5hQDjk20)
-- 🎥 [They Made An IDE For React? (Codux)](https://www.youtube.com/watch?v=_599WJnZd4g)
-- 🧑‍🎓 [Build a Realtime Chat App with Remix and Supabase](https://egghead.io/courses/build-a-realtime-chat-app-with-remix-and-supabase-d36e2618): nouveau cours gratuit Egghead
-- 📦 [Tailwind Protocol template](https://twitter.com/adamwathan/status/1603433598660407296)
-- 📦 [@fastify/react beta](https://github.com/fastify/fastify-dx/releases/tag/react-v0.1.0)
+- 🎥 [Reflections on a career managing React with Tom Occhino](https://www.youtube.com/watch?v=C1m5hQDjk20): interview super intéressante sur de nombreux sujets, des tout débuts de React jusqu'aux Server Components. Tom Occhino a été Engineering Manager chez Meta pendant de longues années.
+- 🎥 [They Made An IDE For React?](https://www.youtube.com/watch?v=_599WJnZd4g): sur Codux, le nouvel IDE React proposé par Wix
+- 🧑‍🎓 [Build a Realtime Chat App with Remix and Supabase](https://egghead.io/courses/build-a-realtime-chat-app-with-remix-and-supabase-d36e2618): nouveau cours gratuit sur Egghead
+- 📦 [TailwindUI Protocol](https://twitter.com/adamwathan/status/1603433598660407296): un beau template pour créer des sites de documentation, basé sur Next.js et MDX
 - 📦 [React-Hook-Form 7.41.0](https://twitter.com/HookForm/status/1603887632710176768)
 - 📦 [Astro 1.7](https://twitter.com/astrodotbuild/status/1603868604667158529)
 - 📦 [Redwood 3.7](https://github.com/redwoodjs/redwood/releases/tag/v3.7.0)
 - 📦 [React Spectrum + React Aria - December 2022 Releases](https://twitter.com/devongovett/status/1603864523488006144)
+- 📦 [Remix Flat Routes 0.5.1](https://twitter.com/kiliman/status/1603845269895921664)
+- 📦 [@fastify/react beta](https://github.com/fastify/fastify-dx/releases/tag/react-v0.1.0)
 - 🐦 ["Introducing hardware-accelerated animations in Framer Motion!"](https://twitter.com/mattgperry/status/1603010346763132933)
 
 <SubscribeFormEmbed />
