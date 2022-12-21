@@ -126,73 +126,73 @@
     },
 
     {
-      "source": "https://thisweekinreact.com/assets/images/storybook7-aa7bd6ad5f774d37600e1906d803bcb2.png",
+      "source": "/assets/images/storybook7-aa7bd6ad5f774d37600e1906d803bcb2.png",
       "destination": "https://thisweekinreact.com/emails/issues/129/storybook7.png",
       "permanent": true
     },
     {
-      "source": "https://thisweekinreact.com/assets/images/opennext-6be161d0a1fbf2873127013569ee41bd.png",
+      "source": "/assets/images/opennext-6be161d0a1fbf2873127013569ee41bd.png",
       "destination": "https://thisweekinreact.com/emails/issues/129/opennext.png",
       "permanent": true
     },
     {
-      "source": "https://thisweekinreact.com/assets/images/reactemail-2e20ad4a526a2af82000f5e760fbe928.png",
+      "source": "/assets/images/reactemail-2e20ad4a526a2af82000f5e760fbe928.png",
       "destination": "https://thisweekinreact.com/emails/issues/129/reactemail.png",
       "permanent": true
     },
     {
-      "source": "https://thisweekinreact.com/assets/images/reactrouter6.5-5d1e594683c1508f56aab1505467a0db.png",
+      "source": "/assets/images/reactrouter6.5-5d1e594683c1508f56aab1505467a0db.png",
       "destination": "https://thisweekinreact.com/emails/issues/129/reactrouter6.5.png",
       "permanent": true
     },
     {
-      "source": "https://thisweekinreact.com/assets/images/pointer-61d414eb4e584908e55f0bd57c5a023d.png",
+      "source": "/assets/images/pointer-61d414eb4e584908e55f0bd57c5a023d.png",
       "destination": "https://thisweekinreact.com/emails/issues/129/pointer.png",
       "permanent": true
     },
     {
-      "source": "https://thisweekinreact.com/assets/images/expo-mdx-3c25f5c69d560e1edee6c8056e1e9ea1.png",
+      "source": "/assets/images/expo-mdx-3c25f5c69d560e1edee6c8056e1e9ea1.png",
       "destination": "https://thisweekinreact.com/emails/issues/129/expo-mdx.png",
       "permanent": true
     },
     {
-      "source": "https://thisweekinreact.com/assets/images/meme-7307ca16c0f3d5d3d7389021f7d86769.png",
+      "source": "/assets/images/meme-7307ca16c0f3d5d3d7389021f7d86769.png",
       "destination": "https://thisweekinreact.com/emails/issues/129/meme.png",
       "permanent": true
     },
 
     {
-      "source": "https://thisweekinreact.com/fr/assets/images/storybook7-aa7bd6ad5f774d37600e1906d803bcb2.png",
+      "source": "/fr/assets/images/storybook7-aa7bd6ad5f774d37600e1906d803bcb2.png",
       "destination": "https://thisweekinreact.com/fr/emails/issues/129/storybook7.png",
       "permanent": true
     },
     {
-      "source": "https://thisweekinreact.com/fr/assets/images/opennext-6be161d0a1fbf2873127013569ee41bd.png",
+      "source": "/fr/assets/images/opennext-6be161d0a1fbf2873127013569ee41bd.png",
       "destination": "https://thisweekinreact.com/fr/emails/issues/129/opennext.png",
       "permanent": true
     },
     {
-      "source": "https://thisweekinreact.com/fr/assets/images/reactemail-2e20ad4a526a2af82000f5e760fbe928.png",
+      "source": "/fr/assets/images/reactemail-2e20ad4a526a2af82000f5e760fbe928.png",
       "destination": "https://thisweekinreact.com/fr/emails/issues/129/reactemail.png",
       "permanent": true
     },
     {
-      "source": "https://thisweekinreact.com/fr/assets/images/reactrouter6.5-5d1e594683c1508f56aab1505467a0db.png",
+      "source": "/fr/assets/images/reactrouter6.5-5d1e594683c1508f56aab1505467a0db.png",
       "destination": "https://thisweekinreact.com/fr/emails/issues/129/reactrouter6.5.png",
       "permanent": true
     },
     {
-      "source": "https://thisweekinreact.com/fr/assets/images/pointer-61d414eb4e584908e55f0bd57c5a023d.png",
+      "source": "/fr/assets/images/pointer-61d414eb4e584908e55f0bd57c5a023d.png",
       "destination": "https://thisweekinreact.com/fr/emails/issues/129/pointer.png",
       "permanent": true
     },
     {
-      "source": "https://thisweekinreact.com/fr/assets/images/expo-mdx-3c25f5c69d560e1edee6c8056e1e9ea1.png",
+      "source": "/fr/assets/images/expo-mdx-3c25f5c69d560e1edee6c8056e1e9ea1.png",
       "destination": "https://thisweekinreact.com/fr/emails/issues/129/expo-mdx.png",
       "permanent": true
     },
     {
-      "source": "https://thisweekinreact.com/fr/assets/images/meme-7307ca16c0f3d5d3d7389021f7d86769.png",
+      "source": "/fr/assets/images/meme-7307ca16c0f3d5d3d7389021f7d86769.png",
       "destination": "https://thisweekinreact.com/fr/emails/issues/129/meme.png",
       "permanent": true
     }
