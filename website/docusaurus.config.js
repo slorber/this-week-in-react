@@ -10,7 +10,7 @@ const TwitterSvg =
 // Make email images easier to copy/paste into ConvertKit editor
 function remarkPluginImage() {
   const visit = require("unist-util-visit");
-  return async (tree, file) => {
+  return async (tree) => {
     if (process.env.NODE_ENV !== "production") {
       return;
     }
