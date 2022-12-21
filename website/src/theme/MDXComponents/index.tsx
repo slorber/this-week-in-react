@@ -32,7 +32,12 @@ export default {
     <img src={require("@site/static/img/todo.png").default} alt={"TODO"} />
   ),
   hr: () => {
-    const imgUrl = useBaseUrl("/emails/separators/christmas.png");
+    let imgUrl = useBaseUrl("/emails/separators/christmas.png");
+
+    // Make it easier to copy/paste emails into ConvertKit editor
+    if (process.env.NODE_ENV === "production") {
+      imgUrl = "https://thisweekinreact.com" + imgUrl;
+    }
     return (
       <div role="separator" style={{ textAlign: "center", margin: "10px 0" }}>
         <img
