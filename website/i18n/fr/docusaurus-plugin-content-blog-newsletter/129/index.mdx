@@ -4,7 +4,6 @@ title: "React Hebdo #129: useEffectEvent, Storybook, OpenNEXT, React Email, Remi
 authors: [slorber]
 date: 12-31-2023
 image: /img/TWIR_POST.png
-unlisted: true
 ---
 
 Salut à tous !
@@ -91,7 +90,7 @@ Nouvelle solution pour créer des emails basé sur React et TypeScript. En prati
 - 👀 [useEvent => useEffectEvent](https://github.com/facebook/react/pull/25881): cette API attendue pour React est renommée et le scope réduit: useEffectEvent n'est pas fait pour optimiser les re-renders en stabilisant les callbacks.
 - 🎅 [GitHub Unwrapped 2022](https://www.githubunwrapped.com/): génère une vidéo qui récapitule votre activité GitHub en 2022. La vidéo est produite avec React et [Remotion](https://remotion.dev/) (projet open-source: [github-unwrapped-2022](https://github.com/remotion-dev/github-unwrapped-2022)).
 - 🎨 [NodeToy 2.0 beta](https://nodetoy.co/): pour les devs créatifs, ce nouvel éditeur de shaders est compatible React-Three-Fiber, via [react-nodetoy](https://github.com/NodeToy/react-nodetoy)
-- 📜 [Downgrade to MPA if users prefer reduced data in Remix](https://sergiodxa.com/articles/downgrade-to-mpa-if-users-prefer-reduced-data-in-remix): explique comment dégrader Remix de SPA vers MPA de manière conditionnelle, en fonction du header `Save-Dat: on`. Un levier intéressant à utiliser pour les performances des apps/pages avec des session courtes.
+- 📜 [Downgrade to MPA if users prefer reduced data in Remix](https://sergiodxa.com/articles/downgrade-to-mpa-if-users-prefer-reduced-data-in-remix): explique comment dégrader Remix de SPA vers MPA de manière conditionnelle, en fonction du header `Save-Data: on`. Un levier intéressant à utiliser pour les performances des apps/pages avec des session courtes.
 - 📜 [SvelteKit Auth: Bringing NextAuth.js to all frameworks](https://vercel.com/blog/announcing-sveltekit-auth): c'est au tour de NextAuth de devenir agnostic. Le projet devient Auth.js et supporte maintenant Next.js + SvelteKit.
 - 📜 [Why does onClick={x()} causes "too many re-renders" error in React?](https://alexsidorenko.com/blog/onclick-too-many-re-renders/): explication simple et bien illustrée d'une erreur (ou typo) qu'on a tous fait un jour 😅
 - 📜 [Svelte vs React: Which framework to learn in 2023?](https://scrimba.com/articles/svelte-vs-react/)
@@ -151,7 +150,7 @@ Le support MDX sur React-Native est sujet qui me plait particulièrement. Voir a
 
 ---
 
-- 📜 The Current State of Debugging on React Native, [Part One: Expo](https://www.g2i.co/blog/the-current-state-of-debugging-on-react-native-part-1) + [Part Two: Bare RN](https://www.g2i.co/blog/the-current-state-of-debugging-on-react-native-part-two-bare-rn): un non aperçu à jour sur le debugging d'app React-Native, suite aux changements récents qui empêchent d'utiliser un remote debugger. Profiling, inspection network... cela semble encore un peu compliqué de réussir à tout faire fonctionner correctement.
+- 📜 The Current State of Debugging on React Native, [Part One: Expo](https://www.g2i.co/blog/the-current-state-of-debugging-on-react-native-part-1) + [Part Two: Bare RN](https://www.g2i.co/blog/the-current-state-of-debugging-on-react-native-part-two-bare-rn): un bon aperçu à jour sur le debugging d'app React-Native, suite aux changements récents qui empêchent d'utiliser un remote debugger. Profiling, inspection network... cela semble encore un peu compliqué de réussir à tout faire fonctionner correctement.
 - 📜 [No, React Native is not the future](https://blog.standardnotes.com/40921/no-react-native-is-not-the-future): histoire d'une app qui souhaitait n'avoir qu'une seule codebase pour web et mobile. Finalement, ils ont choisi d'utiliser une WebView dans une coquille React-Native.
 - 📜 [Apple Considering Dropping Requirement for iPhone Web Browsers to Use WebKit](https://www.macrumors.com/2022/12/14/apple-considering-non-webkit-iphone-browsers/): pour l'instant seulement en Europe. Si généralisé, cela pourrait impacter le choix du runtime React-Native pour iOS, et les WebViews.
 - 📜 [Running your Maestro Flows on GitHub Actions](https://blog.mobile.dev/running-your-maestro-flows-on-github-actions-fe2e016b7338)
