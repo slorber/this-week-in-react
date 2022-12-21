@@ -43,7 +43,14 @@ export default {
         <img
           className="separator"
           src={imgUrl}
-          style={{ maxWidth: 500, margin: "0 auto" }}
+          width="600"
+          height="64"
+          style={{
+            width: "100%",
+            maxWidth: 600,
+            margin: "0 auto",
+            objectFit: "contain",
+          }}
         />
       </div>
     );
