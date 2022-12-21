@@ -7,6 +7,26 @@
       "ENABLE_FILE_SYSTEM_API": "1"
     }
   },
+  "headers": [
+    {
+      "source": "/assets/:path*",
+      "headers": [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=604800, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/emails/:path*",
+      "headers": [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=3600, s-maxage=86400"
+        }
+      ]
+    }
+  ],
   "redirects": [
 
     {
