@@ -11,12 +11,13 @@ const TwitterSvg =
 function remarkPluginImage() {
   const visit = require("unist-util-visit");
   return async (tree, file) => {
-    if (process.env.NODE_OPTIONS !== "production") {
+    if (process.env.NODE_ENV !== "production") {
       return;
     }
 
     visit(tree, "image", (node) => {
       if (node.url) {
+        console.log(node.url);
         if (node.url.startsWith("/emails")) {
           node.url = `https://thisweekinreact.com${node.url}`;
         }
