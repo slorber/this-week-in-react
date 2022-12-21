@@ -14,6 +14,7 @@ import SponsoringTabs, {
 } from "./SponsoringTabs";
 
 import SubscribeFormEmbed from "./SubscribeFormEmbed";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 export default {
   ...MDXComponents,
@@ -27,5 +28,19 @@ export default {
   SponsoringTabsFirstSponsor,
   SponsoringTabsSecondSponsor,
   SponsoringTabsJobSponsor,
-  Todo: () => <img src={require("@site/static/img/todo.png").default} alt={"TODO"}/>
+  Todo: () => (
+    <img src={require("@site/static/img/todo.png").default} alt={"TODO"} />
+  ),
+  hr: () => {
+    const imgUrl = useBaseUrl("/emails/separators/christmas.png");
+    return (
+      <div role="separator" style={{ textAlign: "center", margin: "10px 0" }}>
+        <img
+          className="separator"
+          src={imgUrl}
+          style={{ maxWidth: 500, margin: "0 auto" }}
+        />
+      </div>
+    );
+  },
 };
