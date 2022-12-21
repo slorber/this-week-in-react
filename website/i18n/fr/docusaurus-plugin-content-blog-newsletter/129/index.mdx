@@ -41,6 +41,8 @@ Commencez ici: [ReactBricks.com](https://reactbricks.com/?utm_source=this_week_i
 
 ## ⚛️ React {#react}
 
+[![Storybook 7.0 beta](/emails/issues/129/storybook7.png)](https://storybook.js.org/blog/7-0-beta/)
+
 **[Storybook 7.0 beta](https://storybook.js.org/blog/7-0-beta/)**
 
 Storybook annonce officiellement la sortie de la v7 en beta. La version finale sortira dans quelques mois. C'est une très grosse mise à jour avec un plan de migration et des outils prévus pour nous aider à upgrader. Quelques nouveautés:
@@ -53,6 +55,8 @@ Storybook annonce officiellement la sortie de la v7 en beta. La version finale s
 
 ---
 
+[![OpenNEXT - Open source Next.js serverless adapter](/emails/issues/129/opennext.png)](https://github.com/serverless-stack/open-next)
+
 **[OpenNEXT - Open source Next.js serverless adapter](https://github.com/serverless-stack/open-next)**
 
 Un projet qui vise à améliorer la portabilité de Next.js vers les plateformes serverless, en incluant **toutes** les features (SSR, mais aussi ISR, middleware, Image Optimization). Pour le moment, OpenNEXT permet de déployer sur AWS.
@@ -61,11 +65,15 @@ Pour Ryan Florence, [Next.js n'est pas vraiment open-source](https://twitter.com
 
 ---
 
+[![React Email](/emails/issues/129/reactemail.png)](https://react.email/)
+
 **[React Email](https://react.email/)**
 
-Nouvelle solution pour créer des emails basé sur React et TypeScript. En pratique, il s'agit d'un renderer et d'un ensemble de composants headless compatibles avec les clients emails populaires, ainsi que d'une interface pour développer ses emails avec une bonne DX. La [démo](https://demo.react.email/) reproduit des emails populaires: Vercel, Airbnb, Stripe... Cela me fait penser à [React-MJML](https://github.com/wix-incubator/mjml-react): il va falloir comprendre quand utiliser quelle solution 😄.
+Nouvelle solution pour créer des emails basé sur React et TypeScript. En pratique, il s'agit d'un renderer et d'un ensemble de composants headless compatibles avec les clients emails populaires, ainsi que d'une interface pour développer ses emails avec une bonne DX. La [démo](https://demo.react.email/) reproduit quelques emails de chez Vercel, Airbnb, Stripe... Cela fait penser à une version moderne de [React-MJML](https://github.com/wix-incubator/mjml-react), avec en plus l'interface de preview intégrée.
 
 ---
+
+[![React Router 6.5](/emails/issues/129/reactrouter6.5.png)](https://twitter.com/remix_run/status/1603887581770354688)
 
 **[React Router 6.5](https://github.com/remix-run/react-router/releases/tag/react-router%406.5.0) + [Remix 1.9](https://github.com/remix-run/remix/releases/tag/remix%401.9.0)**
 
@@ -73,16 +81,16 @@ Nouvelle solution pour créer des emails basé sur React et TypeScript. En prati
 
 ---
 
-- 📖 Beta docs: [useLayoutEffect](https://twitter.com/dan_abramov/status/1603772620641431553)
-- 👀 [useEvent => useEffectEvent](https://twitter.com/sebastienlorber/status/1603817244387348480): cette API attendue pour React est renommée et le scope réduit.
+- 📖 Beta docs: [useLayoutEffect](https://twitter.com/dan_abramov/status/1603772620641431553). Toutes les pages API ref sont dispo. Le site beta ne devrait pas tarder à sortir.
+- 👀 [useEvent => useEffectEvent](https://github.com/facebook/react/pull/25881): cette API attendue pour React est renommée et le scope réduit: useEffectEvent n'est pas fait pour optimiser les re-renders en stabilisant les callbacks.
 - 🎅 [GitHub Unwrapped 2022](https://www.githubunwrapped.com/): génère une vidéo qui récapitule votre activité GitHub en 2022. La vidéo est produite avec React et [Remotion](https://remotion.dev/) (projet open-source: [github-unwrapped-2022](https://github.com/remotion-dev/github-unwrapped-2022)).
 - 🎨 [NodeToy 2.0 beta](https://nodetoy.co/): pour les devs créatifs, ce nouvel éditeur de shaders est compatible React-Three-Fiber, via [react-nodetoy](https://github.com/NodeToy/react-nodetoy)
 - 📜 [Downgrade to MPA if users prefer reduced data in Remix](https://sergiodxa.com/articles/downgrade-to-mpa-if-users-prefer-reduced-data-in-remix): explique comment dégrader Remix de SPA vers MPA de manière conditionnelle, en fonction du header `Save-Dat: on`. Un levier intéressant à utiliser pour les performances des apps/pages avec des session courtes.
 - 📜 [SvelteKit Auth: Bringing NextAuth.js to all frameworks](https://vercel.com/blog/announcing-sveltekit-auth): c'est au tour de NextAuth de devenir agnostic. Le projet devient Auth.js et supporte maintenant Next.js + SvelteKit.
-- 📜 [Next, Nest, Nuxt… Nust?](https://www.twilio.com/blog/comparing-nextjs-nestjs-nuxt-gatsby)
-- 📜 [Why does onClick={x()} causes "too many re-renders" error in React?](https://alexsidorenko.com/blog/onclick-too-many-re-renders/)
-- 📜 [The Most Popular CSS-in-JS Libraries in 2022](https://stackdiary.com/css-in-js-libraries/)
+- 📜 [Why does onClick={x()} causes "too many re-renders" error in React?](https://alexsidorenko.com/blog/onclick-too-many-re-renders/): explication simple et bien illustrée d'une erreur (ou typo) qu'on a tous fait un jour 😅
 - 📜 [Svelte vs React: Which framework to learn in 2023?](https://scrimba.com/articles/svelte-vs-react/)
+- 📜 [Next, Nest, Nuxt… Nust?](https://www.twilio.com/blog/comparing-nextjs-nestjs-nuxt-gatsby)
+- 📜 [The Most Popular CSS-in-JS Libraries in 2022](https://stackdiary.com/css-in-js-libraries/)
 - 📜 [Applying Design Patterns in React: Strategy Pattern](https://dev.to/itshugo/applying-design-patterns-in-react-strategy-pattern-enn)
 - 📜 [Conditional wrapping in React](https://daily-dev-tips.com/posts/conditional-wrapping-in-react/)
 - 🎥 [Reflections on a career managing React with Tom Occhino](https://www.youtube.com/watch?v=C1m5hQDjk20): interview super intéressante sur de nombreux sujets, des tout débuts de React jusqu'aux Server Components. Tom Occhino a été Engineering Manager chez Meta pendant de longues années.
@@ -119,15 +127,31 @@ Une fois le questionnaire complété, vous obtiendrez un accès gratuit à notre
 
 ## 📱 React-Native {#react-native}
 
-[Pointer Events in React Native](https://reactnative.dev/blog/2022/12/13/pointer-events-in-react-native)
+[![Pointer Events in React Native](/emails/issues/129/pointer.png)](https://reactnative.dev/blog/2022/12/13/pointer-events-in-react-native)
 
-- 📜 [No, React Native is not the future](https://blog.standardnotes.com/40921/no-react-native-is-not-the-future)
+**[Pointer Events in React Native](https://reactnative.dev/blog/2022/12/13/pointer-events-in-react-native)**
+
+L'API web [Pointer Events](https://www.w3.org/TR/pointerevents3/) est en train d'être portée sur React-Native. C'est une très bonne nouvelle pour le cross-platform. Cela devrait également faciliter l'usage de features comme la gestion du hover et du clic droit via les éléments JSX de React-Native.
+
+---
+
+[![Expo-MDX](/emails/issues/129/expo-mdx.png)](https://twitter.com/Baconbrix/status/1603053674548367360)
+
+**[Expo-MDX](https://twitter.com/Baconbrix/status/1603053674548367360)**
+
+Evan Bacon publie un package pour faciliter l'usage de MDX sur React-Native. Metro compile le MDX en composants React, et un provider substitue les éléments DOM (cible par défaut de MDX) par des éléments React-Native. On peut s'attendre à une utilisation prochaine dans Expo-Router, comme la possibilité de créer un nouveau screen React-Navigation en créant un simple fichier `.mdx`? 👌
+
+Le support MDX sur React-Native est sujet qui me plait particulièrement. Voir aussi mon talk [React Native EU 2020 - Cross-platform: ReactNative, Jamstack, And Beyond](https://www.youtube.com/watch?v=ScgFQojbAAc) ou mon article [Using Expo in Gatsby](https://sebastienlorber.com/using-expo-in-gatsby).
+
+---
+
+- 📜 The Current State of Debugging on React Native, [Part One: Expo](https://www.g2i.co/blog/the-current-state-of-debugging-on-react-native-part-1) + [Part Two: Bare RN](https://www.g2i.co/blog/the-current-state-of-debugging-on-react-native-part-two-bare-rn): un non aperçu à jour sur le debugging d'app React-Native, suite aux changements récents qui empêchent d'utiliser un remote debugger. Profiling, inspection network... cela semble encore un peu compliqué de réussir à tout faire fonctionner correctement.
+- 📜 [No, React Native is not the future](https://blog.standardnotes.com/40921/no-react-native-is-not-the-future): histoire d'une app qui souhaitait n'avoir qu'une seule codebase pour web et mobile. Finalement, ils ont choisi d'utiliser une WebView dans une coquille React-Native.
+- 📜 [Apple Considering Dropping Requirement for iPhone Web Browsers to Use WebKit](https://www.macrumors.com/2022/12/14/apple-considering-non-webkit-iphone-browsers/): pour l'instant seulement en Europe. Si généralisé, cela pourrait impacter le choix du runtime React-Native pour iOS, et les WebViews.
 - 📜 [Running your Maestro Flows on GitHub Actions](https://blog.mobile.dev/running-your-maestro-flows-on-github-actions-fe2e016b7338)
-- 📜 [Apple Considering Dropping Requirement for iPhone Web Browsers to Use WebKit](https://www.macrumors.com/2022/12/14/apple-considering-non-webkit-iphone-browsers/)
-- 📜 The Current State of Debugging on React Native: [Part One: Expo](https://www.g2i.co/blog/the-current-state-of-debugging-on-react-native-part-1) + [Part Two: Bare RN](https://www.g2i.co/blog/the-current-state-of-debugging-on-react-native-part-two-bare-rn)
 - 📦 [React-Native 0.71.0-RC.5](https://twitter.com/CipolleschiR/status/1604907381971976208): dernière release de 2022. Sortie officielle 0.71 début Janvier
-- 📦 [Expo-MDX](https://twitter.com/Baconbrix/status/1603053674548367360)
-- 📦 [React-Native-Fiesta](https://github.com/mateoguzmana/react-native-fiesta)
+- 📦 [Expo-Image alpha](https://twitter.com/tsapeta/status/1605240759342739456): la nouvelle alternative Expo à react-native-fast-image peut être testée
+- 📦 [React-Native-Fiesta](https://github.com/mateoguzmana/react-native-fiesta): des animations Skia pour faire la fête 🥳️
 - 🎨 [React-Native Skia - UI thread rendering demo](https://twitter.com/MateoGuzmanA/status/1604107348188057601)
 - 🐦 ["React-Native 0.70 has broken the 40% market share"️](https://twitter.com/Kelset/status/1604794763965669377)
 - 🐦 ["Did you know you can turn only some parts of the new architecture in React Native?"](https://twitter.com/Tr0zZe/status/1604854481979854848)
@@ -159,8 +183,11 @@ Nous cherchons des développeurs(euses) JavaScript passionnés. Vous interviendr
 - [Interop 2022: end of year update](https://web.dev/interop-2022-wrapup/)
 - [StackOverflow Survey 2022 Results](https://survey.stackoverflow.co/2022/)
 - [TypeScript Articles by Matt Pocock](https://www.totaltypescript.com/articles)
-- [Announcing SvelteKit 1.0](https://svelte.dev/blog/announcing-sveltekit-1.0)
+- [The Performance Inequality Gap, 2023](https://infrequently.org/2022/12/performance-baseline-2023/)
+- [SvelteKit 1.0](https://svelte.dev/blog/announcing-sveltekit-1.0)
 - [Deno 1.29](https://twitter.com/deno_land/status/1603509812079181824)
+- [ESLint 8.30](https://eslint.org/blog/2022/12/eslint-v8.30.0-released/)
+- [The Qase for Qwik: Love At First TTI](https://www.builder.io/blog/the-qase-for-qwik-love-at-first-tti)
 - [Vercel Edge Functions - Generally Available](https://vercel.com/blog/edge-functions-generally-available)
 - [Help choose the syntax for CSS Nesting](https://webkit.org/blog/13607/help-choose-from-options-for-css-nesting-syntax/)
 - [Why I'm Optimistic About JavaScript's Future](https://leerob.substack.com/p/why-im-optimistic-about-javascripts)
@@ -170,7 +197,6 @@ Nous cherchons des développeurs(euses) JavaScript passionnés. Vous interviendr
 - [Discussing tRPC & GraphQL with Theo Browne & Max Stoiber](https://www.youtube.com/watch?v=2-407yO8nEU)
 - [2022 a Golden Year as JavaScript Moves to the Edge](https://thenewstack.io/2022-a-golden-year-as-javascript-moves-to-the-edge/)
 - [Web Share API is a W3C Proposed Recommendation](https://www.w3.org/blog/news/archives/9773)
-- [ESLint 8.30](https://eslint.org/blog/2022/12/eslint-v8.30.0-released/)
 
 ---
 
