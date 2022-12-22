@@ -28,6 +28,46 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/ih",
+      "destination": "https://thisweekinreact.com/?utm_source=ih",
+      "permanent": true
+    },
+    {
+      "source": "/dev-comment",
+      "destination": "https://thisweekinreact.com/?utm_source=dev-comment",
+      "permanent": true
+    },
+    {
+      "source": "/linkedin-page",
+      "destination": "https://thisweekinreact.com/?utm_source=linkedin-page",
+      "permanent": true
+    },
+    {
+      "source": "/md",
+      "destination": "https://thisweekinreact.com/?utm_source=md",
+      "permanent": true
+    },
+    {
+      "source": "/find-your-newsletter",
+      "destination": "https://thisweekinreact.com/?utm_source=find-your-newsletter",
+      "permanent": true
+    },
+    {
+      "source": "/stackoverflow",
+      "destination": "https://thisweekinreact.com/?utm_source=stackoverflow",
+      "permanent": true
+    },
+    {
+      "source": "/dev-listing",
+      "destination": "https://thisweekinreact.com/?utm_source=dev-listing",
+      "permanent": true
+    },
+    {
+      "source": "/subscribe",
+      "destination": "https://thisweekinreact.com/?utm_source=subscribe",
+      "permanent": true
+    },
 
     {
       "source": "/fr/sponsor",
@@ -41,7 +81,6 @@
       "permanent": true
     },
 
-
     {
       "source": "/newsletter/220",
       "destination": "/newsletter/120",
@@ -52,7 +91,6 @@
       "destination": "/fr/newsletter/120",
       "permanent": true
     },
-
 
     {
       "source": "/testimonials",
