@@ -1,4 +1,5 @@
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
+import getAppendOnlySearch from "@site/src/utils/getAppendOnlySearch";
 
 const ParamsToRestore = [
   "rdt_cid",
@@ -18,14 +19,13 @@ function tryRestore() {
       return;
     }
 
-    const key = "appendOnlySearchParams";
-
-    const storageParams = new URLSearchParams(localStorage.getItem(key) ?? "");
+    const storageParams = new URLSearchParams(getAppendOnlySearch());
 
     const url = new URL(window.location.href);
     storageParams.forEach((value, key) => {
       if (ParamsToRestore.includes(key)) {
-        url.searchParams.set(key, value);
+        console.log("restore", key, value);
+        url.searchParams.set(key, url.searchParams.get(key) ?? value);
       }
     });
 

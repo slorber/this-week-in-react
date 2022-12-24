@@ -1,6 +1,7 @@
 import React, { ComponentProps, ReactNode, useEffect, useRef } from "react";
 import clsx from "clsx";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import getAppendOnlySearch from "@site/src/utils/getAppendOnlySearch";
 import styles from "./index.module.css";
 
 function addField(form: HTMLFormElement, name: string, value: string | null) {
@@ -12,34 +13,6 @@ function addField(form: HTMLFormElement, name: string, value: string | null) {
   input.setAttribute("name", `fields[${name}]`);
   input.setAttribute("value", value);
   form.appendChild(input);
-}
-
-function getAppendOnlySearch(): string {
-  try {
-    const key = "appendOnlySearchParams";
-
-    const storageParams = new URLSearchParams(localStorage.getItem(key) ?? "");
-    const currentParams = new URLSearchParams(window.location.search);
-
-    const appendOnlySearchParams = new URLSearchParams({
-      ...Object.fromEntries(storageParams),
-      ...Object.fromEntries(currentParams),
-    });
-    appendOnlySearchParams.sort();
-
-    const appendOnlySearch = appendOnlySearchParams
-      .toString()
-      // normalize
-      .toLowerCase();
-
-    localStorage.setItem(key, appendOnlySearch);
-
-    console.log("appendOnlySearch", appendOnlySearch);
-    return appendOnlySearch;
-  } catch (e) {
-    console.error("getAppendOnlySearch failure", e);
-    return "";
-  }
 }
 
 // TODO save values in a cookie/storage so that values are preserved when navigating?
