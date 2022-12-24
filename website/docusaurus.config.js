@@ -41,6 +41,10 @@ const config = {
 
   themes: ["@docusaurus/theme-live-codeblock"],
 
+  clientModules: [
+    require.resolve("./src/clientModules/restoreWorkflowQueryStringParams.ts"),
+  ],
+
   i18n: {
     defaultLocale: "en",
     locales: ["en", "fr"],
