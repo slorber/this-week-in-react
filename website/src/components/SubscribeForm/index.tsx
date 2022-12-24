@@ -21,10 +21,13 @@ function getAppendOnlySearch(): string {
     const storageParams = new URLSearchParams(localStorage.getItem(key) ?? "");
     const currentParams = new URLSearchParams(window.location.search);
 
-    const appendOnlySearch = new URLSearchParams({
+    const appendOnlySearchParams = new URLSearchParams({
       ...Object.fromEntries(storageParams),
       ...Object.fromEntries(currentParams),
-    })
+    });
+    appendOnlySearchParams.sort();
+
+    const appendOnlySearch = appendOnlySearchParams
       .toString()
       // normalize
       .toLowerCase();
@@ -51,10 +54,13 @@ function prepareFormHiddenElements(form: HTMLFormElement) {
     addField(form, "utm_content", searchParams.get("utm_content"));
     addField(form, "utm_term", searchParams.get("utm_term"));
 
+    addField(form, "qs_ad", searchParams.get("ad"));
     addField(form, "qs_params", appendOnlySearch);
-
-    addField(form, "qs_ref", searchParams.get("ref"));
-    addField(form, "qs_reference", searchParams.get("reference"));
+    addField(
+      form,
+      "qs_ref",
+      searchParams.get("ref") ?? searchParams.get("reference")
+    );
 
     addField(form, "document_referrer", document.referrer);
   } catch (e) {
