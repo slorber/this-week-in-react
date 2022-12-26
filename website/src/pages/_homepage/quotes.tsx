@@ -19,6 +19,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/wcandillon/status/1263825118557593600"
         handle="wcandillon"
+        github="wcandillon"
         name="William Candillon"
         job="React-Native animations expert - Youtuber"
       >
@@ -30,6 +31,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/threepointone/status/1493894062293794817"
         handle="threepointone"
+        github="threepointone"
         name="Sunil Pai"
         job="Engineer at Cloudflare - ex React core team"
       >
@@ -40,6 +42,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/kentcdodds/status/1389240652324474880"
         handle="kentcdodds"
+        github="kentcdodds"
         name="Kent C. Dodds"
         job="Developer Experience at Remix - React expert"
       >
@@ -50,6 +53,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/sebmarkbage/status/1557365971182145543"
         handle="sebmarkbage"
+        github="sebmarkbage"
         name="Sebastian Markbåge"
         job="Engineer at Vercel - React core team"
       >
@@ -61,6 +65,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/yangshunz/status/1511641180907323393"
         handle="yangshunz"
+        github="yangshun"
         name="Yangshun Tay"
         job="Staff Front End Engineer at Meta"
       >
@@ -71,6 +76,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/NoriSte/status/1448145180461355008"
         handle="NoriSte"
+        github="NoriSte"
         name="Stefano Magni"
         job="Front-end Tech Lead at Hasura"
       >
@@ -81,6 +87,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/ericclemmons/status/1519304291609198592"
         handle="ericclemmons"
+        github="ericclemmons"
         name="Eric Clemmons"
         job="Staff Engineer at Stripe"
       >
@@ -92,6 +99,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/swmansion/status/1496225215730397187"
         handle="swmansion"
+        github="software-mansion"
         name="Software Mansion"
         job="React-Native & Expo experts"
       >
@@ -103,6 +111,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/amanhimself/status/1450753646082150401"
         handle="amanhimself"
+        github="amandeepmittal"
         name="Aman Mittal"
         job="Developer & Tech Writer"
       >
@@ -113,6 +122,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/Jonsamp/status/1471222654338314240"
         handle="Jonsamp"
+        github="Jonsamp"
         name="Jon Samp"
         job="Software Developer at Expo"
       >
@@ -123,6 +133,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/johnny_reilly/status/1477359594087321600"
         handle="johnny_reilly"
+        github="johnnyreilly"
         name="John Reilly"
         job="Group Principal Engineer at Investec"
       >
@@ -133,6 +144,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/mcavaliere/status/1371512182178000897"
         handle="mcavaliere"
+        github="mcavaliere"
         name="Mike Cavaliere"
         job="Senior Engineering Strategist at Echobind"
       >
@@ -144,6 +156,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/ane_naiz/status/1442606436207497216"
         handle="ane_naiz"
+        github="anediaz"
         name="Ane Diaz"
         job="Software Engineer at Datadog"
       >
@@ -154,6 +167,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/elijahmanor/status/1528748108330504193"
         handle="elijahmanor"
+        github="elijahmanor"
         name="Elijah Manor"
         job="Senior Software Engineer at Planview"
       >
@@ -164,6 +178,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/asidorenko_/status/1479029650496102402"
         handle="asidorenko_"
+        github="SidKH"
         name="Alex Sidorenko"
         job="Senior Software Engineer - Blogger"
       >
@@ -175,6 +190,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/beaussan/status/1488578333851930627"
         handle="beaussan"
+        github="beaussan"
         name="Nicolas Beaussart"
         job="Principal Engineer at Hasura"
       >
@@ -185,6 +201,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/wbroek/status/1479017874798829569"
         handle="wbroek"
+        github="wbroek"
         name="Wouter Broek"
         job="Software Development Manager at Amazon Web Services"
       >
@@ -195,6 +212,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/fredmaiaarantes/status/1545399680783323136"
         handle="fredmaiaarantes"
+        github="fredmaiaarantes"
         name="Fred Maia Arantes"
         job="CEO at MeteorJS"
       >
@@ -205,6 +223,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/ndubien/status/1445627346275373056"
         handle="ndubien"
+        github="dubzzz"
         name="Nicolas Dubien"
         job="Software Engineer at Pigment"
       >
@@ -215,6 +234,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/jamonholmgren/status/1488926895450198017"
         handle="jamonholmgren"
+        github="jamonholmgren"
         name="Jamon Holmgren"
         job="Founder/CTO of Infinite Red"
       >
@@ -225,6 +245,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/frankdilo/status/1391828520922279936"
         handle="frankdilo"
+        github="frankdilo"
         name="Francesco Di Lorenzo"
         job="Co-founder of Mailbrew & Typefully"
       >
@@ -235,6 +256,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/ElaziziYoussouf/status/1338448625677066240"
         handle="ElaziziYoussouf"
+        github="yjose"
         name="Youssouf El Azizi"
         job="Mobile Tribe lead at OBytes"
       >
@@ -245,6 +267,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/__marcin_/status/1480988303130304526"
         handle="__marcin_"
+        github="mobily"
         name="Marcin Dziewulski"
         job="Senior Software Engineer at Intent"
       >
@@ -255,6 +278,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/Danny_H_W/status/1468285893203144713"
         handle="Danny_H_W"
+        github="dannyhw"
         name="Daniel Williams"
         job="Senior Frontend developer at Coverflex"
       >
@@ -265,6 +289,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/Thierryskoda/status/1440272076800094211"
         handle="thskod"
+        github="thierryskoda"
         name="Thierry Skoda"
         job="Developer at Hack House Web3"
       >
@@ -275,6 +300,7 @@ export const AllQuotes = {
       <Quote
         url="https://www.linkedin.com/feed/update/urn:li:activity:6892034593856577536/"
         handle="dev_bogdan"
+        github="bogadrian"
         name="Adrian Bogdan"
         job="Software Engineer at Moojo"
       >
@@ -288,6 +314,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/xavier_seignard/status/1511793034979168261"
         handle="xavier_seignard"
+        github="xseignard"
         name="Xavier Seignard"
         job="Senior Software Engineer chez Alan"
       >
@@ -298,6 +325,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/lauthieb/status/1498725922127626250"
         handle="lauthieb"
+        github="lauthieb"
         name="Laurent Thiebault"
         job="Engineering Manager chez Decathlon"
       >
@@ -308,6 +336,7 @@ export const AllQuotes = {
       <Quote
         url="https://www.linkedin.com/feed/update/urn:li:activity:6856274186218876928/"
         handle="lereacteurIO"
+        github="lereacteur"
         name="Xavier Colombel"
         job="CEO chez Le Reacteur Coding Bootcamp"
         profileUrl="https://github.com/XavierColombel.png"
@@ -318,7 +347,8 @@ export const AllQuotes = {
     dbuchet: (
       <Quote
         url="https://www.linkedin.com/feed/update/urn:li:activity:6905211472721317888/"
-        handle={null}
+        handle="hichtibidi"
+        github="dbuchet"
         avatarUrl="https://github.com/dbuchet.png"
         name="Damien Buchet"
         job="Tech Lead chez Wild Code School"
@@ -331,6 +361,7 @@ export const AllQuotes = {
       <Quote
         url="https://www.linkedin.com/feed/update/urn:li:activity:6894694552519659523/"
         handle={null}
+        github="sylvain-pauly"
         avatarUrl="https://github.com/sylvain-pauly.png"
         name="Sylvain Pauly"
         job="Senior Front-end Software Engineer chez Yousign"
@@ -343,6 +374,7 @@ export const AllQuotes = {
       <Quote
         url="https://www.linkedin.com/feed/update/urn:li:activity:6899716385652514816/"
         handle={null}
+        github={null}
         name="Pierre V."
         job="Master Tech Lead chez frog France (CapGemini)"
         profileUrl="https://www.linkedin.com/in/pierver/"
@@ -354,6 +386,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/alexsoyes/status/1531289336922001408"
         handle="alexsoyes"
+        github="alexsoyes"
         name="Alexandre Soyer"
         job="Freelance - Bloggeur sur alexsoyes.com"
       >
@@ -364,6 +397,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/arkerone/status/1528776694567473152"
         handle="arkerone"
+        github="arkerone"
         name="Axel Shaita"
         job="Tech lead - Bloggeur sur codeheroes.fr"
       >
@@ -374,6 +408,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/Console_buche/status/1488598916396421124"
         handle="Console_buche"
+        github="Console-buche"
         name="Sebastien Dubourg"
         job="Développeur Frontend chez TenableSecurity"
       >
@@ -384,6 +419,7 @@ export const AllQuotes = {
       <Quote
         url="https://www.linkedin.com/feed/update/urn:li:activity:6899717336786354176/"
         handle={null}
+        github="ElenabMA"
         name="Elena Battisti"
         job="Développeuse Web Front-End chez Meilleurs Agents "
         profileUrl="https://www.linkedin.com/in/elenabattisti/"
@@ -394,7 +430,8 @@ export const AllQuotes = {
     LeMathisBarre: (
       <Quote
         url="https://twitter.com/LeMathisBarre/status/1472198211204890624"
-        handle="LeMathisBarre"
+        handle="TheMathisBarre"
+        github="MathisBarre"
         name="Mathis Barré"
         job="Développeur React et React Native chez Beapp"
       >
@@ -405,6 +442,7 @@ export const AllQuotes = {
       <Quote
         url="https://twitter.com/_smontlouis/status/1524429506190221313"
         handle="_smontlouis"
+        github="smontlouis"
         name="Stéphane Montlouis"
         job="Lead front-end developer chez EMCITV"
       >

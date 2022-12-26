@@ -16,6 +16,7 @@ export interface Props {
   className?: string;
   url: string;
   handle: string | null;
+  github: string | null;
   name: string;
   job: string;
   children: ReactNode;
@@ -25,25 +26,36 @@ export interface Props {
   profileUrl?: string;
 }
 
-const fallbackAvatar = "/svg/noAvatar.svg";
+const fallbackAvatarPath = "/svg/noAvatar.svg";
 
 export default function TweetQuote({
   className,
   url,
   handle,
+  github,
   name,
   job,
   children,
   ...props
 }: Props): JSX.Element {
   const { withBaseUrl } = useBaseUrlUtils();
+
+  const githubAvatar = github ? `https://github.com/${github}.png` : undefined;
+  const fallbackAvatar = githubAvatar ?? withBaseUrl(fallbackAvatarPath);
   const avatarUrl =
     props.avatarUrl ??
     (handle
-      ? `https://unavatar.io/twitter/${handle}`
-      : withBaseUrl(fallbackAvatar));
+      ? `https://unavatar.io/twitter/${handle}?fallback=${fallbackAvatar}`
+      : fallbackAvatar);
+
   const profileUrl =
-    props.profileUrl ?? (handle ? `https://twitter.com/${handle}` : null);
+    props.profileUrl ??
+    (handle
+      ? `https://twitter.com/${handle}`
+      : github
+      ? `https://github.com/${github}`
+      : null);
+
   if (profileUrl === null) {
     throw new Error(`no profile url for ${name}`);
   }
