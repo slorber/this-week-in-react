@@ -1,6 +1,6 @@
 ---
 slug: /130
-title: "React Hebdo #130: ..."
+title: "React Hebdo #130: Next.js, callback ref, Zod, React-Hook-Form, mdxjs-rs, Tamagui, Skia, Shopify, Solid, Bun..."
 authors: [slorber]
 date: 01-03-2023
 image: /img/TWIR_POST.png
@@ -41,35 +41,47 @@ Commencez ici: [ReactBricks.com](https://reactbricks.com/?utm_source=this_week_i
 
 ## ⚛️ React {#react}
 
-- 📦 [Next.js 13.1](https://nextjs.org/blog/next-13-1) + https://twitter.com/martpie_/status/1605951856928096256 + https://twitter.com/vercel/status/1605953909822033922
+[![Next.js 13.1](/emails/issues/130/nextjs-13.1.jpg)](https://nextjs.org/blog/next-13-1)
+
+**[Next.js 13.1](https://nextjs.org/blog/next-13-1)**
+
+Une version mineure avec pas mal d'améliorations:
+
+- app directory
+- TypeScript plugin
+- Module transpilation
+- Turbopack et benchmarks
+- SWC plugin pour transformer les imports
+- Edge runtime stable pour les API routes et middleware avancé
 
 ---
 
 - 📖 Beta docs: [useEffectEvent](https://beta.reactjs.org/learn/separating-events-from-effects#declaring-an-effect-event)
 - 📖 Redux docs: [Side Effects Approaches](https://twitter.com/acemarke/status/1607869290715222016)
+- 📜 [React ref Callback Use–Cases](https://julesblom.com/writing/ref-callback-use-cases): article très complet sur les callback refs qui permettent de déclencher des side-effects associés à un élément DOM. Jules présente de nombreux cas d'utilisation: portals, mesurer un élément DOM...
+- 📜 [The Ultimate Form Abstraction](https://www.brendonovich.dev/blog/the-ultimate-form-abstraction): utilise React-Hook-Form avec un résolver Zod. Utiliser la toute nouvelle feature Zod: type coercion pour les inputs number. Construit progressivement une abstraction de formulaire avec une bonne DX et typesafe.
+- 📜 [A React Developer’s First Take on Solid](https://jakelazaroff.com/words/a-react-developers-first-take-on-solid/): une comparaison intéressante entre Solid et React, puis SolidStart et Next.js/Remix. Jake liste aussi les détails de Solid qu'il a moins aimé.
+- 📜 [A Review of UltraJS, Mixing React and Deno in a Single Framework](https://blog.bitsrc.io/a-review-of-ultrajs-mixing-react-and-deno-in-a-single-framework-8e4dd41ea076): belle présentation d'Ultra, le framework React pour Deno qui pousse les dernières innovations en avant (ES sans bundling, ImportMaps...).
+- 📜 [Turbocharging Next.js: How Remote Caching decreased publish times by 80%](https://vercel.com/blog/turborepo-remote-cache-nextjs-publish-times-80-percent): retour d'expérience de Vercel qui a utilisé Turborepo et Vercel Remote Caching pour réduire les temps de build de Next.js, en particulier du build natif de SWC.
+- 📜 [Hello React, Goodbye useEffect (I Hope)](https://blog.imam.dev/post/hello-react-18-goodbye-useffect): article bien documenté sur useEffect, sans doute trop utilisé dans nos codebases. C'est avant tout un outil de synchronisation. Quelques incohérences, mais mérite d'être lu.
+- 📜 [Simplifying React Three Fiber with Entity Component System](https://douges.dev/blog/simplifying-r3f-with-ecs)
+- 📜 [Everything you need to know about Concurrent React (with a little bit of Suspense)](https://blog.codeminer42.com/everything-you-need-to-know-about-concurrent-react-with-a-little-bit-of-suspense/)
 - 🤔 [Bun + new JSX 2.0 Syntax](https://twitter.com/jarredsumner/status/1609025481684422659): support de la syntaxe `<User {user} />)`. Une nouvelle qui ne plait pas à tout le monde car la spec de JSX 2.0 n'est pas finalisée.
 - 👀 [Remix - CSS Modules support](https://github.com/remix-run/remix/pull/4852): PR mergée, cela devrait arriver prochainement
-- 📜 [A Review of UltraJS, Mixing React and Deno in a Single Framework](https://blog.bitsrc.io/a-review-of-ultrajs-mixing-react-and-deno-in-a-single-framework-8e4dd41ea076)
-- 📜 [Turbocharging Next.js: How Remote Caching decreased publish times by 80%](https://vercel.com/blog/turborepo-remote-cache-nextjs-publish-times-80-percent)
-- 📜 [Hello React, Goodbye useEffect (I Hope)](https://blog.imam.dev/post/hello-react-18-goodbye-useffect)
-- 📜 [Everything you need to know about Concurrent React (with a little bit of Suspense)](https://blog.codeminer42.com/everything-you-need-to-know-about-concurrent-react-with-a-little-bit-of-suspense/)
-- 📜 [Simplifying React Three Fiber with Entity Component System](https://douges.dev/blog/simplifying-r3f-with-ecs)
-- 📜 [React ref Callback Use–Cases](https://julesblom.com/writing/ref-callback-use-cases) + https://twitter.com/Mega_Jules/status/1609903516486873089
-- 📜 [The Ultimate Form Abstraction](https://www.brendonovich.dev/blog/the-ultimate-form-abstraction)
-- 📜 [A React Developer’s First Take on Solid](https://jakelazaroff.com/words/a-react-developers-first-take-on-solid/)
-- 📦 [mdxjs-rs](https://github.com/wooorm/mdxjs-rs): implémentation de MDX en Rust👌
-- 📦 [react-ts-form](https://github.com/iway1/react-ts-form): nouvelle lib de formulaires basée Zod et React-Hook-Form
+- 📦 [mdxjs-rs](https://github.com/wooorm/mdxjs-rs): implémentation de MDX en Rust 👌
 - 📦 [react-wrap-balancer](https://github.com/shuding/react-wrap-balancer): un composant pour "équilibrer" le texte de vos titres sur plusieurs lignes (impossible en CSS). JavaScript inliné avec support SSR et sans layout shifts.
-- 📦 [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels) ([demo](https://twitter.com/brian_d_vaughn/status/1605751430542925827))
-- 📦 [gltfjsx v6](https://twitter.com/0xca0a/status/1605566666066124802)
+- 📦 [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels) ([demo](https://twitter.com/brian_d_vaughn/status/1605751430542925827)): une nouvelle lib de Brian Vaughn qui permet de resizer les elements d'un layout.
+- 📦 [gltfjsx v6](https://twitter.com/0xca0a/status/1605566666066124802): des optimisations sur le loader de modèles 3D GLTF.
+- 📦 [react-ts-form](https://github.com/iway1/react-ts-form): lib de formulaires basée Zod et React-Hook-Form
 - 📦 [Gatsby 5.3](https://www.gatsbyjs.com/docs/reference/release-notes/v5.3/)
 - 📊 [Mobile Performance of Next.js Sites](https://calendar.perfplanet.com/2022/mobile-performance-of-next-js-sites/)
 - 🎥 [3 React Mistakes, 1 App Killer](https://www.youtube.com/watch?v=QuLfCUh-iwI)
 - 🎥 [Learn with Jason - TanStack Query v4 with Dominik Dorfmeister](https://www.learnwithjason.dev/tanstack-query-v4)
 - 🎥 [Learn How I Built a Twitter UI with TypeScript, Qwik, SolidJS, and React in Mitosis](https://www.youtube.com/watch?v=07UW3REM6k8)
 - 🎥 [Remotion - The Rust journey begins](https://twitter.com/JNYBGR/status/1610273808820363265)
-- 👥 [Storybook Day user conference](https://storybook.js.org/blog/storybook-day/): conférence en ligne le 14 Mars pour le lancement de Storybook 7.0
-  <SubscribeFormEmbed />
+- 👥 [Storybook Day user conference](https://storybook.js.org/blog/storybook-day/): conférence en ligne le 14 Mars, lancement de Storybook 7.0
+
+<SubscribeFormEmbed />
 
 ---
 
@@ -104,6 +116,8 @@ Tamagui sort officiellement de beta, et permet de faciliter la création de proj
 Tamagui est un projet innovant, qui pourrait avoir un intérêt même si on ne vise qu'une seule plateforme. Le support des features React 18 comme Server Components, Concurrent Mode est déjà la. A tester!
 
 ---
+
+[![React Native Skia: A Year in Review and a Look Ahead](/emails/issues/130/skia.jpg)](https://shopify.engineering/react-native-skia-2022)
 
 **[React Native Skia: A Year in Review and a Look Ahead](https://shopify.engineering/react-native-skia-2022)**
 
