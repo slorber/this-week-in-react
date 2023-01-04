@@ -1,6 +1,6 @@
 ---
 slug: /130
-title: "This Week In React #130: Next.js, callback ref, Zod, React-Hook-Form, mdxjs-rs, Tamagui, Skia, Shopify, Solid, Bun..."
+title: "This Week In React #130: Next.js, callback ref, Zod, Redux, React-Hook-Form, Redux, mdxjs-rs, Tamagui, Skia, Shopify, Solid, Bun..."
 authors: [slorber]
 date: 01-03-2023
 image: /img/TWIR_POST.png
@@ -64,8 +64,8 @@ A new minor version with a lot of improvements, including:
 
 ---
 
-- 📖 Beta docs: [useEffectEvent](https://beta.reactjs.org/learn/separating-events-from-effects#declaring-an-effect-event)
-- 📖 Redux docs: [Side Effects Approaches](https://twitter.com/acemarke/status/1607869290715222016), thunks, sagas, observables, listeners, RTQ Query...
+- 📖 Beta docs [useEffectEvent](https://beta.reactjs.org/learn/separating-events-from-effects#declaring-an-effect-event): some updated doc for the newly renamed React hook. The [new site is coming in January](https://twitter.com/dan_abramov/status/1606646280649904131)!
+- 📖 Redux docs [Side Effects Approaches](https://twitter.com/acemarke/status/1607869290715222016): new docs page with recommendations, and comparing thunks, sagas, observables, listeners, RTQ Query...
 - 📜 [React ref Callback Use–Cases](https://julesblom.com/writing/ref-callback-use-cases): complete article about callback refs which allow to trigger side effects related to DOM elements. Jules presents many use cases: portals, measuring a DOM element...
 - 📜 [The Ultimate Form Abstraction](https://www.brendonovich.dev/blog/the-ultimate-form-abstraction): explains how to use React-Hook-Form with a Zod resolver. Leverage the brand new Zod type-coercion feature for number inputs. Gradually build a great form abstraction with a good DX and typesafety.
 - 📜 [A React Developer’s First Take on Solid](https://jakelazaroff.com/words/a-react-developers-first-take-on-solid/): an interesting comparison between Solid and React, then SolidStart and Next.js/Remix. Jake also lists things he doesn't like in Solid.
@@ -135,7 +135,7 @@ William Candillon makes a nice retrospective of the React-Native-Skia project. A
 
 - 📊 [State of React-Native 2022](https://twitter.com/swmansion/status/1605957585684799493): the survey is open. I'll send a dedicated email soon because it's important that you answer it 😜
 - 📜 [First-class Support for TypeScript](https://reactnative.dev/blog/2023/01/03/typescript-first): React-Native 0.71 should be released very soon with full TypeScript support by default: type definitions, documentation and starter template.
-- 📜 [Shopify - Migrating our Largest Mobile App to React Native](https://shopify.engineering/migrating-our-largest-mobile-app-to-react-native): Shopifie is in the process of incrementally migrating their main app to React-Native. It's a 6 years old app with more than 300 screens, with no particular technical debt. A very interesting feedback on this ongoing migration (still in the beginning, around 10% done). The first approach (new features in React-Native) had not worked. They finally opted to convert the root of the app first.
+- 📜 [Shopify - Migrating our Largest Mobile App to React Native](https://shopify.engineering/migrating-our-largest-mobile-app-to-react-native): Shopify is in the process of incrementally migrating their main app to React-Native. It's a 6 years old app with more than 300 screens, with no particular technical debt. A very interesting feedback on this ongoing migration (still in the beginning, around 10% done). The first approach (new features in React-Native) had not worked. They finally opted to convert the root of the app first.
 - 📜 [Implementing CSS Style Inheritance in React Native](https://www.builder.io/blog/implementing-css-style-inheritance-in-react-native): explains how to reproduce the CSS cascade in React-Native, a CSS behavior not implemented for good reasons. This is especially useful for integration with a CMS, which often assumes that you can apply text styling to a parent View, like it's possible on the web.
 - 📜 [Google Drive auto-backup for React Native on Android](https://dev.to/retyui/google-drive-auto-backup-for-react-native-on-android-254a): to persist the async storage (or whatever) from one phone to another.
 - 🎥 [How to use Bluetooth Low Energy ( BLE ) Beacons with React-Native](https://www.youtube.com/watch?v=1hYM_sdQcBU)
