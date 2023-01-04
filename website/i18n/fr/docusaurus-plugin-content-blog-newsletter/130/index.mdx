@@ -41,9 +41,30 @@ Commencez ici: [ReactBricks.com](https://reactbricks.com/?utm_source=this_week_i
 
 ## ⚛️ React {#react}
 
-<Todo />
-
-<SubscribeFormEmbed />
+- 📖 Beta docs: [useEffectEvent](https://beta.reactjs.org/learn/separating-events-from-effects#declaring-an-effect-event)
+- 📖 Redux docs: [Side Effects Approaches](https://twitter.com/acemarke/status/1607869290715222016)
+- 🤔 [Bun + new JSX 2.0 Syntax](https://twitter.com/jarredsumner/status/1609025481684422659): support de la syntaxe `<User {user} />)`. Une nouvelle qui ne plait pas à tout le monde car la spec de JSX 2.0 n'est pas finalisée.
+- 📜 [A Review of UltraJS, Mixing React and Deno in a Single Framework](https://blog.bitsrc.io/a-review-of-ultrajs-mixing-react-and-deno-in-a-single-framework-8e4dd41ea076)
+- 📜 [Turbocharging Next.js: How Remote Caching decreased publish times by 80%](https://vercel.com/blog/turborepo-remote-cache-nextjs-publish-times-80-percent)
+- 📜 [Hello React, Goodbye useEffect (I Hope)](https://blog.imam.dev/post/hello-react-18-goodbye-useffect)
+- 📜 [Everything you need to know about Concurrent React (with a little bit of Suspense)](https://blog.codeminer42.com/everything-you-need-to-know-about-concurrent-react-with-a-little-bit-of-suspense/)
+- 📜 [Simplifying React Three Fiber with Entity Component System](https://douges.dev/blog/simplifying-r3f-with-ecs)
+- 📜 [React ref Callback Use–Cases](https://julesblom.com/writing/ref-callback-use-cases) + https://twitter.com/Mega_Jules/status/1609903516486873089
+- 📜 [The Ultimate Form Abstraction](https://www.brendonovich.dev/blog/the-ultimate-form-abstraction)
+- 📜 [A React Developer’s First Take on Solid](https://jakelazaroff.com/words/a-react-developers-first-take-on-solid/)
+- 📦 [Next.js 13.1](https://nextjs.org/blog/next-13-1) + https://twitter.com/martpie_/status/1605951856928096256 + https://twitter.com/vercel/status/1605953909822033922
+- 📦 [mdxjs-rs](https://github.com/wooorm/mdxjs-rs): implémentation de MDX en Rust👌
+- 📦 [react-ts-form](https://github.com/iway1/react-ts-form): nouvelle lib de formulaires basée Zod et React-Hook-Form
+- 📦 [react-wrap-balancer](https://github.com/shuding/react-wrap-balancer): un composant pour "équilibrer" le texte de vos titres sur plusieurs lignes (impossible en CSS). JavaScript inliné avec support SSR et sans layout shifts.
+- 📦 [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels) ([demo](https://twitter.com/brian_d_vaughn/status/1605751430542925827))
+- 📦 [gltfjsx v6](https://twitter.com/0xca0a/status/1605566666066124802)
+- 📦 [Gatsby 5.3](https://www.gatsbyjs.com/docs/reference/release-notes/v5.3/)
+- 📊 [Mobile Performance of Next.js Sites](https://calendar.perfplanet.com/2022/mobile-performance-of-next-js-sites/)
+- 🎥 [3 React Mistakes, 1 App Killer](https://www.youtube.com/watch?v=QuLfCUh-iwI)
+- 🎥 [Learn with Jason - TanStack Query v4 with Dominik Dorfmeister](https://www.learnwithjason.dev/tanstack-query-v4)
+- 🎥 [Learn How I Built a Twitter UI with TypeScript, Qwik, SolidJS, and React in Mitosis](https://www.youtube.com/watch?v=07UW3REM6k8)
+- 👥 [Storybook Day user conference](https://storybook.js.org/blog/storybook-day/): conférence en ligne le 14 Mars pour le lancement de Storybook 7.0
+  <SubscribeFormEmbed />
 
 ---
 
@@ -65,7 +86,32 @@ Une fois le questionnaire complété, vous obtiendrez un accès gratuit à notre
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Tamagui](/emails/issues/130/tamagui.jpg)](https://tamagui.dev/blog/version-one)
+
+**[Tamagui 1.0](https://tamagui.dev/blog/version-one)**
+
+Tamagui sort officiellement de beta, et permet de faciliter la création de projets cross-platform (web et mobile) basés sur une même codebase en React, sans pour autant perdre en DX ou en performances. Le projet est divisé en 3 parties:
+
+- Tamagui Core: un runtime CSS-in-JS au dessus de React-Native et [React-Native-Web-Lite](https://www.npmjs.com/package/react-native-web-lite)
+- Tamagui Static: un compiler basé sur Babel et une pré-évaluation Node qui supporte le "view flattening" et l'extraction de styles en atomic CSS
+- Tamagui UI: une librairie de composants et hooks React pour faciliter l'utilisation
+
+Tamagui est un projet innovant, qui pourrait avoir un intérêt même si on ne vise qu'une seule plateforme. Le support des features React 18 comme Server Components, Concurrent Mode est déjà la. A tester!
+
+---
+
+**[React Native Skia: A Year in Review and a Look Ahead](https://shopify.engineering/react-native-skia-2022)**
+
+William Candillon fait une belle rétrospective du projet React-Native-Skia. Pour rappel, [Skia](https://skia.org/) est le moteur 2D de Google, utilisé par Chrome, Android, Flutter... Ils ont amélioré significativement les performances avec le UI Thread Rendering et une nouvelle API déclarative SkiaDOM. La librairie est flexible et peut être étendue (Skottie, VisionCamera frame processing). En 2023, on peut s'attendre à voir arriver les animations via worklets, une intégration plus performante avec Reanimated, ou encore le layout de texte.
+
+---
+
+- 📊 [State of React-Native 2022](https://twitter.com/swmansion/status/1605957585684799493): le sondage est ouvert.
+- 📜 [First-class Support for TypeScript](https://reactnative.dev/blog/2023/01/03/typescript-first): React-Native 0.71 devrait sortir très prochainement avec un support complet de TypeScript par défaut: type definitions, documentation et starter template.
+- 📜 [Shopify - Migrating our Largest Mobile App to React Native](https://shopify.engineering/migrating-our-largest-mobile-app-to-react-native): Shopifie est en train de migrer incrémentalement son app principale vers React-Native. Il s'agit d'une app vieille de 6 ans et de plus de 300 écrans, qui n'a pas particulièrement de dette technique. Un retour d'expérience très intéressant sur cette migration en cours (environ 10%). La première approche (nouvelles features en React-Native) n'avait pas fonctionné. Ils ont finalement opté pour convertir en premier la racine de l'app.
+- 📜 [Implementing CSS Style Inheritance in React Native](https://www.builder.io/blog/implementing-css-style-inheritance-in-react-native): un article intéressant qui explique comment reproduire la cascade CSS en React-Native. C'est particulièrement utile pour une intégration avec un CMS, qui assume souvent qu'on peut appliquer le style du texte sur une View parente.
+- 📜 [Google Drive auto-backup for React Native on Android](https://dev.to/retyui/google-drive-auto-backup-for-react-native-on-android-254a): pour persister le async storage (ou autre) d'un téléphone à l'autre 🤔
+- 🎥 [How to use Bluetooth Low Energy ( BLE ) Beacons with React-Native](https://www.youtube.com/watch?v=1hYM_sdQcBU)
 
 ---
 
@@ -81,22 +127,24 @@ Nous cherchons des développeurs(euses) JavaScript passionnés. Vous interviendr
 
 ## 🇫🇷 En français {#fr}
 
-Pas de contenu cette semaine 😅
+- 🎥 [3 React Clean Code Concepts à Suivre](https://www.youtube.com/watch?v=w6vFSOsQx7k)
 
 💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
-
-<Todo />
 
 ---
 
 ## 🔀 Autre {#other}
 
-<Todo />
+- [JavaScript Frameworks - Heading into 2023](https://dev.to/this-is-learning/javascript-frameworks-heading-into-2023-nln)
+- [2022 CSS Updates](https://12daysofweb.dev/2022/2022-css-updates/)
+- [Nx 15.4 — Vite 4 Support, a new Nx Watch Command, and more!](https://blog.nrwl.io/nx-15-4-vite-4-support-a-new-nx-watch-command-and-more-77cbf6c9a711)
+- [Jamstack Trends: How will we develop in 2023?](https://www.netlify.com/blog/jamstack-trend-predictions-2023/)
+- [How We Improved monday.com Board’s Scroll Performance](https://engineering.monday.com/how-we-improved-monday-com-boards-scroll-performance-a-case-study-on-boosting-fps-by-50/)
+- [Bun 0.4.0](https://twitter.com/jarredsumner/status/1606345309050634240)
+- [bunx - 100x faster than npx](https://twitter.com/jarredsumner/status/1606163655527059458)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/todo)
+[![alt](/emails/issues/130/meme.jpg)](https://twitter.com/sebastienlorber/status/1610243388174991360)
