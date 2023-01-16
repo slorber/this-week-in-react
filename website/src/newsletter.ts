@@ -2,7 +2,7 @@
 export const sponsorshipCalendarLink = "https://thisweekinreact.com/calendar";
 
 // TODO automate this!
-export const lastIssueLink = "/newsletter/115";
+export const lastIssueLink = "/newsletter/130";
 
 export type NewsletterSegment = {
   name: string;
@@ -21,14 +21,14 @@ export type Newsletter = {
 
 const en: NewsletterSegment = {
   name: "English",
-  subscribersCount: 11473,
+  subscribersCount: 12541,
   openRate: 58,
   clickRate: 14,
 };
 
 const fr: NewsletterSegment = {
   name: "French",
-  subscribersCount: 3283,
+  subscribersCount: 3318,
   openRate: 56,
   clickRate: 14,
 };
