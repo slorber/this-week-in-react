@@ -1,15 +1,22 @@
 ---
 slug: /131
-title: "This Week In React #131: ..."
+title: "This Week In React #131: useReducer, Controlled Inputs, Async React, DevTools, React-Query, Storybook, Remix, React-Native, Expo..."
 authors: [slorber]
 date: 01-17-2023
 image: /img/TWIR_POST.png
-unlisted: true
 ---
 
 Hi everyone!
 
-<Todo />
+We're gradually coming out of the holiday season. There are quite a few blog posts; but no major announcements apart from React-Native 0.71.
+
+I'm back from a ski vacation and back on the weekly newsletter schedule. I didn't follow everything but I think the Twitter drama of the week was about Tailwind? 😅
+
+Only 2 days left to take the [State of React-Native survey](https://survey.stateofreactnative.com/) 🙏
+
+Je vous propose aussi de découvrir la nouvelle [newsletter Web Game Dev](https://www.webgamedev.com/newsletter). Elle fera sans doute un meilleur travail que moi pour vous tenir informer sur le dev web créatif, y compris tout ce qui touche à React-Three-Fiber.
+
+For creative web devs interested in React-Three-Fiber, subscribe to the [Web Game Dev](https://www.webgamedev.com/newsletter) newsletter: you will find more info than here.
 
 <!-- truncate -->
 
@@ -41,7 +48,54 @@ Get started here: [ReactBricks.com](https://reactbricks.com/?utm_source=this_wee
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![useReducer](/emails/issues/131/useReducer.jpg)](https://www.builder.io/blog/use-reducer)
+
+**[A Cure for useState Hell](https://www.builder.io/blog/use-reducer)**
+
+Proposes to replace several `useState` with a `useReducer` with a single action. He explains the advantages, like the possibility to make sure the state is consistent, or to migrate later to a reducer with several actions. An interesting pattern to know. My opinion: it is quite possible to get similar benefits by using a single `useState` with a single object and a custom hook. `useState` or `useReducer` should be an implementation detail.
+
+---
+
+[![useReducer](/emails/issues/131/react-query-ts.jpg)](https://tkdodo.eu/blog/type-safe-react-query)
+
+**[Type-safe React Query](https://tkdodo.eu/blog/type-safe-react-query)**
+
+With TypeScript, you'd rather not fool yourself. Can we trust our backend to return the right payload. Dominik suggests combining React-Query with Zod. With inference, it is no longer necessary to force a type with `as` or generics. We can use tRPC or Zodios in a fullstack environment when the backend and frontend are in the same monorepo.
+
+---
+
+- 📜 [Data Binding in React](https://www.joshwcomeau.com/react/data-binding/): new interactive article by Josh Comeau on controlled inputs in React, including the subtleties to know about each type of input, or the use of ids for accessibility.
+- 📜 [Async React with NextJS 13](https://swizec.com/blog/async-react-with-nextjs-13/): use of async Server Components in a Next.js 13 app, covering many interesting details like error boundaries, fetch extended by Next.js, React cache...
+- 📜 [How to debounce and throttle in React without losing your mind](https://www.developerway.com/posts/debouncing-in-react): highlights that it is not so simple to implement debouncing in React: unstable debounced function, memoization, stale closure...
+- 📜 [Future of Storybook in 2023](https://storybook.js.org/blog/future-of-storybook-in-2023/): a 2022 retrospective and what to expect in 2023: Storybook 7.0, performance, Turbopack support, embeds, testing, improved React-Native support.
+- 📜 [Why You Should Use a React Framework](https://leerob.substack.com/p/react-frameworks): Lee Robinson gives different reasons to use a framework, to dedicate more time to the product. React has evolved, and it is no longer just a library, but also an architecture, a community and an ecosystem.
+- 📜 [Excalidraw - Rethinking the Component API](https://blog.excalidraw.com/redesigning-editor-api/): explains some React design decisions for the Excalidraw editor that remove the use of render props and replaces it with React.Children, a deprecated API.
+- 📜 [Storybook Ecosystem CI](https://storybook.js.org/blog/storybook-ecosystem-ci/): new system that allows to detect in advance regressions linked to minor upgrades of transitive dependencies.
+- 📜 [How We Rebuilt React DevTools with Replay Routines](https://blog.replay.io/how-we-rebuilt-react-devtools-with-replay-routines): Mark Erikson goes in depth on how React DevTools work, and how the new integration with the Replay time-travel debugger works.
+- 📜 [Optimizing React performance without refs and memo](https://alexsidorenko.com/blog/react-optimize-rerenders-without-refs-memo/): proposes to optimize React re-renders by isolating code in a smaller component.
+- 📜 [Why Vercel OG Is Amazing and How to Use It](https://www.flavienbonvin.com/why-vercel-og-is-amazing-and-how-to-use-it/): using a meta image is important for marketing. Vercel OG is an innovative solution using JSX and Tailwind, easy to integrate into a Next.js project deployed on Vercel.
+- 📜 [Building a fast, animated image gallery with Next.js](https://vercel.com/blog/building-a-fast-animated-image-gallery-with-next-js)
+- 📜 [React, Vite and TypeScript: Get started in under 2 minutes](https://blog.nrwl.io/react-vite-and-typescript-get-started-in-under-2-minutes-3bd5cd836175)
+- 📜 [A guide to streaming SSR with React 18](https://blog.logrocket.com/streaming-ssr-with-react-18/)
+- 📜 [Little React Things: React applications are functions](https://www.zekehernandez.com/posts/react-applications-are-functions)
+- 🧑‍🎓 [New official Relay tutorial](https://twitter.com/RelayFramework/status/1611424289068314625)
+- 👀 [Remix + Vanilla Extract PR - merged](https://github.com/remix-run/remix/pull/5040)
+- 🐦 [Solid in React](https://twitter.com/RyanCarniato/status/1611448920521179136): Ryan Carniato's POC to integrate a SolidJS component into a React app
+- 📦 [Remix 1.10](https://github.com/remix-run/remix/releases/tag/remix%401.10.0): the official end of the "React-Routering Remix" project and many new useful hooks.
+- 📦 [create-react-signals](https://github.com/dai-shi/create-react-signals): Daishi Kato inspired by Preact signals to create new reactive bindings for Zustand, Valtio and Jotai.
+- 📦 [Mutative](https://github.com/unadlib/mutative) + [Structura.js](https://giusepperaso.github.io/structura.js): 2 new faster alternatives to Immer for immutable updates?
+- 📦 [Redux Toolkit 2.0 alpha](https://github.com/reduxjs/redux-toolkit/releases/tag/v2.0.0-alpha.0): gives an idea of upcoming v2 breaking changes
+- 📦 [Create-Universal-App](https://github.com/chen-rn/CUA): starter to create universal fullstack apps (web + mobile): Next.js, Expo, Tamagui, tRPC...
+- 📦 [Chakra UI FigPilot](https://twitter.com/chakra_ui/status/1613267652717191191): transform Figma design to Chakra UI
+- 📦 [Inertia 1.0](https://twitter.com/inertiajs/status/1614295060610437123): PHP framework from Tailwind co-creator using server side routing and React integration.
+- 📦 [Precedent](https://twitter.com/steventey/status/1613928948915920896): "Building blocks for Next.js"
+- 📦 [MDX extension for VSCode 1.1](https://twitter.com/remcohaszing/status/1613910319805382657): experimental intellisense support
+- 📦 [Next.js 13.1.2](https://twitter.com/nextjs/status/1613910922128416768)
+- 📦 [Radix releases - January 17](https://www.radix-ui.com/docs/primitives/overview/releases#january-17-2023)
+- 📦 [Visx 3.0](https://github.com/airbnb/visx/releases/tag/v3.0.0)
+- 🎥 [Did NextJS 13 Break State Management?](https://www.youtube.com/watch?v=OpMAH2hzKi8)
+- 🎥 [Blazing Fast Tips: React & TypeScript](https://www.youtube.com/watch?v=37PafxU_uzQ)
+- 🎥 [Is it Too Late To Learn React?](https://www.youtube.com/watch?v=WByOlXWrGaY)
 
 <SubscribeFormEmbed />
 
@@ -65,7 +119,39 @@ Upon completion you will get free access to our Virtual Goody Bag. Don't forget 
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![useReducer](/emails/issues/131/rn-android-bt.jpg)](https://reactnative.dev/blog/2023/01/12/version-071)
+
+**[React Native 0.71: TypeScript by Default, Flexbox Gap, and more...](https://reactnative.dev/blog/2023/01/12/version-071)**
+
+A big release with among other things:
+
+- TypeScript by default
+- Flex gap support in pixels (percentage support is coming later)
+- New web-inspired props (accessibility, style, events) that should simplify cross-platform dev.
+- Improved DX: click-to-inspect DevTools, new Hermes version, new architecture...
+- [Android Prebuilts on Maven Central](https://github.com/reactwg/react-native-new-architecture/discussions/105): Android build time reduced by 94%, and various other impacts. Note: it could be possible to [greatly improve iOS build times](https://twitter.com/Baconbrix/status/1611527618444120065) as well.
+
+---
+
+[![expo-m1](/emails/issues/131/expo-m1.jpg)](https://blog.expo.dev/m1-workers-on-eas-build-dcaa2c1333ad)
+
+**Various new articles on the Expo blog**:
+
+- 👀 SDK 48 should be released at the end of February.
+- 📜 [Announcing General Availability of M1 workers on EAS Build](https://blog.expo.dev/m1-workers-on-eas-build-dcaa2c1333ad): the M1 worker reduces iOS build time by -40% on EAS and will soon become the default worker.
+- 📜 [An Implementation Change to Expo Push Notification Service for Android Notifications](https://blog.expo.dev/an-implementation-change-to-expo-push-notification-service-for-android-notifications-ede056189e33): the Expo API will no longer tell you if the push was received by APNS or FCM.
+- 📜 [Testing React Native from the nightly builds](https://blog.expo.dev/testing-react-native-from-the-nightly-builds-ee54ad0c9830): uses the current dev version of React-Native to detect issues as soon as possible.
+- 📜 [Classic Build service no longer supported](https://blog.expo.dev/classic-build-service-no-longer-supported-73c82b500f56): you have to switch to EAS or build yourself with `turtle-cli`.
+
+---
+
+- 📊 [State of React-Native](https://survey.stateofreactnative.com/): the survey closes on friday, don't forget to answer before it's too late!
+- 📖 [Callstack - The Ultimate Guide to React Native Optimization](https://www.callstack.com/campaigns/download-the-ultimate-guide-to-react-native-optimization)
+- 🐦 ["In Metro v74, bundling React Native is now ~10% faster"](https://twitter.com/Baconbrix/status/1613899384504127488)
+- 🎨 [Multiple iOS windows demo](https://twitter.com/jpdriver/status/1612265133497282561)
+- 📦 [React-Native-OpenAI-JSX](https://github.com/cawfree/react-native-openai-jsx)
+- 🎥 [Skia Shaders and the SDF of a Line](https://www.youtube.com/watch?v=KgJUNYS7ZnA)
+- 🧑‍🎓 [React-Native 10x Faster](https://react-native-10x-faster.com/)
 
 ---
 
@@ -93,12 +179,25 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 ## 🔀 Other {#other}
 
-<Todo />
+- [State of JS 2022 Result](https://2022.stateofjs.com/)
+- [2022 JavaScript Rising Stars](https://risingstars.js.org/)
+- [Turborepo 1.7](https://turbo.build/blog/turbo-1-7-0)
+- [tRPC - TypeScript performance lessons while refactoring for v10](https://trpc.io/blog/typescript-performance-lessons)
+- [Microfrontend.dev](https://microfrontend.dev/)
+- [Speeding up the JavaScript ecosystem - module resolution](https://marvinh.dev/blog/speeding-up-javascript-ecosystem-part-2/)
+- [Fixing a Memory Leak in a Production Node.js App](https://kentcdodds.com/blog/fixing-a-memory-leak-in-a-production-node-js-app)
+- [New in Chrome 109](https://developer.chrome.com/blog/new-in-chrome-109/) + [Chrome 110 Beta](https://developer.chrome.com/blog/chrome-110-beta/)
+- [Our top Core Web Vitals recommendations for 2023](https://web.dev/top-cwv-2023/)
+- [Structure of a TypeScript Error](https://www.totaltypescript.com/structure-of-a-typescript-error)
+- [Mental Model for TypeScript Generics](https://www.totaltypescript.com/mental-model-for-typescript-generics)
+- [The gotcha of unhandled promise rejections](https://jakearchibald.com/2023/unhandled-rejections/)
+- [From Ruby to Node: Overhauling Shopify’s CLI for a Better Developer Experience](https://shopify.engineering/overhauling-shopify-cli-for-a-better-developer-experience)
+- [Conditional CSS](https://ishadeed.com/article/conditional-css/)
+- [NPM Kiosk - A new way to sell NPM packages](https://npm-kiosk.remotion.dev/)
+- [Lightning CSS visitor API](https://twitter.com/devongovett/status/1610683620255043591)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/todo)
+[![alt](/emails/issues/131/meme.jpg)](https://twitter.com/t3dotgg/status/1614125827054260224)
