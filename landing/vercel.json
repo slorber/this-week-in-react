@@ -34,6 +34,11 @@
       "permanent": true
     },
     {
+      "source": "/react-async-hook",
+      "destination": "https://thisweekinreact.com/?utm_source=react-async-hook",
+      "permanent": true
+    },
+    {
       "source": "/dev-comment",
       "destination": "https://thisweekinreact.com/?utm_source=dev-comment",
       "permanent": true
