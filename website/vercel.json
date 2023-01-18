@@ -34,17 +34,17 @@
       "permanent": true
     },
     {
-      "source": "/t/s",
+      "source": "/ts",
       "destination": "https://thisweekinreact.com/?utm_source=twitter&utm_medium=thread&utm_content=thread-start",
       "permanent": true
     },
     {
-      "source": "/t/b",
+      "source": "/tb",
       "destination": "https://thisweekinreact.com/?utm_source=twitter&utm_medium=thread&utm_content=thread-break",
       "permanent": true
     },
     {
-      "source": "/t/e",
+      "source": "/te",
       "destination": "https://thisweekinreact.com/?utm_source=twitter&utm_medium=thread&utm_content=thread-end",
       "permanent": true
     },
