@@ -29,6 +29,11 @@
   ],
   "redirects": [
     {
+      "source": "/t",
+      "destination": "https://thisweekinreact.com/?utm_source=twitter&utm_medium=thread",
+      "permanent": true
+    },
+    {
       "source": "/t/s",
       "destination": "https://thisweekinreact.com/?utm_source=twitter&utm_medium=thread&utm_content=thread-start",
       "permanent": true
