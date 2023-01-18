@@ -29,6 +29,22 @@
   ],
   "redirects": [
     {
+      "source": "/t/s",
+      "destination": "https://thisweekinreact.com/?utm_source=twitter&utm_medium=thread&utm_content=thread-start",
+      "permanent": true
+    },
+    {
+      "source": "/t/b",
+      "destination": "https://thisweekinreact.com/?utm_source=twitter&utm_medium=thread&utm_content=thread-break",
+      "permanent": true
+    },
+    {
+      "source": "/t/e",
+      "destination": "https://thisweekinreact.com/?utm_source=twitter&utm_medium=thread&utm_content=thread-end",
+      "permanent": true
+    },
+
+    {
       "source": "/ih",
       "destination": "https://thisweekinreact.com/?utm_source=ih",
       "permanent": true
