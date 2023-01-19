@@ -36,6 +36,7 @@ function prepareFormHiddenElements(form: HTMLFormElement) {
     );
 
     addField(form, "document_referrer", document.referrer);
+    addField(form, "pathname", window.location.pathname);
   } catch (e) {
     console.error("can't add ConvertKit hidden fields", e);
   }
