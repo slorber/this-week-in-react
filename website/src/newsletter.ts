@@ -37,7 +37,7 @@ const all: NewsletterSegment = {
   name: "All",
   subscribersCount: fr.subscribersCount + en.subscribersCount,
   openRate: 56,
-  clickRate: 32,
+  clickRate: 14,
 };
 
 export const newsletterStats: Newsletter = {
