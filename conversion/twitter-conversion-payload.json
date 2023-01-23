@@ -1,0 +1,27 @@
+{
+  "conversions":[
+    {
+      "conversion_time":"2023-01-23T00:00:00.000Z",
+      "event_id":"tw-o85l6-od5nc",
+      "identifiers":[
+        {
+          "twclid":"23opevjt88psuo13lu8d020qkn"
+        },
+        {
+          "hashed_email":"d360d510a224510f373931ce2d6215a799f5a9c1cef221b0149b6b6b50cced62"
+        },
+      ],
+      "value":"250.00",
+      "number_items":3,
+      "conversion_id":"23294827",
+      "description":"Pet supply purchases",
+      "contents":[
+        {
+          "content_id":"1",
+          "content_price":50.00,
+          "num_items":1
+        },
+      ]
+    }
+  ]
+}
