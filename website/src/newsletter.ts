@@ -21,14 +21,14 @@ export type Newsletter = {
 
 const en: NewsletterSegment = {
   name: "English",
-  subscribersCount: 12541,
+  subscribersCount: 12921,
   openRate: 58,
   clickRate: 14,
 };
 
 const fr: NewsletterSegment = {
   name: "French",
-  subscribersCount: 3318,
+  subscribersCount: 3342,
   openRate: 56,
   clickRate: 14,
 };
@@ -36,7 +36,7 @@ const fr: NewsletterSegment = {
 const all: NewsletterSegment = {
   name: "All",
   subscribersCount: fr.subscribersCount + en.subscribersCount,
-  openRate: 56,
+  openRate: 58,
   clickRate: 14,
 };
 
