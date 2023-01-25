@@ -1,15 +1,20 @@
 ---
 slug: /132
-title: "This Week In React #132: ..."
+title: "This Week In React #132: Astro, Remix, Server Components, useGlobalState, Next.js, Redwood, Expo Router, Expo Image, Android Widgets..."
 authors: [slorber]
 date: 01-25-2023
 image: /img/TWIR_POST.png
-unlisted: true
 ---
 
 Hi everyone!
 
-<Todo />
+Cette semaine, nous avons de belles sorties avec Astro 2.0 et Remix 1.11. Du contenu intéressant autour des Server Components.
+
+React-Native n'est pas en reste avec Expo Router en release candidate, Expo Image en beta, et une nouvelle solution pour créer des widgets Android.
+
+J'ai été invité du show [Learn With Jason - Create and deploy a documentation website](https://www.learnwithjason.dev/create-and-deploy-a-documentation-website?utm_source=thisweekinreact) dans lequel Jason fait ses premiers pas sur Docusaurus.
+
+Je vous propose de découvrir la newsletter [ES.next News](http://esnextnews.com/?utm_source=thisweekinreact), une bonne source d'information pour se tenir à jour sur les évolutions du langage JavaScript et des outils comme Bun ou ESLint.
 
 <!-- truncate -->
 
@@ -41,7 +46,62 @@ We are excited to collaborate with Strapi, Appwrite, Meilisearch, and Medusa. Th
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Astro 2.0](/emails/issues/132/astro2.jpg)](https://astro.build/blog/astro-2/)
+
+**[Astro 2.0](https://astro.build/blog/astro-2/)**
+
+Astro sort sa v2. Les nouveautés mises en avant:
+
+- Content Collections: Automatic type-safety for Markdown & MDX.
+- Hybrid Rendering: Static? Dynamic? Get the best of both worlds.
+- Redesigned Error Overlays
+- Improved Dev Server (HMR)
+- Vite 4.0
+- Public Roadmap
+
+Voir aussi l'article [Introducing Content Collections: Type-Safe Markdown in Astro 2.0](https://astro.build/blog/introducing-content-collections/). Il s'agit de valider le front matter avec Zod, de pouvoir utiliser ces données de manière typée dans les composants React, et d'avoir de bons messages d'erreurs affichés avec une bonne DX en cas de donnée qui ne respecte pas le schema. Définitivement une bonne idée, d'ailleurs [Docusaurus le fait aussi](https://github.com/facebook/docusaurus/issues/4591) 😜.
+
+---
+
+[![Remix 1.11](/emails/issues/132/remix0.11.jpg)](https://github.com/remix-run/remix/releases/tag/remix%401.11.0)
+
+**[Remix 1.11](https://github.com/remix-run/remix/releases/tag/remix%401.11.0)**
+
+Une belle release Remix avec en nouveautés principales:
+
+- `defer` + `<Await>` pour initier une réponse streamée. Le loader retourne des promesses qui peuvent être résolues plus tard coté client.
+- [Route Convention v2](https://remix.run/docs/en/v1/file-conventions/route-files-v2): une nouvelle convention (flat routes) qu'on peut activer dès maintenant et qui deviendra la convention par défaut sur la v2.
+- Support expérimental de CSS imports, CSS Modules, Vanilla Extract.
+
+---
+
+- 📖 Beta docs: ["the main remaining blocker is the landing page which we’re working on now"](https://twitter.com/dan_abramov/status/1617543301477060608)
+- 🐦 ["If you use React, you should be using a React framework"](https://twitter.com/acdlite/status/1617611126514266112): Andrew Clark donne de bonnes raisons d'utiliser un framework. Si vous n'en utilisez pas, vous finissez par en créer un pas terrible vous même.
+- 📜 [useGlobalState - Sharing state between React components without context or fancy libraries](https://yoavik.com/snippets/use-global-state): propose de créer sa propre abstraction de global state, sans avoir besoin d'utiliser des providers.
+- 📜 [What I Like About Astro](https://www.macarthur.me/posts/what-i-like-about-astro): comparaison intéressante avec Gatsby ou Next.js sur le sourcing de données, les intégrations (RSS, sitemap...). Avec Astro, il est difficile d'avoir un site lent.
+- 📜 [The building blocks of great docs](https://www.mux.com/blog/the-building-blocks-of-great-docs): migration en cours d'une documentation technique vers Next.js 13. L'usage de Server Components apporte beaucoup de bénéfices sur un site de contenu assez statique.
+- 📜 [Improving readability with React Wrap Balancer](https://vercel.com/blog/react-wrap-balancer): détaille le fonctionnement interne de React Wrap Balancer qui permet d'équilibrer le texte des titres (feature CSS manquante) sans produire layout shifts.
+- 📜 [Things I want to see in JavaScript and Frontend development in 2023](https://paularmstrong.dev/blog/2023/01/20/javascript-and-frontend-things-to-see-in-2023/): des prédictions intéressantes et une critique piquante sur React 🔥
+- 📜 [Use Remix as a SPA only](https://sergiodxa.com/articles/use-remix-as-a-spa-only): usage d'un composant `<ClientOnly>`.
+- 📜 [Gatsby 5, TypeScript, and Generated GraphQL Types: A Walkthrough](https://www.gatsbyjs.com/blog/gatsby-5-typescript-and-generated-graphql-types-a-walkthrough/)
+- 📜 [Modals with React Router 6 and Remix](https://dev.to/infoxicator/modals-with-react-router-6-and-remix-1e35)
+- 📜 [Why React Router is excellent for Micro-Frontends](https://dev.to/infoxicator/why-react-router-is-excellent-for-micro-frontends-2a21)
+- 📜 [useAsyncEffect: The Missing React Hook](https://marmelab.com/blog/2023/01/11/use-async-effect-react.html)
+- 📜 [Test-driven development of NextJS API routes](https://massimilianomirra.com/notes/test-driven-development-of-nextjs-api-routes)
+- 📜 [How to build a better React map with Pigeon Maps and Mapbox](https://evilmartians.com/chronicles/how-to-build-a-better-react-map-with-pigeon-maps-and-mapbox)
+- 📜 [Refraction, dispersion, and other shader light effects](https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/)
+- 🧑‍🎓 [Josh Comeau - Joy of React - Couse launch](https://twitter.com/JoshWComeau/status/1617553220242661377)
+- 🎨 [TanStack Query multi-client sync demo](https://twitter.com/aryan__deora/status/1616097346558754819)
+- 🎨 [DevTools - Toggle Suspense boundaries demo](https://twitter.com/delba_oliveira/status/1617205554547683328)
+- 👀 [Remix PR - add built-in PostCSS and Tailwind support](https://github.com/remix-run/remix/pull/5229)
+- 👀 [XState PR - createProvider](https://twitter.com/DavidKPiano/status/1617537783018422273)
+- 👀 [React docs PR - Replace Create React App recommendation with Vite](https://github.com/reactjs/reactjs.org/pull/5487): une PR qui fait polémique cette semaine
+- 📦 [Bright - React Server Component for syntax highlighting](https://github.com/code-hike/bright): package prometteur en développement pour le syntax highlighting. Dans un contexte Node.js/server, on peut faire tourner du code plus lourd comme parser un AST plutôt que d'utiliser des Regexp (Prism).
+- 📦 [Redwood 4.0 RC](https://twitter.com/RedwoodJS/status/1616002999729389568): nouvelle API Auth, GraphQL Yoga v3, GraphQL Armor, Node.js 16/18...
+- 📦 [shadcdn/ui - Beautifully designed components built with Radix UI and Tailwind CSS](https://twitter.com/shadcn/status/1617916719242293248)
+- 📦 [next-mdx-remote 4.3 - Server Components Support (experimental)](https://github.com/hashicorp/next-mdx-remote/releases/tag/v4.3.0)
+- 🎥 [Astro 2.0 is Revolutionary!](https://www.youtube.com/watch?v=gi4c7fbeURc)
+- 🎥 [Lee Robinson - Revisiting my React course 3 years later](https://www.youtube.com/watch?v=DQk0TWmgYXw)
 
 <SubscribeFormEmbed />
 
@@ -49,7 +109,22 @@ We are excited to collaborate with Strapi, Appwrite, Meilisearch, and Medusa. Th
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Expo Router RC](/emails/issues/132/expo-router.jpg)](https://blog.expo.dev/announcing-the-expo-router-v1-release-candidate-c5680b88a18c)
+
+**[Expo Router v1 Release Candidate](https://blog.expo.dev/announcing-the-expo-router-v1-release-candidate-c5680b88a18c)**
+
+Expo Router propose de créer sa navigation mobile (basée sur React-Navigation) via des conventions de nommage file-system, comme le font la majorité des frameworks React web. On retrouve les features habituelles comme les layout routes, dynamic routes, error boundaries...
+
+Le plus intéressant pour moi: le support universel. La navigation est basée sur des liens, un composant `<Link>` et le support Metro web (experimental). Maintenant que la partie native d'Expo fonctionne bien, je ne serais pas surpris de voir Expo devenir progressivement un véritable framework full-stack universel, et ainsi réaliser la [prédiction d'Andrew Clark](https://twitter.com/acdlite/status/1489755769876754434).
+
+---
+
+- 👀 [Expo-Image in beta](https://twitter.com/JI/status/1616337848558551041): le nouveau composant image d'Expo passe en beta. Performant, cross-platform (web/mobile), nombreux formats, placeholders, object-fit... La [doc](https://docs.expo.dev/versions/unversioned/sdk/image/) est disponible.
+- 📖 [Maestro Guides - React-Native](https://maestro.mobile.dev/platform-support/react-native): le framework de test e2e propose maintenant une page de doc React-Native
+- 📦 [React-Native-Android-Widget](https://saleksovski.github.io/react-native-android-widget/): nouveau package qui permet de créer des widgets Android, via des primitives dédiées. Dispose d'un système de preview des widgets. Facile à utiliser dans Expo (Config Plugin).
+- 📦 [Moti 0.22](https://twitter.com/FernandoTheRojo/status/1616583066054545408): un fix qui apporte le support Hermes.
+- 📦 [Metro 0.74](https://github.com/facebook/metro/releases/tag/v0.74.0): de bonnes améliorations de performance.
+- 🎙️ [RNR 256 - Expo Router with Evan Bacon](https://reactnativeradio.com/episodes/rnr-256-expo-router-with-evan-bacon)
 
 ---
 
@@ -77,12 +152,21 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 ## 🔀 Other {#other}
 
-<Todo />
+- ["There’s a full port of webpack to rust underway. It’s Not turbopack."](https://twitter.com/ScriptedAlchemy/status/1617815340905553921)
+- [V8 - Introducing the WebAssembly JavaScript Promise Integration API](https://v8.dev/blog/jspi)
+- [WebKit Features in Safari 16.3](https://webkit.org/blog/13691/webkit-features-in-safari-16-3/)
+- [The truth about CSS selector performance](https://blogs.windows.com/msedgedev/2023/01/17/the-truth-about-css-selector-performance/)
+- [Making Generic Functions Pass Type Checking](https://type-level-typescript.com/articles/making-generic-functions-pass-type-checking)
+- [CSS Nesting - Blink Intent to ship](https://twitter.com/sebastienlorber/status/1617882799100526595)
+- [TypeScript 5.0 PR - Decorators support](https://twitter.com/robpalmer2/status/1616215250055090187)
+- [Bun 0.5](https://bun.sh/blog/bun-v0.5.0)
+- [esbuild 0.17](https://github.com/evanw/esbuild/releases/tag/v0.17.0)
+- [ESLint's 2022 year in review](https://eslint.org/blog/2023/01/eslint-2022-year-review/)
+- [Building and delivering frontends at scale](https://frontendmastery.com/posts/building-and-serving-frontends-at-scale/)
+- [Writing a tiny tRPC client](https://trpc.io/blog/tinyrpc-client)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/todo)
+[![alt](/emails/issues/132/meme.jpg)](https://twitter.com/fireship_dev/status/1617708616496345088)
