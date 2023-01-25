@@ -8,13 +8,13 @@ image: /img/TWIR_POST.png
 
 Hi everyone!
 
-Cette semaine, nous avons de belles sorties avec Astro 2.0 et Remix 1.11. Du contenu intéressant autour des Server Components.
+This week we have some nice releases with Astro 2.0 and Remix 1.11. Also some interesting content around Server Components.
 
-React-Native n'est pas en reste avec Expo Router en release candidate, Expo Image en beta, et une nouvelle solution pour créer des widgets Android.
+React-Native is not left out with Expo Router in release candidate, Expo Image in beta, and a new solution to create Android widgets.
 
-J'ai été invité du show [Learn With Jason - Create and deploy a documentation website](https://www.learnwithjason.dev/create-and-deploy-a-documentation-website?utm_source=thisweekinreact) dans lequel Jason fait ses premiers pas sur Docusaurus.
+I was invited to the show [Learn With Jason - Create and deploy a documentation website](https://www.learnwithjason.dev/create-and-deploy-a-documentation-website?utm_source=thisweekinreact) in which Jason makes his first steps on Docusaurus.
 
-Je vous propose de découvrir la newsletter [ES.next News](http://esnextnews.com/?utm_source=thisweekinreact), une bonne source d'information pour se tenir à jour sur les évolutions du langage JavaScript et des outils comme Bun ou ESLint.
+Discover the [ES.next News newsletter](http://esnextnews.com/?utm_source=thisweekinreact), a good source of information to keep up to date on the evolution of the JavaScript language, the TC39 committee and JS tooling like ESLint, Babel, Bun, Prettier...
 
 <!-- truncate -->
 
@@ -50,7 +50,7 @@ We are excited to collaborate with Strapi, Appwrite, Meilisearch, and Medusa. Th
 
 **[Astro 2.0](https://astro.build/blog/astro-2/)**
 
-Astro sort sa v2. Les nouveautés mises en avant:
+Astro releases its v2. New features highlighted:
 
 - Content Collections: Automatic type-safety for Markdown & MDX.
 - Hybrid Rendering: Static? Dynamic? Get the best of both worlds.
@@ -59,7 +59,7 @@ Astro sort sa v2. Les nouveautés mises en avant:
 - Vite 4.0
 - Public Roadmap
 
-Voir aussi l'article [Introducing Content Collections: Type-Safe Markdown in Astro 2.0](https://astro.build/blog/introducing-content-collections/). Il s'agit de valider le front matter avec Zod, de pouvoir utiliser ces données de manière typée dans les composants React, et d'avoir de bons messages d'erreurs affichés avec une bonne DX en cas de donnée qui ne respecte pas le schema. Définitivement une bonne idée, d'ailleurs [Docusaurus le fait aussi](https://github.com/facebook/docusaurus/issues/4591) 😜.
+See also the article [Introducing Content Collections: Type-Safe Markdown in Astro 2.0](https://astro.build/blog/introducing-content-collections/). It's about validating the front matter with Zod, to be able to use this data in a typed way in React components, and to have good error messages displayed with a good DX when front matter data that doesn't respect the schema. Definitely a good idea, by the way [Docusaurus does it too](https://github.com/facebook/docusaurus/issues/4591) 😜.
 
 ---
 
@@ -67,22 +67,22 @@ Voir aussi l'article [Introducing Content Collections: Type-Safe Markdown in Ast
 
 **[Remix 1.11](https://github.com/remix-run/remix/releases/tag/remix%401.11.0)**
 
-Une belle release Remix avec en nouveautés principales:
+A nice Remix release with the main new features:
 
-- `defer` + `<Await>` pour initier une réponse streamée. Le loader retourne des promesses qui peuvent être résolues plus tard coté client.
-- [Route Convention v2](https://remix.run/docs/en/v1/file-conventions/route-files-v2): une nouvelle convention (flat routes) qu'on peut activer dès maintenant et qui deviendra la convention par défaut sur la v2.
-- Support expérimental de CSS imports, CSS Modules, Vanilla Extract.
+- `defer` + `<Await>` to initiate a streamed response. The loader can return promises that will be awaited later on the client side.
+- [Route Convention v2](https://remix.run/docs/en/v1/file-conventions/route-files-v2): a new convention (flat routes) that can be activated now and will become the default convention in v2.
+- Experimental support for CSS imports, CSS Modules, Vanilla Extract.
 
 ---
 
 - 📖 Beta docs: ["the main remaining blocker is the landing page which we’re working on now"](https://twitter.com/dan_abramov/status/1617543301477060608)
-- 🐦 ["If you use React, you should be using a React framework"](https://twitter.com/acdlite/status/1617611126514266112): Andrew Clark donne de bonnes raisons d'utiliser un framework. Si vous n'en utilisez pas, vous finissez par en créer un pas terrible vous même.
-- 📜 [useGlobalState - Sharing state between React components without context or fancy libraries](https://yoavik.com/snippets/use-global-state): propose de créer sa propre abstraction de global state, sans avoir besoin d'utiliser des providers.
-- 📜 [What I Like About Astro](https://www.macarthur.me/posts/what-i-like-about-astro): comparaison intéressante avec Gatsby ou Next.js sur le sourcing de données, les intégrations (RSS, sitemap...). Avec Astro, il est difficile d'avoir un site lent.
-- 📜 [The building blocks of great docs](https://www.mux.com/blog/the-building-blocks-of-great-docs): migration en cours d'une documentation technique vers Next.js 13. L'usage de Server Components apporte beaucoup de bénéfices sur un site de contenu assez statique.
-- 📜 [Improving readability with React Wrap Balancer](https://vercel.com/blog/react-wrap-balancer): détaille le fonctionnement interne de React Wrap Balancer qui permet d'équilibrer le texte des titres (feature CSS manquante) sans produire layout shifts.
-- 📜 [Things I want to see in JavaScript and Frontend development in 2023](https://paularmstrong.dev/blog/2023/01/20/javascript-and-frontend-things-to-see-in-2023/): des prédictions intéressantes et une critique piquante sur React 🔥
-- 📜 [Use Remix as a SPA only](https://sergiodxa.com/articles/use-remix-as-a-spa-only): usage d'un composant `<ClientOnly>`.
+- 🐦 ["If you use React, you should be using a React framework"](https://twitter.com/acdlite/status/1617611126514266112): Andrew Clark gives good reasons to use a framework. If you don't use one, you end up creating a not-so-great one yourself.
+- 📜 [useGlobalState - Sharing state between React components without context or fancy libraries](https://yoavik.com/snippets/use-global-state): proposes to create its own global state abstraction, without the need to use providers.
+- 📜 [What I Like About Astro](https://www.macarthur.me/posts/what-i-like-about-astro): interesting comparison with Gatsby or Next.js on data sourcing, integrations (RSS, sitemap...). Astro makes it difficult to have a slow site.
+- 📜 [The building blocks of great docs](https://www.mux.com/blog/the-building-blocks-of-great-docs): migration in progress of a technical documentation to Next.js 13. The use of Server Components brings a lot of benefits on a site with lots of static content.
+- 📜 [Improving readability with React Wrap Balancer](https://vercel.com/blog/react-wrap-balancer): details the inner workings of React Wrap Balancer which allows to balance headlines without producing layout shifts (missing CSS feature).
+- 📜 [Things I want to see in JavaScript and Frontend development in 2023](https://paularmstrong.dev/blog/2023/01/20/javascript-and-frontend-things-to-see-in-2023/): interesting predictions and a hot criticism of React 🔥
+- 📜 [Use Remix as a SPA only](https://sergiodxa.com/articles/use-remix-as-a-spa-only): using a `<ClientOnly>` component.
 - 📜 [Gatsby 5, TypeScript, and Generated GraphQL Types: A Walkthrough](https://www.gatsbyjs.com/blog/gatsby-5-typescript-and-generated-graphql-types-a-walkthrough/)
 - 📜 [Modals with React Router 6 and Remix](https://dev.to/infoxicator/modals-with-react-router-6-and-remix-1e35)
 - 📜 [Why React Router is excellent for Micro-Frontends](https://dev.to/infoxicator/why-react-router-is-excellent-for-micro-frontends-2a21)
@@ -95,9 +95,9 @@ Une belle release Remix avec en nouveautés principales:
 - 🎨 [DevTools - Toggle Suspense boundaries demo](https://twitter.com/delba_oliveira/status/1617205554547683328)
 - 👀 [Remix PR - add built-in PostCSS and Tailwind support](https://github.com/remix-run/remix/pull/5229)
 - 👀 [XState PR - createProvider](https://twitter.com/DavidKPiano/status/1617537783018422273)
-- 👀 [React docs PR - Replace Create React App recommendation with Vite](https://github.com/reactjs/reactjs.org/pull/5487): une PR qui fait polémique cette semaine
-- 📦 [Bright - React Server Component for syntax highlighting](https://github.com/code-hike/bright): package prometteur en développement pour le syntax highlighting. Dans un contexte Node.js/server, on peut faire tourner du code plus lourd comme parser un AST plutôt que d'utiliser des Regexp (Prism).
-- 📦 [Redwood 4.0 RC](https://twitter.com/RedwoodJS/status/1616002999729389568): nouvelle API Auth, GraphQL Yoga v3, GraphQL Armor, Node.js 16/18...
+- 👀 [React docs PR - Replace Create React App recommendation with Vite](https://github.com/reactjs/reactjs.org/pull/5487): controversial PR this week
+- 📦 [Bright - React Server Component for syntax highlighting](https://github.com/code-hike/bright): promising WIP package for modern syntax highlighting. In a Node.js/server context, we can run heavier code like parsing an AST rather than using regexp (Prism).
+- 📦 [Redwood 4.0 RC](https://twitter.com/RedwoodJS/status/1616002999729389568): new API Auth, GraphQL Yoga v3, GraphQL Armor, Node.js 16/18...
 - 📦 [shadcdn/ui - Beautifully designed components built with Radix UI and Tailwind CSS](https://twitter.com/shadcn/status/1617916719242293248)
 - 📦 [next-mdx-remote 4.3 - Server Components Support (experimental)](https://github.com/hashicorp/next-mdx-remote/releases/tag/v4.3.0)
 - 🎥 [Astro 2.0 is Revolutionary!](https://www.youtube.com/watch?v=gi4c7fbeURc)
@@ -113,17 +113,17 @@ Une belle release Remix avec en nouveautés principales:
 
 **[Expo Router v1 Release Candidate](https://blog.expo.dev/announcing-the-expo-router-v1-release-candidate-c5680b88a18c)**
 
-Expo Router propose de créer sa navigation mobile (basée sur React-Navigation) via des conventions de nommage file-system, comme le font la majorité des frameworks React web. On retrouve les features habituelles comme les layout routes, dynamic routes, error boundaries...
+Expo Router proposes to create your mobile navigation (still based on React-Navigation) using file-system naming conventions, as do most React web frameworks already. We can find the usual features like layout routes, dynamic routes, error boundaries...
 
-Le plus intéressant pour moi: le support universel. La navigation est basée sur des liens, un composant `<Link>` et le support Metro web (experimental). Maintenant que la partie native d'Expo fonctionne bien, je ne serais pas surpris de voir Expo devenir progressivement un véritable framework full-stack universel, et ainsi réaliser la [prédiction d'Andrew Clark](https://twitter.com/acdlite/status/1489755769876754434).
+The most interesting for me: the universal support. Navigation is based on links, a `<Link>` component and Metro web support (experimental). Now that the native part of Expo is working well, I wouldn't be surprised to see Expo gradually become a universal full-stack framework, and realize [Andrew Clark's prediction](https://twitter.com/acdlite/status/1489755769876754434).
 
 ---
 
-- 👀 [Expo-Image in beta](https://twitter.com/JI/status/1616337848558551041): le nouveau composant image d'Expo passe en beta. Performant, cross-platform (web/mobile), nombreux formats, placeholders, object-fit... La [doc](https://docs.expo.dev/versions/unversioned/sdk/image/) est disponible.
-- 📖 [Maestro Guides - React-Native](https://maestro.mobile.dev/platform-support/react-native): le framework de test e2e propose maintenant une page de doc React-Native
-- 📦 [React-Native-Android-Widget](https://saleksovski.github.io/react-native-android-widget/): nouveau package qui permet de créer des widgets Android, via des primitives dédiées. Dispose d'un système de preview des widgets. Facile à utiliser dans Expo (Config Plugin).
-- 📦 [Moti 0.22](https://twitter.com/FernandoTheRojo/status/1616583066054545408): un fix qui apporte le support Hermes.
-- 📦 [Metro 0.74](https://github.com/facebook/metro/releases/tag/v0.74.0): de bonnes améliorations de performance.
+- 👀 [Expo-Image in beta](https://twitter.com/JI/status/1616337848558551041): Expo's new image component goes into beta. Performant, cross-platform (web/mobile), many formats, placeholders, object-fit... Check the [doc](https://docs.expo.dev/versions/unversioned/sdk/image/).
+- 📖 [Maestro Guides - React-Native](https://maestro.mobile.dev/platform-support/react-native): the e2e testing framework now offers a React-Native doc page.
+- 📦 [React-Native-Android-Widget](https://saleksovski.github.io/react-native-android-widget/): new package to create Android widgets, using dedicated UI primitives. Has a widget preview system. Easy to use in Expo (Config Plugin).
+- 📦 [Moti 0.22](https://twitter.com/FernandoTheRojo/status/1616583066054545408): a fix brings Hermes support.
+- 📦 [Metro 0.74](https://github.com/facebook/metro/releases/tag/v0.74.0): great performance improvements.
 - 🎙️ [RNR 256 - Expo Router with Evan Bacon](https://reactnativeradio.com/episodes/rnr-256-expo-router-with-evan-bacon)
 
 ---
