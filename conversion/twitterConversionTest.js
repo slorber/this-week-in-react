@@ -76,8 +76,8 @@ async function run() {
                 "d360d510a224510f373931ce2d6215a799f5a9c1cef221b0149b6b6b50cced62",
             },
           ],
-          // conversion_id: "TODO_USE_UUID_CK_OR_EMAIL_FOR_DEDUPLICATION ???",
-          description: "TWIR subscription",
+	     "conversion_id":"TODO_USE_UUID_CK_OR_EMAIL_FOR_DEDUPLICATION ???",
+         "description":"TWIR subscription"
         },
       ],
     }
@@ -102,7 +102,7 @@ async function run() {
                 "d360d510a224510f373931ce2d6215a799f5a9c1cef221b0149b6b6b50cced62",
             },
           ],
-          // conversion_id: "TODO_USE_UUID_CK_OR_EMAIL_FOR_DEDUPLICATION ???",
+          conversion_id: "TODO_USE_UUID_CK_OR_EMAIL_FOR_DEDUPLICATION ???",
           description: "TWIR subscription",
         },
       ],
