@@ -11,8 +11,6 @@ Salut à tous !
 
 Une conférence **[React-Native-Connection](https://reactnativeconnection.io/)** vient d'être annoncée à Paris le 1er Juin. Je vais participer à la sélection des talks. Il y a également un [meetup React-Native Paris](https://www.meetup.com/fr-FR/meetup-group-xaaafwks/events/291247291/) le 7 Février.
 
-<Todo />
-
 <!-- truncate -->
 
 **💡 [Consulter cette newsletter sur Twitter](https://slo.im/thread) - format visuel 🎨**
@@ -43,41 +41,48 @@ Nous sommes ravis de collaborer avec Strapi, Appwrite, Meilisearch et Medusa. Il
 
 ## ⚛️ React {#react}
 
-**[Why React isn't dying](https://tkdodo.eu/blog/why-react-isnt-dying)**
-
-Dominik explique pourquoi n'est pas près de mourir. React a popularisé le JSX et le concept de composant et de declarative UI. Les alternatives reprennent les bonnes parties et essaient de résoudre les problèmes, mais cela sera difficile de le challenger vu la taille son écosystème et sa communauté qui ne fait que se renforcer avec le temps. Les librairies framework agnostic (TanStack) ont un role à jouer et permettent de transférer la connaissance d'un écosystème à l'autre.
-
----
-
-**[Redwood 4.0](https://community.redwoodjs.com/t/redwood-v4-0-0-is-now-available/4538)**
-
-https://twitter.com/thedavidprice/status/1618359683563290626
-
----
+[![Astro rendering v2](/emails/issues/133/astro-rendering.jpg)](https://astro.build/blog/hybrid-rendering/)
 
 **[Astro - Unlock New Possibilities with Hybrid Rendering](https://astro.build/blog/hybrid-rendering/)**
 
-https://twitter.com/FredKSchott/status/1618665800705146881
+Avec Astro 1, on devait faire un choix global pour tout le site: 100% static (SSG) ou 100% server (SSR). Avec Astro 2.0 il est maintenant possible de choisir pour chaque page. L'article détaille le fonctionnement interne du build Astro, et comment il a dû évoluer pour supporter cette nouvelle feature. Ils utilisent de l'analyse statique pour séparer les routes statiques des routes SSR.
+
+---
+
+[![Why React isn't dying](/emails/issues/133/reactisntdying.jpg)](https://tkdodo.eu/blog/why-react-isnt-dying)
+
+**[Why React isn't dying](https://tkdodo.eu/blog/why-react-isnt-dying)**
+
+Dominik explique pourquoi n'est pas près de mourir. React a popularisé le JSX et le concept de composant et de declarative UI. Les alternatives reprennent les bonnes parties et essaient de résoudre les problèmes, mais cela sera difficile de le challenger vu la taille son écosystème et sa communauté qui ne fait que se renforcer avec le temps. Il faudrait une grosse innovation de rupture. Les librairies framework agnostic (TanStack) ont un role à jouer et permettent de transférer la connaissance d'un écosystème à l'autre.
+
+---
+
+[![esumable React: How To Use React Inside Qwik](/emails/issues/133/qwik.jpg)](https://www.builder.io/blog/resumable-react-how-to-use-react-inside-qwik)
+
+**[Resumable React: How To Use React Inside Qwik](https://www.builder.io/blog/resumable-react-how-to-use-react-inside-qwik)**
+
+Cet article met en avant l'intégration possible entre Qwik et React. Qwik est un framework innovant en beta, basé sur la resumabilité plutôt que l'hydratation. Il propose une methode `qwikify$()` qui permet d'adapter un composant React existant pour pouvoir l'utiliser dans une app Qwik, avec plusieurs modes d'hydratation possible. Pour réduire la taille du bundle au maximum, il est possible de ne pas hydrater le composant React et d'utiliser les events DOM natifs.
 
 ---
 
 - 💬 [Replace Create React App recommendation with Vite - Dan Abramov answers](https://github.com/reactjs/reactjs.org/pull/5487#issuecomment-1409720741): long commentaire de Dan qui relate l'histoire, le but de CRA, et son avenir avec 5 options possibles. TLDR: ils ne souhaitent pas déprécier CRA mais ne veulent pas pour autant le recommander: se priver de SSG/SSR n'est pas une bonne chose. Il est possible que le CLI de CRA devienne un "launcher" qui propose de choisir entre plusieurs frameworks populaires: Next.js, Remix, CRA...
 - 👀 [AsyncContext + React](https://twitter.com/sebmarkbage/status/1620442034598477824): Sebastian Markbåge évoque l'idée d'utiliser la proposal TC39 [AsyncContext](https://github.com/legendecas/proposal-async-context) (stage 0) comme context React 🤔
-- 👀 ["Statically typed links are coming to Next.js"](https://twitter.com/shuding_/status/1620137501192253440)
-- 👀 [Coming soon to Next.js - improved SEO support!](https://twitter.com/leeerob/status/1619743437577912321) + https://twitter.com/shuding_/status/1619775431921762304
+- 👀 ["Statically typed links are coming to Next.js"](https://twitter.com/shuding_/status/1620137501192253440): une bonne nouvelle pour le routing typesafe. Peut-être implémenté avec le nouveau [TypeScript language server plugin](https://twitter.com/delba_oliveira/status/1592209522281439232), plutôt qu'une étape de codegen?
+- 👀 [Coming soon to Next.js - improved SEO support!](https://twitter.com/leeerob/status/1619743437577912321): nouvel export `metadata` (qui sera aussi [typé avec le plugin TypeScript?](https://twitter.com/shuding_/status/1619775431921762304))
+- 📜 [The Key To Good Component Design Is Selfishness](https://www.smashingmagazine.com/2023/01/key-good-component-design-selfishness/): l'histoire du design d'un composant `<Button>` dans le temps, qui tourne mal parce qu'on a utilisé des props pour le contenu interne. Il vaut limiter la responsabilité du bouton, utiliser `children` et la composition.
 - 📜 [Storybook - Component Story Format 3 is here](https://storybook.js.org/blog/storybook-csf3-is-here/): le nouveau format sort de beta et apporte des améliorations intéressantes (boilerplate, composition, `play` function...) tout en restant backward compatible.
-- 📜 [The Curious Case of React](https://cult.honeypot.io/reads/the-curious-case-of-react/)
-- 📜 [The Key To Good Component Design Is Selfishness](https://www.smashingmagazine.com/2023/01/key-good-component-design-selfishness/)
-- 📜 [Resumable React: How To Use React Inside Qwik](https://www.builder.io/blog/resumable-react-how-to-use-react-inside-qwik)
-- 📜 [Nextra 2 – Next.js Static Site Generator](https://the-guild.dev/blog/nextra-2)
+- 📜 [How to create one form with many actions in Remix](https://www.wking.dev/library/how-to-create-one-form-with-many-actions-in-remix): propose d'utiliser des boutons avec les props `name` et `value`, et d'utiliser les TypeScript union types avec un schema pour chaque type d'action.
+- 📜 [Nextra 2 – Next.js Static Site Generator](https://the-guild.dev/blog/nextra-2): présente les principales nouveautés de Nextra v2, le static-site-generator pour Next.js.
 - 📜 [How Netlify Uses Storybook for Visual Regression Testing](https://www.netlify.com/blog/storybook-visual-regression-testing/)
-- 📜 [How to create one form with many actions in Remix](https://www.wking.dev/library/how-to-create-one-form-with-many-actions-in-remix)
+- 📜 [The Curious Case of React](https://cult.honeypot.io/reads/the-curious-case-of-react/)
 - 🎥 [Andrew Clark on the Creation of Redux](https://www.youtube.com/watch?v=WvRcZkuXmpo): interview qui relate la période 2014-2015, bon teaser du [documentaire React](https://www.youtube.com/watch?v=gmp0istg5xo) qui sort prochainement. Redux a proposé l'implémentation Flux la plus élégante, et popularisé le concept de reducer. Andrew ne désavoue pas le projet, mais est content que React propose progressivement de meilleures alternatives pour certaines problématiques comme le data-fetching.
 - 🎥 [I Was Wrong About Nested React Components](https://www.youtube.com/watch?v=2sAdzy90GtE): Jack illustre bien pourquoi il ne faut surtout pas déclarer un composant à l'intérieur d'un autre.
 - 🎥 [Scroll Management with Remix and React Router](https://www.youtube.com/watch?v=4_H8j3rkpjI)
 - 🎥 [State of React Ecosystem Jan 2023](https://www.youtube.com/watch?v=_nGuk2Gs2oc)
+- 📦 [Redwood 4.0](https://community.redwoodjs.com/t/redwood-v4-0-0-is-now-available/4538): sortie officielle de la v4.0 avec une nouvelle Auth API, GraphQL Yoga v3, GraphQL Armor...
+- 📦 [Remix 1.12](https://github.com/remix-run/remix/releases/tag/remix%401.12.0): preview du nouveau dev server derrière un flag
 - 📦 [React Router 6.8.0](https://github.com/remix-run/react-router/releases/tag/react-router%406.8.0)
-- 📦 [Remix 1.12](https://github.com/remix-run/remix/releases/tag/remix%401.12.0)
+- 📦 [Jotai v2](https://twitter.com/jotaijs/status/1620436882034421762)
 - 📦 [Docusaurus 2.3](https://docusaurus.io/blog/releases/2.3)
 - 📦 [TinyBase 3.0](https://twitter.com/tinybasejs/status/1619763700650614784)
 - 📦 [Redux Toolkit 1.9.2](https://twitter.com/acemarke/status/1619445949822009346)
@@ -102,19 +107,21 @@ Vous pouvez également **analyser les résultats des sondages** dans des tableau
 
 ## 📱 React-Native {#react-native}
 
-- 📖 [Open Native Docs](https://twitter.com/ammarahm_ed/status/1620136052152500225): la doc d'Open Native est en ligne. Propose d'unifier les libs natives pour fonctionner sur plusieurs écosystèmes: React-Native, NativeScript, Flutter...
-- 📜 [React Native 0.71-RC0 Android outage postmortem](https://reactnative.dev/blog/2023/01/27/71rc1-android-outage-postmortem)
-- 📜 [Making Your React Native Gestures Feel Natural](https://shopify.engineering/making-react-native-gestures-feel-natural)
+- 📖 [Open Native Docs](https://twitter.com/ammarahm_ed/status/1620136052152500225): nouvelle doc en ligne. Propose d'unifier les libs natives pour fonctionner sur plusieurs écosystèmes: React-Native, NativeScript, Flutter...
+- 📜 [React Native 0.71-RC0 Android outage postmortem](https://reactnative.dev/blog/2023/01/27/71rc1-android-outage-postmortem): l'équipe React-Native revient sur les builds Android bloqués de Novembre 2022 causés par une publication Maven et une dépendance Gradle non figée.
+- 📜 [Summary of 2022 — React Native Open Source at Software Mansion](https://blog.swmansion.com/summary-of-2022-react-native-open-source-at-software-mansion-9edf929db005): belle retrospective de Software Mansion, on peut dire qu'ils ont été actif cette année!
+- 📜 [Making Your React Native Gestures Feel Natural](https://shopify.engineering/making-react-native-gestures-feel-natural): présente quelques techniques utiles (spring, velocity, resistance) rendre ses animations plus naturelles.
+- 📜 [Using Apache ECharts in React Native](https://medium.com/@chenzhiqing/using-apache-echarts-in-react-native-55c6d555ac03): présente une nouvelle librairie qui propose de rendre des charts Apache EChart sur React-Native avec au choix React-Native-SVG ou React-Native-Skia.
 - 📜 [Run Tests for Key Pieces of Your App](https://www.callstack.com/blog/run-tests-for-key-pieces-of-your-app)
 - 📜 [Optimize Your Android Application’s Size with Gradle Settings](https://www.callstack.com/blog/optimize-android-application-size-with-gradle-settings)
-- 📜 [Summary of 2022 — React Native Open Source at Software Mansion](https://blog.swmansion.com/summary-of-2022-react-native-open-source-at-software-mansion-9edf929db005) + https://twitter.com/swmansion/status/1620091215545864194
-- 📜 [Using Apache ECharts in React Native](https://medium.com/@chenzhiqing/using-apache-echarts-in-react-native-55c6d555ac03) + https://twitter.com/wcandillon/status/1619298383851827200
 - 🎨 [Fabric + React-Native-macOS demo - WIP](https://twitter.com/ReactNativeMSFT/status/1619037832496156674)
 - 🎨 [Expo Router - Quick Notes demo](https://twitter.com/Baconbrix/status/1619609828380540929)
 - 🎨 [CSS Modules in Expo demo](https://twitter.com/Baconbrix/status/1619179207250296833)
 - 🐦 ["PS5 user interface using react native"](https://twitter.com/Kelset/status/1619991122130137089)
 - 🐦 ["react-native-drawer-layout is back"](https://twitter.com/satya164/status/1620186837917786114)
+- 📦 [React-Native 0.70.7](https://twitter.com/CipolleschiR/status/1620468072493752320)
 - 📦 [react-native-select-pro](https://github.com/MobileReality/react-native-select-pro)
+- 🎙 [React-Native-Radio 257 - How can we improve React Native, part 2 - Meta Responds! ](https://reactnativeradio.com/episodes/rnr-257-meta-responds-how-can-we-improve-react-native-part-2)
 - 🎙️ [The React Native Show 20 - Remotion and Animations in React Native with Jonny Burger](https://www.youtube.com/watch?v=1VW5Gluxa4w)
 
 ---
@@ -150,8 +157,6 @@ Ponicode (CircleCI) est un partenaire de code basé sur une IA. Ils recrutent un
 
 💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
 
-<Todo />
-
 ---
 
 ## 🔀 Autre {#other}
@@ -172,14 +177,6 @@ Ponicode (CircleCI) est un partenaire de code basé sur une IA. Ils recrutent un
 
 ## 🤭 Fun {#fun}
 
-https://twitter.com/sarah_edo/status/1619843000661843968
+[![alt](/emails/issues/133/meme.jpg)](https://twitter.com/t3dotgg/status/1618932062236594179)
 
-https://twitter.com/mjackson/status/1619730599748710401
-
-https://twitter.com/trashh_dev/status/1619717085055303682
-
-https://twitter.com/t3dotgg/status/1618932062236594179
-
-https://twitter.com/tlakomy/status/1618397733190250496
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/todo)
+A plus 👋
