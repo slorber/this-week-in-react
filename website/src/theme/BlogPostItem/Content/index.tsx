@@ -32,6 +32,7 @@ export default function ContentWrapper(props) {
   return (
     <>
       <Content {...props} />
+      <br />
       {isBlogPostPage && (
         <>
           {frontMatter.twitterThreadUrl && (
