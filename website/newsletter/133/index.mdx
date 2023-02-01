@@ -44,7 +44,53 @@ We are excited to collaborate with Strapi, Appwrite, Meilisearch, and Medusa. Th
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Astro rendering v2](/emails/issues/133/astro-rendering.jpg)](https://astro.build/blog/hybrid-rendering/)
+
+**[Astro - Unlock New Possibilities with Hybrid Rendering](https://astro.build/blog/hybrid-rendering/)**
+
+With Astro 1, you had to make a global choice for the whole site: 100% static (SSG) or 100% server (SSR). With Astro 2.0 it is now possible to choose for each page. The article details the internal workings of the Astro build, and how it had to evolve to support this new feature. They use static analysis to separate static routes from SSR routes.
+
+---
+
+[![Why React isn't dying](/emails/issues/133/reactisntdying.jpg)](https://tkdodo.eu/blog/why-react-isnt-dying)
+
+**[Why React isn't dying](https://tkdodo.eu/blog/why-react-isnt-dying)**
+
+Dominik explains why React is not about to die. React popularized JSX and the concept of component and declarative UI. The alternatives take the good parts and try to solve the problems, but it will be difficult to challenge it given the size of its ecosystem and its community that only gets stronger with time. It would take a big breakthrough innovation. Framework agnostic libraries (TanStack) have a role to play and allow to transfer knowledge from one ecosystem to another.
+
+---
+
+[![Resumable React: How To Use React Inside Qwik](/emails/issues/133/qwik.jpg)](https://www.builder.io/blog/resumable-react-how-to-use-react-inside-qwik)
+
+**[Resumable React: How To Use React Inside Qwik](https://www.builder.io/blog/resumable-react-how-to-use-react-inside-qwik)**
+
+This article highlights the integration between Qwik and React. Qwik is an innovative framework in beta, based on resumability rather than hydration. It exposes a method `qwikify$()` that allows to adapt an existing React component to be used in a Qwik app, with several possible hydration modes. To reduce the size of the bundle as much as possible, it is possible to avoid hydrating the React component and to use the native DOM events directly.
+
+---
+
+- 💬 [Replace Create React App recommendation with Vite - Dan Abramov answers](https://github.com/reactjs/reactjs.org/pull/5487#issuecomment-1409720741): long comment from Dan. Tells the CRA story, goal, and future with 5 possible options. TLDR: they don't want to deprecate CRA but don't want to recommend it either: depriving yourself of SSG/SSR is not a good thing. It is possible that the CRA CLI will become a launcher that offers a choice between several popular frameworks: Next.js, Remix, CRA...
+- 👀 [AsyncContext + React](https://twitter.com/sebmarkbage/status/1620442034598477824): Sebastian Markbåge brings the idea of using TC39 stage 0 proposal [AsyncContext](https://github.com/legendecas/proposal-async-context) directly as React context 🤔
+- 👀 ["Statically typed links are coming to Next.js"](https://twitter.com/shuding_/status/1620137501192253440): great news for typesafe routing. Maybe this will be implemented with their new [TypeScript language server plugin](https://twitter.com/delba_oliveira/status/1592209522281439232), instead of a codegen step?
+- 👀 [Coming soon to Next.js - improved SEO support!](https://twitter.com/leeerob/status/1619743437577912321): new `metadata` export (will also be [typed with the new TS plugin?](https://twitter.com/shuding_/status/1619775431921762304))
+- 📜 [The Key To Good Component Design Is Selfishness](https://www.smashingmagazine.com/2023/01/key-good-component-design-selfishness/): the story a `<Button>` component design over time. It goes wrong because of using props to drive internal button content. It is worth limiting the responsibility of the button, using `children` and composition.
+- 📜 [Storybook - Component Story Format 3 is here](https://storybook.js.org/blog/storybook-csf3-is-here/): the new format comes out of beta and brings interesting improvements (boilerplate, composition, `play` function...) while remaining backward compatible.
+- 📜 [How to create one form with many actions in Remix](https://www.wking.dev/library/how-to-create-one-form-with-many-actions-in-remix): use HTML buttons with `name` and `value` props, and use TypeScript union types with a schema for each action type.
+- 📜 [Nextra 2 – Next.js Static Site Generator](https://the-guild.dev/blog/nextra-2): presents the main new features of Nextra v2, the static-site-generator for Next.js.
+- 📜 [How Netlify Uses Storybook for Visual Regression Testing](https://www.netlify.com/blog/storybook-visual-regression-testing/)
+- 📜 [The Curious Case of React](https://cult.honeypot.io/reads/the-curious-case-of-react/)
+- 🎥 [Andrew Clark on the Creation of Redux](https://www.youtube.com/watch?v=WvRcZkuXmpo): this interview that relates the 2014-2015 period, good teaser of the [React documentary](https://www.youtube.com/watch?v=gmp0istg5xo) that will be released soon. Redux offered the most elegant Flux implementation, and popularized the concept of reducer. Andrew doesn't disavow the project, but is happy that React is progressively proposing better alternatives for things like data fetching.
+- 🎥 [I Was Wrong About Nested React Components](https://www.youtube.com/watch?v=2sAdzy90GtE): Jack illustrates well why you shouldn't declare one component inside another.
+- 🎥 [Scroll Management with Remix and React Router](https://www.youtube.com/watch?v=4_H8j3rkpjI)
+- 🎥 [State of React Ecosystem Jan 2023](https://www.youtube.com/watch?v=_nGuk2Gs2oc)
+- 📦 [Redwood 4.0](https://community.redwoodjs.com/t/redwood-v4-0-0-is-now-available/4538): official release of v4.0 with a new Auth API, GraphQL Yoga v3, GraphQL Armor...
+- 📦 [Remix 1.12](https://github.com/remix-run/remix/releases/tag/remix%401.12.0): new dev server preview, behind a flag.
+- 📦 [React Router 6.8.0](https://github.com/remix-run/react-router/releases/tag/react-router%406.8.0)
+- 📦 [Jotai v2](https://twitter.com/jotaijs/status/1620436882034421762)
+- 📦 [Docusaurus 2.3](https://docusaurus.io/blog/releases/2.3)
+- 📦 [TinyBase 3.0](https://twitter.com/tinybasejs/status/1619763700650614784)
+- 📦 [Redux Toolkit 1.9.2](https://twitter.com/acemarke/status/1619445949822009346)
+- 🤖 [Houston - Astro Assitant AI](https://twitter.com/astrodotbuild/status/1619053233082859521): the Astro doc has its own AI to answer your questions. Remix seems to want to [do the same](https://twitter.com/mjackson/status/1619419579754889218).
+- 🐦 [Lee Robinson - "new version of my website"](https://twitter.com/leeerob/status/1620073039131213824)
 
 <SubscribeFormEmbed />
 
@@ -64,15 +110,26 @@ You can also **analyze survey results** in custom-built dashboards, save your fo
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+- 📜 [React Native 0.71-RC0 Android outage postmortem](https://reactnative.dev/blog/2023/01/27/71rc1-android-outage-postmortem): the React-Native team looks back at the blocked Android builds of November 2022 caused by a Maven release and a dynamic Gradle version dependency.
+- 📜 [Summary of 2022 — React Native Open Source at Software Mansion](https://blog.swmansion.com/summary-of-2022-react-native-open-source-at-software-mansion-9edf929db005): nice retrospective of Software Mansion, we can say that they have been very active this year!
+- 📜 [Making Your React Native Gestures Feel Natural](https://shopify.engineering/making-react-native-gestures-feel-natural): presents some useful techniques (spring, velocity, resistance) to make your animations more natural.
+- 📜 [Using Apache ECharts in React Native](https://medium.com/@chenzhiqing/using-apache-echarts-in-react-native-55c6d555ac03): introduces a new library that can render Apache EChart components on React-Native with either React-Native-SVG or React-Native-Skia.
+- 📜 [Run Tests for Key Pieces of Your App](https://www.callstack.com/blog/run-tests-for-key-pieces-of-your-app)
+- 📜 [Optimize Your Android Application’s Size with Gradle Settings](https://www.callstack.com/blog/optimize-android-application-size-with-gradle-settings)
+- 📖 [Open Native Docs](https://twitter.com/ammarahm_ed/status/1620136052152500225): new online doc. Proposes to unify native libs to work on several ecosystems: React-Native, NativeScript, Flutter...
+- 🎨 [Fabric + React-Native-macOS demo - WIP](https://twitter.com/ReactNativeMSFT/status/1619037832496156674)
+- 🎨 [Expo Router - Quick Notes demo](https://twitter.com/Baconbrix/status/1619609828380540929)
+- 🎨 [CSS Modules in Expo demo](https://twitter.com/Baconbrix/status/1619179207250296833)
+- 🐦 ["PS5 user interface using react native"](https://twitter.com/Kelset/status/1619991122130137089)
+- 🐦 ["react-native-drawer-layout is back"](https://twitter.com/satya164/status/1620186837917786114)
+- 📦 [React-Native 0.70.7](https://twitter.com/CipolleschiR/status/1620468072493752320)
+- 📦 [react-native-select-pro](https://github.com/MobileReality/react-native-select-pro)
+- 🎙 [React-Native-Radio 257 - How can we improve React Native, part 2 - Meta Responds! ](https://reactnativeradio.com/episodes/rnr-257-meta-responds-how-can-we-improve-react-native-part-2)
+- 🎙️ [The React Native Show 20 - Remotion and Animations in React Native with Jonny Burger](https://www.youtube.com/watch?v=1VW5Gluxa4w)
 
 ---
 
 ## 🧑‍💻 Jobs {#jobs}
-
-🧑‍💼 [**Lab - Frontend Developer - Hybird Remote, London**](https://4dayweek.io/remote-job/frontend-developer-lab?utm_source=newsletter&utm_medium=newsletter&utm_campaign=weekinreact)
-
-Join the Riverr agency as a frontend developer, working on client projects using modern technologies, such as React, Next.js, TypeScript. A [**4/day week**](https://4dayweek.io/?utm_source=newsletter&utm_medium=newsletter&utm_campaign=weekinreact) job.
 
 🧑‍💼 [**TLDR - Senior Software Engineer (Remote, $120k-200k)**](https://tldr.tech/jobs/senior-software-engineer/23?utm_source=thisweekinreact)
 
@@ -88,20 +145,26 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 💡 [How to publish an offer?](https://thisweekinreact.com/sponsor)
 
-💡 [How to publish an offer?](https://thisweekinreact.com/sponsor)
-
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- [TC39 January 2023 meeting](https://github.com/babel/proposals/issues/86): great proposals like [Immutable Array methods (change array by copy)](https://twitter.com/AndaristRake/status/1620154153250217988) or [Symbols as WeakMap keys](https://twitter.com/sebastienlorber/status/1620385689853661185) are progressing to stage 4.
+- [TypeScript 5.0 Beta](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0-beta/): this [video by Matt Pocock](https://www.youtube.com/watch?v=iOTAFRFgm8I) highlights some of the most interesting features such as decorators and const type parameters.
+- [Release Notes for Safari Technology Preview 162](https://webkit.org/blog/13703/release-notes-for-safari-technology-preview-162/): CSS nesting, declarative shadow DOM...
+- [Scrollend, a new JavaScript event](https://developer.chrome.com/blog/scrollend-a-new-javascript-event/): already in Chrome, Firefox and polyfills available.
+- ["Turbopack is adding support for webpack loaders"](https://twitter.com/jaredpalmer/status/1619071988181651456)
+- [What’s next for Flutter](https://medium.com/flutter/whats-next-for-flutter-b94ce089f49c)
+- [You’ve Got Options for Removing Event Listeners](https://www.macarthur.me/posts/options-for-removing-event-listeners)
+- [Deno 1.30: Built-in Node modules](https://deno.com/blog/v1.30)
+- [10 Web Development Trends in 2023](https://www.robinwieruch.de/web-development-trends/)
+- [2023 State of Databases for Serverless & Edge](https://leerob.io/blog/backend)
+- [Improve your test experience with Playwright Soft Assertions](https://timdeschryver.dev/blog/improve-your-test-experience-with-playwright-soft-assertions)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/todo)
+[![alt](/emails/issues/133/meme.jpg)](https://twitter.com/t3dotgg/status/1618932062236594179)
 
 See ya! 👋
