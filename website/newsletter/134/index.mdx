@@ -1,6 +1,6 @@
 ---
 slug: /134
-title: "This Week In React #134: ..."
+title: "This Week In React #134: React Hebdo #134: Gatsby, React DOM for Native, XState, Flashlight, re-renders, Custom Hooks, Ignite Cookbook..."
 authors: [slorber]
 date: 02-07-2023
 image: /img/TWIR_POST.png
@@ -9,7 +9,11 @@ unlisted: true
 
 Hi everyone!
 
-<Todo />
+Gatsby vient d'être racheté par Netlify 🤯!
+
+Il y a aussi une RFC très intéressante à lire si vous êtes passionnés de cross-platform en React-Native.
+
+Sinon, c'est une semaine plutôt calme. Ça tombe bien, car j'ai pas beaucoup de temps 😄. Je termine quelques préparatifs pour l'email de la semaine prochaine qui sera un peu différent.
 
 <!-- truncate -->
 
@@ -41,7 +45,39 @@ We are excited to collaborate with Strapi, Appwrite, Meilisearch, and Medusa. Th
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Netlify Acquires Gatsby Inc. to Accelerate Adoption of Composable Web Architectures](/emails/issues/134/netlify-gatsby.jpg)](https://www.netlify.com/press/netlify-acquires-gatsby-inc-to-accelerate-adoption-of-composable-web-architectures/)
+
+**[Netlify Acquires Gatsby Inc. to Accelerate Adoption of Composable Web Architectures](https://www.netlify.com/press/netlify-acquires-gatsby-inc-to-accelerate-adoption-of-composable-web-architectures/)**
+
+C'est la grosse nouvelle de la semaine. Gatsby Inc. racheté par Netlify. Le framework Gatsby passe donc également sous la gouverne de Netlify au coté d'Eleventy et SolidJS et continuera d'évoluer. Les features de Gatsby Cloud (notamment le [Valhalla Content Hub](https://www.gatsbyjs.com/products/valhalla-content-hub/)) seront intégrés aux offres de Netlify. Le nouveau mot d'ordre est "composable architecture". Gatsby n'est pas l'outil le plus populaire actuellement, mais je trouve que cette acquisition à du sens, en particulier pour le content hub et toutes les intégrations CMS sur lesquelles ils ont travaillé. L'offre Gatsby Cloud est plus difficile à faire adopter que des features payantes en option sur Netlify, et c'est encore plus vrai pour les sites qui n'utilisent pas le framework Gatsby.
+
+À lire également:
+
+- 📜 [Gatsby is joining Netlify](https://www.gatsbyjs.com/blog/gatsby-is-joining-netlify/)
+- 📜 [Netlify Acquires Gatsby, Its Struggling Jamstack Competitor](https://thenewstack.io/netlify-acquires-gatsby-its-struggling-jamstack-competitor/)
+- 🎥 [Why would anyone buy Gatsby?](https://www.youtube.com/watch?v=5HE6FcOpit8)
+
+---
+
+[![Making state machines global in React](/emails/issues/134/xstate.jpg)](https://stately.ai/blog/making-state-machines-global-in-react)
+
+**[Making state machines global in React](https://stately.ai/blog/making-state-machines-global-in-react)**
+
+Présentation de la nouvelle API `createActorContext` qui fait son apparition dans XState 3.1. Elle permet de faciliter la création de state machines XState globales, associées à un context React. Il est possible d'utiliser un système de sélecteurs, ou encore de fournir une state machine custom au provider (utilise si d'utiliser des props?).
+
+---
+
+- 📜 [React recursively re-renders child components, but there is a nuance](https://alexsidorenko.com/blog/react-render-children-prop/): article visuel sympa qui illustre comment le découpage en composants et la colocation de state peuvent éviter des re-render inutiles.
+- 📜 [Custom React Hooks and When to Use Them](https://thoughtbot.com/blog/custom-react-hooks): il faut parfois créer des hooks sur mesure, même si ils n'ont pas vocation à être réutilisés. Mais il faut faire attention: les abstractions inutiles ont aussi un cout.
+- 📜 [TypeScript Utility Types You Need To Know](https://www.builder.io/blog/utility-types): présente en particulier `Awaited` et `ReturnType`, mais aussi `Readonly` dans un contexte React.
+- 📜 [React JS Best Practices From The New Docs](https://sebastiancarlos.com/react-js-best-practices-from-the-new-docs-1c65570e785d): lecture intéressante pour ceux qui veulent avoir un aperçu du contenu de la nouvelle doc. Je ne suis pas d'accord avec tous les commentaires (ne passez surtout pas à coté de [useSyncExternalStore](https://thisweekinreact.com/articles/useSyncExternalStore-the-underrated-react-api) 😅).
+- 📜 [WebStorm announces official support for Astro](https://astro.build/blog/astro-webstorm-support/)
+- 📜 [Demystifying UI Frameworks and Theming for React Apps](https://www.velotio.com/engineering-blog/demystifying-ui-frameworks-and-theming-for-react-apps)
+- 🎥 [Using Svelte Inside A React App](https://www.youtube.com/watch?v=FrusJNycQvk)
+- 👀 [Shopify.com using Remix](https://twitter.com/remix_run/status/1622666016135475200)
+- 👀 [`create-astro` CLI redesign](https://twitter.com/n_moore/status/1621524815550074880)
+- 📦 [Ionic 7 Beta](https://ionic.io/blog/announcing-the-ionic-7-beta)
+- 📦 [Netlify/Remix-Compute](https://github.com/netlify/remix-compute): Remix + Netlify adapter
 
 <SubscribeFormEmbed />
 
@@ -67,7 +103,20 @@ Use [Checkly](https://www.checklyhq.com/?utm_medium=email&utm_source=newsletter&
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![React DOM for Native (reduce API fragmentation)](/emails/issues/134/rn-web.jpg)](https://github.com/necolas/discussions-and-proposals/blob/reduce-fragmentation/proposals/0000-reduce-fragmentation.md6)
+
+**[React DOM for Native (reduce API fragmentation)](https://github.com/necolas/discussions-and-proposals/blob/reduce-fragmentation/proposals/0000-reduce-fragmentation.md6)**
+
+La [RFC](https://github.com/react-native-community/discussions-and-proposals/pull/496) de Nicolas Gallagher (Meta / React-Native-Web) a été mise à jour. Le but est d'aligner les APIs React-Native le plus possible des APIs Web, y compris les éléments DOM comme `div`, `span` et même `select`. Le "learn once, run everywhere" pourrait se transformer progressivement en "write once, run everywhere". La communauté est assez partagée. Il va falloir réfléchir un peu à tête reposée pour savoir si c'est une bonne idée 😄, et vu l'ampleur du projet, ce n'est pas pour demain!
+
+---
+
+- 📜 [How to swap between React Native Storybook and your app](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o): technique utile pour ceux qui ont un Storybook React-Native. Perso j'aime carrément avoir une barre de menu en dev avec des boutons qui permettent d'ouvrir/fermer le Storybook, changer d'environnement API ou autre... Ça fait gagner beaucoup de temps sur le long terme de se créer sa propre DX.
+- 📦 [Flashlight.dev](https://flashlight.dev/): Flashlight est un nouveau service qui veut devenir le Lighthouse du mobile, accompagnée d'une offre Flashlight Cloud. Projet anciennement nommé [Android-Performance-Profiler](https://twitter.com/almouro/status/1622588283740880897).
+- 📖 [Ignite Cookbook for React Native](https://twitter.com/ir_ignite/status/1621202420704620544): liste de recettes React-Native.
+- 🎨 [SolidJS + NativeScript demo running React-Native-WebView](https://twitter.com/ammarahm_ed/status/1622259723729764354): la promesse d'Open Native est intéressante pour la portabilité du code natif.
+- 👀 [The White House calls for more interoperability between mobile platforms](https://twitter.com/JI/status/1620948253381632000)
+- 🎙️ [React-Native-Radio 258 - AI Robots coding React Native?!](https://reactnativeradio.com/episodes/r258-robots-coding-react-native)
 
 ---
 
@@ -91,14 +140,28 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 ## 🔀 Other {#other}
 
-<Todo />
+- [Updates from the 94th TC39 meeting](https://dev.to/hemanth/updates-from-the-94th-tc39-meeting-48mb): liste finalisée des propositions qui passent au stage. Particulièrement excité par AsnycContext, Change array by Copy et Symbols as WeakMap keys (nécessaire pour Records & Tuples).
+- [Deno - The Future (and the Past) of the Web is Server Side Rendering](https://deno.com/blog/the-future-and-past-is-server-side-rendering)
+- [WebKit - Pushing Interop Forward in 2023](https://webkit.org/blog/13706/interop-2023/) + [Chrome - Interop 2023: continuing to improve the web for developers](https://web.dev/interop-2023/)
+- [Understanding monomorphism can improve your JavaScript performance 60x](https://twitter.com/mhevery/status/1622499229813047296)
+- [Speeding up the JavaScript ecosystem - eslint](https://marvinh.dev/blog/speeding-up-javascript-ecosystem-part-3/)
+- [Google is working on bringing Chromium to iOS](https://twitter.com/OpenWebAdvocacy/status/1621653519274246144) + [Mozilla is working on bringing Firefox to iOS](https://twitter.com/OpenWebAdvocacy/status/1622898924775415808)
+- [The Guide To Responsive Design In 2023 and Beyond](https://ishadeed.com/article/responsive-design/)
+- [A Business Case for SvelteKit](https://elliscs.hashnode.dev/a-business-case-for-sveltekit)
+- [Node.js 19.6](https://twitter.com/ruyadorno/status/1621186886470361093)
+- [Ada 1.0 - New Node.js URL parser](https://twitter.com/nodejs/status/1622707746716917761)
+- [Vite 4.1](https://twitter.com/vite_js/status/1621149774627094535)
+- [Don't use return types, unless...](https://www.youtube.com/watch?v=nwSe95uFN8E)
+- [The Dangers Of Return Types in TypeScript](https://www.youtube.com/watch?v=I6V2FkW1ozQ)
+- [Learn Images - In-depth course on images for the web](https://web.dev/learn/images/)
+- [Forking Chrome to render in a terminal](https://fathy.fr/carbonyl)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+Savage 😅 why is he so mean.
 
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/todo)
+[![alt](/emails/issues/134/meme.png)](https://twitter.com/ThePrimeagen/status/1620827474681827333)
 
 See ya! 👋
