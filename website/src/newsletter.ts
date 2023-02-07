@@ -14,7 +14,7 @@ export type NewsletterSegment = {
 export type Newsletter = {
   fr: NewsletterSegment;
   en: NewsletterSegment;
-  all: NewsletterSegment;
+  all: NewsletterSegment & NewsletterFuture;
 };
 
 // TODO temporary hardcoded estimates
@@ -33,11 +33,36 @@ const fr: NewsletterSegment = {
   clickRate: 14,
 };
 
-const all: NewsletterSegment = {
+export type NextSlot = {
+  date: string;
+  projectedAudienceSize: number;
+};
+
+// TODO refactor
+export type NewsletterFuture = {
+  nextMainSlot: NextSlot;
+  nextSecondSlot: NextSlot;
+};
+
+const subscribersCount = fr.subscribersCount + en.subscribersCount;
+
+const growthPerMonth = 1500;
+
+const all: NewsletterSegment & NewsletterFuture = {
   name: "All",
-  subscribersCount: fr.subscribersCount + en.subscribersCount,
+  subscribersCount,
   openRate: 58,
   clickRate: 14,
+
+  // TODO improve this!
+  nextMainSlot: {
+    date: "July 2023",
+    projectedAudienceSize: subscribersCount + 6 * growthPerMonth,
+  },
+  nextSecondSlot: {
+    date: "May 2023",
+    projectedAudienceSize: subscribersCount + 4 * growthPerMonth,
+  },
 };
 
 export const newsletterStats: Newsletter = {

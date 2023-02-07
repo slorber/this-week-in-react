@@ -3,7 +3,11 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import styles from "./index.module.css";
 import clsx from "clsx";
-import { newsletterStats, NewsletterSegment } from "@site/src/newsletter";
+import {
+  newsletterStats,
+  NewsletterSegment,
+  NextSlot,
+} from "@site/src/newsletter";
 import { AllQuotes } from "@site/src/pages/_homepage/quotes";
 
 export default function SponsoringTabs({ children }) {
@@ -145,12 +149,24 @@ export function SponsoringTabsTestimonials() {
   );
 }
 
-function SponsoringTabsFirstSponsorHeader({ count }: { count: number }) {
+function SponsoringHeader({
+  count,
+  nextSlot,
+}: {
+  count: number;
+  nextSlot?: NextSlot;
+}) {
   return (
     <>
       <div>
         <b>Audience size</b>: ~{count}
       </div>
+      {nextSlot && (
+        <div>
+          <b>Next availability</b>: {nextSlot.date} -{" "}
+          <b>Projected audience size</b>: ~{nextSlot.projectedAudienceSize}
+        </div>
+      )}
       <div>
         <b>Price:</b>
       </div>
@@ -166,8 +182,9 @@ export function SponsoringTabsFirstSponsor() {
   return (
     <SponsoringTabs>
       <>
-        <SponsoringTabsFirstSponsorHeader
+        <SponsoringHeader
           count={newsletterStats.all.subscribersCount}
+          nextSlot={newsletterStats.all.nextMainSlot}
         />
         <ul>
           <li>
@@ -189,8 +206,9 @@ export function SponsoringTabsSecondSponsor() {
   return (
     <SponsoringTabs>
       <>
-        <SponsoringTabsFirstSponsorHeader
+        <SponsoringHeader
           count={newsletterStats.all.subscribersCount}
+          nextSlot={newsletterStats.all.nextSecondSlot}
         />
         <ul>
           <li>
@@ -212,9 +230,7 @@ export function SponsoringTabsJobSponsor() {
   return (
     <SponsoringTabs>
       <>
-        <SponsoringTabsFirstSponsorHeader
-          count={newsletterStats.all.subscribersCount}
-        />
+        <SponsoringHeader count={newsletterStats.all.subscribersCount} />
         <ul>
           <li>
             <b>1 issues</b>: 200€
@@ -231,9 +247,7 @@ export function SponsoringTabsJobSponsor() {
         </ul>
       </>
       <>
-        <SponsoringTabsFirstSponsorHeader
-          count={newsletterStats.en.subscribersCount}
-        />
+        <SponsoringHeader count={newsletterStats.en.subscribersCount} />
         <ul>
           <li>
             <b>1 issues</b>: 150€
@@ -250,9 +264,7 @@ export function SponsoringTabsJobSponsor() {
         </ul>
       </>
       <>
-        <SponsoringTabsFirstSponsorHeader
-          count={newsletterStats.fr.subscribersCount}
-        />
+        <SponsoringHeader count={newsletterStats.fr.subscribersCount} />
         <ul>
           <li>
             <b>1 issues</b>: 200€
