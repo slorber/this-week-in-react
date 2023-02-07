@@ -8,11 +8,11 @@ image: /img/TWIR_POST.png
 
 Hi everyone!
 
-Gatsby vient d'être racheté par Netlify 🤯!
+Gatsby has just been acquired by Netlify 🤯!
 
-Il y a aussi une RFC très intéressante à lire si vous êtes passionnés de cross-platform en React-Native.
+There is also a very interesting RFC to read if you are passionate about cross-platform in React-Native.
 
-Sinon, c'est une semaine plutôt calme. Ça tombe bien, car j'ai pas beaucoup de temps 😄. Je termine quelques préparatifs pour l'email de la semaine prochaine qui sera un peu différent.
+Otherwise, it's a pretty quiet week. That's good timing, because I don't have much time 😄. I'm finishing up some preparations for next week's email which will be a bit different.
 
 <!-- truncate -->
 
@@ -48,9 +48,9 @@ We are excited to collaborate with Strapi, Appwrite, Meilisearch, and Medusa. Th
 
 **[Netlify Acquires Gatsby Inc. to Accelerate Adoption of Composable Web Architectures](https://www.netlify.com/press/netlify-acquires-gatsby-inc-to-accelerate-adoption-of-composable-web-architectures/)**
 
-C'est la grosse nouvelle de la semaine. Gatsby Inc. racheté par Netlify. Le framework Gatsby passe donc également sous la gouverne de Netlify au coté d'Eleventy et SolidJS et continuera d'évoluer. Les features de Gatsby Cloud (notamment le [Valhalla Content Hub](https://www.gatsbyjs.com/products/valhalla-content-hub/)) seront intégrés aux offres de Netlify. Le nouveau mot d'ordre est "composable architecture". Gatsby n'est pas l'outil le plus populaire actuellement, mais je trouve que cette acquisition à du sens, en particulier pour le content hub et toutes les intégrations CMS sur lesquelles ils ont travaillé. L'offre Gatsby Cloud est plus difficile à faire adopter que des features payantes en option sur Netlify, et c'est encore plus vrai pour les sites qui n'utilisent pas le framework Gatsby.
+This is the big news of the week. Gatsby Inc. bought by Netlify. The framework is now under the Netlify umbrella alongside Eleventy and SolidJS and will continue to evolve. The cloud features (including the [Valhalla Content Hub](https://www.gatsbyjs.com/products/valhalla-content-hub/)) will be integrated into Netlify's offerings. The new slogan is "composable architecture". Gatsby is not the most popular React framework right now, but I think this acquisition makes sense, especially for the content hub and all the CMS integrations they have been working on. The Gatsby Cloud offering is harder to adopt than an optional paid features on Netlify, and that's even more true for sites that don't use Gatsby as a framework.
 
-À lire également:
+Also check:
 
 - 📜 [Gatsby is joining Netlify](https://www.gatsbyjs.com/blog/gatsby-is-joining-netlify/)
 - 📜 [Netlify Acquires Gatsby, Its Struggling Jamstack Competitor](https://thenewstack.io/netlify-acquires-gatsby-its-struggling-jamstack-competitor/)
@@ -62,14 +62,14 @@ C'est la grosse nouvelle de la semaine. Gatsby Inc. racheté par Netlify. Le fra
 
 **[Making state machines global in React](https://stately.ai/blog/making-state-machines-global-in-react)**
 
-Présentation de la nouvelle API `createActorContext` qui fait son apparition dans XState 3.1. Elle permet de faciliter la création de state machines XState globales, associées à un context React. Il est possible d'utiliser un système de sélecteurs, ou encore de fournir une state machine custom au provider (utilise si d'utiliser des props?).
+Presentation of the new `createActorContext` API appearing in XState 3.1. It allows to facilitate the creation of global XState state machines, associated to a React context. It is possible to use a selector system, or to provide a custom state machine to the provider (this looks convenient to customize a machine from parent `props`).
 
 ---
 
-- 📜 [React recursively re-renders child components, but there is a nuance](https://alexsidorenko.com/blog/react-render-children-prop/): article visuel sympa qui illustre comment le découpage en composants et la colocation de state peuvent éviter des re-render inutiles.
-- 📜 [Custom React Hooks and When to Use Them](https://thoughtbot.com/blog/custom-react-hooks): il faut parfois créer des hooks sur mesure, même si ils n'ont pas vocation à être réutilisés. Mais il faut faire attention: les abstractions inutiles ont aussi un cout.
-- 📜 [TypeScript Utility Types You Need To Know](https://www.builder.io/blog/utility-types): présente en particulier `Awaited` et `ReturnType`, mais aussi `Readonly` dans un contexte React.
-- 📜 [React JS Best Practices From The New Docs](https://sebastiancarlos.com/react-js-best-practices-from-the-new-docs-1c65570e785d): lecture intéressante pour ceux qui veulent avoir un aperçu du contenu de la nouvelle doc. Je ne suis pas d'accord avec tous les commentaires (ne passez surtout pas à coté de [useSyncExternalStore](https://thisweekinreact.com/articles/useSyncExternalStore-the-underrated-react-api) 😅).
+- 📜 [React recursively re-renders child components, but there is a nuance](https://alexsidorenko.com/blog/react-render-children-prop/): nice visual article that illustrates how component splitting and state colocation can avoid unnecessary re-rendering.
+- 📜 [Custom React Hooks and When to Use Them](https://thoughtbot.com/blog/custom-react-hooks): sometimes you have to create custom hooks, even if they are not intended to be reused. But be careful: unnecessary abstractions also have a cost.
+- 📜 [TypeScript Utility Types You Need To Know](https://www.builder.io/blog/utility-types): presents in particular `Awaited` and `ReturnType`, but also `Readonly` in a React context.
+- 📜 [React JS Best Practices From The New Docs](https://sebastiancarlos.com/react-js-best-practices-from-the-new-docs-1c65570e785d): Interesting reading for those who want to have an overview of the content of the new doc. I don't agree with all the comments, in particular don't miss the [underrated useSyncExternalStore](https://thisweekinreact.com/articles/useSyncExternalStore-the-underrated-react-api) 😄.
 - 📜 [WebStorm announces official support for Astro](https://astro.build/blog/astro-webstorm-support/)
 - 📜 [Demystifying UI Frameworks and Theming for React Apps](https://www.velotio.com/engineering-blog/demystifying-ui-frameworks-and-theming-for-react-apps)
 - 🎥 [Using Svelte Inside A React App](https://www.youtube.com/watch?v=FrusJNycQvk)
@@ -106,14 +106,14 @@ Use [Checkly](https://www.checklyhq.com/?utm_medium=email&utm_source=newsletter&
 
 **[React DOM for Native (reduce API fragmentation)](https://github.com/necolas/discussions-and-proposals/blob/reduce-fragmentation/proposals/0000-reduce-fragmentation.md6)**
 
-La [RFC](https://github.com/react-native-community/discussions-and-proposals/pull/496) de Nicolas Gallagher (Meta / React-Native-Web) a été mise à jour. Le but est d'aligner les APIs React-Native le plus possible des APIs Web, y compris les éléments DOM comme `div`, `span` et même `select`. Le "learn once, run everywhere" pourrait se transformer progressivement en "write once, run everywhere". La communauté est assez partagée. Il va falloir réfléchir un peu à tête reposée pour savoir si c'est une bonne idée 😄, et vu l'ampleur du projet, ce n'est pas pour demain!
+The [RFC](https://github.com/react-native-community/discussions-and-proposals/pull/496) by Nicolas Gallagher (Meta / React-Native-Web) has just been updated. The goal is to align React-Native APIs as much as possible with Web APIs, including DOM elements like `div`, `span` and even `select`! The "learn once, run everywhere" could gradually turn into "write once, run everywhere". The community is quite divided. We'll have to think a bit at rest to know if it's a good idea 😄, and considering the size of the project, it's clearly not for tomorrow!
 
 ---
 
-- 📜 [How to swap between React Native Storybook and your app](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o): technique utile pour ceux qui ont un Storybook React-Native. Perso j'aime carrément avoir une barre de menu en dev avec des boutons qui permettent d'ouvrir/fermer le Storybook, changer d'environnement API ou autre... Ça fait gagner beaucoup de temps sur le long terme de se créer sa propre DX.
-- 📦 [Flashlight.dev](https://flashlight.dev/): Flashlight est un nouveau service qui veut devenir le Lighthouse du mobile, accompagnée d'une offre Flashlight Cloud. Projet anciennement nommé [Android-Performance-Profiler](https://twitter.com/almouro/status/1622588283740880897).
-- 📖 [Ignite Cookbook for React Native](https://twitter.com/ir_ignite/status/1621202420704620544): liste de recettes React-Native.
-- 🎨 [SolidJS + NativeScript demo running React-Native-WebView](https://twitter.com/ammarahm_ed/status/1622259723729764354): la promesse d'Open Native est intéressante pour la portabilité du code natif.
+- 📜 [How to swap between React Native Storybook and your app](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o): useful technique for those who have a React-Native Storybook. Personally I like to have a menu bar in dev with buttons to open/close the Storybook, change the API environment or other... It saves a lot of time in the long run to create your own DX.
+- 📦 [Flashlight.dev](https://flashlight.dev/): Flashlight is a new service that wants to become the Lighthouse of mobile, including a convenient Flashlight Cloud offering. Project formerly named [Android-Performance-Profiler](https://twitter.com/almouro/status/1622588283740880897).
+- 📖 [Ignite Cookbook for React Native](https://twitter.com/ir_ignite/status/1621202420704620544): short step-by-step recipes for React-Native.
+- 🎨 [SolidJS + NativeScript demo running React-Native-WebView](https://twitter.com/ammarahm_ed/status/1622259723729764354): the promise of Open Native in action, is interesting for the portability of native code.
 - 👀 [The White House calls for more interoperability between mobile platforms](https://twitter.com/JI/status/1620948253381632000)
 - 🎙️ [React-Native-Radio 258 - AI Robots coding React Native?!](https://reactnativeradio.com/episodes/r258-robots-coding-react-native)
 
@@ -139,7 +139,7 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 ## 🔀 Other {#other}
 
-- [Updates from the 94th TC39 meeting](https://dev.to/hemanth/updates-from-the-94th-tc39-meeting-48mb): liste finalisée des propositions qui passent au stage. Particulièrement excité par AsnycContext, Change array by Copy et Symbols as WeakMap keys (nécessaire pour Records & Tuples).
+- [Updates from the 94th TC39 meeting](https://dev.to/hemanth/updates-from-the-94th-tc39-meeting-48mb): finalized list of proposals that are going to the next stage. Especially excited about [AsyncContext](https://twitter.com/sebastienlorber/status/1620391460679065601), Change array by Copy and Symbols as WeakMap keys (much needed for [Records & Tuples](https://sebastienlorber.com/records-and-tuples-for-react)).
 - [Deno - The Future (and the Past) of the Web is Server Side Rendering](https://deno.com/blog/the-future-and-past-is-server-side-rendering)
 - [WebKit - Pushing Interop Forward in 2023](https://webkit.org/blog/13706/interop-2023/) + [Chrome - Interop 2023: continuing to improve the web for developers](https://web.dev/interop-2023/)
 - [Understanding monomorphism can improve your JavaScript performance 60x](https://twitter.com/mhevery/status/1622499229813047296)
