@@ -15,6 +15,17 @@ export function Quote(props: ComponentProps<typeof TweetQuote>) {
 
 export const AllQuotes = {
   en: {
+    evanbacon: (
+      <Quote
+        url="https://twitter.com/Baconbrix/status/1622655092657688576"
+        handle="Baconbrix"
+        github="EvanBacon"
+        name="Evan Bacon"
+        job="Engineering Manager - Expo"
+      >
+        My favorite resource for keeping up with the React community!
+      </Quote>
+    ),
     wcandillon: (
       <Quote
         url="https://twitter.com/wcandillon/status/1263825118557593600"
@@ -463,9 +474,9 @@ export default function HomepageQuotes() {
           {AllQuotes.fr.lauthieb}
         </>
       )}
+      {AllQuotes.en.evanbacon}
       {AllQuotes.en.wcandillon}
-      {AllQuotes.en.threepointone}
-      {AllQuotes.en.kentcdodds}
+      {AllQuotes.en.yangshunz}
       {AllQuotes.en.sebmarkbage}
       {isFrench && (
         <>
@@ -481,7 +492,8 @@ export default function HomepageQuotes() {
           {AllQuotes.fr._smontlouis}
         </>
       )}
-      {AllQuotes.en.yangshunz}
+      {AllQuotes.en.threepointone}
+      {AllQuotes.en.kentcdodds}
       {AllQuotes.en.NoriSte}
       {AllQuotes.en.ericclemmons}
       {AllQuotes.en.swmansion}
