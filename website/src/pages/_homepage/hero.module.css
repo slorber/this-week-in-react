@@ -43,6 +43,11 @@ Not easy to center this CK form properly...
   max-width: 700px; /* TODO reduce this width without CK stacking the form... (JS sets data-stacked="true")*/
 }
 
+.heroValueProposition {
+  margin-bottom: 0 !important;
+  font-size: 22px !important;
+}
+
 @media screen and (max-width: 996px) {
   .hero {
     padding: 1rem 0 1rem 0;
@@ -56,4 +61,8 @@ Not easy to center this CK form properly...
   .hero p {
     font-size: 1.2rem;
   }
+  .heroValueProposition {
+    font-size: 14px !important;
+  }
 }
+

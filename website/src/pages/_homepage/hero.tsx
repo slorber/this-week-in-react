@@ -4,12 +4,58 @@ import styles from "./hero.module.css";
 import { useBaseUrlUtils } from "@docusaurus/core/lib/client/exports/useBaseUrl";
 import SubscribeForm from "@site/src/components/SubscribeForm";
 import SimpleTranslate from "@site/src/components/SimpleTranslate";
+import {
+  newsletterStats,
+  lastIssueLink,
+  testimonialsLink,
+} from "@site/src/newsletter";
+import Link from "@docusaurus/Link";
 
 function HeroSubscribeForm() {
   return (
     <div className={styles.heroSubscribeForm}>
       <SubscribeForm />
     </div>
+  );
+}
+
+function HeroValueProposition() {
+  return (
+    <p className={styles.heroValueProposition}>
+      <SimpleTranslate
+        en="Join {subscribersCount} readers | {oneEmail} per week | 100% {free}!"
+        fr="Rejoins {subscribersCount} abonnés | {oneEmail} par semaine | 100% {free}!"
+        values={{
+          subscribersCount: (
+            <Link
+              to={testimonialsLink}
+              style={{
+                color: "white",
+                textDecoration: "underline",
+              }}
+            >
+              <b>{newsletterStats.all.subscribersCount}</b>
+            </Link>
+          ),
+          oneEmail: (
+            <Link
+              to={lastIssueLink}
+              style={{
+                color: "white",
+                textDecoration: "underline",
+              }}
+            >
+              <b>1 email</b>
+            </Link>
+          ),
+          free: (
+            <b>
+              <SimpleTranslate en="free" fr="gratuit" />
+            </b>
+          ),
+        }}
+      />
+    </p>
   );
 }
 
@@ -29,6 +75,7 @@ export default function Hero() {
           />
         </p>
         <HeroSubscribeForm />
+        <HeroValueProposition />
       </div>
     </header>
   );
