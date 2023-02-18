@@ -17,6 +17,7 @@ function readEnvVariable(name, defaultValue) {
   return result;
 }
 
+/*
 const client = new Twitter({
   consumer_key: readEnvVariable("TWIR_TWITTER_API_KEY"),
   consumer_secret: readEnvVariable("TWIR_TWITTER_API_SECRET"),
@@ -24,6 +25,7 @@ const client = new Twitter({
   access_token_secret: readEnvVariable("TWIR_TWITTER_ACCESS_TOKEN_SECRET"),
   // bearer_token: readEnvVariable("TWIR_TWITTER_BEARER_TOKEN"),
 });
+ */
 
 const client2 = new TwitterLite({
   subdomain: "ads-api",
@@ -36,6 +38,7 @@ const client2 = new TwitterLite({
   // bearer_token: readEnvVariable("TWIR_TWITTER_BEARER_TOKEN"),
 });
 
+/*
 function makeGet(endpoint, params = {}) {
   return new Promise((resolve, reject) => {
     client.get(endpoint, params, (error, data) => {
@@ -52,12 +55,17 @@ function makePost(endpoint, params) {
   });
 }
 
+ */
+
 async function run() {
+  /*
   console.log(
     "Ads Accounts client1",
     await makeGet("https://ads-api.twitter.com/11/accounts")
   );
   console.log("Ads Accounts client2", await client2.get("accounts"));
+
+   */
 
   /*
   const postConversionResult = await makePost(
