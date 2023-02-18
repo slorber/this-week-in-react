@@ -44,6 +44,7 @@ export default function EmailCodeBlock(props: any) {
     // Seems useful to render code blocks in emails :/
     function divToSpan(div) {
       const span = document.createElement("span");
+      // @ts-expect-error
       span.style = `font-size: ${fontSize}px; line-height: ${lineHeight}px;`;
       while (div.firstChild) {
         span.appendChild(div.firstChild);

@@ -36,9 +36,15 @@ export default function ContentWrapper(props) {
         <>
           <br />
 
-          {frontMatter.twitterThreadUrl && (
-            <TwitterThreadCTA twitterThreadUrl={frontMatter.twitterThreadUrl} />
-          )}
+          {
+            // @ts-expect-error
+            frontMatter.twitterThreadUrl && (
+              <TwitterThreadCTA
+                // @ts-expect-error
+                twitterThreadUrl={frontMatter.twitterThreadUrl}
+              />
+            )
+          }
           <SubscribeFormEmbed />
         </>
       )}

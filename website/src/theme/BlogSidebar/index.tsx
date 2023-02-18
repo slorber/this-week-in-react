@@ -6,6 +6,7 @@ import { shortenTitle } from "@site/src/utils/newsletterUtils";
 
 type Props = WrapperProps<typeof BlogSidebarType>;
 
+// @ts-expect-error
 function useCustomizedSidebar(sidebar: Props["sidebar"]): Props["sidebar"] {
   return useMemo(() => {
     return {
@@ -19,6 +20,7 @@ function useCustomizedSidebar(sidebar: Props["sidebar"]): Props["sidebar"] {
 }
 
 export default function BlogSidebarWrapper(props: Props): JSX.Element {
+  // @ts-expect-error
   const sidebar = useCustomizedSidebar(props.sidebar);
   return (
     <>
