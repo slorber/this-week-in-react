@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import getAppendOnlySearch from "@site/src/utils/getAppendOnlySearch";
 
 function getSignupConfirmationQuery() {
-  return "test";
+  return `query=${encodeURIComponent(getAppendOnlySearch())}`;
   // return getAppendOnlySearch();
 }
 
