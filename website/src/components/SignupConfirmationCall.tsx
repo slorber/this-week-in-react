@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import getAppendOnlySearch from "@site/src/utils/getAppendOnlySearch";
 
+// We have to encode the query params because otherwise AdBlock Plus will block the client-side request
 function getSignupConfirmationQuery() {
   return `query=${encodeURIComponent(getAppendOnlySearch())}`;
   // return getAppendOnlySearch();
