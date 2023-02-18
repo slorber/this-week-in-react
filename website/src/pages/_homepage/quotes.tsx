@@ -140,6 +140,17 @@ export const AllQuotes = {
         This newsletter might just replace Twitter for me 😂
       </Quote>
     ),
+    peterpme: (
+      <Quote
+        url="https://twitter.com/peterpme/status/1626958088669470720"
+        handle="peterpme"
+        github="peterpme"
+        name="Peter Piekarczyk"
+        job="Founded Draftbit"
+      >
+        Never a dull moment when reading This Week In React.
+      </Quote>
+    ),
     johnnyreilly: (
       <Quote
         url="https://twitter.com/johnny_reilly/status/1477359594087321600"
@@ -505,6 +516,7 @@ export default function HomepageQuotes() {
       {AllQuotes.en.elijahmanor}
       {AllQuotes.en.asidorenko_}
       {AllQuotes.en.beaussan}
+      {AllQuotes.en.peterpme}
       {AllQuotes.en.wbroek}
       {AllQuotes.en.fredmaiaarantes}
       {AllQuotes.en.ndubien}
