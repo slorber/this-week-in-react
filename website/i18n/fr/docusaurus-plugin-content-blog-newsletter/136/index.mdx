@@ -45,29 +45,13 @@ import Support from "../_support.mdx";
 
 ## ⚛️ React {#react}
 
-[Next.js 13.2](https://nextjs.org/blog/next-13-2)
+[![Next.js 13.2](/emails/issues/136/nextjs13.2.jpg)](https://nextjs.org/blog/next-13-2)
 
-https://twitter.com/delba_oliveira/status/1628841728307232768
+**[Next.js 13.2](https://nextjs.org/blog/next-13-2)**
 
-https://twitter.com/shadcn/status/1629533541183651842
+Une belle release avec des nouveautés dont les devs Vercel nous avaient déjà donné un aperçu. La nouvelle API Metadata est utile pour le SEO, fonctionne bien avec le streaming SSR, les server components et le nouveau app directory. Les nouveaux Route Handlers ont l'air d'avoir une bonne ergonomie: il suffit d'exporter le verbe HTTP. Particulièrement excité par les nouveautés qui touchent au MDX (compiler Rust, Server Components), et qui devraient rendre les sites de contenus Next.js beaucoup plus léger à utiliser. Si j'ai bien compris, Next.js commence à utiliser une étape de codegen TypeScript pour les liens typés (en plus du plugin TypeScript). La compatibilité Turbopack avec Webpack loaders sera bien pratique pour faciliter la migration.
 
-https://twitter.com/timneutkens/status/1628836655762141187
-
----
-
-[Vercel Cache API: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
-
-https://twitter.com/sebmarkbage/status/1628845420121128965
-
-https://twitter.com/delba_oliveira/status/1628841728307232768
-
-https://twitter.com/cramforce/status/1628849610696568832
-
----
-
-[Module Extraction: The Silent Web Revolution](https://www.builder.io/blog/module-extraction-the-silent-web-revolution)
-
-https://twitter.com/RyanCarniato/status/1628879925217497089
+La plus grosse surprise pour moi, c'est l'introduction d'une API de cache directement intégrée à `fetch()`: permet un peu la même chose que ISR mais avec une granularité plus fine, au niveau du composant, pour chaque requête. Il y a même un système de tagging. Cela reste fléxible: Next.js reste portable et peut être hébergé sur votre propre infra. Mais cela s'intègre bien évidement avec Vercel. Un article dédié donne plus de détails et explique les limites du modèle ISR: [Vercel Cache API: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache).
 
 ---
 
@@ -93,6 +77,8 @@ Signals:
 ---
 
 - 👥 [Matt Carroll](https://twitter.com/mattcarrollcode) + [Sean Keegan](https://twitter.com/DevRelSean): 2 DevRels viennent de rejoindre l'équipe React.
+- 📜 [Module Extraction: The Silent Web Revolution](https://www.builder.io/blog/module-extraction-the-silent-web-revolution): les frameworks React peuvent déjà séparer le code client/server dans un même module. Certains autres frameworks comme Qwik vont plus loin et peuvent maintenant extraire des closures, y compris les variables capturées.
+- 📜 [Why useEffect May Not Be the Best Abstraction](https://www.builder.io/blog/useeffect-not-the-best-abstraction): critique de useEffect et comparaison avec Qwik
 - 📜 [React Is Holding Me Hostage](https://emnudge.dev/blog/react-hostage)
 - 📜 [useSyncExternalStore - A First Look](https://julesblom.com/writing/usesyncexternalstore)
 - 📜 [i18n translations in Next.js 13's app-dir for server/client components](https://aralroca.com/blog/i18n-translations-nextjs-13-app-dir)
@@ -106,7 +92,6 @@ Signals:
 - 📦 [Suspense - Utilities for working with React Suspense](https://github.com/bvaughn/suspense/)
 - 📦 [Sonner - an opinionated toast component for React](https://twitter.com/emilkowalski_/status/1628742238548250624)
 - 📦 [nodl - framework for visual node graphs](https://twitter.com/emilwidlund/status/1628877076424949760)
-- 📦 [markdown-rs + mdxjs-rs](https://twitter.com/wooorm/status/1629138812231090179)
 - 📦 [React Aria - February 2023 releases](https://twitter.com/devongovett/status/1629156091178131457)
 - 📦 [Radix UI releases](https://twitter.com/radix_ui/status/1629120708054753281)
 - 📦 [TanStack Bling](https://github.com/TanStack/bling/) https://twitter.com/tannerlinsley/status/1629254943441051648
