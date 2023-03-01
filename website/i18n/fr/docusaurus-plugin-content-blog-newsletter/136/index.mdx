@@ -51,51 +51,47 @@ import Support from "../_support.mdx";
 
 Une belle release avec des nouveautés dont les devs Vercel nous avaient déjà donné un aperçu. La nouvelle API Metadata est utile pour le SEO, fonctionne bien avec le streaming SSR, les server components et le nouveau app directory. Les nouveaux Route Handlers ont l'air d'avoir une bonne ergonomie: il suffit d'exporter le verbe HTTP. Particulièrement excité par les nouveautés qui touchent au MDX (compiler Rust, Server Components), et qui devraient rendre les sites de contenus Next.js beaucoup plus léger à utiliser. Si j'ai bien compris, Next.js commence à utiliser une étape de codegen TypeScript pour les liens typés (en plus du plugin TypeScript). La compatibilité Turbopack avec Webpack loaders sera bien pratique pour faciliter la migration.
 
-La plus grosse surprise pour moi, c'est l'introduction d'une API de cache directement intégrée à `fetch()`: permet un peu la même chose que ISR mais avec une granularité plus fine, au niveau du composant, pour chaque requête. Il y a même un système de tagging. Cela reste fléxible: Next.js reste portable et peut être hébergé sur votre propre infra. Mais cela s'intègre bien évidement avec Vercel. Un article dédié donne plus de détails et explique les limites du modèle ISR: [Vercel Cache API: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache).
+La plus grosse surprise pour moi, c'est l'introduction d'une API de cache directement intégrée à `fetch()`: permet un peu la même chose que ISR mais avec une granularité plus fine, au niveau du composant, pour chaque requête. Il y a même un système de tagging. Next.js reste portable: le cache peut être hébergé sur votre propre infra, ou utiliser un simple LRU. L'intégration avec Vercel est facilitée. Un article dédié donne plus de détails et explique les limites du modèle ISR: [Vercel Cache API: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache). Voir aussi le [thread de Sebastian Markbåge](https://twitter.com/sebmarkbage/status/1628845420121128965).
 
 ---
 
-[Why useEffect May Not Be the Best Abstraction](https://www.builder.io/blog/useeffect-not-the-best-abstraction)
+[![The Evolution of Signals in JavaScript](/emails/issues/136/signals.jpg)](https://dev.to/this-is-learning/the-evolution-of-signals-in-javascript-8ob)
 
-https://twitter.com/mhevery/status/1628537269417295873
+**[The Evolution of Signals in JavaScript](https://dev.to/this-is-learning/the-evolution-of-signals-in-javascript-8ob)**
 
----
+Cet article de Ryan Carniato (SolidJS) qui retrace l'histoire des signaux dans le frontend, en passant par KnockoutJS, MobX et bien d'autres solutions.
 
-Signals:
+C'est le gros sujet du moment, alors je vous propose de lire vous-même les nombreuses discussions qui ont eu lieu sur Twitter cette semaine:
 
-[The Evolution of Signals in JavaScript](https://dev.to/this-is-learning/the-evolution-of-signals-in-javascript-8ob)
-
-- https://twitter.com/acdlite/status/1628811935088013314
-- https://twitter.com/mhevery/status/1628556944318550016
-- https://twitter.com/acdlite/status/1628930249718202369
-- https://twitter.com/devongovett/status/1629540226589663233
-- [Jordan Walke - "Of course this is one of the first things people suggested when we built react. “Let’s just track the access of data on reads”."](https://twitter.com/jordwalke/status/1629663133039214593)
-- [Andrew Clark on Signals](https://twitter.com/acdlite/status/1628811935088013314)
-- [Devon Govett - "the debate about signals is the same one we had about 2-way data binding vs unidirectional data flow 10 years ago"](https://twitter.com/devongovett/status/1629540226589663233)
-- Dan Abramov: ["react props and state are raw values"](https://twitter.com/dan_abramov/status/1629539600489119744) + ["the user expects to see the same thing on the screen given the same data"](https://twitter.com/dan_abramov/status/1629872956288512007)
+- Andrew Clark [clarifie sa position](https://twitter.com/acdlite/status/1628811935088013314) et n'est [pas fermé à introduire les signaux dans React](https://twitter.com/acdlite/status/1626590880126889984). Le compiler React Forget [pourrait compiler vers des signaux](https://twitter.com/acdlite/status/1628930249718202369)
+- Miško Hevery [explique](https://twitter.com/mhevery/status/1628556944318550016) comment les signaux évitent les problèmes de perf sur le props drilling.
+- Evan You [préfère](https://twitter.com/youyuxi/status/1629636673519894528) un modèle muable compréhensible à un modèle immuable qui leak.
+- Devon Govett nous [rappelle](https://twitter.com/devongovett/status/1629540226589663233) pourquoi on a adopté le "unidirectional data flow" et met en avant quelques problèmes des signaux.
+- Jordan Walke [mentionne](https://twitter.com/jordwalke/status/1629663133039214593) qu'ils ont considéré utiliser un modèle réactif à la création de React. Rejeté, car cela changeait la sémantique du langage.
+- Dan Abramov [explique](https://twitter.com/dan_abramov/status/1629872956288512007) que l'utilisateur s'attend à voir la même interface pour les mêmes données. Il [explique](https://twitter.com/dan_abramov/status/1629539600489119744) l'intérêt d'utiliser des "raw values" (non enveloppées dans un conteneur).
+- [Ma position](https://twitter.com/sebastienlorber/status/1630264713845039104): je suis plutôt du même avis que l'équipe React et pense qu'il faut continuer d'innover sur le modèle actuel. J'espère qu'a terme JavaScript supporte mieux le modèle immuable, et que le compiler React Forget n'est qu'une étape de transition.
 
 ---
 
 - 👥 [Matt Carroll](https://twitter.com/mattcarrollcode) + [Sean Keegan](https://twitter.com/DevRelSean): 2 DevRels viennent de rejoindre l'équipe React.
-- 📜 [Module Extraction: The Silent Web Revolution](https://www.builder.io/blog/module-extraction-the-silent-web-revolution): les frameworks React peuvent déjà séparer le code client/server dans un même module. Certains autres frameworks comme Qwik vont plus loin et peuvent maintenant extraire des closures, y compris les variables capturées.
-- 📜 [Why useEffect May Not Be the Best Abstraction](https://www.builder.io/blog/useeffect-not-the-best-abstraction): critique de useEffect et comparaison avec Qwik
-- 📜 [React Is Holding Me Hostage](https://emnudge.dev/blog/react-hostage)
-- 📜 [useSyncExternalStore - A First Look](https://julesblom.com/writing/usesyncexternalstore)
-- 📜 [i18n translations in Next.js 13's app-dir for server/client components](https://aralroca.com/blog/i18n-translations-nextjs-13-app-dir)
-- 📜 [What to Expect from Vue in 2023 and How it Differs from React](https://thenewstack.io/vue-2023/)
+- 📜 [Module Extraction: The Silent Web Revolution](https://www.builder.io/blog/module-extraction-the-silent-web-revolution): les frameworks React peuvent déjà séparer le code client/server dans un même module. Certains autres frameworks comme Qwik vont plus loin et peuvent maintenant extraire des closures, y compris les variables capturées. A voir si cette idée scale bien sur de grosses apps.
+- 📜 [Why useEffect May Not Be the Best Abstraction](https://www.builder.io/blog/useeffect-not-the-best-abstraction): critique de useEffect et comparaison avec Qwik.
+- 📜 [i18n translations in Next.js 13's app-dir for server/client components](https://aralroca.com/blog/i18n-translations-nextjs-13-app-dir): l'auteur de Next-translate explique quelques difficultés rencontrées pour sortir la v2 de sa lib lié aux Server Components, mais rapporte quelques avantages intéressants comme la réduction du bundle js.
+- 📜 [React Is Holding Me Hostage](https://emnudge.dev/blog/react-hostage): une critique plutôt juste de React qui vante les mérites des signaux et d'un modèle plus réactif.
+- 📜 [useSyncExternalStore - First Look](https://julesblom.com/writing/usesyncexternalstore): ce hook est plus utile qu'il n'en a l'air, ne passez pas a coté!
+- 📜 [Owncast v0.1.0 Retrospective - Frontend Web Rewrite](https://gabekangas.com/blog/2023/02/owncast-v0.1.0-retrospective-frontend-web-rewrite/): retour d'expérience sur le passage de Preact vers React/Next.js. Aspect "social" intéressant lié au passage de Preact à React.
 - 📜 [How to avoid tricky async state manager pitfalls in React](https://evilmartians.com/chronicles/how-to-avoid-tricky-async-state-manager-pitfalls-react)
-- 📜 [Owncast v0.1.0 Retrospective - Frontend Web Rewrite](https://gabekangas.com/blog/2023/02/owncast-v0.1.0-retrospective-frontend-web-rewrite/)
 - 📜 [React Libraries for 2023](https://www.robinwieruch.de/react-libraries/)
-- 📜 [Storybook 7 Docs](https://storybook.js.org/blog/storybook-7-docs/) + https://twitter.com/storybookjs/status/1628788317012590594
-- 📦 [Forgetti](https://github.com/lxsmnsyc/forgetti)
-- 📦 [Tinasaurus: Edit your Docusaurus site with TinaCMS](https://tina.io/blog/tinasaurus-docusaurus-starter/)
-- 📦 [Suspense - Utilities for working with React Suspense](https://github.com/bvaughn/suspense/)
+- 📜 [Storybook 7 Docs](https://storybook.js.org/blog/storybook-7-docs/)
+- 📦 [Suspense](https://github.com/bvaughn/suspense/): boite à outil pour React Suspense, nouveau projet de Brian Vaughn?
+- 📦 [TanStack Bling](https://github.com/TanStack/bling/): nouveau projet framework-agnostic dans la TanStack sur lequel devrait s'appuyer le prochain meta-framework TanStack Start.
+- 📦 [Forgetti](https://github.com/lxsmnsyc/forgetti): un dev n'a pas envie d'attendre le compiler React Forget alors il travaille sur son propre compiler.
+- 📦 [TanStack Query v5.0.0-alpha.0](https://twitter.com/TkDodo/status/1630159547405877249): preview de nouveautés v5 a venir: améliorations sur infinite query, optimistic updates, bundle size...
+- 📦 [Tinasaurus - Edit your Docusaurus site with TinaCMS](https://tina.io/blog/tinasaurus-docusaurus-starter/): CMS qui s'intègre bien avec Docusaurus et permet l'usage de composants MDX.
 - 📦 [Sonner - an opinionated toast component for React](https://twitter.com/emilkowalski_/status/1628742238548250624)
 - 📦 [nodl - framework for visual node graphs](https://twitter.com/emilwidlund/status/1628877076424949760)
 - 📦 [React Aria - February 2023 releases](https://twitter.com/devongovett/status/1629156091178131457)
 - 📦 [Radix UI releases](https://twitter.com/radix_ui/status/1629120708054753281)
-- 📦 [TanStack Bling](https://github.com/TanStack/bling/) https://twitter.com/tannerlinsley/status/1629254943441051648
-- 📦 [TanStack Query v5.0.0-alpha.0](https://twitter.com/TkDodo/status/1630159547405877249)
 - 💬 [Chat about the future for stitches](https://github.com/stitchesjs/stitches/issues/1144)
 - 🎙️ [Reactiflux Podcast - Behind the React Documentary with Ida Bechtle and Christopher Chedeau](https://anchor.fm/reactiflux)
 - 🎥 [Signals For Solid, Qwik And React](https://www.youtube.com/watch?v=ZLMjJL70glE)
@@ -127,32 +123,41 @@ You build it; you own it! It's a simple mantra that has driven software developm
 
 ## 📱 React-Native {#react-native}
 
-[Expo 48](https://blog.expo.dev/expo-sdk-48-ccb8302e231)
+[![Expo 48](/emails/issues/136/expo48.jpg)](https://blog.expo.dev/expo-sdk-48-ccb8302e231)
 
-https://twitter.com/Baconbrix/status/1629216259186327553
+**[Expo 48](https://blog.expo.dev/expo-sdk-48-ccb8302e231)**
 
-https://twitter.com/expo/status/1629213084098379776
+Belle release. On retrouve les highlights de la beta:
+
+- React Native 0.71.3 - React 18.2.0
+- Améliorations Yoga (Flexbox) qui viennent avec React-Native
+- EAS builders sous M1 par défaut
+- Moteur Hermes par défaut
+- Tous les modules Expo supportent Fabric - expérimental
+
+Petites nouveautés depuis la beta:
+
+- Expo Image 1.0 en version stable
+- Expo Router 1.0 en version stable ([blog post dédié](https://blog.expo.dev/announcing-expo-router-v1-1d97d7833605))
 
 ---
 
-[Announcing Expo Router v1](https://blog.expo.dev/announcing-expo-router-v1-1d97d7833605)
+[![Reanimated 3.0](/emails/issues/136/reanimated3.jpg)](https://blog.swmansion.com/releasing-reanimated-3-0-17fab4cb2394)
 
-https://twitter.com/Baconbrix/status/1628502539455938564
+**[Reanimated 3.0](https://blog.swmansion.com/releasing-reanimated-3-0-17fab4cb2394)**
 
-https://github.com/expo/router/discussions/309
+La v3.0 de Reanimated vient de sortir en version stable, avec une nouvelle feature de Shared Elements Transitions ([demo](https://twitter.com/swmansion/status/1630590156255240193)). Il est maintenant possible d'utiliser des shared values en inline styles. La librairie a été réécrite pour améliorer les performances, la DX et préparer l'arrivée de nouvelles features. La v3 est compatible avec Fabric et l'API Reanimated 2 pour faciliter la mise à jour, mais l'API Reanimated 1 est retirée.
 
 ---
 
-- 📜 [React Native App Clip: New Capabilities and Reduced App Size](https://bndkt.com/blog/2023/react-native-app-clip-new-capabilities) + https://twitter.com/bndkt/status/1630330441181065216
-- 💬 [RFC: introduce reactNativeMetadata to package.json](https://github.com/react-native-community/discussions-and-proposals/pull/588)
-- 💬 [RFC: Lazy bundling](https://github.com/react-native-community/discussions-and-proposals/pull/605)
-- 📦 [Reanimated 3.0](https://blog.swmansion.com/releasing-reanimated-3-0-17fab4cb2394) + https://twitter.com/swmansion/status/1630590156255240193
-- 📦 [Expo Image 1.0](https://twitter.com/tsapeta/status/1628381264976683010)
+- 📜 [React Native App Clip: New Capabilities and Reduced App Size](https://bndkt.com/blog/2023/react-native-app-clip-new-capabilities)
+- 💬 [RFC: introduce reactNativeMetadata to package.json](https://github.com/react-native-community/discussions-and-proposals/pull/588): propose d'ajouter des meta-données dans package.json pour diverses raisons (apps + libraries).
+- 💬 [RFC: Lazy bundling](https://github.com/react-native-community/discussions-and-proposals/pull/605): pour démarrer son app plus vite en dev grâce aux dynamic imports.
 - 📦 [Metro 0.75.1](https://twitter.com/robjhogan/status/1628460899714449416): support expérimental des symlinks et package "exports"!
-- 📦 [Restyle - Performance improvements](https://github.com/Shopify/restyle/pull/220)
-- 📦 [Dank Style](https://dank.style/): https://twitter.com/sanketsahu/status/1629228026079879168
-- 👀 [Expo + React-Native Server Components demo](https://twitter.com/Baconbrix/status/1629909713910480898)
-- 👀 [BottomSheet - web support coming in v5](https://twitter.com/gorhom/status/1627399052068282368)
+- 📦 [Restyle 2.4](https://github.com/Shopify/restyle/pull/220): nombreuses améliorations de performance sur la librairie de styling de Shopify
+- 📦 [Dank Style (alpha)](https://dank.style/): nouvelle librairie de styling universelle pour Next.js et React-Native.
+- 👀 [Expo + React-Native Server Components demo](https://twitter.com/Baconbrix/status/1629909713910480898): ça fait un moment que je vous bassine avec ça, et Evan Bacon vient de sortir une première démo qui montre que c'est possible!
+- 👀 [BottomSheet - web support](https://twitter.com/gorhom/status/1627399052068282368): PR mergée, ça arrive dans la v5
 - ⚠️ [Fastlane - Update immediately to avoid locked Apple ID account](https://twitter.com/FastlaneTools/status/1629153901747265538)
 - 🎙️ [The React Native Show, Coffee Talk #8 - State of React Native](https://www.youtube.com/watch?v=jwfsMzLY5Cs)
 - 🎥 [A Beginner's Guide to 3D Animations in React Native with three.js](https://www.youtube.com/watch?v=5WNoynmnEAs)
@@ -188,6 +193,7 @@ Teale recrute un dev mobile React-Native / TypeScript pour travailler sur une ap
 
 ## 🇫🇷 En français {#fr}
 
+- 🎥 [Gérer l'Affichage Conditionnel en React](https://www.youtube.com/watch?v=H_dEaebG2u4)
 - 🎥 [NextJS Version 13.2 - Test des nouveautés](https://www.youtube.com/watch?v=Qi45LrnbjOE)
 - 🎥 [Next JS Project : Installation et Premier Pas](https://www.youtube.com/watch?v=-SrqXDcjxKs)
 
@@ -202,14 +208,14 @@ Teale recrute un dev mobile React-Native / TypeScript pour travailler sur une ap
 - [Babel 7.21](https://babeljs.io/blog/2023/02/20/7.21.0): support TypeScript 5.0 et decorators
 - [Angular v16.0.0-next.0](https://twitter.com/Enea_Jahollari/status/1628515124347654144): signals
 - [Deno 1.31](https://twitter.com/deno_land/status/1629123230492463106)
+- [Vitest 0.29](https://twitter.com/sheremet_va/status/1629403679898972161)
+- [Turborepo 1.8](https://twitter.com/turborepo/status/1628497786881597444)
+- [Mock Service Worker 1.1](https://twitter.com/ApiMocking/status/1628909915111579650)
 - [Bun docs available](https://twitter.com/colinhacks/status/1629310598004772865)
 - [SpiderMonkey - JavaScript Import maps - Introduction](https://spidermonkey.dev/blog/2023/02/23/javascript-import-maps-part-1-introduction.html)
-- [Ezno Open-Sourced](https://twitter.com/kaleidawave/status/1629885949353009156)
-- [Vitest 0.29](https://twitter.com/sheremet_va/status/1629403679898972161)
+- [Ezno - now Open-Source](https://twitter.com/kaleidawave/status/1629885949353009156)
 - [Getting Started with Style Queries](https://developer.chrome.com/blog/style-queries/)
-- [Mock Service Worker 1.1](https://twitter.com/ApiMocking/status/1628909915111579650)
 - [Chrome’s Headless mode just got a whole lot better!](https://developer.chrome.com/articles/new-headless/)
-- [Turborepo 1.8](https://twitter.com/turborepo/status/1628497786881597444)
 - [Safari Technology Preview 164](https://webkit.org/blog/13902/release-notes-for-safari-technology-preview-164/)
 - [Let's build a Chrome extension that steals everything](https://mattfrisbie.substack.com/p/spy-chrome-extension)
 
