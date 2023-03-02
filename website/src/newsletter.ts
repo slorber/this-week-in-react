@@ -48,7 +48,7 @@ export type NewsletterFuture = {
 
 const subscribersCount = fr.subscribersCount + en.subscribersCount;
 
-const growthPerMonth = 1500;
+const growthPerMonth = 1300;
 
 const all: NewsletterSegment & NewsletterFuture = {
   name: "All",
@@ -58,12 +58,12 @@ const all: NewsletterSegment & NewsletterFuture = {
 
   // TODO improve this!
   nextMainSlot: {
-    date: "November 2023",
+    date: "December 2023",
     projectedAudienceSize: subscribersCount + 8 * growthPerMonth,
   },
   nextSecondSlot: {
     date: "May 2023",
-    projectedAudienceSize: subscribersCount + 4 * growthPerMonth,
+    projectedAudienceSize: subscribersCount + 3 * growthPerMonth,
   },
 };
 
