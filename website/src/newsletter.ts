@@ -63,7 +63,7 @@ const all: NewsletterSegment & NewsletterFuture = {
   },
   nextSecondSlot: {
     date: "May 2023",
-    projectedAudienceSize: subscribersCount + 3 * growthPerMonth,
+    projectedAudienceSize: subscribersCount + 2 * growthPerMonth,
   },
 };
 
