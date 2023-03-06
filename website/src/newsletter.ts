@@ -17,6 +17,7 @@ export type Newsletter = {
   fr: NewsletterSegment;
   en: NewsletterSegment;
   all: NewsletterSegment & NewsletterFuture;
+  growthPerMonth: number;
 };
 
 // TODO temporary hardcoded estimates
@@ -71,4 +72,5 @@ export const newsletterStats: Newsletter = {
   all,
   en,
   fr,
+  growthPerMonth,
 };

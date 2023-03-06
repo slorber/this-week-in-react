@@ -52,53 +52,41 @@ export default function SponsoringTabs({ children }) {
   return <div className={clsx("card", styles.tabs)}>{content}</div>;
 }
 
-function SponsoringTabsStatsTab({
-  segment,
-  children,
-}: {
-  segment: NewsletterSegment;
-  children: ReactNode;
-}) {
-  // TODO i18n
-  return (
-    <>
-      <ul>
-        <li>
-          <b>Subscribers count</b>: <span>{segment.subscribersCount}</span>
-        </li>
-        <li>
-          <b>Open-rate</b>: <span>{segment.openRate}%</span>
-        </li>
-        <li>
-          <b>Click-rate</b>: <span>{segment.clickRate}%</span>
-        </li>
-      </ul>
-      {children}
-    </>
-  );
-}
-
 export function SponsoringTabsStats() {
   return (
     <SponsoringTabs>
-      <SponsoringTabsStatsTab segment={newsletterStats.all}>
+      <>
+        <ul>
+          <li>
+            <b>Subscribers count</b>:{" "}
+            <span>{newsletterStats.all.subscribersCount}</span> (🇬🇧
+            {newsletterStats.en.subscribersCount} + 🇫🇷
+            {newsletterStats.fr.subscribersCount})
+          </li>
+          <li>
+            <b>Monthly growth</b>:{" "}
+            <span>+{newsletterStats.growthPerMonth}</span>
+          </li>
+          <li>
+            <b>Open-rate</b>: <span>{newsletterStats.all.openRate}%</span>
+          </li>
+          <li>
+            <b>Click-rate</b>: <span>{newsletterStats.all.clickRate}%</span>
+          </li>
+        </ul>
+        <span>
+          <b>
+            <a href="https://thisweekinreact.com/ck">ConvertKit</a> email
+            provider screenshot
+          </b>
+          {" (February 2023)"}
+        </span>
+
         <img
-          alt="en screenshot"
-          src="https://user-images.githubusercontent.com/749374/148784977-26dabc23-c4c5-4879-859f-45072b0c4d31.png"
+          alt="screenshot"
+          src="https://user-images.githubusercontent.com/749374/223171660-1fe93f8a-e67d-48c1-94ad-d0c6a1afed29.png"
         />
-      </SponsoringTabsStatsTab>
-      <SponsoringTabsStatsTab segment={newsletterStats.en}>
-        <img
-          alt="en screenshot"
-          src="https://user-images.githubusercontent.com/749374/148784977-26dabc23-c4c5-4879-859f-45072b0c4d31.png"
-        />
-      </SponsoringTabsStatsTab>
-      <SponsoringTabsStatsTab segment={newsletterStats.fr}>
-        <img
-          alt="en screenshot"
-          src="https://user-images.githubusercontent.com/749374/148398533-eee3aab1-6916-4a55-b5ed-fa3ef1c42063.png"
-        />
-      </SponsoringTabsStatsTab>
+      </>
     </SponsoringTabs>
   );
 }
