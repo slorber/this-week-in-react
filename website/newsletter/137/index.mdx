@@ -1,15 +1,16 @@
 ---
 slug: /137
-title: "This Week In React #137: ..."
+title: "This Week In React #137: Code Extraction, Server Components, Signals, Forget compiler, Next.js, Astro, Deno, Remix, Preact, Signia, TypeScript..."
 authors: [slorber]
 date: 03-07-2023
 image: /img/TWIR_POST.png
-unlisted: true
 ---
 
 Hi everyone!
 
-<Todo />
+This week, there is still a lot of content about signals, but it's the turn of Server Components to take over the discussions!
+
+One week left to send your talk proposal to the CFP of [React-Native-Connection](https://reactnativeconnection.io/) (Paris - June 1st).
 
 <!-- truncate -->
 
@@ -49,7 +50,59 @@ Suncel CMS as developer :
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![WTF Is Code Extraction](/emails/issues/137/codeextraction.jpg)](https://www.builder.io/blog/wtf-is-code-extraction)
+
+**[WTF Is Code Extraction](https://www.builder.io/blog/wtf-is-code-extraction)**
+
+Miško (Qwik) explains the advantages of co-locating server/client code in the same file and the limitations of the current Next.js model (export extraction): you can only declare one `getServerSideProps` function and you have to make use of `ReturnType` to inject the right data type into the client component. Function extraction and closure extraction offer a better developer experience.
+
+These techniques are not yet used in the React world today, but we can expect to see them appear in our frameworks soon. The Qwik team plans to [decouple its code extraction](https://twitter.com/manucorporat/status/1630955309890957313) from the framework. Tanner Linsley is [collaborating with them](https://twitter.com/tannerlinsley/status/1630994907405115393) and [is already using this type of extraction on Bling](https://twitter.com/tannerlinsley/status/1631003945522065409), the toolkit that should power the upcoming TanStack Start framework.
+
+I think we can also include React Server Components in the category of techniques that allow to seamlessly mix server/client code: we should rather consider this solution when discussing the current limits of Next.js.
+
+---
+
+![React Server Components](/emails/issues/137/rsc.jpg)
+
+**React Server Components**
+
+After signals, it's the turn of Server Components to be in the spotlight this week. Dan Abramov triggered many discussions while looking for good mental models to explain the new feature. You'll have to dig into these discussions to find the analogies that speak to you the most.
+
+- 🧵 [Dan Abramov - "I need to start collecting ways to pitch react server components"](https://twitter.com/dan_abramov/status/1631885118355718144)
+- 🧵 [Dan Abramov - "Ask me anything about React Server Components"](https://twitter.com/dan_abramov/status/1631641431742857216)
+- 🧵 [Dan Abramov - `ui = client(server(data), state)`](https://twitter.com/dan_abramov/status/1632535654142713862)
+- 🧵 [Rick Hanlon - "they move your container components to the server"](https://twitter.com/rickhanlonii/status/1632041893960855552)
+- 🧵 [Josh Comeau on Server Components](https://twitter.com/JoshWComeau/status/1631398854632304641)
+- 🧵 [Andrew Clark on framework-agnostic vs well-integrated tools](https://twitter.com/acdlite/status/1632910367289491459)
+- 🐦 [Ben Holmes - "React Server Components and Astro are like... the same thing"](https://twitter.com/BHolmesDev/status/1633133090057986050)
+- 🐦 [Daishi Kato - "This is how I put RSCs inside client components"](https://twitter.com/dai_shi/status/1631989295866347520)
+- 🎥 [React Is A Backend Framework Now](https://www.youtube.com/watch?v=EhI6wb5nEEs)
+- 🎥 [React Server Components with Dan Abramov, Joe Savona, and Kent C. Dodds](https://www.youtube.com/watch?v=h7tur48JSaw): live discussion starting very soon, should be very interesting.
+
+Server Components could also have unsuspected benefits: [a communication layer for Electron threads](https://twitter.com/Eli_White/status/1632445703950852096) or [a flexible data-layer for static site generators](https://twitter.com/sebastienlorber/status/1632310649609920513).
+
+---
+
+- 📜 [React vs Signals: 10 Years Later](https://dev.to/this-is-learning/react-vs-signals-10-years-later-3k71): Don't miss Dan Abramov's answer on this article by Ryan Carniato. Dan does not want the function of a React component to be "setup" like SolidJS: re-running the function is voluntary.
+- 📜 [Making the Case for Signals in JavaScript](https://dev.to/this-is-learning/making-the-case-for-signals-in-javascript-4c7i): Ryan Carniato goes over some good reasons to use signals with some pretty interesting arguments. I also think that you shouldn't have to change the organization of your components for performance reasons.
+- 📜 [React’s Upcoming Compiler Only Solves Part Of The Problem](https://www.builder.io/blog/react-compiler-will-not-solve-prop-drilling): explains why the React Forget compiler will not resolve intermediate re-renders, unlike signals.
+- 📜 [Were React Hooks a Mistake?](https://jakelazaroff.com/words/were-react-hooks-a-mistake/): Jake explains the problems introduced by hooks, and how signals are quite similar to React class components.
+- 📜 [Framework-defined infrastructure](https://vercel.com/blog/framework-defined-infrastructure): Vercel's CTO explains how the infra automatically adapts to your code and uses Next.js as an example.
+- 📜 [2023 Web Framework Performance Report](https://astro.build/blog/2023-web-framework-performance-report/): Fred (Astro) analyzed real-world perf data to derive trends on how frameworks influence the performance of our apps. We find performance scores for Astro, Gatsby, Remix and Next.js.
+- 📜 [Deno - You Don't Need a Build Step](https://deno.com/blog/you-dont-need-a-build-step): explains the complexity behind the 4 build steps of Next.js (compiling, minifying, bundling, code splitting). Proposes an alternative with Fresh and its Just-In-Time mode.
+- 📜 [Common Beginner Mistakes with React](https://www.joshwcomeau.com/react/common-beginner-mistakes/): great interactive article by Josh Comeau, for beginners.
+- 📜 [Wishlist for a React Compiler](https://electricui.com/blog/wishlist-for-a-react-compiler): Michael explains what he would like the React-Forget compiler to do, illustrated with many before/after compilation examples.
+- 📜 [Benchmarking Preact Signals versus the React alternatives](https://electricui.com/blog/benchmarking-preact-signals)
+- 📜 [Sentry’s Frontend Tests: Migrating from Enzyme to React Testing Library](https://blog.sentry.io/2023/02/23/sentrys-frontend-tests-migrating-from-enzyme-to-react-testing-library/)
+- 📜 [Prop drilling and component composition in React](https://alexsidorenko.com/blog/react-prop-drilling-composition/)
+- 🎨 ["Thinking in React" visualized](https://twitter.com/asidorenko_/status/1631967645376315400)
+- 🎥 [Rebuilding Jotai State Manager for React in 20 Minutes!](https://www.youtube.com/watch?v=gg31JTZmFUw)
+- 📦 [preact-reconciliers](https://github.com/CodyJasonBennett/preact-reconciler): a package to create custom Preact renderers. Cody is able to run [React-Three-Fiber + Preact](https://twitter.com/Cody_J_Bennett/status/1632674026408558592).
+- 📦 [Remix 1.14](https://twitter.com/kentcdodds/status/1631059357654818819): Hot Module Replacement + Hot Data Revalidation.
+- 📦 [Signia - Scalable signals for TypeScript](https://tldraw.substack.com/p/introducing-signia): new signal lib with React binding.
+- 📦 [Remix + Fastly support](https://twitter.com/FastlyDevs/status/1631031583523192832): new server adapter for Remix
+- 📦 [Mantine 6.0](https://mantine.dev/changelog/6-0-0/)
+- 📦 [Storybook-Docusaurus](https://github.com/jodyheavener/storybook-docusaurus)
 
 <SubscribeFormEmbed />
 
@@ -69,7 +122,17 @@ You can also **analyze survey results** in custom-built dashboards, save your fo
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+- 👀 [Code elimination for React Native apps demo](https://twitter.com/Baconbrix/status/1631749459389431808): upcoming Expo CLI feature to tell you which native code your app does not use and can be safely removed.
+- 👀 [React Native will soon be a Monorepo](https://twitter.com/o_kwasniewski/status/1631292628217266176)
+- 📜 [I made JSON.parse() 2x faster](https://radex.io/react-native/json-parse/): Radek proposes to improve the performance of Hermes by using very fast C++ libs based on [SIMD instructions](https://en.wikipedia.org/wiki/Single_instruction,_multiple_data). Interesting to read even if you don't use React-Native. Ongoing discussions on the [Hermes PR](https://github.com/facebook/hermes/issues/811).
+- 📜 [Top Ten Reasons to go to Chain React](https://shift.infinite.red/top-ten-reasons-to-go-to-chain-react-665a93883e4f)
+- 🔗 [React Native Hitchhiker's Guide](https://twitter.com/ospfranco/status/1631984862474248193): Oscar shares his React-Native knowledge base. Many advanced topics, many related to JSI.
+- 🎙️ [RNR 261 - What’s the deal with EAS?](https://reactnativeradio.com/episodes/rnr-261-whats-the-deal-with-eas)
+- 🎥 [Riveo Page Curl - “Can it be done in React Native?”](https://www.youtube.com/watch?v=xNZCQvtnhIU)
+- 📦 [React-Native-Graph 1.0](https://github.com/margelo/react-native-graph/releases/tag/v1.0.1): stable version for Margelo's Skia-based graph lib.
+- 📦 [Expo Router 1.2](https://twitter.com/Baconbrix/status/1630969201421582341)
+- 📦 [React-Native-Replicache](https://github.com/Braden1996/react-native-replicache/)
+- 📦 [VisionCamera Realtime Object Detection with TensorFlow Lite](https://github.com/jaroslawkrol/vision-camera-realtime-object-detection) - [demo](https://twitter.com/mrousavy/status/1631269105796886528)
 
 ---
 
@@ -93,14 +156,21 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 ## 🔀 Other {#other}
 
-<Todo />
+- [Tether elements to each other with CSS anchor positioning](https://developer.chrome.com/blog/tether-elements-to-each-other-with-css-anchor-positioning/): CSS draft feature that could replace positioning libs like Popper, Floating-UI or Tether.
+- [TypeScript 5.0 RC](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0-rc/)
+- [Zod 3.21](https://twitter.com/colinhacks/status/1632472849960280064)
+- [ArkType Isomorphic types for TS/JS](https://github.com/arktypeio/arktype)
+- [JavaScript Import maps, Part 2: In-Depth Exploration](https://spidermonkey.dev/blog/2023/03/02/javascript-import-maps-part-2-in-depth-exploration.html)
+- [Can WebAssembly Solve Serverless’s Problems?](https://thenewstack.io/can-webassembly-solve-serverless-problems/)
+- [Experiments with the JavaScript Garbage Collector](https://dev.to/codux/experiments-with-the-javascript-garbage-collector-2ae3)
+- [Drizzle ORM - TypeScript ORM for SQL](https://github.com/drizzle-team/drizzle-orm)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/137/meme.jpg)](https://twitter.com/potetotes/status/1631401117186764803)
 
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/todo)
+🤣 [Other funny tweets this week](https://twitter.com/sebastienlorber/status/1633443251955875840)
 
 See ya! 👋

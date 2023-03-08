@@ -4,14 +4,13 @@ title: "React Hebdo #137: Code Extraction, Server Components, Signals, Forget co
 authors: [slorber]
 date: 03-07-2023
 image: /img/TWIR_POST.png
-unlisted: true
 ---
 
 Salut à tous !
 
 Cette semaine, on retrouve encore pas mal de contenu sur les signaux, mais c'est au tour des Server Components de prendre le relais!
 
-Melvyn à lancé sa formation [NextReact](https://codelynx.dev/nextreact) en français, basée sur les dernières nouveautés React, y compris les Server Components.
+Melvyn a lancé sa formation [NextReact](https://codelynx.dev/nextreact) en français, basée sur les dernières nouveautés React, y compris les Server Components.
 
 Il ne reste plus qu'une semaine pour envoyer votre proposition de talk au CFP de [React-Native-Connection](https://reactnativeconnection.io/) (Paris - 1er Juin).
 
@@ -53,9 +52,9 @@ import Support from "../_support.mdx";
 
 **[WTF Is Code Extraction](https://www.builder.io/blog/wtf-is-code-extraction)**
 
-Miško Hevery (Qwik/Signal) explique les avantages a co-localiser le code server/client dans un même fichier. Il explique les limites du modèle Next.js actuel (export extraction): on ne peut déclarer qu'une seule fonction `getServerSideProps` et on doit faire usage de `ReturnType` pour injecter le bon type de données dans le composant client. Les modèles de function extraction et closure extraction offrent une meilleure expérience.
+Miško Hevery (Qwik) explique les avantages a co-localiser le code server/client dans un même fichier. Il explique les limites du modèle Next.js actuel (export extraction): on ne peut déclarer qu'une seule fonction `getServerSideProps` et on doit faire usage de `ReturnType` pour injecter le bon type de données dans le composant client. Les modèles de function extraction et closure extraction offrent une meilleure expérience.
 
-Ce sont des techniques qui ne sont pas encore utilisées dans le monde React aujourd'hui, mais on peut s'attendre à les voir apparaitre très prochainement dans nos frameworks. L'équipe Qwik prévoit de [découpler son code](https://twitter.com/manucorporat/status/1630955309890957313) d'extration du framework. Tanner Linsley [collabore avec eux](https://twitter.com/tannerlinsley/status/1630994907405115393) et [utilise déjà ce type d'extraction sur Bling](https://twitter.com/tannerlinsley/status/1631003945522065409), la boite à outil sur laquelle va reposer le futur framework TanStack Start.
+Ce sont des techniques qui ne sont pas encore utilisées dans le monde React aujourd'hui, mais on peut s'attendre à les voir apparaitre très prochainement dans nos frameworks. L'équipe Qwik prévoit de [découpler son code d'extraction](https://twitter.com/manucorporat/status/1630955309890957313) du framework. Tanner Linsley [collabore avec eux](https://twitter.com/tannerlinsley/status/1630994907405115393) et [utilise déjà ce type d'extraction sur Bling](https://twitter.com/tannerlinsley/status/1631003945522065409), la boite à outil sur laquelle va reposer le futur framework TanStack Start.
 
 Je pense qu'on peut aussi inclure les React Server Components dans la catégorie des techniques qui permet de mélanger facilement le code server/client d'une app.
 
@@ -75,6 +74,7 @@ Après les signaux, c'est au tour des Server Components d'être à l'honneur cet
 - 🧵 [Andrew Clark on framework-agnostic vs well-integrated tools](https://twitter.com/acdlite/status/1632910367289491459)
 - 🐦 [Ben Holmes - "React Server Components and Astro are like... the same thing"](https://twitter.com/BHolmesDev/status/1633133090057986050)
 - 🐦 [Daishi Kato - "This is how I put RSCs inside client components"](https://twitter.com/dai_shi/status/1631989295866347520)
+- 🎥 [React Is A Backend Framework Now](https://www.youtube.com/watch?v=EhI6wb5nEEs)
 - 🎥 [React Server Components with Dan Abramov, Joe Savona, and Kent C. Dodds](https://www.youtube.com/watch?v=h7tur48JSaw): discussion live qui commence dans quelques heures, devrait être très intéressante.
 
 Les Server Components pourraient aussi avoir des bénéfices insoupçonnés: [faire communiquer des threads Electron](https://twitter.com/Eli_White/status/1632445703950852096) ou encore [implémenter un data-layer pour un générateur de site statique](https://twitter.com/sebastienlorber/status/1632310649609920513).
@@ -94,14 +94,13 @@ Les Server Components pourraient aussi avoir des bénéfices insoupçonnés: [fa
 - 📜 [Sentry’s Frontend Tests: Migrating from Enzyme to React Testing Library](https://blog.sentry.io/2023/02/23/sentrys-frontend-tests-migrating-from-enzyme-to-react-testing-library/)
 - 📜 [Prop drilling and component composition in React](https://alexsidorenko.com/blog/react-prop-drilling-composition/)
 - 🎨 ["Thinking in React" visualized](https://twitter.com/asidorenko_/status/1631967645376315400)
-- 🎥 [React Is A Backend Framework Now](https://www.youtube.com/watch?v=EhI6wb5nEEs)
 - 🎥 [Rebuilding Jotai State Manager for React in 20 Minutes!](https://www.youtube.com/watch?v=gg31JTZmFUw)
 - 📦 [preact-reconciliers](https://github.com/CodyJasonBennett/preact-reconciler): un package pour créer des custom renderers Preact. Cody fait tourner [React-Three-Fiber + Preact](https://twitter.com/Cody_J_Bennett/status/1632674026408558592).
 - 📦 [Remix 1.14](https://twitter.com/kentcdodds/status/1631059357654818819): Hot Module Replacement + Hot Data Revalidation.
 - 📦 [Signia - Scalable signals for TypeScript](https://tldraw.substack.com/p/introducing-signia): nouvelle lib de signaux avec binding React.
 - 📦 [Remix + Fastly support](https://twitter.com/FastlyDevs/status/1631031583523192832): nouveau server adapter pour Remix
 - 📦 [Mantine 6.0](https://mantine.dev/changelog/6-0-0/)
-- 📦 [storybook-docusaurus](https://github.com/jodyheavener/storybook-docusaurus)
+- 📦 [Storybook-Docusaurus](https://github.com/jodyheavener/storybook-docusaurus)
 
 <SubscribeFormEmbed />
 
@@ -123,7 +122,7 @@ Vous pouvez également **analyser les résultats des sondages** dans des tableau
 
 - 👀 [Code elimination for React Native apps demo](https://twitter.com/Baconbrix/status/1631749459389431808): future fonctionnalité sur le CLI Expo pour vous dire quel code natif votre app n'utilise pas et peut être retiré.
 - 👀 [React Native will soon be a Monorepo](https://twitter.com/o_kwasniewski/status/1631292628217266176)
-- 📜 [I made JSON.parse() 2x faster](https://radex.io/react-native/json-parse/): Radex propose d'améliorer les performances d'Hermes en utilisant des libs C++ très rapides basées sur des [instructions SIMD](https://en.wikipedia.org/wiki/Single_instruction,_multiple_data). Intéressant à lire même si on ne fait pas de React-Native. Discussions en cours sur la [PR Hermes](https://github.com/facebook/hermes/issues/811).
+- 📜 [I made JSON.parse() 2x faster](https://radex.io/react-native/json-parse/): Radek propose d'améliorer les performances d'Hermes en utilisant des libs C++ très rapides basées sur des [instructions SIMD](https://en.wikipedia.org/wiki/Single_instruction,_multiple_data). Intéressant à lire même si on ne fait pas de React-Native. Discussions en cours sur la [PR Hermes](https://github.com/facebook/hermes/issues/811).
 - 📜 [Top Ten Reasons to go to Chain React](https://shift.infinite.red/top-ten-reasons-to-go-to-chain-react-665a93883e4f)
 - 🔗 [React Native Hitchhiker's Guide](https://twitter.com/ospfranco/status/1631984862474248193): Oscar partage sa base de connaissance React-Native. De nombreux sujets avancés, dont pas mal liés à JSI.
 - 🎙️ [RNR 261 - What’s the deal with EAS?](https://reactnativeradio.com/episodes/rnr-261-whats-the-deal-with-eas)
