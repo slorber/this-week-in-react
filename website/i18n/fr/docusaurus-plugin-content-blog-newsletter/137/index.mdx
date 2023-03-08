@@ -47,34 +47,46 @@ import Support from "../_support.mdx";
 
 ## ⚛️ React {#react}
 
+[![WTF Is Code Extraction](/emails/issues/137/codeextraction.jpg)](https://www.builder.io/blog/wtf-is-code-extraction)
+
+**[WTF Is Code Extraction](https://www.builder.io/blog/wtf-is-code-extraction)**
+
+Miško Hevery (Qwik/Signal) explique les avantages a co-localiser le code server/client dans un même fichier. Il explique les limites du modèle Next.js actuel (export extraction): on ne peut déclarer qu'une seule fonction `getServerSideProps` et on doit faire usage de `ReturnType` pour injecter le bon type de données dans le composant client. Les modèles de function extraction et closure extraction offrent une meilleure expérience.
+
+Ce sont des techniques qui ne sont pas encore utilisées dans le monde React aujourd'hui, mais on peut s'attendre à les voir apparaitre très prochainement dans nos frameworks. L'équipe Qwik prévoit de [découpler son code](https://twitter.com/manucorporat/status/1630955309890957313) d'extration du framework. Tanner Linsley [collabore avec eux](https://twitter.com/tannerlinsley/status/1630994907405115393) et [utilise déjà ce type d'extraction sur Bling](https://twitter.com/tannerlinsley/status/1631003945522065409), la boite à outil sur laquelle va reposer le futur framework TanStack Start.
+
+Je pense qu'on peut aussi inclure les React Server Components dans la catégorie des techniques qui permet de mélanger facilement le code server/client d'une app.
+
+---
+
+![React Server Components](/emails/issues/137/rsc.jpg)
+
+**React Server Components**
+
+Après les signaux, c'est au tour des Server Components d'être à l'honneur cette semaine, suite aux questions de Dan Abramov qui cherche de bonnes modèles mentaux pour expliquer cette feature. Il faudra fouiller dans ces discussions pour trouver les analogies qui vous parlent.
+
+- 🧵 [Dan Abramov - "I need to start collecting ways to pitch react server components"](https://twitter.com/dan_abramov/status/1631885118355718144)
+- 🧵 [Dan Abramov - "Ask me anything about React Server Components"](https://twitter.com/dan_abramov/status/1631641431742857216)
+- 🧵 [Dan Abramov - `ui = client(server(data), state)`](https://twitter.com/dan_abramov/status/1632535654142713862)
+- 🧵 [Rick Hanlon - "they move your container components to the server"](https://twitter.com/rickhanlonii/status/1632041893960855552)
+- 🧵 [Josh Comeau on Server Components](https://twitter.com/JoshWComeau/status/1631398854632304641)
+- 🧵 [Andrew Clark on framework-agnostic vs well-integrated tools](https://twitter.com/acdlite/status/1632910367289491459)
+- 🐦 [Ben Holmes - "React Server Components and Astro are like... the same thing"](https://twitter.com/BHolmesDev/status/1633133090057986050)
+- 🐦 [Daishi Kato - "This is how I put RSCs inside client components"](https://twitter.com/dai_shi/status/1631989295866347520)
+- 🎥 [React Server Components with Dan Abramov, Joe Savona, and Kent C. Dodds](https://www.youtube.com/watch?v=h7tur48JSaw): discussion live qui commence dans quelques heures, devrait être très intéressante.
+
+Les Server Components pourraient aussi avoir des bénéfices insoupçonnés: [faire communiquer des threads Electron](https://twitter.com/Eli_White/status/1632445703950852096) ou encore [implémenter un data-layer pour un générateur de site statique](https://twitter.com/sebastienlorber/status/1632310649609920513).
+
+---
+
 [Making the Case for Signals in JavaScript](https://dev.to/this-is-learning/making-the-case-for-signals-in-javascript-4c7i)
 
 https://twitter.com/RyanCarniato/status/1631733420148793344
 
 ---
 
-Bling: https://twitter.com/tannerlinsley/status/1631003945522065409
-
-- [WTF Is Code Extraction](https://www.builder.io/blog/wtf-is-code-extraction) + https://twitter.com/tannerlinsley/status/1630994907405115393
-
----
-
-[Deno - You Don't Need a Build Step](https://deno.com/blog/you-dont-need-a-build-step)
-
-https://twitter.com/deno_land/status/1630991025517854734
-
----
-
-[React Server Components with Dan Abramov, Joe Savona, and Kent C. Dodds](https://www.youtube.com/watch?v=h7tur48JSaw)
-
-Josh comeau: https://twitter.com/JoshWComeau/status/1631398854632304641
-
-https://twitter.com/acdlite/status/1631324263138443268
-
----
-
-- 🧵 [Dan Abramov - "ask me anything about React Server Components"](https://twitter.com/dan_abramov/status/1631641431742857216) + ["i need to start collecting ways to pitch react server components"](https://twitter.com/dan_abramov/status/1631885118355718144)
-- 🧵 [Andrew Clark on framework-agnostic vs well-integrated tools](https://twitter.com/acdlite/status/1632910367289491459)
+- 📜 [Framework-defined infrastructure](https://vercel.com/blog/framework-defined-infrastructure): le CTO de Vercel explique comment l'infra s'adapte automatiquement à votre code et prend Next.js en exemple.
+- 📜 [Deno - You Don't Need a Build Step](https://deno.com/blog/you-dont-need-a-build-step): explique la complexité derrière les 4 étapes de build de Next.js (compiling, minifying, bundling, code splitting). Propose une alternative avec Fresh et son mode Just-in-time.
 - 📜 [Common Beginner Mistakes with React](https://www.joshwcomeau.com/react/common-beginner-mistakes/): super article intéractif de Josh Comeau, bonne ressource pour les débutants.
 - 📜 [Were React Hooks a Mistake?](https://jakelazaroff.com/words/were-react-hooks-a-mistake/)
 - 📜 [Wishlist for a React Compiler](https://electricui.com/blog/wishlist-for-a-react-compiler) + https://twitter.com/KillcoDer/status/1633100312411004928
@@ -86,8 +98,6 @@ https://twitter.com/acdlite/status/1631324263138443268
 - 📦 [Remix 1.14](https://twitter.com/kentcdodds/status/1631059357654818819): Hot Module Replacement and Hot Data Revalidation
 - 📦 [Introducing Signia - Scalable signals for TypeScript](https://tldraw.substack.com/p/introducing-signia) + https://twitter.com/tldraw/status/1631354471275016192
 - 🎨 ["Thinking in React" visualized](https://twitter.com/asidorenko_/status/1631967645376315400)
-- 🐦 [How to put Server Components inside Client Components](https://twitter.com/dai_shi/status/1631989295866347520)
-- 🧵 [`ui = client(server(data), state)`](https://twitter.com/dan_abramov/status/1632535654142713862)
 - 📦 [preact-reconciliers](https://github.com/CodyJasonBennett/preact-reconciler) + https://twitter.com/Cody_J_Bennett/status/1632674026408558592 + https://twitter.com/Cody_J_Bennett/status/1633063536158023680
 - 📦 [Remix + Fastly support](https://twitter.com/FastlyDevs/status/1631031583523192832): nouveau server adapter pour Remix
 - 🎥 [React Is A Backend Framework Now](https://www.youtube.com/watch?v=EhI6wb5nEEs)
@@ -128,6 +138,7 @@ https://twitter.com/radexp/status/1631999486456213504
 - 📦 [Expo Router 1.2](https://twitter.com/Baconbrix/status/1630969201421582341)
 - 📦 [React-Native-Replicache](https://github.com/Braden1996/react-native-replicache/)
 - 📦 [VisionCamera Realtime Object Detection with TensorFlow Lite](https://github.com/jaroslawkrol/vision-camera-realtime-object-detection) - [demo](https://twitter.com/mrousavy/status/1631269105796886528)
+- 📦 [react-native-graph 1.0](https://github.com/margelo/react-native-graph)
 
 ## 🧑‍💻 Jobs {#jobs}
 
@@ -167,6 +178,7 @@ Teale recrute un dev mobile React-Native / TypeScript pour travailler sur une ap
 ## 🔀 Autre {#other}
 
 - [TypeScript 5.0 RC](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0-rc/)
+- [ArkType Isomorphic types for TS/JS](https://github.com/arktypeio/arktype)
 - [Zod 3.21](https://twitter.com/colinhacks/status/1632472849960280064)
 - [JavaScript Import maps, Part 2: In-Depth Exploration](https://spidermonkey.dev/blog/2023/03/02/javascript-import-maps-part-2-in-depth-exploration.html)
 - [Tether elements to each other with CSS anchor positioning](https://developer.chrome.com/blog/tether-elements-to-each-other-with-css-anchor-positioning/)
@@ -195,6 +207,8 @@ https://twitter.com/jamonholmgren/status/1631002581471465474
 https://twitter.com/trashh_dev/status/1631011515892654080
 
 https://twitter.com/mlrawlings/status/1630948865711960066
+
+https://twitter.com/jamonholmgren/status/1633184883781828608
 
 [![alt](/emails/issues/122/meme.jpg)](https://twitter.com/todo)
 
