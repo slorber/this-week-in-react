@@ -4,31 +4,30 @@ title: "This Week In React #138: React-Router, Rspack, RSC, Storybook, Astro, Mi
 authors: [slorber]
 date: 03-14-2023
 image: /img/TWIR_POST.png
-unlisted: true
 ---
 
 Hi everyone!
 
-Pendant que tout le monde joue avec GPT-4, je continue de lire les articles React pour vous!
+While everyone is playing with GPT-4, I'm still reading the React articles for you!
 
-Une nouvelle feature `lazy` dans React-Router sera très utile pour éviter les waterfalls.
+A new `lazy` feature in React-Router looks very useful to avoid waterfalls.
 
-Le bundler Rspack en Rust vient d'être annoncé.
+The Rspack bundler in Rust has just been announced.
 
-J'aimerais créer un "referral program" pour cette newsletter, pour t'inciter à la partager à tes potes et te récompenser si de nouveaux abonnés nous rejoignent. Est-ce que tu as une idée de ce que je peux t'offrir en retour?
+I'd like to create a referral program for this newsletter. The idea is to encourage you to share it with your friends and reward you if new subscribers join us. Do you have any idea what I can offer?
 
-J'ai pensé à:
+I thought of:
 
-- +1 abonné: je t'envoie mon top 10 des articles React
-- +3 abonnés: je te donne un accès à ma DB d'articles
-- +5 abonnés: je te remercie publiquement sur Twitter ou LinkedIn
-- +10 abonnés: je t'offre une diffusion d'offre d'emploi dans la newsletter
-- +30 abonnés: je t'offre un cours au choix: Just JavaScript (Dan Abramov), Three.js Journey (Bruno Simon)...
-- +50 abonnés: je t'offre une heure de consulting React
+- +1 subscriber - access to my top 10 React articles ever
+- +3 subscribers - access to a well-presented DB of good articles, sorted with tags and rating
+- +5 subscribers - a public thank you on Twitter or LinkedIn
+- +10 subscribers - your job offer in the newsletter
+- +30 subscribers - a course of your choice from Just JavaScript (Dan Abramov), Three.js Journey (Bruno Simon)...
+- +50 subscribers - a one-hour React consulting session
 
-C'est pas évident de choisir quoi offrir 😅. C'est plus simple de gérer des produits numériques, mais je ne suis pas fermé à quelques produits physiques (stickers, chaussettes, sneakers, sac a doc, mug...).
+It's not easy to choose what to offer 😅. It's easier to manage digital products to get started, but I'm not closed to some physical products (stickers, socks, sneakers, backpack, mug,...).
 
-Tu peux répondre à cet email directement pour me donner ton avis, et me dire ce qui te motiverait le plus?
+Can you reply to this email directly to give me your opinion, and tell me what would motivate you the most?
 
 <!-- truncate -->
 
@@ -72,23 +71,23 @@ Suncel CMS as developer :
 
 **[Lazy Loading Routes in React Router 6.4+](https://remix.run/blog/lazy-loading-routes)**
 
-[React-Router 6.9](https://github.com/remix-run/react-router/releases/tag/react-router%406.9.0) vient de sortir avec une nouvelle de lazy routes qui permet de limiter les waterfalls, et optimiser le temps de chargement de vos apps. C'est de cette manière que Remix fonctionne, mais vous pouvez maintenant utiliser cette technique sur n'importe quelle app basée sur React-Router. Perso je compte l'utiliser sur Docusaurus (repose sur React-Router).
+[React-Router 6.9](https://github.com/remix-run/react-router/releases/tag/react-router%406.9.0) has just been released with a new lazy routes feature that allows to avoid waterfalls, and optimize the loading time of your apps. This is how Remix works, but you can now use this technique on any React-Router based app. Personally I plan to use it on Docusaurus (based on React-Router).
 
 ---
 
-- 👀 [React Flight PR - Add Reply Encoding](https://github.com/facebook/react/pull/26360): support du streaming pour server => client.
-- 👀 [Integrating Remix Router with React Transitions](https://twitter.com/dan_abramov/status/1634300734094057472): Dan Abramov suggère d'utiliser startTransition dans Remix. Les composants suspendus en dehors de `<Suspense>` devraient bloquer la transition.
-- 🧵 [Dan Abramov - "if you’re not composing GraphQL fragments from multiple components into one query \[...\] you’re missing 80% of the point of GraphQL"](https://twitter.com/dan_abramov/status/1634968234821844992): des discussions intéressantes autour de Relay cette semaine. Bien qu'assez intimidant, ce client GraphQL présente de nombreux avantages comparé aux solutions plus simples (colocation, data masking...).
-- 🧵 [70% of Docusaurus sites have good Core Web Vitals](https://twitter.com/sebastienlorber/status/1635661211579580429): petit coup de gueule, on oublie souvent Docusaurus dans la liste des meta-frameworks React malgré un usage élevé et de bonnes perfs.
-- 📜 [My experience learning React, web standards, and Remix](https://andre-landgraf.dev/blog/2023-03-11_web_standards_and_react): retour à la simplicité, moins de `useState` et plus de fullstack
-- 📜 [The Great Gaslighting of the JavaScript Era](https://www.spicyweb.dev/the-great-gaslighting-of-the-js-age/): critique pas vraiment nuancée de React 😅 je ne partage pas la même opinion et pense que les développeurs React sont généralement conscients des tradeoffs qu'ils font en choisissant cette librairie.
-- 📜 [Client-side JavaScript and React criticism: What comes next?](https://molily.de/javascript-criticism/): critique intéressante (et plus nuancée), mais je ne pense pas que React et progressive enhancement soient incompatible, Remix en est un bon exemple.
-- 📜 [State in React is Immutable](https://reacttraining.com/blog/state-in-react-is-immutable): bonne intro au modèle immuable en React.
-- 📜 [Where did Hooks come from?](https://reacttraining.com/blog/where-did-hooks-come-from): retour en arrière pour comprendre pourquoi nous utilisons des hooks aujourd'hui. Les nouveaux développeurs React n'ont pas toujours conscience des problèmes rencontrés il y a quelques années.
-- 📜 [Fine-tuning refs with useImperativeHandle](https://prateeksurana.me/blog/fine-tuning-refs-with-useimperativehandle/): bonne intro pour ce hook qui permet à un composant React d'exposer une API impérative à ses parents.
-- 📜 [Send emails using React and Tailwind CSS](https://resend.com/blog/tailwind-with-react-email): React-Email supporte maintenant les classes Tailwind
-- 📜 [Elegantly managing state and renders in React](https://remotion.com/blog/untangling-state-in-react): met en avant le fonctionnement du batching des updates qui peut surprendre au début.
-- 📜 [A Brief History of Reactivity](https://www.builder.io/blog/history-of-reactivity): compare le modèle réactif de divers frameworks, dont React (coarce-grain reactivity).
+- 👀 [React Flight PR - Add Reply Encoding](https://github.com/facebook/react/pull/26360): streaming support for server => client.
+- 👀 [Integrating Remix Router with React Transitions](https://twitter.com/dan_abramov/status/1634300734094057472): Dan Abramov suggests using `startTransition` in Remix. Suspended components outside `<Suspense>` boundaries should block the transition.
+- 🧵 [Dan Abramov - "if you’re not composing GraphQL fragments from multiple components into one query \[...\] you’re missing 80% of the point of GraphQL"](https://twitter.com/dan_abramov/status/1634968234821844992): interesting discussions about Relay this week. Although quite intimidating, this GraphQL client has many advantages compared to simpler solutions (colocation, data masking...).
+- 🧵 [70% of Docusaurus sites have good Core Web Vitals](https://twitter.com/sebastienlorber/status/1635661211579580429): my little rant because Docusaurus is often forgotten in the list of React meta-frameworks despite a high usage and good performance.
+- 📜 [The Great Gaslighting of the JavaScript Era](https://www.spicyweb.dev/the-great-gaslighting-of-the-js-age/): violent criticism of React 😅 I don't share the same opinion and think that React developers are generally aware of the tradeoffs they make.
+- 📜 [Client-side JavaScript and React criticism: What comes next?](https://molily.de/javascript-criticism/): more nuanced criticism, but I don't think React and progressive enhancement are incompatible, Remix is a good example.
+- 📜 [State in React is Immutable](https://reacttraining.com/blog/state-in-react-is-immutable): good intro to the immutable model in React.
+- 📜 [Where did Hooks come from?](https://reacttraining.com/blog/where-did-hooks-come-from): goes back to understand why we use hooks today. New React developers are not always aware of the problems encountered a few years ago.
+- 📜 [Fine-tuning refs with useImperativeHandle](https://prateeksurana.me/blog/fine-tuning-refs-with-useimperativehandle/): good intro for this hook that allows a React component to expose an imperative API to its parents.
+- 📜 [My experience learning React, web standards, and Remix](https://andre-landgraf.dev/blog/2023-03-11_web_standards_and_react): back to simplicity, less `useState` and more fullstack.
+- 📜 [Send emails using React and Tailwind CSS](https://resend.com/blog/tailwind-with-react-email): React-Email now supports Tailwind classes.
+- 📜 [Elegantly managing state and renders in React](https://remotion.com/blog/untangling-state-in-react):highlights how the batching of updates works, which can be surprising at first.
+- 📜 [A Brief History of Reactivity](https://www.builder.io/blog/history-of-reactivity): compares the reactive model of various frameworks, including React (coarce-grain reactivity).
 - 📜 [The Most Popular Node.js Frameworks in 2023](https://stackdiary.com/node-js-frameworks/)
 - 📜 [Full-Stack TypeScript with tRPC and React](https://www.robinwieruch.de/react-trpc/)
 - 📜 [Beautiful and mind-bending effects with WebGL Render Targets](https://blog.maximeheckel.com/posts/beautiful-and-mind-bending-effects-with-webgl-render-targets/)
@@ -96,14 +95,14 @@ Suncel CMS as developer :
 - 🎥 [React's place in the frontend ecosystem](https://www.youtube.com/watch?v=GHRkN_G5BMc)
 - 🎥 [Ranking every Full Stack Framework (By...TypeSafety?)](https://www.youtube.com/watch?v=zADNdGVIPBY)
 - 🎥 [Unlock the Power of AI with Defer and NextJS 13 - UI Magic!](https://www.youtube.com/watch?v=kHsTp2LENUI)
-- 📦 [Ink 4.0](https://github.com/vadimdemedes/ink/releases/tag/v4.0.0): le renderer React pour les CLI passe sous React 18 et ESM.
-- 📦 [Koestlich](https://twitter.com/coconut_xr/status/1633770307470098434): un "3D UI-kit" basé sur React-Three-Fiber.
-- 📦 [Storybook 7.0 RC](https://github.com/storybookjs/storybook/releases/tag/v7.0.0-rc.0): API framework avec support Next.js, Component Story Format 3, MDX 2... voir aussi la conférence [Storybook Day 2023](https://www.youtube.com/watch?v=P0hJm5v8TJw)
-- 📦 [Astro 2.1](https://astro.build/blog/astro-210/): composant Image, support Markdoc.
-- 📦 [Million 2.0](https://twitter.com/aidenybai/status/1634060432372813829): un virtual DOM basé sur le concept de "blocks" compatible avec React et qui peut le rendre 70% plus rapide 🤔 a tester!
+- 📦 [Ink 4.0](https://github.com/vadimdemedes/ink/releases/tag/v4.0.0): the React renderer for CLI is now under React 18 and ESM.
+- 📦 [Koestlich](https://twitter.com/coconut_xr/status/1633770307470098434): a "3D UI-kit" based on React-Three-Fiber.
+- 📦 [Storybook 7.0 RC](https://github.com/storybookjs/storybook/releases/tag/v7.0.0-rc.0): API framework with Next.js support Component Story Format 3, MDX 2... See also the conf [Storybook Day 2023](https://www.youtube.com/watch?v=P0hJm5v8TJw)
+- 📦 [Astro 2.1](https://astro.build/blog/astro-210/): Image component, Markdoc support.
+- 📦 [Million 2.0](https://twitter.com/aidenybai/status/1634060432372813829): a virtual DOM based on the concept of "blocks" compatible with React and which can make it 70% faster 🤔
 - 📦 [SWR 2.1](https://github.com/vercel/swr/releases/tag/v2.1.0): useSWRSubscription + useSWRInfinite parallel option
-- 📦 [Superflare](https://superflare.dev/): toolkit fullstack pour Cloudflare Workers avec support D1, R2, Session, Queues... intégration avec Remix, et bientôt Next.js?
-- 📦 [Tremor 2.0](https://twitter.com/tremorlabs/status/1635064912153284609): la lib UI pour créer des dashboards repose maintenant sur Tailwind CSS.
+- 📦 [Superflare](https://superflare.dev/): fullstack toolkit for Cloudflare Workers with support for D1, R2, Session, Queues... integration with Remix, and soon Next.js?
+- 📦 [Tremor 2.0](https://twitter.com/tremorlabs/status/1635064912153284609): UI lib to create dashboards, now based on Tailwind CSS.
 - 📦 [next-route-visualizer](https://github.com/DiiiaZoTe/next-route-visualizer)
 - 📦 [Radix - new Form primitive](https://twitter.com/radix_ui/status/1633483912755261443)
 - 📦 [Nodl 1.0](https://twitter.com/emilwidlund/status/1634804041397022720)
@@ -128,15 +127,15 @@ You can also **analyze survey results** in custom-built dashboards, save your fo
 
 ## 📱 React-Native {#react-native}
 
-- 📜 [Building smooth Shared Element Transitions in React Native](https://mrousavy.com/blog/Shared-Element-Transitions-in-React-Native): bonne intro aux Shared Element Transitions de Reanimated 3. Cela a l'air simple et flexible à utiliser, avec possibilité de customizer la transition via une worklet.
-- 📜 [Camera APIs on Android](https://mrousavy.com/blog/Camera-APIs-on-Android): Marc Rousavy explique pourquoi la gestion de la camera est compliqué, en particulier sous Android. VisionCamera v3 devrait repasser sous Camera2, et laisser de côté l'API CameraX pour l'instant.
-- 📜 [Shopify Tophat - Crafting a Delightful Mobile Developer Experience](https://shopify.engineering/shopify-tophat-mobile-developer-testing): Shopify a créé sa propre DX pour ses apps mobiles, qui n'est pas sans rappeler l'expérience Expo. Article intéressant mais pas totalement lié à React-Native même si Shopify l'utilise.
-- 📜 [Expo - EAS Build will Default to M1/M2 for iOS Builds](https://blog.expo.dev/eas-build-will-default-to-m1-m2-for-ios-builds-24208008a68d): Expo explique la transition vers les builders Apple silicon, qui réduisent les temps de build sur iOS (de 40% pour M1, et 10% de plus sous M2)
+- 📜 [Building smooth Shared Element Transitions in React Native](https://mrousavy.com/blog/Shared-Element-Transitions-in-React-Native): good intro to Shared Element Transitions in Reanimated 3. It looks simple and flexible to use, with the possibility to customize the transition with a worklet.
+- 📜 [Camera APIs on Android](https://mrousavy.com/blog/Camera-APIs-on-Android): Marc Rousavy explains why camera management is complicated, especially on Android. VisionCamera v3 should switch back to Camera2, and leave the CameraX API aside for now.
+- 📜 [Shopify Tophat - Crafting a Delightful Mobile Developer Experience](https://shopify.engineering/shopify-tophat-mobile-developer-testing): Shopify has created its own DX for its mobile apps, not too far from the Expo experience. Interesting article but not totally related to React-Native.
+- 📜 [Expo - EAS Build will Default to M1/M2 for iOS Builds](https://blog.expo.dev/eas-build-will-default-to-m1-m2-for-ios-builds-24208008a68d): Expo explains the transition to Apple silicon builders to reduce build times on iOS (by 40% for M1, and 10% more for M2)
 - 📜 [Microsoft - Adding Jest Snapshot Testing to React Native Windows Apps](https://devblogs.microsoft.com/react-native/2023-03-02-adding-snapshot-testing-to-rnw-apps/)
 - 📜 [Using React Native VisionCamera: Demo and alternatives](https://blog.logrocket.com/react-native-visioncamera-demo-alternatives/)
-- 🧑‍🎓 [Bridging Tutorial - Learn how to use any platform API in React Native app](https://mateusz1913.github.io/rnbridgingtutorial/): resource assez complete si vous souhaitez créer des modules natifs.
+- 🧑‍🎓 [Bridging Tutorial - Learn how to use any platform API in React Native app](https://mateusz1913.github.io/rnbridgingtutorial/): comprehensive resource for creating native modules.
 - 🎙️ [RNR 262 - Maestro: The App-solute Solution for Mobile UI Testing](https://reactnativeradio.com/episodes/rnr-262-maestro-the-app-solute-solution-for-mobile-ui-testing)
-- 📦 [Metro 0.76](https://github.com/facebook/metro/releases/tag/v0.76.0): une API reprise de Webpack qui devrait [permettre le code splitting](https://twitter.com/sebastienlorber/status/1635671177082417158) et sera utilisée par Expo Router.
+- 📦 [Metro 0.76](https://github.com/facebook/metro/releases/tag/v0.76.0): API ported from Webpack that should [allow code splitting](https://twitter.com/sebastienlorber/status/1635671177082417158) and will be used by Expo Router.
 - 👀 [Expo Web Global CSS support](https://twitter.com/Baconbrix/status/1633562265189326855)
 
 ---
@@ -161,15 +160,15 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 **[Rspack](https://www.rspack.dev/)**
 
-Annonce officielle du bundler Rust de ByteDance, compatible avec Webpack mais beaucoup plus rapide. Ca sera difficile de faire un choix entre Rspack et Turbopack, qui a également annoncé vouloir [supporter les loaders](https://twitter.com/jaredpalmer/status/1619071988181651456). À noter que [Unplugin 1.3](https://twitter.com/antfu7/status/1634517321392726017) supporte déjà Rspack et permet de créer des plugins bundler agnostic. Il n'y a pas encore de support Turbopack, mais j'espère que c'est prévu!
+Official announcement of the Rust bundler from ByteDance, compatible with Webpack but much faster. It will be hard to choose between Rspack and Turbopack, which also announced [upcoming support for Webpack loaders](https://twitter.com/jaredpalmer/status/1619071988181651456). Note that [Unplugin 1.3](https://twitter.com/antfu7/status/1634517321392726017) already supports Rspack and allows to create agnostic bundler plugins. There is no Unplugin Turbopack support yet, but I hope it is planned!
 
-Lire aussi [Rspack: The Rust-Based Web Bundler that Combines High Performance with Interoperability](https://valor-software.com/press-release/rs-pack-rust-based-web-bundler)
+Read also [Rspack: The Rust-Based Web Bundler that Combines High Performance with Interoperability](https://valor-software.com/press-release/rs-pack-rust-based-web-bundler)
 
 ---
 
 - [Jest 29.5](https://github.com/facebook/jest/releases/tag/v29.5.0): CLI `--randomize` option.
-- [CSS Nesting](https://developer.chrome.com/articles/css-nesting/): arrivée dans Chrome 112.
-- [Proto, a next-generation toolchain manager](https://moonrepo.dev/blog/proto): nouvelle alternative à fnm ou Volta pour gérer son runtime Node.js (mais pas que).
+- [CSS Nesting](https://developer.chrome.com/articles/css-nesting/): landing in Chrome 112!
+- [Proto, a next-generation toolchain manager](https://moonrepo.dev/blog/proto): new alternative to fnm or Volta to manage its Node.js runtime (but not only).
 - [SPA view transitions land in Chrome 111](https://developer.chrome.com/blog/spa-view-transitions-land/)
 - [TypeScript’s Migration to Modules](https://devblogs.microsoft.com/typescript/typescripts-migration-to-modules/)
 - [Cloudflare Workers - Node.js compat demo](https://twitter.com/jasnell/status/1633949738516230144)
