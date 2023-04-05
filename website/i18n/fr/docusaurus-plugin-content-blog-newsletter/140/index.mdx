@@ -42,9 +42,16 @@ React-admin, c'est 6 ans de développement, plus de 20 000 développeurs convain
 
 ## ⚛️ React {#react}
 
-[React Labs: What We've Been Working On – March 2023](https://react.dev/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023)
+**[React Labs: What We've Been Working On – March 2023](https://react.dev/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023)**
 
-https://twitter.com/reactjs/status/1638640958815318021
+Update officielle de la R&D autour de React qui aborde différents sujets:
+
+- React Server Components. Une belle implémentation est déjà dispo dans Next.js via App Router. Les RSCs avec async/await devraient aussi pouvoir tourner dans une app client. J'ai l'impression qu'ils veulent unifier les abstractions coté client/server (et je pense que [Async Context](https://twitter.com/sebastienlorber/status/1639183216799100928) va être super pour ça!). Je trouve que pas mal d'innovations liées RSCs qui ne sont pas encore trop mises en avant.
+- Asset loading: intégration avec Suspense pour le chargement de CSS, font et images ([details][https://twitter.com/acdlite/status/1637102880850059264]).
+- Document Metadata: support officiel d'une API pour les metadata `<head>` avec support streaming.
+- React Optimizing Compiler: le compiler React Forget n'est plus présenté comme un "auto-memoizing compiler", mais plutôt comme un "reactivity compiler". D'ailleurs [Joe Savona vient d'annoncer que React Forget a atteint un milestone](https://twitter.com/en_JS/status/1641494974893281282) et qu'ils se concentrent maintenant sur l'intégration.
+- Offscreen Rendering: c'est vraiment une innovation qui différencie React des autres frameworks, et que j'attends avec impatience. Meta est déjà en train de tester le prerendering sur des apps React-Native avec des gains de performance.
+- Transition Tracing: une API qui permet de détecter les transitions lentes, mis sur pause pour l'instant.
 
 ---
 
@@ -62,7 +69,6 @@ https://vercel.com/blog/streaming-for-serverless-node-js-and-edge-runtimes-with-
 - 📜 [The useEffect cleanup and the two circumstances it's called.](https://reacttraining.com/blog/useEffect-cleanup)
 - 📜 [How Will the Future of Web Development Be Affected by Influential New React Docs?](https://luketheweb.dev/blog/how-will-the-future-of-web-development-be-affected-by-influential-new-react-docs)
 - 👤 [Tom Occhino](https://twitter.com/tomocchino/status/1640800001625411606) et [Dominic Gannaway](https://twitter.com/trueadm/status/1640761270566633472) rejoignent Vercel.
-- 🐦 [Joe Savona - "We’ve reached a fun milestone on React Forget"](https://twitter.com/en_JS/status/1641494974893281282)
 - 📦 [Impala - A very simple static React framework](https://github.com/ascorbic/impala)
 - 💡 Les server components sont [capables d'envoyer des modules](https://twitter.com/dan_abramov/status/1638760757239087104) de manière lazy au client
 - 📦 webpack-rsc: https://twitter.com/unstubbable/status/1641495749627109380
@@ -130,6 +136,7 @@ Watch the [4-min demo video](https://www.youtube.com/watch?v=zRkeKSZjlyw)
 - 📦 [React-Native 0.76.1](https://github.com/facebook/react-native/releases/tag/v0.71.6): fix XCode build issues
 - 👀 [RFC: DOM traversal and layout APIs in React Native](https://github.com/react-native-community/discussions-and-proposals/pull/607): API avancée qui pourrait débloquer l'implémentation de features comme MutationObserver, IntersectionObserver...
 - 📦 [Expo-Blur - Android support](https://twitter.com/aleqsio/status/1638893843457212418): il sera bientot possible d'utiliser BlurView sur toutes les plateformes
+- 🎙️ [RNR 263 - Shopify Goes React Native!](https://reactnativeradio.com/episodes/rnr-263-shopify-goes-react-native)
 
 ---
 
