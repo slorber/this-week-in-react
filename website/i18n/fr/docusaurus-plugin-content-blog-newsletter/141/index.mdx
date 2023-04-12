@@ -1,10 +1,9 @@
 ---
 slug: /141
-title: "React Hebdo #141: 20.000 lecteurs 🥳, Next.js, Remix, React Visualized, Chakra, Modern.js, Reselect, React-Native Benchmarks, Expo..."
+title: "React Hebdo #141: 20.000 lecteurs 🥳, Next.js, Storybook, React Visualized, Remix, Chakra, Modern.js, Reselect, React-Native Benchmarks, Expo..."
 authors: [slorber]
 date: 04-11-2023
 image: /img/TWIR_POST.png
-unlisted: true
 ---
 
 Salut à tous !
@@ -15,7 +14,7 @@ Merci à tous de m'accorder votre attention chaque semaine et de m'aider à fair
 
 Avoir une masse critique de lecteur est important pour moi: cela me permet de trouver des [sponsors](https://thisweekinreact.com/sponsor) et compenser le fait que j'y dédie 50% de mon temps. Après 3 ans d'effort, j'arrive enfin à l'équilibre: ça va me donner la liberté de tester de nouvelles idées sans prendre trop de risques.
 
-Sinon, cette semaine est marquée par la sortie de Next.js 13.3. React Visualized est une resource très sympa pour les débutants. Je découvre Modern.js. Quelques bons articles sur React, Remix et Chakra UI. Plutôt calme coté React-Native.
+Sinon, cette semaine est marquée par la sortie de Next.js 13.3 et Storybook 7.0. React Visualized est une resource très sympa pour les débutants. Je découvre Modern.js. Quelques bons articles sur React, Remix et Chakra UI. Plutôt calme coté React-Native.
 
 Pour les développeurs React-Native, ne manquez pas la conférence [App.js](https://appjs.co/) à Cracovie le 10-12 mai. C'était une [très bonne expérience](https://twitter.com/sebastienlorber/status/1536636851230060544) pour moi l'année dernière 👌. Ils nous offrent [-20% sur les workshops](https://ti.to/appjs/2023/discount/ThisWeekinReact20).
 
@@ -59,7 +58,7 @@ Des nouveautés très sympa dans cette nouvelle release Next.js. Le nouveau App 
 - Static Export: Next.js peut exécuter les Server Components au moment du build et produire un export statique de votre app qui ne nécessite pas de serveur.
 - Parallel Routes: le composant layout peut définir plusieurs "slots" qui seront remplis par différentes pages.
 - Interception Routes: permet d'implémenter les patterns de routing type "Instagram", une photo peut être ouverte dans une modale ou en plein écran selon d'ou on vient.
-- Plein d'autres améliorations
+- Plein d'autres améliorations.
 
 ---
 
@@ -67,7 +66,7 @@ Des nouveautés très sympa dans cette nouvelle release Next.js. Le nouveau App 
 
 **[React, Visualized](https://react.gg/visualized)**
 
-Une resource visuelle et interactive très sympa pour découvrir React, à partager au sein de votre équipe.
+Une resource visuelle et interactive très sympa pour découvrir React. À partager aux juniors de votre équipe.
 
 ---
 
@@ -77,7 +76,7 @@ Une resource visuelle et interactive très sympa pour découvrir React, à parta
 - 👀 [Reselect PR - Add experimental new memoizers: autotrack, weakmap, and signalis](https://github.com/reduxjs/reselect/pull/605)
 - 📜 [The future of Chakra UI](https://www.adebayosegun.com/blog/the-future-of-chakra-ui): Chakra UI veut passer sur du zero-runtime CSS-in-JS pour être compatible avec les Server Components. Souhaite être une librairie universelle avec une bonne DX. Ils créent Panda pour le CSS-in-JS, et Ark pour aider à l'intégration des state machines agnostiques de Zag.js.
 - 📜 [Fighting inter-component HTML bloat](https://elisehe.in/2023/03/27/minimal-html-in-design-systems.html): un bon article qui conseille d'éviter de créer des "wrapper elements" inutiles dans un context React. Propose des solutions intéressantes que je ne connaissais pas, comme Radix `asChild`.
-- 📜 [Server-side render dates across timezones with Remix](https://www.jacobparis.com/guides/remix-ssr-dates): propose de résoudre les problèmes d'hydratation React lié a une timezone différente entre client et SSR.
+- 📜 [Server-side render dates across timezones with Remix](https://www.jacobparis.com/guides/remix-ssr-dates): solution basée sur un cookie pour résoudre les problèmes d'hydratation React lié à une timezone différente entre client et SSR.
 - 📜 [Framework popularity on Netlify](https://www.netlify.com/blog/framework-popularity-on-netlify/): stats sur l'usage de nombreux frameworks React chez Netlify. Content d'y retrouver Docusaurus!
 - 📜 [Generate open graph social preview images with Remix](https://www.jacobparis.com/guides/remix-og): comme `@vercel/og` ne tourne que sur Vercel, cette solution propose d'obtenir un résultat similaire en utilisant Satori et svg2img.
 - 📜 [Why & How We Retired Elm at Culture Amp](https://kevinyank.com/posts/on-endings-why-how-we-retired-elm-at-culture-amp/): retour d'expérience sur le choix d'utiliser Elm ou React au cours du temps.
@@ -85,13 +84,13 @@ Une resource visuelle et interactive très sympa pour découvrir React, à parta
 - 📜 [Improving React Testing Library Tests](https://claritydev.net/blog/improving-react-testing-library-tests)
 - 📜 [NextJS - SPA or MPA?](https://www.code-insights.dev/posts/nextjs-spa-or-mpa)
 - 📦 [React Aria Components alpha](https://twitter.com/devongovett/status/1643988004577619971): pour faciliter l'usage de React-Aria et d'autres updates React-Aria + React-Spectrum.
-- 📦 [Astro 2.2](https://astro.build/blog/astro-220/): `assetPrefix` pour utiliser un CDN et changements sur le helper `image()` pour le schema des collections
-- 📦 [Next-Auth v4.22](https://twitter.com/nextauthjs/status/1645004172725551104): support Route Handlers
+- 📦 [Astro 2.2](https://astro.build/blog/astro-220/): `assetPrefix` pour utiliser un CDN et changements sur le helper `image()` pour le schema des collections.
+- 📦 [Next-Auth v4.22](https://twitter.com/nextauthjs/status/1645004172725551104): support Route Handlers.
 - 📦 [next-seo v6](https://github.com/garmeeh/next-seo/releases/tag/v6.0.0): recommande d'utiliser les nouvelles API Next.js avec le App Router.
-- 📦 [Deno SaaS Kit](https://github.com/denoland/saaskit): boilerplate proposé par Deno pour créer des SaaS, basé sur Fresh et Preact.
-- 🎥 [Secret React Server Component Patterns They Don't Want You To Know](https://www.youtube.com/watch?v=ciQdQkT0bZk)
-- 🎥 [Why React breaks your app – on purpose](https://www.youtube.com/watch?v=1UOAI7pFDek)
-- 🎥 [React Server Components without NextJS - A 1 minute guide](https://twitter.com/BHolmesDev/status/1643990398824763393)
+- 📦 [Deno SaaS Kit](https://github.com/denoland/saaskit): boilerplate Deno officiel pour créer des SaaS, basé sur Fresh et Preact.
+- 🎥 [Secret React Server Component Patterns They Don't Want You To Know](https://www.youtube.com/watch?v=ciQdQkT0bZk): intéressant pour ceux qui veulent en savoir plus sur Wakuwork et ses possibilités RSC non présentes dans Next.js 13.
+- 🎥 [Why React breaks your app – on purpose](https://www.youtube.com/watch?v=1UOAI7pFDek): explique pourquoi React render 2 fois l'app avec le Strict Mode.
+- 🎥 [React Server Components without NextJS - A 1 minute guide](https://twitter.com/BHolmesDev/status/1643990398824763393): bonne vision d'ensemble présenté rapidement.
 
 <SubscribeFormEmbed />
 
@@ -167,7 +166,7 @@ Nous cherchons des développeurs(euses) JavaScript passionnés. Vous interviendr
 
 ## 🔀 Autre {#other}
 
-- [JSPM CLI Relaunch](https://jspm.org/jspm-cli): package management que mise sur les import maps
+- [JSPM CLI Relaunch](https://jspm.org/jspm-cli): package management que mise sur les import maps.
 - [lazyrepo - Caching task runner for npm/pnpm/yarn monorepos](https://github.com/ds300/lazyrepo)
 - [AWS Lambda introduces response payload streaming](https://aws.amazon.com/fr/about-aws/whats-new/2023/04/aws-lambda-response-payload-streaming/)
 - [Vercel - Improved Node.js compatibility for Edge Middleware and Edge Functions](https://vercel.com/changelog/improved-node-js-compatibility-for-edge-middleware-and-edge-functions)
