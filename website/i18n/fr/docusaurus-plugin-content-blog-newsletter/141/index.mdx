@@ -1,6 +1,6 @@
 ---
 slug: /141
-title: "React Hebdo #141: ..."
+title: "React Hebdo #141: 20.000 lecteurs 🥳, Next.js, Remix, React Visualized, Chakra, Modern.js, Reselect, React-Native Benchmarks, Expo..."
 authors: [slorber]
 date: 04-11-2023
 image: /img/TWIR_POST.png
@@ -9,7 +9,15 @@ unlisted: true
 
 Salut à tous !
 
-Promo appjs? attente de code promo
+On vient juste de passer un cap: vous êtes maintenant **plus de 20.000 lecteurs**! 🥳️
+
+Merci à tous de m'accorder votre attention chaque semaine et de m'aider à faire grandir ce beau projet! Si vous souhaitez me donner un coup de pouce: le **bouche-à-oreille** fonctionne bien. Je prépare d'ailleurs un **"referral program"** qui me permettra bientôt de connaître mes meilleurs ambassadeurs, et de pouvoir les remercier ou récompenser.
+
+Avoir une masse critique de lecteur est important pour moi: cela me permet de trouver des [sponsors](https://thisweekinreact.com/sponsor) et compenser le fait que j'y dédie 50% de mon temps. Après 3 ans d'effort, j'arrive enfin à l'équilibre: ça va me donner la liberté de tester de nouvelles idées sans prendre trop de risques.
+
+Sinon, cette semaine est marquée par la sortie de Next.js 13.3. React Visualized est une resource très sympa pour les débutants. Je découvre Modern.js. Quelques bons articles sur React, Remix et Chakra UI. Plutôt calme coté React-Native.
+
+Pour les développeurs React-Native, ne manquez pas la conférence [App.js](https://appjs.co/) à Cracovie le 10-12 mai. C'était une [très bonne expérience](https://twitter.com/sebastienlorber/status/1536636851230060544) pour moi l'année dernière 👌. Ils nous offrent [-20% sur les workshops](https://ti.to/appjs/2023/discount/ThisWeekinReact20).
 
 <!-- truncate -->
 
@@ -40,63 +48,50 @@ React-admin, c'est 6 ans de développement, plus de 20 000 développeurs convain
 
 ## ⚛️ React {#react}
 
-[React, Visualized](https://react.gg/visualized)
+[![Next.js 13.3](/emails/issues/141/nextjs13.3.jpg)](https://nextjs.org/blog/next-13-3)
 
-https://twitter.com/tylermcginnis/status/1645492728011317248
+**[Next.js 13.3](https://nextjs.org/blog/next-13-3)**
 
----
+Des nouveautés très sympa dans cette nouvelle release Next.js. Le nouveau App Router sera prochainement considéré comme stable.
 
-[Next.js 13.3](https://nextjs.org/blog/next-13-3)
-
-https://twitter.com/vercel/status/1644092621218873351
-
-https://twitter.com/ctnicholasdev/status/1644130884323536899
-
-https://www.youtube.com/watch?v=gSSsZReIFRk
-
-https://nextjs.org/docs/advanced-features/instrumentation
-
-https://twitter.com/timneutkens/status/1645795928463532035
-
-https://twitter.com/ctnicholasdev/status/1645797419920269312
-
-https://twitter.com/delba_oliveira/status/1645840553597362176
+- File-Based Metadata API: nouvelles conventions file system pour générer sitemaps, robots, favicons... Voir également ce [thread visuel](https://twitter.com/delba_oliveira/status/1645840553597362176).
+- Dynamic Open Graph Images: intégration de `@vercel/og` et Satori directement dans Next.js pour générer des social cards via JSX et CSS ou Tailwind.
+- Static Export: Next.js peut exécuter les Server Components au moment du build et produire un export statique de votre app qui ne nécessite pas de serveur.
+- Parallel Routes: le composant layout peut définir plusieurs "slots" qui seront remplis par différentes pages.
+- Interception Routes: permet d'implémenter les patterns de routing type "Instagram", une photo peut être ouverte dans une modale ou en plein écran selon d'ou on vient.
+- Plein d'autres améliorations
 
 ---
 
-[Modern.js](https://modernjs.dev/en)
+[![React, Visualized](/emails/issues/141/visualized.jpg)](https://react.gg/visualized)
 
-https://github.com/web-infra-dev/modern.js
+**[React, Visualized](https://react.gg/visualized)**
 
----
-
-https://claritydev.net/blog ?
+Une resource visuelle et interactive très sympa pour découvrir React, à partager au sein de votre équipe.
 
 ---
 
-I hate React. I’m not alone.
-
-https://medium.com/@corbbin/i-hate-react-im-not-alone-f6f476eec18f
-
----
-
-- [Next.js RFC - next/third-parties](https://github.com/vercel/next.js/discussions/48256)
-- [Server-side render dates across timezones with Remix](https://www.jacobparis.com/guides/remix-ssr-dates)
-- [Learn Laravel Routing Techniques for Next.js](https://www.luckymedia.dev/blog/learn-laravel-routing-techniques-for-next-js)
-- [Deno SaaS Kit](https://github.com/denoland/saaskit): boilerplate officiel proposé par Deno pour créer des SaaS basé sur Fresh et Preact.
-- [Fighting inter-component HTML bloat](https://elisehe.in/2023/03/27/minimal-html-in-design-systems.html)
-- [NextJS - SPA or MPA?](https://www.code-insights.dev/posts/nextjs-spa-or-mpa)
-- [The future of Chakra UI](https://www.adebayosegun.com/blog/the-future-of-chakra-ui) + https://twitter.com/thesegunadebayo/status/1643706973341335553
-- [Lee Robinson - "Nextjs now automatically restarts your local dev server when you make changes to `next.config.js`"](https://twitter.com/leeerob/status/1643847173019439104)
-- [Generate open graph social preview images with Remix](https://www.jacobparis.com/guides/remix-og) + https://twitter.com/jacobmparis/status/1645090848286048259
-- [Secret React Server Component Patterns They Don't Want You To Know](https://www.youtube.com/watch?v=ciQdQkT0bZk)
-- [Next-Auth v4.22 - Route Handlers support](https://twitter.com/nextauthjs/status/1645004172725551104)
-- [React Server Components without NextJS - A 1 minute guide](https://twitter.com/BHolmesDev/status/1643990398824763393)
-- [React Aria Components alpha](https://twitter.com/devongovett/status/1643988004577619971): et d'autres updates React-Aria + React-Spectrum.
-- [Astro 2.2](https://astro.build/blog/astro-220/)
-- [Framework popularity on Netlify](https://www.netlify.com/blog/framework-popularity-on-netlify/)
-- [Vercel Adds Remix: Integration Supports Larger Apps](https://thenewstack.io/vercel-adds-remix-integration-supports-larger-apps/)
-- [next-seo v6](https://github.com/garmeeh/next-seo/releases/tag/v6.0.0)
+- 👀 [Modern.js](https://modernjs.dev/en): les devs de chez ByteDance ne proposent pas que rspack, mais également un meta-framework React complet, et tout un écosystème d'outils. À surveiller!
+- 👀 [Next.js RFC - `next/third-parties`](https://github.com/vercel/next.js/discussions/48256): propose de créer des wrappers au dessus de `next/script` pour faciliter l'intégration de librairies populaires comme Google Analytics.
+- 👀 [Next.js PR - Add Zod and router state validation](https://github.com/vercel/next.js/pull/46962)
+- 👀 [Reselect PR - Add experimental new memoizers: autotrack, weakmap, and signalis](https://github.com/reduxjs/reselect/pull/605)
+- 📜 [The future of Chakra UI](https://www.adebayosegun.com/blog/the-future-of-chakra-ui): Chakra UI veut passer sur du zero-runtime CSS-in-JS pour être compatible avec les Server Components. Souhaite être une librairie universelle avec une bonne DX. Ils créent Panda pour le CSS-in-JS, et Ark pour aider à l'intégration des state machines agnostiques de Zag.js.
+- 📜 [Fighting inter-component HTML bloat](https://elisehe.in/2023/03/27/minimal-html-in-design-systems.html): un bon article qui conseille d'éviter de créer des "wrapper elements" inutiles dans un context React. Propose des solutions intéressantes que je ne connaissais pas, comme Radix `asChild`.
+- 📜 [Server-side render dates across timezones with Remix](https://www.jacobparis.com/guides/remix-ssr-dates): propose de résoudre les problèmes d'hydratation React lié a une timezone différente entre client et SSR.
+- 📜 [Framework popularity on Netlify](https://www.netlify.com/blog/framework-popularity-on-netlify/): stats sur l'usage de nombreux frameworks React chez Netlify. Content d'y retrouver Docusaurus!
+- 📜 [Generate open graph social preview images with Remix](https://www.jacobparis.com/guides/remix-og): comme `@vercel/og` ne tourne que sur Vercel, cette solution propose d'obtenir un résultat similaire en utilisant Satori et svg2img.
+- 📜 [Why & How We Retired Elm at Culture Amp](https://kevinyank.com/posts/on-endings-why-how-we-retired-elm-at-culture-amp/): retour d'expérience sur le choix d'utiliser Elm ou React au cours du temps.
+- 📜 [The Most Common Mistakes When Using React](https://claritydev.net/blog/the-most-common-mistakes-when-using-react)
+- 📜 [Improving React Testing Library Tests](https://claritydev.net/blog/improving-react-testing-library-tests)
+- 📜 [NextJS - SPA or MPA?](https://www.code-insights.dev/posts/nextjs-spa-or-mpa)
+- 📦 [React Aria Components alpha](https://twitter.com/devongovett/status/1643988004577619971): pour faciliter l'usage de React-Aria et d'autres updates React-Aria + React-Spectrum.
+- 📦 [Astro 2.2](https://astro.build/blog/astro-220/): `assetPrefix` pour utiliser un CDN et changements sur le helper `image()` pour le schema des collections
+- 📦 [Next-Auth v4.22](https://twitter.com/nextauthjs/status/1645004172725551104): support Route Handlers
+- 📦 [next-seo v6](https://github.com/garmeeh/next-seo/releases/tag/v6.0.0): recommande d'utiliser les nouvelles API Next.js avec le App Router.
+- 📦 [Deno SaaS Kit](https://github.com/denoland/saaskit): boilerplate proposé par Deno pour créer des SaaS, basé sur Fresh et Preact.
+- 🎥 [Secret React Server Component Patterns They Don't Want You To Know](https://www.youtube.com/watch?v=ciQdQkT0bZk)
+- 🎥 [Why React breaks your app – on purpose](https://www.youtube.com/watch?v=1UOAI7pFDek)
+- 🎥 [React Server Components without NextJS - A 1 minute guide](https://twitter.com/BHolmesDev/status/1643990398824763393)
 
 <SubscribeFormEmbed />
 
@@ -127,19 +122,19 @@ Watch the [4-min demo video](https://www.youtube.com/watch?v=zRkeKSZjlyw)
 
 ## 📱 React-Native {#react-native}
 
-- https://www.bam.tech/article/managing-environment-variables-securely-in-react-native
-
-- promo chainreact + appjs?
-
-- https://twitter.com/Baconbrix/status/1645477524606943248
-
-- [The New Architecture Performance Benchmarks](https://github.com/reactwg/react-native-new-architecture/discussions/123) + https://twitter.com/SamuelSusla/status/1643637613771751427
-- [Soon: Environment Variables in Expo](https://twitter.com/Baconbrix/status/1644731840132169728)
-- [freeCodeCamp React-Native Course](https://www.youtube.com/watch?v=obH0Po_RdWk)
-- [react-native-keyboard-controller 1.5](https://twitter.com/ziusko/status/1645322969453932576): interactive keyboard, possibilité de fermer le clavier avec un geste
-- [How to Create an Expo App with React-Native Firebase](https://www.youtube.com/watch?v=mZlKwRV4MC8)
-- ["Hermes recently surpassed JavaScriptCore as the most popular JavaScript engine in EAS Build!"](https://twitter.com/expo/status/1645540179724353536)
-- [Expo - M1/M2 Migration Timeline for EAS Build](https://blog.expo.dev/m1-m2-migration-timeline-for-eas-build-22bd6c49f1b3)
+- 📜 [Managing environment variables securely in React Native](https://www.bam.tech/article/managing-environment-variables-securely-in-react-native)
+- 📜 [Expo - M1/M2 Migration Timeline for EAS Build](https://blog.expo.dev/m1-m2-migration-timeline-for-eas-build-22bd6c49f1b3)
+- 👀 [The New Architecture Performance Benchmarks](https://github.com/reactwg/react-native-new-architecture/discussions/123): la nouvelle architecture est un peu plus rapide que l'ancienne sur ce benchmark synthétique. Note: la performance n'est pas la seule raison d'adopter la nouvelle architecture. Quelques problèmes de performance corrigés sur la v0.72.
+- 👀 [Soon: Environment Variables in Expo](https://twitter.com/Baconbrix/status/1644731840132169728)
+- 👀 [Expo-MDX supports global components](https://twitter.com/Baconbrix/status/1645477524606943248)
+- 📦 [React-Native 0.72.0-RC.1](https://github.com/facebook/react-native/releases/tag/v0.72.0-rc.1)
+- 📦 [react-native-keyboard-controller 1.5](https://twitter.com/ziusko/status/1645322969453932576): interactive keyboard, possibilité de fermer le clavier avec un geste.
+- 📦 [react-native-quick-sqlite](https://twitter.com/mrousavy/status/1643991438450114563): package repris par Margelo.
+- 🐦 ["Hermes recently surpassed JavaScriptCore as the most popular JavaScript engine in EAS Build!"](https://twitter.com/expo/status/1645540179724353536)
+- 🎥 [How to Create an Expo App with React-Native Firebase](https://www.youtube.com/watch?v=mZlKwRV4MC8)
+- 🎥 [freeCodeCamp React-Native Course](https://www.youtube.com/watch?v=obH0Po_RdWk)
+- 👥 [App.js](https://appjs.co/) (Cracovie, 10-12 Mai) nous offre [-20% sur les workshops](https://ti.to/appjs/2023/discount/ThisWeekinReact20) (code "ThisWeekinReact20").
+- 👥 [Chain React](https://chainreactconf.com/) (Portland, 18-19 Mai) nous offre -10% sur les entrées (code "thisweekinreact").
 
 ---
 
@@ -161,42 +156,29 @@ Nous cherchons des développeurs(euses) JavaScript passionnés. Vous interviendr
 
 ## 🇫🇷 En français {#fr}
 
-Pas de contenu cette semaine 😅
+- 📜 [Créer un site avec Docusaurus – Guide complet](https://tutoriels.lws.fr/site-web/creer-un-site-avec-docusaurus)
+- 🎥 [Les Nouveautées de NextJS 13.3](https://www.youtube.com/watch?v=PP6eBEFNMmI)
+- 🎥 [Le piège du rendu Conditionnel en React](https://www.youtube.com/watch?v=7PcIYG7DXwM)
+- 🎥 [La WebGPU API sur Chrome - Actus JS de la semaine](https://www.youtube.com/watch?v=vxfdFhaUXSw)
 
 💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
-
-<Todo />
 
 ---
 
 ## 🔀 Autre {#other}
 
-- [Node.js 19.9](https://nodejs.org/en/blog/release/v19.9.0)
-- [Vitest 0.30](https://twitter.com/sheremet_va/status/1645063635712999427)
+- [JSPM CLI Relaunch](https://jspm.org/jspm-cli): package management que mise sur les import maps
 - [lazyrepo - Caching task runner for npm/pnpm/yarn monorepos](https://github.com/ds300/lazyrepo)
 - [AWS Lambda introduces response payload streaming](https://aws.amazon.com/fr/about-aws/whats-new/2023/04/aws-lambda-response-payload-streaming/)
-- [JSPM CLI Relaunch](https://jspm.org/jspm-cli): package management basé sur les import maps qui sont enfin dispo dans tous les navigateurs
 - [Vercel - Improved Node.js compatibility for Edge Middleware and Edge Functions](https://vercel.com/changelog/improved-node-js-compatibility-for-edge-middleware-and-edge-functions)
 - [W3C - First public draft - Badging API](https://www.w3.org/blog/news/archives/9878)
+- [Node.js 19.9](https://nodejs.org/en/blog/release/v19.9.0)
+- [Vitest 0.30](https://twitter.com/sheremet_va/status/1645063635712999427)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-https://twitter.com/galstar/status/1645638031473254400
-
-https://twitter.com/GabrielVergnaud/status/1645005803131138049
-
-https://twitter.com/trashh_dev/status/1644162037097066496
-
-https://twitter.com/CherryJimbo/status/1643778121944952833
-
-https://twitter.com/sebastienlorber/status/1645823352693506048
-
-https://twitter.com/RozenMD/status/1643918966165848065
-
-https://twitter.com/aarondjents/status/1645805840295919618
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![React was a mistake](/emails/issues/141/meme.jpg)](https://twitter.com/sebastienlorber/status/1645823352693506048)
 
 A plus 👋
