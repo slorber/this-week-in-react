@@ -102,6 +102,12 @@
     },
 
     {
+      "source": "/fr",
+      "destination": "/fr/",
+      "permanent": true
+    },
+
+    {
       "source": "/fr/sponsor",
       "destination": "/sponsor",
       "permanent": false
