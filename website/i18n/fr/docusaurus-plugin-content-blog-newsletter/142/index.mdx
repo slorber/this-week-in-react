@@ -1,6 +1,6 @@
 ---
 slug: /142
-title: "React Hebdo #142: JSX, React-Query, Server Components, Next.js, Million, OpenNext, Ariakit, React-Three-Fiber, TS 5.1, Node.js 20, WebGPU..."
+title: "React Hebdo #142: JSX, React-Query, Server Components, Next.js, Million, OpenNext, Ariakit, Expo-Image, React-Three-Fiber, TS 5.1, Node.js 20, WebGPU..."
 authors: [slorber]
 date: 04-18-2023
 image: /img/TWIR_POST.png
@@ -50,12 +50,11 @@ Testez le dès maintenant en moins de 30 minutes !
 
 Une version TypeScript importante qui va permettre à React de pouvoir déclarer les types valides à utiliser dans le JSX. Il est prévu d'utiliser cette nouvelle feature au plus tôt dans les typedefs React, qui ont d'ailleurs été [forkées](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/65126) pour continuer à supporter des anciennes versions (TypeScript <= 5.0).
 
-Il y a de bonnes raisons d'adopter TypeScript 5.1+ au plus vite, car cela débloque entre autre:
+Il y a de bonnes raisons d'adopter TypeScript 5.1+ au plus vite. Cela débloque entre autre:
 
 - la possibilité d'utiliser un React Server Component `async` dans le JSX sans erreurs TypeScript ni [workaround](https://gist.github.com/cramforce/b5e3f0b103f841d2e5e429b1d5ac4ded).
 - la possibilité de retourner tous les types valides pour `ReactNode` (string, array, boolean...) sans avoir besoin d'un fragment ([details](https://twitter.com/sebastienlorber/status/1648619398259769344)).
-
-D'autres améliorations intéressantes autour du JSX: namespaced attributes et linked editing (VSCode).
+- d'autres améliorations intéressantes autour du JSX: namespaced attributes et linked editing (VSCode).
 
 ---
 
