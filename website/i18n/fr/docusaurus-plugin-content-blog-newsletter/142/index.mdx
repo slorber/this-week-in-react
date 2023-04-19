@@ -1,6 +1,6 @@
 ---
 slug: /142
-title: "React Hebdo #142: ..."
+title: "React Hebdo #142: JSX, React-Query, Server Components, Next.js, Million, OpenNext, Ariakit, React-Three-Fiber, TS 5.1, Node.js 20, WebGPU..."
 authors: [slorber]
 date: 04-18-2023
 image: /img/TWIR_POST.png
@@ -9,9 +9,11 @@ unlisted: true
 
 Salut à tous !
 
-promote confs!
+Cette semaine, TypeScript 5.1 sort en beta avec de nombreuses améliorations lié au JSX et à React!
 
-<Todo />
+React-Query compte retirer les callbacks dans la version 5. Cette idée ne plait pas à tout le monde.
+
+Pour les développeurs React-Native, ne manquez pas [React-Native-Connection](https://reactnativeconnection.io/) le 1er Juin à Paris! J'ai participé au commité de sélection des talks, et on vient de [publier la line-up complete](https://twitter.com/sebastienlorber/status/1648269027318411264) avec des speakers internationaux et locaux. Réduction de 10% avec le code "REACTHEBDO".
 
 <!-- truncate -->
 
@@ -45,7 +47,7 @@ Testez le dès maintenant en moins de 30 minutes !
 
 [![TypeScript 5.1 beta](/emails/issues/142/ts5.1.jpg)](https://devblogs.microsoft.com/typescript/announcing-typescript-5-1-beta/)
 
-**[TypeScript 5.1 beta](https://devblogs.microsoft.com/typescript/announcing-typescript-5-1-beta/)**
+**[TypeScript 5.1 (beta) + React](https://devblogs.microsoft.com/typescript/announcing-typescript-5-1-beta/)**
 
 Une version TypeScript importante qui va permettre à React de pouvoir déclarer les types valides à utiliser dans le JSX. Il est prévu d'utiliser cette nouvelle feature au plus tôt dans les typedefs React, qui ont d'ailleurs été [forkées](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/65126) pour continuer à supporter des anciennes versions (TypeScript <= 5.0).
 
@@ -53,6 +55,8 @@ Il y a de bonnes raisons d'adopter TypeScript 5.1+ au plus vite, car cela déblo
 
 - la possibilité d'utiliser un React Server Component `async` dans le JSX sans erreurs TypeScript ni [workaround](https://gist.github.com/cramforce/b5e3f0b103f841d2e5e429b1d5ac4ded).
 - la possibilité de retourner tous les types valides pour `ReactNode` (string, array, boolean...) sans avoir besoin d'un fragment ([details](https://twitter.com/sebastienlorber/status/1648619398259769344)).
+
+D'autres améliorations intéressantes autour du JSX: namespaced attributes et linked editing (VSCode).
 
 ---
 
@@ -164,11 +168,11 @@ Nous cherchons des développeurs(euses) JavaScript passionnés. Vous interviendr
 ## 🔀 Autre {#other}
 
 - [Node.js 20 Now Available](https://openjsf.org/blog/2023/04/18/node-js-20-now-available/): avec test runner stable, permission model, possibilité de compiler un executable...
-- [WebGPU Fundamentals](https://webgpufundamentals.org/)
-- [pretty-ts-errors](https://github.com/yoavbls/pretty-ts-errors)
+- [pretty-ts-errors](https://github.com/yoavbls/pretty-ts-errors): super idée pour améliorer la DX TS dans VSCode.
 - [total-typescript/shoehorn - Partial mocks in TypeScript](https://github.com/total-typescript/shoehorn)
+- [Chrome ships WebGPU](https://developer.chrome.com/blog/webgpu-release/): dispo dans Chrome 113+.
+- [WebGPU Fundamentals](https://webgpufundamentals.org/)
 - [Turborepo 1.9](https://twitter.com/turborepo/status/1646238976196444162)
-- [Testing with TypeScript is Painful: Here's a Solution](https://www.totaltypescript.com/testing-with-typescript-is-painful-heres-a-solution)
 
 ---
 
