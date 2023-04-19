@@ -4,7 +4,7 @@ export const sponsorshipCalendarLink = "https://thisweekinreact.com/calendar";
 export const testimonialsLink = "https://thisweekinreact.com/testimonials";
 
 // TODO automate this!
-export const lastIssueLink = "/newsletter/141";
+export const lastIssueLink = "/newsletter/142";
 
 export type NewsletterSegment = {
   name: string;
@@ -49,7 +49,7 @@ export type NewsletterFuture = {
 
 const subscribersCount = fr.subscribersCount + en.subscribersCount;
 
-const growthPerMonth = 1400;
+const growthPerMonth = 1500;
 
 const all: NewsletterSegment & NewsletterFuture = {
   name: "All",
