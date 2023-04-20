@@ -145,21 +145,23 @@
       "destination": "https://convertkit.com/?lmref=d0748g",
       "permanent": true
     },
+
     {
       "source": "/revue",
-      "destination": "https://www.getrevue.co/profile/thisweekinreact",
+      "destination": "https://substack.thisweekinreact.com/archive",
       "permanent": true
     },
     {
       "source": "/archive",
-      "destination": "https://revue.thisweekinreact.com",
+      "destination": "https://substack.thisweekinreact.com/archive",
       "permanent": true
     },
     {
       "source": "/fr/archive",
-      "destination": "https://revue.reacthebdo.fr/",
+      "destination": "https://substack.thisweekinreact.com/archive",
       "permanent": true
     },
+
     {
       "source": "/calendar",
       "destination": "https://docs.google.com/spreadsheets/d/16aQqZV4pJbrm0zvvT9qFm0B1NwLUPQuVFzijt4zSJCk/edit#gid=875509319",
