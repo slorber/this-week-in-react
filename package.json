@@ -4,12 +4,10 @@
   "license": "Sébastien Lorber",
   "private": true,
   "workspaces": [
-    "landing",
     "website"
   ],
   "scripts": {
     "start": "yarn start:website",
-    "start:landing": "yarn workspace landing start",
     "start:website": "yarn workspace website start",
     "build:website": "yarn workspace website build",
     "serve:website": "yarn workspace website serve"
