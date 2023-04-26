@@ -49,39 +49,49 @@ Testez le dès maintenant en moins de 30 minutes !
 
 ## ⚛️ React {#react}
 
-[Panda CSS – CSS-in-JS without Runtime Overhead](https://infinum.com/blog/panda-css-css-in-js-without-runtime-overhead/)
+[![Crafting the Next.js Website](/emails/issues/143/nextjs.jpg)](https://rauno.me/craft/nextjs)
+
+**[Crafting the Next.js Website](https://rauno.me/craft/nextjs)**
+
+Vous avez peut-être remarqué la [nouvelle landing page de Nextjs.org](https://nextjs.org/)? Rauno travaille chez Vercel et nous propose de déconstruire les subtilités de cette page. Perso j'adore leur technique de gradient tracing
+
+---
+
+[![Panda CSS – CSS-in-JS without Runtime Overhead](/emails/issues/143/panda.jpg)](https://infinum.com/blog/panda-css-css-in-js-without-runtime-overhead/)
+
+**[Panda CSS – CSS-in-JS without Runtime Overhead](https://infinum.com/blog/panda-css-css-in-js-without-runtime-overhead/)**
+
+Panda CSS est une nouvelle librairie CSS-in-JS sans runtime en cours de développement pour [le futur de Chakra UI](https://www.adebayosegun.com/blog/the-future-of-chakra-ui). La doc Panda n'est pas encore disponible, mais cet article donne premier aperçu pragmatique dans un contexte Next.js.
 
 ---
 
 - 👥 Nouvelle vague de licenciements chez Meta qui touche aussi des profils tech open-source, dont [Mengdi Chen](https://twitter.com/mengdi_en/status/1648718077796786177) (React DevTools), [Robert Balicky](https://twitter.com/StatisticsFTW/status/1648820621252653056) (Relay), [Matt Carroll](https://twitter.com/mattcarrollcode/status/1648770402272018432) (DevRel React, en recherche d'un nouveau poste) et [Sean Keegan](https://twitter.com/DevRelSean/status/1649466893806215172) (DevRel React, en recherche d'un nouveau poste).
-- 👀 [React PR - experimental_useFormStatus](https://twitter.com/sebastienlorber/status/1651135782990561280): un nouveau hook `useFormState()` pourrait arriver dans React. Me fait penser à `useFetcher()` de Remix.
+- 👀 [React PR - experimental_useFormStatus](https://twitter.com/sebastienlorber/status/1651135782990561280): un nouveau hook `useFormState()` pourrait arriver dans React, dont la signature est [inspirée de Remix](https://twitter.com/sebmarkbage/status/1651191679943049216) `useNavigation()`.
+- 👀 [React.dev translation update](https://twitter.com/dan_abramov/status/1649575563055493120): les repositories de traduction de la nouvelle doc sont à jour. Il est possible de commencer à traduire la nouvelle doc.
 - 🧵 [Dan Abramov's RSC Quizz](https://twitter.com/dan_abramov/status/1648923232937058304): un thread super intéressant qui pourrait vous aider à avoir une meilleure intuition sur le fonctionnement des Server Components.
 - 🧵 [Dan Abramov on the origins / inspirations of React Server Components (PHP/Hack/XHP)](https://twitter.com/dan_abramov/status/1648830869304426500)
-- 🧵 [useLayoutEffect + queueMicrotask](https://twitter.com/sebastienlorber/status/1650829494209466373): je partage une astuce qui a suscité plus d'intérêt que je ne pensais 😄
-- 👀 [React.dev translation update](https://twitter.com/dan_abramov/status/1649575563055493120): les repositories de traduction de la nouvelle doc sont à jour. Il est possible de commencer à traduire la nouvelle doc.
+- 🧵 [useLayoutEffect + queueMicrotask](https://twitter.com/sebastienlorber/status/1650829494209466373): mon astuce qui a suscité plus d'intérêt que je ne pensais 😄
 - 🐦 [Dan Abramov on using Preact Signals](https://twitter.com/dan_abramov/status/1650892432119148546): cette librairie patch React, qui ne peut garantir son bon fonctionnement si vous décidez de l'utiliser.
+- 📜 [Why You Don't Need Signals in React](https://blog.axlight.com/posts/why-you-dont-need-signals-in-react/): Daishi explique que les signaux sont caractérisés par 2 éléments: réactivité, et bypassing du diffing. Il propose d'utiliser Jotai pour la réactivité, et de ne pas chercher à bypasser le diffing.
+- 📜 [Creative ways of using useReducer](https://www.code-insights.dev/posts/creative-ways-of-using-usereducer): met en avant 4 manières originales d'utiliser `useReducer`: toggle, increment, formatting du state et merge du state.
+- 📜 [Where to host your Remix app in 2023](https://www.jacobparis.com/guides/where-to-host-remix): bonne analyse avec une matrice comparative pour choisir son hébergeur.
+- 📜 [Securing your Next.js 13 application](https://www.yagiz.co/securing-your-nextjs-13-application): montre comment sécuriser son app Next.js avec des headers, et propose une implémentation détaillée pour CSRF.
+- 📜 [Can Rust Beat Javascript in 2023?](https://joshuamo876.bearblog.dev/can-rust-beat-javascript-in-2023/): les frameworks web basés sur Rust et WebAssembly ont bien progressé dans les benchmarks. Cet article montre aussi qu'ils ont un modèle assez similaire à React.
+- 📜 [Say no to "flickering" UI: useLayoutEffect, painting and browsers story](https://www.developerway.com/posts/no-more-flickering-ui): propose d'implémenter un menu de navigation responsive, et explique comment un `useLayoutEffect` synchrone permet de fixer un problème visuel du 1er rendu. Mais pour le SSR, ce n'est pas si simple!
+- 📜 [Display a view counter on your blog with React Server Components](https://scastiel.dev/view-counter-react-server-components): remplace SWR par RSC pour afficher un compteur de vues. Ajouter un Suspense autour du compteur permet de ne pas bloquer le rendu.
+- 📜 [How we built the Storybook Day 3D animation](https://varun.ca/storybook-day/): explications sur la création d'une scene 3D avec React-Three-Fiber.
+- 📜 [Storybook Community Showcase 5](https://storybook.js.org/blog/community-showcase-5/)
+- 📜 [The Evolution of React Rendering Architectures & Web Performance](https://www.iamtk.co/the-evolution-of-react-rendering-architectures-and-web-performance)
+- 📜 [Integrating React Flow and the Web Audio API](https://reactflow.dev/blog/react-flow-and-the-web-audio-api/)
 - 📦 [Vite 4.3](https://vitejs.dev/blog/announcing-vite4-3.html): grosses améliorations de perf sur un benchmark avec 1000 composants React.
-- 📦 [Immer 10.0](https://github.com/immerjs/immer/releases/tag/v10.0.0)
 - 📦 [Redux Toolkit v2.0.0 alpha.5](https://github.com/reduxjs/redux-toolkit/releases/tag/v2.0.0-alpha.5): nouvelle API `combineSlices` pour lazy-loader les reducers.
 - 📦 [T3 Env](https://env.t3.gg/): nouvelle solution pour parser les variables d'environnement avec Zod, avec une intégration Next.js.
-- 📦 [Micro Frontends Next Generation - A React Server Components Playground](https://github.com/unstubbable/mfng)
-- 📦 [OpenNext 1.0](https://sst.dev/blog/open-next-v1.html)
-- 📦 [react-three-offscreen](https://github.com/pmndrs/react-three-offscreen) + https://twitter.com/0xca0a/status/1649387930450894850
+- 📦 [React-Three-Offscreen](https://github.com/pmndrs/react-three-offscreen): permet le rendu 3D React-Three-Fiber dans un web worker via un OffscreenCanvas, pour ne pas bloquer le thread principal.
 - 📦 [Million.js 2.3.0](https://twitter.com/aidenybai/status/1650406345517199361): support de Next.js et intégration optimizer Forgetti. Un nouveau package [Hundred.js](https://twitter.com/aidenybai/status/1651072640650727424) pour comprendre le fonctionnement du "block virtual DOM".
+- 📦 [Immer 10.0](https://github.com/immerjs/immer/releases/tag/v10.0.0): plus rapide, plus léger.
+- 📦 [Lingui 4.0](https://github.com/lingui/js-lingui/releases/tag/v4.0.0)
+- 📦 [Micro Frontends Next Generation - A React Server Components Playground](https://github.com/unstubbable/mfng)
 - 📦 [Simple RSC, Deno Edition](https://github.com/itsMapleLeaf/simple-rsc-deno)
-- 📜 [How we built the Storybook Day 3D animation](https://varun.ca/storybook-day/) + https://twitter.com/winkerVSbecks/status/1650918867781439491
-- 📜 [Why You Don't Need Signals in React](https://blog.axlight.com/posts/why-you-dont-need-signals-in-react/) + https://twitter.com/dai_shi/status/1650126458520760320
-- 📜 [Creative ways of using useReducer](https://www.code-insights.dev/posts/creative-ways-of-using-usereducer)
-- 📜 [The Evolution of React Rendering Architectures & Web Performance](https://www.iamtk.co/the-evolution-of-react-rendering-architectures-and-web-performance)
-- 📜 [Where to host your Remix app in 2023](https://www.jacobparis.com/guides/where-to-host-remix)
-- 📜 [Crafting the Next.js Website](https://rauno.me/craft/nextjs)
-- 📜 [Can Rust Beat Javascript in 2023?](https://joshuamo876.bearblog.dev/can-rust-beat-javascript-in-2023/)
-- 📜 [Say no to "flickering" UI: useLayoutEffect, painting and browsers story](https://www.developerway.com/posts/no-more-flickering-ui)
-- 📜 [Integrating React Flow and the Web Audio API](https://reactflow.dev/blog/react-flow-and-the-web-audio-api/)
-- 📜 [How to Write Comments in React: The Good, the Bad and the Ugly](https://dmitripavlutin.com/react-comments/)
-- 📜 [Display a view counter on your blog with React Server Components](https://scastiel.dev/view-counter-react-server-components)
-- 📜 [Storybook Community Showcase 5](https://storybook.js.org/blog/community-showcase-5/)
-- 📜 [Securing your Next.js 13 application](https://www.yagiz.co/securing-your-nextjs-13-application) + https://twitter.com/yagiznizipli/status/1649920021559222273
 - 🎥 [Next.js Image Component Just Got Way Better](https://www.youtube.com/watch?v=Ow3VsOJcvpM)
 - 🎥 [React and TypeScript Stopped Fighting?](https://www.youtube.com/watch?v=sr8bwLXDm3U)
 - 🎥 [How To Fix NextJS 13's N+1 Problem](https://www.youtube.com/watch?v=FfHsIio4aCU)
@@ -115,17 +125,22 @@ Watch the [4-min demo video](https://www.youtube.com/watch?v=zRkeKSZjlyw)
 
 ## 📱 React-Native {#react-native}
 
-- https://twitter.com/thymikee/status/1648719107515207680
-- https://twitter.com/callstackio/status/1648695464546402304
+[![Super App Development](/emails/issues/143/superapp.jpg)](https://www.callstack.com/super-app-development)
+
+**[Super App Development](https://www.callstack.com/super-app-development)**
+
+Callstack nous propose une resource complete sur les Super Apps, qui permettent d'assembler plusieurs minis apps sous une seule interface mobile. Ils décrivent aussi bien les intérêts business et organisationnels que les solutions techniques, et mettent en avant leur solution privilégiée: Re.Pack et Module Federation. Il y a également un repo [Super App Showcase](https://github.com/callstack/super-app-showcase) avec une Super App en exemple à étudier.
+
+Les Super Apps sont populaires en Asie (WeChat, MoMo...) mais gagne du terrain. Mon intuition me dit que [PlayStation 5 pourrait être une Super App React-Native](https://twitter.com/syke/status/1619413099861413889), à confirmer!
 
 ---
 
-- 👤 [Mark Lawlor (NativeWind) joins Expo](https://twitter.com/mark__lawlor/status/1648834143659384832): bonne nouvelle pour la communauté, un dev de plus qui va travailler sur le support web/cross-platform.
-- 👀 [Bluesky - Universal Expo app](https://twitter.com/Baconbrix/status/1650608419135700993). On a donc Twitter et son concurrent Bluesky [utilisent tous les 2 React-Native-Web](https://twitter.com/sebastienlorber/status/1650488087430963204).
+- 👤 [Mark Lawlor (NativeWind) joins Expo](https://twitter.com/mark__lawlor/status/1648834143659384832): bonne nouvelle pour la communauté, un dev de plus pour travailler sur le support web/cross-platform.
+- 👀 [Bluesky - Universal Expo app](https://twitter.com/Baconbrix/status/1650608419135700993): on a donc Twitter et son concurrent Bluesky qui [utilisent tous les 2 React-Native-Web](https://twitter.com/sebastienlorber/status/1650488087430963204).
+- 💬 [RFC: Support Expo Config Plugins in React Native apps](https://twitter.com/TMisiukiewicz/status/1649050245106659330): propose d'upstreamer les Config Plugins de Expo directement dans React-Native core pour diverses raisons de DX, dont faciliter les upgrades. Proposition [challengée par Brent Vatne](https://github.com/react-native-community/discussions-and-proposals/pull/637#issuecomment-1518083817) et la communauté car il n'est pas si difficile d'ajouter le support Config Plugin / Prebuild à un projet React-Native.
 - 📜 [Using AI to Write Tests for React Components](https://www.callstack.com/blog/using-ai-to-write-tests-for-react-components)
 - 📦 [React-Native 0.71.7](https://github.com/facebook/react-native/releases/tag/v0.71.7)
 - 📦 [SkiaAnimationShowcase](https://github.com/friyiajr/SkiaAnimationShowcase)
-- 💬 [RFC: Support Expo Config Plugins in React Native apps](https://twitter.com/TMisiukiewicz/status/1649050245106659330)
 - 🎙️ [Syntax FM - Supper Club × Nate Weinert and Tamagui](https://syntax.fm/show/601/supper-club-nate-weinert-and-tamagui)
 - 🎙️ [RNR 264 - RN testing with Detox with Josh Justice and Jason Grosz](https://reactnativeradio.com/episodes/rnr-264-a-detox-case-study-with-josh-justice-and-jason-grosz)
 - 👥 [React-Native-Connection](https://reactnativeconnection.io/) (Paris, 1er Juin) nous offre -10% (code "REACTHEBDO").
