@@ -168,7 +168,7 @@ export const AllQuotes = {
         handle="mcavaliere"
         github="mcavaliere"
         name="Mike Cavaliere"
-        job="Senior Engineering Strategist at Echobind"
+        job="Director of Partnerships at Echobind"
       >
         I can see important React news at a glance.
       </Quote>
