@@ -37,12 +37,40 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "/favicon/favicon.ico",
 
-  themes: ["@docusaurus/theme-live-codeblock"],
-
-  clientModules: [
-    require.resolve("./src/clientModules/restoreWorkflowQueryStringParams.ts"),
+  // See https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
+  // favicon: "/favicon/favicon.ico",
+  headTags: [
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        href: "/favicon/favicon.ico",
+        sizes: "any",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        href: "/favicon/favicon.svg",
+        type: "image/svg+xml",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "apple-touch-icon",
+        href: "/favicon/apple-touch-icon.png",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "manifest",
+        href: "/favicon/manifest.webmanifest",
+      },
+    },
   ],
 
   i18n: {
@@ -57,6 +85,12 @@ const config = {
       },
     },
   },
+
+  clientModules: [
+    require.resolve("./src/clientModules/restoreWorkflowQueryStringParams.ts"),
+  ],
+
+  themes: ["@docusaurus/theme-live-codeblock"],
 
   presets: [
     [
