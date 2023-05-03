@@ -8,15 +8,15 @@ image: /img/TWIR_POST.png
 
 Hi everyone!
 
-Cette semaine, c'est la "launch week" de Vercel qui devrait nous faire de belles annonces autour de React, Next.js et son offre cloud. On a déjà un petit aperçu de ce qui arrive très prochainement dans Next.js!
+This week is "launch week" for Vercel which should make some nice announcements about React, Next.js and its cloud offer. We already have a small preview of what is coming very soon in Next.js!
 
-Il y a pas mal de bons articles à lire cette semaine, donc certains sont intéractifs. J'ai bien aimé en apprendre plus sur Million.js et son concept de "block virtual DOM".
+There are quite a few great articles to read this week, including some interactive ones. I particularly liked to learn more about Million.js and its concept of "block virtual DOM".
 
-Coté React-Native, la plateforme macOS rattrape son retard avec la sortie d'une v0.71, et Expo facilite la création de modules natifs locaux.
+On the React-Native side, the macOS platform is catching up with the release of v0.71, and Expo makes it easier than ever to use local native modules.
 
-Il y a un paquet de conférences les prochaines semaines, on devrait avoir de belles annonces! D'ailleurs, vous verrez peut-être un flyer pour ma newsletter à l'une d'elle? Je compte sur vous pour convaincre vos collègues de s'inscrire.
+There are a lot of React conferences in the next weeks, we should have great announcements! By the way, you might see a flyer for my newsletter at one of them! I'm counting on you to convince your colleagues to sign up for the newsletter.
 
-En parlant de conférences, [React Summit](https://reactsummit.com/?utm_source=email&utm_medium=thisweekinreact) (Amsterdam 2-6 Juin) est la plus grosse conférence React au monde. Ils nous offrent 5% de réduction avec le code "ThisWeekInReact5".
+Speaking of conferences, [React Summit](https://reactsummit.com/?utm_source=email&utm_medium=thisweekinreact) (Amsterdam June 2-6) is the biggest React conference in the world. They offer us a 5% discount (code "ThisWeekInReact5").
 
 <!-- truncate -->
 
@@ -52,15 +52,15 @@ Ready to use with **TypeScript**, **NextJS**, Chakra UI, TanStack Query, Storybo
 
 **[Introducing storage on Vercel](https://vercel.com/blog/vercel-storage)**
 
-Vercel vient de lancer son offre storage edge-first, particulièrement adaptée pour un usage dans les React Server Components et Next.js:
+Vercel has just launched its edge-first storage offering, particularly suited for use in React Server Components and Next.js:
 
-- Vercel KV: store key-value Redis, basé sur Upstash.
-- Vercel Postgres: database PostgreSQL, basée sur Neon.
-- Vercel Blob: file storage, basé sur Cloudflare R2.
+- Vercel KV: store key-value Redis, based on Upstash.
+- Vercel Postgres: PostgreSQL database, based on Neon.
+- Vercel Blob: file storage, based on Cloudflare R2.
 
-C'est la [Vercel Ship week](https://vercel.com/ship): d'autres nouveautés devraient être annoncées dans les prochains jours. L'image choisie nous laisse penser qu'il y aura une release Next.js demain, introduisant une nouvelle feature **Next.js Server Actions** permettent de co-localiser une API server avec un form React. Cela dévoile aussi la volonté d'améliorer le [progressive enhancement](https://twitter.com/sebastienlorber/status/1653701538336915456) dans les apps React, d'une manière assez similaire à Remix: le formulaire peut aussi fonctionner sans JavaScript ou hydratation.
+It's [Vercel Ship week](https://vercel.com/ship): more news should be announced in the next few days. The image chosen leads us to believe that there will be a Next.js release tomorrow, introducing a new feature **Next.js Server Actions**. This also reveals the will to improve [progressive enhancement](https://twitter.com/sebastienlorber/status/1653701538336915456) in React apps, in a way quite similar to Remix: this form can also work without JavaScript or hydration.
 
-Note: cet exemple n'est pas vulnérable aux injections SQL car il utilise des template literals.
+Note: this example is not vulnerable to SQL injections because it uses template literals.
 
 ---
 
@@ -68,9 +68,9 @@ Note: cet exemple n'est pas vulnérable aux injections SQL car il utilise des te
 
 **[Million.js - Virtual DOM: Back in Block](https://millionjs.org/blog/virtual-dom)**
 
-Article interactif qui présente Million.js et son concept de "Block Virtual DOM". Son approche du diffing est différente: non récursive, basée sur l'analyse statique et le dirty checking, assez similaire à Svelte.
+Interactive article that presents Million.js and its "Block Virtual DOM" concept. Its approach to diffing is different: non-recursive, based on static analysis, compilation and dirty checking, quite similar to Svelte.
 
-Million.js ne vient pas remplacer React, mais s'intègre avec pour améliorer les performances. Il est conseillé de ne l'utiliser que dans certains cas précis: beaucoup de contenus statiques et arbres UI avec une structure stables.
+Million.js does not replace React, but integrates with it to improve performance. It is recommended to use it only in some very specific cases: a lot of static content and UI trees with a stable structure.
 
 ---
 
@@ -78,27 +78,27 @@ Million.js ne vient pas remplacer React, mais s'intègre avec pour améliorer le
 
 **[The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)**
 
-Article interactif qui explique quand React re-render un composant React. Une bonne resource plutôt pour les débutants, avec des explications détaillées sur setState(fn), batching, memo, StrictMode etc...
+Interactive article that explains when React re-render a component. A good resource for beginners, with detailed explanations on setState(fn), batching, memo, StrictMode etc...
 
 ---
 
 - 🐦 [Dan Abramov - "If we thought Qwik model was better we would have literally implemented it"](https://twitter.com/dan_abramov/status/1651055386101796864)
 - 🐦 [CSS scoping - upcoming CSS feature useful for React devs](https://twitter.com/sebastienlorber/status/1653432768544534531)
-- 📜 [Making animated tooltip with React and Framer Motion](https://sinja.io/blog/animated-tooltip-with-react-framer-motion): article interactif qui implémente un beau système de tooltip avec Floating UI et de belles animations de layout Frame Motion.
-- 📜 [Building a Type-Safe Tailwind with vanilla-extract](https://www.highlight.io/blog/typesafe-tailwind): Tailwind est une bonne solution, mais a quelques défauts. Cet article présente en profondeur Vanilla-Extract / Sprinkles, une bonne alternative typesafe.
-- 📜 [The URL is the ultimate global state management tool](https://www.jacobparis.com/guides/url-as-state-management): encourage l'usage de query-string, avec quelques exemples React.
+- 📜 [Making animated tooltip with React and Framer Motion](https://sinja.io/blog/animated-tooltip-with-react-framer-motion): interactive article that implements a nice tooltip system with Floating UI and beautiful Frame Motion layout animations.
+- 📜 [Building a Type-Safe Tailwind with vanilla-extract](https://www.highlight.io/blog/typesafe-tailwind): Tailwind is a good solution, but still has some flaws. This article gives an in-depth look at Vanilla-Extract / Sprinkles, a good typesafe alternative.
+- 📜 [The URL is the ultimate global state management tool](https://www.jacobparis.com/guides/url-as-state-management): encourages the use of query-string, with some React examples.
 - 📜 [Find and fix performance bottlenecks in your Remix app with Server Timing](https://www.jacobparis.com/guides/remix-server-timing)
 - 📜 [Building a WebGL Carousel with React Three Fiber and GSAP](https://tympanus.net/codrops/2023/04/27/building-a-webgl-carousel-with-react-three-fiber-and-gsap/)
 - 📜 [Server Components vs. SSR](https://www.webscope.io/blog/server-components-vs-ssr)
 - 📜 [Best YouTube Channels to learn React in 2023](https://www.code-insights.dev/posts/best-youtube-channels-to-learn-react-in-2023)
-- 📦 [Qwik v1.0](https://www.builder.io/blog/qwik-v1): sortie officielle du framework qui challenge React avec son concept de resumability. On peut utiliser React dans une application Qwik, ce qui devrait faciliter l'adoption.
-- 📦 [Lingui 4.0](https://lingui.dev/blog/2023/04/26/announcing-lingui-4.0): perçu de la lib i18n, et présente les nouveautés de la v4.0. Cette lib me semble être une bonne alternative à React-Intl: syntaxe ICU, message extraction, framework-agnostic, support React...
-- 📦 [Remix 1.16](https://github.com/remix-run/remix/releases/tag/remix%401.16.0): stabilise support de CSS Modules, CSS imports, Vanilla Extract, PostCSS, Tailwind...
+- 📦 [Qwik v1.0](https://www.builder.io/blog/qwik-v1): official v1 release of a framework that challenges React with its resumability concept. React can be used in a Qwik application, which should facilitate the adoption.
+- 📦 [Lingui 4.0](https://lingui.dev/blog/2023/04/26/announcing-lingui-4.0): overview of the i18n lib, and presents the new v4 features. This lib looks like a good alternative to React-Intl: ICU syntax, message extraction, framework-agnostics, React support...
+- 📦 [Remix 1.16](https://github.com/remix-run/remix/releases/tag/remix%401.16.0): stabilizes support for CSS Modules, CSS imports, Vanilla Extract, PostCSS, Tailwind...
 - 📦 [React-Router 6.11](https://twitter.com/remix_run/status/1652000618620555264)
 - 🎥 [45% failed Dan's Server Component Quiz](https://www.youtube.com/watch?v=AGAax7WzStc)
 - 🎥 [Reactathon 2023 Day 1 Livestream](https://www.youtube.com/watch?v=gJaN9CnFqrI)
 - 🎙️ [The React Core team talks React Forget and the future](https://twitter.com/PodRocketpod/status/1653429138387243010)
-- 👥 [React Summit](https://reactsummit.com/?utm_source=email&utm_medium=thisweekinreact) (Amsterdam, 2-6 Juin) nous offre -5% sur les entrées (code "ThisWeekInReact5").
+- 👥 [React Summit](https://reactsummit.com/?utm_source=email&utm_medium=thisweekinreact) (Amsterdam, June 2-6) is offering us -5% on tickets (code "ThisWeekInReact5").
 
 <SubscribeFormEmbed />
 
@@ -124,23 +124,23 @@ Nylas makes selecting a use case and a server-side SDK language easy. You'll get
 
 **[Introducing React Native macOS 0.71](https://devblogs.microsoft.com/react-native/2023-04-27-announcing-macos-71/)**
 
-Microsoft à sauté les releases React-Native macOS v0.69 et v0.70 pour passer directement à la v0.71. Le but est maintenant de rester à jour avec les autres plateformes: la v0.72 est déjà en cours de dev. Cela me semble très utile: d'après les retours ça n'est pas évident de mixer différentes versions React-Native au sein d'un même monorepo.
+Microsoft skipped the v0.69 and v0.70 releases to go directly to v0.71. The goal is now to stay up to date with the other platforms: v0.72 work is in progress. This platform version alignment looks super useful: according to feedback it is not easy to mix different React-Native versions within a single monorepo.
 
-Cette version 0.71 apporte un support expérimental de Fabric, ainsi que toutes les nouveautés qui sont arrivées récemment sur mobile: TypeScript, Flexbox... Microsoft et Meta collaborent et l'usage de cette plateforme semble en croissance croitre au sein des 2 entreprises: Meta utilise React-Native macOS sur Messenger Desktop par exemple.
+The newly released v0.71 brings experimental support for Fabric, as well as all the new features that have recently been released on other platforms: TypeScript, Flexbox... Microsoft and Meta collaborate and the use of this platform seems to grow within the 2 companies: Meta uses React-Native macOS on Messenger Desktop for example.
 
 ---
 
-- 🧵 [File-based Expo Router demo](https://twitter.com/Baconbrix/status/1652404780881289216): Evan Bacon propose une démo complete Expo Router avec support mobile et web.
-- 🐦 [`npx create-expo-module --local`](https://twitter.com/aleqsio/status/1651268836593655808): super nouvelle feature Expo qui facilite la création d'un module natif local, sans utiliser de monorepo.
-- 🐦 [`npx create-expo`](https://twitter.com/Baconbrix/status/1652372955450441729): pour créer un projet Expo.
-- 🐦 [Bluesky app (iOS + Android + web) built by 1 dev with Expo](https://twitter.com/GergelyOrosz/status/1652679796818694146): le constat de Gergely Orosz lance de nombreux débats sur Twitter.
-- 📦 [Ignite v8.7.0](https://twitter.com/ir_ignite/status/1651064452781953024): remplace les tests e2e Detox par Maestro.
+- 🧵 [File-based Expo Router demo](https://twitter.com/Baconbrix/status/1652404780881289216): Evan Bacon offers a complete Expo Router demo with mobile and web support.
+- 🐦 [`npx create-expo-module --local`](https://twitter.com/aleqsio/status/1651268836593655808): great new Expo feature that makes it easy to create a local native module, without needing a monorepo.
+- 🐦 [`npx create-expo`](https://twitter.com/Baconbrix/status/1652372955450441729): command to create a new Expo project.
+- 🐦 [Bluesky app (iOS + Android + web) built by 1 dev with Expo](https://twitter.com/GergelyOrosz/status/1652679796818694146): Gergely Orosz's statement is causing a lot of debate on Twitter.
+- 📦 [Ignite v8.7.0](https://twitter.com/ir_ignite/status/1651064452781953024): replaces the e2e Detox tests with Maestro.
 - 📦 [Tamagui 1.17 - selectionStyles](https://twitter.com/tamagui_js/status/1651432667412566016)
 - 📦 [react-native-iconify](https://github.com/oktaysenkan/react-native-iconify)
 - 📦 [react-native-dnd](https://github.com/mgcrea/react-native-dnd)
 - 📦 [react-native-use-list](https://github.com/dozsolti/react-native-use-list)
-- 🎥 [How React Native Was Created At Facebook](https://www.youtube.com/watch?v=On9ghjix77c): Christopher Chedeau revient sur l'histoire de React-Native, un projet qui a failli être abandonné 🥲.
-- 🎥 [React Native Transitions with Skia](https://www.youtube.com/watch?v=PzKWpwmmRqM): William Candillon montre comment utiliser des transitions d'image basées sur des shaders et gestures. Cela peut demander d'adapter un peu les shaders glsl existants.
+- 🎥 [How React Native Was Created At Facebook](https://www.youtube.com/watch?v=On9ghjix77c): Christopher Chedeau looks back at the history of React-Native, a project he more or less saved from a probable death.
+- 🎥 [React Native Transitions with Skia](https://www.youtube.com/watch?v=PzKWpwmmRqM): William Candillon shows how to use image transitions based on shaders and gestures. This may require some adaptation of existing glsl shaders.
 - 🎥 [Is this the Worst Volume Control? React Native and Reanimated](https://www.youtube.com/watch?v=FqdcRBqVS78)
 - 🎙️ [RNR 265 - Chain React is Back!!](https://reactnativeradio.com/episodes/rnr-265-chain-react-is-back)
 - 👥 [App.js](https://appjs.co/) (Krakow, May 10-12) is offering us [-20% on workshops](https://ti.to/appjs/2023/discount/ThisWeekinReact20) (code "ThisWeekinReact20").
@@ -169,16 +169,20 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 ## 🔀 Other {#other}
 
-<Todo />
+- [Deno 1.33](https://twitter.com/deno_land/status/1652030907396530188)
+- [Deno KV](https://deno.com/blog/kv)
+- [Favour TypeScript Types Over Interfaces](https://www.lloydatkinson.net/posts/2023/favour-typescript-types-over-interfaces/)
+- [Practical Guide To Not Blocking The Event Loop](https://www.bbss.dev/posts/eventloop/)
+- [TailwindCSS vs. UnoCSS](https://dev.to/mapleleaf/tailwindcss-vs-unocss-2a53)
+- [Configuring ESLint, Prettier, and TypeScript Together](https://blog.joshuakgoldberg.com/configuring-eslint-prettier-and-typescript-together/)
+- [JS private class fields considered harmful](https://lea.verou.me/2023/04/private-fields-considered-harmful/)
+- [StackBlitz - WebContainers now run on Safari, iOS, and iPadOS](https://blog.stackblitz.com/posts/webcontainers-are-now-supported-on-safari/)
+- [Why I Like Using Maps (and WeakMaps) for Handling DOM Nodes](https://www.macarthur.me/posts/maps-for-dom-nodes)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
-
-🤣 [Other funny tweets this week](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/144/meme.jpg)](https://twitter.com/sebastienlorber/status/1653385919460696068)
 
 See ya! 👋
