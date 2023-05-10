@@ -8,9 +8,9 @@ image: /img/TWIR_POST.png
 
 Hi everyone!
 
-As expected a new version of Next.js is released. It's funny by the way, there are some React innovations that are better documented in the Next.js doc than in the React one, like form `action`, or the 2 new hooks `useFormStatus` and `useOptimistic`.
+As expected a new version of Next.js is out. Some React innovations that are better documented in the Next.js doc than in the React one, like form `action`, or the 2 new hooks `useFormStatus` and `useOptimistic`.
 
-There are a lot of conferences at the moment, with in particular Remix Conf and App.js starting today: there will surely be some nice announcements.
+There are a lot of conferences at the moment. Remix Conf and App.js starting today: there will surely be some nice announcements.
 
 The [React-Native-Connection](https://reactnativeconnection.io/) (Paris, June 1st) is also a few weeks away, and you can have -20% discount with the code "REACTHEBDO"!
 
@@ -46,6 +46,61 @@ Ready to use with **TypeScript**, **NextJS**, Chakra UI, TanStack Query, Storybo
 
 ## ⚛️ React {#react}
 
+[![Next.js 13.4](/emails/issues/145/nextjs.jpg)](https://nextjs.org/blog/next-13-4)
+
+**[Next.js 13.4](https://nextjs.org/blog/next-13-4)**
+
+A major release for Next.js, with:
+
+- App Router (stable): the new router based on Suspense and Server Components is ready for production
+- Turbopack (beta): the new bundler is stabilizing in dev, and prod build is coming soon
+- Server Actions (alpha): Next.js integration of the latest React innovations
+
+The blog post shows many notable differences with the old router: conventions, nested layouts, selective hydration, server components, code splitting...
+
+It also unveils the new React innovations to manage mutations and form submissions, whose integration in Next.js gives birth to Server Actions. This greatly simplifies interactions with the server without the need to create an API route and the use of forms supporting [progressive enhancement](https://twitter.com/acdlite/status/1654159613950828546). It is now possible to create and distribute full-stack React components.
+
+Note that it is a bit early to adopt Server Actions in production. They are in alpha, and you could unexpectedly expose a secret captured in a Server Action closure to the client. Details here:
+
+- 🧵 [Thread](https://twitter.com/tomus_sherman/status/1654198731313500174): warns of this issue
+- 🐦 Problem recognized by [Sebastian Markbåge](https://twitter.com/sebmarkbage/status/1654212899097960448) and [Andrew Clark](https://twitter.com/acdlite/status/1654317374777032704) who propose to encrypt variables.
+- 🎥 [Next's Server Actions Might Not Be That Safe...](https://www.youtube.com/watch?v=fdKcbyEK66M)
+
+**Other useful links:**
+
+- 📖 [New Next.js documentation](https://twitter.com/leeerob/status/1654181055740497939): the new beta doc is deployed in production. I advise in particular to read [React Essentials](https://nextjs.org/docs/getting-started/react-essentials).
+- 👀 [useOptimistic](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions#experimental-useoptimistic) and [useFormStatus](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions#experimental-useformstatus): new React experimental hooks.
+- 📜 [Next.js 13.4 on Vercel](https://vercel.com/changelog/next-js-13-4)
+- 📜 [Introducing the Vercel Data Cache: Optimized caching for React Server Components](https://vercel.com/changelog/introducing-vercel-data-cache)
+- 🧵 [Guillermo Rauch - "I re-designed rauchg.com with App Router"](https://twitter.com/rauchg/status/1652093972117073920): interesting feedback.
+- 🎥 [Introducing Next.js App Router](https://www.youtube.com/watch?v=DrxiNfbr63s)
+
+---
+
+- 🧑‍🎓 [TotalTypeScript - React with TypeScript tutorial](https://www.totaltypescript.com/tutorials/react-with-typescript): free tutorial by Matt Pocock, the TypeScript wizard.
+- 🎨 [The Rendering Journey of a React component](https://alexsidorenko.com/react-journey): step-by-step visualization of re-rendering.
+- 📜 [React Canaries: Enabling Incremental Feature Rollout Outside Meta](https://react.dev/blog/2023/05/03/react-canaries): the React team presenting a new canary release channel which allows frameworks to adopt new React features before their official stable release. The canary releases are stable enough to be adopted in production. This is what Next.js App Router uses now, but also what Meta and React-Native always relied on.
+- 📜 [React Server Components, Next.js App Router and examples](https://addyosmani.com/blog/react-server-components-app-router/): Addy Osmani shares his notes and reflections on Server Components. A good overview, as well as many examples of open-source apps. Also lists reasons to stop using Create-React-App.
+- 📜 [5 Lessons Learned From Taking Next.js App Router to Production](https://www.inngest.com/blog/5-lessons-learned-from-taking-next-js-app-router-to-production): feedback from Inngest who successfully migrated a CRA app to Next.js and App Router. There are some interesting details about caching or search parameters.
+- 📜 [Server-side rendering React in OCaml](https://sancho.dev/blog/server-side-rendering-react-in-ocaml): Ahrefs devs use Reason-React. They reimplemented `ReactDOMServer.renderToString` in OCaml to be able to run the SSR natively and solve some of their issues. Their SSR is now 10x faster than Node.js and 6x faster than Bun. The idea of running SSR natively is very interesting, but it will take a lot of work to support the latest innovations like streaming and Server Components.
+- 📜 [HTMX is the Future](https://quii.dev/HTMX_is_the_Future): a critique of SPA frameworks, in particular React. Proposes to use an alternative: HTMX and hypermedia responses. I find it interesting for backend devs who want to add interactivity without doing JavaScript, but not sure that it scales that well.
+- 📜 [Context, Composition, and Flexibility](https://kyleshevlin.com/context-composition-and-flexibility): proposes to use the React context to activate an alternative rendering of a component on a whole subtree.
+- 📜 [Pull to refresh from scratch as a React hook](https://www.strictmode.io/articles/react-pull-to-refresh)
+- 📜 [Creating an interactive spotlight border with CSS and React](https://www.julienthibeaut.xyz/blog/create-spotlight-border-with-react-css)
+- 📦 [Redwood 5.0](https://community.redwoodjs.com/t/redwood-v5-0-0-is-now-available/4830): React 18, TypeScript v5 and observability.
+- 📦 [Ink UI - Themable UI components for your next CLI](https://twitter.com/vadimdemedes/status/1655567427885846534): great example of the React cross-platform abilities. It's possible to render to the terminal, and even create UI libs for that particular ecosystem.
+- 📦 [OpenNext 1.2.0 - geolocation in middleware](https://twitter.com/fanjiewang/status/1654192897678295040)
+- 📦 [Zact - Zod Server ACTions](https://github.com/pingdotgg/zact)
+- 📦 [Astro 2.4](https://astro.build/blog/astro-240/)
+- 📦 [server-only](https://www.npmjs.com/package/server-only): official React package to prevent the import of server code into Client Components (see [Next.js docs](https://nextjs.org/docs/getting-started/react-essentials#keeping-server-only-code-out-of-client-components-poisoning)).
+- 📦 [Chadcn UI - Table and Data Table components](https://twitter.com/shadcn/status/1656019263394836480)
+- 📦 [Million.js 2.3.1 - Astro support (beta)](https://twitter.com/aidenybai/status/1655088722222923776)
+- 📊 [State of React 2023 - Preliminary Discussions](https://github.com/Devographics/surveys/issues/85): there might be a survey dedicated to React this year.
+- 👀 [RSCs on Rspack](https://twitter.com/_hyf0/status/1655538017669648385)
+- 👀 [Edit audio with Remotion](https://twitter.com/JNYBGR/status/1655853159623917568)
+- 🎥 [Always Bet On React](https://www.youtube.com/watch?v=TnyslkPfXaM)
+- 🎥 [I'm Done With React](https://www.youtube.com/watch?v=Zt8mO_Aqzw8)
+- 🎥 [Should You Learn React in 2023? - Interview with React Summit Speakers Tru Narla and Jordan Gensler](https://www.youtube.com/watch?v=5xRqP-M8MkM)
 - 👥 [React Summit](https://reactsummit.com/?utm_source=email&utm_medium=thisweekinreact) (Amsterdam, June 2-6) is offering us -5% on tickets (code "ThisWeekInReact5") and -10% on [workshops](https://reactsummit.com/react-workshops) (code "THISWEEKINREACT")
 
 <SubscribeFormEmbed />
@@ -64,6 +119,11 @@ Want to get an inside look at the future of generative AI? On May 17th, [OpenAI 
 
 ## 📱 React-Native {#react-native}
 
+- 📖 [New Reanimated Beta docs](https://twitter.com/swmansion/status/1655930596093472774): new interactive Docusaurus doc with many examples implemented in React-Native-Web.
+- 🎨 [VisionCamera + Skia + TensorFlow demo](https://twitter.com/mrousavy/status/1654143459849121792): it's impressive what can be done in React-Native today. Skia rendering and TensorFlow models can be updated with an Over-The-Air update.
+- 🎨 [Reanimated 3 + Expo Router + Shared Element Transitions demo](https://twitter.com/kacperkapusciak/status/1654434612825792513)
+- 📜 [Best tips & tricks for E2E Maestro with React Native](https://dev.to/retyui/best-tips-tricks-for-e2e-maestro-with-react-native-2kaa)
+- 📜 [React Native run-android: How to Test Various Device Types](https://www.testim.io/blog/react-native-run-android/)
 - 👥 [App.js](https://appjs.co/) (Krakow, May 10-12) is offering us [-20% on workshops](https://ti.to/appjs/2023/discount/ThisWeekinReact20) (code "ThisWeekinReact20").
 - 👥 [Chain React](https://chainreactconf.com/) (Portland, May 18-19) is offering us -10% on entries (code "thisweekinreact").
 - 👥 [React-Native-Connection](https://reactnativeconnection.io/) (Paris, 1er June) is offering us -10% on entries (code "REACTHEBDO").
@@ -90,16 +150,19 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 ## 🔀 Other {#other}
 
-<Todo />
+- [Client-side rendering of HTML and interactivity](https://web.dev/client-side-rendering-of-html-and-interactivity/)
+- [Diagnose slow interactions in the lab](https://web.dev/diagnose-slow-interactions-in-the-lab/)
+- [I want to talk about WebGPU](https://cohost.org/mcc/post/1406157-i-want-to-talk-about)
+- [Animate elements on scroll with Scroll-driven animations](https://developer.chrome.com/articles/scroll-driven-animations/)
+- [Cumulative Layout Shift Differences In Lab And Field Data](https://www.debugbear.com/blog/cls-lab-field-differences)
+- [Angular v16](https://blog.angular.io/angular-v16-is-here-4d7a28ec680d)
+- [Nx v16](https://blog.nrwl.io/nx-16-is-here-69584ec87053#68c6)
+- [Vitest 0.31](https://twitter.com/sheremet_va/status/1653827712576880645)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
-
-🤣 [Other funny tweets this week](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/145/meme.jpg)](https://twitter.com/markdalgleish/status/1654259858668163072)
 
 See ya! 👋

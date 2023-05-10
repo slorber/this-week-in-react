@@ -46,10 +46,6 @@ Prêt à être utilisé avec **TypeScript**, **NextJS**, Chakra UI, TanStack Que
 
 ## ⚛️ React {#react}
 
-[React Canaries: Enabling Incremental Feature Rollout Outside Meta](https://react.dev/blog/2023/05/03/react-canaries)
-
----
-
 [![Next.js 13.4](/emails/issues/145/nextjs.jpg)](https://nextjs.org/blog/next-13-4)
 
 **[Next.js 13.4](https://nextjs.org/blog/next-13-4)**
@@ -83,19 +79,20 @@ Il nous dévoile aussi les nouveautés React gérer les mutations et soumissions
 
 - 🧑‍🎓 [TotalTypeScript - React with TypeScript tutorial](https://www.totaltypescript.com/tutorials/react-with-typescript): tutoriel gratuit par Matt Pocock, expert TypeScript.
 - 🎨 [The Rendering Journey of a React component](https://alexsidorenko.com/react-journey): visualisation pas-à-pas du re-rendering.
+- 📜 [React Canaries: Enabling Incremental Feature Rollout Outside Meta](https://react.dev/blog/2023/05/03/react-canaries): l'équipe React créé un nouveau release channel canary qui permet notamment aux frameworks d'adopter les nouvelles features React avant leur sortie officielle dans une release stable. Les releases canary sont suffisamment stables pour une adoption en production. C'est d'ailleurs ce que Next.js App Router utilise maintenant, mais aussi Meta et React-Native.
 - 📜 [React Server Components, Next.js App Router and examples](https://addyosmani.com/blog/react-server-components-app-router/): Addy Osmani partage ses notes et reflexions sur les Server Components. Une bonne vue d'ensemble, ainsi que de nombreux exemples d'apps open-source. Liste également les raisons de ne plus utiliser Create-React-App.
 - 📜 [5 Lessons Learned From Taking Next.js App Router to Production](https://www.inngest.com/blog/5-lessons-learned-from-taking-next-js-app-router-to-production): retour d'expérience de Inngest qui a migré avec succès une app CRA vers Next.js et App Router. On y retrouve quelques détails intéressants sur le caching ou la gestion des search parameters.
+- 📜 [Server-side rendering React in OCaml](https://sancho.dev/blog/server-side-rendering-react-in-ocaml): les devs de Ahrefs utilisent Reason-React. Ils ont réimplémenté `ReactDOMServer.renderToString` en OCaml pour pouvoir exécuter le SSR nativement et résoudre quelques problématiques. Leur SSR est maintenant 10x plus rapide que Node.js et 6x plus rapide que Bun. L'idée d'exécuter le SSR en langage natif est super intéressante, mais il va falloir pas mal de travail pour supporter les dernières innovations comme le streaming et les Server Components.
 - 📜 [HTMX is the Future](https://quii.dev/HTMX_is_the_Future): une critique des frameworks SPA, en particulier React. Propose d'utiliser une alternative: HTMX et des réponses hypermedia. Je trouve ça intéressant pour les devs backend qui veulent ajouter de l'intéractivité sans faire de JavaScript, mais pas certain que ça scale si bien que ça.
-- 📜 [Server-side rendering React in OCaml](https://sancho.dev/blog/server-side-rendering-react-in-ocaml): les devs de Ahref utilisent Reason-React. Ils ont réimplémenté `ReactDOMServer.renderToString` en OCaml pour pouvoir exécuter le SSR nativement et résoudre quelques problématiques. Leur SSR est maintenant 10x plus rapide que Node.js et 6x plus rapide que Bun. L'idée d'exécuter le SSR en langage natif est super intéressante, mais il va falloir pas mal de travail pour supporter les dernières innovations comme le streaming et les Server Components.
 - 📜 [Context, Composition, and Flexibility](https://kyleshevlin.com/context-composition-and-flexibility): propose d'utiliser le contexte React pour activer un rendu alternatif d'un composant.
 - 📜 [Pull to refresh from scratch as a React hook](https://www.strictmode.io/articles/react-pull-to-refresh)
 - 📜 [Creating an interactive spotlight border with CSS and React](https://www.julienthibeaut.xyz/blog/create-spotlight-border-with-react-css)
 - 📦 [Redwood 5.0](https://community.redwoodjs.com/t/redwood-v5-0-0-is-now-available/4830): support de React 18, TypeScript v5 et observabilité.
-- 📦 [Ink UI - Themable UI components for your next CLI](https://twitter.com/vadimdemedes/status/1655567427885846534): belle démonstration des capacités cross-platform de React.
+- 📦 [Ink UI - Themable UI components for your next CLI](https://twitter.com/vadimdemedes/status/1655567427885846534): un bel exemple des capacités cross-platform de React. Il est possible de render pour le terminal, et même de créer des libs UI pour cet écosystème.
 - 📦 [OpenNext 1.2.0 - geolocation in middleware](https://twitter.com/fanjiewang/status/1654192897678295040)
 - 📦 [Zact - Zod Server ACTions](https://github.com/pingdotgg/zact)
 - 📦 [Astro 2.4](https://astro.build/blog/astro-240/)
-- 📦 [server-only](https://www.npmjs.com/package/server-only): un package qui permet d'empêcher l'import de code serveur dans les Client Components ([doc Next.js](https://nextjs.org/docs/getting-started/react-essentials#keeping-server-only-code-out-of-client-components-poisoning)).
+- 📦 [server-only](https://www.npmjs.com/package/server-only): package React officiel qui permet d'empêcher l'import de code serveur dans les Client Components (voir la [doc Next.js](https://nextjs.org/docs/getting-started/react-essentials#keeping-server-only-code-out-of-client-components-poisoning)).
 - 📦 [Chadcn UI - Table and Data Table components](https://twitter.com/shadcn/status/1656019263394836480)
 - 📦 [Million.js 2.3.1 - Astro support (beta)](https://twitter.com/aidenybai/status/1655088722222923776)
 - 📊 [State of React 2023 - Preliminary Discussions](https://github.com/Devographics/surveys/issues/85): il pourrait y avoir un sondage dédié à React cette année.
