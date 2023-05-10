@@ -1,6 +1,6 @@
 ---
 slug: /145
-title: "React Hebdo #145: ..."
+title: "React Hebdo #145: Next.js, Server Actions, useFormStatus, useOptimistic, App Router, Canaries, Ink, ReasonML, Redwood, Reanimated, VisionCamera..."
 authors: [slorber]
 date: 05-09-2023
 image: /img/TWIR_POST.png
@@ -9,15 +9,13 @@ unlisted: true
 
 Salut à tous !
 
-vacances
+Comme prévu une nouvelle version de Next.js est sortie. C'est marrant d'ailleurs, il y a des innovations React qui sont mieux documentées dans la doc de Next.js que celle de React, comme form `action`, ou les 2 nouveaux hooks `useFormStatus` et `useOptimistic`.
 
-[React-Native-Connection](https://reactnativeconnection.io/) (Paris, 1er Juin) nous offre -20% (code "REACTHEBDO").
+Il y a beaucoup de conférences en ce moment, avec en particulier Remix Conf et App.js qui démarrent aujourd'hui: il y aura surement de belles annonces.
 
-React Summit !
+La [React-Native-Connection](https://reactnativeconnection.io/) (Paris, 1er Juin) approche aussi, et vous pouvez avoir -20% de réduction avec le code "REACTHEBDO"!
 
-The link with an interview to spread - https://www.youtube.com/watch?v=5xRqP-M8MkM
-
-<Todo />
+Je compte sauter l'édition de la prochaine semaine, on se retrouve donc le 24 Mai 👋
 
 <!-- truncate -->
 
@@ -57,49 +55,37 @@ Prêt à être utilisé avec **TypeScript**, **NextJS**, Chakra UI, TanStack Que
 
 **[Next.js 13.4](https://nextjs.org/blog/next-13-4)**
 
-https://twitter.com/vercel/status/1654156302531063812
-https://twitter.com/shuding_/status/1654174958715535377
-https://twitter.com/timneutkens/status/1654174833687527439
-https://twitter.com/sebmarkbage/status/1654168460694257687
-https://twitter.com/rauchg/status/1654160039085744128
-https://www.youtube.com/watch?v=M4vrwI5PDI0
-https://twitter.com/rauchg/status/1652093972117073920
-https://twitter.com/acdlite/status/1654159613950828546
+Une release majeure pour Next.js, avec:
 
-Sec:
+- App Router (stable): le nouveau routeur basé sur Suspense et Server Components prêt pour la production
+- Turbopack (beta): le nouveau bundler se stabilise pour le dev, et devrait bientôt fonctionner pour le build
+- Server Actions (alpha): intégration des toutes dernières innovations React
 
-- https://twitter.com/basst85/status/1654394279790346242
-- https://twitter.com/acdlite/status/1654320968368627714
-- https://twitter.com/acdlite/status/1654317374777032704
+Le blog post nous présente de nombreuses différences notables avec l'ancien routeur: conventions, nested layouts, selective hydration, server components, code splitting...
 
-Editing + monorepo?
-https://twitter.com/vercel/status/1653791640832598017
-https://twitter.com/vercel/status/1653791607609761799
-https://twitter.com/cramforce/status/1653792488770125826
-https://twitter.com/jaredpalmer/status/1653804331467165696
+Il nous dévoile aussi les nouveautés React gérer les mutations et soumissions de formulaire, dont l'intégration dans Next.js donne naissance aux Server Actions. Cela simplifie les intéractions avec le serveur sans avoir besoin de créer une API route et l'usage de formulaires supportant le [progressive enhancement](https://twitter.com/acdlite/status/1654159613950828546). Il est maintenant possible de créer et distribuer des composants React full-stack.
 
----
+À noter qu'il est un peu tôt pour adopter les Server Actions en production. Ils sont en alpha, et un problème de sécurité expose un peu trop facilement les variables capturées dans une closure au client. Détails ici:
 
-useOptimistic ?
-https://www.linkedin.com/posts/melvyn-malherbe_la-docs-134-de-nextjs-utilise-deux-nouveau-activity-7059942543060279296-LlSj/?utm_source=pocket_saves
+- 🧵 [Thread](https://twitter.com/tomus_sherman/status/1654198731313500174): met en garde contre ce problème
+- 🐦 Problème reconnu par [Sebastian Markbåge](https://twitter.com/sebmarkbage/status/1654212899097960448) et [Andrew Clark](https://twitter.com/acdlite/status/1654317374777032704) qui proposent d'encrypter les variables.
+- 🎥 [Next's Server Actions Might Not Be That Safe...](https://www.youtube.com/watch?v=fdKcbyEK66M)
 
-https://github.com/facebook/react/pull/26740
+**Autres liens utiles:**
 
-https://github.com/facebook/react/pull/26772
+- 📖 [New Next.js documentation](https://twitter.com/leeerob/status/1654181055740497939): la nouvelle doc beta est déployée en prod. Je conseille en particulier la page [React Essentials](https://nextjs.org/docs/getting-started/react-essentials).
+- 👀 [useOptimistic](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions#experimental-useoptimistic) et [useFormStatus](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions#experimental-useformstatus): nouveaux hooks React expérimentaux.
+- 📜 [Next.js 13.4 on Vercel](https://vercel.com/changelog/next-js-13-4)
+- 📜 [Introducing the Vercel Data Cache: Optimized caching for React Server Components](https://vercel.com/changelog/introducing-vercel-data-cache)
+- 🧵 [Guillermo Rauch - "I re-designed rauchg.com with App Router"](https://twitter.com/rauchg/status/1652093972117073920): retour d'expérience intéressant
+- 🎥 [Introducing Next.js App Router](https://www.youtube.com/watch?v=DrxiNfbr63s)
 
 ---
 
-- 📜 [React Server Components, Next.js App Router and examples](https://addyosmani.com/blog/react-server-components-app-router/): Addy Osmani partage ses notes et reflexions sur les Server Components. Une bonne vue d'ensemble, ainsi que de nombreux exemples d'apps open-source. Liste également les raisons de ne plus utiliser Create-React-App. + https://twitter.com/addyosmani/status/1655270096003280896
-
----
-
-- 📜 [5 Lessons Learned From Taking Next.js App Router to Production](https://www.inngest.com/blog/5-lessons-learned-from-taking-next-js-app-router-to-production): retour d'expérience de Inngest qui a migré avec succès une app CRA vers Next.js et App Router. On y retrouve quelques détails intéressants sur le caching ou la gestion des search parameeters.+ https://twitter.com/inngest/status/1655572340443430919
-
----
-
-- 📖 [New Next.js documentation](https://twitter.com/leeerob/status/1654181055740497939): la nouvelle doc beta est déployée avec de nombreuses améliorations, mais surtout le contenu qui touche aux dernières innovations comme App Router et Server Components.
 - 🧑‍🎓 [TotalTypeScript - React with TypeScript tutorial](https://www.totaltypescript.com/tutorials/react-with-typescript): tutoriel gratuit par Matt Pocock, expert TypeScript.
 - 🎨 [The Rendering Journey of a React component](https://alexsidorenko.com/react-journey): visualisation pas-à-pas du re-rendering.
+- 📜 [React Server Components, Next.js App Router and examples](https://addyosmani.com/blog/react-server-components-app-router/): Addy Osmani partage ses notes et reflexions sur les Server Components. Une bonne vue d'ensemble, ainsi que de nombreux exemples d'apps open-source. Liste également les raisons de ne plus utiliser Create-React-App.
+- 📜 [5 Lessons Learned From Taking Next.js App Router to Production](https://www.inngest.com/blog/5-lessons-learned-from-taking-next-js-app-router-to-production): retour d'expérience de Inngest qui a migré avec succès une app CRA vers Next.js et App Router. On y retrouve quelques détails intéressants sur le caching ou la gestion des search parameters.
 - 📜 [HTMX is the Future](https://quii.dev/HTMX_is_the_Future): une critique des frameworks SPA, en particulier React. Propose d'utiliser une alternative: HTMX et des réponses hypermedia. Je trouve ça intéressant pour les devs backend qui veulent ajouter de l'intéractivité sans faire de JavaScript, mais pas certain que ça scale si bien que ça.
 - 📜 [Server-side rendering React in OCaml](https://sancho.dev/blog/server-side-rendering-react-in-ocaml): les devs de Ahref utilisent Reason-React. Ils ont réimplémenté `ReactDOMServer.renderToString` en OCaml pour pouvoir exécuter le SSR nativement et résoudre quelques problématiques. Leur SSR est maintenant 10x plus rapide que Node.js et 6x plus rapide que Bun. L'idée d'exécuter le SSR en langage natif est super intéressante, mais il va falloir pas mal de travail pour supporter les dernières innovations comme le streaming et les Server Components.
 - 📜 [Context, Composition, and Flexibility](https://kyleshevlin.com/context-composition-and-flexibility): propose d'utiliser le contexte React pour activer un rendu alternatif d'un composant.
@@ -110,16 +96,14 @@ https://github.com/facebook/react/pull/26772
 - 📦 [OpenNext 1.2.0 - geolocation in middleware](https://twitter.com/fanjiewang/status/1654192897678295040)
 - 📦 [Zact - Zod Server ACTions](https://github.com/pingdotgg/zact)
 - 📦 [Astro 2.4](https://astro.build/blog/astro-240/)
-- 📦 [server-only](https://www.npmjs.com/package/server-only) + https://nextjs.org/docs/getting-started/react-essentials#keeping-server-only-code-out-of-client-components-poisoning
+- 📦 [server-only](https://www.npmjs.com/package/server-only): un package qui permet d'empêcher l'import de code serveur dans les Client Components ([doc Next.js](https://nextjs.org/docs/getting-started/react-essentials#keeping-server-only-code-out-of-client-components-poisoning)).
 - 📦 [Chadcn UI - Table and Data Table components](https://twitter.com/shadcn/status/1656019263394836480)
 - 📦 [Million.js 2.3.1 - Astro support (beta)](https://twitter.com/aidenybai/status/1655088722222923776)
 - 📊 [State of React 2023 - Preliminary Discussions](https://github.com/Devographics/surveys/issues/85): il pourrait y avoir un sondage dédié à React cette année.
 - 👀 [RSCs on Rspack](https://twitter.com/_hyf0/status/1655538017669648385)
 - 👀 [Edit audio with Remotion](https://twitter.com/JNYBGR/status/1655853159623917568)
-- 🎥 [Next's Server Actions Might Not Be That Safe...](https://www.youtube.com/watch?v=fdKcbyEK66M)
-- 🎥 [I'm Done With React](https://www.youtube.com/watch?v=Zt8mO_Aqzw8)
-- 🎥 [How to Test UI Automatically — Storybook and Chromatic](https://www.youtube.com/watch?v=zhrboql8UuU)
 - 🎥 [Always Bet On React](https://www.youtube.com/watch?v=TnyslkPfXaM)
+- 🎥 [I'm Done With React](https://www.youtube.com/watch?v=Zt8mO_Aqzw8)
 - 🎥 [Should You Learn React in 2023? - Interview with React Summit Speakers Tru Narla and Jordan Gensler](https://www.youtube.com/watch?v=5xRqP-M8MkM)
 - 👥 [React Summit](https://reactsummit.com/?utm_source=email&utm_medium=thisweekinreact) (Amsterdam, 2-6 Juin) nous offre -5% sur les entrées (code "ThisWeekInReact5") et -10% sur les [workshops](https://reactsummit.com/react-workshops) (code "THISWEEKINREACT")
 
