@@ -1,15 +1,18 @@
 ---
 slug: /146
-title: "This Week In React #146: ..."
+title: "This Week In React #146: Next.js, Concurrency, Server Components, JSX, TV, React-Query, Apollo, Remix, Expo Router, Skia, React-Native, Remotion, Flashlight, INP, Bun..."
 authors: [slorber]
 date: 05-23-2023
 image: /img/TWIR_POST.png
-unlisted: true
 ---
 
 Hi everyone!
 
-<Todo />
+Here we are with 2 weeks of React news. There are quite a few good React articles, and also some very interesting React-Native announcements related to the conferences that took place recently. Between Remix Conf, App.js, Chain React... it's hard to keep up with everything, not to mention React-Native-Connection and React Summit next week!
+
+Data fetching libraries like React-Query and Apollo are wondering about their integration with Server Components and Next.js App Router. We start to see more clearly.
+
+The newsletter is skipping another week: next issue on June 7th 👋
 
 <!-- truncate -->
 
@@ -41,6 +44,55 @@ Ready to use with **TypeScript**, **NextJS**, Chakra UI, TanStack Query, Storybo
 
 ## ⚛️ React {#react}
 
+[![Understanding React Concurrency](/emails/issues/146/concurrency.jpg)](https://www.bbss.dev/posts/react-concurrency/)
+
+**[Understanding React Concurrency](https://www.bbss.dev/posts/react-concurrency/)**
+
+A good overview of Concurrent React features, transitions and how the scheduler works.
+
+---
+
+[![Spotify - TV Spatial Navigation](/emails/issues/146/spotify.jpg)](https://engineering.atspotify.com/2023/05/tv-spatial-navigation/)
+
+**[Spotify - TV Spatial Navigation](https://engineering.atspotify.com/2023/05/tv-spatial-navigation/)**
+
+Spotify explains how they develop their apps for TV and consoles based on hybrid (web) technology. There is no spatial navigation (arrows/joystick) on the web, and they created their own spatial navigation using React components.
+
+---
+
+- 📖 [Next.js Project Structure](https://twitter.com/delba_oliveira/status/1659276340145582088): new docs page about Next.js conventions.
+- 🔨 [RSC Parser](https://rsc-parser.vercel.app/): a tool that makes it easier to inspect the payloads of React Server Components.
+- 👀 [React Router increased Suspense support](https://twitter.com/remix_run/status/1658976420767604736): will soon use `startTransition`.
+- 📜 [You Might Not Need React Query](https://tkdodo.eu/blog/you-might-not-need-react-query): Dominik wonders about the usefulness of React-Query after the arrival of Server Components. If your need for data fetching and mutation is simple, Next.js and Remix can suffice. But there are use-cases for which React-Query remains useful and can even be integrated with RSCs: infinite scroll, offline, interval refetches...
+- 📜 [Using Apollo Client with Next.js 13: releasing an official library to support the App Router](https://www.apollographql.com/blog/announcement/frontend/using-apollo-client-with-next-js-13-releasing-an-official-library-to-support-the-app-router/): introduce an experimental package to use the GraphQL Apollo client in 2 different contexts: Server Components and Client Components.
+- 📜 [Building a modern design system in layers](https://blog.almaer.com/building-a-modern-design-system-in-layers/): suggests the creation of multi-layered design systems rather than a single React implementation.
+- 📜 [Airbnb - Improving Performance with HTTP Streaming](https://medium.com/airbnb-engineering/improving-performance-with-http-streaming-ba9e72c66408): Airbnb implemented HTTP streaming to improve performance and reduce waterfalls in their React + Express app.
+- 📜 [Custom Fetcher Hooks are Remix's Typesafe RPCs](https://www.jacobparis.com/content/remix-rpc-pattern): shows how Remix useFetcher and tRPC somehow solve a similar problem.
+- 📜 [Why I’m excited about Server Actions](https://andrewingram.net/posts/why-excited-about-server-actions): highlights the advantage of Server Actions over Remix, which requires a bit more plumbing.
+- 📜 [I gambled against React and lost (and I don’t regret a thing)](https://goauthentik.io/blog/2023-05-04-i-gambled-against-react-and-lost): discusses the choice to use Lit and Web Components in 2018.
+- 📜 [React reconciliation: how it works and why should we care](https://www.developerway.com/posts/reconciliation-in-react): full article on React reconciliation, potential conditional pitfalls and the use of React keys.
+- 📜 [Next.js vs the world](https://memos.hawkhill.ventures/p/nextjs-vs-the-world): mentions the startup DX opportunity now offered by Next.js to distribute fullstack components.
+- 📜 [Limit and require props in components based on other props](https://nikolasbarwicki.com/articles/limit-require-props-components-based-on-other-props): presents some useful techniques for typing your React components.
+- 📜 [Build UI Series - Data fetching with React Server Components](https://buildui.com/series/react-server-components/building-a-users-table)
+- 📜 [The Next.js 13 App Directory and Server Components: What You Need to Know](https://blogs.shenyien.cyou/the-nextjs-13-app-directory-and-server-components)
+- 📜 [How to Test Custom React Hooks with React Testing Library](https://www.builder.io/blog/test-custom-hooks-react-testing-library)
+- 📜 [Using symbols to create type safe Remix handles without duck typing](https://www.wking.dev/library/using-symbols-to-create-type-safe-remix-handles-without-duck-typing)
+- 📜 [The JavaScript Ecosystem Is Delightfully Weird](https://fly.io/blog/js-ecosystem-delightfully-wierd/)
+- 🎙️ [This Month in React - April 2023](https://www.reactiflux.com/transcripts/tmir-april-2023): FYI every month we record a podcast "This Month In React" with Reactiflux, with Carl Vitullo and Mark Erikson. Subscribe now!
+- 🎥 ["React from Another Dimension"](https://www.youtube.com/watch?v=zMf_xeGPn6s): Dan Abramov's talk at Remix Conf 2023.
+- 🎥 [I built a chart as a React Server Component](https://www.youtube.com/watch?v=3JB_qEk39w0)
+- 🎥 [Remix Conf 2023 Playlist](https://www.youtube.com/playlist?list=PLXoynULbYuEBSoANKVl4nKzBBae7DM3JK)
+- 🎥 [Fullstack React Components – with no API](https://www.youtube.com/watch?v=OAmp3GTfZnU)
+- 🎥 [Server Actions: NextJS 13.4's Best New Feature](https://www.youtube.com/watch?v=czvSZqnpTHs)
+- 📦 [TypeScript 5.1 RC](https://devblogs.microsoft.com/typescript/announcing-typescript-5-1-rc/): the new TypeScript version that should [improve the JSX typing for React](https://thisweekinreact.com/newsletter/142#react) is now a release candidate.
+- 📦 [The Epic Stack](https://www.epicweb.dev/epic-stack): new Remix stack offered by Kent C. Dodds who justifies each of its technical choices.
+- 📦 [upgrade-remix](https://github.com/brophdawg11/upgrade-remix): CLI to upgrade Remix deps.
+- 📦 [Legend-State v1.0](https://legendapp.com/open-source/legend-state-v1/): performant reactive state manager based on observable and proxy.
+- 📦 [chadcn/ui Form](https://twitter.com/shadcn/status/1659639523960291328): Form component integrating Radix UI with react-hook-form.
+- 📦 [Astro 2.5](https://twitter.com/astrodotbuild/status/1659272785540128776)
+- 📦 [Remix 1.16.1](https://twitter.com/remix_run/status/1658921729589415937)
+- 📦 [Cloudflare/next-on-pages v1.0](https://github.com/cloudflare/next-on-pages)
+- 📦 [React-Three-Fiber Ultimate Lens Flare](https://twitter.com/Andersonmancini/status/1660625053497839622)
 - 👥 [React Summit](https://reactsummit.com/?utm_source=email&utm_medium=thisweekinreact) (Amsterdam, June 2-6) is offering us -5% on tickets (code "ThisWeekInReact5") and -10% on [workshops](https://reactsummit.com/react-workshops) (code "THISWEEKINREACT")
 
 <SubscribeFormEmbed />
@@ -65,6 +117,32 @@ We’ll tackle handling common interview questions, approaching the topic of gen
 
 ## 📱 React-Native {#react-native}
 
+[![RN Skia talk](/emails/issues/146/skia.jpg)](https://www.youtube.com/watch?v=Hfb_gpfCHzk)
+
+**[The Joy of Painting with Skia](https://www.youtube.com/watch?v=Hfb_gpfCHzk)**
+
+William Candillon presents at App.js the advances of React-Native Skia. The Reanimated integration is improving. A RichText component is in development. The integration examples with native views are really impressive.
+
+---
+
+[![Expo Router talk](/emails/issues/146/expo-router.jpg)](https://www.youtube.com/watch?v=608r8etX_cg)
+
+**[Write Once, Route Everywhere: File System-based Navigation for Native Apps](https://www.youtube.com/watch?v=608r8etX_cg)**
+
+Evan Bacon presents at App.js the features planned for Expo Router v2. See also this [thread](https://twitter.com/Baconbrix/status/1656634363847507968). The use of universal links has many UX benefits. Expo continues to invest in web support, which is progressing well with the latest advances in the Metro bundler. There is even CSS support planned. Expo could well start to compete with Next.js on the web?
+
+---
+
+- 📜 [Messenger Desktop: Faster and Smaller by moving to React Native from Electron](https://developers.facebook.com/blog/post/2023/05/17/messenger-desktop-faster-and-smaller-by-moving-to-react-native-from-electron/): Meta now uses React-Native Windows/macOS on Messenger, reports performance gains but also challenges encountered. As with mobile, it is better to have competent devs on each of the native platforms. The Meta/Microsoft collaboration should help sustain these platforms.
+- 📦 [0.72.0-RC.3](https://github.com/facebook/react-native/releases/tag/v0.72.0-rc.3): "Golden" Release Candidate that should become the final 0.72 quite soon.
+- 👀 [Remotion + React-Native](https://twitter.com/JNYBGR/status/1657041691319336960): prototype to render Remotion videos directly on your phone.
+- 👀 [Flashlight in open beta](https://twitter.com/almouro/status/1660587299200028672): Lighthouse for React-Native.
+- 👀 [Bluesky App is now open-source](https://twitter.com/addyosmani/status/1658228255328190464)
+- 🧵 [App.js Conf Megathread](https://twitter.com/flexbox_/status/1657994812346499072)
+- 🧵 [App.js announcements](https://twitter.com/expo/status/1656802035373850625)
+- 🎥 [Cedric van Putten – Debugging should be easier | App.js Conf 2023](https://www.youtube.com/watch?v=sRLunWEzwHI)
+- 🎥 [Is This the Future of React Native? app.js Recap and Insights](https://www.youtube.com/watch?v=8ou9dq5HKHk)
+- 🎥 [Metaball Animation in React Native Skia](https://www.youtube.com/watch?v=HOxZegqnDC4)
 - 👥 [React-Native-Connection](https://reactnativeconnection.io/) (Paris, 1er June) is offering us -10% on entries (code "REACTHEBDO").
 
 ---
@@ -89,16 +167,18 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 ## 🔀 Other {#other}
 
-<Todo />
+- [Advancing Interaction to Next Paint](https://web.dev/inp-cwv/): INP will become a Core Web Vitals and replace FID (First Input Delay). A relevant metric for evaluating React apps after the initial page load.
+- [The Bun Bundler](https://bun.sh/blog/bun-bundler): Bun now has a bundler. Benchmark: 2x faster than esbuild, 200x faster than Webpack!
+- [Updates from the 96th TC39 meeting](https://dev.to/hemanth/updates-from-the-96th-tc39-meeting-4goe)
+- [State of Node.js Performance 2023](https://blog.rafaelgss.dev/state-of-nodejs-performance-2023)
+- [Web Platform Baseline - Brings clarity to information about browser support for web platform features.](https://web.dev/baseline/)
+- [What's new in CSS and UI: I/O 2023 Edition](https://developer.chrome.com/en/blog/whats-new-css-ui-2023/)
+- [6 CSS snippets every front-end developer should know in 2023](https://web.dev/6-css-snippets-every-front-end-developer-should-know-in-2023/)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
-
-🤣 [Other funny tweets this week](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/146/meme.jpg)](https://twitter.com/BHolmesDev/status/1656866405713690626)
 
 See ya! 👋
