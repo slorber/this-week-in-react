@@ -45,7 +45,7 @@ export default function ContentWrapper(props) {
               />
             )
           }
-          <SubscribeFormEmbed />
+          <SubscribeFormEmbed placement="bottom" />
         </>
       )}
     </>

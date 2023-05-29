@@ -68,7 +68,7 @@ export const AllQuotes = {
         name="William Candillon"
         job="React-Native animations expert - Youtuber"
       >
-        If you are not signed-up to this mailing-list, you are missing out
+        If you are not signed-up, you are missing out
       </Quote>
     ),
     threepointone: (
