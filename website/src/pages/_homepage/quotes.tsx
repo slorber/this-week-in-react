@@ -68,8 +68,7 @@ export const AllQuotes = {
         name="William Candillon"
         job="React-Native animations expert - Youtuber"
       >
-        If you are not signed-up to @sebastienlorber mailing-list, you are
-        missing out
+        If you are not signed-up to this mailing-list, you are missing out
       </Quote>
     ),
     threepointone: (
@@ -136,8 +135,7 @@ export const AllQuotes = {
         name="Eric Clemmons"
         job="Staff Engineer at Stripe"
       >
-        The closest thing we have to Oscars is @sebastienlorber ’s weekly
-        roundup
+        The closest thing we have to Oscars is Sebastien Lorber’s weekly roundup
       </Quote>
     ),
     swmansion: (
@@ -171,7 +169,7 @@ export const AllQuotes = {
         name="Jon Samp"
         job="Software Developer at Expo"
       >
-        This newsletter might just replace Twitter for me 😂
+        This newsletter might just replace Twitter for me
       </Quote>
     ),
     peterpme: (
@@ -216,7 +214,7 @@ export const AllQuotes = {
         name="Ane Diaz"
         job="Software Engineer at Datadog"
       >
-        I won't miss any information from now on 😊😎
+        I won't miss any information from now on
       </Quote>
     ),
     elijahmanor: (
@@ -283,7 +281,7 @@ export const AllQuotes = {
         name="Nicolas Dubien"
         job="Software Engineer at Pigment"
       >
-        A high quality thread for developers working with React 😍
+        A high quality thread for developers working with React
       </Quote>
     ),
     jamonholmgren: (
@@ -316,7 +314,7 @@ export const AllQuotes = {
         name="Youssouf El Azizi"
         job="Mobile Tribe lead at OBytes"
       >
-        Always enjoy reading @sebastienlorber newsletter 👌
+        Always enjoy reading Sebastien Lorber newsletter 👌
       </Quote>
     ),
     __marcin_: (
