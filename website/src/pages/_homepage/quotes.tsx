@@ -15,6 +15,40 @@ export function Quote(props: ComponentProps<typeof TweetQuote>) {
 
 export const AllQuotes = {
   en: {
+    tkdodo: (
+      <Quote
+        url="https://twitter.com/TkDodo/status/1661337628875137027"
+        handle="TkDodo"
+        github="TkDodo"
+        name="Dominik Dorfmeister"
+        job="Web Developer - React-Query maintainer"
+      >
+        I'm constantly finding interesting things to learn in there.
+      </Quote>
+    ),
+    jackherrington: (
+      <Quote
+        url={undefined} // Email testimonial
+        handle="jherr"
+        github="jherr"
+        name="Jack Herrington"
+        job="Principal Engineer - Youtuber"
+      >
+        People always ask how I keep up to date, it's This Week In React.
+      </Quote>
+    ),
+    addyosmani: (
+      <Quote
+        url={undefined} // email testimonial
+        handle="addyosmani"
+        github="addyosmani"
+        name="Addy Osmani"
+        job="Head of Chrome DX - Google"
+      >
+        It's exceptionally well curated, offers great insights and is well worth
+        subscribing to!
+      </Quote>
+    ),
     evanbacon: (
       <Quote
         url="https://twitter.com/Baconbrix/status/1622655092657688576"
@@ -35,7 +69,7 @@ export const AllQuotes = {
         job="React-Native animations expert - Youtuber"
       >
         If you are not signed-up to @sebastienlorber mailing-list, you are
-        missing out 🙌🏻
+        missing out
       </Quote>
     ),
     threepointone: (
@@ -44,7 +78,7 @@ export const AllQuotes = {
         handle="threepointone"
         github="threepointone"
         name="Sunil Pai"
-        job="Engineer at Cloudflare - ex React core team"
+        job="Engineer - ex React core team"
       >
         The one React newsletter/source of "what's new" that I follow
       </Quote>
@@ -55,7 +89,7 @@ export const AllQuotes = {
         handle="kentcdodds"
         github="kentcdodds"
         name="Kent C. Dodds"
-        job="Developer Experience at Remix - React expert"
+        job="Developer Experience - Remix"
       >
         These threads you do are awesome
       </Quote>
@@ -479,18 +513,16 @@ export default function HomepageQuotes() {
   const isFrench = i18n.currentLocale === "fr";
   return (
     <section className={clsx("container", styles.quotesContainer)}>
+      {AllQuotes.en.addyosmani}
+      {AllQuotes.en.jackherrington}
+      {AllQuotes.en.evanbacon}
+      {AllQuotes.en.wcandillon}
+      {AllQuotes.en.sebmarkbage}
+      {AllQuotes.en.threepointone}
       {isFrench && (
         <>
           {AllQuotes.fr.xavier_seignard}
           {AllQuotes.fr.lauthieb}
-        </>
-      )}
-      {AllQuotes.en.evanbacon}
-      {AllQuotes.en.wcandillon}
-      {AllQuotes.en.yangshunz}
-      {AllQuotes.en.sebmarkbage}
-      {isFrench && (
-        <>
           {AllQuotes.fr.lereacteurIO}
           {AllQuotes.fr.dbuchet}
           {AllQuotes.fr.alexsoyes}
@@ -503,7 +535,8 @@ export default function HomepageQuotes() {
           {AllQuotes.fr._smontlouis}
         </>
       )}
-      {AllQuotes.en.threepointone}
+      {AllQuotes.en.tkdodo}
+      {AllQuotes.en.yangshunz}
       {AllQuotes.en.kentcdodds}
       {AllQuotes.en.NoriSte}
       {AllQuotes.en.ericclemmons}

@@ -71,7 +71,7 @@ export default function TweetQuote({
           <div className="avatar">
             <img
               alt={name}
-              className={clsx("avatar__photo", styles.avatarImg)}
+              className={clsx("avatar__photo shadow--md", styles.avatarImg)}
               src={avatarUrl}
               // loading="lazy"
             />
