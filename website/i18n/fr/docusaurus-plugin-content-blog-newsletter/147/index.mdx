@@ -9,21 +9,15 @@ unlisted: true
 
 Salut à tous !
 
-Recherche alternant/stagiaire?
+Pour info: je souhaite **recruter un stagiaire ou alternant** pour m'aider sur la newsletter et Docusaurus. J'ai publié une [offre](https://gist.github.com/slorber/2f98ba706718d95590242aff6fedf955) ici alors n'hésites pas à postuler!
 
-Résumé RNC: https://twitter.com/sebastienlorber/status/1664584407775051779
+Cette semaine, on fête les [10 ans de React](https://twitter.com/sebastienlorber/status/1662957673573130244)! 🥳️Vercel a publié une vidéo sur les dernières innovations React pour l'occasion.
 
-10 ans de React
+J'ai [passé un bon moment à la React-Native-Connection](https://twitter.com/sebastienlorber/status/1664584407775051779), une nouvelle conférence React-Native à Paris. Merci à tous ceux qui sont venus et ont fait de cette première édition un succès.
 
-OSAward:
+Trop cool, la newsletter a [gagné un React Open Source Award](https://twitter.com/sebastienlorber/status/1664667086860308481) à la conférence React Summit! Merci à ceux qui ont voté pour moi, je ne m'attendais pas à gagner vu les autres nominés 😆
 
-- https://twitter.com/sebastienlorber/status/1664667086860308481
-- https://twitter.com/Piotrski/status/1664642858542931968
-- https://twitter.com/Med7atDawoud/status/1664646001234268168
-- https://twitter.com/coding_garden/status/1664659632319606784
-- https://twitter.com/BenjaminThylin/status/1664641914660876288
-
-<Todo />
+[![award](/emails/issues/147/award.jpg)](https://twitter.com/sebastienlorber/status/1664667086860308481)
 
 <!-- truncate -->
 
@@ -55,27 +49,31 @@ Prêt à être utilisé avec **TypeScript**, **NextJS**, Chakra UI, TanStack Que
 
 ## ⚛️ React {#react}
 
+[![How the Raycast API and extensions work](/emails/issues/147/raycast.jpg)](https://www.raycast.com/blog/how-raycast-api-extensions-work)
+
+**[How the Raycast API and extensions work](https://www.raycast.com/blog/how-raycast-api-extensions-work)**
+
+Raycast est un launcher extensible pour MacOS, une app réputée pour sa qualité. Cet article explique les étapes par lesquels ils sont passés pour implémenter leur système de plugin. Ils ne souhaitaient pas faire de compromis sur l'UX et la DX: pas de WebView ni d'Electron, et possibilité d'utiliser des packages npm. Ils ont finalement opté pour créer un renderer React custom qui tourne dans un process Node séparé, et qui pilote des vues natives avec Swift. Cela ressemble pas mal à React-Native.
+
+---
+
+- 🥳️ [Vercel - Celebrating 10 Years of React](https://vercel.com/blog/10-years-of-react)
 - 👀 [React `<Catch>` API?](https://twitter.com/wongmjane/status/1661786321176911872): bientôt un support des Error Boundaries sans class component?
 - 👀 [Remix + RSC POC](https://twitter.com/ryanflorence/status/1663587026384584704): Remix prévoit finalement d'implémenter les Server Components, et donne l'une des raisons [ici](https://twitter.com/remix_run/status/1661017634480201734).
 - 💬 [React WG - RSC from Scratch. Part 1: Server Components](https://twitter.com/dan_abramov/status/1664681506218864640): Dan Abramov propose un deep dive complet sur l'implémentation des React Server Components en partant d'une page blanche. La 1ère partie (sur 3) est disponible et propose d'implémenter les Server Components.
-- 💬 [React WG - Why do Client Components get SSR'd to HTML?](https://github.com/reactwg/server-components/discussions/4) + https://twitter.com/dan_abramov/status/1664456909116538880
+- 💬 [React WG - Why do Client Components get SSR'd to HTML?](https://github.com/reactwg/server-components/discussions/4): courte explication de Dan Abramov sur la différence entre le Client Tree (ce qu'on utilisait déjà avant) et le Server Tree (nouveau).
 - 📖 [Next.js Docs Update - Project Organization page](https://twitter.com/delba_oliveira/status/1662211824211877889)
-- 📜 [Spotify - Multiple Layers of Abstraction in Design Systems](https://engineering.atspotify.com/2023/05/multiple-layers-of-abstraction-in-design-systems/)
-- 📜 [How the Raycast API and extensions work](https://www.raycast.com/blog/how-raycast-api-extensions-work) + https://twitter.com/raycastapp/status/1663926999214329862
-- 📜 [Solving hydration errors in Remix](https://www.jacobparis.com/content/remix-hydration-errors): de bons conseils pour debugger les erreurs d'hydratation React. Cela peut aussi s'appliquer aux autres frameworks
-- 📜 [What is JSX.IntrinsicElements?](https://www.totaltypescript.com/what-is-jsx-intrinsicelements)
-- 📜 [Explained: 'React' refers to a UMD global](https://www.totaltypescript.com/react-refers-to-a-umd-global)
-- 📜 [Why We Are Dropping Support For Next Js](https://www.stormkit.io/blog/why-we-are-dropping-support-for-next-js)
-- 📜 [An Ode to React Effects](https://alexkondov.com/an-ode-to-effects/)
-- 📜 [Opinionated notes on React Server components](https://github.com/nilshartmann/react-server-component-material/blob/notes-on-rsc/notes-on-rsc.md)
-- 📜 [Deploying Next.js on the edge with SST](https://engineering.udacity.com/deploying-next-js-on-the-edge-with-sst-is-sst-the-game-changer-its-claimed-to-be-1f05a0abc27c): feedback plutôt positif sur l'usage d'OpenNext et SST pour déployer une app Next.js sur AWS.
+- 📜 [Is React Having An Angular.js Moment?](https://marmelab.com/blog/2023/06/05/react-angularjs-moment.html): l'arrivée des Server Components représente-t-elle un changement de paradigme similaire à Angular.js vs Angular 2? Non, car les Server Components sont une nouveauté optionnelle et le reste de React continue de fonctionner comme avant. Cet article met cependant en garde: il est peut-être un peu tôt pour recommander et adopter les RSCs, et l'écosystème n'est pas totalement prêt.
+- 📜 [Opinionated notes on React Server components](https://github.com/nilshartmann/react-server-component-material/blob/notes-on-rsc/notes-on-rsc.md): ensemble de notes et reflexions sur les RSCs. Resource assez complète et très bien documentée, avec de nombreuses références externes pertinentes.
+- 📜 [Isomorphic Development](https://meijer.ws/articles/isomorphic-development): reflexion intéressante sur la complexité apportée avec les Server Components. Ce ne sont pas les Server Components eux même qui sont complexes, mais la nature hybride de notre codebase, et ses frontières moins bien définies.
+- 📜 [The evolution of React APIs and code reuse](https://frontendmastery.com/posts/the-evolution-of-react-patterns/): reviens les différents patterns utilisés au cours du temps, et leurs tradeoffs (mixins, HOCs, render props, hooks, RSCs).
+- 📜 [Why We Are Dropping Support For Next Js](https://www.stormkit.io/blog/why-we-are-dropping-support-for-next-js): la plateforme de déploiement Stormkit abandonne le support de Next.js, trop complexe à supporter pour leur petite équipe. Ils proposent à la place d'utiliser un template React + Vite qui supporte le SSR.
 - 📜 [A better learning path for React with server components](https://scastiel.dev/better-learning-path-react): et si les RSCs rendaient en fait React plus facile à apprendre?
-- 📜 [The React Ecosystem in 2023](https://www.builder.io/blog/react-js-in-2023)
-- 📜 [Celebrating 10 Years of React](https://vercel.com/blog/10-years-of-react)
-- 📜 [Isomorphic Development](https://meijer.ws/articles/isomorphic-development)
-- 📜 [RedwoodJS’ Next Epoch: All In on React Server Components](https://tom.preston-werner.com/2023/05/30/redwoods-next-epoch-all-in-on-rsc.html)
-- 📜 [The evolution of React APIs and code reuse](https://frontendmastery.com/posts/the-evolution-of-react-patterns/)
-- 📜 [Is React Having An Angular.js Moment?](https://marmelab.com/blog/2023/06/05/react-angularjs-moment.html)
+- 📜 [RedwoodJS’ Next Epoch: All In on React Server Components](https://tom.preston-werner.com/2023/05/30/redwoods-next-epoch-all-in-on-rsc.html): Tom Preston-Werner (créateur de GitHub) a annoncé que le framework Redwood prévoit d'implémenter les React Server Components. Jusqu'a présent Redwood générait une SPA sans SSR (limité pour le SEO), et l'usage forcé de GraphQL n'était pas toujours la solution adaptée.
+- 📜 [Solving hydration errors in Remix](https://www.jacobparis.com/content/remix-hydration-errors): de bons conseils pour debugger les erreurs d'hydratation React. Cela peut aussi s'appliquer aux autres frameworks
+- 📜 [What is JSX.IntrinsicElements?](https://www.totaltypescript.com/what-is-jsx-intrinsicelements): TypeScript utilise IntrinsicElements pour savoir quels sont les éléments JSX nativement supportés. Il est possible de déclarer ses propres éléments natifs, c'est ce que font les frameworks comme React.
+- 📜 [Deploying Next.js on the edge with SST](https://engineering.udacity.com/deploying-next-js-on-the-edge-with-sst-is-sst-the-game-changer-its-claimed-to-be-1f05a0abc27c): feedback plutôt positif sur l'usage d'OpenNext et SST pour déployer une app Next.js sur AWS.
+- 📜 [Spotify - Multiple Layers of Abstraction in Design Systems](https://engineering.atspotify.com/2023/05/multiple-layers-of-abstraction-in-design-systems/): Spotify explique comment leur design system React expose 3 niveaux d'abstraction (config, slots, custom).
 - 🔗 [React Handbook](https://reacthandbook.dev/)
 - 📦 [TypeScript 5.1](https://devblogs.microsoft.com/typescript/announcing-typescript-5-1): déjà présentée, cette version TypeScript est important pour React puisqu'elle permet de mieux typer le JSX pour React, et d'autoriser un composant à retourner une Promise (async Server Component), un string, array, boolean... Les typedefs React ont déjà été [mis à jour](https://twitter.com/sebsilbermann/status/1664356039876124672)!
 - 📦 [Triplex - React Three Fiber visual editor](https://twitter.com/itsdouges/status/1664874971481382913)
@@ -112,13 +110,14 @@ Want to start building with ChatGPT + Email API calls in React? [Here’s a guid
 
 ## 📱 React-Native {#react-native}
 
-- 👀 [Nearly ¼ of the top Shopping Apps on the Apple App Store use React Native](https://twitter.com/Baconbrix/status/1664285684583002112): les apps React-Native ont la meilleur note! Voir aussi [Foot & Drinks](https://twitter.com/Baconbrix/status/1661775514074247169) + [Finance](https://twitter.com/Baconbrix/status/1662866951784235008)
-- 👀 [Help us Kotlin-ify React Native tests](https://twitter.com/cortinico/status/1666001895360454660): le début d'une migration de React-Native de Java vers Kotlin!
+- 👀 [Nearly ¼ of the top Shopping Apps on the Apple App Store use React Native](https://twitter.com/Baconbrix/status/1664285684583002112): les apps React-Native ont la meilleur note! Voir aussi les catégorie [Foot & Drinks](https://twitter.com/Baconbrix/status/1661775514074247169) et [Finance](https://twitter.com/Baconbrix/status/1662866951784235008).
+- 👀 [Help us Kotlin-ify React Native tests](https://twitter.com/cortinico/status/1666001895360454660): le début d'une migration de React-Native de Java vers Kotlin, à commencer par les tests.
 - 👀 [React-Skia-Experiment](https://github.com/wcandillon/react-skia-experiment): William Candillon expérimente pour rendre la librairie React-Native-Skia universelle ([tweet](https://twitter.com/wcandillon/status/1662037035102683136)).
 - 👀 [Portal - Apple Vision Pro app using React-Native](https://twitter.com/Baconbrix/status/1665816002712436736)
-- 📜 [How BlueSky Structure Their App and Manage State](https://alexkondov.com/reading-code-bluesky/)
+- 📜 [How BlueSky Structure Their App and Manage State](https://alexkondov.com/reading-code-bluesky/): exploration guidée de la codebase open-source de l'app Bluesky, utilisant Expo, React-Native-Web, Mobx...
 - 🔗 [React Native Performance Issues Catalogue](https://spangled-split-858.notion.site/React-Native-Performance-Issues-Catalogue-9338979a2a5648e883331ef2050e963c): une DB Notion qui liste les causes et symptômes des problèmes de perf React-Native pour vous aider à les fixer.
 - 📦 [React-Native 0.72.0-RC.5](https://github.com/facebook/react-native/releases/tag/v0.72.0-rc.5): nouvelle Golden Release Candidate.
+- 📦 [vscode-expo-tools](https://twitter.com/cedric_dev/status/1666113468078997507)
 - 📦 [style-variants - solution for creating dynamic and reusable styles](https://github.com/oktaysenkan/style-variants)
 - 🎥 [App.js 2023 - Youtube Playlist](https://www.youtube.com/playlist?list=PLSk21zn8fFZCfYEMpSqQOHMgyNKc8B7_s)
 - 🎥 [Chain React 2023 - Youtube Playlist](https://www.youtube.com/playlist?list=PLFHvL21g9bk30F2UaJfn6TqJn15MAoBOc)
@@ -128,6 +127,10 @@ Want to start building with ChatGPT + Email API calls in React? [Here’s a guid
 ---
 
 ## 🧑‍💻 Jobs {#jobs}
+
+🧑‍💼 [**ReactHebdo + Docusaurus - Stagiaire/Alternant - Full-remote**](https://gist.github.com/slorber/2f98ba706718d95590242aff6fedf955)
+
+Mon offre de stage/alternance pour m'aider dans mon activité! N'hésite pas à postuler si tu es intéressé par l'open-source ou la création de contenu React!
 
 🧑‍💼 [**Shotgun - Senior Full Stack Engineer - 60-75k€ + BSPCE**](https://shotgun.teamtailor.com/jobs/1981578-senior-full-stack-engineer)
 
@@ -150,23 +153,22 @@ Nous cherchons des développeurs(euses) JavaScript passionnés. Vous interviendr
 
 💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
 
-<Todo />
-
 ---
 
 ## 🔀 Autre {#other}
 
 - [An introduction to @scope in CSS](https://fullystacked.net/posts/scope-in-css/)
 - [Running Promises in Parallel: A Visual Guide](https://julesblom.com/writing/running-promises-in-parallel)
+- [One Hour Advanced TypeScript Workshop](https://type-level-typescript.com/articles/one-hour-workshop)
+- [JavaScript Macros in Bun](https://bun.sh/blog/bun-macros)
+- [New to the web platform in May](https://web.dev/web-platform-05-2023/)
+- [Introducing the popover API](https://developer.chrome.com/blog/introducing-popover-api/)
+- [Web Share API is now a W3C Recommendation](https://www.w3.org/blog/news/archives/9931)
+- [WebKit Features in Safari 17 beta](https://webkit.org/blog/14205/news-from-wwdc23-webkit-features-in-safari-17-beta/)
 - [Parcel 2.9](https://parceljs.org/blog/v2-9-0/)
 - [XState v5 beta](https://stately.ai/blog/announcing-xstate-v5-beta)
 - [Deno 1.34: deno compile supports npm packages](https://deno.com/blog/v1.34)
 - [Rspack 0.2](https://twitter.com/rspack_dev/status/1664510907379228672)
-- [JavaScript Macros in Bun](https://bun.sh/blog/bun-macros)
-- [New to the web platform in May](https://web.dev/web-platform-05-2023/)
-- [WebKit Features in Safari 17 beta](https://webkit.org/blog/14205/news-from-wwdc23-webkit-features-in-safari-17-beta/)
-- [Introducing the popover API](https://developer.chrome.com/blog/introducing-popover-api/)
-- [Web Share API is now a W3C Recommendation](https://www.w3.org/blog/news/archives/9931)
 
 ---
 
