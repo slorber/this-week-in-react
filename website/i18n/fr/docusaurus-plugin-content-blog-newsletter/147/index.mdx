@@ -4,7 +4,6 @@ title: "React Hebdo #147: RSCs, Next.js, Remix, Redwood, Error Boundary, JSX, Ra
 authors: [slorber]
 date: 06-06-2023
 image: /img/TWIR_POST.png
-unlisted: true
 ---
 
 Salut à tous !
@@ -15,7 +14,7 @@ Cette semaine, on fête les [10 ans de React](https://twitter.com/sebastienlorbe
 
 Il y a eu pas mal d'articles intéressants ces dernières semaines, en particulier sur la complexité liée à l'introduction des Server Components. Dan Abramov a publié quelques resources intéressantes sur le sujet. Remix et Redwood ont annoncé leur intention de supporter les RSCs.
 
-Coté React-Native, 3 conférences ont eu lieu récemment et les playlists arrivent sur Youtube. J'ai [passé un super moment à la React-Native-Connection](https://twitter.com/sebastienlorber/status/1664584407775051779), une nouvelle conférence React-Native à Paris. Merci à tous ceux qui sont venus et ont fait de cette première édition un succès.
+Coté React-Native, 3 conférences ont eu lieu récemment et les playlists arrivent sur YouTube. J'ai [passé un super moment à la React-Native-Connection](https://twitter.com/sebastienlorber/status/1664584407775051779), une nouvelle conférence React-Native à Paris. Merci à tous ceux qui sont venus et ont fait de cette première édition un succès.
 
 Trop cool, la newsletter a [gagné un React Open Source Award](https://twitter.com/sebastienlorber/status/1664667086860308481) à la conférence React Summit! Merci à ceux qui ont voté pour moi, je ne m'attendais pas à gagner vu les autres nominés 😆
 
@@ -55,7 +54,7 @@ Prêt à être utilisé avec **TypeScript**, **NextJS**, Chakra UI, TanStack Que
 
 **[Why do Client Components get SSR'd to HTML?](https://github.com/reactwg/server-components/discussions/5)**
 
-Courte explication visuelle de Dan Abramov sur la différence entre le Client Tree (ce qu'on utilisait déjà avant) et le Server Tree (nouveau). J'ai trouvé ce schéma intéressant, car il démystifie bien une confusion facile à faire: les Client Components sont en fait ce qu'on appelait avant de simples composants React. Lors du SSR, les Client Components sont exécutés coté serveur, exactement comme avant. En réalité, les Server Components ne font pas partie de la phase SSR qu'on connait, mais sont execute une phase avant.
+Courte explication visuelle de Dan Abramov sur la différence entre le Client Tree (ce qu'on utilisait déjà avant) et le Server Tree (nouveau). J'ai trouvé ce schéma intéressant, car il démystifie bien une confusion facile à faire: les Client Components sont en fait ce qu'on appelait avant de simples composants React. Lors du SSR, **les Client Components sont exécutés coté serveur**, exactement comme avant.
 
 ---
 
@@ -63,14 +62,14 @@ Courte explication visuelle de Dan Abramov sur la différence entre le Client Tr
 
 **[How the Raycast API and extensions work](https://www.raycast.com/blog/how-raycast-api-extensions-work)**
 
-Raycast est un launcher extensible pour MacOS, une app réputée pour sa qualité. Cet article explique les étapes par lesquels ils sont passés pour implémenter leur système de plugin. Ils ne souhaitaient pas faire de compromis sur l'UX et la DX: pas de WebView ni d'Electron, et possibilité d'utiliser des packages npm. Ils ont finalement opté pour créer un renderer React custom qui tourne dans un process Node séparé, et qui pilote des vues natives avec Swift. Cela ressemble pas mal à React-Native.
+Raycast est un launcher extensible pour MacOS, une app réputée pour sa qualité. Cet article explique les étapes par lesquels ils sont passés pour implémenter leur système de plugin. Ils ne souhaitaient pas faire de compromis sur l'UX et la DX: pas de WebView ni d'Electron, et possibilité d'utiliser des packages npm. Ils ont finalement opté pour créer un renderer React custom qui tourne dans un process Node séparé, et qui pilote des vues natives avec Swift via un bridge JSON. Cela ressemble pas mal à React-Native.
 
 ---
 
-- 🥳️ [Celebrating 10 Years of React](https://vercel.com/blog/10-years-of-react): Vercel célèbre une décédie de React en publiant une [video table ronde](https://www.youtube.com/watch?v=g5BGoLyGjY0) à propos des dernières innovations React, avec Andrew, Sebastian et Delba.
+- 🥳️ [Celebrating 10 Years of React](https://vercel.com/blog/10-years-of-react): Vercel célèbre une décennie de React en publiant une [video table ronde](https://www.youtube.com/watch?v=g5BGoLyGjY0) à propos des dernières innovations React, avec Andrew, Sebastian et Delba.
 - 👀 [React `<Catch>` API?](https://twitter.com/wongmjane/status/1661786321176911872): bientôt un support des Error Boundaries sans class component?
 - 👀 [Remix + RSC POC](https://twitter.com/ryanflorence/status/1663587026384584704): Remix prévoit finalement d'implémenter les Server Components, et donne l'une des raisons [ici](https://twitter.com/remix_run/status/1661017634480201734).
-- 💬 [React WG - RSC from Scratch. Part 1: Server Components](https://github.com/reactwg/server-components/discussions/5): Dan Abramov propose un deep dive complet sur l'implémentation de Server Components en partant d'une page blanche. La 1ère partie (sur 3) est disponible et propose d'implémenter les Server Components.
+- 💬 [React WG - RSC from Scratch. Part 1: Server Components](https://github.com/reactwg/server-components/discussions/5): Dan Abramov propose un deep dive complet sur l'implémentation de Server Components en partant d'une page blanche. La 1ère partie (sur 3) est disponible et propose d'implémenter la partie Server Components.
 - 📖 [Next.js Docs Update - Project Organization page](https://twitter.com/delba_oliveira/status/1662211824211877889)
 - 📜 [Is React Having An Angular.js Moment?](https://marmelab.com/blog/2023/06/05/react-angularjs-moment.html): l'arrivée des Server Components représente-t-elle un changement de paradigme similaire à Angular.js vs Angular 2? Non, car les Server Components sont une nouveauté optionnelle et le reste de React continue de fonctionner comme avant. Cet article met cependant en garde: il est peut-être un peu tôt pour recommander et adopter les RSCs, et l'écosystème n'est pas totalement prêt.
 - 📜 [Opinionated notes on React Server components](https://github.com/nilshartmann/react-server-component-material/blob/notes-on-rsc/notes-on-rsc.md): ensemble de notes et reflexions sur les RSCs. Resource assez complète et très bien documentée, avec de nombreuses références externes pertinentes.
@@ -79,7 +78,7 @@ Raycast est un launcher extensible pour MacOS, une app réputée pour sa qualit�
 - 📜 [Why We Are Dropping Support For Next Js](https://www.stormkit.io/blog/why-we-are-dropping-support-for-next-js): la plateforme de déploiement Stormkit abandonne le support de Next.js, trop complexe à supporter pour leur petite équipe. Ils proposent à la place d'utiliser un template React + Vite qui supporte le SSR.
 - 📜 [A better learning path for React with server components](https://scastiel.dev/better-learning-path-react): et si les RSCs rendaient en fait React plus facile à apprendre?
 - 📜 [RedwoodJS’ Next Epoch: All In on React Server Components](https://tom.preston-werner.com/2023/05/30/redwoods-next-epoch-all-in-on-rsc.html): Tom Preston-Werner (créateur de GitHub) a annoncé que le framework Redwood prévoit d'implémenter les React Server Components. Jusqu'a présent Redwood générait une SPA sans SSR (limité pour le SEO), et l'usage forcé de GraphQL n'était pas toujours la solution adaptée.
-- 📜 [Solving hydration errors in Remix](https://www.jacobparis.com/content/remix-hydration-errors): de bons conseils pour debugger les erreurs d'hydratation React. Cela peut aussi s'appliquer aux autres frameworks
+- 📜 [Solving hydration errors in Remix](https://www.jacobparis.com/content/remix-hydration-errors): de bons conseils pour debugger les erreurs d'hydratation React. Cela peut aussi s'appliquer aux autres frameworks.
 - 📜 [What is JSX.IntrinsicElements?](https://www.totaltypescript.com/what-is-jsx-intrinsicelements): TypeScript utilise IntrinsicElements pour savoir quels sont les éléments JSX nativement supportés. Il est possible de déclarer ses propres éléments natifs, c'est ce que font les frameworks comme React.
 - 📜 [Deploying Next.js on the edge with SST](https://engineering.udacity.com/deploying-next-js-on-the-edge-with-sst-is-sst-the-game-changer-its-claimed-to-be-1f05a0abc27c): feedback plutôt positif sur l'usage d'OpenNext et SST pour déployer une app Next.js sur AWS.
 - 📜 [Spotify - Multiple Layers of Abstraction in Design Systems](https://engineering.atspotify.com/2023/05/multiple-layers-of-abstraction-in-design-systems/): Spotify explique comment leur design system React expose 3 niveaux d'abstraction (config, slots, custom).
@@ -93,9 +92,9 @@ Raycast est un launcher extensible pour MacOS, une app réputée pour sa qualit�
 - 📦 [React Aria + React Spectrum - May 24 2023 releases](https://twitter.com/devongovett/status/1661765315825643521)
 - 📦 [Astro v2.6 - Middleware, hybrid SSR, custom client directives...](https://astro.build/blog/astro-260/)
 - 🔗 [React Handbook](https://reacthandbook.dev/)
+- 🎥 [Are React Server Components Really Slower?](https://www.youtube.com/watch?v=3Q2q2gs0nAI): benchmark qui montre que Pages Router de Next.js est plus rapide qu'App Router, mais l'expérience utilisateur peut être meilleur avec ce dernier grace au streaming.
 - 🎥 [How to NOT Poison Your React Server Components](https://www.youtube.com/watch?v=BZlwtR9pDp4): utilisation du package `server-only` pour éviter d'importer du code server dans vos Client Components.
 - 🎥 [Remix Conf - React Core Panel Q&A](https://www.youtube.com/watch?v=WiEtFPYGgbM)
-- 🎥 [Are React Server Components Really Slower?](https://www.youtube.com/watch?v=3Q2q2gs0nAI): benchmark qui montre que Pages Router de Next.js est plus rapide qu'App Router, mais l'expérience utilisateur peut être meilleur avec ce dernier grace au streaming
 
 <SubscribeFormEmbed placement="middle" />
 
