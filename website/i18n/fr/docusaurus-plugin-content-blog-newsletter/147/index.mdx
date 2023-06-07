@@ -1,6 +1,6 @@
 ---
 slug: /147
-title: "React Hebdo #147: ..."
+title: "React Hebdo #147: RSCs, Next.js, Remix, Redwood, Error Boundary, JSX, Raycast, Spotify, Triplex, useHooks, ReMDX, Astro, Pastel, TypeScript..."
 authors: [slorber]
 date: 06-06-2023
 image: /img/TWIR_POST.png
@@ -13,7 +13,7 @@ Je compte [**recruter un stagiaire ou alternant**](https://gist.github.com/slorb
 
 Cette semaine, on fête les [10 ans de React](https://twitter.com/sebastienlorber/status/1662957673573130244)! 🥳️
 
-Il y a eu pas mal d'articles intéressants ces dernières semaines, en particulier sur la complexité liée à l'introduction des Server Components. Dan Abramov a publié quelques resources intéressantes sur le sujet.
+Il y a eu pas mal d'articles intéressants ces dernières semaines, en particulier sur la complexité liée à l'introduction des Server Components. Dan Abramov a publié quelques resources intéressantes sur le sujet. Remix et Redwood ont annoncé leur intention de supporter les RSCs.
 
 Coté React-Native, 3 conférences ont eu lieu récemment et les playlists arrivent sur Youtube. J'ai [passé un super moment à la React-Native-Connection](https://twitter.com/sebastienlorber/status/1664584407775051779), une nouvelle conférence React-Native à Paris. Merci à tous ceux qui sont venus et ont fait de cette première édition un succès.
 
@@ -53,9 +53,9 @@ Prêt à être utilisé avec **TypeScript**, **NextJS**, Chakra UI, TanStack Que
 
 [![Why do Client Components get SSR'd to HTML?](/emails/issues/147/client-component.jpg)](https://github.com/reactwg/server-components/discussions/5)
 
-[Why do Client Components get SSR'd to HTML?](https://github.com/reactwg/server-components/discussions/5)
+**[Why do Client Components get SSR'd to HTML?](https://github.com/reactwg/server-components/discussions/5)**
 
-Courte explication visuelle de Dan Abramov sur la différence entre le Client Tree (ce qu'on utilisait déjà avant) et le Server Tree (nouveau). J'ai trouvé ce schéma intéressant, car il démystifie bien une confusion facile à faire: les Client Components sont en fait ce qu'on appelait avant de simples composants React. Lors du SSR, les Client Components sont exécutés coté serveur, exactement comme avant.
+Courte explication visuelle de Dan Abramov sur la différence entre le Client Tree (ce qu'on utilisait déjà avant) et le Server Tree (nouveau). J'ai trouvé ce schéma intéressant, car il démystifie bien une confusion facile à faire: les Client Components sont en fait ce qu'on appelait avant de simples composants React. Lors du SSR, les Client Components sont exécutés coté serveur, exactement comme avant. En réalité, les Server Components ne font pas partie de la phase SSR qu'on connait, mais sont execute une phase avant.
 
 ---
 
@@ -83,7 +83,6 @@ Raycast est un launcher extensible pour MacOS, une app réputée pour sa qualit�
 - 📜 [What is JSX.IntrinsicElements?](https://www.totaltypescript.com/what-is-jsx-intrinsicelements): TypeScript utilise IntrinsicElements pour savoir quels sont les éléments JSX nativement supportés. Il est possible de déclarer ses propres éléments natifs, c'est ce que font les frameworks comme React.
 - 📜 [Deploying Next.js on the edge with SST](https://engineering.udacity.com/deploying-next-js-on-the-edge-with-sst-is-sst-the-game-changer-its-claimed-to-be-1f05a0abc27c): feedback plutôt positif sur l'usage d'OpenNext et SST pour déployer une app Next.js sur AWS.
 - 📜 [Spotify - Multiple Layers of Abstraction in Design Systems](https://engineering.atspotify.com/2023/05/multiple-layers-of-abstraction-in-design-systems/): Spotify explique comment leur design system React expose 3 niveaux d'abstraction (config, slots, custom).
-- 🔗 [React Handbook](https://reacthandbook.dev/)
 - 📦 [TypeScript 5.1](https://devblogs.microsoft.com/typescript/announcing-typescript-5-1): déjà présentée, cette version TypeScript est important pour React puisqu'elle permet de mieux typer le JSX pour React, et d'autoriser un composant à retourner une Promise (async Server Component), un string, array, boolean... Les typedefs React ont déjà été [mis à jour](https://twitter.com/sebsilbermann/status/1664356039876124672)!
 - 📦 [Triplex - React Three Fiber visual editor](https://twitter.com/itsdouges/status/1664874971481382913)
 - 📦 [useHooks.com v2.0 - SSR-safe hooks collection](https://usehooks.com/)
@@ -93,6 +92,7 @@ Raycast est un launcher extensible pour MacOS, une app réputée pour sa qualit�
 - 📦 [Pastel v2.0 - A Next.js-like framework for CLIs made with Ink](https://twitter.com/vadimdemedes/status/1661343197535129601)
 - 📦 [React Aria + React Spectrum - May 24 2023 releases](https://twitter.com/devongovett/status/1661765315825643521)
 - 📦 [Astro v2.6 - Middleware, hybrid SSR, custom client directives...](https://astro.build/blog/astro-260/)
+- 🔗 [React Handbook](https://reacthandbook.dev/)
 - 🎥 [How to NOT Poison Your React Server Components](https://www.youtube.com/watch?v=BZlwtR9pDp4): utilisation du package `server-only` pour éviter d'importer du code server dans vos Client Components.
 - 🎥 [Remix Conf - React Core Panel Q&A](https://www.youtube.com/watch?v=WiEtFPYGgbM)
 - 🎥 [Are React Server Components Really Slower?](https://www.youtube.com/watch?v=3Q2q2gs0nAI): benchmark qui montre que Pages Router de Next.js est plus rapide qu'App Router, mais l'expérience utilisateur peut être meilleur avec ce dernier grace au streaming
