@@ -9,11 +9,13 @@ unlisted: true
 
 Salut à tous !
 
-Pour info: je souhaite **recruter un stagiaire ou alternant** pour m'aider sur la newsletter et Docusaurus. J'ai publié une [offre](https://gist.github.com/slorber/2f98ba706718d95590242aff6fedf955) ici alors n'hésites pas à postuler!
+Je compte [**recruter un stagiaire ou alternant**](https://gist.github.com/slorber/2f98ba706718d95590242aff6fedf955)), n'hésites pas à postuler!
 
-Cette semaine, on fête les [10 ans de React](https://twitter.com/sebastienlorber/status/1662957673573130244)! 🥳️Vercel a publié une vidéo sur les dernières innovations React pour l'occasion.
+Cette semaine, on fête les [10 ans de React](https://twitter.com/sebastienlorber/status/1662957673573130244)! 🥳️
 
-J'ai [passé un bon moment à la React-Native-Connection](https://twitter.com/sebastienlorber/status/1664584407775051779), une nouvelle conférence React-Native à Paris. Merci à tous ceux qui sont venus et ont fait de cette première édition un succès.
+Il y a eu pas mal d'articles intéressants ces dernières semaines, en particulier sur la complexité liée à l'introduction des Server Components. Dan Abramov a publié quelques resources intéressantes sur le sujet.
+
+Coté React-Native, 3 conférences ont eu lieu récemment et les playlists arrivent sur Youtube. J'ai [passé un super moment à la React-Native-Connection](https://twitter.com/sebastienlorber/status/1664584407775051779), une nouvelle conférence React-Native à Paris. Merci à tous ceux qui sont venus et ont fait de cette première édition un succès.
 
 Trop cool, la newsletter a [gagné un React Open Source Award](https://twitter.com/sebastienlorber/status/1664667086860308481) à la conférence React Summit! Merci à ceux qui ont voté pour moi, je ne m'attendais pas à gagner vu les autres nominés 😆
 
@@ -49,6 +51,14 @@ Prêt à être utilisé avec **TypeScript**, **NextJS**, Chakra UI, TanStack Que
 
 ## ⚛️ React {#react}
 
+[![Why do Client Components get SSR'd to HTML?](/emails/issues/147/client-component.jpg)](https://github.com/reactwg/server-components/discussions/5)
+
+[Why do Client Components get SSR'd to HTML?](https://github.com/reactwg/server-components/discussions/5)
+
+Courte explication visuelle de Dan Abramov sur la différence entre le Client Tree (ce qu'on utilisait déjà avant) et le Server Tree (nouveau). J'ai trouvé ce schéma intéressant, car il démystifie bien une confusion facile à faire: les Client Components sont en fait ce qu'on appelait avant de simples composants React. Lors du SSR, les Client Components sont exécutés coté serveur, exactement comme avant.
+
+---
+
 [![How the Raycast API and extensions work](/emails/issues/147/raycast.jpg)](https://www.raycast.com/blog/how-raycast-api-extensions-work)
 
 **[How the Raycast API and extensions work](https://www.raycast.com/blog/how-raycast-api-extensions-work)**
@@ -57,11 +67,10 @@ Raycast est un launcher extensible pour MacOS, une app réputée pour sa qualit�
 
 ---
 
-- 🥳️ [Vercel - Celebrating 10 Years of React](https://vercel.com/blog/10-years-of-react)
+- 🥳️ [Celebrating 10 Years of React](https://vercel.com/blog/10-years-of-react): Vercel célèbre une décédie de React en publiant une [video table ronde](https://www.youtube.com/watch?v=g5BGoLyGjY0) à propos des dernières innovations React, avec Andrew, Sebastian et Delba.
 - 👀 [React `<Catch>` API?](https://twitter.com/wongmjane/status/1661786321176911872): bientôt un support des Error Boundaries sans class component?
 - 👀 [Remix + RSC POC](https://twitter.com/ryanflorence/status/1663587026384584704): Remix prévoit finalement d'implémenter les Server Components, et donne l'une des raisons [ici](https://twitter.com/remix_run/status/1661017634480201734).
-- 💬 [React WG - RSC from Scratch. Part 1: Server Components](https://twitter.com/dan_abramov/status/1664681506218864640): Dan Abramov propose un deep dive complet sur l'implémentation des React Server Components en partant d'une page blanche. La 1ère partie (sur 3) est disponible et propose d'implémenter les Server Components.
-- 💬 [React WG - Why do Client Components get SSR'd to HTML?](https://github.com/reactwg/server-components/discussions/4): courte explication de Dan Abramov sur la différence entre le Client Tree (ce qu'on utilisait déjà avant) et le Server Tree (nouveau).
+- 💬 [React WG - RSC from Scratch. Part 1: Server Components](https://github.com/reactwg/server-components/discussions/5): Dan Abramov propose un deep dive complet sur l'implémentation de Server Components en partant d'une page blanche. La 1ère partie (sur 3) est disponible et propose d'implémenter les Server Components.
 - 📖 [Next.js Docs Update - Project Organization page](https://twitter.com/delba_oliveira/status/1662211824211877889)
 - 📜 [Is React Having An Angular.js Moment?](https://marmelab.com/blog/2023/06/05/react-angularjs-moment.html): l'arrivée des Server Components représente-t-elle un changement de paradigme similaire à Angular.js vs Angular 2? Non, car les Server Components sont une nouveauté optionnelle et le reste de React continue de fonctionner comme avant. Cet article met cependant en garde: il est peut-être un peu tôt pour recommander et adopter les RSCs, et l'écosystème n'est pas totalement prêt.
 - 📜 [Opinionated notes on React Server components](https://github.com/nilshartmann/react-server-component-material/blob/notes-on-rsc/notes-on-rsc.md): ensemble de notes et reflexions sur les RSCs. Resource assez complète et très bien documentée, avec de nombreuses références externes pertinentes.
@@ -84,11 +93,9 @@ Raycast est un launcher extensible pour MacOS, une app réputée pour sa qualit�
 - 📦 [Pastel v2.0 - A Next.js-like framework for CLIs made with Ink](https://twitter.com/vadimdemedes/status/1661343197535129601)
 - 📦 [React Aria + React Spectrum - May 24 2023 releases](https://twitter.com/devongovett/status/1661765315825643521)
 - 📦 [Astro v2.6 - Middleware, hybrid SSR, custom client directives...](https://astro.build/blog/astro-260/)
-- 🎥 [React Roundtable: Server Components, Suspense, and Actions](https://www.youtube.com/watch?v=g5BGoLyGjY0)
 - 🎥 [How to NOT Poison Your React Server Components](https://www.youtube.com/watch?v=BZlwtR9pDp4): utilisation du package `server-only` pour éviter d'importer du code server dans vos Client Components.
 - 🎥 [Remix Conf - React Core Panel Q&A](https://www.youtube.com/watch?v=WiEtFPYGgbM)
-- 🎥 [Are React Server Components Really Slower?](https://www.youtube.com/watch?v=3Q2q2gs0nAI)
-- 🎥 [Did RSCs Really Turn React Into PHP?](https://www.youtube.com/watch?v=hr_y1hIdZHs)
+- 🎥 [Are React Server Components Really Slower?](https://www.youtube.com/watch?v=3Q2q2gs0nAI): benchmark qui montre que Pages Router de Next.js est plus rapide qu'App Router, mais l'expérience utilisateur peut être meilleur avec ce dernier grace au streaming
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -165,9 +172,9 @@ Nous cherchons des développeurs(euses) JavaScript passionnés. Vous interviendr
 - [Introducing the popover API](https://developer.chrome.com/blog/introducing-popover-api/)
 - [Web Share API is now a W3C Recommendation](https://www.w3.org/blog/news/archives/9931)
 - [WebKit Features in Safari 17 beta](https://webkit.org/blog/14205/news-from-wwdc23-webkit-features-in-safari-17-beta/)
+- [Deno 1.34: deno compile supports npm packages](https://deno.com/blog/v1.34)
 - [Parcel 2.9](https://parceljs.org/blog/v2-9-0/)
 - [XState v5 beta](https://stately.ai/blog/announcing-xstate-v5-beta)
-- [Deno 1.34: deno compile supports npm packages](https://deno.com/blog/v1.34)
 - [Rspack 0.2](https://twitter.com/rspack_dev/status/1664510907379228672)
 
 ---
