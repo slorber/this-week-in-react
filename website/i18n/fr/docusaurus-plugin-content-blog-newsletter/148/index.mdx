@@ -61,7 +61,7 @@ Explique comment le flat file routing de Remix v2 va améliorer la colocation du
 
 **[Hydration is a tree, Resumability is a map](https://www.builder.io/blog/hydration-tree-resumability-map)**
 
-Donne un modèle mental intéressant pour bien comprendre la différence entre hydratation (React) et résumabilité (Qwik). Avec la résumabilité, tous les composants sont considérés comme static, et les event handlers sont le point d'entrée pour l'interactivité. Il n'y a pas besoin de parcourir un arbre (complexité O(n)): avec la résumabilité la scalabilité est linéaire, comme le lookup dans une hashmap (O(1)).
+Donne un modèle mental intéressant pour bien comprendre la différence entre hydratation (React) et résumabilité (Qwik). Avec la résumabilité, tous les composants sont considérés comme static, et les event handlers sont le point d'entrée pour l'interactivité. Il n'y a pas besoin de parcourir un arbre (`O(n)`): avec la résumabilité la scalabilité est bonne, comme le lookup dans une hashmap (`O(1)`).
 
 ---
 
