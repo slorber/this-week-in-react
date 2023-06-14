@@ -4,7 +4,7 @@ export const sponsorshipCalendarLink = "https://thisweekinreact.com/calendar";
 export const testimonialsLink = "https://thisweekinreact.com/testimonials";
 
 // TODO automate this!
-export const lastIssueLink = "/newsletter/145";
+export const lastIssueLink = "/newsletter/148";
 
 export type NewsletterSegment = {
   name: string;
@@ -49,7 +49,7 @@ export type NewsletterFuture = {
 
 const subscribersCount = fr.subscribersCount + en.subscribersCount;
 
-const growthPerMonth = 1500;
+const growthPerMonth = 1400;
 
 const all: NewsletterSegment & NewsletterFuture = {
   name: "All",
@@ -60,10 +60,10 @@ const all: NewsletterSegment & NewsletterFuture = {
   // TODO improve this!
   nextMainSlot: {
     date: "December 2023",
-    projectedAudienceSize: subscribersCount + 7 * growthPerMonth,
+    projectedAudienceSize: subscribersCount + 6 * growthPerMonth,
   },
   nextSecondSlot: {
-    date: "May 2023",
+    date: "June 2023",
     projectedAudienceSize: subscribersCount + 1 * growthPerMonth,
   },
 };
