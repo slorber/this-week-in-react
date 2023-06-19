@@ -113,6 +113,7 @@ export function SponsoringTabsTestimonials() {
         {AllQuotes.en.addyosmani}
         {AllQuotes.en.jackherrington}
         {AllQuotes.en.wcandillon}
+        {AllQuotes.en.tkdodo}
         {AllQuotes.en.evanbacon}
         {AllQuotes.en.threepointone}
         {AllQuotes.en.yangshunz}

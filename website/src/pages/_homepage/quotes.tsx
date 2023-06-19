@@ -28,7 +28,9 @@ export const AllQuotes = {
     ),
     jackherrington: (
       <Quote
-        url={undefined} // Email testimonial
+        // url={undefined} // Email testimonial
+        // not exactly the same testimonial but still cool to have a public link!
+        url="https://twitter.com/jherr/status/1666578571912171520"
         handle="jherr"
         github="jherr"
         name="Jack Herrington"
@@ -114,6 +116,17 @@ export const AllQuotes = {
         job="Staff Front End Engineer at Meta"
       >
         Really useful for me as someone who doesn't use Twitter that often
+      </Quote>
+    ),
+    simongrimm: (
+      <Quote
+        url="https://twitter.com/schlimmson/status/1669238968259411969"
+        handle="schlimmson"
+        github="saimon24"
+        name="Simon Grimm"
+        job="React-Native course author"
+      >
+        The one thing that helped me most to get into the whole React ecosystem
       </Quote>
     ),
     NoriSte: (
@@ -516,7 +529,7 @@ export default function HomepageQuotes() {
       {AllQuotes.en.evanbacon}
       {AllQuotes.en.wcandillon}
       {AllQuotes.en.sebmarkbage}
-      {AllQuotes.en.threepointone}
+      {AllQuotes.en.tkdodo}
       {isFrench && (
         <>
           {AllQuotes.fr.xavier_seignard}
@@ -533,10 +546,11 @@ export default function HomepageQuotes() {
           {AllQuotes.fr._smontlouis}
         </>
       )}
-      {AllQuotes.en.tkdodo}
+      {AllQuotes.en.threepointone}
       {AllQuotes.en.yangshunz}
       {AllQuotes.en.kentcdodds}
       {AllQuotes.en.NoriSte}
+      {AllQuotes.en.simongrimm}
       {AllQuotes.en.ericclemmons}
       {AllQuotes.en.swmansion}
       {AllQuotes.en.Jonsamp}
