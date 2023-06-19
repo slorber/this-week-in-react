@@ -110,28 +110,12 @@ export function SponsoringTabsTestimonials() {
   return (
     <SponsoringTabs>
       <SponsoringTabsTestimonialsTabItem>
-        {AllQuotes.en.threepointone}
-        {AllQuotes.en.NoriSte}
-        {AllQuotes.en.yangshunz}
+        {AllQuotes.en.addyosmani}
+        {AllQuotes.en.jackherrington}
         {AllQuotes.en.wcandillon}
-        {AllQuotes.fr.lauthieb}
-        {AllQuotes.fr.xavier_seignard}
-      </SponsoringTabsTestimonialsTabItem>
-      <SponsoringTabsTestimonialsTabItem>
-        {AllQuotes.en.johnnyreilly}
-        {AllQuotes.en.ane_naiz}
-        {AllQuotes.en.Jonsamp}
-        {AllQuotes.en.fredmaiaarantes}
-        {AllQuotes.en.mcavaliere}
-        {AllQuotes.en.ericclemmons}
-      </SponsoringTabsTestimonialsTabItem>
-      <SponsoringTabsTestimonialsTabItem>
-        {AllQuotes.fr.lauthieb}
-        {AllQuotes.fr.xavier_seignard}
-        {AllQuotes.fr.lereacteurIO}
-        {AllQuotes.fr.dbuchet}
-        {AllQuotes.fr.sylvainpauly}
-        {AllQuotes.fr.pierver}
+        {AllQuotes.en.evanbacon}
+        {AllQuotes.en.threepointone}
+        {AllQuotes.en.yangshunz}
       </SponsoringTabsTestimonialsTabItem>
     </SponsoringTabs>
   );
@@ -179,10 +163,10 @@ export function SponsoringTabsFirstSponsor() {
             <b>1 issue</b>: 900€
           </li>
           <li>
-            <b>4 issues</b>: 2400€ <RecommendedOffer />
+            <b>4 issues</b>: 3000€ <RecommendedOffer />
           </li>
           <li>
-            <b>8 issues</b>: 4400€
+            <b>8 issues</b>: 5500€
           </li>
         </ul>
       </>
@@ -200,13 +184,13 @@ export function SponsoringTabsSecondSponsor() {
         />
         <ul>
           <li>
-            <b>1 issue</b>: 700€
+            <b>1 issue</b>: 600€
           </li>
           <li>
-            <b>4 issues</b>: 1400€ <RecommendedOffer />
+            <b>4 issues</b>: 1500€ <RecommendedOffer />
           </li>
           <li>
-            <b>8 issues</b>: 2400€
+            <b>8 issues</b>: 2800€
           </li>
         </ul>
       </>
@@ -221,50 +205,13 @@ export function SponsoringTabsJobSponsor() {
         <SponsoringHeader count={newsletterStats.all.subscribersCount} />
         <ul>
           <li>
-            <b>1 issues</b>: 200€
+            <b>4 issues</b>: 350€
           </li>
           <li>
-            <b>4 issues</b>: 600€
+            <b>8 issues</b>: 500€ <RecommendedOffer />
           </li>
           <li>
-            <b>8 issues</b>: 800€ <RecommendedOffer />
-          </li>
-          <li>
-            <b>12 issues</b>: 1100€
-          </li>
-        </ul>
-      </>
-      <>
-        <SponsoringHeader count={newsletterStats.en.subscribersCount} />
-        <ul>
-          <li>
-            <b>1 issues</b>: 150€
-          </li>
-          <li>
-            <b>4 issues</b>: 500€
-          </li>
-          <li>
-            <b>8 issues</b>: 650€ <RecommendedOffer />
-          </li>
-          <li>
-            <b>12 issues</b>: 800€
-          </li>
-        </ul>
-      </>
-      <>
-        <SponsoringHeader count={newsletterStats.fr.subscribersCount} />
-        <ul>
-          <li>
-            <b>1 issues</b>: 200€
-          </li>
-          <li>
-            <b>4 issues</b>: 340€
-          </li>
-          <li>
-            <b>8 issues</b>: 520€ <RecommendedOffer />
-          </li>
-          <li>
-            <b>12 issues</b>: 720€
+            <b>12 issues</b>: 650€
           </li>
         </ul>
       </>

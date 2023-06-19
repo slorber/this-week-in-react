@@ -24,14 +24,14 @@ export type Newsletter = {
 
 const en: NewsletterSegment = {
   name: "English",
-  subscribersCount: 17767,
-  openRate: 58,
+  subscribersCount: 19166,
+  openRate: 57,
   clickRate: 14,
 };
 
 const fr: NewsletterSegment = {
   name: "French",
-  subscribersCount: 3700,
+  subscribersCount: 3768,
   openRate: 57,
   clickRate: 14,
 };
@@ -63,8 +63,8 @@ const all: NewsletterSegment & NewsletterFuture = {
     projectedAudienceSize: subscribersCount + 6 * growthPerMonth,
   },
   nextSecondSlot: {
-    date: "June 2023",
-    projectedAudienceSize: subscribersCount + 1 * growthPerMonth,
+    date: "September 2023",
+    projectedAudienceSize: subscribersCount + 3 * growthPerMonth,
   },
 };
 

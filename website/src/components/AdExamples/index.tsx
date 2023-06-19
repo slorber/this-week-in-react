@@ -5,8 +5,10 @@ import styles from "./index.module.css";
 
 function AdExample({ type }: { type: "primary" | "secondary" }) {
   const { withBaseUrl } = useBaseUrlUtils();
-  const acmeLogoUrl = withBaseUrl("/img/ACME.png");
-  const isPrimary = type === "primary";
+  const acmeLogoUrl = withBaseUrl("/img/ACME.jpg");
+
+  // now both has images: TODO remove this logic later?
+  const hasImage = type === "primary" || type === "secondary";
 
   const title = (
     <h2 style={{ flex: 1 }}>
@@ -16,18 +18,20 @@ function AdExample({ type }: { type: "primary" | "secondary" }) {
     </h2>
   );
 
-  const header = isPrimary ? (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "nowrap",
-        alignItems: "center",
-        marginBottom: "1rem",
-      }}
-    >
-      <img alt="ACME Corporation logo" src={acmeLogoUrl} />
+  const header = hasImage ? (
+    <>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "nowrap",
+          alignItems: "center",
+          marginBottom: "1rem",
+        }}
+      >
+        <img alt="ACME Corporation logo" src={acmeLogoUrl} />
+      </div>
       {title}
-    </div>
+    </>
   ) : (
     title
   );
@@ -56,7 +60,7 @@ function AdExample({ type }: { type: "primary" | "secondary" }) {
         </a>{" "}
         now! They all have an outstanding <b>native TypeScript support</b>!
       </p>
-      {isPrimary && (
+      {hasImage && (
         <p>
           We are also hiring! If you are interested to join a top-notch company
           with a remote-first culture and talented engineers, don't miss this
