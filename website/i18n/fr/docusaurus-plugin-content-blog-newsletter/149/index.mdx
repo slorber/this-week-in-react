@@ -1,6 +1,6 @@
 ---
 slug: /149
-title: "React Hebdo #149: ..."
+title: "React Hebdo #149: Panda CSS, React-Native 0.72, Isograph, Server Actions, MDX, Remix, Gatsby, Storybook, OpenNext, Fresh, Docusaurus, surveys... "
 authors: [slorber]
 date: 06-20-2023
 image: /img/TWIR_POST.png
@@ -8,6 +8,11 @@ unlisted: true
 ---
 
 Salut à tous !
+
+Cette semaine a été plus active que la semaine dernière. On a en particulier 2 sorties très attendues:
+
+- Panda CSS: nouvelle librairie CSS-in-JS prometteuse
+- React-Native 0.72: de belles améliorations, notamment liées à Metro
 
 🇫🇷 Cet été, je vais essayer de dynamiser un peu plus la partie en français de la newsletter, qui n'est pas très vivante:
 
@@ -72,7 +77,7 @@ Une librairie à surveiller de prêt et qui pourrait bien concurrencer Tailwind:
 - 💬 [Gatsby RFC - Adapters](https://github.com/gatsbyjs/gatsby/discussions/38231): nouveau type de plugin pour adapter le build à une plateforme de déploiement (Vercel, Netlify...) et uniformiser la gestion du caching, headers, redirects etc...
 - 📖 [Improved Next.js image docs](https://twitter.com/leeerob/status/1670815761508581376)
 - 📜 [Introducing Isograph](https://isograph.substack.com/p/introducing-isograph): Robert Balicki (ex Relay) partage le POC d'un nouveau client GraphQL pour React basé sur le concept de resolvers.
-- 📜 [SpiderMonkey Newsletter (Firefox 114-115)](https://spidermonkey.dev/blog/2023/06/09/newsletter-firefox-114-115.html): Firefox annonce travailler sur des optimisations pour les frameworks comme React. Avec Firefox 115, [tous les navigateurs supportent maintenant Change Array By Copy](https://twitter.com/sebastienlorber/status/1671166785738133505), nouvelle feature ES2023 très utile pour updater le state React.
+- 📜 [SpiderMonkey Newsletter - Firefox 114-115](https://spidermonkey.dev/blog/2023/06/09/newsletter-firefox-114-115.html): Firefox annonce travailler sur des optimisations pour les frameworks comme React. Avec Firefox 115, [tous les navigateurs supportent maintenant Change Array By Copy](https://twitter.com/sebastienlorber/status/1671166785738133505), nouvelle feature ES2023 très utile pour updater le state React.
 - 📜 [React Admin June 2023 Update](https://marmelab.com/blog/2023/06/13/react-admin-june-2023-update.html): présente une belle liste de features introduites ces 3 derniers mois.
 - 📜 [Ryan Bigg - Rails 7, React, TypeScript, ESBuild and View Components](https://ryanbigg.com/2023/06/rails-7-react-typescript-setup): expliquer comment intégrer manuellement React dans une app Rails. Mode SPA, ou avec plusieurs points d'entrée.
 - 📜 [Introduction to Next.js Server Actions](https://makerkit.dev/blog/tutorials/nextjs-server-actions): bon aperçu des Server Actions de Next.js 13.4. Je découvre qu'on peut les invoquer depuis un bouton.
@@ -112,28 +117,14 @@ Remove the disconnect between design & code and release products faster!
 
 ## 📱 React-Native {#react-native}
 
-[![](/emails/issues/149/rn.jpg)](https://reactnative.dev/blog/2023/06/21/0.72-metro-package-exports-symlinks)
+[![RN 0.72](/emails/issues/149/rn.jpg)](https://reactnative.dev/blog/2023/06/21/0.72-metro-package-exports-symlinks)
 
 **[React Native 0.72 - Symlink Support, Better Errors, and more](https://reactnative.dev/blog/2023/06/21/0.72-metro-package-exports-symlinks)**
 
-Après plusieurs Golden RC, la dernière version de React-Native vient juste de sortir.
+Après plusieurs Golden RC, la dernière version de React-Native vient finalement de sortir et sera prochainement utilisée dans le SDK Expo 49. Il y a pas mal d'améliorations mentionnées (DX, Hermès, performance...) et quelques breaking changes. J'aime en particulier ces 2 nouvelles features du bundler Metro:
 
-Il y a pas mal d'améliorations mentionnées (DX, Hermès, performance...) et quelques breaking changes. J'aime en particulier ces 2 nouvelles features Metro:
-
-- Metro Symlinks (beta): très attendu pour le support monorepo
-- [Metro Package Exports](https://reactnative.dev/blog/2023/06/21/package-exports-support) (beta): permet aux libs universelles d'exposer un point d'entrée spécifique à React-Native
-
-https://deploy-preview-3725--react-native.netlify.app/blog/2023/06/21/0.72-metro-package-exports-symlinks
-
-https://deploy-preview-3705--react-native.netlify.app/blog/2023/06/21/package-exports-support
-
-https://github.com/facebook/react-native-website/pull/3705
-
-https://github.com/facebook/react-native-website/pull/3725
-
-docs: https://github.com/facebook/react-native-website/pull/3770
-
-npm: https://www.npmjs.com/package/react-native?activeTab=versions
+- Symlinks (beta): très attendu pour simplifier le support monorepo et pnpm
+- [Package Exports](https://reactnative.dev/blog/2023/06/21/package-exports-support) (beta): meilleure encapsulation des libs, compatibilité avec le reste de l'écosystème frontend et possibilité d'exposer un point d'entrée spécifique à React-Native
 
 ---
 
