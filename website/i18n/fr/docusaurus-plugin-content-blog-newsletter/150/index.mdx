@@ -11,7 +11,7 @@ Salut à tous !
 
 🇫🇷 Cette semaine, la section en français présente un nouveau sponsor (Pylote), et les offres de la section Jobs sont fournies par une plateforme partenaire. C'est un test: dis-moi ce que tu penses de ces nouveautés en répondant à cet email 🙏, est-ce que cela te semble pertinent?
 
-Je te propose également de découvrir [React Jam](https://reactjam.com/): un concours de création de jeux vidéos en React qui commence le 20 juillet. Je suis membre du jury.
+Je te propose également de découvrir [React Jam](https://reactjam.com/?utm_source=thisweekinreact): un concours de création de jeux vidéos en React qui commence le 20 juillet. Je suis membre du jury.
 
 <!-- truncate -->
 
@@ -50,26 +50,52 @@ Watch the [4-min demo video](https://www.youtube.com/watch?v=zRkeKSZjlyw)
 
 ## ⚛️ React {#react}
 
+[![](/emails/issues/150/nextjs-update.jpg)](https://nextjs.org/blog/june-2023-update)
+
+**[Next.js App Router Update - Top Priorities](https://nextjs.org/blog/june-2023-update)**
+
+L'équipe Next.js donne un peu de contexte sur le nouvel App Router. Ils ont reçu pas mal de critiques dernièrement et sont bien conscients des bugs et autres problèmes de DX actuelle. Ils détaillent ce sur quoi ils travaillent en priorité:
+
+- La performance: local, build et server runtime
+- Les bugs et instabilités
+- L'éducation et la documentation
+
+---
+
+[![](/emails/issues/150/skew-protection.jpg)](https://vercel.com/blog/version-skew-protection)
+
+**[Vercel - Introducing Skew Protection](https://vercel.com/blog/version-skew-protection)**
+
+Nouvelle feature Vercel qui permet d'atténuer les désynchronisations back/front qui peuvent survenir lors d'un nouveau déploiement: les requêtes des anciens clients seront routées sur le déploiement immuable approprié. Particulièrement utile pour ceux qui font du déploiement continu. Disponible en expérimental dans Next.js 13.4.7 qui va automatiquement appliquer les bons headers HTTP.
+
+---
+
+[![](/emails/issues/150/shadcnui.jpg)](https://ui.shadcn.com/docs/changelog)
+
+**[Shadcn UI update - June 2023](https://ui.shadcn.com/docs/changelog)**
+
+Cette collection de composants Tailwind + Radix fait de plus en plus d'adeptes. L'auteur vient de publier une grosse mise à jour avec un CLI qui propose déjà une belle DX, et semble avoir l'ambition d'y apporter prochainement des [features AI impressionnantes](https://twitter.com/shadcn/status/1673055193968287744). Kent C. Dodds [explique](https://twitter.com/kentcdodds/status/1673806183935909888) pourquoi il a adopté Shadcn UI dans sa stack Remix.
+
+---
+
 - 🐦 [Fred K Schott - "React.js canary is _not_ stable and probably shouldn't be used in production."](https://twitter.com/FredKSchott/status/1673722399278403584): un débat qui anime particulièrement la communauté cette semaine. J'ai aussi partagé [mon opinion](https://twitter.com/sebastienlorber/status/1673802036666589185): c'est ok d'utiliser une release canary React dans une framework.
 - 💬 [Stitches is not longer maintained](https://github.com/stitchesjs/stitches/discussions/1149#discussioncomment-6223090)
 - 👀 [Remotion 4.0 launches next week](https://twitter.com/JNYBGR/status/1673641398539546625)
 - 💡 [Refresh React Server Component on Focus](https://buildui.com/recipes/refresh-react-server-component-on-focus): astuce pour reproduire une feature appréciées de React-Query/SWR.
-- 📜 [Teleportation in React: Positioning, Stacking Context, and Portals](https://www.developerway.com/posts/positioning-and-portals-in-react)
-- 📜 [GitHub - Crafting a better, faster code view](https://github.blog/2023-06-21-crafting-a-better-faster-code-view/) + https://twitter.com/github/status/1671603142373396482
-- 📜 [Vercel - Introducing Skew Protection](https://vercel.com/blog/version-skew-protection) + https://twitter.com/vercel/status/1671634193544269824
-- 📜 [Next.js Update - Top priorities](https://twitter.com/delba_oliveira/status/1672258238446989314) + https://nextjs.org/blog/june-2023-update + https://twitter.com/nextjs/status/1672021371919175682
-- 📜 [Our experience adding Edge Runtime to Next.js SDK](https://blog.logto.io/next-edge/)
-- 📜 [Things you might not know about Next Image](https://pixelpoint.io/blog/next-image/)
-- 📜 [Using useMutation to make an advanced toggle in React](https://www.propelauth.com/post/using-usemutation-to-make-an-advanced-toggle-in-react)
-- 📜 [Thoughts on Svelte(Kit), one year and 3 billion requests later](https://claudioholanda.ch/en/blog/svelte-kit-after-3-billion-requests/)
+- 📜 [Teleportation in React: Positioning, Stacking Context, and Portals](https://www.developerway.com/posts/positioning-and-portals-in-react): super article interactif pour ceux qui galèrent avec le z-index. Explique bien le concept de stacking context, et en quoi créer un portal React peut vous simplifier la vie.
+- 📜 [GitHub - Crafting a better, faster code view](https://github.blog/2023-06-21-crafting-a-better-faster-code-view/): retour d'expérience sur l'implémentation de la nouvelle Code View en React de GitHub, et sur les techniques utilisées pour scaler avec le nombre de lignes à afficher.
+- 📜 [Our experience adding Edge Runtime to Next.js SDK](https://blog.logto.io/next-edge/): retour d'expérience de Logto sur les changements nécessaires apportés à leur SDK pour supporter le Edge Runtime Next.js.
+- 📜 [Things you might not know about Next Image](https://pixelpoint.io/blog/next-image/): une bonne resource sur le fonctionnement du composant Image de Next.js, avec quelques astuces pragmatiques qui pourraient vous aider à optimiser votre score Lighthouse.
+- 📜 [Using useMutation to make an advanced toggle in React](https://www.propelauth.com/post/using-usemutation-to-make-an-advanced-toggle-in-react): utilise les callback useMutation de React-Query pour donner un feedback animé à l'utilisateur.
 - 📜 [Storybook - Zero-config support for Tailwind, MUI, styled-components, and Emotion](https://twitter.com/storybookjs/status/1671907527422795776): le styling-addon est maintenant capable de s'auto-configurer pour plusieurs libs populaires.
 - 📜 [A16z - The Getting Started with AI Stack for JavaScript](https://a16z.com/2023/06/21/the-getting-started-with-ai-stack-for-javascript/): les VC Andreessen Horowitz présentent un starter AI basé sur une stack React et Next.js.
 - 📜 [SwiftUI stole the best parts of React…and my heart](https://www.mux.com/blog/swiftui-against-react)
-- 📦 [Shadcn UI update - June 2023 - New CLI, Styles and more](https://twitter.com/shadcn/status/1671960924587180034)
 - 📦 [Remix 1.18 - Stable V2 Dev Server, JSON/Text Submission...](https://github.com/remix-run/remix/releases/tag/remix%401.18.0): voir également la [série de vidéos](https://www.youtube.com/watch?v=2c2OeqOX72s) qui explique le fonctionnement du Dev Server et le concept de Hot Data Revalidation.
 - 📦 [AI.JSX - AI Application Framework for Javascript](https://github.com/fixie-ai/ai-jsx): une solution pour créer des applications AI basée sur JSX. N'utilise pas directement React, mais s'intègre particulièrement bien avec ([détails](https://docs.ai-jsx.com/is-it-react)).
 - 📦 [Medusa Product Module](https://medusajs.com/recap/): la solution e-commerce open-source propose un nouveau module pour Next.js et autres environnements serverless.
 - 📦 [React Aria - June 27 Release](https://twitter.com/devongovett/status/1673764872117714944): ajout du support StrictMode, plus besoin du SSRProvider, et diverses autres nouveautés: Calendar, DatePicker, TagGroup...
+- 📦 [Next.js 13.4.7](https://github.com/vercel/next.js/releases/tag/v13.4.7)
+- 📦 [SWR 2.2](https://github.com/vercel/swr/releases/tag/v2.2.0)
 - 🎥 [Single Line React Performance Boost with Million](https://www.youtube.com/watch?v=x-aNifu9RNw)
 - 🎥 [Don't Follow This Bad React Advice!](https://www.youtube.com/watch?v=YlU9vznPWIk)
 - 🎥 [Make Your Own Next.js](https://www.youtube.com/watch?v=3RzhNYhjVAw)
@@ -154,9 +180,10 @@ Cette semaine, notre partenaire [**Free-Work**](https://www.free-work.com/fr/tec
 
 ## 🔀 Autre {#other}
 
-- [An Introduction to Streaming on the Web](https://vercel.com/blog/an-introduction-to-streaming-on-the-web) + https://twitter.com/vercel/status/1672006247858708481
+- [An Introduction to Streaming on the Web](https://vercel.com/blog/an-introduction-to-streaming-on-the-web)
 - [Future CSS: State Container Queries](https://ishadeed.com/article/css-state-queries/)
 - [Svelte 4](https://svelte.dev/blog/svelte-4)
+- [Thoughts on Svelte(Kit), one year and 3 billion requests later](https://claudioholanda.ch/en/blog/svelte-kit-after-3-billion-requests/)
 - [Type Argument Placeholders: TypeScript 5.2's Most Discussed Feature](https://www.totaltypescript.com/type-argument-placeholders-typescript-5-2-most-discussed-feature)
 - [Vite 4.4 beta - exp Lightning CSS support](https://twitter.com/vite_js/status/1671510085820882946)
 - [A preview of Ezno's checker](https://kaleidawave.github.io/posts/a-preview-of-the-checker/)
