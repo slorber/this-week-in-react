@@ -1,6 +1,6 @@
 ---
 slug: /151
-title: "React Hebdo #151: ..."
+title: "React Hebdo #151: Remotion, Next.js, SVG-in-JS, TypeScript, Expo, VisionCamera, Conform, TinyBase, i18n, App Clips, ES2023, CommonJS..."
 authors: [slorber]
 date: 07-04-2023
 image: /img/TWIR_POST.png
@@ -9,9 +9,11 @@ unlisted: true
 
 Salut à tous !
 
-Vacances
+On a de belles sorties cette semaine, avec Remotion 4 et Expo SDK 49 en beta. Les devs Next.js travaillent sur des optimisations DX. Les articles sur React + SVG et VisionCamera sont très intéressants.
 
-Remotion 4
+[Remotion 4 est sur ProductHunt](https://www.producthunt.com/posts/remotion-4-0): n'hésitez pas à voter! 👍
+
+Pas de newsletter la semaine prochaine, on se retrouve le 18 Juillet 👋
 
 <!-- truncate -->
 
@@ -41,14 +43,14 @@ Managing or migrating large apps and codebases? This video course covers what yo
 
 **[Remotion 4.0](https://www.remotion.dev/blog/4-0)**
 
-- zod for video parameters, visual editing
-- render button UI
-- adopting Rust: OffthreadVideo x2 faster
-- breaking changes, fixing api design mistakes
+Remotion permet de créer des vidéos avec React. Cette semaine, c'est la [Remotion v4 launch week](https://www.remotion.dev/4), démarrée par une [Keynote](https://www.youtube.com/watch?v=S3C9wlPNhkQ) qui illustra bien les nouvelles capacités 3D du renderer. Des annonces sont prévues chaque jour pour présenter les nouvelles features qui sont déjà détaillées dans le blog post. Quelques highlights:
 
-keynote: https://www.youtube.com/watch?v=S3C9wlPNhkQ
+- Remotion Studio: visual props editing basé sur Zod, render button...
+- Rust-powered architecture, FFmpeg baked in, 2x faster OffthreadVideo
+- SVG 3D engine
+- Intégration Tailwind, Rive
 
-https://www.producthunt.com/posts/remotion-4-0
+Il y à également un [lancement sur ProductHunt](https://www.producthunt.com/posts/remotion-4-0) aujourd'hui alors n'hésitez pas à voter ;)
 
 ---
 
@@ -127,6 +129,7 @@ Marc Rousavy détaille comment il est capable de faire tourner des modèles Tens
 ---
 
 - 📦 [React-Native v0.72.1](https://github.com/facebook/react-native/releases/tag/v0.72.1)
+- 📦 [App Icon Badge](https://github.com/obytes/app-icon-badge): un Expo Config Plugin super pratique pour générer une icone différente selon l'environnement: dev, staging...
 - 📜 [iOS App Clips: a faster, smoother user experience](https://www.bam.tech/en/article/app-clips-ios-experience-utilisateur): explique l'intérêt UX des App Clips iOS et comment on peut les intégrer dans une app React-Native. Il faut rester en dessous de la limite des 10mb.
 - 🧵 [Expo weekly docs update](https://twitter.com/amanhimself/status/1675794149424115714)
 - 🎥 [Hacking Xcode with Colo Loco!](https://www.youtube.com/watch?v=ucEBfIZOap8)
