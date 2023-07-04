@@ -1,15 +1,18 @@
 ---
 slug: /151
-title: "This Week In React #151: ..."
+title: "This Week In React #151: Remotion, Next.js, SVG-in-JS, TypeScript, Expo, VisionCamera, Conform, TinyBase, i18n, App Clips, ES2023, CommonJS..."
 authors: [slorber]
 date: 07-04-2023
 image: /img/TWIR_POST.png
-unlisted: true
 ---
 
-Hi everyone!
+Salut à tous !
 
-<Todo />
+On a de belles sorties cette semaine, avec Remotion 4 et Expo SDK 49 en beta. Les devs Next.js travaillent sur des optimisations DX. Les articles sur React + SVG et VisionCamera sont très intéressants.
+
+[Remotion 4 est sur ProductHunt](https://www.producthunt.com/posts/remotion-4-0): n'hésitez pas à voter! 👍
+
+Pas de newsletter la semaine prochaine, on se retrouve le 18 Juillet 👋
 
 <!-- truncate -->
 
@@ -35,7 +38,47 @@ Managing or migrating large apps and codebases? This video course covers what yo
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Remotion 4.0](/emails/issues/151/remotion4.jpg)](https://www.remotion.dev/blog/4-0)
+
+**[Remotion 4.0](https://www.remotion.dev/blog/4-0)**
+
+Remotion permet de créer des vidéos avec React. Cette semaine, c'est la [Remotion v4 launch week](https://www.remotion.dev/4), démarrée par une [Keynote](https://www.youtube.com/watch?v=S3C9wlPNhkQ) qui illustra bien les nouvelles capacités 3D du renderer. Des annonces sont prévues chaque jour pour présenter les nouvelles features qui sont déjà détaillées dans le blog post. Quelques highlights:
+
+- Remotion Studio: visual props editing basé sur Zod, render button...
+- Rust-powered architecture, FFmpeg baked in, 2x faster OffthreadVideo
+- SVG 3D engine
+- Intégration Tailwind, Rive
+
+Il y à également un [lancement sur ProductHunt](https://www.producthunt.com/posts/remotion-4-0) aujourd'hui alors n'hésitez pas à voter ;)
+
+---
+
+[![RBreaking Up with SVG-in-JS in 2023](/emails/issues/151/svginjs.jpg)](https://kurtextrem.de/posts/svg-in-js)
+
+**[Breaking Up with SVG-in-JS in 2023](https://kurtextrem.de/posts/svg-in-js)**
+
+Article très complet sur les diverses manières d'utiliser des SVGs dans une app React, et l'impacte sur les performances.
+Déconseille le "SVG-in-JS": il faut éviter de render les SVGs via des composants React et d'avoir le SVG présent dans le bundle JS, y compris via des solutions type loader SVGR. Sauf exceptions, il vaut mieux éviter d'inliner les SVGs dans le HTML: les React Server Components ne sont pas forcément une solution idéale non plus.
+
+---
+
+- 👀 [React.dev PR - Adds a TypeScript overview page](https://github.com/reactjs/react.dev/pull/6120): une page de doc arrive prochainement et documente l'usage des APIs React avec TypeScript.
+- 👀 [Next.js - Improving next/image support](https://twitter.com/leeerob/status/1674250190432116736)
+- 📜 [Declaring JSX types in TypeScript 5.1](https://blog.logrocket.com/declaring-jsx-types-typescript-5-1/): explique les améliorations récentes sur le typage du JSX, en particulier pour React.
+- 📜 [Form validation with Conform, Zod, and Remix](https://www.jacobparis.com/content/remix-conform): Conform est une librairie qui valide le FormData coté serveur, respecte le progressive enhancement de Remix et affiche les erreurs coté client. Je me demande si on ne peut pas [l'utiliser avec les Next.js Server Actions](https://twitter.com/sebastienlorber/status/1676210400256204800)?
+- 📜 [React Hook for Avoiding Flash of Empty UI While Data Transitions](https://www.jameskerr.blog/posts/use-data-transition/)
+- 📜 [Storybook - In-app tour for new users](https://storybook.js.org/blog/in-app-tour-for-new-users/)
+- 📜 [Internationalize NextJs URLs with next-translate](https://dev.to/martinratinaud/internationalize-nextjs-urls-with-next-translate-49d8)
+- 📜 [Creating a seamless multi-language user interface in React](https://www.honeybadger.io/blog/creating-multi-language-user-interface-with-react/)
+- 📜 [Aria-Live Regions in React](https://dev.to/abbeyperini/live-regions-in-react-4dmd)
+- 📦 [Next.js 13.4.8 - 1.5x faster local server startup and 54% faster updates](https://twitter.com/nextjs/status/1675929873720680459): comme annoncé, Vercel travaille sur des optimisations de performance pour améliorer la DX de Next.js. Voir le [commentaire](https://github.com/vercel/next.js/issues/48748#issuecomment-1614456247) de Tim Neutkens pour plus de détails.
+- 📦 [Styled-Components v6](https://github.com/styled-components/styled-components/releases/tag/v6.0.0): quelques breaking changes avec un guide pour upgrader.
+- 📦 [Astro Starlight](https://starlight.astro.build/): template Astro officiel pour la documentation, à faible empreinte carbone, avec possibilité d'utiliser React et MDX.
+- 📦 [next-international v0.5 - initial App Router support](https://twitter.com/tomlienard/status/1675512683007705090)
+- 📦 [TinyBase v4.0 - Reactive data store for local‑first apps - SQLite and CRDT integrations](https://twitter.com/tinybasejs/status/1674826869169070080)
+- 📦 [Bun-Remix](https://github.com/jacob-ebey/bun-remix)
+- 🎙️ [Reactiflux - This Month in React – June 2023](https://podcasters.spotify.com/pod/show/reactiflux/episodes/This-Month-in-React--June-2023-e26dgii)
+- 🎥 [What's Next For Redux with Mark Erikson?](https://www.youtube.com/watch?v=n5FK8_EXcbs)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -59,7 +102,37 @@ Managing or migrating large apps and codebases? This video course covers what yo
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Expo SDK 49 beta is now available](/emails/issues/151/expo49beta.jpg)](https://blog.expo.dev/expo-sdk-49-beta-is-now-available-6373e78f8624)
+
+**[Expo SDK 49 beta is now available](https://blog.expo.dev/expo-sdk-49-beta-is-now-available-6373e78f8624)**
+
+Le nouveau SDK 49 vient de sortir en beta, pour environ une semaine. Une release avec plein d'améliorations notables, difficile de toutes les lister. Mes highlights:
+
+- React-Native v0.72
+- Expo Router v2 RC
+- Reanimated v3
+- Network debugging, VS Code debugging
+- React devtools built-in
+- Environment variables
+- Local Expo Modules
+- Experimental support for Fabric in expo-dev-client
+
+---
+
+[![Reinventing Camera Processing - TensorFlow Lite GPU straight from JavaScript](/emails/issues/151/visioncamera.jpg)](https://mrousavy.com/blog/Reinventing-Camera-Processing)
+
+**[Reinventing Camera Processing - TensorFlow Lite GPU straight from JavaScript](https://mrousavy.com/blog/Reinventing-Camera-Processing)**
+
+Marc Rousavy détaille comment il est capable de faire tourner des modèles TensorFlow sur React-Native Vision Camera v3 ([demo](https://twitter.com/mrousavy/status/1674791891823648770)). Son plugin vient juste d'être open-sourcé avec la sortie de [VisionCamera v3 rc.3](https://twitter.com/mrousavy/status/1675883155822202880). L'article est assez technique, car il explique le fonctionnement interne pour que cela tourne de manière performance a 60+ FPS. Il faut surtout retenir qu'il devient très facile d'intégrer un modèle TensorFlow à Vision Camera, et d'afficher un feedback en temps réel via React-Native-Skia. Il n'y a pas besoin d'écrire du code natif, et toute cette intégration peut même être modifiée via des updates Over-The-Air!
+
+---
+
+- 📦 [React-Native v0.72.1](https://github.com/facebook/react-native/releases/tag/v0.72.1)
+- 📦 [App Icon Badge](https://github.com/obytes/app-icon-badge): un Expo Config Plugin super pratique pour générer une icone différente selon l'environnement: dev, staging...
+- 📜 [iOS App Clips: a faster, smoother user experience](https://www.bam.tech/en/article/app-clips-ios-experience-utilisateur): explique l'intérêt UX des App Clips iOS et comment on peut les intégrer dans une app React-Native. Il faut rester en dessous de la limite des 10mb.
+- 🧵 [Expo weekly docs update](https://twitter.com/amanhimself/status/1675794149424115714)
+- 🎥 [Hacking Xcode with Colo Loco!](https://www.youtube.com/watch?v=ucEBfIZOap8)
+- 🎥 [What's New in React Native 0.72?](https://www.youtube.com/watch?v=XNeoSaacyX4)
 
 ---
 
@@ -83,16 +156,23 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 ## 🔀 Other {#other}
 
-<Todo />
+- [Ecma International approves ES2023](https://www.ecma-international.org/news/ecma-international-approves-new-standards-at-the-125th-general-assembly-27-june-2023/): à noter que Change Array By Copy est disponible dans tous les browsers [à partir d'aujourd'hui avec la sortie de Firefox v115](https://twitter.com/sebastienlorber/status/1676139862745923585).
+- [TypeScript 5.2 Beta](https://devblogs.microsoft.com/typescript/announcing-typescript-5-2-beta/)
+- [Qwik 1.2](https://www.builder.io/blog/qwik-1-2-performance-autopilot)
+- [Ember 5.0](https://blog.emberjs.com/ember-5-0-released/)
+- [CSS: The Good Parts](https://www.builder.io/blog/css-the-good-parts)
+- [W3C First Public Working Draft: CSS Anchor Positioning](https://twitter.com/sebastienlorber/status/1675900466553659396)
+- [New to the web platform in June](https://web.dev/web-platform-06-2023/)
+- [Understanding SVG Paths](https://www.nan.fyi/svg-paths)
+- [The massive bug at the heart of the npm ecosystem](https://blog.vlt.sh/blog/the-massive-hole-in-the-npm-ecosystem)
+- [Writing a Node Library in Rust](https://blog.metlo.com/writing-a-node-library-in-rust/)
+- [CommonJS is not going away](https://bun.sh/blog/commonjs-is-not-going-away)
+- [CommonJS is hurting JavaScript](https://deno.com/blog/commonjs-is-hurting-javascript)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
-
-🤣 [Other funny tweets this week](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/151/meme.jpg)](https://twitter.com/localhost_5173/status/1675142562473185281)
 
 See ya! 👋
