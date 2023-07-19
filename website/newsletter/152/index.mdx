@@ -1,6 +1,6 @@
 ---
 slug: /152
-title: "This Week In React #152: ..."
+title: "This Week In React #152: React 18, RSC, Kuma UI, Expo 49, Next.js, Remix DevTools, Fresh, React-Query, Redwood, Catalyst, Million, MDXEditor, Ariakit, Rewind, TC39, Prettier..."
 authors: [slorber]
 date: 07-18-2023
 image: /img/TWIR_POST.png
@@ -9,7 +9,9 @@ unlisted: true
 
 Hi everyone!
 
-<Todo />
+I've just got back from holiday in French Brittany 😎, so we're covering 2 weeks of news in this edition.
+
+I thought it was going to be a quiet summer, but there have been quite a few releases and plenty of articles on Server Components! 😄
 
 <!-- truncate -->
 
@@ -48,7 +50,48 @@ Watch the [4-min demo video](https://www.youtube.com/watch?v=zRkeKSZjlyw)
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![How React 18 Improves Application Performance](/emails/issues/152/react18perf.jpg)](https://vercel.com/blog/how-react-18-improves-application-performance)
+
+**[How React 18 Improves Application Performance](https://vercel.com/blog/how-react-18-improves-application-performance)**
+
+Comprehensive, well-illustrated article on React 18 and its impact on performance. Explains how Concurrent React works and its impact on metrics such as Total Blocking Time and Interaction to Next Paint. Also presents other new features such as the Transition API, React Server Components, Suspense and the new React cache.
+
+---
+
+[![Kuma UI](/emails/issues/152/kuma.jpg)](https://www.kuma-ui.com/)
+
+**[Kuma UI](https://www.kuma-ui.com/)**
+
+New CSS-in-JS library inspired by the DX offered by Chakra UI, and compatible with React Server Components. The library is based on a unique hybride method that combines the best of zero-runtime CSS-in-JS and traditional runtime solutions. We'll have to study all this, and see how this library stands up to [Panda CSS](https://panda-css.com/) from the Chakra team.
+
+---
+
+- 🐦 [DevRel Matt Carroll rejoined the React team](https://twitter.com/mattcarrollcode/status/1681342638816112641)
+- 👀 [How to Setup Redwood Experimental React Server Components](https://community.redwoodjs.com/t/react-server-components-rsc/5081)
+- 👀 [React-Query-Nextjs](https://twitter.com/TkDodo/status/1680153231853223938): React-Query experimental support for the Next.js App Directory.
+- 📜 [My take on the current React & Server Components controversy](https://phryneas.de/react-server-components-controversy): Lenz loves the React Server Components but explains his frustration as a maintainer of Apollo Client and Redux Toolkit.
+- 📜 [Demystifying React Server Components with NextJS 13 App Router](https://demystifying-rsc.vercel.app/): a great demo application with well-illustrated notes explaining how Server Components work, including many code and network payload samples.
+- 📜 [5 Common Pitfalls with Server Components in Next13 (with examples)](https://www.propelauth.com/post/5-common-pitfalls-with-server-components-in-next13-with-examples): well-illustrated article presenting the most common errors when using Server Components.
+- 📜 [Trimming typography with Capsize](https://www.skovy.dev/blog/using-capsize-with-stitches): explains how to trim and normalise whitespaces around your fonts to facilitate alignment, in a React context.
+- 📜 [SvelteJS: My ecosystem is bigger than yours](https://hackmd.io/@roguegpu/r1RKQMdt3): interesting criticism of React in favour of Svelte, which doesn't need as much of an ecosystem.
+- 📜 [Why Server Components - A Brief History of Web](https://www.perssondennis.com/articles/why-server-components-a-brief-history-of-web)
+- 📜 [A Visual Guide to Prefetching in Next.js 13](https://www.builder.io/blog/prefetching-nextjs-visual-guide)
+- 📜 [Autosave form inputs with Remix](https://www.jacobparis.com/content/remix-form-autosave)
+- 📜 [Ariakit is now stable](https://newsletter.ariakit.org/p/stable)
+- 📜 [A pattern for chaining nextjs middlewares](https://raphael.badia.cc/posts/a-pattern-for-chaining-middlewares)
+- 📜 [Embracing Polymorphism for Flexible Components](https://brightinventions.pl/blog/embracing-polymorphism-for-flexible-components/)
+- 📦 [Fresh 1.3 – Simplified Route Components and More](https://twitter.com/deno_land/status/1681340646723039232)
+- 📦 [Next.js 13.4.10](https://github.com/vercel/next.js/releases/tag/v13.4.10)
+- 📦 [Million.js 2.5 - Compile time macros](https://twitter.com/aidenybai/status/1679698685603774464)
+- 📦 [Remix Development Tools](https://twitter.com/AlemTuzlak59192/status/1680538200702369794)
+- 📦 [Remix-Hono](https://github.com/sergiodxa/remix-hono)
+- 📦 [Remix-JSON-Routes](https://github.com/brophdawg11/remix-json-routes)
+- 📦 [Vercel Platforms Starter Kit - Template for building multi-tenant applications using Next.js App Router](https://vercel.com/blog/platforms-starter-kit)
+- 📦 [MDX Editor - WYSIWYG React component for Markdown editing](https://mdxeditor.dev/)
+- 📦 [Rewind-UI - React-TailwindCSS component library](https://rewind-ui.dev/)
+- 📦 [Featurevisor - Git-based Feature flags, with React bindings](https://github.com/fahad19/featurevisor)
+- 🎥 [Tailwind Connect 2023 — Keynote](https://www.youtube.com/watch?v=CLkxRnRQtDE): annonce de Catalyst, un React UI kit
+- 🎥 [Legend: The Ultimate React State Manager?](https://www.youtube.com/watch?v=E4TH77SMOG8)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -76,7 +119,46 @@ Click the link and [get $1 off your next domain name registration](https://pork
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Expo SDK 49](/emails/issues/152/expo49.jpg)](https://blog.expo.dev/expo-sdk-49-c6d398cdf740)
+
+**[Expo SDK 49](https://blog.expo.dev/expo-sdk-49-c6d398cdf740)**
+
+The new SDK 49 has just been released. Many new features have been announced, including my favourites:
+
+- React Native 0.72.3, React Native Web 0.19.6
+- Expo Router v2.0
+- Network debugging, VS Code debugging
+- React devtools built-in
+- Environment variables
+- Local Expo Modules
+- EAS Insights
+
+---
+
+[![Announcing Expo Router v2](/emails/issues/152/exporouter2.jpg)](https://blog.expo.dev/introducing-expo-router-v2-3850fd5c3ca1)
+
+**[Announcing Expo Router v2](https://blog.expo.dev/introducing-expo-router-v2-3850fd5c3ca1)**
+
+Along with SDK 49, Expo is also announcing the release of Expo Router v2 with many enhancements, including:
+
+- TypeScript support
+- Static routes, SEO, Head metadata
+- Async routes
+- Universal Linking, handoff
+- CSS and Styling
+
+---
+
+- 📜 [Reflecting on Code Sharing Between React and React Native](https://matthewwolfe.github.io/blog/code-sharing-react-and-react-native)
+- 📜 [A new approach to React Native development and team composition](https://itnext.io/a-new-approach-to-react-native-development-and-team-composition-d6e3e3eb5184)
+- 📦 [React-Native 0.72.3](https://github.com/facebook/react-native/releases/tag/v0.72.3)
+- 📦 [Flashlight 0.8 - measure command](https://twitter.com/almouro/status/1676202443346944000)
+- 📦 [react-native-image-colors 2.3 - Expo 49 support](https://github.com/osamaqarem/react-native-image-colors)
+- 📦 [react-native-android-widget 0.7 - Expo 49 support](https://github.com/sAleksovski/react-native-android-widget)
+- 🎙️ [RNR 271 - RN From a Flutter Dev's Perspective](https://reactnativeradio.com/episodes/rnr-271-rn-from-a-flutter-devs-perspective)
+- 🎥 [Expo SDK 49: New Features and Improvements](https://www.youtube.com/watch?v=1CVlTqHW5xQ)
+- 🎥 [Theo on Airbnb sunsetting React-Native](https://www.youtube.com/watch?v=ZM8lJIJb2Q4)
+- 🎥 [Top 9 React Native UI Component Libraries in 2023](https://www.youtube.com/watch?v=SfJGBbv-qQw)
 
 ---
 
@@ -100,16 +182,19 @@ We have several roles open for developers focused on React Native! Pay is ~160k 
 
 ## 🔀 Other {#other}
 
-<Todo />
+- [Updates from the 97th TC39 meeting](https://dev.to/hemanth/updates-from-the-97th-tc39-meeting-1cnj)
+- [What’s Next for JavaScript: New Features to Look Forward to](https://thenewstack.io/whats-next-for-javascript-new-features-to-look-forward-to/)
+- [Prisma 5: Faster by Default](https://www.prisma.io/blog/prisma-5-f66prwkjx72s)
+- [Deno 1.35: A fast and convenient way to build web servers](https://deno.com/blog/v1.35)
+- [Prettier 3.0](https://prettier.io/blog/2023/07/05/3.0.0.html)
+- [TypeScript-ESLint v6](https://typescript-eslint.io/blog/announcing-typescript-eslint-v6/)
+- [Node v20.4](https://nodejs.org/en/blog/release/v20.4.0)
+- [Vite 4.4](https://twitter.com/vite_js/status/1676886213771264002)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
-
-🤣 [Other funny tweets this week](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/152/meme.jpg)](https://twitter.com/jantimon/status/1681275581629964300)
 
 See ya! 👋
