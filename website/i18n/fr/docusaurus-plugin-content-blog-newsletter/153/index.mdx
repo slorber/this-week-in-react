@@ -1,6 +1,6 @@
 ---
 slug: /153
-title: "React Hebdo #153: Astro, MUI, Next.js, Remix, React-Query, Storybook, Vaul, Solito, Yoga, Reanimated, React-Tweet, Expo-Router, Lottie, Bun, TypeScript..."
+title: "React Hebdo #153: Server Components, Astro, MUI, Next.js, Remix, React-Query, Storybook, Vaul, Solito, Yoga, Reanimated, React-Tweet, Expo-Router, Lottie, Bun, TypeScript..."
 authors: [slorber]
 date: 07-25-2023
 unlisted: true
@@ -8,7 +8,12 @@ unlisted: true
 
 Salut à tous !
 
-<Todo />
+On dirait que tout le monde n'est pas en vacances : il y a encore beaucoup d'actualités cette semaine, aussi bien coté React que React-Native.
+
+J'ai une question pour toi (tu peux me répondre par email): tu préfères que je mette des liens directs, ou vers des tweets?
+
+- direct: accès à la resource en 1 clic
+- tweet: possibilité de lire les conversations associées
 
 <!-- truncate -->
 
@@ -59,11 +64,11 @@ https://twitter.com/BHolmesDev/status/1682206832423579649 + https://github.com/w
 - 💡 [forwardRef type fix that works with generics](https://twitter.com/sebastienlorber/status/1683753462058610688)
 - 📜 [React Query and React Context](https://tkdodo.eu/blog/react-query-and-react-context): Dominik explique en quoi mettre les data React-Query dans un contexte React peut avoir un intérêt: rendre vos dépendances data plus explicites. Le futur hook `useSuspenseQuery` peut aussi être une bonne alternative. https://twitter.com/TkDodo/status/1682821318473834498
 - 📜 [Next 13 cookies() and headers() explained](https://raphael.badia.cc/posts/next-13-cookies-and-headers-explained): explique comment Next.js utilise AsyncLocalStorage (et [bientôt AsyncContext?](https://twitter.com/sebastienlorber/status/1639183216799100928)) pour exposer ses fonctions `cookies()` et `headers()` aux RSCs.
-- 📜 [Kuma UI vs Panda CSS – My first impressions](https://www.devas.life/my-first-impressions-of-kuma-ui-and-panda-css/): comparaison rapide des 2 nouvelles librairies CSS-in-JS. L'auteur préfère garder Kuma UAI. https://twitter.com/inkdrop_app/status/1682344921359941632
+- 📜 [Kuma UI vs Panda CSS – My first impressions](https://www.devas.life/my-first-impressions-of-kuma-ui-and-panda-css/): comparaison rapide des 2 nouvelles librairies CSS-in-JS. L'auteur préfère garder Kuma UI. https://twitter.com/inkdrop_app/status/1682344921359941632
 - 📜 [Recipe kits, a great alternative to installable libraries](https://andrewingram.net/posts/recipe-kits-a-great-alternative-to-installable-libraries): discute l'émergence et l'intérêt des UI kits qui ne sont pas distribués via npm: Shadcn UI, Tailwind UI (et prochainement Tailwind Catalyst).
 - 📜 [Tailwind Connect 2023 Recap](https://tailwindcss.com/blog/2023-07-18-tailwind-connect-2023-recap): résumé de la conf qui présente également Catalyst, le React UI Kit en cours de développement.
 - 📜 [Introducing React-Tweet](https://vercel.com/blog/introducing-react-tweet): Vercel propose un package pour afficher les tweets de manière performance sur une page, compatible RSC.
-- 📜 [React Server Components Tips](https://echobind.com/post/react-server-components-tips)
+- 📜 [React Server Components Tips](https://echobind.com/post/react-server-components-tips): 5 bons conseils et modèles mentaux pour bien comprendre et utiliser les RSCs.
 - 📜 [Origins of JSX and Why It Exists](https://dodov.dev/blog/origins-of-jsx-and-why-it-exists)
 - 📜 [Lazy Loading in React and Next.js Apps](https://www.fullctx.dev/p/lazy-loading-in-react-and-nextjs)
 - 📦 [Storybook 7.1 - in-app onboarding, zero-config styling support, TypeScript snippets...](https://storybook.js.org/blog/storybook-7-1/) + https://twitter.com/storybookjs/status/1681699562656759823
@@ -119,7 +124,7 @@ https://twitter.com/FernandoTheRojo/status/1681833195023618049
 - 📜 [Redefining Navigation in React Native: the Potential of expo-router](https://www.bam.tech/en/article/redefining-navigation-in-react-native-the-potential-of-expo-router): bonne analyse des tradeoffs entre Expo Router (v1) et React-Navigation.
 - 📜 [Setting Up Storybook Web and Native with Expo Router v2, SDK 49, and TypeScript](https://twitter.com/mauro_codes/status/1682765642963861505)
 - 📜 [EAS Build Will Require Using M1/M2 Builders This Fall](https://blog.expo.dev/eas-build-will-require-using-m1-m2-builders-this-fall-df40e8a9e930)
-- 📦 [Yoga v2.0.0-beta.2](https://twitter.com/sebastienlorber/status/1683874650785210369): la v2 du moteur de layout de React-Native est en beta. Le but est de respecter avec la spec W3C, une très bonne nouvelle pour l'écriture de code React cross-platform! A noter que Yoga ne concerne pas que les développeurs mobile: il est aussi utilisé par de nombreux autres projets comme Satori, React-Three-Flex ou encore le renderer Ink.
+- 📦 [Yoga v2.0.0-beta.2](https://twitter.com/sebastienlorber/status/1683874650785210369): la v2 du moteur de layout de React-Native est en beta. Le but est de respecter avec la spec W3C, une très bonne nouvelle pour l'écriture de code React cross-platform! A noter que Yoga ne concerne pas que les développeurs mobile: il est aussi utilisé par de nombreux autres projets comme Satori, React-Native-Skia, React-Three-Flex ou encore le renderer CLI Ink.
 - 📦 [Reanimated 3.4.0](https://twitter.com/swmansion/status/1683848307452289025): une belle release avec [Shared Element Transitions](https://twitter.com/piaskowyk/status/1683846036878393349), des améliorations sur les worklets, un support React-Native 0.72 et de nouvelles APIs comme `useReducedMotion`.
 - 📦 [React-Native-Lottie v6 - New Architecture support](https://twitter.com/matinzd/status/1683623846992044034)
 - 📦 [Tamagui Takeout](https://twitter.com/tamagui_js/status/1681925619997868033): template qui self-update pour shipper des apps cross-platform. Payant: permet de soutenir le projet open-source.
