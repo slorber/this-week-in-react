@@ -246,4 +246,4 @@ Join **[13259 satisfied readers](https://thisweekinreact.com/testimonials)** - 1
 
 <br/>
 
-[![logo](/img/TWIR_POST.png)](/)
+[![logo](/img/TWIR_POST.jpg)](/)

@@ -167,7 +167,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: "/img/TWIR_POST.png",
+      image: "/img/TWIR_POST.jpg",
       algolia: {
         appId: "HVX722ICC6",
         apiKey: "a24fdccebf5c0a3194349b5d4777b3b0",

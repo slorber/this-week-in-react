@@ -17,16 +17,57 @@
         }
       ]
     },
+
+    {
+      "source": "/img/TWIR_POST.jpg",
+      "headers": [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=86400, s-maxage=86400"
+        }
+      ]
+    },
+    {
+      "source": "/fr/img/TWIR_POST.jpg",
+      "headers": [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=86400, s-maxage=86400"
+        }
+      ]
+    },
+
+    {
+      "source": "/newsletter/rss.xml",
+      "headers": [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=3600, s-maxage=3600"
+        }
+      ]
+    },
+    {
+      "source": "/fr/newsletter/rss.xml",
+      "headers": [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=3600, s-maxage=3600"
+        }
+      ]
+    },
+
     {
       "source": "/emails/:path*",
       "headers": [
         {
           "key" : "Cache-Control",
-          "value" : "public, max-age=3600, s-maxage=86400"
+          "value" : "public, max-age=86400, s-maxage=86400"
         }
       ]
     }
+
   ],
+
   "redirects": [
     {
       "source": "/l",
