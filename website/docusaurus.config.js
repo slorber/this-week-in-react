@@ -150,7 +150,7 @@ const config = {
           createFeedItems: async (options) => {
             // Help reduce RSS feed bandwidth consumption
             // See https://github.com/facebook/docusaurus/pull/8378#issuecomment-1651277331
-            const feedMaxSize = 10;
+            const feedMaxSize = 5;
             const blogPosts = options.blogPosts.filter(
               (_, index) => index < feedMaxSize
             );
