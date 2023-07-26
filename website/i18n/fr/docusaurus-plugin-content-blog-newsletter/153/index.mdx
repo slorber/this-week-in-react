@@ -1,9 +1,8 @@
 ---
 slug: /153
-title: "React Hebdo #153: Server Components, Astro, MUI, Next.js, Remix, React-Query, Storybook, Vaul, Solito, Yoga, Reanimated, React-Tweet, Expo-Router, Lottie, Bun, TypeScript..."
+title: "React Hebdo #153: Server Components, Astro, MUI, Next.js, Remix, React-Query, AsyncLocalStorage, forwardRef, Storybook, Vaul, Solito, Yoga, Reanimated, React-Tweet, Expo-Router, Lottie, Bun, TypeScript..."
 authors: [slorber]
 date: 07-25-2023
-unlisted: true
 ---
 
 Salut à tous !
@@ -52,8 +51,6 @@ Unlock enterprise-grade features, functions, and UI components completely free f
 
 Une nouvelle version d'Astro vient de sortir avec une feature très attendue en expérimental: les [View Transitions](https://developer.chrome.com/docs/web-platform/view-transitions/). Cela permet de créer facilement des transitions fluides et animées entre les pages HTML, sans pour autant recourir à du routing coté client: il n'y a pas besoin d'un composant `<Link>` comme pour Next.js ou Remix. Pour un développeur React, cela rend le framework plus intéressant et compétitif en terme d'UX face au mode classique SPA auquel on est habitué, tout en conservant un modèle plus simple. Attention tout de même: ces transitions ne vont pas préserver votre state React. Rappelons aussi que le [support View Transitions](https://caniuse.com/?search=View%20Transition%20API) reste faible, mais progresse vite et peut être considéré comme un progressive enhancement, et Astro propose un mode fallback.
 
-https://twitter.com/BHolmesDev/status/1682206832423579649 + https://github.com/withastro/astro/releases/tag/astro%402.9.0 + https://twitter.com/astrodotbuild/status/1683514985115426817 + https://astro.build/blog/astro-290/
-
 ---
 
 - 👤 [Dan Abramov leaves his job at Meta, but remains in the React core team](https://twitter.com/dan_abramov/status/1682029195843739649)
@@ -62,18 +59,18 @@ https://twitter.com/BHolmesDev/status/1682206832423579649 + https://github.com/w
 - 💬 [Material UI RFC - Zero-runtime CSS-in-JS](https://github.com/mui/material-ui/issues/38137): MUI prévoit de développer une solution CSS-in-JS sans runtime inspirée de Linaria/Compiled, et compatible RSC. Explique aussi pourquoi ils ne peuvent s'appuyer sur aucune solution existante.
 - 💡 [Server Components allow to pass promises over the network](https://twitter.com/ryantotweets/status/1681696002883944451)
 - 💡 [forwardRef type fix that works with generics](https://twitter.com/sebastienlorber/status/1683753462058610688)
-- 📜 [React Query and React Context](https://tkdodo.eu/blog/react-query-and-react-context): Dominik explique en quoi mettre les data React-Query dans un contexte React peut avoir un intérêt: rendre vos dépendances data plus explicites. Le futur hook `useSuspenseQuery` peut aussi être une bonne alternative. https://twitter.com/TkDodo/status/1682821318473834498
+- 📜 [React Query and React Context](https://tkdodo.eu/blog/react-query-and-react-context): Dominik explique en quoi mettre les data React-Query dans un contexte React peut avoir un intérêt: rendre vos dépendances data plus explicites. Le futur hook `useSuspenseQuery` peut aussi être une bonne alternative.
 - 📜 [Next 13 cookies() and headers() explained](https://raphael.badia.cc/posts/next-13-cookies-and-headers-explained): explique comment Next.js utilise AsyncLocalStorage (et [bientôt AsyncContext?](https://twitter.com/sebastienlorber/status/1639183216799100928)) pour exposer ses fonctions `cookies()` et `headers()` aux RSCs.
-- 📜 [Kuma UI vs Panda CSS – My first impressions](https://www.devas.life/my-first-impressions-of-kuma-ui-and-panda-css/): comparaison rapide des 2 nouvelles librairies CSS-in-JS. L'auteur préfère garder Kuma UI. https://twitter.com/inkdrop_app/status/1682344921359941632
+- 📜 [Kuma UI vs Panda CSS – My first impressions](https://www.devas.life/my-first-impressions-of-kuma-ui-and-panda-css/): comparaison rapide des 2 nouvelles librairies CSS-in-JS. L'auteur préfère garder Kuma UI.
 - 📜 [Recipe kits, a great alternative to installable libraries](https://andrewingram.net/posts/recipe-kits-a-great-alternative-to-installable-libraries): discute l'émergence et l'intérêt des UI kits qui ne sont pas distribués via npm: Shadcn UI, Tailwind UI (et prochainement Tailwind Catalyst).
 - 📜 [Tailwind Connect 2023 Recap](https://tailwindcss.com/blog/2023-07-18-tailwind-connect-2023-recap): résumé de la conf qui présente également Catalyst, le React UI Kit en cours de développement.
 - 📜 [Introducing React-Tweet](https://vercel.com/blog/introducing-react-tweet): Vercel propose un package pour afficher les tweets de manière performance sur une page, compatible RSC.
 - 📜 [React Server Components Tips](https://echobind.com/post/react-server-components-tips): 5 bons conseils et modèles mentaux pour bien comprendre et utiliser les RSCs.
 - 📜 [Origins of JSX and Why It Exists](https://dodov.dev/blog/origins-of-jsx-and-why-it-exists)
 - 📜 [Lazy Loading in React and Next.js Apps](https://www.fullctx.dev/p/lazy-loading-in-react-and-nextjs)
-- 📦 [Storybook 7.1 - in-app onboarding, zero-config styling support, TypeScript snippets...](https://storybook.js.org/blog/storybook-7-1/) + https://twitter.com/storybookjs/status/1681699562656759823
+- 📦 [Storybook 7.1 - in-app onboarding, zero-config styling support, TypeScript snippets...](https://storybook.js.org/blog/storybook-7-1/)
 - 📦 [TanStack Query v5 beta - mostly stable, migration guide and code mods available](https://twitter.com/TkDodo/status/1683425919770173442)
-- 📦 [Remix 1.19 - Improved dev server networking option, ESBuild metafiles, better Node polyfills...](https://github.com/remix-run/remix/releases/tag/remix%401.19.0) + https://twitter.com/remix_run/status/1681741899160498178
+- 📦 [Remix 1.19 - Improved dev server networking option, ESBuild metafiles, better Node polyfills...](https://github.com/remix-run/remix/releases/tag/remix%401.19.0)
 - 📦 [Redwood v6.0.0 RC](https://community.redwoodjs.com/t/redwood-v6-0-0-rc-is-now-available/5044)
 - 📦 [Vaul - Unstyled drawer component for React](https://twitter.com/emilkowalski_/status/1683832539490942978)
 - 📦 [Framer-Motion 10.13 - Scroll API](https://twitter.com/mattgperry/status/1681663921072078851)
@@ -114,8 +111,6 @@ Click the link and [get $1 off your next domain name registration](https://pork
 [**Solito 4**](https://github.com/nandorojo/solito/releases/tag/v4.0.0)
 
 Nouvelle version du projet qui unifie React-Native et Next.js sous des abstractions partagées. Avec la v4, il est maintenant possible d'utiliser Next.js App Router. Pour cela, de nouvelles API ont été introduites. Attention: React-Native ne supporte pas encore les React-Server Components: il est encore un peu tot pour pouvoir les utiliser de manière cross-platform.
-
-https://twitter.com/FernandoTheRojo/status/1681833195023618049
 
 ---
 
