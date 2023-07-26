@@ -1,6 +1,6 @@
 ---
 slug: /153
-title: "React Hebdo #153: ..."
+title: "React Hebdo #153: Astro, MUI, Next.js, Remix, React-Query, Storybook, Vaul, Solito, Yoga, Reanimated, React-Tweet, Expo-Router, Lottie, Bun, TypeScript..."
 authors: [slorber]
 date: 07-25-2023
 unlisted: true
@@ -41,36 +41,42 @@ Unlock enterprise-grade features, functions, and UI components completely free f
 
 ## ⚛️ React {#react}
 
-- [Next 13 cookies() and headers() explained](https://raphael.badia.cc/posts/next-13-cookies-and-headers-explained)
-- [Server Components allow to pass promises over the network](https://twitter.com/ryantotweets/status/1681696002883944451)
-- [Framer-Motion 10.13 - Scroll API](https://twitter.com/mattgperry/status/1681663921072078851)
-- [Jotai tutorial](https://twitter.com/jotaijs/status/1682075111040630784)
-- [Kuma UI🐻 vs Panda CSS🐼 – My first impressions](https://www.devas.life/my-first-impressions-of-kuma-ui-and-panda-css/) + https://twitter.com/inkdrop_app/status/1682344921359941632
-- [Vaul - Unstyled drawer component for React](https://twitter.com/emilkowalski_/status/1683832539490942978)
-- Material UI zero runtime: https://twitter.com/leeerob/status/1683546952393281537 + https://twitter.com/MUI_hq/status/1683511593861095424
-- [Recipe kits, a great alternative to installable libraries](https://andrewingram.net/posts/recipe-kits-a-great-alternative-to-installable-libraries)
-- [The single most important factor that differentiates front-end frameworks](https://themer.dev/blog/the-single-most-important-factor-that-differentiates-front-end-frameworks)
-- [TanStack Query v5 beta - migration guide](https://tanstack.com/query/v5/docs/react/guides/migrating-to-v5) + https://twitter.com/TkDodo/status/1683425919770173442
-- [Remix 1.19](https://github.com/remix-run/remix/releases/tag/remix%401.19.0) + https://twitter.com/remix_run/status/1681741899160498178
-- [Write Clean Server-Side React Code with Higher-Order Server Components](https://medium.com/@burkayanduv/write-clean-server-side-react-code-with-higher-order-server-components-2b0e8df45008)
-- [forwardRef type fix that works with generics](https://twitter.com/sebastienlorber/status/1683753462058610688)
-- [Origins of JSX and Why It Exists](https://dodov.dev/blog/origins-of-jsx-and-why-it-exists) ???
-- [Dan Abramov leaves his job at Meta, but remains in the React core team](https://twitter.com/dan_abramov/status/1682029195843739649)
-- [Meta is hiring a React DX Engineering Manager (London)](https://twitter.com/sebastienlorber/status/1683529524414148608)
-- [Why Panda: CSS for RSCs is Changing the Game](https://www.youtube.com/watch?v=fKSemrudovo)
-- [An In-Depth Look at React Server Components!](https://blog.saeloun.com/2023/07/20/what-are-react-server-components/)
-- [Lazy Loading in React and Next.js Apps](https://www.fullctx.dev/p/lazy-loading-in-react-and-nextjs)
-- [Tailwind Connect 2023 Recap](https://tailwindcss.com/blog/2023-07-18-tailwind-connect-2023-recap): résumé de la conf qui présente également Catalyst, le React UI Kit en cours de développement.
-- [Storybook 7.1](https://storybook.js.org/blog/storybook-7-1/) + https://twitter.com/storybookjs/status/1681699562656759823
-- [Sidebar animation performance](https://www.joshuawootonn.com/sidebar-animation-performance)
-- [How to Build a Routing Layer in React and Why You Need It](https://semaphoreci.com/blog/routing-layer-react)
-- [The Cost Of JavaScript - 2023](https://www.youtube.com/watch?v=ZKH3DLT4BKw) ???
-- [Astro v2.9 - View Transitions](https://github.com/withastro/astro/releases/tag/astro%402.9.0) + https://twitter.com/BHolmesDev/status/1682206832423579649 + https://github.com/withastro/astro/releases/tag/astro%402.9.0 + https://twitter.com/astrodotbuild/status/1683514985115426817 + https://astro.build/blog/astro-290/
-- [Downshift v8 - breaking changes](https://github.com/downshift-js/downshift/blob/master/src/hooks/MIGRATION_V8.md)
-- [Redwood v6.0.0 RC](https://community.redwoodjs.com/t/redwood-v6-0-0-rc-is-now-available/5044)
-- [Jamon Holmgren - The Suspense is killing me](https://www.youtube.com/watch?v=3iRF63A_xbo)
-- [Lee Robinson - Responding to Reddit on the Next.js App Router](https://www.youtube.com/watch?v=-YO_z14dUyI)
-- [Yoga v2.0.0-beta.2](https://twitter.com/sebastienlorber/status/1683874650785210369): la v2 du moteur de layout de React-Native est en beta. Le but est de respecter avec la spec W3C, une très bonne nouvelle pour l'écriture de code React cross-platform! A noter que Yoga ne concerne pas que les développeurs mobile: il est aussi utilisé par de nombreux autres projets comme Satori, React-Three-Flex ou encore le renderer Ink.
+[![Astro 2.9](/emails/issues/153/astro.jpg)](https://astro.build/blog/astro-290/)
+
+[**Astro 2.9**](https://astro.build/blog/astro-290/)
+
+Une nouvelle version d'Astro vient de sortir avec une feature très attendue en expérimental: les [View Transitions](https://developer.chrome.com/docs/web-platform/view-transitions/). Cela permet de créer facilement des transitions fluides et animées entre les pages HTML, sans pour autant recourir à du routing coté client: il n'y a pas besoin d'un composant `<Link>` comme pour Next.js ou Remix. Pour un développeur React, cela rend le framework plus intéressant et compétitif en terme d'UX face au mode classique SPA auquel on est habitué, tout en conservant un modèle plus simple. Attention tout de même: ces transitions ne vont pas préserver votre state React. Rappelons aussi que le [support View Transitions](https://caniuse.com/?search=View%20Transition%20API) reste faible, mais progresse vite et peut être considéré comme un progressive enhancement, et Astro propose un mode fallback.
+
+https://twitter.com/BHolmesDev/status/1682206832423579649 + https://github.com/withastro/astro/releases/tag/astro%402.9.0 + https://twitter.com/astrodotbuild/status/1683514985115426817 + https://astro.build/blog/astro-290/
+
+---
+
+- 👤 [Dan Abramov leaves his job at Meta, but remains in the React core team](https://twitter.com/dan_abramov/status/1682029195843739649)
+- 👤 [Meta is hiring a React DX Engineering Manager (London)](https://twitter.com/sebastienlorber/status/1683529524414148608)
+- 🧑‍🎓 [New Jotai tutorial](https://twitter.com/jotaijs/status/1682075111040630784)
+- 💬 [Material UI RFC - Zero-runtime CSS-in-JS](https://github.com/mui/material-ui/issues/38137): MUI prévoit de développer une solution CSS-in-JS sans runtime inspirée de Linaria/Compiled, et compatible RSC. Explique aussi pourquoi ils ne peuvent s'appuyer sur aucune solution existante.
+- 💡 [Server Components allow to pass promises over the network](https://twitter.com/ryantotweets/status/1681696002883944451)
+- 💡 [forwardRef type fix that works with generics](https://twitter.com/sebastienlorber/status/1683753462058610688)
+- 📜 [React Query and React Context](https://tkdodo.eu/blog/react-query-and-react-context): Dominik explique en quoi mettre les data React-Query dans un contexte React peut avoir un intérêt: rendre vos dépendances data plus explicites. Le futur hook `useSuspenseQuery` peut aussi être une bonne alternative. https://twitter.com/TkDodo/status/1682821318473834498
+- 📜 [Next 13 cookies() and headers() explained](https://raphael.badia.cc/posts/next-13-cookies-and-headers-explained): explique comment Next.js utilise AsyncLocalStorage (et [bientôt AsyncContext?](https://twitter.com/sebastienlorber/status/1639183216799100928)) pour exposer ses fonctions `cookies()` et `headers()` aux RSCs.
+- 📜 [Kuma UI vs Panda CSS – My first impressions](https://www.devas.life/my-first-impressions-of-kuma-ui-and-panda-css/): comparaison rapide des 2 nouvelles librairies CSS-in-JS. L'auteur préfère garder Kuma UAI. https://twitter.com/inkdrop_app/status/1682344921359941632
+- 📜 [Recipe kits, a great alternative to installable libraries](https://andrewingram.net/posts/recipe-kits-a-great-alternative-to-installable-libraries): discute l'émergence et l'intérêt des UI kits qui ne sont pas distribués via npm: Shadcn UI, Tailwind UI (et prochainement Tailwind Catalyst).
+- 📜 [Tailwind Connect 2023 Recap](https://tailwindcss.com/blog/2023-07-18-tailwind-connect-2023-recap): résumé de la conf qui présente également Catalyst, le React UI Kit en cours de développement.
+- 📜 [Introducing React-Tweet](https://vercel.com/blog/introducing-react-tweet): Vercel propose un package pour afficher les tweets de manière performance sur une page, compatible RSC.
+- 📜 [React Server Components Tips](https://echobind.com/post/react-server-components-tips)
+- 📜 [Origins of JSX and Why It Exists](https://dodov.dev/blog/origins-of-jsx-and-why-it-exists)
+- 📜 [Lazy Loading in React and Next.js Apps](https://www.fullctx.dev/p/lazy-loading-in-react-and-nextjs)
+- 📦 [Storybook 7.1 - in-app onboarding, zero-config styling support, TypeScript snippets...](https://storybook.js.org/blog/storybook-7-1/) + https://twitter.com/storybookjs/status/1681699562656759823
+- 📦 [TanStack Query v5 beta - mostly stable, migration guide and code mods available](https://twitter.com/TkDodo/status/1683425919770173442)
+- 📦 [Remix 1.19 - Improved dev server networking option, ESBuild metafiles, better Node polyfills...](https://github.com/remix-run/remix/releases/tag/remix%401.19.0) + https://twitter.com/remix_run/status/1681741899160498178
+- 📦 [Redwood v6.0.0 RC](https://community.redwoodjs.com/t/redwood-v6-0-0-rc-is-now-available/5044)
+- 📦 [Vaul - Unstyled drawer component for React](https://twitter.com/emilkowalski_/status/1683832539490942978)
+- 📦 [Framer-Motion 10.13 - Scroll API](https://twitter.com/mattgperry/status/1681663921072078851)
+- 📦 [Downshift v8](https://github.com/downshift-js/downshift/releases/tag/v8.0.0)
+- 🎥 [Jack Herrington - Why Panda: CSS for RSCs is Changing the Game](https://www.youtube.com/watch?v=fKSemrudovo)
+- 🎥 [Addy Osmani - The Cost Of JavaScript - 2023](https://www.youtube.com/watch?v=ZKH3DLT4BKw)
+- 🎥 [Jamon Holmgren - The Suspense is killing me](https://www.youtube.com/watch?v=3iRF63A_xbo)
+- 🎥 [Lee Robinson - Responding to Reddit on the Next.js App Router](https://www.youtube.com/watch?v=-YO_z14dUyI)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -98,41 +104,56 @@ Click the link and [get $1 off your next domain name registration](https://pork
 
 ## 📱 React-Native {#react-native}
 
-- [EAS Build Will Require Using M1/M2 Builders This Fall](https://blog.expo.dev/eas-build-will-require-using-m1-m2-builders-this-fall-df40e8a9e930)
-- [Tamagui Takeout](https://twitter.com/tamagui_js/status/1681925619997868033) ???
-- [Expo docs revamped](https://twitter.com/expo/status/1682071088308838400)
-- [Setting Up Storybook Web and Native with Expo Router v2, SDK 49, and TypeScript](https://twitter.com/mauro_codes/status/1682765642963861505)
-- [Solito 4: React Native + Next.js App Router](https://twitter.com/FernandoTheRojo/status/1681833195023618049)
-- [Redefining Navigation in React Native: the Potential of expo-router](https://www.bam.tech/en/article/redefining-navigation-in-react-native-the-potential-of-expo-router)
-- [The React Native Show Podcast #24 - React Native at scale with Jacob Suñol (Abbott)](https://www.youtube.com/watch?v=tGGa885ycrg)
-- [React Native EU 2023 Trailer](https://www.youtube.com/watch?v=-fL7wZDKSEE)
-- [Debugging React Native Apps End-to-End: AMA with Experts from Meta and Sentry - 26 July](https://sentry.io/resources/ama-debugging-react-native-apps-end-to-end/)
-- [Hacking Xcode with Colo Loco!](https://www.youtube.com/watch?v=ucEBfIZOap8)
-- [React-Native-Lottie v6](https://twitter.com/matinzd/status/1683623846992044034)
-- [React-Native-Google-Sign - New Architecture support - now freemium](https://twitter.com/vonovak/status/1683755446098690049)
-- [Reanimated 3.4.0](https://twitter.com/swmansion/status/1683848307452289025) + https://twitter.com/piaskowyk/status/1683846036878393349
+[![Solito 4](/emails/issues/153/solito4.jpg)](https://github.com/nandorojo/solito/releases/tag/v4.0.0)
+
+[**Solito 4**](https://github.com/nandorojo/solito/releases/tag/v4.0.0)
+
+Nouvelle version du projet qui unifie React-Native et Next.js sous des abstractions partagées. Avec la v4, il est maintenant possible d'utiliser Next.js App Router. Pour cela, de nouvelles API ont été introduites. Attention: React-Native ne supporte pas encore les React-Server Components: il est encore un peu tot pour pouvoir les utiliser de manière cross-platform.
+
+https://twitter.com/FernandoTheRojo/status/1681833195023618049
+
+---
+
+- 🎉 [Expo Launch Party](https://expo.dev/launch-party): une Expo launch week prévue la semaine du 8 aout?
+- 👥 [Debugging React Native Apps End-to-End: AMA with Experts from Meta and Sentry - 26 July](https://sentry.io/resources/ama-debugging-react-native-apps-end-to-end/)
+- 📜 [Redefining Navigation in React Native: the Potential of expo-router](https://www.bam.tech/en/article/redefining-navigation-in-react-native-the-potential-of-expo-router): bonne analyse des tradeoffs entre Expo Router (v1) et React-Navigation.
+- 📜 [Setting Up Storybook Web and Native with Expo Router v2, SDK 49, and TypeScript](https://twitter.com/mauro_codes/status/1682765642963861505)
+- 📜 [EAS Build Will Require Using M1/M2 Builders This Fall](https://blog.expo.dev/eas-build-will-require-using-m1-m2-builders-this-fall-df40e8a9e930)
+- 📦 [Yoga v2.0.0-beta.2](https://twitter.com/sebastienlorber/status/1683874650785210369): la v2 du moteur de layout de React-Native est en beta. Le but est de respecter avec la spec W3C, une très bonne nouvelle pour l'écriture de code React cross-platform! A noter que Yoga ne concerne pas que les développeurs mobile: il est aussi utilisé par de nombreux autres projets comme Satori, React-Three-Flex ou encore le renderer Ink.
+- 📦 [Reanimated 3.4.0](https://twitter.com/swmansion/status/1683848307452289025): une belle release avec [Shared Element Transitions](https://twitter.com/piaskowyk/status/1683846036878393349), des améliorations sur les worklets, un support React-Native 0.72 et de nouvelles APIs comme `useReducedMotion`.
+- 📦 [React-Native-Lottie v6 - New Architecture support](https://twitter.com/matinzd/status/1683623846992044034)
+- 📦 [Tamagui Takeout](https://twitter.com/tamagui_js/status/1681925619997868033): template qui self-update pour shipper des apps cross-platform. Payant: permet de soutenir le projet open-source.
+- 🎥 [Jamon Holmgren - Hacking Xcode with Colo Loco!](https://www.youtube.com/watch?v=ucEBfIZOap8)
+- 🎙️ [The React Native Show Podcast #24 - React Native at scale with Jacob Suñol (Abbott)](https://www.youtube.com/watch?v=tGGa885ycrg)
+- 🎙️ [React Native Radio 272 - Real Life React Native: Nick Alekhine at NTWRK](https://reactnativeradio.com/episodes/rnr-272-real-life-react-native-nick-alekhine-at-ntwrk)
 
 ---
 
 ## 🧑‍💻 Jobs {#jobs}
 
-<Todo />
+🧑‍💼 [**Shotgun - Senior Full Stack Engineer - 60-75k€ + BSPCE**](https://shotgun.teamtailor.com/jobs/1981578-senior-full-stack-engineer)
+
+Shotgun est la billetterie des évènements electro. Nous recherchons des devs expérimentés pour travailler sur une stack moderne: React, React-Native, Typescript, GraphQL, NextJS, PgSQL, Vercel...
+
+🧑‍💼 [**Premier Octet - Développeurs(euses) React - Paris**](https://www.premieroctet.com/jobs)
+
+Nous cherchons des développeurs(euses) JavaScript passionnés. Vous interviendrez en développement sur des projets variés et motivants, à la fois serveur et front (React, Nest, Next), et éventuellement mobile (React Native).
 
 💡 [Comment publier une offre d'emploi ?](https://thisweekinreact.com/fr/sponsor)
-
-🏢 **[Vous recrutez en CDI ou freelance? Contactez-moi!](https://qq4ph6n1rk0.typeform.com/to/qjSZ38dQ#email={{subscriber.email_address}})**
 
 ---
 
 ## 🇫🇷 En français {#fr}
 
-- [ReactJS et NextJS pour les nuls : useRef, useContext, useMemo, useCallback & useReducer!](https://www.youtube.com/watch?v=LKAQ5LNut8s)
+- 🎥 [ReactJS et NextJS pour les nuls : useRef, useContext, useMemo, useCallback & useReducer!](https://www.youtube.com/watch?v=LKAQ5LNut8s)
+- 🎥 [La v5 de Prisma est 9x plus rapide ! - Actus JS de la semaine](https://www.youtube.com/watch?v=8uG0NDmdNQE)
+- 🎥 [Edge Functions : Ce qu’il faut absolument connaitre](https://www.youtube.com/watch?v=V2lBbT6fNTE)
 
 💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
 
 [![Premier Octet](/emails/issues/151/premieroctet.png)](https://www.premieroctet.com/?utm_source=react_hebdo)
 
-💸 **[Premier Octet - Agence de développement React](https://www.premieroctet.com/?utm_source=react_hebdo)**
+💸 [**Premier Octet - Agence de développement React**](https://www.premieroctet.com/?utm_source=react_hebdo)\*\*
 
 Agence parisienne fondée en 2018 par une équipe de passionnés, nous accompagnons de nombreux clients grâce à notre expertise React et React Native.
 Nous intervenons en développement, conseil, audit ou formation, sur des thématiques JavaScript serveur et front.
@@ -141,33 +162,20 @@ Nous intervenons en développement, conseil, audit ou formation, sur des thémat
 
 ## 🔀 Autre {#other}
 
-- [Node.js Best Practices List - 2023 update](https://twitter.com/nodepractices/status/1683835221840654337)
 - [Bun 0.7 - Improved Node.js compat, Vite support, Worker, AsyncLocalStorage...](https://twitter.com/jarredsumner/status/1682383403684106242)
-- [Introducing Valibot, a < 1kb Zod Alternative](https://www.builder.io/blog/introducing-valibot)
-- [pkg-size - Find the true size of an npm package (thanks to WebContainers)](https://twitter.com/privatenumbr/status/1681206731127554048)
-- [How Turborepo is porting from Go to Rust](https://vercel.com/blog/how-turborepo-is-porting-from-go-to-rust)
-- [5 Inconvenient Truths about TypeScript](https://oida.dev/5-truths-about-typescript/)
-- [TypeScript and the dawn of gradual types](https://github.com/readme/featured/typescript-gradual-types)
+- [Rspack 0.2.9](https://twitter.com/rspack_dev/status/1684039960230522880)
 - [Microsoft TypeChat - Helps get TypeScript type-safe reponses from AI / LLM](https://microsoft.github.io/TypeChat/blog/introducing-typechat)
+- [TypeScript and the dawn of gradual types](https://github.com/readme/featured/typescript-gradual-types)
+- [pkg-size - Find the true size of an npm package (thanks to WebContainers)](https://twitter.com/privatenumbr/status/1681206731127554048)
+- [Node.js Best Practices List - 2023 update](https://twitter.com/nodepractices/status/1683835221840654337)
+- [How Turborepo is porting from Go to Rust](https://vercel.com/blog/how-turborepo-is-porting-from-go-to-rust)
+- [Introducing Valibot, a < 1kb Zod Alternative](https://www.builder.io/blog/introducing-valibot)
+- [5 Inconvenient Truths about TypeScript](https://oida.dev/5-truths-about-typescript/)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-https://twitter.com/BogdanSalamakha/status/1683439393896316930
-
-https://twitter.com/rauchg/status/1683491235611172868
-
-https://twitter.com/jamonholmgren/status/1683593379886809088
-
-https://twitter.com/trashh_dev/status/1683855894885580801
-
-https://twitter.com/swmansion/status/1679500266540769282
-
-https://twitter.com/fireship_dev/status/1682866059098095616
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
-
-🤣 [Les autres tweets marrant cette semaine](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/153/meme.jpg)](https://twitter.com/fireship_dev/status/1682866059098095616)
 
 A plus 👋
