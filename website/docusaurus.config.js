@@ -17,7 +17,6 @@ function remarkPluginImage() {
 
     visit(tree, "image", (node) => {
       if (node.url) {
-        console.log(node.url);
         if (node.url.startsWith("/emails")) {
           node.url = `https://thisweekinreact.com${node.url}`;
         }
@@ -148,6 +147,18 @@ const config = {
           title: "This Week In React - Newsletter",
           description:
             "Weekly issues of the This Week In React curation newsletter",
+          createFeedItems: async (options) => {
+            // Help reduce RSS feed bandwidth consumption
+            // See https://github.com/facebook/docusaurus/pull/8378#issuecomment-1651277331
+            const feedMaxSize = 10;
+            const blogPosts = options.blogPosts.filter(
+              (_, index) => index < feedMaxSize
+            );
+            return options.defaultCreateFeedItems({
+              ...options,
+              blogPosts,
+            });
+          },
         },
       },
     ],
