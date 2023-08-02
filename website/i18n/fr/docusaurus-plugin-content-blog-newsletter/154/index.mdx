@@ -1,6 +1,6 @@
 ---
 slug: /154
-title: "React Hebdo #154: ..."
+title: "React Hebdo #154: Server Components, Remix, Next.js, Redwood, Million, Lucia, ElementRef, Partially Controlled, SVG Sprites, Storybook, Hermes, require.context..."
 authors: [slorber]
 date: 08-01-2023
 unlisted: true
@@ -8,13 +8,9 @@ unlisted: true
 
 Salut à tous !
 
-Direct links
+Cette semaine encore, on a de très beaux articles React, et en particulier sur les Server Components!
 
-Recrutement
-
-https://twitter.com/sebastienlorber/status/1686059338647957509
-
-<Todo />
+La semaine dernière, j'ai demandé si vous préfériez des liens directs ou vers Twitter. Vous avez répondu à l'unanimité: **des liens directs**. En plus de cela, l'expérience Twitter/X a été dégradée pour les utilisateurs anonymes qui ne peuvent plus voir les discussions. Je vais donc m'efforcer d'éviter les liens Twitter, sauf exceptions pour lesquelles j'utiliserai l'émoji 🐦.
 
 <!-- truncate -->
 
@@ -40,28 +36,46 @@ Managing or migrating large apps and codebases? This video course covers what yo
 
 ## ⚛️ React {#react}
 
-- [Partially Controlled Components: A Declarative Design Pattern in React](https://www.jameskerr.blog/posts/partially-controlled-react-components/)
-- [Use svg sprite icons in React](https://www.jacobparis.com/content/svg-icons)
-- [Framer Motion 10.5 - inView API](https://www.framer.com/motion/in-view/) https://twitter.com/mattgperry/status/1684886818314207232
-- [Zustand 4.4](https://github.com/pmndrs/zustand/releases/tag/v4.4.0) https://twitter.com/dai_shi/status/1686199395682021376
-- [Million.js Automatic Mode](https://twitter.com/aidenybai/status/1685710426040832000)
-- RSC parser progress? https://twitter.com/alvarlagerlof/status/1685800749270171648
-- [Understanding React Server Components](https://vercel.com/blog/understanding-react-server-components)
-- [Everything I wish I knew before moving 50,000 lines of code to React Server Components](https://www.mux.com/blog/what-are-react-server-components)
-- [Speeding up the dbt™ docs by 20x with React Server Components](https://dagster.io/blog/dbt-docs-on-react)
-- [Redwood v6](https://github.com/redwoodjs/redwood/releases/tag/v6.0.0) + https://twitter.com/RedwoodJS/status/1686111428384571392
-- [Introducing NextUI Version 2.0](https://nextui.org/blog/nextui-v2) + https://twitter.com/getnextui/status/1686351329055121409)
-- [Remix Error Handling Essentials](https://otiv.dev/blog/essential-remix-error-handling)
-- [Lucia 2.0](https://lucia-auth.com/blog/lucia-2) https://twitter.com/FredKSchott/status/1684243180089380872 https://twitter.com/pilcrowonpaper/status/1684161918830006272
-- [Auto-Form - Automatically creates a @shadcn/ui form based on a zod schema](https://github.com/vantezzen/auto-form)
-- [Shopify’s platform is the Web platform](https://shopify.engineering/shopifys-platform-is-the-web-platform)
-- [Libraries that support React Server Components](https://github.com/reactwg/server-components/discussions/6) + https://twitter.com/leeerob/status/1683897895785725963
-- [The Mysterious Case of the Untracked Clicks](https://profy.dev/article/react-riddles-tracking)
-- [Strongly Type useRef with ElementRef](https://www.totaltypescript.com/strongly-type-useref-with-elementref) + https://twitter.com/sebastienlorber/status/1686046040804233216
-- [10 Essential React Performance Optimization Techniques for Faster Web Applications](https://techreactlearning.blogspot.com/2023/07/10-essential-react-performance.html)
-- [Ports, Adapters, and UI](https://dev.to/bespoyasov/part-3-ports-adapters-and-ui-311b) ???
-- [This Month in React – July 2023](https://podcasters.spotify.com/pod/show/reactiflux/episodes/This-Month-in-React--July-2023-e27ijk5)
-- [Must Know App Router Secret: Promises For Props](https://www.youtube.com/watch?v=ViVa5JPGrf4)
+[![Understanding React Server Components](/emails/issues/154/understandingrsc.jpg)](https://vercel.com/blog/understanding-react-server-components)
+
+[**Understanding React Server Components**](https://vercel.com/blog/understanding-react-server-components)
+
+Nouvel article proposé par Vercel qui donne une bonne vue d'ensemble des React Server Components, leur implémentation dans Next.js, leur raison d'exister, quand les utiliser et leurs limitations. Couvre aussi différents sujets liés: Server Actions, code-splitting, caching, suspense, selective hydration...
+
+https://twitter.com/sebastienlorber/status/1686385330356912130
+
+---
+
+[![Everything I wish I knew before moving 50,000 lines of code to React Server Components](/emails/issues/154/everythingrsc.jpg)](https://www.mux.com/blog/what-are-react-server-components)
+
+[**Everything I wish I knew before moving 50,000 lines of code to React Server Components**](https://www.mux.com/blog/what-are-react-server-components)
+
+Article très complet sur les RSC. Retour d'expérience qui détaille les sur 3 principaux challenges rencontrés lors de l'adoption chez Mux: pas de CSS-in-JS, pas de Context React, et complexité additionnelle. Propose également des réponses à de nombreuses questions et une stratégie pour adopter les RSCs incrémentalement.
+
+https://twitter.com/sebastienlorber/status/1686695126465204225
+
+---
+
+- 👀 [React Working Group - List of libraries that support React Server Components](https://github.com/reactwg/server-components/discussions/6) https://twitter.com/leeerob/status/1683897895785725963
+- 🐦 [React devs, it's time to start using `Array.prototype.with()`](https://twitter.com/sebastienlorber/status/1686059338647957509)
+- 📜 [Speeding up the dbt™ docs by 20x with React Server Components](https://dagster.io/blog/dbt-docs-on-react): retour d'expérience sur un POC de migration d'une app Angular 1 vers Next.js App Router et React Server Components. Des gains très significatifs reportés en terme de temps de chargement, consommation mémoire, blocage CPU... https://twitter.com/sebastienlorber/status/1686390110886240258
+- 📜 [Shopify’s platform is the Web platform](https://shopify.engineering/shopifys-platform-is-the-web-platform): Shopify recommande maintenant Remix pour créer des "Admin Apps", qui tournent dans une iframe et communiquent avec l'app parente via un "App Bridge" basé sur `postMessage()`. Une architecture frontend/React intéressante à étudier pour ceux qui construisent une plateforme avec besoin de découpler.
+- 📜 [Partially Controlled Components: A Declarative Design Pattern in React](https://www.jameskerr.blog/posts/partially-controlled-react-components/): propose d'introduire un nouveau terme pour décrire les composants capable de proposer un state controlled/uncontrolled à la demande, applicable sur tout le state ou un sous-ensemble. https://twitter.com/sebastienlorber/status/1686726610064384000
+- 📜 [Use svg sprite icons in React](https://www.jacobparis.com/content/svg-icons): explique comment utiliser des sprites SVGs (plus optimisé que des composants React) dans un contexte Remix avec une étape de codegen.
+- 📜 [Strongly Type useRef with ElementRef](https://www.totaltypescript.com/strongly-type-useref-with-elementref): je découvre le type TypeScript `ElementRef` qui permet d'obtenir le type d'une ref React. Fait un peu penser à qui fait penser à `ComponentProps`.
+- 📜 [10 Essential React Performance Optimization Techniques for Faster Web Applications](https://techreactlearning.blogspot.com/2023/07/10-essential-react-performance.html)
+- 📜 [Remix Error Handling Essentials](https://otiv.dev/blog/essential-remix-error-handling)
+- 📦 [Lucia v2.0](https://lucia-auth.com/blog/lucia-2): Lucia est une librairie TypeScript d'authentification qui gagne en popularité dernièrement. https://twitter.com/FredKSchott/status/1684243180089380872 https://twitter.com/pilcrowonpaper/status/1684161918830006272
+- 📦 [Million.js Automatic Mode beta](https://million.dev/docs/automatic): nouvelle feature qui analyse votre code React et l'optimise automatiquement avec Million.js! https://twitter.com/aidenybai/status/1685710426040832000
+- 📦 [Redwood v6](https://github.com/redwoodjs/redwood/releases/tag/v6.0.0): nouvelle version stable avec Vite, Prisma 5, Storybook 7, Suspense Router... Prépare le terrain pour introduire le support streaming et React Server components. https://twitter.com/RedwoodJS/status/1686111428384571392
+- 📦 [NextUI Version 2.0](https://nextui.org/blog/nextui-v2) + https://twitter.com/getnextui/status/1686351329055121409)
+- 📦 [Joi UI beta - design-agnostic lib from the MUI team](https://mui.com/joy-ui/getting-started/)
+- 📦 [Storybook 7.2](https://storybook.js.org/blog/july-2023-update/) https://twitter.com/storybookjs/status/1686402878636756992
+- 📦 [Auto-Form - Automatically creates a @shadcn/ui form based on a zod schema](https://github.com/vantezzen/auto-form)
+- 📦 [Framer Motion 10.5 - inView API](https://www.framer.com/motion/in-view/) https://twitter.com/mattgperry/status/1684886818314207232
+- 📦 [Zustand 4.4](https://github.com/pmndrs/zustand/releases/tag/v4.4.0) https://twitter.com/dai_shi/status/1686199395682021376
+- 🎥 [Must Know App Router Secret: Promises For Props](https://www.youtube.com/watch?v=ViVa5JPGrf4)
+- 🎙️ [This Month in React – July 2023](https://podcasters.spotify.com/pod/show/reactiflux/episodes/This-Month-in-React--July-2023-e27ijk5)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -89,20 +103,34 @@ Use CoderPad to run fast, fair and real coding interviews that candidates and in
 
 ## 📱 React-Native {#react-native}
 
-- [Measure Hermes engine performance in React Native with Flashlight](https://www.bam.tech/article/measure-hermes-engine-performance-in-react-native-with-flashlight) https://twitter.com/almouro/status/1684535434951503875
-- [How to make a bottom sheet with React Native Reanimated](https://www.youtube.com/watch?v=lYYiuXcTnnE) https://twitter.com/swmansion/status/1684569298289967107
-- [Apple Store - 1/5 of top 100 Sports apps use React-Native](https://twitter.com/Baconbrix/status/1684579413688750082)
-- [Apple - List of APIs that require declared reasons now available](https://developer.apple.com/news/?id=z6fu1dcu) https://twitter.com/mdj_dev/status/1684846827659472896
-- [React-Native now has end-2-end tests](https://twitter.com/SzymonRybczak/status/1684870142839160832)
-- [Realtime object detection — fine-tuning and deploying models for processing video streams](https://blog.swmansion.com/realtime-object-detection-fine-tuning-and-deploying-models-for-processing-video-streams-312f068dbf88) https://twitter.com/swmansion/status/1686002975276187648
-- [VisionCamera 3.0.0-rc.4](https://twitter.com/mrousavy/status/1685963919238615047)
-- [Dynamic imports supported in react native](https://dev.to/dannyhw/dynamic-imports-supported-in-react-native-273j)
+[![Measure Hermes engine performance in React Native with Flashlight](/emails/issues/154/hermes.jpg)](https://www.bam.tech/article/measure-hermes-engine-performance-in-react-native-with-flashlight)
+
+[**Measure Hermes engine performance in React Native with Flashlight**](https://www.bam.tech/article/measure-hermes-engine-performance-in-react-native-with-flashlight)
+
+Les développeurs de chez BAM ont voulu mesurer l'impact du runtime Hermes sur le temps de démarrage et la consommation mémoire d'une app React-Native Android à l'aide de leur outil [Flashlight](https://github.com/bamlab/flashlight). Pour ceux qui en doutaient encore, Hermes est clairement plus performant que JSC.
+
+https://twitter.com/almouro/status/1684535434951503875
+
+---
+
+- 🐦 [Apple Store - 1/5 of top 100 Sports apps use React-Native](https://twitter.com/Baconbrix/status/1684579413688750082)
+- 🐦 [React-Native now has end-2-end tests](https://twitter.com/SzymonRybczak/status/1684870142839160832): l'app officielle RNTester est maintenant testée avec Appium et WebDriver.
+- 📜 [Dynamic imports supported in react native](https://dev.to/dannyhw/dynamic-imports-supported-in-react-native-273j): la feature Webpack `require.context` (permet de faire un import dynamique de dossier) a été portée dans Metro pour les besoins d'Expo Router. Cela permet à [Storybook React-Native 6.5.5](https://github.com/storybookjs/react-native/releases/tag/v6.5.5) de pouvoir créer un index de stories sans étape de codegen, et ouvre d'autres possibilités intéressantes. - https://twitter.com/sebastienlorber/status/1686749957204701184
+- 📜 [Apple - List of APIs that require declared reasons now available](https://developer.apple.com/news/?id=z6fu1dcu): les devs React-Native iOS doivent se préparer à de nouvelles contraintes. https://twitter.com/mdj_dev/status/1684846827659472896
+- 📦 [VisionCamera 3.0.0-rc.4](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v3.0.0-rc.4): pas mal d'évolutions significatives sur cette RC qui prépare l'arrivée attendue de la v3. https://twitter.com/mrousavy/status/1685963919238615047
+- 🎥 [How to make a bottom sheet with React Native Reanimated](https://www.youtube.com/watch?v=lYYiuXcTnnE) https://twitter.com/swmansion/status/1684569298289967107
 
 ---
 
 ## 🧑‍💻 Jobs {#jobs}
 
-<Todo />
+🧑‍💼 [**Shotgun - Senior Full Stack Engineer - 60-75k€ + BSPCE**](https://shotgun.teamtailor.com/jobs/1981578-senior-full-stack-engineer)
+
+Shotgun est la billetterie des évènements electro. Nous recherchons des devs expérimentés pour travailler sur une stack moderne: React, React-Native, Typescript, GraphQL, NextJS, PgSQL, Vercel...
+
+🧑‍💼 [**Premier Octet - Développeurs(euses) React - Paris**](https://www.premieroctet.com/jobs)
+
+Nous cherchons des développeurs(euses) JavaScript passionnés. Vous interviendrez en développement sur des projets variés et motivants, à la fois serveur et front (React, Nest, Next), et éventuellement mobile (React Native).
 
 💡 [Comment publier une offre d'emploi ?](https://thisweekinreact.com/fr/sponsor)
 
@@ -112,7 +140,7 @@ Use CoderPad to run fast, fair and real coding interviews that candidates and in
 
 ## 🇫🇷 En français {#fr}
 
-<Todo />
+- 🎥 [Pourquoi il ne faut pas utiliser les enum TypeScript](https://www.youtube.com/watch?v=UwIzZ5Z_V2k)
 
 💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
 
@@ -128,33 +156,18 @@ Use CoderPad to run fast, fair and real coding interviews that candidates and in
 
 ## 🔀 Autre {#other}
 
-- [Woodpile - SWC AST visitor in Javascript](https://github.com/kwonoj/woodpile)
-- [New Observable API proposal](https://twitter.com/domfarolino/status/1684921351004430336)
-- [Help Design the Inaugural State of HTML Survey!](https://lea.verou.me/blog/2023/design-state-of-html/)
-- [Core Web Vitals for Search Engine Optimisation: What Do We Need to Know?](https://csswizardry.com/2023/07/core-web-vitals-for-search-engine-optimisation/)
-- [Is Jamstack Officially Finished?](https://remotesynthesis.com/blog/goodbye-jamstack/)
-- [Adapting typography to user preferences with CSS](https://web.dev/adapting-typography-to-user-preferences-with-css/)
-- [ESLint v8.46.0](https://eslint.org/blog/2023/07/eslint-v8.46.0-released/)
-- [New to the web platform in July](https://web.dev/web-platform-07-2023/)
-- [The virtual keyboard API](https://ishadeed.com/article/virtual-keyboard-api/)
-- [dnt — the easiest way to publish a hybrid npm module for ESM and CommonJS](https://deno.com/blog/publish-esm-cjs-module-dnt)
+- 👀 [New unofficial Observable API proposal](https://twitter.com/domfarolino/status/1684921351004430336)
+- 📊 [Help Design the Inaugural State of HTML Survey!](https://lea.verou.me/blog/2023/design-state-of-html/)
+- 📜 [Core Web Vitals for Search Engine Optimisation](https://csswizardry.com/2023/07/core-web-vitals-for-search-engine-optimisation/)
+- 📜 [Is Jamstack Officially Finished?](https://remotesynthesis.com/blog/goodbye-jamstack/)
+- 📜 [New to the web platform in July](https://web.dev/web-platform-07-2023/)
+- 📜 [dnt — Publish a hybrid npm module for ESM and CommonJS](https://deno.com/blog/publish-esm-cjs-module-dnt)
+- 📦 [Woodpile - SWC AST visitor in Javascript](https://github.com/kwonoj/woodpile)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-https://twitter.com/_jessicasachs/status/1685353609708371968
-
-https://twitter.com/BHolmesDev/status/1684988168431382540
-
-https://twitter.com/trashh_dev/status/1684940967714103296
-
-https://twitter.com/fireship_dev/status/1684324664699674625
-
-https://twitter.com/anuraghazru/status/1684264625494433792
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
-
-🤣 [Les autres tweets marrant cette semaine](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/154/meme.jpg)](https://twitter.com/fireship_dev/status/1684324664699674625)
 
 A plus 👋
