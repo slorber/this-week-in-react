@@ -1,9 +1,8 @@
 ---
 slug: /154
-title: "React Hebdo #154: Server Components, Remix, Next.js, Redwood, Million, Lucia, ElementRef, Partially Controlled, SVG Sprites, Storybook, Hermes, require.context..."
+title: "React Hebdo #154: Server Components, Remix, Next.js, Redwood, Million, Lucia, ElementRef, Partially Controlled, SVG Sprites, NextUI, Storybook, Hermes, require.context..."
 authors: [slorber]
 date: 08-01-2023
-unlisted: true
 ---
 
 Salut à tous !
@@ -42,8 +41,6 @@ Managing or migrating large apps and codebases? This video course covers what yo
 
 Nouvel article proposé par Vercel qui donne une bonne vue d'ensemble des React Server Components, leur implémentation dans Next.js, leur raison d'exister, quand les utiliser et leurs limitations. Couvre aussi différents sujets liés: Server Actions, code-splitting, caching, suspense, selective hydration...
 
-https://twitter.com/sebastienlorber/status/1686385330356912130
-
 ---
 
 [![Everything I wish I knew before moving 50,000 lines of code to React Server Components](/emails/issues/154/everythingrsc.jpg)](https://www.mux.com/blog/what-are-react-server-components)
@@ -52,28 +49,26 @@ https://twitter.com/sebastienlorber/status/1686385330356912130
 
 Article très complet sur les RSC. Retour d'expérience qui détaille les sur 3 principaux challenges rencontrés lors de l'adoption chez Mux: pas de CSS-in-JS, pas de Context React, et complexité additionnelle. Propose également des réponses à de nombreuses questions et une stratégie pour adopter les RSCs incrémentalement.
 
-https://twitter.com/sebastienlorber/status/1686695126465204225
-
 ---
 
-- 👀 [React Working Group - List of libraries that support React Server Components](https://github.com/reactwg/server-components/discussions/6) https://twitter.com/leeerob/status/1683897895785725963
+- 👀 [React Working Group - List of libraries that support React Server Components](https://github.com/reactwg/server-components/discussions/6)
 - 🐦 [React devs, it's time to start using `Array.prototype.with()`](https://twitter.com/sebastienlorber/status/1686059338647957509)
-- 📜 [Speeding up the dbt™ docs by 20x with React Server Components](https://dagster.io/blog/dbt-docs-on-react): retour d'expérience sur un POC de migration d'une app Angular 1 vers Next.js App Router et React Server Components. Des gains très significatifs reportés en terme de temps de chargement, consommation mémoire, blocage CPU... https://twitter.com/sebastienlorber/status/1686390110886240258
+- 📜 [Speeding up the dbt™ docs by 20x with React Server Components](https://dagster.io/blog/dbt-docs-on-react): retour d'expérience sur un POC de migration d'une app Angular 1 vers Next.js App Router et React Server Components. Des gains très significatifs reportés en terme de temps de chargement, consommation mémoire, blocage CPU...
 - 📜 [Shopify’s platform is the Web platform](https://shopify.engineering/shopifys-platform-is-the-web-platform): Shopify recommande maintenant Remix pour créer des "Admin Apps", qui tournent dans une iframe et communiquent avec l'app parente via un "App Bridge" basé sur `postMessage()`. Une architecture frontend/React intéressante à étudier pour ceux qui construisent une plateforme avec besoin de découpler.
-- 📜 [Partially Controlled Components: A Declarative Design Pattern in React](https://www.jameskerr.blog/posts/partially-controlled-react-components/): propose d'introduire un nouveau terme pour décrire les composants capable de proposer un state controlled/uncontrolled à la demande, applicable sur tout le state ou un sous-ensemble. https://twitter.com/sebastienlorber/status/1686726610064384000
+- 📜 [Partially Controlled Components: A Declarative Design Pattern in React](https://www.jameskerr.blog/posts/partially-controlled-react-components/): propose d'introduire un nouveau terme pour décrire les composants capable de proposer un state controlled/uncontrolled à la demande, applicable sur tout le state ou un sous-ensemble.
 - 📜 [Use svg sprite icons in React](https://www.jacobparis.com/content/svg-icons): explique comment utiliser des sprites SVGs (plus optimisé que des composants React) dans un contexte Remix avec une étape de codegen.
 - 📜 [Strongly Type useRef with ElementRef](https://www.totaltypescript.com/strongly-type-useref-with-elementref): je découvre le type TypeScript `ElementRef` qui permet d'obtenir le type d'une ref React. Fait un peu penser à qui fait penser à `ComponentProps`.
 - 📜 [10 Essential React Performance Optimization Techniques for Faster Web Applications](https://techreactlearning.blogspot.com/2023/07/10-essential-react-performance.html)
 - 📜 [Remix Error Handling Essentials](https://otiv.dev/blog/essential-remix-error-handling)
-- 📦 [Lucia v2.0](https://lucia-auth.com/blog/lucia-2): Lucia est une librairie TypeScript d'authentification qui gagne en popularité dernièrement. Propose des integrations Next.js et Remix. https://twitter.com/FredKSchott/status/1684243180089380872 https://twitter.com/pilcrowonpaper/status/1684161918830006272
-- 📦 [Million.js Automatic Mode beta](https://million.dev/docs/automatic): nouvelle feature qui analyse votre code React et l'optimise automatiquement avec Million.js! https://twitter.com/aidenybai/status/1685710426040832000
-- 📦 [Redwood v6](https://github.com/redwoodjs/redwood/releases/tag/v6.0.0): nouvelle version stable avec Vite, Prisma 5, Storybook 7, Suspense Router... Prépare le terrain pour introduire le support streaming et React Server components. https://twitter.com/RedwoodJS/status/1686111428384571392
-- 📦 [NextUI Version 2.0](https://nextui.org/blog/nextui-v2) + https://twitter.com/getnextui/status/1686351329055121409)
+- 📦 [Lucia v2.0](https://lucia-auth.com/blog/lucia-2): Lucia est une librairie TypeScript d'authentification qui gagne en popularité dernièrement. Propose des integrations Next.js et Remix.
+- 📦 [Million.js Automatic Mode beta](https://million.dev/docs/automatic): nouvelle feature qui analyse votre code React et l'optimise automatiquement avec Million.js!
+- 📦 [Redwood v6](https://github.com/redwoodjs/redwood/releases/tag/v6.0.0): nouvelle version stable avec Vite, Prisma 5, Storybook 7, Suspense Router... Prépare le terrain pour introduire le support streaming et React Server components.
+- 📦 [NextUI Version 2.0](https://nextui.org/blog/nextui-v2)
 - 📦 [Joi UI beta - design-agnostic lib from the MUI team](https://mui.com/joy-ui/getting-started/)
-- 📦 [Storybook 7.2](https://storybook.js.org/blog/july-2023-update/) https://twitter.com/storybookjs/status/1686402878636756992
+- 📦 [Storybook 7.2](https://storybook.js.org/blog/july-2023-update/)
 - 📦 [Auto-Form - Automatically creates a @shadcn/ui form based on a zod schema](https://github.com/vantezzen/auto-form)
-- 📦 [Framer Motion 10.5 - inView API](https://www.framer.com/motion/in-view/) https://twitter.com/mattgperry/status/1684886818314207232
-- 📦 [Zustand 4.4](https://github.com/pmndrs/zustand/releases/tag/v4.4.0) https://twitter.com/dai_shi/status/1686199395682021376
+- 📦 [Framer Motion 10.5 - inView API](https://www.framer.com/motion/in-view/)
+- 📦 [Zustand 4.4](https://github.com/pmndrs/zustand/releases/tag/v4.4.0)
 - 🎥 [Must Know App Router Secret: Promises For Props](https://www.youtube.com/watch?v=ViVa5JPGrf4)
 - 🎙️ [This Month in React – July 2023](https://podcasters.spotify.com/pod/show/reactiflux/episodes/This-Month-in-React--July-2023-e27ijk5)
 
@@ -112,10 +107,10 @@ https://twitter.com/almouro/status/1684535434951503875
 
 - 🐦 [Apple Store - 1/5 of top 100 Sports apps use React-Native](https://twitter.com/Baconbrix/status/1684579413688750082)
 - 🐦 [React-Native now has end-2-end tests](https://twitter.com/SzymonRybczak/status/1684870142839160832): l'app officielle RNTester est maintenant testée avec Appium et WebDriver.
-- 📜 [Dynamic imports supported in react native](https://dev.to/dannyhw/dynamic-imports-supported-in-react-native-273j): la feature Webpack `require.context` (permet de faire un import dynamique de dossier) a été portée dans Metro pour les besoins d'Expo Router. Cela permet à [Storybook React-Native 6.5.5](https://github.com/storybookjs/react-native/releases/tag/v6.5.5) de pouvoir créer un index de stories sans étape de codegen (en preview), et ouvre d'autres possibilités intéressantes. - https://twitter.com/sebastienlorber/status/1686749957204701184
-- 📜 [Apple - List of APIs that require declared reasons now available](https://developer.apple.com/news/?id=z6fu1dcu): les devs React-Native iOS doivent se préparer à de nouvelles contraintes. https://twitter.com/mdj_dev/status/1684846827659472896
-- 📦 [VisionCamera 3.0.0-rc.4](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v3.0.0-rc.4): pas mal d'évolutions significatives sur cette RC qui prépare l'arrivée attendue de la v3. https://twitter.com/mrousavy/status/1685963919238615047
-- 🎥 [How to make a bottom sheet with React Native Reanimated](https://www.youtube.com/watch?v=lYYiuXcTnnE) https://twitter.com/swmansion/status/1684569298289967107
+- 📜 [Dynamic imports supported in react native](https://dev.to/dannyhw/dynamic-imports-supported-in-react-native-273j): la feature Webpack `require.context` (permet de faire un import dynamique de dossier) a été portée dans Metro pour les besoins d'Expo Router. Cela permet à [Storybook React-Native 6.5.5](https://github.com/storybookjs/react-native/releases/tag/v6.5.5) de pouvoir créer un index de stories sans étape de codegen (en preview), et ouvre d'autres possibilités intéressantes.
+- 📜 [Apple - List of APIs that require declared reasons now available](https://developer.apple.com/news/?id=z6fu1dcu): les devs React-Native iOS doivent se préparer à de nouvelles contraintes.
+- 📦 [VisionCamera 3.0.0-rc.4](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v3.0.0-rc.4): pas mal d'évolutions significatives sur cette RC qui prépare l'arrivée attendue de la v3.
+- 🎥 [How to make a bottom sheet with React Native Reanimated](https://www.youtube.com/watch?v=lYYiuXcTnnE)
 
 ---
 
