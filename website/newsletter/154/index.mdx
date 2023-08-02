@@ -1,6 +1,6 @@
 ---
 slug: /154
-title: "This Week In React #154: ..."
+title: "This Week In React #154: Server Components, Remix, Next.js, Redwood, Million, Lucia, ElementRef, Partially Controlled, SVG Sprites, Storybook, Hermes, require.context..."
 authors: [slorber]
 date: 08-01-2023
 image: /img/TWIR_POST.png
@@ -9,7 +9,9 @@ unlisted: true
 
 Hi everyone!
 
-<Todo />
+Cette semaine encore, on a de très beaux articles React, et en particulier sur les Server Components!
+
+La semaine dernière, j'ai demandé si vous préfériez des liens directs ou vers Twitter. Vous avez répondu à l'unanimité: **des liens directs**. En plus de cela, l'expérience Twitter/X a été dégradée pour les utilisateurs anonymes qui ne peuvent plus voir les discussions. Je vais donc m'efforcer d'éviter les liens Twitter, sauf exceptions pour lesquelles j'utiliserai l'émoji 🐦.
 
 <!-- truncate -->
 
@@ -35,7 +37,42 @@ Managing or migrating large apps and codebases? This video course covers what yo
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Understanding React Server Components](/emails/issues/154/understandingrsc.jpg)](https://vercel.com/blog/understanding-react-server-components)
+
+[**Understanding React Server Components**](https://vercel.com/blog/understanding-react-server-components)
+
+Nouvel article proposé par Vercel qui donne une bonne vue d'ensemble des React Server Components, leur implémentation dans Next.js, leur raison d'exister, quand les utiliser et leurs limitations. Couvre aussi différents sujets liés: Server Actions, code-splitting, caching, suspense, selective hydration...
+
+---
+
+[![Everything I wish I knew before moving 50,000 lines of code to React Server Components](/emails/issues/154/everythingrsc.jpg)](https://www.mux.com/blog/what-are-react-server-components)
+
+[**Everything I wish I knew before moving 50,000 lines of code to React Server Components**](https://www.mux.com/blog/what-are-react-server-components)
+
+Article très complet sur les RSC. Retour d'expérience qui détaille les sur 3 principaux challenges rencontrés lors de l'adoption chez Mux: pas de CSS-in-JS, pas de Context React, et complexité additionnelle. Propose également des réponses à de nombreuses questions et une stratégie pour adopter les RSCs incrémentalement.
+
+---
+
+- 👀 [React Working Group - List of libraries that support React Server Components](https://github.com/reactwg/server-components/discussions/6)
+- 🐦 [React devs, it's time to start using `Array.prototype.with()`](https://twitter.com/sebastienlorber/status/1686059338647957509)
+- 📜 [Speeding up the dbt™ docs by 20x with React Server Components](https://dagster.io/blog/dbt-docs-on-react): retour d'expérience sur un POC de migration d'une app Angular 1 vers Next.js App Router et React Server Components. Des gains très significatifs reportés en terme de temps de chargement, consommation mémoire, blocage CPU...
+- 📜 [Shopify’s platform is the Web platform](https://shopify.engineering/shopifys-platform-is-the-web-platform): Shopify recommande maintenant Remix pour créer des "Admin Apps", qui tournent dans une iframe et communiquent avec l'app parente via un "App Bridge" basé sur `postMessage()`. Une architecture frontend/React intéressante à étudier pour ceux qui construisent une plateforme avec besoin de découpler.
+- 📜 [Partially Controlled Components: A Declarative Design Pattern in React](https://www.jameskerr.blog/posts/partially-controlled-react-components/): propose d'introduire un nouveau terme pour décrire les composants capable de proposer un state controlled/uncontrolled à la demande, applicable sur tout le state ou un sous-ensemble.
+- 📜 [Use svg sprite icons in React](https://www.jacobparis.com/content/svg-icons): explique comment utiliser des sprites SVGs (plus optimisé que des composants React) dans un contexte Remix avec une étape de codegen.
+- 📜 [Strongly Type useRef with ElementRef](https://www.totaltypescript.com/strongly-type-useref-with-elementref): je découvre le type TypeScript `ElementRef` qui permet d'obtenir le type d'une ref React. Fait un peu penser à qui fait penser à `ComponentProps`.
+- 📜 [10 Essential React Performance Optimization Techniques for Faster Web Applications](https://techreactlearning.blogspot.com/2023/07/10-essential-react-performance.html)
+- 📜 [Remix Error Handling Essentials](https://otiv.dev/blog/essential-remix-error-handling)
+- 📦 [Lucia v2.0](https://lucia-auth.com/blog/lucia-2): Lucia est une librairie TypeScript d'authentification qui gagne en popularité dernièrement.
+- 📦 [Million.js Automatic Mode beta](https://million.dev/docs/automatic): nouvelle feature qui analyse votre code React et l'optimise automatiquement avec Million.js!
+- 📦 [Redwood v6](https://github.com/redwoodjs/redwood/releases/tag/v6.0.0): nouvelle version stable avec Vite, Prisma 5, Storybook 7, Suspense Router... Prépare le terrain pour introduire le support streaming et React Server components.
+- 📦 [NextUI Version 2.0](https://nextui.org/blog/nextui-v2)
+- 📦 [Joi UI beta - design-agnostic lib from the MUI team](https://mui.com/joy-ui/getting-started/)
+- 📦 [Storybook 7.2](https://storybook.js.org/blog/july-2023-update/)
+- 📦 [Auto-Form - Automatically creates a @shadcn/ui form based on a zod schema](https://github.com/vantezzen/auto-form)
+- 📦 [Framer Motion 10.5 - inView API](https://www.framer.com/motion/in-view/)
+- 📦 [Zustand 4.4](https://github.com/pmndrs/zustand/releases/tag/v4.4.0)
+- 🎥 [Must Know App Router Secret: Promises For Props](https://www.youtube.com/watch?v=ViVa5JPGrf4)
+- 🎙️ [This Month in React – July 2023](https://podcasters.spotify.com/pod/show/reactiflux/episodes/This-Month-in-React--July-2023-e27ijk5)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -49,13 +86,10 @@ Managing or migrating large apps and codebases? This video course covers what yo
 
 Hiring front-end developers is hard. 😩 But 4,000+ engineering teams — including at Netflix, Spotify and LinkedIn — have found a better way! 🤠 Skip the algorithm interviews and **run front-end interviews in a fully customizable and collaborative IDE** - where you can:
 
-* drag and drop a React (and Angular or Vue) repo
-
-* add packages with npm install
-
-* let candidates use ChatGPT live in the interview
-
-* watch & share code playback after the interview
+- drag and drop a React (and Angular or Vue) repo
+- add packages with npm install
+- let candidates use ChatGPT live in the interview
+- watch & share code playback after the interview
 
 Use CoderPad to run fast, fair and real coding interviews that candidates and interviewers trust. [Sign up for free today & hire with confidence](https://coderpad.io/?utm_medium=3pmedia&utm_source=ThisWeekInReact&utm_campaign=23-Q3-3PMedia-ThisWeekInReact-ACQ-All-Global-Newsletter).
 
@@ -63,13 +97,36 @@ Use CoderPad to run fast, fair and real coding interviews that candidates and in
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Measure Hermes engine performance in React Native with Flashlight](/emails/issues/154/hermes.jpg)](https://www.bam.tech/article/measure-hermes-engine-performance-in-react-native-with-flashlight)
+
+[**Measure Hermes engine performance in React Native with Flashlight**](https://www.bam.tech/article/measure-hermes-engine-performance-in-react-native-with-flashlight)
+
+Les développeurs de chez BAM ont voulu mesurer l'impact du runtime Hermes sur le temps de démarrage et la consommation mémoire d'une app React-Native Android à l'aide de leur outil [Flashlight](https://github.com/bamlab/flashlight). Pour ceux qui en doutaient encore, Hermes est clairement plus performant que JSC.
+
+https://twitter.com/almouro/status/1684535434951503875
 
 ---
 
+- 🐦 [Apple Store - 1/5 of top 100 Sports apps use React-Native](https://twitter.com/Baconbrix/status/1684579413688750082)
+- 🐦 [React-Native now has end-2-end tests](https://twitter.com/SzymonRybczak/status/1684870142839160832): l'app officielle RNTester est maintenant testée avec Appium et WebDriver.
+- 📜 [Dynamic imports supported in react native](https://dev.to/dannyhw/dynamic-imports-supported-in-react-native-273j): la feature Webpack `require.context` (permet de faire un import dynamique de dossier) a été portée dans Metro pour les besoins d'Expo Router. Cela permet à [Storybook React-Native 6.5.5](https://github.com/storybookjs/react-native/releases/tag/v6.5.5) de pouvoir créer un index de stories sans étape de codegen (in preview), et ouvre d'autres possibilités intéressantes.
+- 📜 [Apple - List of APIs that require declared reasons now available](https://developer.apple.com/news/?id=z6fu1dcu): les devs React-Native iOS doivent se préparer à de nouvelles contraintes.
+- 📦 [VisionCamera 3.0.0-rc.4](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v3.0.0-rc.4): pas mal d'évolutions significatives sur cette RC qui prépare l'arrivée attendue de la v3.
+- 🎥 [How to make a bottom sheet with React Native Reanimated](https://www.youtube.com/watch?v=lYYiuXcTnnE)
+
 ## 🧑‍💻 Jobs {#jobs}
 
-<Todo />
+🧑‍💼 [**Passionfroot - Senior Full-stack Engineer (Remix) - €160k+, Berlin/remote**](https://passionfroot.recruitee.com/o/senior-fullstack-engineer)
+
+Passionfroot's mission is to empower the independent businesses of tomorrow via YouTube, Podcasts, Social Media, and Newsletters. Join us in building a tool that will empower creators globally to build scalable, sustainable businesses.
+
+🧑‍💼 [**Callstack - Senior React Native Developer - Fully Remote, PLN 21-32k net on B2B, monthly**](https://www.callstack.com/senior-react-native-developer)
+
+Do you want to work on the world's most used apps? Would you like to co-create the React Native technology? Join the Callstack team of React & React Native leaders. Check our website for more details. We are looking forward to seeing your application - show us what you've got!
+
+🧑‍💼 [**G2i - 100% Remote React Native Jobs**](https://twitter.com/gabe_g2i/status/1563204813881425926?s=20&t=ArRLC77BpRwXXCdx8fnUqw)
+
+We have several roles open for developers focused on React Native! Pay is ~160k plus 10% bonus. You must have production experience with RN and be based in the US. DM [@gabe_g2i](https://twitter.com/gabe_g2i) to learn more and don't forget to mention This Week in React.
 
 💡 [How to publish an offer?](https://thisweekinreact.com/sponsor)
 
@@ -77,16 +134,18 @@ Use CoderPad to run fast, fair and real coding interviews that candidates and in
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [New unofficial Observable API proposal](https://github.com/domfarolino/observable)
+- 📊 [Help Design the Inaugural State of HTML Survey!](https://lea.verou.me/blog/2023/design-state-of-html/)
+- 📜 [Core Web Vitals for Search Engine Optimisation](https://csswizardry.com/2023/07/core-web-vitals-for-search-engine-optimisation/)
+- 📜 [Is Jamstack Officially Finished?](https://remotesynthesis.com/blog/goodbye-jamstack/)
+- 📜 [New to the web platform in July](https://web.dev/web-platform-07-2023/)
+- 📜 [dnt — Publish a hybrid npm module for ESM and CommonJS](https://deno.com/blog/publish-esm-cjs-module-dnt)
+- 📦 [Woodpile - SWC AST visitor in Javascript](https://github.com/kwonoj/woodpile)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
-
-🤣 [Other funny tweets this week](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/154/meme.jpg)](https://twitter.com/fireship_dev/status/1684324664699674625)
 
 See ya! 👋
