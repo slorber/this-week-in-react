@@ -9,9 +9,9 @@ unlisted: true
 
 Hi everyone!
 
-Cette semaine encore, on a de très beaux articles React, et en particulier sur les Server Components!
+Once again this week, we've got some great React articles, especially on Server Components!
 
-La semaine dernière, j'ai demandé si vous préfériez des liens directs ou vers Twitter. Vous avez répondu à l'unanimité: **des liens directs**. En plus de cela, l'expérience Twitter/X a été dégradée pour les utilisateurs anonymes qui ne peuvent plus voir les discussions. Je vais donc m'efforcer d'éviter les liens Twitter, sauf exceptions pour lesquelles j'utiliserai l'émoji 🐦.
+Last week, I asked whether you preferred direct links or links to Twitter. Your answer was unanimous: **direct links**. On top of that, the Twitter/X experience has been degraded for anonymous users who can no longer see the discussions. So I'll try to avoid Twitter links, with a few exceptions for which I'll use the 🐦 emoji.
 
 <!-- truncate -->
 
@@ -41,7 +41,7 @@ Managing or migrating large apps and codebases? This video course covers what yo
 
 [**Understanding React Server Components**](https://vercel.com/blog/understanding-react-server-components)
 
-Nouvel article proposé par Vercel qui donne une bonne vue d'ensemble des React Server Components, leur implémentation dans Next.js, leur raison d'exister, quand les utiliser et leurs limitations. Couvre aussi différents sujets liés: Server Actions, code-splitting, caching, suspense, selective hydration...
+New Vercel article that gives a good overview of React Server Components, their implementation in Next.js, why they exist, when to use them and their limitations. Also covers various related topics: Server Actions, code-splitting, caching, suspense, selective hydration...
 
 ---
 
@@ -49,22 +49,22 @@ Nouvel article proposé par Vercel qui donne une bonne vue d'ensemble des React 
 
 [**Everything I wish I knew before moving 50,000 lines of code to React Server Components**](https://www.mux.com/blog/what-are-react-server-components)
 
-Article très complet sur les RSC. Retour d'expérience qui détaille les sur 3 principaux challenges rencontrés lors de l'adoption chez Mux: pas de CSS-in-JS, pas de Context React, et complexité additionnelle. Propose également des réponses à de nombreuses questions et une stratégie pour adopter les RSCs incrémentalement.
+Awesome article on RSCs! Feedback that details the 3 main challenges encountered during the adoption at Mux: no CSS-in-JS, no Context React, and additional complexity. Also provides answers to many questions and a strategy for adopting RSCs incrementally.
 
 ---
 
 - 👀 [React Working Group - List of libraries that support React Server Components](https://github.com/reactwg/server-components/discussions/6)
 - 🐦 [React devs, it's time to start using `Array.prototype.with()`](https://twitter.com/sebastienlorber/status/1686059338647957509)
-- 📜 [Speeding up the dbt™ docs by 20x with React Server Components](https://dagster.io/blog/dbt-docs-on-react): retour d'expérience sur un POC de migration d'une app Angular 1 vers Next.js App Router et React Server Components. Des gains très significatifs reportés en terme de temps de chargement, consommation mémoire, blocage CPU...
-- 📜 [Shopify’s platform is the Web platform](https://shopify.engineering/shopifys-platform-is-the-web-platform): Shopify recommande maintenant Remix pour créer des "Admin Apps", qui tournent dans une iframe et communiquent avec l'app parente via un "App Bridge" basé sur `postMessage()`. Une architecture frontend/React intéressante à étudier pour ceux qui construisent une plateforme avec besoin de découpler.
-- 📜 [Partially Controlled Components: A Declarative Design Pattern in React](https://www.jameskerr.blog/posts/partially-controlled-react-components/): propose d'introduire un nouveau terme pour décrire les composants capable de proposer un state controlled/uncontrolled à la demande, applicable sur tout le state ou un sous-ensemble.
-- 📜 [Use svg sprite icons in React](https://www.jacobparis.com/content/svg-icons): explique comment utiliser des sprites SVGs (plus optimisé que des composants React) dans un contexte Remix avec une étape de codegen.
-- 📜 [Strongly Type useRef with ElementRef](https://www.totaltypescript.com/strongly-type-useref-with-elementref): je découvre le type TypeScript `ElementRef` qui permet d'obtenir le type d'une ref React. Fait un peu penser à qui fait penser à `ComponentProps`.
+- 📜 [Speeding up the dbt™ docs by 20x with React Server Components](https://dagster.io/blog/dbt-docs-on-react): feedback on a POC migration of an Angular 1 app to Next.js App Router and React Server Components. Very significant gains reported in terms of loading time, memory consumption, CPU blocking.
+- 📜 [Shopify’s platform is the Web platform](https://shopify.engineering/shopifys-platform-is-the-web-platform): Shopify now recommends Remix for creating "Admin Apps", which run in an iframe and communicate with the parent app via an "App Bridge" based on `postMessage()`. An interesting frontend/React architecture for those building a platform that need decoupling.
+- 📜 [Partially Controlled Components: A Declarative Design Pattern in React](https://www.jameskerr.blog/posts/partially-controlled-react-components/): introduces a new term/concept to describe components capable of offering both controlled/uncontrolled state on demand, with granularity applicable to the whole state, or a slice of it.
+- 📜 [Use svg sprite icons in React](https://www.jacobparis.com/content/svg-icons): explains how to use SVG sprites (more optimised than React SVG components) in a Remix context with a codegen step.
+- 📜 [Strongly Type useRef with ElementRef](https://www.totaltypescript.com/strongly-type-useref-with-elementref): TIL about the `ElementRef` TypeScript type, which is used to obtain the type of a React ref from any component, quite similarly to how `ComponentProps` works.
 - 📜 [10 Essential React Performance Optimization Techniques for Faster Web Applications](https://techreactlearning.blogspot.com/2023/07/10-essential-react-performance.html)
 - 📜 [Remix Error Handling Essentials](https://otiv.dev/blog/essential-remix-error-handling)
-- 📦 [Lucia v2.0](https://lucia-auth.com/blog/lucia-2): Lucia est une librairie TypeScript d'authentification qui gagne en popularité dernièrement.
-- 📦 [Million.js Automatic Mode beta](https://million.dev/docs/automatic): nouvelle feature qui analyse votre code React et l'optimise automatiquement avec Million.js!
-- 📦 [Redwood v6](https://github.com/redwoodjs/redwood/releases/tag/v6.0.0): nouvelle version stable avec Vite, Prisma 5, Storybook 7, Suspense Router... Prépare le terrain pour introduire le support streaming et React Server components.
+- 📦 [Lucia v2.0](https://lucia-auth.com/blog/lucia-2): Lucia is a TypeScript authentication library gaining momentum recently. Including Next.js and Remix integrations.
+- 📦 [Million.js Automatic Mode beta](https://million.dev/docs/automatic): now analyses your React code and automatically optimises it with Million.js!
+- 📦 [Redwood v6](https://github.com/redwoodjs/redwood/releases/tag/v6.0.0): new stable release with Vite, Prisma 5, Storybook 7, Suspense Router... Prepares the ground for the introduction of streaming support and React Server components.
 - 📦 [NextUI Version 2.0](https://nextui.org/blog/nextui-v2)
 - 📦 [Joi UI beta - design-agnostic lib from the MUI team](https://mui.com/joy-ui/getting-started/)
 - 📦 [Storybook 7.2](https://storybook.js.org/blog/july-2023-update/)
@@ -101,17 +101,15 @@ Use CoderPad to run fast, fair and real coding interviews that candidates and in
 
 [**Measure Hermes engine performance in React Native with Flashlight**](https://www.bam.tech/article/measure-hermes-engine-performance-in-react-native-with-flashlight)
 
-Les développeurs de chez BAM ont voulu mesurer l'impact du runtime Hermes sur le temps de démarrage et la consommation mémoire d'une app React-Native Android à l'aide de leur outil [Flashlight](https://github.com/bamlab/flashlight). Pour ceux qui en doutaient encore, Hermes est clairement plus performant que JSC.
-
-https://twitter.com/almouro/status/1684535434951503875
+The developers at BAM benchmarked the impact of the Hermes runtime on the app start-up time and memory consumption of a React-Native Android app using their [Flashlight](https://github.com/bamlab/flashlight) performance tool. For those who were still in doubt, Hermes clearly outperforms JSC.
 
 ---
 
 - 🐦 [Apple Store - 1/5 of top 100 Sports apps use React-Native](https://twitter.com/Baconbrix/status/1684579413688750082)
-- 🐦 [React-Native now has end-2-end tests](https://twitter.com/SzymonRybczak/status/1684870142839160832): l'app officielle RNTester est maintenant testée avec Appium et WebDriver.
-- 📜 [Dynamic imports supported in react native](https://dev.to/dannyhw/dynamic-imports-supported-in-react-native-273j): la feature Webpack `require.context` (permet de faire un import dynamique de dossier) a été portée dans Metro pour les besoins d'Expo Router. Cela permet à [Storybook React-Native 6.5.5](https://github.com/storybookjs/react-native/releases/tag/v6.5.5) de pouvoir créer un index de stories sans étape de codegen (in preview), et ouvre d'autres possibilités intéressantes.
-- 📜 [Apple - List of APIs that require declared reasons now available](https://developer.apple.com/news/?id=z6fu1dcu): les devs React-Native iOS doivent se préparer à de nouvelles contraintes.
-- 📦 [VisionCamera 3.0.0-rc.4](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v3.0.0-rc.4): pas mal d'évolutions significatives sur cette RC qui prépare l'arrivée attendue de la v3.
+- 🐦 [React-Native now has end-2-end tests](https://twitter.com/SzymonRybczak/status/1684870142839160832): great news for React-Native release process and QA, the official RNTester app is now tested with Appium and WebDriver.
+- 📜 [Dynamic imports supported in react native](https://dev.to/dannyhw/dynamic-imports-supported-in-react-native-273j): the Webpack feature `require.context` (used to import a folder of modules dynamically) has been ported to Metro for the needs of Expo Router. This allows [Storybook React-Native 6.5.5](https://github.com/storybookjs/react-native/releases/tag/v6.5.5) to create an index of stories without a codegen step (in preview), and opens up other interesting possibilities.
+- 📜 [Apple - List of APIs that require declared reasons now available](https://developer.apple.com/news/?id=z6fu1dcu): React-Native iOS developers need to prepare for new constraints.
+- 📦 [VisionCamera 3.0.0-rc.4](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v3.0.0-rc.4): a number of significant changes in this RC, in preparation for the expected arrival of v3.
 - 🎥 [How to make a bottom sheet with React Native Reanimated](https://www.youtube.com/watch?v=lYYiuXcTnnE)
 
 ## 🧑‍💻 Jobs {#jobs}
