@@ -1,6 +1,6 @@
 ---
 slug: /155
-title: "React Hebdo #155: ..."
+title: "React Hebdo #155: RSC DevTools, Next.js Caching, Radix Themes, Expo Party, Graph Gallery, Astro, Apollo, Storybook, Remix, Reanimated, Apple Settings, Stable Diffusion..."
 authors: [slorber]
 date: 08-08-2023
 unlisted: true
@@ -8,7 +8,13 @@ unlisted: true
 
 Salut à tous !
 
-<Todo />
+Cette semaine s'annonçait plutôt calme, mais finalement j'ai trouvé plein de trucs intéressants, aussi bien coté React que React-Native!
+
+La newsletter vient de [franchir les 25000 abonnés](https://twitter.com/sebastienlorber/status/1689285394855022592)! Merci à toi de me lire chaque semaine et de m'avoir permis de continuer cette aventure.
+
+À partir de Septembre, je ne serai plus seul: j'ai trouvé un alternant pour m'accompagner sur Docusaurus et la newsletter. J'ai malheureusement du dire non à plusieurs candidats aux profils intéressants. Si vous êtes en recherche d'un alternant, contactez-moi, je peux vous recommender quelques personnes.
+
+Cette semaine, je vous propose de découvrir la newsleter [Quoi de neuf les devs?](https://happytodev.substack.com/), une des rares newsletters pour développeur en français. Vous y trouverez une actualité dev variée (dont pas mal de PHP), et une interview de dev chaque semaine.
 
 <!-- truncate -->
 
@@ -43,7 +49,64 @@ Get started with Clerk’s [quickstarts and tutorials](https://clerk.com/docs/qu
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Devtools for React Server Components](/emails/issues/155/rscdevtools.jpg)](https://www.alvar.dev/blog/creating-devtools-for-react-server-components)
+
+[**Devtools for React Server Components**](https://www.alvar.dev/blog/creating-devtools-for-react-server-components)
+
+Suite à la sortie des React Server Components, Alvar constate que la communication réseau entre client/server utilise un format qui est difficile à déchiffrer. Il commence donc à travailler sur un site web [RSC Parser](https://rsc-parser.vercel.app/) qui permet de visualiser les payloads. Cela fonctionne, mais l'UX n'est pas idéale. Depuis, il travaille sur une véritable browser extension qui fonctionne un peu comme les DevTools network de Chrome, avec une timeline qui permet de voir les payloads dans le temps et supporte même le streaming avec Suspense. Cet outil lui a déjà permis de détecter des payloads trop larges sur son site et de les optimiser.
+
+C'est un outil prometteur, toujours en cours de développement et à surveiller. L'extension n'est pas encore disponible dans les stores des navigateurs, mais le sera prochainement. Quelques demos video dans ce [thread Twitter](https://twitter.com/sebastienlorber/status/1689203357368365056).
+
+---
+
+[![Caching in Next.js](/emails/issues/155/cachinginnextjs.jpg)](https://nextjs.org/docs/app/building-your-application/caching)
+
+[**Caching in Next.js**](https://nextjs.org/docs/app/building-your-application/caching)
+
+Une nouvelle page de documentation Next.js explique de manière très exhaustive le fonctionnement des 4 niveaux de caching mis en place, leur raison d'être et les moyens de les bypasser:
+
+- Request Memoization
+- Data Cache
+- Full Route Cache
+- Router Cache
+
+Il n'est pas possible de bypasser le Router cache: un problème dénoncé dans [cette video](https://www.youtube.com/watch?v=_yhSh4g0NSk).
+
+https://twitter.com/delba_oliveira/status/1687131292520071169
+
+https://twitter.com/jherr/status/1687496301670436864
+
+---
+
+[![Radix UI Themes](/emails/issues/155/radix.jpg)](https://www.radix-ui.com/)
+
+[**Radix UI Themes**](https://www.radix-ui.com/)
+
+Radix UI est une librairie React headless qui reçoit beaucoup d'éloge dernièrement, notamment par le design élégant de son API. Ils viennent d'annoncer avec un beau trailer (sur [twitter](https://twitter.com/radix_ui/status/1688889619314585600)) que Radix propose maintenant un ensemble de composants stylés en plus de leurs composants primitifs.
+
+---
+
+- 💬 [What happened to Meta's stylex?](https://www.reddit.com/r/reactjs/comments/13akbvu/what_happened_to_metas_stylex/): la sortie de la lib CSS-in-JS à été retardée pour diverses raison mais devrait finir par sortir prochainement.
+- 📜 [The React Graph Gallery](https://datavizuniverse.substack.com/p/the-react-graph-gallery): Yan nous incite à ne pas utiliser une lib npm de charting, mais plutôt de s'inspirer des nombreux exemples React + D3 disponibles sur son site. Dans la tendance actuelle des Recipe Kits: Shadcn UI, Tailwind Catalyst...
+- 📜 [Migrating my blog from Gatsby to Astro](https://sapegin.me/blog/gatsby-to-astro/): migration vers Astro et Vanilla-Extract, mais pas très satisfait de ce dernier.
+- 📜 [Sending UI over APIs](https://www.builder.io/blog/ui-over-apis): présentation du concept de Server-Driven UI, avec quelques exemples React. Pour moi, les RSCs rentrent dans cette catégorie.
+- 📜 [My Experience Modernizing Packages to ESM](https://blog.isquaredsoftware.com/2023/08/esm-modernization-lessons/): Mark Erikson partage en détail la complexité d'apporter un support ESM aux packages Redux. L'introduction des RSCs n'aide pas non plus.
+- 📜 [Achieving Clean and Maintainable React Component Tests](https://medium.com/globant/achieving-clean-and-maintainable-react-component-tests-b3d5e0483307)
+- 📜 [Use createStateContext to share a useState hook](https://www.jacobparis.com/content/use-state-context)
+- 📜 [Do Contexts in Next.js 13 Make the Whole App Render on the Client?](https://www.perssondennis.com/articles/do-contexts-in-nextjs-13-make-the-whole-app-render-on-the-client)
+- 📜 [Building an email automation system with React Flow and Resend](https://novu.co/blog/building-an-email-automation-system-with-react-flow-and-resend/)
+- 📜 [Markprompt + Algolia: combining prompts with instant search for docs](https://markprompt.com/blog/algolia)
+- 📜 [Forging Leptos Query - TanStack Query in Rust](https://www.nicoburniske.com/thoughts/forging_leptos_query)
+- 📦 [Astro 2.10: Persistent State in View Transitions](https://astro.build/blog/astro-2100/): Astro repousse de plus en plus ses limites, avec la possibilité de persister le state sur les islands stateful. Astro v3 est en beta. https://twitter.com/astrodotbuild/status/1687169909699268614 + v3 beta: https://twitter.com/astrodotbuild/status/1687523994025832448
+- 📦 [Next.js Commerce 2.0](https://vercel.com/blog/introducing-next-js-commerce-2-0): template e-commerce avec support App Router proposé par Vercel, avec une intégration officielle Shopify. Article détaillé qui explique comment ce template arrive à obtenir d'excellentes performances.
+- 📦 [Apollo Client 3.8 - React Suspense Integration](https://www.apollographql.com/blog/announcement/frontend/wait-for-it-announcing-apollo-client-3-8-with-react-suspense-integration/): diverses nouveautés, dont 3 nouveaux hooks disponible pour s'intégrer avec Suspense et un Link pour retirer le `__typename` GraphQL. https://twitter.com/apollographql/status/1688593522717589504
+- 📦 [Storybook - Visual Tests addon sneak peek - using Chromatic](https://storybook.js.org/blog/visual-tests-addon-sneak-peek/)
+- 📦 [Remix Dev Tools v2.0](https://github.com/Code-Forge-Net/Remix-Dev-Tools/releases/tag/v2.0.0) https://twitter.com/AlemTuzlak59192/status/1687434730587701249
+- 📦 [Remix-Workers-POC - Run loaders/actions in a Service Workers, enable offline-first support](https://github.com/scandinavianairlines/remix-workers-poc)
+- 🎥 [HTMX: The Game-Changing Alternative to React](https://www.youtube.com/watch?v=DuGyH5RvfbY)
+- 🎥 [What's new in Remotion – July 2023](https://www.youtube.com/watch?v=ABQErIOxUNg)
+- 🎥 [What is Radix UI?](https://www.youtube.com/watch?v=1JnwJBtg4VA) ???
+- 🎙️ [Software Engineering Daily - Simplifying Documentation with Sébastien Lorber](https://softwareengineeringdaily.com/2023/08/03/simplifying-documentation/)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -57,13 +120,36 @@ Get started with Clerk’s [quickstarts and tutorials](https://clerk.com/docs/qu
 
 If you are looking to set up a robust form management system fully integrated in your IT infrastructure that allows you to retain full control over the data flow, and you don’t want to spend months and thousands of dollars to get it up and running, then SurveyJS is the way to go!
 
-SurveyJS  is a product suite of four open-source JavaScript libraries that allow you to create and edit multiple dynamic JSON-based forms in a drag-and-drop form builder, render them in your React app and store sensitive survey data within your in-house infrastructure. You can then render your custom surveys and forms as editable PDF files in a browser and visualize survey results with interactive charts and tables. [Learn more now](https://surveyjs.io/?utm_source=thisweekinreact&utm_medium=email).
+SurveyJS is a product suite of four open-source JavaScript libraries that allow you to create and edit multiple dynamic JSON-based forms in a drag-and-drop form builder, render them in your React app and store sensitive survey data within your in-house infrastructure. You can then render your custom surveys and forms as editable PDF files in a browser and visualize survey results with interactive charts and tables. [Learn more now](https://surveyjs.io/?utm_source=thisweekinreact&utm_medium=email).
 
 ---
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Expo Launch Party](/emails/issues/155/expolaunchparty.jpg)](https://expo.dev/launch-party)
+
+[**Expo Launch Party**](https://expo.dev/launch-party)
+
+Cette semaine, Expo compte nous annoncer de nombreuses nouveautés. Pour le moment, nous avons:
+
+- [Feature Preview: Single Sign-On (SSO)](https://blog.expo.dev/feature-preview-single-sign-on-sso-9c1a7d50c1a9)
+- [Feature Preview: Rollouts for EAS Update](https://blog.expo.dev/feature-preview-rollouts-for-eas-update-4eac28596470) https://twitter.com/expo/status/1688905053900525568
+- [useUpdates() API for expo-updates](https://expo.dev/changelog/2023/08-08-use-updates-api) https://twitter.com/expo/status/1688912315977220097
+- [Expo Orbit: Download and launch builds](https://expo.dev/changelog/2023/08-09-orbit)
+
+---
+
+- 💬 [Help us Kotlin-ify React Native tests - Round 2](https://github.com/facebook/react-native/issues/38825): les devs React-Native nous proposent une nouvelle fois de contribuer à l'effort de conversion de Java vers Kotlin.
+- 🐦 [Upcoming support for Reanimated worklets background tasks?](https://twitter.com/tomekzaw_/status/1688565879456350208)
+- 📜 [Rust in React Native](https://ospfranco.notion.site/Rust-in-React-Native-43316cdc499f43b48e9bc014074d3f72): article et tutoriel video pour intégrer Rust dans une app React-Native.
+- 📜 [How to Create AI-Generated Images on iOS in React Native Using Stable Diffusion](https://andreizgirvaci.com/blog/how-to-create-ai-generated-images-on-ios-in-react-native-using-stable-diffusion): Andrei explique comment vous pouvez générer des images AI directement depuis votre iPhone avec son nouveau package [Expo-Stable-Diffusion](https://github.com/andrei-zgirvaci/expo-stable-diffusion).
+- 📦 [Expo Config Plugins - Apple Settings](https://github.com/expo/config-plugins/tree/main/packages/apple-settings) https://twitter.com/Baconbrix/status/1688203281716125696
+- 📦 [React-Native Testing Library v12.2.0 - New User Event API](https://callstack.github.io/react-native-testing-library/docs/user-event) https://twitter.com/mdj_dev/status/1687417446515261440
+- 📦 [React-Native-Wireframe-UI - Wireframe UI kit for React Native](https://github.com/rborn/react-native-wireframe-ui)
+- 📦 [React-Native-Bootsplash v5 beta - Bye AndroidX, dark mode + brand image support, useHideAnimation hook, etc](https://github.com/zoontek/react-native-bootsplash/pull/475)
+- 🎥 [Make or port your SDK to react native](https://www.youtube.com/watch?v=A0JtWXt75yw)
+- 🎥 [How to make an Animated Gradient Picker with React Native Reanimated](https://www.youtube.com/watch?v=_FehNLxxpRY)
+- 👥 [React Native EU 2023](https://www.react-native.eu/) (Wrocław, September 7–8, 2023) is offering us [-15% on conference tickets](https://ti.to/react-native-eu/2023/discount/thisweekinreact15) with code "thisweekinreact15".
 
 ---
 
@@ -85,7 +171,7 @@ Nous cherchons des développeurs(euses) JavaScript passionnés. Vous interviendr
 
 ## 🇫🇷 En français {#fr}
 
-<Todo />
+- 📨 [Quoi de neuf les devs](https://happytodev.substack.com/) et [Laravel Au Quotidien](https://laravelauquotidien.substack.com/): 2 autres newsletters pour développeurs en français à découvrir.
 
 💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
 
@@ -100,16 +186,19 @@ Nous intervenons en développement, conseil, audit ou formation, sur des thémat
 
 ## 🔀 Autre {#other}
 
-<Todo />
+- 👀 [Project IDX - Google's new browser-based code environment with AI assistance](https://idx.dev/)
+- 📜 [Atlassian - Rendering like Butter – a Confluence Whiteboards Story](https://www.atlassian.com/engineering/rendering-like-butter-a-confluence-whiteboards-story)
+- 📜 [We’ve built TypeScript ORM for 821 days then this happened](https://medium.com/@aleksandrblokh/weve-built-typescript-orm-for-821-days-then-this-happened-71282a8b0206)
+- 📜 [Bringing Sharp to WebAssembly and WebContainers](https://blog.stackblitz.com/posts/bringing-sharp-to-wasm-and-webcontainers/)
+- 📜 [Unraveling the magic of Pattern Matching](https://www.swan.io/blog-posts/unraveling-the-magic-of-pattern-matching)
+- 📦 [VitePress v1.0 RC](https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md)
+- 📦 [Deno 1.36: More flexible security and expanded testing APIs](https://deno.com/blog/v1.36)
+- 📦 [Dioxus 0.4 - Library for building React-like user interface in Rust](https://dioxuslabs.com/blog/release-040)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
-
-🤣 [Les autres tweets marrant cette semaine](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/155/meme.jpg)](https://twitter.com/fireship_dev/status/1687106416614764547)
 
 A plus 👋
