@@ -80,6 +80,11 @@
       "destination": "https://thisweekinreact.com/?utm_source=instagram-profile",
       "permanent": true
     },
+    {
+      "source": "/ig",
+      "destination": "https://www.instagram.com/thisweekinreact/",
+      "permanent": true
+    },
 
     {
       "source": "/t",
