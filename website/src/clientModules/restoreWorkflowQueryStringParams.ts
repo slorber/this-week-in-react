@@ -5,6 +5,7 @@ const ParamsToRestore = [
   "rdt_cid",
   "twclid",
   "gclid",
+  "fbclid",
   "email",
   "ck_subscriber_id",
 ];
