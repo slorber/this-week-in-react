@@ -50,23 +50,23 @@ Unlock enterprise-grade features, functions, and UI components completely free f
 
 [**Can React Server Actions finally fix forms?**](https://www.mux.com/blog/what-are-react-server-actions)
 
-Une bonne introduction aux Server Actions, feature React à venir, mais déjà intégrée en expérimental dans Next.js 13.4. Propose un petit tutoriel pour uploader une vidéo avec un titre. Les Server Actions peuvent retourner une réponse pour donner du feedback à l'utilisateur, mais on voit bien que ça n'est pas une DX idéale.
+A great introduction to Server Actions, a forthcoming React feature that has already been integrated into Next.js 13.4 (experimental). Includes a short tutorial on uploading a video with a title. Server Actions can return a response to give feedback to the user, but it's clear that this isn't yet an ideal DX.
 
-Pour moi, il faudrait que les Server Actions supportent à 100% le progressive enhancement. Il faudrait sans doute introduire une API "flash" pour gérer un feedback sans JavaScript coté client, et qui existe sur de nombreux frameworks backend. Remix propose d'ailleurs ([`session.flash()`](https://remix.run/docs/en/main/utils/sessions#sessionflashkey-value)). Info liée qui pourrait vous intéresser: avec [`action.$$FORM_ACTION`](https://twitter.com/sebastienlorber/status/1689921046856474625) il est possible d'étendre le progressive enhancement de React.
+In my opinion, Server Actions should aim to fully support progressive enhancement. This probably requires to introduce a "flash" API to manage feedback without any client-side JavaScript. This exists in many backend frameworks, and Remix offers a ([`session.flash()`](https://remix.run/docs/en/main/utils/sessions#sessionflashkey-value)) API. Related info that might interest you: with [`action.$$FORM_ACTION`](https://twitter.com/sebastienlorber/status/1689921046856474625) you can extend React's progressive enhancement behavior.
 
 ---
 
 - 💸 [Zero To Shipped - Master Fast-Paced Fullstack Development and **Finally** ship that product](https://www.zerotoshipped.com/)
-- 🧑‍🎓 [React.dev - Using TypeScript](https://react.dev/learn/typescript): nouvelle page officielle de documentation.
-- 💬 [Next.js RFC - Google Tag Manager and gtag in next/third-parties](https://github.com/vercel/next.js/discussions/53868): propose d'intégrer les analytics Google via un hook plutôt qu'un composant, avec support Web Worker.
+- 🧑‍🎓 [React.dev - Using TypeScript](https://react.dev/learn/typescript): new official documentation page.
+- 💬 [Next.js RFC - Google Tag Manager and gtag in next/third-parties](https://github.com/vercel/next.js/discussions/53868): offers to integrate Google Analytics using a hook rather than a component, with possibly Web Worker support.
 - 🐦 [Million.js Automatic Mode - Video trailer](https://twitter.com/aidenybai/status/1689773623827943424)
-- 📜 [Things you forgot (or never knew) because of React](https://joshcollinsworth.com/blog/antiquated-react): une très longue critique de React, qui selon l'auteur est un framework dépassé. Ça reste intéressant à lire même si [je ne suis pas d'accord](https://github.com/josh-collinsworth/joco-sveltekit/issues/35#issuecomment-1680817566) 😄.
-- 📜 [Fantastic closures and how to find them in React](https://www.developerway.com/posts/fantastic-closures): explique ce qu'est une stale closure en React et présente différents cas qui peuvent introduire ce problème, puis propose une solution basée sur `useRef()`.
-- 📜 [The simplest example to understand Server Actions in Next.js](https://scastiel.dev/simplest-example-server-actions-nextjs): exemple de Server Actions très simple à comprendre, qui offre un moyen pratique de faire des appels RPC à votre API.
-- 📜 [On React Suspense’s throttling](https://andreigatej.dev/blog/on-react-suspense-throttling/): met en avant un comportement surprenant de React lorsque vous imbriquez les `<Suspense>`.
-- 📜 [Quit Your YAP-ing](https://kyleshevlin.com/quit-your-yapping): encourage à abandonner le syndrome "Yet-Another-Prop" et utiliser la composition.
-- 📜 [Node.js's Config Hell Problem](https://deno.com/blog/node-config-hell): Deno pointe du doigt les projets comme Next.js qui ont souvent des dizaines de fichiers de configuration.
-- 📜 [Supabase - Vercel Integration and Next.js App Router Support](https://supabase.com/blog/using-supabase-with-vercel): intégration qui peut être intéressante à étudier. Des APIs aux noms intéressants comme `createClientComponentClient` 😅.
+- 📜 [Things you forgot (or never knew) because of React](https://joshcollinsworth.com/blog/antiquated-react): a very long criticism of React, considered to be an outdated framework. It's still an interesting read, even if [I disagree](https://github.com/josh-collinsworth/joco-sveltekit/issues/35#issuecomment-1680817566) and think the author is unfair.
+- 📜 [Fantastic closures and how to find them in React](https://www.developerway.com/posts/fantastic-closures): explains what a stale closure is in React and presents various cases that can introduce this problem, then proposes a solution based on `useRef()`.
+- 📜 [The simplest example to understand Server Actions in Next.js](https://scastiel.dev/simplest-example-server-actions-nextjs): very simple Server Actions example, easy to understand, and providing a practical way of making RPC calls to your API.
+- 📜 [On React Suspense’s throttling](https://andreigatej.dev/blog/on-react-suspense-throttling/): highlights a surprising behaviour of React when you nest `<Suspense>`.
+- 📜 [Quit Your YAP-ing](https://kyleshevlin.com/quit-your-yapping): encourages you to abandon the "Yet-Another-Prop" syndrome and use composition instead.
+- 📜 [Node.js's Config Hell Problem](https://deno.com/blog/node-config-hell): Deno's criticism of projects like Next.js, which often have dozens of configuration files.
+- 📜 [Supabase - Vercel Integration and Next.js App Router Support](https://supabase.com/blog/using-supabase-with-vercel): an integration worth studying. Includes APIs with interesting names like `createClientComponentClient` 😅.
 - 📜 [Lifting Off with Astro](https://remotesynthesis.com/blog/lifting-off-with-astro/)
 - 📜 [Form Validation with React Hook Form](https://claritydev.net/blog/form-validation-react-hook-form)
 - 📜 [Introducing a new lint rule for React Testing Library](https://blog.testdouble.com/posts/2023-07-31-a-new-rtl-lint-rule/)
@@ -108,12 +108,12 @@ Use CoderPad to run fast, fair and real coding interviews that candidates and in
 
 [**Expo Preview - Fully customizable builds on EAS Build**](https://expo.dev/changelog/2023/08-10-custom-builds).
 
-Expo nous propose un nouveau système qui permet de customiser le build EAS avec un fichier Yaml, ce qui devrait donner beaucoup de flexibilité pour utiliser les outils monorepo de votre choix (Nx, Turbo, Rush...) ou encore rajouter vos propres étapes CI. Cela fait beaucoup penser à GitHub Actions. Marrant: on dirait que EAS utilise Fastlane sur le build iOS.
+Expo has come up with a new system for EAS Build that allows you to customise the flow with a Yaml file, which should give you a lot of flexibility to use the monorepo tools of your choice (Nx, Turbo, Rush...) or add your own CI steps. It looks quite similar to GitHub Actions. TIL: it seems EAS is using Fastlane on iOS builds.
 
 ---
 
-- 👀 [Expo Proof of concept - expo-sqlite integration with CR-SQLite](https://expo.dev/changelog/2023/08-10-cr-sqlite): intégration SQLite et CRDT qui facilite la création d'apps mobiles local-first.
-- 👀 [Expo Proof of concept - Expo CLI Dev Tools Plugins](https://expo.dev/changelog/2023/08-10-dev-tools-plugins): Expo souhaite proposer un système de plugin pour créer des DevTools, et propose une demo avec les Apollo DevTools. Cela devrait à terme permettre de remplacer Flipper.
+- 👀 [Expo Proof of concept - expo-sqlite integration with CR-SQLite](https://expo.dev/changelog/2023/08-10-cr-sqlite): SQLite and CRDT integration to ease creation of local-first mobile apps.
+- 👀 [Expo Proof of concept - Expo CLI Dev Tools Plugins](https://expo.dev/changelog/2023/08-10-dev-tools-plugins): Expo wants to offer a plug-in system for creating DevTools, and presents us a demo with Apollo DevTools. This should eventually replace Flipper plugins.
 - 🐦 [Reanimated on react-native-windows demo](https://twitter.com/piaskowyk/status/1689982162886430721)
 - 🐦 [Async Components + use() hook demo](https://twitter.com/SzymonRybczak/status/1691037156712599552)
 - 🐦 [Half of the Top 20 iOS Sports apps are powered by React Native](https://twitter.com/Baconbrix/status/1690805340290301954)
