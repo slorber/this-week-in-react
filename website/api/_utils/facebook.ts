@@ -3,16 +3,18 @@ import {
   SignupConfirmationParams,
 } from "./signupConfirmationUtls";
 
-import bizSdk from "facebook-nodejs-business-sdk";
-const ServerEvent = bizSdk.ServerEvent;
-const EventRequest = bizSdk.EventRequest;
-const UserData = bizSdk.UserData;
-const CustomData = bizSdk.CustomData;
+import {
+  FacebookAdsApi,
+  ServerEvent,
+  EventRequest,
+  UserData,
+  CustomData,
+} from "facebook-nodejs-business-sdk";
 
 const AccessToken = readEnvVariable("TWIR_FACEBOOK_ACCESS_TOKEN");
 const PixelId = readEnvVariable("TWIR_FACEBOOK_PIXEL_ID");
 
-const api = bizSdk.FacebookAdsApi.init(AccessToken);
+FacebookAdsApi.init(AccessToken);
 
 export async function reportFacebookAdsSignup(
   fbclid: string,
