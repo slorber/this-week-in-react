@@ -31,7 +31,8 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.0.1",
-    "@tsconfig/docusaurus": "^1.0.5"
+    "@tsconfig/docusaurus": "^1.0.5",
+    "@types/facebook-nodejs-business-sdk": "^15.0.2"
   },
   "browserslist": {
     "production": [

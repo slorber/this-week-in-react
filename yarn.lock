@@ -4418,6 +4418,11 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
+"@types/facebook-nodejs-business-sdk@^15.0.2":
+  version "15.0.2"
+  resolved "https://registry.yarnpkg.com/@types/facebook-nodejs-business-sdk/-/facebook-nodejs-business-sdk-15.0.2.tgz#edc392b5df18e0e4836eedafbfc4ef1718d31565"
+  integrity sha512-9NBRIT9uZ35VNm56N3QmWOHu/BU3YvZYCRQorzU5F8sYjQZSIEGOeMeEAQLnbykhBSghicQ2lPEUmjZLokdOdg==
+
 "@types/glob@^7.1.1":
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@types/glob/-/glob-7.2.0.tgz#bc1b5bf3aa92f25bd5dd39f35c57361bdce5b2eb"

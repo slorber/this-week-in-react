@@ -1,3 +1,13 @@
+export function readEnvVariable(name: string) {
+  const value = process.env[name];
+  if (typeof value === "undefined") {
+    throw new Error(
+      `Missing env variable value for ${name} and no default value fallback provided`
+    );
+  }
+  return value;
+}
+
 export type SignupConfirmationParams = {
   email: string;
   subscriberId: string;

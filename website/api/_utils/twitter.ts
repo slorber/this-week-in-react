@@ -1,21 +1,13 @@
 import TwitterLite from "@slorber/twitter-lite";
 import crypto from "crypto";
-import { SignupConfirmationParams } from "./signupConfirmationUtls";
+import {
+  readEnvVariable,
+  SignupConfirmationParams,
+} from "./signupConfirmationUtls";
 
 function sha256(input) {
   return crypto.createHash("sha256").update(input).digest("hex");
 }
-
-function readEnvVariable(name: string) {
-  const value = process.env[name];
-  if (typeof value === "undefined") {
-    throw new Error(
-      `Missing env variable value for ${name} and no default value fallback provided`
-    );
-  }
-  return value;
-}
-
 const TwitterLiteClient = new TwitterLite({
   subdomain: "ads-api",
   version: "11",
@@ -35,9 +27,10 @@ export async function reportTwitterAdsSignup(
     const PixelId = "o85l6";
     const ConversionEventId = "tw-o85l6-od5nc";
     console.log("");
-    console.log("[Twitter Ads] postTwitterConversion attempt", {
+    console.log("[Twitter Ads] reportTwitterAdsSignup attempt", {
       twclid,
       email,
+      signupConfirmation,
     });
     const result = await TwitterLiteClient.post(
       `measurement/conversions/${PixelId}`,
@@ -60,14 +53,14 @@ export async function reportTwitterAdsSignup(
         ],
       }
     );
-    console.log("[Twitter Ads] postTwitterConversion success", {
+    console.log("[Twitter Ads] reportTwitterAdsSignup success", {
       twclid,
       email,
       request: result.request,
       data: result.data,
     });
   } catch (e) {
-    console.error("[Twitter Ads] postTwitterConversion failure", e);
+    console.error("[Twitter Ads] reportTwitterAdsSignup failure", e);
     throw new Error(
       `Could not post twitter conversion result for twclid=${twclid} email=${email} => ${e?.message}`
     );
