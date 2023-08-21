@@ -15,6 +15,7 @@ async function handleQuery(query: URLSearchParams) {
   console.log("[SignupConfirmation]", signupConfirmation);
 
   if (signupConfirmation.adClickIds.twitter) {
+    console.log("[Twitter Ads]", signupConfirmation);
     await reportTwitterAdsSignup(
       signupConfirmation.adClickIds.twitter,
       signupConfirmation
@@ -22,17 +23,20 @@ async function handleQuery(query: URLSearchParams) {
   }
 
   if (signupConfirmation.adClickIds.facebook) {
+    console.log("[Facebook Ads]", signupConfirmation);
     await reportFacebookAdsSignup(
-      signupConfirmation.adClickIds.facebook,
+      signupConfirmation.adClickIds.twitter,
       signupConfirmation
     );
   }
 
   if (signupConfirmation.adClickIds.reddit) {
+    console.log("[Reddit Ads]", signupConfirmation);
     // TODO
   }
 
   if (signupConfirmation.adClickIds.google) {
+    console.log("[Google Ads]", signupConfirmation);
     // TODO
   }
 }
