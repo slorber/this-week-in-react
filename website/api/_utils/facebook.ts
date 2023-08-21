@@ -35,8 +35,7 @@ export async function reportFacebookAdsSignup(
       .setEmails([email])
       // It is recommended to send Client IP and User Agent for Conversions API Events.
       .setClientIpAddress(signupConfirmation.request.socket.remoteAddress)
-      // @ts-expect-error: not sure why TS errors here...
-      .setClientUserAgent(signupConfirmation.request.getHeader("user-agent"))
+      .setClientUserAgent(signupConfirmation.request.headers["user-agent"])
       // See https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc
       .setFbc(`fb.1.${timestamp}.${fbclid}`);
 

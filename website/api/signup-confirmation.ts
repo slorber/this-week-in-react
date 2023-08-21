@@ -19,7 +19,7 @@ async function handleSignupConfirmation(request: VercelRequest) {
   if (signupConfirmation.adClickIds.facebook) {
     console.log("[Facebook Ads]", signupConfirmation);
     await reportFacebookAdsSignup(
-      signupConfirmation.adClickIds.twitter,
+      signupConfirmation.adClickIds.facebook,
       signupConfirmation
     );
   }
