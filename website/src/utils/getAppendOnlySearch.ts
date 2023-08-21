@@ -11,10 +11,12 @@ export default function getAppendOnlySearch(): string {
   try {
     const key = "appendOnlySearchParams";
 
+    const initialParams = getInitialSearchParams();
     const storageParams = new URLSearchParams(localStorage.getItem(key) ?? "");
     const currentParams = new URLSearchParams(window.location.search);
 
     const appendOnlySearchParams = new URLSearchParams({
+      ...Object.fromEntries(initialParams),
       ...Object.fromEntries(storageParams),
       ...Object.fromEntries(currentParams),
     });
