@@ -59,6 +59,12 @@ export async function reportFacebookAdsSignup(
     console.log("Request: ", request);
     const response = await request.execute();
 
+    if (response.events_received !== 1) {
+      throw new Error(
+        `Facebook Ads was supposed to receive 1 event, but received ${response.events_received}`
+      );
+    }
+
     console.log("[Facebook Ads] reportFacebookAdsSignup success", {
       fbclid,
       email,
