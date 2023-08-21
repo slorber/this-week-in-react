@@ -20,7 +20,7 @@ export async function reportFacebookAdsSignup(
   fbclid: string,
   signupConfirmation: SignupConfirmationParams
 ) {
-  const { email } = signupConfirmation;
+  const { email, request } = signupConfirmation;
   try {
     console.log("");
     console.log("[Twitter Ads] reportFacebookAdsSignup attempt", {
@@ -32,13 +32,13 @@ export async function reportFacebookAdsSignup(
     const timestamp = Math.floor(Date.now() / 1000);
 
     const userData = new UserData()
-      .setEmails(["email@xyz.com"])
+      .setEmails([email])
       // It is recommended to send Client IP and User Agent for Conversions API Events.
-      //.setClientIpAddress(request.connection.remoteAddress)
-      //.setClientUserAgent(request.headers["user-agent"])
-      .setFbc(
-        `fb.1.${timestamp}.paaaaxwdph5yshthpa81aekufdjisbi5ufqg86bsrisnfckhkjrxq1n8s9qty_aem_af9lixlablk23ppl88ukyayifsr_wbefb6vwnrl3ftbknpneiczahyhzfokvjb-bhapo9mchxgvubbzmgsobdymy`
-      );
+      .setClientIpAddress(signupConfirmation.request.socket.remoteAddress)
+      // @ts-expect-error: not sure why TS errors here...
+      .setClientUserAgent(signupConfirmation.request.getHeader("user-agent"))
+      // See https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc
+      .setFbc(`fb.1.${timestamp}.${fbclid}`);
 
     const customData = new CustomData();
 
@@ -48,6 +48,7 @@ export async function reportFacebookAdsSignup(
       .setUserData(userData)
       .setCustomData(customData)
       .setEventSourceUrl(
+        // TODO initial.url is not always the ad landing page
         signupConfirmation.initial.url ?? "https://thisweekinreact.com"
       )
       .setActionSource("website");

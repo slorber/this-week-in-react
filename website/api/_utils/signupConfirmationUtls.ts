@@ -1,3 +1,5 @@
+import type { VercelRequest } from "@vercel/node";
+
 export function readEnvVariable(name: string) {
   const value = process.env[name];
   if (typeof value === "undefined") {
@@ -9,6 +11,8 @@ export function readEnvVariable(name: string) {
 }
 
 export type SignupConfirmationParams = {
+  request: VercelRequest;
+
   email: string;
   subscriberId: string;
 
@@ -27,8 +31,12 @@ export type SignupConfirmationParams = {
 
 // TODO Zod validation schema
 export function readSignupConfirmationParams(
-  query: URLSearchParams
+  request: VercelRequest
 ): SignupConfirmationParams {
+  // The TWIR query is provided as query=EncodedQuery
+  // Otherwise the api call gets blocked by AdBlock Plus
+  const query = new URLSearchParams(String(request.query.query ?? ""));
+
   const email = query.get("email");
   const subscriberId = query.get("ck_subscriber_id");
 
@@ -45,6 +53,7 @@ export function readSignupConfirmationParams(
   };
 
   return {
+    request,
     email,
     subscriberId,
     initial,
