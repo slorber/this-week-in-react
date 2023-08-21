@@ -1,4 +1,12 @@
 // TODO make it execute at most once per request
+
+function getInitialSearchParams() {
+  const params = new URLSearchParams();
+  params.set("initial_referrer", document.referrer);
+  params.set("initial_url", document.location.href);
+  return params;
+}
+
 export default function getAppendOnlySearch(): string {
   try {
     const key = "appendOnlySearchParams";
