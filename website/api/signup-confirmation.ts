@@ -8,7 +8,7 @@ async function handleSignupConfirmation(request: VercelRequest) {
 
   console.log("[SignupConfirmation]", signupConfirmation);
 
-  if (signupConfirmation.email) {
+  if (!signupConfirmation.email) {
     console.error(
       "[SignupConfirmation] No email found in confirmation querystring",
       signupConfirmation

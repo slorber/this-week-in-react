@@ -22,8 +22,7 @@ export async function reportFacebookAdsSignup(
 ) {
   const { email } = signupConfirmation;
   try {
-    console.log("");
-    console.log("[Twitter Ads] reportFacebookAdsSignup attempt", {
+    console.log("[Facebook Ads] reportFacebookAdsSignup attempt", {
       fbclid,
       email,
       signupConfirmation,
@@ -59,7 +58,6 @@ export async function reportFacebookAdsSignup(
       serverEvent,
     ]);
 
-    console.log("Request: ", request);
     const response = await request.execute();
 
     if (response.events_received !== 1) {
@@ -71,8 +69,12 @@ export async function reportFacebookAdsSignup(
     console.log("[Facebook Ads] reportFacebookAdsSignup success", {
       fbclid,
       email,
-      request: request,
-      response: response,
+      timestamp,
+      response: {
+        events_received: response.events_received,
+        messages: response.messages,
+        num_processed_entries: response.num_processed_entries,
+      },
     });
   } catch (e) {
     console.error("[Facebook Ads] reportFacebookAdsSignup failure", e);
