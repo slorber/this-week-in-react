@@ -42,7 +42,10 @@ export async function reportFacebookAdsSignup(
     const customData = new CustomData();
 
     const serverEvent = new ServerEvent()
-      .setEventName("Subscribe")
+      // This depends on the Campaign type!
+      // This EventName is for Lead > Conversion
+      // see https://developers.facebook.com/docs/meta-pixel/reference#standard-events
+      .setEventName("CompleteRegistration")
       .setEventTime(timestamp)
       .setUserData(userData)
       .setCustomData(customData)
