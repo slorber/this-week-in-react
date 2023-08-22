@@ -8,6 +8,13 @@ async function handleSignupConfirmation(request: VercelRequest) {
 
   console.log("[SignupConfirmation]", signupConfirmation);
 
+  if (signupConfirmation.email) {
+    console.error(
+      "[SignupConfirmation] No email found in confirmation querystring",
+      signupConfirmation
+    );
+  }
+
   if (signupConfirmation.adClickIds.twitter) {
     console.log("[Twitter Ads]", signupConfirmation);
     await reportTwitterAdsSignup(
