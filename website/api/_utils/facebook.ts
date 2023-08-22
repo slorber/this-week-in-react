@@ -20,7 +20,7 @@ export async function reportFacebookAdsSignup(
   fbclid: string,
   signupConfirmation: SignupConfirmationParams
 ) {
-  const { email, request } = signupConfirmation;
+  const { email } = signupConfirmation;
   try {
     console.log("");
     console.log("[Twitter Ads] reportFacebookAdsSignup attempt", {
@@ -34,8 +34,8 @@ export async function reportFacebookAdsSignup(
     const userData = new UserData()
       .setEmails([email])
       // It is recommended to send Client IP and User Agent for Conversions API Events.
-      .setClientIpAddress(signupConfirmation.request.socket.remoteAddress)
-      .setClientUserAgent(signupConfirmation.request.headers["user-agent"])
+      .setClientIpAddress(signupConfirmation.ip)
+      .setClientUserAgent(signupConfirmation.userAgent)
       // See https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc
       .setFbc(`fb.1.${timestamp}.${fbclid}`);
 

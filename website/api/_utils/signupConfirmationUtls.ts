@@ -11,10 +11,11 @@ export function readEnvVariable(name: string) {
 }
 
 export type SignupConfirmationParams = {
-  request: VercelRequest;
-
   email: string;
   subscriberId: string;
+
+  ip: string;
+  userAgent: string;
 
   initial: {
     referrer: string;
@@ -40,6 +41,9 @@ export function readSignupConfirmationParams(
   const email = query.get("email");
   const subscriberId = query.get("ck_subscriber_id");
 
+  const ip = request.socket.remoteAddress;
+  const userAgent = request.headers["user-agent"];
+
   const initial = {
     referrer: query.get("initial_referrer"),
     url: query.get("initial_url"),
@@ -53,9 +57,10 @@ export function readSignupConfirmationParams(
   };
 
   return {
-    request,
     email,
     subscriberId,
+    ip,
+    userAgent,
     initial,
     adClickIds,
   };
