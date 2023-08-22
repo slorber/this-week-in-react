@@ -41,6 +41,7 @@ export function readSignupConfirmationParams(
   const email = query.get("email");
   const subscriberId = query.get("ck_subscriber_id");
 
+  // See https://vercel.com/docs/edge-network/headers
   const xForwardedFor =
     typeof request.headers["x-forwarded-for"] === "string"
       ? request.headers["x-forwarded-for"]
