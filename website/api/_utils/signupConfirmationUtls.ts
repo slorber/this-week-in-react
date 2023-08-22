@@ -41,7 +41,13 @@ export function readSignupConfirmationParams(
   const email = query.get("email");
   const subscriberId = query.get("ck_subscriber_id");
 
-  const ip = request.socket.remoteAddress;
+  const xForwardedFor =
+    typeof request.headers["x-forwarded-for"] === "string"
+      ? request.headers["x-forwarded-for"]
+      : null;
+
+  // See https://vercel.com/docs/edge-network/headers#x-forwarded-for
+  const ip = xForwardedFor || request.socket.remoteAddress;
   const userAgent = request.headers["user-agent"];
 
   const initial = {
