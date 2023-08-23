@@ -1,6 +1,6 @@
 ---
 slug: /157
-title: "This Week In React #157: ..."
+title: "This Week In React #157: Concurrent Mode, RSC DevTools Extension, Radix asChild, Suspense, hydration, useMemo, Fresh, TinyBase, Worklets, TFLite, Autolinking, Bootsplash..."
 authors: [slorber]
 date: 08-22-2023
 unlisted: true
@@ -8,7 +8,13 @@ unlisted: true
 
 Hi everyone!
 
-<Todo />
+It's been pretty quiet on the React front this week, but we've still got a few nice articles to read.
+
+On the React-Native side, Marc Rousavy is on fire, publishing a number of packages that seem to herald the imminent arrival of VisionCamera v3.
+
+We should have some nice releases soon, like [🐦 Bun 1.0](https://twitter.com/jarredsumner/status/1693657906917585359), [🐦 Astro 3.0](https://twitter.com/astrodotbuild/status/1693655809711108456) and [🐦 TanStack Router](https://twitter.com/tannerlinsley/status/1691936709498552654).
+
+I'm taking a short break next week, so I'll see you on 6 September 👋
 
 <!-- truncate -->
 
@@ -34,9 +40,29 @@ Managing or migrating large apps and codebases? This video course covers what yo
 
 ## ⚛️ React {#react}
 
-- 💸 [Zero To Shipped - Master Fast-Paced Fullstack Development and **Finally** ship that product](https://www.zerotoshipped.com/)
+[![The underlying mechanisms of React’s concurrent mode](/emails/issues/157/concurrentmode.jpg)](https://andreigatej.dev/blog/the-underlying-mechanisms-of-reacts-concurrent-mode/)
 
-<Todo />
+[**The underlying mechanisms of React’s concurrent mode**](https://andreigatej.dev/blog/the-underlying-mechanisms-of-reacts-concurrent-mode/)
+
+A quite technical but greatly educational article that study the React codebase. Explains well how `startTransition` works and how it differs from the synchronous rendering mode. I learned how React uses the `MessageChannel` API recursively to periodically hand over to the main thread.
+
+---
+
+- 💸 [Zero To Shipped - Master Fast-Paced Fullstack Development and **Finally** ship that product](https://www.zerotoshipped.com/)
+- 🎮 [React Jam - Summer 2023 Winners](https://reactjam.com/summer-2023-winners): the React-based video games creation challenge for which I was a member of the jury, just announced the winners.
+- 📜 [Implement Radix's asChild pattern in React](https://www.jacobparis.com/content/react-as-child): explains how the `asChild` pattern, popularised by Radix, works as a good alternative to the `as` props for customising the underlying component.
+- 📜 [A11y-Driven Development](https://www.simplethread.com/a11y-driven-development/): interesting proposal to split and name React components according to their accessibility role.
+- 📜 [React Suspense in three different architectures](https://elanmed.dev/blog/suspense-in-different-architectures): presents 4 different `<Suspense>` use cases for 3 different architectures (CSR, SSR, RSC).
+- 📜 [How to solve hydration error in Next.js](https://chirag-gupta.hashnode.dev/how-to-solve-hydration-error-in-nextjs): highlights some common problems that can lead to hydration problems, such as using browser APIs like `localStorage` to initialise your state, or using an invalid HTML markup.
+- 📜 [Using PostHog with the Next.js App Router and Vercel](https://vercel.com/guides/posthog-nextjs-vercel-feature-flags-analytics)
+- 📜 [useMemo overdose](https://edvins.io/usememo-overdose)
+- 📦 [RSC Devtools - Chrome Extension](https://chrome.google.com/webstore/detail/rsc-devtools/jcejahepddjnppkhomnidalpnnnemomn): the unofficial extension is now available in the Chrome store. It lets you navigate and analyse a timeline of RSC payloads over time. Read the article [Devtools for React Server Components](https://www.alvar.dev/blog/creating-devtools-for-react-server-components) for details.
+- 📦 [Fresh 1.4 – Faster Page Loads, Layouts and More](https://deno.com/blog/fresh-1.4)
+- 📦 [TinyBase 4.1 - New ui-react-dom module](https://tinybase.org/guides/releases/)
+- 📦 [NextUI 2.1 - Select, Listbox, ScrollShadow](https://nextui.org/blog/v2.1.0)
+- 🎥 [tRPC + NextJS App Router = Simple Typesafe APIs](https://www.youtube.com/watch?v=qCLV0Iaq9zU)
+- 🎥 [Remotion Lambda - Tutorial Playlist](https://www.youtube.com/playlist?list=PLRHdymbhXiIRgAeAUpMxe7l7BNliHfWUq)
+- 🎥 [React Query is Secretly an Amazing State Manager](https://www.youtube.com/watch?v=0X3TlVklT-A)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -64,24 +90,39 @@ Click the link and [get $1 off your next domain name registration](https://pork
 
 ## 📱 React-Native {#react-native}
 
+- 💬 [React-Native RFC - Autolinking local modules](https://github.com/react-native-community/discussions-and-proposals/pull/702): proposes to make it easier to create local native modules, in a `local_modules` folder, using the `create-react-native-library` CLI.
+- 💬 [React-Native-Testing-Library RFC - Jest Native matchers migration](https://github.com/callstack/react-native-testing-library/issues/1468)
+- 🐦 [The top 100 Sports apps in the Apple App Store - React-Native 33/100](https://twitter.com/Baconbrix/status/1692215896029212847)
+- 👀 [Expo Preview - Static Font Optimization with Expo Router](https://twitter.com/Baconbrix/status/1692990529800167441)
+- 📜 [Simplify Your iOS Brownfield Integration with React Native Host](https://www.callstack.com/blog/simplify-your-ios-brownfield-integration-with-react-native-host)
+- 📦 [react-native-worklets-core](https://github.com/margelo/react-native-worklets-core): a standalone worklet runner, inspired by the one in Reanimated 2+, and designed to be used by various libraries such as VisionCamera, WishList and Skia.
+- 📦 [react-native-fast-tflite - High-performance TensorFlow Lite with GPU acceleration](https://github.com/mrousavy/react-native-fast-tflite)
+- 📦 [Realm JavaScript v12: complete rewrite without surprises](https://medium.com/realm/realm-javascript-v12-complete-rewrite-without-surprises-62eea2a2e8ae)
+- 📦 [react-native-bootsplash 5.0.0 - Dark mode, Brand image, Web support...](https://github.com/zoontek/react-native-bootsplash/releases/tag/5.0.0)
+- 📦 [clean-rn - Clean all React Native caches](https://github.com/mrousavy/clean-rn)
+- 🎥 [Instagram Stickers - “Can it be done in React Native?”](https://www.youtube.com/watch?v=5yM4NPcTwY4)
+- 🎥 [Flutter vs React Native and Reanimated with @Reactiive](https://www.youtube.com/watch?v=A19-UEUrg6A)
+- 🎙️ [React Native Radio 273 - Gluestack with Sanket Sahu](https://react-native-radio.simplecast.com/episodes/rnr-273-gluestack-with-sanket-sahu)
 - 👥 [React Native EU 2023](https://www.react-native.eu/) (Wrocław, September 7–8, 2023) is offering us [-15% on conference tickets](https://ti.to/react-native-eu/2023/discount/thisweekinreact15) with code "thisweekinreact15".
-
-<Todo />
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [Upcoming Node 20.6 - built-in .env file support](https://github.com/nodejs/node/pull/49185)
+- 🐦 [requestIdleCallback coming to Safari and soon in every browser?](https://twitter.com/sebastienlorber/status/1694260312986227187)
+- 📜 [`Array<T>` vs `T[]`: Which is better?](https://www.totaltypescript.com/array-types-in-typescript)
+- 📜 [Shadow DOM: Not by Default](https://begin.com/blog/posts/2023-08-18-shadow-dom-not-by-default)
+- 📜 [Dropbox - How we reduced the size of our JavaScript bundles by 33%](https://dropbox.tech/frontend/how-we-reduced-the-size-of-our-javascript-bundles-by-33-percent)
+- 📜 [Four new CSS features for smooth entry and exit animations](https://developer.chrome.com/blog/entry-exit-animations/)
+- 📜 [The ideal viewport doesn’t exist](https://viewports.fyi/)
+- 📜 [TypeScript is Surprisingly OK for Compilers](https://matklad.github.io/2023/08/17/typescript-is-surprisingly-ok-for-compilers.html)
+- 📦 [Chrome 117 Beta](https://developer.chrome.com/blog/chrome-117-beta/)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
-
-🤣 [Other funny tweets this week](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/157/meme.jpg)](https://twitter.com/BHolmesDev/status/1693624114097909851)
 
 See ya! 👋
