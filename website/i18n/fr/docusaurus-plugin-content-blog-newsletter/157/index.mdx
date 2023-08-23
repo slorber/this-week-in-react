@@ -1,6 +1,6 @@
 ---
 slug: /157
-title: "React Hebdo #157: ..."
+title: "React Hebdo #157: Concurrent Mode, Radix asChild, Suspense, hydration, useMemo, Fresh, TinyBase, Worklets, TFLite, Autolinking, Realm, Bootsplash ... "
 authors: [slorber]
 date: 08-22-2023
 unlisted: true
@@ -8,9 +8,13 @@ unlisted: true
 
 Salut à tous !
 
-Ob devrait prochainement avoir quelques belles sorties: [🐦 Bun 1.0](https://twitter.com/jarredsumner/status/1693657906917585359), [🐦 Astro 3.0](https://twitter.com/astrodotbuild/status/1693655809711108456) et [🐦 TanStack Router](https://twitter.com/tannerlinsley/status/1691936709498552654)
+C'est assez calme coté React cette semaine, mais on a tout de même quelques articles sympa à lire.
 
-<Todo />
+Coté React-Native, Marc Rousavy est en feu et publie de nombreux packages quoi annoncent sans doute l'arrivée prochaine de VisionCamera v3.
+
+On devrait prochainement avoir quelques belles sorties: [🐦 Bun 1.0](https://twitter.com/jarredsumner/status/1693657906917585359), [🐦 Astro 3.0](https://twitter.com/astrodotbuild/status/1693655809711108456) et [🐦 TanStack Router](https://twitter.com/tannerlinsley/status/1691936709498552654)
+
+Je prends une petite pause la semaine prochaine, on se retrouve le 6 septembre 👋
 
 <!-- truncate -->
 
@@ -36,9 +40,16 @@ Managing or migrating large apps and codebases? This video course covers what yo
 
 ## ⚛️ React {#react}
 
+[![The underlying mechanisms of React’s concurrent mode](/emails/issues/157/concurrentmode.jpg)](https://andreigatej.dev/blog/the-underlying-mechanisms-of-reacts-concurrent-mode/)
+
+[**The underlying mechanisms of React’s concurrent mode**](https://andreigatej.dev/blog/the-underlying-mechanisms-of-reacts-concurrent-mode/)
+
+Un article technique, mais pédagogique qui étudie le code React. Explique bien le fonctionnement de `startTransition` et sa différence avec le mode de rendering synchrone. J'ai appris comment React utilise l'API `MessageChannel` récursivement pour redonner périodiquement la main au thread principal.
+
+---
+
 - 💸 [Zero To Shipped - Master Fast-Paced Fullstack Development and **Finally** ship that product](https://www.zerotoshipped.com/)
 - 🎮 [React Jam - Summer 2023 Winners](https://reactjam.com/summer-2023-winners): concours de jeux videos créés avec React, dont j'étais membre du jury.
-- 📜 [The underlying mechanisms of React’s concurrent mode](https://andreigatej.dev/blog/the-underlying-mechanisms-of-reacts-concurrent-mode/): article technique qui étudie le code React. Explique bien le fonctionnement de `startTransition` et sa différence avec le mode de rendering synchrone. J'ai appris comment React utilise l'API `MessageChannel` récursivement pour redonner périodiquement la main au thread principal.
 - 📜 [Implement Radix's asChild pattern in React](https://www.jacobparis.com/content/react-as-child): explique le fonctionnement du pattern `asChild` popularisé par Radix comme une bonne alternative à la props `as` pour customiser le composant sous-jacent utilisé par une librairie.
 - 📜 [A11y-Driven Development](https://www.simplethread.com/a11y-driven-development/): propose de découper et nommer les composants React selon leur rôle d'accessibilité.
 - 📜 [React Suspense in three different architectures](https://elanmed.dev/blog/suspense-in-different-architectures): présente 4 cas d'usages différent de `<Suspense>` pour 3 architectures différences (CSR, SSR, RSC).
@@ -93,8 +104,6 @@ Click the link and [get $1 off your next domain name registration](https://pork
 - 🎥 [Flutter vs React Native and Reanimated with @Reactiive](https://www.youtube.com/watch?v=A19-UEUrg6A)
 - 🎙️ [React Native Radio 273 - Gluestack with Sanket Sahu](https://react-native-radio.simplecast.com/episodes/rnr-273-gluestack-with-sanket-sahu)
 - 👥 [React Native EU 2023](https://www.react-native.eu/) (Wrocław, 7–8 September 2023) nous offre [-15% sur la conférence](https://ti.to/react-native-eu/2023/discount/thisweekinreact15) avec le code "thisweekinreact15".
-
-<Todo />
 
 ---
 
