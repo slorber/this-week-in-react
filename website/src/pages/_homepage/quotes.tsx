@@ -248,7 +248,7 @@ export const AllQuotes = {
         handle="blvdmitry"
         github="blvdmitry"
         name="Dmitry Belyaev"
-        job="Principal Engineer - Booking"
+        job="Principal Engineer - Booking.com"
       >
         It became my main source of front-end content. I now recommend it to
         everyone.
