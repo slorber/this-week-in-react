@@ -84,6 +84,30 @@ export const AllQuotes = {
         The one React newsletter/source of "what's new" that I follow
       </Quote>
     ),
+    kzzzf: (
+      <Quote
+        url="https://twitter.com/kzzzf/status/1650802159502467073"
+        handle="kzzzf"
+        github="kzzzf"
+        name="Krzysztof Magiera"
+        job="Director of engineering - SWM"
+      >
+        With so much going on in the React and React Native world, this is the
+        only way to stay well-informed
+      </Quote>
+    ),
+    michal: (
+      <Quote
+        url="https://twitter.com/thymikee"
+        handle="thymikee"
+        github="thymikee"
+        name="Michal Pierzchala"
+        job="Head of Technology - Callstack"
+      >
+        I try to keep up with React (Native) news daily. But when I can't, I
+        know I can always rely on Seb's newsletter
+      </Quote>
+    ),
     kentcdodds: (
       <Quote
         url="https://twitter.com/kentcdodds/status/1389240652324474880"
@@ -213,19 +237,30 @@ export const AllQuotes = {
         handle="mcavaliere"
         github="mcavaliere"
         name="Mike Cavaliere"
-        job="Director of Partnerships at Echobind"
+        job="Director of Partnerships - Echobind"
       >
         I can see important React news at a glance.
       </Quote>
     ),
-
+    dmitry: (
+      <Quote
+        url="https://twitter.com/blvdmitry/status/1694620256793194687"
+        handle="blvdmitry"
+        github="blvdmitry"
+        name="Dmitry Belyaev"
+        job="Principal Engineer - Booking"
+      >
+        It became my main source of front-end content. I now recommend it to
+        everyone.
+      </Quote>
+    ),
     ane_naiz: (
       <Quote
         url="https://twitter.com/ane_naiz/status/1442606436207497216"
         handle="ane_naiz"
         github="anediaz"
         name="Ane Diaz"
-        job="Software Engineer at Datadog"
+        job="Software Engineer - Datadog"
       >
         I won't miss any information from now on
       </Quote>
@@ -236,7 +271,7 @@ export const AllQuotes = {
         handle="elijahmanor"
         github="elijahmanor"
         name="Elijah Manor"
-        job="Senior Software Engineer at Planview"
+        job="Senior Software Engineer - Planview"
       >
         If you are a React dev, this is a newsletter you should check out
       </Quote>
@@ -259,7 +294,7 @@ export const AllQuotes = {
         handle="beaussan"
         github="beaussan"
         name="Nicolas Beaussart"
-        job="Principal Engineer at Hasura"
+        job="Principal Engineer - Hasura"
       >
         Your threads and newletter are a gem !
       </Quote>
@@ -270,7 +305,7 @@ export const AllQuotes = {
         handle="wbroek"
         github="wbroek"
         name="Wouter Broek"
-        job="Software Development Manager at Amazon Web Services"
+        job="Software Development Manager - AWS"
       >
         If you do react you should definitely take a look
       </Quote>
@@ -281,7 +316,7 @@ export const AllQuotes = {
         handle="fredmaiaarantes"
         github="fredmaiaarantes"
         name="Fred Maia Arantes"
-        job="CEO at MeteorJS"
+        job="CEO - MeteorJS"
       >
         If you are into React, you should subscribe
       </Quote>
@@ -292,7 +327,7 @@ export const AllQuotes = {
         handle="ndubien"
         github="dubzzz"
         name="Nicolas Dubien"
-        job="Software Engineer at Pigment"
+        job="Software Engineer - Pigment"
       >
         A high quality thread for developers working with React
       </Quote>
@@ -325,7 +360,7 @@ export const AllQuotes = {
         handle="ElaziziYoussouf"
         github="yjose"
         name="Youssouf El Azizi"
-        job="Mobile Tribe lead at OBytes"
+        job="Mobile Tribe lead - OBytes"
       >
         Always enjoy reading Sebastien Lorber newsletter 👌
       </Quote>
@@ -336,7 +371,7 @@ export const AllQuotes = {
         handle="__marcin_"
         github="mobily"
         name="Marcin Dziewulski"
-        job="Senior Software Engineer at Intent"
+        job="Senior Software Engineer - Intent"
       >
         The most comprehensive newsletter for React (Native) developers
       </Quote>
@@ -347,7 +382,7 @@ export const AllQuotes = {
         handle="Danny_H_W"
         github="dannyhw"
         name="Daniel Williams"
-        job="Senior Frontend developer at Coverflex"
+        job="Senior Frontend developer - Coverflex"
       >
         Your weekly newsletter is my favourite source of tech news
       </Quote>
@@ -358,7 +393,7 @@ export const AllQuotes = {
         handle="thskod"
         github="thierryskoda"
         name="Thierry Skoda"
-        job="Developer at Hack House Web3"
+        job="Developer - Hack House Web3"
       >
         I feel that I never miss out on anything
       </Quote>
@@ -369,7 +404,7 @@ export const AllQuotes = {
         handle="dev_bogdan"
         github="bogadrian"
         name="Adrian Bogdan"
-        job="Software Engineer at Moojo"
+        job="Software Engineer - Moojo"
       >
         I am learning a lot from Sebastien Lorber
       </Quote>
@@ -383,7 +418,7 @@ export const AllQuotes = {
         handle="xavier_seignard"
         github="xseignard"
         name="Xavier Seignard"
-        job="Senior Software Engineer chez Alan"
+        job="Senior Software Engineer - Alan"
       >
         Un bijou de newsletter, comme d'hab 👌
       </Quote>
@@ -394,7 +429,7 @@ export const AllQuotes = {
         handle="lauthieb"
         github="lauthieb"
         name="Laurent Thiebault"
-        job="Engineering Manager chez Decathlon"
+        job="Engineering Manager - Decathlon"
       >
         Toujours aussi riche cette newsletter 💌
       </Quote>
@@ -405,7 +440,7 @@ export const AllQuotes = {
         handle="lereacteurIO"
         github="lereacteur"
         name="Xavier Colombel"
-        job="CEO chez Le Reacteur Coding Bootcamp"
+        job="CEO - Le Reacteur Coding Bootcamp"
         profileUrl="https://github.com/XavierColombel.png"
       >
         La meilleure newsletter qui traite de l'écosystème React
@@ -418,7 +453,7 @@ export const AllQuotes = {
         github="dbuchet"
         avatarUrl="https://github.com/dbuchet.png"
         name="Damien Buchet"
-        job="Tech Lead chez Wild Code School"
+        job="Tech Lead - Wild Code School"
         profileUrl="https://www.linkedin.com/in/damienbuchet/"
       >
         Sa newsletter est juste parfaite
@@ -431,7 +466,7 @@ export const AllQuotes = {
         github="sylvain-pauly"
         avatarUrl="https://github.com/sylvain-pauly.png"
         name="Sylvain Pauly"
-        job="Senior Front-end Software Engineer chez Yousign"
+        job="Senior Front-end Software Engineer - Yousign"
         profileUrl="https://www.linkedin.com/in/sylvainpauly/"
       >
         Du contenu en français de qualité !
@@ -443,7 +478,7 @@ export const AllQuotes = {
         handle={null}
         github={null}
         name="Pierre V."
-        job="Master Tech Lead chez frog France (CapGemini)"
+        job="Master Tech Lead - frog France (CapGemini)"
         profileUrl="https://www.linkedin.com/in/pierver/"
       >
         Une newsletter hebdomadaire indispensable
@@ -477,7 +512,7 @@ export const AllQuotes = {
         handle="Console_buche"
         github="Console-buche"
         name="Sebastien Dubourg"
-        job="Développeur Frontend chez TenableSecurity"
+        job="Développeur Frontend - TenableSecurity"
       >
         Ces newsletter sont vraiment super
       </Quote>
@@ -488,7 +523,7 @@ export const AllQuotes = {
         handle={null}
         github="ElenabMA"
         name="Elena Battisti"
-        job="Développeuse Web Front-End chez Meilleurs Agents "
+        job="Développeuse Web Front-End - Meilleurs Agents "
         profileUrl="https://www.linkedin.com/in/elenabattisti/"
       >
         Un outil de veille très précieux
@@ -500,7 +535,7 @@ export const AllQuotes = {
         handle="TheMathisBarre"
         github="MathisBarre"
         name="Mathis Barré"
-        job="Développeur React et React Native chez Beapp"
+        job="Développeur React et React Native - Beapp"
       >
         Je n'ai jamais trouvé mieux
       </Quote>
@@ -511,7 +546,7 @@ export const AllQuotes = {
         handle="_smontlouis"
         github="smontlouis"
         name="Stéphane Montlouis"
-        job="Lead front-end developer chez EMCITV"
+        job="Lead front-end developer - EMCITV"
       >
         100% de mes news react viennent de chez toi
       </Quote>
@@ -546,8 +581,11 @@ export default function HomepageQuotes() {
           {AllQuotes.fr._smontlouis}
         </>
       )}
+      {AllQuotes.en.kzzzf}
       {AllQuotes.en.threepointone}
       {AllQuotes.en.yangshunz}
+      {AllQuotes.en.dmitry}
+      {AllQuotes.en.michal}
       {AllQuotes.en.kentcdodds}
       {AllQuotes.en.NoriSte}
       {AllQuotes.en.simongrimm}
