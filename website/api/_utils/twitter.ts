@@ -5,9 +5,10 @@ import {
   SignupConfirmationParams,
 } from "./signupConfirmationUtls";
 
-function sha256(input) {
+function sha256(input: string): string {
   return crypto.createHash("sha256").update(input).digest("hex");
 }
+
 const TwitterLiteClient = new TwitterLite({
   subdomain: "ads-api",
   version: "11",
@@ -22,7 +23,9 @@ export async function reportTwitterAdsSignup(
   twclid: string,
   signupConfirmation: SignupConfirmationParams
 ) {
-  const { email } = signupConfirmation;
+  // TODO implicit assumption
+  // Use TS 5.1 + type-fest SetNonNullable<SignupConfirmationParams,"email">
+  const email = signupConfirmation.email!;
   try {
     const PixelId = "o85l6";
     const ConversionEventId = "tw-o85l6-od5nc";
@@ -62,7 +65,9 @@ export async function reportTwitterAdsSignup(
   } catch (e) {
     console.error("[Twitter Ads] reportTwitterAdsSignup failure", e);
     throw new Error(
-      `Could not post twitter conversion result for twclid=${twclid} email=${email} => ${e?.message}`
+      `Could not post twitter conversion result for twclid=${twclid} email=${email} => ${
+        (e as Error)?.message
+      }`
     );
   }
 }

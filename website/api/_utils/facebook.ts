@@ -20,7 +20,9 @@ export async function reportFacebookAdsSignup(
   fbclid: string,
   signupConfirmation: SignupConfirmationParams
 ) {
-  const { email } = signupConfirmation;
+  // TODO implicit assumption
+  // Use TS 5.1 + type-fest SetNonNullable<SignupConfirmationParams,"email">
+  const email = signupConfirmation.email!;
   try {
     console.log("[Facebook Ads] reportFacebookAdsSignup attempt", {
       fbclid,
@@ -30,13 +32,14 @@ export async function reportFacebookAdsSignup(
 
     const timestamp = Math.floor(Date.now() / 1000);
 
-    const userData = new UserData()
-      .setEmails([email])
-      // It is recommended to send Client IP and User Agent for Conversions API Events.
-      .setClientIpAddress(signupConfirmation.ip)
-      .setClientUserAgent(signupConfirmation.userAgent)
-      // See https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc
-      .setFbc(`fb.1.${timestamp}.${fbclid}`);
+    const userData = new UserData();
+    userData.setEmails([email]);
+    // See https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc
+    userData.setFbc(`fb.1.${timestamp}.${fbclid}`);
+    // It is recommended to send Client IP and User Agent for Conversions API Events.
+    signupConfirmation.ip && userData.setClientIpAddress(signupConfirmation.ip);
+    signupConfirmation.userAgent &&
+      userData.setClientUserAgent(signupConfirmation.userAgent);
 
     const customData = new CustomData();
 
@@ -79,7 +82,9 @@ export async function reportFacebookAdsSignup(
   } catch (e) {
     console.error("[Facebook Ads] reportFacebookAdsSignup failure", e);
     throw new Error(
-      `Could not post facebook conversion result for fbclid=${fbclid} email=${email} => ${e?.message}`
+      `Could not post facebook conversion result for fbclid=${fbclid} email=${email} => ${
+        (e as Error)?.message
+      }`
     );
   }
 }

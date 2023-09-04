@@ -11,24 +11,26 @@ export function readEnvVariable(name: string) {
 }
 
 export type SignupConfirmationParams = {
-  email: string;
-  subscriberId: string;
+  email: string | null;
+  subscriberId: string | null;
 
-  ip: string;
-  userAgent: string;
+  ip: string | null;
+  userAgent: string | null;
 
   initial: {
-    referrer: string;
-    url: string;
+    referrer: string | null;
+    url: string | null;
   };
 
   adClickIds: {
-    twitter?: string;
-    reddit?: string;
-    facebook?: string;
-    google?: string;
+    twitter: string | null;
+    reddit: string | null;
+    facebook: string | null;
+    google: string | null;
   };
 };
+
+async function getSubscriberOrError(subscriberId: string) {}
 
 // TODO Zod validation schema
 export function readSignupConfirmationParams(
@@ -39,7 +41,7 @@ export function readSignupConfirmationParams(
   const query = new URLSearchParams(String(request.query.query ?? ""));
 
   const email = query.get("email");
-  const subscriberId = query.get("ck_subscriber_id");
+  const subscriberId: string | null = query.get("ck_subscriber_id");
 
   // See https://vercel.com/docs/edge-network/headers
   const xForwardedFor =
@@ -48,8 +50,8 @@ export function readSignupConfirmationParams(
       : null;
 
   // See https://vercel.com/docs/edge-network/headers#x-forwarded-for
-  const ip = xForwardedFor || request.socket.remoteAddress;
-  const userAgent = request.headers["user-agent"];
+  const ip = (xForwardedFor || request.socket.remoteAddress) ?? null;
+  const userAgent = request.headers["user-agent"] ?? null;
 
   const initial = {
     referrer: query.get("initial_referrer"),
