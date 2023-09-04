@@ -3,7 +3,7 @@ import crypto from "crypto";
 import {
   readEnvVariable,
   SignupConfirmationParams,
-} from "./signupConfirmationUtls";
+} from "./signupConfirmationUtils";
 
 function sha256(input: string): string {
   return crypto.createHash("sha256").update(input).digest("hex");

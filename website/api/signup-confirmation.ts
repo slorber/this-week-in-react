@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { readSignupConfirmationParams } from "./_utils/signupConfirmationUtls";
+import { readSignupConfirmationParams } from "./_utils/signupConfirmationUtils";
 import { reportTwitterAdsSignup } from "./_utils/twitter";
 import { reportFacebookAdsSignup } from "./_utils/facebook";
 

@@ -1,4 +1,4 @@
-import { readEnvVariable } from "./signupConfirmationUtls";
+import { readEnvVariable } from "./signupConfirmationUtils";
 
 const API_SECRET = readEnvVariable("TWIR_CONVERTKIT_API_SECRET");
 const API_SECRET_QS = `api_secret=${API_SECRET}`;

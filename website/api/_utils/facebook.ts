@@ -1,7 +1,7 @@
 import {
   readEnvVariable,
   SignupConfirmationParams,
-} from "./signupConfirmationUtls";
+} from "./signupConfirmationUtils";
 
 import {
   FacebookAdsApi,
