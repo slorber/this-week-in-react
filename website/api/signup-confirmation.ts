@@ -4,7 +4,7 @@ import { reportTwitterAdsSignup } from "./_utils/twitter";
 import { reportFacebookAdsSignup } from "./_utils/facebook";
 
 async function handleSignupConfirmation(request: VercelRequest) {
-  const signupConfirmation = readSignupConfirmationParams(request);
+  const signupConfirmation = await readSignupConfirmationParams(request);
 
   console.log("[SignupConfirmation]", signupConfirmation);
 

@@ -3,10 +3,6 @@ import { readEnvVariable } from "./signupConfirmationUtls";
 const API_SECRET = readEnvVariable("TWIR_CONVERTKIT_API_SECRET");
 const API_SECRET_QS = `api_secret=${API_SECRET}`;
 
-export interface FetchSubscriberResponse {
-  subscriber: Subscriber;
-}
-
 export interface Subscriber {
   id: number;
   first_name: string | null;
@@ -16,23 +12,37 @@ export interface Subscriber {
   fields: Record<string, string | null>;
 }
 
-async function fetchWithRetry(
+async function apiCall<T = unknown>(
   input: RequestInfo | URL,
   init?: RequestInit
-): Promise<Response> {
+): Promise<T> {
+  const response = await fetch(input, init);
+  if (response.status !== 200) {
+    throw new Error(
+      `ConvertKit API call failed\nStatus=${response.status}\nFetch Input=${input}`
+    );
+  }
+  return (await response.json()) as T;
+}
+
+async function apiCallWithRetry<T = unknown>(
+  input: RequestInfo | URL,
+  init?: RequestInit
+): Promise<T> {
   try {
-    return await fetch(input, init);
+    return await apiCall<T>(input, init);
   } catch (e) {
     console.error("Failed to fetch from ConvertKit API. Will try again once", {
       input,
       init,
       errorMessage: (e as Error)?.message,
     });
-    return fetch(input, init);
+    return apiCall<T>(input, init);
   }
 }
 
 export async function fetchSubscriberById(id: string) {
   const url = `https://api.convertkit.com/v3/subscribers/${id}?${API_SECRET_QS}`;
-  return fetch(url);
+  const response = await apiCallWithRetry<{ subscriber: Subscriber }>(url);
+  return response.subscriber;
 }
