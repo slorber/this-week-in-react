@@ -1,15 +1,6 @@
 import type { VercelRequest } from "@vercel/node";
+import { mergeParams } from "./common-utils";
 import { fetchSubscriberById, Subscriber } from "./convertkit";
-
-export function readEnvVariable(name: string) {
-  const value = process.env[name];
-  if (typeof value === "undefined") {
-    throw new Error(
-      `Missing env variable value for ${name} and no default value fallback provided`
-    );
-  }
-  return value;
-}
 
 export type SignupConfirmationParams = {
   // In theory, subscriberId is supposed to always be provided by ConvertKit as QueryString param
@@ -77,17 +68,6 @@ function parseRequestParams(request: VercelRequest) {
   const email = params.get("email");
   const subscriberId = params.get("ck_subscriber_id");
   return { params, email, subscriberId };
-}
-
-// Merge multiple lists of QS params
-// Last params wins/overrides first params
-function mergeParams(qsParamsList: URLSearchParams[]) {
-  const entries: Record<string, string> = {};
-  qsParamsList.forEach((qsParams) => ({
-    ...entries,
-    ...Object.fromEntries(qsParams),
-  }));
-  return new URLSearchParams(entries);
 }
 
 // Email is provided most of the time as ConvertKit QS param that has been persisted in localStorage

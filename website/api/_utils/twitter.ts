@@ -1,13 +1,7 @@
 import TwitterLite from "@slorber/twitter-lite";
-import crypto from "crypto";
-import {
-  readEnvVariable,
-  SignupConfirmationParams,
-} from "./signupConfirmationUtils";
+import { SignupConfirmationParams } from "./signupConfirmationUtils";
 
-function sha256(input: string): string {
-  return crypto.createHash("sha256").update(input).digest("hex");
-}
+import { readEnvVariable, sha256 } from "./common-utils";
 
 const TwitterLiteClient = new TwitterLite({
   subdomain: "ads-api",
