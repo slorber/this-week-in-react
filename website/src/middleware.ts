@@ -1,9 +1,5 @@
-import {
-  next,
-  ipAddress,
-  geolocation,
-  type RequestContext,
-} from "@vercel/edge";
+import { next, ipAddress, geolocation } from "@vercel/edge";
+import type { RequestContext } from "@vercel/edge";
 
 // Vercel edge middleware
 // See https://vercel.com/docs/functions/edge-middleware
