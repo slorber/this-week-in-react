@@ -15,10 +15,10 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "0.0.0-5658",
-    "@docusaurus/preset-classic": "0.0.0-5658",
-    "@docusaurus/theme-common": "0.0.0-5658",
-    "@docusaurus/theme-live-codeblock": "0.0.0-5658",
+    "@docusaurus/core": "0.0.0-5663",
+    "@docusaurus/preset-classic": "0.0.0-5663",
+    "@docusaurus/theme-common": "0.0.0-5663",
+    "@docusaurus/theme-live-codeblock": "0.0.0-5663",
     "@mdx-js/react": "^2.3.0",
     "@slorber/twitter-lite": "^1.1.2",
     "@vercel/edge": "^1.0.1",
@@ -30,8 +30,8 @@
     "unist-util-visit": "^2.0.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "0.0.0-5658",
-    "@docusaurus/tsconfig": "0.0.0-5658",
+    "@docusaurus/module-type-aliases": "0.0.0-5663",
+    "@docusaurus/tsconfig": "0.0.0-5663",
     "@types/facebook-nodejs-business-sdk": "^15.0.2",
     "@types/react": "^18.2.21"
   },

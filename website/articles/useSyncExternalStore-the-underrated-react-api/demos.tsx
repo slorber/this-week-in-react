@@ -42,7 +42,11 @@ type History = ReturnType<typeof useHistory>;
 
 function useHistorySelector<Result>(selector: (history: History) => Result) {
   const history = useHistory();
-  return useSyncExternalStore(history.listen, () => selector(history));
+  return useSyncExternalStore(
+    history.listen,
+    () => selector(history),
+    () => undefined
+  );
 }
 
 function CurrentPathnameOptimized() {
