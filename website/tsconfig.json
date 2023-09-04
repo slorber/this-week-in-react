@@ -1,16 +1,7 @@
 {
   // This file is not used in compilation. It is here just for a nice editor experience.
-  "extends": "@tsconfig/docusaurus/tsconfig.json",
+  "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "strict": true,
-    "baseUrl": ".",
-    "moduleResolution": "Node16",
-    "types": [
-      "node",
-      "@docusaurus/module-type-aliases",
-      "@docusaurus/theme-classic",
-      "@docusaurus/theme-live-codeblock"
-    ]
-  },
-  "exclude": ["docusaurus.config.js"]
+    "baseUrl": "."
+  }
 }

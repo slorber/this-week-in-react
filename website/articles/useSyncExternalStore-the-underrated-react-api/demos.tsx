@@ -1,17 +1,8 @@
-import React, { ReactNode, useCallback } from "react";
-import { useSyncExternalStore as useSyncExternalStoreShim } from "use-sync-external-store/shim";
+import React, { useSyncExternalStore } from "react";
 import { useLocation, useHistory } from "@docusaurus/router";
 import Link from "@docusaurus/Link";
 import BrowserWindow from "@site/src/components/BrowserWindow";
 import RenderBox from "@site/src/components/RenderBox";
-
-function useSyncExternalStore<Snapshot>(
-  subscribe: (onStoreChange: () => void) => () => void,
-  getSnapshot: () => Snapshot,
-  getServerSnapshot?: () => Snapshot
-): Snapshot {
-  return useSyncExternalStoreShim(subscribe, getSnapshot, getServerSnapshot);
-}
 
 function CurrentPathname() {
   const { pathname } = useLocation();

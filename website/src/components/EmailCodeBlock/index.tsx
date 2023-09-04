@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+// @ts-ignore: why?
 import Playground from "@theme/Playground";
 import styles from "./index.module.css";
 
