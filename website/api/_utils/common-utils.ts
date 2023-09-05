@@ -16,11 +16,13 @@ export function sha256(input: string): string {
 
 // Merge multiple lists of QS params
 // Last params wins/overrides first params
-export function mergeParams(qsParamsList: URLSearchParams[]): URLSearchParams {
-  const entries: Record<string, string> = {};
-  qsParamsList.forEach((qsParams) => ({
-    ...entries,
-    ...Object.fromEntries(qsParams),
-  }));
-  return new URLSearchParams(entries);
+export function mergeParams(paramsList: URLSearchParams[]): URLSearchParams {
+  const allEntries = paramsList
+    .flatMap((params) => Array.from(params.entries()))
+    // A defined param value should override null/undefined values
+    // But we don't want null/undefined to override a defined value
+    .filter(([, value]) => {
+      return value !== null && typeof value !== "undefined";
+    });
+  return new URLSearchParams(Object.fromEntries(allEntries));
 }
