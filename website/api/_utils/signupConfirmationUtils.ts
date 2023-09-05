@@ -27,6 +27,9 @@ export type SignupConfirmationParams = {
     url: string | null;
   };
 
+  // convenient for logging/debugging but should probably not be read directly?
+  params: Record<string, string>;
+
   adClickIds: {
     twitter: string | null;
     reddit: string | null;
@@ -161,6 +164,8 @@ export async function readSignupConfirmationParams(
     facebook: params.get("fbclid"),
   };
 
+  const paramsObject = Object.fromEntries(params.entries());
+
   return {
     email,
     subscriberId,
@@ -168,6 +173,7 @@ export async function readSignupConfirmationParams(
     ip,
     userAgent,
     initial,
+    params: paramsObject,
     adClickIds,
   };
 }
