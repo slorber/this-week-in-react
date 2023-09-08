@@ -161,13 +161,13 @@ export function SponsoringTabsFirstSponsor() {
         />
         <ul>
           <li>
-            <b>1 issue</b>: 900€
+            <b>1 issue</b>: 1000€
           </li>
           <li>
-            <b>4 issues</b>: 3000€ <RecommendedOffer />
+            <b>4 issues</b>: 3300€ <RecommendedOffer />
           </li>
           <li>
-            <b>8 issues</b>: 5500€
+            <b>8 issues</b>: 5700€
           </li>
         </ul>
       </>
@@ -188,10 +188,10 @@ export function SponsoringTabsSecondSponsor() {
             <b>1 issue</b>: 600€
           </li>
           <li>
-            <b>4 issues</b>: 1500€ <RecommendedOffer />
+            <b>4 issues</b>: 1600€ <RecommendedOffer />
           </li>
           <li>
-            <b>8 issues</b>: 2800€
+            <b>8 issues</b>: 3000€
           </li>
         </ul>
       </>
