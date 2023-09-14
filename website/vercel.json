@@ -70,6 +70,12 @@
 
   "redirects": [
     {
+      "source": "/patrick",
+      "destination": "https://threejs-journey.com/complete/1c3c6f4b7778e7674c988425fcb2154d",
+      "permanent": true
+    },
+
+    {
       "source": "/l",
       "destination": "https://thisweekinreact.com/?utm_source=linkedin",
       "permanent": true
