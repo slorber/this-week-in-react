@@ -46,6 +46,9 @@ export async function reportFacebookAdsSignup(
       // This EventName is for Lead > Conversion
       // see https://developers.facebook.com/docs/meta-pixel/reference#standard-events
       .setEventName("CompleteRegistration")
+      // EventId is used for event deduplication
+      // See https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/server-event
+      .setEventId(email)
       .setEventTime(timestamp)
       .setUserData(userData)
       .setCustomData(customData)
