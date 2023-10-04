@@ -47,11 +47,9 @@ Unlock enterprise-grade features, functions, and UI components completely free f
 
 [**The Uphill Battle of Memoization**](https://tkdodo.eu/blog/the-uphill-battle-of-memoization)
 
-On veut créer des applications performantes, et pour cela on utilise `React.memo` qui évite les re-renders inutiles. Seulement ces optimisations cassent trop facilement. Dominik nous partage plusieurs cas de figure qui conduisent à une dégradation des performances, dont l'utilisation d'objects/callbacks inlinés, ou encore l'usage de slots JSX avec une props comme `children`.
+We want to create high-performance applications, and to do that we use `React.memo`, which avoids unnecessary re-renders. But these optimisations break too easily. Dominik shares with us several scenarios that lead to performance degradation, including the use of inlined objects/callbacks, or the use of JSX slots with a props like `children`.
 
-J'en ai profité pour donner [mon avis sur Twitter](https://twitter.com/sebastienlorber/status/1709258817844752794): la performance d'un composant React devrait être mieux encapsulée. En attendant le compiler React-Forget, il y a tout de même quelques pistes moins connues à explorer, comme l'usage de plugins Babel.
-
-https://twitter.com/TkDodo/status/1708134790065434770
+I took the opportunity to give [my opinion on Twitter](https://twitter.com/sebastienlorber/status/1709258817844752794): the performance of a React component should be better encapsulated. While we're waiting for the React-Forget compiler, there are a few lesser-known avenues to explore, such as the use of Babel plugins.
 
 ---
 
@@ -59,25 +57,25 @@ https://twitter.com/TkDodo/status/1708134790065434770
 
 [**Accessible, Typesafe, Progressively Enhanced Modern Web Forms**](https://www.epicweb.dev/accessible-typesafe-progressively-enhanced-modern-web-forms)
 
-Kent nous montre quelques exemples de code Remix et la facilité avec laquelle on implémente pending UI et optimistic UI. Il recommande d'utiliser un schema Zod partagé pour valider les formulaires coté frontend, et de l'étendre coté backend pour éventuellement rajouter des règles supplémentaires. [conform](https://conform.guide/) facilite l'utilisation d'un schema Zod pour valider un `FormData`, et semble être une solution très intéressante pour gérer un formulaire React, de l'état local jusqu'au serveur.
+Kent shows us a few examples of Remix code and how easy it is to implement pending UI and optimistic UI. He recommends using a shared Zod schema to validate forms on the frontend, and extending it on the backend to eventually add additional rules. [conform](https://conform.guide/) facilitates the use of a Zod schema to validate a `FormData`, and seems to be an underrated solution for managing a React form, from the local state to the server.
 
 ---
 
 - 💸 [Ably Realtime Hackathon - Create a real-time React app, win $19,000 in prizes - from real-time dashboards to collaborative experiences!](https://ably.devpost.com/?utm_campaign=23-hackathon&utm_source=thisweekinreact&utm_medium=referral)
-- 👀 [Next.js PR - Progressive enhancement for form state](https://github.com/vercel/next.js/pull/55584): Next.js intègre un tout nouveau hook React `useFormState` (ne pas confondre avec `useFormStatus`) qui permet de gérer la réponse des Server Actions, même quand JavaScript est désactivé. https://twitter.com/shuding_/status/1707191832625455219
-- 👀 [React core PR - Add Server Context deprecation warning](https://github.com/facebook/react/pull/27424): le hook secret `createServerContext` est déprécié et va être retiré.
+- 👀 [Next.js PR - Progressive enhancement for form state](https://github.com/vercel/next.js/pull/55584): Next.js includes a brand-new `useFormState` React core hook (not to be confused with `useFormStatus`), which can be used to manage the feedback/response of Server Actions, even when JavaScript is disabled.
+- 👀 [React core PR - Add Server Context deprecation warning](https://github.com/facebook/react/pull/27424): the secret hook `createServerContext` is deprecated and will be removed.
 - 👀 [Panda CSS Public Roadmap - Container Query, Panda Studio](https://panda-css.canny.io/)
 - 🐦 [Astro View Transition + persistent React-Three-Fiber model demo](https://twitter.com/astrodotbuild/status/1707918024471355406)
 - 🐦 [Remotion contracting with GitHub - Assembled a team to produce GitHub Unwrapped 2023 videos](https://twitter.com/Remotion/status/1707664519403614323)
-- 📜 [Sharing State with Islands Architecture](https://frontendatscale.com/blog/islands-architecture-state/): article bien illustré qui analyse plusieurs solutions possibles pour faire communiquer des Islands dans un contexte Astro/React. https://twitter.com/charca/status/1703833449789096397
-- 📜 [Next.js 13 vs Remix: An In-depth case study](https://prateeksurana.me/blog/nextjs-13-vs-remix-an-in-depth-case-study/): un article exhaustif et bien documenté qui compare Next.js et Remix sur de nombreux aspects. https://twitter.com/psuranas/status/1708720241059180787
+- 📜 [Sharing State with Islands Architecture](https://frontendatscale.com/blog/islands-architecture-state/): well-illustrated article analysing several possible solutions for getting Islands to communicate in an Astro/React context.
+- 📜 [Next.js 13 vs Remix: An In-depth case study](https://prateeksurana.me/blog/nextjs-13-vs-remix-an-in-depth-case-study/): exhaustive, well-documented article comparing many Next.js and Remix features side-by-side.
 - 📜 [React Google Maps: Drawing Tools](https://sudolabs.com/insights/react-google-maps-drawing-tools)
 - 📜 [Docusaurus - Preparing your site for v3 + MDX 2](https://docusaurus.io/blog/preparing-your-site-for-docusaurus-v3)
 - 📦 [Astro 3.2 - View Transitions improvements](https://astro.build/blog/astro-320/)
-- 📦 [Radix Themes 2.0 - New colors, better Tailwind compatibility, many component improvements](https://www.radix-ui.com/themes/docs/overview/releases#200) https://twitter.com/radix_ui/status/1708911620498362394
-- 📦 [React Aria - October 2 2023 releases - Client-side routing integration](https://react-spectrum.adobe.com/releases/2023-10-02.html) https://twitter.com/devongovett/status/1708878791446339669
+- 📦 [Radix Themes 2.0 - New colors, better Tailwind compatibility, many component improvements](https://www.radix-ui.com/themes/docs/overview/releases#200)
+- 📦 [React Aria - October 2 2023 releases - Client-side routing integration](https://react-spectrum.adobe.com/releases/2023-10-02.html)
 - 📦 [Rustymotion - A Rust-based renderer for Remotion videos](https://github.com/clearlysid/rustymotion)
-- 📦 [Ecctrl - React-Three-Fiber character controller](https://github.com/pmndrs/ecctrl) https://twitter.com/AndrewChenE/status/1709000257747739046
+- 📦 [Ecctrl - React-Three-Fiber character controller](https://github.com/pmndrs/ecctrl)
 - 🎥 [Theo T3 - Facebook Tried Tailwind, Then Built This Instead (styleX)](https://www.youtube.com/watch?v=PHV94q7BivI)
 - 🎙️ [This Month in React – September 2023](https://podcasters.spotify.com/pod/show/reactiflux/episodes/This-Month-in-React--September-2023-e29vb6o)
 - 👥 [reactjsday](https://2023.reactjsday.it/) (Verona 🇮🇹, Octobre 27) is offering us [\-10% - code "media_TWIR"](https://ti.to/grusp/reactjsday-2023/discount/media_TWIR)
@@ -105,20 +103,20 @@ SurveyJS is a product suite of four open-source JavaScript libraries that allow 
 
 [**Custom Apple Settings UI with Expo**](https://evanbacon.dev/blog/apple-settings)
 
-Evan rappelle les quelques avantages d'utiliser l'écran settings iOS. C'est pénible à implémenter nativement, et le ROI est faible, mais son Expo Config Plugin simplifie la tâche. Il explique comment toggle le son d'une app ou encore automatiser l'affichage des licenses logicielles.
+Evan points out the few advantages of using the iOS settings screen. It's a pain to implement natively, and the ROI is low, but his Expo Config Plugin simplifies the task. He explains how to toggle an app's sound with a switch, or how to automate the display of your app's software licenses.
 
 ---
 
 - 💸 [Blitz - Build React Native Apps Faster for iOS, Android, and Web!](https://www.blitz-rn.com/)
-- 📜 [Expo EAS - Support for XCode 15 and iOS 17](https://expo.dev/changelog/2023/09-28-new-xcode-ios) https://twitter.com/expo/status/1707860316661653987
-- 📖 [Expo Docs - Continuous Native Generation (CNG)](https://docs.expo.dev/workflow/continuous-native-generation/): présente l'idée de générer les plateformes natives en continu l'intérêt de cette pratique.
-- 📦 [create-react-native-library v0.34 - local library support](https://github.com/callstack/react-native-builder-bob/releases/tag/create-react-native-library%400.34.0): il est maintenant très facile de générer une librairie locale en React-Native vanilla. À noter qu'Expo le supporte aussi. https://twitter.com/satya164/status/1708769857309720652
+- 📜 [Expo EAS - Support for XCode 15 and iOS 17](https://expo.dev/changelog/2023/09-28-new-xcode-ios)
+- 📖 [Expo Docs - Continuous Native Generation (CNG)](https://docs.expo.dev/workflow/continuous-native-generation/): presents the idea of generating native platforms on an ongoing basis with Expo Prebuild.
+- 📦 [create-react-native-library v0.34 - local library support](https://github.com/callstack/react-native-builder-bob/releases/tag/create-react-native-library%400.34.0): it's now very easy to generate a local library in React-Native vanilla. Expo supports it too.
 - 📦 [react-native-unistyles - Level up your React Native StyleSheet, make it cross-platform and scalable](https://github.com/jpudysz/react-native-unistyles)
 - 📦 [react-native-compressor - Compress Image, Video, and Audio before uploading](https://github.com/numandev1/react-native-compressor)
-- 📦 [Expo-Image 1.3.4 - Fix libwepb security issue](https://expo.dev/changelog/2023/09-29-libwebp) expo image security fix https://twitter.com/expo/status/1707468429798867149
+- 📦 [Expo-Image 1.3.4 - Fix libwepb security issue](https://expo.dev/changelog/2023/09-29-libwebp)
 - 📦 [React-Native-Skia v0.1.211 beta - Animated images](https://shopify.github.io/react-native-skia/docs/animated-images/)
 - 🎥 [Why did your app crash? How to use Logcat & macOS Console to debug](https://www.youtube.com/watch?v=LvCci4Bwmpc)
-- 🎥 [Why Airbnb was wrong to ditch React Native in 2018](https://www.youtube.com/watch?v=RwUQnfcxH0o) https://twitter.com/mo__javad/status/1707424514630390209
+- 🎥 [Why Airbnb was wrong to ditch React Native in 2018](https://www.youtube.com/watch?v=RwUQnfcxH0o)
 - 🎙 [React Native Radio 276 - Announcing Ignite v9](https://reactnativeradio.com/episodes/rnr-276-announcing-ignite-v9-expresso)
 
 ---
