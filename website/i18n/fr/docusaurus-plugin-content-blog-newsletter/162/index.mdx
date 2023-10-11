@@ -99,21 +99,22 @@ Get started with Clerk’s [quickstarts and tutorials](https://clerk.com/docs/qu
 
 ## 📱 React-Native {#react-native}
 
-[Using RCTView & RCTText in React Native for Performance Gains](https://blog.theodo.com/2023/10/native-views-rn-performance/)
+[![Using RCTView & RCTText in React Native for Performance Gains](/emails/issues/162/rnperf.jpg)](https://blog.theodo.com/2023/10/native-views-rn-performance/)
 
-https://twitter.com/mo__javad/status/1711784849067966585
+[**Using RCTView & RCTText in React Native for Performance Gains**](https://blog.theodo.com/2023/10/native-views-rn-performance/)
 
-- 📦 [react-native-fast-text](https://github.com/peterpme/react-native-fast-text) + rn-optimize ? https://twitter.com/peterpme/status/1707983667627446497
+En ce moment, les devs React-Native discutent beaucoup [sur Twitter](https://twitter.com/FernandoTheRojo/status/1707762822015267219) de la perf des composants `Text` et `View`, qui sont des wrappers JS et rajoutent de l'overhead par rapport aux éléments natifs `RCTText` et `RCTView`. William Candillon avait déjà 🎥 [reporté ce problème](https://www.youtube.com/watch?v=1D78Tc46Xqo&t=1156s) dès 2021, et la possibilité d'optimiser, ce qu'il est possible de faire à condition de se priver de quelques features comme les listeners `onPress`. Ce benchmark propose de mesurer l'impact d'utiliser les composants natifs à la place des composants officiels, et reporte un gain d'environ 15%, avec des variations selon la plateforme.
+
+Maintenant que cette astuce s'est répandue, les devs React-Native ont bien envie d'en profiter. On peut noter la création de [react-native-fast-text](https://github.com/peterpme/react-native-fast-text), ou encore le POC d'un plugin Babel [react-native-optimizer](https://github.com/marklawlor/react-native-optimizer) qui appliquerait cette optimisation automatiquement.
 
 ---
 
 - 💸 [Blitz - Build React Native Apps Faster for iOS, Android, and Web!](https://www.blitz-rn.com/)
-- 🐦 [Expo docs updates - Bun, local dev...](https://twitter.com/amanhimself/status/1710254359274037263)
-- nativewind v4? https://twitter.com/mark__lawlor/status/1710063049271279917
+- 🐦 [Expo docs updates - Bun, local dev, iOS capabilities...](https://twitter.com/amanhimself/status/1710254359274037263)
+- 📜 [How to measure React Native performance with Flashlight](https://www.bam.tech/article/measuring-react-native-performance-with-flashlight): montre un exemple d'utilisation de Flashlight pour comparer les performances au scroll de FlatList et Flashlist sur Android. On peut utiliser des commandes ADB ou Maestro pour simuler le scroll.
+- 📜 [Remote controls for React TV apps: a declarative approach with react-tv-space-navigation 1.0!](https://www.bam.tech/article/handling-remote-controls-in-tv-apps-the-react-way-with-react-tv-space-navigation-1-0): les devs BAM ont créé [react-tv-space-navigation](https://github.com/bamlab/react-tv-space-navigation), une solution de navigation spatiale cross-platform, agnostique, qui fonctionne sur les apps TV en React, aussi bien web que natives.
+- 📦 [React-Native v0.73 RC.2](https://github.com/facebook/react-native/releases/tag/v0.73.0-rc.2): la v0.73 vient de passer en RC. Il faudra regarder la [🎥 Keynote React-Native-EU](https://www.youtube.com/watch?v=-rCRgbsJumk) pour connaitre les highlights. On y trouve entre autre one-click debug flow et stable symlinks support! https://twitter.com/sebastienlorber/status/1712090409919242555
 - 📦 [vxrn - The magic of Vite, meet React Native](https://vxrn.dev/): nouveau projet expérimental qui propose d'utiliser Vite pour le développement cross-platform web/mobile, à l'instar d'Expo qui mise sur Metro. https://twitter.com/natebirdman/status/1710084813179474106
-- 📜 [Remote controls for React TV apps: a declarative approach with react-tv-space-navigation 1.0!](https://www.bam.tech/article/handling-remote-controls-in-tv-apps-the-react-way-with-react-tv-space-navigation-1-0)
-- 📦 [React-Native v0.73 RC.2](https://github.com/facebook/react-native/releases/tag/v0.73.0-rc.2): la v0.73 vient de passer en RC. Il faudra regarder la [🎥 Keynote React-Native-EU](https://www.youtube.com/watch?v=-rCRgbsJumk) pour connaitre les highlights. On y trouve entre autre one-click debug flow ([🐦 demo](https://twitter.com/SzymonRybczak/status/1709844650398241123)) et stable symlinks support!
-- 📦 [react-tv-space-navigation](https://github.com/bamlab/react-tv-space-navigation)
 - 📦 [vision-camera 3.3 - QR-code/Barcode scanner](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v3.3.0)
 - 📦 [vision-camera-barcode-scanner](https://github.com/mgcrea/vision-camera-barcode-scanner)
 - 📦 [Create-Expo-Stack CLI v2](https://expostack.dev/) https://twitter.com/DanStepanov/status/1711881578295726149
@@ -162,18 +163,6 @@ Notre plateforme **interactive** et **immersive** permet un apprentissage effica
 
 ## 🤭 Fun {#fun}
 
-https://twitter.com/Hacksore/status/1710826658863702314
-
-https://twitter.com/JNYBGR/status/1709967646945317090
-
-https://twitter.com/thekitze/status/1709581811033026977
-
-https://twitter.com/thekitze/status/1711643097363333537
-
-https://twitter.com/thekitze/status/1711634368366510391
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
-
-🤣 [Les autres tweets marrant cette semaine](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/162/meme.jpg)](https://twitter.com/Hacksore/status/1710826658863702314)
 
 A plus 👋
