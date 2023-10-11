@@ -1,6 +1,6 @@
 ---
 slug: /162
-title: "This Week In React #162: ..."
+title: "This Week In React #162: Lit-React, Remix, Next.js, Fresh, next-safe-actions, Starlight, RN 0.73 RC, RCTText, canvaskit-js, vxrn, Rolldown, Vite, Japa, Prisma..."
 authors: [slorber]
 date: 10-11-2023
 unlisted: true
@@ -8,7 +8,11 @@ unlisted: true
 
 Hi everyone!
 
-<Todo />
+This week, I've been looking at the release of Lit 3.0 to see if the use of Web Components has become easier with React.
+
+On the React-Native side, version 0.73 is in release candidate with a number of DX improvements. There's also interesting activity regarding the possible optimisation of the Text and View components. Canvaskit-js makes it possible to run Skia on the web for just 20kb!
+
+There were some interesting announcements at ViteConf last week. Notably a Rust port of Rollup, and the usage of Vite with Remix and React-Native.
 
 <!-- truncate -->
 
@@ -38,9 +42,37 @@ It is super easy to install in your favorite framework: [React.js,](https://www
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Lit React v1.0](/emails/issues/162/lit.jpg)](https://www.npmjs.com/package/@lit/react)
 
-- 💸 [Ably Realtime Hackathon - Create a real-time React app, win $19,000 in prizes - from real-time dashboards to collaborative experiences!](https://ably.devpost.com/?utm_campaign=23-hackathon&utm_source=thisweekinreact&utm_medium=referral)
+[**Lit React v1.0**](https://www.npmjs.com/package/@lit/react)
+
+Le framework Web Components de Google [Lit vient de sortir en v3.0](https://lit.dev/blog/2023-10-10-lit-3.0/). En dehors des améliorations du framework (decorators, template compiler, Preact Signals), on retrouve en particulier la graduation du package d'intégration `@lit/react` qui sort du Lab, devient stable et sort en v1.0.
+
+Cette intégration facilite l'usage des Web Components dans une app React (ou Preact) en créant un wrapper qui va mapper les props React sur les properties de l'élément cible, gérer les event handlers et faciliter le typage TypeScript. Elle comble certaines lacunes de React 18 qui ne s'intègre pas facilement avec les Web Components: les props sont mappées sur des attributs et non des properties. Voir la [documentation pour le framework React](https://lit.dev/docs/frameworks/react/).
+
+Mais est-ce qu'un dev React moderne peut facilement utiliser tout ça? Lit propose des packages expérimentaux [@lit-labs/ssr](https://www.npmjs.com/package/@lit-labs/ssr), [@lit-labs/ssr-react](https://www.npmjs.com/package/@lit-labs/ssr-react) et [@lit-labs/nextjs](https://www.npmjs.com/package/@lit-labs/nextjs) mais le support est limité et ne marchera pas avec Next.js App Router. Le [Declarative Shadow DOM](https://developer.chrome.com/articles/declarative-shadow-dom/), qui permet le SSR, n'est pas encore implémenté dans Firefox, mais un polyfill existe. Bref, Lit devrait bien fonctionner sur une app CRA, mais semble encore un peu risqué si vous avez besoin de SSR et SEO.
+
+---
+
+- 💸 [Create collaborative applications like Figma and Miro in a few lines of code with Ably's in-app collaboration SDK](https://hubs.la/Q023nqgg0)
+- 👀 [Remix PR - Add experimental Vite support](https://github.com/remix-run/remix/pull/7590)
+- 👀 [Remix PR - Add startViewTransition support](https://github.com/remix-run/react-router/pull/10916)
+- 👀 [Next.js PR - Document Server Actions `.bind` method](https://github.com/vercel/next.js/pull/56164): la [doc Next.js](https://nextjs.org/docs/app/api-reference/functions/server-actions#binding-arguments) recommande maintenant d'utiliser `myAction.bind(null, myArg)` pour passer des arguments supplémentaires à une Server Action. La fonction retournée sera alors également une Server Action.
+- 📜 [UI Composition - AKA taking a step back to take a step forward](https://kyleshevlin.com/ui-composition): article qui présente un exemple de composant Card qui a trop de responsabilité. Propose de le splitter et d'utiliser la composition pour le rendre plus maintenable.
+- 📜 [Server-side pagination with Remix](https://www.jacobparis.com/content/remix-pagination): j'ai trouvé cette implémentation de pagination très intéressante, sans aucun listener `onClick` ni JS pour manipuler la query string. Repose uniquement sur le comportement natif des forms et donc compatible progressive enhancement. Ma réserve: impossible d'ouvrir une page dans un nouvel onglet 😅. https://twitter.com/sebastienlorber/status/1712118722578559162
+- 📜 [Access the Loader Data in Remix](https://sergiodxa.com/tutorials/access-loaders-data-in-remix): présente différentes manières d'utiliser `useLoaderData` ou `useRouteLoaderData` et leurs tradeoffs, en fonction d'où on les utilise.
+- 📜 [Why I love Remix, And why you should too](https://alemtuzlak.hashnode.dev/why-i-love-remix)
+- 📜 [Making React Apps Memory Efficient - Million.js Beyond Speed](https://dev.to/ricardonunezio/millionjs-beyond-speed-making-react-apps-memory-efficient-2amn)
+- 📜 [Test your React Libraries Locally with Yalc](https://www.propelauth.com/post/test-your-react-libraries-with-yalc)
+- 📜 [Why we still use React HOCs](https://www.propelauth.com/post/why-we-have-both-react-hooks-and-hocs)
+- 📜 [Progressively Enhanced WebGL Lens Refraction](https://tympanus.net/codrops/2023/10/10/progressively-enhanced-webgl-lens-refraction/)
+- 📦 [Fresh v1.5 - Partials, client side navigation and more](https://deno.com/blog/fresh-1.5): le framework Preact implémente une navigation client-side basée sur des "Partials" qui permet de préserver le state lors des navigations. Le support View Transitions arrive.
+- 📦 [next-safe-action v4 - Typesafe Server Actions in your Next.js 13 app](https://next-safe-action.dev/): validation des inputs avec Zod. Note: un projet similaire [Zact](https://github.com/pingdotgg/zact) est déprécié au profit de `next-safe-action`.
+- 📦 [Astro Starlight v0.11](https://github.com/withastro/starlight/releases/tag/%40astrojs%2Fstarlight%400.11.0): ajoute le support des [component overrides](https://starlight.astro.build/guides/overriding-components/) https://twitter.com/astrodotbuild/status/1711391413630329009
+- 📦 [React-Query 5.0.0 RC.10](https://github.com/TanStack/query/releases/tag/v5.0.0-rc.10): les dernières RCs apportent des améliorations notables [🐦 devtools](https://twitter.com/TkDodo/status/1711297673934848388) et [🐦 TypeScript](https://twitter.com/TkDodo/status/1711635656642855297).
+- 🔗 [ServerComponents.dev](https://servercomponents.dev/): une resource interactive sympa pour en savoir plus sur les Server Components.
+- 🎥 [What's new in Remotion – September 2023](https://www.youtube.com/watch?v=Ol-571DOPDY)
+- 📅 [React Jam - October 19-29th - React devs create and play games in 10 days](https://reactjam.com/)
 - 👥 [React Advanced](https://reactadvanced.com/?utm_source=email&utm_medium=thisweekinreact) (London 🇬🇧, Octobre 20-23) is offering us [\-10% - code "REACT10"](https://ti.to/gitnation/react-advanced-london-2023/discount/REACT10)
 
 <SubscribeFormEmbed placement="middle" />
@@ -71,22 +103,52 @@ Get started with Clerk’s [quickstarts and tutorials](https://clerk.com/docs/qu
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Using RCTView & RCTText in React Native for Performance Gains](/emails/issues/162/rnperf.jpg)](https://blog.theodo.com/2023/10/native-views-rn-performance/)
+
+[**Using RCTView & RCTText in React Native for Performance Gains**](https://blog.theodo.com/2023/10/native-views-rn-performance/)
+
+En ce moment, les devs React-Native discutent beaucoup [sur Twitter](https://twitter.com/FernandoTheRojo/status/1707762822015267219) de la perf des composants `Text` et `View`, qui sont des wrappers JS et rajoutent de l'overhead par rapport aux éléments natifs `RCTText` et `RCTView`. William Candillon avait déjà 🎥 [reporté ce problème](https://www.youtube.com/watch?v=1D78Tc46Xqo&t=1156s) dès 2021, et la possibilité d'optimiser, ce qu'il est possible de faire à condition de se priver de quelques features comme les listeners `onPress`. Ce benchmark propose de mesurer l'impact d'utiliser les composants natifs à la place des composants officiels, et reporte un gain d'environ 15%, avec des variations selon la plateforme.
+
+Maintenant que cette astuce s'est répandue, les devs React-Native ont bien envie d'en profiter. On peut noter la création de [react-native-fast-text](https://github.com/peterpme/react-native-fast-text), ou encore le POC d'un plugin Babel [react-native-optimizer](https://github.com/marklawlor/react-native-optimizer) qui appliquerait cette optimisation automatiquement.
+
+---
 
 - 💸 [Blitz - Build React Native Apps Faster for iOS, Android, and Web!](https://www.blitz-rn.com/)
+- 🐦 [Expo docs updates - Bun, local dev, iOS capabilities...](https://twitter.com/amanhimself/status/1710254359274037263)
+- 📜 [How to measure React Native performance with Flashlight](https://www.bam.tech/article/measuring-react-native-performance-with-flashlight): montre un exemple d'utilisation de Flashlight pour comparer les performances au scroll de FlatList et Flashlist sur Android. On peut utiliser des commandes ADB ou Maestro pour simuler le scroll.
+- 📜 [Remote controls for React TV apps: a declarative approach with react-tv-space-navigation 1.0!](https://www.bam.tech/article/handling-remote-controls-in-tv-apps-the-react-way-with-react-tv-space-navigation-1-0): les devs BAM ont créé [react-tv-space-navigation](https://github.com/bamlab/react-tv-space-navigation), une solution de navigation spatiale cross-platform, agnostique, qui fonctionne sur les apps TV en React, aussi bien web que natives.
+- 📦 [React-Native v0.73 RC.2](https://github.com/facebook/react-native/releases/tag/v0.73.0-rc.2): la v0.73 vient de passer en RC. Il faudra regarder la [🎥 Keynote React-Native-EU](https://www.youtube.com/watch?v=-rCRgbsJumk) pour connaitre les highlights. On y trouve entre autre one-click debug flow et stable symlinks support! https://twitter.com/sebastienlorber/status/1712090409919242555
+- 📦 [vxrn - The magic of Vite, meet React Native](https://vxrn.dev/): nouveau projet expérimental qui propose d'utiliser Vite pour le développement cross-platform web/mobile, à l'instar d'Expo qui mise sur Metro. https://twitter.com/natebirdman/status/1710084813179474106
+- 📦 [Vision-Camera 3.3 - QR-code/Barcode scanner](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v3.3.0)
+- 📦 [Vision-Camera-Barcode-Scanner](https://github.com/mgcrea/vision-camera-barcode-scanner)
+- 📦 [Create-Expo-Stack CLI v2](https://expostack.dev/) https://twitter.com/DanStepanov/status/1711881578295726149
+- 🎥 [Back to the Web](https://www.youtube.com/watch?v=3p3NI1yIgcM): William Candillon dévoile un polyfill expérimental pour Skia `canvaskit-js` qui permet de faire tourner React-Native-Skia sur le web en seulement 20kb, au lieu de 3mb! Les demos Flutter tournent déjà plutôt bien avec. On peut l'utiliser dans une app Create-React-App sans dépendre de React-Native-Web.
+- 🎥 [What’s the Best React Native Storage Option?](https://www.youtube.com/watch?v=wVNPmxntwKQ)
+- 🎙️ [React-Native-Radio 277 - Expo Launch Party](https://reactnativeradio.com/episodes/rnr-277-expo-launch-party)
+- 🎙 [The React Native Show Podcast 28 - Improving Developer Experience with Expo](https://www.youtube.com/watch?v=4PPDAvgfLHk)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 🐦 [Evan You - "we are working on Rolldown, a rust port of Rollup"](https://twitter.com/youyuxi/status/1709943106215530867)
+- 📜 [Speeding up the JavaScript ecosystem - The barrel file debacle](https://marvinh.dev/blog/speeding-up-javascript-ecosystem-part-7/)
+- 📜 [Hydration, the Saboteur of Lazy Loading](https://www.builder.io/blog/hydration-sabotages-lazy-loading)
+- 📜 [Limit the reach of your selectors with the CSS @scope at-rule](https://developer.chrome.com/articles/at-scope/)
+- 📜 [Strong static typing, a hill I'm willing to die on...](https://www.svix.com/blog/strong-typing-hill-to-die-on/)
+- 📜 [Photoshop is now on the web!](https://medium.com/@addyosmani/photoshop-is-now-on-the-web-38d70954365a)
+- 📜 [Write your own Zod](https://zackoverflow.dev/writing/write-your-own-zod)
+- 📜 [This technique makes Valibot’s bundle size 10x smaller than Zod’s!](https://www.builder.io/blog/valibot-bundle-size)
+- 📜 [An Interactive Intro to CRDTs](https://jakelazaroff.com/words/an-interactive-intro-to-crdts/)
+- 📜 [ESLint Flat config rollout plans - By default in v9](https://eslint.org/blog/2023/10/flat-config-rollout-plans/)
+- 📦 [Japa v3 - Testing framework for Node.js](https://japa.dev/)
+- 📦 [Prisma v5.4 - Serverless database drivers preview](https://github.com/prisma/prisma/releases/tag/5.4.0)
+- 🎥 [ViteConf 2023 Replay](https://viteconf.org/23/replay)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/162/meme.jpg)](https://twitter.com/Hacksore/status/1710826658863702314)
 
 See ya! 👋
