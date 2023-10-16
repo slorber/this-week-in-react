@@ -230,6 +230,13 @@
       "destination": "https://twitter.com/sebastienlorber/timelines/1448942785814466561",
       "permanent": true
     },
+
+    {
+      "source": "/sponsor/form",
+      "destination": "https://tally.so/r/wLK0VG",
+      "permanent": true
+    },
+
     {
       "source": "/sponsoring",
       "destination": "https://thisweekinreact.com/sponsor",
