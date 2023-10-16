@@ -131,15 +131,21 @@ function SponsoringHeader({
 }) {
   return (
     <>
+      {/*}
       {typeof count !== "undefined" ? (
         <div>
           <b>Audience size</b>: ~{count}
         </div>
       ) : null}
+      */}
       {nextSlot && (
         <div>
-          <b>Next availability</b>: {nextSlot.date} -{" "}
-          <b>Projected audience size</b>: ~{nextSlot.projectedAudienceSize}
+          <b>Next availability</b>: {nextSlot.date}
+        </div>
+      )}
+      {nextSlot && (
+        <div>
+          <b>Audience size projection</b>: ~{nextSlot.projectedAudienceSize}
         </div>
       )}
       <div>
