@@ -131,9 +131,11 @@ function SponsoringHeader({
 }) {
   return (
     <>
-      <div>
-        <b>Audience size</b>: ~{count}
-      </div>
+      {typeof count !== "undefined" ? (
+        <div>
+          <b>Audience size</b>: ~{count}
+        </div>
+      ) : null}
       {nextSlot && (
         <div>
           <b>Next availability</b>: {nextSlot.date} -{" "}
@@ -192,6 +194,24 @@ export function SponsoringTabsSecondSponsor() {
           </li>
           <li>
             <b>8 issues</b>: 3000€
+          </li>
+        </ul>
+      </>
+    </SponsoringTabs>
+  );
+}
+
+export function SponsoringTabsQuickLinkSponsor() {
+  return (
+    <SponsoringTabs>
+      <>
+        <SponsoringHeader />
+        <ul>
+          <li>
+            <b>⚛️ 4 Quick Links - React section</b>: 800€
+          </li>
+          <li>
+            <b>📱 4 Quick Links - React-Native section</b>: 300€
           </li>
         </ul>
       </>

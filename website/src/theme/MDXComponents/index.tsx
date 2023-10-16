@@ -11,6 +11,7 @@ import SponsoringTabs, {
   SponsoringTabsFirstSponsor,
   SponsoringTabsSecondSponsor,
   SponsoringTabsJobSponsor,
+  SponsoringTabsQuickLinkSponsor,
 } from "./SponsoringTabs";
 
 import SubscribeFormEmbed from "./SubscribeFormEmbed";
@@ -27,6 +28,7 @@ export default {
   SponsoringTabsTestimonials,
   SponsoringTabsFirstSponsor,
   SponsoringTabsSecondSponsor,
+  SponsoringTabsQuickLinkSponsor,
   SponsoringTabsJobSponsor,
   Todo: () => (
     <img src={require("@site/static/img/todo.png").default} alt={"TODO"} />
