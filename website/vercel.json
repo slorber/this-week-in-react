@@ -76,6 +76,27 @@
     },
 
     {
+      "source": "/social/x",
+      "destination": "https://twitter.com/sebastienlorber",
+      "permanent": true
+    },
+    {
+      "source": "/social/linkedin",
+      "destination": "https://www.linkedin.com/in/sebastienlorber/",
+      "permanent": true
+    },
+    {
+      "source": "/social/instagram",
+      "destination": "https://www.instagram.com/thisweekinreact/",
+      "permanent": true
+    },
+    {
+      "source": "/social/youtube",
+      "destination": "https://www.youtube.com/@thisweekinreact",
+      "permanent": true
+    },
+
+    {
       "source": "/l",
       "destination": "https://thisweekinreact.com/?utm_source=linkedin",
       "permanent": true
