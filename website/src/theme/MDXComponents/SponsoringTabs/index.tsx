@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
 import styles from "./index.module.css";
 import clsx from "clsx";
 import {
@@ -52,16 +53,14 @@ export default function SponsoringTabs({ children }) {
   return <div className={clsx("card", styles.tabs)}>{content}</div>;
 }
 
-export function SponsoringTabsStats() {
+export function SponsoringTabsStats({ children }: { children: ReactNode }) {
   return (
     <SponsoringTabs>
       <>
         <ul>
           <li>
             <b>Subscribers count</b>:{" "}
-            <span>{newsletterStats.all.subscribersCount}</span> (🇬🇧
-            {newsletterStats.en.subscribersCount} + 🇫🇷
-            {newsletterStats.fr.subscribersCount})
+            <span>{newsletterStats.all.subscribersCount}</span>
           </li>
           <li>
             <b>Monthly growth</b>:{" "}
@@ -74,18 +73,7 @@ export function SponsoringTabsStats() {
             <b>Click-rate</b>: <span>{newsletterStats.all.clickRate}%</span>
           </li>
         </ul>
-        <span>
-          <b>
-            <a href="https://thisweekinreact.com/ck">ConvertKit</a> email
-            provider screenshot
-          </b>
-          {" (February 2023)"}
-        </span>
-
-        <img
-          alt="screenshot"
-          src="https://user-images.githubusercontent.com/749374/223171660-1fe93f8a-e67d-48c1-94ad-d0c6a1afed29.png"
-        />
+        {children}
       </>
     </SponsoringTabs>
   );
@@ -111,12 +99,24 @@ export function SponsoringTabsTestimonials() {
     <SponsoringTabs>
       <SponsoringTabsTestimonialsTabItem>
         {AllQuotes.en.addyosmani}
-        {AllQuotes.en.jackherrington}
-        {AllQuotes.en.wcandillon}
         {AllQuotes.en.tkdodo}
+        {AllQuotes.en.jackherrington}
         {AllQuotes.en.evanbacon}
-        {AllQuotes.en.threepointone}
-        {AllQuotes.en.yangshunz}
+
+        <Details summary={<summary>More testimonials?</summary>}>
+          {AllQuotes.en.wcandillon}
+          {AllQuotes.en.threepointone}
+          {AllQuotes.en.kzzzf}
+          {AllQuotes.en.yangshunz}
+          {AllQuotes.en.michal}
+          {AllQuotes.en.ericclemmons}
+          {AllQuotes.en.johnnyreilly}
+          {AllQuotes.en.ane_naiz}
+          {AllQuotes.en.asidorenko_}
+          {AllQuotes.en.beaussan}
+          {AllQuotes.en.elijahmanor}
+          {AllQuotes.en.fredmaiaarantes}
+        </Details>
       </SponsoringTabsTestimonialsTabItem>
     </SponsoringTabs>
   );

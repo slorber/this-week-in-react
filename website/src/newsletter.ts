@@ -4,7 +4,7 @@ export const sponsorshipCalendarLink = "https://thisweekinreact.com/calendar";
 export const testimonialsLink = "https://thisweekinreact.com/testimonials";
 
 // TODO automate this!
-export const lastIssueLink = "/newsletter/161";
+export const lastIssueLink = "/newsletter/162";
 
 export type NewsletterSegment = {
   name: string;
@@ -24,15 +24,15 @@ export type Newsletter = {
 
 const en: NewsletterSegment = {
   name: "English",
-  subscribersCount: 22982,
-  openRate: 57,
+  subscribersCount: 23729,
+  openRate: 56,
   clickRate: 14,
 };
 
 const fr: NewsletterSegment = {
   name: "French",
   subscribersCount: 4000,
-  openRate: 57,
+  openRate: 56,
   clickRate: 14,
 };
 
@@ -54,19 +54,17 @@ const growthPerMonth = 1300;
 const all: NewsletterSegment & NewsletterFuture = {
   name: "All",
   subscribersCount,
-  openRate: 58,
+  openRate: 56,
   clickRate: 14,
 
   // TODO improve this!
   nextMainSlot: {
     date: "December 2023",
     projectedAudienceSize: 31000,
-    // projectedAudienceSize: subscribersCount + 5 * growthPerMonth,
   },
   nextSecondSlot: {
     date: "December 2023",
     projectedAudienceSize: 31000,
-    // projectedAudienceSize: subscribersCount + 5 * growthPerMonth,
   },
 };
 
