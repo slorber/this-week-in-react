@@ -46,13 +46,11 @@ Learn React.js from the ground up to advanced topics like performance, testing, 
 
 [**TanStack Query v5**](https://tanstack.com/blog/announcing-tanstack-query-v5)
 
-Après de nombreuses pré-releases, la v5 de TanStack Query sort en version stable, y compris l'interface React Query. On y retrouve en particulier:
+After many pre-releases, TanStack Query v5.0 stable is out, including the React Query package. In particular, it includes
 
-- une API unifiée, mieux typée, sans overloads
-- support Suspense stable. Streaming, React Server Components (expérimental)
-- de nombreuses autres améliorations: infinite queries, persistence, devtools, optimistic updates, useMutationState...
-
-https://twitter.com/TkDodo/status/1714262102305632643
+- a unified, better-typed API, with no overloads
+- stable Suspense support. Streaming, React Server Components (experimental)
+- many other improvements: infinite queries, persistence, devtools, optimistic updates, useMutationState...
 
 ---
 
@@ -60,9 +58,7 @@ https://twitter.com/TkDodo/status/1714262102305632643
 
 [**Rspress v1.0 - A fast Rspack-based static site generator**](https://github.com/orgs/web-infra-dev/discussions/5)
 
-Première version stable pour générateur de site statique venant de l'équipe ByteDance, basé sur Rust, React et MDX. Un concurrent sérieux pour Docusaurus, Nextra, Vitepress, Starlight et autres solutions orientées contenu. Rspress affiche de très bonnes performances au build, tout en présentant une belle liste de features: i18n, versioning, search... La compétition devient rude, et ça me motive encore plus pour ajouter du Rust dans Docusaurus 😄!
-
-https://twitter.com/sebastienlorber/status/1714600933810655608
+First stable release for this new static site generator from the ByteDance team. Based on Rust, React and MDX. A serious contender for Docusaurus, Nextra, Vitepress, Starlight and other content-oriented solutions. Rspress is performant, while offering an impressive list of features: i18n, versioning, search, etc. The competition is getting tough, and that's motivating me even more to add some Rust to Docusaurus 😄!
 
 ---
 
@@ -70,11 +66,7 @@ https://twitter.com/sebastienlorber/status/1714600933810655608
 
 [**Remix - Vite Support (Unstable)**](https://remix.run/docs/en/dev/future/vite)
 
-Remix explique le choix de devenir un plugin Vite dans cette [proposal](https://github.com/remix-run/remix/discussions/7632). Cela lui permet d'ouvrir son compilateur et de devenir plus flexible en laissant la possibilité d'ajouter ses propres plugins Vite pour gérer divers scenarios: MDX, GraphQL, Tailwind, path aliases...
-
-https://twitter.com/remix_run/status/1712881668560691613
-
-https://twitter.com/remix_run/status/1713916968753885244
+Remix explains its decision to become a Vite plugin in this [proposal](https://github.com/remix-run/remix/discussions/7632). This enables to open up its compiler and become more flexible by allowing users to add their own Vite plugins, and handle various scenarios: MDX, GraphQL, Tailwind, path aliases, etc.
 
 ---
 
@@ -82,36 +74,34 @@ https://twitter.com/remix_run/status/1713916968753885244
 
 🎥 [**Statically analysing React components for fun and profit**](https://www.youtube.com/watch?v=kjOacmVsLSE)
 
-Sathya travaille sur React Forget, le compiler tant attendu. Ce talk nous dévoile quelques détails intéressants:
+Sathya is working on React-Forget, the long-awaited compiler. This talk reveals some interesting details:
 
-- Le compiler est possible grace au "nouveau" modèle de React, qui n'utilise plus de classes ou de `this`
-- Il raisonne localement, est capable d'optimiser en parallèle, et peut être adopté incrémentalement
-- Il fonctionne sur du JavaScript non typé, et comprends les conventions React comme les hooks et le prefix "use"
-- Son système d'alias analysis est encore plus complèxe que celui du moteur V8
+- Compiling is possible thanks to React's new model, which no longer uses classes or `this`
+- It reasons locally, is able to optimise in parallel, and can be adopted incrementally
+- It works on untyped JavaScript, and understands React conventions such as hooks and the "use" prefix
+- Its alias analysis system is even more complete than that of the V8 engine
 
-Sathya annonce qu'on devrait en entendre plus souvent parler dans les semaines à venir, notamment dans le talk ["Understanding Idiomatic React" à React Advanced](https://reactadvanced.com/schedule-offline) dans à peine 2 jours. Bref, on a hâte d'en savoir plus!
-
-https://twitter.com/sebastienlorber/status/1714334740445118795
+Sathya says we should be hearing more about React-Forget in the coming weeks, including in the talk ["Understanding Idiomatic React" at React Advanced](https://reactadvanced.com/schedule-offline) in just 2 days. In short, we can't wait to hear more!
 
 ---
 
 - 💸 [Create collaborative applications like Figma and Miro in a few lines of code with Ably's in-app collaboration SDK](https://hubs.la/Q023nqgg0)
-- 📜 [Vercel - How we optimized package imports in Next.js](https://vercel.com/blog/how-we-optimized-package-imports-in-next-js): explique le fonctionnement de `optimizePackageImports`, une option ajoutée dans la dernière version de Next.js pour optimiser l'import des "Barrel files", ces `index.js` qui re-exporte plusieurs modules et causent des soucis de performance. https://twitter.com/shuding_/status/1712849886050218279
-- 📜 [Unlocking the Power of Storybook](https://formidable.com/blog/2023/unlocking-the-power-of-storybook/): un excellent article qui partage de nombreuses astuces pragmatiques sur l'usage de Storybook pour itérer plus vite. Si vous avez un Storybook, je vous conseille vivement d'utiliser des tests de régression visuels.
-- 📜 [React useTransition: performance game changer or...?](https://www.developerway.com/posts/use-transition): article intéractif qui illustre un cas classique où une update React bloque le thread principal. Explique comment utiliser correctement les transitions et le concurrent rendering pour améliorer l'UX.
-- 📜 [React memo is good actually](https://timtech.blog/posts/react-memo-is-good-actually/): reflexions intéressantes sur l'usage de mémoisation en React. Un point sur lequel je ne suis d'accord: pour moi [🐦 les optimisations devraient être encapsulées](https://twitter.com/sebastienlorber/status/1709258823582564644).
-- 📜 [A love letter to the Remix loader](https://laconicwit.com/a-love-letter-to-the-remix-loader/): apologie du loader Remix, une abstraction élégante, dynamique, facile à typer. Décrit aussi quelques challenges à surmonter.
-- 📜 [Programmatic SEO in Next.js](https://practicalprogrammatic.com/blog/programmatic-seo-in-nextjs/): propose de générer des pages Next.js avec les RSCs en fonction d'un jeu de données.
-- 📜 [Classed Components](https://flexible.dev/blog/single-line-components/): propose de simplifier l'usage de Tailwind en ré-utilisant une technique de styled-components et package `@tw-classed/react`
-- 📜 [The Rise of Next.js: Why It's the Full-Stack Framework of Choice for Modern Websites](https://www.felixvemmer.com/blog/why-next-js/): article bien documenté qui donne de bonnes raisons d'utiliser Next.js
+- 📜 [Vercel - How we optimized package imports in Next.js](https://vercel.com/blog/how-we-optimized-package-imports-in-next-js): explains how `optimizePackageImports` works, an option added in the latest version of Next.js to optimize the import of "Barrel files", those `index.js` that re-export several modules and cause performance problems.
+- 📜 [Unlocking the Power of Storybook](https://formidable.com/blog/2023/unlocking-the-power-of-storybook/): an excellent article that shares many pragmatic tips on using Storybook to iterate faster. If you have a Storybook, I strongly advise you to try visual regression tests.
+- 📜 [React useTransition: performance game changer or...?](https://www.developerway.com/posts/use-transition): great interactive article illustrating a classic case where a React update blocks the main thread. Explains how to use transitions and concurrent rendering correctly to improve the UX.
+- 📜 [React memo is good actually](https://timtech.blog/posts/react-memo-is-good-actually/): interesting reflections on the use of memoization in React. One point on which I disagree: for me [🐦 optimisations should be encapsulated](https://twitter.com/sebastienlorber/status/1709258823582564644).
+- 📜 [A love letter to the Remix loader](https://laconicwit.com/a-love-letter-to-the-remix-loader/): an apology for the Remix loader, an elegant, dynamic abstraction that's easy to type. It also describes some of the challenges to be overcome.
+- 📜 [Programmatic SEO in Next.js](https://practicalprogrammatic.com/blog/programmatic-seo-in-nextjs/): generates Next.js pages with RSCs based on a dataset.
+- 📜 [Classed Components](https://flexible.dev/blog/single-line-components/): proposes to simplify the use of Tailwind by re-using a styled-components api and `@tw-classed/react`.
+- 📜 [The Rise of Next.js: Why It's the Full-Stack Framework of Choice for Modern Websites](https://www.felixvemmer.com/blog/why-next-js/): well-documented article giving good reasons to use Next.js
 - 📜 [Embedding Remix in Directus](https://echobind.com/post/embedding-remix-in-directus)
 - 📜 [Storybook - Introducing the Theme Switcher addon](https://storybook.js.org/blog/introducing-theme-switcher-addon/)
 - 📜 [Benchmarking MobX-State-Tree Performance](https://coolsoftware.dev/blog/benchmarking-mobx-state-tree/)
-- 📦 [Remix v2.1 - Experimental support for View Transitions](https://github.com/remix-run/remix/releases/tag/remix%402.1.0) https://twitter.com/remix_run/status/1713967835410514103
-- 📦 [Astro v3.3 - New experimental Picture component, shikiji syntax highlighting](https://astro.build/blog/astro-330/) https://twitter.com/astrodotbuild/status/1712487761570115931
-- 📦 [create-t3-app v7.22 - add Next.js App Router option](https://github.com/t3-oss/create-t3-app/releases/tag/create-t3-app%407.22.0) https://twitter.com/t3dotgg/status/1713790082661175359
+- 📦 [Remix v2.1 - Experimental support for View Transitions](https://github.com/remix-run/remix/releases/tag/remix%402.1.0)
+- 📦 [Astro v3.3 - New experimental Picture component, shikiji syntax highlighting](https://astro.build/blog/astro-330/)
+- 📦 [create-t3-app v7.22 - add Next.js App Router option](https://github.com/t3-oss/create-t3-app/releases/tag/create-t3-app%407.22.0)
 - 📦 [Legend-State v2.0 - Performance, Persistence, DX improvements](https://legendapp.com/open-source/legend-state-v2/)
-- 📦 [Next-international v1.1 - Improved App Router support](https://github.com/QuiiBz/next-international/releases/tag/1.1.0) https://twitter.com/tomlienard/status/1712466650434269320
+- 📦 [Next-international v1.1 - Improved App Router support](https://github.com/QuiiBz/next-international/releases/tag/1.1.0)
 - 👥 [Next.js Conf - 26 October - Speakers announced](https://nextjs.org/conf/speakers)
 - 👥 [React Advanced](https://reactadvanced.com/?utm_source=email&utm_medium=thisweekinreact) (London 🇬🇧, October 20-23) is offering us [\-10% - code "REACT10"](https://ti.to/gitnation/react-advanced-london-2023/discount/REACT10)
 
@@ -142,19 +132,17 @@ Use CoderPad to run fast, fair and real coding interviews that candidates and in
 
 [**Gluestack-ui v1.0 - Universal & Accessible UI Components for React Native & Web, Unstyled & Themed**](https://gluestack.io/ui/v1)
 
-Sortie en version v1.0 stable pour cette nouvelle solution de styling cross-platform en React-Native. On peut dire qu'il y a déjà pas mal de choses fournies dans cette version: plugin VSCode, kit Figma, support Expo et Next.js, primitives headless et stylisées. Il va falloir étudier tout ça de plus près! J'ai l'impression que le support RSC avec Next.js est encore limité, et il faudra utiliser "use client".
-
-https://twitter.com/sanketsahu/status/1712729417309626570
+Stable v1.0 release for this new cross-platform styling solution and component library in React-Native. There's already quite a lot included in this first version: VSCode plugin, Figma kit, Expo and Next.js support, headless and styled primitives. We're going to have to take a closer look at all that! I think the RSC support with Next.js is still limited and will require the 'use client' directive.
 
 ---
 
 - 💸 [Moropo - build and scale open-source React Native tests 10x quicker](https://www.moropo.com/for-react-native?utm_source=newsletter&utm_medium=emails&utm_campaign=twir-20231018)
 - 📜 [Expo - Three ways to use network debugging](https://blog.expo.dev/three-ways-to-use-network-debugging-75fa6118fac6)
 - 📦 [React-Native 0.72.6](https://github.com/facebook/react-native/releases/tag/v0.72.6) https://twitter.com/alxhnt/status/1712513763298128320
-- 📦 [react-native-visionos](https://github.com/callstack/react-native-visionos): le fork React-Native de Callstack qui fait tourner React-Native sur VisionOS a été publié. https://twitter.com/o_kwasniewski/status/1714267035583328452
-- 📦 [react-native-unistyles v1.0](https://github.com/jpudysz/react-native-unistyles): version stable pour cette nouvelle solution de styling cross-platform qui propose d'améliorer la DX de React-Native StyleSheet. https://twitter.com/jpudysz/status/1714189338458624278
-- 📦 [VisionCamera v3.4 - 7x faster](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v3.4.0) https://twitter.com/mrousavy/status/1713939416463397165
-- 📦 [React-Native-Screens v3.26 - useAnimatedHeaderHeight](https://github.com/software-mansion/react-native-screens/releases/tag/3.26.0) https://twitter.com/swmansion/status/1714324990491762873
+- 📦 [react-native-visionos](https://github.com/callstack/react-native-visionos): Callstack's React-Native fork, which runs React-Native on VisionOS, has been open-sourced.
+- 📦 [react-native-unistyles v1.0](https://github.com/jpudysz/react-native-unistyles): stable version of this new cross-platform styling solution, which improves on React-Native StyleSheet DX.
+- 📦 [VisionCamera v3.4 - 7x faster](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v3.4.0)
+- 📦 [React-Native-Screens v3.26 - useAnimatedHeaderHeight](https://github.com/software-mansion/react-native-screens/releases/tag/3.26.0)
 - 📦 [react-native-vercel-ai - cross-platform interface to Vercel AI](https://github.com/bidah/react-native-vercel-ai)
 - 📦 [radix-ui-react-native-icons](https://github.com/Eronred/radix-ui-react-native-icons)
 
