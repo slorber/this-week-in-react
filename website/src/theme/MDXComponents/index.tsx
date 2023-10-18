@@ -10,7 +10,6 @@ import SponsoringTabs, {
   SponsoringTabsTestimonials,
   SponsoringTabsFirstSponsor,
   SponsoringTabsSecondSponsor,
-  SponsoringTabsJobSponsor,
   SponsoringTabsQuickLinkSponsor,
 } from "./SponsoringTabs";
 
@@ -29,7 +28,6 @@ export default {
   SponsoringTabsFirstSponsor,
   SponsoringTabsSecondSponsor,
   SponsoringTabsQuickLinkSponsor,
-  SponsoringTabsJobSponsor,
   Todo: () => (
     <img src={require("@site/static/img/todo.png").default} alt={"TODO"} />
   ),

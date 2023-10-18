@@ -9,6 +9,7 @@ import {
   NewsletterSegment,
   NextSlot,
 } from "@site/src/newsletter";
+import Prices from "@site/src/prices";
 import { AllQuotes } from "@site/src/pages/_homepage/quotes";
 
 export default function SponsoringTabs({ children }) {
@@ -126,7 +127,7 @@ function SponsoringHeader({
   count,
   nextSlot,
 }: {
-  count: number;
+  count?: number;
   nextSlot?: NextSlot;
 }) {
   return (
@@ -169,13 +170,13 @@ export function SponsoringTabsFirstSponsor() {
         />
         <ul>
           <li>
-            <b>1 issue</b>: 1000€
+            <b>1 issue</b>: {Prices.main.x1}€
           </li>
           <li>
-            <b>4 issues</b>: 3300€ <RecommendedOffer />
+            <b>4 issues</b>: {Prices.main.x4}€ <RecommendedOffer />
           </li>
           <li>
-            <b>8 issues</b>: 5700€
+            <b>8 issues</b>: {Prices.main.x8}€
           </li>
         </ul>
       </>
@@ -193,13 +194,13 @@ export function SponsoringTabsSecondSponsor() {
         />
         <ul>
           <li>
-            <b>1 issue</b>: 600€
+            <b>1 issue</b>: {Prices.second.x1}€
           </li>
           <li>
-            <b>4 issues</b>: 1600€ <RecommendedOffer />
+            <b>4 issues</b>: {Prices.second.x4}€ <RecommendedOffer />
           </li>
           <li>
-            <b>8 issues</b>: 3000€
+            <b>8 issues</b>: {Prices.main.x8}€
           </li>
         </ul>
       </>
@@ -214,31 +215,12 @@ export function SponsoringTabsQuickLinkSponsor() {
         <SponsoringHeader />
         <ul>
           <li>
-            <b>⚛️ 4 Quick Links - React section</b>: 800€
+            <b>⚛️ 4 Quick Links - React section</b>
+            <>: {Prices.quickLinkReact.x4}€</>
           </li>
           <li>
-            <b>📱 4 Quick Links - React-Native section</b>: 300€
-          </li>
-        </ul>
-      </>
-    </SponsoringTabs>
-  );
-}
-
-export function SponsoringTabsJobSponsor() {
-  return (
-    <SponsoringTabs>
-      <>
-        <SponsoringHeader count={newsletterStats.all.subscribersCount} />
-        <ul>
-          <li>
-            <b>4 issues</b>: 350€
-          </li>
-          <li>
-            <b>8 issues</b>: 500€ <RecommendedOffer />
-          </li>
-          <li>
-            <b>12 issues</b>: 650€
+            <b>📱 4 Quick Links - React-Native section</b>
+            <>{" " + Prices.quickLinkReactNative.x4}€</>
           </li>
         </ul>
       </>
