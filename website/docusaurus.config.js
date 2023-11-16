@@ -86,6 +86,7 @@ const config = {
   },
 
   clientModules: [
+    require.resolve("./src/clientModules/posthog.ts"),
     require.resolve("./src/clientModules/restoreWorkflowQueryStringParams.ts"),
   ],
 
