@@ -4,7 +4,7 @@ import { ProvideExperimentContext } from "@site/src/components/ExperimentContext
 
 export default function Home(): JSX.Element {
   return (
-    <ProvideExperimentContext experiment="default">
+    <ProvideExperimentContext experiment="no-layout">
       <Homepage />
     </ProvideExperimentContext>
   );
