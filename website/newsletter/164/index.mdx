@@ -3,12 +3,20 @@ slug: /164
 title: "This Week In React #164: so back! 30k, Next.js, Remix, Taint API, Activity, RSCs, React-Forget, Docusaurus, MDX, Storybook, Expo Orbit, Ignite, Victory XL, Reanimated, TypeScript..."
 authors: [slorber]
 date: 11-29-2023
-unlisted: true
 ---
 
 Hi everyone!
 
-<Todo />
+Ça fait longtemps, j'espère que je ne vous ai pas trop manqué 😄
+
+J'étais en congé paternité et j'ai bien profité de ma petite Louise 👨‍🍼
+😍.
+
+Ça n'a pas freiné pour autant la croissance de cette newsletter qui vient juste de [passer les 30.000 abonnés](https://www.indiehackers.com/product/french-react-newsletter/30-000-subscribers--NkKag3m683I_z7J3TCI)! 🥳️
+
+C'est la première fois que je fais une pause aussi longue (5 semaines), et la reprise est difficile. Vous savez que j'aime être exhaustif, mais impossible pour moi de lire et commenter tout ce qui s'est passé depuis la dernière édition 😅. Bref cet email va contenir beaucoup de liens intéressants, mais pas forcément commentés, je ferai mieux la semaine prochaine, promis!
+
+À l'avenir, j'aimerais tout ça plus professionnel, et publier une édition chaque semaine de manière consistante. Je [cherche quelqu'un pour m'aider](https://thisweekinreact.com/job). Si tu es intéressé(e), n'hésite pas à postuler (rémunéré).
 
 <!-- truncate -->
 
@@ -34,7 +42,74 @@ Learn React.js from the ground up to advanced topics like performance, testing, 
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Next.js 14](/emails/issues/164/nextjs-14.jpg)](https://nextjs.org/blog/next-14)
+
+[**Next.js 14**](https://nextjs.org/blog/next-14)
+
+Next.js 14 a été annoncé à la Next.js conf, avec:
+
+- Support Server Actions stable
+- Turbopack bientôt stable
+- Introducing du Partial Pre-Rendering en expérimental
+- Nouvelle resource
+
+Voir aussi:
+
+- 🎥 [Playlist YouTube Next.js conf](https://www.youtube.com/playlist?list=PLBnKlKpPeagl57K9bCw_IXShWQXePnXjY)
+- 📜 [Next.js 14 on Vercel](https://vercel.com/changelog/next-js-14)
+- 📜 [A look at Partial Prerendering with Next.js 14 on Vercel.](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model)
+
+---
+
+- 🐦 [Server Actions are available in React Canary](https://twitter.com/reactjs/status/1716573234160967762)
+- 🐦 [Andrew Clark - "React 19 coming soon"](https://twitter.com/acdlite/status/1719474730363662473)
+- 🐦 [Ryan Florence - "React Server Components on the Remix roadmap"](https://twitter.com/ryanflorence/status/1729274387671760936)
+- 👀 [React PR - `<Offscreen>` renamed as `<Activity>`](https://github.com/facebook/react/pull/27640): Dan Abramov explique que le nom `<Offscreen>` de cette prochaine feature Concurrent React était trompeur.
+- 👀 [React PR - Generate sourcemaps for production build artifacts](https://github.com/facebook/react/pull/26446): une bonne nouvelle pour améliorer la DX de nombreux produits, comme Sentry.
+- 👀 [React Canary Changelog](https://github.com/facebook/react/blob/main/CHANGELOG-canary.md): comme prévu, les versions canaries de React ont commencé à être documentées correctement.
+- 📖 [React docs - "use server"](https://react.dev/reference/react/use-server)
+- 📖 [React docs - Taint API](https://react.dev/reference/react/experimental_taintObjectReference): nouvelle API expérimentale de sécurité pour éviter d'envoyer des données sensibles coté client avec les RSCs.
+- 📖 [Redux Toolkit 2.0 + Redux core 5.0 Migration Guide](https://deploy-preview-3089--redux-starter-kit-docs.netlify.app/migrations/migrating-1.x-to-2.x): de nouvelles versions de packages RTK, React-Redux et Redux sont en release candidate.
+- 📜 [Vercel - How to Think About Security in Next.js](https://nextjs.org/blog/security-nextjs-server-components-actions): donne divers conseils pour éviter les problèmes de sécurité liés aux RSCs et Server Actions, en particulier l'envoie de données sensibles coté client. Recommande de vérifier les inputs, d'ajouter des checks Access Control, d'utiliser un Data Access Layer, de tester les nouvelles API expérimentales React Taint....
+- 📜 [Why we use AWS instead of Vercel to host our Next.js app](https://graphite.dev/blog/why-we-use-aws-instead-of-vercel): Graphite décide d'utiliser des conteneurs EC2 plutôt que Vercel pour déployer Next.js, et explique ce choix. Étonnamment, ils mesurent une perf assez similaire entre EC2 et un runtime edge.
+- 📜 [Why useSyncExternalStore Is Not Used in Jotai](https://blog.axlight.com/posts/why-use-sync-external-store-is-not-used-in-jotai/): il est difficile de faire fonctionner ensemble useTransition et useSyncExternalStore.
+- 📜 [Event Types in React and TypeScript](https://www.totaltypescript.com/event-types-in-react-and-typescript): techniques utiles si vous avez du mal à vous souvenir des types à utiliser sur les event handlers.
+- 📜 [Why You Need React Query](https://tkdodo.eu/blog/why-you-want-react-query): donne de bonnes raisons de ne pas implémenter soit même le data fetching via useEffect.
+- 📜 [React Server Components, without a framework?](https://timtech.blog/posts/react-server-components-rsc-no-framework/): article technique et très intéressant pour bien comprendre le fonctionnement des RSCs. Propose de migrer une app CRA vers un setup RSC custom.
+- 📜 [Remix ❤️ Vite](https://remix.run/blog/remix-heart-vite): avec Remix 2.2, il est possible d'utiliser Remix via un nouveau plugin Vite expérimental, qui présente de nombreux avantages.
+- 📜 [Why I'm Using Next.js](https://leerob.io/blog/using-nextjs)
+- 📜 [Why I Won't Use Next.js](https://www.epicweb.dev/why-i-wont-use-nextjs)
+- 📜 [What do we know about React Forget](https://www.code-insights.dev/posts/what-do-we-konw-about-react-forget)
+- 📜 [Using Selectlist in React](https://polypane.app/blog/using-selectlist-in-react/)
+- 📜 [A Complete Guide To Using Cookies in Next.js](https://www.propelauth.com/post/cookies-in-next-js)
+- 📜 [Pierre's Next.js Cache Strategy](https://pierre.co/share/fe34c8b7-4054-4e07-b108-c6c8230cfab1)
+- 📜 [React Server Components - Introduction and Background](https://jessedit.tech/articles/react-server-components/1-background/)
+- 📜 [On Mixing Client and Server](https://matt-rickard.com/on-mixing-client-and-server)
+- 📜 [Building a drawer component - Vaul](https://emilkowal.ski/ui/building-a-drawer-component)
+- 📜 [Typed server-safe DOM event listeners in Remix](https://alemtuzlak.hashnode.dev/typed-server-safe-dom-event-listeners-in-remix)
+- 📜 [Exploring Remix with Vite](https://alemtuzlak.hashnode.dev/exploring-remix-with-vite)
+- 📜 [Building the most ambitious sites on the Web with Vercel and Next.js 14](https://vercel.com/blog/building-the-most-ambitious-sites-on-the-web-with-vercel-and-next-js-14)
+- 📜 [re-re-reselect — Simplifying React state management](https://causal.app/blog/re-re-reselect)
+- 📜 [Refreshing the Next.js App Router When Your Markdown Content Changes](https://www.steveruiz.me/posts/nextjs-refresh-content)
+- 📜 [Guide to React Suspense and use hook for busy bees](https://sinja.io/blog/guide-to-react-suspense)
+- 📜 [Concurrency in React 18 for busy bees](https://sinja.io/blog/guide-to-concurrency-in-react-18)
+- 📜 [React-Admin - Turning Open-Source Into Profit: Our Journey](https://marmelab.com/blog/2023/11/08/open-source-profit-1.html)
+- 📜 [Keep that cursor still!](https://giacomocerquone.com/keep-input-cursor-still/)
+- 📜 [Testing against every Next.js canary release](https://francoisbest.com/posts/2023/testing-against-every-nextjs-canary-release)
+- 📜 [Against Single Element React Components](https://www.jameskerr.blog/posts/against-single-element-react-components/)
+- 📜 [How React works](https://incepter.github.io/how-react-works/)
+- 📜 [Out of Order Streaming from Scratch](https://gal.hagever.com/posts/out-of-order-streaming-from-scratch)
+- 📜 [daily.dev - Moving back to React](https://daily.dev/blog/moving-back-to-react)
+- 📜 [Headless Component: a pattern for composing React UIs](https://martinfowler.com/articles/headless-component.html)
+- 📜 [When NOT to use shadcn/ui?](https://mwskwong.com/blog/when-not-to-use-shadcn-ui)
+- 📜 [React Query Auth Token Refresh](https://elazizi.com/posts/react-query-auth-token-refresh/)
+- 📦 [Docusaurus v3.0 - MDX 3, TS/ESM configs, unlisted...](https://docusaurus.io/blog/releases/3.0)
+- 📦 [React Aria Components RC](https://react-spectrum.adobe.com/releases/2023-11-8.html)
+- 📦 [MDX v3 - Updating Node, await support...](https://mdxjs.com/blog/v3/)
+- 📦 [Remix v2.3](https://github.com/remix-run/remix/blob/main/CHANGELOG.md#v230)
+- 📦 [Astro 4.0 beta](https://astro.build/blog/astro-4-beta/?tw)
+- 📦 [Storybook 7.5 - Vite 5, Next.js improvements, faster...](https://storybook.js.org/blog/storybook-7-5/)
+- 🎥 [React Forget Compiler - Understanding Idiomatic React](https://portal.gitnation.org/contents/understanding-idiomatic-react)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -54,22 +129,46 @@ You can create and easily modify multiple **JSON-based forms in a drag-and-drop 
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
-
 - 💸 [Moropo - We'll Get Your App to 60% UI Test Coverage in 6 Weeks or You Don't Pay](https://www.moropo.com/automation-offer?utm_source=newsletter&utm_medium=emails&utm_campaign=twir-20231129)
+- 🐦 [Amazon using React-Native for years, including the main Amazon Shopping app](https://twitter.com/reactnative/status/1722025802974277983)
+- 🐦 [Static Hermes demo - JS performance comparable to C++](https://twitter.com/tmikov/status/1720103356738474060)
+- 👀 [RFC - Golden Template for create-react-native-library](https://github.com/react-native-community/discussions-and-proposals/pull/721)
+- 👀 [RFC - Introducing reactNativeManifest to package.json](https://github.com/react-native-community/discussions-and-proposals/pull/717)
+- 📖 [Develop an app with Expo - Overview](https://docs.expo.dev/workflow/overview/)
+- 📜 [Universal Links are Important](https://evanbacon.dev/blog/universal-links)
+- 📜 [Apple Home Screen Widgets with Expo CNG](https://evanbacon.dev/blog/apple-home-screen-widgets)
+- 📜 [Securing your React Native app with SSL Pinning](https://www.bam.tech/article/securing-your-react-native-app-with-ssl-pinning)
+- 📜 [Our journey from React Native to Expo for mobile app development at Alan](https://medium.com/alan/our-journey-from-react-native-to-expo-for-mobile-app-development-at-alan-%EF%B8%8F-3b1569e8ab7c)
+- 📜 [Node.js mobile rebooted](https://nodejs-mobile.github.io/blog/reboot)
+- 📜 [Victory Native Turns 40](https://formidable.com/blog/2023/victory-native-turns-40/)
+- 📦 [Expo Orbit v1 - macOS menu bar app](https://expo.dev/changelog/2023/11-14-orbit-v1)
+- 📦 [React-Native 0.73 RC.6](https://github.com/facebook/react-native/releases/tag/v0.73.0-rc.6)
+- 📦 [Reanimated 3.6 - Multithreading, Layout animations on web...](https://github.com/software-mansion/react-native-reanimated/releases/tag/3.6.0)
+- 📦 [Ignite 9.0 - More Expo-focused than ever](https://shift.infinite.red/announcing-ignite-9-0-exp-ress-o-89ab5801937d)
+- 📦 [react-native-testing-library 12.4 - Built-in Jest matchers](https://github.com/callstack/react-native-testing-library/releases/tag/v12.4.0)
+- 📦 [react-native-ai - full stack framework for building cross-platform mobile AI apps](https://github.com/dabit3/react-native-ai)
+- 🎥 [The road to a better developer experience](https://www.youtube.com/watch?v=YA0PMPm12SU): Krzysztof présente une preview d'un IDE très prometteur pour React-Native sous la forme d'une extension VSCode. Voir aussi ce [🐦 thread](https://twitter.com/kzzzf/status/1722973994368762335).
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📊 [State of JavaScript 2023 - Survey is open](https://survey.devographics.com/en-US/survey/state-of-js/2023)
+- 📜 [An Interactive Guide to CSS Grid](https://www.joshwcomeau.com/css/interactive-guide-to-grid/)
+- 📦 [TypeScript 5.3 - import attributes, narrowing...](https://devblogs.microsoft.com/typescript/announcing-typescript-5-3/)
+- 📦 [Rspack 0.4 - Rsbuild 0.1](https://www.rspack.dev/blog/announcing-0.4.html)
+- 📦 [Yarn 4.0 - Hardened mode](https://yarnpkg.com/blog/release/4.0)
+- 📦 [Deno v1.38 - HTML doc generator and HMR](https://deno.com/blog/v1.38)
+- 📦 [Vite 5.0 - Rollup 4 and cleanups](https://vitejs.dev/blog/announcing-vite5)
+- 📦 [Prettier 3.1 - new ternary formatting](https://prettier.io/blog/2023/11/13/3.1.0)
+- 📦 [Biome 1.4 - Formatter 96% compatible with Prettier](https://biomejs.dev/blog/biome-wins-prettier-challenge)
+- 📦 [Mock Service Worker 2.0](https://github.com/mswjs/msw/releases/tag/v2.0.0)
+- 📦 [Hono 3.10 - Support for Async Components in JSX + Suspense](https://github.com/honojs/hono/releases/tag/v3.10.0)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/164/meme.jpg)](https://twitter.com/sebastienlorber/status/1719831082235801974)
 
 See ya! 👋
