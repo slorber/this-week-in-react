@@ -3,20 +3,20 @@ slug: /164
 title: "This Week In React #164: so back! 30k, Next.js, Remix, Taint API, Activity, RSCs, React-Forget, Docusaurus, MDX, Storybook, Expo Orbit, Ignite, Victory XL, Reanimated, TypeScript..."
 authors: [slorber]
 date: 11-29-2023
+unlisted: true
 ---
 
 Hi everyone!
 
-Ça fait longtemps, j'espère que je ne vous ai pas trop manqué 😄
+It's been a long time, I hope you haven't missed me too much 😄
 
-J'étais en congé paternité et j'ai bien profité de ma petite Louise 👨‍🍼
-😍.
+I've been on paternity leave and enjoyed my little Louise 👨‍🍼😍.
 
-Ça n'a pas freiné pour autant la croissance de cette newsletter qui vient juste de [passer les 30.000 abonnés](https://www.indiehackers.com/product/french-react-newsletter/30-000-subscribers--NkKag3m683I_z7J3TCI)! 🥳️
+Apparently my absence hasn't slowed down the growth of this newsletter, which has just [passed 30,000 subscribers](https://www.indiehackers.com/product/french-react-newsletter/30-000-subscribers--NkKag3m683I_z7J3TCI)! 🥳️
 
-C'est la première fois que je fais une pause aussi longue (5 semaines), et la reprise est difficile. Vous savez que j'aime être exhaustif, mais impossible pour moi de lire et commenter tout ce qui s'est passé depuis la dernière édition 😅. Bref cet email va contenir beaucoup de liens intéressants, mais pas forcément commentés, je ferai mieux la semaine prochaine, promis!
+This is the first time I've taken such a long break (5 weeks), and it's hard to get back at it. You know I like to be exhaustive, but it's impossible for me to read and comment on everything that's happened since the last issue 😅. In short, this email is going to contain a lot of interesting links, but not necessarily commented on. I'll do better next week, I promise!
 
-À l'avenir, j'aimerais tout ça plus professionnel, et publier une édition chaque semaine de manière consistante. Je [cherche quelqu'un pour m'aider](https://thisweekinreact.com/job). Si tu es intéressé(e), n'hésite pas à postuler (rémunéré).
+In the future, I'd like to make this more professional, and publish every single week consistently. I'm [looking for someone to help me](https://thisweekinreact.com/job). If you're interested, please apply (paid).
 
 <!-- truncate -->
 
@@ -46,14 +46,14 @@ Learn React.js from the ground up to advanced topics like performance, testing, 
 
 [**Next.js 14**](https://nextjs.org/blog/next-14)
 
-Next.js 14 a été annoncé à la Next.js conf, avec:
+Next.js 14 has been announced at Next.js conf, including:
 
-- Support Server Actions stable
-- Turbopack bientôt stable
-- Introducing du Partial Pre-Rendering en expérimental
-- Nouvelle resource
+- Server Actions stable
+- Turbopack almost stable
+- Introducing Partial Pre-Rendering (experimental)
+- New learning resource
 
-Voir aussi:
+See also:
 
 - 🎥 [Playlist YouTube Next.js conf](https://www.youtube.com/playlist?list=PLBnKlKpPeagl57K9bCw_IXShWQXePnXjY)
 - 📜 [Next.js 14 on Vercel](https://vercel.com/changelog/next-js-14)
@@ -64,19 +64,19 @@ Voir aussi:
 - 🐦 [Server Actions are available in React Canary](https://twitter.com/reactjs/status/1716573234160967762)
 - 🐦 [Andrew Clark - "React 19 coming soon"](https://twitter.com/acdlite/status/1719474730363662473)
 - 🐦 [Ryan Florence - "React Server Components on the Remix roadmap"](https://twitter.com/ryanflorence/status/1729274387671760936)
-- 👀 [React PR - `<Offscreen>` renamed as `<Activity>`](https://github.com/facebook/react/pull/27640): Dan Abramov explique que le nom `<Offscreen>` de cette prochaine feature Concurrent React était trompeur.
-- 👀 [React PR - Generate sourcemaps for production build artifacts](https://github.com/facebook/react/pull/26446): une bonne nouvelle pour améliorer la DX de nombreux produits, comme Sentry.
-- 👀 [React Canary Changelog](https://github.com/facebook/react/blob/main/CHANGELOG-canary.md): comme prévu, les versions canaries de React ont commencé à être documentées correctement.
+- 👀 [React PR - `<Offscreen>` renamed as `<Activity>`](https://github.com/facebook/react/pull/27640): Dan Abramov explains the `<Offscreen>` name was misleading for this upcoming Concurrent React feature.
+- 👀 [React PR - Generate sourcemaps for production build artifacts](https://github.com/facebook/react/pull/26446): great news to improve the DX of many tools, such as Sentry.
+- 👀 [React Canary Changelog](https://github.com/facebook/react/blob/main/CHANGELOG-canary.md): as planned, React canary releases have started to be documented properly.
 - 📖 [React docs - "use server"](https://react.dev/reference/react/use-server)
-- 📖 [React docs - Taint API](https://react.dev/reference/react/experimental_taintObjectReference): nouvelle API expérimentale de sécurité pour éviter d'envoyer des données sensibles coté client avec les RSCs.
-- 📖 [Redux Toolkit 2.0 + Redux core 5.0 Migration Guide](https://deploy-preview-3089--redux-starter-kit-docs.netlify.app/migrations/migrating-1.x-to-2.x): de nouvelles versions de packages RTK, React-Redux et Redux sont en release candidate.
-- 📜 [Vercel - How to Think About Security in Next.js](https://nextjs.org/blog/security-nextjs-server-components-actions): donne divers conseils pour éviter les problèmes de sécurité liés aux RSCs et Server Actions, en particulier l'envoie de données sensibles coté client. Recommande de vérifier les inputs, d'ajouter des checks Access Control, d'utiliser un Data Access Layer, de tester les nouvelles API expérimentales React Taint....
-- 📜 [Why we use AWS instead of Vercel to host our Next.js app](https://graphite.dev/blog/why-we-use-aws-instead-of-vercel): Graphite décide d'utiliser des conteneurs EC2 plutôt que Vercel pour déployer Next.js, et explique ce choix. Étonnamment, ils mesurent une perf assez similaire entre EC2 et un runtime edge.
-- 📜 [Why useSyncExternalStore Is Not Used in Jotai](https://blog.axlight.com/posts/why-use-sync-external-store-is-not-used-in-jotai/): il est difficile de faire fonctionner ensemble useTransition et useSyncExternalStore.
-- 📜 [Event Types in React and TypeScript](https://www.totaltypescript.com/event-types-in-react-and-typescript): techniques utiles si vous avez du mal à vous souvenir des types à utiliser sur les event handlers.
-- 📜 [Why You Need React Query](https://tkdodo.eu/blog/why-you-want-react-query): donne de bonnes raisons de ne pas implémenter soit même le data fetching via useEffect.
-- 📜 [React Server Components, without a framework?](https://timtech.blog/posts/react-server-components-rsc-no-framework/): article technique et très intéressant pour bien comprendre le fonctionnement des RSCs. Propose de migrer une app CRA vers un setup RSC custom.
-- 📜 [Remix ❤️ Vite](https://remix.run/blog/remix-heart-vite): avec Remix 2.2, il est possible d'utiliser Remix via un nouveau plugin Vite expérimental, qui présente de nombreux avantages.
+- 📖 [React docs - Taint API](https://react.dev/reference/react/experimental_taintObjectReference): new experimental API to avoid sending sensitive data to the client in a RSC context.
+- 📖 [Redux Toolkit 2.0 + Redux core 5.0 Migration Guide](https://deploy-preview-3089--redux-starter-kit-docs.netlify.app/migrations/migrating-1.x-to-2.x): new versions of RTK, React-Redux and Redux core are in RC.
+- 📜 [Vercel - How to Think About Security in Next.js](https://nextjs.org/blog/security-nextjs-server-components-actions): gives great advices to avoid security issues related to RSCs and Server Actions, in particular how to avoid exposing sensitive data. Recommends to validate unsafe inputs, to add Access Control checks, to use a Data Access Layer, to test the new React Taint API...
+- 📜 [Why we use AWS instead of Vercel to host our Next.js app](https://graphite.dev/blog/why-we-use-aws-instead-of-vercel): Graphite decided to use EC2 containers instead of an edge runtime. Surprisingly performance remains similar.
+- 📜 [Why useSyncExternalStore Is Not Used in Jotai](https://blog.axlight.com/posts/why-use-sync-external-store-is-not-used-in-jotai/): on the difficulty to make both useTransition and useSyncExternalStore work at the same time.
+- 📜 [Event Types in React and TypeScript](https://www.totaltypescript.com/event-types-in-react-and-typescript): useful techniques if you can't remember types to use for your event handlers.
+- 📜 [Why You Need React Query](https://tkdodo.eu/blog/why-you-want-react-query): gives great reasons to avoid implementing your own data fetching based on useEffect, it's more complex than it looks like.
+- 📜 [React Server Components, without a framework?](https://timtech.blog/posts/react-server-components-rsc-no-framework/): great technical article to understand how RSCs work under the hood. Migrates a simple CRA app to a custom RSC setup.
+- 📜 [Remix ❤️ Vite](https://remix.run/blog/remix-heart-vite): with Remix 2.2, it's now possible to use Remix as a Vite plugin. This comes with interesting benefits.
 - 📜 [Why I'm Using Next.js](https://leerob.io/blog/using-nextjs)
 - 📜 [Why I Won't Use Next.js](https://www.epicweb.dev/why-i-wont-use-nextjs)
 - 📜 [What do we know about React Forget](https://www.code-insights.dev/posts/what-do-we-konw-about-react-forget)
@@ -147,7 +147,7 @@ You can create and easily modify multiple **JSON-based forms in a drag-and-drop 
 - 📦 [Ignite 9.0 - More Expo-focused than ever](https://shift.infinite.red/announcing-ignite-9-0-exp-ress-o-89ab5801937d)
 - 📦 [react-native-testing-library 12.4 - Built-in Jest matchers](https://github.com/callstack/react-native-testing-library/releases/tag/v12.4.0)
 - 📦 [react-native-ai - full stack framework for building cross-platform mobile AI apps](https://github.com/dabit3/react-native-ai)
-- 🎥 [The road to a better developer experience](https://www.youtube.com/watch?v=YA0PMPm12SU): Krzysztof présente une preview d'un IDE très prometteur pour React-Native sous la forme d'une extension VSCode. Voir aussi ce [🐦 thread](https://twitter.com/kzzzf/status/1722973994368762335).
+- 🎥 [The road to a better developer experience](https://www.youtube.com/watch?v=YA0PMPm12SU): Krzysztof presented a demo of an very promising React-Native IDE taking the form of a VSCode extension. See also this [🐦 thread](https://twitter.com/kzzzf/status/1722973994368762335).
 
 ---
 
