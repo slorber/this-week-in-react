@@ -1,14 +1,15 @@
 ---
 slug: /165
-title: "This Week In React #165: ..."
+title: "This Week In React #165: StyleX, CSS Hooks, PandaCSS, Tailwind, Redux, Astro, Next.js, Remix, Storybook, State of React-Native, RN bridgeless mode, Skia text layouts, Expo EAS..."
 authors: [slorber]
 date: 12-06-2023
-unlisted: true
 ---
 
 Hi everyone!
 
-<Todo />
+I've found this week's CSS news particularly interesting! StyleX, CSS Hooks, Panda, Tailwind, CSS4...
+
+The State of React Native survey is open. A new "bridgeless mode" will be introduced in version 0.73.
 
 <!-- truncate -->
 
@@ -34,9 +35,51 @@ RevenueCat gives you everything you need to monetize, analyze, and grow your app
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![StyleX](/emails/issues/165/stylex.jpg)](https://github.com/facebook/stylex)
+
+[**StyleX**](https://github.com/facebook/stylex)
+
+Meta's CSS-in-JS solution is finally open-sourced, after a long wait. It is used on major apps such as Facebook, Instagram and WhatsApp. It is not strictly coupled with React. Atomic CSS will be extracted at build time, and there is a lightweight runtime for concatenating classes. TypeScript support is well-thought-out. The API is minimalist, relying mainly on 2 functions: `create` and `props`. We'll see how this new solution will position itself in an ecosystem that is already fairly competitive with Tailwind, Panda and a few others.
+
+See also:
+
+- 🎥 [Jack Herrington - StyleX: Meta's Solution To CSS At Scale](https://www.youtube.com/watch?v=6ZDiGtg1jN4)
+- 🎥 [Theo T3 - Facebook Tried Tailwind, Then Built This Instead](https://www.youtube.com/watch?v=PHV94q7BivI)
+
+---
+
+[![CSS Hooks](/emails/issues/165/csshooks.jpg)](https://css-hooks.com/)
+
+CSS library with React bindings, offering a real return to basics via inline styles. In [From CSS madness to CSS Hooks](https://nsaunders.dev/posts/css-madness-to-hooks), the author explains how he uses a variable CSS trick to support missing features such as media-queries, pseudo-selectors and so on.
+
+Personally, I've always preferred the DX of inline styles, but in practice this is too limited and doesn't always perform well. It remains to be seen whether this innovation will hold up in practice. Mark Dalgleish (🐦 [tweet](https://twitter.com/markdalgleish/status/1729399475494608923)) is excited about it. Note Adam Wathan probably wouldn't have created Tailwind if inline styles had better support (🐦 [tweet](https://twitter.com/adamwathan/status/1732209400641724785)).
+
+---
 
 - 💸 [Developer Nation Survey - What's next for developers in 2024 and beyond? Take the survey and win prizes!](https://developereconomics.net/?member_id=thisweekinreact&utm_medium=nl_ad1)
+- 👀 [Remix RFC - Client Data (clientLoader, clientAction)](https://github.com/remix-run/remix/discussions/7634): new exports should soon be supported by Remix, making it easier for those who wish to migrate React-Router apps to Remix
+- 🐦 [Using TanStack React Query v5 + Router preview](https://twitter.com/tannerlinsley/status/1730621837212876829)
+- 📜 [How does xxx compare to Panda CSS](https://www.astahmer.dev/posts/how-does-xxx-compares-to-panda-css): good presentation of Panda CSS by its maintainer, who also outlines its current limitations. A modern CSS-in-JS solution based on static analysis and compatible with Server Components. There is a light JS runtime, but the atomic CSS remains extracted at build time.
+- 📜 [Tailwind has a scalability problem. How can we solve that?](https://byteofdev.com/posts/scale-tailwindcss/): suggests using `cva` (Class Variance Authority) to make Tailwind code more digestible in a React context.
+- 📜 [Guide to fast websites with Next.js: Tips for maximizing server speeds and minimizing client burden](https://vercel.com/blog/guide-to-fast-websites-with-next-js-tips-for-maximizing-server-speeds): guest post on an agency's Vercel blog explaining the Next.js techniques used to achieve very good performance.
+- 📜 [Fastest Way of Passing State to JavaScript, Re-visited](https://calendar.perfplanet.com/2023/fastest-way-passing-state-javascript-revisited/): SSR-based React/Redux apps need to send the store data to the client-side for hydration. Presents 3 techniques with their performance.
+- 📜 [Keep Your Loader Data Fresh in Remix](https://sergiodxa.com/tutorials/keep-your-loader-data-fresh-in-remix): shows how to call the `useRevalidator` hook when the connection is restored or the tab regains focus.
+- 📜 [Build your own StorybookGPT](https://storybook.js.org/blog/build-your-own-storybook-gpt/): explains how to use AI to generate your stories automatically.
+- 📜 [Introducing React components for the Maps JavaScript API](https://cloud.google.com/blog/products/maps-platform/introducing-react-components-for-the-maps-javascript-api/): Google is finally officially sponsoring the development of a React lib for Google Maps.
+- 📜 [Slack - Building Custom Animations in the Workflow Builder](https://slack.engineering/building-custom-animations-in-the-workflow-builder/): feedback from Slack on the implementation of drag-and-drop features with `react-beautiful-dnd `.
+- 📜 [How Relay Enables Optimal Data Fetching](https://relay.dev/blog/2023/10/24/how-relay-enables-optimal-data-fetching/)
+- 📜 [TanStack Router – modern React for the rest of us](https://swizec.com/blog/tanstack-router-modern-react-for-the-rest-of-us/)
+- 📜 [Handling HTML within React i18next translations](https://rafaelcamargo.com/blog/handling-html-within-react-i18next-translations/)
+- 📜 [A minimal dependency-free translation system for Next.js](https://www.thomasledoux.be/blog/minimal-dependency-free-translation-system-nextjs)
+- 📜 [An Introduction To Full Stack Composability](https://www.smashingmagazine.com/2023/11/introduction-full-stack-composability/)
+- 📦 [Redux Toolkit 2.0, Redux 5.0, React-Redux 9.0, Reselect 5.0, Redux-Thunk 3.0](https://github.com/reduxjs/redux-toolkit/releases/tag/v2.0.0): big synchronised update of all Redux packages. Includes new features (`combineSlices`), improvements in size, performance, typing, and removal of deprecated features.
+- 📦 [Astro 4.0 - Dev Toolbar, i18n routing, Incremental Content Caching, View Transition APIs...](https://astro.build/blog/astro-4/)
+- 📦 [Storybook 7.6 - switch to SWC, faster, react-docgen upgrade, controls improvement, doctor CLI...](https://storybook.js.org/blog/storybook-7-6/)
+- 📦 [Remix Dev Tools 3.5 - Vite support](https://github.com/Code-Forge-Net/Remix-Dev-Tools/releases/tag/v3.5.0)
+- 📦 [Starlight 0.14 - Plugin API](https://github.com/withastro/starlight/releases/tag/%40astrojs%2Fstarlight%400.14.0)
+- 📦 [Jotai 2.6 - use `<Provider>` in React Server Components](https://github.com/pmndrs/jotai/releases/tag/v2.6.0)
+- 🎥 [React Server Components Panel Discussion - React Summit US 2023](https://www.youtube.com/watch?v=ujaTs-5LEWM)
+- 🎥 [Lee Robinson - Introduction to Next.js and React](https://www.youtube.com/@leerob)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -48,30 +91,50 @@ RevenueCat gives you everything you need to monetize, analyze, and grow your app
 
 **[Breakpoints and console.log is the past, time travel is the future](https://wallabyjs.com/?referrer=ThisWeekInReact1)**
 
-15x faster JavaScript debugging than with breakpoints and console.log.  
-  
-[Wallaby.js](https://wallabyjs.com/?referrer=ThisWeekInReact1) runs your tests immediately as you type, with runtime values, errors, and code coverage displayed in real-time right next to your code.  
-  
+15x faster JavaScript debugging than with breakpoints and console.log.
+
+[Wallaby.js](https://wallabyjs.com/?referrer=ThisWeekInReact1) runs your tests immediately as you type, with runtime values, errors, and code coverage displayed in real-time right next to your code.
+
 Designed specifically for testing, Wallaby features include a [Time Travel Debugger](https://wallabyjs.com/docs/intro/time-travel-debugger.html?referrer=ThisWeekInReact1), the ability to only run opened test files, and more.
 
 ---
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+- 📊 [State of React Native 2023](https://survey.stateofreactnative.com/): the React-Native survey is back for the 2nd year. Your answers have an impact, and will help us prioritise the most requested improvements.
+- 🐦 ["Inspect Element" in iOS Safari with  Actions and Expo Config Plugins](https://twitter.com/Baconbrix/status/1731407884624310708)
+- 📖 [Expo Router docs - Migrate from Expo Webpack](https://docs.expo.dev/router/migrate/from-expo-webpack/)
+- 💬 [React-Native 0.73 - Introducing Bridgeless Mode](https://github.com/reactwg/react-native-new-architecture/discussions/154): React-Native 0.73 offers a new flag to fully disable the old architecture bridge, still used by default for certain features: error handling, event emitters, timers, etc. An interop layer should make the transition easier, but some API calls will have to be migrated manually.
+- 💬 [React-Native 0.74 - Will bump Android `minSdk` to v6 (API 23)](https://github.com/react-native-community/discussions-and-proposals/discussions/740)
+- 📜 [Shopify - Getting Started with React Native Skia](https://shopify.engineering/getting-started-with-react-native-skia): a good introduction to React-Native-Skia, why use it, its integration with Reanimated, its integrated effects, its web support...
+- 📜 [How to change root view background color in React Native for iOS?](https://www.oskarkwasniewski.dev/blog/react-native-change-native-background-color)
+- 📜 [Expo EAS - Speed up your development workflow with Automatic GitHub builds](https://expo.dev/changelog/2023/11-29-automatic-github-builds)
+- 📜 [Expo EAS - Introducing Build Annotations](https://expo.dev/changelog/2023/12-01-build-annotations)
+- 📦 [React-Native-Skia - Text layouts / Paragraph support](https://shopify.github.io/react-native-skia/docs/text/paragraph/)
+- 📦 [React-Native-VisionOS](https://github.com/callstack/react-native-visionos): now available to try on npm (🐦 [demo](https://twitter.com/o_kwasniewski/status/1729453555201802495))
+- 🎙️ [React Native Radio 281 - Real Life React Native : Benedikt Müller of Share My Stack](https://reactnativeradio.com/episodes/rnr-281-real-life-react-native-benedikt-muller-of-share-my-stack)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 🧵 [Evan You about "bundle-less doesn't scale" discussions](https://twitter.com/youyuxi/status/1730537401217610234)
+- 📜 [Updates from the 99th TC39 meeting - Array Grouping stage 4, Promise.withResolvers stage 4](https://dev.to/hemanth/updates-from-the-99th-tc39-meeting-15hn)
+- 📜 [Prettier's CLI: A Performance Deep Dive](https://prettier.io/blog/2023/11/30/cli-deep-dive)
+- 📜 [Biome formatter wins the Prettier challenge](https://biomejs.dev/blog/biome-wins-prettier-challenge/)
+- 📜 [Let’s learn how modern JavaScript frameworks work by building one](https://nolanlawson.com/2023/12/02/lets-learn-how-modern-javascript-frameworks-work-by-building-one/)
+- 📜 [Web Components Eliminate JavaScript Framework Lock-in](https://jakelazaroff.com/words/web-components-eliminate-javascript-framework-lock-in/)
+- 📜 [Track Frontend JavaScript exceptions with Playwright fixtures](https://www.checklyhq.com/blog/track-frontend-javascript-exceptions-with-playwright/)
+- 📦 [XState 5.0 - Everything is an actor](https://stately.ai/blog/2023-12-01-xstate-v5)
+- 📦 [Fresh 1.6 - Tailwind CSS plugin, simplified typings and more](https://deno.com/blog/fresh-1.6)
+- 📦 [Vitest 1.0](https://github.com/vitest-dev/vitest/releases/tag/v1.0.0)
+- 📦 [Hono 3.11 - Error Boundary](https://github.com/honojs/hono/releases/tag/v3.11.0)
+- 🎥 [CSS4 Is Coming](https://www.youtube.com/watch?v=j4mOm1qic7k)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/165/meme.jpg)](https://twitter.com/bndkt/status/1729743347370139940)
 
 See ya! 👋
