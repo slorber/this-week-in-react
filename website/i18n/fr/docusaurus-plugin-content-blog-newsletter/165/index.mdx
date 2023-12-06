@@ -1,6 +1,6 @@
 ---
 slug: /165
-title: "React Hebdo #165: ..."
+title: "React Hebdo #165: StyleX, CSS Hooks, Panda, Redux"
 authors: [slorber]
 date: 12-06-2023
 unlisted: true
@@ -42,44 +42,44 @@ RevenueCat gives you everything you need to monetize, analyze, and grow your app
 
 ## ⚛️ React {#react}
 
-StyleX
+[![StyleX](/emails/issues/165/stylex.jpg)](https://github.com/facebook/stylex)
 
-[StyleX](https://github.com/facebook/stylex)
+[**StyleX**](https://github.com/facebook/stylex)
 
-[StyleX: Meta's Solution To CSS At Scale](https://www.youtube.com/watch?v=6ZDiGtg1jN4)
-[Facebook Tried Tailwind, Then Built This Instead](https://www.youtube.com/watch?v=PHV94q7BivI)
+La solution CSS-in-JS de Meta est enfin open-sourcée, après de longues années d'attente. Elle est utilisée sur des apps conséquentes comme Facebook, Instagram ou WhatsApp. Elle n'est pas strictement couplée à React. Le CSS atomique va être extrait au build, et il y a un léger runtime pour concaténer les classes. Le support TypeScript est bien pensé. L'API est minimaliste et repose principalement sur 2 fonctions `create` et `props`. À voir comment cette nouvelle solution se positionnera dans un écosystème déjà assez concurrentiel face à Tailwind ou Panda.
+
+Voir aussi:
+
+- 🎥 [Jack Herrington - StyleX: Meta's Solution To CSS At Scale](https://www.youtube.com/watch?v=6ZDiGtg1jN4)
+- 🎥 [Theo T3 - Facebook Tried Tailwind, Then Built This Instead](https://www.youtube.com/watch?v=PHV94q7BivI)
 
 ---
 
-Redux:
+[![CSS Hooks](/emails/issues/165/csshooks.jpg)](https://css-hooks.com/)
 
-https://www.reddit.com/r/reactjs/comments/18aldn4/redux_toolkit_20_new_features_faster_perf_smaller/
+Librairie CSS avec bindings React, qui propose un véritable retour aux sources via les inline styles. Dans [From CSS madness to CSS Hooks](https://nsaunders.dev/posts/css-madness-to-hooks), l'auteur explique comment il utilise un trick CSS variables pour pouvoir supporter les features manquantes comme media-queries, pseudo-selectors...
 
-- [Redux Toolkit 2.0](https://github.com/reduxjs/redux-toolkit/releases/tag/v2.0.0)
-- [Redux 5.0](https://github.com/reduxjs/redux/releases/tag/v5.0.0)
-- [React-Redux 9.0](https://github.com/reduxjs/react-redux/releases/tag/v9.0.0)
-- [Reselect 5.0](https://github.com/reduxjs/reselect/releases/tag/v5.0.1)
-- Thunks 3.0
+Personnellement, j'ai toujours préféré la DX des inline styles, mais en pratique, cela est trop limité et pas toujours performant. À voir si cette innovation tiendra la route en pratique. En tout cas, elle suscite l'engouement de Mark Dalgleish (🐦 [tweet](https://twitter.com/markdalgleish/status/1729399475494608923)). Adam Wathan n'aurait probablement pas créé Tailwind si les inline styles avaient un meilleur support ([tweet](https://twitter.com/adamwathan/status/1732209400641724785)).
 
 ---
 
 - 💸 [Developer Nation Survey - What's next for developers in 2024 and beyond? Take the survey and win prizes!](https://developereconomics.net/?member_id=thisweekinreact&utm_medium=nl_ad1)
 - 👀 [Remix RFC - Client Data (clientLoader, clientAction)](https://github.com/remix-run/remix/discussions/7634)
-- 🐦 [Using TanStack React Query v5 + Router](https://twitter.com/tannerlinsley/status/1730621837212876829)
-- 📜 [Fastest Way of Passing State to JavaScript, Re-visited](https://calendar.perfplanet.com/2023/fastest-way-passing-state-javascript-revisited/)
-- 📜 [TanStack Router – modern React for the rest of us](https://swizec.com/blog/tanstack-router-modern-react-for-the-rest-of-us/)
-- 📜 [Keep Your Loader Data Fresh in Remix](https://sergiodxa.com/tutorials/keep-your-loader-data-fresh-in-remix)
-- 📜 [A minimal dependency-free translation system for Next.js](https://www.thomasledoux.be/blog/minimal-dependency-free-translation-system-nextjs)
-- 📜 [Web Components Eliminate JavaScript Framework Lock-in](https://jakelazaroff.com/words/web-components-eliminate-javascript-framework-lock-in/)
-- 📜 [Handling HTML within React i18next translations](https://rafaelcamargo.com/blog/handling-html-within-react-i18next-translations/)
-- 📜 [Build your own StorybookGPT - automatically generates stories for React + TypeScript components](https://storybook.js.org/blog/build-your-own-storybook-gpt/)
-- 📜 [An Introduction To Full Stack Composability](https://www.smashingmagazine.com/2023/11/introduction-full-stack-composability/)
-- 📜 [What's new in Astro - November 2023](https://astro.build/blog/whats-new-november-2023/)
-- 📜 [Google - Introducing React components for the Maps JavaScript API](https://cloud.google.com/blog/products/maps-platform/introducing-react-components-for-the-maps-javascript-api/)
-- 📜 [From CSS madness to CSS Hooks](https://nsaunders.dev/posts/css-madness-to-hooks)
-- 📜 [How does xxx compare to Panda CSS](https://www.astahmer.dev/posts/how-does-xxx-compares-to-panda-css)
-- 📜 [Tailwind has a scalability problem. How can we solve that?](https://byteofdev.com/posts/scale-tailwindcss/)
+- 🐦 [Using TanStack React Query v5 + Router preview](https://twitter.com/tannerlinsley/status/1730621837212876829)
+- 📜 [Guide to fast websites with Next.js: Tips for maximizing server speeds and minimizing client burden](https://vercel.com/blog/guide-to-fast-websites-with-next-js-tips-for-maximizing-server-speeds): guest-post sur le blog Vercel d'une agence qui explique les techniques Next.js utilisées pour obtenir de très bonnes performances.
+- 📜 [Fastest Way of Passing State to JavaScript, Re-visited](https://calendar.perfplanet.com/2023/fastest-way-passing-state-javascript-revisited/): les apps React/Redux basées sur SSR doivent envoyer le state coté client pour l'hydratation. Il existe plusieurs techniques plus ou moins performantes.
+- 📜 [Keep Your Loader Data Fresh in Remix](https://sergiodxa.com/tutorials/keep-your-loader-data-fresh-in-remix): montre comment appeler le hook `useRevalidator` quand la connection revient ou le tab reprend le focus.
+- 📜 [Build your own StorybookGPT](https://storybook.js.org/blog/build-your-own-storybook-gpt/): explique comment utiliser l'IA pour générer vos stories automatiquement.
+- 📜 [Introducing React components for the Maps JavaScript API](https://cloud.google.com/blog/products/maps-platform/introducing-react-components-for-the-maps-javascript-api/): Google sponsorise enfin officiellement le développement d'une lib React pour Google Maps.
+- 📜 [How does xxx compare to Panda CSS](https://www.astahmer.dev/posts/how-does-xxx-compares-to-panda-css): bonne présentation de Panda CSS par son mainteneur, qui présente aussi ses limites actuelles. Une solution CSS-in-JS moderne basée sur l'analyse statique et compatible Server Components. Il y a un léger runtime JS, mais le CSS atomic reste extrait au build donc cela n'est pas un gros problème.
+- 📜 [Tailwind has a scalability problem. How can we solve that?](https://byteofdev.com/posts/scale-tailwindcss/): propose d'utiliser `cva` (Class Variance Authority) pour rendre le code Tailwind plus digeste dans un contexte React.
+- 📜 [Slack - Building Custom Animations in the Workflow Builder](https://slack.engineering/building-custom-animations-in-the-workflow-builder/): retour d'expérience de Slack sur l'implementation de features drag-and-drop avec `react-beautiful-dnd `.
 - 📜 [How Relay Enables Optimal Data Fetching](https://relay.dev/blog/2023/10/24/how-relay-enables-optimal-data-fetching/)
+- 📜 [TanStack Router – modern React for the rest of us](https://swizec.com/blog/tanstack-router-modern-react-for-the-rest-of-us/)
+- 📜 [Handling HTML within React i18next translations](https://rafaelcamargo.com/blog/handling-html-within-react-i18next-translations/)
+- 📜 [A minimal dependency-free translation system for Next.js](https://www.thomasledoux.be/blog/minimal-dependency-free-translation-system-nextjs)
+- 📜 [An Introduction To Full Stack Composability](https://www.smashingmagazine.com/2023/11/introduction-full-stack-composability/)
+- 📦 [Redux Toolkit 2.0, Redux 5.0, React-Redux 9.0, Reselect 5.0, Redux-Thunk 3.0](https://github.com/reduxjs/redux-toolkit/releases/tag/v2.0.0): grosse update synchronisée de tous les packages Redux avec des nouvelles features (`combineSlices`), des améliorations de taille, performance, typing, et retrait des features deprecated.
 - 📦 [Astro 4.0](https://astro.build/blog/astro-4/)
 - 📦 [Storybook 7.6](https://storybook.js.org/blog/storybook-7-6/)
 - 📦 [Remix Dev Tools 3.5 - Vite support](https://github.com/Code-Forge-Net/Remix-Dev-Tools/releases/tag/v3.5.0)
@@ -88,7 +88,7 @@ https://www.reddit.com/r/reactjs/comments/18aldn4/redux_toolkit_20_new_features_
 - 🎥 [React Server Components Panel Discussion, React Summit US 2023](https://www.youtube.com/watch?v=ujaTs-5LEWM)
 - 🎥 [Lee Robinson - Introduction to Next.js and React](https://www.youtube.com/@leerob)
 
-  <SubscribeFormEmbed placement="middle" />
+<SubscribeFormEmbed placement="middle" />
 
 ---
 
@@ -127,6 +127,7 @@ Designed specifically for testing, Wallaby features include a [Time Travel Debug
 ## 🇫🇷 En français {#fr}
 
 - 🎥 [Remix vs Next.js - Mon avis Tranché](https://www.youtube.com/watch?v=nuT6JOyVZho)
+- 🎥 [Actus JS de la semaine - TS 5.3, Vite 5, State of JS](https://www.youtube.com/watch?v=hiw-8SxGjYs)
 
 💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
 
@@ -139,6 +140,7 @@ Designed specifically for testing, Wallaby features include a [Time Travel Debug
 - 📜 [Prettier's CLI: A Performance Deep Dive](https://prettier.io/blog/2023/11/30/cli-deep-dive)
 - 📜 [Biome formatter wins the Prettier challenge](https://biomejs.dev/blog/biome-wins-prettier-challenge/)
 - 📜 [Let’s learn how modern JavaScript frameworks work by building one](https://nolanlawson.com/2023/12/02/lets-learn-how-modern-javascript-frameworks-work-by-building-one/)
+- 📜 [Web Components Eliminate JavaScript Framework Lock-in](https://jakelazaroff.com/words/web-components-eliminate-javascript-framework-lock-in/)
 - 📜 [Track Frontend JavaScript exceptions with Playwright fixtures](https://www.checklyhq.com/blog/track-frontend-javascript-exceptions-with-playwright/)
 - 📦 [Vitest 1.0](https://github.com/vitest-dev/vitest/releases/tag/v1.0.0)
 - 📦 [XState 5.0](https://stately.ai/blog/2023-12-01-xstate-v5)
