@@ -100,56 +100,54 @@ Offers industry-standard solutions for critical project aspects like **authentic
 
 ## 📱 React-Native {#react-native}
 
-- https://reactnative.dev/blog/2023/12/06/0.73-debugging-improvements-stable-symlinks
-- [Reactotron 3.0](https://shift.infinite.red/announcing-reactotron-3-0-934b5a221bda) brings automatic tracking of all log messages, better Android device debugging, faster app launch time
-- [interpolate in React Native Reanimated](https://x.com/kacperkapusciak/status/1732794213371097491?s=20) Informative X thread
-- [Expo SDK 50 available as canary release](https://docs.expo.dev/versions/latest/#using-pre-release-versions) Expo introduces canary releases
-- [Expo - Keep your cache close — It’s Faster!](https://expo.dev/changelog/2023/12-07-cocoapods-cache#how-to-speed-up-cocoapods) Expo cuts pod installation time by caching popular pods directly on their build VMs
-- [3D transforms in RN Skia soon](https://x.com/wcandillon/status/1733972374930837776?s=20)
-- [POC of multi-window apps support in React Native](https://x.com/o_kwasniewski/status/1734198386612388263?s=20)
-- [RFC: Well-defined event loop processing model](https://github.com/react-native-community/discussions-and-proposals/pull/744)
+[![React Native 0.73, Expo SDK 50 beta, Expo Router v3 beta](/emails/issues/166/rnheader.jpg)]
+
+- 📦 [React Native 0.73 released](https://reactnative.dev/blog/2023/12/06/0.73-debugging-improvements-stable-symlinks) with a new debugger intended to replace Flipper (see updated [docs](https://reactnative.dev/docs/debugging)), stable Symlink support in Metro (important in Monorepos) and a new Kotlin template for Android (+ Android 14 support).
+- 📦 [Expo SDK 50 beta is now available](https://blog.expo.dev/expo-sdk-50-beta-is-now-available-8e6c74e4e13d) with a new Expo Dev Tools Plugin API, a complete rewrite of `expo-sqlite`, improved `expo-camera`, a new library to figure out compatibility between a JS bundle and a particular native build (`@expo/fingerprint`), `expo-updates` hooks API, and much more.
+- 📦 [EAS Update rollouts](https://docs.expo.dev/eas-update/rollouts/) and [EAS Update rollbacks](https://docs.expo.dev/eas-update/rollbacks/)
+- 📦 [Expo Router v3 beta is now available](https://blog.expo.dev/expo-router-v3-beta-is-now-available-eab52baf1e3e) including API routes (server endpoints with a unified build process), Bundle Splitting for web, and a ton of other new features.
+- 📦 [Reactotron 3.0](https://shift.infinite.red/announcing-reactotron-3-0-934b5a221bda) brings automatic tracking of all log messages, better Android device debugging, faster app launch time
+- 🐦 [interpolate() in React Native Reanimated](https://x.com/kacperkapusciak/status/1732794213371097491) Finally understand Extrapolation with this X thread
+- 📖 [Expo introduces canary releases](https://docs.expo.dev/versions/latest/#using-pre-release-versions)
+- 📜 [Expo - Keep your cache close — It’s Faster!](https://expo.dev/changelog/2023/12-07-cocoapods-cache#how-to-speed-up-cocoapods) Expo cuts pod installation time by caching popular pods directly on their build VMs
+- 📦 [React Native Skia adds support for 3D transformations](https://github.com/Shopify/react-native-skia/pull/2033) William Candillon posted a demo 🐦 [Demo](https://x.com/wcandillon/status/1733972374930837776)
+- 🐦 [POC of multi-window apps support in React Native](https://x.com/o_kwasniewski/status/1734198386612388263)
+- 🚧 [RFC: Well-defined event loop processing model](https://github.com/react-native-community/discussions-and-proposals/pull/744) Proposal to bring the React Native event loop closer to the web specification
 - React Server Components in React Native
-- - https://x.com/SzymonRybczak/status/1733191828306800654?s=20
+    - https://x.com/SzymonRybczak/status/1733191828306800654?s=20
+    - [Evan Bacon about React-Native Server Components being blocked due to lack of Metro bunfle splitting](https://twitter.com/Baconbrix/status/1734250043488563387)
+- 📦 [react-native-permissions 4.0](https://github.com/zoontek/react-native-permissions/releases/tag/4.0.0)
+- 📜 [Creating a macOS MenuBar app with React Native](https://www.oskarkwasniewski.dev/blog/create-react-native-macos-menubar-app)
+- 🎙️ [Rocket Ship #20 - Building Tools for Expo with Dan Stepanov](https://podcast.galaxies.dev/episodes/020-building-tools-for-expo-with-dan-stepanov) with Dan Stepanov, creator of Create Expo Stack
+- 📊 [State of React-Native - Reminder to fill the survey!](https://survey.stateofreactnative.com/)
+- 📜 [Integrate Firebase Analytics into Expo Router](https://tinybytelabs.com/blog/integrate-firebase-analytics-to-expo-router): unlike React-Navigation, Expo-Router is url-first and you have to listen to pathname changes.
+- 📜 [Epic v Google Trial Verdict, a Win for All Developers](https://www.epicgames.com/site/en-US/news/epic-v-google-trial-verdict-a-win-for-all-developers) - Will be interesting to see what changes this might bring to the Play Store (e.g. third party payment processors for IAP?)
 
 ### Seb
 
-- RN 0.73
-- [Creating a macOS MenuBar app with React Native](https://www.oskarkwasniewski.dev/blog/create-react-native-macos-menubar-app)
+
+
 - Epic won the Google/Android case - https://twitter.com/t3dotgg/status/1734450296456093943 ???
-- [State of React-Native - Reminder to fill the survey!](https://survey.stateofreactnative.com/)
-- [react-native-permissions 4.0](https://github.com/zoontek/react-native-permissions/releases/tag/4.0.0)
-- [Rocket Ship](https://podcast.galaxies.dev/): un podcast React-Native à découvrir
-- [Expo Router v3 beta is now available](https://blog.expo.dev/expo-router-v3-beta-is-now-available-eab52baf1e3e)
-- [Expo SDK 50 beta is now available](https://blog.expo.dev/expo-sdk-50-beta-is-now-available-8e6c74e4e13d)
-- [Expo now shipping canary releases](https://twitter.com/tsapeta/status/1732892591556034751)
-- [Evan Bacon about React-Native Server Components being blocked due to lack of Metro bunfle splitting](https://twitter.com/Baconbrix/status/1734250043488563387)
-- [Integrate Firebase Analytics into Expo Router](https://tinybytelabs.com/blog/integrate-firebase-analytics-to-expo-router): unlike React-Navigation, Expo-Router is url-first and you have to listen to pathname changes.
+
 
 ---
 
 ## 🔀 Other {#other}
 
-- [Big update to GitHub Copilot](https://www.youtube.com/watch?v=SZVCJRUADc4)
-- [Electron 28](https://www.electronjs.org/blog/electron-28-0)
-- [New V8 compiler "Maglev"](https://x.com/v8js/status/1733160315326792162?s=20)
-- [Advice for developers from Shopify CEO Tobias Lütke](https://www.youtube.com/watch?si=CJMQtcv28JerS49p&v=prHmUW4JIms&feature=youtu.be)
-- https://x.com/webkit/status/1734291991414841365?s=20
-
-### Probably not
-
-- [VS Code November release](https://code.visualstudio.com/updates/v1_85)
-
-### Seb
-
-- [Baseline 2023 - All new cross-browser supported APIs - Displayed on on caniuse](https://web.dev/blog/baseline2023)
-- [CSS Wrapped: 2023!](https://developer.chrome.com/blog/css-wrapped-2023)
-- [Correctly Configure (Pre) Connections](https://csswizardry.com/2023/12/correctly-configure-preconnections/)
-- [WebKit Features in Safari 17.2 - exclusive accordions, CSS nesting, maths, animations](https://webkit.org/blog/14787/webkit-features-in-safari-17-2/)
-- [Release Notes for Safari Technology Preview 184](https://webkit.org/blog/14780/release-notes-for-safari-technology-preview-184/)
-- [Does Interaction to Next Paint actually correlate to user behavior?](https://www.speedcurve.com/blog/INP-user-experience-correlation/)
-- [TC39 FAQ](https://github.com/tc39/faq/)
-- [Seroval 1.0 - Stringify JS values](https://github.com/lxsmnsyc/seroval)
-- [The TypeScript 5.3 Feature They Didn't Tell You About - as const satisfies](https://www.totaltypescript.com/the-typescript-5-3-feature-they-didn-t-tell-you-about)
+- 🎥 [Big update to GitHub Copilot](https://www.youtube.com/watch?v=SZVCJRUADc4)
+- 📦 [Electron 28](https://www.electronjs.org/blog/electron-28-0)
+- 📜 [New V8 compiler "Maglev"](https://v8.dev/blog/maglev)
+- 🎥 [Advice for developers from Shopify CEO Tobias Lütke](https://www.youtube.com/watch?si=CJMQtcv28JerS49p&v=prHmUW4JIms&feature=youtu.be)
+- 📦 [VS Code November release](https://code.visualstudio.com/updates/v1_85)
+- 📜 [Baseline 2023 - All new cross-browser supported APIs - Displayed on on caniuse](https://web.dev/blog/baseline2023)
+- 📜 [CSS Wrapped: 2023!](https://developer.chrome.com/blog/css-wrapped-2023)
+- 📜 [Correctly Configure (Pre) Connections](https://csswizardry.com/2023/12/correctly-configure-preconnections/)
+- 📜 [WebKit Features in Safari 17.2 - exclusive accordions, CSS nesting, maths, animations](https://webkit.org/blog/14787/webkit-features-in-safari-17-2/)
+- 📜 [Release Notes for Safari Technology Preview 184](https://webkit.org/blog/14780/release-notes-for-safari-technology-preview-184/)
+- 📜 [Does Interaction to Next Paint actually correlate to user behavior?](https://www.speedcurve.com/blog/INP-user-experience-correlation/)
+- 📜 [TC39 FAQ](https://github.com/tc39/faq/)
+- 📦 [Seroval 1.0 - Stringify JS values](https://github.com/lxsmnsyc/seroval)
+- 📜 [The TypeScript 5.3 Feature They Didn't Tell You About - as const satisfies](https://www.totaltypescript.com/the-typescript-5-3-feature-they-didn-t-tell-you-about)
 
 ---
 
@@ -161,9 +159,6 @@ Offers industry-standard solutions for critical project aspects like **authentic
 - https://x.com/BHolmesDev/status/1733572149527429222?s=20
 - https://x.com/t3dotgg/status/1733632034898059387?s=20
 - https://x.com/shuttle_dev/status/1734154967085146534?s=20
-
-### Seb
-
 - https://twitter.com/sebastienlorber/status/1733126141915906550
 - https://twitter.com/sebastienlorber/status/1734633934439256133
 - https://twitter.com/almormd/status/1732681415677083812
