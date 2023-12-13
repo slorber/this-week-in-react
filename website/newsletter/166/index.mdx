@@ -34,39 +34,38 @@ A new kind of dev tool for React just opened its beta. See your JSX and styles i
 
 ## ⚛️ React {#react}
 
-- 📦 [First alpha of Storybook 8](https://github.com/storybookjs/storybook/releases) brings some improvements for Next.js support and React implementation
-- 📦 [Million.js 3.0](https://million.dev/blog/million-3) brings faster build time and faster runtime
-- [Parallel routes and default.js in Next.js](https://x.com/asidorenko_/status/1732846254420308362) good and short video introduction (but X only)
-- 📖 [Next.js - Updated Server Actions docs](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations) learn about server actions - asynchronous functions that are executed on the server.
-- 🐦 [Nice visualization of fine-grained reactivity in TanStack Router](https://x.com/aryan__deora/status/1733164876170764409)
-- 👀 [v0 can now render charts](https://x.com/rauchg/status/1733002334043865425)
-- 📜 [Introducing Waku - The minimal React Framework that enhances React Server Component usage](https://waku.gg/blog/introducing-waku) - 📦 [Waku 0.18.0](https://www.npmjs.com/package/waku)
-- 📦 [react-hook-form 7.49.0](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.49.0) adds reactive errors prop for useForm and react-server bundle
-- 📦 [Simple Form 1.0](https://github.com/bholmesdev/simple-stack/tree/main/packages/form) New form library just dropped 🐦 ([Demo](https://x.com/BHolmesDev/status/1732950888996573542))
+[![Waku](/emails/issues/166/waku.jpg)](https://waku.gg/blog/introducing-waku)
+
+[**Introducing Waku - The minimal React Framework that enhances React Server Component usage**](https://waku.gg/blog/introducing-waku)
+
+[Waku 0.18.0](https://www.npmjs.com/package/waku)
+
+---
+
+- 💸 [Developer Nation Survey - For each completed response, Developer Nation will donate to one of the charities of respondents’ choosing! Start now!](https://developereconomics.net/?member_id=thisweekinreact&utm_medium=nl_ad2)
+- 🍿 [Remotion - GitHub Unwrapped 2023](https://githubunwrapped.com/): this year Remotion partnered with GitHub to produce the GitHub Unwrapped video ([here is mine](https://twitter.com/sebastienlorber/status/1734622460547342693)). A great showcase for the type of videos that can be produced using React.
+- 🐦 [React hydration error diff demo](https://twitter.com/samijaber_/status/1734332721634099282): revival of interest for this much needed feature ([new React PR](https://github.com/facebook/react/pull/27808)).
+- 🐦 [Tanner Linsley about React concurrent model vs reactive model](https://twitter.com/tannerlinsley/status/1732474127712481371): on the difficulty to get the benefits of both models at once. Tanner finally migrated the upcoming TanStack Router to a reactive model ([visual demo](https://x.com/aryan__deora/status/1733164876170764409)).
+- 🐦 [Next.js moving away from extending `fetch()`, adding new APIs like `noStore()`](https://twitter.com/leeerob/status/1733154383410684148)
+- 📖 [Next.js - Updated Server Actions docs - Includes how to use them outside forms, security recommendations, and best practices](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations)
 - 📖 [Next.js React Foundations updated with App Router and Server Components](https://nextjs.org/learn/react-foundations)
 - 📜 [A Chain Reaction](https://overreacted.io/a-chain-reaction/): Dan Abramov offers us a great lesson in storytelling through the implementation of a recursive function that translates JSX into HTML elements.
-- 📜 [How to set up self-healing URLs in Next.js for better SEO](https://mikebifulco.com/posts/self-healing-urls-nextjs-seo)
-- 📜 [Best Practices using React Server Components with a Headless CMS](https://www.cosmicjs.com/blog/best-practices-using-react-server-components-with-a-headless-cms)
-- 📜 [Polymorphism in React: 2 patterns you must know](https://www.bekk.christmas/post/2023/01/polymorphism-in-react)
-- 📜 [Lexical state updates](https://dio.la/article/lexical-state-updates)
-- 📦 [Next-Admin 3.0 - App router support](https://github.com/premieroctet/next-admin/releases/tag/%40premieroctet%2Fnext-admin%403.0.0) brings support for App Router
-- 📦 [React DevTools 5.0 - New React-Forget badge](https://github.com/facebook/react/pull/27759): I gave it a try and we can see React-Forget is already used in production on Instagram ([ref](https://twitter.com/sebastienlorber/status/1734607171030303186)).
-- 📦 [Epic Stack - Client Hints - Eliminate a flash of incorrect content by using client hints](https://github.com/epicweb-dev/client-hints)
-- 📜 [Remix - Submit a form without overwriting existing parameters](https://www.jacobparis.com/content/existing-params)
-- 📜 [Expose Remix Routes as API Endpoints](https://sergiodxa.com/tutorials/expose-remix-routes-as-api-endpoints)
-- 📦 [Fuse.js: The opinionated framework for creating typesafe data layers](https://stellate.co/blog/announcing-fuse-js)
 - 📜 [Next.js 14: Layouts vs Templates](https://www.builder.io/blog/nextjs-14-layouts-templates): templates are remounted on navigation and reset their state.
-- 📜 [The anatomy of shadcn/ui](https://manupa.dev/blog/anatomy-of-shadcn-ui)
+- 📜 [Storybook for React Server Components](https://storybook.js.org/blog/storybook-react-server-components/): Storybook 8 is now in alpha. In includes experimental Next.js RSC support. In practice RSCs will run client-side and you have to mock networks and Node.js APIs.
+- 📜 [The anatomy of shadcn/ui](https://manupa.dev/blog/anatomy-of-shadcn-ui): gives a great overview of the popular Radix + Tailwind l̶i̶b̶r̶a̶r̶y̶, and how it assembles various packages to provide a good DX.
+- 📜 [How to set up self-healing URLs in Next.js for better SEO](https://mikebifulco.com/posts/self-healing-urls-nextjs-seo): shows how to create Next.js urls that are both human-readable and include a stable id. You can change the article title/url without breaking old links.
+- 📜 [Remix - Submit a form without overwriting existing parameters](https://www.jacobparis.com/content/existing-params): suggests to use a `<ExistingSearchParams>` to append existing params to the form.
+- 📜 [Polymorphism in React - 2 patterns you must know](https://www.bekk.christmas/post/2023/01/polymorphism-in-react)
+- 📜 [Lexical state updates](https://dio.la/article/lexical-state-updates)
+- 📦 [Million.js 3.0](https://million.dev/blog/million-3) brings faster build time and faster runtime
+- [Parallel routes and default.js in Next.js](https://x.com/asidorenko_/status/1732846254420308362) good and short video introduction (but X only)
+- 📦 [react-hook-form 7.49.0](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.49.0) adds reactive errors prop for useForm and react-server bundle
+- 📦 [Simple Form 1.0](https://github.com/bholmesdev/simple-stack/tree/main/packages/form) New form library just dropped 🐦 ([Demo](https://x.com/BHolmesDev/status/1732950888996573542))
+- 📦 [Next-Admin 3.0 - App router support](https://github.com/premieroctet/next-admin/releases/tag/%40premieroctet%2Fnext-admin%403.0.0) brings support for App Router
+- 📦 [React DevTools 5.0 - New React-Forget badge](https://github.com/facebook/react/pull/27759): I gave it a try, and we can see React-Forget is already used in production on Instagram ([ref](https://twitter.com/sebastienlorber/status/1734607171030303186)).
+- 📦 [Epic Stack - Client Hints - Eliminate a flash of incorrect content by using client hints](https://github.com/epicweb-dev/client-hints)
+- 📦 [Fuse.js: The opinionated framework for creating typesafe data layers](https://stellate.co/blog/announcing-fuse-js)
 - 📦 [AuthKit - The world's best login box powered by WorkOS and Radix](https://www.authkit.com/)
-- 🐦 [React hydration error diff demo](https://twitter.com/samijaber_/status/1734332721634099282)
-- 🐦 [Next.js moving away from extending fetch, adding new APIs like `noStore()`](https://twitter.com/leeerob/status/1733154383410684148)
-- 🐦 [Tanner Linsley about React concurrent model vs reactive model](https://twitter.com/tannerlinsley/status/1732474127712481371): difficult to use both models at once. Tanner migrated the upcoming TanStack Router to a reactive model ([ref](https://twitter.com/tannerlinsley/status/1732906060795846847)).
-- 💸 [Developer Nation Survey - For each completed response, Developer Nation will donate to one of the charities of respondents’ choosing! Start now!](https://developereconomics.net/?member_id=thisweekinreact&utm_medium=nl_ad2)
-
-### Seb
-
-- 💸 [Developer Nation Survey - For each completed response, Developer Nation will donate to one of the charities of respondents’ choosing! Start now!](https://developereconomics.net/?member_id=thisweekinreact&utm_medium=nl_ad2)
-- [Introducing StyleX](https://stylexjs.com/blog/introducing-stylex) - was in the last issue already?
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -106,6 +105,7 @@ Offers industry-standard solutions for critical project aspects like **authentic
 - 📦 [Expo Router v3 beta](https://blog.expo.dev/expo-router-v3-beta-is-now-available-eab52baf1e3e): includes API routes, Bundle Splitting for web, and a ton of other new features. Universal React Server Components are coming to Expo!
 - 📦 [Reactotron 3.0](https://shift.infinite.red/announcing-reactotron-3-0-934b5a221bda): brings automatic tracking of all log messages, better Android device debugging, faster app launch time.
 - 📦 [React Native Skia - 3D transformations](https://github.com/Shopify/react-native-skia/pull/2033): William Candillon posted a 🐦 [demo](https://x.com/wcandillon/status/1733972374930837776)
+- 📦 [React-Native-Unistyles 2.0](https://reactnativeunistyles.vercel.app/)
 - 📦 [react-native-permissions 4.0 - iOS 17, Android 14 support](https://github.com/zoontek/react-native-permissions/releases/tag/4.0.0)
 - 🎙️ [Rocket Ship #20 - Building Tools for Expo with Dan Stepanov](https://podcast.galaxies.dev/episodes/020-building-tools-for-expo-with-dan-stepanov) with Dan Stepanov, creator of Create Expo Stack
 
@@ -118,7 +118,10 @@ Offers industry-standard solutions for critical project aspects like **authentic
 - 📜 [WebKit Features in Safari 17.2 - exclusive accordions, CSS nesting, maths, animations...](https://webkit.org/blog/14787/webkit-features-in-safari-17-2/)
 - 📜 [Does Interaction to Next Paint actually correlate to user behavior?](https://www.speedcurve.com/blog/INP-user-experience-correlation/)
 - 📜 [The TypeScript 5.3 Feature They Didn't Tell You About - as const satisfies](https://www.totaltypescript.com/the-typescript-5-3-feature-they-didn-t-tell-you-about)
+- 📜 [Ternaries could be beautiful - A new proposal for Prettier formatting](https://pedrocattori.dev/blog/ternaries-could-be-beautiful)
+- 📜 [Improving Node.js loader performance](https://sentry.engineering/blog/improving-nodejs-loader-performance)
 - 📦 [Seroval 1.0 - Stringify JS values](https://github.com/lxsmnsyc/seroval)
+- 📦 [Oxlint - General Availability](https://oxc-project.github.io/blog/2023-12-12-announcing-oxlint.html)
 
 ---
 
