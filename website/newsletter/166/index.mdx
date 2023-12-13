@@ -1,6 +1,6 @@
 ---
 slug: /166
-title: "This Week In React #166: ..."
+title: "This Week In React #166: Server Components, Waku, Million, React-Forget, Remotion, React-Native, Expo, Storybook, Next.js, Remix, AuthKit, Reactotron, Unistyles..."
 authors: [slorber]
 date: 12-12-2023
 unlisted: true
@@ -36,9 +36,10 @@ A new kind of dev tool for React just opened its beta. See your JSX and styles i
 
 [![Waku](/emails/issues/166/waku.jpg)](https://waku.gg/blog/introducing-waku)
 
-[**Introducing Waku - The minimal React Framework that enhances React Server Component usage**](https://waku.gg/blog/introducing-waku)
+[**Waku - Minimal React Framework that enhances React Server Component usage**](https://waku.gg/blog/introducing-waku)
 
-[Waku 0.18.0](https://www.npmjs.com/package/waku)
+We already featured this one, but the v0.18 rewrite is out, and includes a little introduction blog post.
+Waku is a minimal React framework that allows us to explore the core RSC capabilities, free from the traditional SSG/SSR strategies. Technically it is a Vite-based bundler that outputs pure JS and supports deployment to edge runtimes. Now sponsored by Vercel.
 
 ---
 
@@ -49,7 +50,7 @@ A new kind of dev tool for React just opened its beta. See your JSX and styles i
 - 🐦 [Next.js moving away from extending `fetch()`, adding new APIs like `noStore()`](https://twitter.com/leeerob/status/1733154383410684148)
 - 📖 [Next.js - Updated Server Actions docs - Includes how to use them outside forms, security recommendations, and best practices](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations)
 - 📖 [Next.js React Foundations updated with App Router and Server Components](https://nextjs.org/learn/react-foundations)
-- 📜 [A Chain Reaction](https://overreacted.io/a-chain-reaction/): Dan Abramov offers us a great lesson in storytelling through the implementation of a recursive function that translates JSX into HTML elements.
+- 📜 [A Chain Reaction](https://overreacted.io/a-chain-reaction/): Dan Abramov is back with great storytelling lesson through the implementation of a recursive function that renders JSX to platform elements.
 - 📜 [Next.js 14: Layouts vs Templates](https://www.builder.io/blog/nextjs-14-layouts-templates): templates are remounted on navigation and reset their state.
 - 📜 [Storybook for React Server Components](https://storybook.js.org/blog/storybook-react-server-components/): Storybook 8 is now in alpha. In includes experimental Next.js RSC support. In practice RSCs will run client-side and you have to mock networks and Node.js APIs.
 - 📜 [The anatomy of shadcn/ui](https://manupa.dev/blog/anatomy-of-shadcn-ui): gives a great overview of the popular Radix + Tailwind l̶i̶b̶r̶a̶r̶y̶, and how it assembles various packages to provide a good DX.
@@ -57,15 +58,12 @@ A new kind of dev tool for React just opened its beta. See your JSX and styles i
 - 📜 [Remix - Submit a form without overwriting existing parameters](https://www.jacobparis.com/content/existing-params): suggests to use a `<ExistingSearchParams>` to append existing params to the form.
 - 📜 [Polymorphism in React - 2 patterns you must know](https://www.bekk.christmas/post/2023/01/polymorphism-in-react)
 - 📜 [Lexical state updates](https://dio.la/article/lexical-state-updates)
-- 📦 [Million.js 3.0](https://million.dev/blog/million-3) brings faster build time and faster runtime
-- [Parallel routes and default.js in Next.js](https://x.com/asidorenko_/status/1732846254420308362) good and short video introduction (but X only)
-- 📦 [react-hook-form 7.49.0](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.49.0) adds reactive errors prop for useForm and react-server bundle
-- 📦 [Simple Form 1.0](https://github.com/bholmesdev/simple-stack/tree/main/packages/form) New form library just dropped 🐦 ([Demo](https://x.com/BHolmesDev/status/1732950888996573542))
-- 📦 [Next-Admin 3.0 - App router support](https://github.com/premieroctet/next-admin/releases/tag/%40premieroctet%2Fnext-admin%403.0.0) brings support for App Router
-- 📦 [React DevTools 5.0 - New React-Forget badge](https://github.com/facebook/react/pull/27759): I gave it a try, and we can see React-Forget is already used in production on Instagram ([ref](https://twitter.com/sebastienlorber/status/1734607171030303186)).
-- 📦 [Epic Stack - Client Hints - Eliminate a flash of incorrect content by using client hints](https://github.com/epicweb-dev/client-hints)
-- 📦 [Fuse.js: The opinionated framework for creating typesafe data layers](https://stellate.co/blog/announcing-fuse-js)
+- 📦 [React DevTools 5.0 - New React-Forget badge](https://github.com/facebook/react/pull/27759): new feature permits to see Meta's rollout of React-Forget in production on Instagram ([ref](https://twitter.com/sebastienlorber/status/1734607171030303186)).
+- 📦 [Million.js 3.0](https://million.dev/blog/million-3): new overhauled version of this React VDOM alternative is a faster drop-in replacement.
 - 📦 [AuthKit - The world's best login box powered by WorkOS and Radix](https://www.authkit.com/)
+- 📦 [react-hook-form 7.49 - react-server bundle, reactive errors prop...](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.49.0)
+- 📦 [Next-Admin 3.0 - App router support](https://github.com/premieroctet/next-admin/releases/tag/%40premieroctet%2Fnext-admin%403.0.0)
+- 📦 [Epic Stack - Client Hints - Eliminate flashes of incorrect content](https://github.com/epicweb-dev/client-hints)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -101,13 +99,13 @@ Offers industry-standard solutions for critical project aspects like **authentic
 - 📜 [Creating a macOS MenuBar app with React Native](https://www.oskarkwasniewski.dev/blog/create-react-native-macos-menubar-app)
 - 📜 [Epic Games vs Google - Trial Verdict, a Win for All Developers](https://www.epicgames.com/site/en-US/news/epic-v-google-trial-verdict-a-win-for-all-developers): might bring changes to the app stores rules regarding in-app-payment models and their 30% tax.
 - 📦 [React Native 0.73](https://reactnative.dev/blog/2023/12/06/0.73-debugging-improvements-stable-symlinks) with a new debugger intended to replace Flipper (see updated [docs](https://reactnative.dev/docs/debugging)), stable Symlink support in Metro (important in monorepos) and a new Kotlin template for Android (+ Android 14 support).
-- 📦 [Expo SDK 50 beta](https://expo.dev/changelog/2023/12-12-sdk-50-beta): upgrades to React-Native 0.73, with a new Expo Dev Tools Plugin API, a complete rewrite of `expo-sqlite`, improved `expo-camera`, a new library to figure out compatibility between a JS bundle and a particular native build (`@expo/fingerprint`), `expo-updates` hooks API, EAS Updates/Rollouts and much more.
+- 📦 [Expo SDK 50 beta](https://expo.dev/changelog/2023/12-12-sdk-50-beta): upgrades to React-Native 0.73, with a new Expo Dev Tools Plugin API, a complete rewrite of `expo-sqlite`, improved `expo-camera`, a new library to figure out compatibility between a JS bundle and a particular native build (`@expo/fingerprint`), `expo-updates` hooks API, EAS updates/rollouts and much more.
 - 📦 [Expo Router v3 beta](https://blog.expo.dev/expo-router-v3-beta-is-now-available-eab52baf1e3e): includes API routes, Bundle Splitting for web, and a ton of other new features. Universal React Server Components are coming to Expo!
 - 📦 [Reactotron 3.0](https://shift.infinite.red/announcing-reactotron-3-0-934b5a221bda): brings automatic tracking of all log messages, better Android device debugging, faster app launch time.
 - 📦 [React Native Skia - 3D transformations](https://github.com/Shopify/react-native-skia/pull/2033): William Candillon posted a 🐦 [demo](https://x.com/wcandillon/status/1733972374930837776)
 - 📦 [React-Native-Unistyles 2.0](https://reactnativeunistyles.vercel.app/)
 - 📦 [react-native-permissions 4.0 - iOS 17, Android 14 support](https://github.com/zoontek/react-native-permissions/releases/tag/4.0.0)
-- 🎙️ [Rocket Ship #20 - Building Tools for Expo with Dan Stepanov](https://podcast.galaxies.dev/episodes/020-building-tools-for-expo-with-dan-stepanov) with Dan Stepanov, creator of Create Expo Stack
+- 🎙️ [Galaxies - Rocket Ship](https://podcast.galaxies.dev/): recent React-Native focused podcast worth discovering
 
 ---
 
@@ -127,17 +125,6 @@ Offers industry-standard solutions for critical project aspects like **authentic
 
 ## 🤭 Fun {#fun}
 
-- https://x.com/CreeCoder/status/1732645774779977811?s=20
-- https://x.com/thymikee/status/1733145938665918478?s=20
-- https://x.com/kepano/status/1733246246478131278?s=20
-- https://x.com/BHolmesDev/status/1733572149527429222?s=20
-- https://x.com/t3dotgg/status/1733632034898059387?s=20
-- https://x.com/shuttle_dev/status/1734154967085146534?s=20
-- https://twitter.com/sebastienlorber/status/1733126141915906550
-- https://twitter.com/sebastienlorber/status/1734633934439256133
-- https://twitter.com/almormd/status/1732681415677083812
-- https://twitter.com/sebastienlorber/status/1734897835521331451
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/166/meme.jpg)](https://twitter.com/sebastienlorber/status/1733126141915906550)
 
 See ya! 👋
