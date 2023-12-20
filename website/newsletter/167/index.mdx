@@ -1,6 +1,6 @@
 ---
 slug: /167
-title: "This Week In React #167: ..."
+title: "This Week In React #167: Aria Components, Hydration, Remix, Server Components, useSyncExternalStore, cache, perf, Glow, Unistyles, Expo, Tailwind, date-fns..."
 authors: [slorber]
 date: 12-19-2023
 unlisted: true
@@ -8,7 +8,13 @@ unlisted: true
 
 Hi everyone!
 
-Happy new year merry christmas
+Once again this week, we have a good mix of articles and releases.
+
+Firefox 121 is out, making [CSS `:has()`](https://twitter.com/stefanjudis/status/1737366970566053927) officially cross-browser supported 🥲
+
+That's the last issue of the year. The newsletter should be back on January 3.
+
+Happy New Year and Merry Christmas everyone, and thank you for reading me throughout the year ❤️️
 
 <!-- truncate -->
 
@@ -52,13 +58,13 @@ A brand-new project that permits to add a handy error overlay to help debugging 
 
 - 💸 [Take the Developer Nation Survey - A virtual goody bag packed with free data, promo codes for event tickets, courses, tools & platforms is waiting at the end of the survey!](https://developereconomics.net/?member_id=thisweekinreact&utm_medium=nl_ad3)
 - 👀 [Remix PR - unstable_serverBundles - split your route tree](https://github.com/remix-run/remix/pull/8332)
+- 📖 [React Docs Update](https://github.com/reactwg/server-components/discussions/7): an overview of all the new official docs pages that were recently published on React.dev, including `use`, `cache`, `form` and many other experimental/canary APIs. There's even a "Coming Soon" section referencing docs for new [static resource preloading APIs](https://github.com/reactjs/react.dev/pull/6459).
 - 📖 [Updated Next.js testing docs - using App Router and TypeScript](https://nextjs.org/docs/app/building-your-application/testing)
-- 📖 [React Docs Update](https://github.com/reactwg/server-components/discussions/7): an overview of all the new official docs pages that were recently published on React.dev, including `use`, `cache`, `form` and many other experimental/canary APIs.
 - 📜 [Concurrent React, External Stores, and Tearing](https://interbolt.org/blog/react-ui-tearing/): An advanced article explaining how React can end up displaying an inconsistent UI (tearing). `useSyncExternalStore` helps to render a consistent UI, but it can also de-optimize your React transitions. See also the [Tearable Dots interactive demo](https://tearabledots.com/).
 - 📜 [Explaining React's cache Function](https://unicorn-utterances.com/posts/explaining-reacts-cache-function): interactive article presenting the experimental React API, and how it differs from `useMemo`. It permits cross-component caching and can be used to preload data.
-- 📜 [Netlify’s Disingenuous Survey-based Attack on Next.js (and Eleventy, too)](https://www.zachleat.com/web/netlify-and-nextjs/): Eleventy creator's criticism of how Netlify presented their State of Web Dev survey results.
 - 📜 [How to Get Rid of “Window is Not Defined” and Hydration Mismatch Errors in Next.js](https://medium.com/@eric.burel/how-to-get-rid-of-window-is-not-defined-and-hydration-mismatch-errors-in-next-js-567cc51b4a17): Shares 5 tips to avoid React hydration problems.
 - 📜 [React Tricks: Fast, Fit and Fun](https://molefrog.com/notes/react-tricks): React perf lessons learned from building Wouter, a React router.
+- 📜 [Netlify’s Disingenuous Survey-based Attack on Next.js (and Eleventy, too)](https://www.zachleat.com/web/netlify-and-nextjs/): Eleventy creator's criticism of how Netlify presented their State of Web Dev survey results.
 - 📜 [Upcoming React and React-Native Conferences for 2024](https://thoughtbot.com/blog/upcoming-react-and-react-native-conferences-for-2024)
 - 📜 [What is Reactivity?](https://unicorn-utterances.com/posts/what-is-reactivity)
 - 📜 [What are React Server Actions?](https://unicorn-utterances.com/posts/what-are-react-server-actions)
@@ -110,12 +116,13 @@ Unistyles is a cross-platform styling library. It is built as a superset of Styl
 - 📖 [Expo Guide on How to use the New Architecture](https://docs.expo.dev/guides/new-architecture/): All `expo-*` packages except expo-updates support the new architecture. Support for `expo-updates` is planned for Expo SDK 51.
 - 📜 [Expo 2023 - The year in review](https://expo.dev/changelog/2023/12-20-2023-year-in-review): An overview of everything Expo launched this year, including Expo Orbit, Expo Router, EAS improvements, 3 SDKs, Expo Modules API and much more.
 - 📜 [Xcode 15.1 image is now available on EAS Build](https://expo.dev/changelog/2023/12-19-eas-build-xcode-15.1-image): Xcode 15.1 primarily fixes bugs.
-- 📜 [Building AR face masks in React Native](https://blog.logrocket.com/building-ar-face-masks-react-native/): How to load and apply 3D face masks using DeepAR
 - 📜 [Optimizing Performance in React-Native: Tips and Techniques](https://thoughtbot.com/blog/optimizing-performance-in-react-native-tips-and-techniques): Tutorial on how to apply memoization, use virtualized lists, optimize images, debounce, optimize bundle size and network requests
+- 📜 [Building AR face masks in React Native](https://blog.logrocket.com/building-ar-face-masks-react-native/): How to load and apply 3D face masks using DeepAR
 - 📜 [Introducing docs.infinite.red — A New Home for Infinite Red’s Documentation - Ignite, Reactotron, RN MLKit, Gluegun](https://shift.infinite.red/introducing-docs-infinite-red-a-new-home-for-infinite-reds-documentation-6f4b25f7a1a4)
 - 📜 [Universal Medusa: The why, when and how of universal e-commerce apps with Medusa.js, Expo and Next.js](https://bidah.hashnode.dev/universal-medusa-the-why-when-and-how-of-universal-e-commerce-apps-with-medusajs-expo-and-nextjs)
 - 📦 [React Native 0.73.1 is out](https://github.com/facebook/react-native/releases/tag/v0.73.1): Adds `enableNetworkInspector` to enable Network panel and CDP handlers in inspector proxy, bumps CLI to 12.3.0
 - 📦 [React Native Windows 0.73.1 is out](https://github.com/microsoft/react-native-windows/releases/tag/react-native-windows_v0.73.1): Brings React Native 0.73 to Windows
+- 📦 [Repack 3.7 - 0.73 compat](https://github.com/callstack/repack/releases/tag/%40callstack%2Frepack%403.7.0)
 - 🎥 [Ignite 9 video overview by Jamon Holmgren](https://youtu.be/QmkMsUYrTlk?si=p9rvLM-EMggZNcft)
 - 🎙️ [Rocket Ship #021 - The React Native IDE with Krzysztof Magiera](https://podcast.galaxies.dev/episodes/021-the-react-native-ide-with-krzysztof-magiera)
 - 🎙️ [React Native Radio 283 - From side-project to acquisition!](https://reactnativeradio.com/episodes/rnr-283-from-side-hustle-to-top-charts-with-simon-reggiani)
@@ -127,6 +134,7 @@ Unistyles is a cross-platform styling library. It is built as a superset of Styl
 - 📖 [tsdocs.dev - browse type documentation for npm packages](https://tsdocs.dev/)
 - 📜 [New to the web platform in December](https://web.dev/blog/web-platform-12-2023)
 - 📜 [The await event horizon in JavaScript](https://frontside.com/blog/2023-12-11-await-event-horizon/)
+- 📦 [Node.js v21.5.0 - parse JSON efficiently, adding a `--trace-promises` flag](https://nodejs.org/en/blog/release/v21.5.0)
 - 📦 [Tailwind CSS v3.4: Dynamic viewport units, `:has()` support, balanced headlines, subgrid, and more](https://tailwindcss.com/blog/tailwindcss-v3-4)
 - 📦 [SvelteKit 2.0 - Vite 5, shallow routing, prepating for Svelte 5](https://svelte.dev/blog/sveltekit-2)
 - 📦 [date-fns 3.0 - TypeScript rewrite, ESM and other date features](https://blog.date-fns.org/v3-is-out/)
