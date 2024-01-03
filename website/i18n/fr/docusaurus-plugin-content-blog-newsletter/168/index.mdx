@@ -1,14 +1,19 @@
 ---
 slug: /168
-title: "React Hebdo #168: ..."
+title: "React Hebdo #168: TanStack, useMemo, RSC, preload, flushSync, shadcn-ui, MDX, Storybook, StyleX, TWC, Tokenami, Catalyst, rsc-cache, WishList, VisionOS, Hermes, release-profiler..."
 authors: [slorber]
 date: 01-03-2024
-unlisted: true
 ---
 
 Salut à tous !
 
-<Todo />
+Joyeux Noël et bonne année ! 🥂
+
+La newsletter est de retour, et malgré les fêtes, nous avons encore eu quelques nouvelles intéressantes, notamment en ce qui concerne la TanStack. Les développeurs ont probablement profité de cette occasion pour travailler sur leurs propres projets open-source 😄 !
+
+N'oubliez pas de répondre au sondage [State of React Native 2023 survey](https://stateofreactnative.com/), il reste peu de temps !
+
+J'espère trouver le temps d'écrire une rétrospective complète de la newsletter 2023. En attendant, si vous êtes curieux, j'écris des rapports mensuels sur ma [page Indie Hackers](https://www.indiehackers.com/product/french-react-newsletter) depuis 2 ans maintenant.
 
 <!-- truncate -->
 
@@ -34,7 +39,50 @@ import Support from "../_support.mdx";
 
 ## ⚛️ React {#react}
 
+[![TanStack Router 1.0](/emails/issues/168/tanstack-router.jpg)](https://tanstack.com/router/v1)
+
+**[TanStack Router 1.0](https://tanstack.com/router/v1)**
+
+Le très attendu TanStack Router a été lancé en version stable 1.0 avec un joli [🐦 trailer](https://twitter.com/tannerlinsley/status/1738709130213560497), juste à temps pour Noël. Ce nouveau routeur repousse les limites en termes de typesafety, de gestion de l'état de l'url (search params) et de mise en cache, entre autres.
+
+Le [guide SSR](https://tanstack.com/router/v1/docs/guide/ssr) fait référence à un package `@tanstack/react-start`, probablement un teaser pour un prochain framework [🐦 TanStack Start](https://twitter.com/sebastienlorber/status/1742589454563369123)
+
+D'autres packages TanStack récents que vous auriez pu manquer :
+
+- 📦 [TanStack Config - Tool for publishing and maintaining high-quality JavaScript packages](https://github.com/TanStack/config)
+- 📦 [TanStack Store - Framework agnostic, type-safe store with reactive framework adapters](https://tanstack.com/store/latest)
+
+---
+
 - 💸 [From Dreamweaver to JSX: The Evolution of Visual Dev Tools for the Web](https://mightymeld.com/blog/browser-dev-tools-understand-code?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=link1)
+- 👀 [React Docs PR - React-DOM static resource loading functions](https://github.com/reactjs/react.dev/pull/6459)
+- 👀 [Next.js PR - Next.js is exploring moving to Lightning CSS](https://github.com/vercel/next.js/pull/58712)
+- 👀 [Remix PR - SPA Mode](https://github.com/remix-run/remix/pull/8338)
+- 🐦 [useMemo to become a better version of context selectors](https://twitter.com/sebastienlorber/status/1741218919732429108): il semblerait que [les selecteurs composent mal](https://twitter.com/dan_abramov2/status/1741200483862151663), et le plan de la core team React est d'améliorer l'API useMemo pour optimiser la souscription aux contexts React.
+- 🐦 [SkipRenderOnClient - interesting trick to optimize hydration performance](https://twitter.com/sebastienlorber/status/1742528219318738955)
+- 🐦 [Million.js joins Y Combinator](https://twitter.com/aidenybai/status/1737929698221682789)
+- 📜 [React Server Components: the Good, the Bad, and the Ugly](https://www.mayank.co/blog/react-server-components/): une critique très bien documentée sur le statu quo de l'utilisation des RSCs.
+- 📜 [Thoughts on Remix](https://www.viget.com/articles/thoughts-on-remix/): bon aperçu de Remix - d'où il vient, leur philosophie et comment il se compare à Next.js.
+- 📜 [More Than You Need to Know About ReactDOM.­flushSync](https://julesblom.com/writing/flushsync): article détaillé et interactif sur la méthode React-DOM `flushSync()`, rarement utilisée mais parfois cruciale qui vous permet désactiver le batching React.
+- 📜 [Remix + MDX - How this site is built](https://remix-blog-mdx.fly.dev/): les features Vite et les plugins remark fonctionnent ensemble pour apporter le support MDX.
+- 📜 [The View Transition API: A New Way to Animate Page Transitions](https://marmelab.com/blog/2023/12/21/view-transitions.html): montre aussi l'usage avec React Router and Remix.
+- 📜 [What should we ship?](https://rauno.me/craft/vercel): article détaillé d'un dev/designer ayant participé a la nouvelle landing page vercel.com.
+- 📜 [Future of Storybook in 2024](https://storybook.js.org/blog/future-of-storybook-2024/): les thèmes de Storybook en 2024 seront le développement d'applications entières (et pas uniquement les composants isolés), un meilleur support des frameworks non React, et une génération de stories améliorée (à l'aide de l'IA).
+- 📜 [How to make Storybook 2-4x faster - v7.6 comes with perf improvement options, enabled by default in v8.0](https://storybook.js.org/blog/optimize-storybook-7-6/)
+- 📜 [Next.js 14 Parallel Routes](https://www.builder.io/blog/nextjs-14-parallel-routes)
+- 📜 [Next.js 14 Intercepting Routes](https://www.builder.io/blog/nextjs-14-intercepting-routes)
+- 📜 [Understanding React’s useFormState and useFormStatus Hooks](https://blog.logrocket.com/understanding-react-useformstate-useformstatus-hooks/)
+- 📜 [Diving into Server Actions in Next.js 14](https://blog.logrocket.com/diving-into-server-actions-next-js-14/)
+- 📦 [rsc-cache - cache expensive RSCs, with Next.js integration](https://github.com/fredkiss3/rsc-cache)
+- 📦 [Catalyst - Modern UI kit for React](https://tailwindcss.com/blog/introducing-catalyst): nouveau kit React UI officiel de l'équipe Tailwind. Produit payant nécessitant une licence Tailwind UI. Il y a aussi une mise à jour de Headless UI, maintenant en v2.0 alpha.
+- 📦 [Tokenami - Atomic CSS in the style attribute](https://github.com/tokenami/tokenami): moderne solution de styling typesafe avec support du theming, variants... Supporte React et Solid.
+- 📦 [shadcn-ui 0.5 - new components (Carousel, Drawer, Pagination, Resizable, Sonner) and CLI improvements](https://ui.shadcn.com/docs/changelog)
+- 📦 [StyleX 0.4.1 - ESLint and Rollup plugin improvements, autocomplete, performance, reduced runtime size, support for CSS layers...](https://stylexjs.com/blog/v0.4.1)
+- 📦 [Storybook 8.0.0 alpha 4 - no react peer dependency anymore](https://github.com/storybookjs/storybook/releases/tag/v8.0.0-alpha.4)
+- 📦 [TWC - Create reusable Tailwind CSS + React components](https://react-twc.vercel.app/)
+- 📦 [MDXTS - Build interactive, type-safe content and documentation in MDX, TypeScript, and React](https://www.mdxts.dev/)
+- 📦 [Plate - Rich-text editor framework for React, customizable, including a plugin system](https://platejs.org/)
+- 📦 [next-route-handler-pipe - Function pipelines for Next.js route handlers](https://github.com/KolbySisk/next-route-handler-pipe)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -57,12 +105,31 @@ The NextJS boilerplate with all you need to build your SaaS, AI tool, or any oth
 ## 📱 React-Native {#react-native}
 
 - 💸 [Galaxies.dev - Master React Native & Save 25% on PRO with code GALAXIES24](https://galaxies.dev?utm_source=thisweekinreact.com)
+- 📊 [State of React Native 2023 survey - Last-call, closing on Friday 5](https://stateofreactnative.com/)
+- 👀 [RFC: Moving away from Obj-C on Apple platforms](https://github.com/react-native-community/discussions-and-proposals/pull/747): la migration vers Swift ne commencera qu'après la dépréciation de la nouvelle architecture.
+- 👀 [hermes-jsi-demos - Use Hermes with JSI on desktop without any frameworks](https://github.com/tmikov/hermes-jsi-demos)
+- 👀 [jsi-rs - Write ultra fast React Native modules in Rust](https://github.com/laptou/jsi-rs/)
+- 🐦 [Expo SDK 50 optimizing bundle size with platform shaking](https://twitter.com/Baconbrix/status/1740487401414275120)
+- 🐦 [Chain React 2024 announced for July 17-19](https://twitter.com/ChainReactConf/status/1737578373415928100)
+- 🐦 [Top React Native Tweets of 2023](https://twitter.com/infinite_red/status/1737890233201623526)
+- 📜 [WishList Release scrapped](https://margelo.notion.site/WishList-Summit-b20c24d1f0da4889a0513dfa929be5ed): Après un an de développement, Margelo a décidé de ne pas releaser leur bibliothèque visant à résoudre les problèmes de performance pour les listes React Native. Ils expliquent pourquoi.
+- 📜 [Bringing React Native libraries to Apple Vision Pro](https://www.oskarkwasniewski.dev/blog/bringing-react-native-libraries-to-apple-vision-pro): la nouvelle plateforme VisionOS supportera automatiquement les librairies JS. La plupart des librairies natives devront simplement ajouter une plateforme `visionos` à leur podspec.
+- 📜 [How to Properly Read Xcode Error](https://levelup.gitconnected.com/how-to-properly-read-xcode-error-7b979692333d)
+- 📜 [JavaScript Achieves Breakthrough Performance with Static Hermes](https://medium.com/@elves.silva.vieira/javascript-achieves-breakthrough-performance-with-static-hermes-6286b0ac8ef7)
+- 📦 [react-native-release-profiler - passively profile JS/Hermes in production and release builds](https://github.com/margelo/react-native-release-profiler)
+- 📦 [expo-video-metadata](https://github.com/hirbod/expo-video-metadata)
+- 📦 [react-native-macos 0.73.1](https://www.npmjs.com/package/react-native-macos/v/0.73.1)
+- 📦 [react-native-windows 0.73.2](https://github.com/microsoft/react-native-windows/releases/tag/react-native-windows_v0.73.2)
+- 📦 [Bootstrap a universal File-based Expo app with Tailwind styles](https://github.com/expo/examples/tree/master/with-router-tailwind): nouveau template create-expo-app utilisant Expo Router v3 et NativeWind v4.
+- 🎙 [React Native Show 32 - React Native for Apple Vision Pro and visionOS](https://www.callstack.com/podcasts/react-native-for-apple-vision-pro-and-visionos)
+- 🎙️ [RNR 284 - React Native Rewind - 2023 in Review](https://reactnativeradio.com/episodes/rnr-284-react-native-rewind-2023-in-review)
+- 🎙️ [Rocket Ship 23 - Why you should use React Native in 2024](https://podcast.galaxies.dev/episodes/023-why-you-should-use-react-native-in-2024)
 
 ---
 
 ## 🇫🇷 En français {#fr}
 
-<Todo />
+- 🎥 [Apprendre Tailwind en juste 5 minutes](https://www.youtube.com/watch?v=OBciomJ898k&t=1s)
 
 💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
 
@@ -72,14 +139,19 @@ The NextJS boilerplate with all you need to build your SaaS, AI tool, or any oth
 
 ## 🔀 Autre {#other}
 
-<Todo />
+- 👀 [TypeScript 5.4 PR - Add auto-import for the package.json imports field](https://github.com/microsoft/TypeScript/pull/55015)
+- 📜 [Frontend predictions for 2024](https://buttondown.email/whatever_jamie/archive/frontend-predictions-for-2024/)
+- 📜 [JavaScript Frameworks - Heading into 2024](https://dev.to/this-is-learning/javascript-frameworks-heading-into-2024-i3l)
+- 📜 [Alternate Futures for “Web Components”](https://blog.carlana.net/post/2023/web-component-alternative-futures/)
+- 📜 [Why JavaScript promises aren't technically monads](https://rybicki.io/blog/2023/12/23/promises-arent-monads.html)
+- 📜 [Shadow DOM and the problem of encapsulation](https://nolanlawson.com/2023/12/30/shadow-dom-and-the-problem-of-encapsulation/)
+- 📦 [ESLint v9.0.0-alpha.0](https://eslint.org/blog/2023/12/eslint-v9.0.0-alpha.0-released/)
+- 📦 [quick-lint-js. 3.0 - TypeScript bug finder](https://quick-lint-js.com/blog/version-3.0/)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/168/meme.jpg)](https://twitter.com/webdevcody/status/1737138310605083051)
 
 A plus 👋
