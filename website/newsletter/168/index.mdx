@@ -8,9 +8,15 @@ unlisted: true
 
 Hi everyone!
 
-RN Survey
+Merry Christmas and Happy New Year! 🥂
 
-2023 review
+The newsletter is back for another year. Despite the holiday season we still had some interesting news, notably regarding the TanStack. Developers also took this opportunity to work on their own open-source side projects 😄
+
+Don't forget to answer the [State of React Native 2023 survey](https://stateofreactnative.com/), it's your last chance!
+
+Once again, this issue now has 2 authors [Benedikt](https://twitter.com/bndkt) is helping me.
+
+I hope to find time to write a full 2023 retrospective of the newsletter. Until then, if you are curious, I write monthly reports on my [Indie Hackers page](https://www.indiehackers.com/product/french-react-newsletter) for 2 years now.
 
 <!-- truncate -->
 
@@ -36,50 +42,50 @@ import Support from "../_support.mdx";
 
 ## ⚛️ React {#react}
 
-Headline:
+[![TanStack Router 1.0](/emails/issues/168/tanstack-router.jpg)](https://tanstack.com/router/v1)
 
-📦 Tanstack Router 1.0 release - 🐦 [Tweet](https://twitter.com/tannerlinsley/status/1738709130213560497)
+**[TanStack Router 1.0](https://tanstack.com/router/v1)**
+
+The highly anticipated TanStack Router launched as stable 1.0 with a nice [🐦 trailer](https://twitter.com/tannerlinsley/status/1738709130213560497), just in time for Christmas. This new router pushes the boundary of what is possible in terms of type-safety, url state management (search params) and caching, among other things.
+
+The [SSR guide](https://tanstack.com/router/v1/docs/guide/ssr) reference a `@tanstack/react-start` package, probably a teaser for an upcoming [🐦 TanStack Start framework](https://twitter.com/sebastienlorber/status/1742589454563369123)
+
+Other recent TanStack packages that you might have missed:
+
+- 📦 [TanStack Config - Tool for publishing and maintaining high-quality JavaScript packages](https://github.com/TanStack/config)
+- 📦 [TanStack Store - Framework agnostic, type-safe store with reactive framework adapters](https://tanstack.com/store/latest)
 
 ---
 
 - 💸 [From Dreamweaver to JSX: The Evolution of Visual Dev Tools for the Web](https://mightymeld.com/blog/browser-dev-tools-understand-code?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=link1)
 - 👀 [React Docs PR - React-DOM static resource loading functions](https://github.com/reactjs/react.dev/pull/6459)
-- 👀 [Next.js PR - Next.js is exploring moving to Lightning CSS](https://github.com/vercel/next.js/pull/58712) 🐦 [Tweet](https://twitter.com/leeerob/status/1740124461683409042)
-- 👀 [Remix PR - SPA Mode](https://github.com/remix-run/remix/pull/8338): Will add the long-awaited possibility to generate Single Page Applications with Remix.
-- 👀 [Million.js joins Y Combinator](https://twitter.com/aidenybai/status/1737929698221682789): Their mission is “Make React Faster”.
-- 🐦 [useMemo to become a better version of context selectors](https://twitter.com/sebastienlorber/status/1741218919732429108): We all want to optimize our apps with context selectors for a while, but it turns out [selectors do not compose well](https://twitter.com/dan_abramov2/status/1741200483862151663), and the plan is to improve useMemo to kind of act like a selector!
-- 🐦 [React.postpone() experimental API](https://twitter.com/sebastienlorber/status/1741180119975182770)
+- 👀 [Next.js PR - Next.js is exploring moving to Lightning CSS](https://github.com/vercel/next.js/pull/58712)
+- 👀 [Remix PR - SPA Mode](https://github.com/remix-run/remix/pull/8338)
+- 🐦 [useMemo to become a better version of context selectors](https://twitter.com/sebastienlorber/status/1741218919732429108): It turns out [selectors do not compose well](https://twitter.com/dan_abramov2/status/1741200483862151663), and the plan is to improve useMemo to kind of act like a selector!
 - 🐦 [SkipRenderOnClient - interesting trick to optimize hydration performance](https://twitter.com/sebastienlorber/status/1742528219318738955)
-- 📜 [How to make Storybook 2-4x faster - v7.6 comes with perf improvement options, enabled by default in v8.0](https://storybook.js.org/blog/optimize-storybook-7-6/)
-- 📜 [Future of Storybook in 2024](https://storybook.js.org/blog/future-of-storybook-2024/): The themes for Storybook in 2024 will be application development (as opposed to isolated component development), enhanced support for non-React frameworks, and improved story generation (using AI).
-- 📜 [MDX routes in Remix using Vite](https://remix-blog-mdx.fly.dev/): New approach to handle MDX at build-time using the new Vite support in Remix.
-- 📜 [React Server Components: the Good, the Bad, and the Ugly](https://www.mayank.co/blog/react-server-components/): Critical, but well-informed take on the status quo of RSC.
+- 🐦 [Million.js joins Y Combinator](https://twitter.com/aidenybai/status/1737929698221682789)
+- 📜 [React Server Components: the Good, the Bad, and the Ugly](https://www.mayank.co/blog/react-server-components/): Critical, but well-informed take on the status quo of using RSC.
 - 📜 [Thoughts on Remix](https://www.viget.com/articles/thoughts-on-remix/): Balanced view on Remix - where it came from, their philosophy and how it compares to Next.js.
-- 📜 [More Than You Need to Know About ReactDOM.­flushSync](https://julesblom.com/writing/flushsync): Detailed look at reac-dom’s flushSync method, a rarely used but sometimes crucial method to flush any updates inside a provided callback synchronously.
+- 📜 [More Than You Need to Know About ReactDOM.­flushSync](https://julesblom.com/writing/flushsync): Detailed and interactive look at React-DOM `flushSync()` method, a rarely used but sometimes crucial method enabling you to opt-out of React state update batching.
 - 📜 [Next.js 14 Parallel Routes](https://www.builder.io/blog/nextjs-14-parallel-routes): Article explaining how to use parallel routes in Next.js to simultaneously render multiple pages within the same layout, as for example commonly required for dashboards.
 - 📜 [Next.js 14 Intercepting Routes](https://www.builder.io/blog/nextjs-14-intercepting-routes): Introduction to “intercepting routes” in Next.js, which are most commonly used for login modals which should correctly be reflected in URL state.
-- 📜 [React with Vite and TypeScript and its common challenges](https://wanago.io/2023/12/25/react-vite-typescript/)
+- 📜 [Remix + MDX - How this site is built](https://remix-blog-mdx.fly.dev/): Vite features and plugins work together to power Remix + MDX.
+- 📜 [The View Transition API: A New Way to Animate Page Transitions](https://marmelab.com/blog/2023/12/21/view-transitions.html): Also shows how to use it in React Router and Remix.
 - 📜 [What should we ship?](https://rauno.me/craft/vercel): Detailed blog post about the vercel.com relaunch.
-- 📜 [Apollo Client 3.9 Feature Spotlight – The memory story](https://www.apollographql.com/blog/apollo-3-9-beta-feature-spotlight-the-memory-story)
-- 📜 [Developing Gatsby: Enhancing stability and reliability](https://www.netlify.com/blog/developing-gatsby-enhancing-stability-and-reliability/)
-- 📜 [The View Transition API: A New Way to Animate Page Transitions](https://marmelab.com/blog/2023/12/21/view-transitions.html)
-- 📜 [Understanding React’s useFormState and useFormStatus Hooks](https://blog.logrocket.com/understanding-react-useformstate-useformstatus-hooks/): Currently, handling forms in React is mostly done with heavy manual lifting (think lots of useState hooks) or by leaning on a form library (like react-hook-form or Formik). Recent canary releases of React include two new hooks as kind of a middle ground between those existing approaches.
-- 📜 [Diving into Server Actions in Next.js 14](https://blog.logrocket.com/diving-into-server-actions-next-js-14/): If you’re new to React Server Components/Next.js Server Actions, this is a good introductory article to catch up on what they’re all about.
-- 📦 [shadcn-ui 0.5](https://github.com/shadcn-ui/ui/releases/tag/shadcn-ui%400.5.0): Adds a bunch of new components like Drawer, Carousel, and Pagination. 🐦 [Tweet](https://twitter.com/shadcn/status/1738283281424982488)
-- [https://ui.shadcn.com/docs/changelog](https://ui.shadcn.com/docs/changelog)
+- 📜 [Future of Storybook in 2024](https://storybook.js.org/blog/future-of-storybook-2024/): The themes for Storybook in 2024 will be application development (as opposed to isolated component development), enhanced support for non-React frameworks, and improved story generation (using AI).
+- 📜 [How to make Storybook 2-4x faster - v7.6 comes with perf improvement options, enabled by default in v8.0](https://storybook.js.org/blog/optimize-storybook-7-6/)
+- 📜 [Understanding React’s useFormState and useFormStatus Hooks](https://blog.logrocket.com/understanding-react-useformstate-useformstatus-hooks/)
+- 📜 [Diving into Server Actions in Next.js 14](https://blog.logrocket.com/diving-into-server-actions-next-js-14/)
 - 📦 [rsc-cache - cache expensive RSCs, with Next.js integration](https://github.com/fredkiss3/rsc-cache)
-- 📦 [TanStack Store - Framework agnostic, type-safe store with reactive framework adapters](https://tanstack.com/store/latest)
-- 📦 [TanStack Config - Tool for publishing and maintaining high-quality JavaScript packages](https://github.com/TanStack/config)
-- 📦 [Catalyst - Modern UI kit for React](https://tailwindcss.com/blog/introducing-catalyst): Tailwind UI, the paid component and template library from the makers of Tailwind CSS added a new UI kit.
-- 📦 [Tokenami Atomic CSS in the style attribute](https://github.com/tokenami/tokenami): 2023 was the year of the styling libraries, and here is yet another one, which looks very well thought-out. Type-safe static styles with theming, responsive variant support, and no bundler integration.
-- 📦 [StyleX 0.4.1](https://stylexjs.com/blog/v0.4.1): Meta’s StyleX keeps evolving, recently improved the ESLint and Rollup plugins, added auto-complete and performance and code-size improvements.
+- 📦 [Catalyst - Modern UI kit for React](https://tailwindcss.com/blog/introducing-catalyst): New official React UI kit from the Tailwind team. It's a paid product requiring a Tailwind UI license. There's also a free Headless UI update, now in v2.0 alpha.
+- 📦 [Tokenami - Atomic CSS in the style attribute](https://github.com/tokenami/tokenami): Modern type-safe styling solution with theming, responsive variant support. Supports React and Solid.
+- 📦 [shadcn-ui 0.5 - new components (Carousel, Drawer, Pagination, Resizable, Sonner) and CLI improvements](https://ui.shadcn.com/docs/changelog)
+- 📦 [StyleX 0.4.1 - ESLint and Rollup plugin improvements, autocomplete, performance, reduced runtime size, support for CSS layers...](https://stylexjs.com/blog/v0.4.1)
 - 📦 [Storybook 8.0.0 alpha 4 - no react peer dependency anymore](https://github.com/storybookjs/storybook/releases/tag/v8.0.0-alpha.4)
-- 📦 [TWC](https://react-twc.vercel.app/): library to create reusable Tailwind components for React
-- 📦 [MDXTS](https://www.mdxts.dev/): Interesting approach to automatically render prose content, type documentation, and examples from MDX and TypeScript files (e.g. to generate documentation for React components). 🐦 [Tweet](https://twitter.com/souporserious/status/1738878942260699231)
+- 📦 [TWC - Create reusable Tailwind CSS + React components](https://react-twc.vercel.app/)
+- 📦 [MDXTS - Build interactive, type-safe content and documentation in MDX, TypeScript, and React](https://www.mdxts.dev/)
 - 📦 [Plate - Rich-text editor framework for React, customizable, including a plugin system](https://platejs.org/)
-- 📦 [Holy-loader - Progress-bar for React and Next.js](https://github.com/tomcru/holy-loader)
 - 📦 [next-route-handler-pipe - Function pipelines for Next.js route handlers](https://github.com/KolbySisk/next-route-handler-pipe)
-- 📦 [puck 0.13 - Visual editor for React](https://github.com/measuredco/puck)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -132,7 +138,6 @@ The NextJS boilerplate with all you need to build your SaaS, AI tool, or any oth
 - 📜 [Alternate Futures for “Web Components”](https://blog.carlana.net/post/2023/web-component-alternative-futures/)
 - 📜 [Why JavaScript promises aren't technically monads](https://rybicki.io/blog/2023/12/23/promises-arent-monads.html)
 - 📜 [Shadow DOM and the problem of encapsulation](https://nolanlawson.com/2023/12/30/shadow-dom-and-the-problem-of-encapsulation/)
-- 📜 [Modern CSS for 2024: Nesting, Layers, and Container Queries](https://www.builder.io/blog/css-2024-nesting-layers-container-queries)
 - 📦 [ESLint v9.0.0-alpha.0](https://eslint.org/blog/2023/12/eslint-v9.0.0-alpha.0-released/)
 - 📦 [quick-lint-js. 3.0 - TypeScript bug finder](https://quick-lint-js.com/blog/version-3.0/)
 
@@ -140,16 +145,6 @@ The NextJS boilerplate with all you need to build your SaaS, AI tool, or any oth
 
 ## 🤭 Fun {#fun}
 
-https://twitter.com/sebastienlorber/status/1737380479383277636?s=20
-https://twitter.com/trashh_dev/status/1737851312962994611?s=20
-https://twitter.com/wesbos/status/1737985901861495003?s=20
-https://twitter.com/AdamRackis/status/1738997470649065703?s=20
-https://twitter.com/trashh_dev/status/1740040036224282942?s=20
-https://twitter.com/supabase/status/1740650139100778625?s=20
-https://twitter.com/ryanflorence/status/1737566755583848470
-https://twitter.com/webdevcody/status/1737138310605083051
-https://twitter.com/RyanEls4/status/1742107920047780292
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/168/meme.jpg)](https://twitter.com/webdevcody/status/1737138310605083051)
 
 See ya! 👋
