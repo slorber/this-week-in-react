@@ -1,6 +1,6 @@
 ---
 slug: /168
-title: "This Week In React #168: ..."
+title: "This Week In React #168: TanStack, useMemo, RSC, preload, flushSync, shadcn-ui, MDX, Storybook, StyleX, TWC, Tokenami, WishList, VisionOS, Hermes, release-profiler..."
 authors: [slorber]
 date: 01-03-2024
 unlisted: true
@@ -67,12 +67,12 @@ Other recent TanStack packages that you might have missed:
 - 📜 [React Server Components: the Good, the Bad, and the Ugly](https://www.mayank.co/blog/react-server-components/): Critical, but well-informed take on the status quo of using RSC.
 - 📜 [Thoughts on Remix](https://www.viget.com/articles/thoughts-on-remix/): Balanced view on Remix - where it came from, their philosophy and how it compares to Next.js.
 - 📜 [More Than You Need to Know About ReactDOM.­flushSync](https://julesblom.com/writing/flushsync): Detailed and interactive look at React-DOM `flushSync()` method, a rarely used but sometimes crucial method enabling you to opt-out of React state update batching.
-- 📜 [Next.js 14 Parallel Routes](https://www.builder.io/blog/nextjs-14-parallel-routes): Article explaining how to use parallel routes in Next.js to simultaneously render multiple pages within the same layout, as for example commonly required for dashboards.
-- 📜 [Next.js 14 Intercepting Routes](https://www.builder.io/blog/nextjs-14-intercepting-routes): Introduction to “intercepting routes” in Next.js, which are most commonly used for login modals which should correctly be reflected in URL state.
 - 📜 [Remix + MDX - How this site is built](https://remix-blog-mdx.fly.dev/): Vite features and plugins work together to power Remix + MDX.
 - 📜 [The View Transition API: A New Way to Animate Page Transitions](https://marmelab.com/blog/2023/12/21/view-transitions.html): Also shows how to use it in React Router and Remix.
 - 📜 [What should we ship?](https://rauno.me/craft/vercel): Detailed blog post about the vercel.com relaunch.
 - 📜 [Future of Storybook in 2024](https://storybook.js.org/blog/future-of-storybook-2024/): The themes for Storybook in 2024 will be application development (as opposed to isolated component development), enhanced support for non-React frameworks, and improved story generation (using AI).
+- 📜 [Next.js 14 Parallel Routes](https://www.builder.io/blog/nextjs-14-parallel-routes): Simultaneously render multiple pages within the same layout (useful for dashboards).
+- 📜 [Next.js 14 Intercepting Routes](https://www.builder.io/blog/nextjs-14-intercepting-routes)
 - 📜 [How to make Storybook 2-4x faster - v7.6 comes with perf improvement options, enabled by default in v8.0](https://storybook.js.org/blog/optimize-storybook-7-6/)
 - 📜 [Understanding React’s useFormState and useFormStatus Hooks](https://blog.logrocket.com/understanding-react-useformstate-useformstatus-hooks/)
 - 📜 [Diving into Server Actions in Next.js 14](https://blog.logrocket.com/diving-into-server-actions-next-js-14/)
@@ -97,11 +97,11 @@ Other recent TanStack packages that you might have missed:
 
 **[ShipFast - Ship your startup in days, not weeks](https://shipfa.st/?via=twir)**
 
-The NextJS boilerplate with all you need to build your SaaS, AI tool, or any other web app and make your first $ online fast.
+The Next.js boilerplate with all you need to build your SaaS, AI tool, or any other web app and make your first $ online fast.
 
 - App Router or Page Router
 - JavaScript or TypeScript
-- Money back guarantee, refundable within 7 days
+- Money-back guarantee, refundable within 7 days
 
 ---
 
@@ -109,16 +109,16 @@ The NextJS boilerplate with all you need to build your SaaS, AI tool, or any oth
 
 - 💸 [Galaxies.dev - Master React Native & Save 25% on PRO with code GALAXIES24](https://galaxies.dev?utm_source=thisweekinreact.com)
 - 📊 [State of React Native 2023 survey - Last-call, closing on Friday 5](https://stateofreactnative.com/)
-- 👀 [RFC: Moving away from Obj-C on Apple platforms](https://github.com/react-native-community/discussions-and-proposals/pull/747): Implementation will only start after the move to the New Architecture has been completed.
+- 👀 [RFC: Moving away from Obj-C on Apple platforms](https://github.com/react-native-community/discussions-and-proposals/pull/747): Moving to Swift will only start after the move to the New Architecture has been completed.
 - 👀 [hermes-jsi-demos - Use Hermes with JSI on desktop without any frameworks](https://github.com/tmikov/hermes-jsi-demos)
 - 👀 [jsi-rs - Write ultra fast React Native modules in Rust](https://github.com/laptou/jsi-rs/)
 - 🐦 [Expo SDK 50 optimizing bundle size with platform shaking](https://twitter.com/Baconbrix/status/1740487401414275120)
 - 🐦 [Chain React 2024 announced for July 17-19](https://twitter.com/ChainReactConf/status/1737578373415928100)
 - 🐦 [Top React Native Tweets of 2023](https://twitter.com/infinite_red/status/1737890233201623526)
-- 📜 [WishList Release scrapped](https://margelo.notion.site/WishList-Summit-b20c24d1f0da4889a0513dfa929be5ed): After a year of development, Margelo decided not to release their library aimed at solving performance problems for lists in React Native (🐦 [Tweet](https://twitter.com/margelo_io/status/1737808611101888601))
+- 📜 [WishList Release scrapped](https://margelo.notion.site/WishList-Summit-b20c24d1f0da4889a0513dfa929be5ed): After a year of development, Margelo decided not to release their library aimed at solving performance problems for lists in React Native.
+- 📜 [Bringing React Native libraries to Apple Vision Pro](https://www.oskarkwasniewski.dev/blog/bringing-react-native-libraries-to-apple-vision-pro): the new out-of-tree VisionOS platform will support JS libs automatically. Most native libs will simply need to add a `visionos` platform to the podspec.
 - 📜 [How to Properly Read Xcode Error](https://levelup.gitconnected.com/how-to-properly-read-xcode-error-7b979692333d)
 - 📜 [JavaScript Achieves Breakthrough Performance with Static Hermes](https://medium.com/@elves.silva.vieira/javascript-achieves-breakthrough-performance-with-static-hermes-6286b0ac8ef7)
-- 📜 [Bringing React Native libraries to Apple Vision Pro](https://www.oskarkwasniewski.dev/blog/bringing-react-native-libraries-to-apple-vision-pro): the new out-of-tree VisionOS platform will support JS libs automatically, and most native libs will simply need to add a `visionos` platform to the podspec.
 - 📦 [react-native-release-profiler - passively profile JS/Hermes in production and release builds](https://github.com/margelo/react-native-release-profiler)
 - 📦 [expo-video-metadata](https://github.com/hirbod/expo-video-metadata): Retrieve information such as duration, dimensions, orientation, and codec for local and remote video files.
 - 📦 [react-native-macos 0.73.1](https://www.npmjs.com/package/react-native-macos/v/0.73.1)
