@@ -8,9 +8,20 @@ unlisted: true
 
 Salut à tous !
 
-<Todo />
+Cette semaine, nous avons un aperçu de l'avenir de React et de la mémoïsation, et beaucoup de contenu liés de Lee Robinson 😄.
 
-Promo [react.paris](http://react.paris) + [reactconnection.io](http://reactconnection.io)
+Expo nous montre sa forte présence dans l'écosystème React-Native mais aussi les app stores 💪
+
+[JavaScript Rising Stars 2023](https://risingstars.js.org/2023/en) a été publié. Cette année, j'ai eu l'occasion de commenter la section React, shadcn/ui et Bun ont été les plus gros succès. Merci à Theo d'avoir recommandé ma newsletter dans sa [vidéo d'analyse des tendances](https://www.youtube.com/watch?v=5lkMs_WEoto) : bienvenue à tous ceux qui se sont inscrits récemment 🙏.
+
+Paris 2024, ce n'est pas seulement les Jeux olympiques : nous sommes aussi de retour dans le monde des conférences React !
+Depuis la fin de React Europe, il manquait vraiment une conférence React à Paris. C'est enfin réparé avec 3 superbes confs à venir 👌
+
+- 📅 22 mars - [React Paris](https://react.paris/) - L'équipe derrière React Brussels et BeJS lance une nouvelle conférence à Paris et le programme vient d'être annoncé aujourd'hui !
+
+- 📅 22-23 avril - [React Connection](https://reactconnection.io/) + [React-Native Connection](https://reactnativeconnection.io/) - La conférence d'une demi-journée sur React-Native que j'ai aidé à organiser l'année dernière a été un grand succès. Elle revient donc cette année sous la forme d'une conférence de 2 x 1 journée, ce qui vaut la peine de se déplacer. Le CFP est ouvert jusqu'au 3 février.
+
+J'essaierai d'assister aux deux, et j'espère y rencontrer certains d'entre vous !
 
 <!-- truncate -->
 
@@ -26,24 +37,19 @@ import Support from "../_support.mdx";
 
 ## 💸 Sponsor {#sponsor1}
 
-[![Nlux ― A new new React / JS library to create conversational AI web apps](/emails/issues/169/nlux.jpg)](https://nlux.ai/?c-twr1-h)
+[![Nlux ― A new new React / JS library to create conversational AI web apps](/emails/issues/169/nlux.png)](https://nlux.ai/?c-twr1-h)
 
 **[Nlux ― A new new React / JS library to create conversational AI web apps](https://nlux.ai/?c-twr1-h)**
 
-[NLUX](https://nlux.ai?c-twr1-p1) *(for Natural Language User Experience)* is a new [open-source](https://github.com/nluxai/nlux) React / Javascript library that makes it simple to integrate powerful large language models (LLMs) like ChatGPT into your web app or website. With just a few lines of code, you can add conversational AI capabilities and interact with your favourite LLM.
+[NLUX](https://nlux.ai?c-twr1-p1) _(for Natural Language User Experience)_ is a new [open-source](https://github.com/nluxai/nlux) React / Javascript library that makes it simple to integrate powerful large language models (LLMs) like ChatGPT into your web app or website. With just a few lines of code, you can add conversational AI capabilities and interact with your favourite LLM.
 
 Key features 🌟 include:
 
-*   **Build AI Chat Interfaces In Minutes** - High quality conversational AI interfaces with just a few lines of code.
-    
-*   **React Components & Hooks** - `<AiChat />` for UI and `useAdapter` hook for easy integration.
-    
-*   **Flexible LLM Adapters** - `ChatGPT` and `HuggingFace`, and an API to **Create Your Own Adapter** for any LLM.
-    
-*   **Customisable Chat Personas** - Configure bot and user pictures, names, and descriptions for personalised interactions.
-    
-*   **Zero Dependencies** - Lightweight codebase, with zero-dependencies except for LLM front-end libraries.
-    
+- **Build AI Chat Interfaces In Minutes** - High quality conversational AI interfaces with just a few lines of code.
+- **React Components & Hooks** - `<AiChat />` for UI and `useAdapter` hook for easy integration.
+- **Flexible LLM Adapters** - `ChatGPT` and `HuggingFace`, and an API to **Create Your Own Adapter** for any LLM.
+- **Customisable Chat Personas** - Configure bot and user pictures, names, and descriptions for personalised interactions.
+- **Zero Dependencies** - Lightweight codebase, with zero-dependencies except for LLM front-end libraries.
 
 More info, examples and documentation on [Nlux.ai](https://nlux.ai?c-twr1-p2)
 
@@ -51,9 +57,55 @@ More info, examples and documentation on [Nlux.ai](https://nlux.ai?c-twr1-p2)
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![The future of React.use and React.useMemo - a powerful alternative to context selectors](/emails/issues/169/useMemo.jpg)](https://interbolt.org/blog/react-use-selector-optimization/)
+
+**[The future of React.use and React.useMemo - a powerful alternative to context selectors](https://interbolt.org/blog/react-use-selector-optimization/)**
+
+Colin explains how React context can cause performance problems, the lack of a context selector API, and how he optimized an app’s performances thanks to the userland [use-context-selector](https://github.com/dai-shi/use-context-selector) implementation from Daishi Kato.
+
+The most interesting part is a great summary of the [recent Twitter discussions](https://twitter.com/sebastienlorber/status/1741218919732429108). Dan Abramov explained context selectors do not compos well. Andrew Clark shared the plan to extend `useMemo()` and allow the usage of other hooks inside it. This would work with the use hook with [any Usable types](https://github.com/acdlite/rfcs/blob/first-class-promises/text/0000-first-class-support-for-promises.md#other-usable-types) (currently context and promises, but maybe Observables and stores in the future?), but also [third-party hooks](https://twitter.com/BenJ_Ayc0/status/1742499230525067408)! This would solve the fine-grained selection problem in a performant and composable way, and be compatible with the upcoming React Forget compiler.
+
+---
+
+[![The Two Reacts](/emails/issues/169/2reacts.jpg)](https://overreacted.io/the-two-reacts/)
+
+**[The Two Reacts](https://overreacted.io/the-two-reacts/)**
+
+Great writeup from Dan Abramov, giving good reasons for code to run locally (instant feedback), as well as remotely (close to the data source). He proposes a new React formula: `UI = f(data, state)`, where `f` represents all your whole React app, running in 2 distinct environments.
+
+This ends with a great question, implicitly asking if you would invent React Server Components to solve this problem.
+
+> Is there some way we could split components between your computer and mine in a way that preserves what’s great about React? Could we combine and nest components from two different environments? How would that work?
+
+---
 
 - 💸 [From Dreamweaver to JSX: The Evolution of Visual Dev Tools for the Web](https://mightymeld.com/blog/browser-dev-tools-understand-code?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=link1)
+- 🌟 [2023 JavaScript Rising Stars](https://risingstars.js.org/2023/en): see my comment on the [React section](https://risingstars.js.org/2023/en#section-react).
+- 🐦 [Next.js can now run with HTTPS locally](https://twitter.com/leeerob/status/1743709145386131906)
+- 📖 [Remix Docs - new Client Data guide](https://remix.run/docs/en/main/guides/client-data)
+- 📜 [Common mistakes with the Next.js App Router and how to fix them](https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them): Lee Robinson is in touch with hundreds of Next.js devs and gathered the most common mistakes. Also available as a [video](https://www.youtube.com/watch?v=RBM03RihZVs). TIL that the redirect function returns a never type and throws a Next.js specific error, surprising design.
+- 📜 [How I'm Writing CSS in 2024](https://leerob.io/blog/css): Lee Robinson likes CSS in 2024. He describes constraints that make a great UX/DX, and the role of a build step, compiler, or streaming. He recommends CSS Modules, Tailwind CSS, or StyleX.
+- 📜 [Increasingly miffed about the state of React releases](https://macwright.com/2024/01/03/miffed-about-react): No stable release for 550d considered harmful.
+- 📜 [Executing Dangerously Injected Scripts Inside React Components](https://macarthur.me/posts/script-tags-in-react): Interesting technique to bypass security limitations and execute scripts injected through dangerouslySetInnerHTML, using Document Fragments.
+- 📜 [28 Advanced NextJS features everyone should know](https://codedrivendevelopment.com/posts/rarely-known-nextjs-features): List and comments on various lesser-known features the author did not encounter in any app he worked on.
+- 📜 [Things I would change about React to increase DX](https://codedrivendevelopment.com/posts/things-i-would-change-about-react): List React pain points I can agee with, and make rough propositions to fix them (not all of them are great nor possible IMHO).
+- 📜 [Harmful complexity: using React for static content](https://gomakethings.com/harmful-complexity-using-react-for-static-content/): Interesting opinion, but I hope to prove the author wrong and believe React is nice for static content, particularly with RSCs.
+- 📜 [A new blog for 2024](https://chrisnicholas.dev/blog/a-new-blog-for-2024): Using moderns tools such as Catalyst, TWC, Contentlayer, Tailwind, Next.js
+- 📜 [How to Set Up Soft Navigation Reporting in a React App](https://www.debugbear.com/blog/soft-navigations-react-tutorial): Shows usage of the Google web-vitals npm package in a CRA app.
+- 📜 [Introducing Superglue: React ❤️ Rails](https://thoughtbot.com/blog/introducing-superglue): “Superglue makes React and Redux as productive as Hotwire, Turbo and Stimulus”
+- 📜 [How Lee Robinson created his Guestbook, and you can do it too](https://bejamas.io/blog/how-to-create-a-guestbook/?ck_subscriber_id=887776054)
+- 📜 [2024 Predictions by JavaScript Frontend Framework Maintainers](https://thenewstack.io/2024-predictions-by-javascript-frontend-framework-maintainers/)
+- 📦 [Fresnel 7.0 - React 18 support - SSR compatible approach for responsive layouts for React](https://github.com/artsy/fresnel/releases/tag/v7.0.0)
+- 📦 [@tanstack/router-vite-plugin - Vite alternative to the router CLI](https://tanstack.com/router/v1/docs/api/router-vite-plugin)
+- 📦 [Docusaurus 3.1 - built-in broken anchors detectors, `parseFrontMatter` hook](https://docusaurus.io/blog/releases/3.1)
+- 📦 [Astro 4.1 - Accessibility audit rules, client:visible rootMargin, custom cookie encoding](https://astro.build/blog/astro-410/)
+- 📦 [Mutative 1.0 - Efficient immutable updates, 10x faster than Immer](https://dev.to/unadlib/announcing-mutative-10-a-new-era-in-efficient-immutable-updates-nml)
+- 📦 [JSX email 1.7 - A fork of react-email that keeps being improved](https://github.com/shellscape/jsx-email)
+- 🔨 [Palettify - Get an instant preview for your theme - supports shadcn/ui and soon MUI](https://palettify.co/)
+- 🔗 [Remix Resources - Community templates, stacks and libraries](https://remix.run/resources)
+- 🎥 [Jack Herrington - HTMX For React Developers in 10 Minutes](https://www.youtube.com/watch?v=r0XBULqzsT0)
+- 🎥 [Lee Robinson - React Server Components: the Good, the Bad, and the Ugly](https://www.youtube.com/watch?v=8DyzsSWNcDE)
+- 🎥 [Remix Singles - "Trellix" - Cookies, Auth, and Drag & Drop](https://www.youtube.com/watch?v=RTHzZVbTl6c&list=PLXoynULbYuED9b2k5LS44v9TQjfXifwNu): 15 short videos by the Remix team, building a Trello clone (see the [demo app](https://trellix.fly.dev/)).
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -78,32 +130,48 @@ Trusted by corporate clients such as The Weather Channel, Deel.com, La Banque Po
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Who's using Expo OSS in 2024](/emails/issues/169/expo.jpg)](https://evanbacon.dev/blog/expo-2024)
 
-- 💸[Galaxies.dev - Master React Native & Save 25% on PRO with code GALAXIES24](https://galaxies.dev?utm_source=thisweekinreact.com)
+**[Who's using Expo OSS in 2024](https://evanbacon.dev/blog/expo-2024)**
+
+Evan Bacon gathered an impressive list of 1,599 apps that are using Expo libraries (and therefore, React Native). The list includes household names like Pizza Hut, Burger King, Microsoft, Discord, Shopify, NFL, Walgreens, Amazon, CNN, and many more. It’s not news to us that React Native is thriving, but it’s nevertheless encouraging to see the big role that it plays when you look at top apps in the App Store.
+
+---
+
+- 💸 [Galaxies.dev - Master React Native & Save 25% on PRO with code GALAXIES24](https://galaxies.dev?utm_source=thisweekinreact.com)
+- 👀 [Proposal: Hover style API for iPad / Apple Vision Pro](https://github.com/react-native-community/discussions-and-proposals/pull/750) The iPad supports hover effects for mouse/trackpad users, and this will also be useful for Apple’s upcoming Vision Pro, where navigation elements get highlighted when the user looks at them.
+- 📜 [Introduction to Reanimated](https://www.reactiive.io/articles/introduction-to-reanimated): A good introductory article to learn about the concepts behind one of the most popular animation libraries for RN: shared values, reanimated style, animated view.
+- 📦 [React-Native v0.73.2 + v0.72.9 + v0.71.15](https://github.com/facebook/react-native/issues/42180): new releases fix the "Error installing boost Verification checksum” iOS build errors, among other things.
+- 📦 [react-native-vision-camera 3.7.0](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v3.7.0): Now includes an Expo config plugin to easily enable the fully native QR/Barcode scanner.
+- 🎥 [Theo - Moving off React Native](https://www.youtube.com/watch?v=gntZth3mIbM): Clickbait, but informative. This is about moving from “vanilla” React-Native to Expo.
+- 🎥 [Szymon Rybczak - Bringing React Server Components to React Native](https://portal.gitnation.org/contents/brining-react-server-components-to-react-native)
+- 🎥 [Simon Grimm - THE React Native Tech Stack for 2024](https://www.youtube.com/watch?v=Xwk4rcB6qVQ)
 
 ---
 
 ## 🇫🇷 En français {#fr}
 
-<Todo />
-
-💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
-
-<Todo />
+- 📜 [Expo Router (version 2). Mise en place et configuration d'un projet](<https://www.devaidaya.fr/articles/expo-router-(version-2)-mise-en-place-et-configuration-dun-projet>)
+- 🎥 [React n’est pas une qu'une librairie web](https://www.youtube.com/watch?v=AASNCRrzqLE)
+- 🎥 [Actus JS de la semaine - Top 10 des projets JS de 2023, shadnc/ui, Bun…](https://www.youtube.com/watch?v=pHyV8NdHL9Q)
 
 ---
 
 ## 🔀 Autre {#other}
 
-<Todo />
+- 👀 [TypeScript 5.4 Iteration Plan - `NoInfer<T>`, throw expressions...](https://github.com/microsoft/TypeScript/issues/56948)
+- 📜 [Daniel Rosenwasser on TypeScript and What’s Ahead in 2024](https://thenewstack.io/daniel-rosenwasser-on-typescript-and-whats-ahead-in-2024/)
+- 📜 [Weird things engineers believe about Web development](https://birtles.blog/2024/01/06/weird-things-engineers-believe-about-development/)
+- 📜 [The Website vs. Web App Dichotomy Doesn't Exist](https://jakelazaroff.com/words/the-website-vs-web-app-dichotomy-doesnt-exist/)
+- 📜 [The Popular Vote of Interop 2024](https://frontendmasters.com/blog/the-popular-vote-of-interop-2024/)
+- 📦 [Biome 1.5 - 97% Prettier compat + 2024 Roadmap](https://biomejs.dev/blog/roadmap-2024/)
+- 📦 [Node 20.11 - improves test_runner, import.meta, perf…](https://nodejs.org/en/blog/release/v20.11.0)
+- 📦 [Rspact 0.5 - Module Federation](https://www.rspack.dev/blog/announcing-0.5)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/169/meme.jpg)](https://twitter.com/sebastienlorber/status/1744853546556649773)
 
 A plus 👋
