@@ -1,16 +1,17 @@
 ---
 slug: /169
-title: "React Hebdo #169: ..."
+title: "React Hebdo #169: useMemo, 2 Reacts, Next.js, Remix, JS Rising Stars, Docusaurus, Astro, Fresnel, Mutative, JSX emails, Expo usage, React-Native releases, Reanimated, VisionCamera, TypeScript, Rspack, Biome..."
 authors: [slorber]
 date: 01-09-2024
-unlisted: true
 ---
 
 Salut à tous !
 
-Cette semaine, nous avons un aperçu de l'avenir de React et de la mémoïsation, et beaucoup de contenu liés de Lee Robinson 😄.
+**Un petit service pour commencer**: est-ce que vous pouvez répondre à cet email pour me dire ce que vous voulez? Un simple "Coucou" ou un retour plus constructif me vont très bien. J'ai changé la manière dont mes emails sont envoyés, et reconfiguré les protocols emailing SPF, DKIM, DMARC. J'ai besoin de faire comprendre aux algos Gmail que mes emails sont bienvenus. Obtenir des réponses à mes emails aide pour cela.
 
-Expo nous montre sa forte présence dans l'écosystème React-Native mais aussi les app stores 💪
+Cette semaine, nous avons un aperçu de l'avenir de `React.useMemo`, et beaucoup de contenu liés de Lee Robinson 😄.
+
+Expo nous montre sa forte présence dans l'écosystème React-Native, mais aussi les app stores 💪
 
 [JavaScript Rising Stars 2023](https://risingstars.js.org/2023/en) a été publié. Cette année, j'ai eu l'occasion de commenter la section React, shadcn/ui et Bun ont été les plus gros succès. Merci à Theo d'avoir recommandé ma newsletter dans sa [vidéo d'analyse des tendances](https://www.youtube.com/watch?v=5lkMs_WEoto) : bienvenue à tous ceux qui se sont inscrits récemment 🙏.
 
@@ -61,9 +62,9 @@ More info, examples and documentation on [Nlux.ai](https://nlux.ai?c-twr1-p2)
 
 **[The future of React.use and React.useMemo - a powerful alternative to context selectors](https://interbolt.org/blog/react-use-selector-optimization/)**
 
-Colin explains how React context can cause performance problems, the lack of a context selector API, and how he optimized an app’s performances thanks to the userland [use-context-selector](https://github.com/dai-shi/use-context-selector) implementation from Daishi Kato.
+Colin explique comment le contexte React peut causer des problèmes de performance, l'absence d'une API de sélecteur de contexte, et comment il a optimisé les performances d'une application grâce à l'implémentation userland [use-context-selector](https://github.com/dai-shi/use-context-selector) de Daishi Kato.
 
-The most interesting part is a great summary of the [recent Twitter discussions](https://twitter.com/sebastienlorber/status/1741218919732429108). Dan Abramov explained context selectors do not compos well. Andrew Clark shared the plan to extend `useMemo()` and allow the usage of other hooks inside it. This would work with the use hook with [any Usable types](https://github.com/acdlite/rfcs/blob/first-class-promises/text/0000-first-class-support-for-promises.md#other-usable-types) (currently context and promises, but maybe Observables and stores in the future?), but also [third-party hooks](https://twitter.com/BenJ_Ayc0/status/1742499230525067408)! This would solve the fine-grained selection problem in a performant and composable way, and be compatible with the upcoming React Forget compiler.
+La partie la plus intéressante est le résumé des [récentes discussions sur Twitter](https://twitter.com/sebastienlorber/status/1741218919732429108). Dan Abramov a expliqué que les context selectors ne composaient pas bien. Andrew Clark a partagé le projet d'étendre `useMemo()` et de permettre l'utilisation d'autres hooks à l'intérieur de celui-ci. Cela fonctionnerait avec le hook use avec [n'importe quel type `Usable`](https://github.com/acdlite/rfcs/blob/first-class-promises/text/0000-first-class-support-for-promises.md#other-usable-types) (actuellement React context et Promise, mais peut-être à l'avenir Observables, stores et autres resources), mais aussi avec les [hooks tiers](https://twitter.com/BenJ_Ayc0/status/1742499230525067408) ! Cela résoudrait le problème de la sélection de data d'une manière performante et composable, et serait compatible avec le compilateur React Forget à venir.
 
 ---
 
@@ -71,27 +72,27 @@ The most interesting part is a great summary of the [recent Twitter discussions]
 
 **[The Two Reacts](https://overreacted.io/the-two-reacts/)**
 
-Great writeup from Dan Abramov, giving good reasons for code to run locally (instant feedback), as well as remotely (close to the data source). He proposes a new React formula: `UI = f(data, state)`, where `f` represents all your whole React app, running in 2 distinct environments.
+Excellent article de Dan Abramov, qui donne de bonnes raisons d'exécuter le code localement (feedback instantané), ainsi qu'à distance (au plus près de la source de données). Il propose une nouvelle formule React : `UI = f(data, state)`, où `f` représente l'ensemble de votre application React, s'exécutant dans 2 environnements distincts.
 
-This ends with a great question, implicitly asking if you would invent React Server Components to solve this problem.
+Cela se termine par une question intéressante, demandant implicitement si vous inventeriez les React Server Components pour résoudre ce problème.
 
 > Is there some way we could split components between your computer and mine in a way that preserves what’s great about React? Could we combine and nest components from two different environments? How would that work?
 
 ---
 
 - 💸 [From Dreamweaver to JSX: The Evolution of Visual Dev Tools for the Web](https://mightymeld.com/blog/browser-dev-tools-understand-code?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=link1)
-- 🌟 [2023 JavaScript Rising Stars](https://risingstars.js.org/2023/en): see my comment on the [React section](https://risingstars.js.org/2023/en#section-react).
+- 🌟 [2023 JavaScript Rising Stars](https://risingstars.js.org/2023/en): voir mon commentaire sur la [section React](https://risingstars.js.org/2023/en#section-react).
 - 🐦 [Next.js can now run with HTTPS locally](https://twitter.com/leeerob/status/1743709145386131906)
 - 📖 [Remix Docs - new Client Data guide](https://remix.run/docs/en/main/guides/client-data)
-- 📜 [Common mistakes with the Next.js App Router and how to fix them](https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them): Lee Robinson is in touch with hundreds of Next.js devs and gathered the most common mistakes. Also available as a [video](https://www.youtube.com/watch?v=RBM03RihZVs). TIL that the redirect function returns a never type and throws a Next.js specific error, surprising design.
-- 📜 [How I'm Writing CSS in 2024](https://leerob.io/blog/css): Lee Robinson likes CSS in 2024. He describes constraints that make a great UX/DX, and the role of a build step, compiler, or streaming. He recommends CSS Modules, Tailwind CSS, or StyleX.
-- 📜 [Increasingly miffed about the state of React releases](https://macwright.com/2024/01/03/miffed-about-react): No stable release for 550d considered harmful.
-- 📜 [Executing Dangerously Injected Scripts Inside React Components](https://macarthur.me/posts/script-tags-in-react): Interesting technique to bypass security limitations and execute scripts injected through dangerouslySetInnerHTML, using Document Fragments.
-- 📜 [28 Advanced NextJS features everyone should know](https://codedrivendevelopment.com/posts/rarely-known-nextjs-features): List and comments on various lesser-known features the author did not encounter in any app he worked on.
-- 📜 [Things I would change about React to increase DX](https://codedrivendevelopment.com/posts/things-i-would-change-about-react): List React pain points I can agee with, and make rough propositions to fix them (not all of them are great nor possible IMHO).
-- 📜 [Harmful complexity: using React for static content](https://gomakethings.com/harmful-complexity-using-react-for-static-content/): Interesting opinion, but I hope to prove the author wrong and believe React is nice for static content, particularly with RSCs.
-- 📜 [A new blog for 2024](https://chrisnicholas.dev/blog/a-new-blog-for-2024): Using moderns tools such as Catalyst, TWC, Contentlayer, Tailwind, Next.js
-- 📜 [How to Set Up Soft Navigation Reporting in a React App](https://www.debugbear.com/blog/soft-navigations-react-tutorial): Shows usage of the Google web-vitals npm package in a CRA app.
+- 📜 [Common mistakes with the Next.js App Router and how to fix them](https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them): Lee Robinson est en contact avec des centaines de développeurs Next.js et a recueilli les erreurs les plus courantes. Également disponible sous forme de [vidéo] (https://www.youtube.com/watch?v=RBM03RihZVs). Je découvre que la fonction redirect retourne un type never et throw une erreur.
+- 📜 [How I'm Writing CSS in 2024](https://leerob.io/blog/css): Lee Robinson aime CSS en 2024. Il décrit les contraintes qui font une bonne UX/DX, et le rôle d'une build step, d'un compilateur ou du streaming. Il recommande les modules CSS, Tailwind CSS ou StyleX.
+- 📜 [Increasingly miffed about the state of React releases](https://macwright.com/2024/01/03/miffed-about-react): aucune nouvelle release depuis plus de 550 jours.
+- 📜 [Executing Dangerously Injected Scripts Inside React Components](https://macarthur.me/posts/script-tags-in-react): technique intéressante pour contourner les limitations de sécurité et exécuter des scripts injectés via dangerouslySetInnerHTML, en utilisant les Document Fragments.
+- 📜 [28 Advanced NextJS features everyone should know](https://codedrivendevelopment.com/posts/rarely-known-nextjs-features): liste et commente diverses fonctionnalités moins connues de Next.js, que l'auteur n'a rencontrées dans aucune des applications sur lesquelles il a travaillé.
+- 📜 [Things I would change about React to increase DX](https://codedrivendevelopment.com/posts/things-i-would-change-about-react): liste quelques points douloureux de React, et fais des propositions pour les résoudre (toutes ne sont pas forcément bonnes ni possible).
+- 📜 [Harmful complexity: using React for static content](https://gomakethings.com/harmful-complexity-using-react-for-static-content/): opinion intéressante, mais j'espère prouver que l'auteur a tort et que React est intéressant pour le contenu statique, en particulier avec les RSC et MDX.
+- 📜 [A new blog for 2024](https://chrisnicholas.dev/blog/a-new-blog-for-2024): utilisation d'outils modernes tels que Catalyst, TWC, Contentlayer, Tailwind, Next.js.
+- 📜 [How to Set Up Soft Navigation Reporting in a React App](https://www.debugbear.com/blog/soft-navigations-react-tutorial): Montre l'utilisation du paquet npm Google web-vitals dans une application CRA.
 - 📜 [Introducing Superglue: React ❤️ Rails](https://thoughtbot.com/blog/introducing-superglue): “Superglue makes React and Redux as productive as Hotwire, Turbo and Stimulus”
 - 📜 [How Lee Robinson created his Guestbook, and you can do it too](https://bejamas.io/blog/how-to-create-a-guestbook/?ck_subscriber_id=887776054)
 - 📜 [2024 Predictions by JavaScript Frontend Framework Maintainers](https://thenewstack.io/2024-predictions-by-javascript-frontend-framework-maintainers/)
@@ -105,7 +106,7 @@ This ends with a great question, implicitly asking if you would invent React Ser
 - 🔗 [Remix Resources - Community templates, stacks and libraries](https://remix.run/resources)
 - 🎥 [Jack Herrington - HTMX For React Developers in 10 Minutes](https://www.youtube.com/watch?v=r0XBULqzsT0)
 - 🎥 [Lee Robinson - React Server Components: the Good, the Bad, and the Ugly](https://www.youtube.com/watch?v=8DyzsSWNcDE)
-- 🎥 [Remix Singles - "Trellix" - Cookies, Auth, and Drag & Drop](https://www.youtube.com/watch?v=RTHzZVbTl6c&list=PLXoynULbYuED9b2k5LS44v9TQjfXifwNu): 15 short videos by the Remix team, building a Trello clone (see the [demo app](https://trellix.fly.dev/)).
+- 🎥 [Remix Singles - "Trellix" - Cookies, Auth, and Drag & Drop](https://www.youtube.com/watch?v=RTHzZVbTl6c&list=PLXoynULbYuED9b2k5LS44v9TQjfXifwNu): playlist officielle Remix qui créé un clone Trello ([demo app](https://trellix.fly.dev/)).
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -134,16 +135,16 @@ Trusted by corporate clients such as The Weather Channel, Deel.com, La Banque Po
 
 **[Who's using Expo OSS in 2024](https://evanbacon.dev/blog/expo-2024)**
 
-Evan Bacon gathered an impressive list of 1,599 apps that are using Expo libraries (and therefore, React Native). The list includes household names like Pizza Hut, Burger King, Microsoft, Discord, Shopify, NFL, Walgreens, Amazon, CNN, and many more. It’s not news to us that React Native is thriving, but it’s nevertheless encouraging to see the big role that it plays when you look at top apps in the App Store.
+Evan Bacon a rassemblé une liste impressionnante de 1599 applications qui utilisent les libs Expo (et donc React Native). La liste comprend des noms connus comme Pizza Hut, Burger King, Microsoft, Discord, Shopify, NFL, Walgreens, Amazon, CNN, et bien d'autres encore. Ce n'est pas une grande nouvelle pour nous de voir React Native prospérer, mais il est appréciable de confirmer la présence de nombreuses apps dans le top de l'App Store.
 
 ---
 
 - 💸 [Galaxies.dev - Master React Native & Save 25% on PRO with code GALAXIES24](https://galaxies.dev?utm_source=thisweekinreact.com)
-- 👀 [Proposal: Hover style API for iPad / Apple Vision Pro](https://github.com/react-native-community/discussions-and-proposals/pull/750) The iPad supports hover effects for mouse/trackpad users, and this will also be useful for Apple’s upcoming Vision Pro, where navigation elements get highlighted when the user looks at them.
-- 📜 [Introduction to Reanimated](https://www.reactiive.io/articles/introduction-to-reanimated): A good introductory article to learn about the concepts behind one of the most popular animation libraries for RN: shared values, reanimated style, animated view.
-- 📦 [React-Native v0.73.2 + v0.72.9 + v0.71.15](https://github.com/facebook/react-native/issues/42180): new releases fix the "Error installing boost Verification checksum” iOS build errors, among other things.
-- 📦 [react-native-vision-camera 3.7.0](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v3.7.0): Now includes an Expo config plugin to easily enable the fully native QR/Barcode scanner.
-- 🎥 [Theo - Moving off React Native](https://www.youtube.com/watch?v=gntZth3mIbM): Clickbait, but informative. This is about moving from “vanilla” React-Native to Expo.
+- 👀 [Proposal: Hover style API for iPad / Apple Vision Pro](https://github.com/react-native-community/discussions-and-proposals/pull/750): l'iPad prend en charge les effets de survol hover pour les utilisateurs de la souris ou du trackpad, ce qui sera également utile pour le future support de Vision Pro d'Apple, dans lequel les éléments de navigation sont mis en évidence lorsque l'utilisateur les regarde.
+- 📜 [Introduction to Reanimated](https://www.reactiive.io/articles/introduction-to-reanimated): Un bon article d'introduction pour apprendre les concepts derrière l'une des bibliothèques d'animation les plus populaires, couvrant les shared values, reanimated styles et animated views.
+- 📦 [React-Native v0.73.2 + v0.72.9 + v0.71.15](https://github.com/facebook/react-native/issues/42180): nouvelles releases qui fixent l'erreur a build iOS "Error installing boost Verification checksum”, et quelques autres nouveautés.
+- 📦 [react-native-vision-camera 3.7.0](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v3.7.0): inclut désormais un Expo config plugin pour activer facilement le scanner QR/Barcode entièrement natif.
+- 🎥 [Theo - Moving off React Native](https://www.youtube.com/watch?v=gntZth3mIbM): Clickbait, mais intéressant. Theo discute de la migration d'Alan (🇫🇷) de “vanilla” React-Native vers Expo.
 - 🎥 [Szymon Rybczak - Bringing React Server Components to React Native](https://portal.gitnation.org/contents/brining-react-server-components-to-react-native)
 - 🎥 [Simon Grimm - THE React Native Tech Stack for 2024](https://www.youtube.com/watch?v=Xwk4rcB6qVQ)
 
