@@ -7,11 +7,11 @@ date: 01-17-2024
 
 Salut à tous !
 
-This week we had some really great React articles, but also interesting releases from Waku and Remix. The community shared mitigated but interesting feedback on React Server Components, regarding complexity and ownership.
+Cette semaine, nous avons eu d'excellents articles sur React, mais aussi des releases intéressantes de Waku et Remix. La communauté a partagé des retours mitigés sur les React Server Components, concernant la complexité et la gouvernance.
 
-On the React Native side, it's calm. We are eagerly waiting for the Expo SDK 50 which this time is released much later than the beta. We are also waiting for the official launch of VisionOS, a new platform that React Native will support.
+Du côté de React Native, c'est plutôt calme. Nous attendons avec impatience le SDK Expo 50 qui, cette fois, sort bien plus tard que la bêta. Nous attendons également le lancement officiel de VisionOS, une nouvelle plateforme que React Native prendra en charge.
 
-I just [celebrated 10 years of React experience](https://twitter.com/sebastienlorber/status/1747307299356447148) 🙉 It's hard to believe how my career changed thanks to React, considering I used to really dislike JavaScript.
+Je viens de [célébrer 10 ans d'expérience avec React](https://twitter.com/sebastienlorber/status/1747307299356447148) 🙉 Difficile de croire à quel point ma carrière a changé grâce à React, étant donné que je n'aimais vraiment pas JavaScript avant.
 
 <!-- truncate -->
 
@@ -44,20 +44,36 @@ Trusted by corporate clients such as The Weather Channel, Deel.com, La Banque Po
 
 ## ⚛️ React {#react}
 
+[![Waku 0.19](/emails/issues/170/waku.jpg)](https://waku.gg/blog/introducing-create-pages)
+
+**[Waku 0.19](https://waku.gg/blog/introducing-create-pages)**
+
+Cette version introduit une nouvelle API `createPage` pour créer des layouts et des pages de manière programmatique. Cela marque notamment le passage de Waku d'un framework minimal pour apprendre les RSC, à un véritable framework React prêt pour la production. Un routeur léger basé sur des conventions filesystem est prévu pour la v0.20.
+
+---
+
+[![Delicious Donut Components](/emails/issues/170/donuts.jpg)](https://frontendatscale.com/blog/donut-components/)
+
+**[Delicious Donut Components](https://frontendatscale.com/blog/donut-components/)**
+
+Ce superbe article interactif et plaisant à lire utilise l'analogie des donuts (composant client avec un trou "children") pour expliquer comment les composants client/serveur peuvent être imbriqués. Il couvre également des sujets plus avancés sur la composition RSC. J'ai appris une astuce originale sur les Server Actions render props!
+
+---
+
 - 💸 [Take the Developer Nation Survey - For each completed response, Developer Nation will donate to one of the charities of respondents’ choosing!](https://developereconomics.net/?member_id=thisweekinreact&utm_medium=nl_ad4)
-- 🐦 [Dan Abramov - “React Server Components does not require a server”](https://twitter.com/dan_abramov2/status/1745795274977493317): Another important reminder that RSCs can all run at build time too, and the CI is your server. You can deploy a completely static Next.js site using RSCs to S3 or GitHub Pages.
+- 🐦 [Dan Abramov - “React Server Components does not require a server”](https://twitter.com/dan_abramov2/status/1745795274977493317): un rappel important concernant les RSCs qui peuvent tous être exécutés au moment du build. Dans ce cas, votre CI est votre serveur. Vous pouvez tout à fait déployer un site Next.js complètement statique sur S3 ou GitHub Pages, tout en utilisant des RSCs.
 - 🐦 [React v19 is coming - React v18.3 is not planned](https://twitter.com/sebastienlorber/status/1747633798374625525)
 - 🐦 [Pre-rendering (SSG) is coming to Remix](https://twitter.com/brophdawg11/status/1747402216925704684)
-- 👀 [React Postgres Components](https://react-postgres-components.vercel.app/): Render React SSR using V8 inside Postgres RPC? Sounds crazy, but works!
-- 📜 [React Libraries for 2024](https://www.robinwieruch.de/react-libraries/): As every year, Robin Wieruch updated his list of recommended React libraries, a good way to discover many libs of the ecosystem.
-- 📜 [Kind of annoyed at React](https://blog.cassidoo.co/post/annoyed-at-react/): Cassidy shares a reasonable take on the current state of React that seems to resonate with the community, notably 🐦 [Tanner Linsley using React with increasing resentment](https://twitter.com/tannerlinsley/status/1746970043836158330).
-- 📜 [React, where are you going?](https://dev.to/matfrana/react-where-are-you-going-5284): Matteo builds on top of Cassidy’s take and explains his frustration regarding React ownership and increasing complexity. He advocates for a financially sustainable community-driven framework. What struck me is that adding RSC support to their lib React-Bricks decreased the DX (also confirmed by a few others, 🐦 [tweet](https://twitter.com/sebastienlorber/status/1747643069460021405)).
-- 📜 [Streams and React Server Components](https://minimalistweb.dev/p/streams-and-react-server-components): Even apart from RSC, this is a great deep dive into the Streams APIs from a Waku contributor.
-- 📜 [Server-side rendering local dates without FOUC](https://blog.6nok.org/server-side-rendering-local-dates-without-fouc/): It’s common to get React hydration mismatches when trying to render time in the user timezone. This suggests to inline a script to modify the DOM SSR-rendered time just before React hydrates to avoid the mismatch.
-- 📜 [How to setup Client-Server Relaying in Next.js](https://ericbureltech.hashnode.dev/how-to-setup-client-server-relaying-in-nextjs): Explains how we can render a dynamic value on the server, and then let SWR take over that value on the client.
+- 👀 [React Postgres Components](https://react-postgres-components.vercel.app/): fais un rendu React SSR dans Postgres, via le moteur V8? Ça a l'air fou, mais ça marche !
+- 📜 [React Libraries for 2024](https://www.robinwieruch.de/react-libraries/): comme chaque année, Robin Wieruch a mis à jour sa liste de librairies React recommandées, un bon moyen de découvrir de nombreuses librairies de l'écosystème.
+- 📜 [Kind of annoyed at React](https://blog.cassidoo.co/post/annoyed-at-react/): Cassidy partage un point de vue raisonnable sur l'état actuel de React qui semble résonner avec la communauté, notamment 🐦 [Tanner Linsley utilisant React avec de plus en plus d'appréhension](https://twitter.com/tannerlinsley/status/1746970043836158330).
+- 📜 [React, where are you going?](https://dev.to/matfrana/react-where-are-you-going-5284): Matteo s'appuie sur le point de vue de Cassidy et explique sa frustration concernant la gouvernance de React et sa complexité croissante. Il plaide en faveur d'un framework communautaire soutenu financièrement. Ce qui m'a frappé, c'est que l'ajout du support RSC à leur lib React-Bricks a diminué la DX (également confirmé par quelques autres, 🐦 [tweet](https://twitter.com/sebastienlorber/status/1747643069460021405)).
+- 📜 [Streams and React Server Components](https://minimalistweb.dev/p/streams-and-react-server-components): en dehors de RSC, il s'agit d'une excellente plongée dans les APIs Streams de la part d'un contributeur de Waku.
+- 📜 [Server-side rendering local dates without FOUC](https://blog.6nok.org/server-side-rendering-local-dates-without-fouc/): il est courant d'obtenir des erreurs d'hydratation en essayant d'afficher l'heure dans la timezone de l'utilisateur. Cet article suggère d'inliner un script pour modifier l'heure rendue par le DOM SSR juste avant que React ne s'hydrate.
+- 📜 [How to setup Client-Server Relaying in Next.js](https://ericbureltech.hashnode.dev/how-to-setup-client-server-relaying-in-nextjs): explique comment nous pouvons rendre une valeur dynamique sur le serveur via les RSCs, puis laisser SWR prendre en charge cette valeur coté client.
 - 📜 [Say Hello to Panda CSS - The New CSS-in-JS Library with Zero Runtime](https://www.telerik.com/blogs/say-hello-panda-css-new-css-js-library-zero-runtime)
 - 📜 [Build Dynamic Forms with React Hook Form](https://claritydev.net/blog/build-dynamic-forms-react-hook-form)
-- 📦 [Remix 2.5 - SPA mode](https://github.com/remix-run/remix/blob/main/CHANGELOG.md#v250): Deploy Remix apps without a server (e.g. on GitHub pages) using SPA mode, generating a single `index.html` file.
+- 📦 [Remix 2.5 - SPA mode](https://github.com/remix-run/remix/blob/main/CHANGELOG.md#v250): pour déployer les applications Remix sans serveur (par exemple sur GitHub Pages) en utilisant le mode SPA, en générant un seul fichier `index.html`.
 - 📦 [React-Aria-Components + Tailwind starter kit - New set of beautifully styled component that you can modify](https://react-spectrum.adobe.com/react-aria/getting-started.html#starter-kits)
 - 🎥 [A Beginner’s Guide to Storybook 7 with React - free Egghead course](https://egghead.io/courses/a-beginner-s-guide-to-storybook-7-with-react-56f61ecf)
 - 🔐 [Critical security vulnerability in @clerk/nextjs - upgrade to 4.29.3](https://clerk.com/changelog/2024-01-12)
@@ -85,10 +101,10 @@ Start your free trial [today](https://apryse.com/form/contact-sales?utm_source=e
 - 👀 [atob() and btoa() were just added to Hermes](https://github.com/facebook/hermes/commit/d2177c31b271e92d1725742605b53d7f6e8acf3e)
 - 👀 [ChatGPT React Native Buddy](https://chat.openai.com/g/g-S9qpp72cb-react-native-buddy)
 - 📅 [App.js Conf Call for Papers is ending January 28](https://appjs.co/#CFP)
-- 📜 [Unlocking New Possibilities with Maestro: Beyond Automated Testing](https://www.bam.tech/article/unlocking-new-possibilities-with-maestro-beyond-automated-testing): Introduction on how to do automatic visual testing of React Native apps using Maestro.
-- 📦 [Official Tamagui design system Figma released](https://www.figma.com/community/file/1326593766534421119/tamagui-v1-2-0): Create designs using Tamagui components in Figma.
-- 📦 [React Native Test App 3.0](https://github.com/microsoft/react-native-test-app/releases/tag/3.0.0): Microsoft’s test app for library authors. Mainly a clean-up release, dropping Node 14, React Native 0.65 and earlier, as well as Flipper.
-- 📦 [React Native visionOS with new CLI commands](https://github.com/callstack/react-native-visionos): visionOS will soon be available and the community is racing to get React Native ready for it.
+- 📜 [Unlocking New Possibilities with Maestro: Beyond Automated Testing](https://www.bam.tech/article/unlocking-new-possibilities-with-maestro-beyond-automated-testing): introduction sur la façon de faire des tests visuels automatiques des applications React Native en utilisant Maestro.
+- 📦 [Official Tamagui design system Figma released](https://www.figma.com/community/file/1326593766534421119/tamagui-v1-2-0): créer des dessins en utilisant les composants Tamagui dans Figma.
+- 📦 [React Native Test App 3.0](https://github.com/microsoft/react-native-test-app/releases/tag/3.0.0): pplication de test de Microsoft pour les auteurs de librairies. Abandonne Node 14, React Native 0.65 et les versions antérieures, ainsi que Flipper.
+- 📦 [React Native visionOS with new CLI commands](https://github.com/callstack/react-native-visionos): VisionOS sera bientôt disponible et la communauté s'active pour que React Native soit prêt à accueillir cette nouvelle plateforme.
 - 📦 [vision-camera-resize-plugin - Frame Processor plugin for fast buffer resizing](https://github.com/mrousavy/vision-camera-resize-plugin)
 - 📦 [Expo Orbit 1.0.2](https://expo.dev/orbit)
 - 🎥 [Simon Grimm - Better than React Native Stylesheet - Unistyles](https://www.youtube.com/watch?v=OT5hQbvGRW8)
