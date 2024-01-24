@@ -3,10 +3,11 @@ slug: /171
 title: "This Week In React #171: ..."
 authors: [slorber]
 date: 01-24-2023
-unlisted: true
 ---
 
 Hi everyone!
+
+Hey
 
 <Todo />
 
@@ -30,12 +31,9 @@ import Support from "../_support.mdx";
 
 😴 Sleep peacefully knowing that Axiom’s zero-config observability for Vercel projects has you covered.
 
-*   Use Axiom's pre-built dashboard for an overview across all your Vercel logs and vitals, drill down to specific projects and deployments, and get insight on how functions are performing with a single click. 
-    
-*   [next-axiom](https://github.com/axiomhq/next-axiom) allows you to send logs and events from any part of your Next.js projects - client, edge, or server-side - without any special configuration.
-    
-*   Easily send structured logs directly from your code and analyze them together with Vercel logs.
-    
+- Use Axiom's pre-built dashboard for an overview across all your Vercel logs and vitals, drill down to specific projects and deployments, and get insight on how functions are performing with a single click.
+- [next-axiom](https://github.com/axiomhq/next-axiom) allows you to send logs and events from any part of your Next.js projects - client, edge, or server-side - without any special configuration.
+- Easily send structured logs directly from your code and analyze them together with Vercel logs.
 
 Axiom efficiently captures 100% of your event data so you’ll never have to worry about sampling or retention, and you’ll never have to guess what your users are experiencing.
 
@@ -45,9 +43,37 @@ Axiom efficiently captures 100% of your event data so you’ll never have to wor
 
 ## ⚛️ React {#react}
 
-<Todo />
+- 💸 [Accelerate your workflow with MightyMeld, a visual dev tool for React codebases. Drag, drop, click, and prompt your UI into place while you hand-code the rest of it.](https://www.mightymeld.com/?utm_source=thisweekinreact4&utm_medium=newsletter&utm_campaign=1&utm_content=top)
+- 📅 [React Conf 2024:](https://conf.react.dev/) the official conf is back May 15-16 in Henderson (Nevada/USA), in collaboration with Callstack.
+- 👀 [React core - Web Components / custom element support is ready for React 19](https://github.com/facebook/react/issues/11347#issuecomment-1899140345)
+- 👀 [Next.js App Router Training](https://nextjs-app-router-training.vercel.app/): A playground with a quite exhaustive list of interactive demos that can help you understand many Next.js features.
+- 👀 [Nexar: application architecture for Next.js App Router apps](https://nexar.dev/): An opinionated set of patterns and conventions to build scalable Next.js apps, including a full open-source application.
+- 🐦 [React-Forget is written in TypeScript/Babel. It will eventually be rewritten in Rust later, or compiled to native with Static Hermes!](https://twitter.com/dan_abramov2/status/1747640983980806466) 🙉
+- 📜 [New client-side hooks coming to React 19](https://marmelab.com/blog/2024/01/23/react-19-new-hooks.html): Overview of new React hooks and APIs coming in the next major that you will be able to use without a framework.
 
--💸 [Accelerate your workflow with MightyMeld, a visual dev tool for React codebases. Drag, drop, click, and prompt your UI into place while you hand-code the rest of it.](https://www.mightymeld.com/?utm_source=thisweekinreact4&utm_medium=newsletter&utm_campaign=1&utm_content=top)
+- 📜 [The Query Options API](https://tkdodo.eu/blog/the-query-options-api): Dominik explains the advantages of removing React-Query overloads in v5, and using a single unified options object that you can reuse across all React-Query APIs thanks to TypeScript duck typing. The usage of a fancy TypeScript DataTag technique greatly improves the DX 🙉.
+- 📜 [Panda v1 Roadmap](https://www.adebayosegun.com/blog/panda-v1-roadmap): the CSS-in-JS lib is progressing toward a v1 release. It has already optimized its runtime and integrated Lightning CSS. Remaining tasks include Panda Studio (to vizualize design tokens), opacity modifiers, container queries, config validation…
+- 📜 [Wrangling Tuple Types](https://kyleshevlin.com/wrangling-tuple-types/): Explains why you might want to use TypeScript “as const” while returning tuples from custom React hooks.
+- 📜 [Build a Next.js app in Storybook with React Server Components and Mock Service Worker](https://storybook.js.org/blog/build-a-nextjs-app-with-rsc-msw-storybook/): The RSC support coming with Storybook 8 permits to use it to develop a full Next.js app in isolation.
+- 📜 [Build an app with Remix and Bun](https://sergiodxa.com/tutorials/build-an-app-with-remix-and-bun): It’s possible to use Bun at runtime, but for now you have to keep building the Remix app with Node.
+- 📜 [Harmony - A new kind of color picker for React](https://polar.sh/emilwidlund/posts/a-new-kind-of-color-picker-with-react-typescript): Introduces a new interesting React color picker package, that matches multiple colors together according to harmonies.
+- 📜 [RSC is React Server + Component](https://bobaekang.com/blog/rsc-is-react-server-plus-component/): Gives you an interesting mental model to understand RSCs.
+- 📜 [From Next.js to Rails then Elixir: My journey through React.js burnout](https://dev.to/danielbergholz/from-nextjs-to-rails-then-elixir-my-journey-through-reactjs-burnout-h8d)
+- 📜 [Detailed React. Reconciliation, Renderers, Fiber, Virtual Tree](https://blog.frontend-almanac.com/JqtGelofzm1)
+- 📜 [Shining a light on Caustics with Shaders and React Three Fiber](https://blog.maximeheckel.com/posts/caustics-in-webgl/)
+- 📜 [Mastering React and OpenLayers Integration: A Comprehensive Guide](https://mxd.codes/articles/how-to-create-a-web-map-with-open-layers-and-react)
+- 📜 [Optimizing images for Next.js sites with imgproxy and docker](https://mxd.codes/articles/optimizing-images-for-next-js-sites-with-imgproxy-and-docker)
+- 📦 [dream-css-tool - styled-components, but without a client runtime. Built for Next.js](https://github.com/joshwcomeau/dream-css-tool): Josh Comeau explores creating his own CSS-in-JS lb.
+- 📦 [React Email 2.0 - New preview experience, improved performance, CodeBlock component](https://resend.com/blog/react-email-2)…
+- 📦 [Next.js 14.1 - Improving DX, Turbopack, self-hosting, history APIs, image component, parallel and intercepted routes…](https://nextjs.org/blog/next-14-1)
+- 📦 [Zustand 4.5 - getInitialState to prevent hydration mismatches](https://github.com/pmndrs/zustand/releases/tag/v4.5.0)
+- 📦 [Relay 16.2 - @preloadable directive](https://github.com/facebook/relay/releases/tag/v16.2.0)
+- 📦 [Astro 4.2 - Prerendering using Speculation Rules API, customizable image optimization](https://astro.build/blog/astro-420/)…
+- 📦 [vocs - Minimal Documentation Framework, powered by React + Vite](https://github.com/wevm/vocs)
+- 📦 [ReScript 11.0 - React lazy components](https://rescript-lang.org/blog/release-11-0-0)
+- 🎥 [Next.js App Router Caching: Explained!](https://www.youtube.com/watch?v=VBlSe8tvg4U)
+- 🎥 [Deploying Next.js to Vercel](https://www.youtube.com/watch?v=AiiGjB2AxqA)
+- 🎥 [React form validation explained - Next.js and Astro](https://www.youtube.com/watch?v=DwEkvie79xI)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -61,20 +87,13 @@ Axiom efficiently captures 100% of your event data so you’ll never have to wor
 
 A complete form solution for React projects, used by Fortune 500 companies. With easy-to-use open-source components for building and running powerful forms inside your React app. Extensively documented, up in minutes, and deeply customizable.
 
-*   Builder for creating powerful forms;
-    
-*   Runner for deploying forms and collecting data;
-    
-*   Flexible form layouts (conversational, chat etc.) and styling;
-    
-*   Extensible with custom question types;
-    
-*   Complete docs, examples, and demos;
-    
-*   Self-hosted without external dependencies;
-    
-*   Start, test, and perfect for free.
-    
+- Builder for creating powerful forms;
+- Runner for deploying forms and collecting data;
+- Flexible form layouts (conversational, chat etc.) and styling;
+- Extensible with custom question types;
+- Complete docs, examples, and demos;
+- Self-hosted without external dependencies;
+- Start, test, and perfect for free.
 
 TWIR exclusive: [Get 25% off your FormBuilder SDK license](https://tripetto.com/sdk/this-week-in-react/?utm_source=thisweekinreact&utm_medium=sponsor&utm_campaign=sdk).
 
@@ -82,22 +101,43 @@ TWIR exclusive: [Get 25% off your FormBuilder SDK license](https://tripetto.com/
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+---
 
--💸 [Moropo - Power Up Your Mobile UI Tests with support for 2FA, Google Play, Offline Mode and Tablets ](https://www.moropo.com?utm_source=newsletter&utm_medium=emails&utm_campaign=twir-20240124)
+- 💸 [Moropo - Power Up Your Mobile UI Tests with support for 2FA, Google Play, Offline Mode and Tablets ](https://www.moropo.com?utm_source=newsletter&utm_medium=emails&utm_campaign=twir-20240124)
+- 📜 [Webpack support in Expo CLI is now deprecated](https://blog.expo.dev/webpack-support-in-expo-cli-is-now-deprecated-e9831d7eb631): Time to move to Metro, the universal bundler for React Native and Expo Web. There are also [docs for migrating](https://docs.expo.dev/router/migrate/from-expo-webpack/).
+- 📜 [Expo Docs: Use Bun](https://docs.expo.dev/guides/using-bun/): Bun is (rightfully) all the rage right now and it works great with Expo!
+- 📜 [Xcode 15.2 image is now available on EAS Build](https://expo.dev/changelog/2024/01-18-eas-build-xcode-15.2-image)
+- 📜 [React Native Video on visionOS](https://thewidlarzgroup.com/react-native-video-on-visionos/): react-native-video will be able to render video on Apple’s Vision Pro.
+- 📜 [Our React Native toolbox: 24 essential tools for developers in 2024](https://thewidlarzgroup.com/24-react-native-tools-for-2024/): Good overview of the tools landscape, from IDEs to debugging and tracing.
+- 📜 [How to set video as a background in React Native application](https://thewidlarzgroup.com/video-background-with-react-native-video/)
+- 📦 [React Native Storybook v7 alpha](https://github.com/storybookjs/react-native/releases/tag/v7.6.10-alpha.0): Now compatible with the latest Storybook 7.6.1 and featuring dynamic story imports.
+- 📦 [react-native-skottie](https://github.com/margelo/react-native-skottie): Library to run Lottie animations using Skia's GPU-accelerated engine.
+- 📦 [nativecn-ui](https://github.com/Mobilecn-UI/nativecn-ui): An effort to bring the widely used web component library shadcn-ui to React Native.
+- 📦 [react-native-fast-tflite](https://github.com/mrousavy/react-native-fast-tflite) [1.1 - Upgrades to latest TensorFlow Lite](https://github.com/mrousavy/react-native-fast-tflite/releases/tag/v1.1.0)
+- 🐦 [Blur VisionOS demo](https://twitter.com/o_kwasniewski/status/1747976103505821946): @react-native-community/blur now supports visionOS.
+- 🎙️ [RNR 285 - Expo Dominates the App Store (and other news)](https://reactnativeradio.com/episodes/rnr-285-expo-dominates-the-app-store-and-other-news)
+- 🎙️ [Rocket Ship 26 - React Server Components for React Native with Szymon Rybczak](https://podcast.galaxies.dev/episodes/026-react-server-components-for-react-native-with-szymon-rybczak)
+- 🎥 [William Candillon - 3D transformations with React Native Skia](https://www.youtube.com/watch?v=pYu3DiWYtL0)
+- 🎥 [Catalin Miron - create-expo-app -w with-router-tailwind](https://www.youtube.com/watch?v=RsFoOlYj-gc&themeRefresh=1)
+- 🎥 [Simon Grimm - The Worlds Best Apps use React Native](https://www.youtube.com/watch?v=LIMyd5FoKyc)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [RFC for Biome plugins](https://github.com/biomejs/biome/discussions/1649)
+- 📜 [How Core Web Vitals affect SEO - field data vs lab data](https://vercel.com/blog/how-core-web-vitals-affect-seo)
+- 📜 [The Bun Shell - run cross-platform shell scripts in JavaScript & TypeScript](https://bun.sh/blog/the-bun-shell)
+- 📜 [The AHA Stack - Combine Astro, htmx and Alpine.js to create modern web applications](https://ahastack.dev/)
+- 📜 [You Probably Don't Need eslint-config-prettier or eslint-plugin-prettier](https://www.joshuakgoldberg.com/blog/you-probably-dont-need-eslint-config-prettier-or-eslint-plugin-prettier)
+- 📜 [Migrating from Zod to Valibot: A Comparative Experience](https://mwskwong.com/blog/migrating-from-zod-to-valibot-a-comparative-experience)
+- 📦 [og-img - framework agnostic package for generating Open Graph images using Satori and resvg](https://github.com/fabian-hiller/og-img)
+- 📦 [Knip 4.0 - Find unused files, dependencies and exports in JavaScript and TypeScript projects](https://knip.dev/blog/knip-v4)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/171/meme.jpg)](https://twitter.com/trashh_dev/status/1750233852553924709)
 
 See ya! 👋
