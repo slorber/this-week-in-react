@@ -3,6 +3,7 @@ slug: /171
 title: "This Week In React #171: ..."
 authors: [slorber]
 date: 01-24-2023
+unlisted: true
 ---
 
 Hi everyone!
@@ -43,10 +44,17 @@ Axiom efficiently captures 100% of your event data so you’ll never have to wor
 
 ## ⚛️ React {#react}
 
+[![Next.js App Router Training](/emails/issues/171/appRouterTraining.jpg)](https://nextjs-app-router-training.vercel.app/)
+
+**[Next.js App Router Training](https://nextjs-app-router-training.vercel.app/)**
+
+A playground with a quite exhaustive list of interactive demos about Next.js features. This is a great resource to understand how the Next.js App Router behaves by actually seeing it running with a convenient way to browse the related code.
+
+---
+
 - 💸 [Accelerate your workflow with MightyMeld, a visual dev tool for React codebases. Drag, drop, click, and prompt your UI into place while you hand-code the rest of it.](https://www.mightymeld.com/?utm_source=thisweekinreact4&utm_medium=newsletter&utm_campaign=1&utm_content=top)
 - 📅 [React Conf 2024:](https://conf.react.dev/) the official conf is back May 15-16 in Henderson (Nevada/USA), in collaboration with Callstack.
 - 👀 [React core - Web Components / custom element support is ready for React 19](https://github.com/facebook/react/issues/11347#issuecomment-1899140345)
-- 👀 [Next.js App Router Training](https://nextjs-app-router-training.vercel.app/): A playground with a quite exhaustive list of interactive demos that can help you understand many Next.js features.
 - 👀 [Nexar: application architecture for Next.js App Router apps](https://nexar.dev/): An opinionated set of patterns and conventions to build scalable Next.js apps, including a full open-source application.
 - 🐦 [React-Forget is written in TypeScript/Babel. It will eventually be rewritten in Rust later, or compiled to native with Static Hermes!](https://twitter.com/dan_abramov2/status/1747640983980806466) 🙉
 - 📜 [New client-side hooks coming to React 19](https://marmelab.com/blog/2024/01/23/react-19-new-hooks.html): Overview of new React hooks and APIs coming in the next major that you will be able to use without a framework.
@@ -106,7 +114,7 @@ This week’s React Native news are compiled by Benedikt. Feedback, suggestions 
 
 **[Expo SDK 50](https://expo.dev/changelog/2024/01-18-sdk-50)**
 
-Expo SDK 50 introduces Expo Dev Tools Plugins, comes with new SQLite and Camera APIs, and adds ‘@expo/fingerprint’, a new way to determine whether an updated JS bundle update is compatible with a given native build. This release also marks the [end of Webpack support](https://blog.expo.dev/webpack-support-in-expo-cli-is-now-deprecated-e9831d7eb631) in Expo, which is now deprecated in favor of Metro. The best and most convenient way to get up to speed on Expo 50 is probably to watch Simon rattle through it in about 15 minutes on [YouTube](https://www.youtube.com/watch?v=shaGaiwu4Fg).
+Expo SDK 50 introduces Expo Dev Tools Plugins, comes with new SQLite and Camera APIs, and adds `@expo/fingerprint`, a new way to determine whether an updated JS bundle update is compatible with a given native build. This release also marks the [end of Webpack support](https://blog.expo.dev/webpack-support-in-expo-cli-is-now-deprecated-e9831d7eb631) in Expo, which is now deprecated in favor of Metro. The best and most convenient way to get up to speed on Expo 50 is probably to watch Simon rattle through it in about 15 minutes on [YouTube](https://www.youtube.com/watch?v=shaGaiwu4Fg).
 
 ---
 
@@ -119,6 +127,7 @@ Along with Expo SDK 50, Expo Router v3 has been released. It brings lots of perf
 ---
 
 - 💸 [Moropo - Power Up Your Mobile UI Tests with support for 2FA, Google Play, Offline Mode and Tablets ](https://www.moropo.com?utm_source=newsletter&utm_medium=emails&utm_campaign=twir-20240124)
+- 🐦 [Blur VisionOS demo](https://twitter.com/o_kwasniewski/status/1747976103505821946): `@react-native-community/blur` now supports visionOS.
 - 📜 [Webpack support in Expo CLI is now deprecated](https://blog.expo.dev/webpack-support-in-expo-cli-is-now-deprecated-e9831d7eb631): Time to move to Metro, the universal bundler for React Native and Expo Web. There are also [docs for migrating](https://docs.expo.dev/router/migrate/from-expo-webpack/).
 - 📜 [Expo Docs: Use Bun](https://docs.expo.dev/guides/using-bun/): Bun is (rightfully) all the rage right now and it works great with Expo!
 - 📜 [Xcode 15.2 image is now available on EAS Build](https://expo.dev/changelog/2024/01-18-eas-build-xcode-15.2-image)
@@ -126,10 +135,9 @@ Along with Expo SDK 50, Expo Router v3 has been released. It brings lots of perf
 - 📜 [Our React Native toolbox: 24 essential tools for developers in 2024](https://thewidlarzgroup.com/24-react-native-tools-for-2024/): Good overview of the tools landscape, from IDEs to debugging and tracing.
 - 📜 [How to set video as a background in React Native application](https://thewidlarzgroup.com/video-background-with-react-native-video/)
 - 📦 [React Native Storybook v7 alpha](https://github.com/storybookjs/react-native/releases/tag/v7.6.10-alpha.0): Now compatible with the latest Storybook 7.6.1 and featuring dynamic story imports.
-- 📦 [react-native-skottie](https://github.com/margelo/react-native-skottie): Library to run Lottie animations using Skia's GPU-accelerated engine.
-- 📦 [nativecn-ui](https://github.com/Mobilecn-UI/nativecn-ui): An effort to bring the widely used web component library shadcn-ui to React Native.
-- 📦 [react-native-fast-tflite](https://github.com/mrousavy/react-native-fast-tflite) [1.1 - Upgrades to latest TensorFlow Lite](https://github.com/mrousavy/react-native-fast-tflite/releases/tag/v1.1.0)
-- 🐦 [Blur VisionOS demo](https://twitter.com/o_kwasniewski/status/1747976103505821946): @react-native-community/blur now supports visionOS.
+- 📦 [react-native-skottie - run Lottie animations using Skia's GPU-accelerated engine](https://github.com/margelo/react-native-skottie)
+- 📦 [nativecn-ui - An effort to port the popular shadcn-ui to React Native](https://github.com/Mobilecn-UI/nativecn-ui)
+- 📦 [react-native-fast-tflite 1.1 - Upgrades to latest TensorFlow Lite](https://github.com/mrousavy/react-native-fast-tflite/releases/tag/v1.1.0)
 - 🎙️ [RNR 285 - Expo Dominates the App Store (and other news)](https://reactnativeradio.com/episodes/rnr-285-expo-dominates-the-app-store-and-other-news)
 - 🎙️ [Rocket Ship 26 - React Server Components for React Native with Szymon Rybczak](https://podcast.galaxies.dev/episodes/026-react-server-components-for-react-native-with-szymon-rybczak)
 - 🎥 [William Candillon - 3D transformations with React Native Skia](https://www.youtube.com/watch?v=pYu3DiWYtL0)
