@@ -173,7 +173,10 @@ export function SponsoringTabsFirstSponsor() {
             <b>1 issue</b>: {Prices.main.x1}€
           </li>
           <li>
-            <b>4 issues</b>: {Prices.main.x4}€ <RecommendedOffer />
+            <b>2 issue</b>: {Prices.main.x2}€
+          </li>
+          <li>
+            <b>4 issues</b>: {Prices.main.x4}€ <RecommendedOffer/>
           </li>
           <li>
             <b>8 issues</b>: {Prices.main.x8}€
@@ -197,10 +200,13 @@ export function SponsoringTabsSecondSponsor() {
             <b>1 issue</b>: {Prices.second.x1}€
           </li>
           <li>
-            <b>4 issues</b>: {Prices.second.x4}€ <RecommendedOffer />
+            <b>2 issue</b>: {Prices.second.x2}€
           </li>
           <li>
-            <b>8 issues</b>: {Prices.main.x8}€
+            <b>4 issues</b>: {Prices.second.x4}€ <RecommendedOffer/>
+          </li>
+          <li>
+            <b>8 issues</b>: {Prices.second.x8}€
           </li>
         </ul>
       </>
