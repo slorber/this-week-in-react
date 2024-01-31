@@ -1,6 +1,6 @@
 ---
 slug: /172
-title: "This Week In React #172: ..."
+title: "This Week In React #172: Next.js, PPR, Remotion, State of React Native, Panda, StyleX, Cosmos, Remix, TypeScript, Skia, Reanimated, RNTL, Storybook, Flashlight, Tamagui..."
 authors: [slorber]
 date: 01-31-2024
 unlisted: true
@@ -8,7 +8,13 @@ unlisted: true
 
 Hi everyone!
 
-https://twitter.com/ThisWeekInReact
+**[@ThisWeekInReact](https://twitter.com/ThisWeekInReact)** is our brand-new X account, hit subscribe! The promise is to share and retweet interesting things happening in the React community in near-real-time, and to be as **high-signal/low-noise** as possible.
+
+This week React Server Components have been once-again the subject of various articles and discussions. The community has mitigated feelings about Next.js App Router. Even if people embrace the vision, they seem a little disappointed by its current implementation. Let's hope it's only temporary 🤞.
+
+React Native has been particularly interesting this week. The [State of React Native](https://results.stateofreactnative.com/) survey results have been published, and the general feeling towards React Native is increasingly positive. There are also interesting bits related to Skia, Reanimated, or the bridgeless mode. The community is excited about Expo becoming a full-stack universal framework.
+
+Happy reading!
 
 <!-- truncate -->
 
@@ -42,13 +48,15 @@ Axiom efficiently captures 100% of your event data so you’ll never have to wor
 
 ## ⚛️ React {#react}
 
-🎥 [Next.js Explained - Partial Prerendering](https://www.youtube.com/watch?v=MTcPrTIBkpA)
+[![Next.js Explained](/emails/issues/172/ppr.jpg)](https://www.youtube.com/watch?v=MTcPrTIBkpA)
+
+🎥 [**Next.js Explained - Partial Prerendering**](https://www.youtube.com/watch?v=MTcPrTIBkpA)
 
 It’s is not often that a video makes the headlines here, but this one is different for a few reasons.
 
 First the topic is super interesting and well-explained with many animated visualizations. Partial pre-rendering is a [Next.js 14 experimental feature](https://nextjs.org/blog/next-14#partial-prerendering-preview) that completes the Next.js vision and offers the best of both worlds between static and dynamic rendering. This makes Next.js a multi-paradigm framework that supports all ranges of rendering diversity. This new feature is simple to adopt, builds on top of Suspense, and doesn’t introduce new APIs: you just need to turn a flag on.
 
-Second: this incredibly well-produced video has been created with [Remotion](https://www.remotion.dev/), using React web code 🙉. Good job Delba, you nailed it! We can’t wait to see more videos like this and to know more about your Remotion creative process. On a related note, Remotion just shared a [behind the scene of GitHub Unwrapped 2023](https://www.youtube.com/watch?v=WW8vIZ1kwR0).
+Second: this incredibly well-produced video has been created with [Remotion](https://www.remotion.dev/), using React web code 🙉. Good job Delba, you nailed it! We can’t wait to see more videos like this and to know more about your Remotion creative process. On a related note, the Remotion team just shared theirs with a [behind the scene of GitHub Unwrapped 2023](https://www.youtube.com/watch?v=WW8vIZ1kwR0).
 
 ---
 
@@ -101,9 +109,11 @@ Dive into Clerk's [quickstarts and tutorials](https://clerk.com/docs/quickstarts
 
 ## 📱 React-Native {#react-native}
 
-This section is co-authored with [Benedikt](https://twitter.com/bndkt). Feel free to send us your comments by email or on Twitter!
+This section is now co-authored with [Benedikt](https://twitter.com/bndkt). Feel free to send us your comments by email or on [Twitter](https://twitter.com/bndkt)!
 
-[State of React Native 2023 Results are out!](https://results.stateofreactnative.com/)
+[![State of React Native 2023 - Survey Results](/emails/issues/172/stateofrn.jpg)](https://results.stateofreactnative.com/)
+
+**[State of React Native 2023 - Survey Results](https://results.stateofreactnative.com/)**
 
 I’m a big fan of all the “State of …” surveys, because they give us a unique insight into what’s going on in the ecosystem. It’s one thing to follow the hype generated on X and elsewhere, but another thing to see stats of what developers actually use. So I’m really happy to see last year’s State of React Native results published! And as this is now the second year this survey is conducted, we can also identify some trends by comparing the results to the year before. For all the details, [have a look at the results yourself](https://results.stateofreactnative.com/)! I’ll just highlight a few things that I found interesting, some of them really surprised me:
 
