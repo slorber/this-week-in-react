@@ -1,6 +1,6 @@
 ---
 slug: /172
-title: "React Hebdo #172: ..."
+title: "React Hebdo #172: Next.js, PPR, Remotion, State of React Native, Parcel, Panda, StyleX, Cosmos, Remix, RTK, TypeScript, Skia, Reanimated, RNTL, Storybook, Flashlight, Tamagui..."
 authors: [slorber]
 date: 01-31-2024
 unlisted: true
@@ -8,9 +8,13 @@ unlisted: true
 
 Salut à tous !
 
-twitter account
+**[@ThisWeekInReact](https://twitter.com/ThisWeekInReact)** is our brand-new X account, hit subscribe! The promise is to share and retweet interesting things happening in the React community in near-real-time, and to be as **high-signal/low-noise** as possible.
 
-<Todo />
+This week React Server Components have been once-again the subject of various articles and discussions. The community has mitigated feelings about Next.js App Router. Even if people embrace the vision, they seem a little disappointed by its current implementation. Let's hope it's only temporary 🤞.
+
+React Native has been particularly interesting this week. The [State of React Native](https://results.stateofreactnative.com/) survey results have been published, and the general feeling towards React Native is increasingly positive. There are also interesting bits related to Skia, Reanimated, or the bridgeless mode. The community is excited about Expo becoming a full-stack universal framework.
+
+Happy reading!
 
 <!-- truncate -->
 
@@ -44,9 +48,41 @@ Axiom efficiently captures 100% of your event data so you’ll never have to wor
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Next.js Explained](/emails/issues/172/ppr.jpg)](https://www.youtube.com/watch?v=MTcPrTIBkpA)
 
-- 💸[Accelerate your workflow with MightyMeld, a visual dev tool for React codebases. Drag, drop, click, and prompt your UI into place while you hand-code the rest of it.](https://www.mightymeld.com/?utm_source=thisweekinreact5&utm_medium=newsletter&utm_campaign=1&utm_content=top)
+🎥 [**Next.js Explained - Partial Prerendering**](https://www.youtube.com/watch?v=MTcPrTIBkpA)
+
+It’s is not often that a video makes the headlines here, but this one is different for a few reasons.
+
+First the topic is super interesting and well-explained with many animated visualizations. Partial pre-rendering is a [Next.js 14 experimental feature](https://nextjs.org/blog/next-14#partial-prerendering-preview) that completes the Next.js vision and offers the best of both worlds between static and dynamic rendering. This makes Next.js a multi-paradigm framework that supports all ranges of rendering diversity. This new feature is simple to adopt, builds on top of Suspense, and doesn’t introduce new APIs: you just need to turn a flag on.
+
+Second: this incredibly well-produced video has been created with [Remotion](https://www.remotion.dev/), using React web code 🙉. Good job Delba, you nailed it! We can’t wait to see more videos like this and to know more about your Remotion creative process. On a related note, the Remotion team just shared theirs with a [behind the scene of GitHub Unwrapped 2023](https://www.youtube.com/watch?v=WW8vIZ1kwR0).
+
+---
+
+- 💸 [Accelerate your workflow with MightyMeld, a visual dev tool for React codebases. Drag, drop, click, and prompt your UI into place while you hand-code the rest of it.](https://www.mightymeld.com/?utm_source=thisweekinreact5&utm_medium=newsletter&utm_campaign=1&utm_content=top)
+- 👀 [React core PR - react-server-dom-parcel package](https://github.com/facebook/react/pull/28138): Devon from Parcel working on a new bundler integration.
+- 👀 [Remix - support for Cloudflare through the Remix Vite plugin](https://github.com/remix-run/remix/tree/dev/templates/unstable-vite-cloudflare)
+- 🐦 [Partykit - Real-time React Server Component sneak-peek](https://twitter.com/threepointone/status/1751963277394116993)
+- 📜 [My first impressions of Panda CSS](https://newsletter.baptiste.devessier.fr/archive/my-first-impressions-of-panda-css/): Baptiste likes Tailwind but now prefers Panda for multiple reasons, including type-safety, the ability to group styles and make them more readable, and its out-of-the-box support for styles merging and variants.
+- 📜 [Fix Next.js Routing to Have Full Type-Safety](https://www.flightcontrol.dev/blog/fix-nextjs-routing-to-have-full-type-safety): the Next.js typedRoute experimental feature is not good enough. We can improve routing type-safety (route params, search params, linking…) thanks to a route builder API.
+- 📜 [Migrating to Next.js App Router: the good, bad, and ugly](https://www.flightcontrol.dev/blog/nextjs-app-router-migration-the-good-bad-and-ugly): Flightcontrol rebuilt from scratch their dashboard with Next.js App Router and share feedback. There are positive experiences, but overall their team would have chosen Remix instead, and they’d prefer to use another language than using the Next.js dev server again 😅 (note they are stuck on Next.js 13.5 and performance improved lately).
+- 📜 [How To Use forwardRef With Generic Components](https://www.totaltypescript.com/forwardref-with-generic-components): Matt wraps forwardRef to redefine its types and fix type inference problems.
+- 📜 [Updating public Next.js environment variables without rebuilds](https://phase.dev/blog/nextjs-public-runtime-variables/): the NEXT_PUBLIC env variables are inlined in the client bundles at build time. This proposes to use a find-and-replace script to update them without rebuilding.
+- 📜 [How to start a React Project in 2024](https://www.robinwieruch.de/react-starter/): Robin discusses the tradeoffs of starting a React project with Vite, Next.js or Astro.
+- 📜 [Including static files in App Router RSCs](https://www.hipstersmoothie.com/blog/posts/including-static-files-with-rscs): Shows usage of advanced Webpack features such as require.context and inline loaders.
+- 📜 [Take a Qwik Break from React with Astro](https://thenewstack.io/take-a-qwik-break-from-react-with-astro/): Paul compares Qwik and React over various examples. “Write code like React, Browser tastes of Vanilla”.
+- 📜 [Where do React Server Components fit in the history of web development?](https://dev.to/matfrana/where-do-react-server-components-fit-in-the-history-of-web-development-1l0f)
+- 📦 [Remix-Client-Cache - using clientLoader to cache server loader data](https://github.com/Code-Forge-Net/remix-client-cache)
+- 📦 [StyleX 0.5 - new stylex.attrs function, ESLint sort-keys rule, Babel aliases option, esbuild plugin](https://stylexjs.com/blog/v0.5.0)
+- 📦 [React Cosmos 6 - Sandbox for developing and testing UI components in isolation - RSC support, plugin system, integrations (Vite,Webpack, Next.js, RN), Lazy Mode, MDX fixtures…](https://github.com/react-cosmos/react-cosmos/releases/tag/v6.0.0)
+- 📦 [Panda CSS 0.29 - config validation, default values in patterns, media-quey tokens, color opacifier…,](https://github.com/chakra-ui/panda/discussions/2110)
+- 📦 [React-Live-Chat-Loader 2.9 - Performant live chat integration - Add support for HubSpot/Front](https://github.com/calibreapp/react-live-chat-loader/)
+- 📦 [fumadocs - powerful framework for building documentation sites in Next.js](https://github.com/fuma-nama/fumadocs)
+- 📦 [React Bricks 4.2 - RSC support](https://docs.reactbricks.com/docs/rsc/visual-components/)
+- 📦 [Redux Toolkit 2.1](https://github.com/reduxjs/redux-toolkit/releases/tag/v2.1.0)
+- 🎥 [Jack Herrington - Are RSCs and NextJS Really That Bad?](https://www.youtube.com/watch?v=u0OMdWJfdhg): compares side-by-side 3 cases where App Router has a much better DX than Page Router, and highlights how easy it is to encapsulate and distribute RSC logic inside a package.
+- 🎥 [Nadia Makarevich - Advanced React - All about memoization in React](https://www.youtube.com/watch?v=huBxeruVnAM)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -73,9 +109,46 @@ Dive into Clerk's [quickstarts and tutorials](https://clerk.com/docs/quickstarts
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+This section is now co-authored with [Benedikt](https://twitter.com/bndkt). Feel free to send us your comments by email or on [Twitter](https://twitter.com/bndkt)!
 
-- 💸[Moropo - Stop Losing Days to Detox and Build Meaningful Tests in Minutes](https://www.moropo.com?utm_source=newsletter&utm_medium=emails&utm_campaign=twir-20240131)
+[![State of React Native 2023 - Survey Results](/emails/issues/172/stateofrn.jpg)](https://results.stateofreactnative.com/)
+
+**[State of React Native 2023 - Survey Results](https://results.stateofreactnative.com/)**
+
+I’m a big fan of all the “State of …” surveys, because they give us a unique insight into what’s going on in the ecosystem. It’s one thing to follow the hype generated on X and elsewhere, but another thing to see stats of what developers actually use. So I’m really happy to see last year’s State of React Native results published! And as this is now the second year this survey is conducted, we can also identify some trends by comparing the results to the year before. For all the details, [have a look at the results yourself](https://results.stateofreactnative.com/)! I’ll just highlight a few things that I found interesting, some of them really surprised me:
+
+- State management continues to be in a very interesting state (pun intended), with Redux taking the last place in retention with only 44 % (down from 57 % last year), but still clinging to second place after React’s native capabilities in terms of usage with 78 % (down from 85 %).
+- Data fetching is a category where the results are in line with the amount of attention that can be observed on social media, with TanStack Query and tRPC taking top places in terms of interest and retention, and Meta’s own Relay staying mostly irrelevant outside of Meta with only 5 % usage.
+- The future of navigation is Expo Router, which exploded from 12 % usage last year to 40 % today.
+- Gauging by social media activity, styling seems to be the most talked about category with an abundance of options. In terms of usage, the classics (StyleSheet API, inline styling, styled components) remain the dominant options, with NativeWind and Tamagui catching up. Tamagui managed to generate the most interest in the past year (and also has the most retention and interest as a UI component library), closely followed by a new contender: react-native-unistyles.
+- Special shoutout to Expo: In the “React Native tools” section, 6 out of the top 10 tools as well as the top 2 options in the deployment category are made by Expo.
+- Over 85 % of respondents think that React Native is moving in the right direction and the share of developers that find that building RN apps is overly complex right now decreased from about 30 % to 25 % - that’s still too much, but we seem to be moving in the right direction!
+
+Overall, really interesting results that are worth [checking out](https://results.stateofreactnative.com/) in detail! Many thanks to Bartłomiej, Kacper and Software Mansion for making this happen!
+
+---
+
+- 💸 [Moropo - Stop Losing Days to Detox and Build Meaningful Tests in Minutes](https://www.moropo.com?utm_source=newsletter&utm_medium=emails&utm_campaign=twir-20240131)
+- 👀 [React Native 0.74 PR - Make bridgeless mode the default when the New Architecture is enabled](https://github.com/facebook/react-native/pull/42714)
+- 👀 [Reanimated PR - Generators support](https://github.com/software-mansion/react-native-reanimated/pull/5565): William Candillon feels productive writing animations with generators, and contributed this new feature to Reanimated (🐦 [demo](https://twitter.com/wcandillon/status/1751893521907261773))
+- 👀 [Flashlight React Native performance dashboard](https://app.flashlight.dev/projects/react-native): this uses Flashlight to measure performance all React Native versions over time. For now there’s only one FlatList-based scenario.
+- 🐦 [React Native visionOS - New 𝚂𝚙𝚊𝚝𝚒𝚊𝚕 API coming soon to](https://x.com/o_kwasniewski/status/1750532404245373434?s=20)
+- 📖 [Expo Docs - Using Sentry](https://docs.expo.dev/guides/using-sentry/): Using Sentry with Expo got way easier in SDK 50: Now only needs one dependency (@sentry/react-native), and doesn’t require you to configure hooks in app.json.
+- 📖 [Skia Docs - new Atlas component - efficiently draw a very large number of similar textures/images](https://shopify.github.io/react-native-skia/docs/shapes/atlas/): Here’s a great 🐦 [demo](https://twitter.com/alihdjr/status/1751175731533488464) to see it in action.
+- 🧑‍🎓 [Build and Deploy React Native Apps with Expo EAS - Free Egghead course from Expo’s Kadi Kraman](https://egghead.io/courses/build-and-deploy-react-native-apps-with-expo-eas-85ab521e)
+- 📜 [John Gruber - Apple’s Plans for the DMA in the European Union](https://daringfireball.net/2024/01/apples_plans_for_the_dma): Apple is introducing a host of changes to the App Store in response to demands by the EU, in a way that has by many press outlets been described as “malicious compliance.” (also see: 📖 [Apple Developer Docs](https://developer.apple.com/support/alternative-browser-engines/))
+- 📜 [Recommended practices for React Native Testing Library in 2024](https://mdj.hashnode.dev/recommended-practices-for-react-native-testing-library-in-2024): RNTL author Maciej shared tips for people that might know the library but maybe haven’t kept up with the latest changes and improvements (like screen API and semantic queries).
+- 📜 [Communicating with React Native Web Views](https://making.close.com/posts/react-native-webviews): Using web views can be a good way to reuse parts of a web app, but those parts can also feel disconnected from the native part - this article highlights how to avoid this by establishing communication between native and web.
+- 📜 [Building a PhotoRoom-like background remover app with React Native and Skia](https://medium.com/@ludwighenne/building-a-photoroom-like-background-remover-app-with-react-native-and-skia-%EF%B8%8F-540743c6ec0f)
+- 📦 [React Native Storybook 7](https://github.com/storybookjs/react-native/discussions/545): After some time, RN Storybook has finally catched up to the major version of the “parent project.”
+- 📦 [React Native 0.73.3 - Bug fixes](https://github.com/facebook/react-native/releases/tag/v0.73.3)
+- 📦 [vision-camera-resize-plugin 2.0: Full rewrite to C++, much faster performance, and customizeable cropping logic](https://github.com/mrousavy/vision-camera-resize-plugin/releases/tag/v2.0.0)
+- 📦 [Tamagui 1.88 - Biggest Tamagui release, brings Expo SDK 50 support, simplifies setup via new Metro plugin](https://github.com/tamagui/tamagui/releases/tag/v1.88.0)
+- 📦 [Create Expo Stack 2.4 - Starter with Expo SDK 50, Expo Router v3, NativeWind v4, Shopify’s Restyle, and Unistyles](https://github.com/danstepanov/create-expo-stack/releases/tag/create-expo-stack%402.4.0)
+- 🎙️ [RNR 286 - What’s new in React Native 0.73?](https://x.com/ReactNativeRdio/status/1751015494591918434?s=20)
+- 🎙️ [Rocket Ship 27 - React Native’s Superpower with Theo Browne](https://share.transistor.fm/s/5b8f8a1a)
+- 🎥 [Simon Grimm - Can this replace NextJS?](https://www.youtube.com/watch?v=gzehQxHxtfw): Expo Router becoming an universal full-stack React framework makes it a direct competitor to Next.js.
+- 🎥 [Theo Brown - Mobile Devs Hate Servers. Expo Wants To Fix That.](https://www.youtube.com/watch?v=2P0q1EdH_oQ)
 
 ---
 
@@ -91,14 +164,23 @@ Dive into Clerk's [quickstarts and tutorials](https://clerk.com/docs/quickstarts
 
 ## 🔀 Autre {#other}
 
-<Todo />
+- 📜 [Some use cases for CSS revert-layer - better isolation/encapsulation than shadow DOM](https://www.mayank.co/blog/revert-layer/)
+- 📜 [You Probably Don't Need eslint-config-prettier or eslint-plugin-prettier](https://www.joshuakgoldberg.com/blog/you-probably-dont-need-eslint-config-prettier-or-eslint-plugin-prettier/)
+- 📜 [The Web Component Success Story](https://jakelazaroff.com/words/the-web-component-success-story/)
+- 📜 [12 Modern CSS One-Line Upgrades](https://moderncss.dev/12-modern-css-one-line-upgrades/)
+- 📜 [Zed is now open source - Free modern Rust-based IDE](https://zed.dev/blog/zed-is-now-open-source)
+- 📦 [TypeScript 5.4 Beta - `NoInfer<T>`, closure type narrowing, groupBy…](https://devblogs.microsoft.com/typescript/announcing-typescript-5-4-beta/)
+- 📦 [Safari 17.4 beta - groupBy, withResolvers, @scope, ArrayBuffer, Intl improvements](https://developer.apple.com/documentation/safari-release-notes/safari-17_4-release-notes)
+- 📦 [Qwik 1.4 - JSX types changes, automatic Link prefetching, MPA navigation fallback](https://github.com/BuilderIO/qwik/releases/tag/v1.4.0)
+- 📦 [Lucia Auth 3.0 - greatly simplified lib, Oauth logic extrated to new “arctic” package](https://github.com/lucia-auth/lucia/discussions/1361)
+- 📦 [Shiki 1.0 beta.0 - Modern ESM syntax highlighter - merges back Shikiji into Shiki](https://github.com/shikijs/shiki/releases/tag/v1.0.0-beta.0)
+- 📦 [Adonis v6 - ESM, type-safety imrovements…](https://adonisjs.com/blog/adonisjs-v6-announcement)
+- 📦 [Deno 1.40 - Temporal API, meta.filename/dirname, decorators](https://deno.com/blog/v1.40)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/172/meme.jpg)](https://twitter.com/dabit3/status/1752143163546911036)
 
 A plus 👋
