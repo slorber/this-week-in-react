@@ -1,6 +1,6 @@
 ---
 slug: /173
-title: "React Hebdo #173: ..."
+title: "React Hebdo #173: Million, Storybook, visionOS, Expo, Conform, Next.js, Remix, Astro, Apollo, useFormStatus, Framer Motion, Ariakit, Reanimated, TypeScript, JQuery, Express, Interop..."
 authors: [slorber]
 date: 02-07-2024
 unlisted: true
@@ -8,10 +8,17 @@ unlisted: true
 
 Salut à tous !
 
-<Todo />
+Hi everyone!
 
-- 📅 [Conférence React Paris - 22 Mars](https://react.paris/): nouvelle conférence, les speakers ont déjà été annoncés.
-- 📅 [React Connection - 22 Avril](https://reactconnection.io/) + [React-Native Connection - 23 Avril](https://reactnativeconnection.io/): 2 jours de conférence web et mobile. CFP est ouvert jusqu'au 3 février.
+This week we have many great React articles and a few interesting releases. It seems that React is constantly being criticized, but overall, the arguments are always the same and many of them seems a bit outdated, and never acknowledging what React does better than other solutions.
+
+The React Native world is taken over by the official launch of Vision Pro!
+
+We are trying something new this week, with a very first [Twitter thread dedicated to React Native](https://twitter.com/bndkt/status/1755203992039424377). Let us know if you like it.
+
+The newsletter will be on a break next week. We'll be back the 21th of February 👋.
+
+I'd also like to ask you a small favor: can you reply to this e-mail with a simple "hello" or a comment? This helps increase our email deliverability. Thanks!
 
 <!-- truncate -->
 
@@ -44,9 +51,47 @@ Trusted by corporate clients such as The Weather Channel, Deel.com, La Banque Po
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Million 3.0](/emails/issues/173/million.jpg)](https://million.dev/blog/million-3)
+
+**[Million 3.0](https://million.dev/blog/million-3)**
+
+Million is an optimizing compiler for React. This new major version is a complete rewrite that fixes caveats of previous versions, handles more edge cases, brings a new optimized hydration system and improves stability.
+
+It looks like Million is planning to help us debug and maintain great web performance over time. According to their 🐦 [launch trailer](https://twitter.com/aidenybai/status/1753456530652107072), a million linter is on the roadmap.
+
+---
 
 - 💸 [Product for Engineers - PostHog's newsletter helping engineers build their product skills.](https://newsletter.posthog.com/?utm_source=twir&utm_campaign=twir)
+- 👀 [React Types PR - JSDoc comments](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/68409): Matt Pocock is working on increasing our DX when using React with TypeScript.
+- 📜 [Avoid using React’s `useFormStatus`](https://allanlasser.com/posts/2024-01-26-avoid-using-reacts-useformstatus): An interesting article presenting shortcomings of this new React hook. It requires to be used under a `<form>` element, yet placing a submit `<button>` outside a form is perfectly valid HTML. Suggests using an async transition as an alternative.
+- 📜 [Direction-aware animations in Framer Motion](https://sinja.io/blog/direction-aware-animations-in-framer-motion): A pleasant interactive article showing how to animate list/details views and carousel slides in the correct direction for enter/exist animations.
+- 📜 [Open Sourcing the Remix Website](https://remix.run/blog/oss-remix-dot-run): The Remix team think there are more benefits than drawbacks to open-source their website. You can now study how their homepage scroll experience is implemented, or how they SSR their docs pages.
+- 📜 [Dockerizing a Next.js Application with GitHub Actions](https://mxd.codes/articles/ci-cd-for-nextjs-with-github-actions): Builds the default Dockerfile provided by Vercel with appropriate env variables, and publishes it to your container registry.
+- 📜 [Removing React is just weakness leaving your codebase](https://begin.com/blog/posts/2024-01-26-removing-react-is-just-weakness-leaving-your-codebase): Interesting criticism I can’t really agree with 😅 to me React doesn’t change that often, existing code doesn’t need to be rewritten and CSS-in-JS, well we know runtime-based libs are a problem for a while… And even React devs today rely more and more on web fundamentals than ever.
+- 📜 [It feels like React is getting a bit of a kicking recently](https://piccalil.li/blog/react-is-getting-a-bit-of-a-kicking-recently/): A more nuanced reply to the criticism above. React isn’t perfect, but isn’t going anywhere, and the web platform doesn’t currently give us all the tools we need.
+- 📜 [How to stream files from Next.js Route Handlers](https://www.ericburel.tech/blog/nextjs-stream-files): Shows how to serve dynamic/generated files without loading them in memory. You might need to convert Node.js streams to web streams.
+- 📜 [How to Detect Clicks Anywhere on a Page in React](https://spacejelly.dev/posts/how-to-detect-clicks-anywhere-on-a-page-in-react): TIL about the event.composedPath() API.
+- 📜 [How streaming helps build faster web applications](https://vercel.com/blog/how-streaming-helps-build-faster-web-applications)
+- 📜 [Lessons Learned from Developing DevCycle's Next.js SDK](https://blog.devcycle.com/feature-flagging-with-next-js-lessons-learned-from-developing-devcycles-sdk/): Their feature-flag SDK had to support Server/Client Components, streaming and Suspense.
+- 📜 [How to generate responsive images on Remix with Unpic](https://unpic.pics/blog/responsive-images-on-remix/)
+- 📜 [Enhance Your React App's Scalability using Storybook and Chromatic](https://dainemawer.com/articles/enhance-your-react-apps-scalability-using-storybook-and-chromatic)
+- 📜 [Tale of a Refactor - Payment system](https://commerce.nearform.com/blog/2024/tale-of-a-refactor/)
+- 📜 [How we Increased Search Traffic by 20x in 4 Months with the Next.js App Router](https://hardcover.app/blog/next-js-app-router-seo)
+- 📜 [How I generate Open Graph images for my Astro-based blog](https://techsquidtv.com/blog/generating-open-graph-images-for-astro/)
+- 📜 [Building a blog with Next.js App Router and MDX](https://www.alexchantastic.com/building-a-blog-with-next-and-mdx)
+- 📜 [React Intersection Observer - A Practical Guide](https://www.builder.io/blog/react-intersection-observer)
+- 📦 [Storybook 8 Beta - RSC support, SWC compiler, Vitest, major performance and compatibility improvements, on-the-fly visual tests…](https://storybook.js.org/blog/storybook-8-beta/)
+- 📦 [Conform 1.0 - Type-safe progressive enhancement form validation library for Remix and Next.js](https://github.com/edmundhung/conform/releases/tag/v1.0.0)
+- 📦 [Safe NextJS Navigation - Typesafe navigation for NextJS App Router](https://github.com/lukemorales/next-safe-navigation)
+- 📦 [Astro 4.3 - i18n domains, html output control, ComponentProps utility type…](https://astro.build/blog/astro-430/)
+- 📦 [Apollo Client 3.9 - Suspense data-fetching, query preloading, memory optimizations, useQueryRefHandlers hook…](https://www.apollographql.com/blog/whats-new-in-apollo-client-3-9)
+- 📦 [Remix 2.6.0 - Cloudflare support for Vite plugin (unstable)](https://github.com/remix-run/remix/blob/main/CHANGELOG.md)
+- 📦 [Sonner 1.4 - Toast component](https://github.com/emilkowalski/sonner/releases/tag/v1.4.0)
+- 📦 [Ariakit 0.4 - better support for CSS animations and transitions](https://ariakit.org/changelog#040)
+- 📦 [React-resizable-panels 2.0 - Support for multi-panel resize](https://github.com/bvaughn/react-resizable-panels/releases/tag/2.0.0)
+- 🎥 [Lee Robinson - Next.js App Router Authentication (Sessions, Cookies, JWTs)](https://www.youtube.com/watch?v=DJvM2lSPn6w)
+- 🎥 [Jack Herrington - Five Application Killing React Anti-Patterns](https://www.youtube.com/watch?v=ZkQPxP4wlE8)
+- 🎙️ [Dan Abramov on React, RSCs, and the future](https://podrocket.logrocket.com/dan-abramov-react-rscs-future)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -73,9 +118,40 @@ Dive into Clerk's [quickstarts and tutorials](https://clerk.com/docs/quickstarts
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+This section is now co-authored with [Benedikt](https://twitter.com/bndkt), and we also have a new [React Native thread on Twitter](https://twitter.com/bndkt/status/1755203992039424377)! Please let us know if you like it, and support us with a like or retweet 😍.
+
+[![Announcing React Native for Apple Vision Pro](/emails/issues/173/visionos.jpg)](https://www.callstack.com/blog/announcing-react-native-for-apple-vision-pro)
+
+**[Announcing React Native for Apple Vision Pro](https://www.callstack.com/blog/announcing-react-native-for-apple-vision-pro)**
+
+Last week, Apple released their Apple Vision Pro, and at least parts of the React Native community are excited about a new platform for which they’ll be able to build experiences with their favorite framework. There are two different approaches (🐦 [side-by-side comparison](https://twitter.com/o_kwasniewski/status/1754520654219493408)) to bring React Native onto visionPro:
+
+- Similar to how you can run an iOS app on macOS you can check a box in App Store Connect and enable your app to run on visionOS “as is,” using compatibility mode. Check out how 🐦 [Evan Bacon provisions, builds, and installs an Expo app on visionPro in under 10 minutes](https://twitter.com/Baconbrix/status/1753927218697208102). Apps in compatibility mode don’t take advantage of the “spatial computing” capabilities of visionOS though, they’re merely an iPad screen shown in the room.
+
+- To build apps that are truly optimized for this new world, additional native capabilities need to be adapted. And that is exactly what this new visionOS platform is doing, driven by Oskar Kwaśniewski and brought to us by Callstack.
+
+It’s early days, but it's super exciting to see RN embrace a new platform so quickly! The very first React Native visionOS app [Spacial Noise](https://apps.apple.com/us/app/spatial-noise/id6477335349) is already available on the App Store.
+
+---
 
 - 💸 [Moropo - Mobile Testing Infrastructure That Integrates Seamlessly With Expo EAS ](https://www.moropo.com?utm_source=newsletter&utm_medium=emails&utm_campaign=twir-20240207)
+- 👀 [RFC - React Native Frameworks](https://github.com/react-native-community/discussions-and-proposals/pull/759): Did you ever wonder where the boundary between React Native, Expo, and other community tools is? Lines are blurry, and this RFC aims to clarify things by introducing the concept of “React Native Frameworks.”
+- 👀 [CSS4 color functions](https://github.com/facebook/react-native/pull/42831) and [DisplayP3 color](https://github.com/facebook/react-native/pull/42830): More color options (e.g. Wide Gamut) coming to React Native.
+- 🐦 [Expo is dogfooding Expo web and Expo Router on their new blog](https://twitter.com/Baconbrix/status/1755026874047123843)
+- 🐦 [Shopify continues to bet on React Native](https://x.com/mustafa01ali/status/1753477532668600653?s=20)
+- 📖 [Expo Docs - Build Expo apps for TV](https://x.com/expo/status/1754208200935518292?s=20): “React Native everywhere” is becoming more true every day. Thanks to Expo config plugins, experimental support for Apple TV and Android TV is now directly available. This is a super exciting development, which I’m sure will continue with macOS, visionOS, …
+- 📖 [Improved Metro bundler docs from Expo](https://docs.expo.dev/guides/customizing-metro/): Explaining how bundle splitting, tree shaking, and minification work and and how Metro is now also used for the web.
+- 📜 [What every dev should know about using Environment Variables](https://expo.dev/blog/what-are-environment-variables): Handling environment variables in RN correctly is critical, as you otherwise run the risk of shipping (and therefore exposing) secrets to the client.
+- 📜 [Fingerprint your native runtime with @expo/fingerprint](https://expo.dev/blog/fingerprint-your-native-runtime): Determining whether an update to the JS bundle of a RN app requires a new native build is a tricky question. With SDK 50, Expo released Fingerprint, which basically creates a single hash value representing all the “native surface area” of a RN app and can then be used to trigger a new native build.
+- 📜 [6 reasons to use EAS Update](https://expo.dev/blog/6-reasons-to-use-eas-update): Did you know about the republish feature? I didn’t, before reading this article. In case of a messed up upgrade, you can quickly republish a previous (working) update!
+- 📜 [How to add a new target to your file with Expo config plugin?](https://www.reactnativecrossroads.com/posts/config-plugin-expo-add-target)
+- 📦 [React Native Storybook 7 - CSF 3, TypeScript, Markdown, Automatic story loading, Auto-generation for controls](https://storybook.js.org/blog/react-native-storybook-7/)
+- 📦 [React Native Test App 3.1 - Support for bridgeless mode](https://github.com/microsoft/react-native-test-app/releases/tag/3.1.0)
+- 🎥 [William Candillon - JavaScript Animations in 2024](https://www.youtube.com/watch?v=AHh3Bt7JpRs): The next version of Reanimated will support JavaScript generators. William rewrites 3 of his custom Reanimated animation examples to generators, using yields in a while (true) loop.
+- 🎥 [Simon Grimm - The Time for React Native is Now](https://www.youtube.com/watch?v=COH_XhlMyZ4)
+- 🎙️ [RNR 287 - Special Guest - Charlie Cheever](https://reactnativeradio.com/episodes/rnr-287-special-guest-charlie-cheever): To me it was always clear that Expo was meant to be a layer on top of React Native. But did you know that Charlie Cheever and James Ide started working on Expo before React Native was even around?
+- 🎙️ [Rocket Ship 28 - Expo Router & Universal React Native Apps with Evan Bacon](https://share.transistor.fm/s/e9f2b98e)
+- 🎙️ [The React Native Show 34 - Results of the State of React Native 2023 Survey](https://www.callstack.com/podcasts/state-of-react-native-2023)
 
 ---
 
@@ -86,19 +162,28 @@ Dive into Clerk's [quickstarts and tutorials](https://clerk.com/docs/quickstarts
 - 🎥 [Next.js 14 et supabase](https://www.youtube.com/watch?v=ANGGGlMT3ZA&list=PLVq2Nd186wZEEPmW5Un25YZ0B0qC4GLag)
 - 🎥 [Actus JS de la semaine - Husky v9 qui se simplifie! Adonis, React-Admin](https://www.youtube.com/watch?v=ryIZaqcKfHM)
 - 🎥 [Ma stack ultime pour créer un SaaS en 2024](https://www.youtube.com/watch?v=myfwQIyc5S0)
+- 📅 [Conférence React Paris - 22 Mars](https://react.paris/): nouvelle conférence, les speakers ont déjà été annoncés.
+- 📅 [React Connection - 22 Avril](https://reactconnection.io/) + [React-Native Connection - 23 Avril](https://reactnativeconnection.io/): 2 jours de conférence web et mobile. CFP est ouvert jusqu'au 3 février.
 
 ---
 
 ## 🔀 Autre {#other}
 
-<Todo />
+- 👀 [Interop 2024 Dashboard - What browsers will prioritize this year](https://wpt.fyi/interop-2024)
+- 👀 [Express Forward - The plan for Express v5, v6, v7](https://github.com/expressjs/discussions/issues/160)
+- 📜 [The next evolution of serverless is stateful](https://sunilpai.dev/posts/the-future-of-serverless/)
+- 📜 [TotalTypeScript - Method Shorthand Syntax Considered Harmful](https://www.totaltypescript.com/method-shorthand-syntax-considered-harmful)
+- 📜 [TotalTypeScript - When 'as never' Is The Only Thing That Works](https://www.totaltypescript.com/as-never)
+- 📜 [Squeezing Last Bit Of JavaScript Performance For My Automation Game](https://ruoyusun.com/2024/01/23/cividle-optimization.html)
+- 📜 [How to Favicon in 2024: Six files that fit most needs](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs)
+- 📜 [Using branded types in validators](https://stack.convex.dev/using-branded-types-in-validators)
+- 📦 [Turborepo 1.12](https://turbo.build/blog/turbo-1-12-0)
+- 📦 [jQuery 4.0.0 beta](https://blog.jquery.com/2024/02/06/jquery-4-0-0-beta/)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/173/meme.jpg)](https://twitter.com/wesbos/status/1754347448623890719)
 
 A plus 👋
