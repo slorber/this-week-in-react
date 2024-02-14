@@ -112,7 +112,7 @@ const config = {
   ],
 
   plugins: [
-    "@slorber/plugin-vercel-analytics",
+    "vercel-analytics",
     ["./plugins/gtm", { trackingID: "GTM-TRTJQ6M" }],
     [
       "content-blog",
