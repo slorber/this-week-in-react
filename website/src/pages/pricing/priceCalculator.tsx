@@ -35,7 +35,7 @@ function computeBundlePrice(state: State): {
   const pricesX4 = computePriceLevel(4);
   const pricesX8 = computePriceLevel(8);
 
-  console.log({ pricesX1, pricesX2, pricesX4, pricesX8 });
+  // console.log({ pricesX1, pricesX2, pricesX4, pricesX8 });
 
   if (pricesX1 < 1200) {
     return { level: 1, range: { min: 0, max: 1200 }, price: pricesX1 };
@@ -62,7 +62,7 @@ export default function PriceCalculator(): ReactNode {
 
   const { price, level, range } = computeBundlePrice(state);
 
-  console.log({ price });
+  // console.log({ price });
 
   function createSlotLine(label: string, offer: keyof typeof state) {
     return (

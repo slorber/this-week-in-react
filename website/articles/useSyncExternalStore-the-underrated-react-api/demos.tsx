@@ -17,11 +17,13 @@ function CurrentHash() {
 function Links() {
   return (
     <RenderBox title="Links">
-      <Link to="#link1">#link1</Link>
-      <Link to="#link2" style={{ marginLeft: "2rem" }}>
+      <Link to="#link1" data-noBrokenLinkCheck>
+        #link1
+      </Link>
+      <Link to="#link2" data-noBrokenLinkCheck style={{ marginLeft: "2rem" }}>
         #link2
       </Link>
-      <Link to="#link3" style={{ marginLeft: "2rem" }}>
+      <Link to="#link3" data-noBrokenLinkCheck style={{ marginLeft: "2rem" }}>
         #link3
       </Link>
     </RenderBox>
