@@ -1,6 +1,6 @@
 ---
 slug: /174
-title: "This Week In React #174: ..."
+title: "This Week In React #174: ReactLabs, React-Strict-DOM, Forget, Remix, Hono, Redwood, Isograph, SafeTest, React-Aria, Reanimated, RNGH, Expo, RN+TV, VisionCamera, Hermes, TC39, LLRT, Vite..."
 authors: [slorber]
 date: 02-22-2024
 unlisted: true
@@ -83,25 +83,25 @@ An important release for Remix, stabilizing the Vite plugin and the SPA mode, pr
 - 📜 [What we've learned from the transition to Next.js 14 with Server Components](https://medusajs.com/blog/client-server-transition-learnings-nextjs-14-server-components/): Medusa e-commerce framework recently upgraded their Next.js starter template. Presents interesting side-by-side code comparisons. After getting used to the RSC model, it greatly simplifies your code.
 - 📜 [React Trends in 2024](https://www.robinwieruch.de/react-trends/): Robin Wieruch sharing his annual list of exciting React trends to follow.
 - 📜 [UI = f(statesⁿ)](https://daverupert.com/2024/02/ui-states/): Dave lists all the kind of states than can affect your UI. This formula strongly reminds React, but the post remains generic.
-- 📜 [How to do Incremental Static Regeneration and advanced caching with Remix](https://developers.netlify.com/guides/how-to-do-isr-and-advanced-caching-with-remix/)
+- 📜 [Clean Architecture in React](https://alexkondov.com/full-stack-tao-clean-architecture-react/)
 - 📜 [Global state with XState and React](https://stately.ai/blog/2024-02-12-xstate-react-global-state)
 - 📜 [What is Astro?](https://www.eddyvinck.com/blog/what-is-astro/)
 - 📜 [OpenTask - A Next.js App Router Case Study](https://flsilva.com/blog/opentask-nextjs-app-router-case-study/)
-- 📜 [Remix Takes on Next.js in Battle of the React Frameworks](https://thenewstack.io/remix-takes-on-next-js-in-battle-of-the-react-frameworks/)
 - 📜 [How to Build a Blog with Next.js App Router & Headless Hashnode](https://spacejelly.dev/posts/how-to-build-a-blog-with-next-js-app-router-headless-hashnode)
 - 📜 [Simplifying Form Rendering In React with Field Component Abstraction](https://claritydev.net/blog/abstract-react-form-fields-with-field-component)
 - 📜 [Password protecting routes in Next.js App Router](https://www.alexchantastic.com/password-protecting-next)
 - 📜 [Syntax Highlighting with Shiki, React Server Components, and Next.js](https://www.luckymedia.dev/blog/syntax-highlighting-with-shiki-react-server-components-and-next-js)
-- 📜 [Clean Architecture in React](https://alexkondov.com/full-stack-tao-clean-architecture-react/)
 - 📜 [How to optimize the DOM size in React JS?](https://scientyficworld.org/how-to-optimize-the-dom-size-in-react-js/)
+- 📜 [How to do Incremental Static Regeneration and advanced caching with Remix](https://developers.netlify.com/guides/how-to-do-isr-and-advanced-caching-with-remix/)
 - 📦 [Hono 4.0 - Static Site Generation, client components, file-based routing](https://github.com/honojs/hono/releases/tag/v4.0.0): It’s super interesting to see the Hono web framework supporting client-side React-like hooks such as useState, moving in the opposite direction of React (from the server to the client). Hono is maintained by a Cloudflare dev, and I wouldn’t be surprised to see this company seriously enter the “frontend framework war”. And we are still 🐦 [waiting for Aviation](https://twitter.com/GregBrimble/status/1758007869759189036), another React RSC framework from a Cloudflare dev.
-- 📦 [Isograph 0.1.0:](https://isograph.dev/blog/2024/02/15/isograph-0.1.0/) New modern React GraphQL client coming from an ex-Meta Relay maintainer just reached alpha stage.
+- 📦 [Isograph 0.1.0](https://isograph.dev/blog/2024/02/15/isograph-0.1.0/) New modern React GraphQL client coming from an ex-Meta Relay maintainer just reached alpha stage milestone.
 - 📦 [SafeTest - A Novel Approach to Front End Testing](https://netflixtechblog.com/introducing-safetest-a-novel-approach-to-front-end-testing-37f9f88c152d): The Netflix team introduced a novel approach to frontend testing, combining React, Jest/Vitest and Playwright, and aiming to solve respective shortcomings of both Integration (RTL) and E2E tests at once.
 - 📦 [React Aria February 13, 2024 Release](https://react-spectrum.adobe.com/releases/2024-02-13.html): Introducing a new submenu feature in alpha (🐦 [demo](https://twitter.com/devongovett/status/1757540075636744236))
 - 📦 [Redwood 7.0 - Redwood Studio, GraphQL realtime, GraphQL fragments, Node 20, server entrypoint…](https://community.redwoodjs.com/t/redwood-v7-0-0-is-now-available/5777)
 - 📦 [Waku v0.19.3 introduces RSC hot reload support in development mode](https://github.com/dai-shi/waku/blob/main/CHANGELOG.md#0193---2024-02-14)
 - 📦 [Astro 4.4 - All about performance](https://astro.build/blog/astro-440/)
 - 📦 [Starlight 0.19 - Custom pages](https://starlight.astro.build/guides/pages/#custom-pages)
+- 📦 [rsc-html-stream - Inject an RSC payload into an HTML stream and read it back](https://github.com/devongovett/rsc-html-stream)
 - 📦 [react-print-pdf](https://github.com/OnedocLabs/react-print-pdf)
 - 📦 [Storybook’s Visual Tests addon enters beta](https://storybook.js.org/blog/visual-tests-addon-beta/)
 - 🎥 [Ben Holmes - React Suspense from scratch!](https://www.youtube.com/watch?v=cdOyOgwt9Zc)
@@ -153,7 +153,6 @@ There’s still a long way to go when you look at the current [compatibility sta
 
 ---
 
-- 👀 [react-strict-dom](https://github.com/facebook/react-strict-dom): Brand new repo by meta, stated aim is to “standardize development of styled React components for web AND native.”
 - 👀 [Hermes PR - Add Support for ES2023 Array non-mutating methods](https://github.com/facebook/hermes/commit/b30f0e453d82594654810730211e092415aa6a3c): ES support in Hermes is improving. About Hermes, see also [this discussion](https://github.com/awslabs/llrt/issues/110#issuecomment-1939825912) discussion related to using it in AWS LLRT as a runtime for AWS lambdas / serverless functions.
 - 💬 [Lorenzo Sciandra - Status recap for react-native-macos](https://github.com/microsoft/react-native-macos/issues/1935#issuecomment-1935714556): TLDR: It’s alive and kicking, but a lot of work is going into keeping up with upstream. Also, it’s actively used by MS and Meta!
 - 📜 React Native on TVs: [Expo blog article](https://expo.dev/blog/how-to-build-tv-apps) and [ReactNativeTV.com](https://www.reactnativetv.com/)
