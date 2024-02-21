@@ -44,7 +44,9 @@ Axiom efficiently captures 100% of your event data so you’ll never have to wor
 
 ## ⚛️ React {#react}
 
-[React Labs - What We've Been Working On – February 2024](https://react.dev/blog/2024/02/15/react-labs-what-we-have-been-working-on-february-2024)
+[![React Labs - What We've Been Working On – February 2024](/emails/issues/174/react-labs.jpg)](https://react.dev/blog/2024/02/15/react-labs-what-we-have-been-working-on-february-2024)
+
+**[React Labs - What We've Been Working On – February 2024](https://react.dev/blog/2024/02/15/react-labs-what-we-have-been-working-on-february-2024)**
 
 This week brought us the first official update from React Labs since almost exactly one year ago, and they dropped some exciting announcements. We already covered many of them here, but it’s good to have an official summary!
 
@@ -61,9 +63,11 @@ See also:
 - 🐦 [Andrew Clark’s tweet](https://twitter.com/acdlite/status/1758229889595977824) containing interesting extras I first hear about, such as React refs becoming normal props, or the ability to use `<Context>` instead of `<Context.Provider>`.
 - 🎥 [Theo Browne’s summary video - React 19 Is Here - Are You Ready?](https://www.youtube.com/watch?v=B-tjhF7ojeA)
 
-—
+—--
 
-[Remix 2.7 - Remix Vite is Now Stable](https://remix.run/blog/remix-vite-stable)
+[![Remix 2.7 - Remix Vite is Now Stable](/emails/issues/174/remix-vite.jpg)](https://remix.run/blog/remix-vite-stable)
+
+**[Remix 2.7 - Remix Vite is Now Stable](https://remix.run/blog/remix-vite-stable)**
 
 An important release for Remix, stabilizing the Vite plugin and the SPA mode, proper support for Cloudflare Pages, introducing a preset system, and shipping many other useful improvements. An upcoming dedicated post will likely detail how the new SPA mode will help Vite + React Router apps transition to Remix without having to introduce a server runtime. If you are still using Create-React-App, it might be a good time to consider migrating to Vite!
 
@@ -135,9 +139,15 @@ This section is now co-authored with [Benedikt](https://twitter.com/bndkt). Feel
 
 ---
 
-Meta not only dropped some big news regarding React this week. Today, a brand new repo showed up on GitHub: [react-strict-dom](https://github.com/facebook/react-strict-dom). The readme describes it as an “experimental integration of React DOM and StyleX that aims to improve and standardize the development of styled React components for web and native.” It is based on the ideas from the [“React DOM for Native” RFC](https://github.com/react-native-community/discussions-and-proposals/pull/496) and in my opinion could be huge for how we think about universal app development in the future. Today, the most common approach for universal apps for RN ist React Native Web, which shims RN components and APIs on the web. And while RNW is really great, it often feels like shoehorning one platform into another. The premise of react-strict-dom is that there is a single DOM library which universally supports web, iOS, and Android (and potentially more platforms in the future). The element API is based on web, which is why you see the very HTML-like syntax in the screenshot above.
+[![React Strict DOM](/emails/issues/174/strict-dom.jpg)](https://github.com/facebook/react-strict-dom)
 
-As always, Dan Abramov is the best in expressing the idea in a concise [tweet](https://twitter.com/dan_abramov2/status/1760245165703184516): “Looks like a spiritual successor to RNW, but approached from the other direction (web APIs won, so RN is building support for a strict subset). Essentially, you’ll be able to render a `<div>` in RN.”
+**[React Strict DOM](https://github.com/facebook/react-strict-dom)**
+
+Meta not only dropped some big news regarding React this week. Today, a brand-new repo showed up on GitHub: [react-strict-dom](https://github.com/facebook/react-strict-dom). The readme describes it as an “experimental integration of React DOM and StyleX that aims to improve and standardize the development of styled React components for web and native.” It is based on the ideas from the [“React DOM for Native” RFC](https://github.com/react-native-community/discussions-and-proposals/pull/496) and in my opinion could be huge for how we think about universal app development in the future. Today, the most common approach for universal apps for RN ist React Native Web, which shims RN components and APIs on the web. And while RNW is really great, it often feels like shoehorning one platform into another. The premise of react-strict-dom is that there is a single DOM library which universally supports web, iOS, and Android (and potentially more platforms in the future). The element API is based on web, which is why you see the very HTML-like syntax in the screenshot above.
+
+As always, Dan Abramov is the best in expressing the idea in a concise 🐦 [tweet](https://twitter.com/dan_abramov2/status/1760245165703184516):
+
+> “Looks like a spiritual successor to RNW, but approached from the other direction (web APIs won, so RN is building support for a strict subset). Essentially, you’ll be able to render a `<div>` in RN.”
 
 There’s still a long way to go when you look at the current [compatibility status](https://github.com/facebook/react-strict-dom/blob/main/packages/react-strict-dom/COMPATIBILITY.md), but this is certainly an exciting milestone on a more universal React!
 
