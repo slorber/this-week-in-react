@@ -1,16 +1,19 @@
 ---
 slug: /174
-title: "React Hebdo #174: ..."
+title: "React Hebdo #174: ReactLabs, React-Strict-DOM, Forget, Remix, Hono, Redwood, Isograph, SafeTest, React-Aria, RN 0.74 RC, Reanimated, RNGH, Expo, RN+TV, VisionCamera, Hermes, TC39, LLRT, Vite..."
 authors: [slorber]
 date: 02-22-2024
-unlisted: true
 ---
 
 Salut à tous !
 
-<Todo />
+J'ai fait une petite pause la semaine dernière, nous rattrapons donc deux semaines de news, et il y en a eu **beaucoup** ! Beaucoup d'entre vous aiment la nature exhaustive de mes emails, alors... amusez-vous bien à lire tous ces liens 😅 ! D'ailleurs cet email est tellement long que Gmail le tronque. Pour une meilleure expérience de lecture pour les utilisateurs Gmail, vous pouvez consulter la [version en ligne](https://thisweekinreact.com/fr/newsletter/174).
 
-Promo [react.paris](http://react.paris) + [reactconnection.io](http://reactconnection.io)
+Nous avons de grosses updates de Meta, avec le blog post annuel R&D de React Labs dont vous êtes probablement déjà au courant, et plus récemment la sortie de React Strict DOM pour les adeptes du cross-platform. Je suis également impatient de voir Remix franchir un milestone important avec la v2.7 qui marque le début de la Grande Migration des apps React Router vers le mode Remix SPA.
+
+Vous souhaitez participer à la [React Conf 2024](https://conf.react.dev/) (15-16 mai au Nevada) ? Il reste qu'une semaine pour [gagner un billet de loterie](https://forms.reform.app/bLaLeE/react-conf-2024-ticket-lottery/1aRQLK), ou envoyer votre présentation au [CFP](https://sessionize.com/react-conf-2024/).
+
+🇫🇷 **IMPORTANT**: j'ai pris la lourde décision d'arrêter de traduire cet email en français. Je sais que le contenu localisé était très apprécié, mais les liens sont déjà en anglais, et j'utilise plein d'anglicismes. Cela ne veut pas dire que je ferme la porte au contenu localisé, mais c'est devenu difficile pour moi de rajouter cette tâche supplémentaire dans mon workflow, qui fait d'ailleurs souvent partir cet email le jour suivant. Cependant, je prévois toujours d'inclure une section "En français" dans vos emails avec quelques liens localisés, et nous allons voir comment traduire la [version en ligne](https://thisweekinreact.com/fr/newsletter/174) de la newsletter de manière asynchrone et communautaire, après l'envoi de l'email. Si vous souhaitez m'aider à traduire le contenu, n'hésitez pas à me contacter.
 
 <!-- truncate -->
 
@@ -44,9 +47,70 @@ Axiom efficiently captures 100% of your event data so you’ll never have to wor
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![React Labs - What We've Been Working On – February 2024](/emails/issues/174/react-labs.jpg)](https://react.dev/blog/2024/02/15/react-labs-what-we-have-been-working-on-february-2024)
+
+**[React Labs - What We've Been Working On – February 2024](https://react.dev/blog/2024/02/15/react-labs-what-we-have-been-working-on-february-2024)**
+
+This week brought us the first official update from React Labs since almost exactly one year ago, and they dropped some exciting announcements. We already covered many of them here, but it’s good to have an official summary!
+
+React Forget is 🐦 [now just called React Compiler](https://twitter.com/en_JS/status/1758224340880158955) and it seems that the production 🐦 [Instagram rollout](https://twitter.com/sebastienlorber/status/1734607171030303186) has been successful.
+
+The next React release will be a major version. React 19 is around the corner, and there’s a certain [conference](https://conf.react.dev/) that would lend itself to such an announcement 😏. The release will also include built-in support for managing page metadata (built-in support for what React-Helmet did for us, with proper streaming support), Asset Loading (including Suspense integration) and Actions for sending data from client to server. The surface area that meta-frameworks like Next.js and Remix need to cover with proprietary implementations is shrinking.
+
+One of the most underrated upcoming React features, the Offscreen API (named as Activity), is temporarily deprioritized to focus on React 19. We’ll have to wait a bit more to fully leverage the concurrent model introduced by React 18.
+
+Overall, it’s an exciting time to be a React developer, and we look forward to the next major version!
+
+See also:
+
+- 🐦 [Andrew Clark’s tweet](https://twitter.com/acdlite/status/1758229889595977824) containing interesting extras I first hear about, such as React refs becoming normal props, or the ability to use `<Context>` instead of `<Context.Provider>`.
+- 🎥 [Theo Browne’s summary video - React 19 Is Here - Are You Ready?](https://www.youtube.com/watch?v=B-tjhF7ojeA)
+
+---
+
+[![Remix 2.7 - Remix Vite is Now Stable](/emails/issues/174/remix-vite.jpg)](https://remix.run/blog/remix-vite-stable)
+
+**[Remix 2.7 - Remix Vite is Now Stable](https://remix.run/blog/remix-vite-stable)**
+
+An important release for Remix, stabilizing the Vite plugin and the SPA mode, proper support for Cloudflare Pages, introducing a preset system, and shipping many other useful improvements. An upcoming dedicated post will likely detail how the new SPA mode will help Vite + React Router apps transition to Remix without having to introduce a server runtime. If you are still using Create-React-App, it might be a good time to consider migrating to Vite!
+
+---
 
 - 💸 [React Component Analytics — Omlet Scans Your Codebase to Measure Component Usage to Increase Code Quality and Design Systems Adoption](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-quick-link-feb-2024)
+- 🐦 [Next.js DevTools preview - visualize what gets pre-rendered, stream, caches, etc…](https://twitter.com/rauchg/status/1757402186060083272)
+- 👀 [React Docs PR - Add useFormStatus pitfall example](https://github.com/reactjs/react.dev/pull/6620): The new useFormStatus hook requires to be nested under a `<form>` component that acts like a provider. When that’s not possible, you can reimplement it thanks to startTransition
+  👀 [React PR - Move all client code to react-dom/client](https://github.com/facebook/react/pull/28271)
+- 📜 [HTML Streaming and DOM Diffing Algorithm](https://aralroca.com/blog/html-node-streaming): Present various contexts in which streaming can be used. Including a simplified example of how React Suspense works.
+- 📜 [React 19 Will Be Compiled](https://reacttraining.com/blog/react-19-will-be-compiled): Explains memoization and gives an interesting perspective on the “compilation spectrum” of frameworks. React 19 with a compiler will remain less compiled than Svelte.
+- 📜 [React, Solid, htmx - how far can they go?](https://bobaekang.com/blog/react-solid-htmx/): Interesting thoughts of different approaches to bridge the “network chasm”.
+- 📜 [What we've learned from the transition to Next.js 14 with Server Components](https://medusajs.com/blog/client-server-transition-learnings-nextjs-14-server-components/): Medusa e-commerce framework recently upgraded their Next.js starter template. Presents interesting side-by-side code comparisons. After getting used to the RSC model, it greatly simplifies your code.
+- 📜 [React Trends in 2024](https://www.robinwieruch.de/react-trends/): Robin Wieruch sharing his annual list of exciting React trends to follow.
+- 📜 [UI = f(statesⁿ)](https://daverupert.com/2024/02/ui-states/): Dave lists all the kind of states than can affect your UI. This formula strongly reminds React, but the post remains generic.
+- 📜 [Clean Architecture in React](https://alexkondov.com/full-stack-tao-clean-architecture-react/)
+- 📜 [Global state with XState and React](https://stately.ai/blog/2024-02-12-xstate-react-global-state)
+- 📜 [What is Astro?](https://www.eddyvinck.com/blog/what-is-astro/)
+- 📜 [OpenTask - A Next.js App Router Case Study](https://flsilva.com/blog/opentask-nextjs-app-router-case-study/)
+- 📜 [How to Build a Blog with Next.js App Router & Headless Hashnode](https://spacejelly.dev/posts/how-to-build-a-blog-with-next-js-app-router-headless-hashnode)
+- 📜 [Simplifying Form Rendering In React with Field Component Abstraction](https://claritydev.net/blog/abstract-react-form-fields-with-field-component)
+- 📜 [Password protecting routes in Next.js App Router](https://www.alexchantastic.com/password-protecting-next)
+- 📜 [Syntax Highlighting with Shiki, React Server Components, and Next.js](https://www.luckymedia.dev/blog/syntax-highlighting-with-shiki-react-server-components-and-next-js)
+- 📜 [How to optimize the DOM size in React JS?](https://scientyficworld.org/how-to-optimize-the-dom-size-in-react-js/)
+- 📜 [How to do Incremental Static Regeneration and advanced caching with Remix](https://developers.netlify.com/guides/how-to-do-isr-and-advanced-caching-with-remix/)
+- 📦 [Hono 4.0 - Static Site Generation, client components, file-based routing](https://github.com/honojs/hono/releases/tag/v4.0.0): It’s super interesting to see the Hono web framework supporting client-side React-like hooks such as useState, moving in the opposite direction of React (from the server to the client). Hono is maintained by a Cloudflare dev, and I wouldn’t be surprised to see this company seriously enter the “frontend framework war”. And we are still 🐦 [waiting for Aviation](https://twitter.com/GregBrimble/status/1758007869759189036), another React RSC framework from a Cloudflare dev.
+- 📦 [Isograph 0.1.0](https://isograph.dev/blog/2024/02/15/isograph-0.1.0/) New modern React GraphQL client coming from an ex-Meta Relay maintainer just reached alpha stage milestone.
+- 📦 [SafeTest - A Novel Approach to Front End Testing](https://netflixtechblog.com/introducing-safetest-a-novel-approach-to-front-end-testing-37f9f88c152d): The Netflix team introduced a novel approach to frontend testing, combining React, Jest/Vitest and Playwright, and aiming to solve respective shortcomings of both Integration (RTL) and E2E tests at once.
+- 📦 [React Aria February 13, 2024 Release](https://react-spectrum.adobe.com/releases/2024-02-13.html): Introducing a new submenu feature in alpha (🐦 [demo](https://twitter.com/devongovett/status/1757540075636744236))
+- 📦 [Redwood 7.0 - Redwood Studio, GraphQL realtime, GraphQL fragments, Node 20, server entrypoint…](https://community.redwoodjs.com/t/redwood-v7-0-0-is-now-available/5777)
+- 📦 [Waku v0.19.3 introduces RSC hot reload support in development mode](https://github.com/dai-shi/waku/blob/main/CHANGELOG.md#0193---2024-02-14)
+- 📦 [Astro 4.4 - All about performance](https://astro.build/blog/astro-440/)
+- 📦 [Starlight 0.19 - Custom pages](https://starlight.astro.build/guides/pages/#custom-pages)
+- 📦 [rsc-html-stream - Inject an RSC payload into an HTML stream and read it back](https://github.com/devongovett/rsc-html-stream)
+- 📦 [react-print-pdf](https://github.com/OnedocLabs/react-print-pdf)
+- 📦 [Storybook’s Visual Tests addon enters beta](https://storybook.js.org/blog/visual-tests-addon-beta/)
+- 🎥 [Ben Holmes - React Suspense from scratch!](https://www.youtube.com/watch?v=cdOyOgwt9Zc)
+- 🎥 [Ryan Toronto - Out-of-order streaming in React](https://www.youtube.com/watch?v=23bHSDJD9y4)
+- 🎥 [Nadia Makarevich - Mastering React Reconciliation](https://www.youtube.com/watch?v=cyAbjx0mfKM)
+- 🎥 [Jack Herrington - Are Your React Components Too BIG?](https://www.youtube.com/watch?v=NsFmOttIW9Y)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -74,7 +138,51 @@ TWIR exclusive: [Get 25% off your FormBuilder SDK license](https://tripetto.com/
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+This section is now co-authored with [Benedikt](https://twitter.com/bndkt). Feel free to send us your comments by email or on [Twitter](https://twitter.com/bndkt)!
+
+---
+
+[![React Strict DOM](/emails/issues/174/strict-dom.jpg)](https://github.com/facebook/react-strict-dom)
+
+**[React Strict DOM](https://github.com/facebook/react-strict-dom)**
+
+Meta not only dropped some big news regarding React this week. Today, a brand-new repo showed up on GitHub: [react-strict-dom](https://github.com/facebook/react-strict-dom). The readme describes it as an “experimental integration of React DOM and StyleX that aims to improve and standardize the development of styled React components for web and native.” It is based on the ideas from the [“React DOM for Native” RFC](https://github.com/react-native-community/discussions-and-proposals/pull/496) and in my opinion could be huge for how we think about universal app development in the future. Today, the most common approach for universal apps for RN ist React Native Web, which shims RN components and APIs on the web. And while RNW is really great, it often feels like shoehorning one platform into another. The premise of react-strict-dom is that there is a single DOM library which universally supports web, iOS, and Android (and potentially more platforms in the future). The element API is based on web, which is why you see the very HTML-like syntax in the screenshot above.
+
+As always, Dan Abramov is the best in expressing the idea in a concise 🐦 [tweet](https://twitter.com/dan_abramov2/status/1760245165703184516):
+
+> “Looks like a spiritual successor to RNW, but approached from the other direction (web APIs won, so RN is building support for a strict subset). Essentially, you’ll be able to render a `<div>` in RN.”
+
+There’s still a long way to go when you look at the current [compatibility status](https://github.com/facebook/react-strict-dom/blob/main/packages/react-strict-dom/COMPATIBILITY.md), but this is certainly an exciting milestone on a more universal React! Meta is already using it! See also this 🐦 [thread from Lorenzo and the involvement of Microsoft](https://twitter.com/Kelset/status/1760367655423549480).
+
+---
+
+- 👀 [Hermes PR - Add Support for ES2023 Array non-mutating methods](https://github.com/facebook/hermes/commit/b30f0e453d82594654810730211e092415aa6a3c): ES support in Hermes is improving. About Hermes, see also [this discussion](https://github.com/awslabs/llrt/issues/110#issuecomment-1939825912) discussion related to using it in AWS LLRT as a runtime for AWS lambdas / serverless functions.
+- 💬 [Lorenzo Sciandra - Status recap for react-native-macos](https://github.com/microsoft/react-native-macos/issues/1935#issuecomment-1935714556): TLDR: It’s alive and kicking, but a lot of work is going into keeping up with upstream. Also, it’s actively used by MS and Meta!
+- 📜 React Native on TVs: [Expo blog article](https://expo.dev/blog/how-to-build-tv-apps) and [ReactNativeTV.com](https://www.reactnativetv.com/)
+- 📜 [Expo - Broadening the scope of dev tools plugins](https://expo.dev/blog/dev-tools-plugins)
+- 📜 [expo-camera/next is ready for a close up](https://expo.dev/blog/expo-camera-next): expo-camera aims to be the simple, easy to use camera library, for advanced use cases look at react-native-vision-camera.
+- 📜 [How React Native Screens powers Expo Router?](https://blog.swmansion.com/how-react-native-screens-powers-expo-router-766480fd2d06)
+- 📜 [Extending React Native visionOS with RealityKit](https://www.oskarkwasniewski.dev/blog/react-native-visionos-realitykit-snow)
+- 📜 [Image Optimization on CI and Local](https://www.callstack.com/blog/image-optimization-on-ci-and-local)
+- 📖 [Apple will officially drop PWA support with iOS 17.4 in the EU](https://developer.apple.com/support/dma-and-apps-in-the-eu): All the more reason to build true native apps with React Native.
+- 📖 [New React Native Gesture Handler docs](https://docs.swmansion.com/react-native-gesture-handler/)
+- 🐦 [Evan Bacon: New Expo Router template for working with native context menus](https://twitter.com/Baconbrix/status/1759639968396333392?s=20)
+- 📦 [React Native 0.74-RC.0](https://github.com/facebook/react-native/releases/tag/v0.74.0-rc.0)
+- 📦 [gluestack-ui with NativeWind - Copy and paste components into apps](https://gluestack.io/ui/with-nativewind/docs/overview/introduction): Like shadcn/ui, but for React Native.
+- 📦 [react-native-live-markdown](https://github.com/Expensify/react-native-live-markdown): Neat text input field with live markdown formatting.
+- 📦 [expo-share-extension - Create native iOS share extension with a custom view](https://github.com/MaxAst/expo-share-extension)
+- 📦 [react-native-reanimated 3.7.0](https://github.com/software-mansion/react-native-reanimated/releases/tag/3.7.0): New clamp parameter in withSpring, generator support in worklet, visionOS support.
+- 📦 [react-native-vision-camera 3.9](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v3.9.0): Lots of new features, especially for Android (focus, flash, …).
+- 📦 [react-native-gesture-handler 2.15 - macOS/visionOS support, TurboModule](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.15.0)
+- 🎥 [Theo Browne - The State of React Native 2023](https://www.youtube.com/watch?v=sJItBjarnr4)
+- 🎥 [Jamon Holmgren - Intro to MobX-State-Tree](https://www.youtube.com/watch?v=n_VjjJxyd8Q)
+- 🎥 [William Candillon - Heart Beat Animation](https://www.youtube.com/watch?v=3pVn3_Q_QfA)
+- 🎙️ [The React Native Show 35 - Multiplatform App Development With React Native](https://www.callstack.com/podcasts/multiplatform-app-development-with-react-native)
+- 🎙️ [React Native Radio 288 - Reacting to the 2023 State of React Native Results](https://reactnativeradio.com/episodes/rnr-288-survey-says-react-native-got-more-popular)
+- 🎙️ [Rocket Ship 29 - State of React Native with Áron Berezkin](https://share.transistor.fm/s/aca1a636)
+- 🎙️ [Rocket Ship 30 - Ignite React Native Projects with Frank Calise](https://share.transistor.fm/s/059aa605)
+- 📅 [Chain React 2024 tickets are now on sale - July 17–19, 2024 in Portland, OR](https://twitter.com/ChainReactConf/status/1758192473686622271)
+- 📅 [React Native EU rebrands to React Universe Conf - Sept 5-6, 2024 in Wrocław, Poland](https://www.reactuniverseconf.com)
 
 ---
 
@@ -94,14 +202,36 @@ TWIR exclusive: [Get 25% off your FormBuilder SDK license](https://tripetto.com/
 
 ## 🔀 Autre {#other}
 
-<Todo />
+- 👀 [Updates from the 100th TC39 meeting - Promise.try, function decorators, ArrayBuffer, Uint8Array, Iterator…](https://dev.to/hemanth/updates-from-the-100th-tc39-meeting-4j2f)
+- 👀 [TC39 introduced a new stage 2.7](https://github.com/tc39/process-document/pull/37)
+- 👀 [ES2024 Release Candidate](https://ecmascript-daily.github.io/2024/02/17/release-es2024-candidate-february-2024-tc39-ecma262)
+- 👀 [RFC for Biome plugins](https://github.com/biomejs/biome/discussions/1762)
+- 👀 [Vite 6 discussions - Vite started to collect input for the next major version](https://github.com/vitejs/vite/discussions/15886)
+- 👀 [JSR - new ESM-only package registry from the Deno team](https://jsr.io/)
+- 📜 [JSR first impressions](https://www.kitsonkelly.com/posts/jsr-first-impressions)
+- 📜 [A practical guide to using shadow DOM](https://www.mayank.co/blog/declarative-shadow-dom-guide/)
+- 📜 [How To Center a Div](https://www.joshwcomeau.com/css/center-a-div/)
+- 📜 [Making Use of Code Coverage](https://www.epicweb.dev/making-use-of-code-coverage)
+- 📜 [Get started with v4 of GitHub Actions Artifacts](https://github.blog/2024-02-12-get-started-with-v4-of-github-actions-artifacts/)
+- 📜 [Union, intersection, difference, and more are coming to JavaScript Sets](https://www.sonarsource.com/blog/union-intersection-difference-javascript-sets/)
+- 📜 [Towards Qwik 2.0 - Lighter, Faster, Better](https://www.builder.io/blog/qwik-2-coming-soon)
+- 📜 [Vercel - Finishing Turborepo's migration from Go to Rust](https://vercel.com/blog/finishing-turborepos-migration-from-go-to-rust)
+- 📜 [Node.js Community Debate Intensifies Over Enabling Corepack by Default and Potentially Unbundling npm](https://socket.dev/blog/node-community-debates-enabling-corepack-unbundling-npm)
+- 📜 [Nx Launch Week Recap - Nx 18, Project Crystal, Nx Agents…](https://blog.nrwl.io/launch-nx-week-recap-3bc7c6c49ce1)
+- 📦 [AWS LLRT - New JS runtime for Lambda based on Rust QuickJS engine](https://github.com/awslabs/llrt)
+- 📦 [Observables - Static site generator for data apps, dashboards, reports, and more](https://github.com/observablehq/framework)
+- 📦 [Apple Pkl - A programming language for configuration](https://pkl-lang.org/blog/introducing-pkl.html)
+- 📦 [Tempo - The easiest way to work with dates in JavaScript.](https://tempo.formkit.com/)
+- 📦 [Shiki 1.0 - A beautiful yet powerful syntax highlighter](https://github.com/shikijs/shiki/releases/tag/v1.0.0)
+- 📦 [Mock Service Worker 2.2 - Server Boundary API](https://mswjs.io/blog/introducing-server-boundary)
+- 📦 [Vitest 1.3 - onTestFinished, snapshot serializers, improved browser mode and CLI…](https://github.com/vitest-dev/vitest/releases/tag/v1.3.0)
+- 📦 [Vite 5.1 - Vite Runtime API (experimental)](https://vitejs.dev/blog/announcing-vite5-1.html)
+- 🎥 [Node.js documentary trailer](https://www.youtube.com/watch?v=SfWPqr04srM)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/174/meme.jpg)](https://twitter.com/sebastienlorber/status/1758252538883723759)
 
 A plus 👋
