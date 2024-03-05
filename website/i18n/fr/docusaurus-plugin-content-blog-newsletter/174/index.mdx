@@ -41,7 +41,7 @@ import Support from "../_support.mdx";
 
 Axiom efficiently captures 100% of your event data so you’ll never have to worry about sampling or retention, and you’ll never have to guess what your users are experiencing.
 
-**PS**: [I use it myself to monitor the newsletter signups](https://twitter.com/sebastienlorber/status/1528666563452317696) 😉
+**PS** : [Je l'utilise moi-même pour suivre les inscriptions à la newsletter](https://twitter.com/sebastienlorber/status/1528666563452317696) 😉
 
 ---
 
@@ -138,7 +138,7 @@ TWIR exclusive: [Get 25% off your FormBuilder SDK license](https://tripetto.com/
 
 ## 📱 React-Native {#react-native}
 
-This section is now co-authored with [Benedikt](https://twitter.com/bndkt). Feel free to send us your comments by email or on [Twitter](https://twitter.com/bndkt)!
+Cette section est désormais co-écrite avec [Benedikt](https://twitter.com/bndkt). N'hésitez pas à nous envoyer vos commentaires par email ou sur [Twitter](https://twitter.com/bndkt) !
 
 ---
 
@@ -146,33 +146,33 @@ This section is now co-authored with [Benedikt](https://twitter.com/bndkt). Feel
 
 **[React Strict DOM](https://github.com/facebook/react-strict-dom)**
 
-Meta not only dropped some big news regarding React this week. Today, a brand-new repo showed up on GitHub: [react-strict-dom](https://github.com/facebook/react-strict-dom). The readme describes it as an “experimental integration of React DOM and StyleX that aims to improve and standardize the development of styled React components for web and native.” It is based on the ideas from the [“React DOM for Native” RFC](https://github.com/react-native-community/discussions-and-proposals/pull/496) and in my opinion could be huge for how we think about universal app development in the future. Today, the most common approach for universal apps for RN ist React Native Web, which shims RN components and APIs on the web. And while RNW is really great, it often feels like shoehorning one platform into another. The premise of react-strict-dom is that there is a single DOM library which universally supports web, iOS, and Android (and potentially more platforms in the future). The element API is based on web, which is why you see the very HTML-like syntax in the screenshot above.
+Meta n'a pas seulement dévoilé de grandes nouvelles concernant React cette semaine. Aujourd'hui, un tout nouveau repo est apparu sur GitHub : [react-strict-dom](https://github.com/facebook/react-strict-dom). Le readme le décrit comme une « intégration expérimentale de React DOM et StyleX qui vise à améliorer et standardiser le développement de composants React stylisés pour le web et le natif ». Il est basé sur les idées du [RFC "React DOM for Native"](https://github.com/react-native-community/discussions-and-proposals/pull/496) et, à mon avis, pourrait être déterminant dans la façon dont nous envisageons le développement d'applications universelles à l'avenir. Aujourd'hui, l'approche la plus courante pour les applications universelles pour RN est React Native Web, qui adapte les composants RN et les API sur le web. Et bien que React Native Web soit vraiment excellent, il donne souvent l'impression d'insérer une plateforme dans une autre. Le principe de react-strict-dom est qu'il existe une seule bibliothèque DOM qui supporte universellement le web, iOS et Android (et potentiellement d'autres plateformes à l'avenir). L'API des éléments est basée sur le web, c'est pourquoi vous voyez la syntaxe très semblable au HTML dans la capture d'écran ci-dessus.
 
-As always, Dan Abramov is the best in expressing the idea in a concise 🐦 [tweet](https://twitter.com/dan_abramov2/status/1760245165703184516):
+Comme toujours, Dan Abramov est le meilleur pour exprimer l'idée de manière concise 🐦 [tweet](https://twitter.com/dan_abramov2/status/1760245165703184516) :
 
 > “Looks like a spiritual successor to RNW, but approached from the other direction (web APIs won, so RN is building support for a strict subset). Essentially, you’ll be able to render a `<div>` in RN.”
 
-There’s still a long way to go when you look at the current [compatibility status](https://github.com/facebook/react-strict-dom/blob/main/packages/react-strict-dom/COMPATIBILITY.md), but this is certainly an exciting milestone on a more universal React! Meta is already using it! See also this 🐦 [thread from Lorenzo and the involvement of Microsoft](https://twitter.com/Kelset/status/1760367655423549480).
+Il y a encore un long chemin à parcourir quand on regarde le [statut de compatibilité](https://github.com/facebook/react-strict-dom/blob/main/packages/react-strict-dom/COMPATIBILITY.md) actuel, mais c'est certainement une étape excitante vers un React plus universel ! Meta l'utilise déjà ! Voir aussi ce 🐦 [thread de Lorenzo et l'implication de Microsoft](https://twitter.com/Kelset/status/1760367655423549480).
 
 ---
 
-- 👀 [Hermes PR - Add Support for ES2023 Array non-mutating methods](https://github.com/facebook/hermes/commit/b30f0e453d82594654810730211e092415aa6a3c): ES support in Hermes is improving. About Hermes, see also [this discussion](https://github.com/awslabs/llrt/issues/110#issuecomment-1939825912) discussion related to using it in AWS LLRT as a runtime for AWS lambdas / serverless functions.
-- 💬 [Lorenzo Sciandra - Status recap for react-native-macos](https://github.com/microsoft/react-native-macos/issues/1935#issuecomment-1935714556): TLDR: It’s alive and kicking, but a lot of work is going into keeping up with upstream. Also, it’s actively used by MS and Meta!
+- 👀 [Hermes PR - Add Support for ES2023 Array non-mutating methods](https://github.com/facebook/hermes/commit/b30f0e453d82594654810730211e092415aa6a3c) : La prise en charge de ES dans Hermes s'améliore. À propos d'Hermes, voir également [cette discussion](https://github.com/awslabs/llrt/issues/110#issuecomment-1939825912) la discussion relative à son utilisation dans AWS LLRT en tant que runtime pour AWS lambdas / fonctions sans serveur.
+- 💬 [Lorenzo Sciandra - Status recap for react-native-macos](https://github.com/microsoft/react-native-macos/issues/1935#issuecomment-1935714556) : TLDR : Il est toujours en vie, mais beaucoup de travail est fait pour rester en phase avec l'amont. De plus, il est activement utilisé par MS et Meta !
 - 📜 React Native on TVs: [Expo blog article](https://expo.dev/blog/how-to-build-tv-apps) and [ReactNativeTV.com](https://www.reactnativetv.com/)
 - 📜 [Expo - Broadening the scope of dev tools plugins](https://expo.dev/blog/dev-tools-plugins)
-- 📜 [expo-camera/next is ready for a close up](https://expo.dev/blog/expo-camera-next): expo-camera aims to be the simple, easy to use camera library, for advanced use cases look at react-native-vision-camera.
+- 📜 [expo-camera/next is ready for a close up](https://expo.dev/blog/expo-camera-next) : expo-camera a pour but d'être la bibliothèque de caméra la plus simple et la plus facile à utiliser. Pour les cas d'utilisation plus avancés, consultez react-native-vision-camera.
 - 📜 [How React Native Screens powers Expo Router?](https://blog.swmansion.com/how-react-native-screens-powers-expo-router-766480fd2d06)
 - 📜 [Extending React Native visionOS with RealityKit](https://www.oskarkwasniewski.dev/blog/react-native-visionos-realitykit-snow)
 - 📜 [Image Optimization on CI and Local](https://www.callstack.com/blog/image-optimization-on-ci-and-local)
-- 📖 [Apple will officially drop PWA support with iOS 17.4 in the EU](https://developer.apple.com/support/dma-and-apps-in-the-eu): All the more reason to build true native apps with React Native.
+- 📖 [Apple will officially drop PWA support with iOS 17.4 in the EU](https://developer.apple.com/support/dma-and-apps-in-the-eu) : Raison de plus pour construire de véritables applications natives avec React Native.
 - 📖 [New React Native Gesture Handler docs](https://docs.swmansion.com/react-native-gesture-handler/)
 - 🐦 [Evan Bacon: New Expo Router template for working with native context menus](https://twitter.com/Baconbrix/status/1759639968396333392?s=20)
 - 📦 [React Native 0.74-RC.0](https://github.com/facebook/react-native/releases/tag/v0.74.0-rc.0)
-- 📦 [gluestack-ui with NativeWind - Copy and paste components into apps](https://gluestack.io/ui/with-nativewind/docs/overview/introduction): Like shadcn/ui, but for React Native.
-- 📦 [react-native-live-markdown](https://github.com/Expensify/react-native-live-markdown): Neat text input field with live markdown formatting.
+- 📦 [gluestack-ui with NativeWind - Copy and paste components into apps](https://gluestack.io/ui/with-nativewind/docs/overview/introduction) : Comme shadcn/ui, mais pour React Native.
+- 📦 [react-native-live-markdown](https://github.com/Expensify/react-native-live-markdown) : Champ de saisie de texte soigné avec formatage markdown en temps réel.
 - 📦 [expo-share-extension - Create native iOS share extension with a custom view](https://github.com/MaxAst/expo-share-extension)
-- 📦 [react-native-reanimated 3.7.0](https://github.com/software-mansion/react-native-reanimated/releases/tag/3.7.0): New clamp parameter in withSpring, generator support in worklet, visionOS support.
-- 📦 [react-native-vision-camera 3.9](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v3.9.0): Lots of new features, especially for Android (focus, flash, …).
+- 📦 [react-native-reanimated 3.7.0](https://github.com/software-mansion/react-native-reanimated/releases/tag/3.7.0) : Nouveau paramètre clamp dans withSpring, prise en charge du générateur dans worklet, prise en charge de visionOS.
+- 📦 [react-native-vision-camera 3.9](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v3.9.0) : Beaucoup de nouvelles fonctionnalités, en particulier pour Android (focus, flash, …).
 - 📦 [react-native-gesture-handler 2.15 - macOS/visionOS support, TurboModule](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.15.0)
 - 🎥 [Theo Browne - The State of React Native 2023](https://www.youtube.com/watch?v=sJItBjarnr4)
 - 🎥 [Jamon Holmgren - Intro to MobX-State-Tree](https://www.youtube.com/watch?v=n_VjjJxyd8Q)
@@ -195,8 +195,8 @@ There’s still a long way to go when you look at the current [compatibility sta
 - 📜 [Pourquoi je choisis NextAuth plutôt que Clerk, Supabase ou Lucia ?](https://nowts.app/posts/2024-02-20_pourquoi-nextauth)
 - 🎥 [Remix v2.5: Mode SPA, SSG, support de Vite imminent !](https://www.youtube.com/watch?v=Ka6O3m_tsJk)
 - 🎙️ [Double Slash 82 - Les News Web Dev de Février 2024 - Remix SPA, jQuery 4, Million 3, Tempo…](https://double-slash.dev/podcasts/news-feb24/)
-- 📅 [Conférence React Paris - 22 Mars](https://react.paris/): nouvelle conférence, les speakers ont déjà été annoncés.
-- 📅 [React Connection - 22 Avril](https://reactconnection.io/) + [React-Native Connection - 23 Avril](https://reactnativeconnection.io/): 2 jours de conférence web et mobile. CFP est ouvert jusqu'au 3 février.
+- 📅 [Conférence React Paris - 22 Mars](https://react.paris/) : nouvelle conférence, les speakers ont déjà été annoncés.
+- 📅 [React Connection - 22 Avril](https://reactconnection.io/) + [React-Native Connection - 23 Avril](https://reactnativeconnection.io/) : 2 jours de conférence web et mobile. CFP est ouvert jusqu'au 3 février.
 
 ---
 
