@@ -7,9 +7,9 @@ date: 03-06-2024
 
 Salut à tous !
 
-This week is difficult to sum up, there's a lot of interesting news and I don't know which to highlight.
+Cette semaine est difficile à résumer, il y a beaucoup de nouvelles intéressantes et je ne sais pas lesquelles mettre en avant.
 
-We notably have a sneak peek of a new React core hook replacing the confusing `useFormState`, that even React Native devs will now be able to use now!
+Nous avons notamment un aperçu d'un nouveau hook React remplaçant le déroutant `useFormState`, que même les développeurs React Native pourront désormais utiliser !
 
 <!-- truncate -->
 
@@ -47,33 +47,33 @@ Axiom efficiently captures 100% of your event data so you’ll never have to wor
 
 **[React Core PR - New useActionState hook](https://github.com/facebook/react/pull/28491)**
 
-It turns out the useFormState hook was confusing, and not even meant to be solely used in forms. The React team is addressing this by introducing a new React core hook to replace it:
+Il s'avère que le hook useFormState était confus, et n'était même pas destiné à être utilisé uniquement dans les formulaires. L'équipe React s'attaque à ce problème en introduisant un nouveau hook React pour le remplacer :
 
-- Renames `useFormState` to `useActionState`
-- Adds a pending state to the returned tuple
-- Moves the hook to the `react` package
+- Renomme `useFormState` en `useActionState`
+- Ajoute un état `pending` au tuple retourné
+- Déplace le hook vers le package `react`.
 
-Moving it from `react-dom` to `react` also means that now, other renderers such as React Native can use it too. There are other benefits to look at, such as a “partial progressive enhancement” feature, but also new caveats documented in the PR.
+Le déplacement de `react-dom` vers `react` signifie également que maintenant, d'autres moteurs de rendu tels que React Native peuvent également l'utiliser. D'autres avantages sont à prendre en compte, comme une fonctionnalité « d'amélioration progressive partielle », mais aussi de nouvelles mises en garde documentées dans le PR.
 
 ---
 
 - 💸 [Secure your documents with PDF Redaction. Discover how to protect sensitive information in PDFs using React. Visit our blog to learn more.](https://apryse.com/blog/pdf-redaction-using-react?utm_source=this%20week%20in%20react&utm_medium=newsletter3)
-- 🐦 [React 19 != React Compiler](https://twitter.com/sebastienlorber/status/1764950877620654474): The React Labs post is a bit ambiguous and misled many of us, so let’s clarify. The compiler will likely come after the React 19.0 release as a separate project, and there’s a good chance it will initially be released as a Babel/TypeScript plugin. The internals are decoupled through, so it shouldn’t take long to adapt it it to Rust.
-- 🐦 [TanStack Start preview](https://twitter.com/tannerlinsley/status/1765120904370307438): Tanner works on a TanStack Start full-stack framework based on Vinxi and TanStack Router. This preview shows he’s migrating his own TanStack site to it.
-- 📜 [Vercel - Introducing AI SDK 3.0 with Generative UI support](https://vercel.com/blog/ai-sdk-3-generative-ui): With the AI SDK 3.0 and thanks to React Server Components, you can now stream UI components directly from LLMs. Super impressive demos!
-- 📜 [Secure statically rendered paid content in Next.js (with the App Router)](https://www.ericburel.tech/blog/static-paid-content-app-router): Shows that using Next.js layouts for authentication is not super secure, and the protected content can still leak through the RSC endpoint. Suggests using a middleware instead.
-- 📜 [Internationalization with Remix](https://remix.run/blog/remix-i18n): Goes back to i18n fundamentals, and then detail various i18n solutions you can set up within Remix. Optional route segments can help you use localized sub-directories.
-- 📜 [Did you know you can write your own typesafe React router in 500 lines?](https://sinja.io/blog/build-typesafe-react-router-from-scratch): A great comprehensive article that might give you a better understanding of how existing routers work. Also great to learn about advanced TypeScript type-level programming techniques.
-- 📜 [Streaming HTML out of order without JavaScript](https://lamplightdev.com/blog/2024/01/10/streaming-html-out-of-order-without-javascript/): This super interesting demo shows we don’t need JavaScript to stream out-of-order HTML chunks, and yet render them in the correct order. All you need is Declarative Shadow DOM and slots. It will be interesting to see if RSC streaming + Suspense could leverage that technique in the future instead of inlining JavaScript.
-- 📜 [Simple RSC With Vinxi](https://www.brenelz.com/posts/simple-rsc-with-vinxi/): The Vinxi SDK helps you create your own full-stack framework, and it even has a plugin for React Server Components support!
-- 📜 [Million.js - Blocks with noSlot Mode](https://million.dev/blog/block-noSlot): the Million compiler might wrap your components with `<slot>` elements, which might cause issues (styling). This introduces a new experimental `noSlot` mode..
-- 📜 [How to add Monaco to a Next.js app to enable custom user workflows](https://deno.com/blog/monaco-nextjs): Interesting tutorial that also shows how to deploy untrusted user code to Deno.
-- 📜 [Conceptual Model of React and RSC](https://ondrejvelisek.github.io/conceptual-model-of-react-and-rsc/): Reflects around the UI=f(state) formula in interesting ways, and concludes RSC kind of breaks the original model.
+- 🐦 [React 19 != React Compiler](https://twitter.com/sebastienlorber/status/1764950877620654474) : L'article de React Labs est un peu ambigu et a induit beaucoup d'entre nous en erreur, alors clarifions les choses. Le compilateur sera probablement publié après la sortie de React 19.0 en tant que projet séparé, et il y a de fortes chances qu'il soit initialement publié en tant que plugin Babel/TypeScript. Les éléments internes sont entièrement dissociés, il ne devrait donc pas falloir longtemps pour l'adapter à Rust.
+- 🐦 [TanStack Start preview](https://twitter.com/tannerlinsley/status/1765120904370307438) : Tanner travaille sur un framework TanStack Start full-stack basé sur Vinxi et TanStack Router. Cet aperçu montre la migration de son propre site TanStack vers ce framework.
+- 📜 [Vercel - Introducing AI SDK 3.0 with Generative UI support](https://vercel.com/blog/ai-sdk-3-generative-ui) : Avec le AI SDK 3.0 et grâce à React Server Components, vous pouvez désormais diffuser des composants d'interface utilisateur directement à partir des LLM. Des démos super impressionnantes !
+- 📜 [Secure statically rendered paid content in Next.js (with the App Router)](https://www.ericburel.tech/blog/static-paid-content-app-router) : Montre que l'utilisation des layouts Next.js pour l'authentification n'est pas très sécurisée, et que le contenu protégé peut toujours fuir à travers le endpoint RSC. Suggère d'utiliser un middleware à la place.
+- 📜 [Internationalization with Remix](https://remix.run/blog/remix-i18n) : Reprend les fondamentaux de l'i18n, puis détaille les différentes solutions i18n que vous pouvez mettre en place dans Remix. Les segments de route facultatifs peuvent vous aider à utiliser des sous-répertoires localisés.
+- 📜 [Did you know you can write your own typesafe React router in 500 lines?](https://sinja.io/blog/build-typesafe-react-router-from-scratch) : Un article très complet qui pourrait vous permettre de mieux comprendre le fonctionnement des routeurs existants. Cet article permet également de découvrir les techniques avancées de programmation TypeScript au niveau du type.
+- 📜 [Streaming HTML out of order without JavaScript](https://lamplightdev.com/blog/2024/01/10/streaming-html-out-of-order-without-javascript/) : Cette démo très intéressante montre qu'il n'est pas nécessaire d'utiliser JavaScript pour diffuser des morceaux de HTML dans le désordre, tout en les restituant dans l'ordre correct. Tout ce dont vous avez besoin, c'est d'un Shadow DOM déclaratif et de slots. Il sera intéressant de voir si RSC streaming + Suspense pourra exploiter cette technique à l'avenir au lieu d'intégrer du JavaScript.
+- 📜 [Simple RSC With Vinxi](https://www.brenelz.com/posts/simple-rsc-with-vinxi/) : Le Vinxi SDK vous aide à créer votre propre framework full-stack, et il dispose même d'un plugin pour la prise en charge de React Server Components !
+- 📜 [Million.js - Blocks with noSlot Mode](https://million.dev/blog/block-noSlot) : le compilateur Million peut envelopper vos composants avec des éléments `<slot>`, ce qui peut causer des problèmes (de style). Ceci introduit un nouveau mode expérimental `noSlot`...
+- 📜 [How to add Monaco to a Next.js app to enable custom user workflows](https://deno.com/blog/monaco-nextjs) : Tutoriel intéressant qui montre également comment déployer du code utilisateur non fiable sur Deno.
+- 📜 [Conceptual Model of React and RSC](https://ondrejvelisek.github.io/conceptual-model-of-react-and-rsc/) : Réflexion intéressante sur la formule UI=f(state), et conclusion sur le fait que RSC ne respecte pas le modèle original.
 - 📜 [Why React Server Components Are Breaking Builds to Win Tomorrow](https://www.builder.io/blog/why-react-server-components)
 - 📜 [The End Of My Gatsby Journey](https://www.smashingmagazine.com/2024/03/end-of-gatsby-journey/)
 - 📜 [React Admin March 2024 Update](https://marmelab.com/blog/2024/03/05/react-admin-march-2024-update.html)
-- 📦 [Million Lint - public beta](https://million.dev/blog/lint): A VSCode extension that helps you keep your React code fast thanks to dynamic analysis. Much simpler to use than React Devtools flame graphs. There will be an additional AI-based Lint++ paid service built on top to suggest you possible performance improvements.
-- 📦 [react-unforget - A compiler for automatic optimization of React apps](https://github.com/mohebifar/react-unforget): After Forgetti, this is another new alternative React compiler coming from the community. See also 🐦 [Joe Savona’s feedback](https://twitter.com/en_JS/status/1763593971224494106).
+- 📦 [Million Lint - public beta](https://million.dev/blog/lint) : Une extension VSCode qui vous aide à garder votre code React rapide grâce à l'analyse dynamique. Beaucoup plus simple à utiliser que les graphes de React Devtools flame. Il y aura un service payant supplémentaire Lint++ basé sur l'IA construit au-dessus pour vous suggérer des améliorations de performance possibles.
+- 📦 [react-unforget - A compiler for automatic optimization of React apps](https://github.com/mohebifar/react-unforget) : Après Forgetti, voici un autre nouveau compilateur React alternatif issu de la communauté. Voir aussi 🐦 [Le retour d'expérience de Joe Savona](https://twitter.com/en_JS/status/1763593971224494106).
 - 📦 [Remix 2.8 - Pass resolved viteConfig to buildEnd hook](https://remix.run/docs/en/main/start/changelog#v280)
 - 📦 [React Query 5.25 - skipToken, typesafe query disabling](https://github.com/TanStack/query/releases/tag/v5.25.0)
 - 📦 [TanStack Router 1.18 - route groups](https://github.com/TanStack/router/releases/tag/v1.18.0)
