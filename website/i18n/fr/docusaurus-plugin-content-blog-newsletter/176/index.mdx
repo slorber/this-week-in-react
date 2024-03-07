@@ -117,25 +117,25 @@ Cette section est désormais co-écrite avec [Benedikt](https://twitter.com/bndk
 
 **[Improving Shopify App’s Performance](https://shopify.engineering/improving-shopify-app-s-performance)**
 
-Spotify has been a proponent of React Native for a long time. But they did notice their app performance go down since they migrated to React Native. Instead of blaming the tech stack, they got to work and started optimizing for performance. The results speak for themselves: App launch is 44 % faster and screen load times were reduced by 59 %. Here’s a quick summary of some of the measures they took (hint: FlashList plays a big role in some of these). For details, read their great summary post:
+Spotify est un adepte de React Native depuis longtemps. Mais ils ont remarqué que les performances de leur application avaient baissé depuis qu'ils avaient migré vers React Native. Au lieu de blâmer la pile technologique, ils se sont mis au travail et ont commencé à optimiser les performances. Les résultats parlent d'eux-mêmes : Le lancement de l'app est 44 % plus rapide et les temps de chargement des écrans ont été réduits de 59 %. Voici un résumé rapide de certaines des mesures prises (indice : FlashList joue un rôle important dans certaines d'entre elles). Pour plus de détails, lisez leur excellent article de synthèse :
 
-- Initially, only render what’s visible on the screen (especially true for the home screen)
-- Build all screens as lists (based on FlashList)
-- Use inlineRequires
-- Batch state changes
-- Optimize caching
+- Au début, ne rendre que ce qui est visible sur l'écran (surtout pour l'écran d'accueil)
+- Construire tous les écrans comme des listes (basé sur FlashList)
+- Utiliser inlineRequires
+- Changements d'état par batch
+- Optimiser la mise en cache
 
-Very interesting insights and impressive results. I hope the Shopify team keeps sharing these details and maybe we’ll even see some of the things they mentioned they built during this process ending up as Open Source?
+Des informations très intéressantes et des résultats impressionnants. J'espère que l'équipe de Shopify continuera à partager ces détails et peut-être verrons-nous même certaines des choses qu'ils ont indiqué avoir conçues au cours de ce processus finir en Open Source ?
 
 ---
 
 - 💸 [React Universe Conf combines the best of React Native EU with a new enhanced program. Get your ticket at the lowest price before March 7](https://www.reactuniverseconf.com/?utm_campaign=React_Universe_Conf&utm_source=email&utm_content=This_Week_in_React)
-- 👀 [PR - RCTRootViewFactory](https://github.com/facebook/react-native/pull/42263): Simplifies brownfield integrations on iOS and spares you from worrying about Old Arch/New Arch/Bridge/Bridgeless combinations.
+- 👀 [PR - RCTRootViewFactory](https://github.com/facebook/react-native/pull/42263) : Simplifie les intégrations sur iOS et vous évite de vous préoccuper des combinaisons Old Arch/New Arch/Bridge/Bridgeless.
 - 🐦 [Drag and drop files from other apps in your RN app](https://x.com/alihdjr/status/1764393524940673529)
 - 📖 [visionOS docs - Integrating in existing projects](https://callstack.github.io/react-native-visionos-docs/docs/guides/integrate-into-existing-projects/)
-- 📜 [Expo - Orchestrate advanced workflows with custom builds](https://expo.dev/blog/orchestrate-advanced-workflows-with-custom-builds): Custom builds allow you to run scripts (bash or JS) before or after Expo builds, for example to run E2E tests, send notifications to your team, …
-- 📜 [iOS Live Activities and React Native - leveraging the latest iOS features to display your app's most current data without needing to open it](https://www.reactnative.university/blog/live-activities-unleashed): Way more apps should have Live Activities! There is a hurdle for RN devs though, because they need to be written in Swift. This 3-part series walks through all the steps required to add a Live Activity.
-- 📜 [React Native Error Boundaries - Feature, Partial, and Server](https://www.reactnative.university/blog/react-native-error-boundaries): Error boundaries remain an underutilized feature, and every React Native app should have at least one (but ideally more). This post explains why and how.
+- 📜 [Expo - Orchestrate advanced workflows with custom builds](https://expo.dev/blog/orchestrate-advanced-workflows-with-custom-builds) : Les builds personnalisés vous permettent d'exécuter des scripts (bash ou JS) avant ou après les builds Expo, par exemple pour exécuter des tests E2E, envoyer des notifications à votre équipe, ...
+- 📜 [iOS Live Activities and React Native - leveraging the latest iOS features to display your app's most current data without needing to open it](https://www.reactnative.university/blog/live-activities-unleashed) : Beaucoup plus d'applications devraient avoir des Live Activities ! Il y a cependant un obstacle pour les développeurs RN, car elles doivent être écrites en Swift. Cette série en trois parties passe en revue toutes les étapes nécessaires à l'ajout d'une Live Activity.
+- 📜 [React Native Error Boundaries - Feature, Partial, and Server](https://www.reactnative.university/blog/react-native-error-boundaries) : Les error boundaries restent une fonctionnalité sous-utilisée, et chaque application React Native devrait en avoir au moins une (mais idéalement plus). Ce billet explique pourquoi et comment.
 - 📜 [Increase Speed and Security With Native Crypto Libraries](https://www.callstack.com/blog/increase-speed-and-security-with-native-crypto-libraries)
 - 📜 [Morrow's Summary of the State of React Native 2023 Report](https://www.themorrow.digital/blog/our-summary-of-the-state-of-react-native-2023-report)
 - 📦 [Intercom-react-native 6.5 - Now with Expo config plugin](https://github.com/intercom/intercom-react-native/releases/tag/6.5.0)
