@@ -4,7 +4,7 @@ export const sponsorshipCalendarLink = "https://thisweekinreact.com/calendar";
 export const testimonialsLink = "https://thisweekinreact.com/testimonials";
 
 // TODO automate this!
-export const lastIssueLink = "/newsletter/175";
+export const lastIssueLink = "/newsletter/177";
 
 export type NewsletterSegment = {
   name: string;
@@ -24,14 +24,14 @@ export type Newsletter = {
 
 const en: NewsletterSegment = {
   name: "English",
-  subscribersCount: 29324,
+  subscribersCount: 31424,
   openRate: 55,
   clickRate: 13,
 };
 
 const fr: NewsletterSegment = {
   name: "French",
-  subscribersCount: 4082,
+  subscribersCount: 4282,
   openRate: 55,
   clickRate: 13,
 };
@@ -49,13 +49,13 @@ export type NewsletterFuture = {
 
 const subscribersCount = fr.subscribersCount + en.subscribersCount;
 
-const growthPerMonth = 1300;
+const growthPerMonth = 1500;
 
 const all: NewsletterSegment & NewsletterFuture = {
   name: "All",
   subscribersCount,
   openRate: 55,
-  clickRate: 14,
+  clickRate: 13,
 
   // TODO improve this!
   nextMainSlot: {
