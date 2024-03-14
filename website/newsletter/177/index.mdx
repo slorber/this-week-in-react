@@ -36,29 +36,26 @@ RevenueCat gives you everything you need to monetize, analyze, and grow your app
 
 ## ⚛️ React {#react}
 
-Welcome file
-Welcome file
+[![Pigment CSS](/emails/issues/177/pigment.jpg)](https://github.com/mui/material-ui/tree/master/packages/pigment-css-react)
 
-Pigment CSS
+[**Pigment CSS**](https://github.com/mui/material-ui/tree/master/packages/pigment-css-react)
 
-[https://twitter.com/olivtassinari/status/1765719897152127315](https://twitter.com/olivtassinari/status/1765719897152127315)
-
-[Pigment CSS](https://github.com/mui/material-ui/tree/master/packages/pigment-css-react)
-
-The MUI team is working on their own zero-runtime CSS-in-JS. It looks like the existing solutions (StyleX, Panda) were not a good fit for MUI which aims to be mostly compatible with Emotion/Styled-Components APIs (🐦 [tweet](https://twitter.com/olivtassinari/status/1765719897152127315)).
-Pigment CSS
-
-https://twitter.com/olivtassinari/status/1765719897152127315
-
-Pigment CSS
-
-The MUI team is working on their own zero-runtime CSS-in-JS. It looks like the existing solutions (StyleX, Panda) were not a good fit for MUI which aims to be mostly compatible with Emotion/Styled-Components APIs (🐦 tweet).
+The MUI team is working on Pigment, their own zero-runtime CSS-in-JS to replace Emotion in Material UI v6. The first versions have been published to npm, including a Next.js `withPigment()` plugin. Olivier explains in a 🐦 [tweet](https://twitter.com/olivtassinari/status/1765719897152127315) the motivations to create a new solution, and how it compares to existing ones (Panda, StyleX, Tailwind). Unlike all others, this one will ease the adoption for existing Emotion and Styled-Components users.
 
 ---
 
+[![Storybook 8](/emails/issues/177/storybook.jpg)](https://storybook.js.org/blog/storybook-8/)
+
 [**Storybook 8**](https://storybook.js.org/blog/storybook-8/)
 
-Experimental RSC support, built-in visual testing, test mode, Vite 5, improved control autogen…
+This new major version of Storybook comes with many improvements, including:
+
+- Experimental React Server Components support
+- Faster React control auto-generation (through `react-docgen`)
+- Faster static builds in "test mode" (CLI flag `--test`)
+- Built-in visual testing (through Chromatic)
+- Re-architected Vite support, Vitest, Vite 5
+- Improved mobile/desktop UI/UX
 
 ---
 
@@ -69,7 +66,7 @@ Experimental RSC support, built-in visual testing, test mode, Vite 5, improved c
 - 👀 [Next.js PR merged - add Lightning CSS](https://github.com/vercel/next.js/pull/61327): A new experimental opt-in CSS loader should be available soon.
 - 👀 [Remix RFC - Action Functions](https://github.com/remix-run/remix/discussions/9020): new RFC suggests to implement React actions functions and reduce indirection/boilerplate. It should be implemented first on the client-side, and later add support for RPC “use server” directive.
 - 👀 [Vercel - Support for Remix + Vite](https://vercel.com/changelog/support-for-remix-with-vite)
-- 📖 [Framework Field Guide, a three-part series that teaches you Angular, React and Vue all at once](https://unicorn-utterances.com/collections/framework-field-guide-fundamentals)
+- 📖 [The Framework Field Guide](https://unicorn-utterances.com/collections/framework-field-guide): A polished three-part series of books that teaches you Angular, React and Vue all at once, helping you figure out the differences between frameworks, and including many interactive examples. The first part "Fundamentals" is available.
 - 📜 [React Compiler & React 19 - forget about memoization soon?](https://www.developerway.com/posts/react-compiler-soon): Overview of what know about the upcoming compiler, its release timeframe and what kind of React code we might get rid of.
 - 📜 [Navigating the future of frontend](https://frontendmastery.com/posts/navigating-the-future-of-frontend/): Well-documented article to better understand the current direction of the frontend ecosystem, including React with its Server Components.
 - 📜 [Component Testing with SafeTest vs. Cypress vs. WebdriverIO](https://bromann.dev/post/safetest-vs-cypress-vs-webdriverio): The newly released Netflix SafeTest framework was recently roasted by competitors in 2 detailed articles, illustrated with React test examples.
@@ -80,10 +77,9 @@ Experimental RSC support, built-in visual testing, test mode, Vite 5, improved c
 - 📜 [How to safely use dangerouslySetInnerHTML in React](https://deadsimplechat.com/blog/how-to-safely-use-dangerouslysetinnerhtml-in-react/)
 - 📜 [Progressively Enhance Handling Your Forms With React.js Server Actions](https://techhub.iodigital.com/articles/progressively-enhance-handling-your-forms-with-react-js-server-actions)
 - 📜 [Best Practices for Writing Tests with React Testing Library](https://claritydev.net/blog/improving-react-testing-library-tests)
-- 📦 [WinterJS 1.0 - WinterCG-co](https://wasmer.io/posts/winterjs-v1)
-  [(https://wasmer.io/posts/winterjs-v1): this new runtime claims to be the fastest, and can now run Next.js. A Hacker News RSC demo is available, and they plan to migrate their own Next.js frontend to it soon.
+- 📦 [WinterJS 1.0 - WinterCG-compatible JS runtime built on Rust and SpiderMonkey](https://wasmer.io/posts/winterjs-v1): this new runtime claims to be the fastest, and can now run Next.js. A Hacker News RSC demo is available, and they plan to migrate their own Next.js frontend to it soon.
 - 📦 [React Geiger](https://github.com/kristiandupont/react-geiger): It’s like the audio version of WhyDidYouRender, emitting little audio farts whenever React re-renders. That’s a fun idea, but could actually be useful too.
-- 📦 [MistCSS - Write React components using CSS only](https://typicode.github.io/mistcss/): A JS-from-CSS tool that permits to generate React components directly from CSS files, including Tailwind support. Interesting idea 🤪.
+- 📦 [MistCSS - Write React components using CSS only](https://typicode.github.io/mistcss/): A crazy JS-from-CSS tool that permits to generate React components directly from CSS files, including Tailwind support 🤪.
 - 📦 [Shadcn/ui - March 2024 Update - New components: Breadcrumb, One-Time-Password Input](https://ui.shadcn.com/docs/changelog)
 - 📦 [MDXTS (Beta) - The Content & Documentation SDK for React](https://www.mdxts.dev/): “It's sort of a mashup of Contentlayer + Storybook”
 - 📦 [Astro 4.5 - Dev Audit UI, View Transition improvements, Multi-CDN, Shiki 1.0…](https://astro.build/blog/astro-450/)
@@ -118,9 +114,9 @@ Refine enables teams to rapidly develop production-ready apps while maintaining 
 
 This section is now co-authored with [Benedikt](https://twitter.com/bndkt). Feel free to send us your comments by email or on [Twitter](https://twitter.com/bndkt)!
 
-![](https://lh7-us.googleusercontent.com/ItzkKzNOo2ybiWQIjwCC8s9gGD1nqXhnyEJ7EUNg-PEySjS8SDTp1BYgtebEf76R7JP8Euh7_nKCuWVMtiKi2ndPFcngb6GHYOeUvPmHnmQUQzO1jJPFHwZuUHNd0kEpwn0viCS5P2_-GNToGrpzNjk)
+[![William Candillon - Time to Fly - React Native Skia 1.0](/emails/issues/177/skia.jpg)](https://www.youtube.com/watch?v=eUbj_NxcgKg)
 
-🎥 [William Candillon - Time to Fly - React Native Skia 1.0](https://www.youtube.com/watch?v=eUbj_NxcgKg)
+🎥 [**William Candillon - Time to Fly - React Native Skia 1.0**](https://www.youtube.com/watch?v=eUbj_NxcgKg)
 
 Exciting major release of React Native Skia, with an inspiring launch video! This library was first released back in 2021 by William Candillon and Christian Falch and has been heavily supported by Shopify for a long time. Now, they’ve finally released a 1.0 and it’s packed with improvements and new features: Thanks to a new Paragraph API, Skia can now render rich text layouts, combining system fonts and custom fonts. Animations Hooks make it easier to build performant animations with the already existing RN Reanimated and Gesture Handler integration. Another highlight for me personally: RN Skia now also supports the web as a platform, via a package called canvaskit-js!
 
@@ -163,7 +159,7 @@ Exciting major release of React Native Skia, with an inspiring launch video! Thi
 - 📦 [Biome v1.6 - Partial support for Astro, Svelte and Vue files](https://biomejs.dev/blog/biome-v1-6/)
 - 📦 [Rolldown - Fast Rust bundler for JavaScript with Rollup-compatible API](https://rolldown.rs/)
 - 📦 [Node.js 21.7 - API for styling text](https://nodejs.org/en/blog/release/v21.7.0)
-- 📦 [Tailwind CSS v4 alpha](https://tailwindcss.com/blog/tailwindcss-v4-alpha)
+- 📦 [Tailwind CSS v4 alpha - Oxide engine, CSS-first config](https://tailwindcss.com/blog/tailwindcss-v4-alpha)
 - 📦 [Speedometer 3.0 - The Best Way Yet to Measure Browser Performance](https://webkit.org/blog/15131/speedometer-3-0-the-best-way-yet-to-measure-browser-performance/)
 
 ---
