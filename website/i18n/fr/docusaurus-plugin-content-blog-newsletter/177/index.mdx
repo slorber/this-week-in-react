@@ -7,11 +7,11 @@ date: 03-13-2024
 
 Salut à tous !
 
-This week it's particularly exciting to see React Native Skia reaching 1.0. But we also have many other interesting releases to look at: Pigment, Storybook, Tailwind, Rolldown, MDXTS...
+Cette semaine, c'est particulièrement excitant de voir React Native Skia atteindre la version 1.0. Mais nous avons également beaucoup d'autres versions intéressantes à découvrir : Pigment, Storybook, Tailwind, Rolldown, MDXTS...
 
-There were also some fun ones, such as Mist and Geist. I'm really curious to know what you think of them. Would you use these?
+Il y a également eu quelques nouveautés amusantes, comme Mist et Geist. Je suis vraiment curieux de savoir ce que vous en pensez. Les utiliseriez-vous ?
 
-I'm trying to monitor more closely weak signals (PRs, RFCs and tweets), do you find this kind of news valuable?
+J'essaie de surveiller de plus près les indicateurs secondaires (PRs, RFCs et tweets), trouvez-vous ce genre de nouvelles utiles ?
 
 <!-- truncate -->
 
@@ -41,7 +41,7 @@ RevenueCat gives you everything you need to monetize, analyze, and grow your app
 
 [**Pigment CSS**](https://github.com/mui/material-ui/tree/master/packages/pigment-css-react)
 
-The MUI team is working on Pigment, their own zero-runtime CSS-in-JS to replace Emotion in Material UI v6. The first versions have been published to npm, including a Next.js `withPigment()` plugin. Olivier explains in a 🐦 [tweet](https://twitter.com/olivtassinari/status/1765719897152127315) the motivations to create a new solution, and how it compares to existing ones (Panda, StyleX, Tailwind). Unlike all others, this one will ease the adoption for existing Emotion and Styled-Components users.
+L'équipe MUI travaille sur Pigment, leur propre CSS-in-JS avec zéro temps d'exécution pour remplacer Emotion dans Material UI v6. Les premières versions ont été publiées sur npm, avec notamment un plugin Next.js `withPigment()`. Olivier explique dans un 🐦 [tweet](https://twitter.com/olivtassinari/status/1765719897152127315) les motivations pour créer une nouvelle solution, et comment elle se compare à celles existantes (Panda, StyleX, Tailwind). Contrairement à tous les autres, celui-ci facilitera l'adoption pour les utilisateurs existants d'Emotion et de Styled-Components.
 
 ---
 
@@ -49,41 +49,41 @@ The MUI team is working on Pigment, their own zero-runtime CSS-in-JS to replace 
 
 [**Storybook 8**](https://storybook.js.org/blog/storybook-8/)
 
-This new major version of Storybook comes with many improvements, including:
+Cette nouvelle version majeure de Storybook apporte de nombreuses améliorations, notamment :
 
-- Experimental React Server Components support
-- Faster React control auto-generation (through `react-docgen`)
-- Faster static builds in "test mode" (CLI flag `--test`)
-- Built-in visual testing (through Chromatic)
-- Re-architected Vite support, Vitest, Vite 5
-- Improved mobile/desktop UI/UX
+- Prise en charge expérimentale de React Server Components
+- Génération automatique de contrôle React plus rapide (grâce à `react-docgen`)
+- Constructions statiques en « mode test » plus rapides (flag CLI `--test`)
+- Tests visuels intégrés (via Chromatic)
+- Prise en charge ré-architecturée de Vite, Vitest, Vite 5
+- Amélioration de l'UI/UX pour mobile/desktop
 
 ---
 
 - 💸 [Dive into React PDF viewing with Apryse. Seamless integration with PDF.js for an elevated experience. Learn more from our blog.](https://apryse.com/blog/react/building-react-pdf-viewer-with-pdfjs?utm_source=emailnewsletter3&utm_medium=email)
 - 🐦 [Sebastian Markbåge recommends to use package.json “imports” for dependency injection instead of Context](https://twitter.com/sebmarkbage/status/1765828741500981475)
-- 👀 [React Core PR - Add Diffs to Hydration Warnings](https://github.com/facebook/react/pull/28512): The React team is working on improving the React hydration error messages by displaying a diff. You can get a 🐦 [preview](https://twitter.com/sebastienlorber/status/1765666127558918243) from the unit tests.
-- 👀 [React 19 - its not fine](https://github.com/facebook/react/pull/28524): React 19 currently 🐦 [breaks the “its-fine” package](https://twitter.com/0xca0a/status/1766032105807483261), notably used to bridge React context from one renderer to another. It seems the React team is investigating bringing first-class support for this feature, although it looks like a challenging problem to solve.
-- 👀 [Next.js PR merged - add Lightning CSS](https://github.com/vercel/next.js/pull/61327): A new experimental opt-in CSS loader should be available soon.
-- 👀 [Remix RFC - Action Functions](https://github.com/remix-run/remix/discussions/9020): new RFC suggests to implement React actions functions and reduce indirection/boilerplate. It should be implemented first on the client-side, and later add support for RPC “use server” directive.
+- 👀 [React Core PR - Add Diffs to Hydration Warnings](https://github.com/facebook/react/pull/28512) : L'équipe React travaille sur l'amélioration des messages d'erreur d'hydratation de React en affichant un diff. Vous pouvez obtenir un 🐦 [aperçu](https://twitter.com/sebastienlorber/status/1765666127558918243) depuis les tests unitaires.
+- 👀 [React 19 - its not fine](https://github.com/facebook/react/pull/28524) : React 19 🐦 [casse le package « its-fine »] (https://twitter.com/0xca0a/status/1766032105807483261), notamment utilisé pour faire le pont du contexte React d'un moteur de rendu à l'autre. Il semble que l'équipe React étudie la possibilité d'apporter une prise en charge de première classe pour cette fonctionnalité, bien que cela semble être un problème difficile à résoudre.
+- 👀 [Next.js PR merged - add Lightning CSS](https://github.com/vercel/next.js/pull/61327) : A new experimental opt-in CSS loader should be available soon.
+- 👀 [Remix RFC - Action Functions](https://github.com/remix-run/remix/discussions/9020) : new RFC suggests to implement React actions functions and reduce indirection/boilerplate. It should be implemented first on the client-side, and later add support for RPC “use server” directive.
 - 👀 [Vercel - Support for Remix + Vite](https://vercel.com/changelog/support-for-remix-with-vite)
-- 📖 [The Framework Field Guide](https://unicorn-utterances.com/collections/framework-field-guide): A polished three-part series of books that teaches you Angular, React and Vue all at once, helping you figure out the differences between frameworks, and including many interactive examples. The first part "Fundamentals" is available.
-- 📅 [React Paris - 22 March](https://react.paris/): Next week I'll go to React Paris, and hope to meet some of you there. The conference is sold-out but you can still watch it online with a [-20% discount](https://ti.to/bejs/react-paris/discount/this-week-in-react).
-- 📜 [React Compiler & React 19 - forget about memoization soon?](https://www.developerway.com/posts/react-compiler-soon): Great overview of what we know about the upcoming compiler, its release timeframe and what kind of React code we might get rid of.
-- 📜 [Navigating the future of frontend](https://frontendmastery.com/posts/navigating-the-future-of-frontend/): Well-documented article to better understand the current direction of the frontend ecosystem, including React with its Server Components.
-- 📜 [Component Testing with SafeTest vs. Cypress vs. WebdriverIO](https://bromann.dev/post/safetest-vs-cypress-vs-webdriverio): The newly released Netflix SafeTest framework was recently roasted by competitors in 2 detailed articles, illustrated with React test examples.
-- 📜 [A Next.js package for managing third-party libraries](https://developer.chrome.com/blog/next-third-parties): Presents the work of the Chrome Aurora team, notably the @next/third-parties package that enables you to efficiently load third-party scripts and embeds in a Next.js project
-- 📜 [Implicit Assertions](https://www.epicweb.dev/implicit-assertions): Explains why a React render smoke test remains useful.
+- 📖 [The Framework Field Guide](https://unicorn-utterances.com/collections/framework-field-guide) : A polished three-part series of books that teaches you Angular, React and Vue all at once, helping you figure out the differences between frameworks, and including many interactive examples. The first part "Fundamentals" is available.
+- 📅 [React Paris - 22 March](https://react.paris/) : Next week I'll go to React Paris, and hope to meet some of you there. The conference is sold-out but you can still watch it online with a [-20% discount](https://ti.to/bejs/react-paris/discount/this-week-in-react).
+- 📜 [React Compiler & React 19 - forget about memoization soon?](https://www.developerway.com/posts/react-compiler-soon) : Great overview of what we know about the upcoming compiler, its release timeframe and what kind of React code we might get rid of.
+- 📜 [Navigating the future of frontend](https://frontendmastery.com/posts/navigating-the-future-of-frontend/) : Well-documented article to better understand the current direction of the frontend ecosystem, including React with its Server Components.
+- 📜 [Component Testing with SafeTest vs. Cypress vs. WebdriverIO](https://bromann.dev/post/safetest-vs-cypress-vs-webdriverio) : The newly released Netflix SafeTest framework was recently roasted by competitors in 2 detailed articles, illustrated with React test examples.
+- 📜 [A Next.js package for managing third-party libraries](https://developer.chrome.com/blog/next-third-parties) : Presents the work of the Chrome Aurora team, notably the @next/third-parties package that enables you to efficiently load third-party scripts and embeds in a Next.js project
+- 📜 [Implicit Assertions](https://www.epicweb.dev/implicit-assertions) : Explains why a React render smoke test remains useful.
 - 📜 [You can now deploy the Remotion Studio](https://www.remotion.dev/blog/deployable-studio)
 - 📜 [How To Transform ReactJS Animation into Video - The Lightweight Version of Remotion](https://medium.com/numatic-ventures/how-to-transform-reactjs-animation-into-video-the-lightweight-version-of-remotion-25706b1e0251?sk=a979e3131d85e8de4f2666b134eea1ec)
 - 📜 [How to safely use dangerouslySetInnerHTML in React](https://deadsimplechat.com/blog/how-to-safely-use-dangerouslysetinnerhtml-in-react/)
 - 📜 [Progressively Enhance Handling Your Forms With React.js Server Actions](https://techhub.iodigital.com/articles/progressively-enhance-handling-your-forms-with-react-js-server-actions)
 - 📜 [Best Practices for Writing Tests with React Testing Library](https://claritydev.net/blog/improving-react-testing-library-tests)
-- 📦 [WinterJS 1.0 - WinterCG-compatible JS runtime built on Rust and SpiderMonkey](https://wasmer.io/posts/winterjs-v1): this new runtime claims to be the fastest, and can now run Next.js. A Hacker News RSC demo is available, and they plan to migrate their own Next.js frontend to it soon.
-- 📦 [React Geiger](https://github.com/kristiandupont/react-geiger): It’s like the audio version of WhyDidYouRender, emitting little audio farts whenever React re-renders. That’s a fun idea, but could actually be useful too.
-- 📦 [MistCSS - Write React components using CSS only](https://typicode.github.io/mistcss/): A crazy JS-from-CSS tool that permits to generate React components directly from CSS files, including Tailwind support 🤪.
+- 📦 [WinterJS 1.0 - WinterCG-compatible JS runtime built on Rust and SpiderMonkey](https://wasmer.io/posts/winterjs-v1) : this new runtime claims to be the fastest, and can now run Next.js. A Hacker News RSC demo is available, and they plan to migrate their own Next.js frontend to it soon.
+- 📦 [React Geiger](https://github.com/kristiandupont/react-geiger) : It’s like the audio version of WhyDidYouRender, emitting little audio farts whenever React re-renders. That’s a fun idea, but could actually be useful too.
+- 📦 [MistCSS - Write React components using CSS only](https://typicode.github.io/mistcss/) : A crazy JS-from-CSS tool that permits to generate React components directly from CSS files, including Tailwind support 🤪.
 - 📦 [Shadcn/ui - March 2024 Update - New components: Breadcrumb, One-Time-Password Input](https://ui.shadcn.com/docs/changelog)
-- 📦 [MDXTS (Beta) - The Content & Documentation SDK for React](https://www.mdxts.dev/): “It's sort of a mashup of Contentlayer + Storybook”
+- 📦 [MDXTS (Beta) - The Content & Documentation SDK for React](https://www.mdxts.dev/) : “It's sort of a mashup of Contentlayer + Storybook”
 - 📦 [Astro 4.5 - Dev Audit UI, View Transition improvements, Multi-CDN, Shiki 1.0…](https://astro.build/blog/astro-450/)
 - 📦 [Remix-Dev-Tools 4.0 - now Vite/ESM-only, new docs site](https://github.com/Code-Forge-Net/Remix-Dev-Tools/releases/tag/v4.0.0)
 - 📦 [BlockNote 0.12 - Block-Based rich text editor - New website and features](https://www.blocknotejs.org/)
