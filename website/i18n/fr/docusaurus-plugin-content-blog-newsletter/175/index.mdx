@@ -5,11 +5,11 @@ authors: [slorber]
 date: 02-28-2024
 ---
 
-Hi everyone!
+Salut à tous !
 
-This week has been rather quiet in terms of releases, but we have many great articles to read!
+Cette semaine a été plutôt calme en termes de versions, mais nous avons beaucoup d'articles intéressants à lire !
 
-Sorry for last week, the email was so long that despite removing links, it got truncated by Gmail 😅.
+Désolé pour la semaine dernière, l'email était si long que malgré la suppression des liens, il a été tronqué par Gmail 😅.
 
 <!-- truncate -->
 
@@ -46,7 +46,7 @@ Trusted by corporate clients such as The Weather Channel, Deel.com, La Banque Po
 
 **[Instant Search Params with React Server Components](https://buildui.com/posts/instant-search-params-with-react-server-components)**
 
-An awesome interactive article showing that it’s surprisingly hard to persist UI state to the query string in a React Server Component world and yet give immediate user feedback. Updating the URL triggers a server round-trip. The new `useOptimistic` hook solves this problem nicely. This also shows a nice use-case for CSS `:has()`, to avoid hoisting the `startTransition` pending state.
+Un article interactif génial qui montre qu'il est étonnamment difficile de faire persister l'état de l'interface utilisateur dans la chaîne de requête dans un monde de composants React Server tout en donnant un retour d'information immédiat à l'utilisateur. La mise à jour de l'URL déclenche un aller-retour sur le serveur. Le nouveau hook `useOptimistic` résout joliment ce problème. Cela montre aussi un bon cas d'utilisation du CSS `:has()`, pour éviter de remonter l'état en attente de `startTransition`.
 
 ---
 
@@ -54,26 +54,26 @@ An awesome interactive article showing that it’s surprisingly hard to persist 
 
 **[Building a React Metaframework with Vinxi](https://www.brenelz.com/posts/building-a-react-metaframework-with-vinxi/)**
 
-TIL about [Vinxi](https://vinxi.vercel.app/), a toolbox built on top of Vite and Nitro enabling you to easily create your own meta-framework, with support, SSR, routing conventions, server functions and everything. Solid Start uses it behind the hood, but it’s a framework-agnostic SDK. Apparently, [TanStack Start will use it too](https://twitter.com/sebastienlorber/status/1762809340719780080)! This article explains how to use it with React.
+Aujourd'hui, j'ai découvert [Vinxi](https://vinxi.vercel.app/), une boîte à outils construite au-dessus de Vite et Nitro vous permettant de créer facilement votre propre méta-framework, avec le support SSR, les conventions de routage, les fonctions serveur et tout le reste. Solid Start l'utilise sous le capot, mais c'est un SDK indépendant du framework. Apparemment, [TanStack Start l'utilisera aussi](https://twitter.com/sebastienlorber/status/1762809340719780080) ! Cet article explique comment l'utiliser avec React.
 
 ---
 
 - 💸 [Explore how to build a feature-rich PDF Viewer in React with Apryse's rendering engine. Customize UI, scroll, zoom, and search with annotations.](https://apryse.com/blog/build-custom-react-pdf-viewer?utm_source=thisweekinreact2&utm_medium=email&utm_campaign=newsletter2)
-- 📜 [Avoiding Hydration Mismatches with useSyncExternalStore](https://tkdodo.eu/blog/avoiding-hydration-mismatches-with-use-sync-external-store): Another great article from Dominik explaining how `useSyncExternalStore` and its 2 client/server snapshot callbacks can help prevent hydration mismatches. It can be a better alternative to useEffect for many use-cases, including rendering localized dates, or creating a client-only wrapper component.
-- 📜 [Exploring Next.js Forms with Server Actions](https://www.robinwieruch.de/next-forms/): A very comprehensive step-by-step tutorial on using the new React/Next.js form primitives without any abstractions, and all the little mistakes you might make along the way.
-- 📜 [No Outer margin](https://kyleshevlin.com/no-outer-margin/): Gives good reasons to not apply margins inside your component root, but instead let the parent component handle the layout. Margins are the first thing that come to mind, but there are also other CSS rules that break component encapsulation. I recovered a great deleted article for you on that matter: [Layout-isolated components](https://web.archive.org/web/20201024040746/https://visly.app/blog/layout-isolated-components).
-- 📜 [Vjeux - 12 Years at Meta](https://blog.vjeux.com/2024/project/12-years-at-meta.html): If you are a new React developer, you may not have heard of Christopher Chedeau, but he’s one of the most impactful member of our community. A few things he created or significantly contributed to: React, React Native, Yoga, CSS-in-JS, Prettier, Excalidraw, Docusaurus, GraphQL…
-- 📜 [Learning Four Key Primitives In Solid](https://www.brenelz.com/posts/learning-four-key-primitives-in-solid/): Don’t be mislead by the title, it’s a great article for React devs, comparing Solid vs React, Next.js and Remix on 4 interesting topics. TIL that Next.js RSC components would waterfall by default unless you use a preloading function.
-- 📜 [Handle both JSON and FormData in Remix](https://www.jacobparis.com/content/conform-json-formdata): Jacob explains the tradeoffs of using form inputs vs creating a FormData or JSON payload manually on an event handler. Shows how to create an Remix abstraction using Zod and Conform that can conveniently accept both JSON and FormData paylods.
-- 📜 [Introducing Waku Land](https://interbolt.org/blog/waku-land/): A live deployment of every Waku examples.
-- 📜 [Where to host your Remix app in 2024](https://www.jacobparis.com/content/where-to-host-remix?ref=twitter): Updated on 25 Feb.
-- 📜 [HTMX vs React - A Complete Comparison](https://semaphoreci.com/blog/htmx-react): The article suggests to use React for rich web experiences, and use HTMX for pages with simpler interactivity.
+- 📜 [Avoiding Hydration Mismatches with useSyncExternalStore](https://tkdodo.eu/blog/avoiding-hydration-mismatches-with-use-sync-external-store) : Un autre excellent article de Dominik expliquant comment `useSyncExternalStore` et ses 2 callbacks client/serveur de snapshot peuvent aider à éviter les déséquilibres de l'hydratation. Cela peut être une meilleure alternative à useEffect pour de nombreux cas d'utilisation, y compris le rendu de dates localisées, ou la création d'un composant enveloppe uniquement pour le client.
+- 📜 [Exploring Next.js Forms with Server Actions](https://www.robinwieruch.de/next-forms/) : Un tutoriel très complet, étape par étape, sur l'utilisation des nouvelles primitives de formulaire React/Next.js sans aucune abstraction, et toutes les petites erreurs que vous pourriez faire en cours de route.
+- 📜 [No Outer margin](https://kyleshevlin.com/no-outer-margin/) : Présente de bonnes raisons de ne pas appliquer de marges à l'intérieur de la racine de votre composant, mais de laisser le composant parent s'occuper de la mise en page. Les marges sont la première chose qui nous vient à l'esprit, mais il y a aussi d'autres règles CSS qui ne respectent pas l'encapsulation des composants. J'ai récupéré un excellent article supprimé à ce sujet : [Layout-isolated components](https://web.archive.org/web/20201024040746/https://visly.app/blog/layout-isolated-components).
+- 📜 [Vjeux - 12 Years at Meta](https://blog.vjeux.com/2024/project/12-years-at-meta.html) : Si vous êtes un nouveau développeur React, vous n'avez peut-être pas entendu parler de Christopher Chedeau, mais c'est l'un des membres les plus influents de notre communauté. Voici quelques exemples de choses qu'il a créées ou auxquelles il a contribué de manière significative : React, React Native, Yoga, CSS-in-JS, Prettier, Excalidraw, Docusaurus, GraphQL...
+- 📜 [Learning Four Key Primitives In Solid](https://www.brenelz.com/posts/learning-four-key-primitives-in-solid/) : Ne vous laissez pas berner par le titre, c'est un excellent article pour les développeurs React, comparant Solid vs React, Next.js et Remix sur 4 sujets intéressants. A noter que les composants RSC de Next.js sont waterfall par défaut à moins que vous n'utilisiez une fonction de preloading.
+- 📜 [Handle both JSON and FormData in Remix](https://www.jacobparis.com/content/conform-json-formdata) : Jacob explique les compromis entre l'utilisation des inputs de formulaire et la création manuelle d'un chargement d'un FormData ou d'un JSON depuis un gestionnaire d'événement. Il montre comment créer une abstraction Remix à l'aide de Zod et Conform qui peut accepter de manière pratique des chargements à la fois de JSON et de FormData.
+- 📜 [Introducing Waku Land](https://interbolt.org/blog/waku-land/) : Un déploiement en temps réel de tous les exemples de Waku.
+- 📜 [Where to host your Remix app in 2024](https://www.jacobparis.com/content/where-to-host-remix?ref=twitter) : Mise à jour du 25 février.
+- 📜 [HTMX vs React - A Complete Comparison](https://semaphoreci.com/blog/htmx-react) : L'article suggère d'utiliser React pour les expériences web riches, et d'utiliser HTMX pour les pages avec une interactivité plus simple.
 - 📜 [Next.js vs. Remix - A Developer's Dilemma](https://blog.saeloun.com/2024/02/21/next.js-vs-remix/)
-- 📜 [Compiler Theory and Reactivity](https://www.recompiled.dev/blog/ssa/): Sathya works on React Forget and explains a compiler theory pass they use called Static Single Assignment form. I have to admit I’m a bit lost here 😅. His previous post on [Alias analysis](https://www.recompiled.dev/blog/alias-analysis/) is easier to understand.
+- 📜 [Compiler Theory and Reactivity](https://www.recompiled.dev/blog/ssa/) : Sathya travaille sur React Forget et explique une technique théorique de compilation qu'ils utilisent appelée Static Single Assignment form. Je dois admettre que je suis un peu perdu 😅. Son post précédent sur [Alias analysis](https://www.recompiled.dev/blog/alias-analysis/) est plus facile à comprendre.
 - 📜 [How to Style Active Links in Next.js App Router](https://spacejelly.dev/posts/how-to-style-active-links-in-next-js-app-router)
 - 📜 [Add Dynamic Sitemap to Next.js Website Using Pages or App Directory](https://claritydev.net/blog/nextjs-dynamic-sitemap-pages-app-directory)
-- 📦 [@react-three/uikit - Build performant 3D user interfaces using react-three/fiber and yoga](https://github.com/pmndrs/uikit): New Poimandres collective package preview with an impressive 🐦 [demo](https://twitter.com/0xca0a/status/1762069894932160943)
-- 🎥 [Ryan Toronto - Asset loading in React 19](https://www.youtube.com/watch?v=dxWLp-8mXes): Explains a quite unknown but exciting upcoming React feature that lets you load assets (here CSS) of the next page before completing the navigation transition.
+- 📦 [@react-three/uikit - Build performant 3D user interfaces using react-three/fiber and yoga](https://github.com/pmndrs/uikit): Nouveau package du collectif Poimandres en preview avec une impressionnante 🐦 [démo](https://twitter.com/0xca0a/status/1762069894932160943)
+- 🎥 [Ryan Toronto - Asset loading in React 19](https://www.youtube.com/watch?v=dxWLp-8mXes) : Explique une fonctionnalité de React assez méconnue mais passionnante à venir qui vous permet de charger les ressources (ici du CSS) de la page suivante avant de terminer la transition de navigation.
 - 🎥 [Jack Herrington - React Hook Form & React 19 Form Actions, The Right Way](https://www.youtube.com/watch?v=VLk45JBe8L8)
 - 🎥 [Fireship - They made React great again? (React Labs)](https://www.youtube.com/watch?v=4k6Xgjqkad4)
 - 🎥 [Fireship - This UI component library is mind-blowing (Aceternity Components)](https://www.youtube.com/watch?v=RPa3_AD1_Vs)
@@ -104,26 +104,26 @@ Dive into Clerk's [quickstarts and tutorials](https://clerk.com/docs/quickstarts
 
 ## 📱 React-Native {#react-native}
 
-This section is now co-authored with [Benedikt](https://twitter.com/bndkt). Feel free to send us your comments by email or on [Twitter](https://twitter.com/bndkt)!
+Cette section est désormais co-écrite avec [Benedikt](https://twitter.com/bndkt). N'hésitez pas à nous envoyer vos commentaires par email ou sur [Twitter](https://twitter.com/bndkt) !
 
-This past week, we all enjoyed a brief respite from major headline React Native news (or did I miss something, in this case [@me](https://twitter.com/bndkt)). Perhaps that's a welcome change, especially after the whirlwind of events like Expo 50, visionOS, the State of React Native, react-strict-dom, and more. However, this doesn't mean the React Native world has come to a halt. There’s been a lot of little announcements that give us a glimpse in the near future of React Native. The first release candidates for [RN 0.74](https://github.com/facebook/react-native/blob/ee2bc59dfe4579cad3b7f0b5de667a89fcac8710/CHANGELOG.md#0740-rc0) were released. They contain a lot of improvements as well as some deprecations and breaking changes, but from the first glance nothing major that makes me worried about upgrading effort. Most notably, bridgeless mode becomes the new default with 0.74 (but only when New Arch is enabled). Bridgeless mode is the third pillar of the New Arch, after the already introduced TurboModules and new renderer (Fabric). Speaking of New Arch and defaults, a [PR](https://github.com/facebook/react-native/pull/43135) was merged that’ll make the New Arch the default beginning with RN 0.75 (it will still be possible to opt out though). Also, the RFC with the [React Native Frameworks](https://github.com/react-native-community/discussions-and-proposals/blob/main/proposals/0759-react-native-frameworks.md) definition has been merged, laying out the responsibilities of RN vs frameworks on top of RN.
+La semaine dernière, nous avons tous bénéficié d'un bref repos concernant les nouvelles majeures de React Native (ou aurais-je manqué quelque chose, en l'occurrence [@moi](https://twitter.com/bndkt)). C'est peut-être un signe positif, surtout après le tourbillon d'événements tels que Expo 50, visionOS, the State of React Native, react-strict-dom, et bien d'autres encore. Cependant, cela ne signifie pas que le monde de React Native s'est arrêté. Il y a eu beaucoup de petites annonces qui nous donnent un aperçu du futur proche de React Native. La première release candidates pour [RN 0.74](https://github.com/facebook/react-native/blob/ee2bc59dfe4579cad3b7f0b5de667a89fcac8710/CHANGELOG.md#0740-rc0) est sortie. Elle contient beaucoup d'améliorations ainsi que quelques dépréciations et breaking changes, mais à première vue, rien de majeur qui me rende inquiet quant à l'effort de mise à jour. Plus particulièrement, le mode bridgeless devient le nouveau mode par défaut avec la version 0.74 (mais uniquement lorsque la fonction New Arch est activée). Le mode bridgeless est le troisième pilier de New Arch, aprèsTurboModules déjà introduit et le nouveau moteur de rendu (Fabric). Concernant New Arch et les valeurs par défaut, une [PR](https://github.com/facebook/react-native/pull/43135) a été fusionné qui fera deNew Arch la valeur par défaut à partir de RN 0.75 (il sera toujours possible d'opter pour une autre solution). De plus, la RFC avec la définition de [React Native Frameworks](https://github.com/react-native-community/discussions-and-proposals/blob/main/proposals/0759-react-native-frameworks.md) a été fusionné, établissant les responsabilités de RN par rapport aux frameworks au-dessus de RN.
 
 ---
 
 - 💸 [React Universe Conf - join the conference at the lowest price now. There’s a limited batch of blind bird tickets available.](https://www.reactuniverseconf.com/)
-- 📜 [How to integrate Native iOS code into a React Native project for iOS](https://www.themorrow.digital/blog/how-to-integrate-native-modules-in-react-native-ios-apps): Good introduction to bridging headers, @objc, and other fun stuff you need to know before diving into native code for iOS.
-- 📜 [react-strict-dom, why it's so great?](https://szymonrybczak.dev/blog/react-strict-dom) If you want to know how `<html.div>` ends up as a native component in iOS, read this short summary of react-strict-dom.
-- 📜 [Expo Push Notifications Migrating to FCM V1](https://expo.dev/blog/expo-push-notifications-migrating-to-fcm-v1): In June, FCM Legacy will join the long list of discontinued Google services, so it’s really time to migrate!
-- 📜 [@expo/fingerprint 🤝 GitHub Actions](https://expo.dev/blog/expo-fingerprint-github-actions): In my opinion, Fingerprint is the most underhyped feature of Expo SDK 50. This post shows the killer use case: Kicking off a new native build as soon as Fingerprint determines it is required.
-- 📜 [Universal Apps: A Single, Unified Codebase Powering Mobile, Desktop, Web, and TV?](https://www.reactnativetv.com/blog/universal-apps-powering-seven-platforms) Kind of the holy grail, and a topic I’m really excited about in 2024: One app, all the platforms. This article has some interesting thoughts about it.
+- 📜 [How to integrate Native iOS code into a React Native project for iOS](https://www.themorrow.digital/blog/how-to-integrate-native-modules-in-react-native-ios-apps) : Bonne introduction aux entêtes de liaison (bridging headers), à @objc, et à d'autres choses intéressantes que vous devez savoir avant de plonger dans le code natif pour iOS.
+- 📜 [react-strict-dom, why it's so great?](https://szymonrybczak.dev/blog/react-strict-dom) : Si vous voulez savoir comment `<html.div>` finit par devenir un composant natif dans iOS, lisez ce court résumé de react-strict-dom.
+- 📜 [Expo Push Notifications Migrating to FCM V1](https://expo.dev/blog/expo-push-notifications-migrating-to-fcm-v1) : En juin, FCM Legacy rejoindra la longue liste des services Google abandonnés, il est donc grand temps de migrer !
+- 📜 [@expo/fingerprint 🤝 GitHub Actions](https://expo.dev/blog/expo-fingerprint-github-actions) A mon avis, Fingerprint est la fonctionnalité la plus sous-estimée de Expo SDK 50. Cet article montre le meilleur cas d'utilisation : Commencer une nouvelle version native dès que Fingerprint indique qu'elle est nécessaire.
+- 📜 [Universal Apps: A Single, Unified Codebase Powering Mobile, Desktop, Web, and TV?](https://www.reactnativetv.com/blog/universal-apps-powering-seven-platforms) C'est un peu le Saint-Graal, et un sujet qui me passionne en 2024 : Une application pour toutes les plateformes. Cet article contient des réflexions intéressantes à ce sujet.
 - 📜 [How to build an offline-first app using Expo & Legend State](https://expo.dev/blog/offline-first-apps-with-expo-and-legend-state)
 - 📦 [React Native 0.74-rc.1](https://github.com/facebook/react-native/releases/tag/v0.74.0-rc.1)
 - 📦 [React Native v0.73.5](https://github.com/facebook/react-native/releases/tag/v0.73.5)
-- 📦 [react-native-visionos 0.73.6](https://github.com/callstack/react-native-visionos/releases/tag/v0.73.6-visionos): Multi window support and [new docs](https://callstack.github.io/react-native-visionos-docs/)!
+- 📦 [react-native-visionos 0.73.6](https://github.com/callstack/react-native-visionos/releases/tag/v0.73.6-visionos) : Prise en charge de plusieurs fenêtres et [nouveaux documents](https://callstack.github.io/react-native-visionos-docs/) !
 - 📦 [Zeego 1.8 + 1.9 - Universal cross-platform menus - Horizontal groups and group labels](https://github.com/nandorojo/zeego/releases)
 - 📦 [react-native-image-editor 4.0 - base64 output, format prop, returns metadata](https://github.com/callstack/react-native-image-editor/releases/tag/4.0.0)
 - 📦 [React Native Flash Calendar - Fast and flexible calendar using Shopify FlashList](https://github.com/MarceloPrado/flash-calendar)
-- 📦 [react-native-reusables](https://github.com/mrzachnugent/react-native-reusables): I love shadcn/ui (UI library) for web, this brings it to RN!
+- 📦 [react-native-reusables](https://github.com/mrzachnugent/react-native-reusables) : J'adore shadcn/ui (bibliothèque d'interface utilisateur) pour le web, ceci permet de l'utiliser avec RN !
 - 🎥 [Fireship - Expo in 100 Seconds](https://www.youtube.com/watch?v=vFW_TxKLyrE)
 - 🎥 [Theo Brown - React's Next Big Change? (react strict dom)](https://www.youtube.com/watch?v=hz5gbCXJ-vA)
 - 🎥 [Expo - How to build TV apps with Expo SDK 50](https://www.youtube.com/watch?v=PUMBWeLVuiw)
@@ -138,8 +138,8 @@ This past week, we all enjoyed a brief respite from major headline React Native 
 - 🎥 [React Native / Expo et supabase](https://www.youtube.com/watch?v=TDBZ2qM_8S0&list=PLVq2Nd186wZGUFifnViYVVE9xYygILip-)
 - 🎥 [Comment résoudre les Erreurs d'hydratation en Next.js ?](https://www.youtube.com/watch?v=FrLPbHCYMS8)
 - 🎥 [Ces Composants React sont un Game Changer](https://www.youtube.com/watch?v=HmMs19aAK6g)
-- 📅 [Conférence React Paris - 22 Mars](https://react.paris/): nouvelle conférence, les speakers ont déjà été annoncés.
-- 📅 [React Connection - 22 Avril](https://reactconnection.io/) + [React-Native Connection - 23 Avril](https://reactnativeconnection.io/): 2 jours de conférence web et mobile. CFP est ouvert jusqu'au 3 février.
+- 📅 [Conférence React Paris - 22 Mars](https://react.paris/) : nouvelle conférence, les speakers ont déjà été annoncés.
+- 📅 [React Connection - 22 Avril](https://reactconnection.io/) + [React-Native Connection - 23 Avril](https://reactnativeconnection.io/) : 2 jours de conférence web et mobile. CFP est ouvert jusqu'au 3 février.
 
 ---
 

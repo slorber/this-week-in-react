@@ -1,14 +1,15 @@
 ---
 slug: /176
-title: "React Hebdo #176: ..."
+title: "This Week In React #176: useActionState, React Compiler, Million Lint, TanStack, Generative UI, Vinxi, Remix i18n, Next.js security, Typesafe Router, Shopify RN perf, RCTRootViewFactory, iOS Live Activities, Uni Stack, TypeScript, Parcel..."
 authors: [slorber]
 date: 03-06-2024
-unlisted: true
 ---
 
 Salut à tous !
 
-<Todo />
+Cette semaine est difficile à résumer, il y a beaucoup de nouvelles intéressantes et je ne sais pas lesquelles mettre en avant.
+
+Nous avons notamment un aperçu d'un nouveau hook React remplaçant le déroutant `useFormState`, que même les développeurs React Native pourront désormais utiliser !
 
 <!-- truncate -->
 
@@ -36,15 +37,54 @@ import Support from "../_support.mdx";
 
 Axiom efficiently captures 100% of your event data so you’ll never have to worry about sampling or retention, and you’ll never have to guess what your users are experiencing.
 
-**PS**: [I use it myself to monitor the newsletter signups](https://twitter.com/sebastienlorber/status/1528666563452317696) 😉
+**PS** : [Je l'utilise moi-même pour suivre les inscriptions à la newsletter](https://twitter.com/sebastienlorber/status/1528666563452317696) 😉
 
 ---
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![React Core PR - New useActionState hook](/emails/issues/176/useActionState.jpg)](https://github.com/facebook/react/pull/28491)
+
+**[React Core PR - New useActionState hook](https://github.com/facebook/react/pull/28491)**
+
+Il s'avère que le hook useFormState était confus, et n'était même pas destiné à être utilisé uniquement dans les formulaires. L'équipe React s'attaque à ce problème en introduisant un nouveau hook React pour le remplacer :
+
+- Renomme `useFormState` en `useActionState`
+- Ajoute un état `pending` au tuple retourné
+- Déplace le hook vers le package `react`.
+
+Le déplacement de `react-dom` vers `react` signifie également que maintenant, d'autres moteurs de rendu tels que React Native peuvent également l'utiliser. D'autres avantages sont à prendre en compte, comme une fonctionnalité « d'amélioration progressive partielle », mais aussi de nouvelles mises en garde documentées dans le PR.
+
+---
 
 - 💸 [Secure your documents with PDF Redaction. Discover how to protect sensitive information in PDFs using React. Visit our blog to learn more.](https://apryse.com/blog/pdf-redaction-using-react?utm_source=this%20week%20in%20react&utm_medium=newsletter3)
+- 🐦 [React 19 != React Compiler](https://twitter.com/sebastienlorber/status/1764950877620654474) : L'article de React Labs est un peu ambigu et a induit beaucoup d'entre nous en erreur, alors clarifions les choses. Le compilateur sera probablement publié après la sortie de React 19.0 en tant que projet séparé, et il y a de fortes chances qu'il soit initialement publié en tant que plugin Babel/TypeScript. Les éléments internes sont entièrement dissociés, il ne devrait donc pas falloir longtemps pour l'adapter à Rust.
+- 🐦 [TanStack Start preview](https://twitter.com/tannerlinsley/status/1765120904370307438) : Tanner travaille sur un framework TanStack Start full-stack basé sur Vinxi et TanStack Router. Cet aperçu montre la migration de son propre site TanStack vers ce framework.
+- 📜 [Vercel - Introducing AI SDK 3.0 with Generative UI support](https://vercel.com/blog/ai-sdk-3-generative-ui) : Avec le AI SDK 3.0 et grâce à React Server Components, vous pouvez désormais diffuser des composants d'interface utilisateur directement à partir des LLM. Des démos super impressionnantes !
+- 📜 [Secure statically rendered paid content in Next.js (with the App Router)](https://www.ericburel.tech/blog/static-paid-content-app-router) : Montre que l'utilisation des layouts Next.js pour l'authentification n'est pas très sécurisée, et que le contenu protégé peut toujours fuir à travers le endpoint RSC. Suggère d'utiliser un middleware à la place.
+- 📜 [Internationalization with Remix](https://remix.run/blog/remix-i18n) : Reprend les fondamentaux de l'i18n, puis détaille les différentes solutions i18n que vous pouvez mettre en place dans Remix. Les segments de route facultatifs peuvent vous aider à utiliser des sous-répertoires localisés.
+- 📜 [Did you know you can write your own typesafe React router in 500 lines?](https://sinja.io/blog/build-typesafe-react-router-from-scratch) : Un article très complet qui pourrait vous permettre de mieux comprendre le fonctionnement des routeurs existants. Cet article permet également de découvrir les techniques avancées de programmation TypeScript au niveau du type.
+- 📜 [Streaming HTML out of order without JavaScript](https://lamplightdev.com/blog/2024/01/10/streaming-html-out-of-order-without-javascript/) : Cette démo très intéressante montre qu'il n'est pas nécessaire d'utiliser JavaScript pour diffuser des morceaux de HTML dans le désordre, tout en les restituant dans l'ordre correct. Tout ce dont vous avez besoin, c'est d'un Shadow DOM déclaratif et de slots. Il sera intéressant de voir si RSC streaming + Suspense pourra exploiter cette technique à l'avenir au lieu d'intégrer du JavaScript.
+- 📜 [Simple RSC With Vinxi](https://www.brenelz.com/posts/simple-rsc-with-vinxi/) : Le Vinxi SDK vous aide à créer votre propre framework full-stack, et il dispose même d'un plugin pour la prise en charge de React Server Components !
+- 📜 [Million.js - Blocks with noSlot Mode](https://million.dev/blog/block-noSlot) : le compilateur Million peut envelopper vos composants avec des éléments `<slot>`, ce qui peut causer des problèmes (de style). Ceci introduit un nouveau mode expérimental `noSlot`...
+- 📜 [How to add Monaco to a Next.js app to enable custom user workflows](https://deno.com/blog/monaco-nextjs) : Tutoriel intéressant qui montre également comment déployer du code utilisateur non fiable sur Deno.
+- 📜 [Conceptual Model of React and RSC](https://ondrejvelisek.github.io/conceptual-model-of-react-and-rsc/) : Réflexion intéressante sur la formule UI=f(state), et conclusion sur le fait que RSC ne respecte pas le modèle original.
+- 📜 [Why React Server Components Are Breaking Builds to Win Tomorrow](https://www.builder.io/blog/why-react-server-components)
+- 📜 [The End Of My Gatsby Journey](https://www.smashingmagazine.com/2024/03/end-of-gatsby-journey/)
+- 📜 [React Admin March 2024 Update](https://marmelab.com/blog/2024/03/05/react-admin-march-2024-update.html)
+- 📦 [Million Lint - public beta](https://million.dev/blog/lint) : Une extension VSCode qui vous aide à garder votre code React rapide grâce à l'analyse dynamique. Beaucoup plus simple à utiliser que les graphes de React Devtools flame. Il y aura un service payant supplémentaire Lint++ basé sur l'IA construit au-dessus pour vous suggérer des améliorations de performance possibles.
+- 📦 [react-unforget - A compiler for automatic optimization of React apps](https://github.com/mohebifar/react-unforget) : Après Forgetti, voici un autre nouveau compilateur React alternatif issu de la communauté. Voir aussi 🐦 [Le retour d'expérience de Joe Savona](https://twitter.com/en_JS/status/1763593971224494106).
+- 📦 [Remix 2.8 - Pass resolved viteConfig to buildEnd hook](https://remix.run/docs/en/main/start/changelog#v280)
+- 📦 [React Query 5.25 - skipToken, typesafe query disabling](https://github.com/TanStack/query/releases/tag/v5.25.0)
+- 📦 [TanStack Router 1.18 - route groups](https://github.com/TanStack/router/releases/tag/v1.18.0)
+- 📦 [Starlight 0.21 - New UI components: Steps, FileTree](https://starlight.astro.build/guides/components/)
+- 📦 [Storybook 8.0 RC - v8 is officially stable enough to be used in production](https://github.com/storybookjs/storybook/releases/tag/v8.0.0-rc.0)
+- 📦 [Onborda - Onboarding wizard flow for Next.js powered by Framer Motion](https://github.com/uixmat/onborda)
+- 📦 [Input-OTP - One-time password input component for React](https://input-otp.rodz.dev/)
+- 📦 [Panda 0.33](https://github.com/chakra-ui/panda/discussions/2274)
+- 📦 [UVCanvas - React component library for beautifully shaded canvas](https://uvcanvas.com)
+- 🎥 [Jack Herrington - Is Tanstack Router Better Than React-Router?](https://www.youtube.com/watch?v=qOwnQJOClrw)
+- 🎥 [Theo - How Shadcn/ui Actually Works](https://www.youtube.com/watch?v=AqmMx_JidGo)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -71,32 +111,70 @@ Dive into Clerk's [quickstarts and tutorials](https://clerk.com/docs/quickstarts
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+Cette section est désormais co-écrite avec [Benedikt](https://twitter.com/bndkt). N'hésitez pas à nous envoyer vos commentaires par email ou sur [Twitter](https://twitter.com/bndkt) !
 
-- 💸 [React Universe Conf combines the best of React Native EU with a new enhanced program. Get your ticket at the lowest price before March 7.](https://www.reactuniverseconf.com/?utm_campaign=React_Universe_Conf&utm_source=email&utm_content=This_Week_in_React)
+[![Improving Shopify App’s Performance](/emails/issues/176/shopify.jpg)](https://shopify.engineering/improving-shopify-app-s-performance)
+
+**[Improving Shopify App’s Performance](https://shopify.engineering/improving-shopify-app-s-performance)**
+
+Spotify est un adepte de React Native depuis longtemps. Mais ils ont remarqué que les performances de leur application avaient baissé depuis qu'ils avaient migré vers React Native. Au lieu de blâmer la pile technologique, ils se sont mis au travail et ont commencé à optimiser les performances. Les résultats parlent d'eux-mêmes : Le lancement de l'app est 44 % plus rapide et les temps de chargement des écrans ont été réduits de 59 %. Voici un résumé rapide de certaines des mesures prises (indice : FlashList joue un rôle important dans certaines d'entre elles). Pour plus de détails, lisez leur excellent article de synthèse :
+
+- Au début, ne rendre que ce qui est visible sur l'écran (surtout pour l'écran d'accueil)
+- Construire tous les écrans comme des listes (basé sur FlashList)
+- Utiliser inlineRequires
+- Changements d'état par batch
+- Optimiser la mise en cache
+
+Des informations très intéressantes et des résultats impressionnants. J'espère que l'équipe de Shopify continuera à partager ces détails et peut-être verrons-nous même certaines des choses qu'ils ont indiqué avoir conçues au cours de ce processus finir en Open Source ?
+
+---
+
+- 💸 [React Universe Conf combines the best of React Native EU with a new enhanced program. Get your ticket at the lowest price before March 7](https://www.reactuniverseconf.com/?utm_campaign=React_Universe_Conf&utm_source=email&utm_content=This_Week_in_React)
+- 👀 [PR - RCTRootViewFactory](https://github.com/facebook/react-native/pull/42263) : Simplifie les intégrations sur iOS et vous évite de vous préoccuper des combinaisons Old Arch/New Arch/Bridge/Bridgeless.
+- 🐦 [Drag and drop files from other apps in your RN app](https://x.com/alihdjr/status/1764393524940673529)
+- 📖 [visionOS docs - Integrating in existing projects](https://callstack.github.io/react-native-visionos-docs/docs/guides/integrate-into-existing-projects/)
+- 📜 [Expo - Orchestrate advanced workflows with custom builds](https://expo.dev/blog/orchestrate-advanced-workflows-with-custom-builds) : Les builds personnalisés vous permettent d'exécuter des scripts (bash ou JS) avant ou après les builds Expo, par exemple pour exécuter des tests E2E, envoyer des notifications à votre équipe, ...
+- 📜 [iOS Live Activities and React Native - leveraging the latest iOS features to display your app's most current data without needing to open it](https://www.reactnative.university/blog/live-activities-unleashed) : Beaucoup plus d'applications devraient avoir des Live Activities ! Il y a cependant un obstacle pour les développeurs RN, car elles doivent être écrites en Swift. Cette série en trois parties passe en revue toutes les étapes nécessaires à l'ajout d'une Live Activity.
+- 📜 [React Native Error Boundaries - Feature, Partial, and Server](https://www.reactnative.university/blog/react-native-error-boundaries) : Les error boundaries restent une fonctionnalité sous-utilisée, et chaque application React Native devrait en avoir au moins une (mais idéalement plus). Ce billet explique pourquoi et comment.
+- 📜 [Increase Speed and Security With Native Crypto Libraries](https://www.callstack.com/blog/increase-speed-and-security-with-native-crypto-libraries)
+- 📜 [Morrow's Summary of the State of React Native 2023 Report](https://www.themorrow.digital/blog/our-summary-of-the-state-of-react-native-2023-report)
+- 📦 [Intercom-react-native 6.5 - Now with Expo config plugin](https://github.com/intercom/intercom-react-native/releases/tag/6.5.0)
+- 📦 [Uni Stack - React Native starter w/ Expo, Prisma, tRPC](https://www.uni-stack.dev/)
+- 📦 [Expo-foreground-actions - Start actions that continue to run in the grace period after the user switches apps](https://github.com/Acetyld/expo-foreground-actions)
+- 📦 [React Native 0.74.0 RC 2](https://github.com/facebook/react-native/releases/tag/v0.74.0-rc.2)
+- 🎙️ [RNR 290 - The State of React Native survey with Bartłomiej Bukowski](https://reactnativeradio.com/episodes/the-state-of-react-native-survey-with-bartomiej-bukowski)
+- 🎙️ [Rocket Ship 32 - From broke Teacher to Software Engineer with Zach Taylor](https://podcast.galaxies.dev/episodes/032-from-broke-teacher-to-software-engineer-with-zach-taylor)
+- 🎥 [Simon Grimm - uild a Kids Drawing App with React Native](https://www.youtube.com/watch?v=G5TjXRHoEno)
+- 🎥 [notJust Dev - Build Your Own Blog with React Native (for Web & Mobile)](https://www.youtube.com/watch?v=ewW6_baBXko)
+- 📅 [Chain React Call for Speakers now open until May 3, 2024](https://sessionize.com/chain-react-2024/)
+- 📅 [React Universe Conf 2024 - Early bird ends today](https://ti.to/RUC/react-universe-conf-2024)
 
 ---
 
 ## 🇫🇷 En français {#fr}
 
-<Todo />
-
-💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
-
-<Todo />
+- 🎥 [Melvyn - L'histoire de Tailwind CSS](https://www.youtube.com/watch?v=zngIwDVQfdA)
+- 🎥 [DevTheory - Actus JS de la semaine - Vercel gère les DDOS ?](https://www.youtube.com/watch?v=JfB6IkP6GAg)
 
 ---
 
 ## 🔀 Autre {#other}
 
-<Todo />
+- 💬 [TypeScript 5.5 Iteration Plan - new Set methods, config extension merging](https://github.com/microsoft/TypeScript/issues/57475)
+- 📜 [Effective TypeScript - The Hidden Side of Type Predicates](https://effectivetypescript.com/2024/02/27/type-guards/)
+- 📜 [Deno - Introducing JSR - the JavaScript Registry](https://deno.com/blog/jsr_open_beta)
+- 📜 [OpenJS Launches New Collaboration to Improve Interoperability of JavaScript Package Metadata](https://socket.dev/blog/openjs-improve-interoperability-of-javascript-package-metadata)
+- 📜 [Open Web Advocacy - Apple backs off killing web apps, but the fight continues](https://open-web-advocacy.org/blog/apple-backs-off-killing-web-apps/)
+- 📜 [Top 8 Recent V8 in Node Updates](https://blog.appsignal.com/2024/02/28/top-8-recent-v8-in-node-updates.html)
+- 📦 [WebKit Features in Safari 17.44 - CSS @scope, align-content](https://webkit.org/blog/15063/webkit-features-in-safari-17-4/)
+- 📦 [Shiki-magic-move - Smoothly animated code blocks](https://github.com/shikijs/shiki-magic-move)
+- 📦 [Parcel 2.12 - Macros defined with import attributes running at build times](https://parceljs.org/blog/v2-12-0/)
+- 📦 [Playwright 1.42 - test tagging, skipped tests annotations](https://github.com/microsoft/playwright/releases/tag/v1.42.0)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/176/meme.jpg)](https://twitter.com/sebastienlorber/status/1765373471645737153)
 
 A plus 👋
