@@ -1,16 +1,17 @@
 ---
 slug: /177
-title: "React Hebdo #177: ..."
+title: "This Week In React #177: Skia, Pigment, Mist, Storybook, shadcn/ui, Hydration Diff, Geiger, MDXTS, Remotion, WinterJS, Astro, Rolldown, Tailwind, TypeScript, Biome, INP..."
 authors: [slorber]
 date: 03-13-2024
-unlisted: true
 ---
 
 Salut à tous !
 
-<Todo />
+Cette semaine, c'est particulièrement excitant de voir React Native Skia atteindre la version 1.0. Mais nous avons également beaucoup d'autres versions intéressantes à découvrir : Pigment, Storybook, Tailwind, Rolldown, MDXTS...
 
-Promo confs
+Il y a également eu quelques nouveautés amusantes, comme Mist et Geist. Je suis vraiment curieux de savoir ce que vous en pensez. Les utiliseriez-vous ?
+
+J'essaie de surveiller de plus près les indicateurs secondaires (PRs, RFCs et tweets), trouvez-vous ce genre de nouvelles utiles ?
 
 <!-- truncate -->
 
@@ -36,9 +37,60 @@ RevenueCat gives you everything you need to monetize, analyze, and grow your app
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Pigment CSS](/emails/issues/177/pigment.jpg)](https://github.com/mui/material-ui/tree/master/packages/pigment-css-react)
+
+[**Pigment CSS**](https://github.com/mui/material-ui/tree/master/packages/pigment-css-react)
+
+L'équipe MUI travaille sur Pigment, leur propre CSS-in-JS avec zéro temps d'exécution pour remplacer Emotion dans Material UI v6. Les premières versions ont été publiées sur npm, avec notamment un plugin Next.js `withPigment()`. Olivier explique dans un 🐦 [tweet](https://twitter.com/olivtassinari/status/1765719897152127315) les motivations pour créer une nouvelle solution, et comment elle se compare à celles existantes (Panda, StyleX, Tailwind). Contrairement à tous les autres, celui-ci facilitera l'adoption pour les utilisateurs existants d'Emotion et de Styled-Components.
+
+---
+
+[![Storybook 8](/emails/issues/177/storybook.jpg)](https://storybook.js.org/blog/storybook-8/)
+
+[**Storybook 8**](https://storybook.js.org/blog/storybook-8/)
+
+Cette nouvelle version majeure de Storybook apporte de nombreuses améliorations, notamment :
+
+- Prise en charge expérimentale de React Server Components
+- Génération automatique de contrôle React plus rapide (grâce à `react-docgen`)
+- Constructions statiques en « mode test » plus rapides (flag CLI `--test`)
+- Tests visuels intégrés (via Chromatic)
+- Prise en charge ré-architecturée de Vite, Vitest, Vite 5
+- Amélioration de l'UI/UX pour mobile/desktop
+
+---
 
 - 💸 [Dive into React PDF viewing with Apryse. Seamless integration with PDF.js for an elevated experience. Learn more from our blog.](https://apryse.com/blog/react/building-react-pdf-viewer-with-pdfjs?utm_source=emailnewsletter3&utm_medium=email)
+- 🐦 [Sebastian Markbåge recommends to use package.json “imports” for dependency injection instead of Context](https://twitter.com/sebmarkbage/status/1765828741500981475)
+- 👀 [React Core PR - Add Diffs to Hydration Warnings](https://github.com/facebook/react/pull/28512) : L'équipe React travaille sur l'amélioration des messages d'erreur d'hydratation de React en affichant un diff. Vous pouvez obtenir un 🐦 [aperçu](https://twitter.com/sebastienlorber/status/1765666127558918243) depuis les tests unitaires.
+- 👀 [React 19 - its not fine](https://github.com/facebook/react/pull/28524) : React 19 🐦 [casse le package « its-fine »](https://twitter.com/0xca0a/status/1766032105807483261), notamment utilisé pour faire le pont du contexte React d'un moteur de rendu à l'autre. Il semble que l'équipe React étudie la possibilité d'apporter une prise en charge de première classe pour cette fonctionnalité, bien que cela semble être un problème difficile à résoudre.
+- 👀 [Next.js PR merged - add Lightning CSS](https://github.com/vercel/next.js/pull/61327) : Un nouveau chargeur CSS expérimental opt-in devrait être disponible prochainement.
+- 👀 [Remix RFC - Action Functions](https://github.com/remix-run/remix/discussions/9020) : La nouvelle RFC propose d'implémenter les React actions functions et de réduire indirection/boilerplate. Il devrait être mis en œuvre d'abord côté client, et plus tard ajouté la prise en charge de la directive RPC « use server ».
+- 👀 [Vercel - Support for Remix + Vite](https://vercel.com/changelog/support-for-remix-with-vite)
+- 📖 [The Framework Field Guide](https://unicorn-utterances.com/collections/framework-field-guide) : Une série de livres en trois parties qui vous apprend Angular, React et Vue en une seule fois, en vous aidant à comprendre les différences entre les frameworks et en incluant de nombreux exemples interactifs. La première partie « Fundamentals » est disponible.
+- 📅 [React Paris - 22 March](https://react.paris/) : La semaine prochaine, j'irai à React Paris, et j'espère y rencontrer certains d'entre vous. La conférence est complète mais vous pouvez toujours la regarder en ligne avec une [réduction de 20 %](https://ti.to/bejs/react-paris/discount/this-week-in-react).
+- 📜 [React Compiler & React 19 - forget about memoization soon?](https://www.developerway.com/posts/react-compiler-soon) : Excellent aperçu des informations dont nous disposons sur le compilateur à venir, son calendrier de publication et le type de code React dont nous pourrions nous débarrasser.
+- 📜 [Navigating the future of frontend](https://frontendmastery.com/posts/navigating-the-future-of-frontend/) : Article bien documenté pour mieux comprendre l'orientation actuelle de l'écosystème frontend, y compris React avec ses Server Components.
+- 📜 [Component Testing with SafeTest vs. Cypress vs. WebdriverIO](https://bromann.dev/post/safetest-vs-cypress-vs-webdriverio) : Le framework Netflix SafeTest, récemment sorti, a été récemment décortiqué par rapport à des concurrents dans 2 articles détaillés, illustrés par des exemples de tests React.
+- 📜 [A Next.js package for managing third-party libraries](https://developer.chrome.com/blog/next-third-parties) : Présente le travail de l'équipe Chrome Aurora, notamment le package @next/third-parties qui permet de charger efficacement des scripts tiers et des intégrations dans un projet Next.js
+- 📜 [Implicit Assertions](https://www.epicweb.dev/implicit-assertions) : Explique pourquoi un test de fumée (« smoke test ») de rendu de React reste utile.
+- 📜 [You can now deploy the Remotion Studio](https://www.remotion.dev/blog/deployable-studio)
+- 📜 [How To Transform ReactJS Animation into Video - The Lightweight Version of Remotion](https://medium.com/numatic-ventures/how-to-transform-reactjs-animation-into-video-the-lightweight-version-of-remotion-25706b1e0251?sk=a979e3131d85e8de4f2666b134eea1ec)
+- 📜 [How to safely use dangerouslySetInnerHTML in React](https://deadsimplechat.com/blog/how-to-safely-use-dangerouslysetinnerhtml-in-react/)
+- 📜 [Progressively Enhance Handling Your Forms With React.js Server Actions](https://techhub.iodigital.com/articles/progressively-enhance-handling-your-forms-with-react-js-server-actions)
+- 📜 [Best Practices for Writing Tests with React Testing Library](https://claritydev.net/blog/improving-react-testing-library-tests)
+- 📦 [WinterJS 1.0 - WinterCG-compatible JS runtime built on Rust and SpiderMonkey](https://wasmer.io/posts/winterjs-v1) : ce nouveau runtime prétend être le plus rapide, et peut maintenant exécuter Next.js. Une démo de Hacker News RSC est disponible, et ils prévoient de migrer leur propre frontend Next.js vers celui-ci prochainement.
+- 📦 [React Geiger](https://github.com/kristiandupont/react-geiger) : C'est comme la version audio de WhyDidYouRender, émettant de petits pets audio à chaque fois que React effectue un nouveau rendu. C'est une idée amusante, mais qui pourrait aussi être utile.
+- 📦 [MistCSS - Write React components using CSS only](https://typicode.github.io/mistcss/) : Un outil JS-from-CSS délirant qui permet de générer des composants React directement à partir de fichiers CSS, incluant la prise en charge de Tailwind 🤪.
+- 📦 [Shadcn/ui - March 2024 Update - New components: Breadcrumb, One-Time-Password Input](https://ui.shadcn.com/docs/changelog)
+- 📦 [MDXTS (Beta) - The Content & Documentation SDK for React](https://www.mdxts.dev/) : « Il s'agit en quelque sorte d'un mélange de Contentlayer et de Storybook ».
+- 📦 [Astro 4.5 - Dev Audit UI, View Transition improvements, Multi-CDN, Shiki 1.0…](https://astro.build/blog/astro-450/)
+- 📦 [Remix-Dev-Tools 4.0 - now Vite/ESM-only, new docs site](https://github.com/Code-Forge-Net/Remix-Dev-Tools/releases/tag/v4.0.0)
+- 📦 [BlockNote 0.12 - Block-Based rich text editor - New website and features](https://www.blocknotejs.org/)
+- 📦 [next-cache-toolbar - A toolbar that helps to identify data cache entries](https://github.com/KajSzy/next-cache-toolbar/)
+- 🎥 [Theo - New JS Framework Just Dropped (TanStack Start)](https://www.youtube.com/watch?v=LMTJPKD0lQw)
+- 🎥 [Jack Herrington - Forms Management with Next.js App Router](https://www.pronextjs.dev/tutorials/forms-management-with-next-js-app-router)
+- 🎙️ [This Month in React - February 2024 - React 19 (but more details), Apple tries to kill PWAs](https://podcasters.spotify.com/pod/show/reactiflux/episodes/TMiR-2024-02-React-19-but-more-details--Apple-tries-to-kill-PWAs-e2gj9gs)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -62,9 +114,40 @@ Refine enables teams to rapidly develop production-ready apps while maintaining 
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+Cette section est désormais co-écrite avec [Benedikt](https://twitter.com/bndkt). N'hésitez pas à nous envoyer vos commentaires par email ou sur [Twitter](https://twitter.com/bndkt) !
+
+[![William Candillon - Time to Fly - React Native Skia 1.0](/emails/issues/177/skia.jpg)](https://www.youtube.com/watch?v=eUbj_NxcgKg)
+
+🎥 [**William Candillon - Time to Fly - React Native Skia 1.0**](https://www.youtube.com/watch?v=eUbj_NxcgKg)
+
+Une version majeure de React Native Skia, avec une vidéo de lancement inspirante ! Cette bibliothèque a été publiée pour la première fois en 2021 par William Candillon et Christian Falch et a été fortement soutenue par Shopify pendant longtemps. Aujourd'hui, ils ont finalement publié une version 1.0 et elle est remplie d'améliorations et de nouvelles fonctionnalités : Grâce à une nouvelle API Paragraph, Skia peut maintenant rendre des mises en page de texte riche, en combinant des polices système et des polices personnalisées. Les Animations Hooks facilitent la construction d'animations performantes avec l'intégration déjà existante de RN Reanimated et de Gesture Handler. Un autre point fort pour moi personnellement : RN Skia supporte désormais le web en tant que plateforme, via un package appelé canvaskit-js !
+
+---
 
 - 💸 [React Universe Conf - Meet the first speakers, and maybe become a speaker yourself? Our CFP is open until March 22. Apply today!](https://www.reactuniverseconf.com/?utm_campaign=React_Universe_Conf&utm_source=email&utm_content=This_Week_in_React)
+- 🐦 [React Navigation 7 will support animations for Bottom Tabs](https://x.com/satya164/status/1766404046036844876?s=20) : Le nombre de versions alpha a augmenté de manière significative au cours des dernières semaines, donc je suppose que la sortie est proche ?
+- 📖 [React Native Docs - About the New Architecture](https://reactnative.dev/docs/the-new-architecture/landing-page) : Nous n'arrêtons pas d'entendre parler de « New Architecture » partout, et ce sera celle par défaut avec RN 0.75. Cette nouvelle section de la documentation explique en quoi consiste exactement cette nouvelle architecture.
+- 📖 [New docs - Drag Drop Content View](https://expo-drag-drop-content-view.vercel.app/) : Vous avez peut-être vu cette bibliothèque dans la newsletter de la semaine dernière, mais elle a maintenant de nouveaux docs.
+- 📜 [Learn Once, Hack Everywhere](https://www.callstack.com/blog/learn-once-hack-everywhere) : Un regard intéressant sur la rétro-ingénierie des applications mobiles.
+- 📜 [The Hidden Gems of React Native](https://www.reactiive.io/articles/the-hidden-gems-of-react-native)
+- 📜 [Expo - Support for FCM HTTP v1 API](https://expo.dev/blog/expo-adds-support-for-fcm-http-v1-api)
+- 📜 [Expo - Launching EAS Updates with Orbit](https://expo.dev/blog/launching-eas-updates-with-orbit)
+- 📜 [The Morrow guide to Expo Router](https://www.themorrow.digital/blog/what-is-the-expo-router)
+- 📜 [The Mini Guide to React Native Optimization for Web3](https://www.callstack.com/blog/the-mini-guide-to-react-native-optimization-for-web3)
+- 📜 [Why you don’t need Flipper in your React Native app … and how to get by without it](https://shift.infinite.red/why-you-dont-need-flipper-in-your-react-native-app-and-how-to-get-by-without-it-3af461955109)
+- 📜 [Consistently Improve App Performance With DMAIC and Reassure](https://www.callstack.com/blog/consistently-improve-app-performance-with-dmaic-and-reassure)
+- 📜 [RevenueCat’s State of Subscription Apps report 2024](https://www.revenuecat.com/state-of-subscription-apps-2024/)
+- 📜 [Fine-tuning React Performance: A Subtle Insider Tip from a TV App](https://www.bam.tech/article/fine-tuning-react-performance-a-subtle-insider-tip-from-a-tv-app)
+- 📦 [react-native 0.74.0-rc.3](https://github.com/facebook/react-native/releases/tag/v0.74.0-rc.3)
+- 📦 [react-native 0.73.6](https://github.com/facebook/react-native/releases/tag/v0.73.6)
+- 📦 [faster-image](https://github.com/candlefinance/faster-image) : Nouvelle bibliothèque pour le rendu rapide d'images, elle intègre Nuke sur iOS et Coil sur Android.
+- 📦 [OP-SQLite 3.0 - Now (optionally) with encryption](https://ospfranco.notion.site/Encryption-58aa9d33736f43e9a53a4f6f9116c36a)
+- 📦 [vision-camera-resize-plugin 2.1.0 - with two new features "mirror" and "rotate"](https://github.com/mrousavy/vision-camera-resize-plugin/releases/tag/v2.1.0)
+- 📦 [react-native-graph 1.1.0 now uses REA values for updating on the UI Thread](https://github.com/margelo/react-native-graph/releases/tag/v1.1.0)
+- 📦 [react-native-mmkv 2.12.2 contains a bunch of fixes](https://github.com/mrousavy/react-native-mmkv/releases/tag/v2.12.2)
+- 📦 [Obytes Starter - RN starter app now with Expo 50, Expo Router, and NativeWind 4](https://github.com/obytes/react-native-template-obytes/releases/tag/v5.0.0)
+- 🎥 [Simon Grimm - Role Based Navigation in React Native with Expo Router](https://www.youtube.com/watch?v=cMi6Vwo6C2M)
+- 🎙️ [Rocket Ship 33 - NativeWind & React Native Styling with Mark Lawlor](https://podcast.galaxies.dev/episodes/033-nativewind-react-native-styling-with-mark-lawlor)
 
 ---
 
@@ -77,14 +160,21 @@ Refine enables teams to rapidly develop production-ready apps while maintaining 
 
 ## 🔀 Autre {#other}
 
-<Todo />
+- 📜 [The Evolution of Shiki v1.0](https://nuxt.com/blog/shiki-v1)
+- 📜 [The quiet, pervasive devaluation of frontend](https://joshcollinsworth.com/blog/devaluing-frontend)
+- 📜 [Supercharge compression efficiency with shared dictionaries](https://developer.chrome.com/blog/shared-dictionary-compression)
+- 📜 [Interaction to Next Paint is officially a Core Web Vital](https://web.dev/blog/inp-cwv-launch)
+- 📦 [TypeScript 5.4 - NoInfer, groupBy, improved narrowing in closures](https://devblogs.microsoft.com/typescript/announcing-typescript-5-4/)
+- 📦 [Biome v1.6 - Partial support for Astro, Svelte and Vue files](https://biomejs.dev/blog/biome-v1-6/)
+- 📦 [Rolldown - Fast Rust bundler for JavaScript with Rollup-compatible API](https://rolldown.rs/)
+- 📦 [Node.js 21.7 - API for styling text](https://nodejs.org/en/blog/release/v21.7.0)
+- 📦 [Tailwind CSS v4 alpha - Oxide engine, CSS-first config](https://tailwindcss.com/blog/tailwindcss-v4-alpha)
+- 📦 [Speedometer 3.0 - The Best Way Yet to Measure Browser Performance](https://webkit.org/blog/15131/speedometer-3-0-the-best-way-yet-to-measure-browser-performance/)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/177/meme.jpg)](https://twitter.com/jacobmparis/status/1759264032349888799)
 
 A plus 👋
