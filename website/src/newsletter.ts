@@ -63,7 +63,7 @@ const all: NewsletterSegment & NewsletterFuture = {
     projectedAudienceSize: 42000,
   },
   nextSecondSlot: {
-    date: "August 2023",
+    date: "August 2024",
     projectedAudienceSize: 42000,
   },
 };
