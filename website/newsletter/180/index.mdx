@@ -1,6 +1,6 @@
 ---
 slug: /180
-title: "This Week In React #180: ..."
+title: "This Week In React #180: Transitions, Drag & Drop, Metadata APIs, React name, Next.js Auth, useOptimistic, Cally, Docusaurus, New Architecture, RN Server Components, Privacy Manifest, Bun, xz, TypeScript, Signals..."
 authors: [slorber]
 date: 04-03-2024
 unlisted: true
@@ -8,7 +8,11 @@ unlisted: true
 
 Hi everyone!
 
-Bun, xz, Turbopack
+As expected, it's been a quiet week, with developers taking a break for Easter.
+
+Although we don't have a lot of major releases, we still have a good amount of content and blog posts. I really liked the headline blog post. Only Bun decided to release an outstanding v1.1 release on 1st April, quite a bold move!
+
+Apart that, stay safe and make sure to check if you are [affected by xz](https://socket.dev/blog/how-to-use-socket-to-find-out-if-you-were-affected-by-the-backdoored-xz-package), a major security vulnerability unveiled recently.
 
 React Native developer? Don’t miss [App.js Conf](http://app.js) kicking off on 22 May in Kraków 🇵🇱. Get a [10% discount](https://ti.to/appjs/2024/discount/TWIR) with our partner code “TWIR”.
 
@@ -42,7 +46,9 @@ Take the guesswork out of which components to focus on next with Omlet.
 
 ## ⚛️ React {#react}
 
-[Global progress in Next.js](https://buildui.com/posts/global-progress-in-nextjs)
+[![Global progress in Next.js**](/emails/issues/180/transitions.jpg)](https://buildui.com/posts/global-progress-in-nextjs)
+
+[**Global progress in Next.js**](https://buildui.com/posts/global-progress-in-nextjs)
 
 Don’t be misled by the title, this great article is a great illustration of how React transitions work. Easy-to-understand Interactive demos show how setState calls inside a transition can be executed synchronously in a click handler, and yet their application to the DOM will be delayed until the transition can fully complete. Also explains why App Router doesn’t expose a router event system anymore. The animation code is also interesting, based on Framer Motion.
 
@@ -64,8 +70,8 @@ Don’t be misled by the title, this great article is a great illustration of ho
 - 📜 [Next.js with Prisma and SQLite](https://www.robinwieruch.de/next-prisma-sqlite/)
 - 🗓 [React Connection - 22 April](https://reactconnection.io/) + [React-Native Connection - 23 April](https://reactnativeconnection.io/) - 🇫🇷 Paris - 2 days of web/mobile conferences. Get a [20% discount](https://www.billetweb.fr/react-connection-2024?discount=TWIR) with code "TWIR".
 - 📦 [Pragmatic Drag & Drop - Fast drag and drop for any experience on any tech stack](https://github.com/atlassian/pragmatic-drag-and-drop): maintainer of react-beautiful-dnd introduced a new, more powerful, framework-agnostic drag & drop library that Atlassian is now using to power products such as Trello and Confluence. A [GitHub issue and video](https://github.com/atlassian/react-beautiful-dnd/issues/2573) explain possibilities for users of react-beautiful-dnd, which will only receive security fixes. A compatibility package is provided to ease the migration.
-- 📦 [Docusaurus 3.2 - faster dev/build, MDX partial TOC, blog improvements, sitemap lastmod, Vercel Analytics…](https://docusaurus.io/blog/releases/3.2)
 - 📦 [Cally - Small, feature-rich calendar components](https://wicky.nillia.ms/cally/): Modern lightweight calendar components. A page explains [how to integrate with React](https://wicky.nillia.ms/cally/guides/frameworks/#react), although with React 19 integration with Web Components, it’s going to become much easier to use. Does not support SSR yet.
+- 📦 [Docusaurus 3.2 - faster dev/build, MDX partial TOC, blog improvements, sitemap lastmod, Vercel Analytics…](https://docusaurus.io/blog/releases/3.2)
 - 📦 [epicweb-dev/react-server-components - Understand React Server Components and Server Actions by building a framework with them](https://github.com/epicweb-dev/react-server-components)
 - 🎥 [UI Engineering - The Curious Case of React's Name](https://www.youtube.com/watch?v=qBymTM6MQLo): A great poetic mini-documentary. This video took 40 hours to produce and only got a few hundred views. Give Philip some love and subscribe to his underrated channel (other videos are more pragmatic).
 - 🎥 [Jack Herrington - Are You In A React Cult?](https://www.youtube.com/watch?v=74q1vURXvlY)
@@ -99,9 +105,9 @@ Refine enables teams to rapidly develop production-ready apps while maintaining 
 
 This section is now co-authored with [Benedikt](https://twitter.com/bndkt). Feel free to send us your comments by email or on [Twitter](https://twitter.com/bndkt)!
 
-![](https://lh7-us.googleusercontent.com/bruO3gAgthhAoiAF5UVXnijVpFMPrcg4BfTmO9O8u-83vf1jaLG1LAhjUUET-1ceQA_1QhY0eXQpdqJPe1g7-5CbmzNzRyzRnyJaCHPn9iJIpHu5KLWC86qfqSXCBFKC6MYEJWgoNTitpuCgykVgMg0)
+[!["New Architecture support in popular libraries"](/emails/issues/180/rn.jpg)](https://github.com/reactwg/react-native-new-architecture/discussions/167)
 
-📖 ["New Architecture support in popular libraries" spreadsheet](https://github.com/reactwg/react-native-new-architecture/discussions/167)
+[**"New Architecture support in popular libraries"**](https://github.com/reactwg/react-native-new-architecture/discussions/167)
 
 This week's headline news is … a spreadsheet? Yes, indeed. We’re approaching the release of React Native 0.74, which will have the Interop Layer and Bridgeless Mode enabled by default. And although you can still turn it off, the message is clear: It’s time to start adopting the New Architecture. There has been a lot of effort to prepare the RN ecosystem for the New Arch, and now there’s a great spreadsheet tracking New Architecture and Bridgeless Mode support for many popular RN libraries. As you can see in the screenshot above, there’s lots of green already, although plenty of rows require some more work as well. In my opinion, even beyond the pure question of which libraries already support the new paradigms this list is also very interesting if you only want to check out which RN libraries are the most popular ones or which technical challenges library authors face when shifting to the New Arch.
 
@@ -149,8 +155,6 @@ This week's headline news is … a spreadsheet? Yes, indeed. We’re approaching
 ---
 
 ## 🤭 Fun {#fun}
-
-<Todo />
 
 [![alt](/emails/issues/180/meme.jpg)](https://twitter.com/rickhanlonii/status/1774813693944971594)
 
