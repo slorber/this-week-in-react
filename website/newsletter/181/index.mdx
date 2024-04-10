@@ -37,9 +37,19 @@ RevenueCat gives you everything you need to monetize, analyze, and grow your app
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![React Docs - Add onCaughtError / onUncaughtError, improve onRecoverableError](/emails/issues/181/react-errors.jpg)](https://github.com/reactjs/react.dev/pull/6742)
 
-[React Core - Add onCaughtError / onUncaughtError, improve onRecoverableError](https://github.com/reactjs/react.dev/pull/6742)
+[**React Docs - Add onCaughtError / onUncaughtError, improve onRecoverableError**](https://github.com/reactjs/react.dev/pull/6742)
+
+Recently, the React core team overhauled the way errors are handled in React 19. Those improvements are available in React 19 canary releases and should probably land in Next.js 14.2+ sooner or later. This notably includes new public API callbacks available on the React Root (`createRoot`, `hydrateRoot`):
+
+- `onCaughtError` 🆕 reports errors caught by error boundaries
+- `onUncaughtError` 🆕 reports uncaught errors (duh)
+- `onRecoverableError` now uses the ES Error Cause feature to report the original cause
+
+The linked PR is the WIP documentation for those new APIs, including many interactive examples. The main motivation seems to be presenting an error dialog to the user.
+
+What excited me most in all this is that it's the first time I'm able to see in action the brand-new React hydration error message displayed in a dialog, as shown in the screenshot above. This will greatly improve the DX of React!
 
 ---
 
@@ -67,6 +77,7 @@ RevenueCat gives you everything you need to monetize, analyze, and grow your app
 - 📦 [Jotai Effect 1.0 - A Jōtai utility package for reactive side-effects](https://github.com/jotaijs/jotai-effect/releases/tag/v1.0.0)
 - 📦 [Jotai 2.8 - atomWithLazy, experimental store](https://github.com/pmndrs/jotai/releases/tag/v2.8.0)
 - 📦 [react-testing-library 15.0 - requires Node 18, supports new WAI-ARIA 1.2 roles](https://github.com/testing-library/react-testing-library/releases/tag/v15.0.0)
+- 📦 [use-signals - An experimental React hook for TC39 signals](https://github.com/dai-shi/use-signals)
 - 🎥 [Jack Herrington - Declarative Routes for NextJS and React-Router](https://www.youtube.com/watch?v=MiZcNHJT_Ss): Jack introduced [declarative-routing](https://github.com/ProNextJS/declarative-routing), a new typesafe routing solution he’s working on with support for React Router and Next.js. It also supports API routes, which makes it an alternative to tRPC with control over the API endpoints.
 - 🎥 [Theo - Facebook wrote a language just for React](https://www.youtube.com/watch?v=HOFIefkepMA)
 - 🎥 [James Quick - Don’t Make This Mistake with Next.js Server Components (Bad performance!)](https://www.youtube.com/watch?v=F_AplRX3dJU)
@@ -95,14 +106,16 @@ Refine enables teams to rapidly develop production-ready apps while maintaining 
 
 This section is now co-authored with [Benedikt](https://twitter.com/bndkt)
 
-🐦 [**New 3D library for React Native in the works**](https://x.com/mrousavy/status/1775840325161853389)
+[![New 3D library for React Native in the works](/emails/issues/181/rn3d.jpg)](https://twitter.com/mrousavy/status/1775840325161853389)
 
-One of the most inspiring things in the RN community is observing folks like Marc Rousavy and William Candillon pushing the boundaries of what’s possible with this technology and going far beyond rendering text and buttons on a screen. With the recent Skia announcements, we saw the state of the art regarding 2D rendering in RN. Now, Marc provided a sneak peek of some exciting advancements in 3D rendering with RN. Apparently, Margelo is working on a new library to enable access to the native Graphics APIs (Metal/Vulkan) from RN. Apart from the short [demo video](https://x.com/JPoliachik/status/1775866218743787934), I also found this [thread](https://x.com/mrousavy/status/1775870100945461277) very interesting, where Marc explains their approach using a C++ library and why they didn’t go with Three.js, which is amazing on web.
+🐦 [**New 3D library for React Native in the works**](https://twitter.com/mrousavy/status/1775840325161853389)
+
+One of the most inspiring things in the RN community is observing folks like Marc Rousavy, William Candillon and Christian Falch pushing the boundaries of what’s possible with this technology and going far beyond rendering text and buttons on a screen. With the recent Skia announcements, we saw the state of the art regarding 2D rendering in RN. Now, Marc provided a sneak peek of some exciting advancements in 3D rendering with RN. Apparently, Margelo is working on a new library to enable access to the native Graphics APIs (Metal/Vulkan) from RN. Apart from the short [demo video](https://twitter.com/JPoliachik/status/1775866218743787934), I also found this [thread](https://twitter.com/mrousavy/status/1775870100945461277) very interesting, where Marc explains their approach using a C++ library and why they didn’t go with Three.js, which is amazing on web (React-Three-Fiber supports RN).
 
 ---
 
 - 💸 [React Library Analytics — Omlet helps you understand which components and props to keep, remove, or improve based on real usage data.](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-rn-ql-apr-2024)
-- 🐦 [VisionCamera rendering straight to Skia](https://x.com/mrousavy/status/1776326923674661065): This will come with Vision Camera 4, which seems to be nearing its release.
+- 🐦 [VisionCamera rendering straight to Skia](https://twitter.com/mrousavy/status/1776326923674661065): This will come with Vision Camera 4, which seems to be nearing its release.
 - 📣 [Expo - Orbit is now available as a Preview for Windows](https://expo.dev/blog/expo-orbit-now-available-as-a-preview-for-windows): If you don’t know Orbit yet, it’s a handy menu bar app to launch builds on Simulator.
 - 📣 [Expo - Push notification receipt IDs will change string formats](https://expo.dev/blog/push-receipt-id-format-will-change)
 - 📖 [Gestures in RN Gesture Handler are state machines](https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/states-events/#state-flows): now the docs have an excellent interactive visualization to understand them.
