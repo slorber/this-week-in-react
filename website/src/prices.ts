@@ -12,10 +12,10 @@ const Prices = {
     x8: 4000,
   },
   quickLinkReact: {
-    x1: 400,
-    x2: 700,
-    x4: 1200,
-    x8: 2300,
+    x1: 500,
+    x2: 800,
+    x4: 1500,
+    x8: 2800,
   },
   quickLinkReactNative: {
     x1: 200,
