@@ -1,0 +1,180 @@
+---
+slug: /179
+title: "This Week In React #179: useActionState, Redwood, Waku, Astro, Pre-rendering, Bun, Kotekan, memo, Radix, shadcn/ui, React-Navigation, RN-Screens, CodePush, VisionOS, TypeScript, Node.js..."
+authors: [slorber]
+date: 03-27-2024
+---
+
+Salut à tous !
+
+Encore une semaine pleine de nouvelles intéressantes ! J'ai trouvé de nombreux liens et j'en ai gardé quelques-uns pour la semaine prochaine, qui devrait être calme en raison du lundi de Pâques.
+
+Il est passionnant de voir Waku et Redwood devenir des méta-frameworks plus robustes, et de nouvelles expériences innovantes construites sur Bun comme Kotekan et une macro de pré-rendu.
+
+React Native a également des mises à jour intéressantes, notamment un aperçu de React Navigation v7, et une belle mise à jour de React Native Screen.
+
+J'étais à [React.paris](https://react.paris/) la semaine dernière. C'était une très bonne conf, et j'ai été ravi de rencontrer certains d'entre vous ! C'est génial que Paris soit enfin de retour dans le monde des confs React.
+
+La fête n'est pas finie, car le mois prochain, nous avons également [React Connection](https://reactconnection.io/) et [React Native Connection](https://reactnativeconnection.io/) les 22 et 23 avril à Paris ! La newsletter est une fois de plus partenaire média de conf. Vous pouvez obtenir une [réduction de -20%](https://www.billetweb.fr/react-connection-2024?discount=TWIR) avec le code « TWIR », et nous organiserons un tirage au sort pour gagner des places sur Twitter ce vendredi.
+
+<!-- truncate -->
+
+**💡 [Consulter cette newsletter sur Twitter](https://slo.im/thread) - format visuel 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![React-admin: The Open-Source Framework for B2B apps](/emails/issues/179/reactadmin.jpg)](https://marmelab.com/react-admin/)
+
+**[React-admin: The Open-Source Framework for B2B apps](https://marmelab.com/react-admin/)**
+
+With 23k stars and 500,000 daily users, react-admin is the framework of choice for single-page applications (ERPs, Admins, B2B apps). Compatible with Vite, Next, and Remix, it builds upon acclaimed libraries like react-hook-form, react-query, react-router and material-ui to accelerate your development game.
+
+🌟 Key characteristics include:
+
+- 🔌 Backend agnostic: Connects to any REST or GraphQL API
+- 🧩 Rich library with over 200 application building blocks
+- 🛠 Complete customization: Replace any component with your own
+- 💻 Great developer experience
+- 👑 Amazing user experience
+
+[Join React-admin’s community](https://discord.gg/tKyDzXHJ7f) today and witness firsthand why it's the framework of choice for thousands of developers worldwide! [Try it now](https://marmelab.com/react-admin/Tutorial.html), it is free, forever! 😉
+
+---
+
+## ⚛️ React {#react}
+
+[![React Server Components now in RedwoodJS](/emails/issues/179/redwood.jpg)](https://redwoodjs.com/blog/rsc-now-in-redwoodjs)
+
+[**React Server Components now in RedwoodJS**](https://redwoodjs.com/blog/rsc-now-in-redwoodjs)
+
+Bighorn, la prochaine « ère » de Redwood à partir de la v8.0, misera à fond sur les React Server Components. Cet article explique pourquoi Redwood préfère désormais les RSC à GraphQL, qui n'était pas le meilleur DX avec lequel démarrer pour la plupart des développeurs et des projets. GraphQL reste supporté et peut être utilisé avec les RSC dans la même application. Les cellules Redwood vous permettent maintenant d'exporter une nouvelle fonction « data » pour charger les données de la cellule.
+
+Vous pouvez essayer Redwood Bighorn dès aujourd'hui avec la version canari v8, mais il y a encore beaucoup d'imperfections mentionnées dans le billet du blog, qui seront corrigées avant la sortie officielle de la version majeure. Il y a un autre article intéressant à lire [comparant les conventions de routage de Redwood à Next.js et Remix](https://redwoodjs.com/blog/whats-different-comparing-the-router-in-nextjs-app-api-nextjs-pages-api-remix-and-redwoodjs).
+
+---
+
+- 💸 [React Universe Conf - We care about a diverse lineup, so we prolong our CFP until April 5. We encourage all women in tech to submit talks!](https://www.reactuniverseconf.com/?utm_campaign=React_Universe_Conf&utm_source=email&utm_content=This_Week_in_React)
+- 👀 [React Core PR - useActionState](https://github.com/facebook/react/pull/28491) : Le PR est maintenant fusionné et a été ajouté au [changelog de canary](https://github.com/facebook/react/blob/main/CHANGELOG-canary.md).
+- 💬 [Astro proposal - Form actions](https://github.com/withastro/roadmap/discussions/871) : Astro explore les options pour les soumissions de formulaires et les mutations pour alimenter leur nouveau produit Astro DB, en prenant en considération les îles React 19 utilisant useActionState() et useFormStatus().
+- 🐦 [Sebastian Silbermann (React core team) joins Vercel](https://twitter.com/sebsilbermann/status/1772229730747490691)
+- 📖 [Remix new docs - CSS files](https://remix.run/docs/en/main/guides/css-files)
+- 📜 [Power of Partial Prerendering with Bun](https://aralroca.com/blog/partial-prerendering) : Une idée intéressante, utiliser les attributs d'importation pour pré-rendre les composants React grâce à une macro Bun.
+- 📜 [A faster React.memo()](https://romgrk.com/posts/react-fast-memo/) : Démontre que React utilise une fonction générique shallowCompare pour React.memo() qui pourrait être grandement optimisée en utilisant une fonction de comparaison spécialisée qui suppose que les éléments à comparer sont des props React.
+- 📜 [What is a layout in React?](https://www.ericburel.tech/blog/what-layout-means-in-react) : Un excellent aperçu de la façon dont les mises en page sont implémentées différemment dans Remix, Next.js, ou Astro.
+- 📜 [Diving into the Node.js Website Redesign](https://nodejs.org/en/blog/announcements/diving-into-the-nodejs-website-redesign) : Node.js vient de lancer un nouveau site Next.js et partage les détails des coulisses. Ils ont envisagé Nextra mais ont opté pour une installation personnalisée de Next.js. Le site est construit de manière statique et utilise ISR pour le contenu dynamique.
+- 📜 [This Pattern Will Wreck Your React App's TS Performance](https://www.totaltypescript.com/react-apps-ts-performance) : Matt recommande d'utiliser « interface extends » au lieu de « & », en s'inspirant de l'histoire d'un problème de performance du TS de Sentry.
+- 📜 [Utilizing useOptimistic() across the component tree in Next.js](https://aurorascharff.no/posts/utilizing-useoptimistic-across-the-component-tree-in-nextjs/) : Explique pourquoi et comment partager la valeur useOptimistic dans un contexte React.
+- 📜 [Why I Like React (even in 2024)](https://ejosh.co/de/2024/03/why-i-like-react-even-in-2024/)
+- 📜 [Building a «hold to confirm» button with Framer Motion](https://sinja.io/blog/hold-to-confirm-button-react-framer-motion)
+- 📜 [React useEffect and objects as dependency - 4 approaches to avoid unnecessary re-renders](https://profy.dev/article/react-useeffect-with-object-dependency)
+- 📜 [React-Three-Fiber - Moebius-style post-processing and other stylized shaders](https://blog.maximeheckel.com/posts/moebius-style-post-processing/)
+- 📜 [How to Build Your Own ChatGPT Clone Using Clerk & AWS Bedrock](https://conermurphy.com/blog/how-to-build-your-own-chatgpt-clone-using-clerk-aws-bedrock)
+- 📜 [Exploring useSyncExternalStore, a lesser-known React Hook](https://blog.logrocket.com/exploring-usesyncexternalstore-react-hook/)
+- 📜 [Remix Case Study - Shopify rebuilding Shop with Remix](https://remix.run/blog/shop-case-study)
+- 📦 [Waku 0.20 - Introducing “pages router”](https://waku.gg/blog/introducing-pages-router) : Waku continue de progresser pour devenir un méta-framework React de première classe. La dernière version ajoute un routeur léger basé sur les fichiers et l'article d'introduction présente ses conventions. Vous pouvez choisir entre un rendu statique ou dynamique par page.
+- 📦 [Kotekan - A simple React framework built on Bun, supporting React Server Components](https://kotekan.dev/blog/introducing-kotekan) : Mon co-auteur Benedikt a créé son propre méta-framework expérimental, supportant les React Server Components. Contrairement à d'autres frameworks qui essaient de rester découplés d'un runtime spécifique, Kotekan tire parti d'un couplage étroit avec Bun à la fois pour le bundling et le runtime. Il semble que d'autres choses intéressantes ne soient pas mentionnées dans le billet d'introduction, notamment une démo d'application mobile utilisant react-strict-dom et StyleX. Ce qui est impressionnant, c'est que le site web est déjà construit avec.
+- 📦 [Radix Themes 3.0](https://www.radix-ui.com/blog/themes-3) : Cette nouvelle version ajoute des palettes de couleurs personnalisées, de nombreux nouveaux composants et un nouveau moteur de mise en page.
+- 📦 [shadcn/ui update - Blocks](https://ui.shadcn.com/docs/changelog) : Composants prêts à l'emploi, entièrement responsifs, accessibles et composables, débutant par des mises en page de tableaux de bord et des pages d'authentification.
+- 📦 [@vite-pwa/remix - Zero-config PWA Plugin for Remix](https://github.com/vite-pwa/remix)
+- 📦 [Remotion 4.0.130 - Lambda renders are now faster](https://www.remotion.dev/blog/faster-lambda)
+- 🎥 [Jack Herrington - Finally Fix Your Issues With JS/React Memory Leaks](https://www.youtube.com/watch?v=qERgb3pWfu0)
+- 🎥 [UI Engineering - Senior-Level Understanding of React Portals](https://www.youtube.com/watch?v=5F7GrlIPdJ4)
+- 🎥 [Theo - The End Of React Router](https://www.youtube.com/watch?v=nZKlPtQqqgQ)
+- 🎥 [James Quick - I Didn't Know Next.js Server Actions Could Do This (usage outside forms)](https://www.youtube.com/watch?v=ZZCXnNAOqqU)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![The only auth platform you need for enterprise clients](/emails/issues/179/workos.jpg)](https://workos.com/?utm_source=thiswekkinreact&utm_medium=newsletter&utm_campaign=q12024)
+
+**[The only auth platform you need for enterprise clients](https://workos.com/?utm_source=thiswekkinreact&utm_medium=newsletter&utm_campaign=q12024)**
+
+WorkOS is a modern identity platform built for B2B SaaS.
+
+⚡ Open-source login UI powered by Radix components, offering all the customizability you need
+
+⚙️ Support for more complex features like single sign-on (SSO) and SCIM provisioning
+
+⌨️ Flexible and easy-to-use APIs, helping companies like Vercel, Loom, and Webflow offer enterprise-grade auth in minutes
+
+💰 User Management that is free up to 1 million monthly active users
+
+[Get started with WorkOS ↗️](https://workos.com/?utm_source=thiswekkinreact&utm_medium=newsletter&utm_campaign=q12024)
+
+---
+
+## 📱 React-Native {#react-native}
+
+Cette section est désormais co-écrite avec [Benedikt](https://twitter.com/bndkt). N'hésitez pas à nous envoyer vos commentaires par email ou sur [Twitter](https://twitter.com/bndkt) !
+
+[![React Navigation - Introducing Static API](/emails/issues/179/rnav.jpg)](https://reactnavigation.org/blog/2024/03/25/introducing-static-api)
+
+[**React Navigation - Introducing Static API**](https://reactnavigation.org/blog/2024/03/25/introducing-static-api)
+
+L'une des bibliothèques React Native les plus utilisées et les plus importantes est sans doute React Navigation. La version majeure actuelle (6) a été introduite il y a environ trois ans, et il semble maintenant que nous nous rapprochions de la prochaine version majeure. Avec la v7 (actuellement en alpha), React Navigation (ré)introduit une API statique, qui vous permet de définir des écrans à partir d'une configuration d'objet. Cela permet l'inférence de types (si vous avez déjà créé des types pour un arbre dynamique de React Navigation, vous savez de quoi cela vous déleste) et rend également la configuration de liens profonds plus facile (ou partiellement automatique, même).
+
+N'oubliez pas de lire également le [guide de mise à jour de la v7](https://reactnavigation.org/docs/7.x/upgrading-from-6.x/) si vous voulez connaître les autres changements à venir !
+
+---
+
+- 💸 [Omlet - Measure React Native component usage in production. Track adoption and get data for codebase improvements in \<5 minutes setup](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-quick-link-rn-mar-2024)
+- 🐦 [React Native Server Components on visionOS demo](https://twitter.com/SzymonRybczak/status/1772987077488935208)
+- 📜 [Building multi-window applications with React Native visionOS](https://www.oskarkwasniewski.dev/blog/react-native-visionos-multi-window-apps) : Apprenez non seulement à activer plusieurs fenêtres dans les applications visionOS, mais aussi à partager l'état React entre elles.
+- 📜 [Expo - How to replace App Center and CodePush](https://expo.dev/blog/how-to-replace-app-center-and-codepush) : Comme nous l'avons annoncé la semaine dernière, CodePush fermera ses portes le 31 mars 2025.
+- 📜 Two Expo case studies: [Win your March Madness bracket with this Expo app](https://expo.dev/blog/march-madness-expo-app) and [incident.io harnesses the power of native modules and CNG](https://expo.dev/blog/incident-io-harnesses-the-power-of-native-modules-and-cng)
+- 📜 [Rethinking Layout Practices - A minimalistic Stack component that sets the foundation for doing layout well](https://www.reactnative.university/blog/rethinking-layout-practices) : Un point de vue intéressant : Ne jamais faire de mise en page en utilisant padding ou margin sur les composants Text ou View et introduire à la place un composant Stack (Tamagui le fait par exemple).
+- 📜 [Optimize Your React Native App’s JavaScript Bundle](https://www.callstack.com/blog/optimize-react-native-apps-javascript-bundle) : Le titre ne donne pas d'indications, mais il s'agit d'un aperçu intéressant des bundlers alternatifs pour RN. Malheureusement, tous ces bundlers ont encore des compromis assez importants par rapport à Metro.
+- 📜 [How To Add Social Auth With AWS Amplify And React Native?](https://scientyficworld.org/social-auth-with-aws-amplify-and-react-native/)
+- 📜 [Optimize React Native Apps' Battery Drain With Mobile-Dedicated Libraries](https://www.callstack.com/blog/optimize-battery-drain-in-react-native-apps)
+- 📜 [How Can Higher-Order Components Improve Performance of React Native Apps?](https://www.callstack.com/blog/improve-react-native-performance-with-higher-ordered-components)
+- 📦 [@dev-plugins/redux](https://www.npmjs.com/package/@dev-plugins/redux) : Plugin pour Expo Dev Tools pour déboguer les stores Redux.
+- 📦 [react-native-screens 3.30.0](https://github.com/software-mansion/react-native-screens/releases/tag/3.30.0) : Inclut désormais un mouvement de « retour en arrière » et prend en charge visionOS
+- 📦 [react-native 0.74.0-rc.5](https://github.com/facebook/react-native/releases/tag/v0.74.0-rc.5)
+- 🎙️ [RNR 292 - RNR Explains: Metro Bundler](https://reactnativeradio.com/episodes/rnr-292-rnr-explains-metro-bundler)
+- 🎥 [Theo - The New React Native Architecture](https://www.youtube.com/watch?v=BdPkVl4Y8TQ)
+- 🎥 [Rocket Ship 35 - React Native Skia with William Candillon](https://share.transistor.fm/s/15269c3f)
+- 🎥 [Simon: Build a FinTech Clone with React Native (API Routes, Zustand, Tanstack Query, FaceID, Charts, Clerk)](https://www.youtube.com/watch?v=iDZBeIgcixk) : En général, nous choisissons des vidéos courtes mais utiles pour vous faire gagner du temps. Celle-ci dure plus de 5 heures et demie (!), mais je vous la recommande vivement si vous voulez observer la construction d'une application RN de pointe, du début à la fin.
+
+---
+
+## 🇫🇷 En français {#fr}
+
+- 🇫🇷 [ReactHebdo.fr - Dernières éditions traduites en français](https://thisweekinreact.com/fr/newsletter)
+- 🎥 [Je fais la même App Avec 4 Framework - Lequel est le mieux en 2024?](https://www.youtube.com/watch?v=Rxzupf1NbHw)
+- 🎥 [Comment configurer un monorepo avec Remix, NestJS et Turborepo](https://algomax.fr/blog/comment-configurer-un-monorepo-avec-remix-nest-js-et-turborepo)
+- 🎥 [La vraie révolution de l’AI - Vercel AI SDK v3](https://www.youtube.com/watch?v=27yRFc32118&t=5s)
+- 🎥 [Ces 6 nouveautés vont te plaire ! Tailwind v4, Million Lint, Payload CMS, Tanstack, Remix ...](https://www.youtube.com/watch?v=y-hptYWZUyI)
+
+---
+
+## 🔀 Autre {#other}
+
+- 📜 [TypeScript Flow Nodes - How Type Inference Is Implemented](https://effectivetypescript.com/2024/03/24/flownodes/)
+- 📜 [Optimizing Javascript for fun and for profit](https://romgrk.com/posts/optimizing-javascript/)
+- 📜 [Why TypeScript Doesn't Include a throws Keyword](https://www.learningtypescript.com/articles/why-typescript-doesnt-include-a-throws-keyword)
+- 📜 [JavaScript Visualized - Promise Execution](https://www.lydiahallie.com/blog/promise-execution)
+- 📜 [Astro - Migrating 500+ tests from Mocha to Node.js](https://astro.build/blog/node-test-migration/)
+- 📜 [Kuto, a reverse JS bundler](https://samthor.au/2024/kuto/)
+- 📦 [VitePress 1.0 - Vite & Vue Powered Static Site Generator](https://blog.vuejs.org/posts/vitepress-1.0)
+- 📦 [Microsoft TypeChat 0.1 - Get structured output from AI language models](https://microsoft.github.io/TypeChat/blog/announcing-typechat-0-1-0/)
+- 🎥 [Node.js - The Documentary](https://www.youtube.com/watch?v=LB8KwiiUGy0)
+- 🔗 [Runtime Compatibility - Display APIs compatibility across different JavaScript runtimes](https://runtime-compat.unjs.io/)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/179/meme.jpg)](https://twitter.com/ryanflorence/status/1770638771392049400)
+
+A plus 👋
