@@ -1,0 +1,169 @@
+---
+slug: /180
+title: "This Week In React #180: Transitions, Drag & Drop, Metadata APIs, React name, Next.js Auth, useOptimistic, Cally, Docusaurus, New Architecture, Gesture Handler, Server Components, Privacy Manifest, Bun, xz, TypeScript, Signals..."
+authors: [slorber]
+date: 04-03-2024
+---
+
+Salut à tous !
+
+Comme prévu, la semaine a été calme, les développeurs ayant fait une pause pour Pâques.
+
+Bien que nous n'ayons pas beaucoup de versions majeures, nous avons toujours une bonne quantité de contenu et d'articles de blog. J'ai beaucoup aimé l'article de blog qui fait la une. Seul Bun a décidé de publier une version exceptionnelle de la v1.1 le 1er avril, ce qui est assez audacieux !
+
+Développeur React Native ? Ne manquez pas la [**App.js Conf**](https://appjs.co/?utm_source=thisweekinreact) qui débutera le 22 mai à Kraków 🇵🇱. Bénéficiez d'une [réduction de 10 %](https://ti.to/appjs/2024/discount/TWIR) avec notre code partenaire « TWIR ».
+
+Par ailleurs, soyez vigilant et vérifiez si vous êtes [affecté par xz](https://socket.dev/blog/how-to-use-socket-to-find-out-if-you-were-affected-by-the-backdoored-xz-package), une importante faille de sécurité dévoilée récemment.
+
+<!-- truncate -->
+
+**💡 [Consulter cette newsletter sur Twitter](https://slo.im/thread) - format visuel 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![Omlet React Analytics - Measure component & prop usage](/emails/issues/180/omletad.jpg)](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-first-sponsor-apr-2024)
+
+**[Omlet React Analytics - Measure component & prop usage](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-first-sponsor-apr-2024)**
+
+☁️ Imagine being able to instantly track most popular, least used, unused, and newly created React components and props — all in one dashboard. You can with Omlet.
+
+- Gain visibility into component and prop usage in your production code, with pre-built and custom charts to drill down into trends and gaps
+- Easily turn Omlet’s component insights into specific codebase improvements — like what code to update, deprecate, or migrate
+- Get setup and run your first scan in \<5 minutes
+
+Take the guesswork out of which components to focus on next with Omlet.
+
+---
+
+## ⚛️ React {#react}
+
+[![Global progress in Next.js**](/emails/issues/180/transitions.jpg)](https://buildui.com/posts/global-progress-in-nextjs)
+
+[**Global progress in Next.js**](https://buildui.com/posts/global-progress-in-nextjs)
+
+Ne vous laissez pas tromper par le titre, cet article est une excellente illustration du fonctionnement des transitions React. Des démos interactives faciles à comprendre montrent comment les appels setState à l'intérieur d'une transition peuvent être exécutés de manière synchrone dans un click handler, et pourtant leur application au DOM sera retardée jusqu'à ce que la transition soit complètement terminée. Cela explique aussi pourquoi App Router n'expose plus de système d'événements pour le routeur. Le code d'animation est également intéressant, basé sur Framer Motion.
+
+---
+
+- 💸 [React app authentication and user management secured by Clerk, ensuring a quick setup with pre-built components.](https://go.clerk.com/WBJx175)
+- 👀 [The road to Fresh 2.0](https://github.com/denoland/fresh/issues/2363) : Le framework Deno/Preact devrait supporter les composants asynchrones.
+- 📣 [Netlify - Introducing the new Next.js Runtime](https://www.netlify.com/blog/introducing-the-new-next-js-runtime/)
+- 📜 [Expose Platform APIs Over Wrapping Them](https://blog.jim-nielsen.com/2024/expose-platform-apis-over-wrapping-them/) : Une critique intéressante de la conception de l'API de métadonnées de Next.js, qui a une courbe d'apprentissage et n'est pas une correspondance directe avec les métabalises HTML. Il compare les compromis avec une solution plus ad-hoc et portable.
+- 📜 [Exploring Authentication in Next.js](https://www.robinwieruch.de/next-authentication/) : Tutoriel complet d'authentification utilisant Next.js 14, App Router, Prisma, Lucia.
+- 📜 [How does useOptimistic() work internally in React?](https://jser.dev/2024-03-20-how-does-useoptimisticwork-internally-in-react/)
+- 📜 [How does use() work internally in React?](https://jser.dev/2024-03-16-how-does-use-work-internally-in-react/)
+- 📜 [How to Add a Sitemap & RSS Feed in Next.js App Router](https://spacejelly.dev/posts/how-to-add-a-sitemap-rss-feed-in-next-js-app-router)
+- 📜 [React "as" Prop Using TypeScript](https://www.christianvm.dev/blog/react-as-prop)
+- 📜 [We Rewrote our React App in Svelte in Three Weeks](https://dusty.phillips.codes/2024/03/20/we-rewrote-our-react-app-in-svelte-in-three-weeks/)
+- 📜 [Flaky Tests In React: Detection, Prevention and Tools](https://semaphoreci.com/blog/flaky-react)
+- 📜 [Implementing React Hook Form with Next.js 14 and Server Actions](https://aurorascharff.no/posts/implementing-react-hook-form-with-nextjs-14-server-actions/)
+- 📜 [The High-Risk Refactoring](https://webup.org/blog/the-high-risk-refactoring/)
+- 📜 [Next.js with Prisma and SQLite](https://www.robinwieruch.de/next-prisma-sqlite/)
+- 🗓 [React Connection - 22 April](https://reactconnection.io/) + [React-Native Connection - 23 April](https://reactnativeconnection.io/) - 🇫🇷 Paris - 2 jours de conférences web/mobiles. Bénéficiez d'une [réduction de 20%](https://www.billetweb.fr/react-connection-2024?discount=TWIR) avec le code « TWIR ».
+- 📦 [Pragmatic Drag & Drop - Fast drag and drop for any experience on any tech stack](https://github.com/atlassian/pragmatic-drag-and-drop) : Le mainteneur de react-beautiful-dnd a présenté une nouvelle bibliothèque drag & drop, plus puissante et agnostique au niveau du framework, qui est maintenant utilisée par Atlassian pour alimenter des produits tels que Trello et Confluence. Une [issue GitHub et une vidéo](https://github.com/atlassian/react-beautiful-dnd/issues/2573) expliquent les possibilités pour les utilisateurs de react-beautiful-dnd, qui ne recevra que des correctifs de sécurité. Un package de compatibilité est fourni pour faciliter la migration.
+- 📦 [Cally - Small, feature-rich calendar components](https://wicky.nillia.ms/cally/) : Composants de calendrier modernes et légers. Une page explique [comment l'intégrer à React](https://wicky.nillia.ms/cally/guides/frameworks/#react), mais avec l'intégration des Web Components dans React 19, il va devenir beaucoup plus facile à utiliser. Ne supporte pas encore SSR.
+- 📦 [Docusaurus 3.2 - faster dev/build, MDX partial TOC, blog improvements, sitemap lastmod, Vercel Analytics…](https://docusaurus.io/blog/releases/3.2)
+- 📦 [epicweb-dev/react-server-components - Understand React Server Components and Server Actions by building a framework with them](https://github.com/epicweb-dev/react-server-components)
+- 🎥 [UI Engineering - The Curious Case of React's Name](https://www.youtube.com/watch?v=qBymTM6MQLo) : Un mini-documentaire poétique. Cette vidéo a nécessité 40 heures de travail et n'a été visionnée que quelques centaines de fois. Apportez votre soutien à Philip et abonnez-vous à sa chaîne sous-estimée (les autres vidéos sont plus pragmatiques).
+- 🎥 [Jack Herrington - Are You In A React Cult?](https://www.youtube.com/watch?v=74q1vURXvlY)
+- 🎥 [Lee Robinson - Next.js Explained - How cookies() uses AsyncLocalStorage](https://www.youtube.com/watch?v=JejwWxhsfZw)
+- 🎥 [Ryan Toronto - Where should this component run?](https://www.youtube.com/watch?v=4S3vQffXT7o)
+- 🎥 [Nadia Makarevich - Making sense of Higher Order Components](https://www.youtube.com/watch?v=OLFV1Ds_L8A)
+- 🎙️ [This Month In React - React canary is 19, New ShadCN bits, Astro looks like Wordpress. Wiz](https://podcasters.spotify.com/pod/show/reactiflux/episodes/TMiR-2024-03-React-canary-is-19--New-ShadCN-bits--Astro-looks-like-Wordpress--Wiz-e2hsspd)
+- 🎙️ [DevTools FM 92 - Dan Abramov - Bluesky, Core React Team, RSC, Strict Dom, and more!](https://www.devtools.fm/episode/92)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Refine - Open source Retool Alternative](/emails/issues/177/refine.jpg)](https://github.com/refinedev/refine)
+
+**[Refine - Open source Retool Alternative](https://github.com/refinedev/refine)**
+
+The sweet spot between the low code and traditional development for CRUD-heavy applications.
+
+As an open-source React meta-framework designed for Enterprise applications, [Refine](https://github.com/refinedev/refine) offers a headless solution ideal for tasks like admin panels, dashboards, and internal tools.
+
+While low-code tools may offer initial promise, they often fall short in handling complex scenarios due to scalability issues, limited customization options, and the risk of vendor lock-in.
+
+Refine enables teams to rapidly develop production-ready apps while maintaining flexibility.
+
+---
+
+## 📱 React-Native {#react-native}
+
+Cette section est désormais co-écrite avec [Benedikt](https://twitter.com/bndkt). N'hésitez pas à nous envoyer vos commentaires par email ou sur [Twitter](https://twitter.com/bndkt) !
+
+[!["New Architecture support in popular libraries"](/emails/issues/180/rn.jpg)](https://github.com/reactwg/react-native-new-architecture/discussions/167)
+
+[**"New Architecture support in popular libraries"**](https://github.com/reactwg/react-native-new-architecture/discussions/167)
+
+La grande nouvelle de cette semaine est... une feuille de calcul ? Oui, en effet. Nous approchons de la sortie de React Native 0.74, qui aura le Interop Layer et le Bridgeless Mode activés par défaut. Et bien que vous puissiez encore les désactiver, le message est clair : il est temps de commencer à adopter la nouvelle architecture. Beaucoup d'efforts ont été faits pour préparer l'écosystème RN à la nouvelle architecture, et il existe maintenant une feuille de calcul qui permet de suivre la prise en charge de la nouvelle architecture et du mode Bridgeless pour de nombreuses bibliothèques RN populaires. Comme vous pouvez le voir dans la capture d'écran ci-dessus, il y a déjà beaucoup de vert, bien que de nombreuses lignes nécessitent également un peu plus de travail. À mon avis, au-delà de la question de savoir quelles bibliothèques supportent déjà les nouveaux paradigmes, cette liste est également très intéressante si vous voulez seulement vérifier quelles sont les bibliothèques RN les plus populaires ou quels sont les défis techniques auxquels les auteurs de bibliothèques sont confrontés lorsqu'ils passent à la nouvelle architecture.
+
+---
+
+- 💸 [PowerSync – Postgres\<>SQLite sync layer for local-first apps with simple state management and real-time reactivity](https://www.powersync.com/?utm_source=newsletter&utm_medium=sponsorship&utm_campaign=this-week-in-react)
+- 🐦 [Interesting idea/thread: React Native should have built-in support for rendering native views without importing them](https://x.com/Baconbrix/status/1773800723383275952)
+- 🐦 [Tailwind CSS has TailwindUI. Soon, NativeWind will have NativeWindUI](https://x.com/DanStepanov/status/1773746866536280376)
+- 🐦 [Calling an arbitrary UIKit API from JS, on the UI thread, with no native code – thanks to NativeScript, Node-API, and Reanimated](https://x.com/birch_js/status/1774855694271045666?s=20)
+- 🐦 [Safari extension to see a 3D view of Web DOM on iOS built with Expo config plugin](https://twitter.com/Baconbrix/status/1773418737061773676)
+- 📖 [How to deal with Apple’s privacy request requirement with RN](https://github.com/react-native-community/discussions-and-proposals/discussions/776) : Bientôt, toutes les applications iOS devront avoir un "manifeste de confidentialité". Cette discussion GitHub fournit des conseils sur la manière de répondre à cette exigence lors de l'utilisation de RN.
+- 📜 [Bringing React Sever Components to React Native](https://szymonrybczak.dev/blog/bringing-react-server-components-to-react-native) : Ce n'est pas encore la grande plongée technique, mais Szymon dit que c'est à venir. Il s'agit plutôt d'une introduction à ce que les composants du serveur signifieront pour RN.
+- 📜 [How to Achieve 60 FPS Animations in React Native](https://www.callstack.com/blog/60fps-animations-in-react-native)
+- 📜 [Why Is It Important to Always Run The Latest Version of React Native?](https://www.callstack.com/blog/always-run-the-latest-version-of-react-native)
+- 📜 [Expo Location background tracking - Not all who wander are lost](https://blog.swmansion.com/not-all-who-wander-are-lost-805811c433c5)
+- 📜 [How to Choose Tools Wisely and Build Fast-Working React Native Apps](https://www.callstack.com/blog/find-the-balance-between-native-and-javascript)
+- 📜 [How to Pick the Right External JavaScript Libraries for Your React Native App](https://www.callstack.com/blog/external-javascript-libraries-for-react-native)
+- 📣 [EAS Submit - Security notice](https://expo.dev/blog/security-notice-for-eas-submit)
+- 📣 [EAS Build - Upcoming iOS images updates](https://expo.dev/changelog/2024/03-29-eas-build-upcoming-ios-images-updates)
+- 📦 [React Native Gesture Handler 2.16.0 - Improved Gesture.Fling() on Web & Android, RectButton border styles on Android, improved mouse support](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.16.0)
+- 📦 [react-native-quick-base64 2.1.0 - 4x-6x faster than the previous version by decoding via the lookup table](https://github.com/craftzdog/react-native-quick-base64/releases/tag/v2.1.0)
+- 📦 [react-native 0.74.0-rc.6](https://github.com/facebook/react-native/releases/tag/v0.74.0-rc.6)
+- 🎥 [Theo - Flutter inside React? react-native-skia is wild](https://www.youtube.com/watch?v=2l9Wm-8TxlA)
+- 🎥 [Daniel Friyia - Build an Expo App with Apple Watch Tutorial](https://www.youtube.com/watch?v=Z6xRCyhrg1A)
+- 🎥 [Simon Grimm - React Native with HTML?](https://www.youtube.com/watch?v=D_14xgyW4Rk)
+- 🎙️ [Rocket Ship 36 - React Native Apps using Web3 & AI with Nader Dabit](https://share.transistor.fm/s/2c3bbd34)
+- 🔗 [react-native-community-map - different online places where React Native developers can be found](https://github.com/kelset/react-native-community-map) : Aperçu assez exhaustif des communautés, subreddits, podcasts, serveurs Discord, etc.
+
+---
+
+## 🇫🇷 En français {#fr}
+
+- 🇫🇷 [ReactHebdo.fr - Dernières éditions traduites en français](https://thisweekinreact.com/fr/newsletter)
+- 🎥 [1 an Après NextJS App Router 14 - Mon retour après 7 applications](https://www.youtube.com/watch?v=KHp-tTqhcIs)
+- 🎥 [Remplace Eslint et Prettier avec BiomeJS, un outil d'analyse de code très rapide](https://algomax.fr/blog/remplace-eslint-et-prettier-avec-biome-js-un-outil-d-analyse-de-code-tres-rapide)
+- 🐦 [React Connection - 22 Avril à Paris - Loterie Twitter en cours jusqu'a vendredi pour gagner 2 places](https://twitter.com/sebastienlorber/status/1773626145818267832)
+
+---
+
+## 🔀 Autre {#other}
+
+- 👀 [JavaScript Signals standard proposal](https://github.com/proposal-signals/proposal-signals)
+- 📜 [\_\_dirname is back in Node.js with ES modules](https://www.sonarsource.com/blog/dirname-node-js-es-modules/)
+- 📜 [Building a Micro HTMX SSR Framework](https://blog.platformatic.dev/building-a-micro-htmx-ssr-framework)
+- 📜 [What You Need to Know about Modern CSS (Spring 2024 Edition)](https://frontendmasters.com/blog/what-you-need-to-know-about-modern-css-spring-2024-edition/)
+- 📜 [The `never` type and error handling in TypeScript](https://fettblog.eu/typescript-never-and-error-handling/)
+- 📜 [`any` Considered Harmful, Except For These Cases](https://www.totaltypescript.com/any-considered-harmful)
+- 📜 [V8 - Iterator helpers, now in Chrome 122+](https://v8.dev/features/iterator-helpers)
+- 📜 [An Interactive Guide to CSS Container Queries](https://ishadeed.com/article/css-container-query-guide)
+- 📦 [Bun 1.1 - Windows support, faster, cross-platform shell, many new APIs like Glob, Semver…](https://bun.sh/blog/bun-v1.1)
+- 📦 [Deno 1.42 - JSR for dependency management, deno publish and deno add commands](https://deno.com/blog/v1.42)
+- 📦 [TailwindCSS Signals](https://github.com/brandonmcconnell/tailwindcss-signals)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/180/meme.jpg)](https://twitter.com/rickhanlonii/status/1774813693944971594)
+
+A plus 👋
