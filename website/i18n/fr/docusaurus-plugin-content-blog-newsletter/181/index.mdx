@@ -1,0 +1,165 @@
+---
+slug: /181
+title: "This Week In React #181: React errors, Fast JSX, Flow, React-Query, Jotai, Inline styles, RSC, Next.js, RTL, RN 3D, Orbit, Gesture Handler, Skia, NewArch Helper, TC39, ESLint, VSCode..."
+authors: [slorber]
+date: 04-10-2024
+---
+
+Salut à tous !
+
+This week I found many React Core PRs to look at. Too many, in fact, so I've saved a few for next week!
+
+After 2D with Skia, it's super excitings to see React Native devs exploring the 3D space!
+
+**💡 [Consulter cette newsletter sur Twitter](https://slo.im/thread) - format visuel 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![In-App Subscriptions Made Easy](/emails/issues/177/revenuecat.jpg)](https://www.revenuecat.com?utm_source=twir&utm_medium=sponsorship&utm_campaign=dec_23)
+
+**[In-App Subscriptions Made Easy](https://www.revenuecat.com?utm_source=twir&utm_medium=sponsorship&utm_campaign=dec_23)**
+
+RevenueCat gives you everything you need to monetize, analyze, and grow your app business. Effortlessly control customer access and entitlements, manage data, and experiment with pricing. See why over 30,000 apps trust RevenueCat to power their in-app purchase infrastructure.
+
+---
+
+## ⚛️ React {#react}
+
+[![React Docs - Add onCaughtError / onUncaughtError, improve onRecoverableError](/emails/issues/181/react-errors.jpg)](https://github.com/reactjs/react.dev/pull/6742)
+
+[**React Docs - Add onCaughtError / onUncaughtError, improve onRecoverableError**](https://github.com/reactjs/react.dev/pull/6742)
+
+Recently, the React core team overhauled the way errors are handled in React 19. Those improvements are available in React 19 canary releases and should probably land in Next.js 14.2+ sooner or later. This notably includes new public API callbacks available on the React Root (`createRoot`, `hydrateRoot`):
+
+- `onCaughtError` 🆕 reports errors caught by error boundaries
+- `onUncaughtError` 🆕 reports uncaught errors (duh)
+- `onRecoverableError` now uses the ES Error Cause feature to report the original cause
+
+The linked PR is the WIP documentation for those new APIs, including many interactive examples. The main motivation seems to be presenting an error dialog to the user.
+
+What excited me most in all this is that it's the first time I'm able to see in action the brand-new React hydration error message displayed in a dialog, as shown in the screenshot above. This will greatly improve the DX of React!
+
+---
+
+- 💸 [Get drop-in authentication for your React app using Clerk, with ready-to-use components, hooks, and helpers.](https://go.clerk.com/WtsedFE)
+- 👀 [React Core - Fast JSX: Don't clone props object](https://github.com/facebook/react/pull/28768): Creating JSX elements under React 19 should become much faster. Recent changes in how key/refs are handled make it possible to avoid cloning props. We create a lot of JSX nodes so this should have a significant impact!
+- 👀 [React Core - Remove defaultProps support (except for classes)](https://github.com/facebook/react/pull/28733)
+- 👀 [React Core - Rename SECRET INTERNALS](https://github.com/facebook/react/pull/28789)
+- 🐦 [TIL React can render promises and contexts as JSX nodes](https://twitter.com/sebastienlorber/status/1777383298618077331)
+- 📖 [TanStack Query - new Render Optimizations guide](https://tanstack.com/query/v5/docs/framework/react/guides/render-optimizations): It’s nice that React Query uses structural sharing under the hood, and try hard to preserve object identities over time.
+- 📈 [Docusaurus has overtaken Gatsby’s npm downloads](https://npmtrends.com/@docusaurus/core-vs-@remix-run/react-vs-astro-vs-gatsby-vs-nextra-vs-vitepress-vs-vuepress): It feels surreal that the framework I work on is now the 2nd most used React web framework just after Next.js (far behind), despite its focus on content-centric websites. This should not last though: Astro, Remix, and Expo Web have more potential to grow.
+- 🗓 [React Summit](https://reactsummit.com/?utm_source=thisweekinreact) - 🇳🇱 Amsterdam - 14-18 June - Get a 10% discount with code "TWIR".
+- 🗓 [React Connection - 22 April](https://reactconnection.io/) + [React-Native Connection - 23 April](https://reactnativeconnection.io/) - 🇫🇷 Paris - 2 days of web/mobile conferences. Get a [\-20% discount](https://www.billetweb.fr/react-connection-2024?discount=TWIR) with code "TWIR".
+- 📜 [New Flow Language Features for React](https://medium.com/flow-type/announcing-component-syntax-b6c5285660d0): Meta engineers use Flow (and not TypeScript). This post presents the benefits of new keywords `component`, `hook`, and `renders` keywords introduced directly into the language, and presents great benefits in terms of DX, type-safety, and static analysis in general. I wish we had those in TypeScript too, but since it’s specific to React it’s unlikely to happen unless benefiting the whole JS ecosystem.
+- 📜 [Are Inline Styles Faster than CSS?](https://danielnagy.me/posts/Post_tsr8q6sx37pl): Daniel implemented his personal React website in 3 variants and measured several things: HTML/JS size, compression, Web Vitals… Surprisingly, using plain inline styles outperforms other CSS techniques!
+- 📜 [Exploring using Suspense with React Query](https://www.teemutaskula.com/blog/exploring-query-suspense): Nicely explains how you can improve the UX when using React Query. Creates a `useSuspenseQueryDeferred` to avoid showing a Suspense fallback on query key changes.
+- 📜 [React Server Components in a Nutshell](https://thenewstack.io/react-server-components-in-a-nutshell/): Paul takes Waku to illustrate how RSCs enable convenient server-side requests at the component level, while former solutions only supported route level. He also makes an interesting comparison between Gatsby’s static queries and RSCs.
+- 📜 [Jotai Tips](https://blog.axlight.com/posts/jotai-tips/): Daishi aggregated 20 Jotai tips in a single article.
+- 📜 [State machines in React](https://thesametech.com/state-machines-in-react/): Implements a wizard flow by building a state machine from scratch.
+- 📜 [Server-only Code in Next.js App Router](https://www.builder.io/blog/server-only-next-app-router): Use server-only and client-only packages to ensure code runs where it should.
+- 📜 [Next.js Forms with Server Actions](https://www.jtmthf.com/posts/nextjs-forms): A tutorial using Radix Form (in preview) to implement form elements compatible with Server Actions.
+- 📜 [Exploring Server Actions with Next.js](https://www.robinwieruch.de/next-server-actions/): A Tutorial showing how to do each CRUD operation.
+- 📜 [Techniques for Fetching Data - Comparing Next.js, Remix, and RedwoodJS](https://redwoodjs.com/blog/techniques-for-fetching-data): Revisits old data fetching techniques to explain why RSC is better.
+- 📜 [React 19 - Part 1: The Backstory; My journey writing a framework from scratch!](https://www.cmrg.me/blog/rsc-part-1-the-backstory)
+- 📜 [Synchronize Backend and Frontend Types With tRPC](https://marmelab.com/blog/2024/04/04/trpc-full-stack-types.html)
+- 📦 [Jotai Effect 1.0 - A Jōtai utility package for reactive side-effects](https://github.com/jotaijs/jotai-effect/releases/tag/v1.0.0)
+- 📦 [Jotai 2.8 - atomWithLazy, experimental store](https://github.com/pmndrs/jotai/releases/tag/v2.8.0)
+- 📦 [react-testing-library 15.0 - requires Node 18, supports new WAI-ARIA 1.2 roles](https://github.com/testing-library/react-testing-library/releases/tag/v15.0.0)
+- 📦 [use-signals - An experimental React hook for TC39 signals](https://github.com/dai-shi/use-signals)
+- 🎥 [Jack Herrington - Declarative Routes for NextJS and React-Router](https://www.youtube.com/watch?v=MiZcNHJT_Ss): Jack introduced [declarative-routing](https://github.com/ProNextJS/declarative-routing), a new typesafe routing solution he’s working on with support for React Router and Next.js. It also supports API routes, which makes it an alternative to tRPC with control over the API endpoints.
+- 🎥 [Theo - Facebook wrote a language just for React](https://www.youtube.com/watch?v=HOFIefkepMA)
+- 🎥 [James Quick - Don’t Make This Mistake with Next.js Server Components](https://www.youtube.com/watch?v=F_AplRX3dJU)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Refine - Open source Retool Alternative](/emails/issues/177/refine.jpg)](https://github.com/refinedev/refine)
+
+**[Refine - Open source Retool Alternative](https://github.com/refinedev/refine)**
+
+The sweet spot between the low code and traditional development for CRUD-heavy applications.
+
+As an open-source React meta-framework designed for Enterprise applications, [Refine](https://github.com/refinedev/refine) offers a headless solution ideal for tasks like admin panels, dashboards, and internal tools.
+
+While low-code tools may offer initial promise, they often fall short in handling complex scenarios due to scalability issues, limited customization options, and the risk of vendor lock-in.
+
+Refine enables teams to rapidly develop production-ready apps while maintaining flexibility.
+
+---
+
+## 📱 React-Native {#react-native}
+
+Cette section est désormais co-écrite avec [Benedikt](https://twitter.com/bndkt)
+
+[![New 3D library for React Native in the works](/emails/issues/181/rn3d.jpg)](https://twitter.com/mrousavy/status/1775840325161853389)
+
+🐦 [**New 3D library for React Native in the works**](https://twitter.com/mrousavy/status/1775840325161853389)
+
+One of the most inspiring things in the RN community is observing folks like Marc Rousavy, William Candillon and Christian Falch pushing the boundaries of what’s possible with this technology and going far beyond rendering text and buttons on a screen. With the recent Skia announcements, we saw the state of the art regarding 2D rendering in RN. Now, Marc provided a sneak peek of some exciting advancements in 3D rendering with RN. Apparently, Margelo is working on a new library to enable access to the native Graphics APIs (Metal/Vulkan) from RN. Apart from the short [demo video](https://twitter.com/JPoliachik/status/1775866218743787934), I also found this [thread](https://twitter.com/mrousavy/status/1775870100945461277) very interesting, where Marc explains their approach using a C++ library and why they didn’t go with Three.js, which is amazing on web (React-Three-Fiber supports RN).
+
+---
+
+- 💸 [React Library Analytics — Omlet helps you understand which components and props to keep, remove, or improve based on real usage data.](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-rn-ql-apr-2024)
+- 🐦 [VisionCamera rendering straight to Skia](https://twitter.com/mrousavy/status/1776326923674661065): This will come with Vision Camera 4, which seems to be nearing its release.
+- 📣 [Expo - Orbit is now available as a Preview for Windows](https://expo.dev/blog/expo-orbit-now-available-as-a-preview-for-windows): If you don’t know Orbit yet, it’s a handy menu bar app to launch builds on Simulator.
+- 📣 [Expo - Push notification receipt IDs will change string formats](https://expo.dev/blog/push-receipt-id-format-will-change)
+- 📖 [Gestures in RN Gesture Handler are state machines](https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/states-events/#state-flows): now the docs have an excellent interactive visualization to understand them.
+- 🗓 [App.js Conf](https://appjs.co/?utm_source=thisweekinreact) - 🇵🇱 Kraków - 22-24 May. Get a [10% discount](https://ti.to/appjs/2024/discount/TWIR) with code "TWIR".
+- 📜 [Truly Selectable Text with React Native on iOS](https://haileyok.com/truly-selectable-text-with-react-native-on-ios/): Everyone who has at some point in time tried to make text selectable (as in, parts of a text, not just copy a whole text element) in RN will appreciate this post and the accompanying library.
+- 📜 [How To Dockerize A React Native App?](https://scientyficworld.org/how-to-dockerize-a-react-native-app/) Good summary of running RN dev setup in Docker. For me, the main issue remains that you can’t do iOS builds in Docker, which makes this only half as interesting, but in some scenarios it still makes sense (e.g. if you don’t run local native builds at all).
+- 📜 [How to improve your React Native 3D animations: camera control with Three.js](https://www.themorrow.digital/blog/how-to-improve-your-react-native-3d-animations-camera-control-with-three-js)
+- 📜 [Set up Detox for end-to-end testing in your React Native App](https://thoughtbot.com/blog/set-up-detox-for-end-to-end-testing-in-your-react-native-app)
+- 📜 [The Easiest Way to Build Reactive Local-First Apps with TinyBase and PowerSync](https://bndkt.com/blog/2024/the-easiest-way-to-build-reactive-local-first-apps-with-tinybase-and-powersync)
+- 📦 [React Native 0.74.0-rc.8](https://github.com/facebook/react-native/releases/tag/v0.74.0-rc.8)
+- 📦 [React-Native-Skia 1.1 - makeImageSnapshotAsync](https://github.com/Shopify/react-native-skia/releases/tag/v1.1.0)
+- 📦 [New Architecture Helper - check if dependencies are ready for new architecture and bridgeless mode](https://github.com/aleqsio/new-arch-helper)
+- 📦 [react-native-localize 3.1 - visionOS support](https://github.com/zoontek/react-native-localize/releases/tag/3.1.0)
+- 📦 [expo-proximity - Access the system's proximity sensor](https://github.com/tmallet/expo-proximity)
+- 📦 [react-native-qrcode-skia](https://github.com/enzomanuelmangano/react-native-qrcode-skia)
+- 🎥 [Simon Grimm - React Native Security: Lock Screen, Face ID & Privacy Overlay](https://www.youtube.com/watch?v=iMFUWaIEzOs)
+- 🎙️ [RNR 293 - Real Life React Native With Benji Lightstone](https://reactnativeradio.com/episodes/rnr-293-real-life-react-native)
+- 🎙️ [Rocket Ship 37 - Bringing Swift to React Native with Gary Tokman](https://share.transistor.fm/s/cf35076f)
+
+---
+
+## 🇫🇷 En français {#fr}
+
+- 🇫🇷 [ReactHebdo.fr - Dernières éditions traduites en français](https://thisweekinreact.com/fr/newsletter)
+- 🎥 [Créer un Portfolio de développeur - Next.js 14, TailwindCSS, React](https://www.youtube.com/watch?v=G8ZQo5S1db0)
+- 🎥 [Créer une Carte 3D avec Framer Motion, Tailwind CSS, React JS, NextJS](https://www.youtube.com/watch?v=X_ROAuBvikk)
+- 🎥 [Cours sur Zustand avec React en 2024](https://www.youtube.com/watch?v=JRGMte2Zq0k)
+
+---
+
+## 🔀 Autre {#other}
+
+- 📣 [Set Methods (intersection, union, difference) moved to stage 4](https://twitter.com/robpalmer2/status/1777777295941386429) 🎉
+- 📣 [Promise.try moved to stage 2.7](https://github.com/tc39/proposal-promise-try/issues/15)
+- 📜 [A TC39 Proposal for Signals](https://eisenbergeffect.medium.com/a-tc39-proposal-for-signals-f0bedd37a335)
+- 📜 [Angular and Wiz Are Better Together](https://blog.angular.io/angular-and-wiz-are-better-together-91e633d8cd5a)
+- 📜 [HTML Streaming Over the Wire - A Deep Dive](https://aralroca.com/blog/html-streaming-over-the-wire)
+- 📜 [Creating and importing styles with constructable stylesheets and CSS module scripts](https://fullystacked.net/constructable/)
+- 📜 [Enhance WASM - Backend agnostic server-side rendering (SSR) for Web Components](https://begin.com/blog/posts/2024-04-08-introducing-enhance-wasm)
+- 📦 [ESLint 9.0 - flat config by default, config inspector, Node 20, cleanup formatters](https://eslint.org/blog/2024/04/eslint-v9.0.0-released/)
+- 📦 [VS Code 1.88 - Custom editor labels, test coverage API, Copilot enhancements](https://code.visualstudio.com/updates/v1_88)
+- 📦 [zx 8.0 - Write better scripts - smaller, sync calls, input, AbortController…](https://github.com/google/zx/releases/tag/8.0.0)
+- 🎥 [JavaScript Visualized - Event Loop, Web APIs, (Micro)task Queue](https://www.youtube.com/watch?v=eiC58R16hb8)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/181/meme.jpg)](https://twitter.com/sebastienlorber/status/1777647108822102502)
+
+A plus 👋
