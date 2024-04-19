@@ -94,10 +94,10 @@ const config = {
       const isDefaultLocale = process.env.DOCUSAURUS_LOCALE === 'en';
       const isFromI18nFolder = params.filePath.includes('/i18n/');
 
-      const isNotTranslated = !isDefaultLocale && !isFromI18nFolder;
-
-      result.frontMatter.isNotTranslated =
-        !isDefaultLocale && !isFromI18nFolder;
+      if (!params.filePath.startsWith("_")) {
+        result.frontMatter.isNotTranslated =
+          !isDefaultLocale && !isFromI18nFolder;
+      }
 
       return result;
     },
