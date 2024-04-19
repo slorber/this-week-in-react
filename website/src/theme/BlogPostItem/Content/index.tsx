@@ -5,6 +5,7 @@ import Content from "@theme-original/BlogPostItem/Content";
 import SubscribeFormEmbed from "@site/src/theme/MDXComponents/SubscribeFormEmbed";
 import useDocusaurusContext from "@docusaurus/core/lib/client/exports/useDocusaurusContext";
 import Link from "@docusaurus/Link";
+import Admonition from '@theme/Admonition';
 
 type Props = React.ComponentProps<typeof ContentType>;
 
@@ -31,6 +32,11 @@ export default function ContentWrapper(props) {
   const { frontMatter, isBlogPostPage } = useBlogPost();
   return (
     <>
+      {frontMatter.isNotTranslated && (
+        <Admonition type="warning" title="Non traduit :/">
+          Malheuresement cette page n'est pas encore traduite :s
+        </Admonition>
+      )}
       <Content {...props} />
       {isBlogPostPage && (
         <>
