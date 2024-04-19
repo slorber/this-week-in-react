@@ -7,13 +7,13 @@ date: 04-17-2024
 
 Salut à tous !
 
-This week we have a nice Next.js release and many interesting community blog posts.
+Cette semaine, nous avons une belle version de Next.js et de nombreux articles intéressants sur le blog de la communauté.
 
-We can also feel that the React core team is working hard to polish the remaining details for React 19. Unexpectedly, a v18.3 is finally planned with extra warnings. React Native 0.74 is also around the corner.
+Nous pouvons également sentir que l'équipe principale de React travaille dur pour peaufiner les derniers détails de React 19. De manière inattendue, une v18.3 est finalement prévue avec des avertissements supplémentaires. React Native 0.74 est également sur le point d'arriver.
 
-This week I'd like to introduce you to [**ECMAScript News**](https://ecmascript.news/?utm_source=thisweekinreact). It's my favorite newsletter to keep up to date with ES, TC39, JS tooling, and runtimes.
+Cette semaine, j'aimerais vous présenter [**ECMAScript News**](https://ecmascript.news/?utm_source=thisweekinreact). C'est ma newsletter préférée pour rester informé sur ES, TC39, l'outillage JS et les runtimes.
 
-Next week we have [React Connection](https://reactconnection.io/) and [React Native Connection](https://reactnativeconnection.io/) conferences in Paris. See you there for those that attend 👋. You can still get a [-20% discount](https://www.billetweb.fr/react-connection-2024?discount=TWIR) with my partner code "TWIR".
+La semaine prochaine, nous avons les conférences [React Connection](https://reactconnection.io/) et [React Native Connection](https://reactnativeconnection.io/) à Paris. Rendez-vous là-bas pour ceux qui y participent 👋. Vous pouvez encore bénéficier d'une [réduction de -20%](https://www.billetweb.fr/react-connection-2024?discount=TWIR) avec mon code partenaire « TWIR ».
 
 <!-- truncate -->
 
@@ -51,37 +51,37 @@ Best of all: it's free and seamlessly integrates with your API (no [SSO Tax](htt
 
 [**Next.js 14.2**](https://nextjs.org/blog/next-14-2)
 
-Until we get React 19 and Next.js 15, this new minor version includes development, production, and caching improvements. The highlights are:
+En attendant React 19 et Next.js 15, cette nouvelle version mineure comprend des améliorations pour le développement, la production et la mise en cache. Les points forts sont les suivants :
 
-- Turbopack (RC): 99.8% of tests passing for `next dev --turbo`
-- Build / Production Improvements: Reduced memory usage
-- Caching Improvements: Configurable client-side cache revalidation with `staleTimes`
-- Errors DX: Better hydration mismatch messages
+- Turbopack (RC) : 99.8% des tests passent pour `next dev --turbo`
+- Amélioration du build / de la production : Réduction de l'utilisation de la mémoire
+- Amélioration de la mise en cache : Revalidation configurable du cache côté client avec `staleTimes`
+- Erreurs DX : Meilleurs messages concernant les problèmes d'hydratation
 
-I’m excited to see a great React hydration mismatch error dialog already implemented in Next.js! As I write this, Turbopack is 99.9% ready for development usage (6 integration tests missing). For build usage, it’s 75% ready so we’ll have to wait a bit more.
+Je suis ravi de voir un excellent dialogue d'erreur d'hydratation React déjà implémenté dans Next.js ! Au moment où j'écris ces lignes, Turbopack est prêt à 99,9% pour le développement (il manque 6 tests d'intégration). Pour l'utilisation du build, il est prêt à 75%, il faudra donc encore attendre un peu.
 
 ---
 
 - 💸 [Clerk - A complete suite of embeddable UIs, flexible APIs, and admin dashboards to authenticate and manage your users.](https://go.clerk.com/JTqLYDZ)
-- 👀 [React Core - Upcoming v18.3 release](https://github.com/facebook/react/pull/28843): The React team has finally decided to release a v18 minor version. It should not contain any behavior change but will emit new warnings for deprecated features to help us upgrade to React 19. It should warn us when using string refs, defaultProps on FC/memo components, or when spreading a key prop (🐦 [preview](https://twitter.com/sebastienlorber/status/1780519349247205589)).
-- 👀 [React Core - useDeferredValue’s `initialValue`](https://github.com/reactjs/react.dev/pull/6747): In upcoming React 19 canary releases, this hook will take a new 2nd argument affecting the initial render. It will return the `initialValue` on initial render, and schedule a re-render in the background with the `value` returned.
-- 👀 [React Core - Automatically reset forms after action finishes](https://github.com/facebook/react/pull/28804): This new React 19 behavior only affects uncontrolled inputs, and aligns with the native platform behavior (it will now be the same with/without JS). It will only affect uncontrolled inputs. They also added a new public API [DOM.requestFormReset](https://github.com/facebook/react/pull/28809) so that form abstraction authors can implement this behavior too.
+- 👀 [React Core - Upcoming v18.3 release](https://github.com/facebook/react/pull/28843) : L'équipe React a finalement décidé de publier une version mineure v18. Elle ne devrait pas contenir de changement de comportement mais émettra de nouveaux avertissements pour les fonctionnalités dépréciées afin de nous aider à passer à React 19. Elle devrait nous avertir lors de l'utilisation de string refs, de defaultProps sur les composants FC/memo, ou lors de la diffusion d'un key prop (🐦 [aperçu](https://twitter.com/sebastienlorber/status/1780519349247205589)).
+- 👀 [React Core - useDeferredValue’s `initialValue`](https://github.com/reactjs/react.dev/pull/6747) : Dans les prochaines versions de React 19 canary, ce hook prendra un second nouvel argument affectant le rendu initial. Il retournera la `initialValue` lors du premier rendu, et planifiera un nouveau rendu en arrière-plan avec la `value` retournée.
+- 👀 [React Core - Automatically reset forms after action finishes](https://github.com/facebook/react/pull/28804) : Ce nouveau comportement de React 19 n'affecte que les inputs non contrôlés, et s'aligne sur le comportement de la plateforme native (il sera désormais le même avec/sans JS). Il n'affectera que les inputs non contrôlés. Ils ont également ajouté une nouvelle API publique [DOM.requestFormReset](https://github.com/facebook/react/pull/28809) afin que les auteurs d'abstractions de formulaires puissent également implémenter ce comportement.
 - 👀 [React Core - DevTools v5.1](https://github.com/facebook/react/pull/28840)
 - 👀 [React Core - Document new react-reconciler methods](https://github.com/facebook/react/pull/28750)
-- 🗓 [React Summit](https://reactsummit.com/?utm_source=thisweekinreact) - 🇳🇱 Amsterdam - 14-18 June - Get a 10% discount with code "TWIR". Awesome lineup including Evan Bacon, Kent C. Dodds, Theo, Tim Neutkens, Mark Erikson, Fred Schott and so many others!
-- 📜 [Zustand and React Context](https://tkdodo.eu/blog/zustand-and-react-context): I cannot agree more with Dominik that suggests putting your Zustand store instance in a React context. This way, you can initialize the store from props, make things easier to test, and allow using a store on multiple subtrees.
-- 📜 [CSS in React Server Components](https://www.joshwcomeau.com/react/css-in-rsc/): Josh explains why Styled-Components/Emotion do not play well with RSC, and presents alternative solutions providing a similar styled API, like Linaria, Panda, or Pigment. Avoid FOMO, there's no need to adopt RSCs and these libraries now if your app already works fine.
-- 📜 [R19, a dead-simple React 19 framework - Part 2 - The Code; How it works under the hood!](https://www.cmrg.me/blog/rsc-part-2-the-code): Great technical deep dive into what it takes to create a custom React 19 / RSC / Server Actions setup on top of Bun.
-- 📜 [Rebuilding "Remix Contacts" in Next.js 14 with Transitions, Server Actions and Prisma](https://aurorascharff.no/posts/rebuilding-remix-contacts-in-nextjs-14-with-transitions-server-actions-and-prisma/): A nicely detailed walkthrough of converting an official Remix tutorial app to Next.js while preserving the progressive enhancement behavior. It also explains the differences between the 2 approaches and lists the pros/cons of each implementation. There’s no clear winner, although Remix looks quite competitive!
-- 📜 [The Two-Tree Problem with Styling on the Web](https://danielnagy.me/posts/Post_jt4adn0o5bnr): An interesting read on the DOM/CSS tree separation, and whether React CSS-in-JS or Tailwind solves this problem. The author is pro-inline-style (like me BTW).
-- 📜 [Improving our Jest execution time by 300%](https://www.camggould.com/posts/Jest-With-RTL-Is-Slow/): Investigations of Jest execution time on a React codebase. RTL getByRole was a bottleneck, among other things.
-- 📜 [Empathetic Coding - Button Component](https://react-japan.dev/en/blog/empathetic-coding-button-component): Nice article showing the steps to design a React button component using TypeScript and Tailwind, keeping in mind maintenance and convenience.
-- 📜 [Overcoming Next.js' Search Params Limitation in Layouts](https://www.nico.fyi/blog/workaround-layout-has-no-search-params): Suggest using parallel routes to overcome the limitation.
-- 📜 [The process.env frontend time bomb (plus: a sustainable definition of “fixed”)](https://massimilianomirra.com/notes/the-frontend-process-env-time-bomb-plus-a-sustainable-definition-of-fixed): Instead of spreading process.env across your codebase, parses env variables with Zod and exposes app config in a React context.
+- 🗓 [React Summit](https://reactsummit.com/?utm_source=thisweekinreact) - 🇳🇱 Amsterdam - 14-18 juin - 10% de réduction avec le code « TWIR ». Un programme impressionnant avec notamment Evan Bacon, Kent C. Dodds, Theo, Tim Neutkens, Mark Erikson, Fred Schott et bien d'autres encore !
+- 📜 [Zustand and React Context](https://tkdodo.eu/blog/zustand-and-react-context) : Je suis tout à fait d'accord avec Dominik qui suggère de placer votre instance de store Zustand dans un contexte React. De cette façon, vous pouvez initialiser le store à partir des props, rendre les choses plus faciles à tester, et permettre l'utilisation d'un store sur plusieurs sous-arbres.
+- 📜 [CSS in React Server Components](https://www.joshwcomeau.com/react/css-in-rsc/) : Josh explique pourquoi les Styled-Components/Emotion ne fonctionnent pas bien avec RSC, et présente des solutions alternatives fournissant une API de style similaire, comme Linaria, Panda, ou Pigment. Evitez le syndrome de FOMO, il n'est pas nécessaire d'adopter les RSC et ces librairies maintenant si votre application fonctionne déjà très bien.
+- 📜 [R19, a dead-simple React 19 framework - Part 2 - The Code; How it works under the hood!](https://www.cmrg.me/blog/rsc-part-2-the-code) : Une excellente plongée technique dans ce qu'il faut pour créer une configuration personnalisée de React 19 / RSC / Server Actions sur Bun.
+- 📜 [Rebuilding "Remix Contacts" in Next.js 14 with Transitions, Server Actions and Prisma](https://aurorascharff.no/posts/rebuilding-remix-contacts-in-nextjs-14-with-transitions-server-actions-and-prisma/) : Une description détaillée de la conversion d'une app officielle du tutoriel Remix vers Next.js tout en préservant le comportement de l'amélioration progressive. Il explique également les différences entre les deux approches et liste les avantages et inconvénients de chaque implémentation. Il n'y a pas de gagnant clair, bien que Remix semble assez compétitif !
+- 📜 [The Two-Tree Problem with Styling on the Web](https://danielnagy.me/posts/Post_jt4adn0o5bnr) : Une lecture intéressante sur la séparation de l'arbre DOM/CSS, et sur la question de savoir si React CSS-in-JS ou Tailwind résout ce problème. L'auteur est favorable au style en ligne (comme moi, d'ailleurs).
+- 📜 [Improving our Jest execution time by 300%](https://www.camggould.com/posts/Jest-With-RTL-Is-Slow/) : Investigations sur le temps d'exécution de Jest sur une base de code React. getByRole de RTL était un goulot d'étranglement, parmi d'autres points.
+- 📜 [Empathetic Coding - Button Component](https://react-japan.dev/en/blog/empathetic-coding-button-component) : Bel article montrant les étapes de la conception d'un composant bouton React en utilisant TypeScript et Tailwind, en gardant à l'esprit la maintenance et la commodité.
+- 📜 [Overcoming Next.js' Search Params Limitation in Layouts](https://www.nico.fyi/blog/workaround-layout-has-no-search-params) : Suggére l'utilisation de routes parallèles pour surmonter cette limitation.
+- 📜 [The process.env frontend time bomb (plus: a sustainable definition of “fixed”)](https://massimilianomirra.com/notes/the-frontend-process-env-time-bomb-plus-a-sustainable-definition-of-fixed) : Au lieu de répandre process.env dans votre base de code, il analyse les variables env avec Zod et expose la configuration de l'application dans un contexte React.
 - 📜 [How to Style a React Application](https://alexkondov.com/full-stack-tao-styling/)
 - 📜 [Understanding Layout and Template Next.js App Router](https://www.nico.fyi/blog/understanding-layout-and-template-next-app-router)
-- 📦 [Next.js View Transitions](https://next-view-transitions.vercel.app/): Shu from Vercel released a basic userland implementation of CSS View Transitions, although it looks possible that Next.js will provide this feature later.
-- 📦 [XState Store](https://stately.ai/blog/2024-04-10-xstate-store): New tiny typesafe event-driven state manager, including a React useSelector API. This reminds me a bit of both Redux and Zustand.
+- 📦 [Next.js View Transitions](https://next-view-transitions.vercel.app/) : Shu de Vercel a publié une implémentation basique de CSS View Transitions, bien qu'il soit possible que Next.js fournisse cette fonctionnalité plus tard.
+- 📦 [XState Store](https://stately.ai/blog/2024-04-10-xstate-store) : Nouveau petit gestionnaire d'état événementiel de type sécurisé, incluant une API useSelector de React. Cela me rappelle un peu Redux et Zustand.
 - 📦 [Astro 4.6 - Manual i18n routing, move dev toolbar, CSRF protection, cookies…](https://astro.build/blog/astro-460/)
 - 📦 [Next-Video 1.0 - The easiest way to add video in your NextJS app](https://github.com/muxinc/next-video/releases/tag/v1.0.0)
 - 📦 [Mantine 7.8.0 - Uncontrolled form mode, form.getValues, form.watch, automatic px to rem conversions](https://mantine.dev/changelog/7-8-0/)
@@ -120,25 +120,25 @@ TWIR exclusive: [Get 25% off your FormBuilder SDK license](https://tripetto.com/
 
 🐦 [Is Zero-Bundle-Size React Server Components possible in React Native?](https://twitter.com/Baconbrix/status/1780259340458340360)
 
-Evan Bacon answers yes, and gives us a glimpse of what the future might hold in a server-driven React Native world. Exciting times ahead!
+Evan Bacon nous répond positivement et nous donne un aperçu de ce que l'avenir pourrait nous réserver dans un monde React Native piloté par les serveurs. Des temps passionnants nous attendent !
 
 ---
 
 - 💸 [PowerSync – build local-first apps with simple state management and real-time reactivity. Non-invasive to existing architecture.](https://www.powersync.com/?utm_source=newsletter&utm_medium=sponsorship&utm_campaign=this-week-in-react)
-- 🐦 [Brent Vatne's automatic batching demos](https://twitter.com/notbrent/status/1778266063832056285): See the New Architecture in action!
+- 🐦 [Brent Vatne's automatic batching demos](https://twitter.com/notbrent/status/1778266063832056285) : Découvrez la nouvelle architecture en action !
 - 🐦 [Nice dialog component demo for destructive actions](https://twitter.com/marceloterreiro/status/1779657639745798411)
-- 🐦 [The Ignite Cookbook site quietly received several new recipes](https://twitter.com/jamonholmgren/status/1778829659775676653): Supabase & PowerSync
+- 🐦 [The Ignite Cookbook site quietly received several new recipes](https://twitter.com/jamonholmgren/status/1778829659775676653) : Supabase & PowerSync
 - 🐦 [3D Rendering with RN on Vision Pro](https://twitter.com/o_kwasniewski/status/1780602815167283485)
 - 👀 [rn.new - Pretty neat way to start a new React Native project](https://rn.new)
-- 🗓 [App.js Conf](https://appjs.co/?utm_source=thisweekinreact) - 🇵🇱 Kraków - 22-24 May. Get a [10% discount](https://ti.to/appjs/2024/discount/TWIR) with code "TWIR".
-- 📜 [Add shapes and textures to 3D animations with React, Expo and ThreeJS](https://www.themorrow.digital/blog/add-shapes-and-textures-to-3d-animations-with-react-expo-and-threejs): Last week, I wrote about an upcoming 3D animation library, but of course there’s already approaches to 3D in RN. This article describes one of them.
-- 📜 [How To Implement Metro's Http Cache](https://andrei-calazans.com/posts/metro-http-cache/): Did you know that Meta uses a central cache for their RN devs, meaning that if one dev has already bundled something, another dev can benefit from the cache result. This article describes how remote HTTP caches work in Metro.
+- 🗓 [App.js Conf](https://appjs.co/?utm_source=thisweekinreact) - 🇵🇱 Kraków - 22-24 mai. Bénéficiez d'une [réduction de 10 %](https://ti.to/appjs/2024/discount/TWIR) avec le code « TWIR ».
+- 📜 [Add shapes and textures to 3D animations with React, Expo and ThreeJS](https://www.themorrow.digital/blog/add-shapes-and-textures-to-3d-animations-with-react-expo-and-threejs) : La semaine dernière, j'ai parlé d'une bibliothèque d'animation 3D à venir, mais il existe déjà des approches de la 3D en RN. Cet article décrit l'une d'entre elles.
+- 📜 [How To Implement Metro's Http Cache](https://andrei-calazans.com/posts/metro-http-cache/) : Saviez-vous que Meta utilise un cache central pour ses devs RN, ce qui signifie que si un dev a déjà bundlé quelque chose, un autre dev peut bénéficier du résultat du cache. Cet article décrit le fonctionnement des caches HTTP distants dans Metro.
 - 📜 [React Strict DOM: The Future of Universal Apps with React Native](https://blog.theodo.com/2024/04/react-strict-dom-react-native-web/)
 - 📜 [Forgotten art of status bar design](https://brainsandbeards.com/blog/2024-forgotten-art-of-status-bar-design/)
 - 📜 [Gist - Apple Privacy Manifest using Expo 50.0.17](https://gist.github.com/catalinmiron/d2cabb835088d0342bc48030464ee615)
 - 📜 [react-native-worklets-core 1.0](https://github.com/margelo/react-native-worklets-core/releases/tag/v1.0.0)
 - 📦 [VisionCamera 4.0.0-beta.15 - the first beta for Skia Frame Processors](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v4.0.0-beta.15)
-- 📦 [react-native 0.74.0-rc.9](https://github.com/facebook/react-native/releases/tag/v0.74.0-rc.9): Adds a template for an iOS privacy manifest to build step
+- 📦 [react-native 0.74.0-rc.9](https://github.com/facebook/react-native/releases/tag/v0.74.0-rc.9) : Ajoute un template pour un manifeste de confidentialité iOS à l'étape du build.
 - 📦 [Unistyle 2.6 + 2.7 - Add support for tvOS + visionOS](https://github.com/jpudysz/react-native-unistyles/releases)
 - 📦 [RN Storybook v8.0.0-alpha.4](https://github.com/storybookjs/react-native/releases/tag/v8.0.0-alpha.4)
 - 🎥 [Simon Grimm - 10 Epic React Native Animation Libraries](https://www.youtube.com/watch?v=8CZy6DjDXK0)
