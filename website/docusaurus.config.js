@@ -91,12 +91,13 @@ const config = {
       // Reuse the default parser
       const result = await params.defaultParseFrontMatter(params);
 
-      const isDefaultLocale = process.env.DOCUSAURUS_LOCALE === 'en';
-      const isFromI18nFolder = params.filePath.includes('/i18n/');
+      const isPartial =
+        params.filePath.includes("/_") || params.filePath.includes("\\_");
+      const isDefaultLocale = process.env.DOCUSAURUS_LOCALE === "en";
 
-      if (!params.filePath.startsWith("_")) {
-        result.frontMatter.isNotTranslated =
-          !isDefaultLocale && !isFromI18nFolder;
+      if (!isDefaultLocale && !isPartial) {
+        const isTranslated = params.filePath.includes("/i18n/");
+        result.frontMatter.isTranslated = isTranslated;
       }
 
       return result;

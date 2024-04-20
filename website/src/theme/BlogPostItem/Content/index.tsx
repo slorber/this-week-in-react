@@ -5,7 +5,7 @@ import Content from "@theme-original/BlogPostItem/Content";
 import SubscribeFormEmbed from "@site/src/theme/MDXComponents/SubscribeFormEmbed";
 import useDocusaurusContext from "@docusaurus/core/lib/client/exports/useDocusaurusContext";
 import Link from "@docusaurus/Link";
-import Admonition from '@theme/Admonition';
+import Admonition from "@theme/Admonition";
 
 type Props = React.ComponentProps<typeof ContentType>;
 
@@ -30,11 +30,14 @@ function TwitterThreadCTA({ twitterThreadUrl }: { twitterThreadUrl: string }) {
 
 export default function ContentWrapper(props) {
   const { frontMatter, isBlogPostPage } = useBlogPost();
+  // @ts-expect-error: TODO docusaurus should support front matter declaration merging
+  const isTranslated = frontMatter.isTranslated;
   return (
     <>
-      {frontMatter.isNotTranslated && (
-        <Admonition type="warning" title="Non traduit :/">
-          Malheuresement cette page n'est pas encore traduite :s
+      {!isTranslated && (
+        <Admonition type="warning" title="🇫🇷 Non traduit :/">
+          Malheureusement, cette page n'a pas encore été traduite en français.
+          Revenez un peu plus tard!
         </Admonition>
       )}
       <Content {...props} />
