@@ -15,11 +15,11 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "0.0.0-5831",
-    "@docusaurus/preset-classic": "0.0.0-5831",
-    "@docusaurus/theme-common": "0.0.0-5831",
-    "@docusaurus/theme-live-codeblock": "0.0.0-5831",
-    "@docusaurus/plugin-vercel-analytics": "0.0.0-5831",
+    "@docusaurus/core": "3.2.1",
+    "@docusaurus/preset-classic": "3.2.1",
+    "@docusaurus/theme-common": "3.2.1",
+    "@docusaurus/theme-live-codeblock": "3.2.1",
+    "@docusaurus/plugin-vercel-analytics": "3.2.1",
     "@mdx-js/react": "^3.0.1",
     "@slorber/twitter-lite": "^1.1.2",
     "@vercel/edge": "^1.0.1",
@@ -32,8 +32,8 @@
     "unist-util-visit": "^2.0.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "0.0.0-5831",
-    "@docusaurus/tsconfig": "0.0.0-5831",
+    "@docusaurus/module-type-aliases": "3.2.1",
+    "@docusaurus/tsconfig": "3.2.1",
     "@types/facebook-nodejs-business-sdk": "^15.0.2",
     "@types/react": "^18.2.21"
   },
@@ -50,6 +50,6 @@
     ]
   },
   "engines": {
-    "node": ">=16.14"
+    "node": "20.x"
   }
 }

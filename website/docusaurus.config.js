@@ -86,6 +86,24 @@ const config = {
     },
   },
 
+  markdown: {
+    parseFrontMatter: async (params) => {
+      // Reuse the default parser
+      const result = await params.defaultParseFrontMatter(params);
+
+      const isPartial =
+        params.filePath.includes("/_") || params.filePath.includes("\\_");
+      const isDefaultLocale = process.env.DOCUSAURUS_LOCALE === "en";
+
+      if (!isDefaultLocale && !isPartial) {
+        const isTranslated = params.filePath.includes("/i18n/");
+        result.frontMatter.isTranslated = isTranslated;
+      }
+
+      return result;
+    },
+  },
+
   clientModules: [
     require.resolve("./src/clientModules/posthog.ts"),
     require.resolve("./src/clientModules/restoreWorkflowQueryStringParams.ts"),
