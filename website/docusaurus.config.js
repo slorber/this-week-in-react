@@ -98,7 +98,7 @@ const config = {
         return result;
       }
 
-      const isDefaultLocale = process.env.DOCUSAURUS_LOCALE === "en";
+      const isDefaultLocale = process.env.DOCUSAURUS_CURRENT_LOCALE === "en";
       const isI18n = params.filePath.includes("/i18n/");
 
       if (isDefaultLocale) {
