@@ -102,9 +102,9 @@ const config = {
       const isI18n = params.filePath.includes("/i18n/");
 
       if (isDefaultLocale) {
-        result.frontMatter.isNotTranslated = false;
+        result.frontMatter.isTranslationMissing = false;
       } else {
-        result.frontMatter.isNotTranslated = !isI18n;
+        result.frontMatter.isTranslationMissing = !isI18n;
       }
 
       return result;
