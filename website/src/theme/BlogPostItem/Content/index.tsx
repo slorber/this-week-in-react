@@ -31,10 +31,10 @@ function TwitterThreadCTA({ twitterThreadUrl }: { twitterThreadUrl: string }) {
 export default function ContentWrapper(props) {
   const { frontMatter, isBlogPostPage } = useBlogPost();
   // @ts-expect-error: TODO docusaurus should support front matter declaration merging
-  const isTranslated = frontMatter.isTranslated;
+  const isNotTranslated = frontMatter.isNotTranslated;
   return (
     <>
-      {!isTranslated && (
+      {isNotTranslated && (
         <Admonition type="warning" title="🇫🇷 Non traduit :/">
           Malheureusement, cette page n'a pas encore été traduite en français.
           Revenez un peu plus tard!

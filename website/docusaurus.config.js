@@ -93,12 +93,15 @@ const config = {
 
       const isPartial =
         params.filePath.includes("/_") || params.filePath.includes("\\_");
-      const isDefaultLocale = process.env.DOCUSAURUS_LOCALE === "en";
 
-      if (!isDefaultLocale && !isPartial) {
-        const isTranslated = params.filePath.includes("/i18n/");
-        result.frontMatter.isTranslated = isTranslated;
+      if (isPartial) {
+        return result;
       }
+
+      const isDefaultLocale = process.env.DOCUSAURUS_LOCALE === "en";
+      const isI18n = params.filePath.includes("/i18n/");
+
+      result.frontMatter.isNotTranslated = !isDefaultLocale && !isI18n;
 
       return result;
     },
