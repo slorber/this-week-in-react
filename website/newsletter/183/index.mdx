@@ -42,7 +42,25 @@ import Support from "../_support.mdx";
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Vercel reverted all edge rendering back to Node.js](/emails/issues/183/r183.jpg)](https://x.com/leeerob/status/1780705942734331983)
+
+🐦 [Vercel reverted all edge rendering back to Node.js](https://x.com/leeerob/status/1780705942734331983)
+
+Vercel’s VP of Product, Lee Rob, explained on X that Vercel is “reverting all edge rendering back to Node.js.” If you’re using Vercel (and probably even if you don’t), you’ll know that Vercel has pushed “edge” as a concept for a long time. One the one hand, edge means that compute is run near to where a user accessing a site hosted on Vercel is located. On the other hand, it also means that this compute is run on an “edge runtime,” which is built on V8 and not on Node.js. While the concept of running compute near to the end users sound appealing, the advantages quickly disappear if data needs to be loaded from a central location (which very often is the case). At the same time, development teams are often struggling to adapt workload to the limited subset of APIs available on the edge runtime. Now it seams Vercel has come to the conclusion that overall, the challenges for developers outweigh the limited benefits, and is therefore reverting to centralized Node.js runtimes. I appreciate their transparency around this! If you want more details, Theo made a [video](https://youtu.be/lAGE-k1Zfrg?si=5SP4hyoFkixTsh-y) about it.
+
+- 👀 [Mounting a Remix app to Hono and running it on Vite](https://github.com/yusukebe/hono-and-remix-on-vite)
+- 📜 [Deploy a new Remix app to Cloudflare Pages:](https://www.jacobparis.com/content/remix-cloudflare-pages) A lot has recently changed (and improved!) about how Remix can be deployed to CF Pages. This is a good guide on the state of the art.
+- 📜 [Getting the Current URL in Next.js Server Components](https://www.propelauth.com/post/getting-url-in-next-server-components)
+- 📜 [How to Style a React Application](https://alexkondov.com/full-stack-tao-styling/?utm_source=newsletter.reactdigest.net&utm_medium=newsletter&utm_campaign=how-to-style-a-react-application): Good overview of the different styling approaches used today, from semantic classes, to CSS-in-JS and utility classes.
+- 📜 [How to manifest streamlined authentication: AWS Cognito in a React app](https://evilmartians.com/chronicles/how-to-manifest-streamlined-authentication-aws-cognito-in-a-react-app)
+- 📜 [Localized link tags for SEO in Remix](https://react-japan.dev/en/blog/localized-link-tags-for-seo-in-remix)
+- 📜 [How Solid Made Me A Better React Developer](https://www.brenelz.com/posts/how-solid-made-me-a-better-react-developer/)
+- 📜 [Improving INP in React and Next.js](https://www.thisdot.co/blog/improving-inp-in-react-and-next-js): Interaction to Next Paint has recently replaced First Input Delay (FID) as a core web vital; this post details how to optimize it.
+- 📜 [Did Signals Just Land in React?](https://www.paulie.dev/articles/2024/04/did-signals-just-land-in-react/): Spoiler Alert: No, it didn’t. But there’s still a way to try signals in React.
+- 📦 [Remix 2.9 adds Single Fetch (unstable)](https://github.com/remix-run/remix/blob/main/CHANGELOG.md)
+- 🎙️ [Off The Main Thread Podcast: Putting React In The Browser](https://offthemainthread.tech/episode/putting-react-in-the-browser/)
+- 🎥 [Easy Stripe Integration in your Remix.run App](https://www.youtube.com/watch?v=BaEbhSCRy3g)
+- 🎥 [Vercel got it wrong](https://www.youtube.com/watch?v=_dtyYDwHAIc): Interesting take on the “edge” topic by Ben Holmes, detailing Cloudflare’s approach.
 
 - 💸 [Clerk's prebuilt UI components give you a beautiful, fully-functional user management experience in minutes. Start for free!](https://go.clerk.com/AlkHHq8)
 
@@ -79,7 +97,30 @@ More info, examples and documentation on [nlux.dev](https://nlux.dev?c-twr2-p1)
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![React Native 0.74 released, React Native IDE is now in beta](/emails/issues/183/rn183.jpg)](https://reactnative.dev/blog/2024/04/22/release-0.74)
+
+📦 [React Native 0.74 released](https://reactnative.dev/blog/2024/04/22/release-0.74)
+  
+This week saw the release of React Native 0.74, a major milestone for the community! The latest version makes “bridgeless mode” the default for new projects using the New Architecture (with the next release, 0.75, the New Arch will become the default, too). Both can still be turned off if needed, but they clearly represent the future of React Native, and over the last months especially, A LOT of libraries have added support for both. But there’s more: RN 0.74 includes Yoga 3.0. There are very few breaking changes and deprecations, but it’s still worth checking them out in the [release notes](https://reactnative.dev/blog/2024/04/22/release-0.74).
+
+
+📦 [React Native IDE is now in beta](https://ide.swmansion.com/)
+
+Another exciting news this week is the closed beta for React Native IDE, developed by the team at Software Mansion. You can now sign up to get early access to the IDE. They also have a landing page up now, and the [docs](https://ide.swmansion.com/docs/getting-started) are publicly available for anyone curious about it.
+
+- 🐦 [Right-click to inspect with access to components hierarchy and jump-to-source in the coming React Native IDE?](https://x.com/kzzzf/status/1781334337960493100)
+- 🐦 [First Chain React speakers announced](https://x.com/ChainReactConf/status/1781079172322148609): Gant Laborde & Robin Heinze!
+- 🐦 [Another week, another wild push from Evan Bacon: Precompiled React Native](https://x.com/Baconbrix/status/1782454818851663918)
+- 📜 [Sunrising New Architecture in the New Expensify App](https://blog.swmansion.com/sunrising-new-architecture-in-the-new-expensify-app-729d237a02f5): Super cool to see a complex open-source app adapting the New Arch. A great example to look into!
+- 📜 [Apple privacy manifest for React Native](https://dev.to/dannyhw/apple-privacy-manifest-for-react-native-29fk): I’ve mentioned the Apple Privacy Manifest requirement before; finally, a good blog post summarizes the topic.
+- 📜 [Expo Blog: Save users from deleting your app with expo-quick-actions](https://expo.dev/blog/expo-quick-actions)
+- 📜 [Creating a React Native “Curved Bottom Bar” with Handwritten SVG](https://kyleshevlin.com/react-native-curved-bottom-bar-with-handwritten-svg/)
+- 📜 [Microsoft is retiring App Center: Here’s what React Native developers should use instead](https://shift.infinite.red/microsoft-is-retiring-app-center-heres-what-react-native-developers-should-use-instead-c2a8786f971e)
+- 📦 [React Native VisionCamera V4: Draw directly on camera frames with Skia, lots of Android bug fixes](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v4.0.0) 
+- 📦 [react-native-svg 15.2.0 adds support for RN 0.74 on New Architecture](https://github.com/software-mansion/react-native-svg/releases/tag/v15.2.0)
+- 🎙️ [RNR 294 - Goodbye, App Center!](https://reactnativeradio.com/episodes/rnr-294-rip-app-center-and-other-news)
+- 🎥 [Behind the Scenes of React Native 0.74 Release | The React Native Show Podcast: Coffee Talk #18](https://www.youtube.com/watch?v=bLHubdUE2Ew)
+- 🎥 [React Native Multiplayer with Supabase Realtime and Skia](https://www.youtube.com/watch?v=rqbu-nGkOgw)
 
 - 💸 [React Native Analytics — Omlet is a New Tool to Analyze Component Usage. See Trends to Improve Code and Boost Component Adoption.](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-rn-ql-apr-2024)
 
@@ -87,14 +128,19 @@ More info, examples and documentation on [nlux.dev](https://nlux.dev?c-twr2-p1)
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 🐦 [Fetch API has built-in timeout support](https://x.com/goenning/status/1781290404211814903)    
+- 📜 [WebKit: Help us invent CSS Grid Level 3, aka “Masonry” layout](https://webkit.org/blog/15269/help-us-invent-masonry-layouts-for-css-grid-level-3/)
+- 📜 [An intro to TSConfig for JavaScript Developers](https://deno.com/blog/intro-to-tsconfig)
+- 📜 [Latency numbers every frontend developer should know](https://vercel.com/blog/latency-numbers-every-web-developer-should-know)
+- 📖 [The Front End Developer/Engineer Handbook 2024 — A Guide to Modern Web Development](https://frontendmasters.com/blog/front-end-developer-handbook-2024/): Free eBook**
+- 📦 [ESLint v9.1.0 released](https://eslint.org/blog/2024/04/eslint-v9.1.0-released/)
+- 📦 [Chrome 125 beta - CSS Anchor Positioning, CSS stepped functions, …](https://developer.chrome.com/blog/chrome-125-beta?hl=en)
+- 📦 [Electron 30.0.0](https://www.electronjs.org/blog/electron-30-0)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![Vercel updated their logo](/emails/issues/183/meme183.jpg)](https://x.com/bentonnnnnn/status/1781186098800267421)
 
 See ya! 👋
