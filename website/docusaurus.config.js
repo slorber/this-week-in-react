@@ -98,7 +98,11 @@ const config = {
         return result;
       }
 
-      const isDefaultLocale = process.env.DOCUSAURUS_CURRENT_LOCALE === "en";
+      // TODO fix weird undefined case!
+      const isDefaultLocale =
+        process.env.DOCUSAURUS_CURRENT_LOCALE === "undefined" ||
+        typeof process.env.DOCUSAURUS_CURRENT_LOCALE === "undefined" ||
+        process.env.DOCUSAURUS_CURRENT_LOCALE === "en";
       const isI18n = params.filePath.includes("/i18n/");
 
       if (isDefaultLocale) {
