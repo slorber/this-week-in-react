@@ -3,21 +3,19 @@ slug: /183
 title: "This Week In React #183: Vercel Edge, React Native 0.74 + IDE, refs, patching fetch(), Remix Single Fetch, RSCs, Signals, Redwood, Zustand Slices, XState, VisionCamera 4, NewArch, VisionOS..."
 authors: [slorber, bndkt]
 date: 04-24-2024
-unlisted: true
 ---
 
 Hi everyone!
 
-Promo dotjs conf
-Chain React?
+This week React Native takes the spotlight! But there are also interesting news from Vercel and PRs to take a look at from the React core team.
 
-ReactNative conn mention
+Earlier this week, I was at React/RN Connection conferences in Paris. It was great to meet some of you there!
 
-newsletter break
+By the way, the party is not over. After many years, the awesome [dotJS conf](https://www.dotjs.io/?utm_source=thisweekinreact) is back in Paris on June 27. They already announced many great speakers, including Mark Dalgleish, Malte Ubl, Charlie Gerard, James Q Quick, Ben Lesh... Get a 10% discount with my code "TWIR".
 
-- 🗓 [](https://reactconnection.io/)[App.js Conf](https://appjs.co/?utm_source=thisweekinreact) - 🇵🇱 Kraków - 22-24 May. Get a [](https://www.billetweb.fr/react-connection-2024?discount=TWIR)[10% discount](https://ti.to/appjs/2024/discount/TWIR) with code "TWIR".
-- 🗓 [React Summit](https://reactsummit.com/?utm_source=thisweekinreact) - 🇳🇱 Amsterdam - 14-18 June - Get a 10% discount with code "TWIR".
-- ReactSummit 22-26 April - Interview with an influencer (I will share with you as soon as it is published).
+Due to the conf, I only had today to work on the newsletter. Thankfully my co-author [Benedikt](https://twitter.com/bndkt) took over and did most of the work this week! 🙏
+
+Next week, the newsletter takes a well-deserved break. We'll be back on May 8.
 
 <!-- truncate -->
 
@@ -58,6 +56,7 @@ Vercel’s VP of Product, Lee Rob, explained on X that Vercel is “reverting al
 - 👀 [React Core PR - Don't minify symbols in production builds](https://github.com/facebook/react/pull/28881): React 19 production builds will preserve variable/function names and should become easier to read/debug. You can still minify it yourself if you want to, but using HTTP gzip compression should be enough to compensate for the extra size.
 - 👀 [React Docs PR - Add documentation for ref cleanup function](https://github.com/reactjs/react.dev/pull/6770): React 19 ref functions can now return a cleanup function (🐦 [preview](https://twitter.com/sebastienlorber/status/1783108366459375675)). This should also help users using string refs (removed in v19) and classes to migrate thanks to automated codemods.
 - 👀 [Remix POC - Remix + Hono + Vite](https://github.com/yusukebe/hono-and-remix-on-vite)
+- 🗓 [React Summit](https://reactsummit.com/?utm_source=thisweekinreact) - 🇳🇱 Amsterdam - 14-18 June - Get a 10% discount with code "TWIR". Awesome lineup including Evan Bacon, Kent C. Dodds, Theo, Tim Neutkens, Mark Erikson, Fred Schott and so many others!
 - 📜 [HTML attributes vs DOM properties](https://jakearchibald.com/2024/attributes-vs-properties/): A great deep dive into subtle DOM behaviors and design decisions, including how frameworks like React or Vue handle the difference. Also explains how React 19 will improve support for Web Components.
 - 📜 [Redwood - Building a new docs site with RSC](https://redwoodjs.com/blog/building-a-new-docs-site-with-rsc): Redwood is dogfooding Redwood by showing how to build a docs site with it, based on MDX and RSCs.
 - 📜 [Deploy a new Remix app to Cloudflare Pages:](https://www.jacobparis.com/content/remix-cloudflare-pages) A lot has recently changed (and improved!) about how Remix can be deployed to CF Pages. This is a good guide on the state of the art.
@@ -122,6 +121,7 @@ Another exciting news this week is the closed beta for React Native IDE, develop
 - 🐦 [Right-click to inspect with access to components hierarchy and jump-to-source in the coming React Native IDE?](https://x.com/kzzzf/status/1781334337960493100)
 - 🐦 [First Chain React speakers announced](https://x.com/ChainReactConf/status/1781079172322148609): Gant Laborde & Robin Heinze!
 - 🐦 [Another week, another wild push from Evan Bacon: Precompiled React Native](https://x.com/Baconbrix/status/1782454818851663918)
+- 🗓 [App.js Conf](https://appjs.co/?utm_source=thisweekinreact) - 🇵🇱 Kraków - 22-24 May. Get a [10% discount](https://ti.to/appjs/2024/discount/TWIR) with code "TWIR".
 - 📜 [Sunrising New Architecture in the New Expensify App](https://blog.swmansion.com/sunrising-new-architecture-in-the-new-expensify-app-729d237a02f5): Super cool to see a complex open-source app adapting the New Arch. A great example to look into!
 - 📜 [Apple privacy manifest for React Native](https://dev.to/dannyhw/apple-privacy-manifest-for-react-native-29fk): I’ve mentioned the Apple Privacy Manifest requirement before; finally, a good blog post summarizes the topic.
 - 📜 [Expo Blog: Save users from deleting your app with expo-quick-actions](https://expo.dev/blog/expo-quick-actions)
