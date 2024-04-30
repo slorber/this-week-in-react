@@ -1,0 +1,169 @@
+---
+slug: /183
+title: "This Week In React #183: Vercel Edge, React Native 0.74 + IDE, refs, patching fetch(), Remix Single Fetch, RSCs, Signals, Redwood, Zustand Slices, XState, VisionCamera 4, NewArch, VisionOS..."
+authors: [slorber, bndkt]
+date: 04-24-2024
+---
+
+Salut à tous !
+
+Cette semaine, React Native est à l'honneur ! Mais il y a aussi des nouvelles intéressantes de Vercel et des PR à regarder de la part de l'équipe principale de React.
+
+En début de semaine, j'étais à la conférence React/RN Connection à Paris. J'ai été ravi de rencontrer certains d'entre vous !
+
+La fête parisienne n'est pas terminée. Après de nombreuses années, la grande [**dotJS conference**](https://www.dotjs.io/?utm_source=thisweekinreact) est de retour à Paris le 27 juin. Ils ont déjà annoncé d'excellents intervenants, dont Mark Dalgleish, Malte Ubl, Charlie Gerard, James Q Quick, Ben Lesh... Dernières places disponibles, obtenez une réduction de 10% avec mon code « TWIR ».
+
+En raison de la conf, je n'ai eu qu'aujourd'hui pour travailler sur la newsletter. Heureusement, mon co-auteur [Benedikt](https://twitter.com/bndkt) a pris le relais et a fait le plus gros du travail cette semaine ! 🙏
+
+La semaine prochaine, la newsletter fera une pause bien méritée. Nous serons de retour le 8 mai.
+
+<!-- truncate -->
+
+**💡 [Consulter cette newsletter sur Twitter](https://slo.im/thread) - format visuel 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![A newsletter helping build your product skills](/emails/issues/183/posthog.jpg)](https://newsletter.posthog.com/?utm_source=twir&utm_campaign=twir)
+
+**[A newsletter helping build your product skills](https://newsletter.posthog.com/?utm_source=twir&utm_campaign=twir)**
+
+[**Product for Engineers**](https://newsletter.posthog.com/?utm_source=twir&utm_campaign=twir) is PostHog’s newsletter dedicated to helping engineers improve their product skills. Learn what questions to ask users, how to build new features users love, and the path to product market fit.
+
+[**Subscribe for free**](https://newsletter.posthog.com/?utm_source=twir&utm_campaign=twir) to get curated advice on building great products, lessons (and mistakes) from building PostHog, and deep dives into the strategies of top startups.
+
+---
+
+## ⚛️ React {#react}
+
+[![Vercel reverted all edge rendering back to Node.js](/emails/issues/183/r183.jpg)](https://x.com/leeerob/status/1780705942734331983)
+
+🐦 [Vercel reverted all edge rendering back to Node.js](https://x.com/leeerob/status/1780705942734331983)
+
+Le vice-président des produits de Vercel, Lee Rob, a expliqué sur X que Vercel « réinstaure tous les rendus du edge sur Node.js ». Si vous utilisez Vercel (et probablement même si vous ne l'utilisez pas), vous savez que Vercel a mis en avant le concept de « edge » depuis longtemps. D'une part, cela signifie que le calcul est effectué à proximité de l'endroit où se trouve l'utilisateur qui accède à un site hébergé sur Vercel. D'autre part, cela signifie également que ce calcul est exécuté sur un « runtime edge », qui est construit sur V8 et non sur Node.js. Si l'idée d'exécuter des calculs à proximité des utilisateurs finaux semble séduisante, les avantages disparaissent rapidement si les données doivent être chargées à partir d'un emplacement central (ce qui est très souvent le cas). Dans le même temps, les équipes de développement ont souvent du mal à adapter la charge de travail au sous-ensemble limité des API disponibles sur le runtime edge. Il semble que Vercel soit arrivé à la conclusion que, globalement, les obstacles rencontrés par les développeurs l'emportent sur les avantages limités, raison pour laquelle ils préfèrent revenir à des runtimes Node.js centralisés. J'apprécie leur transparence à ce sujet ! Si vous voulez plus de détails, Theo a fait une [vidéo](https://youtu.be/lAGE-k1Zfrg?si=5SP4hyoFkixTsh-y) à ce sujet.
+
+---
+
+- 💸 [Clerk's prebuilt UI components give you a beautiful, fully-functional user management experience in minutes. Start for free!](https://go.clerk.com/AlkHHq8)
+- 👀 [React Core PR - React 19 will not patch fetch() anymore!](https://github.com/facebook/react/pull/28896) : le patch controversé `fetch()` pour dédupliquer les requêtes dans les RSC est maintenant retiré du noyau de React. Vous pouvez y voir une bonne chose, mais gardez à l'esprit que vous devrez maintenant dédupliquer les requêtes vous-même manuellement avec `React.cache`.
+- 👀 [React Core PR - Don't minify symbols in production builds](https://github.com/facebook/react/pull/28881) : Les versions de production de React 19 préserveront les noms de variables/fonctions et devraient être plus faciles à lire/déboguer. Vous pouvez toujours les minifier vous-même si vous le souhaitez, mais l'utilisation de la compression HTTP gzip devrait suffire à compenser la taille supplémentaire.
+- 👀 [React Docs PR - Add documentation for ref cleanup function](https://github.com/reactjs/react.dev/pull/6770) : Les fonctions ref de React 19 peuvent désormais renvoyer une fonction de nettoyage (🐦 [aperçu](https://twitter.com/sebastienlorber/status/1783108366459375675)). Cela devrait également aider les utilisateurs qui emploient des refs string (supprimés en v19) et des classes à migrer grâce à des codemods automatisés.
+- 👀 [Remix POC - Remix + Hono + Vite](https://github.com/yusukebe/hono-and-remix-on-vite)
+- 🗓 [React Summit](https://reactsummit.com/?utm_source=thisweekinreact) - 🇳🇱 Amsterdam - 14-18 juin - 10% de réduction avec le code « TWIR ». Un programme impressionnant comprenant Evan Bacon, Kent C. Dodds, Theo, Tim Neutkens, Mark Erikson, Fred Schott et bien d'autres !
+- 📜 [HTML attributes vs DOM properties](https://jakearchibald.com/2024/attributes-vs-properties/) : Une excellente plongée dans les comportements subtils du DOM et les décisions de conception, y compris la façon dont les frameworks comme React ou Vue gèrent la différence. Explique également comment React 19 améliorera la prise en charge des Web Components.
+- 📜 [Redwood - Building a new docs site with RSC](https://redwoodjs.com/blog/building-a-new-docs-site-with-rsc) : Redwood montre comment construire un site de documentation avec Redwood, basé sur MDX et RSC.
+- 📜 [Deploy a new Remix app to Cloudflare Pages:](https://www.jacobparis.com/content/remix-cloudflare-pages) Beaucoup de choses ont récemment changé (et se sont améliorées !) sur la façon dont Remix peut être déployé sur les pages CF. Voici un bon guide sur l'état de l'art.
+- 📜 [Improving INP in React and Next.js](https://www.thisdot.co/blog/improving-inp-in-react-and-next-js) : Interaction to Next Paint a récemment remplacé First Input Delay (FID) en tant qu'élément vital du web, cet article explique comment l'optimiser.
+- 📜 [Did Signals Just Land in React?](https://thenewstack.io/did-signals-just-land-in-react/) : Spoiler Alert : Non, ils ne l'ont pas fait. Mais il y a toujours un moyen d'essayer les signaux dans React.
+- 📜 [Vercel - Building an interactive 3D event badge with React Three Fiber](https://vercel.com/blog/building-an-interactive-3d-event-badge-with-react-three-fiber)
+- 📜 [Getting the Current URL in Next.js Server Components](https://www.propelauth.com/post/getting-url-in-next-server-components)
+- 📜 [How to manifest streamlined authentication: AWS Cognito in a React app](https://evilmartians.com/chronicles/how-to-manifest-streamlined-authentication-aws-cognito-in-a-react-app)
+- 📜 [Localized link tags for SEO in Remix](https://react-japan.dev/en/blog/localized-link-tags-for-seo-in-remix)
+- 📜 [How Solid Made Me A Better React Developer](https://www.brenelz.com/posts/how-solid-made-me-a-better-react-developer/)
+- 📜 [Boosting Performance with Next.js and React Server Components - A GeekyAnts Case Study](https://geekyants.com/blog/boosting-performance-with-nextjs-and-react-server-components-a-geekyantscom-case-study)
+- 📜 [How to Simplify Global State Management in React Using Jotai](https://thenewstack.io/how-to-simplify-global-state-management-in-react-using-jotai/)
+- 📦 [Remix 2.9 - Single Fetch (unstable)](https://github.com/remix-run/remix/blob/main/CHANGELOG.md)
+- 📦 [StyleX - 0.6.1 - Typed variables, fallback values, ESLint plugin](https://stylexjs.com/blog/v0.6.1)
+- 📦 [Hydrogen April 2024 release - Analytics preview, stable Vite support, SEO updates, full-page caching](https://hydrogen.shopify.dev/update/april-2024)
+- 📦 [Zustand-Slices - Assemble slices into a single store](https://github.com/zustandjs/zustand-slices)
+- 📦 [Spoiled - Realistic Spoiler component for React.js](https://github.com/molefrog/spoiled)
+- 🎙️ [Off The Main Thread Podcast: Putting React In The Browser](https://offthemainthread.tech/episode/putting-react-in-the-browser/)
+- 🎥 [Jack Herrington - JS Built-in Signals In React and Svelte today!](https://www.youtube.com/watch?v=HSVcZa5yTKE)
+- 🎥 [Ben Holmes - Vercel got it wrong](https://www.youtube.com/watch?v=_dtyYDwHAIc) : Ben Holmes présente un point de vue intéressant sur le thème du « edge », en détaillant l'approche de Cloudflare.
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![NLUX ― New React Library To Simplify Adding AI Features](/emails/issues/183/nlux.jpg)](https://nlux.dev/?c-twr2-h)
+
+**[NLUX ― New React Library To Simplify Adding AI Features](https://nlux.dev/?c-twr2-h)**
+
+[NLUX](https://nlux.dev?c-twr2-p1) is an [open-source](https://github.com/nluxai/nlux) React library that makes it super simple to integrate powerful large language models (LLMs) like ChatGPT into your web app or website. With just a few lines of code, you can add conversational AI capabilities.
+
+Key features 🌟 include:
+
+- **Build AI Chat Interfaces In Minutes** - High quality conversational AI interfaces with a few lines of code.
+- **React Components & Hooks** - `<AiChat />` for UI and `useChatAdapter` hook for easy integration.
+- **Flexible Adapters** - For `ChatGPT`, `LangChain` and `HuggingFace`, and an API to **Create Your Own Adapter** for any backend.
+- **Synchronise UI state with AI backends** in an optimal way.
+- **Markdown Streaming** - Render LLM markdown as it's being generated.
+- **Zero Dependencies** - Lightweight codebase.
+
+More info, examples and documentation on [nlux.dev](https://nlux.dev?c-twr2-p1)
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![React Native 0.74 released, React Native IDE is now in beta](/emails/issues/183/rn183.jpg)](https://reactnative.dev/blog/2024/04/22/release-0.74)
+
+📦 [React Native 0.74 released](https://reactnative.dev/blog/2024/04/22/release-0.74)
+
+Cette semaine a vu la sortie de React Native 0.74, un jalon important pour la communauté ! La dernière version fait du "bridgeless mode" le mode par défaut pour les nouveaux projets utilisant la Nouvelle Architecture (avec la prochaine version, 0.75, la New Arch deviendra également le mode par défaut). Les deux peuvent toujours être désactivés si nécessaire, mais ils représentent clairement l'avenir de React Native, et au cours des derniers mois en particulier, BEAUCOUP de bibliothèques ont ajouté la prise en charge des deux. Mais ce n'est pas tout : RN 0.74 inclut Yoga 3.0. Il y a très peu de changements et de dépréciations, mais cela vaut la peine de les vérifier dans les [notes de version](https://reactnative.dev/blog/2024/04/22/release-0.74).
+
+📦 [React Native IDE is now in beta](https://ide.swmansion.com/)
+
+Une autre nouvelle passionnante cette semaine est la bêta fermée de React Native IDE, développée par l'équipe de Software Mansion. Vous pouvez maintenant vous inscrire pour obtenir un accès anticipé à l'IDE. Ils ont également une page d'accueil, et les [docs](https://ide.swmansion.com/docs/getting-started) sont publiquement disponibles pour tous les curieux.
+
+---
+
+- 💸 [React Native Analytics — Omlet is a New Tool to Analyze Component Usage. See Trends to Improve Code and Boost Component Adoption.](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-rn-ql-apr-2024)
+- 🐦 [Right-click to inspect with access to components hierarchy and jump-to-source in the coming React Native IDE?](https://x.com/kzzzf/status/1781334337960493100)
+- 🐦 [Another week, another wild push from Evan Bacon: Precompiled React Native](https://x.com/Baconbrix/status/1782454818851663918)
+- 🗓 [App.js Conf](https://appjs.co/?utm_source=thisweekinreact) - 🇵🇱 Kraków - 22-24 mai. Bénéficiez d'une [réduction de 10 %](https://ti.to/appjs/2024/discount/TWIR) avec le code « TWIR ».
+- 📜 [Sunrising New Architecture in the New Expensify App](https://blog.swmansion.com/sunrising-new-architecture-in-the-new-expensify-app-729d237a02f5) : Super cool de voir une application open-source complexe adapter le New Arch. Un bel exemple à étudier !
+- 📜 [Apple privacy manifest for React Native](https://dev.to/dannyhw/apple-privacy-manifest-for-react-native-29fk) : J'ai déjà mentionné la nécessité de l'Apple Privacy Manifest ; enfin, un bon article de blog résume le sujet.
+- 📜 [Expo Blog: Save users from deleting your app with expo-quick-actions](https://expo.dev/blog/expo-quick-actions)
+- 📜 [Creating a React Native “Curved Bottom Bar” with Handwritten SVG](https://kyleshevlin.com/react-native-curved-bottom-bar-with-handwritten-svg/)
+- 📜 [Exploring VisionOS Apps with React Native](https://geekyants.com/blog/exploring-visionos-apps-with-react-native)
+- 📜 [Microsoft is retiring App Center: Here’s what React Native developers should use instead](https://shift.infinite.red/microsoft-is-retiring-app-center-heres-what-react-native-developers-should-use-instead-c2a8786f971e)
+- 📦 [React Native VisionCamera V4: Draw directly on camera frames with Skia, lots of Android bug fixes](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v4.0.0) : Il existe une [démo](https://github.com/mrousavy/FaceBlurApp) très intéressante qui montre le genre de choses que cela permet de faire, également !
+- 📦 [react-native-svg 15.2.0 adds support for RN 0.74 on New Architecture](https://github.com/software-mansion/react-native-svg/releases/tag/v15.2.0)
+- 🎙️ [RNR 294 - Goodbye, App Center!](https://reactnativeradio.com/episodes/rnr-294-rip-app-center-and-other-news)
+- 🎙 [Rocket Ship 39 - Award Winning Credit Card App Yonder with Henry Moulton](https://podcast.galaxies.dev/episodes/039-award-winning-credit-card-app-yonder-with-henry-moulton)
+- 🎥 [The React Native Show Podcast: Coffee Talk 18 - Behind the Scenes of React Native 0.74 Release](https://www.youtube.com/watch?v=bLHubdUE2Ew)
+- 🎥 [Simon Grimm - React Native Multiplayer with Supabase Realtime and Skia](https://www.youtube.com/watch?v=rqbu-nGkOgw)
+- 🎥 [Oscar Franco - React Native Bridgeless Mode for Dummies](https://www.youtube.com/watch?v=K5HBIKAjZ4U)
+
+---
+
+## 🇫🇷 En français {#fr}
+
+- 🇫🇷 [ReactHebdo.fr - Dernières éditions traduites en français](https://thisweekinreact.com/fr/newsletter)
+- 📜 [Retour sur React Connection 2024​](https://www.premieroctet.com/blog/react-connection-2024)
+- 🎥 [Ils ont résolu les URL state en Next.js​](https://www.youtube.com/watch?v=zt18IWj9nF0)
+- 👥 [React Paris Meetup relancé - une première date annoncée prochainement?](https://www.meetup.com/fr-FR/react-paris/)
+
+---
+
+## 🔀 Autre {#other}
+
+- 🐦 [Fetch API has built-in timeout support](https://x.com/goenning/status/1781290404211814903)
+- 📜 [On Signal Relays](https://www.pzuraq.com/blog/on-signal-relays)
+- 📜 [WebKit: Help us invent CSS Grid Level 3, aka “Masonry” layout](https://webkit.org/blog/15269/help-us-invent-masonry-layouts-for-css-grid-level-3/)
+- 📜 [An intro to TSConfig for JavaScript Developers](https://deno.com/blog/intro-to-tsconfig)
+- 📜 [Vercel - Latency numbers every frontend developer should know](https://vercel.com/blog/latency-numbers-every-web-developer-should-know)
+- 📖 [The Front End Developer/Engineer Handbook 2024 — A Guide to Modern Web Development - Free eBook](https://frontendmasters.com/blog/front-end-developer-handbook-2024/)
+- 📦 [Chrome 125 beta - CSS Anchor Positioning, CSS stepped functions, …](https://developer.chrome.com/blog/chrome-125-beta?hl=en)
+- 📦 [ESLint v9.1](https://eslint.org/blog/2024/04/eslint-v9.1.0-released/)
+- 📦 [Electron 30.0](https://www.electronjs.org/blog/electron-30-0)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![Vercel updated their logo](/emails/issues/183/meme.jpg)](https://twitter.com/RhysSullivan/status/1780822966349266957)
+
+[![Vercel updated their logo](/emails/issues/183/meme2.jpg)](https://twitter.com/bentonnnnnn/status/1781186098800267421)
+
+A plus 👋
