@@ -77,7 +77,7 @@ The Tailwind team released a major upgrade to their unstyled, accessible React c
 ---
 
 - 💸 [React Universe Conf - Previously React Native EU. Experts from React & React Native under one roof! Use code RUCxTWIR to get a 10% discount.](https://www.reactuniverseconf.com/tickets-2024?utm_campaign=React_Universe_Conf&utm_source=email&utm_content=This_Week_in_React)
-- 💬 [Why doesn't Next.js expose the request and response objects?](https://github.com/vercel/next.js/issues/43704#issuecomment-2090798307)
+- 💬 [Why doesn't Next.js expose the request and response objects?](https://github.com/vercel/next.js/issues/43704#issuecomment-2090798307): Delba explains exposing more APIs would prevent Next.js from optimizing code in the future (notably through Partial Prerendering), and gives us alternatives.
 - 💬 [Vite RFC - Environment API](https://github.com/vitejs/vite/discussions/16358): This upcoming Vite 6 feature should help support React Server Components in Vite. This could also make Vite a viable choice for React Native, which needs to handle one module graph per native platform.
 - 👀 [React DevTools 5.2 PR](https://github.com/facebook/react/pull/29022): components optimized by the React Compiler will show a “✨ Memo” badge, including in the profiler. We can now debug/inspect useFormStatus. There is also work around “Fusebox”, a new codename for React Native DevTools.
 - 👀 [Next.js PR - Support React 19 in App and Pages router](https://github.com/vercel/next.js/pull/65058)
@@ -137,7 +137,9 @@ With this data, you can stop guessing which components to keep, remove, or impro
 
 This section is authored by [Benedikt](https://twitter.com/bndkt).
 
-[Expo SDK 51 released](https://expo.dev/changelog/2024/05-07-sdk-51)
+[![Expo SDK 51](/emails/issues/184/expo51.jpg)](https://expo.dev/changelog/2024/05-07-sdk-51)
+
+[**Expo SDK 51**](https://expo.dev/changelog/2024/05-07-sdk-51)
 
 Hot on the heels of React Native 0.74 follows the release of Expo SDK 51. This release mostly advances the internal architecture and promotes some previously experimental packages to the new default, so let me quickly get out of the way the topics we have already covered in this newsletter: New Architecture support for most Expo modules (there are still some [known issues](https://docs.expo.dev/guides/new-architecture/#known-issues-in-expo-sdk-libraries)), Bridgeless support, support for Apple’s privacy manifest, “next” versions of camera and sqlite package are now the default, Fingerprint no longer experimental. But there is also a new expo-symbols package featuring Apple’s SF Symbols library (iOS only), a new expo-video library, Expo Router 3.5 release with support for the # segment in URLs, and improvements to EAS Update (e.g. a web UI to roll out updates gradually). I expect bigger announcements around Expo Router (RSC 👀) at the upcoming React Conf, so stay tuned! One other significant change is that Expo Go, starting with version 51, only supports one single version of the Expo SDK. This decision makes absolute sense to me as it makes maintenance of the Expo Go app a lot easier and for most use cases, you should be using Expo Dev Client anyways.
 
