@@ -7,10 +7,15 @@
     "website"
   ],
   "scripts": {
+    "clear": "yarn clear:website",
     "start": "yarn start:website",
+    "build": "yarn build:website",
+    "serve": "yarn serve:website",
+    "clear:website": "yarn workspace website clear",
     "start:website": "yarn workspace website start",
     "build:website": "yarn workspace website build",
-    "serve:website": "yarn workspace website serve"
+    "serve:website": "yarn workspace website serve",
+    "docusaurus": "yarn workspace website docusaurus"
   },
   "resolutions": {
     "**/ts-node": "10.9.1"
