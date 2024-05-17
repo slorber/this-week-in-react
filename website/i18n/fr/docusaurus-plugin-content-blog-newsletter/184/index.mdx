@@ -7,17 +7,17 @@ date: 05-08-2024
 
 Salut à tous !
 
-We're back after a short break, covering two weeks of news!
+Nous sommes de retour après une courte pause, pour couvrir deux semaines d'actualités !
 
-I hope you have recovered well from the React 19 beta release 😄 But it's not over, we are entering an exciting period with React Conf, Vercel Ship, App.js and many other conferences just around the corner.
+J'espère que vous vous êtes bien remis de la sortie de la version bêta de React 19 😄 Mais ce n'est pas fini, nous entrons dans une période passionnante avec React Conf, Vercel Ship, App.js et bien d'autres conférences qui se profilent à l'horizon.
 
-This week, React patching globals was a hot topic in the ecosystem. We also had a few interesting React-related releases, including 2 major headless libraries.
+Cette semaine, React patching globals a été un sujet brûlant dans l'écosystème. Nous avons également eu quelques publications intéressantes liées à React, y compris deux bibliothèques headless majeures.
 
-As expected, Expo SDK 51 is out, and it looks like it's a good time to try out the New Architecture.
+Comme prévu, Expo SDK 51 est sorti, et il semble que ce soit le bon moment pour essayer la Nouvelle Architecture.
 
-Looking for a great React summer conf? [React Rally](https://reactrally.com/?utm_source=thisweekinreact) tickets are on sale (August 12-13, 🇺🇸 Utah). Our readers get a [10% discount](https://ti.to/react-rally/react-rally-2024/discount/TWIR) with code "TWIR".
+Vous cherchez une conférence d'été sur React ? Les billets pour le [React Rally](https://reactrally.com/?utm_source=thisweekinreact) sont en vente (12-13 août, 🇺🇸 Utah). Nos lecteurs bénéficient d'une [réduction de 10 %](https://ti.to/react-rally/react-rally-2024/discount/TWIR) avec le code « TWIR ».
 
-Speaking of discounts, Josh Comeau is also offering one for his flagship course [The Joy of React](https://www.joyofreact.com/). In addition to an already great discount, our readers get an [extra 10% off](https://courses.joshwcomeau.com/checkout/joy-of-react/ultimate?couponCode=TWIR) with code "TWIR"!
+En parlant de réductions, Josh Comeau en offre également une pour son cours phare [The Joy of React](https://www.joyofreact.com/). En plus d'une réduction déjà importante, nos lecteurs bénéficient d'une [réduction supplémentaire de 10 %](https://courses.joshwcomeau.com/checkout/joy-of-react/ultimate?couponCode=TWIR) avec le code  « TWIR » !
 
 <!-- truncate -->
 
@@ -49,15 +49,15 @@ import Support from "../_support.mdx";
 
 [**React Aria release, May 1**](https://react-spectrum.adobe.com/releases/2024-05-01.html)
 
-Adobe engineers recently released many improvements to their unstyled, accessible React component library. The highlights are:
+Les ingénieurs d'Adobe ont récemment publié de nombreuses améliorations à leur bibliothèque de composants React non stylisés et accessibles. En voici les grandes lignes :
 
-- Submenu, see the [dedicated blog post](https://react-spectrum.adobe.com/blog/creating-a-pointer-friendly-submenu-experience.html)
-- 7 new color picker components
+- Sous-menu, voir [l'article du blog dédié](https://react-spectrum.adobe.com/blog/creating-a-pointer-friendly-submenu-experience.html)
+- 7 nouveaux composants pour la sélection des couleurs
 - TreeView alpha
 - DropZone + FileTrigger
-- Typed client-side router integration
-- onAction/isDisabled item API
-- Better tree shaking (~4x smaller)
+- Intégration de routeurs typés côté client
+- API des éléments onAction/isDisabled
+- Meilleur tree shaking (~4x plus petit)
 
 ---
 
@@ -65,40 +65,40 @@ Adobe engineers recently released many improvements to their unstyled, accessibl
 
 [**Headless UI v2.0 for React**](https://tailwindcss.com/blog/headless-ui-v2)
 
-The Tailwind team released a major upgrade to their unstyled, accessible React component library. The highlights are:
+L'équipe de Tailwind a publié une mise à jour majeure de sa bibliothèque de composants React accessible et sans style. Les points forts sont les suivants :
 
-- Built-in anchor positioning, using Floating UI
-- New form element components: Checkbox, Input, Label, Field
-- Combobox list virtualization using TanStack Virtual
-- Hover/focus/active data attributes using React Aria
-- New docs website
+- Positionnement d'ancre intégré, utilisant Floating UI
+- Nouveaux composants d'éléments de formulaire : Checkbox, Input, Label, Field
+- Virtualisation de la liste des combobox à l'aide de TanStack Virtual
+- Attributs de données Hover/focus/active utilisant React Aria
+- Nouveau site web de documentation
 
 ---
 
 - 💸 [React Universe Conf - Previously React Native EU. Experts from React & React Native under one roof! Use code RUCxTWIR to get a 10% discount.](https://www.reactuniverseconf.com/tickets-2024?utm_campaign=React_Universe_Conf&utm_source=email&utm_content=This_Week_in_React)
-- 💬 [Why doesn't Next.js expose the request and response objects in Layouts?](https://github.com/vercel/next.js/issues/43704#issuecomment-2090798307): Delba explains exposing more APIs would prevent Next.js from optimizing code in the future (notably through Partial Prerendering), and gives us alternatives. This [workaround](https://www.propelauth.com/post/getting-url-in-next-server-components) made me smile: putting request data in a header through a middleware to be able to access it.
-- 💬 [Vite RFC - Environment API](https://github.com/vitejs/vite/discussions/16358): This upcoming Vite 6 feature should help support React Server Components in Vite. This could also make Vite a viable choice for React Native, which needs to handle one module graph per native platform.
-- 👀 [React DevTools 5.2 PR](https://github.com/facebook/react/pull/29022): components optimized by the React Compiler will show a “✨ Memo” badge, including in the profiler. We can now debug/inspect useFormStatus. There is also work around “Fusebox”, a new codename for React Native DevTools.
+- 💬 [Why doesn't Next.js expose the request and response objects in Layouts?](https://github.com/vercel/next.js/issues/43704#issuecomment-2090798307) : Delba explique qu'exposer plus d'APIs empêcherait Next.js d'optimiser le code à l'avenir (notamment grâce au Partial Prerendering), et nous donne des alternatives. Cette [solution de contournement](https://www.propelauth.com/post/getting-url-in-next-server-components) m'a fait sourire : placer les données de la requête dans une entête par le biais d'un middleware pour pouvoir y accéder.
+- 💬 [Vite RFC - Environment API](https://github.com/vitejs/vite/discussions/16358) : Cette fonctionnalité à venir de Vite 6 devrait aider à prendre en charge les composants React Server dans Vite. Cela pourrait également faire de Vite un choix viable pour React Native, qui doit gérer un graphique de module par plateforme native.
+- 👀 [React DevTools 5.2 PR](https://github.com/facebook/react/pull/29022) : Les composants optimisés par le compilateur React afficheront un badge « ✨ Memo », y compris dans le profiler. Nous pouvons maintenant déboguer/inspecter useFormStatus. Il y a aussi du travail autour de « Fusebox », un nouveau nom de code pour React Native DevTools.
 - 👀 [Next.js PR - Support React 19 in App and Pages router](https://github.com/vercel/next.js/pull/65058)
 - 👀 [React Core PR - Support useFormStatus in progressively-enhanced forms](https://github.com/facebook/react/pull/29019)
 - 🐦 [React might patch the Date API to avoid hydration mismatch](https://x.com/acdlite/status/1785691330988986587)
 - 🐦 [React 19 will "fire" refs twice under StrictMode](https://twitter.com/sebastienlorber/status/1787814604170485770)
 - 🐦 [React 19 beta - Rick Hanlon’s Ask Me Anything](https://twitter.com/rickhanlonii/status/1783906285957587194)
-- 🔗 [Remix for Next.js Developers](https://remixfornextdevs.com): Convenient resource with side-by-side code snippets.
-- 🗓 [React Summit](https://reactsummit.com/?utm_source=thisweekinreact) - 🇳🇱 Amsterdam - 14-18 June - Get a 10% discount with code "TWIR".
-- 🗓 [dotJS](https://www.dotjs.io/?utm_source=thisweekinreact) - 🇫🇷 Paris - June 27 - Less than 2 months before the conference, the speaker line-up is announced! 10% discount with code "TWIR"
-- 📜 [Why Patching Globals Is Harmful](https://kettanaito.com/blog/why-patching-globals-is-harmful): An interesting read related to the bad practice of patching globals, taking React, Next.js, and Bun as examples. I agree that explicitly imported APIs are better, but it wouldn’t allow React to dedupe RSC fetch requests from third-party npm SDKs.
-- 📜 [Modern React testing - Playwright](https://sapegin.me/blog/react-testing-5-playwright/): A great resource to start implementing E2E React tests in your apps, using Playwright, Mock Service Worker, and React Testing Library.
-- 📜 [React Strict Mode and Race Condition](https://www.nico.fyi/blog/react-strict-mode-and-race-condition): Highlights a subtle behavior you might encounter if you cancel requests in useEffect with AbortController.
-- 📜 [Getting Started with Mitosis - Creating a Cross-Framework Design System](https://www.builder.io/blog/mitosis-get-started): Mitosis allows you to compile a JSX component to React/RN/Angular/Vue/Svelte. It also has a brand new website.
-- 📜 [Locality of Behavior in React Components](https://alexkondov.com/locality-of-behavior-react/): Reflection around abstracting vs inlining code in a React component. Things that change together should live together.
-- 📜 [How to make edge rendering fast](https://developers.netlify.com/guides/how-to-make-edge-rendering-fast/): Netlify’s CEO takes an edge-rendered Remix app and explains how introducing an extra serverless function + CDN caching could speed up your app.
-- 📜 [Combining Pixi-React and HTML with Tunnels](https://jallen.dev/blog/pixi-react-tunnels): When using multiple React renderers, a tunnel library might help you keep things grouped by concern.
-- 📜 [Upcoming custom element support in React](https://piccalil.li/blog/upcoming-custom-element-support-in-react/): React 19 beta passes 100% of the Custom Elements Everywhere benchmark. Combining React with custom elements looks like an interesting choice in the future.
-- 📜 [Replace Your HTML Entry Point with React](https://danielnagy.me/posts/Post_2mewtbsl6g4c): Uses React to render the entire document in Vite. It’s not so simple, but this can be useful for SSR streaming support.
-- 📜 [10 Features Next.js 15 Could Launch](https://notebook.lachlanjc.com/2024-04-17_10_features_nextjs_15_could_launch): Predict possible announcements at Vercel Ship conf.
+- 🔗 [Remix for Next.js Developers](https://remixfornextdevs.com) : Une ressource pratique avec des extraits de code côte à côte.
+- 🗓 [React Summit](https://reactsummit.com/?utm_source=thisweekinreact) - 🇳🇱 Amsterdam - 14-18 juin - 10% de réduction avec le code « TWIR ».
+- 🗓 [dotJS](https://www.dotjs.io/?utm_source=thisweekinreact) - 🇫🇷 Paris - June 27 - Moins de 2 mois avant la conférence, la liste des orateurs est annoncée ! 10% de réduction avec le code « TWIR »
+- 📜 [Why Patching Globals Is Harmful](https://kettanaito.com/blog/why-patching-globals-is-harmful) : Un article intéressant sur les mauvaises pratiques en matière de correctifs globaux, en prenant React, Next.js et Bun comme exemples. Je suis d'accord avec le fait que les API importées explicitement sont meilleures, mais cela ne permettrait pas à React de déduire les requêtes RSC fetch provenant de SDK npm tiers.
+- 📜 [Modern React testing - Playwright](https://sapegin.me/blog/react-testing-5-playwright/) : Une excellente ressource pour commencer à mettre en œuvre des tests E2E React dans vos applications, en utilisant Playwright, Mock Service Worker et React Testing Library.
+- 📜 [React Strict Mode and Race Condition](https://www.nico.fyi/blog/react-strict-mode-and-race-condition) : Souligne un comportement subtil que vous pouvez rencontrer si vous annulez des requêtes dans useEffect avec AbortController.
+- 📜 [Getting Started with Mitosis - Creating a Cross-Framework Design System](https://www.builder.io/blog/mitosis-get-started) : Mitosis permet de compiler un composant JSX vers React/RN/Angular/Vue/Svelte. Il dispose également d'un tout nouveau site web.
+- 📜 [Locality of Behavior in React Components](https://alexkondov.com/locality-of-behavior-react/) : Réflexion autour de l'abstraction et de l'intégration de code dans un composant React. Ce qui change ensemble doit vivre ensemble.
+- 📜 [How to make edge rendering fast](https://developers.netlify.com/guides/how-to-make-edge-rendering-fast/) : Le PDG de Netlify prend une application Remix avec edge-rendered et explique comment l'introduction d'une fonction serverless supplémentaire + la mise en cache CDN pourrait accélérer votre application.
+- 📜 [Combining Pixi-React and HTML with Tunnels](https://jallen.dev/blog/pixi-react-tunnels) : Lorsque vous utilisez plusieurs moteurs de rendu React, une bibliothèque tunnel peut vous aider à garder les choses groupées par préoccupation.
+- 📜 [Upcoming custom element support in React](https://piccalil.li/blog/upcoming-custom-element-support-in-react/) : React 19 beta réussit 100% du benchmark Custom Elements Everywhere. Combiner React avec des éléments personnalisés semble être un choix intéressant pour l'avenir.
+- 📜 [Replace Your HTML Entry Point with React](https://danielnagy.me/posts/Post_2mewtbsl6g4c) : Utilise React pour rendre le document entier dans Vite. Ce n'est pas si simple, mais cela peut être utile pour la prise en charge du streaming SSR.
+- 📜 [10 Features Next.js 15 Could Launch](https://notebook.lachlanjc.com/2024-04-17_10_features_nextjs_15_could_launch) : Prévision des annonces possibles à la conférence Vercel Ship.
 - 📜 [Nuances of Server Actions in Next.js](https://tigerabrodi.blog/nuances-of-server-actions-in-nextjs)
-- 📦 [React Router 6.23 - Data Strategy API (unstable)](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v6230): Enables new Remix 2.9 Single Fetch feature, firing one request for all loaders instead of one per loader.
+- 📦 [React Router 6.23 - Data Strategy API (unstable)](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v6230) : Active la nouvelle fonctionnalité Single Fetch de Remix 2.9, qui lance une requête pour tous les loaders au lieu d'une requête par loader.
 - 📦 [Terminosaurus - Graphical UI library for terminals, including React renderer integration](https://mael.dev/terminosaurus/)
 - 📦 [Twofold - Framework for building demos with React Server Components](https://twofoldframework.com/)
 - 📦 [Mobx-State-Tree 6.0 - hasEnv, TypeScript, perf improvements](https://github.com/mobxjs/mobx-state-tree/discussions/2180)
