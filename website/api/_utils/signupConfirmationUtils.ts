@@ -51,7 +51,7 @@ async function getSubscriberOrError({
     return [
       null,
       new Error(
-        "Can't get newsletter subscriber because subscriberId was not provided"
+        "Can't get newsletter subscriber because subscriberId was not provided",
       ),
     ];
   }
@@ -83,7 +83,7 @@ function parseRequestParams(request: VercelRequest) {
 // It is safer fetch the email address, and other ad click ids, from the ConvertKit API using the subscriberId
 function mergeSubscriberParams(
   subscriber: Subscriber,
-  params: URLSearchParams
+  params: URLSearchParams,
 ): URLSearchParams {
   const subscriberParams = subscriber.fields["qs_params"];
   if (subscriberParams) {
@@ -109,7 +109,7 @@ async function parseRequest(request: VercelRequest) {
   if (error) {
     console.error(
       `Unable to get ConvertKit subscriber with subscriberId=${urlQuery.subscriberId} or email=${urlQuery.email}`,
-      error
+      error,
     );
   }
 
@@ -143,11 +143,10 @@ function parseRequestIP(request: VercelRequest): string | null {
 
 // TODO Zod validation schema
 export async function readSignupConfirmationParams(
-  request: VercelRequest
+  request: VercelRequest,
 ): Promise<SignupConfirmationParams> {
-  const { params, subscriberId, email, subscriber } = await parseRequest(
-    request
-  );
+  const { params, subscriberId, email, subscriber } =
+    await parseRequest(request);
 
   const userAgent = parseRequestUserAgent(request);
   const ip = parseRequestIP(request);

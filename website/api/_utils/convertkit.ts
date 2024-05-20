@@ -14,12 +14,12 @@ export interface Subscriber {
 
 async function apiCall<T = unknown>(
   input: RequestInfo | URL,
-  init?: RequestInit
+  init?: RequestInit,
 ): Promise<T> {
   const response = await fetch(input, init);
   if (response.status !== 200) {
     throw new Error(
-      `ConvertKit API call failed\nStatus=${response.status}\nFetch Input=${input}`
+      `ConvertKit API call failed\nStatus=${response.status}\nFetch Input=${input}`,
     );
   }
   return (await response.json()) as T;
@@ -27,7 +27,7 @@ async function apiCall<T = unknown>(
 
 async function apiCallWithRetry<T = unknown>(
   input: RequestInfo | URL,
-  init?: RequestInit
+  init?: RequestInit,
 ): Promise<T> {
   try {
     return await apiCall<T>(input, init);

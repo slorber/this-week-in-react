@@ -15,7 +15,7 @@ const TwitterLiteClient = new TwitterLite({
 
 export async function reportTwitterAdsSignup(
   twclid: string,
-  signupConfirmation: SignupConfirmationParams
+  signupConfirmation: SignupConfirmationParams,
 ) {
   // TODO implicit assumption
   // Use TS 5.1 + type-fest SetNonNullable<SignupConfirmationParams,"email">
@@ -48,7 +48,7 @@ export async function reportTwitterAdsSignup(
             description: "TWIR subscription",
           },
         ],
-      }
+      },
     );
     console.log("[Twitter Ads] reportTwitterAdsSignup success", {
       twclid,
@@ -61,7 +61,7 @@ export async function reportTwitterAdsSignup(
     throw new Error(
       `Could not post twitter conversion result for twclid=${twclid} email=${email} => ${
         (e as Error)?.message
-      }`
+      }`,
     );
   }
 }

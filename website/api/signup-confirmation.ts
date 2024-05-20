@@ -11,7 +11,7 @@ async function handleSignupConfirmation(request: VercelRequest) {
   if (!signupConfirmation.email) {
     console.error(
       "[SignupConfirmation] No email found in confirmation querystring",
-      signupConfirmation
+      signupConfirmation,
     );
   }
 
@@ -19,7 +19,7 @@ async function handleSignupConfirmation(request: VercelRequest) {
     console.log("[Twitter Ads]", signupConfirmation);
     await reportTwitterAdsSignup(
       signupConfirmation.adClickIds.twitter,
-      signupConfirmation
+      signupConfirmation,
     );
   }
 
@@ -27,7 +27,7 @@ async function handleSignupConfirmation(request: VercelRequest) {
     console.log("[Facebook Ads]", signupConfirmation);
     await reportFacebookAdsSignup(
       signupConfirmation.adClickIds.facebook,
-      signupConfirmation
+      signupConfirmation,
     );
   }
 
@@ -44,7 +44,7 @@ async function handleSignupConfirmation(request: VercelRequest) {
 
 export default async function signupConfirmationHandler(
   request: VercelRequest,
-  response: VercelResponse
+  response: VercelResponse,
 ) {
   console.log("/api/signup-confirmation");
 
