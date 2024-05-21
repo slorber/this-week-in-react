@@ -98,7 +98,7 @@ The [official documentation](https://reactjs.org/docs/hooks-reference.html#usesy
 function useSyncExternalStore<Snapshot>(
   subscribe: (onStoreChange: () => void) => () => void,
   getSnapshot: () => Snapshot,
-  getServerSnapshot?: () => Snapshot
+  getServerSnapshot?: () => Snapshot,
 ): Snapshot;
 ```
 
@@ -118,7 +118,7 @@ function useOnlineStatus() {
   return useSyncExternalStore(
     subscribe,
     () => navigator.onLine,
-    () => true
+    () => true,
   );
 }
 
@@ -150,7 +150,7 @@ The implementation of `useHistorySelector()` relatively simple:
 function useHistorySelector(selector) {
   const history = useHistory();
   return useSyncExternalStore(history.listen, () =>
-    selector(history)
+    selector(history),
   );
 }
 ```
@@ -160,14 +160,14 @@ Let's use it in our app:
 ```tsx
 function CurrentPathname() {
   const pathname = useHistorySelector(
-    (history) => history.location.pathname
+    (history) => history.location.pathname,
   );
   return <div>{pathname}</div>;
 }
 
 function CurrentHash() {
   const hash = useHistorySelector(
-    (history) => history.location.hash
+    (history) => history.location.hash,
   );
   return <div>{hash}</div>;
 }
@@ -191,7 +191,7 @@ function subscribe(onStoreChange) {
   return () =>
     global.window?.removeEventListener(
       "scroll",
-      onStoreChange
+      onStoreChange,
     );
 }
 
@@ -199,7 +199,7 @@ function useScrollY(selector = (id) => id) {
   return useSyncExternalStore(
     subscribe,
     () => selector(global.window?.scrollY),
-    () => undefined
+    () => undefined,
   );
 }
 ```
@@ -215,7 +215,7 @@ function ScrollY() {
 function ScrollYFloored() {
   const to = 100;
   const scrollYFloored = useScrollY((y) =>
-    y ? Math.floor(y / to) * to : undefined
+    y ? Math.floor(y / to) * to : undefined,
   );
   return <div>{scrollYFloored}</div>;
 }

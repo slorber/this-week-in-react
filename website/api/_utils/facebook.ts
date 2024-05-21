@@ -16,7 +16,7 @@ FacebookAdsApi.init(AccessToken);
 
 export async function reportFacebookAdsSignup(
   fbclid: string,
-  signupConfirmation: SignupConfirmationParams
+  signupConfirmation: SignupConfirmationParams,
 ) {
   // TODO implicit assumption
   // Use TS 5.1 + type-fest SetNonNullable<SignupConfirmationParams,"email">
@@ -54,7 +54,7 @@ export async function reportFacebookAdsSignup(
       .setCustomData(customData)
       .setEventSourceUrl(
         // TODO initial.url is not always the ad landing page
-        signupConfirmation.initial.url ?? "https://thisweekinreact.com"
+        signupConfirmation.initial.url ?? "https://thisweekinreact.com",
       )
       .setActionSource("website");
 
@@ -66,7 +66,7 @@ export async function reportFacebookAdsSignup(
 
     if (response.events_received !== 1) {
       throw new Error(
-        `Facebook Ads was supposed to receive 1 event, but received ${response.events_received}`
+        `Facebook Ads was supposed to receive 1 event, but received ${response.events_received}`,
       );
     }
 
@@ -85,7 +85,7 @@ export async function reportFacebookAdsSignup(
     throw new Error(
       `Could not post facebook conversion result for fbclid=${fbclid} email=${email} => ${
         (e as Error)?.message
-      }`
+      }`,
     );
   }
 }

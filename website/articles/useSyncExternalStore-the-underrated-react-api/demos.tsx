@@ -47,7 +47,7 @@ function useHistorySelector<Result>(selector: (history: History) => Result) {
   return useSyncExternalStore(
     history.listen,
     () => selector(history),
-    () => undefined
+    () => undefined,
   );
 }
 
@@ -80,7 +80,7 @@ function useScrollY(selector = (id) => id) {
   return useSyncExternalStore(
     subscribe,
     () => selector(global.window?.scrollY),
-    () => undefined
+    () => undefined,
   );
 }
 
@@ -92,7 +92,7 @@ function ScrollY() {
 function ScrollYFloored() {
   const to = 100;
   const scrollYFloored = useScrollY((y) =>
-    y ? Math.floor(y / to) * to : undefined
+    y ? Math.floor(y / to) * to : undefined,
   );
   return (
     <RenderBox title="ScrollY Floored">
