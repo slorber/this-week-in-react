@@ -1,20 +1,17 @@
 ---
 slug: /187
-title: "This Week In React #187: ..."
+title: "This Week In React #187: Next.js, Expo, Popover, rethrow, SWR, React-Query, Astro, PPR, tRPC, zsa, Memory leaks, INP, RN IDE, Skia, WebGPU, RNSC, Atlas, Re.Pack, Prisma, SwiftUI, Flutter, Angular..."
 authors: [slorber]
 date: 05-29-2024
-unlisted: true
 ---
 
 Hi everyone!
 
-mention React Rally
+Last week we got great announcements from Vercel Ship and App.js conferences.
 
-MAJ REACT ADMIN AD
+I also found the community blog posts very interesting this week! There's a lot of good content to read here. The one about memory leak is quite scary 😅.
 
-Taking a break
-
-Continue the thread question?
+I have been wondering lately: is it still useful to write a [Twitter thread](https://slo.im/thread)? I've [asked the question on Twitter](https://x.com/sebastienlorber/status/1795377678918554072) and feel like nobody reads it anymore, apart a few people. I'm considering stopping. What do you think? 🤔
 
 <!-- truncate -->
 
@@ -59,7 +56,7 @@ A new major version of Next.js dropped in RC at Vercel Ship last week. The highl
 - next/after (experimental), a new API useful to defer analytics tasks and keep responses fast
 - Optimizing bundling of external packages (`serverExternalPackages`) now stable
 
-There were other interesting announcements at Vercel Ship. Take a look at the following resources:
+Other interesting things were announced at Vercel Ship. Additional resources to look at:
 
 - 📜 [Vercel Ship 2024 recap](https://vercel.com/blog/vercel-ship-2024)
 - 📜 [Introducing deeper integrations for feature flags in Vercel](https://vercel.com/blog/feature-flags)
@@ -74,7 +71,7 @@ There were other interesting announcements at Vercel Ship. Take a look at the fo
 - 👀 [Next.js PR - `unstable_rethrow`](https://github.com/vercel/next.js/pull/65831): Upcoming Next.js API to avoid catching internal errors thrown by Next.js (such as redirect/notFound errors).
 - 🐦 [Latest SWR beta can seamlessly move data fetching between client-side and server-side](https://x.com/shuding_/status/1794461568505352693). And [React-Query](https://x.com/TkDodo/status/1794801851671695533) + [Apollo Client](https://x.com/phry/status/1795777518944784450) also implemented similar features.
 - 🗓 [React Rally](https://reactrally.com/?utm_source=thisweekinreact) - 🇺🇸 Utah - 12-13, August - Get a 10% discount with code "TWIR". There’s an advanced React [workshop](https://reactrally.com/workshop) with Cory House.
-- 📜 [Sneaky React Memory Leaks: How useCallback and closures can bite you](https://schiener.io/2024-03-03/react-closures): A great article simplifying a real production app memory leak to explain it. This surprised me, I couldn’t guess such React code would leak memory, and pretty sure my apps contain memory leaks now 😅.
+- 📜 [Sneaky React Memory Leaks: How useCallback and closures can bite you](https://schiener.io/2024-03-03/react-closures): A great article simplifying a real production app memory leak to explain it. This surprised me, I couldn’t guess such React code would leak memory, and pretty sure my apps contain memory leaks now 😅. Good news though: the app wouldn't leak memory when using the new React Compiler.
 - 📜 [Automatic Query Invalidation after Mutations](https://tkdodo.eu/blog/automatic-query-invalidation-after-mutations): React Query is un-opinionated about how you invalidate cached resources and instead lets you implement a custom strategy on top of flexible primitives. For example, you can invalidate queries by tags.
 - 📜 [Migrating from Radix to React Aria: Improving Accessibility and UX](https://argos-ci.com/blog/react-aria-migration): After having used alternatives such as Reakit or Radix, Greg gives good reasons for adopting React Aria. The migration feedback is positive, but some challenges were encountered. React Aria is quite “strict” at ensuring your components remain accessible.
 - 📜 [On Laravel, Full-Stack JavaScript, and Productive Frameworks](https://www.jplhomer.org/posts/on-laravel-full-stack-javascript-and-productive-frameworks/): Josh created 2 React meta-frameworks (including Shopify Hydrogen) and also uses Laravel extensively. He shares an interesting perspective on the pros/cons of the Laravel vs React ecosystem.
@@ -126,8 +123,6 @@ Best of all, it's **free up to 1,000,000 MAUs 🚀**
 ---
 
 ## 📱 React-Native {#react-native}
-
-This section is authored by [Benedikt](https://twitter.com/bndkt).
 
 This section is authored by [Benedikt](https://twitter.com/bndkt).
 
