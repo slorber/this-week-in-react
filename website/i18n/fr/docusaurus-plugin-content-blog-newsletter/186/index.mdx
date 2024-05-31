@@ -1,0 +1,195 @@
+---
+slug: /186
+title: "This Week In React #186: React Conf, Compiler, Universal RSC, React-Router, Google Maps, Million Lint, Pigment, Restyle, Storybook, SSRF, Inline Styles, New Arch, Expo, Bootsplash, Skia, RN-Video..."
+authors: [slorber]
+date: 05-22-2024
+---
+
+Salut à tous !
+
+La semaine a été très chargée pour nous 😄. La conférence React n'a pas déçu ! Nous n'y étions pas, mais [notre flyer y était](https://x.com/sebastienlorber/status/1790771155734839313) 😇. Non seulement nous avons eu de belles annonces de conf (notamment le compilateur !), mais nous avons eu de beaux articles de la communauté que j'ai dû reporter à la semaine prochaine pour certains d'entre eux.
+
+Bien qu'il soit peu probable que cela se calme car 2 confs majeures commencent demain :
+
+- Vercel Ship, durant laquelle [Next.js 15 devrait être annoncé](https://x.com/feedthejim/status/1792969159321723244) avec une stratégie de cache moins agressive, Turborepo en développement, la prise en charge du compilateur et plus encore.
+- App.js Conf, avec également de grandes annonces pour React Native.
+
+Bonne lecture et à la semaine prochaine !
+
+*   🗓 [Chain React Conf](https://chainreactconf.com/?utm_source=thisweekinreact) -  Portland, OR - Du 17 au 19 juillet. La conférence américaine React Native est de retour avec des conférences captivantes et des ateliers pratiques ! Bénéficiez de 15% de réduction sur votre billet avec le code « TWIR »
+
+<!-- truncate -->
+
+**💡 [Consulter cette newsletter sur Twitter](https://slo.im/thread) - format visuel 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![React-admin: The Open-Source Framework for B2B apps](/emails/issues/182/marmelab.jpg)](https://marmelab.com/react-admin/)
+
+**[React-admin: The Open-Source Framework for B2B apps](https://marmelab.com/react-admin/)**
+
+Speed up the development of your single-page applications with the acclaimed frontend framework🚀. Built with TanStack Query, react-hook-form, react-router & material UI, React-admin lets you create rich user experiences on top of REST or GraphQL APIs.
+
+Beyond CRUD pages, React-admin has many advanced functionalities to meet your needs. Its complete toolkit offers a calendar **📅**, customizable Kanban board, content versioning **🔄**, nested forms & more. Add real-time updates 🎥, tree **🌲** structures and detailed audit logs via headless hooks and themeable components.
+
+Ready to take your development to the next level? Make React-admin your go-to framework & join over half a million daily users. [Try it now](https://marmelab.com/react-admin/)!
+
+---
+
+## ⚛️ React {#react}
+
+[![React Conf 2024 Recap](/emails/issues/186/recap.jpg)](https://react.dev/blog/2024/05/22/react-conf-2024-recap)
+
+**[React Conf 2024 Recap](https://react.dev/blog/2024/05/22/react-conf-2024-recap)**
+
+L'équipe React a publié un article de blog récapitulatif de la React Conf, juste à temps pour la newsletter d'aujourd'hui 🤗. Il présente tous les conférences et les principales annonces. Je ne les ai pas encore toutes vues, mais mes points forts pour l'instant sont :
+
+- React 19 est en RC, et une version stable est attendue dans les prochaines semaines
+- Le compilateur React est sorti et semble vraiment puissant
+- Les Universal React Server Components arrivent sur Expo et la démo est vraiment impressionnante
+- Remix et React Router fusionnent. Remix v3 sera finalement React Router v7.
+- La démo Real-time React Server Components rend les RSC stateful et ouvre de nouvelles possibilités qui me rappellent Phoenix LiveView
+- React coordonne maintenant les balises HTML, ce qui est extrêmement sous-estimé.
+
+Encore une fois, il ne s'agit que de mes favoris personnels. Nous avons déjà couvert la plupart des fonctionnalités de React 19 dans la newsletter, et [l'article du blog de React 19 beta](https://react.dev/blog/2024/04/25/react-19) reste la référence pour découvrir toutes les nouvelles fonctionnalités à venir dans la prochaine version majeure.
+
+---
+
+[![React Compiler](/emails/issues/186/compiler.jpg)](https://react.dev/learn/react-compiler)
+
+**[The React Compiler is out](https://react.dev/learn/react-compiler)**
+
+Le compilateur mérite probablement sa propre section. TLDR : le compilateur optimise votre code existant automatiquement et vous donne une réactivité fine en utilisant des valeurs JS standard. Essayez le [React Compiler Playground](https://playground.react.dev/#N4Igzg9grgTgxgUxALhAgHgBwjALgAgBMEAzAQygBsCSoA7OXASwjvwFkBPAQU0wAoAlPmAAdNvhgJcsNgB5CTAG4A+ABIJKlCPgDqOSoTkB6RaoDc4gL7iQVoA) pour voir comment il fonctionne et comprendre comment il optimise votre code.
+
+Il a été déployé avec succès sur le web d'Instagram avec de très bons résultats (les interactions sont 2,5 fois plus rapides). Il analyse statiquement votre code, un fichier à la fois, et mémorise ce qui peut être optimisé en toute sécurité, avec une granularité encore plus grande que ce que vous pourriez faire à la main. Si vous suivez les règles de React, vous ne devriez pas avoir à réécrire de code. Le plugin ESLint vous informe sur le code problématique détecté par le compilateur. Il ne fonctionne pas bien avec les solutions basées sur un proxy comme MobX. Les options de configuration et les directives opt-in/out vous permettent d'essayer progressivement le compilateur sur votre base de code.
+
+Le compilateur est initialement écrit en TypeScript et livré avec des bindings Babel, mais ne soyez pas déçus car sa logique est découplée. Le support de SWC devrait venir ensuite, et nous aurons probablement un portage en Rust un peu plus tard (ils ont déjà fait un POC pour cela afin de s'assurer que c'est faisable).
+
+Il convient de mentionner que l'équipe React a toujours eu à l'esprit d'avoir un compilateur pour React (voir [le thread d'Andrew Clark](https://x.com/acdlite/status/1792710362745405911)). Et ce n'est que le début, ils ont maintenant l'infrastructure pour construire des choses encore plus puissantes. Je suis presque sûr que tôt ou tard, nous n'aurons plus besoin d'un tableau de dépendance, et que le compilateur sera capable d'optimiser la consommation de contexte à un niveau fin ([tweet pertinent](https://x.com/TkDodo/status/1741193371283026422)).
+
+🔗 **Ressources associées qui valent la peine d'être consultées :**
+
+- 📜 [React Compiler With React 18](https://jherr2020.medium.com/react-compiler-with-react-18-1e39f60ae71a) : Le compilateur n'est pas une fonctionnalité de React 19. Jack montre un POC pour l'utiliser sous React 18 en fournissant un hook trés simple d'exécution du compilateur. Lauren de l'équipe React Compiler vient de confirmer que c'est possible et a fourni un [polyfill officiel](https://github.com/reactwg/react-compiler/discussions/6) que vous pouvez utiliser temporairement, bien qu'il soit recommandé de passer à React 19.
+- 🎥 [Jack Herrington - React Compiler: In-Depth Beyond React Conf 2024](https://www.youtube.com/watch?v=PYHBHK37xlE)
+- 🎥 [Theo - React Just Changed Forever](https://www.youtube.com/watch?v=DhfeXfF_W4w)
+- 🧵 [Theo - Clearing up some React Compiler misunderstandings](https://x.com/t3dotgg/status/1791177359896555600)
+
+---
+
+[![Merging Remix and React Router](/emails/issues/186/remix.jpg)](https://remix.run/blog/merging-remix-and-react-router)
+
+**[Merging Remix and React Router](https://remix.run/blog/merging-remix-and-react-router)**
+
+C'est une autre grande annonce de React Conf. Remix et React Router ont tellement convergé (grâce au plugin Vite et au mode SPA) qu'il n'est plus vraiment logique de conserver les deux. Techniquement, au lieu de livrer Remix v3, ils prévoient d'ajouter un plugin Vite optionnel à React Router v7, qui restera rétro-compatible, et apportera également de nouvelles fonctionnalités (RSC, server-actions, pré-rendering statique...). Voir aussi l'article de suivi [Incremental Path to React 19 : React Conf Follow-Up](https://remix.run/blog/incremental-path-to-react-19).
+
+---
+
+- 💸 [Conversational AI and context-aware LLM chat with React](https://nlux.dev/?utm_source=twir-m24-2)
+- 📜 [React 19 lets you write impossible components](https://www.mux.com/blog/react-19-server-components-and-actions) : Un excellent article de Mux qui a adopté les RSC très tôt, expliquant que nous n'avons fait qu'effleurer la surface des nouveaux modèles que les RSC permettent. L'exemple de la pagination du changelog est intéressant et montre que même des bibliothèques comme React Query pourraient devenir moins utiles.
+- 📜 [Introducing Pigment CSS: the next generation of CSS-in-JS](https://mui.com/blog/introducing-pigment-css/) : L'équipe MUI explique les raisons qui l'ont poussée à créer sa propre solution CSS-in-JS, basée sur la boîte à outils WyW-in-JS, qui devrait équiper MUI v6 dans le courant de l'année. Cette solution est compatible avec les RSC. L'adoption par les utilisateurs de MUI/Emotion/StyledComponent devrait être facile.
+- 📜 [Digging for SSRF in NextJS apps](https://www.assetnote.io/resources/research/digging-for-ssrf-in-nextjs-apps) : Des chercheurs en sécurité expliquent les vulnérabilités aveugles de Server Side Request Forgery qu'ils ont trouvées dans Next.js liées au composant Image et aux implémentations Server Actions. Ces vulnérabilités ont été corrigées depuis Next.js 14.1.1 (janvier 2024).
+- 📜 [Prefer Multiple Compositions](https://kyleshevlin.com/prefer-multiple-compositions/) : Si votre composant a un ensemble fini de cas à traiter, il sera plus facile à maintenir en ayant des branches if/else clairement séparées pour chaque cas plutôt que de disperser des conditionnelles partout dans JSX.
+- 📜 [Prefer Noun-Adjective Naming](https://kyleshevlin.com/prefer-noun-adjective-naming/) : Je préfère également nommer un composant « ButtonPrimary » plutôt que « PrimaryButton ». Les éléments apparentés restent groupés par ordre alphabétique et sont plus faciles à retrouver dans l'IDE.
+- 📜 [Inline Styles on Steroids](https://weser.io/blog/inline-styles-on-steroids) : Avec des projets tels que CSS Hooks, et la plateforme web qui prévoit d'ajouter un support pour l'imbrication des styles en ligne, ce n'est qu'une question de temps avant que les styles en ligne ne fassent un retour en force. L'auteur de Fela recrée la DX d'une bonne bibliothèque CSS-in-JS au-dessus de CSS Hooks grâce à deux nouveaux projets sur lesquels il travaille.
+- 📜 [Quantifying the Impact of Styled Components on Server Response Times](https://blog.levineandrew.com/quantifying-the-impact-of-styled-components-on-server-response-times) : Utilise SpeedScope (plus puissant que Chrome DevTools) pour analyser une trace CPU et conclut que l'injection de style prend 47% du temps SSR.
+- 📜 [Storybook - Portable stories for Playwright Component Tests](https://storybook.js.org/blog/portable-stories-for-playwright-ct/) : Bien que Storybook fournisse une fonction play() à l'aide d'un exécuteur de tests Playwright, vous préférerez peut-être utiliser directement les tests de composants Playwright et réutiliser vos stories existantes à cet endroit.
+- 📜 [Deploying Remix to Cloudflare with SST](https://ruanmartinelli.com/blog/remix-sst-cloudflare) : L'utilisation de SST pour déployer votre application sur un cloud majeur peut être une alternative intéressante aux plateformes DX comme Vercel/Netlify. La simplicité d'utilisation et la possibilité de déployer vers Cloudflare en font une alternative intéressante.
+- 📦 [Restyle](https://reactstyle.vercel.app/) : Nouvelle bibliothèque CSS-in-JS compatible avec RSC qui exploite la toute nouvelle fonctionnalité de déduplication et d'extraction de style de React 19. Ces nouvelles primitives React ont également été conçues en pensant aux librairies CSS-in-JS, et il est formidable de voir que la communauté les utilise déjà. C'est également intéressant pour la distribution de CSS dans le cadre d'un package npm de bibliothèque React.
+- 📦 [React Google Maps 1.0](https://mapsplatform.google.com/resources/blog/google-maps-platform-graduates-react-integration-library-to-1-0/) : La bibliothèque officielle Google Maps pour React est désormais stable, maintenue par la fondation OpenJS.
+- 📦 [Million Lint 1.0-rc](https://million.dev/blog/lint-rc) : Extension IDE qui trouve et corrige automatiquement les problèmes de performance pour vous. Contrairement au compilateur React, il est basé sur l'analyse du temps d'exécution et peut détecter des problèmes de performance supplémentaires que le compilateur ne peut pas détecter. Les deux peuvent être utilisés en tandem.
+- 📦 [Zustand 5.0-beta - Upgrade guide available - drop deprecated features, upgrades React/TS](https://github.com/pmndrs/zustand/blob/v5/docs/guides/migrating-to-v5.mdx)
+- 📦 [Storybook 8.1 - tag filtering, typesafe mocking, beforeEach, portable stories API](https://github.com/storybookjs/storybook/releases/tag/v8.1.0)
+- 📦 [Storybook-Rsbuild - Storybook builder powered by Rsbuild](https://github.com/rspack-contrib/storybook-rsbuild)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Next.js auth tutorial with RSCs and Server Actions](/emails/issues/186/AuthKitNextjs.jpg)](https://www.youtube.com/watch?v=aoRG1q_kVo8)
+
+**[Next.js auth tutorial with RSCs and Server Actions](https://www.youtube.com/watch?v=aoRG1q_kVo8)**
+
+The latest tutorial with WorkOS and Sam Selikoff shows how you can easily add AuthKit's hosted login box to a Next.js app:
+
+📚 Get started using the Authkit \<> Next.js [integration library](https://github.com/workos/authkit-nextjs)  
+🤖 Set up environment variables, configure the callback route and middleware, and implement signIn and signOut functionalities  
+⚙️ Protect routes in the Next.js app from unauthenticated users with the getUser function
+
+AuthKit can be used with WorkOS User Management, which supports MFA, identity linking, email verification, user impersonation, and more.
+
+Best of all, it's **free up to 1,000,000 MAUs 🚀**
+
+---
+
+## 📱 React-Native {#react-native}
+
+Cette section est rédigée par [Benedikt](https://twitter.com/bndkt).
+
+![](/emails/issues/186/ursc.jpg)
+
+React Conf est officiellement derrière nous, et j'espère que vous avez eu l'occasion de regarder les enregistrements des superbes présentations sur YouTube. Ce que j'ai retenu de cette conférence, c'est la quantité de contenu RN qu'elle contenait ! Étant donné que RN est développé de manière très ouverte et en collaboration avec l'ensemble de la communauté, il n'y a pas eu de « grandes annonces » surprenantes, mais il s'agissait d'un très bon résumé de l'état actuel de RN et d'une vision sur le chemin à parcourir. La partie la plus impressionnante et la plus inspirante pour moi a été la vision d'Evan Bacon pour les Universal React Server Components, qu'il a présentée à l'aide d'une démo absolument géniale que je vous conseille vivement de [regarder par vous-même](https://www.youtube.com/watch?v=T8TZQ6k4SLE&t=20765s). J'ai rassemblé mes principales conclusions en quelques points pour vous :
+
+- RN est en plein essor : Plus de 2 millions de téléchargements hebdomadaires de RN, 30 versions de RN livrées en 2024 à ce jour.
+- La nouvelle Architecture est maintenant en Bêta
+- Expo est maintenant officiellement recommandé pour toutes les nouvelles applications
+- Lancement de la nouvelle page reactnative.dev
+- L'application React Conf est open source
+- La vision d'Expo pour Universal RSC
+
+---
+
+- 💸 [PowerSync - Supabase \<> SQLite sync layer: follow our step-by-step video integration guide.](https://docs.powersync.com/integration-guides/supabase-+-powersync?utm_source=newsletter&utm_medium=sponsorship&utm_campaign=this-week-in-react)
+- 👀 [New React Native landing page](https://reactnative.dev/)
+- 🐦 [New resources to get started with React Native and Expo](https://x.com/jonsamp/status/1791164393893609705) : Nouvelle page d'accueil, nouvelle documentation "Getting Started", nouvelle documentation sur la configuration de l'environnement Expo dev.
+- 🐦 [Interesting discussion on Apple's stance on server-driven UI in iOS apps](https://x.com/sregg/status/1791784335999160783) : L'Universal RSC sera-t-il un défi dans le processus d'approbation de l'App Store d'Apple ?
+- 🐦 [Potential ways to decrease Android bundle size](https://x.com/mironcatalin/status/1792485000559935571) : Deux paramétrages permettent de réduire considérablement la taille de bundle, mais - comme toujours - cela s'accompagne de compromis.
+- 🗓 [Chain React Conf](https://chainreactconf.com/?utm_source=thisweekinreact) - Portland, OR - Du 17 au 19 juillet. La conférence américaine React Native est de retour avec des conférences captivantes et des ateliers pratiques ! Bénéficiez de 15% de réduction sur votre billet avec le code « TWIR »
+- 📜 [Debunk ideas on cross-platform framework](https://www.bam.tech/article/debunk-ideas-on-cross-platform-framework) : Performances, sécurité, accessibilité, stabilité, acceptation par l'App Store, fonctionnalités natives : tous ces éléments sont parfois mis en doute à tort lorsqu'il s'agit d'applications multiplateformes.
+- 📜 [Breaking down react-native-video 6.0.0 stable release - enhancements and comparisons](https://www.thewidlarzgroup.com/blog/breaking-down-react-native-video-6-0-0-stable-release-enhancements-and-comparisons)
+- 📜 [Creating Custom Fonts with React-Native-Skia](https://gitstashapply.medium.com/creating-custom-fonts-with-react-native-skia-4851d8b14ddd)
+- 📦 [Bootsplash v6 beta - Expo plugin, simpler setup](https://github.com/zoontek/react-native-bootsplash/pull/578) : L'application React Conf l'a utilisé pour l'écran d'accueil !
+- 📦 [React Conf app open-sourced](https://github.com/expo/react-conf-app) : Utilise déjà React Compiler ([Tweet](https://x.com/kadikraman/status/1791155001882275989))
+- 🎙️ [RNR 297 - Jumping over the React Native v0.74 Bridge](https://reactnativeradio.com/episodes/rnr-297-jumping-over-the-react-native-v074-bridge)
+- 🎥 [Supercharging your React Native app for Windows](https://www.youtube.com/watch?v=4sbAvwukSWM) : Session React Native à la MS Build 2024
+
+---
+
+## 🇫🇷 En français {#fr}
+
+- 🇫🇷 [ReactHebdo.fr - Dernières éditions traduites en français](https://thisweekinreact.com/fr/newsletter)
+- 📜 [Dessiner des graphiques avec d3js​](https://grafikart.fr/tutoriels/graph-d3js-2215)
+- 🎙️ [Les Dev News de Mai 2024 - Part 2](https://double-slash.dev/podcasts/news05-2-24/)
+
+---
+
+## 🔀 Autre {#other}
+
+- 📜 [What's new in the web - 12 newly available Baseline features](https://web.dev/blog/new-in-the-web-io2024)
+- 📜 [What's new in JavaScript Frameworks (May 2024)](https://developer.chrome.com/blog/frameworks-may-2024)
+- 📜 [Portable Server Rendered Web Components with Enhance SSR](https://begin.com/blog/posts/2024-05-03-portable-ssr-components)
+- 📜 [ECMAScript 2023 feature: Symbols as WeakMap keys](https://2ality.com/2024/05/proposal-symbols-as-weakmap-keys.html)
+- 📦 [SolidStart 1.0 - The Shape of Frameworks to Come](https://www.solidjs.com/blog/solid-start-the-shape-frameworks-to-come)
+- 📦 [Graphql-query - 8.7x faster GraphQL query parser written in Rust](https://stellate.co/blog/graphql-query-parsing-8x-faster-with-rust)
+- 📦 [Node 22.2](https://nodejs.org/en/blog/release/v22.2.0)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/186/meme.jpg)](https://x.com/rauchg/status/1791163745307328650)
+
+[![alt](/emails/issues/186/meme2.jpg)](https://x.com/sebastienlorber/status/1790796662153117863)
+
+(Ok celle de React Compiler n'est pas techniquement exacte, mais quand même amusante 😇 désolé l'équipe de Compiler)
+
+A plus 👋
