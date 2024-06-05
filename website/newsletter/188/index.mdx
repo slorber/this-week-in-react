@@ -1,6 +1,6 @@
 ---
 slug: /188
-title: "This Week In React #188: React 19 RC0, Data Fetching, Framer Motion, Compiler, Astro, Zod, Remix, Docusaurus, Spline, Memory Leaks, Module Mocking, Slow Networks, MS Edge, RN Security Guide, RN 0.74.2, Reanimated 3.12, Turborepo..."
+title: "This Week In React #188: React 19 RC0, Data Fetching, Framer Motion, Compiler, Astro, Zod, Remix, Docusaurus, React-Query,, Memory Leaks, Spline, Module Mocking, Slow Networks, MS Edge, RN Security Guide, RN 0.74.2, Reanimated 3.12, Turborepo 2, Biome 1.8..."
 authors: [bndkt]
 date: 06-06-2024
 ---
@@ -52,9 +52,9 @@ This is a long read (~10k words), but such a great article! The title doesn’t 
 - 📜 [I tried React Compiler today, and guess what …](https://www.developerway.com/posts/i-tried-react-compiler): A super interesting and detailed article about React Compiler and real-world use cases. Seems like we’re not at the point yet where we can just ignore everything about memoization because the Compiler takes care of it, and apart from this conclusion the article is also a great reminder of how memoization works exactly.
 - 📜 [Do you still need Framer Motion?](https://motion.dev/blog/do-you-still-need-framer-motion): The creator of the popular React animation library explains you might not need his library anymore thanks to 5 great new/upcoming CSS features.
 - 📜 [Sneaky React Memory Leaks II: Closures Vs. React Query](https://schiener.io/2024-05-29/react-query-leaks): This follows up on last week's great article. This time it shows how React Query might be affected as well by memory leaks, and how to fix them. Using custom hooks looks like a good general solution to this problem.
-- 📜 [Type-safe module mocking in Storybook](https://storybook.js.org/blog/type-safe-module-mocking/): Very elegant way to leverage subpath imports for module mocking.
 - 📜 [An even faster Microsoft Edge](https://blogs.windows.com/msedgedev/2024/05/28/an-even-faster-microsoft-edge/): Microsoft was using React for some elements of the UI in its Edge browser and is now abandoning this approach. See the video linked below for more context.
 - 📜 [Speeding up the JavaScript ecosystem - Server Side JSX](https://marvinh.dev/blog/speeding-up-javascript-ecosystem-part-9/): The JSX runtime of React can lead to many object allocations. Marvin (Preact/Deno) shows it's possible to precompile JSX to improve server rendering of JSX and reduce GC. Maybe React could use that as well?
+- 📜 [Type-safe module mocking in Storybook](https://storybook.js.org/blog/type-safe-module-mocking/): Very elegant way to leverage subpath imports for module mocking.
 - 📜 [Multiple action handlers with Zod in Remix](https://www.jacobparis.com/content/zod-actions-remix): If you target one action endpoint from multiple components, this article shows you how to combine the different Zod schemas via discriminated union.
 - 📜 [Embracing Slow Networks: Improving User Experience](https://www.epicweb.dev/embracing-slow-networks-improving-user-experience)
 - 📜 [Cleaner components with useSuspenseQuery](https://swizec.com/blog/cleaner-components-with-use-suspense-query/) & [Why useSuspenseQuery works](https://swizec.com/blog/why-use-suspense-query-works/)
