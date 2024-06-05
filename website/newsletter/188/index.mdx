@@ -49,21 +49,24 @@ This is a long read (~10k words), but such a great article! The title doesn’t 
 - 🐦 [Remix working inside a Cloudflare Durable Object 🤯](https://x.com/threepointone/status/1796223745243119890)
 - 🐦 [React 19.0.0-rc.0](https://x.com/acdlite/status/1797668537349328923): Andrew Clark says “This is the exact build we'll release as 19.0, unless an issue is reported that requires a breaking change.”
 - 🐦 [Upcoming Spline (3D rendering) and NextJS RSC integration](https://x.com/rauchg/status/1798021886657650711)
-- 📜 [Multiple action handlers with Zod in Remix](https://www.jacobparis.com/content/zod-actions-remix): If you target one action endpoint from multiple components, this article shows you how to combine the different Zod schemas via discriminated union.
-- 📜 [Sneaky React Memory Leaks II: Closures Vs. React Query](https://schiener.io/2024-05-29/react-query-leaks)
-- 📜 [Type-safe module mocking in Storybook](https://storybook.js.org/blog/type-safe-module-mocking/): Very elegant way to leverage subpath imports for module mocking.
-- 📜 [Embracing Slow Networks: Improving User Experience](https://www.epicweb.dev/embracing-slow-networks-improving-user-experience)
-- 📜 [An even faster Microsoft Edge](https://blogs.windows.com/msedgedev/2024/05/28/an-even-faster-microsoft-edge/): Microsoft was using React for some elements of the UI in its Edge browser and is now abandoning this approach. See the video linked below for more context.
-- 📜 [Cleaner components with useSuspenseQuery](https://swizec.com/blog/cleaner-components-with-use-suspense-query/) & [Why useSuspenseQuery works](https://swizec.com/blog/why-use-suspense-query-works/)
 - 📜 [I tried React Compiler today, and guess what …](https://www.developerway.com/posts/i-tried-react-compiler): A super interesting and detailed article about React Compiler and real-world use cases. Seems like we’re not at the point yet where we can just ignore everything about memoization because the Compiler takes care of it, and apart from this conclusion the article is also a great reminder of how memoization works exactly.
+- 📜 [Multiple action handlers with Zod in Remix](https://www.jacobparis.com/content/zod-actions-remix): If you target one action endpoint from multiple components, this article shows you how to combine the different Zod schemas via discriminated union.
+- 📜 [Type-safe module mocking in Storybook](https://storybook.js.org/blog/type-safe-module-mocking/): Very elegant way to leverage subpath imports for module mocking.
+- 📜 [An even faster Microsoft Edge](https://blogs.windows.com/msedgedev/2024/05/28/an-even-faster-microsoft-edge/): Microsoft was using React for some elements of the UI in its Edge browser and is now abandoning this approach. See the video linked below for more context.
+- 📜 [Speeding up the JavaScript ecosystem - Server Side JSX](https://marvinh.dev/blog/speeding-up-javascript-ecosystem-part-9/): The JSX runtime of React can lead to many object allocations. Marvin (Preact/Deno) shows it's possible to precompile JSX to improve server rendering of JSX and reduce GC. Maybe React could use that as well?
+- 📜 [Sneaky React Memory Leaks II: Closures Vs. React Query](https://schiener.io/2024-05-29/react-query-leaks)
+- 📜 [Embracing Slow Networks: Improving User Experience](https://www.epicweb.dev/embracing-slow-networks-improving-user-experience)
+- 📜 [Cleaner components with useSuspenseQuery](https://swizec.com/blog/cleaner-components-with-use-suspense-query/) & [Why useSuspenseQuery works](https://swizec.com/blog/why-use-suspense-query-works/)
+- 📜 [Explore new hooks coming up in React 19](https://blog.saeloun.com/2024/06/05/new-hooks-in-react-19/)
+- 📦 [React 19.0.0-rc.0](https://www.npmjs.com/package/react/v/19.0.0-rc.0): Andrew Clark said "This is the exact build we'll release as 19.0, unless an issue is reported that requires a breaking change."
 - 📦 [Docusaurus 3.4](https://docusaurus.io/blog/releases/3.4): A new way to centrally manage tags (great for consistency), an experimental hash router (great for offline browsing without a web server), and an option to use namespaces for local storage (useful if you’re deploying multiple instances of Docusaurus on the same domain).
-- 📦 [React 19.0.0-rc.0](https://www.npmjs.com/package/react/v/19.0.0-rc.0)
-- 🎥 [Beware of "auto" Mode in the NextJS App Router](https://www.youtube.com/watch?v=bU3Px8bHjPA)
-- 🎥 [Microsoft Regrets Using React (For Edge)](https://www.youtube.com/watch?v=Bm8Ga07BOnI)
+- 🎙 [This Month in React, May 2024 - Updates from React Conf](https://www.reactiflux.com/transcripts/tmir-2024-05)
+- 🎥 [Jack Herrington - Beware of "auto" Mode in the NextJS App Router](https://www.youtube.com/watch?v=bU3Px8bHjPA)
+- 🎥 [Theo - Microsoft Regrets Using React (For Edge)](https://www.youtube.com/watch?v=Bm8Ga07BOnI)
 - 🎥 [Stephanie Dietz - How to Use React's `useOptimistic` Hook](https://www.youtube.com/watch?v=ChF9-P4Bjs4)
 - 🎥 [UI Engineering - Why 95% of Modals should be Local (in React)](https://www.youtube.com/watch?v=iMoAviG_ZUE)
-- 🎥 [Laravel vs React](https://www.youtube.com/watch?v=gRtv-BVkwA4)
-- 🎥 [How React Query Won](https://www.youtube.com/watch?v=xIflplz925Y)
+- 🎥 [Aaron Francis - Laravel vs React](https://www.youtube.com/watch?v=gRtv-BVkwA4)
+- 🎥 [Theo - How React Query Won](https://www.youtube.com/watch?v=xIflplz925Y)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -104,19 +107,23 @@ Many roads lead to Rome, and it seems there are almost as many ways to build an 
 - 📦 [React Native 0.74.2](https://github.com/facebook/react-native/releases/tag/v0.74.2): Patch release, bumping some dependencies (typescript-eslint, CLI) and fixing bugs.
 - 📦 [React Native Reanimated 3.12.0](https://github.com/software-mansion/react-native-reanimated/releases/tag/3.12.0): Introduces a new hook useComposedEventHandler which simplifies merging of multiple event handlers.
 - 🎙️ [RNR 298 - Create Expo Stack, NativeWind Ul, & Plugin Pro with Dan Stepanov](https://reactnativeradio.com/episodes/rnr-298-create-expo-stack-nativewind-ul-plugin-pro-with-dan-stepanov)
-- 🎥 [React Native is alive! App.js Recap with Áron Berezkin | Rocket Ship 042](https://www.youtube.com/watch?v=GeUfrojkoo0)
+- 🎥 [Rocket Ship 42 - React Native is alive! App.js Recap with Áron Berezkin](https://www.youtube.com/watch?v=GeUfrojkoo0)
+- 🎥 [Expo - How to start your first Expo project in 2 minutes](https://www.youtube.com/watch?v=yOUAEfDuI44)
 
 ---
 
 ## 🔀 Other {#other}
 
 - 🐦 [Find memory issues using Chrome Dev Tools](https://x.com/addyosmani/status/1796527052306419820)
-- 📜 [Live types in a TypeScript monorepo](https://colinhacks.com/essays/live-types-typescript-monorepo)
+- 👀 [Vitest Browser Mode](https://github.com/vitest-dev/vitest/discussions/5828)
+- 📜 [10 modern Node.js runtime features to start using in 2024](https://snyk.io/blog/10-modern-node-js-runtime-features/)
+- 📜 [Live types in a TypeScript monorepo - stop writing dead TypeScript](https://colinhacks.com/essays/live-types-typescript-monorepo)
 - 📜 [How To Use Corepack](https://www.totaltypescript.com/how-to-use-corepack)
 - 📜 [Promises From The Ground Up](https://www.joshwcomeau.com/javascript/promises/)
-- 📜 [Very interesting new sync project: Zero Sync](https://zerosync.dev/)
-- 📦 [Deno 1.44: Private npm registries, improved Node.js compat, and performance boosts](https://deno.com/blog/v1.44)
+- 📜 [Zero - Rethinking local-first, general-purpose sync engine for the web](https://zerosync.dev/)
 - 📦 [Turborepo 2.0 - New terminal UI, watch mode, all-new docs](https://turbo.build/blog/turbo-2-0)
+- 📦 [Biome 1.8 - CSS support, new reports, CLI improvements...](https://x.com/biomejs/status/1797963672004043040)
+- 📦 [Deno 1.44 - Private npm registries, improved Node.js compat, and performance boosts](https://deno.com/blog/v1.44)
 
 ---
 
