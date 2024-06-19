@@ -46,11 +46,13 @@ Graphite Grid is declarative and consistent, leveraging state signals to ensure 
 
 ## ⚛️ React {#react}
 
+![Suspense with siblings](/emails/issues/190/suspense.jpg)
+
 **[React 19 and Suspense - A Drama in 3 Acts](https://tkdodo.eu/blog/react-19-and-suspense-a-drama-in-3-acts)**
 
 React 19 RC.0 was released 2 weeks ago and could have become the React 19 stable release we've been waiting for. Unfortunately, it contains a controversial change to the Suspense behavior, leading the React team to talk and decide to delay the release until a solution is found.
 
-Unlike React 18, in v19 the siblings of a component that suspend won’t render anymore, leading to potential waterfalls. In many situations (using “fetch-on-render” pattern, using React.lazy()...), async code might run sequentially instead of in parallel. There’s a good reason motivating this change: the ability to display Suspense fallbacks sooner, and avoid rendering components uselessly. In theory, waterfalls could be avoided if requests were “hoisted” at the router level (using the “render-as-you-fetch” pattern), but many existing apps do not do that and would suffer from degraded performances.
+Unlike React 18, in v19 if a component suspends, its siblings won't render anymore, leading to potential waterfalls. In many situations (using “fetch-on-render” pattern, using React.lazy()...), async code might run sequentially instead of in parallel. There’s a good reason motivating this change: the ability to display Suspense fallbacks sooner, and avoid rendering components uselessly. In theory, waterfalls could be avoided if requests were “hoisted” at the router level (using the “render-as-you-fetch” pattern), but many existing apps do not do that and would suffer from degraded performances.
 
 **Related resources**:
 
@@ -60,6 +62,8 @@ Unlike React 18, in v19 the siblings of a component that suspend won’t render 
 - 🎥 [Josh tried coding - React 19 has a Problem](https://www.youtube.com/watch?v=PZYXTFnP2po)
 
 ---
+
+![React Internals Explorer - screenshot + logo](/emails/issues/190/rie.jpg)
 
 **[React Internals Explorer - easily see how React works](https://jser.dev/2024-05-11-introducing-rie/)**
 
@@ -73,11 +77,11 @@ A new interactive playground to see how React works under the hood. It’s possi
 - 📜 [Codemod partnering with the React team](https://codemod.com/blog/react-announcement): The Codemod company is partnering with React to maintain the react-codemod repo and help us upgrade to React 19.
 - 📜 [Future of Astro series - Zero-JS view transitions, Astro Content Layer, and Server Islands](https://astro.build/blog/future-of-astro-zero-js-view-transitions/): Astro betting on new browser features like cross-document view transitions makes us question the need for client-side routing and SPAs. I hope they’ll figure out how to persist component state across navigation in this new mode. They also plan to improve their (CMS integration, composable, using LibSQL) and provide a new “server:defer” directive (similar to Suspense, but not using streaming).
 - 📜 [Demystifying INP: New tools and actionable insights](https://vercel.com/blog/demystifying-inp-new-tools-and-actionable-insights): Vercel CTO explains that the new Core Web Vital INP (Interaction to Next Paint) is a misleading metric. Surprisingly preloading data can even give you a lower INP score. Using a React example from the Next.js docs site (js/ts code block language picker), he explains that user input must be acknowledged within 200ms. He suggests using either his package “await-interaction-response” or React transitions to separate user input handling from rendering the meaningful result.
+- 📜 [Experimenting with React Server Components and Vite](https://danielnagy.me/posts/Post_usaivhdu3j5d): A quite advanced article recreating a RSC setup with Vite from scratch. Very useful resource for framework authors looking to support RSCs. All this work to run a blog for your cat Dan 😄.
 - 📜 [How to compose JavaScript functions that take multiple parameters](https://jrsinclair.com/articles/2024/how-to-compose-functions-that-take-multiple-parameters-epic-guide/): Shows how to use a compose() function with React useState, among other things that will interest functional programming enthusiasts.
 - 📜 [React Form with Loading State (Pending Action)](https://www.robinwieruch.de/react-form-loading-pending-action/): Shows 3 possible ways to can get the loading state of a form, using useActionState, useFormStatus and useTransition.
 - 📜 [Redwood “Love reloaded" - A DX Story](https://redwoodjs.com/blog/love-reloaded-a-dx-story): Redwood briefly explains the tradeoffs of 3 instant feedback mechanisms. For their RSC experience, they’ll start by shipping live reload, and plan to implement fast refresh later.
 - 📜 [Using React Query with Astro](https://hounie.me/writings/how-to-use-react-query-with-astro/): Using nanostores instead of React Context.
-- 📜 [Experimenting with React Server Components and Vite](https://danielnagy.me/posts/Post_usaivhdu3j5d): An advanced article creating a RSC setup with Vite from scratch. All this work to run a blog for your cat Dan 😄.
 - 📜 [Hybrid i18n with Next and Astro - 4-part series](https://www.ericburel.tech/blog/hybrid-i18n-next-astro-1)
 - 📜 [Write SOLID React Hooks](https://www.perssondennis.com/articles/write-solid-react-hooks)
 - 📜 [Full Stack Web Push API Guide - Add push notifications to Remix Indie Stack](https://www.bocoup.com/blog/full-stack-web-push-api-guide)
@@ -117,11 +121,7 @@ Want to join the mission? 🚀 [**Sign up for the waiting list today**](https://
 
 This section is authored by [Benedikt](https://twitter.com/bndkt).
 
-<Todo />
-
-This section is authored by [Benedikt](https://twitter.com/bndkt).
-
----
+![](/emails/issues/190/rn.jpg)
 
 As there is no “big headline news” this week, I want to take the opportunity to celebrate two projects within the React Native community. The team behind React Native [visionOS received the React Open Source Award](https://x.com/michalchudziak/status/1801632496100008121) in the category “Most Exciting Use of Technology,” and the team at Infinite Red released the [300th episode of the React Native Radio](https://reactnativeradio.com/episodes/rnr-300-special-episode-ask-us-anything) podcast this week. Congratulations to both teams and thank you for the work you all do for our community!
 
@@ -130,17 +130,16 @@ As there is no “big headline news” this week, I want to take the opportunity
 - 💸 [WithFrame - Pre-Built React Native Components](https://withfra.me/?utm_source=thisweekinreact&utm_medium=email&utm_campaign=quick-link--3)
 - 🐦 [React Native visionOS receives React Open Source Award](https://x.com/michalchudziak/status/1801632496100008121): Congratulations!
 - 🐦 [New React Native IDE beta with speed improvements](https://x.com/kzzzf/status/1801367065086816449)
-- 👀 [First React Native 0.75 PRs start showing up (e.g. bump dependency to React 19](https://github.com/facebook/react-native/pull/44990) + [#44991](https://github.com/facebook/react-native/pull/44991) + [#44989](https://github.com/facebook/react-native/pull/44989)
-- 👀 [PR: requestIdleCallback in React Native](https://github.com/facebook/react-native/pull/44759): Schedule background and low-priority work on the main event loop.
-- 📖 [Expo Docs: React Compiler - Available from Expo SDK 51 and still experimental, of course](https://docs.expo.dev/guides/react-compiler/)
+- 👀 [React Native 0.75 PRs - bump dependency to React 19](https://github.com/facebook/react-native/pull/44990)
+- 👀 [React Native PR - requestIdleCallback ](https://github.com/facebook/react-native/pull/44759): Schedule background and low-priority work on the main event loop.
+- 📖 [Expo Docs - React Compiler - Available from Expo SDK 51](https://docs.expo.dev/guides/react-compiler/): Still experimental, of course
 - 📜 [Infinite Red maintains a list of the Top React Native Apps](https://shift.infinite.red/top-react-native-apps-1cae78fdee22): I didn’t know Burger King and Pizza Hut apps were built with RN. If you know of a great app that should be on that list, you can nominate it - even if it’s not a fast food chain!
 - 📜 [Reanimated Can Block Your JS Thread](https://andrei-calazans.com/posts/reanimated-blocking-js-thread/): Yes, you can shoot yourself in the foot when using shared values, this is a good reminder to evaluate whether a value needs to be a Shared Value.
-- 📜 [Bringing native AI to your mobile apps with ExecuTorch— part I — iOS](https://blog.swmansion.com/bringing-native-ai-to-your-mobile-apps-with-executorch-part-i-ios-f1562a4556e8)
 - 📜 [Testing Expo Web3 Apps With Wagmi and Anvil](https://www.callstack.com/blog/testing-expo-web3-apps-with-wagmi-and-anvil): Even if you’re like me and instantly fall asleep when you hear the word Web3 these days, this article is a good example walkthrough of different aspects of testing, including mocking.
 - 📜 [Baseball + React Native = Success](https://www.thewidlarzgroup.com/portfolio/flexpro-grip): I love seeing apps built with RN that are a bit unusual (and not just consist of lists of records). This is an example of such an app for the FlexPro Grip, a device that Baseball players use to train their grip.
-- 📜 [The Inner Workings of GPU Rendering for 2D and 3D Graphics](https://www.callstack.com/blog/the-inner-workings-of-gpu-rendering-for-2d-and-3d-graphics)
+- 📜 [Bringing native AI to your mobile apps with ExecuTorch— part I — iOS](https://blog.swmansion.com/bringing-native-ai-to-your-mobile-apps-with-executorch-part-i-ios-f1562a4556e8)
 - 📦 [react-navigation-bottom-sheet](https://github.com/th3rdwave/react-navigation-bottom-sheet): I’m a big fan of @gorhom/bottom-sheet, this new library integrates it with React Navigation.
-- 📦 [react-native-screens 3.32.0 - Back button display mode on iOS, 𝚗𝚊𝚟𝚒𝚐𝚊𝚝𝚒𝚘𝚗𝙱𝚊𝚛𝚃𝚛𝚊𝚗𝚜𝚕𝚞𝚌𝚎𝚗𝚝 prop on Android](https://github.com/software-mansion/react-native-screens/releases/tag/3.32.0)
+- 📦 [react-native-screens 3.32.0 - Back button display mode on iOS, navigationBarTranslucent prop on Android](https://github.com/software-mansion/react-native-screens/releases/tag/3.32.0)
 - 📦 [react-native-config 1.5.2 adds visionOS support](https://github.com/lugg/react-native-config/releases/tag/v1.5.2)
 - 📦 [react-native-gesture-handler 2.17.0](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.17.0)
 - 🎙️ [RNR 300 - Special Episode: Ask Us Anything!](https://reactnativeradio.com/episodes/rnr-300-special-episode-ask-us-anything)
