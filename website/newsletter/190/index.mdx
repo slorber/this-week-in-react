@@ -1,22 +1,18 @@
 ---
 slug: /190
-title: "This Week In React #190: ..."
+title: "This Week In React #190: Suspense, Internals Explorer, DevTools, RSC + Vite, Codemod, Astro, INP, composition, Reassure, Fumadocs, tscircuit, Sonner, Relay, Reanimated, RNGH, BottomSheet, RNScreens, VisionOS, TC39, Node, CSS ..."
 authors: [slorber]
 date: 06-19-2024
-unlisted: true
 ---
 
 Hi everyone!
 
-Mention GeekConf + check dates + sections
-40k!
+This week I (Seb) am back from my break, and happy to share that the newsletter crossed 40 000 subscribers! 🎉 \
+Thank you all for your support and for sharing the newsletter with your friends and colleagues. If you have any idea to make it even better, just hit reply to this email.
 
-React Native 0.75 RC out soon?
-rc.0 is on npm but broken
+The React 19 stable released that we expected very soon is delayed a bit by a controversial Suspense behavior change.
 
-- 🗓 [dotJS](https://www.dotjs.io/?utm_source=thisweekinreact) - 🇫🇷 Paris - June 27 - Just 1 week left before the conference! 10% discount with code "TWIR"
-- 🗓 [Chain React Conf](https://chainreactconf.com/?utm_source=thisweekinreact) - 🇺🇸 Portland, OR - July 17-19. The U.S. React Native Conference is back with engaging talks and hands-on workshops! Get 15% off your ticket with code “TWIR”
-- 🗓️ [The Geek Conf](https://www.thegeekconf.com/?utm_source=thisweekinreact) - 🇩🇪 Berlin - 18 & 25 July - Get a 10% discount with code "TWIR". Tomasz Sapeta (Expo/Software Mansion), Carmen Huidobro (DevCraft Academy), and Atila Fassina (CrabNebula) will speak !
+On the React Native side, the first RC of 0.75 is expected very soon and should use React 19.
 
 <!-- truncate -->
 
@@ -74,6 +70,8 @@ A new interactive playground to see how React works under the hood. It’s possi
 - 💸 [Meilisearch - Build search-as-you-type for React](https://www.meilisearch.com/with/react?utm_campaign=sponsoring&utm_content=june-19&utm_source=thisweekinreact)
 - 👀 [React Core PR - Badge Environment Name on Thrown Errors from the Server](https://github.com/facebook/react/pull/29846): A convenient DX improvement to know where the error comes from thanks to a [server] console badge.
 - 🐦 [React Router 7 - Ryan Florence Sneak Peek video](https://x.com/ryanflorence/status/1801388170891903252)
+- 🗓️ [The Geek Conf](https://www.thegeekconf.com/?utm_source=thisweekinreact) - 🇩🇪 Berlin - 18 & 25 July - Get a 10% discount with code "TWIR". Tomasz Sapeta (Expo/Software Mansion), Carmen Huidobro (DevCraft Academy), and Atila Fassina (CrabNebula) will speak !
+- 🗓 [dotJS](https://www.dotjs.io/?utm_source=thisweekinreact) - 🇫🇷 Paris - June 27 - Just 1 week left before the conference! 10% discount with code "TWIR"
 - 📜 [Codemod partnering with the React team](https://codemod.com/blog/react-announcement): The Codemod company is partnering with React to maintain the react-codemod repo and help us upgrade to React 19.
 - 📜 [Future of Astro series - Zero-JS view transitions, Astro Content Layer, and Server Islands](https://astro.build/blog/future-of-astro-zero-js-view-transitions/): Astro betting on new browser features like cross-document view transitions makes us question the need for client-side routing and SPAs. I hope they’ll figure out how to persist component state across navigation in this new mode. They also plan to improve their (CMS integration, composable, using LibSQL) and provide a new “server:defer” directive (similar to Suspense, but not using streaming).
 - 📜 [Demystifying INP: New tools and actionable insights](https://vercel.com/blog/demystifying-inp-new-tools-and-actionable-insights): Vercel CTO explains that the new Core Web Vital INP (Interaction to Next Paint) is a misleading metric. Surprisingly preloading data can even give you a lower INP score. Using a React example from the Next.js docs site (js/ts code block language picker), he explains that user input must be acknowledged within 200ms. He suggests using either his package “await-interaction-response” or React transitions to separate user input handling from rendering the meaningful result.
@@ -82,14 +80,17 @@ A new interactive playground to see how React works under the hood. It’s possi
 - 📜 [React Form with Loading State (Pending Action)](https://www.robinwieruch.de/react-form-loading-pending-action/): Shows 3 possible ways to can get the loading state of a form, using useActionState, useFormStatus and useTransition.
 - 📜 [Redwood “Love reloaded" - A DX Story](https://redwoodjs.com/blog/love-reloaded-a-dx-story): Redwood briefly explains the tradeoffs of 3 instant feedback mechanisms. For their RSC experience, they’ll start by shipping live reload, and plan to implement fast refresh later.
 - 📜 [Using React Query with Astro](https://hounie.me/writings/how-to-use-react-query-with-astro/): Using nanostores instead of React Context.
+- 📜 [Next.js Server Actions with next-safe-action](https://www.davegray.codes/posts/nextjs-server-actions-with-next-safe-action): The library handles typesafety and input validation (with zod).
 - 📜 [Hybrid i18n with Next and Astro - 4-part series](https://www.ericburel.tech/blog/hybrid-i18n-next-astro-1)
 - 📜 [Write SOLID React Hooks](https://www.perssondennis.com/articles/write-solid-react-hooks)
 - 📜 [Full Stack Web Push API Guide - Add push notifications to Remix Indie Stack](https://www.bocoup.com/blog/full-stack-web-push-api-guide)
 - 📦 [React DevTools 5.3 - Dim StrictMode extra console logs, fixes and refactors](https://github.com/facebook/react/blob/main/packages/react-devtools/CHANGELOG.md#530)
 - 📦 [Vercel AI SDK 3.2](https://vercel.com/blog/introducing-vercel-ai-sdk-3-2): you can now build generative UI chatbots client-side with just useChat() and streamText in your React projects
+- 📦 [Reassure 1.0 - Performance testing companion for React and React Native](https://github.com/callstack/reassure/releases/tag/reassure%401.0.0)
 - 📦 [Fumadocs 12 - Documentation framework for Next.js](https://fumadocs.vercel.app/blog/v12)
 - 📦 [react-distributed-components - Effortlessly compose client and server components](https://github.com/daniel-nagy/react-distributed-components)
 - 📦 [tscircuit - Design Electronics with React & AI](https://tscircuit.com/)
+- 📦 [Relay 17.0](https://github.com/facebook/relay/releases/tag/v17.0.0)
 - 📦 [Sonner 1.5 - Toast library - x3 smaller and many other improvements](https://github.com/emilkowalski/sonner/releases/tag/v.1.5.0)
 - 📦 [Remix Privacy Stack - Indie Stack + GDPR/CCPA flows + self-hosted](https://www.bocoup.com/blog/announcing-the-privacy-stack-for-remix)
 - 🎥 [Delba - Next.js: Authentication (Best Practices for Server Components, Actions, Middleware)](https://www.youtube.com/watch?v=N_sUsq_y10U)
@@ -132,7 +133,8 @@ As there is no “big headline news” this week, I want to take the opportunity
 - 🐦 [New React Native IDE beta with speed improvements](https://x.com/kzzzf/status/1801367065086816449)
 - 👀 [React Native 0.75 PRs - bump dependency to React 19](https://github.com/facebook/react-native/pull/44990)
 - 👀 [React Native PR - requestIdleCallback ](https://github.com/facebook/react-native/pull/44759): Schedule background and low-priority work on the main event loop.
-- 📖 [Expo Docs - React Compiler - Available from Expo SDK 51](https://docs.expo.dev/guides/react-compiler/): Still experimental, of course
+- 📖 [Expo Docs - React Compiler - Available from Expo SDK 51](https://docs.expo.dev/guides/react-compiler/): Still experimental, of course.
+- 🗓 [Chain React Conf](https://chainreactconf.com/?utm_source=thisweekinreact) - 🇺🇸 Portland, OR - July 17-19. The U.S. React Native Conference is back with engaging talks and hands-on workshops! Get 15% off your ticket with code “TWIR”
 - 📜 [Infinite Red maintains a list of the Top React Native Apps](https://shift.infinite.red/top-react-native-apps-1cae78fdee22): I didn’t know Burger King and Pizza Hut apps were built with RN. If you know of a great app that should be on that list, you can nominate it - even if it’s not a fast food chain!
 - 📜 [Reanimated Can Block Your JS Thread](https://andrei-calazans.com/posts/reanimated-blocking-js-thread/): Yes, you can shoot yourself in the foot when using shared values, this is a good reminder to evaluate whether a value needs to be a Shared Value.
 - 📜 [Testing Expo Web3 Apps With Wagmi and Anvil](https://www.callstack.com/blog/testing-expo-web3-apps-with-wagmi-and-anvil): Even if you’re like me and instantly fall asleep when you hear the word Web3 these days, this article is a good example walkthrough of different aspects of testing, including mocking.
