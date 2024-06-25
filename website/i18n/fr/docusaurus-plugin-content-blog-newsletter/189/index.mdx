@@ -1,0 +1,147 @@
+---
+slug: /189
+title: "This Week In React #189: Next.js Security, Memoization, useFormStatus, React State, Remix Typesafe Routes, View Transitions, Astro, Starlight, Hydrogen, Remotion, Lingui, Storybook, Skia Video, Starlink, App Clips, VisionOS..."
+authors: [bndkt]
+date: 06-12-2024
+---
+
+Salut à tous !
+
+C'est encore [Benedikt](https://x.com/bndkt) cette semaine, car Sébastien fait une pause.
+
+Pour moi, les sujets les plus intéressants de la semaine ne sont pas de grandes annonces ou de nouvelles versions, mais plutôt des indices subtils sur les travaux futurs (les types-safe routes models à venir dans Remix, React Compiler à venir dans Expo, les natives intents dans Expo Router), ainsi que quelques discussions en ligne sur les détails de l'implémentation de React Suspense (`display : none`, et, plus important encore, un changement assez significatif dans le comportement du parallèle fetching avec React 19).
+
+<!-- truncate -->
+
+**💡 [Check this newsletter on Twitter](https://slo.im/thread) - visual format 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![Flex your product muscles](/emails/issues/183/posthog.jpg)](https://newsletter.posthog.com/?utm_source=twir&utm_campaign=twir)
+
+**[Flex your product muscles](https://newsletter.posthog.com/?utm_source=twir&utm_campaign=twir)**
+
+[**Product for Engineers**](https://newsletter.posthog.com/?utm_source=twir&utm_campaign=twir) is PostHog’s newsletter dedicated to helping engineers improve their product skills. Learn what questions to ask users, how to build new features users love, and the path to product market fit.
+
+[**Subscribe for free**](https://newsletter.posthog.com/?utm_source=twir&utm_campaign=twir) to get curated advice on building great products, lessons (and mistakes) from building PostHog, and deep dives into the strategies of top startups.
+
+---
+
+## ⚛️ React {#react}
+
+[![Mind the gap](/emails/issues/189/react189.jpg)](https://www.youtube.com/live/1g5ruM-16_Y?t=7443s)
+
+🎥 **[Ryan Florence talk “Mind the Gap”](https://www.youtube.com/live/1g5ruM-16_Y?t=7443s)**
+
+J'ai regardé cette conférence après avoir entendu plusieurs personnes la décrire comme l'une des meilleures conférences technologiques qu'ils aient jamais vues. Nous sommes à un moment très intéressant du développement web, avec React 19 qui apporte un changement majeur au modèle React, de nouveaux frameworks JS qui gagnent en popularité, et de nombreuses discussions en ligne qui établissent des distinctions et/ou des comparaisons avec Rails et Laravel. L'exposé de Ryan est un très bon aperçu de la façon dont nous en sommes arrivés là et il offre, à mon avis, un très bon modèle mental sur la façon de penser React 19. C'est aussi amusant de voir l'un des créateurs de Remix faire une démo de Next.js 😉
+
+- 💸 [NL Kit — Ship AI Features Faster With JavaScript](https://nlkit.com)
+- 🐦 [Flow diagram on how to pick one of the over 30 ways to handle React state](https://x.com/housecor/status/1799435036736778364)
+- 🐦 [React changes a component in a Suspense context to `display: none !important` until data fetching completes](https://x.com/cpojer/status/1798912741383844237)
+- 🐦 [Type-safe route modules coming to Remix/React Router 7](https://x.com/pcattori/status/1799194706850504818)
+- 🐦 [Significant difference in how Suspense handles parallel fetching between React 18 and 19 raises concerns](https://x.com/TkDodo/status/1800501040766144676)
+- 🗓 [dotJS](https://www.dotjs.io/?utm_source=thisweekinreact) - 🇫🇷 Paris - 27 juin - Plus que 2 semaines avant la conférence ! 10% de réduction avec le code « TWIR »
+- 🗓 [React Summit](https://reactsummit.com/?utm_source=thisweekinreact) - 🇳🇱 Amsterdam - 14-18 juin - Les billets sont presque tous vendus. Bénéficiez d'une réduction de 10 % avec le code « TWIR ».
+- 📜 [Weak memoization in JavaScript](https://dev.to/thekashey/weak-memoization-in-javascript-4po6) : J'aime beaucoup ces articles « fondamentaux ». Celui-ci n'est pas sur useMemo, il explique le concept de mémoïsation à partir de zéro (tout en faisant référence à React), ce qui aide vraiment à approfondir la compréhension de ce qui se passe sous le capot.
+- 📜 [Creating a Reusable SubmitButton with useFormStatus](https://aurorascharff.no/posts/creating-a-reusable-submitbutton-with-useformstatus/) : En suivant cet article, vous apprendrez non seulement à travailler avec des formulaires et des server actions dans React 19, mais aussi à le faire en utilisant des formulaires progressivement améliorés.
+- 📜 [Lingui with React Server Components](https://lingui.dev/tutorials/react-rsc) : Tutoriel sur l'internationalisation d'une application Next.js App Router (y compris RSC) à l'aide de Lingui.
+- 📜 [Next.js security checklist](https://blog.arcjet.com/next-js-security-checklist/) : Une liste de contrôle utile couvrant 7 domaines, certains très évidents (mettre à jour les dépendances, assainir les inputs), et d'autres un peu plus spécifiques (éviter d'exposer le code du serveur, utiliser des headers de sécurité).
+- 📜 [Hydrogen - June 2024 Release - Optimistic cart, RichText component, stable analytics](https://hydrogen.shopify.dev/update/june-2024) : Outre ces trois annonces de fonctionnalités, l'article commence par un engagement répété en faveur de Remix (alias React Router 7), au cas où vous vous poseriez la question.
+- 📜 [Astro - Starlight (the Astro-based documentation builder) turns one year old](https://astro.build/blog/starlight-turns-one/) : Des statistiques plutôt impressionnantes : 24 versions mineures, 181 contributeurs, 2 000 commits, 4 000 étoiles GitHub et 2 700 sites Starlight open-source.
+- 📜 [Astro - Zero-JavaScript View Transitions](https://astro.build/blog/future-of-astro-zero-js-view-transitions/) : Chrome 126 vient de prendre en charge les animations natives entre les pages de navigation, à la manière d'une application.
+- 📜 [The Need for Speed: A Quick Way to Improve React Testing Times](https://www.helpscout.com/blog/improve-react-testing-times/)
+- 📜 [Interactive dropdown menus with Radix UI](https://www.joshuawootonn.com/radix-interactive-dropdown)
+- 📜 [How to render zoomable image with Shadcn UI and Tailwind CSS in Next.js](https://www.nico.fyi/blog/easy-zoomable-image-with-shadcn-tailwind)
+- 📜[Storybook - Interactive story generation](https://storybook.js.org/blog/interactive-story-generation/)
+- 📜 [How to Build a Notification System in Next.js with Knock](https://spacejelly.dev/posts/how-to-build-a-notification-system-in-next-js-with-knock)
+- 📦 [Code Hike + Remotion example](https://github.com/code-hike/examples/tree/main/with-remotion) : Combinaison intéressante pour créer des vidéos de code animées (🐦 [Vidéo de démonstration](https://x.com/pomber/status/1800108854459715864?t=8ickNCn-Orou7665JY31VA&s=19)).
+- 📦 [@xstate/store 1.0.0](https://github.com/statelyai/xstate/releases/tag/%40xstate%2Fstore%401.0.0)
+- 📦 [@tanstack/query 5.44.0](https://github.com/TanStack/query/releases/tag/v5.44.0) : Apporte une fonction "staleTime", par exemple pour déterminer l'heure de péremption depuis des headers de cache-control.
+- 🎥 [Theo - React Compiler: It's Stranger Than You Think](https://www.youtube.com/watch?v=wnXGSwrOw80)
+- 🎥 [Ben Holmes - The problem with server actions](https://www.youtube.com/watch?v=GPYAC1qGD44)
+- 🎥 [Jack Herrington - Radix Themes: Awesome New Components For NextJS](https://www.youtube.com/watch?v=SKm2XGxbLLM)
+- 🎥 [Syntax - What's new in the world of React? - React Conf 2024 Recap](https://www.youtube.com/watch?v=udXZw-9LdOM)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![WorkOS: enterprise-grade auth in minutes](/emails/issues/189/WorkOS.jpg)](https://workos.com/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=q22024)
+
+**[WorkOS: enterprise-grade auth in minutes](https://workos.com/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=q22024)**
+
+🔐 WorkOS supports a complete User Management solution along with **SSO, SCIM, RBAC, & FGA**.
+
+🗂️ Unlike other auth providers that rely on user-centric models, WorkOS is designed for B2B SaaS with an **org modeling approach**.
+
+🏗️ The APIs are **flexible, easy-to-use, and modular**. Pick and choose what you need and integrate in minutes.
+
+✨ User Management is **free up to 1 million MAUs** and includes bot protection, impersonation, MFA, & more.
+
+🤝 WorkOS is trusted by hundreds of leading startups like **Perplexity**, **Vercel**, & **Webflow**.
+
+Future-proof your auth stack with [WorkOS](https://workos.com/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=q22024) 🚀
+
+---
+
+## 📱 React-Native {#react-native}
+
+Cette section est rédigée par [Benedikt](https://twitter.com/bndkt).
+
+- 💸 [WithFrame - Ready to Use React Native Components](https://withfra.me/?utm_source=thisweekinreact&utm_medium=email&utm_campaign=quick-link--2)
+- 👀 [Expo adds experimental React Compiler support](https://github.com/expo/expo/pull/29168)
+- 👀 [Expo Router +native-intent Demo](https://github.com/EvanBacon/expo-router-native-intent-demo)
+- 🐦 [Skia Video is coming to the web, too](https://x.com/wcandillon/status/1799859456584646663)
+- 🐦 [Lorenzo leaving Microsoft and React Native](https://x.com/Kelset/status/1800158749811966280?t=jif1MJRNNYc3wIE1cIUJvw&s=19) : Merci Lorenzo pour toutes tes contributions à RN et à sa communauté en tant que mainteneur de longue date du noyau, et meilleurs vœux pour la suite !
+- 🗓 [Chain React Conf](https://chainreactconf.com/?utm_source=thisweekinreact) -  Portland, OR - Du 17 au 19 juillet. La conférence américaine React Native est de retour avec des conférences captivantes et des ateliers pratiques ! Bénéficiez de 15% de réduction sur votre billet avec le code  « TWIR »
+- 📜 [Apple Vision Pro: Insights From Conferences and Beyond](https://www.callstack.com/blog/apple-vision-pro-insights-from-conferences-and-beyond)
+- 📜 [Now that I can write React Native, what should I test](https://thoughtbot.com/blog/now-that-i-can-write-react-native-what-should-i-test) : Un parcours de débutant dans les tests unitaires et l'intégration avec React Native. Ensuite, faites des tests de bout en bout !
+- 📜 [How Starlink built 3d and AR in React Native & Expo](https://www.notjust.dev/blog/react-native-starlink) : Résumé de l'intervention d'Aaron à la conférence App.js. Lisez-le si vous souhaitez du texte, mais je vous recommande de regarder la conférence originale.
+- 📜 [How Belka built the MangaYo! app in just 3 months with Expo](https://expo.dev/blog/how-belka-built-mangayo-app-in-just-3-months-with-expo) : Construit à l'aide d'Expo et de Supabase en 3 mois, il a atteint la cinquième place du palmarès de l'App Store lors de son lancement.
+- 📜 [Flatlist Rendering Techniques](https://www.andydevs.dev/articles/flatlist-rendering-techniques) : La plupart du temps, j'utilise directement FlashList, mais si vous ne pouvez ou ne voulez pas l'utiliser, voici comment optimiser le rendu de la FlatList classique.
+- 📦 [react-native-app-clip 0.3.0 - Now supports Expo 51, RN 0.74, New Architecture, and Apple Pay](https://github.com/bndkt/react-native-app-clip/releases/tag/v0.3.0)
+- 📦 [@rn-tools/navigation](https://github.com/ajsmth/rn-tools/blob/main/packages/navigation/readme.md) : Nouvel ensemble de composants de navigation pour React Native.
+- 🎙️ [RNR 299 - What to Expect From React Native in 5 Years](https://www.reactnativeradio.com/episodes/rnr-299-what-to-expect-from-react-native-in-5-years)
+- 🎙️ [React Conf 2024 Highlights: Speakers Interviews | The React Native Show Podcast #38](https://www.youtube.com/watch?v=EP2IzK6rPv8)
+- 🎥 [Expo livestream - Presenting SDK 51: New Architecture, Router 3.5, Faster 'getting started' flow and more](https://www.youtube.com/watch?v=k1ISWPgP4S4)
+- 🎥 [Simon Grimm - Building a Local-First React Native App with PowerSync and Supabase](https://www.youtube.com/watch?v=xvvVGOyRgZg)
+
+---
+
+## 🇫🇷 En français {#fr}
+
+- 🇫🇷 [ReactHebdo.fr - Dernières éditions traduites en français](https://thisweekinreact.com/fr/newsletter)
+- 🗓 [React Paris Meetup #2 - 18 juin​](https://www.meetup.com/fr-FR/react-paris/events/301337337)
+- 📜 [Comment implémenter Lighthouse CI dans un projet Next.js avec GitHub](https://www.hexa-web.fr/blog/how-to-setting-up-lighthouse-ci-with-next-js-and-github)
+- 🎥 [Ils ont résolu les plus gros problèmes NextJS (v15)](https://www.youtube.com/watch?v=Qp6VTuYhAyo)
+
+---
+
+## 🔀 Autre {#other}
+
+- 📜 [WebKit in Safari 18 beta - View Transitions, Style Queries, WebXR...](https://webkit.org/blog/15443/news-from-wwdc24-webkit-in-safari-18-beta/)
+- 📜 [How Deep is Your DOM?](https://frontendatscale.com/blog/how-deep-is-your-dom/)
+- 📜 [Find slow interactions in the field](https://web.dev/articles/find-slow-interactions-in-the-field)
+- [Your Node is Leaking Memory? setTimeout Could be the Reason](https://lucumr.pocoo.org/2024/6/5/node-timeout/)
+- 📜 [Comprehensive guide to JavaScript performance analysis using Chrome DevTools](https://blog.jiayihu.net/comprenhensive-guide-chrome-performance/)
+- 📦 [TypeScript 5.5 RC](https://devblogs.microsoft.com/typescript/announcing-typescript-5-5-rc/?t)
+- 📦 [Valibot v0.31.0 is finally available](https://valibot.dev/blog/valibot-v0.31.0-is-finally-available/)
+- 📦 [Vite 5.3.0-beta.2](https://github.com/vitejs/vite/blob/v5.3.0-beta.2/packages/vite/CHANGELOG.md#530-beta2-2024-06-10)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![tailwind monitor](/emails/issues/189/meme.jpg)](https://x.com/thekitze/status/1788852862669217805)
+
+A plus 👋
