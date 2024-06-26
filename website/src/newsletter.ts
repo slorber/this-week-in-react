@@ -54,8 +54,8 @@ const growthPerMonth = 1500;
 const all: NewsletterSegment & NewsletterFuture = {
   name: "All",
   subscribersCount,
-  openRate: 54,
-  clickRate: 12,
+  openRate: 53,
+  clickRate: 11,
 
   // TODO improve this!
   nextMainSlot: {
