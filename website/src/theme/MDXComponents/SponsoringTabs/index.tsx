@@ -16,7 +16,7 @@ export default function SponsoringTabs({ children }) {
   const array = React.Children.toArray(children);
   if (array.length !== 1 && array.length !== 3) {
     throw new Error(
-      "Bad SponsoringTabs children array length of " + array.length
+      "Bad SponsoringTabs children array length of " + array.length,
     );
   }
   const [all, en, fr] = array;
@@ -65,7 +65,7 @@ export function SponsoringTabsStats({ children }: { children: ReactNode }) {
           </li>
           <li>
             <b>Monthly growth</b>:{" "}
-            <span>+{newsletterStats.growthPerMonth}</span>
+            <span>+~ {newsletterStats.growthPerMonth}</span>
           </li>
           <li>
             <b>Open-rate</b>: <span>{newsletterStats.all.openRate}%</span>
@@ -105,18 +105,20 @@ export function SponsoringTabsTestimonials() {
         {AllQuotes.en.evanbacon}
 
         <Details summary={<summary>More testimonials?</summary>}>
-          {AllQuotes.en.wcandillon}
-          {AllQuotes.en.threepointone}
-          {AllQuotes.en.kzzzf}
-          {AllQuotes.en.yangshunz}
-          {AllQuotes.en.michal}
-          {AllQuotes.en.ericclemmons}
-          {AllQuotes.en.johnnyreilly}
-          {AllQuotes.en.ane_naiz}
-          {AllQuotes.en.asidorenko_}
-          {AllQuotes.en.beaussan}
-          {AllQuotes.en.elijahmanor}
-          {AllQuotes.en.fredmaiaarantes}
+          <SponsoringTabsTestimonialsTabItem>
+            {AllQuotes.en.wcandillon}
+            {AllQuotes.en.threepointone}
+            {AllQuotes.en.kzzzf}
+            {AllQuotes.en.yangshunz}
+            {AllQuotes.en.michal}
+            {AllQuotes.en.ericclemmons}
+            {AllQuotes.en.johnnyreilly}
+            {AllQuotes.en.ane_naiz}
+            {AllQuotes.en.asidorenko_}
+            {AllQuotes.en.beaussan}
+            {AllQuotes.en.elijahmanor}
+            {AllQuotes.en.fredmaiaarantes}
+          </SponsoringTabsTestimonialsTabItem>
         </Details>
       </SponsoringTabsTestimonialsTabItem>
     </SponsoringTabs>
@@ -176,7 +178,7 @@ export function SponsoringTabsFirstSponsor() {
             <b>2 issue</b>: {Prices.main.x2}€
           </li>
           <li>
-            <b>4 issues</b>: {Prices.main.x4}€ <RecommendedOffer/>
+            <b>4 issues</b>: {Prices.main.x4}€ <RecommendedOffer />
           </li>
           <li>
             <b>8 issues</b>: {Prices.main.x8}€
@@ -203,7 +205,7 @@ export function SponsoringTabsSecondSponsor() {
             <b>2 issue</b>: {Prices.second.x2}€
           </li>
           <li>
-            <b>4 issues</b>: {Prices.second.x4}€ <RecommendedOffer/>
+            <b>4 issues</b>: {Prices.second.x4}€ <RecommendedOffer />
           </li>
           <li>
             <b>8 issues</b>: {Prices.second.x8}€
