@@ -99,10 +99,11 @@ export function SponsoringTabsTestimonials() {
   return (
     <SponsoringTabs>
       <SponsoringTabsTestimonialsTabItem>
-        {AllQuotes.en.addyosmani}
+        {AllQuotes.en.theo}
         {AllQuotes.en.tkdodo}
         {AllQuotes.en.jackherrington}
         {AllQuotes.en.evanbacon}
+        {AllQuotes.en.addyosmani}
 
         <Details summary={<summary>More testimonials?</summary>}>
           <SponsoringTabsTestimonialsTabItem>

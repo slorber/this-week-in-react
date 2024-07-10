@@ -26,6 +26,17 @@ export const AllQuotes = {
         I'm constantly finding interesting things to learn in there.
       </Quote>
     ),
+    theo: (
+      <Quote
+        url="https://www.youtube.com/clip/UgkxDdNASo6xNS710ODcjMx0WW4HtTxIYbrA"
+        handle="t3dotgg"
+        github="t3dotgg"
+        name="Theo Browne"
+        job="Youtuber - Founder of ping.gg"
+      >
+        One of the few things I regularly read to keep up with the React world.
+      </Quote>
+    ),
     jackherrington: (
       <Quote
         // url={undefined} // Email testimonial
@@ -559,12 +570,13 @@ export default function HomepageQuotes() {
   const isFrench = i18n.currentLocale === "fr";
   return (
     <section className={clsx("container", styles.quotesContainer)}>
-      {AllQuotes.en.addyosmani}
+      {AllQuotes.en.theo}
       {AllQuotes.en.jackherrington}
+      {AllQuotes.en.tkdodo}
       {AllQuotes.en.evanbacon}
       {AllQuotes.en.wcandillon}
-      {AllQuotes.en.sebmarkbage}
-      {AllQuotes.en.tkdodo}
+      {AllQuotes.en.addyosmani}
+
       {isFrench && (
         <>
           {AllQuotes.fr.xavier_seignard}
@@ -583,6 +595,7 @@ export default function HomepageQuotes() {
       )}
       {AllQuotes.en.kzzzf}
       {AllQuotes.en.threepointone}
+      {AllQuotes.en.sebmarkbage}
       {AllQuotes.en.yangshunz}
       {AllQuotes.en.dmitry}
       {AllQuotes.en.michal}

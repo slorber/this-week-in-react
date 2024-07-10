@@ -7,12 +7,12 @@ import { AllQuotes } from "@site/src/pages/_homepage/quotes";
 import { useLocalPathname } from "@docusaurus/theme-common/internal";
 
 const FormTestimonials = [
-  AllQuotes.en.addyosmani,
+  AllQuotes.en.theo,
   AllQuotes.en.jackherrington,
   AllQuotes.en.evanbacon,
   AllQuotes.en.wcandillon,
   AllQuotes.en.tkdodo,
-  AllQuotes.en.threepointone,
+  AllQuotes.en.addyosmani,
 ];
 
 // not ideal fn but good enough for now to randomize testimonials
@@ -31,7 +31,7 @@ function getTestimonial(seed: string, offset: number) {
 }
 
 const Placements = ["top", "middle", "bottom", "unknown"] as const;
-type Placement = typeof Placements[number];
+type Placement = (typeof Placements)[number];
 
 function useTestimonial(placement: Placement) {
   const pathname = useLocalPathname();
