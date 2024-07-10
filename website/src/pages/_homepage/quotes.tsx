@@ -32,7 +32,7 @@ export const AllQuotes = {
         handle="t3dotgg"
         github="t3dotgg"
         name="Theo Browne"
-        job="Youtuber - Founder of ping.gg"
+        job="Founder of ping.gg - Youtuber"
       >
         One of the few things I regularly read to keep up with the React world.
       </Quote>
