@@ -1,0 +1,233 @@
+---
+slug: /192
+title: "This Week In React #192: Fog of War, react-html, Memory leaks, Suspense, security, chadcn/ui Charts, MUI, XR, Filament, Rise, Expo, React Navigation, Reanimated, Node, TypeScript, pnpm, Vitest..."
+authors: [slorber]
+date: 07-18-2024
+---
+
+Salut à tous !
+
+La newsletter est de retour après une pause bien méritée de deux semaines !
+
+Nous couvrons donc trois semaines d'actualités en un seul numéro, et il y a trop de liens à caser dans un seul e-mail, j'ai donc dû filtrer les actualités de manière plus agressive. Malgré la saison des vacances, nous avons eu beaucoup d'excellents articles sur la communauté React, et des nouvelles assez intéressantes sur React Native !
+
+Si vous aimez vraiment le côté exhaustif de cette newsletter, je vous encourage à consulter la [version en ligne](https://thisweekinreact.com/newsletter/192) cette fois-ci : elle contient exceptionnellement des sections bonus avec deux fois plus de liens que vous pourriez encore trouver intéressants. Cela vous donne également une idée de la valeur que j'apporte : le travail que vous ne voyez pas est constitué de tous les articles que j'ai rassemblés et lus/écoutés et que j'ai dû filtrer.
+
+Jetez un œil à la conf [React-Brussels](https://www.react.brussels/?utm_source=thisweekinreact) de notre partenaire (🇧🇪 Bruxelles - 18 octobre), qui nous offre une réduction de 10 % avec le code « TWIR ». Certains orateurs ont déjà été révélés !
+
+<!-- truncate -->
+
+**💡 [Consulter cette newsletter sur Twitter](https://slo.im/thread) - format visuel 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![The Category-Defining React Grid for Your Enterprise](/emails/issues/190/advertfinal.jpg)](https://1771technologies.com/graphitegrid)
+
+**[The Category-Defining React Grid for Your Enterprise](https://1771technologies.com/graphitegrid)**
+
+Data grids are complex components of web applications, but current solutions are inefficient, require a lot of maintenance, and perform poorly. [Graphite Grid](https://1771technologies.com/graphitegrid) transforms the landscape with two key features: retargetable rendering and reactive signal state.
+
+**Graphite Grid** separates grid state from view logic, allowing a single unified state model to support a variety of render targets, declaratively or imperatively. It includes a **DOM and Canvas** renderer, giving developers flexible, high-performance options 🚀.
+
+Graphite Grid is declarative and consistent, leveraging state signals to ensure seamless integration with your application. Designed with **React in mind**, it is the only JavaScript data grid built with React's state management primitives. [Try it now!](https://1771technologies.com/graphitegrid/demo)
+
+---
+
+## ⚛️ React {#react}
+
+[![Remix - Fog of War](/emails/issues/192/rr.jpg)](https://remix.run/blog/fog-of-war)
+
+**[Remix - Fog of War](https://remix.run/blog/fog-of-war)**
+
+Nous en avons déjà parlé dans notre dernier numéro, mais il y a maintenant un article de blog dédié qui explique en détail de quoi il s'agit. Une nouvelle fonctionnalité de React Router vous permet de diviser votre manifeste de route en morceaux. Cet article explique comment elle a été intégrée dans Remix 2.10 et quels sont les compromis. Il s'avère qu'un manifeste de route peut devenir assez grand, et si vous ne le divisez pas, cela peut retarder l'hydratation React de votre application parce qu'il doit être chargé en amont. Si vous avez un site Remix ou React Router de taille moyenne ou grande, je vous recommande de vérifier immédiatement la taille de votre manifeste, et de réfléchir à des moyens logiques de le diviser, parce que la réduction de taille permise par cette nouvelle fonctionnalité peut avoir un impact significatif sur les performances. Le manifeste initial de Shopify est passé de 10MB à 1.9KB ! Le manifeste du site web de Docusaurus est également de 200KB et je prévois définitivement d'implémenter cette fonctionnalité.
+
+---
+
+- 💸 [Meilisearch — Build fast, typo-tolerant search with React](https://dub.sh/0PeE0RQ)
+- 👀 [React Core PR - `ReactHTML.renderToMarkup`](https://github.com/facebook/react/pull/30105) : Un nouveau package `react-html` est introduit pour produire du HTML qui n'est pas destiné à être hydraté (comme les emails). C'est le successeur de `renderToStaticMarkup`, supportant des fonctionnalités modernes comme Suspense.
+- 👀 [React Core PR - `React.captureOwnerStack()`](http://github.com/facebook/react/pull/29923) : D'après les nombreux PR que je vois, beaucoup d'efforts sont faits dans le repo de React pour améliorer le débogage, la journalisation et la production de « stack trace de son propre composant » lisible. Cette nouvelle API publique devrait être utile aux auteurs de frameworks pour afficher une boîte de dialogue d'erreur.
+- 👀 [Next.js PR - TypeScript config file (`next.config.ts`)](https://github.com/vercel/next.js/pull/63051) : Une amélioration appréciée de DX pour avoir un support TypeScript de première classe dans les fichiers de configuration, ne se limitant plus aux commentaires JSDoc.
+- 🗓️ [React Rally](https://reactrally.com/?utm_source=thisweekinreact) - 🇺🇸 Utah - 12-13 août - Obtenez [10% de réduction](https://ti.to/react-rally/react-rally-2024/discount/TWIR) avec le code « TWIR ». Une programmation impressionnante est annoncée avec Kent C. Dodds, Cory House, Joel Hooks, Tejas Kumar.
+- 📜 [Sneaky React Memory Leaks: How the React compiler won't save you](http://schiener.io/2024-07-07/react-closures-compiler) : Ceci clôture une excellente série de 3 parties sur les fuites de mémoire dans React. Kevin a trouvé un cas où l'utilisation du compilateur React introduisait une fuite mémoire dans un code qui n'en aurait pas eu normalement. L'utilisation de bind pourrait être une solution de contournement décente. Notez que ces problèmes de mémoire ne sont pas limités à React, mais sont dus à l'utilisation de la programmation fonctionnelle et des closures en JS en général.
+- 📜 [How to Simplify Component Imports with TypeScript Namespaces](https://sergiodxa.com/tutorials/simplify-component-imports-with-typescript-namespaces) : J'avoue que je ne connaissais pas cette astuce React + TypeScript assez pragmatique que [Matt Pocock approuve également](https://x.com/mattpocockuk/status/1805606072167940167).
+- 📜 [How to protect against a security breach in React Server Components](https://www.nodejs-security.com/blog/how-to-protect-against-a-security-breach-in-react-server-components) : Cela illustre parfaitement le fait que la validation avec Zod n'est pas suffisante, et qu'il est important de vérifier le contrôle d'accès pour toute entrée concernant une action du serveur.
+- 📜 [WorkOS - Migrating to Next.js App Router with zero downtime](https://workos.com/blog/migrating-to-next-js-app-router-with-zero-downtime) : Une migration incrémentale des pages vers l'App Router n'offre pas une grande qualité de navigation. Ils ont trouvé un moyen astucieux d'exposer la même application en tant que routeur de pages et routeur d'applications, avec la possibilité de changer de routeur par le biais d'un paramètre de chaîne de requête.
+- 📜 [Enhancing The New York Times Web Performance with React 18](https://open.nytimes.com/enhancing-the-new-york-times-web-performance-with-react-18-d6f91a7c5af8) : Ils ont migré depuis React 16 et constatent de grands bénéfices tels que la diminution des re-renders et l'amélioration du score INP. Ils ont également rencontré quelques difficultés en raison des exigences plus strictes en matière d'hydratation.
+- 📜 [Learn Suspense by Building a Suspense-Enabled Library](https://www.bbss.dev/posts/react-learn-suspense/) : Crée un hook `useFetch()` activé par suspense pour démontrer de manière générale comment les bibliothèques du monde réel fonctionnent.
+- 📜 [All About That Button, ’Bout That Button](https://blog.jim-nielsen.com/2024/all-about-that-button/) : Remix encourage l'écriture de mutations en HTML déclaratif qui fonctionne « avant » le JS, et d'autres choses intéressantes d'amélioration progressive liées aux boutons.
+- 📜 [Secret knowledge to self-host Next.js](https://www.flightcontrol.dev/blog/secret-knowledge-to-self-host-nextjs) : Guide contenant tout ce dont vous avez besoin pour déployer la production de Next.js en dehors de Vercel.
+- 📜 [5 Misconceptions about React Server Components](https://www.builder.io/blog/nextjs-react-server-components)
+- 📦 [chadcn/ui Charts - Collection of beautiful chart components, built using Recharts](https://ui.shadcn.com/docs/components/chart)
+- 📦 [Material UI 6.0 beta - Pigment CSS build-time CSS-in-JS support (optional), container queries](https://next.mui.com/material-ui/migration/migrating-to-v6/)
+- 📦 [react-three/xr 6.0 - AR/VR for react-three-fiber](https://github.com/pmndrs/xr)
+- 📦 [Motion-Primitives - Beautifully designed motions components based on Framer Motion](https://motion-primitives.com/)
+- 🎥 [Jack Herrington - Warning: React 19's use Hook Can Impact App Performance](https://www.youtube.com/watch?v=t6MeFVF3V9I) : J'ai appris un détail surprenant concernant l'implémentation de React lorsqu'il rencontre pour la première fois un hook « use ».
+- 🎙️ [PodRocket - React Compiler with Sathya Gunasekaran and Joe Savona](https://podrocket.logrocket.com/react-compiler-sathya-gunasekaran-joe-savona)
+
+**Bonus :**
+
+- 👀 [Next.js PR - onRequestError in instrumentation.js](https://github.com/vercel/next.js/pull/67539)
+- 💬 [Why Vercel created Turbopack instead of using Vite](https://github.com/vercel/next.js/issues/48748#issuecomment-2199941311)
+- 📜 [The Secret to Maintainable Remix Apps: Hexagonal Architecture](https://laconicwit.com/the-secret-to-maintainable-remix-apps-hexagonal-architecture/)
+- 📜 [Can you modify React Props?](https://www.epicreact.dev/can-you-modify-react-props)
+- 📜 [Demistifying cache in Next.js](https://www.nico.fyi/blog/demistifying-cache-in-nextjs)
+- 📜 [How much code can Tanstack Query save](https://www.frontendundefined.com/posts/monthly/tanstack-query-savings/)
+- 📜 [The Experience of Deploying Next.js Apps on Cloudflare](https://davidgomes.com/the-experience-of-deploying-next-js-apps-on-cloudflare/)
+- 📜 [Preparing for React 19: a guide for WordPress 6.6 users](https://kinsta.com/blog/react-19-wordpress/)
+- 📜 [A pragmatic guide for adding React to an existing Rails application (and still use Hotwire)](https://thoughtbot.com/blog/add-react-to-an-existing-rails-app)
+- 📜 [Next.js and cache poisoning: a quest for the black hole](https://zhero-web-sec.github.io/research-and-things/nextjs-and-cache-poisoning-a-quest-for-the-black-hole)
+- 📜 [Security advice for self-hosting Next.js in Docker](https://blog.arcjet.com/security-advice-for-self-hosting-next-js-in-docker/)
+- 📜 [Nested arrays and objects in Form Data with Conform](https://www.jacobparis.com/content/conform-nested-formdata)
+- 📜 [React Form Button](https://www.robinwieruch.de/react-form-button/)
+- 📜 [Extra Arguments for Server Actions in React Forms](https://www.robinwieruch.de/react-form-server-action-extra-arguments/)
+- 📜 [Next.js createPage helper with loader pattern](https://saas-ui.dev/blog/nextjs-create-page-helper-with-loader-pattern)
+- 📜 [How Zustand Was Born](https://blog.axlight.com/posts/how-zustand-was-born/)
+- 📜 [The React useRef Hook: Not Just for DOM Elements](https://opensauced.pizza/docs/community-resources/the-react-useref-hook-not-just-for-html-elements/)
+- 📜 [Path To A Clean(er) React Architecture (Part 7) - Domain Logic](https://profy.dev/article/react-architecture-domain-logic)
+- 📦 [Headless UI React 2.1 - Simplified transition API and improved multi-dialog support](https://tailwindcss.com/blog/2024-06-21-headless-ui-v2-1)
+- 📦 [Storybook 8.2 - beforeAll test hook, enhanced play function, portable stories, new onboarding](https://github.com/storybookjs/storybook/releases/tag/v8.2.0)
+- 📦 [React Flow 12.0 - SSR support, Computing flows, dark mode](https://www.xyflow.com/blog/react-flow-12-release)
+- 📦 [Hono 4.5 - React 19 Compatible APIs](https://github.com/honojs/hono/releases/tag/v4.5.0)
+- 🎥 [Dave Gray - Toast Notification Patterns with Next.js Server Actions and next-safe-action](https://www.youtube.com/watch?v=A_061Vqh6Bc)
+- 🎥 [Lazar Nikolov - Implementing Clean Architecture Patterns in Next.js](https://www.youtube.com/playlist?list=PLHQY5AFuyYYW8IJK16BxyTLZqTHxwmDww)
+- 🎥 [Jolly Coding - NextJS 'use server' Trap (Accidentally Leaking Data)](https://www.youtube.com/watch?v=yBEHKoaoZpY)
+- 🎥 [Olivier Larose - GSAP vs Framer Motion for React](https://www.youtube.com/watch?v=_1QAJaC6Xwc)
+- 🎙️ [This Month in React - React 19 delayed (drama-ish), why no JS Laravel, TS 5.5…](https://podcasters.spotify.com/pod/show/reactiflux/episodes/TMiR-2024-06-React-19-delayed-drama-ish--why-no-JS-Laravel--TS-5-5-and-more-e2lee77)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![WorkOS: Modern Identity Platform for B2B SaaS](/emails/issues/189/WorkOS.jpg)](https://workos.com/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=q22024)
+
+**[WorkOS: Modern Identity Platform for B2B SaaS](https://workos.com/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=q22024)**
+
+With WorkOS you can start selling to enterprises with just a few lines of code.
+
+🔐 WorkOS supports a complete User Management solution along with **SSO, SCIM, RBAC, & FGA**.
+
+🏗️ The APIs are **flexible, easy-to-use, and modular**. Pick and choose what you need and integrate in minutes.
+
+🎨 Design and user experience are everything. From the quality of our documentation to how your users onboard, we **remove all the unnecessary complexity for developers**.
+
+✨ User Management is **free up to 1 million MAUs** and includes bot protection, impersonation, MFA, & more.
+
+🤝 WorkOS is trusted by hundreds of leading startups like **Perplexity**, **Vercel**, & **Webflow**.
+
+Future-proof your auth stack with [WorkOS](https://workos.com/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=q22024) 🚀
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![react-native-filament](/emails/issues/192/filament.jpg)](https://github.com/margelo/react-native-filament)
+
+**[react-native-filament](https://github.com/margelo/react-native-filament)**
+
+L'équipe Margelo a publié un nouveau moteur de rendu 3D temps réel basé sur la physique pour React Native, basé sur Google Filament. Il est accéléré par le GPU grâce à Metal/Vulkan, rendu sur un thread séparé, fonctionne avec Reanimated, et supporte déjà la Nouvelle Architecture et Expo. Le readme explique bien en quoi il diffère des solutions 3D existantes basées sur expo-gl (expo-three et react-three-fiber RN). Avec Skia et Filament, l'avenir semble prometteur pour les capacités 2D/3D de React Native.
+
+---
+
+[![Rise Tools](/emails/issues/192/rise.jpg)](https://rise.tools/)
+
+**[Rise Tools](https://rise.tools/)**
+
+Une toute nouvelle solution pour créer des interfaces utilisateur pilotées par le serveur dans React Native, qui vous permet de déployer de nouvelles vues sur le serveur sans reconstruire/resoumettre votre application (ou même envoyer une mise à jour OTA). Cette solution est philosophiquement très proche du modèle React Server Components, mais avec des compromis légèrement différents : au prix d'un câblage manuel supplémentaire, cette nouvelle solution est agnostique en termes de framework et de langage grâce à un protocole qui définit la façon dont les vues sont sérialisées. Il est encore tôt, mais cela semble prometteur.
+
+---
+
+- 💸 [RevenueCat Paywalls - Easy remotely configurable paywalls for React Native apps](https://www.revenuecat.com/docs/tools/paywalls?utm_medium=sponsored&utm_source=thisWeekInReact&utm_campaign=general_sponsorship&utm_content=revenuecat-paywalls)
+- 📣 [React Native 0.76 - Android minSdk will bump to Android 7.0 (API 24)](https://github.com/react-native-community/discussions-and-proposals/discussions/802)
+- 👀 [More-reacty-native-demo](https://github.com/EvanBacon/more-reacty-native-demo) : Evan Bacon expérimente l'exposition des vues natives en tant qu'éléments JSX intrinsèques en minuscules qui peuvent être utilisés directement sans les importer, comme les divs sur le web.
+- 📖 [Reanimated Cookbook - Real-life examples to help you learn](https://docs.swmansion.com/react-native-reanimated/examples/)
+- 🗓️ [The Geek Conf](https://www.thegeekconf.com/?utm_source=thisweekinreact) - 🇩🇪 Berlin - 18 & 25 juillet - 10% de réduction avec le code « TWIR ». Derniers billets pour les événements à distance de demain !
+- 📜 [Expo - Increase iteration speed with PR previews](https://expo.dev/blog/increase-iteration-speed-with-pr-previews) : Une nouvelle fonctionnalité intègre EAS Updates avec GitHub pour poster automatiquement les mises à jour OTA en tant que statut de commit PR. Un excellent DX, similaire à ce que Vercel/Netlify offre sur le web, mais pour le mobile ! Mon seul souhait est qu'ils affichent un QRCode dans un commentaire PR épinglé.
+- 📜 [Use a framework to build React Native apps](https://reactnative.dev/blog/2024/06/25/use-a-framework-to-build-react-native-apps) : L'équipe React Native approuve enfin officiellement l'utilisation d'Expo ! Si vous n'utilisez pas de framework, vous êtes probablement en train d'en construire un.
+- 📜 [From Web to Native with React](https://expo.dev/blog/from-web-to-native-with-react) : Kadi d'Expo a créé une excellente ressource pour aider les développeurs web à apprendre React Native, y compris une comparaison entre les éléments intrinsèques de React DOM et React Native, comment le modèle flexbox est un peu différent, les erreurs à éviter, les nouvelles choses natives à apprendre, et globalement une grande vue d'ensemble de tout ce qu'il faut savoir sur React Native ou Expo.
+- 📜 [Microsoft - Building React Native for Windows Apps from a Mac](https://devblogs.microsoft.com/react-native/2024-07-18-running-rnw-from-a-mac-md/) : Il n'est pas nécessaire de posséder un PC Windows, et vous pouvez utiliser une VM Windows via Microsoft Dev Box ou Parallels.
+- 📜 [App clip with React Native and New Arch (and Swift)](<https://ospfranco.com/app-clip-with-react-native-and-new-arch-(and-swift)/>)
+- 📜 [Bringing native AI to your mobile apps with ExecuTorch - Part 2, Android](https://blog.swmansion.com/bringing-native-ai-to-your-mobile-apps-with-executorch-part-ii-android-29431b6b9f7f)
+- 📜 [Introduction to the React Native OMH Maps Library](https://www.callstack.com/blog/introduction-to-the-react-native-omh-maps-library)
+- 📦 [React Navigation 7.0 RC](https://reactnavigation.org/blog/2024/06/27/react-navigation-7.0-rc/) : La version finale 7.0 arrive, et je suis particulièrement excité par l'API Statique et l'introduction d'une API de préchargement d'écran. C'est un premier pas vers de grandes améliorations de performances perçues, qui pourraient plus tard tirer parti des fonctionnalités Concurrente de React comme notamment `<Activity>`.
+- 📦 [FlashList 1.7 - New Architecture support!](https://github.com/Shopify/flash-list/releases/tag/v1.7.0)
+- 📦 [Yoga 3.1 - gap in %, layout conformance and regression fixes](https://www.yogalayout.dev/blog/announcing-yoga-3.1)
+- 📦 [Reanimated 3.13 - New Architecture, Tabs Shared Element Transitions](https://github.com/software-mansion/react-native-reanimated/releases/tag/3.13.0)
+- 📦 [React Native Primitives - Unstyled universal components with a focus on accessibility](https://github.com/roninoss/rn-primitives)
+
+**Bonus :**
+
+- 🐦 [React Native running on Meta Quest demo](https://x.com/swmansion/status/1798736357206179920)
+- 🐦 [Expo running on Daylight DC-1 devics demo](https://x.com/notbrent/status/1811134140265173178)
+- 👀 [Flutter-Brownfield - a proof-of-concept for adding React Native to an existing Flutter app](https://github.com/callstack/flutter-brownfield)
+- 📜 [Rebuilding a 10 year old iOS app with Expo](https://expo.dev/blog/rebuilding-a-10-year-old-ios-app-with-expo)
+- 📜 [Building an Image Slider in React Native using Skia and Reanimated](https://www.tweag.io/blog/2024-07-04-image-transition-react-native-skia/)
+- 📜 [Publishing dual module ESM libraries](https://satya164.page/posts/publishing-dual-module-esm-libraries)
+- 📜 [How To Implement Local Storage In Your Expo App?](https://scientyficworld.org/how-to-implement-local-storage-in-expo-app/)
+- 📜 [Empowering Users: Developing Accessible Mobile Apps using React Native](https://commerce.nearform.com/blog/2024/empowering-users-developing-accessible-mobile-apps-using-react-native)
+- 🔗 [Awesome-react-native-ui - list of react native animations created by the community](https://mrpmohiburrahman.github.io/awesome-react-native-ui/)
+- 📦 [React Native 0.75 RC.5](https://github.com/facebook/react-native/releases/tag/v0.75.0-rc.5)
+- 🎙️ [Rocket Ship 44 - Yoga, Layouting and New Architecture with Delphine Bugner](https://podcast.galaxies.dev/episodes/044-yoga-layouting-and-new-architecture-with-delphine-bugner)
+- 🎙️ [Rocket Ship 45 - React Native Apps for Seafarers with Gabriel Dierks](https://podcast.galaxies.dev/episodes/045-react-native-apps-for-seafarers-with-gabriel-dierks)
+- 🎙️ [RNR 301 - RNR Explains: Using Native Driver for Animated](https://www.reactnativeradio.com/episodes/rnr-301-rnr-explains-using-native-driver-for-animated)
+- 🎙️ [RNR 302 - Landing a React Native Job with Taylor Desseyn](https://www.reactnativeradio.com/episodes/rnr-302-landing-a-react-native-job-with-taylor-desseyn)
+- 🎥 [Simon Grimm - From React to React Native in 12 Minutes](https://www.youtube.com/watch?v=6UB3gw3SKfY)
+- 🎥 [Simon Grimm - React Native vs Flutter - Which should you use?](https://www.youtube.com/watch?v=AiG8-wHidiA)
+
+---
+
+## 🇫🇷 En français {#fr}
+
+- 🇫🇷 [ReactHebdo.fr - Dernières éditions traduites en français](https://thisweekinreact.com/fr/newsletter)
+- 📜 [Qu'est-ce qu'un layout en React ?​](https://www.formationnextjs.fr/ressources/layout-en-react)
+- 📜 [Comparatif des différentes libraries de gestion d'état avec React & Next.js​](https://www.hexa-web.fr/blog/state-management-libraries-with-react-next-js)
+- 📜 [Comment créer une API avec plusieurs actions dans Remix ?​](https://algomax.fr/blog/comment-creer-une-api-avec-plusieurs-actions-dans-remix)
+- 🎥 [Cours React sur le State Management (Zustand et useContext API)](https://www.youtube.com/watch?v=o3uxODN1Y-g)​
+- 🎥 [Shadcn/UI vient de sortir les Charts et c'est Game Changer !​](https://www.youtube.com/watch?v=XrtuyqkSGs0)
+- 🎙️ [Double Slash - Les news web dev pour juillet 2024](https://double-slash.dev/podcasts/news-jul-24/)
+
+---
+
+## 🔀 Autre {#other}
+
+- 👀 [TypeScript 5.6 Iteration Plan](https://github.com/microsoft/TypeScript/issues/59250)
+- 📜 [Ecma International approves ECMAScript 2024 - What’s new?](https://2ality.com/2024/06/ecmascript-2024.html)
+- 📜 [Speeding up the JavaScript ecosystem - Isolated Declarations](https://marvinh.dev/blog/speeding-up-javascript-ecosystem-part-10/)
+- 📦 [Node 22.4 - experimental Web Storage support (localStorage/sessionStorage)](https://nodejs.org/en/blog/release/v22.4.0)
+- 📦 [Node 22.5 - experimental node:sqlite module](https://nodejs.org/en/blog/release/v22.5.0)
+- 📦 [pnpm 9.5 - New “catalogs” feature](https://pnpm.io/catalogs)
+- 📦 [Vitest 2.0 - better Browser Mode](https://github.com/vitest-dev/vitest/releases/tag/v2.0.0)
+
+**Bonus :**
+
+- 🔐 [Polyfill.io supply chain attack hits 100K+ sites](https://sansec.io/research/polyfill-supply-chain-attack)
+- 📣 [Astro + Netlify - Official Deployment Partners](https://astro.build/blog/netlify-official-deployment-partner/)
+- 📜 [How To Hack Your Google Lighthouse Scores In 2024](https://blog.sentry.io/how-to-hack-your-google-lighthouse-scores-in-2024/)
+- 📜 [It’s about time I tried to explain what progressive enhancement actually is](https://piccalil.li/blog/its-about-time-i-tried-to-explain-what-progressive-enhancement-actually-is/)
+- 📜 [What's coming next for ESLint - Language-agnostic, core rewrite](https://eslint.org/blog/2024/07/whats-coming-next-for-eslint/)
+- 📜 [Is TypeScript Just A Linter?](https://www.totaltypescript.com/is-typescript-just-a-linter)
+- 📜 [A guide to reading and writing Node.js streams](https://blog.platformatic.dev/a-guide-to-reading-and-writing-nodejs-streams)
+- 📜 [TypeScript 5.5 - A Blockbuster Release](https://effectivetypescript.com/2024/07/02/ts-55/)
+- 📦 [StackBlitz pkg.pr.new - Continuous (Preview) Releases for your libraries](https://github.com/stackblitz-labs/pkg.pr.new)
+- 📦 [fetch-super-headers - A drop-in replacement for JavaScript `Headers` with type-safe access](https://github.com/mjackson/fetch-super-headers)
+- 📦 [Deno 1.45 - Workspace and Monorepo Support](https://deno.com/blog/v1.45)
+- 📦 [Rspack 1.0 Alpha - Smaller outputs, module concat, Lightning CSS, lean core](https://www.rspack.dev/blog/announcing-1-0-alpha)
+- 📦 [Mako - New fast bundler based on Rust](https://makojs.dev/blog/mako-open-sourced)
+- 📦 [Facebook memlab - Find JavaScript memory leaks, analyzing heap snapshots](https://github.com/facebook/memlab)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/192/meme.jpg)](https://x.com/flexbox_/status/1806786055057674337)
+
+A plus 👋
