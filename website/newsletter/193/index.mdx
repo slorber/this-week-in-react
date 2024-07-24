@@ -1,14 +1,20 @@
 ---
 slug: /193
-title: "This Week In React #193: ..."
-authors: [slorber]
+title: "This Week In React #193: State of React, Server Functions, next/form, useId, Astro, Meteor, Gluestack, React-Aria, Turbopack, Airbnb, Apollo, DRY, IDX, Bootsplash, Flash Calendar, CSS, ES, Poku..."
+authors: [slorber, bndkt]
 date: 07-24-2024
 unlisted: true
 ---
 
 Hi everyone!
 
-<Todo />
+This week the State of React survey results are finally out, and they are full of interesting insights.
+
+I found some great articles on abstractions in React, as well as feedback and case studies from various companies.
+
+Astro has released Server Islands, and it looks like a pretty simple but compelling solution to rival with Next.js Partial Prerendering. There's also the Renaissance of Meteor to look forward to, React Aria releases, the new Gluestack-UI v2 for Universal React Native.
+
+Do you like TypeScript and web dev tooling in general? Check out [Squiggle Conf](https://2024.squiggleconf.com/?utm_source=thisweekinreact) (🇺🇸 Boston - 03 & 04 October), offering us a 10% discount with code “TWIR”. Great speakers have already been announced!
 
 <!-- truncate -->
 
@@ -55,8 +61,9 @@ The next State of React 2024 survey is [planned for September 2024](https://dev.
 ---
 
 - 💸 [Reactile – a new approach to React-based web apps. Create your own views. Let it handle your windows and widgets in a single browser tab](https://www.reactile.net/?utm_source=reactnewsletter)
-- 👀 [Next.js PR - next/form](https://github.com/vercel/next.js/pull/68102): A new `<Form>` component for Next.js is being worked on. I don’t know yet what it will do.
-- 📜 [Data Fetching with Server Actions in Next.js](https://www.robinwieruch.de/next-server-actions-fetch-data/): You can use Server Actions to fetch client data using React-Query. There are limitations to consider though: they use POST requests and run sequentially.
+- 👀 [Next.js PR - next/form](https://github.com/vercel/next.js/pull/68102)
+- 🗓️ [React-Brussels](https://www.react.brussels/?utm_source=thisweekinreact) - 🇧🇪 Brussels - 18 October - Some speakers have already been revealed ! Check out now, and apply 10% discount with code “TWIR”.
+- 📜 [Data Fetching with Server Actions in Next.js](https://www.robinwieruch.de/next-server-actions-fetch-data/): You can use Server Actions to fetch client data using React-Query. There are limitations to consider though: they use POST requests and run sequentially. FYI a "use server" function called outside a transition is not a Server Action, but a [Server Function](https://x.com/sebastienlorber/status/1816096442492051672).
 - 📜 [Use useId() Instead Of Hand-Making IDs](https://reacttraining.com/blog/use-useid-instead-of-hand-making-ids): IDs are useful for accessibility, but you’d rather avoid creating them manually if you want to mount a component twice, or have good support for React hydration. To access DOM elements, `useRef` is enough.
 - 📜 [Do not pass DTOs to UI components](https://darios.blog/posts/do-not-pass-dtos-to-ui-components): Explain why you’d rather design component props shapes independently, instead of blindly using your backend payloads as props.
 - 📜 [DRY – the common source of bad abstractions](https://swizec.com/blog/dry-the-common-source-of-bad-abstractions/): Greatly illustrates how React devs could end up creating the wrong abstractions. React UI libraries learned over the years to not over-abstract and give you great flexibility through composition.
@@ -73,7 +80,6 @@ The next State of React 2024 survey is [planned for September 2024](https://dev.
 - 📦 [React Aria July 22 release - React 19 ready, virtualization improvements, toast focus management improvements, Color Picker RC](https://react-spectrum.adobe.com/releases/2024-07-22.html)
 - 📦 [Apollo Client 3.11 - Subscription improvements, React 19 + compiler support, new testing library, new Devtools options](https://www.apollographql.com/blog/whats-new-in-apollo-client-3-11)
 - 📦 [eslint-plugin-use-server - Disallows top level "use server"](https://github.com/c-ehrlich/eslint-plugin-use-server)
-- 📦 [Simple Stack - A simple library to query the DOM from your Astro components](https://simple-stack.dev/query)
 - 🧩️ [Design GUI - Browser Extension for managing colors in CSS Variables - Support for shadcn/ui](https://www.designgui.io/)
 - 🎥 [React Summit 2024 - All the talks are online](https://portal.gitnation.org/events/react-summit-2024)
 - 🎥 [dotJS 2024 - YouTube playlist with talks from Malte Ubl, Mark Dalgleish and more](https://www.youtube.com/watch?v=9tx-dE8oBTY&list=PLMW8Xq7bXrG7fOUOLJQw9I7ygJCbue9zO)
@@ -100,21 +106,17 @@ Here's a [tutorial that shows you how to set up **AuthKit with any JS framework*
 - ✨ Your users, your data. The only requirement for a valid user object is an email address.
 - ☄️ Features like roles and permissions, MFA, user impersonation, and bot protection come standard. Don't pay a cent until you hit 1 million MAUs.
 
-Not everyone uses Next.js — but it sure feels like it’s the only JavaScript framework that gets first-class integrations. AuthKit, powered by WorkOS, is an open source authentication UI built with Radix components.
-
-Here's a [tutorial that shows you how to set up **AuthKit with any JS framework**](https://www.youtube.com/watch?v=237vaK_nYRg) in 30 minutes.
-
 ---
 
 ## 📱 React-Native {#react-native}
 
 This section is authored by [Benedikt](https://twitter.com/bndkt).
 
-[![gluestack-ui v2](/emails/issues/193/gluestack.jpg)](https://gluestack.io/)
+[![Gluestack-UI v2](/emails/issues/193/gluestack.jpg)](https://gluestack.io/)
 
-📦 **[gluestack-ui v2 - Copy paste components for Expo/Next with RSC support, based on Tailwid/NativeWind](https://gluestack.io/)**
+**[Gluestack-UI v2 - Universal copy/paste components for Expo/Next](https://gluestack.io/)**
 
-gluestack offers universal components and patterns for React, Next.js & React Native to copy & paste. The recently released v2 is a major update that focuses on performance optimization, reduced dependencies, and RSC compatibility. It’s based on Tailwind CSS (for web) and NativeWind (for native). Due to its copy & paste approach, upgrading is not as easy as bumping a dependency, but they have a straightforward tutorial and a code mod to help with the upgrade. To give you a glimpse of v2, they even released a little 🐦 [trailer on X](https://x.com/gluestack/status/1813895494005112859).
+Gluestack-UI offers universal components and patterns for React, Next.js & React Native to copy & paste. The recently released v2 is a major update that focuses on performance optimization, reduced dependencies, and RSC compatibility. It’s based on Tailwind CSS (for web) and NativeWind (for native). Due to its copy & paste approach, upgrading is not as easy as bumping a dependency, but they have a straightforward tutorial and a code mod to help with the upgrade. To give you a glimpse of v2, they even released a little 🐦 [trailer on X](https://x.com/gluestack/status/1813895494005112859).
 
 ---
 
