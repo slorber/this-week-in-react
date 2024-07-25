@@ -1,0 +1,170 @@
+---
+slug: /193
+title: "This Week In React #193: State of React, Server Functions, next/form, useId, Astro, Meteor, Gluestack, React-Aria, Turbopack, Airbnb, Apollo, DRY, IDX, Bootsplash, Flash Calendar, CSS, ES, Poku..."
+authors: [slorber, bndkt]
+date: 07-24-2024
+---
+
+Salut à tous !
+
+Cette semaine, les résultats de l'enquête State of React sont enfin publiés, et ils sont riches de renseignements utiles.
+
+J'y ai trouvé d'excellents articles sur les abstractions en React, ainsi que des retours d'expérience et des études de cas de diverses entreprises React et React Native.
+
+Astro a sorti Server Islands, et cela semble être une solution assez simple mais convaincante pour rivaliser avec Next.js Partial Prerendering, sur lequel Vercel a également publié un excellent article. Il y a aussi la Renaissance de Meteor à regarder, les sorties de React Aria, et une v2 de Gluestack-UI pour les devs Universal React Native.
+
+Vous aimez TypeScript et les outils de développement web en général ? Rendez-vous à la [Squiggle Conf](https://2024.squiggleconf.com/?utm_source=thisweekinreact) (🇺🇸 Boston - 03 & 04 octobre), qui nous offre une réduction de 10% avec le code « TWIR ». D'excellents orateurs ont déjà été annoncés !
+
+<!-- truncate -->
+
+**💡 [Consulter cette newsletter sur Twitter](https://slo.im/thread) - format visuel 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![The Category-Defining React Grid for Your Enterprise](/emails/issues/190/advertfinal.jpg)](https://1771technologies.com/graphitegrid)
+
+**[The Category-Defining React Grid for Your Enterprise](https://1771technologies.com/graphitegrid)**
+
+Data grids are complex components of web applications, but current solutions are inefficient, require a lot of maintenance, and perform poorly. [Graphite Grid](https://1771technologies.com/graphitegrid) transforms the landscape with two key features: retargetable rendering and reactive signal state.
+
+**Graphite Grid** separates grid state from view logic, allowing a single unified state model to support a variety of render targets, declaratively or imperatively. It includes a **DOM and Canvas** renderer, giving developers flexible, high-performance options 🚀.
+
+Graphite Grid is declarative and consistent, leveraging state signals to ensure seamless integration with your application. Designed with **React in mind**, it is the only JavaScript data grid built with React's state management primitives. [Try it now!](https://1771technologies.com/graphitegrid/demo)
+
+---
+
+## ⚛️ React {#react}
+
+[![State of React 2023 - Survey Results](/emails/issues/193/stateofreact.jpg)](https://2023.stateofreact.com/en-US)
+
+**[State of React 2023 - Survey Results](https://2023.stateofreact.com/)**
+
+Les résultats de la toute première enquête State of React sont enfin en ligne. Les données ont été collectées en novembre 2023, et il a fallu un certain temps pour que les résultats soient publiés. C'est un excellent outil pour analyser les tendances de notre cher écosystème de frameworks. Et il sera encore meilleur l'année prochaine pour voir comment ces tendances évoluent. Sans plus attendre, voici mes sélections :
+
+- [L'adoption des hooks a été largement couronnée de succès](https://x.com/JoshWComeau/status/1814292932461306239)
+- Signaux très positifs pour React Query, Zustand, Radix UI, React Aria, shadcn/ui, tRPC, Zod
+- Il n'y a pas de gagnant clair pour le framework React. Next.js est le plus populaire mais son taux de rétention est légèrement inférieur à celui d'Astro et de Remix.
+- L'utilisation du moteur de rendu React montre que React n'est pas seulement React-DOM. Plus de 30 % utilisent React Native et 9 % React-Three-Fiber.
+- Seulement 7% ont déjà utilisé [mon hook préféré et sous-estimé useSyncExternalStore](https://thisweekinreact.com/articles/useSyncExternalStore-the-underrated-react-api)
+- This Week In React est la 5ème ressource la plus populaire dans la catégorie "Blogs & Magazines" (❤️️ merci !)
+
+La prochaine enquête State of React 2024 est [prévue pour septembre 2024](https://dev.to/sachagreif/planning-out-the-2024-state-of-surveys-4lb9) et c'est le moment de participer à la conception de l'enquête.
+
+---
+
+- 💸 [Reactile – a new approach to React-based web apps. Create your own views. Let it handle your windows and widgets in a single browser tab](https://www.reactile.net/?utm_source=reactnewsletter)
+- 👀 [Next.js PR - next/form](https://github.com/vercel/next.js/pull/68102)
+- 🗓️ [React-Brussels](https://www.react.brussels/?utm_source=thisweekinreact) - 🇧🇪 Bruxelles - 18 octobre - Certains orateurs ont déjà été révélés ! Réservez dès maintenant et bénéficiez d'une réduction de 10% avec le code « TWIR ».
+- 📜 [Data Fetching with Server Actions in Next.js](https://www.robinwieruch.de/next-server-actions-fetch-data/) : Vous pouvez utiliser les Server Actions pour récupérer les données du client à l'aide de React-Query. Il y a cependant des limitations à prendre en compte : elles utilisent des requêtes POST et s'exécutent de manière séquentielle. Pour information, une fonction « use server » appelée en dehors d'une transition n'est pas une Server Action, mais une [Server Function](https://x.com/sebastienlorber/status/1816096442492051672).
+- 📜 [Use useId() Instead Of Hand-Making IDs](https://reacttraining.com/blog/use-useid-instead-of-hand-making-ids) : Les ID sont utiles pour l'accessibilité, mais vous préféreriez éviter de les créer manuellement si vous voulez monter un composant deux fois, ou si vous voulez avoir un bon support pour l'hydratation de React. Pour accéder aux éléments du DOM, `useRef` est suffisant.
+- 📜 [Do not pass DTOs to UI components](https://darios.blog/posts/do-not-pass-dtos-to-ui-components) : Pourquoi est-il préférable de concevoir des structures de props de composants de manière indépendante, plutôt que d'utiliser aveuglément les données utiles de votre backend en tant que props ?
+- 📜 [DRY – the common source of bad abstractions](https://swizec.com/blog/dry-the-common-source-of-bad-abstractions/) : Cela illustre parfaitement comment les développeurs React peuvent finir par créer les mauvaises abstractions. Les bibliothèques React UI ont appris au fil des ans à ne pas trop abstraire et à vous donner une grande flexibilité grâce à la composition.
+- 📜 [Turbopack updates: Moving homes](https://vercel.com/blog/turbopack-moving-homes) : Le bundler Turbopack est déplacé vers le dépôt Next.js. La co-localisation aidera l'équipe à itérer plus rapidement sur les builds de production (actuellement prêts à 92% !). Turbopack restera un bundler autonome agnostique au framework : une fois prêt, il sera replacé dans un dépôt séparé.
+- 📜 [Vercel - How to choose the best rendering strategy for your app](https://vercel.com/blog/how-to-choose-the-best-rendering-strategy-for-your-app) : Excellente vue d'ensemble de toutes les stratégies de rendu (SSG, SSR, ISR, CSR), de leurs avantages et des meilleures pratiques. L'utilisation du pré-rendu partiel s'appuie sur les stratégies ci-dessus. L'utilisation de Next.js avec les Server Components et les Suspense boundaries permet à votre application d'être à l'épreuve du temps en sélectionnant la meilleure stratégie de rendu pour chaque composant.
+- 📜 [How Airbnb Smoothly Upgrades React](https://medium.com/airbnb-engineering/how-airbnb-smoothly-upgrades-react-b1d772a565fd) : Airbnb a récemment mis à jour ses frontends de React 16 à React 18. En utilisant un « système de mise à niveau React », s'appuyant sur un code d'infrastructure partagé et une stratégie de migration et de déploiement incrémentale.
+- 📜 [Fine-grained Markdown](https://v1.codehike.org/blog/fine-grained-markdown) : Article interactif du créateur de Code Hike (basé sur MDX) montrant comment nous pouvons décorer Markdown et l'étendre de manière sûre pour en faire un média plus riche.
+- 📜 [Data fetching in useEffect vs Remix loader](https://www.jacobparis.com/content/use-effect-fetching)
+- 📜 [Integrating Next.js with New Relic](https://www.thisdot.co/blog/integrating-next-js-with-new-relic)
+- 📜 [Clean(er) React Architecture (Part 8) - How Does React-Query Fit Into The Picture?](https://profy.dev/article/react-architecture-tanstack-query)
+- 📜 [Zoom - Why we chose T3 stack to build our reference apps on Web](https://developers.zoom.us/blog/why-we-chose-to-build-with-the-t3-stack/)
+- 📦 [Astro 4.12 - Server Islands](https://astro.build/blog/astro-4120/) : Astro a sorti une nouvelle fonctionnalité Server Islands qui rend un placeholder sur le serveur, et le remplace indépendamment avec du contenu dynamique par la suite, vous permettant de rendre le reste de votre site de manière statique. Il s'agit d'une approche alternative au modèle Next.js, qui prévoit de résoudre ce problème avec React Server Components + Suspense + Partial Pre-Rendering. Leur démo est un fork rebaptisé de celle de Next.js PPR et la surpasse !
+- 📦 [Meteor.js 3.0](https://forums.meteor.com/t/its-official-meteor-3-0-official-release-is-out/61860) : Meteor vient de sortir une nouvelle version majeure qui abandonne les anciennes coroutines Fibers au profit d'async/await, passe à Node 20 et intègre Express. Cette nouvelle version prétend être la [Renaissance de Meteor.js](http://meteor.js), avec des événements de lancement à partir du 29 juillet. Je n'ai jamais utilisé Meteor, et je suis curieux de savoir quelle place il prendra aux côtés des frameworks React modernes que nous avons aujourd'hui.
+- 📦 [React Aria July 22 release - React 19 ready, virtualization improvements, toast focus management improvements, Color Picker RC](https://react-spectrum.adobe.com/releases/2024-07-22.html)
+- 📦 [Apollo Client 3.11 - Subscription improvements, React 19 + compiler support, new testing library, new Devtools options](https://www.apollographql.com/blog/whats-new-in-apollo-client-3-11)
+- 📦 [eslint-plugin-use-server - Disallows top level "use server"](https://github.com/c-ehrlich/eslint-plugin-use-server)
+- 🧩️ [Design GUI - Browser Extension for managing colors in CSS Variables - Support for shadcn/ui](https://www.designgui.io/)
+- 🎥 [React Summit 2024 - All the talks are online](https://portal.gitnation.org/events/react-summit-2024)
+- 🎥 [dotJS 2024 - YouTube playlist with talks from Malte Ubl, Mark Dalgleish and more](https://www.youtube.com/watch?v=9tx-dE8oBTY&list=PLMW8Xq7bXrG7fOUOLJQw9I7ygJCbue9zO)
+- 🎥 [Sam Selikoff - How to build a Recursive React Component](https://www.youtube.com/watch?v=6UU2Ey4KZr8)
+- 🎥 [Web Dev Simplified - How To Debug React Apps Like A Senior Developer](https://www.youtube.com/watch?v=l8knG0BPr-o)
+- 🎙️ [Why you should use Redux in 2024 with Mark Erikson](https://podrocket.logrocket.com/redux-2024-mark-erikson)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Use AuthKit with any framework, not just Next.js](/emails/issues/193/authkit.jpg)](https://www.youtube.com/watch?v=237vaK_nYRg)
+
+**[Use AuthKit with any framework, not just Next.js](https://www.youtube.com/watch?v=237vaK_nYRg)**
+
+Not everyone uses Next.js — but it sure feels like it’s the only JavaScript framework that gets first-class integrations. AuthKit, powered by WorkOS, is an open source authentication UI built with Radix components.
+
+Here's a [tutorial that shows you how to set up **AuthKit with any JS framework**](https://www.youtube.com/watch?v=237vaK_nYRg) in 30 minutes.
+
+- 🏗️ AuthKit is flexible — offering both high-level integrations and low-level SDKs.
+- 🔐 It can be used with WorkOS User Management, which is **free up to 1 million MAUs**.
+- ✨ Your users, your data. The only requirement for a valid user object is an email address.
+- ☄️ Features like roles and permissions, MFA, user impersonation, and bot protection come standard. Don't pay a cent until you hit 1 million MAUs.
+
+---
+
+## 📱 React-Native {#react-native}
+
+Cette section est rédigée par [Benedikt](https://twitter.com/bndkt).
+
+[![Gluestack-UI v2](/emails/issues/193/gluestack.jpg)](https://gluestack.io/)
+
+**[Gluestack-UI v2 - Universal copy/paste components for Expo/Next](https://gluestack.io/)**
+
+Gluestack-UI offre des composants et des patterns universels pour React, Next.js & React Native à copier et coller. La v2 récemment publiée est une mise à jour majeure qui se concentre sur l'optimisation des performances, la réduction des dépendances et la compatibilité avec RSC. Elle est basée sur Tailwind CSS (pour le web) et NativeWind (pour le natif). En raison de son approche copier-coller, la mise à jour n'est pas aussi simple que de changer une dépendance, mais il y a un tutoriel simple et un code mod pour aider à la mise à jour. Pour vous donner un aperçu de la v2, ils ont même publié une petite 🐦 [bande-annonce sur X](https://x.com/gluestack/status/1813895494005112859).
+
+---
+
+- 💸 [Sentry - Application monitoring tools with support for React Native, Expo, Hermes and every other technology (except some of them). Considered "not bad" by 4 million developers. Get Sentry Free](https://sentry.io/welcome/?utm_medium=email&utm_source=THIS_WEEK_IN_REACT&utm_campaign=TWIR_july_2024&utm_content=rn-quick-link)
+- 🐦 [New experimental expo-doctor feature validates project dependencies against reactnative.directory metadata](https://x.com/notbrent/status/1814016564452315374) : Vous indique que vous utilisez des bibliothèques qui ne sont plus maintenues ou qui ne supportent pas la New Arch.
+- 🐦 [New updates from Expo documentation](https://x.com/amanhimself/status/1815460518515118266) : SSO, alias Metro bundler et expo-drizzle-studio-plugin
+- 🐦 [Google IDX (web-based IDE) now supports React Native / Expo](https://x.com/kirupa/status/1813690012720120225)
+- 🐦 [Learn how to perform link redirection & utilization with 3rd party deep-links with +native-intent](https://x.com/expo/status/1814274913030520874)
+- 📜 [Build fast, flexible calendars with Flash Calendar](https://expo.dev/blog/build-fast-flexible-calendars-in-react-native-with-flash-calendar) : Construire des sélecteurs de date est difficile, les rendre performants l'est encore plus - Flash Calendar résout ce problème et est tout à fait personnalisable.
+- 📜 [Building a multi-platform on-call mobile app](https://incident.io/hubs/building-on-call/building-a-multi-platform-on-call-mobile-app) : Étude de cas de incident.io
+- 📜 [Driving Innovation: MyWheels' Journey from RNC CLI to Expo](https://expo.dev/blog/from-rnc-cli-to-expo)
+- 📦 [Bootsplash 6.0 - Now with Expo Config Plugin](https://github.com/zoontek/react-native-bootsplash/releases/tag/6.0.0)
+- 📦 [React Native 0.75 rc.6](https://github.com/facebook/react-native/releases/tag/v0.75.0-rc.6)
+- 📦 [TinyBase Example for React Native](https://github.com/expo/examples/tree/master/with-tinybase) : Un excellent point de départ pour la création d'applications locales.
+- 🎥 [Harry Tormey - Migrating Coinbase's 56 Million Users to React Native: Key Lessons and Takeaways](https://stepchange.work/blog/migrating-coinbases-56-million-users-to-react-native-key-lessons-and-takeaways)
+- 🎥 [Simon Grimm - 10 Expo Router Tips You Need to Know](https://www.youtube.com/watch?v=1hD1ZClxpfc)
+- 🎥 [Daniel Friyia - Introduction to Game Development with Expo, Skia and Reanimated](https://www.youtube.com/watch?v=Af2-OT9mE14)
+- 🎥 [Reactiive - Animated Stacked Cards - Exploring the interpolate function](https://www.youtube.com/watch?v=8_hvNoZJsc8)
+
+---
+
+## 🇫🇷 En français {#fr}
+
+- 🇫🇷 [ReactHebdo.fr - Dernières éditions traduites en français](https://thisweekinreact.com/fr/newsletter)
+- 📜 [Retour sur dotJS 2024​](https://www.premieroctet.com/blog/retour-sur-dotjs-2024)
+- 🎥 [Tout Savoir sur le Dev Tools React en 15 minutes​](https://www.youtube.com/watch?v=jiDW-o7gZaU)
+- 🎥 [Cours React complet pour 2024 - Maîtrise React en 4 heures](https://www.youtube.com/watch?v=eKYkDqHohrw)
+
+---
+
+## 🔀 Autre {#other}
+
+- 👀 [New CSS Editor's Draft - Functions and Mixins Module](https://drafts.csswg.org/css-mixins/)
+- 📣 [CSS font-size-adjust is now in Baseline](https://web.dev/blog/font-size-adjust)
+- 📜 [What’s New for JavaScript Developers in ECMAScript 2024](https://thenewstack.io/whats-new-for-javascript-developers-in-ecmascript-2024/)
+- 📜 [TypeScripter's Take on Zig](https://effectivetypescript.com/2024/07/17/advent2023-zig/)
+- 📜 [Typed CSS variables using @property](https://css-tip.com/typed-variables/)
+- 📜 [An update on invokers: Invoker commands in HTML](https://utilitybend.com/blog/an-update-on-invokers-invoker-commands-in-html)
+- 📜 [New in CSS: relative colors](https://www.stefanjudis.com/notes/new-in-css-relative-colors/)
+- 📜 [Why is spawning a new process in Node so slow?](https://blog.val.town/blog/node-spawn-performance/)
+- 📦 [Poku - cross-platform test runner for Node.js, Bun, Deno](https://github.com/wellwelwel/poku)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/193/meme.jpg)](https://x.com/vinceflibustier/status/1814233715641389456)
+
+[![alt](/emails/issues/193/meme2.jpg)](https://x.com/birch_js/status/1815299684728201400)
+
+A plus 👋
