@@ -33,3 +33,7 @@ cyrilbo:
   page: true
   socials:
     x: BonacciniCyril
+
+
+# Note: don't forget to add newly added authors to the localized authors files
+# i18n/fr/docusaurus-plugin-content-blog-articles/authors.yml file
