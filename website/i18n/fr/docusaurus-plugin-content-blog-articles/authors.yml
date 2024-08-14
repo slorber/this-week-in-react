@@ -3,25 +3,33 @@ slorber:
   title: Editeur - Mainteneur de Docusaurus
   url: https://sebastienlorber.com
   image_url: https://github.com/slorber.png
+  page: true
+  socials:
+    x: sebastienlorber
 
 bndkt:
   name: Benedikt Müller
   title: Indie Hacker
   url: https://bndkt.com
   image_url: https://github.com/bndkt.png
+  page: true
+  socials:
+    x: bndkt
 
 matthieugicquel:
   name: Matthieu Gicquel
   title: Staff Engineer chez Theodo
   url: https://x.com/matthieu_g
   image_url: https://github.com/matthieugicquel.png
+  page: true
   socials:
-    x: https://x.com/matthieu_g
+    x: matthieu_g
 
 cyrilbo:
   name: Cyril Bonaccini
   title: Staff Engineer chez Theodo
   url: https://x.com/BonacciniCyril
   image_url: https://github.com/cyrilbo.png
+  page: true
   socials:
-    x: https://x.com/BonacciniCyril
+    x: BonacciniCyril
