@@ -1,5 +1,5 @@
 import React from "react";
-import { useBlogPost } from "@docusaurus/theme-common/internal";
+import { useBlogPost } from "@docusaurus/plugin-content-blog/client";
 import type ContentType from "@theme/BlogPostItem/Content";
 import Content from "@theme-original/BlogPostItem/Content";
 import SubscribeFormEmbed from "@site/src/theme/MDXComponents/SubscribeFormEmbed";
