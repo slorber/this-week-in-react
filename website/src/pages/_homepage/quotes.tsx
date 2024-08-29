@@ -73,6 +73,18 @@ export const AllQuotes = {
         My favorite resource for keeping up with the React community!
       </Quote>
     ),
+    grabbou: (
+      <Quote
+        url="https://x.com/grabbou/status/1829126194022715617"
+        handle="grabbou"
+        github="grabbou"
+        name="Mike Grabowski"
+        job="CTO and founder - Callstack"
+      >
+        If every newsletter was as informative, the world would be a better
+        place!
+      </Quote>
+    ),
     wcandillon: (
       <Quote
         url="https://twitter.com/wcandillon/status/1263825118557593600"
@@ -594,6 +606,7 @@ export default function HomepageQuotes() {
         </>
       )}
       {AllQuotes.en.kzzzf}
+      {AllQuotes.en.grabbou}
       {AllQuotes.en.threepointone}
       {AllQuotes.en.sebmarkbage}
       {AllQuotes.en.yangshunz}

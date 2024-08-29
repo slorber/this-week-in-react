@@ -10,6 +10,7 @@ const FormTestimonials = [
   AllQuotes.en.theo,
   AllQuotes.en.jackherrington,
   AllQuotes.en.evanbacon,
+  AllQuotes.en.grabbou,
   AllQuotes.en.wcandillon,
   AllQuotes.en.tkdodo,
   AllQuotes.en.addyosmani,
