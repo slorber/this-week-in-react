@@ -1,0 +1,161 @@
+---
+slug: /196
+title: "This Week In React #196: Forms, Jotai, DI, Electron, Docusaurus, Signals, Plunk, React-Server, Switchboard, React-Call, RN WebGPU, Nitro Modules, use dom, macOS, Screens, Autolinking, Cocoapods, Corepack, Node.js, TypeScript..."
+authors: [matthieugicquel, cyrilbo]
+date: 08-14-2024
+---
+
+Salut à tous !
+
+This week, we welcome **2 new contributors** to help **ensure the continuity of the newsletter** throughout the year, even when Seb takes a break.
+
+**Cyril and Matthieu from [Theodo Apps (formerly BAM)](https://apps.theodo.com/en?utm_source=thisweekinreact)** here 👋, filling in to bring you the latest news from the React and React Native worlds.
+
+It’s a relatively calm week for React, with some ongoing discussions about the Suspense drama in React 19.
+
+**But React Native? That’s where the real action is!**\
+From Expo demoing a way to integrate React DOM components to the exciting launch of React Native WebGPU, there’s plenty to talk about. Plus, we’re diving into new approaches to native module development that are sure to shake things up. And React Native 0.75 is around the corner, we'll cover it next week!
+
+Our partner conf **[reactjsday](https://2024.reactjsday.it/?utm_source=thisweekinreact)** (🇮🇹 Verona - 25 October) is celebrating its 10th year by upgrading to 2 tracks (16 talks). Get a 10% discount with code "TWIR". Great speakers have already been announced: Matheus Albuquerque, Aurora Scharff, Dani Coll, and more!
+
+<!-- truncate -->
+
+**💡 [Consulter cette newsletter sur Twitter](https://slo.im/thread) - format visuel 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![Make the most of your design system with StackBlitz](/emails/issues/196/StackBlitz.jpg)](https://stackblitz.com/design-systems?utm_source=twir&utm_medium=primary)
+
+**[Make the most of your design system with StackBlitz](https://stackblitz.com/design-systems?utm_source=twir&utm_medium=primary)**
+
+Your design system makes web development more efficient and consistent, but we know that building and maintaining it comes with no shortage of challenges. [**StackBlitz**](https://stackblitz.com/) **makes design systems easier to _evangelize_, _maintain_, and _evolve_**. With StackBlitz you can:
+
+- 📈 **Increase adoption rates**: Provide one-click instant environments your team can use to try internal libraries.
+- 💻 **Elevate developer experience:** Include live code examples in your documentation.
+- 🐛 **Improve bug reporting**: Instantly filter out true issues and never spin up heavy local installations for a simple bug report _ever again_.
+- 🤝 **Simplify collaboration**: Facilitate seamless collaborations across engineering, design, and other departments.
+
+**Ready to transform your design system workflow?** [Get started now](https://stackblitz.com/design-systems)!
+
+---
+
+## ⚛️ React {#react}
+
+- 💸 [Chromatic – Visual testing for Storybook, Playwright, and Cypress. Catch UI bugs that functional tests miss. Lightning-fast & zero flake.](https://www.chromatic.com/features/visual-test?utm_source=thisweekinreact&utm_medium=quick_link&utm_campaign=q3_2024)
+- 👀 [React 19 - Disabling prerendering siblings of suspended components breaking common pattern](https://github.com/facebook/react/issues/29898): The React team is working on reversing this change that was planned to be included in React 19 but would have degraded the performance of lots of SPAs. No ETA yet, it may take some time to get a stable React 19 release
+- 🐦 [Matt Pocock has a suggestion for a new approach to library typings](https://x.com/mattpocockuk/status/1821124980043636841): React could for instance expose `useState` types with TypeScript namespaces
+- 🐦 [Matt](https://x.com/mattpocockuk/status/1821926395380986219) [Pocock](https://x.com/mattpocockuk/status/1821124980043636841)['s tip to add auto-completion to your component props](https://x.com/mattpocockuk/status/1821926395380986219): Using `string & {}`
+- 📜 [A deep dive on forms with modern React](https://www.epicreact.dev/react-forms): Kent explains how to use the new hooks `​​useFormStatus`, `useActionState` and `useOptimistic`
+- 📜 [How Jotai was born](https://blog.axlight.com/posts/how-jotai-was-born/): Daishi Kato recaps his multiple iterations on state management libraries before creating Jotai
+- 📜 [Why using dependency injection in your app can lead to cleaner and easier to maintain code](https://codedrivendevelopment.com/posts/dependency-injection-in-react): A valuable article that encourages thoughtful consideration of DI in frontend development, especially for those working on more complex React projects
+- 📜 [Building an App with Next.js and Electron with Server Components Support](https://www.saybackend.com/blog/03-electron-nextjs-ssr): Explains how to hijack Next.js to run an RSC server in an Electron app
+- 📜 [Optimizing SPA load times with async chunks preloading](https://mmazzarolo.com/blog/2024-08-13-async-chunk-preloading-on-load/)
+- 📜 [What is a Component Library and Should You Build Your Own?](https://component-odyssey.com/articles/10-what-is-a-library-should-you-build-your-own)
+- 📦 [Docusaurus 3.5 - Authors pages and many new blogging features](https://docusaurus.io/blog/releases/3.5)
+- 📦 [Impact-React in RC - Signals for React, by CodeSandbox](https://impact-react.dev)
+- 📦 [Plunk - New OSS email platform, with react-email and jsx-email integrations](https://www.useplunk.com/)
+- 📦 [react-switchboard - Quickly create custom DevTools for your apps](https://github.com/coryhouse/react-switchboard)
+- 📦 [react-call - Imperatively display React Components and await their result](https://github.com/desko27/react-call): An interesting idea to simplify implementing confirmation dialogs, toasters…
+- 📦 [@lazarv/react-server - An alternative framework with Server Components](https://react-server.dev/)
+- 🎙️ [Syntax.fm - We React to State of React Survey](https://syntax.fm/show/805/we-react-to-state-of-react-survey)
+- 🎙️ [Syntax.fm - CSS Components: Tailwind, Panda, Scoped, Modules, Classes, Variables, CSS-in-JS and Sprinkles!](https://syntax.fm/show/807/css-components-tailwind-panda-scoped-modules-classes-variables-css-in-js-and-sprinkles)
+- 🎥 [Sam Selikoff - Avoid premature abstraction with Unstyled Components](https://www.youtube.com/watch?v=9iJK-Vl6PhE)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Statsig: Ship, Measure, Repeat](/emails/issues/196/statsig.jpg)](https://statsig.com/?utm_campaign=this-week-in-react&utm_source=sponsorships&utm_medium=email&utm_content=website)
+
+**[Statsig: Ship, Measure, Repeat](https://statsig.com/?utm_campaign=this-week-in-react&utm_source=sponsorships&utm_medium=email&utm_content=website)**
+
+The feature management, A/B testing, and product analytics tools used by OpenAI, Notion, & Brex. Build better products by measuring everything you ship 🚀
+
+Install Statsig once and get:
+
+🧪 **A/B Testing:** Automated experiments with advanced stats. Ship only the features that work
+
+🚩 **Feature Flags:** Unlimited free flags and turn any flag into an A/B test with one click
+
+🥇 **Product Analytics:** Track growth and measure feature impact. Conduct analysis by feature flag or A/B test group
+
+🎥 **Session Replays:** Replay user interactions to understand experiences and frictions
+
+🌐 **Web Analytics:** Drop a JS snippet for essential website metrics and dashboards
+
+Get up to 2M free-tier events and 10K session recordings — [**all for free**](https://statsig.com/?utm_campaign=this-week-in-react&utm_source=sponsorships&utm_medium=email&utm_content=website)**!**
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![React Native WebGPU](/emails/issues/196/rn-webgpu.jpg)](https://www.youtube.com/watch?v=i-DGY98cTjk)
+
+**🎥 [React Native WebGPU](https://www.youtube.com/watch?v=i-DGY98cTjk)**
+
+React Native WebGPU has just launched, offering a unified API to leverage the GPU for advanced graphics and computation in React Native! By reusing the Web API standard, we will be able to easily integrate existing WebGPU code samples and libraries, such as ThreeJS, directly into React Native.
+Beyond just graphics, React Native WebGPU can be used for tasks like matrix computations, making it interesting for on-device machine learning algorithms. It's built using Nitro Modules for smooth Typescript to C++ interoperability. Currently, it's available in technical preview, signaling exciting developments ahead!
+
+---
+
+**The Future of React Native Modules**
+
+Exciting times for React Native developers! Marc Rousavy is shaking things up with NitroModules, a new way to write native code 📦 [that’s blowing away existing solutions in speed tests](https://github.com/mrousavy/NitroBenchmarks). He's encountered some limitations with JSI in VisionCamera. The project is already stable on the C++ side and is already being used in various projects like 🐦 [react-native-unistyles](https://x.com/jpudysz/status/1822541758137303233) and react-native-webgpu, with Swift and Kotlin bindings still in progress.
+
+👀 [Meanwhile, a new proposal to push the use of Swift for TurboModules has landed.](https://github.com/okwasniewski/discussions-and-proposals/blob/22edd2c7853aaf2ee654b57f4521e43d668103fb/proposals/0000-swift-turbo-modules.md) These changes will ease native modules development by moving away from Objective-C and C++. With these updates, building native modules is about to get a whole lot better!
+
+---
+
+- 💸 [Galaxies.dev - Become an expert React Native Developer & Save $65 before price increases next Tuesday!](https://galaxies.dev/subscription?utm_campaign=announcement&utm_medium=price-updates&utm_source=thisweekinreact.com)
+- 👀 [React Native 0.76 will likely bump the minimum iOS version to 15.1](https://github.com/react-native-community/discussions-and-proposals/discussions/812)
+- 👀 [“use dom” - Expo is working on a way to seamlessly integrate React Web components in React Native apps](https://docs.expo.dev/guides/dom-components/): New experimental Expo feature allows importing React DOM components, communicating with them with props and callbacks! The components are rendered with webviews and not native views, so it will probably be most useful for migrations or secondary features
+- 👀 [React Native Screens 4.0 beta](https://github.com/software-mansion/react-native-screens/releases/tag/4.0.0-beta.0): With iOS custom detents & Android form sheets
+- 👀 [Upcoming Autolinking performance benefits shipping in React Native 0.75 & Expo SDK 51](https://github.com/react-native-community/discussions-and-proposals/discussions/814)
+- 📖 [Expo Docs update - Unit testing with Jest](https://docs.expo.dev/develop/unit-testing/): Now explains how to set up jest-expo and React Native Testing Library
+- 🗓️ [React Universe Conf](https://www.reactuniverseconf.com/?utm_source=thisweekinreact) -  🇵🇱 Wrocław - Sept 5-6. Get a 10% discount with code "TWIR". Speakers: Dan Abramov, Evan Bacon, Kent C. Dodds, Delba Oliveira...
+- 📜 [Cocoapods is officially in maintenance mode](https://blog.cocoapods.org/CocoaPods-Support-Plans/): React Native will need to migrate at some point
+- 📦 [react-native-macos support for RN 0.74 is out](https://github.com/microsoft/react-native-macos/releases/tag/v0.74.1)
+- 🎥 [Reactiiive - Building a Story List UI with Reanimated (React Native)](https://www.youtube.com/watch?v=NNRym_f8JsA)
+- 🎥 [Simon Grimm - React Native Firebase Authentication with Expo Router](https://www.youtube.com/watch?v=BsOik6ycGqk)
+- 🎙️ [RNR 303 - Stories from Chain React 2024](https://www.reactnativeradio.com/episodes/rnr-303-stories-from-chain-react-2024)
+
+---
+
+## 🇫🇷 En français {#fr}
+
+- 🇫🇷 [ReactHebdo.fr - Dernières éditions traduites en français](https://thisweekinreact.com/fr/newsletter)
+- 📜 [Comment afficher une liste en React ?​](https://codelynx.dev/posts/2024-08-11-comment-afficher-une-liste-en-react)
+- 🐦 [Antoine Lin explique comment optimiser le SEO d'un site Next.js​](https://x.com/antoinerdlin/status/1822905901000675435)
+- 🎥 [Melvynx - Next.js : N'utilise plus les API Routes, voici ton nouvel outil favori](https://www.youtube.com/watch?v=e4eWX8er2sQ)
+
+---
+
+## 🔀 Autre {#other}
+
+- 👀 [Node.js - Add Support for transpiling typescript enums & namespaces](https://github.com/nodejs/node/pull/54283)
+- 📜 [Node.js Takes Steps Towards Removing Corepack](https://socket.dev/blog/node-js-takes-steps-towards-removing-corepack?utm_medium=feed)
+- 📜 [Animating entry effects with CSS is now in baseline after it was added to Firefox 129](https://web.dev/blog/baseline-entry-animations?hl=en)
+- 📜 [Common Causes of Memory Leaks in JavaScript](https://www.trevorlasn.com/blog/common-causes-of-memory-leaks-in-javascript/)
+- 📜 [An approach to optimizing TypeScript type checking performance](https://www.edgedb.com/blog/an-approach-to-optimizing-typescript-type-checking-performance#how-do-we-quantify-the-type-checker-s-workload)
+- 📜 [Exploring the Possibilities of Native JavaScript Decorators](https://frontendmasters.com/blog/exploring-the-possibilities-of-native-javascript-decorators/?ref=cms.macarthur.me)
+- 📜 [Animating Figma's SVG Exports](https://courses.nan.fyi/blog/svg/animating-figma-exports)
+- 📦 [Cheerio 1.0 - Finally stable after 7 years of RC](https://cheerio.js.org/blog/cheerio-1.0)
+- 🔗 [e18e - An initiative for performance in the JS ecosystem](https://e18e.dev/)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/196/meme.jpg)](https://x.com/DavidKPiano/status/1822633099433316504)
+
+A plus 👋
