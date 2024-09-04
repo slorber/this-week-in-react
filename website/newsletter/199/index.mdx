@@ -1,0 +1,130 @@
+---
+slug: /199
+title: "This Week In React #199: shadcn CLI,, Next.js 15, @svg-use,  Storybook component testing, React 19, Rspack in Re.pack, React Three Fiber, Super Apps, EAS Pricing. ECMAScript Stage 2.7, AggregateError, i-html, Style-observer…"
+authors: [matthieugicquel, cyrilbo]
+date: 09-04-2024
+unlisted: true
+---
+
+Hi everyone!
+
+Cyril and Matthieu from Theodo Apps (formerly BAM) here 👋, standing in for Seb to bring you the latest news from the React and React Native world.
+
+This week, shadcn has a released a new CLI, and we've noticed other nice things that are currently cooking, like support for the `use()` hook in React Query.
+
+The React Universe Conf starts tomorrow, we're expecting React Native announcements that we will discuss next week!
+
+<!-- truncate -->
+
+**💡 [Check this newsletter on Twitter](https://slo.im/thread) - visual format 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+<Todo />
+
+---
+
+## ⚛️ React {#react}
+
+[![Shadcn introduces a new CLI](/emails/issues/199/shadcn.jpg)](https://ui.shadcn.com/docs/changelog)
+
+**[Shadcn introduces a new CLI](https://ui.shadcn.com/docs/changelog)**
+
+It’s significantly more powerful and flexible:
+
+- `shadcn add` can now install components, themes, hooks, utils, dependencies…
+- It supports for multiple React frameworks (Next.js, Remix, Vite, Laravel)
+- It can update your tailwind config instead of overriding it
+- Components can be imported directly from urls
+
+More details in 🐦 [this twitter thread](https://x.com/shadcn/status/1829646528149143992).
+
+---
+
+- 👀 [TanStack Query PR - Add support for `React.use()`](https://github.com/TanStack/query/pull/7988): React Query plans to return a promise that you can `use()`, making it easier to integrate with Suspense in a performant way. It’s more convenient than `usePrefetchQuery` and more parallel than `useSuspenseQuery`.
+- 👀 [Remix Route Convention Evolution](https://github.com/brookslybrand/route-convention-evolution): The new `routes.ts` we evoked last week will allow you to skip filesystem-based routing, or simplify using the convention of your choice.
+- 🐦 [Next.js 15 may be released soon](https://x.com/feedthejim/status/1829569083777437745) without waiting for React 19 to be stable, and without requiring React 19 for the pages router. It will include major Turbopack improvements.
+- 🐦 [Render on Fetch vs Fetch on Render](https://x.com/t3dotgg/status/1829988532489793957): Theo shares a graphical visualization of different React rendering patterns. An associated video is available to deep dive.
+- 📜 [Introducing @svg-use](https://fotis.xyz/posts/introducing-svg-use/): Greatly explains how SVG-in-JS (notably SVGR in React) is convenient for theming and distribution, but is not ideal in terms of performance and duplication. The `<use href>` pattern is a good alternative but requires manual plumbing, so the author created a toolchain to automate it.
+- 📜 [Build-time Components](https://codehike.org/blog/build-time-components): Greatly illustrated article explains the benefits of React Server Components for MDX users looking to make their content interactive. Client components and build-time Remark/Rehype plugins have limitations, and RSCs offer the best of both.
+- 📜 [Blending Markdown and React components in NextJS](https://edspencer.net/2024/8/28/using-markdown-with-nextjs)
+- 📜 [Higher Order Components (HOCs) in React: What They Are and How To Use Them](https://www.reactsquad.io/blog/higher-order-components-hocs-in-react)
+- 📜 [Comprehensive React Testing: Handling API Calls with Mock Service Worker](https://www.trevorlasn.com/blog/react-testing-mock-service-worker/)
+- 📜 [Using Server Functions and Tanstack Query](https://www.brenelz.com/posts/using-server-functions-and-tanstack-query/): Tanstack Start is almost ready to use, and has a compelling data fetching approach, with “server fns” integrated with react-query and routing (for prefetching), fully typesafe of course.
+- 📜 [What the heck is atomic state management?](https://www.frontendundefined.com/posts/monthly/jotai-atomic-state-management/): A refresher on how to use Jotai “the right way” and the benefits it brings.
+- 📜 [Component testing in Storybook](https://storybook.js.org/blog/component-testing/): Storybook promotes component testing as a complement to end-to-end testing, offering speed and reliability with browser fidelity for better UI test coverage.
+- 📜 [The Complete Developer Guide to React 19:](https://www.callstack.com/blog/the-complete-developer-guide-to-react-19-part-1-async-handling) A 2-part series on what’s coming in React 19, including useTransition, useActionState, useOptimistic, use, Server Components, Server Actions, ref as a prop, Diffs for Hydration Errors, Improved error reporting, Context as a provider, useDeferredValue initial value & more.
+- 📜 [Easy RAG for TypeScript and React Apps](https://edspencer.net/2024/9/2/easy-rag-for-typescript-and-react-apps): Build a RAG system in TypeScript and React by processing text documents, generating embeddings, and utilizing a vector database for semantic search to answer user queries.
+- 📜 [React Drag and Drop: The Missing Example](https://www.davegray.codes/posts/missing-example-for-react-drag-n-drop)
+- 📜 [Using the inert attribute in React](https://www.mayank.co/notes/inert-in-react)
+- 📜 [Authoring CSS in modern JavaScript apps](https://www.alexchantastic.com/modern-css-authoring)
+- 📦 [Midday V1 - Starter kit based on Next.js, Turborepo, Shadcn & more](https://github.com/midday-ai/v1)
+- 📦 [Bulletproof-React - scalable React architecture repo - now updated with Next.js examples](https://github.com/alan2207/bulletproof-react)
+- 📦 [Astro 4.15 - Astro Actions, Use rewrites for i18n fallbacks, libSQL remotes in @astrojs/db, Timeout option in client:idle, Swap helpers for ViewTransitions](https://astro.build/blog/astro-4150/)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+<Todo />
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![React Universe](/emails/issues/199/react-universe.jpg)](https://www.reactuniverseconf.com/)
+
+
+At the time we’re writing this, the React Native Core Contributor Summit is happening in Wrocław.
+
+It will be followed by the React Universe conf on Thursday and Friday. A lot of exciting talks are planned, and [you can follow along on Youtube](https://www.youtube.com/watch?v=b48Lax2-jOQ). Some highlights: A new debugger, The New Architecture, Expo DOM Components, Static Hermes.
+
+So we will probably have more React Native news for you next week!
+
+---
+
+- 👀 [Re.Pack is adding support for Rspack](https://github.com/callstack/repack/pull/720): The alternative, webpack-compatible bundler for React Native will probably see major speed gains with this change.
+- 🐦 [React Native IDE will integrate Storybook into IDE's preview mode](https://x.com/kzzzf/status/1829262449541062716)
+- 🐦 [React Three Fiber running on react-native-webgpu](https://x.com/aarongrider/status/1830629528005460016): We’ve seen examples of Three.js running with react-native-webgpu. Aaron Grider from SpaceX is currently working on React Three Fiber support, bringing its declarative API to React Native land.
+- 📜 [Create and run fast end-to-end tests using Moropo and Expo: with Maestro](https://expo.dev/blog/create-and-run-fast-end-to-end-tests-using-moropo-and-expo)
+- 📜 [How to Develop a Super App with React Native?](https://medium.com/@xayilmaz/how-to-develop-a-super-app-with-react-native-fe18fbe002c5): Use of a custom native module for communication between mini-apps differs from the Repack approach, which leverages Webpack to generate modular and independent JavaScript bundles for each mini-app.
+- 📖 [Expo documentation update](https://x.com/amanhimself/status/1828545129499750498): Local First Architecture, DOM Components, Native project upgrade helper for SDK 51.
+- 📖 [Expo Application Services (EAS) Pricing](https://expo.dev/pricing\#update): EAS Update and Build concurrencies get cheaper as of September 1st.
+- 📦 [react-native-macos 0.75](https://www.npmjs.com/package/react-native-macos/v/0.75.2)
+- 🎥 [Minute React Native - React Native WebGPU Explained in under 2 Minutes](https://www.youtube.com/watch?v=DQrO2LFnrOw)
+- 🎥 [Chain React 2024 - YouTube playlist available](https://www.youtube.com/playlist?list=PLE7tQUdRKcyb81ybEVsrk6PfxXu7pJs1i\#chainreact2024)
+
+---
+
+## 🔀 Other {#other}
+
+- 📜 [Inside ECMAScript: JavaScript Standard Gets an Extra Stage](https://thenewstack.io/inside-ecmascript-javascript-standard-gets-an-extra-stage/)
+- 📜 [The web's clipboard, and how it stores data of different types](https://alexharri.com/blog/clipboard)
+- 📜 [JavaScript Generators Explained, But On A Senior-Level](https://www.reactsquad.io/blog/understanding-generators-in-javascript)
+- 📜 [Inside ECMAScript: JavaScript Standard Gets an Extra Stage](https://thenewstack.io/inside-ecmascript-javascript-standard-gets-an-extra-stage/)
+- 📜 [AggregateError in JavaScript](https://www.trevorlasn.com/blog/aggregate-error-in-javascript/)
+- 📦 [ThreeJS 168](https://github.com/mrdoob/three.js/releases/tag/r168)
+- 📦 [Style-observer \- A MutationObserver for CSS](https://www.bram.us/2024/08/31/introducing-bramus-style-observer-a-mutationobserver-for-css/)
+- 📦 [Effect 3.7 \- With HttpApi, a declarative way to define api endpoints](https://effect.website/blog/effect-3.7)
+- 📦 [Node 22.8](https://nodejs.org/en/blog/release/v22.8.0) \- module.enableCompileCache(), vm.createContext() with freezable globalThis, coverage thresholds
+- 📦 [Sherif 1.0 \- Opinionated, zero-config linter for JavaScript monorepos](https://github.com/QuiiBz/sherif)
+- 📦 [Safari Technology Preview 202 \- Lots of CSS features](https://webkit.org/blog/15798/release-notes-for-safari-technology-preview-202/)
+- 📦 [i-html \- inline-html import element](https://www.keithcirkel.co.uk/i-html/)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![The life of a programmer in 2024](/emails/issues/199/meme.jpg)](https://x.com/daboigbae/status/1828778118888452572)
+
+See ya! 👋
