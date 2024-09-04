@@ -7,10 +7,10 @@ date: 08-28-2024
 
 Salut à tous !
 
-Looks like it's the end of summer already, eh?
+On dirait que c'est déjà la fin de l'été, hein ?
 
-This week we had many great releases and articles!\
-I'm particularly excited about React Email, which I'd like to use for an upcoming newsletter email template, and for Rspack that I'm adopting for Docusaurus to replace webpack.
+Cette semaine, nous avons reçu de nombreux articles et nouvelles versions de grande qualité !\
+Je suis particulièrement enthousiaste à propos de React Email, que j'aimerais utiliser pour un prochain template d'email de newsletter, et de Rspack que je suis en train d'adopter pour Docusaurus pour remplacer webpack.
 
 <!-- truncate -->
 
@@ -52,37 +52,37 @@ With WorkOS you can start selling to enterprises with just a few lines of code.
 
 **[React Email 3.0](https://resend.com/blog/react-email-3)**
 
-A new major version of React Email is out. Highlights include:
+Une nouvelle version majeure de React Email est disponible. Les points forts sont les suivants :
 
-- A brand-new library of 54 components to copy/paste, similar to shadcn/ui
-- 11x rendering performance improvement
-- Support for React 19 RC
+- Une toute nouvelle bibliothèque de 54 composants à copier/coller, similaire à shadcn/ui
+- Amélioration des performances de rendu par un facteur de 11
+- Support de React 19 RC
 
 ---
 
 - 💸 [Reactile – a new approach to React-based web apps. Create your own views. Let it handle your windows and widgets in a single browser tab](https://www.reactile.net/?utm_source=reactnewsletter)
-- 👀 [React Core PR - Schedule prerender after something suspends](https://github.com/facebook/react/pull/30800): Remember the [Suspense behavior change controversy](https://github.com/facebook/react/issues/29898) delaying the React 19.0 stable release? Andrew has a working implementation to add support for pre-rendering siblings in Suspense components, and this is the first of a series of PR. It introduces a new “pre-rendering” concept that should give us the best of both worlds: keep pre-rendering siblings without blocking the Suspense fallback!
-- 👀 [Next.js PR - Apply optimization for unused actions](https://github.com/vercel/next.js/pull/69178): Implements “tree-shaking” of unused server actions found in top-level “use server” files (not inline). This mitigates a security risk reported by the community and avoids exposing endpoints by mistake.
-- 👀 [React DevTools PR - Support Server Components in Tree](https://github.com/facebook/react/pull/30684): Also adds a `[server]` badge.
-- 👀 [React Router PR - Add support for `routes.ts`](https://github.com/remix-run/react-router/pull/11773): Defines a static list of routes, with a possibility to plug in the Remix filesystem convention. The Vite plugin uses this file to create bundles for each route.
-- 📖 [TanStack Start new doc - Server Functions](https://tanstack.com/router/latest/docs/framework/react/start/server-functions): Gives an interesting preview of the upcoming TanStack-Router-based framework. It uses an explicit `createServerFn()` on top of ‘use server’ directives and can give you access to the request context.
+- 👀 [React Core PR - Schedule prerender after something suspends](https://github.com/facebook/react/pull/30800) : Vous vous souvenez de la [controverse sur le changement de comportement de Suspense](https://github.com/facebook/react/issues/29898) qui a retardé la sortie de la version stable de React 19.0 ? Andrew a mis au point une implémentation pour ajouter la prise en charge du pré-rendu des frères et sœurs dans les composants Suspense, et ceci est le premier d'une série de PR. Il introduit un nouveau concept de « pré-rendu » qui devrait nous donner le meilleur des deux mondes : garder le pré-rendu des frères et sœurs sans bloquer le fallback de Suspense !
+- 👀 [Next.js PR - Apply optimization for unused actions](https://github.com/vercel/next.js/pull/69178) : Mise en place d'un « tree-shaking » des server actions inutilisées trouvées dans les fichiers « use server » de haut niveau (pas en ligne). Cela permet d'atténuer un risque de sécurité signalé par la communauté et d'éviter d'exposer des endpoints par erreur.
+- 👀 [React DevTools PR - Support Server Components in Tree](https://github.com/facebook/react/pull/30684) : Ajoute également un badge `[server]`.
+- 👀 [React Router PR - Add support for `routes.ts`](https://github.com/remix-run/react-router/pull/11773) : Définit une liste statique de routes, avec la possibilité d'ajouter la convention du système de fichiers Remix. Le plugin Vite utilise ce fichier pour créer des bundles pour chaque route.
+- 📖 [TanStack Start new doc - Server Functions](https://tanstack.com/router/latest/docs/framework/react/start/server-functions) : Il donne un aperçu intéressant du futur framework basé sur TanStack-Router. Il utilise un `createServerFn()` explicite en plus des directives 'use server' et peut vous donner accès au contexte de la requête.
 - 📖 [Next.js new doc - ISR with App Router](https://x.com/leeerob/status/1828142382438858994)
-- 🗓️ [React-Brussels](https://www.react.brussels/?utm_source=thisweekinreact) - 🇧🇪 Brussels - 18 October - Get a 10% discount with code “TWIR”. The full line up is now available, take a tour on the conference website !
-- 🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇬🇧 London - 25 & 28 October - [Free remote tickets are available, click here !](https://gitnation.com/badges/react-advanced-conference-2024/jack_herrington?from=This+Week+In+React)
-- 🗓️ [Next.js Conf](https://nextjs.org/conf) - 🇺🇸 San Francisco & Online - October 24
-- 📜 [Error handling and retry with React Server Components](https://edspencer.net/2024/7/16/errors-and-retry-with-react-server-components): To recover from RSC failures, you can present a retry button in your `<ErrorBoundary>`, and call Next.js `router.refresh()` in a transition.
-- 📜 [Everything about Google Translate crashing React (and other web apps)](https://martijnhols.nl/gists/everything-about-google-translate-crashing-react): An interactive blog post that greatly explains how Google Translate works and how it interferes with the DOM and React reconciliation, leading to crashes or text not updating. Unfortunately, there is no real solution.
-- 📜 [Multipart Namespace Components: Addressing RSC and Dot Notation Issues](https://ivicabatinic.from.hr/posts/multipart-namespace-components-addressing-rsc-and-dot-notation-issues): Explains how components like `<Card.Body>` can cause troubles in the RSC world and prevent tree-shaking. Suggests using named ES exports instead of assigning properties to the default root component. Libs like Chakra and Radix do that.
-- 📜 [Implementing React from scratch](https://www.rob.directory/blog/react-from-scratch): Reimplements typing, reconciliation, and hooks. You might discover surprising things along the way, such as the ability to call `useContext` conditionally, or the fact that `useCallback` is similar to `useMemo` returning a callback.
-- 📜 [An SSR Performance Showdown](https://blog.platformatic.dev/an-ssr-performance-showdown): You might have seen this benchmark showing React SSR as being slow. It should be updated with more accurate numbers soon. [Dan Abramov PRs](https://github.com/platformatic/ssr-performance-showdown/pull/8) made React SSR x4 faster by enabling production mode, automatic JSX runtime, and upgrading to React 19 RC (Fast JSX).
-- 📜 [Never Call new Date() Inside Your Components](https://kyleshevlin.com/never-call-new-date-inside-your-components/): To keep your components testable you’d rather avoid initializing state with impure functions like `new Date()` or `Math.random()`, and pass it as props instead. IMHO you can also use React context.
-- 📜 [Consuming a Remix backend from a mobile app or external client](https://www.jacobparis.com/content/remix-external-client): The `?_data` workaround will not work anymore under Remix Single Fetch mode. You’d rather create dedicated API routes for mobile apps and share common code in an abstraction.
-- 📜 [Why is CSS-in-JS slow?](https://playfulprogramming.com/posts/why-is-css-in-js-slow): Greatly illustrated articles explain why traditional CSS-in-JS is slow, and how compiled CSS-in-JS makes it faster by avoiding a waterfall chain of steps for the browsers.
-- 📜 [Interface Segregation Principle in React](https://alexkondov.com/interface-segregation-principle-in-react/): Explains how to apply this SOLID principle when designing component props and encourages you to use composition. Personally, I also like to leverage TypeScript duck typing and helpers like `Pick` narrow prop types.
-- 📜 [Exploring an experimental Micro-Frontend Architecture with Server-Side Rendering using React Server Components](https://dev.to/lazarv/exploring-an-experimental-micro-frontend-architecture-with-server-side-rendering-using-react-server-components-2d0f): An alternative RSC framework introduced an innovative concept of “RSC Delegation”.
+- 🗓️ [React-Brussels](https://www.react.brussels/?utm_source=thisweekinreact) - 🇧🇪 Bruxelles - 18 octobre - Bénéficiez d'une réduction de 10% avec le code « TWIR ». Le programme complet est maintenant disponible, visitez le site web de la conférence !
+- 🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇬🇧 Londres - 25 & 28 octobre - [Des billets à distance gratuits sont disponibles, cliquez ici !](https://gitnation.com/badges/react-advanced-conference-2024/jack_herrington?from=This+Week+In+React)
+- 🗓️ [Next.js Conf](https://nextjs.org/conf) - 🇺🇸 San Francisco & Online - 24 octobre
+- 📜 [Error handling and retry with React Server Components](https://edspencer.net/2024/7/16/errors-and-retry-with-react-server-components) : Pour récupérer les échecs de RSC, vous pouvez présenter un bouton de réessai dans votre `<ErrorBoundary>`, et appeler Next.js `router.refresh()` dans une transition.
+- 📜 [Everything about Google Translate crashing React (and other web apps)](https://martijnhols.nl/gists/everything-about-google-translate-crashing-react) : Un article de blog interactif qui explique en détail comment Google Translate fonctionne et comment il interfère avec la réconciliation du DOM et React, entraînant des plantages ou des textes qui ne se mettent pas à jour. Malheureusement, il n'y a pas de véritable solution.
+- 📜 [Multipart Namespace Components: Addressing RSC and Dot Notation Issues](https://ivicabatinic.from.hr/posts/multipart-namespace-components-addressing-rsc-and-dot-notation-issues) : Explique comment des composants comme `<Card.Body>` peuvent causer des problèmes dans le monde RSC et empêcher le tree-shaking. Suggère d'utiliser des exports ES nommées au lieu d'assigner des propriétés au composant racine par défaut. Des librairies comme Chakra et Radix le font.
+- 📜 [Implementing React from scratch](https://www.rob.directory/blog/react-from-scratch) : Réimplémente le typage, la réconciliation et les hooks. Vous pourriez découvrir des choses surprenantes en cours de route, comme la possibilité d'appeler `useContext` conditionnellement, ou le fait que `useCallback` est similaire à `useMemo` renvoyant un callback.
+- 📜 [An SSR Performance Showdown](https://blog.platformatic.dev/an-ssr-performance-showdown) : Vous avez peut-être vu ce benchmark qui montre que React SSR est lent. Il devrait être mis à jour avec des chiffres plus précis prochainement. [Le PR de Dan Abramov](https://github.com/platformatic/ssr-performance-showdown/pull/8) a rendu React SSR x4 plus rapide en activant le mode production, l'exécution automatique de JSX, et en mettant à jour React 19 RC (Fast JSX).
+- 📜 [Never Call new Date() Inside Your Components](https://kyleshevlin.com/never-call-new-date-inside-your-components/) : Pour garder vos composants testables, vous devriez éviter d'initialiser l'état avec des fonctions impures comme `new Date()` ou `Math.random()`, et les passer en tant que props à la place. Selon moi, vous pouvez aussi utiliser le contexte React.
+- 📜 [Consuming a Remix backend from a mobile app or external client](https://www.jacobparis.com/content/remix-external-client) : La solution de contournement `?_data` ne fonctionnera plus en mode Remix Single Fetch. Il est préférable de créer des routes API dédiées aux applications mobiles et de partager le code commun dans une abstraction.
+- 📜 [Why is CSS-in-JS slow?](https://playfulprogramming.com/posts/why-is-css-in-js-slow) : Des articles très illustrés expliquent pourquoi le CSS traditionnel en JS est lent et comment le CSS compilé en JS l'accélère en évitant une cascade d'étapes pour les navigateurs.
+- 📜 [Interface Segregation Principle in React](https://alexkondov.com/interface-segregation-principle-in-react/) : Explique comment appliquer ce principe SOLID lors de la conception des prop de composants et vous encourage à utiliser la composition. Personnellement, j'aime aussi utiliser le typage TypeScript duck et les helpers comme `Pick` pour les types d'objets restreints.
+- 📜 [Exploring an experimental Micro-Frontend Architecture with Server-Side Rendering using React Server Components](https://dev.to/lazarv/exploring-an-experimental-micro-frontend-architecture-with-server-side-rendering-using-react-server-components-2d0f) : Un framework alternatif RSC a introduit un concept innovant de « délégation du RSC ».
 - 📜 [Introducing InformAI - Easy & Useful AI for React apps](https://edspencer.net/2024/8/26/introducing-inform-ai)
 - 📜 [Next.js + Supabase app in production: what would I do differently](https://catjam.fi/articles/next-supabase-what-do-differently)
-- 📦 [Material UI 6.0](https://mui.com/blog/material-ui-v6-is-out/): A great release with many new features and improvements. More importantly, it introduces an opt-in integration with Pigment CSS for static CSS extraction and zero-runtime CSS-in-JS, as a replacement for Emotion, with the ability to support React Server Components and React 19.
+- 📦 [Material UI 6.0](https://mui.com/blog/material-ui-v6-is-out/) : Une excellente version avec de nombreuses nouvelles fonctionnalités et améliorations. Plus important encore, elle introduit une intégration en option avec Pigment CSS pour l'extraction CSS statique et CSS-in-JS sans exécution, en remplacement d'Emotion, avec la possibilité de prendre en charge React Server Components et React 19.
 - 📦 [Code Hike 1.0 - Bridges the gap between Markdown to create rich interactive experiences](https://codehike.org/blog/v1)
 - 📦 [Astro 5.0 alphas - stable globalRoutePriority, stable astro:env, CSRF protection by default…](https://github.com/withastro/astro/releases?q=%22astro%405.0.0%22)
 - 🎥 [Theo - React, is it time to move on?](https://www.youtube.com/watch?v=0tvfC9r9lcw)
@@ -127,7 +127,7 @@ Whether you're launching a new framework or updating an existing library, Tutori
 - 🎥 [Simon Grimm - When does local-first make sense?](https://www.youtube.com/watch?v=vLRtC53rwCg)
 - 🎥 [The React Native Podcast rebrands to React Universe On Air](https://www.youtube.com/watch?v=Y8VVdfP9QDE): The popular Callstack podcast has rebranded to a new name matching the upcoming React Universe conf next week and for covering a broader React cross-platform scope.
 - 🎙️ [Rocket Ship 48 - MLKit & The React Native Paradox with Gant Laborde](https://share.transistor.fm/s/9b305e63)
-- 🎙️ [RNR 305 - On-device AI in React Native with Gant Laborde](https://www.reactnativeradio.com/episodes/rnr-305-on-device-ai-in-react-native-with-gant-laborde) (yes, him again!)
+- 🎙️ [RNR 305 - On-device AI in React Native with Gant Laborde](https://www.reactnativeradio.com/episodes/rnr-305-on-device-ai-in-react-native-with-gant-laborde) (oui, encore lui !)
 
 ---
 
@@ -148,7 +148,7 @@ Whether you're launching a new framework or updating an existing library, Tutori
 
 **[Rspack 1.0](https://rspack.dev/blog/announcing-1-0)**
 
-Rspack is a very fast Rust bundler that is almost 100% compatible with Webpack, including its entire ecosystem of plugins and loaders. Rspack is well suited to being a great choice for many React apps using Webpack that need to bundle faster today. It’s easy to adopt thanks to its compatibility, but also future-proof with [upcoming first-class React Server Components support](https://rspack.dev/blog/announcing-1-0#react-server-components-support). That’s why I’m [migrating Docusaurus to Rspack](https://x.com/sebastienlorber/status/1828696665135431879) by the way. I’d also recommend to take a look at [Rsdoctor](https://rsdoctor.dev/), it’s a great tool that also works with Webpack and will tell you the bottlenecks of your build.
+Rspack est un bundler Rust très rapide qui est presque 100% compatible avec Webpack, y compris tout son écosystème de plugins et de loaders. Rspack est bien adapté pour être un excellent choix pour de nombreuses applications React utilisant Webpack qui ont besoin de bundler plus rapidement aujourd'hui. Il est facile à adopter grâce à sa compatibilité, mais aussi à l'épreuve du temps avec [la prise en charge prochaine des React Server Components de première classe](https://rspack.dev/blog/announcing-1-0#react-server-components-support). C'est pourquoi je suis en train de [migrer Docusaurus vers Rspack](https://x.com/sebastienlorber/status/1828696665135431879). Je vous recommande également de jeter un œil à [Rsdoctor](https://rsdoctor.dev/), c'est un excellent outil qui fonctionne également avec Webpack et qui vous indiquera les goulots d'étranglement de votre build.
 
 ---
 
