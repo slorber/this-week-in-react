@@ -1,0 +1,174 @@
+---
+slug: /198
+title: "This Week In React #198: React-Email, MUI, Rspack, prerendering, tree-shaking, Next.js, TanStack, Remix, RSC, Code Hike, Astro, CodePush, visionOS, Tophat, Bluetooth, MKKV, Swift, Re.Pack, Reanimated, TypeScript, Node..."
+authors: [slorber]
+date: 08-28-2024
+---
+
+Salut à tous !
+
+Looks like it's the end of summer already, eh?
+
+This week we had many great releases and articles!\
+I'm particularly excited about React Email, which I'd like to use for an upcoming newsletter email template, and for Rspack that I'm adopting for Docusaurus to replace webpack.
+
+<!-- truncate -->
+
+**💡 [Consulter cette newsletter sur Twitter](https://slo.im/thread) - format visuel 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![WorkOS: Modern Identity Platform for B2B SaaS](/emails/issues/195/workOS.jpg)](https://workos.com/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=q32024)
+
+**[WorkOS: Modern Identity Platform for B2B SaaS](https://workos.com/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=q32024)**
+
+With WorkOS you can start selling to enterprises with just a few lines of code.
+
+🔐 WorkOS AuthKit supports a complete user management solution along with **SSO, SCIM, RBAC, & FGA**.
+
+🏗️ The APIs are **flexible, easy-to-use, and modular**. Pick and choose what you need and integrate in minutes.
+
+🎨 Design and user experience are everything. From the quality of our documentation to how your users onboard, we **remove all the unnecessary complexity for developers**.
+
+✨ AuthKit is **free up to 1 million MAUs** and includes bot protection, MFA, RBAC, & more.
+
+🤝 WorkOS is trusted by hundreds of leading startups like **Perplexity**, **Vercel**, & **Webflow**.
+
+[Get started with WorkOS](https://workos.com/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=q32024) 🚀
+
+---
+
+## ⚛️ React {#react}
+
+[![React Email 3.0](/emails/issues/198/reactemail.jpg)](https://resend.com/blog/react-email-3)
+
+**[React Email 3.0](https://resend.com/blog/react-email-3)**
+
+A new major version of React Email is out. Highlights include:
+
+- A brand-new library of 54 components to copy/paste, similar to shadcn/ui
+- 11x rendering performance improvement
+- Support for React 19 RC
+
+---
+
+- 💸 [Reactile – a new approach to React-based web apps. Create your own views. Let it handle your windows and widgets in a single browser tab](https://www.reactile.net/?utm_source=reactnewsletter)
+- 👀 [React Core PR - Schedule prerender after something suspends](https://github.com/facebook/react/pull/30800): Remember the [Suspense behavior change controversy](https://github.com/facebook/react/issues/29898) delaying the React 19.0 stable release? Andrew has a working implementation to add support for pre-rendering siblings in Suspense components, and this is the first of a series of PR. It introduces a new “pre-rendering” concept that should give us the best of both worlds: keep pre-rendering siblings without blocking the Suspense fallback!
+- 👀 [Next.js PR - Apply optimization for unused actions](https://github.com/vercel/next.js/pull/69178): Implements “tree-shaking” of unused server actions found in top-level “use server” files (not inline). This mitigates a security risk reported by the community and avoids exposing endpoints by mistake.
+- 👀 [React DevTools PR - Support Server Components in Tree](https://github.com/facebook/react/pull/30684): Also adds a `[server]` badge.
+- 👀 [React Router PR - Add support for `routes.ts`](https://github.com/remix-run/react-router/pull/11773): Defines a static list of routes, with a possibility to plug in the Remix filesystem convention. The Vite plugin uses this file to create bundles for each route.
+- 📖 [TanStack Start new doc - Server Functions](https://tanstack.com/router/latest/docs/framework/react/start/server-functions): Gives an interesting preview of the upcoming TanStack-Router-based framework. It uses an explicit `createServerFn()` on top of ‘use server’ directives and can give you access to the request context.
+- 📖 [Next.js new doc - ISR with App Router](https://x.com/leeerob/status/1828142382438858994)
+- 🗓️ [React-Brussels](https://www.react.brussels/?utm_source=thisweekinreact) - 🇧🇪 Brussels - 18 October - Get a 10% discount with code “TWIR”. The full line up is now available, take a tour on the conference website !
+- 🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇬🇧 London - 25 & 28 October - [Free remote tickets are available, click here !](https://gitnation.com/badges/react-advanced-conference-2024/jack_herrington?from=This+Week+In+React)
+- 🗓️ [Next.js Conf](https://nextjs.org/conf) - 🇺🇸 San Francisco & Online - October 24
+- 📜 [Error handling and retry with React Server Components](https://edspencer.net/2024/7/16/errors-and-retry-with-react-server-components): To recover from RSC failures, you can present a retry button in your `<ErrorBoundary>`, and call Next.js `router.refresh()` in a transition.
+- 📜 [Everything about Google Translate crashing React (and other web apps)](https://martijnhols.nl/gists/everything-about-google-translate-crashing-react): An interactive blog post that greatly explains how Google Translate works and how it interferes with the DOM and React reconciliation, leading to crashes or text not updating. Unfortunately, there is no real solution.
+- 📜 [Multipart Namespace Components: Addressing RSC and Dot Notation Issues](https://ivicabatinic.from.hr/posts/multipart-namespace-components-addressing-rsc-and-dot-notation-issues): Explains how components like `<Card.Body>` can cause troubles in the RSC world and prevent tree-shaking. Suggests using named ES exports instead of assigning properties to the default root component. Libs like Chakra and Radix do that.
+- 📜 [Implementing React from scratch](https://www.rob.directory/blog/react-from-scratch): Reimplements typing, reconciliation, and hooks. You might discover surprising things along the way, such as the ability to call `useContext` conditionally, or the fact that `useCallback` is similar to `useMemo` returning a callback.
+- 📜 [An SSR Performance Showdown](https://blog.platformatic.dev/an-ssr-performance-showdown): You might have seen this benchmark showing React SSR as being slow. It should be updated with more accurate numbers soon. [Dan Abramov PRs](https://github.com/platformatic/ssr-performance-showdown/pull/8) made React SSR x4 faster by enabling production mode, automatic JSX runtime, and upgrading to React 19 RC (Fast JSX).
+- 📜 [Never Call new Date() Inside Your Components](https://kyleshevlin.com/never-call-new-date-inside-your-components/): To keep your components testable you’d rather avoid initializing state with impure functions like `new Date()` or `Math.random()`, and pass it as props instead. IMHO you can also use React context.
+- 📜 [Consuming a Remix backend from a mobile app or external client](https://www.jacobparis.com/content/remix-external-client): The `?_data` workaround will not work anymore under Remix Single Fetch mode. You’d rather create dedicated API routes for mobile apps and share common code in an abstraction.
+- 📜 [Why is CSS-in-JS slow?](https://playfulprogramming.com/posts/why-is-css-in-js-slow): Greatly illustrated articles explain why traditional CSS-in-JS is slow, and how compiled CSS-in-JS makes it faster by avoiding a waterfall chain of steps for the browsers.
+- 📜 [Interface Segregation Principle in React](https://alexkondov.com/interface-segregation-principle-in-react/): Explains how to apply this SOLID principle when designing component props and encourages you to use composition. Personally, I also like to leverage TypeScript duck typing and helpers like `Pick` narrow prop types.
+- 📜 [Exploring an experimental Micro-Frontend Architecture with Server-Side Rendering using React Server Components](https://dev.to/lazarv/exploring-an-experimental-micro-frontend-architecture-with-server-side-rendering-using-react-server-components-2d0f): An alternative RSC framework introduced an innovative concept of “RSC Delegation”.
+- 📜 [Introducing InformAI - Easy & Useful AI for React apps](https://edspencer.net/2024/8/26/introducing-inform-ai)
+- 📜 [Next.js + Supabase app in production: what would I do differently](https://catjam.fi/articles/next-supabase-what-do-differently)
+- 📦 [Material UI 6.0](https://mui.com/blog/material-ui-v6-is-out/): A great release with many new features and improvements. More importantly, it introduces an opt-in integration with Pigment CSS for static CSS extraction and zero-runtime CSS-in-JS, as a replacement for Emotion, with the ability to support React Server Components and React 19.
+- 📦 [Code Hike 1.0 - Bridges the gap between Markdown to create rich interactive experiences](https://codehike.org/blog/v1)
+- 📦 [Astro 5.0 alphas - stable globalRoutePriority, stable astro:env, CSRF protection by default…](https://github.com/withastro/astro/releases?q=%22astro%405.0.0%22)
+- 🎥 [Theo - React, is it time to move on?](https://www.youtube.com/watch?v=0tvfC9r9lcw)
+- 🎥 [Lee Robinson - Fast ecommerce with optimistic UI and Next.js](https://www.youtube.com/watch?v=Fl1x57e5i4k)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Increase Library Adoption with Interactive Tutorials](/emails/issues/198/tutorialkit.jpg)](https://tutorialkit.dev/?utm_source=twir&utm_medium=primary)
+
+**[Increase Library Adoption with Interactive Tutorials](https://tutorialkit.dev/?utm_source=twir&utm_medium=primary)**
+
+Are you looking to increase adoption of your JavaScript framework or library? **TutorialKit by StackBlitz** is a command-line interface (CLI) generator that allows you to create fully interactive code tutorials that engage your users and help them learn quickly.
+
+To get started with TutorialKit, simply run the `npm create tutorial` command to launch a wizard that guides you through the tutorial site generation process. The scaffolded project takes care of the underlying tutorial logic and in-browser code editor, so you can focus on the content.
+
+Whether you're launching a new framework or updating an existing library, TutorialKit ensures that your users have the best learning experience possible. Don't let your library go unnoticed. [Get started now!](https://tutorialkit.dev/?utm_source=twir&utm_medium=link)
+
+---
+
+## 📱 React-Native {#react-native}
+
+- 💸 [Learn how to create a simple, type-safe PDF viewer with the Apryse SDK and React Native — complete with editing and annotation features.](https://apryse.com/blog/mobile/react-native-typescript-pdf-viewer?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=0828)
+- 🐦 [Reanimated 4.0 will only work with Fabric (the new RN architecture)](https://x.com/kzzzf/status/1828461715228422153)
+- 🐦 [React Native WebGPU on visionOS demo](https://x.com/o_kwasniewski/status/1828079146456535224)
+- 👀 [React Native PR - migrate template to Swift](https://github.com/react-native-community/template/pull/45): Exciting to generate new React Native projects with AppDelegate in Swift instead of Objective-C.
+- 🗓️ [React Universe Conf](https://www.reactuniverseconf.com/?utm_source=thisweekinreact) - 🇵🇱 Wrocław - Sept 5-6. 10% discount with code "TWIR". Can’t make it in person? Register for Free Livestream Access! Speakers: Mike Grabowski, Fernando Rojo, Alex Hunt, Eric Vicenti...
+- 📜 [Shopify Tophat - Crafting a Delightful Mobile Developer Experience](https://shopify.engineering/shopify-tophat-mobile-developer-testing): Re-introduces “Tophat”, the macOS menubar app to increase React Native DX, that Shopify finally open-sourced last week. Apparently, this was an inspiration for Expo Orbit.
+- 📜 [Expo - What to do without CodePush](https://expo.dev/blog/what-to-do-without-codepush): Microsoft App Center will shut down soon, including CodePush. This article suggests CodePush alternatives for Over-The-Air updates. It encourages you to adopt EAS Updates by offering a nice side-by-side comparison, but also mentions self-hosted alternatives.
+- 📜 [Introducing Oblivious HTTP support in Swift](https://www.swift.org/blog/introducing-swift-nio-oblivious-http/): New Swift API could be useful for React Native devs looking to increase privacy protection.
+- 📜 [How to build a Bluetooth Low Energy powered Expo app](https://expo.dev/blog/how-to-build-a-bluetooth-low-energy-powered-expo-app): Tutorial using `react-native-ble-plx` with Expo Config plugin.
+- 📜 [How to deploy App Store and Beta versions of React Native iOS app from Azure DevOps pipeline](https://www.nico.fyi/blog/how-to-deploy-multiple-versions-react-native-ios-to-testflight-from-azure-devops-pipeline)
+- 📜 [How Rosebud decided to go native with Expo](https://expo.dev/blog/how-rosebud-decided-to-go-native-with-expo)
+- 📦 [React-Native-MMKV 3.0 - faster key/value storage, full rewrite to pure C++ TurboModule](https://github.com/mrousavy/react-native-mmkv/releases/tag/v3.0.0)
+- 📦 [React Native visionOS 0.75](https://github.com/callstack/react-native-visionos/releases/tag/v0.75.0-visionos)
+- 📦 [Re.Pack 4.3 - RN 0.75, --watch flag](https://github.com/callstack/repack/releases/tag/%40callstack%2Frepack%404.3.0)
+- 📦 [Belt - Opionated CLI tool for starting a new React Native app](https://thoughtbot.com/blog/introducing-belt-your-new-favorite-tool-for-starting-react-native-apps)
+- 🎥 [Beto - Building an Obscura Pro Camera App with React Native Vision Camera and Expo](https://www.youtube.com/watch?v=xNaGYGDZ2JU)
+- 🎥 [Simon Grimm - When does local-first make sense?](https://www.youtube.com/watch?v=vLRtC53rwCg)
+- 🎥 [The React Native Podcast rebrands to React Universe On Air](https://www.youtube.com/watch?v=Y8VVdfP9QDE): The popular Callstack podcast has rebranded to a new name matching the upcoming React Universe conf next week and for covering a broader React cross-platform scope.
+- 🎙️ [Rocket Ship 48 - MLKit & The React Native Paradox with Gant Laborde](https://share.transistor.fm/s/9b305e63)
+- 🎙️ [RNR 305 - On-device AI in React Native with Gant Laborde](https://www.reactnativeradio.com/episodes/rnr-305-on-device-ai-in-react-native-with-gant-laborde) (yes, him again!)
+
+---
+
+## 🇫🇷 En français {#fr}
+
+- 🇫🇷 [ReactHebdo.fr - Dernières éditions traduites en français](https://thisweekinreact.com/fr/newsletter)
+- 📜 [Comment configurer NextAuth Password avec une base de données (Next App Directory)​](https://codelynx.dev/posts/2024-08-27-comment-setup-nextauth-avec-le-password-en-database-next-app)
+- 📜 [Faut-il apprendre React ou Angular ?​](https://codelynx.dev/posts/2024-08-27-apprendre-react-ou-angular)
+- 🎥 [devaidaya - Setup de NativeWind dans un projet React Native (Expo et Expo Router)​](https://www.youtube.com/watch?v=4LPnPUmlrk0)
+- 🎥 [Melvynx - Je refais mon blog de 0 (Design / Stack / NextJS)​](https://www.youtube.com/watch?v=UONPCDkoM94)
+- 🎙️ [Double Slash - Les news web dev pour août 2024](https://double-slash.dev/podcasts/news-aout-24/)
+
+---
+
+## 🔀 Autre {#other}
+
+[![Rspack 1.0](/emails/issues/198/rspack.jpg)](https://rspack.dev/blog/announcing-1-0)
+
+**[Rspack 1.0](https://rspack.dev/blog/announcing-1-0)**
+
+Rspack is a very fast Rust bundler that is almost 100% compatible with Webpack, including its entire ecosystem of plugins and loaders. Rspack is well suited to being a great choice for many React apps using Webpack that need to bundle faster today. It’s easy to adopt thanks to its compatibility, but also future-proof with [upcoming first-class React Server Components support](https://rspack.dev/blog/announcing-1-0#react-server-components-support). That’s why I’m [migrating Docusaurus to Rspack](https://x.com/sebastienlorber/status/1828696665135431879) by the way. I’d also recommend to take a look at [Rsdoctor](https://rsdoctor.dev/), it’s a great tool that also works with Webpack and will tell you the bottlenecks of your build.
+
+---
+
+- 📜 [JS Dates Are About to Be Fixed](https://docs.timetime.in/blog/js-dates-finally-fixed/)
+- 📜 [How To Create An NPM Package](https://www.totaltypescript.com/how-to-create-an-npm-package)
+- 📜 [How to make your web page faster before it even loads](https://blog.sentry.io/how-to-make-your-web-page-faster-before-it-even-loads/)
+- 📜 [Fix Your Annoying Popups with the CloseWatcher API](https://logaretm.com/blog/fix-your-annoying-popups-with-the-closewatcher-api/)
+- 📜 [Custom Range Slider Using Anchor Positioning & Scroll-Driven Animations](https://frontendmasters.com/blog/custom-range-slider-using-anchor-positioning-scroll-driven-animations/)
+- 📜 [Regexes Got Good: The History And Future Of Regular Expressions In JavaScript](https://www.smashingmagazine.com/2024/08/history-future-regular-expressions-javascript/)
+- 📦 [Node v20.17 - require() sync ESM graphs, matchesGlob()](https://nodejs.org/en/blog/release/v20.17.0)
+- 📦 [Node v22.7.0 - Experimental support for TS Enums/Namespaces, detect modules stable](https://nodejs.org/en/blog/release/v22.7.0)
+- 📦 [Deno 1.46 - The Last 1.x Release](https://deno.com/blog/v1.46)
+- 📦 [Test-server - Utility for creating HTTP and WebSocket servers for testing](https://github.com/epicweb-dev/test-server)
+- 📦 [TypeScript 5.6 RC - Iterator methods, Disallowed Nullish and Truthy Checks…](https://devblogs.microsoft.com/typescript/announcing-typescript-5-6-rc/)
+- 📦 [Turborepo 2.1](https://turbo.build/blog/turbo-2-1-0)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/198/meme.jpg)](https://x.com/astrodotbuild/status/1820423005912105149)
+
+A plus 👋
