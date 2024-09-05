@@ -1,0 +1,174 @@
+---
+slug: /198
+title: "This Week In React #198: React-Email, MUI, Rspack, prerendering, tree-shaking, Next.js, TanStack, Remix, RSC, Code Hike, Astro, CodePush, visionOS, Tophat, Bluetooth, MKKV, Swift, Re.Pack, Reanimated, TypeScript, Node..."
+authors: [slorber]
+date: 08-28-2024
+---
+
+Salut à tous !
+
+On dirait que c'est déjà la fin de l'été, hein ?
+
+Cette semaine, nous avons reçu de nombreux articles et nouvelles versions de grande qualité !\
+Je suis particulièrement enthousiaste à propos de React Email, que j'aimerais utiliser pour un prochain template d'email de newsletter, et de Rspack que je suis en train d'adopter pour Docusaurus pour remplacer webpack.
+
+<!-- truncate -->
+
+**💡 [Consulter cette newsletter sur Twitter](https://slo.im/thread) - format visuel 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![WorkOS: Modern Identity Platform for B2B SaaS](/emails/issues/195/workOS.jpg)](https://workos.com/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=q32024)
+
+**[WorkOS: Modern Identity Platform for B2B SaaS](https://workos.com/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=q32024)**
+
+With WorkOS you can start selling to enterprises with just a few lines of code.
+
+🔐 WorkOS AuthKit supports a complete user management solution along with **SSO, SCIM, RBAC, & FGA**.
+
+🏗️ The APIs are **flexible, easy-to-use, and modular**. Pick and choose what you need and integrate in minutes.
+
+🎨 Design and user experience are everything. From the quality of our documentation to how your users onboard, we **remove all the unnecessary complexity for developers**.
+
+✨ AuthKit is **free up to 1 million MAUs** and includes bot protection, MFA, RBAC, & more.
+
+🤝 WorkOS is trusted by hundreds of leading startups like **Perplexity**, **Vercel**, & **Webflow**.
+
+[Get started with WorkOS](https://workos.com/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=q32024) 🚀
+
+---
+
+## ⚛️ React {#react}
+
+[![React Email 3.0](/emails/issues/198/reactemail.jpg)](https://resend.com/blog/react-email-3)
+
+**[React Email 3.0](https://resend.com/blog/react-email-3)**
+
+Une nouvelle version majeure de React Email est disponible. Les points forts sont les suivants :
+
+- Une toute nouvelle bibliothèque de 54 composants à copier/coller, similaire à shadcn/ui
+- Amélioration des performances de rendu par un facteur de 11
+- Support de React 19 RC
+
+---
+
+- 💸 [Reactile – a new approach to React-based web apps. Create your own views. Let it handle your windows and widgets in a single browser tab](https://www.reactile.net/?utm_source=reactnewsletter)
+- 👀 [React Core PR - Schedule prerender after something suspends](https://github.com/facebook/react/pull/30800) : Vous vous souvenez de la [controverse sur le changement de comportement de Suspense](https://github.com/facebook/react/issues/29898) qui a retardé la sortie de la version stable de React 19.0 ? Andrew a mis au point une implémentation pour ajouter la prise en charge du pré-rendu des frères et sœurs dans les composants Suspense, et ceci est le premier d'une série de PR. Il introduit un nouveau concept de « pré-rendu » qui devrait nous donner le meilleur des deux mondes : garder le pré-rendu des frères et sœurs sans bloquer le fallback de Suspense !
+- 👀 [Next.js PR - Apply optimization for unused actions](https://github.com/vercel/next.js/pull/69178) : Mise en place d'un « tree-shaking » des server actions inutilisées trouvées dans les fichiers « use server » de haut niveau (pas en ligne). Cela permet d'atténuer un risque de sécurité signalé par la communauté et d'éviter d'exposer des endpoints par erreur.
+- 👀 [React DevTools PR - Support Server Components in Tree](https://github.com/facebook/react/pull/30684) : Ajoute également un badge `[server]`.
+- 👀 [React Router PR - Add support for `routes.ts`](https://github.com/remix-run/react-router/pull/11773) : Définit une liste statique de routes, avec la possibilité d'ajouter la convention du système de fichiers Remix. Le plugin Vite utilise ce fichier pour créer des bundles pour chaque route.
+- 📖 [TanStack Start new doc - Server Functions](https://tanstack.com/router/latest/docs/framework/react/start/server-functions) : Il donne un aperçu intéressant du futur framework basé sur TanStack-Router. Il utilise un `createServerFn()` explicite en plus des directives 'use server' et peut vous donner accès au contexte de la requête.
+- 📖 [Next.js new doc - ISR with App Router](https://x.com/leeerob/status/1828142382438858994)
+- 🗓️ [React-Brussels](https://www.react.brussels/?utm_source=thisweekinreact) - 🇧🇪 Bruxelles - 18 octobre - Bénéficiez d'une réduction de 10% avec le code « TWIR ». Le programme complet est maintenant disponible, visitez le site web de la conférence !
+- 🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇬🇧 Londres - 25 & 28 octobre - [Des billets à distance gratuits sont disponibles, cliquez ici !](https://gitnation.com/badges/react-advanced-conference-2024/jack_herrington?from=This+Week+In+React)
+- 🗓️ [Next.js Conf](https://nextjs.org/conf) - 🇺🇸 San Francisco & Online - 24 octobre
+- 📜 [Error handling and retry with React Server Components](https://edspencer.net/2024/7/16/errors-and-retry-with-react-server-components) : Pour récupérer les échecs de RSC, vous pouvez présenter un bouton de réessai dans votre `<ErrorBoundary>`, et appeler Next.js `router.refresh()` dans une transition.
+- 📜 [Everything about Google Translate crashing React (and other web apps)](https://martijnhols.nl/gists/everything-about-google-translate-crashing-react) : Un article de blog interactif qui explique en détail comment Google Translate fonctionne et comment il interfère avec la réconciliation du DOM et React, entraînant des plantages ou des textes qui ne se mettent pas à jour. Malheureusement, il n'y a pas de véritable solution.
+- 📜 [Multipart Namespace Components: Addressing RSC and Dot Notation Issues](https://ivicabatinic.from.hr/posts/multipart-namespace-components-addressing-rsc-and-dot-notation-issues) : Explique comment des composants comme `<Card.Body>` peuvent causer des problèmes dans le monde RSC et empêcher le tree-shaking. Suggère d'utiliser des exports ES nommées au lieu d'assigner des propriétés au composant racine par défaut. Des librairies comme Chakra et Radix le font.
+- 📜 [Implementing React from scratch](https://www.rob.directory/blog/react-from-scratch) : Réimplémente le typage, la réconciliation et les hooks. Vous pourriez découvrir des choses surprenantes en cours de route, comme la possibilité d'appeler `useContext` conditionnellement, ou le fait que `useCallback` est similaire à `useMemo` renvoyant un callback.
+- 📜 [An SSR Performance Showdown](https://blog.platformatic.dev/an-ssr-performance-showdown) : Vous avez peut-être vu ce benchmark qui montre que React SSR est lent. Il devrait être mis à jour avec des chiffres plus précis prochainement. [Le PR de Dan Abramov](https://github.com/platformatic/ssr-performance-showdown/pull/8) a rendu React SSR x4 plus rapide en activant le mode production, l'exécution automatique de JSX, et en mettant à jour React 19 RC (Fast JSX).
+- 📜 [Never Call new Date() Inside Your Components](https://kyleshevlin.com/never-call-new-date-inside-your-components/) : Pour garder vos composants testables, vous devriez éviter d'initialiser l'état avec des fonctions impures comme `new Date()` ou `Math.random()`, et les passer en tant que props à la place. Selon moi, vous pouvez aussi utiliser le contexte React.
+- 📜 [Consuming a Remix backend from a mobile app or external client](https://www.jacobparis.com/content/remix-external-client) : La solution de contournement `?_data` ne fonctionnera plus en mode Remix Single Fetch. Il est préférable de créer des routes API dédiées aux applications mobiles et de partager le code commun dans une abstraction.
+- 📜 [Why is CSS-in-JS slow?](https://playfulprogramming.com/posts/why-is-css-in-js-slow) : Des articles très illustrés expliquent pourquoi le CSS traditionnel en JS est lent et comment le CSS compilé en JS l'accélère en évitant une cascade d'étapes pour les navigateurs.
+- 📜 [Interface Segregation Principle in React](https://alexkondov.com/interface-segregation-principle-in-react/) : Explique comment appliquer ce principe SOLID lors de la conception des prop de composants et vous encourage à utiliser la composition. Personnellement, j'aime aussi utiliser le typage TypeScript duck et les helpers comme `Pick` pour les types d'objets restreints.
+- 📜 [Exploring an experimental Micro-Frontend Architecture with Server-Side Rendering using React Server Components](https://dev.to/lazarv/exploring-an-experimental-micro-frontend-architecture-with-server-side-rendering-using-react-server-components-2d0f) : Un framework alternatif RSC a introduit un concept innovant de « délégation du RSC ».
+- 📜 [Introducing InformAI - Easy & Useful AI for React apps](https://edspencer.net/2024/8/26/introducing-inform-ai)
+- 📜 [Next.js + Supabase app in production: what would I do differently](https://catjam.fi/articles/next-supabase-what-do-differently)
+- 📦 [Material UI 6.0](https://mui.com/blog/material-ui-v6-is-out/) : Une excellente version avec de nombreuses nouvelles fonctionnalités et améliorations. Plus important encore, elle introduit une intégration en option avec Pigment CSS pour l'extraction CSS statique et CSS-in-JS sans exécution, en remplacement d'Emotion, avec la possibilité de prendre en charge React Server Components et React 19.
+- 📦 [Code Hike 1.0 - Bridges the gap between Markdown to create rich interactive experiences](https://codehike.org/blog/v1)
+- 📦 [Astro 5.0 alphas - stable globalRoutePriority, stable astro:env, CSRF protection by default…](https://github.com/withastro/astro/releases?q=%22astro%405.0.0%22)
+- 🎥 [Theo - React, is it time to move on?](https://www.youtube.com/watch?v=0tvfC9r9lcw)
+- 🎥 [Lee Robinson - Fast ecommerce with optimistic UI and Next.js](https://www.youtube.com/watch?v=Fl1x57e5i4k)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Increase Library Adoption with Interactive Tutorials](/emails/issues/198/tutorialkit.jpg)](https://tutorialkit.dev/?utm_source=twir&utm_medium=primary)
+
+**[Increase Library Adoption with Interactive Tutorials](https://tutorialkit.dev/?utm_source=twir&utm_medium=primary)**
+
+Are you looking to increase adoption of your JavaScript framework or library? **TutorialKit by StackBlitz** is a command-line interface (CLI) generator that allows you to create fully interactive code tutorials that engage your users and help them learn quickly.
+
+To get started with TutorialKit, simply run the `npm create tutorial` command to launch a wizard that guides you through the tutorial site generation process. The scaffolded project takes care of the underlying tutorial logic and in-browser code editor, so you can focus on the content.
+
+Whether you're launching a new framework or updating an existing library, TutorialKit ensures that your users have the best learning experience possible. Don't let your library go unnoticed. [Get started now!](https://tutorialkit.dev/?utm_source=twir&utm_medium=link)
+
+---
+
+## 📱 React-Native {#react-native}
+
+- 💸 [Learn how to create a simple, type-safe PDF viewer with the Apryse SDK and React Native — complete with editing and annotation features.](https://apryse.com/blog/mobile/react-native-typescript-pdf-viewer?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=0828)
+- 🐦 [Reanimated 4.0 will only work with Fabric (the new RN architecture)](https://x.com/kzzzf/status/1828461715228422153)
+- 🐦 [React Native WebGPU on visionOS demo](https://x.com/o_kwasniewski/status/1828079146456535224)
+- 👀 [React Native PR - migrate template to Swift](https://github.com/react-native-community/template/pull/45) : Passionnant de générer de nouveaux projets React Native avec AppDelegate en Swift plutôt qu'en Objective-C.
+- 🗓️ [React Universe Conf](https://www.reactuniverseconf.com/?utm_source=thisweekinreact) - 🇵🇱 Wrocław - Sept 5-6. 10% de réduction avec le code « TWIR ». Vous ne pouvez pas venir sur place ? Inscrivez-vous pour bénéficier d'un accès gratuit à la diffusion en direct ! Intervenants : Mike Grabowski, Fernando Rojo, Alex Hunt, Eric Vicenti...
+- 📜 [Shopify Tophat - Crafting a Delightful Mobile Developer Experience](https://shopify.engineering/shopify-tophat-mobile-developer-testing) : Réintroduit « Tophat », l'application macOS menubar pour augmenter React Native DX, que Shopify a finalement open-sourcé la semaine dernière. Apparemment, cette application a été une source d'inspiration pour Expo Orbit.
+- 📜 [Expo - What to do without CodePush](https://expo.dev/blog/what-to-do-without-codepush) : Le Microsoft App Center sera bientôt fermé, y compris CodePush. Cet article propose des alternatives à CodePush pour les mises à jour en direct. Il vous encourage à adopter EAS Update en offrant une belle comparaison entre les deux, mais mentionne également des alternatives auto-hébergées.
+- 📜 [Introducing Oblivious HTTP support in Swift](https://www.swift.org/blog/introducing-swift-nio-oblivious-http/) : Une nouvelle API Swift qui pourrait être utile aux développeurs React Native cherchant à renforcer la protection de la vie privée.
+- 📜 [How to build a Bluetooth Low Energy powered Expo app](https://expo.dev/blog/how-to-build-a-bluetooth-low-energy-powered-expo-app) : Tutoriel utilisant `react-native-ble-plx` avec le plugin Expo Config.
+- 📜 [How to deploy App Store and Beta versions of React Native iOS app from Azure DevOps pipeline](https://www.nico.fyi/blog/how-to-deploy-multiple-versions-react-native-ios-to-testflight-from-azure-devops-pipeline)
+- 📜 [How Rosebud decided to go native with Expo](https://expo.dev/blog/how-rosebud-decided-to-go-native-with-expo)
+- 📦 [React-Native-MMKV 3.0 - faster key/value storage, full rewrite to pure C++ TurboModule](https://github.com/mrousavy/react-native-mmkv/releases/tag/v3.0.0)
+- 📦 [React Native visionOS 0.75](https://github.com/callstack/react-native-visionos/releases/tag/v0.75.0-visionos)
+- 📦 [Re.Pack 4.3 - RN 0.75, --watch flag](https://github.com/callstack/repack/releases/tag/%40callstack%2Frepack%404.3.0)
+- 📦 [Belt - Opionated CLI tool for starting a new React Native app](https://thoughtbot.com/blog/introducing-belt-your-new-favorite-tool-for-starting-react-native-apps)
+- 🎥 [Beto - Building an Obscura Pro Camera App with React Native Vision Camera and Expo](https://www.youtube.com/watch?v=xNaGYGDZ2JU)
+- 🎥 [Simon Grimm - When does local-first make sense?](https://www.youtube.com/watch?v=vLRtC53rwCg)
+- 🎥 [The React Native Podcast rebrands to React Universe On Air](https://www.youtube.com/watch?v=Y8VVdfP9QDE) : Le célèbre podcast Callstack a changé de nom pour s'adapter à la conférence React Universe qui aura lieu la semaine prochaine et pour couvrir un champ d'application plus large de React cross-platform.
+- 🎙️ [Rocket Ship 48 - MLKit & The React Native Paradox with Gant Laborde](https://share.transistor.fm/s/9b305e63)
+- 🎙️ [RNR 305 - On-device AI in React Native with Gant Laborde](https://www.reactnativeradio.com/episodes/rnr-305-on-device-ai-in-react-native-with-gant-laborde) (oui, encore lui !)
+
+---
+
+## 🇫🇷 En français {#fr}
+
+- 🇫🇷 [ReactHebdo.fr - Dernières éditions traduites en français](https://thisweekinreact.com/fr/newsletter)
+- 📜 [Comment configurer NextAuth Password avec une base de données (Next App Directory)​](https://codelynx.dev/posts/2024-08-27-comment-setup-nextauth-avec-le-password-en-database-next-app)
+- 📜 [Faut-il apprendre React ou Angular ?​](https://codelynx.dev/posts/2024-08-27-apprendre-react-ou-angular)
+- 🎥 [devaidaya - Setup de NativeWind dans un projet React Native (Expo et Expo Router)​](https://www.youtube.com/watch?v=4LPnPUmlrk0)
+- 🎥 [Melvynx - Je refais mon blog de 0 (Design / Stack / NextJS)​](https://www.youtube.com/watch?v=UONPCDkoM94)
+- 🎙️ [Double Slash - Les news web dev pour août 2024](https://double-slash.dev/podcasts/news-aout-24/)
+
+---
+
+## 🔀 Autre {#other}
+
+[![Rspack 1.0](/emails/issues/198/rspack.jpg)](https://rspack.dev/blog/announcing-1-0)
+
+**[Rspack 1.0](https://rspack.dev/blog/announcing-1-0)**
+
+Rspack est un bundler Rust très rapide qui est presque 100% compatible avec Webpack, y compris tout son écosystème de plugins et de loaders. Rspack est bien adapté pour être un excellent choix pour de nombreuses applications React utilisant Webpack qui ont besoin de bundler plus rapidement aujourd'hui. Il est facile à adopter grâce à sa compatibilité, mais aussi à l'épreuve du temps avec [la prise en charge prochaine des React Server Components de première classe](https://rspack.dev/blog/announcing-1-0#react-server-components-support). C'est pourquoi je suis en train de [migrer Docusaurus vers Rspack](https://x.com/sebastienlorber/status/1828696665135431879). Je vous recommande également de jeter un œil à [Rsdoctor](https://rsdoctor.dev/), c'est un excellent outil qui fonctionne également avec Webpack et qui vous indiquera les goulots d'étranglement de votre build.
+
+---
+
+- 📜 [JS Dates Are About to Be Fixed](https://docs.timetime.in/blog/js-dates-finally-fixed/)
+- 📜 [How To Create An NPM Package](https://www.totaltypescript.com/how-to-create-an-npm-package)
+- 📜 [How to make your web page faster before it even loads](https://blog.sentry.io/how-to-make-your-web-page-faster-before-it-even-loads/)
+- 📜 [Fix Your Annoying Popups with the CloseWatcher API](https://logaretm.com/blog/fix-your-annoying-popups-with-the-closewatcher-api/)
+- 📜 [Custom Range Slider Using Anchor Positioning & Scroll-Driven Animations](https://frontendmasters.com/blog/custom-range-slider-using-anchor-positioning-scroll-driven-animations/)
+- 📜 [Regexes Got Good: The History And Future Of Regular Expressions In JavaScript](https://www.smashingmagazine.com/2024/08/history-future-regular-expressions-javascript/)
+- 📦 [Node v20.17 - require() sync ESM graphs, matchesGlob()](https://nodejs.org/en/blog/release/v20.17.0)
+- 📦 [Node v22.7.0 - Experimental support for TS Enums/Namespaces, detect modules stable](https://nodejs.org/en/blog/release/v22.7.0)
+- 📦 [Deno 1.46 - The Last 1.x Release](https://deno.com/blog/v1.46)
+- 📦 [Test-server - Utility for creating HTTP and WebSocket servers for testing](https://github.com/epicweb-dev/test-server)
+- 📦 [TypeScript 5.6 RC - Iterator methods, Disallowed Nullish and Truthy Checks…](https://devblogs.microsoft.com/typescript/announcing-typescript-5-6-rc/)
+- 📦 [Turborepo 2.1](https://turbo.build/blog/turbo-2-1-0)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/198/meme.jpg)](https://x.com/astrodotbuild/status/1820423005912105149)
+
+A plus 👋
