@@ -1,0 +1,192 @@
+---
+slug: /200
+title: "This Week In React #200: Remix, React Universe, Next.js dynamicIO, :has, Redwood, MDX, Atomic-CRM, NewArch, Fusebox, Hermes, Gesture Handler, TypedGPU, Firebase, Vite, Express, TypeScript, Rsbuild..."
+authors: [matthieugicquel, cyrilbo]
+date: 09-11-2024
+---
+
+Salut à tous !
+
+**Cyril et Matthieu** de [Theodo Apps (anciennement BAM)](https://apps.theodo.com/en?utm_source=thisweekinreact) sont présents 👋, ils remplacent Seb pour vous présenter les dernières nouvelles des mondes React et React Native.
+
+Cette semaine est consacrée aux Server Components, avec de nouvelles fonctionnalités dans Vite et Next.js. Nous avons également quelques articles sur le sujet que vous aimeriez peut-être lire. Nous avons également beaucoup de contenu lié à Remix et des discussions liées à l'adoption de ChatGPT.
+
+Du côté de React Native, comme prévu, il y a eu des annonces majeures lors de React Universe, et React Native 0.76 arrive dans quelques semaines !
+
+La fête de React Native n'est pas terminée. Allez voir notre partenaire de conférence [**React Native 🇬🇧 London**](https://www.reactnativelondon.co.uk/?utm_source=thisweekinreact) (14 & 15 novembre) et bénéficiez de 10% de réduction avec notre code « TWIR ». C'est la première édition, et ils ont déjà un excellent programme avec Charlie Cheever, Alex Hunt, Charlotte Isambert et Cedric Van Putten.
+
+**Seb** : Je passe rapidement pour fêter la 200e édition de cette newsletter 🎉. Merci de nous lire si fidèlement depuis toutes ces années. Avec 43k abonnés, nous sommes pérennes et en passe de devenir un véritable média pour les développeurs.
+
+<!-- truncate -->
+
+**💡 [Consulter cette newsletter sur Twitter](https://slo.im/thread) - format visuel 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![Handsontable: Advanced data grid for your React app](/emails/issues/200/handsontable.jpg)](https://handsontable.com/docs/react-data-grid/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=twirsep11)
+
+**[Handsontable: Advanced data grid for your React app](https://handsontable.com/docs/react-data-grid/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=twirsep11)**
+
+Handsontable is [a feature-rich data grid](https://handsontable.com/demo?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=twirsep11) designed for React developers who need a powerful, customizable, and accessible solution to manage complex data.
+
+- A unique **spreadsheet-like interface** with sorting, filtering, and CRUD operations
+- Advanced operations like conditional formatting and **400 built-in formulas**, similar to Excel
+- **Customizable editors and renderers**, allowing dropdowns, menus or custom components within grid cells to fit specific use cases
+- **Optimized performance** for smooth and responsive interactions
+- **Accessibility with WCAG 2.1 compliance** for better support for users with disabilities
+
+Handsontable adapts to various use cases, from enterprise applications to simple websites, offering performance and flexibility trusted by companies worldwide.
+
+[Get started today!](https://handsontable.com/docs/react-data-grid/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=twirsep11)
+
+---
+
+## ⚛️ React {#react}
+
+[![Josh Comeau - The Undeniable Utility Of CSS `:has`](/emails/issues/200/css-has.jpg)](https://www.joshwcomeau.com/css/has/)
+
+**Le CSS `:has` pour les développeurs React**
+
+Cette semaine, nous avons deux excellents articles sur le nouveau sélecteur CSS `:has`, et sur la façon dont les développeurs React peuvent l'exploiter et simplifier/supprimer leur code JS tout en améliorant les performances. Cette nouvelle fonctionnalité CSS a été assez bien supportée (92%) mais ne peut pas être polyfilled donc pour l'instant il vaut mieux l'utiliser pour des choses subtiles et de l'amélioration progressive.
+
+A lire dans cet ordre :
+
+- 📜 [Josh Comeau \- The Undeniable Utility Of CSS `:has`](https://www.joshwcomeau.com/css/has/) : Excellent article d'introduction interactif, incluant également quelques commentaires et exemples pertinents pour les développeurs React, tels que le blocage du scroll global de la page lors de l'ouverture d'une modale avec un attribut data au lieu d'un `useEffect`.
+- 📜 [Nadia Makarevich \- Replacing React code with CSS `:has` selector](https://www.developerway.com/posts/replacing-react-with-css) : Donne quelques exemples plus intéressants basés sur React, tels que la gestion du focus, la mise en évidence des lignes de tableau ou des champs de formulaire en fonction de l'état de l'input.
+
+Un grand pouvoir implique de grandes responsabilités. N'oubliez pas de garder vos composants React encapsulés et évitez autant que possible les styles qui sortent des limites des composants.
+
+---
+
+- 💸 [React Component Analytics — Omlet Scans Your Codebase to Measure Component Usage to Increase Code Quality and Design Systems Adoption](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-quick-link-aug-2024)
+- 🐦 [Next.js - new `experimental.dynamicIO` flag to end caching headaches](https://x.com/feedthejim/status/1831224197827166613) : Ce flag permet de s'assurer que les composants qui effectuent des IO asynchrones comme les fetches et les DB queries utilisent le rendu dynamique par défaut.
+- 🐦 [ChatGPT migrated from Next.js to Remix](https://x.com/ryanflorence/status/1831379475654947233)
+- 👀 [Vite 6 PR merged - Environment API](https://github.com/vitejs/vite/pull/16471) : Ceci est particulièrement utile pour React, car il modélise correctement les différents « environnements » sur lesquels les applications React s'exécutent : navigateur, SSR, RSC, avec des graphes de modules distincts.
+- 👀 [Next.js PR - Partial Fallback Prerendering](https://github.com/vercel/next.js/pull/68958)
+- 📖 [TanStack Router - Virtual File Routes:](https://tanstack.com/router/v1/docs/framework/react/guide/virtual-file-routes) Tanstack Start a son équivalent Remix `routes.ts`.
+- 📖 [Next.js new docs - Progressive Web Applications (PWA)](https://nextjs.org/docs/app/building-your-application/configuring/progressive-web-apps)
+- 🗓️ [React-Brussels](https://www.react.brussels/?utm_source=thisweekinreact) - 🇧🇪 Bruxelles - 18 octobre - 10% de réduction avec le code « TWIR ». Apprenez avec Nicolas Dubien et Charlotte Isambert !
+- 🗓️ [reactjsday](https://2024.reactjsday.it/?utm_source=thisweekinreact) - 🇮🇹 Vérone - 25 octobre - 10% de réduction avec le code « TWIR ». Une programmation impressionnante est annoncée avec Matheus Albuquerque, Aurora Scharff et Dani Coll !
+- 🗓️ [Squiggle Conf](https://2024.squiggleconf.com/?utm_source=thisweekinreact) - 🇺🇸 Boston - 03 & 04 octobre - Dernier rappel pour les billets ! Ne manquez pas cet événement, et le code de réduction « TWIR » de 10% !
+- 📜 [React and FormData](https://reacttraining.com/blog/react-and-form-data) : préconise l'utilisation de FormData et fournit des solutions pratiques ainsi que la compatibilité TypeScript via Zod.
+- 📜 [Modern Data-Fetching in React](https://reacttraining.com/blog/modern-data-fetching-in-react) : L'article compare les méthodes de collecte de données comme `useEffect`, `useQuery`, les loaders React Router, le `getServerSideProps` de Next.js, les loaders Remix, et les React Server Components, en soulignant les compromis entre les approches côté client et côté serveur.
+- 📜 [Oops, I accidentally made our website faster by switching to Remix](https://echobind.com/post/oops-i-accidentally-made-our-website-faster-by-switching-to-remix) : Echobind détaille les détails de la migration de Next.js/Vercel vers Remix/Railway. Ils cherchaient seulement à économiser quelques dollars et ont été surpris par les performances (Lighthouse score) et les améliorations en matière de référencement.
+- 📜 [Deploying a Next.js App to Production in any server](https://www.saybackend.com/blog/04-deploy-nextjs-to-production-without-vercel) : Il ne vous donne pas toutes les optimisations que Vercel fournit, mais il est possible de déployer des applications Next.js avec docker et le mode de sortie `standalone` Next.js.
+- 📜 [How to Show Task Sequence Progress with React Suspense and RSC in Next.js](https://www.nico.fyi/blog/next-js-sequential-tasks-progress-stepper-with-rsc-and-suspense) : Utilisation du hook `use`.
+- 📜 [Expressive components in vanilla React, part 1: TypeStates](https://massimilianomirra.com/notes/expressive-components-in-vanilla-react-part-1-type-states) : « Le choix n'est pas vraiment entre la construction d'une machine à états ou non, mais plutôt entre la construction implicite ou explicite ».
+- 📜 [Preact or Svelte? An Embedded Widget Use Case](https://sentry.engineering/blog/preact-or-svelte-an-embedded-widget-use-case) : Sentry a choisi Preact plutôt que Svelte pour son widget de feedback utilisateur.
+- 📜 [Vercel - What’s new in React 19](https://vercel.com/blog/whats-new-in-react-19)
+- 📜 [How to Use React Compiler](https://www.freecodecamp.org/news/react-compiler-complete-guide-react-19/?utm_source=newsletter.reactdigest.net&utm_medium=newsletter&utm_campaign=how-to-use-react-compiler)
+- 📜 [MDX in Next.js](https://spacejelly.dev/posts/mdx-in-nextjs)
+- 📜 [Component auto import in Astro and MDX](https://lirantal.com/blog/component-auto-import-in-astro-framework/)
+- 📜 [File uploads with Remix](https://programmingarehard.com/2024/09/06/remix-file-uploads-updated.html/)
+- 📦 [Redwood v8.0](https://redwoodjs.com/upgrade/v8) : Jobs en arrière-plan, configuration SSR/RSC plus facile, Vite pour Storybook, prise en charge de Docker et mises à jour de packages clés, tout en supprimant Webpack.
+- 📦 [Remix 2.12 - Single Fetch improvements \+ `future.unstable_optimizeDeps`](https://remix.run/docs/en/main/start/changelog#v2120)
+- 📦 [React Router 6.26.2 - Update the `unstable_dataStrategy` API](https://reactrouter.com/en/main/start/changelog#v6262)
+- 📦 [Remix-the-web - Collection of packages for use with Remix or any web framework](https://github.com/mjackson/remix-the-web)
+- 📦 [Atomic-CRM - Full-featured free CRM built with React, react-admin, and Supabase](https://marmelab.com/atomic-crm/)
+- 🎥 [Wes Bos - Why did OpenAI move from Next.js to Remix?](https://www.youtube.com/watch?v=hHWgGfZpk00)
+- 🎥 [Fireship - Front-end web development is changing, quickly (shadcn/ui, V0)](https://www.youtube.com/watch?v=TBIjgBVFjVI)
+- 🎥 [Theo - React's most dangerous feature (“use server”)](https://www.youtube.com/watch?v=yUm-ET8w_28&t=1068s)
+- 🎥 [Jack Herrington - ShadCN’s Revolutionary New CLI](https://www.youtube.com/watch?v=LEFRcCf4ehc)
+- 🎙️ [This Month in React August 2024 - Matt Pocock taught us to make modules, RN is faster, iterator helpers are cool, JSR/Deno going sour](https://podcasters.spotify.com/pod/show/reactiflux/episodes/TMiR-2024-08-Matt-Pocock-taught-us-to-make-modules--RN-is-faster--iterator-helpers-are-cool--JSRDeno-going-sour-e2o0cor)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Unleash Document Superpowers in Your React Apps!](/emails/issues/200/pspdfkit.jpg)](https://pspdfkit.com/pdf-sdk/web)
+
+**[Unleash Document Superpowers in Your React Apps!](https://pspdfkit.com/pdf-sdk/web)**
+
+Attention React enthusiasts! 👋 Elevate your document game with the PSPDFKit React SDK:
+
+- 🏎️ Get started quickly with a free trial and extensive documentation
+- ⏱️ Save time developing by leveraging the slick built-in UI and **Baseline-UI**, our new design system
+- 🛠️ Leverage extensive APIs for processing and customization
+- 🆘 Make use of our support and solution engineering team to get help from domain experts
+
+We've got you covered on **all platforms** from mobile to backend.
+
+Want to work on challenging problems and have **impact on hundreds of applications**? Check out our open positions such as [Senior Frontend Engineer](https://pspdfkit.bamboohr.com/careers/163).
+
+---
+
+## 📱 React-Native {#react-native}
+
+La semaine dernière, Wrocław a été le théâtre de React Universe, où des annonces majeures ont enthousiasmé la communauté React Native. L'un des moments marquants a été le dévoilement de React Native 0.76, dont le lancement est prévu pour la fin du mois d'octobre. Cette version apporte des avancées significatives, notamment la nouvelle architecture activée par défaut et l'introduction des DevTools React Native entièrement remaniés. Elle est déjà disponible en tant que [release candidate 0.76](https://github.com/facebook/react-native/releases/tag/v0.76.0-rc.0)\ !
+
+[![React Native DevTools](/emails/issues/200/react-native-devtools.jpg)](https://www.youtube.com/watch?v=b48Lax2-jOQ&t=4350s)
+
+- 🎥 [Alex Hunt - The New React Native Debugger - Codename "Fusebox"](https://www.youtube.com/watch?v=b48Lax2-jOQ&t=4350s)
+  Les outils de débogage pour React Native ont longtemps été fragmentés, mais le nouveau « React Native DevTools » introduit une expérience unifiée avec un nouveau backend alimenté par le Chrome DevTools Protocol (CDP). Cette architecture, prise en charge par les IDE et Chrome DevTools, promet des points d'arrêt plus fiables et des rechargements stables. Elle prend en charge à la fois les nouvelles et les anciennes architectures, se positionnant comme la solution de débogage de référence pour les applications React Native. Le débogage Direct Hermes via Chrome sera progressivement supprimé, bien que les fonctionnalités d'inspection des performances et du réseau soient toujours en cours d'élaboration.
+
+[![Hermes Performance Chart](/emails/issues/200/hermes-perf.jpg)](https://www.youtube.com/watch?v=pfeTPSai6vc&t=8702s)
+
+- 🎥 [Tzvetan Mikov - Hermes: Better performance with runtime bytecode translation](https://www.youtube.com/watch?v=pfeTPSai6vc&t=8702s)  
+  Static Hermes, présenté à React Native Europe l'année dernière, a suscité un intérêt significatif en remettant en question les normes existantes des moteurs JavaScript. Bien qu'encore en cours de développement, Static Hermes propose une nouvelle approche en compilant le JavaScript en code machine natif ou en bytecode typé grâce à l'analyse des annotations de type, avec la possibilité d'obtenir des performances équivalentes à celles du C++. Cependant, ce workflow a ses limites : les mises à jour over-the-air (OTA) ne fonctionneront plus, les outils de compilation JavaScript actuels comme Babel ne conservent pas les annotations de type, et il y a encore une quantité considérable de code non typé en cours d'utilisation. Pour relever ces défis, l'équipe Hermes a introduit la traduction du bytecode en cours d'exécution, qui promet des performances jusqu'à 12 fois supérieures à celles de la compilation native. Ces innovations seront disponibles dans Hermes v2, une fois qu'elles auront fait l'objet de tests internes approfondis chez Meta.
+
+---
+
+- 💸 [React Native Mastery - The only course you need to Master React Native & Expo](https://notjust.dev/react-native-mastery?utm_source=twir&utm_medium=email)
+- 🐦 [React Native Firebase supports the New Architecture](https://x.com/notbrent/status/1832108444578672709) : C'est une excellente nouvelle, car il est largement utilisé dans tous les projets. C'était l'une des pierres manquantes pour pouvoir activer la nouvelle architecture.
+- 🐦 [React Native IDE will support the New React Debugger (Fusebox)](https://x.com/kzzzf/status/1832017321235190117)
+- 📖 [New updates from Expo documentation](https://x.com/amanhimself/status/1833466032209727662) : fichiers sans routes dans expo-router, mise à jour de l'aide pour la mise à niveau pour le SDK 51, guide des notifications push, tests E2E avec Maestro.
+- 📜 [The beauty of mathematics in crafting stunning animations](https://expo.dev/blog/the-beauty-of-mathematics-in-crafting-stunning-animations)
+- 📜 [Universal React Native - Operational Efficiency Across Platforms](https://raf.dev/blog/universal-react-native/)
+- 📜 [From idea to Google Play Store in 100 days](https://expo.dev/blog/from-idea-to-google-play-store-in-100-days)
+- 📦 [Metro v0.80.11 - Perf improvements making builds up to 15 times faster](https://x.com/MetroBundler/status/1831709057670861260)
+- 📦 [React Native Gesture Handler 2.19 - Full macOS support, keyboard accessibility on Web, multiple pointers support in LongPress](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.19.0)
+- 📦 [TypeGPU - TypeScript library that enhances the WebGPU API, allowing resource management in a type-safe, declarative way](https://docs.swmansion.com/TypeGPU/)
+- 📦 [expo-reaction-menu](https://github.com/arunabhverma/expo-reaction-menu) : Présentation d'un menu fluide pour des réactions qui peut être utilisé dans les applications de messagerie à l'aide d'Expo et de Reanimated.
+- 📦 [InAppModule - Example repo to add a Turbo Native Module locally in your app, and not as an external library](https://github.com/cipolleschi/inappmodule)
+- 🎥 [Reactiive - Pager Dots Animation with React Native (Reanimated)](https://www.youtube.com/watch?v=04K3wPK2yC8)
+- 🎥 [Expo - How to create a native module with the Expo modules API](https://youtu.be/CdaQSlyGik8?si=aH_DWm6nr5BM3hYL)
+- 🎙️ [React Universe On Air 42 - Crossing Paths of React And React Native Ecosystems](https://www.callstack.com/podcasts/crossing-paths-of-react-and-react-native-ecosystems)
+- 🎙️ [React-Native-Radio 306 - React Native \+ Sentry: A Match Made in Heaven](https://reactnativeradio.com/episodes/306-react-native-sentry-a-match-made-in-heaven-with-krystof-woldrich)
+- 🎙️ [Rocket Ship 49 - Migrating to Expo from RNC CLI & Testing Libraries with Steve Galili](https://share.transistor.fm/s/e96a142b)
+
+---
+
+## 🇫🇷 En français {#fr}
+
+- 🇫🇷 [ReactHebdo.fr - Dernières éditions traduites en français](https://thisweekinreact.com/fr/newsletter)
+- 📅 [Remix Paris Meetup 2 - Jeudi 10 octobre 2024​](https://www.meetup.com/fr-FR/remix-paris/events/303251895/)
+- 📜 [Le meilleur moyen de créer des API Routes en NextJS App Directory​](https://codelynx.dev/posts/2024-09-08-route-avec-zod-en-nextjs)
+- 🎥 [Devaidaya - Les Routes Api d'Expo Router expliquées en 5 minutes​](https://www.youtube.com/watch?v=ggOYuTQkIh8)
+- 🎥 [Melvinx - Apprendre les render en React](https://www.youtube.com/watch?v=RteRxJaFsHQ)
+
+---
+
+## 🔀 Autre {#other}
+
+- 🐦 [Tailwind v4 alpha demo](https://x.com/adamwathan/status/1830715726195306731)
+- 📖 [Vitest cheat sheet](https://github.com/sapegin/vitest-cheat-sheet)
+- 📜 [ESLint v8.x end of life and version support policy](https://eslint.org/blog/2024/09/eslint-v8-eol-version-support/) : la prise en charge s'arrêtera en octobre, il est temps de migrer vers ESLint v9 et la configuration plate (flat config)
+- 📜 [CSS display contents](https://ishadeed.com/article/display-contents/)
+- 📜 [The State of ES5 on the Web](https://philipwalton.com/articles/the-state-of-es5-on-the-web/)
+- 📜 [CSS @property and the New Style](https://ryanmulligan.dev/blog/css-property-new-style/)
+- 📦 [Typescript v5.6 - Disallowed Nullish and Truthy Checks, , Iterator Helper Methods, `--noUncheckedSideEffectImports`, `--noCheck`, Exclude Patterns for Auto-Imports & more](https://devblogs.microsoft.com/typescript/announcing-typescript-5-6/)
+- 📦 [Rsbuild 1.0 - Build tool based on Rspack](https://rsbuild.dev/community/releases/v1-0)
+- 📦 [Express 5.0](https://github.com/expressjs/express/releases/tag/v5.0.0) : Mais nous utilisons toujours la balise `next` npm dist [jusqu'à ce que les types soient mis à jour et que la documentation sur la migration soit écrite](https://github.com/expressjs/express/issues/5944#issuecomment-2341980442).
+- 🎥 [Matt Pocock - 5 Things They’ll never Add To TypeScript](https://www.youtube.com/watch?v=Zsj1UlCsuio) : Stricter Omit, Negated Types, Nominal/Branded Types, Throws et Exact Types.
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/200/meme.jpg)](https://x.com/JLarky/status/1831873626985144708)
+
+[![alt](/emails/issues/200/meme2.jpg)](https://x.com/bionanek/status/1831649116415299837)
+
+A plus 👋
