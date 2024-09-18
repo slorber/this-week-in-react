@@ -45,38 +45,37 @@ Get set up and run your first scan in \<5 minutes. [Try for free](https://omlet.
 
 ## ⚛️ React {#react}
 
-- 📜 [Introducing TanStack Router](https://frontendmasters.com/blog/introducing-tanstack-router/): Great routing/navigation overview of this full-featured client-side framework that powers the upcoming TanStack Start framework (in alpha). It notably shines for its great typesafety for links, path segments and search parameters. I particularly like the idea of linking with \`to=”/users/$id”\` instead of \`to=”/users/123”\`
+- 📜 [Introducing TanStack Router](https://frontendmasters.com/blog/introducing-tanstack-router/): Great routing/navigation overview of this full-featured client-side framework that powers the upcoming TanStack Start framework (in alpha). It notably shines for its great typesafety for links, path segments and search parameters. I particularly like the idea of linking with `to=”/users/$id”` instead of `to=”/users/123”`
 - 📜 [A milestone for TypeScript Performance in TanStack Router](https://tanstack.com/blog/tanstack-router-typescript-performance): Still related to TanStack Router, I also liked this post that dives deep into troubleshooting TypeScript performance problems in the language service, leading to slow IDE autocompletion.
 
 ---
 
 - 💸 [React Bricks - Transform React components into dynamic, visually editable bricks of content with the pioneering React Visual Headless CMS.](https://www.reactbricks.com/?utm_source=twir&utm_campaign=ql24)
-
 - 🧑‍🎓 [XState: Complete Getting Started Guide](https://www.typeonce.dev/course/xstate-complete-getting-started-guide): Free comprehensive course on XState in a React context.
 - 🖨 [React 19 Cheat Sheet](https://www.epicreact.dev/react-19-cheatsheet)
-- 📜 [Remix's concurrent submissions are fundamentally flawed (without causal ordering)](https://dashbit.co/blog/remix-concurrent-submissions-flawed): The creator of Elixir argues that Remix submission and validation model is subject to race conditions. Ryan Florence plans to respond later. Note this is a more general problem affecting most client-side frameworks, although React 19 actions run sequentially and are not affected by it.
+- 📜 [Remix's concurrent submissions are fundamentally flawed (without causal ordering)](https://dashbit.co/blog/remix-concurrent-submissions-flawed): Following the migration of ChatGPT from Next.js to Remix, the creator of Elixir argues that Remix submission and validation model is subject to race conditions. Ryan Florence plans to respond later. Note this is a more general problem affecting most client-side frameworks, although React 19 actions run sequentially and are not affected by it.
 - 📜 [How Infinite Queries work](https://tkdodo.eu/blog/how-infinite-queries-work): Dominik from React Query explains how Infinite Queries work under the hood, using an elegant code architecture with a pluggable behavior logic. He also explains how he fixed an historical bug that was only reported recently, caused by the retry logic.
 - 📜 [How Remix's Flat File-Based Routing Works](https://www.udohjeremiah.com/blog/how-remix-flat-file-based-routing-works): Remix routing convention can be customized, but it comes with a default one that this post explains in details.
-- 📜 [Using callbacks to achieve better component decoupling in React](https://darios.blog/posts/using-callbacks-in-react): Short but important lesson on how to decouple a parent component from its children, by narrowing callback types instead of injecting a parent \`setState\`.
+- 📜 [Using callbacks to achieve better component decoupling in React](https://darios.blog/posts/using-callbacks-in-react): Short but important lesson on how to decouple a parent component from its children, by narrowing callback types instead of injecting a parent `setState`.
 - 📜 [SPA Lazy Loading Pitfalls](https://reacttraining.com/blog/spa-lazy-loading-pitfalls): When using React Router with lazy routes and loader functions, you’d rather avoid co-locating your loader function with the component that receives its data because it creates a waterfall.
 - 📜 [LLM and RSC: A match made in Heaven](https://nikhilsnayak.dev/blogs/llm-and-rsc): Uses OpenAI function/tool calls to implement an MVP of generative UI. The interactive demo can render an interactive React component during the chat session.
-- 📜 [Clean React with TypeScript](https://weser.io/blog/clean-react-with-typescript): Long-time ReasonML user adopts TypeScript and shares a great overview on how to best type React components, state, refs and events. You might be familiar with most types, but it also covers more advanced patterns such as forwarding props with \`ComponentProps\`.
+- 📜 [Clean React with TypeScript](https://weser.io/blog/clean-react-with-typescript): Long-time ReasonML user adopts TypeScript and shares a great overview on how to best type React components, state, refs and events. You might be familiar with most types, but it also covers more advanced patterns such as forwarding props with `ComponentProps`.
 - 📜 [Implementing Feature Flagging with the Next.js App Router](https://aurorascharff.no/posts/implementing-feature-flagging-with-nextjs-app-router/): Implements a custom feature flag system based on env variables. It works for both client and server components.
-- 📜 [Search Params in Next.js for URL State](https://www.robinwieruch.de/next-search-params/): A good introduction to the \`nuqs\` library to implement typed search params to filter/sort a list of items.
+- 📜 [Search Params in Next.js for URL State](https://www.robinwieruch.de/next-search-params/): A good introduction to the `nuqs` library to implement typed search params to filter/sort a list of items.
 - 📜 [Redwood background Jobs](https://redwoodjs.com/blog/background-jobs): Details the new feature introduced in the recent 8.0 release. It’s notably useful to perform slower actions such as sending emails, without delaying user responses. Jobs are stored in a database and executed by a scheduler.
 - 📜 [Tailwind UI Radiant \- A beautiful new marketing site template](https://tailwindcss.com/blog/2024-09-12-radiant-a-beautiful-new-marketing-site-template): New paid Next.js template from the Tailwind CSS team, but the launch blog post also explains interesting details, such as FramerMotion variant propagation.
-- 📜 [Don't Sleep on AbortController](https://kettanaito.com/blog/dont-sleep-on-abort-controller): Great vanilla JS article overall, including a cool React \`useEffect\` example
+- 📜 [Don't Sleep on AbortController](https://kettanaito.com/blog/dont-sleep-on-abort-controller): Great vanilla JS article overall, including a cool React `useEffect` example
 - 📦 [Vite 6 beta](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md): This comes with the new [Environment API](https://main.vitejs.dev/guide/api-environment) useful to support multiple module graphs for SSR and RSCs.
-- 📦 [Valtio 2.0](https://github.com/pmndrs/valtio/releases/tag/v2.0.0): Valtio won’t handle promises anymore, you need to use \`React.use()\` now. This inspired me to create a [demo](https://x.com/sebastienlorber/status/1836060870733955127) showing how this pattern of storing promises could greatly simplify vanilla data fetching with less complexity than \`useEffect()\`.
+- 📦 [Valtio 2.0](https://github.com/pmndrs/valtio/releases/tag/v2.0.0): Valtio won’t handle promises anymore, you need to use `React.use()` now. This inspired me to create a [demo](https://x.com/sebastienlorber/status/1836060870733955127) showing how this pattern of storing promises could greatly simplify vanilla data fetching with less complexity than `useEffect()`.
 - 📦 [Next.js SaaS Starter \- Using Next.js 15, React 19 Postgres, Drizzle, Stripe, and shadcn/ui](https://github.com/leerob/next-saas-starter): I’m not that much into boilerplates (there are too many), but this one is created by Lee Robinson from Vercel, free, using cutting edge React 19 features with best practices in application.
 - 📦 [Astro 5.0 beta \- stable Content Layer, Server Islands, astro:env](https://astro.build/blog/astro-5-beta/)
 - 📦 [Hono-Remix-Adapter](https://github.com/yusukebe/hono-remix-adapter)
 - 📦 [Storybook 8.3 \- Vitest integration, experimental Story globals](https://github.com/storybookjs/storybook/releases/tag/v8.3.0)
 - 📦 [Conform 1.2 \- Input key prop no longer required](https://github.com/edmundhung/conform/releases/tag/v1.2.0)
 - 📦 [Isograph 0.2 \- Modern GraphQL client](https://isograph.dev/blog/2024/09/11/isograph-0.2.0/)
-- 📦 [Relay 18.0 \- \`@alias\`, \`@catch\`, editor integration improvements and more](https://github.com/facebook/relay/releases/tag/v18.0.0)
+- 📦 [Relay 18.0 \- `@alias`, `@catch`, editor integration improvements and more](https://github.com/facebook/relay/releases/tag/v18.0.0)
 - 📦 [Shopify Hydrogen \- September 2024 release \- Improved sitemaps, search enhancements, localization, CSP fixes](https://hydrogen.shopify.dev/update/september-2024)
-- 🎥 [Theo \- We need to talk about Chrome's new API](https://www.youtube.com/watch?v=ucMNiYFB4CA): Greatly introduces the new \`scheduler.yield()\` that landed in Chrome 129\. It is useful for Concurrent React to split work into smaller chunks and give priority to the user inputs.
+- 🎥 [Theo \- We need to talk about Chrome's new API](https://www.youtube.com/watch?v=ucMNiYFB4CA): Greatly introduces the new `scheduler.yield()` that landed in Chrome 129\. It is useful for Concurrent React to split work into smaller chunks and give priority to the user inputs.
 - 🎥 [UI Engineering \- Making setState() instant](https://www.youtube.com/watch?v=H9IIwbUhEJA)
 
 <SubscribeFormEmbed placement="middle" />
@@ -95,7 +94,9 @@ Learn how leveraging the benefits of both session token authentication and JWTs 
 
 ## 📱 React-Native {#react-native}
 
-[Nitro Modules](https://mrousavy.github.io/nitro/)
+[![Nitro Modules](/emails/issues/201/nitro.jpg)](https://mrousavy.github.io/nitro/)
+
+**[Nitro Modules](https://mrousavy.github.io/nitro/)**
 
 Marc Rousavy finally released his long-awaited framework for creating very fast native modules with a great DX. It is based on Nitrogen, a code generator that generates type-safe C++/Swift/Kotlin bindings from a TypeScript interface. Many TypeScript types are supported. Unlike other module solutions, it is able to bridge directly to Swift and Kotlin (from C++). A simple benchmark shows that Nitro Modules outperform ExpoModules and TurboModules on a simple operation. So far the community feedback from early adopters has been very positive, notably William Candillion using it on react-native-wgpu. Also worth reading [Brent Vatne’s comment](https://x.com/notbrent/status/1834647244089307279) for why they didn’t adopt direct Swift C++ Interop in Expo modules (at least for now).
 
@@ -113,7 +114,7 @@ Marc Rousavy finally released his long-awaited framework for creating very fast 
 - 📦 [React Native VisionOS 0.76 RC.0 \- React Native debugger support](https://github.com/callstack/react-native-visionos/releases/tag/v0.76.0-rc.0-visionos)
 - 📦 [Lottie React Native 7.0 \- VisionOS, XCode 16, require 0.73+, no major breaking change](https://github.com/lottie-react-native/lottie-react-native/releases/tag/v7.0.0)
 - 📦 [Sonner-Native \- An opinionated toast component for React Native (port of Sonner)](https://github.com/gunnartorfis/sonner-native)
-- 📦 [React Native Testing Library 12.7 \- Simulate native state for TextInputs/ScrollView, Switch toBeChecked(), match Image with \`alt\` prop](https://github.com/callstack/react-native-testing-library/releases/tag/v12.7.2)
+- 📦 [React Native Testing Library 12.7 \- Simulate native state for TextInputs/ScrollView, Switch toBeChecked(), match Image with `alt` prop](https://github.com/callstack/react-native-testing-library/releases/tag/v12.7.2)
 - 📦 [React Native Iconify 2.0 \- dynamci imports, Next.js \+ Vite support, variables](https://github.com/oktaysenkan/react-native-iconify/releases/tag/v2.0.0)
 - 🎥 [Reactiive \- Animated Bar Chart with React Native (Reanimated)](https://www.youtube.com/watch?v=RO3qutJhU_Y)
 - 🎥 [Simon Grimm \- Can Cursor AI build my React Native App?](https://www.youtube.com/watch?v=5Y_t6NRl_xI)
@@ -139,10 +140,10 @@ Marc Rousavy finally released his long-awaited framework for creating very fast 
 
 ## 🤭 Fun {#fun}
 
-https://x.com/sebastienlorber/status/1833145461328244774
-https://x.com/sophiebits/status/1836272297801585041
-https://x.com/thymikee/status/1831602712577733035
+[![alt](/emails/issues/201/meme.jpg)](https://x.com/sophiebits/status/1836272297801585041)
 
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/201/meme2.jpg)](https://x.com/thymikee/status/1831602712577733035)
+
+[![alt](/emails/issues/201/meme3.jpg)](https://x.com/sebastienlorber/status/1833145461328244774)
 
 See ya! 👋
