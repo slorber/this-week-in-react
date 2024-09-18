@@ -1,19 +1,19 @@
 ---
 slug: /201
-title: "This Week In React #201: ..."
+title: "This Week In React #201: TanStack, Remix, Next.js-SaaS-Starter, routing, ?search, decoupling, LLM, Astro, Redwood, Storybook, Conform, Nitro Modules, RN CSS, Re.Pack, Swift, VisionOS, Lottie, Node.js, TypeScript, Vite, date-fns"
 authors: [slorber]
 date: 09-18-2024
-unlisted: true
 ---
 
 Hi everyone!
 
-<Todo />
+Another week with many interesting React community articles, notably around the TanStack.
 
-**Newsletter intro : React Summit US**
+We also have cool React Native announcements such as Nitro Modules.
 
-- 🗓️ [React-Africa](https://react-africa.com/?utm_source=thisweekinreact) - 🇲🇦 Casablanca - 29 November - Get a 10% discount with code “TWIR”. The full line up is now available, take a tour on the conference website !
-- 🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇬🇧 London - 25 & 28 October - 10% discount with code TWIR. Full line-up revealed !
+✍ Don't forget to sign this important petition: [Oracle, it's time to free JavaScript](https://javascript.tm/)
+
+Also check our partner conf 🗓 [React Summit US](https://reactsummit.us/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇺🇸 New-York \- 19 & 22 December. The great React Summit conference is back in the US for it's second edition!
 
 <!-- truncate -->
 
@@ -45,16 +45,25 @@ Get set up and run your first scan in \<5 minutes. [Try for free](https://omlet.
 
 ## ⚛️ React {#react}
 
-- 📜 [Introducing TanStack Router](https://frontendmasters.com/blog/introducing-tanstack-router/): Great routing/navigation overview of this full-featured client-side framework that powers the upcoming TanStack Start framework (in alpha). It notably shines for its great typesafety for links, path segments and search parameters. I particularly like the idea of linking with `to=”/users/$id”` instead of `to=”/users/123”`
+[![Introducing TanStack Router](/emails/issues/201/tanstack.jpg)](https://frontendmasters.com/blog/introducing-tanstack-router/)
+
+**TanStack news**
+
+I wasn't sure which headline to pick this week, so let's gather all TanStack-related news under one roof:
+
+- 📜 [Introducing TanStack Router](https://frontendmasters.com/blog/introducing-tanstack-router/): Great routing/navigation overview of this full-featured client-side framework that powers the upcoming TanStack Start framework (in alpha). It notably shines for its great typesafety for links, path segments and search parameters. I particularly like the idea of linking with `to=”/users/$id”` instead of `to=”/users/123”`.
 - 📜 [A milestone for TypeScript Performance in TanStack Router](https://tanstack.com/blog/tanstack-router-typescript-performance): Still related to TanStack Router, I also liked this post that dives deep into troubleshooting TypeScript performance problems in the language service, leading to slow IDE autocompletion.
+- 📜 [How Infinite Queries work](https://tkdodo.eu/blog/how-infinite-queries-work): Dominik from React Query explains how Infinite Queries work under the hood, using an elegant code architecture with a pluggable behavior logic. He also explains how he fixed an historical bug that was only reported recently, caused by the retry logic.
+- 👀 [Clerk TanStack start SDK (beta)](https://clerk.com/docs/quickstarts/tanstack-start): A third-party auth provider adding first-class auth support to the upcoming framework is a great sign of traction.
 
 ---
 
 - 💸 [React Bricks - Transform React components into dynamic, visually editable bricks of content with the pioneering React Visual Headless CMS.](https://www.reactbricks.com/?utm_source=twir&utm_campaign=ql24)
 - 🧑‍🎓 [XState: Complete Getting Started Guide](https://www.typeonce.dev/course/xstate-complete-getting-started-guide): Free comprehensive course on XState in a React context.
 - 🖨 [React 19 Cheat Sheet](https://www.epicreact.dev/react-19-cheatsheet)
+- 🗓️ [React-Africa](https://react-africa.com/?utm_source=thisweekinreact) - 🇲🇦 Casablanca - 29 November - Get a 10% discount with code “TWIR”. The full line up is now available, take a tour on the conference website !
+- 🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇬🇧 London - 25 & 28 October - 10% discount with code TWIR. Full line-up revealed !
 - 📜 [Remix's concurrent submissions are fundamentally flawed (without causal ordering)](https://dashbit.co/blog/remix-concurrent-submissions-flawed): Following the migration of ChatGPT from Next.js to Remix, the creator of Elixir argues that Remix submission and validation model is subject to race conditions. Ryan Florence plans to respond later. Note this is a more general problem affecting most client-side frameworks, although React 19 actions run sequentially and are not affected by it.
-- 📜 [How Infinite Queries work](https://tkdodo.eu/blog/how-infinite-queries-work): Dominik from React Query explains how Infinite Queries work under the hood, using an elegant code architecture with a pluggable behavior logic. He also explains how he fixed an historical bug that was only reported recently, caused by the retry logic.
 - 📜 [How Remix's Flat File-Based Routing Works](https://www.udohjeremiah.com/blog/how-remix-flat-file-based-routing-works): Remix routing convention can be customized, but it comes with a default one that this post explains in details.
 - 📜 [Using callbacks to achieve better component decoupling in React](https://darios.blog/posts/using-callbacks-in-react): Short but important lesson on how to decouple a parent component from its children, by narrowing callback types instead of injecting a parent `setState`.
 - 📜 [SPA Lazy Loading Pitfalls](https://reacttraining.com/blog/spa-lazy-loading-pitfalls): When using React Router with lazy routes and loader functions, you’d rather avoid co-locating your loader function with the component that receives its data because it creates a waterfall.
@@ -100,7 +109,7 @@ Learn how leveraging the benefits of both session token authentication and JWTs 
 
 Marc Rousavy finally released his long-awaited framework for creating very fast native modules with a great DX. It is based on Nitrogen, a code generator that generates type-safe C++/Swift/Kotlin bindings from a TypeScript interface. Many TypeScript types are supported. Unlike other module solutions, it is able to bridge directly to Swift and Kotlin (from C++). A simple benchmark shows that Nitro Modules outperform ExpoModules and TurboModules on a simple operation. So far the community feedback from early adopters has been very positive, notably William Candillion using it on react-native-wgpu. Also worth reading [Brent Vatne’s comment](https://x.com/notbrent/status/1834647244089307279) for why they didn’t adopt direct Swift C++ Interop in Expo modules (at least for now).
 
-—--
+---
 
 - 💸 [React Native Mastery - The only course you need to Master React Native & Expo](https://notjust.dev/react-native-mastery?utm_source=twir&utm_medium=email)
 - 🐦 [React Native Skia running on WebGPU Canvas](https://x.com/wcandillon/status/1834245607906496888): Great demo but more importantly explains the intention to implement a generic Canvas API for React Native, similar to the one available on the web.
@@ -124,7 +133,6 @@ Marc Rousavy finally released his long-awaited framework for creating very fast 
 
 ## 🔀 Other {#other}
 
-- ✍️ [Oracle, it's time to free JavaScript \- Sign the petition](https://javascript.tm/)
 - 👀 [TypeScript 5.7 Iteration Plan](https://github.com/microsoft/TypeScript/issues/59905)
 - 👀 [Web Features Explorer \- A release note for the web platform](https://patrickbrosset.com/articles/2024-09-04-a-release-note-for-the-web-platform/)
 - 📜 [Understanding Concurrency, Parallelism and JS](https://www.rugu.dev/en/blog/concurrency-and-parallelism/)
@@ -133,8 +141,7 @@ Marc Rousavy finally released his long-awaited framework for creating very fast 
 - 📦 [Node 22.9 \- getCallSite API](https://nodejs.org/en/blog/release/v22.9.0)
 - 📦 [Safari 18.0 \- View Transitions, Style Queries, Animate display, URL.parse()...](https://webkit.org/blog/15865/webkit-features-in-safari-18-0/)
 - 📦 [Hono 4.6 \- Context Storage Middleware (AsyncLocalStorage)](https://github.com/honojs/hono/releases/tag/v4.6.0)
-- 📦 [Biome 1.9 \- Stable CSS and GraphQL formatter/linter, editorconfig](https://biomejs.dev/blog/biome-v1-9/)
-- 📦 [Fastify 5.0 \- Node 20+, remove deprecated APIs](https://blog.platformatic.dev/fastify-v5-is-here)
+- 📦 [Biome 1.9 \- Stable CSS and GraphQL formatter/linter, `.editorconfig`](https://biomejs.dev/blog/biome-v1-9/)
 
 ---
 
