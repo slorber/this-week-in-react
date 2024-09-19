@@ -19,6 +19,15 @@
     },
 
     {
+      "source": "/img/TWIR_LOGO_SIMPLE_NOBG.png",
+      "headers": [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=86400, s-maxage=86400"
+        }
+      ]
+    },
+    {
       "source": "/img/TWIR_POST.jpg",
       "headers": [
         {
@@ -57,6 +66,15 @@
     },
 
     {
+      "source": "/emails/separators/christmas.png",
+      "headers": [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=86400, s-maxage=86400"
+        }
+      ]
+    },
+    {
       "source": "/emails/:path*",
       "headers": [
         {
@@ -64,12 +82,20 @@
           "value" : "public, max-age=3600, s-maxage=3600"
         }
       ]
+    },
+    {
+      "source": "/social/:path*",
+      "headers": [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=86400, s-maxage=86400"
+        }
+      ]
     }
-
   ],
 
-  "redirects": [
 
+  "redirects": [
     {
       "source": "/social/x",
       "destination": "https://twitter.com/sebastienlorber",
