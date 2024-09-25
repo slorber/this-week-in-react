@@ -1,6 +1,6 @@
 ---
 slug: /202
-title: "This Week In React #202: ..."
+title: "This Week In React #202: Next.js, Composition, search params, PPR, useActionState, content-visibility, Astro, MDX, Storybook, Priompt, Radon, Expo, MiniSim, CSS, Bun, Deno, Node.js..."
 authors: [slorber]
 date: 09-25-2024
 unlisted: true
@@ -8,11 +8,7 @@ unlisted: true
 
 Hi everyone!
 
-<Todo />
-
-- 🗓️ [React Summit US](https://reactsummit.us/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇺🇸 New-York - 19 & 22 December - [Free remote tickets are available now, click here !](https://gitnation.com/badges/react-summit-us-2024/addy_osmani?from=This+Week+In+React) 10% discount with code TWIR.
-- 🗓️ [RNLConf](https://www.reactnativelondon.co.uk/?utm_source=thisweekinreact) \- 🇬🇧 London - 14 & 15 November - Get a 10% discount with code "TWIR”, grab a ticket now !
-- 🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇬🇧 London - 25 & 28 October - Hurry and grab your ticket to the conference as prices are about to go up ! And fon’t forget your discount with code “TWIR”.
+This week has been rather quiet in terms of React/RN announcements, but we still had great blog posts and various interesting Next.js and CSS news.
 
 <!-- truncate -->
 
@@ -45,11 +41,19 @@ Learn More: [ag-grid.com](https://www.ag-grid.com/react-table?utm_source=thiswee
 
 ## ⚛️ React {#react}
 
-- 📜 [How I Built My Blog](https://www.joshwcomeau.com/blog/how-i-built-my-blog-v2/): Josh Comeau shares his experience migrating an advanced blog (100k LOC) from the Next.js Pages Router to the App Router, with mitigated feedback (lower Lighthouse score, slower dev server…). It’s an interesting React read overall, presently presented, interactive, and not limited to Next.js users. Includes many details involving various dependencies: MDX, Shiki, Linaria, Framer-Motion…
+[![How I Built My Blog](/emails/issues/202/josh.jpg)](https://www.joshwcomeau.com/blog/how-i-built-my-blog-v2/)
+
+**[How I Built My Blog](https://www.joshwcomeau.com/blog/how-i-built-my-blog-v2/)**
+
+Josh Comeau shares his experience migrating an advanced blog (100k LOC) from the Next.js Pages Router to the App Router, with mitigated feedback (lower Lighthouse score, slower dev server…). It’s an interesting React read overall, presently presented, interactive, and not limited to Next.js users. Includes many details involving various dependencies: MDX, Shiki, Linaria, Framer-Motion…
 
 ---
 
-- 📜 [Component Composition is great btw](https://tkdodo.eu/blog/component-composition-is-great-btw): Dominik explains how React redefined the concept of “Separation of Concerns” and why you should favor composition and early returns over rendering multiple states conditionally. I share the same experience: the component is more likely to remain maintainable over time this way.
+[![Component Composition is great btw](/emails/issues/202/composition.jpg)](https://tkdodo.eu/blog/component-composition-is-great-btw)
+
+**[Component Composition is great btw](https://tkdodo.eu/blog/component-composition-is-great-btw)**
+
+Dominik explains how React redefined the concept of “Separation of Concerns” and why you should favor composition and early returns over rendering multiple states conditionally. I share the same experience: the component is more likely to remain maintainable over time this way.
 
 ---
 
@@ -59,6 +63,8 @@ Learn More: [ag-grid.com](https://www.ag-grid.com/react-table?utm_source=thiswee
 - 🔐 [Next.js Cache Poisoning vulnerability](https://github.com/advisories/GHSA-gp8f-8m3g-qvj9): Only affects Page Router non-dynamic routes, fixed in 13.5.7 and 14.2.9
 - 🧑‍🎓 [Vim for React Developers](https://vimforreactdevs.com/): Free pragmatic mini-course from Lee Robinson.
 - 🧑‍🎓 [EpicReact v2 \- React 19 update](https://www.epicreact.dev/): Kent C. Dodds released a new version of his flagship React course (paid, currently 40% off).
+- 🗓️ [React Summit US](https://reactsummit.us/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇺🇸 New-York - 19 & 22 December - [Free remote tickets are available now, click here !](https://gitnation.com/badges/react-summit-us-2024/addy_osmani?from=This+Week+In+React) 10% discount with code TWIR.
+- 🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇬🇧 London - 25 & 28 October - Hurry and grab your ticket to the conference as prices are about to go up ! And fon’t forget your discount with code “TWIR”.
 - 📜 [How to control a React component with the URL](https://buildui.com/posts/how-to-control-a-react-component-with-the-url): This cool interactive blog post greatly illustrates a common antipattern among React devs using search parameters. You should consider the URL as the source of truth, instead of trying to sync your state to the URL.
 - 📜 [Partial Prerendering for Everyone with Cloudflare Workers](https://sunilpai.dev/posts/ppr-for-everyone/): Former React team member Sunil Pai shared a demo of implementing PPR from scratch outside of Next.js, using React `prerender()`, `postpone()` and `resumeToPipeableStream()`. These are very experimental APIs that may change, don’t do this at home and only use this for learning/curiosity.
 - 📜 [CSS `content-visibility` for React devs](https://dev.to/sebastienlorber/css-content-visibility-for-react-devs-4a3i): I aggregated a few interesting tweets/links explaining why React devs should care about this new CSS property that can improve your app rendering performance. It’s now in all browsers and although not widely supported, can be a progressive enhancement. You could use it as a replacement or alongside a React virtualization library to improve performance and accessibility.
@@ -104,6 +110,7 @@ This section is authored by [Benedikt](https://twitter.com/bndkt).
 - 🐦 [React-Native-WebGPU on macOS demo](https://x.com/SaadNajmi/status/1838295375700201720)
 - 🐦 [Tzvetan Mikov about usefulness of adding Wasm support to Hermes](https://x.com/tmikov/status/1837600409386734037)
 - 📊 [React Native Benchmarking](https://dream-sports-labs.github.io/rn-benchmarking/): This interesting site allows us to compare the performance of React Native depending on version, architecture, and platform (iOS/Android)
+- 🗓️ [RNLConf](https://www.reactnativelondon.co.uk/?utm_source=thisweekinreact) \- 🇬🇧 London - 14 & 15 November - Get a 10% discount with code "TWIR”, grab a ticket now !
 - 📜 [React Native IDE is now Radon IDE](https://blog.swmansion.com/react-native-ide-is-now-radon-ide-cfbdad77d43c): TL;DR it’s just a name change for practical reasons. Still fun to read why they choose that name (hint: atomic, Polonium)
 - 📜 [How to listen to uncaught/unhandled errors in React Native](https://andrei-calazans.com/posts/how-to-global-catch-errors/): with `globalThis.ErrorUtils.setGlobalHandler()`
 - 📜 [How to incrementally adopt Expo](https://expo.dev/blog/how-to-incrementally-adopt-expo)
