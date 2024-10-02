@@ -1,6 +1,6 @@
 ---
 slug: /203
-title: "This Week In React #203: ..."
+title: "This Week In React #203: Server Functions, DevTools, Next.js, React-Query, React Router, React-Aria, Vaul, Remotion, Skia, Native Tabs, Godot, CodePush, void(0), Oxc, Node.js..."
 authors: [slorber]
 date: 10-01-2024
 unlisted: true
@@ -8,7 +8,13 @@ unlisted: true
 
 Hi everyone!
 
-**Newsletter intro : React Day Berlin :** 🗓 [React Day Berlin](https://reactday.berlin/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇩🇪 Berlin - 13 & 16 December - [Free remote tickets are available now, click here !](https://gitnation.com/badges/react-day-berlin-2024/sara_vieira?from=This+Week+In+React) 10% discount with code TWIR.
+This week we have a lot of interesting news and releases!
+
+There's notably an important terminology change for Server Actions, and an exciting preview of upcoming React DevTools v6.
+
+On the React Native side we also have a broad set of very interesting news
+
+Check our partner conf [React Day 🇩🇪 Berlin](https://reactday.berlin/?utm_source=Newsletter&utm_medium=thisweekinreact) (13 & 16 December). Get a 10% discount with our code TWIR.
 
 <!-- truncate -->
 
@@ -38,43 +44,52 @@ Try Omlet for free today and maintain cleaner code: [omlet.dev](https://omlet.de
 
 ## ⚛️ React {#react}
 
-[Server Actions have been renamed to Server Functions](https://19.react.dev/reference/rsc/server-functions)
+[![Server Actions have been renamed to Server Functions](/emails/issues/203/serverfunctions.jpg)](https://19.react.dev/reference/rsc/server-functions)
+
+**[Server Actions have been renamed to Server Functions](https://19.react.dev/reference/rsc/server-functions)**
 
 It’s not a code change, but it’s an impactful terminology change that is now officially published on the React v19 docs site. Server Actions are now considered a subset of a broader Server Function feature. It only becomes an action when used within:
 
-- `\<form action\> `
-- `useActionState() `
-- `startTransition() `
+- `<form action>`
+- `useActionState()`
+- `startTransition()`
 
 This change clarifies that “use server” is about exposing a server endpoint, not necessarily limited to mutations. Fetching data and JSX with Server Functions might not be an anti-pattern.
 
-**About Next.js Server Actions**: they use `POST ` requests and run sequentially, but this is a Next.js implementation detail and React doesn’t prevent you from running actions in parallel. The Next.js team have confirmed their intention to introduce new APIs to call Server Functions with `GET `.
+**About Next.js Server Actions**: they use `POST` requests and run sequentially, but this is a Next.js implementation detail and React doesn’t prevent you from running actions in parallel. The Next.js team have confirmed their intention to introduce new APIs to call Server Functions with `GET`.
+
+---
+
+[![React DevTools 6.0](/emails/issues/203/devtools.jpg)](https://github.com/facebook/react/blob/main/packages/react-devtools/CHANGELOG.md#600)
+
+**[React DevTools 6.0](https://github.com/facebook/react/blob/main/packages/react-devtools/CHANGELOG.md#600)**
+
+The React DevTools have been the focus of a lot of work recently, notably the ability to present a unified easy-to-understand React tree for Server and Client components. The browser extensions have not been published, but the v6 changelog is available with many PRs and screenshots to look at. From what I see, the team did an incredible work to provide a great DX around element inspection, profiling, logging, stacktraces, sourcemaps.
 
 ---
 
 - 💸 [React Bricks - Transform React components into dynamic, visually editable bricks of content with the pioneering React Visual Headless CMS.](https://www.reactbricks.com/?utm_source=twir&utm_campaign=ql24)
-- 👀 [Next.js PR \- Update Dynamic APIs to be async](https://github.com/vercel/next.js/pull/68812): The PR we mentioned last week (turning APIs such as `cookies() `, `headers() ` and `searchParams ` async) has been merged and released in Next.js 15 canary 171\. Libraries might have to adjust their code accordingly ([nuqs](https://x.com/fortysevenfx/status/1839158893710033141)) or introduce breaking changes ([Clerk](https://x.com/tweetsbycolin/status/1839273740577759603)). Migration instructions will be provided very soon.
-- 👀 [Next.js PR \- Add `connection() ` as a new dynamic API](https://github.com/vercel/next.js/pull/69949): A new API to bail out of pre-rendering will replace `unstable_noStore() `.
+- 👀 [Next.js PR \- Update Dynamic APIs to be async](https://github.com/vercel/next.js/pull/68812): The PR we mentioned last week (turning APIs such as `cookies()`, `headers()` and `searchParams` async) has been merged and released in Next.js 15 canary 171\. Libraries might have to adjust their code accordingly ([nuqs](https://x.com/fortysevenfx/status/1839158893710033141)) or introduce breaking changes ([Clerk](https://x.com/tweetsbycolin/status/1839273740577759603)). Migration instructions will be provided very soon.
+- 👀 [Next.js PR \- Add `connection()` as a new dynamic API](https://github.com/vercel/next.js/pull/69949): A new API to bail out of pre-rendering will replace `unstable_noStore()`.
 - 🐦 [React Core \- Lazy Context Propagation has been enabled for React 19 and React Native](https://x.com/sebastienlorber/status/1841042683122286641): This shouldn’t impact you directly, but it's an important implementation detail change that sets the stage for upcoming features to optimize React Context consumption.
 - 🐦 [React Router \- Typesafety improvements preview](https://x.com/pcattori/status/1841166684180402378): React Router will soon be able to generate types manually (CLI) or automatically (TS plugin) to improve type-safety.
 - 🗓️ [React-Brussels](https://www.react.brussels/?utm_source=thisweekinreact) - 🇧🇪 Brussels - 18 October - Last call! You still have a chance to get your ticket, and don’t forget the [10% discount](https://ti.to/react-rally/react-rally-2024/discount/TWIR) with code "TWIR".
 - 🗓️ [React Summit US](https://reactsummit.us/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇺🇸 New-York - 19 & 22 December - 10% discount with code TWIR. Full line-up revealed!
 - 📜 [Cloudflare Builder Day 2024 \- 18 big updates to the Workers platform](https://blog.cloudflare.com/builder-day-2024-announcements/): Cloudflare made relevant announcements for React devs. They improved Node.js compatibility and added support for Static Assets. They also joined the OpenNext initiative and published a new adapter to reduce Next.js vendor lock-in and to make it more portable outside Vercel without compromises.
 - 📜 [Level up your env var tooling in Next.js with DMNO](https://dmno.dev/blog/dmno-nextjs-launch/): This interesting tool can help prevent leaking secrets in a modern React RSC world. It also supports Remix, Astro, and Vite.
-- 📜 [The unspoken rules of React hooks](https://macwright.com/2024/09/19/the-extra-rules-of-hooks): Some functions returned by React (such as `setState `) are known to be stable and do not need to be added to dependency arrays. This rule is implicit and there’s no way for third-party libraries to declare their returned functions as stable.
-- 📜 [SSR-friendly Custom React Hook for Local Storage Read and Write](https://www.nico.fyi/blog/ssr-friendly-local-storage-react-custom-hook): Reading `localStorage ` with `useSyncExternalStore ` is great and helps avoid hydration mismatches. But you have to work around storage events not firing for the current document.
+- 📜 [The unspoken rules of React hooks](https://macwright.com/2024/09/19/the-extra-rules-of-hooks): Some functions returned by React (such as `setState`) are known to be stable and do not need to be added to dependency arrays. This rule is implicit and there’s no way for third-party libraries to declare their returned functions as stable.
+- 📜 [SSR-friendly Custom React Hook for Local Storage Read and Write](https://www.nico.fyi/blog/ssr-friendly-local-storage-react-custom-hook): Reading `localStorage` with `useSyncExternalStore` is great and helps avoid hydration mismatches. But you have to work around storage events not firing for the current document.
 - 📜 [Intro to CSS animations for React developers](https://www.developerway.com/posts/intro-to-css-animations-for-react-devs): Interactive article that notably explains the problem with unmounting and animations.
-- 📜 [use() and data fetching](https://flaviocopes.com/use-and-data-fetching/): Moves data fetching from `useEffect ` to an RSC, which also shows React’s ability to serialize promises.
-- 📜 [Reliable date formatting in Next.js](https://next-intl-docs.vercel.app/blog/date-formatting-nextjs): To avoid hydration mismatches, you need to use the same Date/timestamp, timezone, and locale across both client/server environments. `next-intl ` gives you APIs to help you do so.
+- 📜 [use() and data fetching](https://flaviocopes.com/use-and-data-fetching/): Moves data fetching from `useEffect` to an RSC, which also shows React’s ability to serialize promises.
+- 📜 [Reliable date formatting in Next.js](https://next-intl-docs.vercel.app/blog/date-formatting-nextjs): To avoid hydration mismatches, you need to use the same Date/timestamp, timezone, and locale across both client/server environments. `next-intl` gives you APIs to help you do so.
 - 📜 [Inverse Assertions](https://www.epicweb.dev/inverse-assertions): An interesting React Testing Library technique to assert a side effect did NT happen.
 - 📜 [Types of React Components](https://www.robinwieruch.de/react-component-types/): Documenting component types from 2013 to 2024\.
 - 📜 [Proxy state management: MobX vs Valtio](https://www.frontendundefined.com/posts/monthly/proxy-state-management-mobx-valtio/)
-- 📦 [React DevTools 6.0](https://github.com/facebook/react/blob/main/packages/react-devtools/CHANGELOG.md#600): DevTools have been the focus of a lot of work recently, notably the ability to present a unified easy-to-understand React tree for Server and Client components. The v6 changelog is there with many PRs and screenshots to look at, but the browser extensions are not yet published.
-- 📦 [React Query 5.59 \- Experimental support for `use() `](https://github.com/TanStack/query/releases/tag/v5.59.0): When using the new `experimental_prefetchInRender ` option, the library will return a stable promise that you can `use() ` making it easier to integrate with React 19 Suspense in a performant way. It’s more convenient than `usePrefetchQuery ` and more parallel than `useSuspenseQuery ` which can create waterfalls.
+- 📦 [React Query 5.59 \- Experimental support for `use()`](https://github.com/TanStack/query/releases/tag/v5.59.0): When using the new `experimental_prefetchInRender` option, the library will return a stable promise that you can `use()` making it easier to integrate with React 19 Suspense in a performant way. It’s more convenient than `usePrefetchQuery` and more parallel than `useSuspenseQuery` which can create waterfalls.
 - 📦 [Live Compositor \- React renderer for mixing real-time livestreams](https://compositor.live/): A new innovative product from Software Mansion provides live video and audio mixing capabilities similar to OBS through a familiar React interface. Open-source but requires a license for production usage.
 - 📦 [React Aria \- September 30, 2024 Release \- Color Pickers stable, Button pending state, Tree beta, Disclosure, DisclosureGroup (accordion)](https://react-spectrum.adobe.com/releases/2024-09-30.html)
 - 📦 [Vaul 1.0 \- Drawer component for React \- Rewritten, improved, new docs](https://github.com/emilkowalski/vaul/releases/tag/v1.0.0)
-- 📦 [Framer-Motion 11.9 \- `useAnimate() ` mini, much smaller, built on top of WAAPI](https://www.framer.com/motion/use-animate/#usage)
+- 📦 [Framer-Motion 11.9 \- `useAnimate()` mini, much smaller, built on top of WAAPI](https://www.framer.com/motion/use-animate/#usage)
 - 📦 [React-admin \- October 2024 Update](https://marmelab.com/blog/2024/09/27/react-admin-october-2024-update.html)
 - 🎥 [Remotion on Shark Tank \- Pitching a programming framework on TV](https://www.youtube.com/watch?v=XzY1ukohYdA): Remotion is the first React framework to pitch Shark Tank investors, and they even got an offer\!
 - 🎥 [Delba \- React explained: 'use client'](https://www.youtube.com/watch?v=eO51VVCpTk0): Greatly explained, and another great usage of Remotion\!
@@ -119,13 +134,13 @@ With WorkOS you can start selling to enterprises with just a few lines of code.
 - 📜 [Meta has rebuilt Instagram and Facebook for its Quest headsets](https://techcrunch.com/2024/09/25/meta-has-rebuilt-instagram-and-facebook-for-its-quest-headsets/): The announcement is not technical, but this VR experience is built with React Native and running on Static Hermes.
 - 📜 [How to synchronize reactive local-first apps with TinyBase](https://expo.dev/blog/how-to-synchronize-reactive-local-first-apps-with-tinybase)
 - 📜 [Simplify Your iOS Brownfield Integration With RootViewFactory](https://www.callstack.com/blog/simplify-your-ios-brownfield-integration-with-rootviewfactory)
-- 📦 [React-Native-Skia 1.4](https://github.com/Shopify/react-native-skia/releases/tag/v1.4.0): Experimental WebGPU Canvas integration.
+- 📦 [React-Native-Skia 1.4](https://github.com/Shopify/react-native-skia/releases/tag/v1.4.0): William introduced an experimental WebGPU Canvas integration.
 - 📦 [Code-Push-Server](https://github.com/microsoft/code-push-server): Microsoft open-sourced a server implementation of CodePush before shutting down App Center to avoid disrupting apps relying on it. Note that the [React Native SDK doesn’t plan to support the New Architecture](https://github.com/microsoft/react-native-code-push/issues/2696) although someone found a way to make it work with the Interop layer.
 - 📦 [Expo-File-System@next](https://docs.expo.dev/versions/unversioned/sdk/filesystem-next/): The upcoming SDK 52 version has been rewritten to be simpler and fully synchronous.
 - 📦 [Expo-Speech-Recognition](https://github.com/jamsch/expo-speech-recognition): Cross-platform speech recognition for iOS, Android and Web.
 - 📦 [Pressto \- Improve your app with pressable micro-interactions](https://github.com/enzomanuelmangano/pressto)
 - 📦 [Lottie v1.0 specification](https://www.linuxfoundation.org/press/lottie-animation-community-announces-lottie-v1.0-specification)
-- 📦 [React-Native-Gesture-Handler 2.20](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.20.0)
+- 📦 [React-Native-Gesture-Handler 2.20 - Add v0.76 and Stylus support](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.20.0)
 - 📦 [React-Native 0.76.0-rc.3](https://github.com/facebook/react-native/releases/tag/v0.76.0-rc.3)
 - 🎥 [React Native Universe 2024 \- Conf playlist](https://www.youtube.com/watch?v=ayJTvbIFLuw&list=PLZ3MwD-soTTGAEY8kZD3tgXGTwojn5qYh)
 - 🎥 [Reactiive \- Animated Loader with Skia](https://www.youtube.com/watch?v=7pCiGUrJuow)
