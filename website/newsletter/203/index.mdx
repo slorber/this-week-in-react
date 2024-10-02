@@ -55,9 +55,9 @@ It’s not a code change, but it’s an impactful terminology change that is now
 - `useActionState()`
 - `startTransition()`
 
-This change clarifies that “use server” is about exposing a server endpoint, not necessarily limited to mutations. Fetching data and JSX with Server Functions might not be an anti-pattern.
+This change clarifies that “use server” is about exposing a server endpoint, not necessarily limited to mutations. Fetching data and JSX with Server Functions might not be an anti-pattern after all.
 
-**About Next.js Server Actions**: they use `POST` requests and run sequentially, but this is a Next.js implementation detail and React doesn’t prevent you from running actions in parallel. The Next.js team have confirmed their intention to introduce new APIs to call Server Functions with `GET`.
+**About Next.js Server Actions**: they use `POST` requests and run sequentially, but this is a Next.js implementation detail and React doesn’t prevent you from running actions in parallel. The Next.js team has confirmed their intention to introduce new APIs to call Server Functions with `GET`.
 
 ---
 
@@ -65,7 +65,7 @@ This change clarifies that “use server” is about exposing a server endpoint,
 
 **[React DevTools 6.0](https://github.com/facebook/react/blob/main/packages/react-devtools/CHANGELOG.md#600)**
 
-The React DevTools have been the focus of a lot of work recently, notably the ability to present a unified easy-to-understand React tree for Server and Client components. The browser extensions have not been published, but the v6 changelog is available with many PRs and screenshots to look at. From what I see, the team did an incredible work to provide a great DX around element inspection, profiling, logging, stacktraces, sourcemaps.
+The React DevTools have been the focus of a lot of work recently, notably the ability to present a unified easy-to-understand React tree for Server and Client components. The browser extensions have not been published, but the v6 changelog is available with many PRs and screenshots to look at. From what I see, the team did an incredible job to provide a great DX around element inspection, profiling, logging, stacktraces, sourcemaps.
 
 ---
 
