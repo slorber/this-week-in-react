@@ -8,17 +8,9 @@ unlisted: true
 
 Hi everyone!
 
-<Todo />
+**Newsletter intro : React Day Berlin :** 🗓 [React Day Berlin](https://reactday.berlin/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇩🇪 Berlin - 13 & 16 December - [Free remote tickets are available now, click here !](https://gitnation.com/badges/react-day-berlin-2024/sara_vieira?from=This+Week+In+React) 10% discount with code TWIR.
 
 <!-- truncate -->
-
-**Newsletter intro : React Day Berlin :** 🗓️ [React Day Berlin](https://reactday.berlin/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇩🇪 Berlin - 13 & 16 December - [Free remote tickets are available now, click here !](https://gitnation.com/badges/react-day-berlin-2024/sara_vieira?from=This+Week+In+React) 10% discount with code TWIR.
-
-*   📨 [ECMAScript News - Discover my favorite newsletter to keep up to date with ES, TC39, JS tooling, and runtimes](https://ecmascript.news/?utm_source=thisweekinreact)
-    
-*   🗓️ [React-Brussels](https://www.react.brussels/?utm_source=thisweekinreact) - 🇧🇪 Brussels - 18 October - **Last call !** You still have a chance to get your ticket, and don’t forget the [10% discount](https://ti.to/react-rally/react-rally-2024/discount/TWIR) with code "TWIR".
-    
-*   🗓️ [React Summit US](https://reactsummit.us/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇺🇸 New-York - 19 & 22 December - 10% discount with code TWIR. Full line-up revealed !
 
 **💡 [Check this newsletter on Twitter](https://slo.im/thread) - visual format 🎨**
 
@@ -46,9 +38,49 @@ Try Omlet for free today and maintain cleaner code: [omlet.dev](https://omlet.de
 
 ## ⚛️ React {#react}
 
-<Todo />
+[Server Actions have been renamed to Server Functions](https://19.react.dev/reference/rsc/server-functions)
+
+It’s not a code change, but it’s an impactful terminology change that is now officially published on the React v19 docs site. Server Actions are now considered a subset of a broader Server Function feature. It only becomes an action when used within:
+
+- `\<form action\> `
+- `useActionState() `
+- `startTransition() `
+
+This change clarifies that “use server” is about exposing a server endpoint, not necessarily limited to mutations. Fetching data and JSX with Server Functions might not be an anti-pattern.
+
+**About Next.js Server Actions**: they use `POST ` requests and run sequentially, but this is a Next.js implementation detail and React doesn’t prevent you from running actions in parallel. The Next.js team have confirmed their intention to introduce new APIs to call Server Functions with `GET `.
+
+---
 
 - 💸 [React Bricks - Transform React components into dynamic, visually editable bricks of content with the pioneering React Visual Headless CMS.](https://www.reactbricks.com/?utm_source=twir&utm_campaign=ql24)
+- 👀 [Next.js PR \- Update Dynamic APIs to be async](https://github.com/vercel/next.js/pull/68812): The PR we mentioned last week (turning APIs such as `cookies() `, `headers() ` and `searchParams ` async) has been merged and released in Next.js 15 canary 171\. Libraries might have to adjust their code accordingly ([nuqs](https://x.com/fortysevenfx/status/1839158893710033141)) or introduce breaking changes ([Clerk](https://x.com/tweetsbycolin/status/1839273740577759603)). Migration instructions will be provided very soon.
+- 👀 [Next.js PR \- Add `connection() ` as a new dynamic API](https://github.com/vercel/next.js/pull/69949): A new API to bail out of pre-rendering will replace `unstable_noStore() `.
+- 🐦 [React Core \- Lazy Context Propagation has been enabled for React 19 and React Native](https://x.com/sebastienlorber/status/1841042683122286641): This shouldn’t impact you directly, but it's an important implementation detail change that sets the stage for upcoming features to optimize React Context consumption.
+- 🐦 [React Router \- Typesafety improvements preview](https://x.com/pcattori/status/1841166684180402378): React Router will soon be able to generate types manually (CLI) or automatically (TS plugin) to improve type-safety.
+- 🗓️ [React-Brussels](https://www.react.brussels/?utm_source=thisweekinreact) - 🇧🇪 Brussels - 18 October - Last call! You still have a chance to get your ticket, and don’t forget the [10% discount](https://ti.to/react-rally/react-rally-2024/discount/TWIR) with code "TWIR".
+- 🗓️ [React Summit US](https://reactsummit.us/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇺🇸 New-York - 19 & 22 December - 10% discount with code TWIR. Full line-up revealed!
+- 📜 [Cloudflare Builder Day 2024 \- 18 big updates to the Workers platform](https://blog.cloudflare.com/builder-day-2024-announcements/): Cloudflare made relevant announcements for React devs. They improved Node.js compatibility and added support for Static Assets. They also joined the OpenNext initiative and published a new adapter to reduce Next.js vendor lock-in and to make it more portable outside Vercel without compromises.
+- 📜 [Level up your env var tooling in Next.js with DMNO](https://dmno.dev/blog/dmno-nextjs-launch/): This interesting tool can help prevent leaking secrets in a modern React RSC world. It also supports Remix, Astro, and Vite.
+- 📜 [The unspoken rules of React hooks](https://macwright.com/2024/09/19/the-extra-rules-of-hooks): Some functions returned by React (such as `setState `) are known to be stable and do not need to be added to dependency arrays. This rule is implicit and there’s no way for third-party libraries to declare their returned functions as stable.
+- 📜 [SSR-friendly Custom React Hook for Local Storage Read and Write](https://www.nico.fyi/blog/ssr-friendly-local-storage-react-custom-hook): Reading `localStorage ` with `useSyncExternalStore ` is great and helps avoid hydration mismatches. But you have to work around storage events not firing for the current document.
+- 📜 [Intro to CSS animations for React developers](https://www.developerway.com/posts/intro-to-css-animations-for-react-devs): Interactive article that notably explains the problem with unmounting and animations.
+- 📜 [use() and data fetching](https://flaviocopes.com/use-and-data-fetching/): Moves data fetching from `useEffect ` to an RSC, which also shows React’s ability to serialize promises.
+- 📜 [Reliable date formatting in Next.js](https://next-intl-docs.vercel.app/blog/date-formatting-nextjs): To avoid hydration mismatches, you need to use the same Date/timestamp, timezone, and locale across both client/server environments. `next-intl ` gives you APIs to help you do so.
+- 📜 [Inverse Assertions](https://www.epicweb.dev/inverse-assertions): An interesting React Testing Library technique to assert a side effect did NT happen.
+- 📜 [Types of React Components](https://www.robinwieruch.de/react-component-types/): Documenting component types from 2013 to 2024\.
+- 📜 [Proxy state management: MobX vs Valtio](https://www.frontendundefined.com/posts/monthly/proxy-state-management-mobx-valtio/)
+- 📦 [React DevTools 6.0](https://github.com/facebook/react/blob/main/packages/react-devtools/CHANGELOG.md#600): DevTools have been the focus of a lot of work recently, notably the ability to present a unified easy-to-understand React tree for Server and Client components. The v6 changelog is there with many PRs and screenshots to look at, but the browser extensions are not yet published.
+- 📦 [React Query 5.59 \- Experimental support for `use() `](https://github.com/TanStack/query/releases/tag/v5.59.0): When using the new `experimental_prefetchInRender ` option, the library will return a stable promise that you can `use() ` making it easier to integrate with React 19 Suspense in a performant way. It’s more convenient than `usePrefetchQuery ` and more parallel than `useSuspenseQuery ` which can create waterfalls.
+- 📦 [Live Compositor \- React renderer for mixing real-time livestreams](https://compositor.live/): A new innovative product from Software Mansion provides live video and audio mixing capabilities similar to OBS through a familiar React interface. Open-source but requires a license for production usage.
+- 📦 [React Aria \- September 30, 2024 Release \- Color Pickers stable, Button pending state, Tree beta, Disclosure, DisclosureGroup (accordion)](https://react-spectrum.adobe.com/releases/2024-09-30.html)
+- 📦 [Vaul 1.0 \- Drawer component for React \- Rewritten, improved, new docs](https://github.com/emilkowalski/vaul/releases/tag/v1.0.0)
+- 📦 [Framer-Motion 11.9 \- `useAnimate() ` mini, much smaller, built on top of WAAPI](https://www.framer.com/motion/use-animate/#usage)
+- 📦 [React-admin \- October 2024 Update](https://marmelab.com/blog/2024/09/27/react-admin-october-2024-update.html)
+- 🎥 [Remotion on Shark Tank \- Pitching a programming framework on TV](https://www.youtube.com/watch?v=XzY1ukohYdA): Remotion is the first React framework to pitch Shark Tank investors, and they even got an offer\!
+- 🎥 [Delba \- React explained: 'use client'](https://www.youtube.com/watch?v=eO51VVCpTk0): Greatly explained, and another great usage of Remotion\!
+- 🎥 [Theo \- Next.js has real competition now (TanStack Start)](https://www.youtube.com/watch?v=nz43Vuy9_dE)
+- 🎥 [Jack Herrington \- Legend State v3 \- Local first sync and fastest React State manager](https://www.youtube.com/watch?v=xkWvDG6uEfk)
+- 🎙️ [This Month in React 2024-09 – Async Components, a React 19 cheatsheet, Static Hermes, and trademarks drama](https://podcasters.spotify.com/pod/show/reactiflux/episodes/TMiR-2024-09--Async-Components----a-React-19-cheatsheet--static-Hermes--and-trademarks-drama-e2p2o6j)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -62,39 +94,59 @@ Try Omlet for free today and maintain cleaner code: [omlet.dev](https://omlet.de
 
 With WorkOS you can start selling to enterprises with just a few lines of code.
 
-🔐 WorkOS AuthKit supports a complete user management solution along with **SSO, SCIM, RBAC, & FGA**.
+🔐 WorkOS AuthKit supports a complete user management solution along with **SSO, SCIM, RBAC, & FGA**.
 
-🏗️ The APIs are **flexible, easy-to-use, and modular**. Pick and choose what you need and integrate in minutes.
+🏗️ The APIs are **flexible, easy-to-use, and modular**. Pick and choose what you need and integrate in minutes.
 
 🎨 Design and user experience are everything. From the quality of our documentation to how your users onboard, we **remove all the unnecessary complexity for developers**.
 
-✨ AuthKit is **free up to 1 million MAUs** and includes bot protection, MFA, RBAC, & more.
+✨ AuthKit is **free up to 1 million MAUs** and includes bot protection, MFA, RBAC, & more.
 
 🤝 WorkOS is trusted by hundreds of leading startups like **Perplexity**, **Vercel**, & **Webflow**.
 
-[Get started with WorkOS](https://workos.com/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=q32024) 🚀
+[Get started with WorkOS](https://workos.com/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=q32024) 🚀
 
 ---
 
 ## 📱 React-Native {#react-native}
 
-This section is authored by [Benedikt](https://twitter.com/bndkt).
-
-<Todo />
-
-- 💸 [React Native Mastery - The only course you need to Master React Native & Expo](https://notjust.dev/react-native-mastery?utm_source=twir&utm_medium=email) 
+- 💸 [React Native Mastery - The only course you need to Master React Native & Expo](https://notjust.dev/react-native-mastery?utm_source=twir&utm_medium=email)
+- 👀 [React Native PR \- Migrate template to Swift](https://github.com/react-native-community/template/pull/45): Newly initialized projects will use Swift by default starting React Native 0.77.
+- 👀 [React Native Proposal \- Removing "run on iOS/Android" key handlers from the CLI dev server](https://github.com/react-native-community/discussions-and-proposals/discussions/821)
+- 🐦 [React-Native-Godot preview](https://x.com/JannisRingwald/status/1840827419562836103): An upcoming package should allow React Native developers to create games with the Godot Engine.
+- 🐦 [React-Native-Bottom-Tabs preview](https://x.com/o_kwasniewski/status/1841383968148509149): Oskar is working on a new native tabs component using SwiftUI TabView and Android BottomNavigationView. Compatible with react-native-screens, it should be an almost drop-in replacement to the JS-based one from React-Navigation. The demo highlights the difference between native/JS, particularly for the VisionOS platform.
+- 🐦 [Tzvetan Mikov \- “The Problem of Intl in Hermes”](https://x.com/tmikov/status/1840575141182636469)
+- 📜 [Meta has rebuilt Instagram and Facebook for its Quest headsets](https://techcrunch.com/2024/09/25/meta-has-rebuilt-instagram-and-facebook-for-its-quest-headsets/): The announcement is not technical, but this VR experience is built with React Native and running on Static Hermes.
+- 📜 [How to synchronize reactive local-first apps with TinyBase](https://expo.dev/blog/how-to-synchronize-reactive-local-first-apps-with-tinybase)
+- 📜 [Simplify Your iOS Brownfield Integration With RootViewFactory](https://www.callstack.com/blog/simplify-your-ios-brownfield-integration-with-rootviewfactory)
+- 📦 [React-Native-Skia 1.4](https://github.com/Shopify/react-native-skia/releases/tag/v1.4.0): Experimental WebGPU Canvas integration.
+- 📦 [Code-Push-Server](https://github.com/microsoft/code-push-server): Microsoft open-sourced a server implementation of CodePush before shutting down App Center to avoid disrupting apps relying on it. Note that the [React Native SDK doesn’t plan to support the New Architecture](https://github.com/microsoft/react-native-code-push/issues/2696) although someone found a way to make it work with the Interop layer.
+- 📦 [Expo-File-System@next](https://docs.expo.dev/versions/unversioned/sdk/filesystem-next/): The upcoming SDK 52 version has been rewritten to be simpler and fully synchronous.
+- 📦 [Expo-Speech-Recognition](https://github.com/jamsch/expo-speech-recognition): Cross-platform speech recognition for iOS, Android and Web.
+- 📦 [Pressto \- Improve your app with pressable micro-interactions](https://github.com/enzomanuelmangano/pressto)
+- 📦 [Lottie v1.0 specification](https://www.linuxfoundation.org/press/lottie-animation-community-announces-lottie-v1.0-specification)
+- 📦 [React-Native-Gesture-Handler 2.20](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.20.0)
+- 📦 [React-Native 0.76.0-rc.3](https://github.com/facebook/react-native/releases/tag/v0.76.0-rc.3)
+- 🎥 [React Native Universe 2024 \- Conf playlist](https://www.youtube.com/watch?v=ayJTvbIFLuw&list=PLZ3MwD-soTTGAEY8kZD3tgXGTwojn5qYh)
+- 🎥 [Reactiive \- Animated Loader with Skia](https://www.youtube.com/watch?v=7pCiGUrJuow)
+- 🎥 [Dan’s Lab \- Add Computer Vision to your Expo iOS App using Skia (Golf Swing Tracer)](https://www.youtube.com/watch?v=a51ofzf2rDo)
+- 🎥 [Simon Grimm \- 10 Essential React Native Tips Every Developer Must Know](https://www.youtube.com/watch?v=zuFh9lfb4HY)
+- 🎙️ [RNR 309 \- React Native IDE with Krzysztof Magiera](https://www.reactnativeradio.com/episodes/rnr-309-react-native-ide-with-krzysztof-magiera)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📨 [ECMAScript News - My favorite newsletter to keep up with ES, TC39, JS tooling, and runtimes](https://ecmascript.news/?utm_source=thisweekinreact)
+- 📣 [Announcing VoidZero \- Next Generation Toolchain for JavaScript](https://voidzero.dev/posts/announcing-voidzero-inc): Evan You announced a VC-backed company to support the development of an ambitious super fast JS toolchain involving Vite, Vitest, Rolldown, Oxc. Those projects will remain free under the MIT license.
+- 👀 [Node.js PR \- unflag require(esm) for v23](https://github.com/nodejs/node/pull/55085): Good news for Node.js CJS/ESM interop. This is planned to be backported in older LTS.
+- 📜 [Web Components Are Not the Future](https://dev.to/ryansolid/web-components-are-not-the-future-48bh): There’s a Web Component drama going on right now and you’ll find many thought leaders giving their opinion.
+- 📜 [What’s the Difference Between HTML’s Dialog Element and Popovers?](https://frontendmasters.com/blog/whats-the-difference-between-htmls-dialog-element-and-popovers/)
+- 📦 [Oxc Transformer Alpha \- Transpile 5x faster than SWC](https://oxc.rs/blog/2024-09-29-transformer-alpha.html)
 
 ---
 
 ## 🤭 Fun {#fun}
-
-<Todo />
 
 [![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
 
