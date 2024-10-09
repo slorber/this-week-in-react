@@ -40,9 +40,41 @@ Utilize the `ClerkExpressWithAuth()` and `ClerkExpressRequireAuth()` middleware 
 
 ## ⚛️ React {#react}
 
-<Todo />
+[**React at Meta Connect 2024**](https://engineering.fb.com/2024/10/02/android/react-at-meta-connect-2024/)
+
+At a recent event, Meta announced:
+
+- New Instagram and Facebook mixed-reality apps for the Meta Quest headset. These apps use React Native and run on Static Hermes. The team was able to reuse existing Facebook web code and infrastructure thanks to technologies such as StyleX and React Strict DOM.
+- A new Meta Horizon RN app that performs on par with their main native Facebook app. They mention the render-as-you-fetch pattern as the most impactful performance improvement they implemented.
+- Meta Horizon Store for web/mobile/HorizonOS built using the bleeding-edge React Compiler, StyleX, React Strict DOM
+- Meta Spatial Editor built on top of React Native Windows/macOS enables them to integrate natively their custom 3D rendering engine. The C++/Qt team was initially skeptical but ended up loving Fast Refresh.
+
+Many great research projects are being dogfooded at Meta on real production projects improving the framework and ecosystem for all of us along the way. We were perhaps a little disappointed that Threads didn't use React Native, but with all this, we can say with certainty that Meta will continue to bet on React as an excellent cross-platform solution.
+
+See also this [commented video from Theo](https://www.youtube.com/watch?v=GjBfD9PHff4).
+
+---
 
 - 💸 [Omlet – A new tool for measuring React component usage across your repos. Try for free with unlimited scans and improve your code quality.](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-quick-link-oct-2024)
+- 👀 [React Router v7 Prerelease](https://reactrouter.com/dev/guides/start/installation): The first prerelease (7.0.0-pre.0) is available on npm and you can already read the docs. The new version comes with a Vite plugin that enables React Router to be a full-stack framework (aka Remix). It also supports SSG, has a better config-based routing system, improves type-safety. RSC support will come later once React 19 and Vite Environment API are ready.
+- 👀 [React Compiler Docs - Usage with React v18 and v17](http://react-compiler-runtime) : A new official `react-compiler-runtime` package (experimental) has been published by the React team to support older versions of React. The babel config now accepts a new `target: '17' | '18' | '19'` option.
+- 👀 [Next.js Guide - Fixing breaking changes after v15.0.0-canary.171](https://github.com/vercel/next.js/issues/70899): For those living on the bleeding edge, the Next.js team explains how migrate the Dynamic APIs that now return promises.
+- 📜 [Serverless servers and the challenge of new React architecture](https://bobaekang.com/blog/serverless-servers-and-the-challenge-of-new-react-architecture/): Vercel recently launched a new “Serverless Servers” feature (wait, what? 😅) that enables a Serverless Function instance to behave more like a traditional Node.js server accepting concurrent requests while idling. React RSCs will be more cost-effective: you won't be charged for the time spent awaiting promises.
+- 📜 [Handling Form Validation Errors and Resets with useActionState](https://aurorascharff.no/posts/handling-form-validation-errors-and-resets-with-useactionstate/): Teaches you how to handle React 19 resetting the fields of uncontrolled forms on submit.
+- 📜 [How Do Server Actions Work in NextJS?](https://codelynx.dev/posts/how-work-server-actions): Explains what happens under the hood when you call a Next.js Server Action, including simplified Next.js source code snippets.
+- 📜 [Using Mitosis to build a Design System](https://www.voorhoede.nl/en/blog/write-components-once-run-everywhere-with-mitosis-a-beautiful-dream-or-reality/): Mitigated feedback on this tool that permits creating cross-framework components from a shared JSX dialect.
+- 📜 [Increasing Vite's potential with the Environment API](https://green.sapphi.red/blog/increasing-vites-potential-with-the-environment-api): A modern React RSC app needs to bundle the code in multiple ways, one for each environment (client, SSR, RSC). A Vite contributor explains how Vite 6 helps you do so efficiently, and presents other use cases.
+- 📜 [Code based routing in Next.js](https://www.nico.fyi/blog/next-js-code-config-based-routing): Possible to achieve thanks to a catch-all route segment.
+- 📜 [Why Gumroad Didn't Choose htmx](https://htmx.org/essays/why-gumroad-didnt-choose-htmx/): Explain why they chose Next.js for their new product.
+- 📜 [React on the server is not PHP](https://www.artmann.co/articles/react-on-the-server-is-not-php)
+- 📦 [StyleX 0.8 - LightningCSS post-processing, theming and linting improvements](https://stylexjs.com/blog/v0.8.0)
+- 📦 [JSX Email 2.0 - config file, plugins, email compat, CSS inlining, new components](https://jsx.email/docs/v2/migration) [https://x.com/shellscape/status/1842292143152574765](https://x.com/shellscape/status/1842292143152574765)
+- 📦 [Framer motion 11.11 - `animate()` can now animate any object such as Object3D from Three.js](https://www.framer.com/motion/animate-function/##objects)
+- 📦 [React-To-Print 3.0 - API modernization, React 19, smaller, Shadow DOM support, improved error handling](https://github.com/MatthewHerbst/react-to-print/blob/master/CHANGELOG.md#300-september-28th-2024)
+- 📦 [Assistant-UI - React Components for AI Chat](https://github.com/Yonom/assistant-ui)
+- 🎥 [Lee Robinson - Self-Hosting Next.js](https://www.youtube.com/watch?v=sIVL4JMqRfc): Including how to configure Next.js features like image optimization, caching, ISR, streaming, middleware …
+- 🎥 [Sam Selikoff - How to share a React Component with the URL](https://www.youtube.com/watch?v=fYqMPvPvVAc)
+- 🎥 [Jack Herrington - 5 Hidden React Server Function TRAPS Beginners Fall Into](https://www.youtube.com/watch?v=_wnamPRhgkA)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -60,17 +92,41 @@ Year after year, companies feast at the Open Source table, but few pay the maint
 
 ## 📱 React-Native {#react-native}
 
-This section is authored by [Benedikt](https://twitter.com/bndkt).
+[**One - New cross-platform React framework**](https://onestack.dev/)
 
-<Todo />
+Nate, the creator of Tamagui, released a new universal framework that supports web and mobile. It’s built on top of Vite instead of Metro, has universal typed file-based routing, Remix-like loaders, and various render modes (SSG/SSR/SPA). It also helps you build local-first apps with an opt-in integration with the granular Zero sync engine.
+
+---
 
 - 💸 [Apryse React Native PDF Library - Easily add PDF viewing and editing to your cross-platform apps.](https://docs.apryse.com/documentation/ios/react-native/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=1009)
+- 👀 [Static Hermes for React Native – Experimental Builds](https://github.com/software-mansion-labs/hermes): Software Mansion is collaborating with the Hermes team on a fork to bring Static Hermes to RN apps, that you can try today, starting with iOS. Initial benchmarks show a 16% faster startup on a production app.
+- 👀 [React Native Docs PR - Discourage using controlled inputs in React Native because they are broken](https://github.com/facebook/react-native-website/pull/4247): Dan Abramov is unhappy about a core primitive of React Native not working as expected and suggests advising against using controlled inputs. Apparently, it used to work better but recent iOS features broke it (autocorrect and predictive text). The New Architecture allows synchronous native calls and might permit fixing it.
+- 📖 [React Native Testing Library Cookbook](https://callstack.github.io/react-native-testing-library/cookbook/index)
+- 📜 [Journeying from React to React Native: Differences & Similarities](https://dev.to/amazonappdev/journeying-from-react-to-react-native-21ep)
+- 📜 [Payhip boosts seller experience with Expo-powered mobile app](https://expo.dev/blog/payhip-boosts-seller-experience-with-expo-powered-mobile-app)
+- 📦 [React Native Storybook 8](https://storybook.js.org/blog/react-native-storybook-8/): An important milestone for Storybook React Native which finally caught up with Storybook core and plans to keep it in sync thanks to shared infrastructure. This new major includes many new features, including a new mobile UI, widescreen layout, simpler Metro config, hot reloading, stable RNW support, and more.
+- 📦 [React-Native-Bottom-Tabs - Bottom Tabs that use native platform primitives](https://github.com/okwasniewski/react-native-bottom-tabs): An early version of the lib we mentioned last week, meant to be used with React-Navigation and replace its non-native JS-based implementation. Also works with Expo Router.
+- 📦 [Zeego 2.0 - Cross-platform menus for React Native](https://github.com/nandorojo/zeego/releases/tag/v2.0.0): Improves web support, drops the RNW dependency in favor of a thin RadixUI layer wrapper.
+- 📦 [setup-ci - CLI to spin your CI/CD for react-native](https://github.com/software-mansion/setup-ci): New Software Mansion CLI project to help you quickly create RN GitHub Actions.
+- 📦 [Nitro Modules 0.11 - Add Old Architecture support](https://github.com/mrousavy/nitro/releases/tag/v0.11.0)
+- 📦 [React Native 0.76.0-rc.4](https://github.com/facebook/react-native/releases/tag/v0.76.0-rc.4)
+- 🎥 [Simon Grimm - Build AI Powered Mobile Apps FASTER with Expo API Routes & Cursor](https://www.youtube.com/watch?v=9FzkE1qVBiA)
+- 🎥 [Reactiive - Animated Blur Cards with React Native (Skia)](https://www.youtube.com/watch?v=SveA2QjmEzM)
+- 🎙️ [RNR 310 - Nitro with Marc Rousavy](https://www.reactnativeradio.com/episodes/rnr-310-nitro-with-marc-rousavy)
+- 🎙️ [Rocket Ship 51 - React Native Brownfield Integration with Mariusz Stanisz](https://share.transistor.fm/s/e737607c)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [TC39 - Agenda for the 104th meeting](https://github.com/tc39/agendas/blob/main/2024/10.md): The meeting is still in progress, but many proposals progressed to stage 4 and will be standardized in ES2025, we’ll share the final list next week\!
+- 👀 [Lucia Auth - Future plans: deprecate the library, transform to a learning resource](https://github.com/lucia-auth/lucia/discussions/1707)
+- 📜 [Building a Single-Page App with htmx](https://jakelazaroff.com/words/building-a-single-page-app-with-htmx/)
+- 📜 [Do not use secrets in environment variables and here's how to do it better](https://www.nodejs-security.com/blog/do-not-use-secrets-in-environment-variables-and-here-is-how-to-do-it-better/)
+- 📦 [Deno 2.0 - Backwards-compatible, forward-thinking](https://deno.com/blog/v2.0)
+- 📦 [Brisa - Full-stack Framework with Server Components, Server Actions, JSX, Web Components, JSX](https://brisa.build/blog/introducing-brisa): An interesting new framework inspired by React and Next.js and leveraging Declarative Shadow DOM for SSR.
+- 📦 [Bun 1.1.30 - CSS Parsing & bundling, bun publish, CJS output](https://bun.sh/blog/bun-v1.1.30)
+- 📦 [Better-Auth - The most comprehensive authentication library for TypeScript](https://github.com/better-auth/better-auth)
 
 ---
 
