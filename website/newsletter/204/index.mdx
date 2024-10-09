@@ -1,12 +1,20 @@
 ---
 slug: /204
-title: "This Week In React #204: ..."
+title: "This Week In React #204: React at Meta, React Compiler, React Router, Next.js, StyleX, Mitosis, One, Hermes, BottomTabs, Zeego, Storybook RN, Nitro, TC39, Vite, Deno, Bun, Brisa..."
 authors: [slorber]
 date: 10-09-2024
 unlisted: true
 ---
 
 Hi everyone!
+
+It's been another exciting week with cross-platform announcements at the Meta Connect event, with very positive production usage of React Compiler, StyleX, React Strict DOM and Hermes. I'm also excited for the React Compiler to add official support for React 18 and React 17 (experimental).
+
+On the React Native side we also had great releases and announcements, notably a new cross-platform framework from the Tamagui team, Zeego 2, native bottom tabs and RN Storybook 8.
+
+In the frontend world, Deno 2.0 just came out, and we also have a very exciting TC39 meeting happening right now.
+
+Happy reading!
 
 <!-- truncate -->
 
@@ -90,6 +98,8 @@ Year after year, companies feast at the Open Source table, but few pay the maint
 
 ## 📱 React-Native {#react-native}
 
+[![One - New cross-platform React framework](/emails/issues/204/one.jpg)](https://onestack.dev/)
+
 [**One - New cross-platform React framework**](https://onestack.dev/)
 
 Nate, the creator of Tamagui, released a new universal framework that supports web and mobile. It’s built on top of Vite instead of Metro, has universal typed file-based routing, Remix-like loaders, and various render modes (SSG/SSR/SPA). It also helps you build local-first apps with an opt-in integration with the granular Zero sync engine.
@@ -101,7 +111,6 @@ Nate, the creator of Tamagui, released a new universal framework that supports w
 - 👀 [React Native Docs PR - Discourage using controlled inputs in React Native because they are broken](https://github.com/facebook/react-native-website/pull/4247): Dan Abramov is unhappy about a core primitive of React Native not working as expected and suggests advising against using controlled inputs. Apparently, it used to work better but recent iOS features broke it (autocorrect and predictive text). The New Architecture allows synchronous native calls and might permit fixing it.
 - 📖 [React Native Testing Library Cookbook](https://callstack.github.io/react-native-testing-library/cookbook/index)
 - 📜 [Journeying from React to React Native: Differences & Similarities](https://dev.to/amazonappdev/journeying-from-react-to-react-native-21ep)
-- 📜 [Payhip boosts seller experience with Expo-powered mobile app](https://expo.dev/blog/payhip-boosts-seller-experience-with-expo-powered-mobile-app)
 - 📦 [React Native Storybook 8](https://storybook.js.org/blog/react-native-storybook-8/): An important milestone for Storybook React Native which finally caught up with Storybook core and plans to keep it in sync thanks to shared infrastructure. This new major includes many new features, including a new mobile UI, widescreen layout, simpler Metro config, hot reloading, stable RNW support, and more.
 - 📦 [React-Native-Bottom-Tabs - Bottom Tabs that use native platform primitives](https://github.com/okwasniewski/react-native-bottom-tabs): An early version of the lib we mentioned last week, meant to be used with React-Navigation and replace its non-native JS-based implementation. Also works with Expo Router.
 - 📦 [Zeego 2.0 - Cross-platform menus for React Native](https://github.com/nandorojo/zeego/releases/tag/v2.0.0): Improves web support, drops the RNW dependency in favor of a thin RadixUI layer wrapper.
