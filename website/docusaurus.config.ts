@@ -1,5 +1,5 @@
-import { Config } from "@docusaurus/types";
 import { themes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
 
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
@@ -29,6 +29,10 @@ function remarkPluginImage() {
 }
 
 const config: Config = {
+  future: {
+    experimental_faster: true,
+  },
+
   title: "This Week In React",
   tagline: "Stay up-to-date now!",
   url: "https://thisweekinreact.com",
