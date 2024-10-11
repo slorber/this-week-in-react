@@ -68,7 +68,7 @@ const config = {
       tagName: "link",
       attributes: {
         rel: "manifest",
-        href: "/favicon/manifest.webmanifest",
+        href: "/favicon/site.webmanifest",
       },
     },
   ],
@@ -184,7 +184,7 @@ const config = {
             // See https://github.com/facebook/docusaurus/pull/8378#issuecomment-1651277331
             const feedMaxSize = 5;
             const blogPosts = options.blogPosts.filter(
-              (_, index) => index < feedMaxSize
+              (_, index) => index < feedMaxSize,
             );
             return options.defaultCreateFeedItems({
               ...options,
