@@ -1,7 +1,6 @@
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+import { Config } from "@docusaurus/types";
+import { themes } from "prism-react-renderer";
 
-const { themes } = require("prism-react-renderer");
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
@@ -29,8 +28,7 @@ function remarkPluginImage() {
   };
 }
 
-/** @type {import('@docusaurus/types').Config} */
-const config = {
+const config: Config = {
   title: "This Week In React",
   tagline: "Stay up-to-date now!",
   url: "https://thisweekinreact.com",
@@ -126,7 +124,7 @@ const config = {
     [
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: false,
         blog: false,
         theme: {
@@ -136,7 +134,7 @@ const config = {
           trackingID: "G-WMDM3YHXPR",
           anonymizeIP: true,
         },
-      }),
+      },
     ],
   ],
 
@@ -198,7 +196,7 @@ const config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    {
       image: "/img/TWIR_POST.jpg",
       algolia: {
         appId: "HVX722ICC6",
@@ -297,7 +295,7 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-    }),
+    },
 };
 
-module.exports = config;
+export default Config;
