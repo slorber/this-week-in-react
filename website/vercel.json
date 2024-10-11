@@ -97,6 +97,12 @@
 
   "redirects": [
     {
+      "source": "/feed",
+      "destination": "/newsletter/rss.xml",
+      "permanent": true
+    },
+
+    {
       "source": "/social/x",
       "destination": "https://twitter.com/sebastienlorber",
       "permanent": true
