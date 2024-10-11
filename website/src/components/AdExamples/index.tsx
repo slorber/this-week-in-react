@@ -47,12 +47,12 @@ function AdExample({ type }: { type: "primary" | "secondary" }) {
         is perfect for <b>React and React-Native developers</b> reading this
         newsletter. We have a lot of great JS SDKs and API clients, covering
         every possible stack you might want to use:
-        <ul>
-          <li>JavaScript & Node.js</li>
-          <li>React & React-Native</li>
-          <li>Expo config plugin</li>
-        </ul>
       </p>
+      <ul>
+        <li>JavaScript & Node.js</li>
+        <li>React & React-Native</li>
+        <li>Expo config plugin</li>
+      </ul>
       <p>
         Check{" "}
         <a href="https://animationschooldaily.com/evolution-of-a-peg/">
