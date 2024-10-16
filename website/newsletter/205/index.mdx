@@ -1,18 +1,12 @@
 ---
 slug: /205
-title: "This Week In React #205: ..."
+title: "This Week In React #205: Next.js, useActionState, Headless, d&d, Web Components, RSCs, Next-Safe-Action, Remix, Zustand, NumberFlow, Atomic-CSS-DevTools, ESLint, BottomSheet, edge-to-edge, Ignite, Metro, ES2025, Node.js, TypeScript..."
 authors: [slorber]
 date: 10-16-2024
 unlisted: true
 ---
 
 Hi everyone!
-
-<Todo />
-
-*   🗓️ [React Summit US](https://reactsummit.us/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇺🇸 New-York - 19 & 22 December - Hurry and grab your ticket to the conference as prices are about to go up ! And don’t forget your discount with code “TWIR”.
-    
-*   🗓️ [RNLConf](https://www.reactnativelondon.co.uk/?utm_source=thisweekinreact) \- 🇬🇧 London - 14 & 15 November - Get a 10% discount with code “TWIR”. Alex Hunt, Charlotte Isambert, Cedric Van Putten and Charlie Cheever will give a talk !
 
 <!-- truncate -->
 
@@ -34,14 +28,10 @@ import Support from "../_support.mdx";
 
 AG Charts is a canvas-based charting library from AG Grid. Initially built to power [AG Grids](https://www.ag-grid.com/react-table?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2024-email-2) Integrated Charts, AG Charts now has over **1 million** npm downloads/month:
 
-*   🆓 **Free:** Access a range of chart types, including **bar**, **line**, **scatter**, **area**, and more – completely **free**, forever.
-    
-*   🚀 **Fast:** Using **batch drawing** and advanced change detection alongside the **offscreen canvas API**, AG Charts can easily render hundreds of thousands of data points out of the box
-    
-*   📊 **Financial Charts:** Build interactive financial charts featuring advanced annotations with just 3 lines of code.
-    
-*   🏢 **Enterprise Features:** Upgrade to Enterprise to unlock advanced capabilities such as animations, context menus, crosshairs and more. Try it for free, no trial license required.
-    
+- 🆓 **Free:** Access a range of chart types, including **bar**, **line**, **scatter**, **area**, and more – completely **free**, forever.
+- 🚀 **Fast:** Using **batch drawing** and advanced change detection alongside the **offscreen canvas API**, AG Charts can easily render hundreds of thousands of data points out of the box
+- 📊 **Financial Charts:** Build interactive financial charts featuring advanced annotations with just 3 lines of code.
+- 🏢 **Enterprise Features:** Upgrade to Enterprise to unlock advanced capabilities such as animations, context menus, crosshairs and more. Try it for free, no trial license required.
 
 Learn More: [www.ag-grid.com/charts](https://www.ag-grid.com/charts?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2024-email-2)
 
@@ -49,9 +39,49 @@ Learn More: [www.ag-grid.com/charts](https://www.ag-grid.com/charts?utm_source=t
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Next.js 15 RC 2](/emails/issues/205/nextjs.jpg)](https://nextjs.org/blog/next-15-rc2)
+
+[**Next.js 15 RC 2**](https://nextjs.org/blog/next-15-rc2)
+
+Months after the first RC, another big one drops just before Next.js Conf, including:
+
+- `@next/codemod upgrade`: Easily upgrade to the latest Next.js and React versions.
+- Turbopack for development: Performance improvements and Next.js 15 stability target.
+- Async Request APIs (Breaking): Incremental step towards a simplified rendering and caching model.
+- Server Actions: Enhanced security with unguessable endpoints and removal of unused actions.
+- Static Indicator: New visual indicator shows static routes during development.
+- `next/form`: Enhance HTML forms with client-side navigation.
+- `next.config.ts`: TypeScript support for the Next.js configuration file.
+- `instrumentation.js` (Stable): New API for server lifecycle observability.
+- Development and Build improvements: Improved build times and Faster Fast Refresh.
+- Self-hosting: More control over `Cache-Control` headers.
+- ESLint 9
+
+---
 
 - 💸 [Product for Engineers - The magic of small engineering teams](https://newsletter.posthog.com/p/the-magic-of-small-engineering-teams?utm_source=twir&utm_campaign=twir)
+- 👀 [React Core PR \- Re-land non-blocking prerendering](https://github.com/facebook/react/pull/31238): The prerendering of Suspense siblings (blocking the v19 release) has been reverted due to breakages and is now re-introduced.
+- 👀 [Next.js PR draft \- experimental Request Interceptors](https://github.com/vercel/next.js/pull/70961): This new feature could complement middleware and address some of its limitations with different tradeoffs.
+- 👀 [react-beautiful-dnd is now deprecated](https://github.com/atlassian/react-beautiful-dnd/issues/2672): Atlassian is now focusing on building “pragmatic drag and drop”.
+- 🗓️ [React Summit US](https://reactsummit.us/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇺🇸 New-York - 19 & 22 December - Hurry and grab your ticket to the conference as prices are about to go up ! And don’t forget your discount with code “TWIR”.
+- 📜 [The True Nature of useActionState](https://www.nikhilsnayak.dev/blogs/the-true-nature-of-use-action-state): An interactive article that points out the API design similarities between `useReducer` and `useActionState`. It refactors an in-memory todo app using `useReducer` to use persistent/async storage. React 19 makes it convenient to turn an existing reducer async and move it to the server.
+- 📜 [Headless, boneless, skinless & lifeless UI](https://nerdy.dev/headless-boneless-and-skinless-ui): Adam Argyle attempts to classify different React UI abstraction libraries more precisely than just “headless”.
+- 📜 [Drag to Select](https://www.joshuawootonn.com/react-drag-to-select): This awesome interactive article explains how to implement a complex item selection UX in React, including various edge cases to consider such as user scrolling while dragging.
+- 📜 [A Future for Web Components Without Shadow DOM](https://jjenzz.com/future-for-web-components-without-shadow-dom/): Jenna (RadixUI) shares interesting insight on Web Components from the perspective of a React design system dev. I thought Declarative Shadow DOM was required for SSR, but customized built-ins and custom attributes (proposal) might be better alternatives.
+- 📜 [The Big "Server Waterfall Problem" with RSCs](https://www.epicreact.dev/server-waterfall-problem-rscs): Kent explains it’s still possible to have waterfalls when using RSCs, but server-side waterfalls are less problematic than client-side waterfalls. The tension between query co-location and props drilling is not going away with RSCs.
+- 📜 [How to prevent re-render in React with Tailwind CSS](https://www.nico.fyi/blog/tailwind-css-group-modifier-to-prevent-react-rerender): Adding data attributes at the top of the DOM tree could help reduce statefulness in deeply nested components. An interesting technique, often used for theming, not only for Tailwind users.
+- 📜 [How to Use Next-Safe-Action for Your Server Actions](https://codelynx.dev/posts/next-safe-action-guide-en): Shows how to enhance Next.js Server Actions with Zod params validation, an access control middleware, normalized error management and React-Query integration.
+- 📦 [Zustand 5.0 \- No new feature, but twice smaller](https://github.com/pmndrs/zustand/releases/tag/v5.0.0)
+- 📦 [Number Flow \- A React component to transition, format, and localize numbers](https://github.com/barvian/number-flow)
+- 📦 [Atomic-CSS-DevTools](https://github.com/astahmer/atomic-css-devtools): This Chrome extension adds a dev tool panel for debugging atomic CSS rules as if they were not atomic. Works with Tailwind, StyleX, Panda…
+- 📦 [Remix 2.13 \- Stabilizes `lazyRouteDiscovery`, `data`, `singleFetch`, `flushSync`, `viewTransition`](https://github.com/remix-run/remix/blob/main/CHANGELOG.md#v2130)
+- 📦 [React Router 6.27 \- Stable `dataStrategy`, `patchRoutesOnNavigation`, `flushSync`, `viewTransition`](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v6270)
+- 📦 [ESLint-Plugin-React-Hooks 5.0 \- Support for ESLint 9](https://github.com/facebook/react/releases/tag/eslint-plugin-react-hooks%405.0.0)
+- 📦 [Astro 4.16 \- Concurrent Builds](https://github.com/withastro/astro/releases/tag/astro%404.16.0)
+- 📦 [Just-Styled \- Dead simple CSS-in-JS library for React 19+](https://github.com/yukukotani/just-styled)
+- 🎥 [Alem Tuzlak \- How React Router v7 became type-safe\!](https://www.youtube.com/watch?v=ferLCqcLcGU)
+- 🎥 [Sam Selikoff \- Building a Reusable Component that Animates on Scroll](https://www.youtube.com/watch?v=GIIuG5_kyow)
+- 🎙️ [Syntax 833 \- Next Gen Fullstack React with TanStack](https://syntax.fm/show/833/next-gen-fullstack-react-with-tanstack)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -81,22 +111,42 @@ With WorkOS you can start selling to enterprises with just a few lines of code.
 
 ## 📱 React-Native {#react-native}
 
-This section is authored by [Benedikt](https://twitter.com/bndkt).
-
-<Todo />
+- 💸 [Expo Starter Kit \- Fully Featured Starter Kit to Ship Mobile Apps Faster for iOS, Android, and Web](https://expostarter.com?utm_source=this-week-in-react&utm_medium=newsletter&utm_campaign=this-week-in-react)
+- 🐦 [Expo DOM Components on macOS demo](https://x.com/Baconbrix/status/1845612129342165217): This could offer a way for Electron/Tauri desktop apps (WebView) to incrementally migrate to native in the future.
+- 👀 [React Native PR \- Fix cursor issue in iOS controlled components (NewArch)](https://github.com/facebook/react-native/pull/46970): The major text input issue Dan reported last week has been fixed for the new architecture.
+- 👀 [React Native Docs \- Pure C++ Turbo Native Modules](https://reactnative.dev/docs/next/the-new-architecture/pure-cxx-modules)
+- 🗓️ [RNLConf](https://www.reactnativelondon.co.uk/?utm_source=thisweekinreact) \- 🇬🇧 London - 14 & 15 November - Get a 10% discount with code “TWIR”. Alex Hunt, Charlotte Isambert, Cedric Van Putten and Charlie Cheever will give a talk !
+- 📜 [Introducing the OMH Cloud Storage Module](https://www.callstack.com/blog/introducing-the-omh-cloud-storage-module)
+- 📜 [Build a daily workout tracker with Clerk, Convex, and Expo](https://expo.dev/blog/build-a-daily-workout-tracker-with-clerk-convex-and-expo)
+- 📜 [Manage notifications in a WebView with React Native](https://www.premieroctet.com/blog/en/notification-webview)
+- 📦 [react-native-edge-to-edge \- Lets Android app content flow beneath system bars](https://github.com/zoontek/react-native-edge-to-edge): Important infrastructure library supported by Expo, particularly useful for Android 15+.
+- 📦 [Bottom Sheet 5.0 \- RNGH v2, web support, dynamic sizing, FlashList integratio](https://gorhom.dev/react-native-bottom-sheet/blog/bottom-sheet-v5),
+- 📦 [Metro 0.81 \- scheduled for RN 0.76, `fileSystemLookup`, `onClose`](https://github.com/facebook/metro/releases/tag/v0.81.0)
+- 📦 [Ignite 10.0 \- Infinite Red's battle-tested React Native starter](https://shift.infinite.red/what-is-ignite-x-9ecde0b34d75): This new version comes with Expo prebuild, dark mode, Expo Router, MKKV, i18next, RNTL and more.
+- 📦 [react-native-bootsplash 6.2 \- Kotlin rewrite, better handling of translucent bars](https://github.com/zoontek/react-native-bootsplash/releases/tag/6.2.0)
+- 📦 [react-native-permissions 5.0 \- iOS 18 limited contact permission, permission escalation, drop older versions](https://github.com/zoontek/react-native-permissions/releases/tag/5.0.0)
+- 📦 [react-native-fast-confetti \- Based on Skia Atlas](https://github.com/AlirezaHadjar/react-native-fast-confetti)
+- 🎥 [Expo \- Universal App Tutorial Series \- How to build your first React Native app](https://www.youtube.com/playlist?list=PLsXDmrmFV_AT6I9knFlpzP61_appiRTNP)
+- 🎥 [Catalin Miron \- Custom Animated tabs](https://www.youtube.com/watch?v=zBBMimH6lTc)
+- 🎥 [Simon Grimm \- Is this the Expo Competitor? (One)](https://www.youtube.com/watch?v=GY2pCVn0Bm8)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [TC39 \- Updates from the 104th meeting](https://dev.to/hemanth/updates-from-the-104th-tc39-meeting-14cp): 14 proposals progressed, 4 of them reached stage 4 and ready to land in ES2025\!
+- 👀 [Companion Windows](https://github.com/explainers-by-googlers/companion-windows): Explainer from Google working on a web feature that could be the missing piece for MPAs, allowing them to preserve the state of dynamic widgets while navigating
+- 📜 [Introducing Express v5: A New Era for Node.js Framework](https://expressjs.com/2024/10/15/v5-release): v5.0 has been published a few weeks ago, and we now have an official blog post with a list of breaking changes, also explaining why v5 is still not tagged as `latest`.
+- 📦 [Node.js 23.0 \- require(ESM) enabled by default](https://nodejs.org/en/blog/release/v23.0.0)
+- 📦 [TypeScript 5.7 Beta \- New checks, es2024 lib/target, relative path rewriting, perf](https://devblogs.microsoft.com/typescript/announcing-typescript-5-7-beta/)
+- 📦 [srvx \- Universal Server API based on web platform standards, works with Deno, Bun Node.js](https://github.com/unjs/srvx)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/205/meme.jpg)](https://x.com/sebastienlorber/status/1846445741188743509)
 
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/205/meme2.jpg)](https://x.com/_tjzel/status/1839275827759816882)
 
 See ya! 👋
