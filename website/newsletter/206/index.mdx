@@ -1,6 +1,6 @@
 ---
 slug: /206
-title: "This Week In React #206: Next.js, React Compiler, Turbopack, Chakra UI, Remix, React Cache, Shadcn, Microfrontends, React DevTools, React Native, react-native-mmkv, Svelte, Turborepo, Node.js..."
+title: "This Week In React #206: Next.js, Compiler, DevTools, Turbopack, nuqs, Chakra UI, Remix, shadcn/ui, Microfrontends, React Native, react-native-mmkv, NewArch, Svelte, Turborepo..."
 authors: [matthieugicquel, cyrilbo]
 date: 10-23-2024
 unlisted: true
@@ -39,13 +39,9 @@ import Support from "../_support.mdx";
 Handsontable is [a feature-rich data grid](https://handsontable.com/demo?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=twirsep11) designed for React developers who need a powerful, customizable, and accessible solution to manage complex data.
 
 - A unique **spreadsheet-like interface** with sorting, filtering, and CRUD operations
-
 - Advanced operations like conditional formatting and **400 built-in formulas**, similar to Excel
-
 - **Customizable editors and renderers**, allowing dropdowns, menus or custom components within grid cells to fit specific use cases
-
 - **Optimized performance** for smooth and responsive interactions
-
 - **Accessibility with WCAG 2.1 compliance** for better support for users with disabilities
 
 Handsontable adapts to various use cases, from enterprise applications to simple websites, offering performance and flexibility trusted by companies worldwide.
@@ -60,37 +56,37 @@ Handsontable adapts to various use cases, from enterprise applications to simple
 
 [**Next.js 15**](https://nextjs.org/blog/next-15)
 
-Just in time for Next.js conf, Next.js 15 is officially released. There are no major changes since RC2, just a few stability fixes.
-
-In this v15:
+Just in time for Next.js conf, Next.js 15 is officially released. There are no major changes since RC2, just a few stability fixes. In this v15:
 
 - The caching behavior is flipped with most things (eg `fetch` requests) not cached by default anymore.
 - App router uses React 19 RC, pages router stays on React 18
 - Using turbopack dev is now recommended (webpack is still supported)
-- `@next/codemod upgrade` facilitates migrating
+- There are breaking changes such as existing APIs going async, and `@next/codemod upgrade` facilitates the upgrade
 
 There’s of course a slew of other DX, security and performance improvements.
 
 ---
 
-- 📊 [State of React 2024 survey is out](https://survey.devographics.com/en-US/survey/state-of-react/2024?source=this_week_in_react)
-- 🐦 [React Devtools v6 has been published](https://x.com/leeerob/status/1846954524864594350) with server components support.
+- 💸 [Omlet – Scan your repos and measure how and where components are used](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-quick-link-oct-2024)
+- 📊 [State of React 2024 - Survey is open](https://survey.devographics.com/en-US/survey/state-of-react/2024?source=this_week_in_react): Please don't forget to fill this year's survey. Seb has contributed to its design. We would appreciate if you answer that you read This Week In React at the end 😇.
 - 📜 [Server Side State management in NextJS: a deep dive into React Cache](https://www.yoseph.tech/posts/nextjs/server-side-state-management-in-nextjs-a-deep-dive-into-react-cache): using `cache`, `unstable_cache`, and `patched fetch`, explaining how these tools can optimize state handling, reduce prop drilling, and simplify server-side code.
 - 📜 [Remix Todo App](https://www.udohjeremiah.com/blog/remix-todo-app-part-1-building-the-app-layout-and-structure): A detailed guide in 6 parts.
 - 📜 [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
 - 📜 [Perfectly Fitting Text to Container in React](https://sentry.engineering/blog/perfectly-fitting-text-to-container-in-react)
 - 📜 [Creating a Keyboard Shortcut Hook in React](https://www.taniarascia.com/keyboard-shortcut-hook-react/)
-- 📦 [React Compiler beta release](https://react.dev/blog/2024/10/21/react-compiler-beta-release): It’s already in use in tens of thousands of components at Meta, they now want community feedback. This release adds official support for React 17 and 18. You can already add the ESLint plugin to prepare your codebase.
-- 📦 [Turbopack Dev is now stable](https://nextjs.org/blog/turbopack-for-development-stable): A slow dev server has been a usual pain point when working with Next.js. Vercel has been working on a rust-based webpack replacement for 2 years, and it’s finally safe to use on all projects that don’t rely on unusual webpack plugins.
-- 📦 [Chakra UI v3](https://www.chakra-ui.com/blog/00-announcing-v3): A full rewrite, with more components, semantic tokens and better performance.
-- 📦 [react-render-stream-testing-library v1.0](https://github.com/testing-library/react-render-stream-testing-library): To make detailed, render-per-render assertions when testing components and hooks. In many cases it amounts to testing implementation details but it will be very useful for library authors or in perf-sensitive scenarios.
-- 📦 [Sidebar - shadcn/ui](https://ui.shadcn.com/docs/components/sidebar)
+- 📦 [React Compiler beta](https://react.dev/blog/2024/10/21/react-compiler-beta-release): It’s already in use in tens of thousands of components at Meta, they now want community feedback. This release adds official support for React 17 and 18. You can already add the ESLint plugin to prepare your codebase.
+- 📦 [React DevTools 6.0.1 - React Server Components support](https://github.com/facebook/react/blob/main/packages/react-devtools/CHANGELOG.md#601): The React team fixed a few v6 bugs and then finally published this new version to the stores so that we can all easily install it.
+- 📦 [Turbopack Dev stable](https://nextjs.org/blog/turbopack-for-development-stable): A slow dev server has been a usual pain point when working with Next.js. Vercel has been working on a rust-based webpack replacement for 2 years, and it’s finally safe to use on all projects that don’t rely on unusual webpack plugins.
+- 📦 [nuqs 2.0 - Type-safe search params state manager](https://nuqs.47ng.com/blog/nuqs-2): Initially a Next.js query-string library, it is now opening up to other React frameworks with support for Remix, React Router... and also the brand new Next.js 15.
+- 📦 [Chakra UI 3.0](https://www.chakra-ui.com/blog/00-announcing-v3): A full rewrite, with more components, semantic tokens and better performance.
+- 📦 [react-render-stream-testing-library](https://github.com/testing-library/react-render-stream-testing-library): To make detailed, render-per-render assertions when testing components and hooks. In many cases it amounts to testing implementation details but it will be very useful for library authors or in perf-sensitive scenarios.
+- 📦 [shadcn/ui - Sidebar component](https://ui.shadcn.com/docs/components/sidebar)
+- 📦 [next-intl 3.22 - Incrementally moving forward](https://next-intl-docs.vercel.app/blog/next-intl-3-22)
 - 🔗 [GitHub - ethanniser/NextMaster: A highly performant replica of McMaster-Carr using Next.js](https://github.com/ethanniser/NextMaster): Partial prerendering with dynamic streaming, eliminated loading spinners via server-side data fetching, advanced image prefetching, triggered links on `onMouseDown` event, AI-generated dataset using GPT-4o-mini, product images generated with stable-diffusion-v1-5, UI scaffolding with V0 from screenshots.
+- 🎥 [Theo - Next.js is hiding something...](https://www.youtube.com/watch?v=g4g2YUtjh9g): Early sneak peek of upcoming features not even mentioned in the Next.js 15 release post, including the `'use cache'` directive, `cacheTag()` and `cacheLife` APIs.
 - 🎥 [Wes Bos - How is this Website so fast!?](https://www.youtube.com/watch?v=-Ln-8QM8KhQ): About the McMaster-Carr website.
 - 🎥 [Tanner Linsley - An Early Glimpse of TanStack Start](https://www.youtube.com/watch?v=AuHqwQsf64o)
 - 🎥 [Jack Herrington - What I Discovered When I Compared React and NextJS for Astro 5's Server Islands](https://www.youtube.com/watch?v=rCkhCG7n8sA)
-
-- 💸 [Omlet – Scan your repos and measure how and where components are used](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-quick-link-oct-2024)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -116,32 +112,32 @@ React Native 0.76 is out with major updates!
 
 The New Architecture is now enabled by default for better performance, there's a new React Native DevTools for improved debugging, and new style props like `boxShadow` and `filter` for enhanced UI effects (available only with the new architecture). Be aware of some breaking changes: minimum SDK requirements have been raised to iOS 15.1 and Android SDK 24 (Android 7). Time to upgrade and check it out!
 
-- 👀 [React Native PR - Add support for CSS `display: contents`](https://github.com/facebook/react-native/pull/46584): Define views that have zero impact on the layout but to which you can still attach event handlers. One possible usage is in `GestureDetector` from `react-native-gesture-handler`, which relies on direct native views to handle touch gestures without affecting layout, to fix issues like automatic collapsing of views in components.
-- 📖 [React Native DevTools new doc: available in React Native 0.76](https://reactnative.dev/docs/next/react-native-devtools)
-- 📜 [How we built mobile replay (and why it took so long)](https://posthog.com/blog/mobile-session-replay): Their React Native SDK 3.2 now has support for session replay (beta).
+---
+
+- 💸 [Stay up-to-date with React Native & Expo News with notJust Newsletter](https://www.notjust.dev/newsletter?utm_source=twir&utm_medium=email&utm_campaign=newsletter)
+- 👀 [React Native PR - Support for CSS `display: contents`](https://github.com/facebook/react-native/pull/46584): Define views that have zero impact on the layout but to which you can still attach event handlers. One possible usage is in `GestureDetector` from `react-native-gesture-handler`, which relies on direct native views to handle touch gestures without affecting layout, to fix issues like automatic collapsing of views in components.
+- 📖 [React Native Docs - New 0.76 DevTools](https://reactnative.dev/docs/next/react-native-devtools)
+- 📜 [React Native’s New Architecture, The Tricky Parts](https://blog.swmansion.com/react-natives-new-architecture-the-tricky-parts-1-2-bb0c16950f2d): View flattening, View recycling, libraries support.
+- 📜 [PostHog - How we built mobile replay (and why it took so long)](https://posthog.com/blog/mobile-session-replay): Their React Native SDK 3.2 now has support for session replay (beta).
 - 📜 [Hacking Expo SQLite into React Native MacOS](https://coolsoftware.dev/blog/hacking-expo-sqlite-into-react-native-macos/)
 - 📜 [How to bring your React Native apps to life using sensors](https://expo.dev/blog/how-to-bring-your-react-native-apps-to-life-using-sensors)
 - 📜 [How Kraken fixed performance issues via incremental adoption of the React Native New Architecture](https://blog.kraken.com/product/engineering/how-kraken-fixed-performance-issues-via-incremental-adoption-of-the-react-native-new-architecture)
-- 📜 [Introducing react-native-whip-whep](https://blog.swmansion.com/introducing-react-native-whip-whep-ac9e5588d4da?source=rss----e003bf129483---4)
-- 📜 [React Native’s New Architecture, The Tricky Parts](https://blog.swmansion.com/react-natives-new-architecture-the-tricky-parts-1-2-bb0c16950f2d): : View flattening, View recycling, libraries support.
-- 📦 [react-native-mmkv 3.1](https://x.com/mrousavy/status/1848666575382966401)
-- 📦 [expo-in-app-updates](https://github.com/SohelIslamImran/expo-in-app-updates)
-- 📦 [expo-import-cost](https://github.com/SohelIslamImran/expo-import-cost)
+- 📦 [react-native-mmkv 3.1 - GC-safe autotrim, readOnly mode](https://github.com/mrousavy/react-native-mmkv/releases/tag/v3.1.0)
+- 📦 [react-native-whip-whep - WebRTC PeerConnection](https://blog.swmansion.com/introducing-react-native-whip-whep-ac9e5588d4da?source=rss----e003bf129483---4)
+- 📦 [expo-in-app-updates - Native in-app updates for Android and iOS](https://github.com/SohelIslamImran/expo-in-app-updates)
+- 📦 [expo-import-cost - VSCode extension displaying dependency import cost](https://github.com/SohelIslamImran/expo-import-cost)
 - 🎥 [Catalin Miron - TikTok incoming messages animation](https://www.youtube.com/watch?v=dFUaYZ_AXcc)
-
-- 💸 [Stay up-to-date with React Native & Expo News with notJust Newsletter](https://www.notjust.dev/newsletter?utm_source=twir&utm_medium=email&utm_campaign=newsletter)
 
 ---
 
 ## 🔀 Other {#other}
 
-- 📜 [Brisa Framework - Server Actions have been fixed](https://brisa.build/blog/server-actions-have-been-fixed)
 - 📜 [Why I’m skeptical of rewriting JavaScript tools in “faster” languages](https://nolanlawson.com/2024/10/20/why-im-skeptical-of-rewriting-javascript-tools-in-faster-languages/)
 - 📜 [View Transitions Staggering](https://frontendmasters.com/blog/view-transitions-staggering/)
-- 📦 [Svelte v5](https://svelte.dev/blog/svelte-5-release-candidate)
+- 📜 [Brisa Framework - Server Actions have been fixed](https://brisa.build/blog/server-actions-have-been-fixed)
 - 📦 [Turborepo v2.2 - Experimental repository querying with GraphQL, cache safety warnings, automatic GitHub action comparisons](https://turbo.build/blog/turbo-2-2-0)
 - 📦 [is-my-node-vulnerable - Package that checks if your Node.js installation is vulnerable to known security vulnerabilities](https://github.com/RafaelGSS/is-my-node-vulnerable)
-- 📦 [Node.js v23 - Support for loading ES modules with require(), dropped 32-bit Windows support, stabilized --run command, enhanced test runner with glob patterns for coverage](https://openjsf.org/blog/announcing-node.js-23-key-features-and-enhancement)
+- 📦 [Svelte v5](https://svelte.dev/blog/svelte-5-release-candidate)
 
 ---
 
