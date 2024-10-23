@@ -1,0 +1,166 @@
+---
+slug: /201
+title: "This Week In React #201: TanStack, Remix, Next.js-SaaS-Starter, routing, ?search, decoupling, LLM, Astro, Redwood, Storybook, Conform, Nitro Modules, RN CSS, Re.Pack, Swift, VisionOS, Lottie, Node.js, TypeScript, Vite, date-fns..."
+authors: [slorber]
+date: 09-18-2024
+---
+
+Salut à tous !
+
+Encore une semaine avec de nombreux articles intéressants de la communauté React, notamment autour de TanStack.
+
+Nous avons également des annonces intéressantes concernant React Native, comme les modules Nitro.
+
+✍ N'oubliez pas de signer cette importante pétition : [Oracle, il est temps de libérer JavaScript](https://javascript.tm/)
+
+Consultez également notre conférence partenaire 🗓 [React Summit US](https://reactsummit.us/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇺🇸 New-York \- 19 & 22 décembre. La grande conférence React Summit est de retour aux États-Unis pour sa deuxième édition !
+
+<!-- truncate -->
+
+**💡 [Consulter cette newsletter sur Twitter](https://slo.im/thread) - format visuel 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![Uncover React Component Usage Across Your Dev Teams](/emails/issues/201/omletad.png)](https://omlet.dev/?utm_campaign=partner_this-week-in-react_first-sponsor-sep-2024)
+
+**[Uncover React Component Usage Across Your Dev Teams](https://omlet.dev/?utm_campaign=partner_this-week-in-react_first-sponsor-sep-2024)**
+
+☁️ Imagine being able to see exactly how and where devs are using specific React components so you can spot ways to reduce front-end tech debt and prove design system value. You can with Omlet.
+
+- Gain a central catalog of all the custom and reusable components you’ve used in production
+- Search and filter components by specific attributes to uncover what needs to be updated, debugged, or utilized more
+- Easily create and share custom charts with your team to show design system adoption, legacy code reduction, least/most used components and props, and more.
+
+Get set up and run your first scan in \<5 minutes. [Try for free](https://omlet.dev/?utm_campaign=partner_this-week-in-react_first-sponsor-sep-2024).
+
+---
+
+## ⚛️ React {#react}
+
+[![Introducing TanStack Router](/emails/issues/201/tanstack.jpg)](https://frontendmasters.com/blog/introducing-tanstack-router/)
+
+**Les nouvelles de TanStack**
+
+Je ne savais pas quel titre choisir cette semaine, alors rassemblons toutes les nouvelles liées à TanStack dans un même endroit :
+
+- 📜 [Introducing TanStack Router](https://frontendmasters.com/blog/introducing-tanstack-router/) : Excellent aperçu du routage/de la navigation de ce framework client complet qui alimente le futur framework TanStack Start (en alpha). Il se distingue notamment par son excellente sécurité pour les liens, les segments de chemin et les paramètres de recherche. J'aime particulièrement l'idée de lier avec `to=”/users/$id”` au lieu de `to=”/users/123”`.
+- 📜 [A milestone for TypeScript Performance in TanStack Router](https://tanstack.com/blog/tanstack-router-typescript-performance) : Toujours en rapport avec TanStack Router, j'ai également aimé cet article qui plonge en profondeur dans le dépannage des problèmes de performance de TypeScript dans le service de langage, conduisant à une autocomplétion lente de l'IDE.
+- 📜 [How Infinite Queries work](https://tkdodo.eu/blog/how-infinite-queries-work) : Dominik de React Query explique comment les requêtes infinies fonctionnent sous le capot, en utilisant une architecture de code élégante avec une logique de comportement pluggable. Il explique également comment il a corrigé un bogue historique qui n'a été signalé que récemment, causé par la logique de relance.
+- 👀 [Clerk TanStack start SDK (beta)](https://clerk.com/docs/quickstarts/tanstack-start) : Un fournisseur d'authentification tiers qui ajoute un support d'authentification de premier ordre au framework à venir est un excellent signe de confiance.
+
+---
+
+- 💸 [React Bricks - Transform React components into dynamic, visually editable bricks of content with the pioneering React Visual Headless CMS.](https://www.reactbricks.com/?utm_source=twir&utm_campaign=ql24)
+- 🧑‍🎓 [XState: Complete Getting Started Guide](https://www.typeonce.dev/course/xstate-complete-getting-started-guide): Free comprehensive course on XState in a React context.
+- 🖨 [React 19 Cheat Sheet](https://www.epicreact.dev/react-19-cheatsheet)
+- 🗓️ [React-Africa](https://react-africa.com/?utm_source=thisweekinreact) - 🇲🇦 Casablanca - 29 November - Get a 10% discount with code “TWIR”. The full line up is now available, take a tour on the conference website !
+- 🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇬🇧 London - 25 & 28 October - 10% discount with code TWIR. Full line-up revealed !
+- 📜 [Remix's concurrent submissions are fundamentally flawed (without causal ordering)](https://dashbit.co/blog/remix-concurrent-submissions-flawed): Following the migration of ChatGPT from Next.js to Remix, the creator of Elixir argues that Remix submission and validation model is subject to race conditions. Ryan Florence plans to respond later. Note this is a more general problem affecting most client-side frameworks, although React 19 actions run sequentially and are not affected by it.
+- 📜 [How Remix's Flat File-Based Routing Works](https://www.udohjeremiah.com/blog/how-remix-flat-file-based-routing-works): Remix routing convention can be customized, but it comes with a default one that this post explains in details.
+- 📜 [Using callbacks to achieve better component decoupling in React](https://darios.blog/posts/using-callbacks-in-react): Short but important lesson on how to decouple a parent component from its children, by narrowing callback types instead of injecting a parent `setState`.
+- 📜 [SPA Lazy Loading Pitfalls](https://reacttraining.com/blog/spa-lazy-loading-pitfalls): When using React Router with lazy routes and loader functions, you’d rather avoid co-locating your loader function with the component that receives its data because it creates a waterfall.
+- 📜 [LLM and RSC: A match made in Heaven](https://nikhilsnayak.dev/blogs/llm-and-rsc): Uses OpenAI function/tool calls to implement an MVP of generative UI. The interactive demo can render an interactive React component during the chat session.
+- 📜 [Clean React with TypeScript](https://weser.io/blog/clean-react-with-typescript): Long-time ReasonML user adopts TypeScript and shares a great overview on how to best type React components, state, refs and events. You might be familiar with most types, but it also covers more advanced patterns such as forwarding props with `ComponentProps`.
+- 📜 [Implementing Feature Flagging with the Next.js App Router](https://aurorascharff.no/posts/implementing-feature-flagging-with-nextjs-app-router/): Implements a custom feature flag system based on env variables. It works for both client and server components.
+- 📜 [Search Params in Next.js for URL State](https://www.robinwieruch.de/next-search-params/): A good introduction to the `nuqs` library to implement typed search params to filter/sort a list of items.
+- 📜 [Redwood background Jobs](https://redwoodjs.com/blog/background-jobs): Details the new feature introduced in the recent 8.0 release. It’s notably useful to perform slower actions such as sending emails, without delaying user responses. Jobs are stored in a database and executed by a scheduler.
+- 📜 [Tailwind UI Radiant \- A beautiful new marketing site template](https://tailwindcss.com/blog/2024-09-12-radiant-a-beautiful-new-marketing-site-template): New paid Next.js template from the Tailwind CSS team, but the launch blog post also explains interesting details, such as FramerMotion variant propagation.
+- 📜 [Don't Sleep on AbortController](https://kettanaito.com/blog/dont-sleep-on-abort-controller): Great vanilla JS article overall, including a cool React `useEffect` example
+- 📦 [Vite 6 beta](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md): This comes with the new [Environment API](https://main.vitejs.dev/guide/api-environment) useful to support multiple module graphs for SSR and RSCs.
+- 📦 [Valtio 2.0](https://github.com/pmndrs/valtio/releases/tag/v2.0.0): Valtio won’t handle promises anymore, you need to use `React.use()` now. This inspired me to create a [demo](https://x.com/sebastienlorber/status/1836060870733955127) showing how this pattern of storing promises could greatly simplify vanilla data fetching with less complexity than `useEffect()`.
+- 📦 [Next.js SaaS Starter \- Using Next.js 15, React 19 Postgres, Drizzle, Stripe, and shadcn/ui](https://github.com/leerob/next-saas-starter): I’m not that much into boilerplates (there are too many), but this one is created by Lee Robinson from Vercel, free, using cutting edge React 19 features with best practices in application.
+- 📦 [Astro 5.0 beta \- stable Content Layer, Server Islands, astro:env](https://astro.build/blog/astro-5-beta/)
+- 📦 [Hono-Remix-Adapter](https://github.com/yusukebe/hono-remix-adapter)
+- 📦 [Storybook 8.3 \- Vitest integration, experimental Story globals](https://github.com/storybookjs/storybook/releases/tag/v8.3.0)
+- 📦 [Conform 1.2 \- Input key prop no longer required](https://github.com/edmundhung/conform/releases/tag/v1.2.0)
+- 📦 [Isograph 0.2 \- Modern GraphQL client](https://isograph.dev/blog/2024/09/11/isograph-0.2.0/)
+- 📦 [Relay 18.0 \- `@alias`, `@catch`, editor integration improvements and more](https://github.com/facebook/relay/releases/tag/v18.0.0)
+- 📦 [Shopify Hydrogen \- September 2024 release \- Improved sitemaps, search enhancements, localization, CSP fixes](https://hydrogen.shopify.dev/update/september-2024)
+- 🎥 [Theo \- We need to talk about Chrome's new API](https://www.youtube.com/watch?v=ucMNiYFB4CA): Greatly introduces the new `scheduler.yield()` that landed in Chrome 129\. It is useful for Concurrent React to split work into smaller chunks and give priority to the user inputs.
+- 🎥 [UI Engineering \- Making setState() instant](https://www.youtube.com/watch?v=H9IIwbUhEJA)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Amplify the benefits of JWTs and Session Tokens](/emails/issues/201/clerk.jpg)](https://go.clerk.com/4kxhIiA)
+
+**[Amplify the benefits of JWTs and Session Tokens](https://go.clerk.com/4kxhIiA)**
+
+Learn how leveraging the benefits of both session token authentication and JWTs results in the best of both approaches.
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![Nitro Modules](/emails/issues/201/nitro.jpg)](https://mrousavy.github.io/nitro/)
+
+**[Nitro Modules](https://mrousavy.github.io/nitro/)**
+
+Marc Rousavy finally released his long-awaited framework for creating very fast native modules with a great DX. It is based on Nitrogen, a code generator that generates type-safe C++/Swift/Kotlin bindings from a TypeScript interface. Many TypeScript types are supported. Unlike other module solutions, it is able to bridge directly to Swift and Kotlin (from C++). A simple benchmark shows that Nitro Modules outperform ExpoModules and TurboModules on a simple operation. So far the community feedback from early adopters has been very positive, notably William Candillion using it on react-native-wgpu. Also worth reading [Brent Vatne’s comment](https://x.com/notbrent/status/1834647244089307279) for why they didn’t adopt direct Swift C++ Interop in Expo modules (at least for now).
+
+---
+
+- 💸 [React Native Mastery - The only course you need to Master React Native & Expo](https://notjust.dev/react-native-mastery?utm_source=twir&utm_medium=email)
+- 🐦 [React Native Skia running on WebGPU Canvas](https://x.com/wcandillon/status/1834245607906496888): Great demo but more importantly explains the intention to implement a generic Canvas API for React Native, similar to the one available on the web.
+- 🐦 [React Native WebGPU \+ React Three Fiber demo](https://x.com/wcandillon/status/1834901444320801032)
+- 📜 [Shaping the Future of Super Apps in React Native](https://www.callstack.com/blog/shaping-the-future-of-super-apps-in-react-native): Callstack explains why they bet on Rspack, Re.Pack and Module Federation v2 to implement Super Apps. They also announced a new partnership with Zephyr Cloud to integrate this platform into the React Native ecosystem, a SaaS making it easier to manage federated apps. Note that [Re.Pack 5.0 alpha](https://github.com/callstack/repack/releases/tag/%40callstack%2Frepack%405.0.0-alpha.0) is out with Rspack support, building 5x faster than Webpack.
+- 📜 [React Native Layout components](https://kyleshevlin.com/snippets/react-native-layout-components/): I also like this pattern of exposing layout style as props, and would probably use it to create a React Native design system.
+- 📜 [5 Ways to Manage Focus in React Native TV Apps](https://www.reactnativetv.com/blog/five-ways-of-managing-focus)
+- 📜 [Expo Go vs Development Builds: Which should you use?](https://expo.dev/blog/expo-go-vs-development-builds)
+- 📦 [React Native 0.76 RC1](https://github.com/facebook/react-native/releases/tag/v0.76.0-rc.1): This one has stable support for CSS boxShadow and filter\! Note it seems even more CSS features are in the pipeline (mix-blend-mode, isolate, outline…).
+- 📦 [Swift 6 \- Concurrency memory safety, Typed throws, C++ interop, Foundation, testing](https://www.swift.org/blog/announcing-swift-6/)
+- 📦 [React Native VisionOS 0.76 RC.0 \- React Native debugger support](https://github.com/callstack/react-native-visionos/releases/tag/v0.76.0-rc.0-visionos)
+- 📦 [Lottie React Native 7.0 \- VisionOS, XCode 16, require 0.73+, no major breaking change](https://github.com/lottie-react-native/lottie-react-native/releases/tag/v7.0.0)
+- 📦 [Sonner-Native \- An opinionated toast component for React Native (port of Sonner)](https://github.com/gunnartorfis/sonner-native)
+- 📦 [React Native Testing Library 12.7 \- Simulate native state for TextInputs/ScrollView, Switch toBeChecked(), match Image with `alt` prop](https://github.com/callstack/react-native-testing-library/releases/tag/v12.7.2)
+- 📦 [React Native Iconify 2.0 \- dynamci imports, Next.js \+ Vite support, variables](https://github.com/oktaysenkan/react-native-iconify/releases/tag/v2.0.0)
+- 🎥 [Reactiive \- Animated Bar Chart with React Native (Reanimated)](https://www.youtube.com/watch?v=RO3qutJhU_Y)
+- 🎥 [Simon Grimm \- Can Cursor AI build my React Native App?](https://www.youtube.com/watch?v=5Y_t6NRl_xI)
+- 🎙️ [RNR 307 \- React Universe Recap](https://www.reactnativeradio.com/episodes/rnr-307-react-universe-recap)
+
+---
+
+## 🇫🇷 En français {#fr}
+
+- 🇫🇷 [ReactHebdo.fr - Dernières éditions traduites en français](https://thisweekinreact.com/fr/newsletter)
+- 📅 [React Paris Meetup #3 - Jeu. 19 sept. 2024​](https://www.meetup.com/fr-FR/react-paris/events/303277359/)
+- 📜 [Comment utiliser Zod pour valider des données en TypeScript​](https://www.premieroctet.com/blog/zod-et-les-validateurs)
+- 🎥 [Melvynx - 4 Composants Next.js que tu dois installer !​](https://www.youtube.com/watch?v=AHGqOknBLHs)
+- 🎥 [Grafikart - Faite fonctionner votre site hors ligne avec Vite PWA](https://www.youtube.com/watch?v=mLOnB4Z_DSc)
+
+---
+
+## 🔀 Autre {#other}
+
+- 👀 [TypeScript 5.7 Iteration Plan](https://github.com/microsoft/TypeScript/issues/59905)
+- 👀 [Web Features Explorer \- A release note for the web platform](https://patrickbrosset.com/articles/2024-09-04-a-release-note-for-the-web-platform/)
+- 📜 [Understanding Concurrency, Parallelism and JS](https://www.rugu.dev/en/blog/concurrency-and-parallelism/)
+- 📦 [date-fns 4.0 \- First-class time zones support](https://blog.date-fns.org/v40-with-time-zone-support/)
+- 📦 [Chokidar 4.0 \- Shrink 13 deps to 1 dep, native TS, CJS+ESM, require Node.js 14](https://github.com/paulmillr/chokidar/releases/tag/4.0.0)
+- 📦 [Node 22.9 \- getCallSite API](https://nodejs.org/en/blog/release/v22.9.0)
+- 📦 [Safari 18.0 \- View Transitions, Style Queries, Animate display, URL.parse()...](https://webkit.org/blog/15865/webkit-features-in-safari-18-0/)
+- 📦 [Hono 4.6 \- Context Storage Middleware (AsyncLocalStorage)](https://github.com/honojs/hono/releases/tag/v4.6.0)
+- 📦 [Biome 1.9 \- Stable CSS and GraphQL formatter/linter, `.editorconfig`](https://biomejs.dev/blog/biome-v1-9/)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/201/meme.jpg)](https://x.com/sophiebits/status/1836272297801585041)
+
+[![alt](/emails/issues/201/meme2.jpg)](https://x.com/thymikee/status/1831602712577733035)
+
+[![alt](/emails/issues/201/meme3.jpg)](https://x.com/sebastienlorber/status/1833145461328244774)
+
+A plus 👋
