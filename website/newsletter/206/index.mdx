@@ -1,9 +1,8 @@
 ---
 slug: /206
-title: "This Week In React #206: Next.js, Compiler, DevTools, Turbopack, nuqs, Chakra UI, Remix, shadcn/ui, Microfrontends, Fumadocs, React Native, react-native-mmkv, NewArch, Svelte, Turborepo..."
+title: "This Week In React #206: Next.js, Compiler, DevTools, State Of React, nuqs, Chakra UI, Remix, shadcn/ui, Turbopack, Microfrontends, Fumadocs, NewArch, react-native-mmkv, whip-whep, Svelte, Turborepo, Hono..."
 authors: [matthieugicquel, cyrilbo]
 date: 10-23-2024
-unlisted: true
 ---
 
 Hi everyone!
@@ -12,9 +11,11 @@ Cyril and Matthieu from [Theodo Apps (formerly BAM)](https://apps.theodo.com/en?
 
 Big updates this week for the React world! Next.js 15 is officially out with key changes around caching and performance, plus the React Compiler has hit beta — lots to look forward to there.
 
-React Native 0.76 also dropped, with the new architecture now enabled by default and some cool new style props like boxShadow and filter.
-
 We’ve got a bunch of great articles too, from optimizing state with React Cache to a deep dive into React Native's new architecture.
+
+Speaking of React Native, v0.76 is coming very soon! A major milestone as it's the first version to activate the New Architecture by default, the culmination of years of work that deserves to be celebrated! 🥳️
+
+The [State of React 2024 survey](https://survey.devographics.com/en-US/survey/state-of-react/2024?source=this_week_in_react) is now open and waiting for your answers.
 
 Let’s dive in!
 
@@ -70,6 +71,7 @@ There’s of course a slew of other DX, security and performance improvements.
 - 💸 [Omlet – Scan your repos and measure how and where components are used](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-quick-link-oct-2024)
 - 📊 [State of React 2024 - Survey is open](https://survey.devographics.com/en-US/survey/state-of-react/2024?source=this_week_in_react): Please don't forget to fill this year's survey. Seb has contributed to its design. We would appreciate if you answer that you read This Week In React at the end 😇.
 - 📜 [Server Side State management in NextJS: a deep dive into React Cache](https://www.yoseph.tech/posts/nextjs/server-side-state-management-in-nextjs-a-deep-dive-into-react-cache): using `cache`, `unstable_cache`, and `patched fetch`, explaining how these tools can optimize state handling, reduce prop drilling, and simplify server-side code.
+- 📜 [Framer Sites Now Become Interactive 50% Faster](https://www.framer.com/blog/sites-interactive-faster/): Faster hydration with granular Suspense.
 - 📜 [Remix Todo App](https://www.udohjeremiah.com/blog/remix-todo-app-part-1-building-the-app-layout-and-structure): A detailed guide in 6 parts.
 - 📜 [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
 - 📜 [Perfectly Fitting Text to Container in React](https://sentry.engineering/blog/perfectly-fitting-text-to-container-in-react)
@@ -104,16 +106,6 @@ Lazar Nikolov and Sarah Guthals are hosting a free workshop on [Implementing Cle
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
-
-[**React Native 0.76**](https://reactnative.dev/blog)
-
-React Native 0.76 is out with major updates!
-
-The New Architecture is now enabled by default for better performance, there's a new React Native DevTools for improved debugging, and new style props like `boxShadow` and `filter` for enhanced UI effects (available only with the new architecture). Be aware of some breaking changes: minimum SDK requirements have been raised to iOS 15.1 and Android SDK 24 (Android 7). Time to upgrade and check it out!
-
----
-
 - 💸 [Stay up-to-date with React Native & Expo News with notJust Newsletter](https://www.notjust.dev/newsletter?utm_source=twir&utm_medium=email&utm_campaign=newsletter)
 - 👀 [React Native PR - Support for CSS `display: contents`](https://github.com/facebook/react-native/pull/46584): Define views that have zero impact on the layout but to which you can still attach event handlers. One possible usage is in `GestureDetector` from `react-native-gesture-handler`, which relies on direct native views to handle touch gestures without affecting layout, to fix issues like automatic collapsing of views in components.
 - 📖 [React Native Docs - New 0.76 DevTools](https://reactnative.dev/docs/next/react-native-devtools)
@@ -133,6 +125,7 @@ The New Architecture is now enabled by default for better performance, there's a
 ## 🔀 Other {#other}
 
 - 📜 [The story of web framework Hono](https://blog.cloudflare.com/the-story-of-web-framework-hono-from-the-creator-of-hono/): "In contrast to the Next.js framework, which started from the client-side with React, Hono is trying to become a full-stack framework starting from the server-side"
+- 📜 [Does JavaScript require a compiler soon? - TC39 JSSugar proposal](https://bleepbloop.studio/posts/new-tc39-proposal-does-javascript-require-a-compiler-soon)
 - 📜 [Why I’m skeptical of rewriting JavaScript tools in “faster” languages](https://nolanlawson.com/2024/10/20/why-im-skeptical-of-rewriting-javascript-tools-in-faster-languages/)
 - 📜 [View Transitions Staggering](https://frontendmasters.com/blog/view-transitions-staggering/)
 - 📜 [Brisa Framework - Server Actions have been fixed](https://brisa.build/blog/server-actions-have-been-fixed)
