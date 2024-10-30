@@ -10,9 +10,6 @@ Hi everyone!
 
 <Todo />
 
-- 🗓️ [React Day Berlin](https://reactday.berlin/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇩🇪 Berlin - 13 & 16 December - [Free remote tickets are available now, click here !](https://gitnation.com/badges/react-day-berlin-2024/sara_vieira?from=This+Week+In+React)
-- 🗓️ [RNLConf](https://www.reactnativelondon.co.uk/?utm_source=thisweekinreact) \- 🇬🇧 London - 14 & 15 November - Last chance to grab a ticket ! Don’t forget your discount with code “TWIR”.
-
 <!-- truncate -->
 
 **💡 [Check this newsletter on Twitter](https://slo.im/thread) - visual format 🎨**
@@ -37,6 +34,8 @@ import Support from "../_support.mdx";
 
 ## ⚛️ React {#react}
 
+[![Next.js Conf 2024 Recap](/emails/issues/207/nextjsconf.jpg)](https://vercel.com/blog/recap-next-js-conf-2024)
+
 [**Next.js Conf 2024 Recap**](https://vercel.com/blog/recap-next-js-conf-2024)
 
 Last week, the community gathered at the Next.js conference. This recap is a nice overview of the highlights, including:
@@ -46,16 +45,17 @@ Last week, the community gathered at the Next.js conference. This recap is a nic
 - Simpler caching, reduced complexity
 - Self-hosting improvements and templates
 
-The sister blog post [Our Journey with Caching](https://nextjs.org/blog/our-journey-with-caching) is particularly interesting, introducing new experimental caching semantics and APIs such as \`use cache\`, \`cacheTag\`, and \`cacheLife\`. It’s a more flexible system, and super cool that you don’t even need to provide a cache key.
+The sister blog post [Our Journey with Caching](https://nextjs.org/blog/our-journey-with-caching) is particularly interesting, introducing new experimental caching semantics and APIs such as `use cache`, `cacheTag`, and `cacheLife`. It’s a more flexible system, and super cool that you don’t even need to provide a cache key.
 
 ---
 
 - 💸 [Product for Engineers - A/B testing mistakes I learned the hard way](https://dub.sh/twir-oct30)
 - 📖 [Using shadcn/ui with Next.js 15 and React 19](https://ui.shadcn.com/docs/react-19): Explains how to handle peer deps, gives status of React 19 support of underlying libs.
 - 📣 [Netlify Joins OpenNext](https://www.netlify.com/blog/netlify-joins-opennext/): They moved their adapter to the OpenNext org and started collaborating with Cloudclare and SST to make Next.js more portable.
+- 🗓️ [React Day Berlin](https://reactday.berlin/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇩🇪 Berlin - 13 & 16 December - [Free remote tickets are available now, click here !](https://gitnation.com/badges/react-day-berlin-2024/sara_vieira?from=This+Week+In+React)
 - 📜 [Using Shadcn UI without a Tailwind Config File](https://www.luisball.com/blog/shadcn-ui-with-tailwind-v4): Use Tailwind v4 (alpha) with shadcn/ui in a Next.js 15 app. Unfortunately you’ll have to copy/paste the components/dependencies manually until the CLI gets updated.
-- 📜 [Conditional React hooks pattern](https://robinmalfait.com/blog/conditional-react-hooks-pattern): Maintainer of Headless UI shares trick he uses in the library, passing \`enabled\` as first parameter to hooks.
-- 📜 [HTML Form Validation is heavily underused](https://expressionstatement.com/html-form-validation-is-heavily-underused): Creates a convenient React abstraction on top of \`input.setCustomValidity\`.
+- 📜 [Conditional React hooks pattern](https://robinmalfait.com/blog/conditional-react-hooks-pattern): Maintainer of Headless UI shares trick he uses in the library, passing `enabled` as first parameter to hooks.
+- 📜 [HTML Form Validation is heavily underused](https://expressionstatement.com/html-form-validation-is-heavily-underused): Creates a convenient React abstraction on top of `input.setCustomValidity`.
 - 📜 [Add an RSS Feed to a Next.js Blog](https://didoesdigital.com/blog/nextjs-blog-09-rss/): Use a static route returning XML. Note I beg you to add an RSS feed, otherwise I have to pay Inoreader 0.20€/month to track your blog through selectors 😅.
 - 📜 [How to roll your own auth in JavaScript & TypeScript](https://www.robinwieruch.de/how-to-roll-your-own-auth/): Step-by-step guide to implement auth in Next.js 15\.
 - 📜 [Live Streaming with React — More Rust in the JavaScript Ecosystem](https://blog.swmansion.com/live-streaming-with-react-more-rust-in-the-javascript-ecosystem-f83a0371e16c): This innovative project uses a custom React renderer to control a media server doing live video mixing. The article explains their implementation decisions.
@@ -86,15 +86,16 @@ Blacksmith runs your GitHub Actions substantially faster by running them on mode
 
 [**React Native 0.76 \- New Architecture by default, React Native DevTools, and more**](https://reactnative.dev/blog/2024/10/23/release-0.76-new-architecture)
 
-React Native 0.76 is out with major updates\! The New Architecture is now enabled by default, there's a new React Native DevTools for improved debugging, and CSS support for \`boxShadow\` and \`filter\` for enhanced UI effects (available only with the new architecture). Be aware of some breaking changes: minimum SDK requirements have been raised to iOS 15.1 and Android SDK 24 (Android 7). Time to upgrade and check it out\!
+React Native 0.76 is out with major updates\! The New Architecture is now enabled by default, there's a new React Native DevTools for improved debugging, and CSS support for `boxShadow` and `filter` for enhanced UI effects (available only with the new architecture). Be aware of some breaking changes: minimum SDK requirements have been raised to iOS 15.1 and Android SDK 24 (Android 7). Time to upgrade and check it out\!
 
-v0.76 is cool, but what’s even better is that the [New Architecture is here](https://reactnative.dev/blog/2024/10/23/the-new-architecture-is-here) and officially declared ready to be used in production\! This is a multi-year effort and a huge milestone for the React Native ecosystem\! At this point, you probably already heard about JSI, Fabric, Turbomodules, synchronous low-overhead bridgeless communication, interop mode, and more. It’s not just about performance, but also solving important UX/DX problems such as being able to measure views synchronously to position a tooltip, or having \`useLayoutEffect\` work like on the web. What excites me most is also probably the most underrated: React Native can finally use React 18+ concurrent features, notably transitions, Suspense, and what’s coming next.
+v0.76 is cool, but what’s even better is that the [New Architecture is here](https://reactnative.dev/blog/2024/10/23/the-new-architecture-is-here) and officially declared ready to be used in production\! This is a multi-year effort and a huge milestone for the React Native ecosystem\! At this point, you probably already heard about JSI, Fabric, Turbomodules, synchronous low-overhead bridgeless communication, interop mode, and more. It’s not just about performance, but also solving important UX/DX problems such as being able to measure views synchronously to position a tooltip, or having `useLayoutEffect` work like on the web. What excites me most is also probably the most underrated: React Native can finally use React 18+ concurrent features, notably transitions, Suspense, and what’s coming next.
 
 ---
 
 - 💸 [Expo Starter Kit - The Swiss Army Knife of Mobile App Building](https://expostarter.com?utm_source=this-week-in-react&utm_medium=newsletter&utm_campaign=this-week-in-react-10-30-2024)
 - 📣 [React Native Announcement \- Handling Android 15's edge-to-edge enforcement](https://github.com/react-native-community/discussions-and-proposals/discussions/827): Android 15 changes how content is displayed on screen. SafeAreaView is going to be deprecated. The new library [react-native-edge-to-edge](https://github.com/zoontek/react-native-edge-to-edge) is an alternative to fully embrace edge-to-edge rendering. Note it just reached 1.0 and is supported by Expo.
 - 📣 [Flipper repository is being archived](https://fbflipper.com/blog/2024/10/24/changes-to-oss-flipper/)
+- 🗓️ [RNLConf](https://www.reactnativelondon.co.uk/?utm_source=thisweekinreact) \- 🇬🇧 London - 14 & 15 November - Last chance to grab a ticket ! Don’t forget your discount with code “TWIR”.
 - 📜 [React Native, and “the native feel”](https://mozzius.dev/post/3l777nhz4h32w): Bluesky dev explains how they made their Expo app feel native. It’s the sum of many little details, such as hairlineWidth, bottom sheets, animations, navigation.
 - 📜 [Animated Spiral with React Native Skia](https://reactiive.io/articles/animated-spiral): Reactiive just relaunched his blog with greatly interactive animated Skia playgrounds, very satisfying to look at\!
 - 📜 [Enhance App Performance and Business Growth With Real User Monitoring (RUM)](https://www.callstack.com/blog/enhance-app-performance-and-business-with-real-user-monitoring-rum)
@@ -107,7 +108,7 @@ v0.76 is cool, but what’s even better is that the [New Architecture is here](h
 - 📦 [React Native visionOS 0.76 \- New Architecture by default, debugger support](https://github.com/callstack/react-native-visionos/releases/tag/v0.76.0-visionos)
 - 📦 [React Native for TV 0.76 \- New Architecture by default, support for NativeWind](https://github.com/react-native-tvos/react-native-tvos/releases/tag/v0.76.0-0)
 - 📦 [React Native Testing Library 12.8 \- Option to enable New Architecture concurrent rendering](https://github.com/callstack/react-native-testing-library/releases/tag/v12.8.0)
-- 📦 [Reassure 1.3 \- Improves \`measureRenders\` precision](https://github.com/callstack/reassure/releases/tag/reassure%401.3.0)
+- 📦 [Reassure 1.3 \- Improves `measureRenders` precision](https://github.com/callstack/reassure/releases/tag/reassure%401.3.0)
 - 📦 [React Native 0.76.1 \- Bugfixes](https://github.com/facebook/react-native/releases/tag/v0.76.1)
 - 📦 [Radon IDE 0.0.21-beta](https://github.com/software-mansion/radon-ide/releases/tag/v0.0.21-beta)
 - 🎥 [Expo \- Can you migrate a React website to native with Expo DOM components?](https://www.youtube.com/watch?v=lLlu4fPMXes)
