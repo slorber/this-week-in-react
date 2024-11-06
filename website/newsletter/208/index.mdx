@@ -8,10 +8,6 @@ unlisted: true
 
 Hi everyone!
 
-<Todo />
-
-- 🗓️ [React-Brussels](https://www.react.brussels/?utm_source=thisweekinreact) - 🇧🇪 Brussels - 18 October - POST MENTION
-
 <!-- truncate -->
 
 **💡 [Check this newsletter on Twitter](https://slo.im/thread) - visual format 🎨**
@@ -43,9 +39,45 @@ Learn More: [ag-grid.com](https://www.ag-grid.com/react-table?utm_source=thiswee
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Sathya Gunasekaran - What's next for the React Compiler?](/emails/issues/208/compiler.jpg)](https://www.youtube.com/watch?v=qd5yk2gxbtg)
+
+🎥 [**Sathya Gunasekaran \- What's next for the React Compiler?**](https://www.youtube.com/watch?v=qd5yk2gxbtg)
+
+I finally caught up with this great talk that announced the [React compiler beta](https://react.dev/blog/2024/10/21/react-compiler-beta-release), and a few other things that it also unveiled. The compiler is not just about auto-memoization, but is a platform to build more optimizations on.
+
+mentions a few upcoming compiler features, including JSX inlining (remove useless JSX runtime calls), JSX outlining (extract smaller subcomponents), and a new config to teach the compiler additional type information to help it further optimize. 3 upcoming things presented:
+
+- Type config: Help the compiler do a better job by providing extra type information.
+- JSX Inlining: Remove useless JSX runtime calls, replace them with pre-built JSX objects. `jsx('div')` becomes `{type: 'div'}`.
+- JSX Outlining: Extract subcomponents automatically that can be optimized independently. This is particularly useful for list elements when using `array.map` and inlined JSX, the compiler can create an `<Item>` component (see screenshot, otherwise this [PR](https://github.com/facebook/react/pull/30956) explains it well).
+
+---
 
 - 💸 [Omlet – Scan your repos and measure how and where components are used](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-quick-link-oct-2024)
+- 📜 [Managing Advanced Search Param Filtering in the Next.js App Router](https://aurorascharff.no/posts/managing-advanced-search-param-filtering-next-app-router/): Great interactive article showing that lifting state to the URL is not so easy when using RSC-based routing. To obtain a good UX, you have to use startTransition and useOptimistic. The nuqs library can help simplify.
+- 📜 [Two ways to the two Reacts](https://bobaekang.com/blog/two-ways-to-the-two-reacts/): Interesting thoughts on the different visions that Next.js and TanStack Start are adopting to integrate modern React features. TanStack Start is more client-centric and less disruptive.
+- 📜 [How to (not) reset a form after a Server Action in React](https://www.robinwieruch.de/react-server-action-reset-form/): React Actions automatically reset the uncontrolled form inputs, but it might not be what you want on action errors.
+- 📜 [Storybook Test sneak peek](https://storybook.js.org/blog/storybook-test-sneak-peek/): Testing components and stories in your browsers.
+- 📜 [Upgrading React with micro-frontend](https://alexocallaghan.com/upgrading-react-with-microfrontends): Using a Module Federation React bridge to allow using different React versions.
+- 📜 [React Router Brand Update](https://remix.run/blog/react-router-brand-update): Updating the logo/wordmark for the upcoming v7 release.
+- 📜 [How headless components became the future for building UI libraries](https://www.subframe.com/blog/how-headless-components-became-the-future-for-building-ui-libraries): In particular focusing on Radix.
+- 📜 [Integrating Large Language Models into Frontends](https://www.manuelsanchezdev.com/blog/integrating-llm-frontend)
+- 📜 [XState in React: Look Ma, no useState or useEffect\!](https://www.frontendundefined.com/posts/monthly/xstate-in-react/)
+- 📜 [How To Build And Deploy A Headless WordPress With Next.js?](https://scientyficworld.org/how-to-deploy-headless-wordpress-with-next-js/)
+- 📜 [On Crafting Painterly Shaders (React Three Fiber)](https://blog.maximeheckel.com/posts/on-crafting-painterly-shaders/)
+- 📜 [Preact \- Simplifying Islands Architecture](https://preactjs.com/blog/simplifying-islands-arch/)
+- 📦 [Docusaurus 3.6 \- Docusaurus Faster](https://docusaurus.io/blog/releases/3.6): The project I’ve been working on for a few months now, upgrading Docusaurus to Rust tooling (Rspack, SWC, LightningCSS) makes it 3x faster to build your static site\!
+- 📦 [next-validate-link \- Validate Your Markdown Links with Ease](https://next-validate-link.vercel.app/): It understands Next.js (App Router) conventions and reports broken links/anchors found in MD/MDX files.
+- 📦 [StyleX 0.9.3 \- Improves theming APIs and dynamic styles](https://stylexjs.com/blog/v0.9.3)
+- 📦 [nuqs 2.1 \- Type-safe search params \- Vitest 2 support, parseAsISODate, serializer urlKeys and clearAsDefaults](https://github.com/47ng/nuqs/releases/tag/v2.1.0)
+- 📦 [uikit 0.8 \- Performant 3D user interfaces using React-Three-Fiber and Yoga](https://github.com/pmndrs/uikit/releases/tag/v0.8.0)
+- 📦 [Quicky \- Deploy Next.js and Node.js to your own server](https://quicky.dev/)
+- 📦 [Shopify Hydrogen \- October 2024 release \- Storefront API](https://hydrogen.shopify.dev/update/october-2024-release-storefront-api-2024-10)
+- 📦 [Monicon \- Universal Icon Library](https://monicon-docs.vercel.app/)
+- 🎥 [Ethan Niser \- The secret to why React feels so fast](https://www.youtube.com/watch?v=vtotu8p9DWw): More about functional programming than React but still worth watching to understand the underlying techniques that allow Concurrent React to split work into smaller chunks and regularly yield to the main thread.
+- 🎥 [Delba \- Next.js 'use cache' in 100 seconds](https://www.youtube.com/watch?v=OWmRn74CQKY)
+- 🎥 [React Query API Design \- Lessons Learned](https://tkdodo.eu/blog/react-query-api-design-lessons-learned)
+- 🎙️ [This Month in React \- React Devtools, RN 0.76, Web Components...](https://podcasters.spotify.com/pod/show/reactiflux/episodes/TMiR-2024-10-React-DevTools-update--React-Native-0-76-new-architecture-dropped--Web-Components-arent-the-future-e2qi6bb)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -69,7 +101,7 @@ The Next.js team has announced the stable release of Next.js 15, and Clerk is co
 
 React Navigation v7 is now out and should power the upcoming Expo Router v4 coming with Expo SDK 52, both in beta. My favorite highlights are:
 
-- Screen preloading: You can prepare screens ahead of time prior to navigating to them to increase perceived performance.
+- Screen preloading: You can prepare screens ahead of time prior to navigating to them and improve the perceived performance. This one is really exciting and might be able to use Concurrent React features in the future.
 - Static API: Simplifies the navigator configuration, and makes it easier to work with TypeScript and deep linking.
 
 ---
@@ -111,7 +143,13 @@ Mustafa (Director of Engineering) announced on X that Shopify finished migrating
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📜 [A Friendly Introduction to Container Queries](https://www.joshwcomeau.com/css/container-queries-introduction/)
+- 📜 [What's a Single-Page App?](https://jakelazaroff.com/words/whats-a-single-page-app/)
+- 📜 [Should masonry be part of CSS grid?](https://ishadeed.com/article/css-grid-masonry/)
+- 📜 [Your CSS reset should be layered](https://www.mayank.co/blog/css-reset-layer/)
+- 📜 [New to the web platform in October](https://web.dev/blog/web-platform-10-2024?hl=en)
+- 📦 [Lightning CSS 1.28](https://github.com/parcel-bundler/lightningcss/releases/tag/v1.28.0)
+- 📦 [Rolldown 0.14](https://github.com/rolldown/rolldown/releases/tag/v0.14.0): The upcoming Rollup-compatible Rust bundler for Vite is feature-complete, v1 beta is expected by the end of the year.
 
 ---
 
