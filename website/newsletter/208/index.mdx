@@ -43,13 +43,11 @@ Learn More: [ag-grid.com](https://www.ag-grid.com/react-table?utm_source=thiswee
 
 🎥 [**Sathya Gunasekaran \- What's next for the React Compiler?**](https://www.youtube.com/watch?v=qd5yk2gxbtg)
 
-I finally caught up with this great talk that announced the [React compiler beta](https://react.dev/blog/2024/10/21/react-compiler-beta-release), and a few other things that it also unveiled. The compiler is not just about auto-memoization, but is a platform to build more optimizations on.
+I finally caught up with this great talk that announced the [React compiler beta](https://react.dev/blog/2024/10/21/react-compiler-beta-release), but also unveiled a few other interesting. The compiler is not just about auto-memoization, but is a platform to build more optimizations on. 3 upcoming features presented:
 
-mentions a few upcoming compiler features, including JSX inlining (remove useless JSX runtime calls), JSX outlining (extract smaller subcomponents), and a new config to teach the compiler additional type information to help it further optimize. 3 upcoming things presented:
-
-- Type config: Help the compiler do a better job by providing extra type information.
-- JSX Inlining: Remove useless JSX runtime calls, replace them with pre-built JSX objects. `jsx('div')` becomes `{type: 'div'}`.
-- JSX Outlining: Extract subcomponents automatically that can be optimized independently. This is particularly useful for list elements when using `array.map` and inlined JSX, the compiler can create an `<Item>` component (see screenshot, otherwise this [PR](https://github.com/facebook/react/pull/30956) explains it well).
+- Type config: You can help the compiler do a better job by providing extra type information.
+- JSX Inlining: The compiler can remove useless JSX runtime calls, replace them with pre-built JSX objects. `jsx('div')` becomes `{type: 'div'}`.
+- JSX Outlining: The compiler can extract subcomponents automatically, that can then be optimized independently. This is particularly useful for list elements when using `array.map` and inlined JSX, the compiler can create an `<Item>` component (see the talk screenshot, otherwise [this PR](https://github.com/facebook/react/pull/30956) explains it well).
 
 ---
 
