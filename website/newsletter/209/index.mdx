@@ -10,9 +10,6 @@ Hi everyone!
 
 <Todo />
 
-- 🗓️ [React-Africa](https://react-africa.com/?utm_source=thisweekinreact) - 🇲🇦 Casablanca - 29 November - **Last call** ! You still have a chance to get your ticket, and don’t forget the [10% discount](https://ti.to/react-rally/react-rally-2024/discount/TWIR) with code "TWIR".
-- 🗓️ [React Day Berlin](https://reactday.berlin/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇩🇪 Berlin - 13 & 16 December - 10% discount with code TWIR. Full line-up revealed !
-
 <!-- truncate -->
 
 **💡 [Check this newsletter on Twitter](https://slo.im/thread) - visual format 🎨**
@@ -49,9 +46,36 @@ With WorkOS you can start selling to enterprises with just a few lines of code.
 
 ## ⚛️ React {#react}
 
-<Todo />
-
 - 💸 [Product for Engineers - The magic of small engineering teams](https://dub.sh/twir-nov13)
+- 👀 [React PR \- Make prerendering always non-blocking](https://github.com/facebook/react/pull/31452): The Suspense siblings prerendering feature (delaying the React 19 release) is re-re-landing after a few back and forths. Turns out there was a hard-to-find one-line bug.
+- 👀 [react-server \- Add initial README](https://github.com/facebook/react/tree/main/packages/react-server): The experimental package for creating custom React streaming server renderers now has some initial documentation. Provides 2 implementations: Fizz for SSR and Flight for RSCs. Advanced content, useful for framework authors looking to add RSC support.
+- 👀 [Next.js 15 PR \- Add `expireTag` and `expirePath` APIs](https://github.com/vercel/next.js/pull/72485): The \`revalidateTag\` and \`revalidatePath\` APIs are being deprecated and renamed with more explicit names. Also it’s possible to pass multiple tags at once now.
+- 👀 [React Compiler case study \- Adopting the compiler in Sanity Studio](https://github.com/reactwg/react-compiler/discussions/33): Adapting the compiler improved their editor fps and helped surface bugs they didn’t know they had.
+- 🐦 [”The first Turbopack prod build on Vercel is live”](https://x.com/rauchg/status/1854922385046356445)
+- 📣 [Framer Motion is now independent, introducing Motion](https://motion.dev/blog/framer-motion-is-now-independent-introducing-motion): The popular React animation library plans to expand and support other frameworks.
+- 🗓️ [React-Africa](https://react-africa.com/?utm_source=thisweekinreact) - 🇲🇦 Casablanca - 29 November - **Last call** ! You still have a chance to get your ticket, and don’t forget the [10% discount](https://ti.to/react-rally/react-rally-2024/discount/TWIR) with code "TWIR".
+- 🗓️ [React Day Berlin](https://reactday.berlin/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇩🇪 Berlin - 13 & 16 December - 10% discount with code TWIR. Full line-up revealed !
+- 📜 [Uncontrolled or controlled: A matter of perspective](https://buildui.com/posts/uncontrolled-vs-controlled-a-matter-of-perspective): A component can both be controlled and uncontrolled. I decided to call this RSC: React Schrödinger Component.
+- 📜 [React is a programming language, and its rules are its syntax](https://buildui.com/posts/react-is-a-programming-language-and-its-rules-are-its-syntax): Interesting thoughts on React rules you have to learn, and constraints that cannot be encoded into the programming language.
+- 📜 [The magic of keeping one level of abstraction per function](https://www.tymzap.com/blog/the-magic-of-keeping-one-abstraction-level-per-function): Encourages you to keep each function at a consistent level of abstraction. This includes React components, and I couldn’t agree more.
+- 📜 [React and FormData](https://www.robinwieruch.de/react-form-data/): Using `Object.fromEntries` won’t automatically handle multiple form inputs with the same name.
+- 📜 [Dynamically Generating PWA App Icons in the Next.js App Router](https://aurorascharff.no/posts/dynamically-generating-app-icons-with-nextjs-app-router-and-nextpwa/): Dynamic generation of the PWA manifest to obtain different icons per environment.
+- 📜 [Make dangerouslySetInnerHTML Safer by Disabling Inline Event Handlers](https://macarthur.me/posts/safer-dangerouslysetinnerhtml/): React dangerouslySetInnerHTML will not execute scripts but can still execute inline handlers and introduce attack vectors. Make sure to sanitize your inputs.
+- 📜 [Supporting Offline Mode in TanStack Query](https://lucas-barake.github.io/persisting-tantsack-query-data-locally/): Using the Effect library.
+- 📜 [Conditional Props in React Using Type Discrimination](https://elanmed.dev/blog/conditional-props-using-type-discrimination)
+- 📜 [Managing Interactive Demos in MDX](https://abhisaha.com/blog/managing-interactive-demos-mdx)
+- 📜 [Example of Using useSyncExternalStore with LocalStorage](https://www.56kode.com/posts/using-usesyncexternalstore-with-localstorage/)
+- 📜 [Vercel Makes Changes to Next.js To Simplify Self-Hosting](https://thenewstack.io/vercel-makes-changes-to-next-js-to-simplify-self-hosting/)
+- 📦 [Remix 2.14](https://remix.run/docs/en/main/start/changelog#v2140) & [React Router 6.28](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v6280): Both releases preparing the arrival of React Router v7. New `future.unstable_routeConfig` flag, deprecating `SerializeFrom` and `json/defer`.
+- 📦 [Storybook 8.4 \- 1-click Component Testing in browser, smaller, RN Storybook 8](https://storybook.js.org/blog/storybook-8-4/)
+- 📦 [Next.js AI Chatbot Template 3.0](https://vercel.com/changelog/next-js-ai-chatbot-template-3-0)
+- 📦 [Toldo \- Elevated dialog component for React, based on Radix](https://github.com/raphaelsalaja/toldo)
+- 📦 [State-in-URL \- Deep links and url state synchronization without the hassle](https://github.com/asmyshlyaev177/state-in-url): An alternative to nuqs with different serialization opinions.
+- 📦 [ImmutableJS 5.0 \- Improve Map typing, remove deprecated methods](https://github.com/immutable-js/immutable-js/releases/tag/v5.0.0)
+- 📦 [Gatsby 5.14 \- Performance improvements and security fixes](https://github.com/gatsbyjs/gatsby/releases/tag/gatsby%405.14.0)
+- 🎥 [Jack Herrington \- Tanstack Start vs NextJS \- Server Functions Battle](https://www.youtube.com/watch?v=Iun1DE_oHG0)
+- 🎥 [Theo \- The fastest website ever? McMaster-Carr](https://www.youtube.com/watch?v=fWfIf7Vfjec)
+- 🎙️ [JSParty \- How Vercel thinks about Next.js, with Tom Occhino](https://changelog.com/jsparty/345)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -80,15 +104,55 @@ Want to work on challenging problems and have **impact on hundreds of applicatio
 
 This section is authored by [Benedikt](https://twitter.com/bndkt).
 
-<Todo />
+[**Expo SDK 52**](https://expo.dev/changelog/2024/11-12-sdk-52)
+
+Just after the excellent React Native 0.76 milestone release, here comes Expo SDK 52, just as great. There’s a huge changelog and many expo package updates. My favorite items are:
+
+- New Architecture enabled by default for new projects, opt-in for existing ones. Expo Go now only supports the New Architecture.
+- Expo Router 4, React Navigation 7
+- Universal Server Components and Server Actions (experimental)
+- DOM Components with the `’use dom’` directive for incremental migrations or seamlessly integrating a WebView
+- React Native DevTools
+- Universal Tree Shaking (experimental)
+- React Compiler (experimental)
+
+You might also like:
+
+- 👀 [Expo Launch Party \- November 18-22](https://expo.dev/launch-party)
+- 🎥 [notJust Dev \- Expo SDK 52 & React Native 0.76: Latest Updates and Improvements](https://www.youtube.com/watch?v=gQqE55rkHO0)
+
+---
 
 - 💸 [Expo Starter – A Universal Mobile App Kit to Help You Get Started Quickly and Save Time and Money](https://expostarter.com?utm_source=this-week-in-react&utm_medium=newsletter&utm_campaign=this-week-in-react-13-11-2024)
+- 👀 [React Native Android PR \- Edge-to-Edge Modal, `navigationBarTranslucent` prop](https://github.com/facebook/react-native/pull/47254)
+- 👀 [Bluesky App PR \- Reduce Reanimated serialization traffic](https://github.com/bluesky-social/social-app/pull/6219): Dan Abramov found a weird `makeMutable` trick to optimize Reanimated serialization that doubled the ap
+- 📜 [What is the best React Native list component?](https://expo.dev/blog/what-is-the-best-react-native-list-component)
+- 📜 [How to add an animated splash screen with expo-custom-assets](https://expo.dev/blog/how-to-add-an-animated-splash-screen-with-expo-custom-assets)
+- 📜 [Build an AI Voice Recorder with React Native (Firebase, Whisper API, Expo)](https://galaxies.dev/react-native-voice-recorder-whisper-api)
+- 📦 [React Native Audio API](https://github.com/software-mansion-labs/react-native-audio-api): Software Mansion unveils an early version of a lib implementing the Web Audio API.
+- 📦 [React Native Skia List](https://samuelscheit.github.io/react-native-skia-list/): Why not make React Native lists even faster with a canvas 🤭 It’s harder and less familiar to implement classic UI layouts with Skia, but another 🐦 [upcoming Yoga binding lib](https://x.com/Swami__L/status/1854932920936566980) could help.
+- 📦 [React Native True Sheet](https://github.com/lodev09/react-native-true-sheet): Unlike BottomSheet, it’s implemented native-side instead of with RN/Reanimated. The next release will support Android edge-to-edge.
+- 📦 [React Native Screen 4.0 \- Supports React Navigation 7, Stack screen preloading, native bottom sheet, Fabric fixes](https://github.com/software-mansion/react-native-screens/releases/tag/4.0.0)
+- 📦 [React Native Bottom Tabs 0.5 \- Support for SVG and custom fonts](https://github.com/okwasniewski/react-native-bottom-tabs/releases/tag/v0.5.0)
+- 📦 [React Native Windows 0.76 \- Preview release of New Architecture](https://github.com/microsoft/react-native-windows/releases/tag/react-native-windows_v0.76.0)
+- 📦 [React Native Worklets Core 1.5 \- Support 0.76 and Nitro modules](https://github.com/margelo/react-native-worklets-core)
+- 📦 [Nitro 0.16 \- visionOS support](https://github.com/mrousavy/nitro/releases/tag/v0.16.0)
+- 📦 [React Native Godot \- Create immersive 3D experiences](https://github.com/calico-games/react-native-godot/tree/main)
+- 📦 [Radon IDE 0.0.22 beta \- Expo Router 4, touch indicators, deeplink, pasta from clipboard](https://github.com/software-mansion/radon-ide/releases/tag/v0.0.22-beta)
+- 🎙️ [RNR 313 \- React Native 0.75 & 0.76](https://reactnativeradio.com/episodes/rnr-313-react-native-075-076)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📜 [Exploring the browser rendering process](https://abhisaha.com/blog/exploring-browser-rendering-process)
+- 📜 [Deno \- Introducing your new JavaScript package manager](https://deno.com/blog/your-new-js-package-manager)
+- 📜 [Overflow Clip \- Learn how overflow: clip works in CSS](https://ishadeed.com/article/overflow-clip/)
+- 📜 [View Transitions: Single Page Apps Without a Framework](https://www.debugbear.com/blog/view-transitions-spa-without-framework)
+- 📦 [Node v23.2 \- New `stripTypeScriptTypes(code)` API, TypeScript in “active” development status](https://nodejs.org/en/blog/release/v23.2.0): Note it’s also planned to [unflag TS support](https://github.com/nodejs/typescript/issues/17)\!
+- 📦 [TypeScript 5.7 RC \- es2024 lib, check uninitialized variables, extensions rewriting](https://devblogs.microsoft.com/typescript/announcing-typescript-5-7-rc/)
+- 📦 [Rspack 1.1 \- faster builds/HMR, improve HtmlRspackPlugin and JSDoc, community adoption from Nuxt/Docusaurus](https://rspack.dev/blog/announcing-1-1)
+- 📦 [dtsx \- Extremely fast & configurable `.d.ts` emitter leveraging `isolatedDeclarations`](https://github.com/stacksjs/dtsx)
 
 ---
 
