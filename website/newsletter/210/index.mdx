@@ -62,7 +62,7 @@ Handsontable adapts to various use cases, from enterprise applications to simple
 
 ## ⚛️ React {#react}
 
-[**React 19 RC1 - Siblings pre-warning**](https://github.com/facebook/react/issues/29898#issuecomment-2477449973)  
+[**React 19 RC1 - Siblings pre-warming**](https://github.com/facebook/react/issues/29898#issuecomment-2477449973)  
 We’ve covered how the initial release of React 19 was aborted because of a change in Suspense that would have caused waterfalls in apps that use Suspense without starting fetches in event handlers.  
 The React team has been hard at work to reintroduce Suspense sibling prerendering without causing performance regressions for apps that start fetching early. Their solution is now ready and it’s called [pre-warming](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#improvements-to-suspense). Dominik, the React Query maintainer who raised awareness of this problem, [has confirmed he’s happy with the fix](https://bsky.app/profile/tkdodo.eu/post/3layw6wk5bs2b).  
 As usual, the new features were already available in Next.JS (which uses react canary). They include server components and actions, the new `use` hook, improvements to forms handling (`useFormStatus` and `useOptimistic`), and a small but long-awaited change: `forwardRef` is not necessary anymore!
