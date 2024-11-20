@@ -1,6 +1,6 @@
 ---
 slug: /210
-title: "This Week In React #210: React 19, pre-warming, Expo Workflows, Universal React Server Components, Expo DOM Components, EAS Channel pausing, NextJS cache, Angular 19, MistCSS,React Portals, React Scan, WASM Modules in Deno, React Native FastIO..."
+title: "This Week In React #210: React 19, pre-warning, Next.js, IDE, TanStack, React Scan, MistCSS, PayloadCMS, Expo Workflows, Universal RSC, use dom, Yoga JSI, Skia, Turbo Haptics, TV, FastIO, SwiftUI, Angular 19..."
 authors: [matthieugicquel, cyrilbo]
 date: 11-20-2024
 unlisted: true
@@ -62,7 +62,10 @@ Handsontable adapts to various use cases, from enterprise applications to simple
 
 ## ⚛️ React {#react}
 
-[**React 19 RC1 - Siblings pre-warming**](https://github.com/facebook/react/issues/29898#issuecomment-2477449973)  
+[![React 19 RC1](/emails/issues/210/react19.jpg)](https://github.com/facebook/react/issues/29898#issuecomment-2477449973)
+
+[**React 19 RC1 - Siblings pre-warming**](https://github.com/facebook/react/issues/29898#issuecomment-2477449973)
+
 We’ve covered how the initial release of React 19 was aborted because of a change in Suspense that would have caused waterfalls in apps that use Suspense without starting fetches in event handlers.  
 The React team has been hard at work to reintroduce Suspense sibling prerendering without causing performance regressions for apps that start fetching early. Their solution is now ready and it’s called [pre-warming](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#improvements-to-suspense). Dominik, the React Query maintainer who raised awareness of this problem, [has confirmed he’s happy with the fix](https://bsky.app/profile/tkdodo.eu/post/3layw6wk5bs2b).  
 As usual, the new features were already available in Next.JS (which uses react canary). They include server components and actions, the new `use` hook, improvements to forms handling (`useFormStatus` and `useOptimistic`), and a small but long-awaited change: `forwardRef` is not necessary anymore!
@@ -70,9 +73,9 @@ As usual, the new features were already available in Next.JS (which uses react c
 ---
 
 - 💸 [Omlet – Scan your repo and measure how and where React components are used](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-quick-link-nov-2024)
-- 👀 [React IDE](https://youtu.be/C8Mg-NSyqWg?t=14452): Mofei (React Compiler team) unveils at React Summit the plan to work on a VSCode extension powered by the compiler. Don't get too excited, because we don't know much about it yet!
 - 👀 [Next.js segment cache initial implementation](https://github.com/vercel/next.js/pull/72875): A rewrite of App Router's client caching implementation, designed with PPR and "use cache" in mind. Not production-ready at all, but in the future Next will cache by route segment instead of by full URL.
 - 👀 [React Query may soon have a unified staleTime per query](https://github.com/TanStack/query/pull/8313) instead of one per “observer” (e.g. each `useQuery`). This will be less flexible but certainly easier to reason about.
+- 👀 [React IDE](https://youtu.be/C8Mg-NSyqWg?t=14452): Mofei (React Compiler team) unveils at React Summit the plan to work on a VSCode extension powered by the compiler. Don't get too excited, because we don't know much about it yet!
 - 👀 [TanStack Start is officially in beta](https://bsky.app/profile/tannerlinsley.com/post/3lbdl4zp2ns2n)
 - 📖 [The Road to Next](https://www.road-to-next.com/): Robin Wieruch launched his paid Next.js 15 course with early access discounts.
 - 🗓️ [React Day Berlin](https://reactday.berlin/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇩🇪 Berlin - 13 & 16 December - Hurry and grab your ticket to the conference as prices are about to go up! And don’t forget your discount with code “TWIR”.
@@ -122,7 +125,7 @@ Want to work on challenging problems and have **impact on hundreds of applicatio
 [**Expo Workflows**](https://reactnativeradio.com/episodes/rnr-314-announcing-expo-workflows-with-jon-samp)  
 Expo has announced "Workflows," a new CI/CD tool for React Native and Expo apps that simplifies and accelerates app releases with pre-packaged jobs (such as E2E tests using Maestro), automated workflows, and smart machine selection for optimal performance. While it’s not a direct replacement for more general CI/CD solutions like GitHub Actions, it promises exciting improvements worth exploring.
 
-[Expo Launch Party](https://expo.dev/launch-party) is still running. Don’t miss their announcements\!
+🎉 [Expo Launch Party](https://expo.dev/launch-party) is still running. Don’t miss their announcements\!
 
 - 📣 [Expo \- Introducing Channel Pausing for EAS Update : Pause your channels either on the web page or via the eas cli](https://expo.dev/changelog/2024/11-14-channel-pausing)
 - 📜 [Universal React Server Components in Expo Router (in beta)](https://expo.dev/blog/universal-react-server-components-developer-preview): Expo Router introduces for the first time universal React Server Components, enabling server-side rendering in both native and web apps. Though not production-ready due to unavailable production exports and mainly aimed at library authors, it's an exciting development because it enables direct server-side access to resources like secrets, databases, and file systems, simplifying development and improving performance by eliminating client-server round trips.
