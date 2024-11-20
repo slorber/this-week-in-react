@@ -1,26 +1,34 @@
 ---
 slug: /210
-title: "This Week In React #210: ..."
-authors: [slorber]
+title: "This Week In React #210: React 19, pre-warming, Expo Workflows, Universal React Server Components, Expo DOM Components, EAS Channel pausing, NextJS cache, Angular 19, MistCSS,React Portals, React Scan, WASM Modules in Deno, React Native FastIO..."
+authors: [matthieugicquel, cyrilbo]
 date: 11-20-2024
 unlisted: true
 ---
 
 Hi everyone!
 
-INTRO:
+Cyril and Matthieu from Theodo Apps (formerly BAM) here 👋, standing in for Seb to bring you the latest news from React and React Native!
 
-- 🗓️ [React Paris 2025](https://react.paris/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇫🇷 Paris - 20 & 21 March - Kick off your year with one of the first dev conferences of 2025! Speakers include Dominik 'TkDodo' Dorfmeister, Kent C. Dodds, and Aurora Scharff. CFPs are open, and you can get 20% off tickets with code "TWIR"!
+Big news from the React world this week! React 19 is back in RC, six months after its initial release was postponed. The suspense over Suspense is finally easing with the introduction of pre-warming.
 
-REACT:
+Expo is making waves during its launch party, and the excitement keeps building! 🚀
 
-- 🗓️ [React Day Berlin](https://reactday.berlin/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇩🇪 Berlin - 13 & 16 December - Hurry and grab your ticket to the conference as prices are about to go up ! And don’t forget your discount with code “TWIR”.
+The newly announced **Expo Workflows** promises to revolutionize CI/CD for React Native apps with pre-packaged jobs, intelligent machine selection, and seamless automation — streamlining the entire release process.
+
+Meanwhile, **Universal React Server Components** in Expo Router have entered beta, marking a major milestone in the journey toward **server-first React Native development**.
+
+And the party isn’t over yet! 🎉 Stay tuned for next week’s issue, where we’ll dive into even more announcements from Expo’s ongoing celebration.
+
+Also check our partner conf [React Paris 2025](https://react.paris/?utm_source=Newsletter&utm_medium=thisweekinreact) (🇫🇷 Paris - 20 & 21 March). Kick off your year with one of the first dev conferences of 2025! Speakers include Dominik 'TkDodo' Dorfmeister, Kent C. Dodds, and Aurora Scharff. CFPs are open, and you can get 20% off tickets with code "TWIR"!
 
 We'd be super grateful if you'd share this newsletter or support us here :
 
 - [X / Twitter](https://slo.im/last/x)
 - [Bluesky](https://slo.im/last/b)
 - [LinkedIn](https://slo.im/last/l)
+
+Let’s dive in! 🚀
 
 <!-- truncate -->
 
@@ -54,9 +62,30 @@ Handsontable adapts to various use cases, from enterprise applications to simple
 
 ## ⚛️ React {#react}
 
-<Todo />
+[**React 19 RC1 - Siblings pre-warning**](https://github.com/facebook/react/issues/29898#issuecomment-2477449973)  
+We’ve covered how the initial release of React 19 was aborted because of a change in Suspense that would have caused waterfalls in apps that use Suspense without starting fetches in event handlers.  
+The React team has been hard at work to reintroduce Suspense sibling prerendering without causing performance regressions for apps that start fetching early. Their solution is now ready and it’s called [pre-warming](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#improvements-to-suspense). Dominik, the React Query maintainer who raised awareness of this problem, [has confirmed he’s happy with the fix](https://bsky.app/profile/tkdodo.eu/post/3layw6wk5bs2b).  
+As usual, the new features were already available in Next.JS (which uses react canary). They include server components and actions, the new `use` hook, improvements to forms handling (`useFormStatus` and `useOptimistic`), and a small but long-awaited change: `forwardRef` is not necessary anymore!
+
+---
 
 - 💸 [Omlet – Scan your repo and measure how and where React components are used](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-quick-link-nov-2024)
+- 🗓️ [React Day Berlin](https://reactday.berlin/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇩🇪 Berlin - 13 & 16 December - Hurry and grab your ticket to the conference as prices are about to go up! And don’t forget your discount with code “TWIR”.
+- 👀 [Next.js segment cache initial implementation](https://github.com/vercel/next.js/pull/72875): A rewrite of App Router's client caching implementation, designed with PPR and "use cache" in mind. Not production-ready at all, but in the future Next will cache by route segment instead of by full URL.
+- 👀 [React Query may soon have a unified staleTime per query](https://github.com/TanStack/query/pull/8313) instead of one per “observer” (e.g. each `useQuery`). This will be less flexible but certainly easier to reason about.
+- 📜 [Be careful with useSyncExternalStore](https://www.nico.fyi/blog/be-careful-with-usesyncexternalstore): implementation of a `useLocalStorage` hook using `useSyncExternalStore` and `superjson`.
+- 📜 [5 differences between React server components and server-side rendering](https://www.tymzap.com/blog/5-differences-between-react-server-components-and-server-side-rendering): At this point you already know that they are not at all the same. This recaps the concrete differences between the two.
+- 📜 [Design System: from scratch or from the shelf?](https://www.voorhoede.nl/en/blog/design-system-from-scratch-from-the-shelf/)
+- 📜 [What are React Portals?](https://techhub.iodigital.com/articles/what-are-react-portals)
+- 📜 [Creating your own React design system analytics tool with react-scanner](https://alexocallaghan.com/creating-your-own-react-design-system-analytics-tool)
+- 📜 [Quick Guide to Building a PWA with Next.js](https://playfulprogramming.com/posts/pwa-nextjs-guide)
+- 📜 [Vercel - Skew Protection is now enabled by default for new projects](https://vercel.com/changelog/skew-protection-is-now-enabled-by-default-for-new-projects)
+- 📜 [React Anti-Pattern: Stop Passing Setters Down the Components Tree](https://matanbobi.dev/posts/stop-passing-setter-functions-to-components)
+- 📦 [react-scan](https://github.com/aidenybai/react-scan): a new tool to find performance issues React apps
+- 📦 [MistCSS 1.0](https://github.com/typicode/mistcss): Instead of generating full React components from CSS, the library now bets on generating types for intrinsic React JSX elements. Interesting idea!
+- 🎥 [Jack Herrington - “use cache” NextJS’s latest take on data caching](https://www.youtube.com/watch?v=ZDRGEewXkrs)
+- 🎥 [Theo - How To Avoid Big Serverless Bills](https://www.youtube.com/watch?v=jsuNjCAngnQ): Various tips for Vercel or Next.js users.
+- 🎥 [React Summit US - Live Stream](https://www.youtube.com/watch?v=C8Mg-NSyqWg)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -83,22 +112,56 @@ Want to work on challenging problems and have **impact on hundreds of applicatio
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Expo Workflows](/emails/issues/210/workflows.jpg)](https://reactnativeradio.com/episodes/rnr-314-announcing-expo-workflows-with-jon-samp)
 
-- 💸[notJust Hack - the best online Hackathon for React Native developers. This December - build, launch, compete, and win prizes!](https://bit.ly/4fDgOXX)
+[**Expo Workflows**](https://reactnativeradio.com/episodes/rnr-314-announcing-expo-workflows-with-jon-samp)  
+Expo has announced "Workflows," a new CI/CD tool for React Native and Expo apps that simplifies and accelerates app releases with pre-packaged jobs (such as E2E tests using Maestro), automated workflows, and smart machine selection for optimal performance. While it’s not a direct replacement for more general CI/CD solutions like GitHub Actions, it promises exciting improvements worth exploring.
+
+[Expo Launch Party](https://expo.dev/launch-party) is still running. Don’t miss their announcements\!
+
+- 📣 [Expo \- Introducing Channel Pausing for EAS Update : Pause your channels either on the web page or via the eas cli](https://expo.dev/changelog/2024/11-14-channel-pausing)
+- 📜 [Universal React Server Components in Expo Router (in beta)](https://expo.dev/blog/universal-react-server-components-developer-preview): Expo Router introduces for the first time universal React Server Components, enabling server-side rendering in both native and web apps. Though not production-ready due to unavailable production exports and mainly aimed at library authors, it's an exciting development because it enables direct server-side access to resources like secrets, databases, and file systems, simplifying development and improving performance by eliminating client-server round trips.
+- 📜 [The magic of Expo DOM Components](https://expo.dev/blog/the-magic-of-expo-dom-components): Expo DOM Components make it easier to integrate web features into React Native apps, combining the speed of WebViews with incremental native migration. While limited by WebView performance and compatibility with some Expo features, future updates aim to enhance native integration and optimize performance.
+
+---
+
+- 💸 [notJust Hack - the best online Hackathon for React Native developers. This December - build, launch, compete, and win prizes!](https://bit.ly/4fDgOXX)
+- 📖 [Mastering the Big Screen: React Native for TV guidebook](https://www.callstack.com/ebook/mastering-the-big-screen-react-native-for-tv-guidebook)
+- 🐦 [Oskar made a POC of Jetpack Compose adaptive navigation for react-native-bottom-tabs](https://x.com/o_kwasniewski/status/1858620684706214095)
+- 🐦 [Mike demoed a 1.2GB file upload over the network with React Native FastIO](https://x.com/grabbou/status/1858920818744389947)
+- 🐦 [Jay is cooking a new List component, codename Legend List, that may be even faster than FlashList](https://x.com/jmeistrich/status/1855663310386958840)
+- 🐦 [SwiftUI MeshGradient component in React Native thanks to a new feature in Expo Modules not yet announced in Expo SDK 52](https://x.com/tsapeta/status/1859226070932660615)
+- 📜 [How to Integrate React Native With an Existing App](https://www.callstack.com/blog/how-to-integrate-react-native-with-an-existing-app)
+- 📦 [React Native 0.76.2](https://github.com/facebook/react-native/releases/tag/v0.76.2)
+- 📦 [React Native Executorch 0.1 \- Run AI models on device, powered by ExecuTorch](https://blog.swmansion.com/introducing-react-native-executorch-2bdb87592884)
+- 📦 [React Native SVG 15.9 \- New filters FeDropShadow and FeComposite](https://github.com/software-mansion/react-native-svg/releases/tag/v15.9.0)
+- 📦 [React Native Gesture Handler 2.21 \- Two-finger Pan gesture on web, new `ReanimatedDrawerLayout` component](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.21.0)
+- 📦 [React Native Screens 4.1 & 4.2 \- Fix iOS modal animation issues on old architecture, support for transparent large header on iOS](https://github.com/software-mansion/react-native-screens/releases/tag/4.2.0)
+- 📦 [React Native Video 6.8 \- Web Support and HLS video caching](https://github.com/TheWidlarzGroup/react-native-video/releases/tag/v6.8.0)
+- 📦 [React Native Skia 1.5.4 \- Experimental Graphite (Vulkan/Metal) backend via build flag](https://github.com/Shopify/react-native-skia/releases/tag/v1.5.4)
+- 📦 [React Native Turbo Haptics \- Fast, worklet-compatible haptic feedback](https://github.com/christianbaroni/react-native-turbo-haptics)
+- 📦 [React Native Yoga JSI 0.1](https://github.com/Swami-Laxmikant/react-native-yoga-jsi): This experimental lib gives you access to Yoga APIs on the JS side. It can be used with libs like React Native Skia to layout elements on a canvas.
+- 🎙️ [Rocket Ship 54 \- React Native Music Game with Kim Chouard (Skia, NativeWind, Expo AV)](https://share.transistor.fm/s/34b8c9fc)
+- 🎥 [Simon Grimm \- Expo SDK 52: DOM, RSC, Router, New Architecture & Packages](https://www.youtube.com/watch?v=OROMGU3jq6E)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [Deno \- Support importing wasm modules](https://github.com/denoland/deno/issues/2552)
+- 👀 [ES TC39 proposal \`import.sync()\` in stage 0](https://github.com/guybedford/proposal-import-sync)
+- 📜 [Self-contained Executable Programs with Deno Compile](https://deno.com/blog/deno-compile-executable-programs)
+- 📜 [Annotate traces directly in the Performance panel in Chrome DevTools](https://developer.chrome.com/blog/devtools-annotations?hl=en)
+- 📜 [Dependencies vs. devDependencies for JavaScript apps](https://angelika.me/2024/11/11/dependencies-vs-dev-dependencies-javascript-apps/)
+- 📦 [Angular 19](https://blog.angular.dev/meet-angular-v19-7b29dfd05b84)
+- 📦 [Bun v1.1.35](https://bun.sh/blog/bun-v1.1.35)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![inlined function breaks memoization](/emails/issues/210/meme1.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
 
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![prompt engineer](/emails/issues/210/meme2.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
 
 See ya! 👋
