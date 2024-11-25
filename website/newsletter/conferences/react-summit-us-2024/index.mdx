@@ -67,21 +67,21 @@ Without further ado, here are the 6 talks we've selected!
 
 Web app development has evolved to meet the growing demands of users and developers. **[Kent C. Dodds](https://bsky.app/profile/kentcdodds.com)** traces web app evolution from multi-page apps (MPAs) to React Server Components (RSC). Let’s look at the key stages of this evolution highlighted in the talk:
 
-- MPA is simple and effective, but requires a full page reload.
-- Progressively enhanced MPAs (PEMPA) introduced JavaScript for partial updates and UX improvement but added complexity and server-client duplication.
-- Single-page apps (SPAs) improved interactivity but required client-side networking and managing loading states, increasing complexity.
-- Progressively enhanced SPAs (PESPA) brought server-side fetching and rendering, improving UX. Yet, tying logic to routes limited reusable components.
-- RSCs enable full-stack, reusable components, simplifying workflows while improving speed and scalability.
+- **Multi-Page Applications** (MPA) is simple and effective, but requires a full page reload.
+- **Progressively Enhanced MPAs** (PEMPA) introduced JavaScript for partial updates and UX improvement but added complexity and server-client duplication.
+- **Single-Page Applications** (SPA) improved interactivity but required client-side networking and managing loading states, increasing complexity.
+- **Progressively Enhanced SPAs** (PESPA) brought server-side fetching and rendering, improving UX. Yet, tying logic to routes limited reusable components.
+- **React Server Componentss** enable full-stack, reusable components, simplifying workflows while improving speed and scalability.
 
 ## Out Of Order Streaming - The Secret Powering Modern React
 
 ![Theo speaking](/emails/conferences/2024/react-summit-us/theo.jpg)
 
-**[Theo Browne](https://bsky.app/profile/t3.gg)** explores one of React's most innovative advancements—out-of-order streaming. Streaming HTML in web applications allows browsers to progressively render incomplete HTML as it arrives, significantly improving perceived performance. This is especially valuable for SSR. The only limitation was the order of the elements. HTML is linear, meaning that a slow component at the top of the HTML will block other components below.
+**[Theo Browne](https://bsky.app/profile/t3.gg)** explores one of React's most innovative advancements—out-of-order streaming. Streaming HTML in web applications allows browsers to **progressively render incomplete HTML as it arrives**, significantly improving **perceived performance**. This is especially valuable for SSR. The only limitation was the order of the elements. HTML is linear, meaning that a slow component at the top of the HTML will block other components below.
 
-This limitation was solved by using RSC. The \<`template/>` and \<`script/>` tags are used to identify placeholders for unresolved content and replace them dynamically when data becomes available.
+This limitation was solved by using RSC. The `<template/>` and `<script/>` tags are used to identify placeholders for unresolved content and replace them dynamically when data becomes available.
 
-Recent advancements, such as partial pre-rendering and dynamic IO in Next.js, combine static and dynamic rendering. This hybrid approach allows initial static content to be cached on CDNs for faster loads, with subsequent dynamic updates streamed from the server, optimizing both speed and developer workflow. These methods revolutionize SSR by enhancing UX and supporting complex web interactions seamlessly.
+Recent advancements, such as **partial pre-rendering and dynamic IO in Next.js**, combine static and dynamic rendering. This hybrid approach allows initial static content to be cached on CDNs for faster loads, with subsequent dynamic updates streamed from the server, optimizing both speed and developer workflow. These methods revolutionize SSR by enhancing UX and supporting complex web interactions seamlessly.
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -89,15 +89,15 @@ Recent advancements, such as partial pre-rendering and dynamic IO in Next.js, co
 
 ![Shruti speaking](/emails/conferences/2024/react-summit-us/shruti.jpg)
 
-**[Shruti Kapoor](https://bsky.app/profile/shrutikapoor08.bsky.social)** (Frontend engineer at Slack) provides an overview of the forthcoming stable update to the React library, which promises a lot of new and exciting things. Here are the key features of the new version of React as told by Shruti Kapoor:
+**[Shruti Kapoor](https://bsky.app/profile/shrutikapoor08.bsky.social)** (Frontend engineer at Slack) provides an overview of the forthcoming stable update to the React library, which promises a lot of new and exciting things. The key features of this new version of React:
 
 - **React actions**: functions that use async transitions. It also supported on the server.
-- **New hooks**: \`useActionState\` and \`useFormStatus\` will make building forms easier. \`useOptimistic\` will provide fancy way to make UI smooth.
-- **React Compiler**: new plugin for React, that will say goodbye to \`useMemo\` and \`useCallback\`
-- **New API**: \`use\` \- read resources and Promises inside of your component.
-- **\`ref\` change**: finally it is a prop, so say goodbye to \`forwardRef\`
+- **New hooks**: `useActionState` and `useFormStatus` will make building forms easier. `useOptimistic` will provide fancy way to make UI smooth.
+- **React Compiler**: new plugin for React, that will say goodbye to `useMemo` and `useCallback`
+- **New API**: `use` \- read resources and Promises inside of your component.
+- **`ref` change**: finally it is a prop, so say goodbye to `forwardRef`
 - **Improved errors**: errors became more descriptive
-- **Context change**: Render \<Context\> instead of \<Context.Provider\>
+- **Context change**: Render `<Context>` instead of `<Context.Provider>`
 
 ## AI Will Revolutionize UI
 
@@ -123,7 +123,7 @@ He tells how to integrate AI into our applications and shows with clear examples
 
 Accessibility is often overlooked in development, but **[Cat Johnson](https://www.linkedin.com/in/catandthemachines/)** highlights how AI is already making a difference and what developers can do now.
 
-AI has brought us tools like improved text-to-speech, automated meeting notes, and advanced voice commands. Apps like **Be My Eyes** use AI to describe objects captured with a phone camera, offering invaluable support for visually impaired users.
+AI has brought us tools like improved text-to-speech, automated meeting notes, and advanced voice commands. Apps like "Be My Eyes" use AI to describe objects captured with a phone camera, offering invaluable support for visually impaired users.
 
 Developers can enhance accessibility by writing clean HTML with proper tags and attributes. Accessibility tools can test and ensure your work is functional. Adding accessibility scans like **axe-core** or **lighthouse-cli** to your CI/CD pipeline can further streamline this process.
 
@@ -133,7 +133,7 @@ By leveraging AI and following best practices, we can make technology more inclu
 
 That's a wrap!
 
-Before we leave:
+Before you leave, make sure to:
 
 - Check the [React Summit 2025](https://reactsummit.com?utm_source=Newsletter&utm_medium=thisweekinreact) early bird tickets
 - Hire [FocusReactive](https://focusreactive.com/?utm_source=Newsletter&utm_medium=thisweekinreact) for their Next.js CMS and e-Commerce expertise
