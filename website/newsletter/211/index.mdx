@@ -1,6 +1,6 @@
 ---
 slug: /211
-title: "This Week In React #211: ..."
+title: "This Week In React #211: React Router, TanStack, Next.js, Vite, RSCs, Aria, Rslib, React-Scan, Screens, Edge-to-Edge, RN 0.77 RC, Legend List, Rapier, Testing Library, Cali, Nitro, Solito"
 authors: [slorber]
 date: 11-27-2024
 unlisted: true
@@ -45,9 +45,37 @@ Learn More: [www.ag-grid.com/charts](https://www.ag-grid.com/charts?utm_source=t
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![React Router 7.0](/emails/issues/211/reactrouter.jpg)](https://remix.run/blog/react-router-v7)
+
+**[React Router 7.0](https://remix.run/blog/react-router-v7)**
+
+As planned, Remix features have been brought to React Router, and the full-stack framework features are now powered by a Vite plugin. There are also new features related to routing, type safety, and route pre-rendering. Remix v2 users are invited to upgrade to React Router v7: it should be easy after turning on the future flags. Now that this great milestone has been completed and the team can fully focus on the next wave of innovation, we can't wait to hear the next Michael Jackson Remix.
+
+---
 
 - 💸 [PostHog - How we built mobile replay (and why it took so long)](https://posthog.com/blog/mobile-session-replay?utm_source=twir&utm_campaign=twir)
+- 👀 [React Core PR \- Add moveBefore Experiment](https://github.com/facebook/react/pull/31596): The React team is looking to support the upcoming DOM API `Node.moveBefore()` in the reconciler after [Chromium announced its intent to ship it](https://bsky.app/profile/did:plc:hxmev3uady7j4litwnr5fzbg/post/3lbcmvgkfw227). Unlike `insertBefore()`, this new API can preserve the state of the moved DOM elements such as iframes and video players.
+- 👀 [Next.js PR \- CSS inlining](https://github.com/vercel/next.js/pull/72195): New `experimental.inlineCss` option might improve your site’s First Contentful Paint score, in particular for sites using atomic CSS like Tailwind.
+- 📜 [The AutoScrollList Component](https://www.nikhilsnayak.dev/blogs/the-auto-scroll-list-component): This interactive article implementing a chat UI shows how `useRef` \+ `useEffect` can be simplified by a simple `ref` callback. Also shares a little-known but important lesson: [“Don't use memoization for correctness, use it only for perf\!”](https://bsky.app/profile/gsathya.bsky.social/post/3lbk5putwkc2d)
+- 📜 [Why TanStack Start is Ditching Adapters](https://tanstack.com/blog/why-tanstack-start-is-ditching-adapters): TanStack Start is coming, and Tanner can fully focus on its innovative features. Instead of creating a long list of host-specific adapters, he saved time and delegated this annoying task to Vinxi, Nitro, and H3.
+- 📜 [Loading Data with TanStack Router](https://frontendmasters.com/blog/tanstack-router-data-loading-1/): A 2-part series using TanStack Router with/without React-Query. Both can be used together. Prefetching queries in loaders can avoid waterfalls.
+- 📜 [Thoughts on What RSC Means for SPAs](https://blog.axlight.com/posts/thoughts-on-what-rsc-means-for-spas/): Daishi outlines the possible benefits of RSCs for regular SPAs. This speaks directly to my next project: integrate RSCs into Docusaurus, a React static site generator.
+- 📜 [Existential React questions and a perfect Modal Dialog](https://www.developerway.com/posts/hard-react-questions-and-modal-dialog): Great article starting from a simple dialog component, incrementally adding more requirements until reaching the perfect abstraction.
+- 📜 [The anatomy of a React Island](https://swizec.com/blog/the-anatomy-of-a-react-island/): A pragmatic approach to incrementally adopt React in existing codebases.
+- 📜 [The `use cache` Directive Deep Dive in Next.js](https://www.nextjscourse.dev/courses/nextjs-course/use-cache-deep-dive): A well-presented article about the new Next.js 15 features, including an interactive demo.
+- 📜 [Feature-based React Architecture](https://www.robinwieruch.de/react-feature-architecture/): Good component composition patterns can help decouple components by feature without introducing request waterfalls.
+- 📜 [Astro Patterns \- React Love](https://astropatterns.dev/p/react-love/intro-react): 2 interactive examples using React Context with Astro.
+- 📜 [Currency handling in React](https://www.jacobparis.com/content/currency-handling)
+- 📦 [Vite 6.0](https://vite.dev/blog/announcing-vite6.html): An important release for React framework authors looking to support multiple module graphs (client, SSR, RSC) through the new Environment API.
+- 📦 [Ariakit 0.4.14 \- Combobox / Select performance improvements](https://newsletter.ariakit.org/p/performance-tailwind-v4-and-more): Apparently, using too many `useSyncExternalStore` hooks (in list items) can cause overhead, and “merging” them into a single one improved performance.
+- 📦 [React Aria \- November 20 releases \- Disclosure, ToggleButtonGroup, Menu improvements](https://react-spectrum.adobe.com/releases/2024-11-20.html)
+- 📦 [Preact 10.25 \- Stricter element types, improve reconciliation for unkeyed elements](https://github.com/preactjs/preact/releases/tag/10.25.0)
+- 📦 [Rslib 0.1 – Intuitive library development tool, including support for React libs](https://lib.rsbuild.dev/guide/solution/react)
+- 📦 [Meteor.js 3.1 \- Node 22, Express 5, MongoDB driver 6, core and DX improvements](https://dev.to/meteor/meteorjs-31-a-new-dawn-for-full-stack-javascript-development-4a13)
+- 🎥 [Alem Tuzlak \- React Router v7 Is Here \- Should You Upgrade Now?](https://www.youtube.com/watch?v=s8H5-CZOlm0)
+- 🎥 [Dev Leonardo \- TanStack Start: A Full-Stack React Framework but Client-First](https://www.youtube.com/watch?v=PUf8DzCvrdc)
+- 🎥 [Theo \- JavaScript runs on literally everything now](https://www.youtube.com/watch?v=tQ6fB7WClgw)
+- 🎙️ [Syntax 850 \- Manage State in JavaScript Like a Pro\!](https://syntax.fm/show/850/manage-state-in-javascript-like-a-pro)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -74,22 +102,61 @@ Want to work on challenging problems and have **impact on hundreds of applicatio
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Introducing React Native Screens 4.0.0](/emails/issues/211/screens.jpg)](https://blog.swmansion.com/introducing-react-native-screens-4-0-0-1b833ff98a55)
+
+**[Introducing React Native Screens 4.0.0](https://blog.swmansion.com/introducing-react-native-screens-4-0-0-1b833ff98a55)**
+
+The library used by React Navigation and Expo Router was released a few weeks ago, and the promised release blog post is finally online, presenting the highlights visually through various videos:
+
+- Sheets API: Android `formSheet` and iOS custom detents
+- Screen pre-loading for native stack to improve perceived performance
+- Improved iOS animations
+
+---
 
 - 💸 [Implementing Authentication and Authorization with Clerk and Expo](https://go.clerk.com/HueGwuo)
+- 👀 [React Scan PR \- React Native support](https://github.com/aidenybai/react-scan/pull/23): The trending tool to detect re-renders should have React Native support by tomorrow.
+- 📜 [Edge-to-Edge display, now streamlined for Android](https://expo.dev/blog/edge-to-edge-display-now-streamlined-for-android): This immersive mode will be enforced by default starting Android 15+ and Mathieu is on a mission to migrate our ecosystem forward, in partnership with Expo.
+- 📜 [I learned React Native as a web developer, and I got everything wrong](https://fernandorojo.co/mistakes): Fernando's thoughts on the growing usa of native primitives.
+- 📜 [Upgrading to Expo SDK 52](https://expo.dev/blog/upgrading-to-expo-sdk-52)
+- 📜 [Environment variables in EAS: new changes to simplify setup](https://expo.dev/blog/environment-variables)
+- 🧑‍🎓 [React Native Mastery](https://www.notjust.dev/react-native-mastery): Vadim just launched his new project-based React Native course (paid).
+- 📦 [React Native 0.77.0-rc.0](https://github.com/facebook/react-native/releases/tag/v0.77.0-rc.0): The init template uses Swift instead of Objective-C. Improved CSS support (display contents, mixBlendMode). There’s ongoing work to clarify the native public API surface.
+- 📦 [Legend List \- Faster drop-in replacement for FlatList](https://github.com/LegendApp/legend-list): A new signal-based list library is trending with great community feedback. Apparently, it’s also faster than FlashList.
+- 📦 [React Native Rapier](https://github.com/callstack/react-native-rapier): You may not need this Rust-based physics engine, but there’s an even more important story behind all this. It’s a playground for Callstack devs to compile back WASM code to native ([demo](https://x.com/rob_pasinski/status/1861077912713318781)), enabling efficient cross-platform usage of native languages like Rust.
+- 📦 [LiveStore \- SQLite-based data layer for local-first apps](https://expo.dev/blog/local-first-application-development-with-livestore): Upcoming event-sourcing-based local-first lib with first-class Expo integration.
+- 📦 [React Native Testing Library releases](https://github.com/callstack/react-native-testing-library/releases): v12 adds support for RN 0.77 and Expo 52\. v13 (beta) drops deprecated features, supports both React 18/19, and enables Concurrent rendering by default. v14 (alpha) replaces `react-test-renderer` in favor of a new [universal-test-renderer](https://github.com/mdjastrzebski/universal-test-renderer) dependency.
+- 📦 [Bottom Tabs 0.7 \- React Navigation v7, `useBottomTabBarHeight`](https://github.com/okwasniewski/react-native-bottom-tabs/releases/tag/react-native-bottom-tabs%400.7.0)
+- 📦 [Cali \- AI agent for building React Native apps](https://github.com/callstackincubator/cali)
+- 📦 [Nitro 0.17 \- All about Promises](https://github.com/mrousavy/nitro/releases/tag/v0.17.0)
+- 📦 [Solito 4.3 \- Support for React Navigtion 7](https://github.com/nandorojo/solito/releases/tag/v4.3.0)
+- 📦 [React Native Share 12.0 \- Expo config plugin](https://github.com/react-native-share/react-native-share/releases/tag/v12.0.0)
+- 📦 [Radon IDE 0.24 beta \- stability improvements, Expo 52, multi-touch gestures, screen recording](https://github.com/software-mansion/radon-ide/releases/tag/v0.0.24-beta)
+- 🎥 [Jack Herrington \- React-Native Server Components\! Change Your Native UI From Your Server\!](https://www.youtube.com/watch?v=RW1SlwBx0hk)
+- 🎥 [Simon Grimm \- The Future of React Native? (RSC)](https://www.youtube.com/watch?v=uLjqKLjE4UE)
+- 🎙️ [RNR 315 \- What to do without App Center](https://www.reactnativeradio.com/episodes/rnr-315-what-to-do-without-app-center)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📊 [Web Almanac 2024](https://almanac.httparchive.org/en/2024/)
+- 📣 [Deno v. Oracle: Canceling the JavaScript Trademark](https://deno.com/blog/deno-v-oracle)
+- 📜 [A Framework for Evaluating Browser Support](https://www.joshwcomeau.com/css/browser-support/)
+- 📦 [Tailwind CSS 4.0 Beta \- Much faster, unified toolchain, CSS-first config, modern CSS](https://tailwindcss.com/blog/tailwindcss-v4-beta)
+- 📦 [TypeScript 5.7 \- 2024 lib types, check uninitialized vars, extension rewriting, faster startup](https://devblogs.microsoft.com/typescript/announcing-typescript-5-7/)
+- 📦 [Mock Service Worker \- WebSockets support](https://mswjs.io/blog/enter-websockets/)
+- 📦 [Deno 2.1 \- Wasm Imports and other enhancements](https://deno.com/blog/v2.1)
+- 📦 [Better Auth 1.0 \- Comprehensive authentication framework for TypeScript](https://www.better-auth.com/v1)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/211/meme.jpg)](https://x.com/fortysevenfx/status/1850288992559796369)
 
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/211/meme2.jpg)](https://bsky.app/profile/did:plc:hxmev3uady7j4litwnr5fzbg/post/3lbtsc6z57s2f)
+
+[![alt](/emails/issues/211/meme3.jpg)](https://x.com/adamwathan/status/1861560244771422692)
 
 See ya! 👋
