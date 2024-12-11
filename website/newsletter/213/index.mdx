@@ -1,12 +1,22 @@
 ---
 slug: /213
-title: "This Week In React #213: ..."
+title: "This Week In React #213: React 19, React Compiler, React Router, Lingui v5.0, State of RN, Uniffi, Shared Objects, Fast IO, Radon IDE, TC39, CSS Wrapped, Dioxus, Astro Starlight, EAS Update..."
 authors: [slorber]
 date: 12-11-2024
 unlisted: true
 ---
 
 Hi everyone!
+
+Cyril and Matthieu from Theodo Apps (formerly BAM) here 👋, standing in for Seb to bring you the latest news from React and React Native!
+
+React 19 is officially stable. The number of articles and releases we mention below that are linked to its new features show how big a release this is 🙂
+
+The State of React Native 2024 survey is live. Don’t miss your chance to shape the future of React Native! 
+
+There’s also exciting progress in using Rust for frontend apps with tools like Uniffi for React Native and Dioxus, paving the way for more powerful, cross-platform experiences.
+
+Let’s dive in! 🚀
 
 REPLACE STREAM BANNER
 REPLACE STREAM BANNER
@@ -49,9 +59,37 @@ With WorkOS you can start selling to enterprises with just a few lines of code.
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![React 19](/emails/issues/213/react.jpg)](https://react.dev/blog/2024/12/05/react-19)
+
+[React 19](https://react.dev/blog/2024/12/05/react-19)
+
+React 19 has been one of the main characters of this newsletter for the past year, so there’s not much more to say. Let’s just say it’s officially stable, and it includes all those new features:
+
+- Actions / Server Actions / useActionState()  
+- `<form>` \+ progressive enhancement compatible hooks  
+- `<Context>` instead of `<Context.Provider>`  
+- The `use()` hook  
+- Custom Elements  
+- Ref as standard props and ref callbacks cleanup functions  
+- Meta tags handling  
+- Resource preloading  
+- Better errors and hydration diff reporting
+
+If you want to know more, you can watch Theo’s video 🎥 [React 19 is finally out\!](https://www.youtube.com/watch?v=6aQgiJHReCI) or Brandon Roberts explaining 🎥 [What every Angular Developer Needs to Know\!](https://www.youtube.com/watch?v=0aHHGdxAmF4) about React 19\.
 
 - 💸 [React Bricks – the Visual CMS for React got more accessible with lower entry price and flexible pay-as-you-go options. Start for free!](https://www.reactbricks.com/?utm_source=twir&utm_campaign=ql24)
+- 📖 [Restyle 3.0](https://x.com/souporserious/status/1864780390004576632): A very lightweight css-in-js lib for React which uses the new React 19 metadata APIs  
+- 📜 [Ref Callbacks, React 19 and the Compiler](https://tkdodo.eu/blog/ref-callbacks-react-19-and-the-compiler): TkDodo looks into ref callbacks, which now have cleanup functions. When should they replace `useEffect` ?  
+- 📜 [A new React Router tutorial](https://reactrouter.com/tutorials/address-book): It goes over most of the features you’ll need in \~30 minutes  
+- 📜 [Building Scalable Micro-Frontends with Next.js Multi Zones](https://techhub.iodigital.com/articles/building-scalable-micro-frontends-with-next-js-multi-zones): Being able to deploy independently is a major advantage for big teams, and it turns out it’s not that complicated with Next.js  
+- 📜 [Root Element API in waku](https://waku.gg/blog/root-element-api): Customize `<html>`, `<body>` and `<head>` in a `\_root.tsx` file  
+- 📜 [How React Compiler Performs on Real Code](https://www.developerway.com/posts/how-react-compiler-performs-on-real-code)  
+- 📜 [Multi-framework docs with Astro Starlight](https://blog.arcjet.com/multi-framework-docs-with-astro-starlight/)  
+- 📜 [SSR is not expensive](https://t3.gg/blog/post/ssr-is-not-expensive)  
+- 📜 [Reflections on managing state](https://www.frontendundefined.com/posts/monthly/react-state-management-reflections/)  
+- 📦 [Next.js v15.1](https://nextjs.org/blog/next-15-1): React 19 stable, improved error debugging, `after` (to run code after the response is sent, eg for analytics) is stable, and new `forbidden` and `unauthorized` APIs that work like `notFound`  
+- 📦 [Lingui v5.0](https://lingui.dev/blog/2024/11/28/announcing-lingui-5.0) with support for RSC and a new `useLingui` macro among other improvements  
+- 📦 [react-render-stream-testing-library v2.0](https://github.com/testing-library/react-render-stream-testing-library/releases/tag/v2.0.0): No major new features, some breaking changes were necessary to be compatible with React 19
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -77,22 +115,46 @@ Build Fast. Scale Effortlessly. [Get Started With Stream](https://getstream.io/t
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+
+[![State of React Native 2024](/emails/issues/213/state_of_rn.jpg)](https://stateofreactnative.com/)
+
+[State of React Native 2024](https://stateofreactnative.com/)
+
+The State of React Native 2024 survey is live\! 📊 This is your chance to influence the future of React Native by sharing insights on trends, tools, and challenges. Your feedback helps guide the Expo and Meta teams in shaping improvements each year, benefiting the entire community. 
 
 - 💸 [React Native Mastery - Now open for enrollment!](https://notjust.dev/react-native-mastery?utm_source=twir&utm_medium=email)
+- 🐦 [RN Unistyles v3 supports scoped theme](https://x.com/jpudysz/status/1865460854717632737) : A missing feature since the removal of `UnistylesTheme` in v2.  
+- 📜 [Developing a React Native TV App](https://www.callstack.com/blog/developing-a-react-native-tv-app)  
+- 📜 [The real-world impact of Shared Objects in Expo Modules](https://expo.dev/blog/the-real-world-impact-of-shared-objects): Shared Objects in Expo Modules enable seamless integration between native and JavaScript, improving API design and cross-package compatibility.  
+- 📜 [Introducing Uniffi for React Native: Rust-Powered Turbo Modules](https://hacks.mozilla.org/2024/12/introducing-uniffi-for-react-native-rust-powered-turbo-modules/): Uniffi for React Native integrates Rust with Turbo Modules, unlocking the entire Rust crates ecosystem for React Native apps.  
+- 📜 [Automated EAS Updates in a bare React Native app with Multiple Flavors & Schemes](https://shift.infinite.red/automated-eas-updates-in-a-bare-react-native-app-with-multiple-flavors-schemes-dcdf17963079): An article perfectly timed for projects that don’t use Expo or EAS but rely on CodePush, and are in need of an OTA update solution before CodePush is officially sunset.  
+- 📦 [React Native Sheet Transitions - Universal bottomsheet transitions, not stable yet](https://github.com/saulamsal/react-native-sheet-transitions/tree/main)  
+- 📦 [@lingui/metro-transformer](https://lingui.dev/blog/2024/11/20/metro-transformer): eliminates the need to precompile .po translation files by handling compilation during Metro bundling.  
+- 📦 [React Native Fast IO in Pre Release](https://github.com/callstackincubator/react-native-fast-io): high-performance I/O solution for React Native, implementing standard W3C APIs like WebSocket, Fetch, FileSystem, Blob, and Streams.  
+- 📦 [React Native Bottom Tabs v0.7.2 - macOS support, support for sidebars](https://github.com/okwasniewski/react-native-bottom-tabs/releases/tag/react-native-bottom-tabs%400.7.2)  
+- 📦 [React Native Video Player v0.15](https://github.com/TheWidlarzGroup/react-native-video-player/releases/tag/v0.15.0)  
+- 🎥 [A live demo of Radon IDE: the VS Code extension for streamlining development](https://www.youtube.com/watch?v=UeYmRKWhwFI)  
+- 🎙️ [RNR 316 - Debugging the Debugger with Cedric van Putten and Alex Hunt](https://reactnativeradio.com/episodes/rnr-316-debugging-the-debugger-with-cedric-van-putten-and-alex-hunt)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 🐦[TC39 meeting: several exciting advancements in ECMAScript proposals this week including Intl.DurationFormat, Immutable ArrayBuffer, Import Sync](https://dev.to/hemanth/updates-from-the-105th-tc39-meeting-3gkh)  
+- 📜 [Solving N² Complexity with JavaScript Maps](https://davidbonan.io/blog/solving-n2-complexity-with-javascript-maps)  
+- 📜 [CSS Wrapped 2024](https://chrome.dev/css-wrapped-2024/)  
+- 📜 [How to improve your page load time with browser caching | DebugBear](https://www.debugbear.com/blog/browser-caching)  
+- 📜 [Exploring Node.js Readable Streams](https://pavel-romanov.com/exploring-the-core-concepts-of-nodejs-readable-streams)  
+- 📜 [Node.js Delivers First LTS with require(esm) Enabled, Enhances Security and Release Automation](https://socket.dev/blog/node-js-delivers-first-lts-with-require-esm-enabled)   
+- 📦 [Dioxus v0.6: revamped CLI, mobile app serving, advanced hot-reloading, inline stack traces, and server functions for native apps.](https://dioxuslabs.com/blog/release-060)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![React 19 PeerDependencies](/emails/issues/213/react_19_meme.jpg)](https://bsky.app/profile/did:plc:hxmev3uady7j4litwnr5fzbg/post/3laz2eyx77k2l)
+[![JavaScript Math.sin](/emails/issues/213/math_sin.jpg)](https://x.com/davesnx/status/1863991593432391711)
 
-[![alt](/emails/issues/122/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+
 
 See ya! 👋
