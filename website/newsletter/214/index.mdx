@@ -1,12 +1,19 @@
 ---
 slug: /214
-title: "This Week In React #214: ..."
+title: "This Week In React #214: Base UI, Custom Elements, Next.js, React Router, i18n, OG, Apollo, Android XR, iOS targets, Nitro, RNTL, Volume Manager, Drag Select, brownfield, Zod, Node, SourceMaps, Bun, State Of JS..."
 authors: [slorber]
 date: 12-18-2024
 unlisted: true
 ---
 
 Hi everyone!
+
+This week I'm excited about a promising new headless component library, and I've found various interesting articles about Web Components relevant to React developers.
+
+On the mobile side, Google introduced Android XR and React Native support is already coming!
+
+🎄 We are taking a Christmas break, this is the last newsletter until 8th January.\
+🧑‍🎄 You've already given me a great gift, we are now 4th most popular JS newsletter according to the recently published [State of JS 2024 survey result](https://2024.stateofjs.com/en-US/resources/).
 
 State of JS 4th!
 
@@ -57,7 +64,7 @@ I’m usually not into UI libs. But when Radix, MUI and Floating UI creators gat
 
 - 💸 [React Bricks – the Visual CMS for React got more accessible with lower entry price and flexible pay-as-you-go options. Start for free!](https://www.reactbricks.com/?utm_source=twir&utm_campaign=ql24)
 - 🐦 [Lee Robinson explains why transitioning between pages when running Next.js locally take time](https://x.com/leeerob/status/1869095675201192335)
-- 👀 [Next.js PR \- `unstable_rootParams()`](https://github.com/vercel/next.js/pull/72837): A new convenient experimental API to return path params from all path segments up to the root layout. Looks particularly useful for accessing a `[locale]` param.
+- 👀 [Next.js PR \- `unstable_rootParams()`](https://github.com/vercel/next.js/pull/72837): A new convenient experimental API to return path params from all path segments up to the root layout. Looks particularly useful for accessing a i18n `[locale]` param.
 - 👀 [Next.js PR \- `experimental.newDevOverlay`](https://github.com/vercel/next.js/pull/73977): A new dev overlay is coming and the feature flag already exists.
 - 👀 [Rsbuild PR \- plugin-react-router](https://github.com/web-infra-dev/rsbuild/pull/4186): React Router framework features (Remix) are now implemented as a Vite plugin, but it seems other bundlers could also turn React Router into a framework 😲
 - 📜 [How to validate your React i18next application](https://lingual.dev/blog/how-to-validate-your-react-i18next-application/): Present a workflow based on react-i18next to prevent missing, unused, and invalid translation keys. There’s another post for react-intl users.
@@ -73,7 +80,7 @@ I’m usually not into UI libs. But when Radix, MUI and Floating UI creators gat
 - 📦 [Inertia 2.0 \- Redefining Frontend Development for Laravel](https://blog.laravel.com/announcing-inertia-20-redefining-frontend-development-for-laravel): New major version of this tool that seamlessly integrates React into PHP backends. New features: async requests, deferred props, prefetching, polling.
 - 📦 [Apollo Client 3.12 \- GraphQL fragment data masking](https://www.apollographql.com/blog/more-resilient-code-with-data-masking-in-apollo-client-3-12): Similar to Relay, Apollo Client improves in colocation, encapsulation, and performance. A component will only receive the fields it needs, and nothing more.
 - 📦 [Virtua 0.39 \- Zero-config, fast and small virtual list \- React 19 support](https://github.com/inokawa/virtua)
-- 📦 [MUI 6.2](https://github.com/mui/material-ui/releases/tag/v6.2.0) \+ [https://mui.com/blog/material-ui-2024-updates/](https://mui.com/blog/material-ui-2024-updates/)
+- 📦 [Material UI EoY update - MUI v5/6 are compatible with React 19](https://mui.com/blog/material-ui-2024-updates/)
 - 📦 [Roadmap UI \- Composable components for building interactive roadmaps \- Gantt, Kanban, Calendar, List, Table](https://www.roadmap-ui.com/)
 - 🎥 [Justin Poli \- What happens when you break the rules of React?](https://www.youtube.com/watch?v=NsFD-1HkJNU): Mobx-State-Tree maintainer explains plan to make the reactive library compatible with the React Compiler.
 - 🎥 [Wawa Sensei \- My Journey Coding a VR/AR Rhythm Game with Three.js & React Three Fiber](https://www.youtube.com/watch?v=jBh4ftHqC5U)
