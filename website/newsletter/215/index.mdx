@@ -1,20 +1,29 @@
 ---
 slug: /215
-title: "This Week In React #215: Dropdown, i18n, Next.js, Remix, Astro, shadcn, Fancy Components, Expo, Static Hermes, Skia, ExecuTorch, Kotlin, Node, Shortest, Rolldown, Rspack, pnpm..."
+title: "This Week In React #215: Dropdown, i18n, Next.js, Remix, Astro, shadcn, StyleX, Fancy Components, Expo, Static Hermes, Skia, ExecuTorch, Kotlin, Node, Shortest, Rolldown, Rspack, pnpm..."
 authors: [slorber]
 date: 01-02-2025
-unlisted: true
 ---
 
 Hi everyone!
 
-please share the newsletter
+We initially planned to return on 8th January.\
+But here I am a little earlier, wishing you all a Happy New Year! 🎉\
+With the end-of-year festivities, it's been a quiet week for React, as you'd expect.
 
-happy new year
+I also take the opportunity to share a little newsletter retrospective, and thank you once again for reading the newsletter and making all this possible.
 
-results
+In 2024 the newsletter went from being a sustainable project to a break-even business. This allows me to invest more in the project and improve the content. Let's share some concrete figures from 2023 to 2024 :
 
-milestone https://x.com/sebastienlorber/status/1874596608735891791
+- 📈 **Subscribers**: 31k ➡️ 46k - A great +15k subscribers increase this year. Not exponential as I expected, but still very nice!
+- 👥 **Writers**: 1 ➡️ 4 - I'm no longer the sole writer of this curation newsletter: Benedikt, Matthieu and Cyril have backed me up when I was unavailable.
+- 📨 **Issues**: 38 ➡️ 47 - Onboarding other writers allowed us to send out an email almost every week!
+- 💰 **Income**: 47k€ ➡️ 99k€ ARR - We are getting good as sales, and have successfully convinced most companies we wanted to work with to sponsor us.
+- 💸 **Charges**: 15k€ ➡️ 36k€ - We have increased our charges significantly this year by onboarding guest newsletter writers (14k€). The other charges are ads (12k€), SaaS (7k€) and virtual assistants (3k€).
+
+Overall I think it has been a great 2024 year, looking forward to a promising future. I didn't reach my goal of 50k subscribers, but I'm not too far. And I still reached another important symbolic milestone: having more newsletter subscribers than Twitter followers, and becoming less dependent of social platforms.
+
+In 2025, I'd like the newsletter to be more than just a list of curation emails. I plan to onboard guest writers, paying them to produce a series of articles on topics they are passionate about. If you think you'd be a great fit, reply and say hi! 👋
 
 <!-- truncate -->
 
@@ -58,13 +67,15 @@ This article shows how you can use ts-morph AST transformations to automatically
 
 ---
 
-- 💸 [React Native Zero to Hero - Learn everything you need to ship your first app](https://galaxies.dev/missions/zero-to-hero?utm_source=thisweekinreact)
+- 💸 [React Native Zero to Hero - Everything you need to ship your first app](https://galaxies.dev/missions/zero-to-hero?utm_source=thisweekinreact)
 - 👀 [React PR \- “Forgive” IDE extension](https://github.com/facebook/react/pull/31918): The React Compiler team recently [hinted at React Summit](https://www.youtube.com/watch?v=C8Mg-NSyqWg&t=14452s) their intent to create a “React IDE” powered by the compiler, not limited to just linting but also providing educational tooltips and more. Well, there's nothing very interesting to see yet, but work has begun on scaffolding a Language Server Protocol and VSCode extension.
+- 📜 [You don't need Next.js](https://www.comfydeploy.com/blog/you-dont-need-nextjs): They migrated dashboards from Next.js 15 to just React with TanStack Router and Rspack with satisfying results.
 - 📜 [Building the Black Friday-Cyber Monday live dashboard](https://vercel.com/blog/building-the-black-friday-cyber-monday-live-dashboard): Vercel presents the technical architecture behind their Next.js-based Black Friday dashboard
 - 📜 [Replacing Legacy throw in React 19 with Suspense and use](https://peterkellner.net/2024/12/31/replacing-legacy-throw-in-react-19-with-suspense-and-use/): There’s a new `use()` hook, but throwing promises still works.
 - 📜 [Remix Security Checklist](https://blog.arcjet.com/remix-security-checklist/)
 - 📜 [Building a simple form in React \- before and after React 19](https://reactpractice.dev/articles/building-a-simple-form-in-react-before-and-after-react-19/)
 - 📦 [Astro 5.1 \- Experimental sessions, remote image caching, getActionPath](https://astro.build/blog/astro-510/)
+- 📦 [StyleX 0.10 - PostCSS plugin, better debugging, ESLint/Perf/CLI improvements](https://stylexjs.com/blog/v0.10.0): The new PostCSS plugin should make StyleX easier to adopt in various contexts.
 - 📦 [Fancy Components \- Collection of funky, unconventional components](https://www.fancycomponents.dev/)
 - 📦 [next-intl 4.0 beta](https://next-intl.dev/blog/next-intl-4-0): type-safety for ICU params is really cool\! Also lays the ground for the latest Next.js innovations like PPR, dynamicIO, and rootParams.
 - 📦 [React Router 7.1 \- Support for Vite 6](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v710)
@@ -121,6 +132,7 @@ To get 2025 off to a good start, let's recap all the great things Expo offered u
 - 📜 [Static Hermes Update, Dec 2024](https://x.com/tmikov/status/1869945330638442651): Static Hermes is expected to roll out in 2025, initially opt-in, then enabled by default. It can compile and execute both typed and untyped code. Benchmarks show it’s already significantly faster on untyped code, particularly with JIT mode when Hermes can infer types. No benchmark was provided for typed code, but we can expect it to much faster\! The improved ES compliance will also permit to remove heavy Babel plugins. TLDR: in 2025 you can expect a great speed increase of both build and runtime.
 - 📜 [How to create beautiful glowing components on React Native 0.76+](https://www.devas.life/how-to-create-beautiful-glowing-components-on-react-native-0-76/): box-shadow support and New Architecture unlock new creative possibilities.
 - 📜 [From Native to Multiplatform Development: Unpacking Kotlin and Compose](https://www.callstack.com/blog/from-native-to-multiplatform-development-unpacking-kotlin-and-compose): Explains the Android Kotlin ecosystem from the perspective of a React Native dev.
+- 📜 [The Time for React Native is Now](https://galaxies.dev/article/time-for-react-native)
 - 📜 [Why Expo is a great fit for new and existing React Native apps](https://expo.dev/blog/why-expo-is-a-great-fit-for-new-and-existing-react-native-apps)
 - 📜 [Skeleton Animation in React Native with Moti](https://reactiive.io/articles/skeleton-loader)
 - 📦 [RN ExecuTorch 0.2 \- Support for Computer Vision models](https://github.com/software-mansion/react-native-executorch/releases/tag/v0.2.0)
