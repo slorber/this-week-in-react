@@ -1,6 +1,6 @@
 ---
 slug: /216
-title: "This Week In React #216: Recoil, View transitions, Next.Js, RSC, A11y testing, React Compiler, Nitro Modules, Radon IDE, SQLite, RN edge-to-edge, htmx, Node, pnpm..."
+title: "This Week In React #216: Next.js, View Transitions, RSC, Compiler, React Router, Recoil, Bippy, Docusaurus, A11y, Nitro, Radon IDE, SQLite, Edge-to-Edge, Node, TypeScript, pnpm, htmx..."
 authors: [matthieugicquel, cyrilbo]
 date: 01-08-2025
 unlisted: true
@@ -46,12 +46,26 @@ With [PropelAuth](https://www.propelauth.com/?utm_source=newsletter&utm_campaign
 
 ## ⚛️ React {#react}
 
+[![Composable Caching with Next.js](/emails/issues/216/nextjscache.jpg)](https://nextjs.org/blog/composable-caching)
+
+**[Composable Caching with Next.js](https://nextjs.org/blog/composable-caching)**
+
+Explains what Next.js is trying to accomplish, and why `”use cache”` is a compiler directive and not a function (to be able to analyze closures and determine the right cache key).
+
+---
+
+[![React Core PR - Add `<ViewTransition>` Component](/emails/issues/216/viewTransitions.jpg)](https://github.com/facebook/react/pull/31975)
+
+**[React Core PR - Add `<ViewTransition>` Component](https://github.com/facebook/react/pull/31975)**
+
+React is adding support for View transitions with a `<ViewTransition />` component that integrates with all the async features like Suspense and `startTransition`.
+
+---
+
 - 💸 [daily.dev: Your personal dev news feed. Free!](https://daily.dev/w/this-week-in-react)
 - 🐦 [Recoil (state manager by meta) has been archived](https://x.com/dai_shi/status/1875910305802514649)
-- 👀 [React is adding support for View transitions](https://github.com/facebook/react/pull/31975) with a `<ViewTransition />` component that integrates with all the async features like Suspense and `startTransition`.
-- 📜 [Composable Caching with Next.js](https://nextjs.org/blog/composable-caching): Explains what Next.js is trying to accomplish, and why `”use cache”` is a compiler directive and not a function (to be able to analyze closures and determine the right cache key).
 - 📜 [RSC and Server Action Bundle Practice](https://github.com/orgs/web-infra-dev/discussions/23): An Rspack maintainer shared a comprehensive deep dive on how bundlers implement React Server Components in practice, notably webpack and Turbopack.
-- 📜 [Automated Accessibility Testing at Slack](https://slack.engineering/automated-accessibility-testing-at-slack/): They tried to do it with testing-library but ended up using playwright.
+- 📜 [Automated Accessibility Testing at Slack](https://slack.engineering/automated-accessibility-testing-at-slack/): They tried to do it with testing-library but ended up using Playwright.
 - 📜 [Thoughts on State Management Libraries in the React Compiler Era](https://blog.axlight.com/posts/thoughts-on-state-management-libraries-in-the-react-compiler-era/): The compiler makes React Context much more attractive, are they still useful?
 - 📜 [All kinds of state management in React](https://www.typeonce.dev/article/all-kinds-of-state-management-in-react): url state, server state, client state…
 - 📜 [React Router 7 Tutorial](https://www.robinwieruch.de/react-router/): A 3-part series covering the introduction, descendent routes and search params.
