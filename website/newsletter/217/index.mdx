@@ -28,12 +28,11 @@ import Support from "../_support.mdx";
 
 Bad performance is just another kind of bug 🐛 . And Sentry helps you find bugs fast, even the ones that aren’t obvious.
 
-*   Cut chunks of time off of bad API calls
-    
-*   Reduce extremely costly, frequently pinged, or generally slow db operations 
-    
-*   Uncover the source of a traffic spike spike in minutes
-    
+- Cut chunks of time off of bad API calls
+
+- Reduce extremely costly, frequently pinged, or generally slow db operations
+
+- Uncover the source of a traffic spike spike in minutes
 
 Whether it’s an error or a slowdown, Sentry helps you fix issues fast and keep your app running smoothly. Because if it’s slow, it’s broken. [See for yourself](https://sentry.io/lp/new-apm/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=perf-fy26q1-evergreen&utm_content=newsletter-primary-slowbug-seehow).
 
@@ -41,9 +40,38 @@ Whether it’s an error or a slowdown, Sentry helps you fix issues fast and keep
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Revealed: React's experimental animations API](/emails/issues/217/viewtransition.jpg)](https://motion.dev/blog/reacts-experimental-view-transition-api)
+
+**[Revealed: React's experimental animations API**](https://motion.dev/blog/reacts-experimental-view-transition-api)\*\*
+
+Motion creator explains the animation tradeoffs of using View Transitions and why it makes sense for React to directly integrate it into its reconciler through a new `<ViewTransition>` component. This interactive post shows an early look at the upcoming React feature, including some of its current implementation details, and explains how it overlaps a bit with Motion layout animations.
+
+Keep in mind this exciting new API is still in active development, subject to change, and new PRs keep landing, notably:
+
+- 👀 [React Core PR \- Support only View Transitions v2](https://github.com/facebook/react/pull/31996): The new component will leverage recent v2 spec APIs such as `view-transition-class`, requires Safari 18.2+, and still unsupported in Firefox.
+- 👀 [React Core PR \- View Transition Class Names based on event kind](https://github.com/facebook/react/pull/32050)
+- 👀 [Next.js PR \- `experimental.viewTransition` flag](https://github.com/vercel/next.js/pull/74659): You can try the feature in Next.js 15.2 canary 4\.
+
+---
 
 - 💸 [Product for Engineers - Product management is broken. Engineers can fix it](https://dub.link/twir-jan15)
+- 👀 [React website PR \- Upgrade to Next.js 15, React 19, enable React Compiler](https://github.com/reactjs/react.dev/pull/6996)
+- 👀 [React Router Milestones](https://github.com/remix-run/react-router/milestones): Now communicating what they hope to ship in upcoming releases. v7.2 should include initial RSC support (from loaders/actions), Server Actions, middleware.
+- 👀 [Adopting the compiler at Wakelet](https://github.com/reactwg/react-compiler/discussions/52): Positive feedback, improving LCP and INP metrics. It did not magically solve all the perf issues, but was close to a “free lunch” experience.
+- 📖 [Next.js docs \- Single-Page Applications with Next.js](https://nextjs.org/docs/app/building-your-application/upgrading/single-page-applications): This new page notably documents how the newly released [SWR 2.3](https://github.com/vercel/swr/releases/tag/v2.3.0) now allows passing promises in `<SWRConfig fallback>`, enabling you to seamlessly move data fetching from the client to the server.
+- 📜 [Understanding React Server Components](https://tonyalicea.dev/blog/understanding-react-server-components/): A comprehensive and well-presented overview of RSCs.
+- 📜 [Accessibility essentials every front-end developer should know](https://martijnhols.nl/blog/accessibility-essentials-every-front-end-developer-should-know): Accessibility tips with React examples.
+- 📜 [Bloated React code? Try component hooks](https://www.tymzap.com/blog/bloated-react-code-try-component-hooks): Reduce cognitive load by extracting a component hook so that the component can solely focus on rendering.
+- 📜 [Make FormData and input names type-safe in React](https://www.typeonce.dev/article/make-form-data-and-input-names-type-safe-in-react): Using hand-made TS, then using Effect.Schema and FP.
+- 📜 [Maybe don't navigate(-1) in Remix/React Router](https://programmingarehard.com/2025/01/13/maybe-dont-navigate-1.html/): Or how to navigate backward but ensure you never leave the current app.
+- 📜 [Should you use MobX-State-Tree with React in 2025?](https://coolsoftware.dev/blog/mobx-state-tree-react-2025/)
+- 📜 [Become expert in React Query](https://tigerabrodi.blog/become-expert-in-react-query)
+- 📦 [Next.js React Server Component Testing](https://github.com/kettanaito/nextjs-rsc-testing): An example repository of testing Next.js RSCs using MSW and Playwright.
+- 📦 [Nextra 4.0](https://the-guild.dev/blog/nextra-4): The Next.js-based docs framework upgrades to App Router among many other things.
+- 📦 [Base UI 1.0.0-alpha.5](https://base-ui.com/react/overview/releases)
+- 📦 [Superglue 1.0 \- React \+ Rails](https://thoughtbot.com/blog/superglue-1-0-react-rails-a-new-era-of-thoughtfulness)
+- 🎥 [Theo \- All the ways HTML gets to your browser](https://www.youtube.com/watch?v=Cifkb-ZVps4)
+- 🎥 [Simeon Griggs \- useOptimistic from React docs to production](https://www.youtube.com/watch?v=_0bwnnlUZRU)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -55,11 +83,10 @@ Whether it’s an error or a slowdown, Sentry helps you fix issues fast and keep
 
 **[Tests are dead - Meticulous is here](https://www.meticulous.ai?utm_source=thisweekinreact&utm_campaign=jan15th)**
 
-Meticulous creates and maintains an exhaustive suite of e2e ui tests with **zero** developer effort. 
+Meticulous creates and maintains an exhaustive suite of e2e ui tests with **zero** developer effort.
 
-  
-This quote from the CTO of Traba sums the product up best: "Meticulous has fundamentally changed the way we approach frontend testing in our web applications, fully eliminating the need to write any frontend tests. The software gives us confidence that every change will be completely regression tested, allowing us to ship more quickly with significantly fewer bugs in our code. The platform is easy to use and reduces the barrier to entry for backend-focused devs to contribute to our frontend codebase."  
-  
+This quote from the CTO of Traba sums the product up best: "Meticulous has fundamentally changed the way we approach frontend testing in our web applications, fully eliminating the need to write any frontend tests. The software gives us confidence that every change will be completely regression tested, allowing us to ship more quickly with significantly fewer bugs in our code. The platform is easy to use and reduces the barrier to entry for backend-focused devs to contribute to our frontend codebase."
+
 Meticulous is used by companies like Lattice, Bilt Rewards, Power and many others.
 
 This [post](https://www.meticulous.ai/blog/lessons-from-a-decade?utm_source=thisweekinreact&utm_campaign=jan15th) from our CTO sets out the context of why exhaustive testing can double engineering velocity.
@@ -68,15 +95,48 @@ This [post](https://www.meticulous.ai/blog/lessons-from-a-decade?utm_source=this
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[**EAS Hosting Preview**](https://expo.dev/blog/expo-announces-eas-hosting-service)
+
+Expo unveiled what we expected, the first-ever universal app-hosting platform that completes the vision of bringing the web DX to the cross-platform world. It enables us to seamlessly deploy Expo’s server-related features, notably Expo for Web, API Routes, and Universal React Server Components. It takes into account mobile app subtleties, such as syncing the backend/app versions. You can use either the CLI or CI (EAS Workflows). Under the hood, it’s using Cloudflare Workers. There’s a free plan.
+
+---
+
+📜 [Five years of React Native at Shopify](https://shopifyengineering.myshopify.com/blogs/engineering/five-years-of-react-native-at-shopify)
+
+Positive feedback after migrating their 6 apps to React Native. Also mentioning what can be improved, such as debugging and upgrading.
+
+---
 
 - 💸 [WithFrame - React Native Templates to accelerate your app development](https://withfra.me)
+- 👀 [Expo Router RSC Movies Demo](https://github.com/EvanBacon/expo-rsc-movies)
+- 📜 [Animated Loader with React Native Skia](https://reactiive.io/articles/animated-loader-skia)
+- 📦 [React Native 0.78 RC.0](https://github.com/facebook/react-native/releases/tag/v0.78.0-rc.0): This upcoming version upgrades to React 19\! Note that the v0.77 stable release has been postponed until next week due to a bug.
+- 📦 [React Native 0.76.6](https://github.com/facebook/react-native/releases/tag/v0.76.6)
+- 📦 [React Query 5.63 \- Allow useQuery and useQueries to unsubscribe from the query cache](https://github.com/TanStack/query/releases/tag/v5.63.0): Particularly useful to unsubscribe hidden RN stack screens (including querying), more powerful/granular than react-freeze.
+- 📦 [Input OTP Native \- One Time Passcode input, unstyled and fully customizable](https://github.com/yjose/input-otp-native)
+- 📦 [Edge-to-Edge 1.3 \- Transparent button navigation bar](https://github.com/zoontek/react-native-edge-to-edge/releases/tag/1.3.0)
+- 📦 [Skia 1.9 & 1.10 \- tvOS support, new reconcilier, image sampling options](https://github.com/Shopify/react-native-skia/releases)
+- 📦 [Radon 1.2 \- RN 0.77, Redux and React Query tools, local EAS builds](https://github.com/software-mansion/radon-ide/releases/tag/v1.2.0)
+- 📦 [Screens 4.5 \- RN 0.77 support](https://github.com/software-mansion/react-native-screens/releases/tag/4.5.0)
+- 📦 [Gesture Handler 2.22 \- RN 0.77 support, Text component](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.22.0)
+- 📦 [Reanimated 3.16.7 \- RN 0.77 support](https://github.com/software-mansion/react-native-reanimated/releases/tag/3.16.7)
+- 🎥 [Simon Grimm \- The Missing Piece to Universal React Native](https://www.youtube.com/watch?v=UpPj5xZiiFo)
+- 🎙️ [React Universe On Air 46 \- Lessons from Shopify's Migration to React Native with Mustafa Ali](https://www.youtube.com/watch?v=WFoO-GDvrY8)
+- 🎙️ [Rocket Ship 58 \- React Native Games & Animations with Ben Awad](https://share.transistor.fm/s/249233ec)
+- 🎙️ [RNR 318 \- Maintaining Open Source Libraries at Software Mansion](https://www.reactnativeradio.com/episodes/rnr-318-maintaining-open-source-libraries-at-software-mansion)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📣 [WinterTC (TC55) \- Technical Committee on Web-interoperable Server Runtimes](https://www.w3.org/blog/2025/collaborating-across-w3c-and-ecma-for-web-interoperable-server-runtimes-through-wintertc/): Supersede WinterCG, responsible for defining a Minimum Common API spec for server runtimes, aligned with web APIs.
+- 📜 [Build systems and bundlers](https://github.com/orgs/web-infra-dev/discussions/24): Rspack maintainer’s research on how build tools and bundlers implement their incremental mode.
+- 📜 [Everything You Need to Know About Node.js Type Stripping](https://satanacchio.hashnode.dev/everything-you-need-to-know-about-nodejs-type-stripping): Tradeoffs explained by the Node.js PR author, including why `.tsx` files are not supported.
+- 📜 [CSS text-box-trim \- Take back space from above/below, achieve optical balance](https://developer.chrome.com/blog/css-text-box-trim)
+- 📜 [Updates to the customizable select API](https://una.im/select-updates/)
+- 📜 [ECMAScript feature: import attributes](https://2ality.com/2025/01/import-attributes.html)
+- 📦 [Lightning CSS 1.29 \- Support for view transitions level 2](https://github.com/parcel-bundler/lightningcss/releases/tag/v1.29.0)
+- 📦 [Bun 1.1.43 \- S3 support, HTML bundling, V8 snapshots and more](https://bun.sh/blog/bun-v1.1.43)
 
 ---
 
