@@ -40,7 +40,36 @@ With [PropelAuth](https://www.propelauth.com/?utm_source=newsletter&utm_campaign
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![React Scan 0.1](/emails/issues/218/react-scan.jpg)](https://github.com/aidenybai/react-scan)
+
+[**React Scan 0.1**](https://github.com/aidenybai/react-scan)
+
+This is the first official release of React Scan, a new React performance tool that has been trending on social platforms lately with many great demos from its creator Aiden Bai. It’s easy to install and helps you find unwanted React re-renders with a great DX, a bit like “why-did-you-update” on steroids. Related podcast: 🎙️ [JavaScript Jabber \- Optimizing React with React Scan](https://www.youtube.com/watch?v=pyV1wMcOtN0).
+
+---
+
+- 💸 [What is middleware in Next.js? And how Clerk uses it for authentication](https://clerk.com/blog/what-is-middleware-in-nextjs?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=nextjs-middleware&utm_content=01-22-24)
+- 🐦 [Parcel \+ React Server Components integration preview](https://x.com/devongovett/status/1881730597011571050)
+- 💬 [Storybook RFCs](https://github.com/storybookjs/storybook/discussions/categories/rfc): Several were created to reduce story creation boilerplate and improve autocompletion, type safety, and simplify syntax for writing tests.
+- 📖 [shadcn/ui \- Block](https://ui.shadcn.com/docs/blocks): shadcn has a community-driven “reusable blocks” library and this page explains how to publish your custom blocks to the registry.
+- 📜 [Why Server Functions Matter In A Server Component World](https://www.brenelz.com/posts/why-server-functions-matter-in-a-server-component-world/): Interesting reflection on using Server Functions in a framework that doesn’t support (yet) RSCs, illustrated with TanStack Start. Using RSCs, you make a tradeoff between bundle size and payload size. See also part 2 [Server Function Benefits](https://www.brenelz.com/posts/server-function-benefits/) which explains how Server Functions can offer similar benefits to RSCs.
+- 📜 [Do JavaScript frameworks still need portals?](https://fullystacked.net/portal/): This greatly explains why modern HTML elements like `<dialog>` can solve similar cases as React portals. Even when usage is deeply nested, those dialogs are not affected by their parents. Note: you can also stack dialogs on top of each other without using `z-index`, similar to portals.
+- 📜 [Next.js on EAS Hosting](https://x.com/JI/status/1879740964492980598): Expo founder shows how to host a Next.js 15 static site on EAS from the CLI, then with an automated CI. See also Theo [deploying Universal RSCs on EAS](https://www.youtube.com/watch?v=weYe4ffxWQk), and Jack Herrington [deploying a Vite React SPA app to EAS](https://www.youtube.com/watch?v=YU0ENx1xgJk). Web devs should pay attention to EAS, it’s not just for mobile anymore.
+- 📜 [Progressive Forms with React 19](https://rdrn.me/react-forms/): A comprehensive post showing all the steps to provide a great form UX supporting optimistic UI and progressive enhancement.
+- 📜 [Formity: The Ultimate Tool For Multi-Step Forms In React](https://www.formity.app/blog/articles/formity-ultimate-tool-multi-step-forms-react): An interactive post presenting a new form library focusing on the complexities of dynamic multi-step forms that adapt to user inputs. You don’t need to abandon your favorite single-step form library, it integrates with it.
+- 📜 [The XSS dangers in interpolating styled-components](https://andrei-calazans.com/posts/styled-components-xss-danger/): You might need to sanitize your React styling props to avoid this XSS attack vector.
+- 📜 [Implementing Streaming SSR with React Relay and Vite](https://aqora.io/blog/AEJsb2dBcnRpY2xlAZRgyH4wdeKfFHS0yil0Fw/implementing-streaming-ssr-with-react-relay-and-vite): Interesting React setup to study, although not supporting SSR streaming.
+- 📦 [React Aria \- January 15, 2025 Release \- Overlay CSS transitions, Autocomplete (alpha), Test utils package (alpha), and more](https://react-spectrum.adobe.com/releases/2025-01-15.html)
+- 📦 [Storybook 8.5 \- React 19 support, React Native Web Vite framework, A11y tests, code coverage](https://storybook.js.org/blog/storybook-8-5/)
+- 📦 [Unpic 1.0](https://unpic.pics/blog/unpic-1/): A framework-agnostic toolkit to display images that natively understand many CDNs, with first-class integrations for React and Next.js.
+- 📦 [React Three Handles](https://pmndrs.github.io/xr/docs/handles/introduction): A new convenient package to build React XR interactions.
+- 📦 [HeroUI](https://www.heroui.com/blog/introducing-heroui): New identity for NextUI library, since it’s not limited to Next.js usage.
+- 📦 [Justd \- Accessible React UI Components](https://getjustd.com/): Similar shadcn/ui, but using React Aria instead of Radix.
+- 📦 [React Admin 5.5 \- React 19, MUI 6, React Router 7, various new features](https://github.com/marmelab/react-admin/releases/tag/v5.5.0)
+- 📦 [React Testing Library 16.2 \- Support for React 19 APIs `onRecoverableError` and `onCaughtError`](https://github.com/testing-library/react-testing-library/releases/tag/v16.2.0)
+- 📦 [Puck 0.18 \- Visual editor for React](https://github.com/measuredco/puck/releases/tag/v0.18.0)
+- 🎥 [Hamed Bahram \- Optimizing your NextJs app with after()](https://www.youtube.com/watch?v=0h402Lkg4xs)
+- 🎥 [Ankita \- The Next.js Masterclass with Lee Rob](https://www.youtube.com/watch?v=M8bf7HJNLBo)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -64,22 +93,68 @@ This [post](https://www.meticulous.ai/blog/lessons-from-a-decade?utm_source=this
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[**React Native 0.77**](https://reactnative.dev/blog/2025/01/21/version-0.77)
+
+As planned, the next React Native version just dropped. It notably ships with:
+
+- CSS support improvement: `display: contents`, `boxSizing`, `mixBlendMode`, and `outline`
+- Support for Android 15 edge-to-edge and 16KB memory page size (perf improvement)
+- iOS init template with Swift AppDelegate
+
+Good news for Expo users: [SDK 52 already supports v0.77](https://expo.dev/changelog/2025/01-21-react-native-0.77), alongside many infrastructure packages (Screens, RNGH, Reanimated). For React 19 support, we’ll have to wait v0.78, but I could come sooner than you expect.
+
+---
+
+[**Reanimated 4.0 beta**](https://blog.swmansion.com/reanimated-4-is-new-but-also-very-familiar-b926dd59aa40)
+
+Reanimated 4 is in beta, and it’s a huge one\! 🔥 The animation core has been revamped. You can now just animate things, with regular CSS, on the native thread, thanks to newly added support for:
+
+- CSS property transitions
+- CSS keyframe animations
+
+This is particularly exciting for React Native micro-interactions with greatly reduced boilerplate, and the ability to ship cross-platform animations. The existing worklet APIs remains retrocompatible and relevant for more advanced needs. However, the New Architecture is now a requirement.
+
+See also [Reactiiive migrates a Reanimated v2 animation to v4](https://reactiive.io/articles/css-animations-react-native) which greatly simplifies things (and we are not even talking about Reanimated v1 🙈).
+
+Side note: have you seen the [upcoming React `<ViewTransition>` component](https://motion.dev/blog/reacts-experimental-view-transition-api) being actively worked on? Notice that it’s not in React-DOM, there’s probably an exciting reason for that 👀.
 
 - 💸 [Codemagic - a great App Center alternative for React Native devs! 8x faster builds, CodePush, automated distribution. 1-month free trial!](https://codemagic.io/migration-from-app-center/?utm_source=newsletter&utm_medium=email&utm_campaign=app_center_this_week_react)
+- 🐦 [Expo 53 modules will support SwiftUI and Jetpack Compose](https://x.com/Baconbrix/status/1879900047397314813)
+- 💬 [React Native proposals \- Improving iOS keyboard avoidance using keyboardLayoutGuide](https://github.com/react-native-community/discussions-and-proposals/discussions/867)
+- 📣 [EAS is now SOC 2 Type 2-compliant](https://expo.dev/blog/eas-soc2-type2)
+- 📜 [How I migrated my bare React Native app to Expo](https://expo.dev/blog/how-i-migrated-my-bare-react-native-app-to-expo)
+- 📜 [Solving Swift Modular Header Issues in React Native for Good](https://www.callstack.com/blog/solving-swift-modular-header-issues-in-react-native-for-good)
+- 📜 [React Native RCTRootViewFactory (Brownfield apps)](https://ospfranco.com/react-native-rctrootviewfactory/)
+- 📦 [React Native Document Picker & Viewer 10.0](https://react-native-documents.github.io/)
+- 📦 [Bottom Tabs 0.8 \- Android Page Transitions, Material You support](https://github.com/callstackincubator/react-native-bottom-tabs/releases/tag/react-native-bottom-tabs%400.8.0)
+- 📦 [Legend List 1.0 beta \- Claims better perf than FlashList](https://legendapp.com/open-source/list/intro/introduction/)
+- 📦 [Shadowlist alpha \- New high-performance list for React Native](https://github.com/azimgd/shadowlist)
+- 📦 [Screens 4.6 beta](https://github.com/software-mansion/react-native-screens/releases/tag/4.6.0-beta.0)
+- 📦 [Repack 5.0 rc.7 \- NativeWind support](https://github.com/callstack/repack/releases/tag/%40callstack%2Frepack%405.0.0-rc.7)
+- 🎥 [Catalin Miron \- React Native Schedule animation](https://www.youtube.com/watch?v=F3KJNgINMIQ)
+- 🎥 [Simon Grimm \- Top React Native Essentials \- Tech Stack for 2025](https://www.youtube.com/watch?v=I_J7N0n5YPs)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [Biome 2.0 and 2025 Roadmap \- Plugins, Domains (rules for frameworks like React), HTML and template literal snippets support](https://biomejs.dev/blog/roadmap-2025/)
+- 📜 [Preserve state during DOM mutations with moveBefore()](https://developer.chrome.com/blog/movebefore-api): Exciting feature comes with Chrome 133 on February 4th, useful for React siblings reconciliation.
+- 📜 [TypeScript enums: use cases and alternatives](https://2ality.com/2025/01/typescript-enum-patterns.html)
+- 📜 [So, you want to push a web platform feature?](https://blog.yoav.ws/posts/so_you_want_to_push_a_web_platform_feature/)
+- 📦 [Bun 1.2 \- Node.js compat, built-in S3 & SQL clients, text-based lockfile, HTML imports, and way more](https://bun.sh/blog/bun-v1.2)
+- 📦 [Rspack 1.2 \- Persistent cache, Yarn PnP, performance improvements](https://rspack.dev/blog/announcing-1-2)
+- 📦 [Vitest 3.0 \- New reporter, inline workspace, multi-browser, filtering by location, public API](https://vitest.dev/blog/vitest-3)
+- 📦 [ESLint 9.18 \- Stable TypeScript config file support](https://eslint.org/blog/2025/01/eslint-v9.18.0-released/)
+- 📦 [ArkType 2.0 \- Modern TypeScript validation lib](https://arktype.io/docs/blog/2.0)
+- 📦 [Shiki 2.0 \- Syntax highlighter, boring release, deprecation warnings](https://shiki.style/blog/v2)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/218/meme.jpg)](https://x.com/aidenybai/status/1881397529369034997)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/218/meme2.jpg)](https://bsky.app/profile/did:plc:hxmev3uady7j4litwnr5fzbg/post/3lgbup6t2es2b)
 
 See ya! 👋
