@@ -1,16 +1,19 @@
 ---
 slug: /219
-title: "This Week In React #219: ..."
+title: "This Week In React #219: CRA, Next.js, Remix, Tremor, SaaS-Starter, Local-First, JSDom, 2n8, RN-Windows, OTA, Polygen, Audio API, Debugging, Shopify, Bottom Tabs, Reanimated, Tailwind, Standard Schema, TypeScript..."
 authors: [slorber]
 date: 01-29-2025
-unlisted: true
 ---
 
 Hi everyone!
 
-<Todo />
+It's been a fairly quiet week compared with the previous one!
 
-🗓️ [dotJS 2025](https://www.dotjs.io/?utm_source=thisweekinreact) -  🇫🇷 Paris - 03 April - Speakers are announced ! Ryan Dahl, creator of Node.js, Sarah Drasner, Director of Engineering at Google and Wes Bos, co-host of Syntax.fm podcast.  Get 15% off tickets with code "TWIR”.
+The most important news for our ecosystem is probably the official deprecation of Create React App. There's also Tailwind v4 and Standard Schema v1.
+
+I'm quite excited by the upcoming TypeScript 5.8 `erasableSyntaxOnly` flag that forbids usage of features such as enums. This is the path toward making your app compatible Node.js built-in support, and maybe browsers too in the future.
+
+Check our partner conf [dotJS 2025](https://www.dotjs.io/?utm_source=thisweekinreact) - 🇫🇷 Paris - 03 April - Speakers announced! Ryan Dahl, creator of Node.js, Sarah Drasner, Director of Engineering at Google and Wes Bos, co-host of Syntax.fm podcast. Get 15% off tickets with code "TWIR”.
 
 <!-- truncate -->
 
@@ -28,18 +31,14 @@ import Support from "../_support.mdx";
 
 Convex is the all-in-one platform that gives you everything you need to build, launch, and scale a production-ready backend.
 
-Leverage TypeScript to write [queries as code](https://docs.convex.dev/functions/query-functions/) that are automatically cached and realtime, with an acid-compliant [reactive database](https://docs.convex.dev/database).
+Leverage TypeScript to write [queries as code](https://docs.convex.dev/functions/query-functions/) that are automatically cached and realtime, with an acid-compliant [reactive database](https://docs.convex.dev/database).
 
 And that’s just the beginning. With Convex, you can:
 
 - Easily schedule functions and write cron jobs
-
 - Set up file storage
-
 - Write efficient server functions
-
 - Generate your backend with your favorite AI coding tool
-
 - And so much more…
 
 [Try a Quickstart today](https://docs.convex.dev/quickstarts)
@@ -51,8 +50,8 @@ And that’s just the beginning. With Convex, you can:
 - 💸 [Clerk - Build session-based authentication with React and Express](https://go.clerk.com/HRqsMAP)
 - 📣 [Vercel acquires Tremor to invest in open source React components](https://vercel.com/blog/vercel-acquires-tremor): The premium library to build dashboards is now free and open source.
 - 👀 [CRA breaks with React 19, and CRA needs deprecation notices](https://github.com/facebook/create-react-app/issues/17004): After various community discussions, Create-React-App has been officially deprecated\!
-- 👀 [Next.js PR \- `experimental.useCache`](https://github.com/vercel/next.js/pull/75240)
-- 👀 [Next.js PR \- `slowModuleDetection`](https://github.com/vercel/next.js/pull/75368)
+- 👀 [Next.js PR \- New standalone `experimental.useCache` flag for usage without `dynamicIO`](https://github.com/vercel/next.js/pull/75240)
+- 👀 [Next.js PR \- New `experimental.slowModuleDetection` flag to report modules that takes a long time to compile](https://github.com/vercel/next.js/pull/75368)
 - 👀 [Remix PR \- Support for client side `routerContext`](https://github.com/remix-run/react-router/pull/12515)
 - 🐦 [React Three Fiber v9 in RC, supporting React 19 and Three.js WebGPURenderer](https://x.com/0xca0a/status/1882441755368563114)
 - 📜 [DexieJs: Reactive local state in React](https://www.typeonce.dev/article/dexie-js-reactive-local-state-in-react): You might not need a React state management library, the browser provides a built-in reactive IndexedDB. This great article shows how to wire everything (live queries and actions) using modern React 19 features.
