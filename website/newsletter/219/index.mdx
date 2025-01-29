@@ -48,9 +48,29 @@ And that’s just the beginning. With Convex, you can:
 
 ## ⚛️ React {#react}
 
-<Todo />
-
 - 💸 [Clerk - Build session-based authentication with React and Express](https://go.clerk.com/HRqsMAP)
+- 📣 [Vercel acquires Tremor to invest in open source React components](https://vercel.com/blog/vercel-acquires-tremor): The premium library to build dashboards is now free and open source.
+- 👀 [CRA breaks with React 19, and CRA needs deprecation notices](https://github.com/facebook/create-react-app/issues/17004): After various community discussions, Create-React-App has been officially deprecated\!
+- 👀 [Next.js PR \- `experimental.useCache`](https://github.com/vercel/next.js/pull/75240)
+- 👀 [Next.js PR \- `slowModuleDetection`](https://github.com/vercel/next.js/pull/75368)
+- 👀 [Remix PR \- Support for client side `routerContext`](https://github.com/remix-run/react-router/pull/12515)
+- 🐦 [React Three Fiber v9 in RC, supporting React 19 and Three.js WebGPURenderer](https://x.com/0xca0a/status/1882441755368563114)
+- 📜 [DexieJs: Reactive local state in React](https://www.typeonce.dev/article/dexie-js-reactive-local-state-in-react): You might not need a React state management library, the browser provides a built-in reactive IndexedDB. This great article shows how to wire everything (live queries and actions) using modern React 19 features.
+- 📜 [Next.js: an honest review](https://beeps.dev/blog/nextjs-an-honest-review): An interesting and quite pragmatic list of pros/cons of using Next.js in production apps.
+- 📜 [Why I Won’t Use JSDOM](https://www.epicweb.dev/why-i-won-t-use-jsdom): Recommends testing frontend components in an actual browser, using Vitest Browser Mode and Playwright, instead of a polyfilled Node.js env like JSDOM. The React integration is similar to using React Testing Library.
+- 📜 [UX++ and DX++ with Sync Engines](https://www.carlassmann.com/blog/improve-ux-dx-with-sync-engines): Explains why it’s difficult to invalidate queries and implement optimistic UI with React Query, then propose to use a local-first model with Replicache.
+- 📜 [Moving on from React, a Year Later](https://kellysutton.com/2025/01/18/moving-on-from-react-a-year-later.html): Feedback on removing React from a server-rendered Rails application, considering JS a handicap.
+- 📜 [Server-side React that renders as png, pdf, or interactive webapp](https://swizec.com/blog/server-side-react-that-renders-as-png-pdf-or-interactive-webapp/): Using a search parameter to return a PDF or png in a TanStack Start app.
+- 📜 [How to handle multiple concurrent submissions in Remix](https://tigerabrodi.blog/how-to-handle-multiple-concurrent-submissions-in-remix)
+- 📜 [Why are React Server Components actually beneficial?](https://tigerabrodi.blog/why-is-react-server-components-actually-beneficial-full-history)
+- 📜 [Picking a state management library for a React app used by millions (and why we went with MobX)](https://www.photoroom.com/inside-photoroom/picking-a-state-management-library-why-we-went-with-mobx-)
+- 📜 [useAsyncFetcher: How to implement an asynchronous fetch function in a Remix app](https://www.cerbos.dev/blog/useasyncfetcher-implement-asynchronous-fetch-in-remix)
+- 📜 [Intro to Formik](https://playfulprogramming.com/posts/formik-intro)
+- 📜 [How to build a CMS with React-Admin](https://marmelab.com/blog/2025/01/24/how-to-build-a-cms-with-react-admin.html)
+- 📦 [Vercel Next.js SaaS Starter](https://github.com/nextjs/saas-starter): Initially created by Lee Robinson, it’s now an official package maintained by Vercel. You probably don’t need to buy a paid boilerplate.
+- 📦 [2n8 \- Class-based React store](https://2n8.wstone.uk/): An interesting blend between MobX and Zustand.
+- 🎥 [Theo \- Why is every React site so slow?](https://www.youtube.com/watch?v=INLq9RPAYUw)
+- 🎥 [Youssef Benlemlih \- TanStack Router Full Course](https://www.youtube.com/watch?v=fpXOT8SNTpY)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -67,13 +87,9 @@ Reactile is an UI/UX turnkey framework which features an out-of-the-box, intuiti
 On top of that, Reactile also offers:
 
 - A promise-based persistence mechanism which permits a uniform workflow across time and on multiple devices.
-
 - The possibility to use nested tabs for your tiles.
-
 - A simplified global search mechanism.
-
 - CSS @container based responsiveness.
-
 - And much more.
 
 Version 2 coming out soon. Get started with your unique 30-day free trial. Learn more about it on reactile.net.
@@ -84,22 +100,46 @@ Version 2 coming out soon. Get started with your unique 30-day free trial. Learn
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
-
-- 💸[PostHog - How Swype uses mobile session replays for testing and user insights](https://dub.link/twir-jan29)
+- 💸 [PostHog - How Swype uses mobile session replays for testing and user insights](https://dub.link/twir-jan29)
+- 📣 [React Native 0.79 \- Removal of Remote JS Debugging via Chrome](https://github.com/react-native-community/discussions-and-proposals/discussions/872)
+- 🐦 [Fernando Rojo highlights “newer versions of React Native have a less expensive `<Text>` component”](https://x.com/FernandoTheRojo/status/1882111985661415556): Starting at v0.75+ (not sure), text components with simple string children are much faster.
+- 🐦 [React Native at Shopify \- CTO’s perspective](https://x.com/jmwind/status/1882071857098080653): Former Shopify CTO shared a long tweet that completes nicely the recent Shopify blog post. The decision to adopt RN took years. They took a bet on technology and community based on potential, not on the current state.
+- 🐦 [iOS App Clip in Expo Router demo](https://x.com/Baconbrix/status/1882141919574360421): This runs native iOS app screens simply by clicking a link, without even installing from the App Store.
+- 🐦 [Multiple windows on iPadOS demo](https://x.com/o_kwasniewski/status/1882388170643272130): A new “React Native Factory” feature unlocks new brownfield and multi-window possibilities.
+- 📜 [How to build beautiful React Native bottom tabs](https://expo.dev/blog/how-to-build-beautiful-react-native-bottom-tabs)
+- 📜 [Introducing React Native Audio API](https://blog.swmansion.com/hello-react-native-audio-api-bb0f10347211)
+- 📜 [Over the Air (OTA) updates with Zephyr](https://zephyr-cloud.io/blog/ota-with-zephyr): Gives the possibility for super apps to update their submodules independently.
+- 📦 [Polygen \- Run WebAssembly modules in your apps, statically, without interpreting](https://github.com/callstackincubator/polygen): This Callstack package in preview converts Wasm to C and then call it through JSI to deliver great performance.
+- 📦 [Hot Updater \- A self-hostable OTA update solution for React Native](https://github.com/gronxb/hot-updater): An interesting alternative to CodePush. Plugins let you decide where to host the JS bundles (S3, Supabase, PostgreSQL).
+- 📦 [React Native Windows 0.77](https://github.com/microsoft/react-native-windows/releases/tag/react-native-windows_v0.77.0), and [MacOS 0.77](https://github.com/microsoft/react-native-macos/pull/2333) should come soon
+- 📦 [React Native 0.74.7](https://github.com/facebook/react-native/releases/tag/v0.74.7): End-of-life release, 0.74.x is now out of support.
+- 📦 [React Native CSS Animation presets for Reanimated 4](https://github.com/software-mansion-labs/react-native-css-animations)
+- 🎥 [Fernando Rojo \- I built a React Native bottom sheet...with SwiftUI?](https://www.youtube.com/watch?v=TFEPTgGJ2iU)
+- 🎥 [Simon Grimm \- React Native Animations just got way easier (Reanimated v4)](https://www.youtube.com/watch?v=QgCLSR9EbDc)
+- 🎙️ [React Universe On Air 47 \- Mobile Microfrontends With Zephyr Cloud and Re.Pack](https://www.youtube.com/watch?v=9fHpEngW2lU)
+- 🎙️ [RNR 319 \- Shopify goes full throttle on React Native with Mustafa Ali](https://www.reactnativeradio.com/episodes/rnr-319-shopify-goes-full-throttle-on-react-native-with-mustafa-ali)
+- 🎙️ [PodRocket \- Universal React with Mo Khazali](https://podrocket.logrocket.com/universal-react-mo-khazali)
+- 🎙️ [Rocket Ship 59 \- Expo Router, RSC & DOM Components with Evan Bacon](https://share.transistor.fm/s/df636b75)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [TypeScript 5.8 Iteration Plan · `erasableSyntaxOnly`, require(esm), dependent return type narrowing](https://github.com/microsoft/TypeScript/issues/61023)
+- 📜 [TypeScript 5.8 Ships \--erasableSyntaxOnly To Disable Enums](https://www.totaltypescript.com/erasable-syntax-only)
+- 📜 [Container Queries Unleashed](https://www.joshwcomeau.com/css/container-queries-unleashed/)
+- 📜 [JavaScript Temporal is coming](https://developer.mozilla.org/en-US/blog/javascript-temporal-is-coming/)
+- 📜 [Avoiding \`any\`s with Linting and TypeScript](https://typescript-eslint.io/blog/avoiding-anys/)
+- 📜 [The modern way to write JavaScript servers](https://marvinh.dev/blog/modern-way-to-write-javascript-servers/)
+- 📦 [Tailwind CSS 4.0 \- High-performance engine, CSS-first config, modern CSS, Vite plugin](https://tailwindcss.com/blog/tailwindcss-v4)
+- 📦 [Standard Schema 1.0 \- Common interface for TypeScript validation libraries](https://standardschema.dev/)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/219/meme.jpg)](https://x.com/dcorbacho/status/1655443576195538946)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/219/meme2.jpg)](https://x.com/thekitze/status/1883985586194706537)
 
 See ya! 👋
