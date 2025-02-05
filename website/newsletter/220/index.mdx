@@ -1,6 +1,6 @@
 ---
 slug: /220
-title: "This Week In React #220: ..."
+title: "This Week In React #220: Next.js, Astro, Nuqs, React Scan, Fumadocs, Fusion, Radix, Inertia | Sortables, Contributors Summit, Windows, Deep linking, Oklab, Audio, BottomTabs, Metro, OTA | TypeScript, Angular, Node.js, Vite"
 authors: [slorber]
 date: 02-05-2025
 unlisted: true
@@ -8,9 +8,11 @@ unlisted: true
 
 Hi everyone!
 
-UPDATE SENTRY !!!
+This week we have a good variety of React articles and Next.js is finally adding support for Node.js runtime middleware!
 
-<Todo />
+Mobile developers will also discover future plans for React Native, including for desktop support from Microsoft. A new sortables drag & drop library should unlock new interactions in your app, considering it's quite hard to build all this yourself.
+
+TypeScript continues to progress with a new beta including a flag to support the newly added native Node.js support, and the upcoming browser support. A polyfill for native browsers support is already available!
 
 <!-- truncate -->
 
@@ -42,8 +44,17 @@ With [PropelAuth](https://www.propelauth.com/?utm_source=newsletter&utm_campaign
 
 ## ⚛️ React {#react}
 
+[![Next.js PR - Support for Node.js middleware](/emails/issues/220/nextjs-middleware.jpg)](https://github.com/vercel/next.js/pull/75624)
+
+**[Next.js PR \- Support for Node.js middleware](https://github.com/vercel/next.js/pull/75624)**
+
+A much-awaited feature for the Next.js community. The latest v15.2 canary has a new `experimental.nodeMiddleware` flag letting you opt-in for `runtime: ‘nodejs’`, enabling you to use Node.js APIs in middleware, and remove the constraints of being limited to APIs compatible with the edge runtime.
+
+Vercel middleware has also been [rebuilt from the ground up](4706) to support multiple runtimes and run on [Fluid compute](https://vercel.com/blog/introducing-fluid-compute), a new cost-efficient way for Vercel to run serverless functions.
+
+---
+
 - 💸 [Add a collaborative document editor to your app](https://convex.link/0dtC5qE)
-- 👀 [Next.js PR \- Support for Node.js middleware](https://github.com/vercel/next.js/pull/75624): The latest v15.2 canary has a new `experimental.nodeMiddleware` flag letting you opt-in for `runtime: ‘nodejs’`, enabling you to use Node.js APIs in middleware. Vercel middleware has also been rebuilt to support multiple runtimes and run on [Fluid compute](https://vercel.com/blog/introducing-fluid-compute), a new cost-efficient way to run serverless functions.
 - 👀 [Remix PR \- Split Route Modules](https://github.com/remix-run/react-router/pull/11871): Introduce new `future.unstable_splitRouteModules` flag so that the route component and its clientLoader can be downloaded in parallel instead of sequentially.
 - 🗓️ [Paris TypeScript La Conf'](https://la-conf.typescript.paris/?utm_source=thisweekinreact) - 🇫🇷 Paris - 28 February - Last call to join the first ever TypeScript conference in the heart of Paris! Get 20% off tickets with code "TWIR"!
 - 📖 [Integrate Motion with Radix](https://motion.dev/docs/radix): New docs page presenting integration examples for exit and layout animations.
@@ -83,22 +94,60 @@ Sentry's new bi-weekly live demos will show you how to catch, fix and prevent is
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![React Native Sortables](/emails/issues/220/rnsortables.jpg)](https://react-native-sortables-docs.vercel.app/)
+
+**[React Native Sortables](https://react-native-sortables-docs.vercel.app/)**
+
+A new powerful React Native library for re-ordering items with drag & drop gestures, including features such as:
+
+- Support for Grid and Flex layouts
+- Support for different item sizes, spacing, and arrangements
+- Auto-scrolling when dragging outside screen
+- Seamless layout animations
+- Simple API, full TypeScript support
+- Compatible with Expo and both architectures
+
+---
 
 - 💸 [Clerk - Build a daily workout tracker with Clerk, Convex, and Expo](https://go.clerk.com/scFbrAu)
+- 📣 [Apple open-sourcing Swift Build engine](https://www.swift.org/blog/the-next-chapter-in-swift-build-technologies/)
+- 💬 [React Native RFC \- Oklab color space support](https://github.com/react-native-community/discussions-and-proposals/pull/871)
+- 📜 [React Native Core Contributor Summit 2024 Recap](https://reactnative.dev/blog/2025/02/03/react-native-core-contributor-summit-2024): Many contributors met last September before React Universe to discuss the future of React Native, including various topics such as the release process, the New Architecture, Lean Core 2.0, upcoming support for new Web APIs, and more.
+- 📜 [Microsoft \- A look into the new architecture on RNW 0.76 and 0.77](https://devblogs.microsoft.com/react-native/2025-01-29-new-architecture-on-0-76-0-77/): On Windows, the New Architecture is available in preview but isn’t enabled by default yet. Newly introduced features such as Modal support only support the New Architecture.
+- 📜 [iOS Universal Links and Android App Links with Expo Router and EAS Hosting](https://expo.dev/blog/universal-and-app-links): Using web URLs for deep linking provides benefits over custom app scheme links. Easy to set up with Expo Router.
+- 📜 [An elegantly simple DOM Component use case](https://expo.dev/blog/dom-component-use-case): Useful to quickly integrate fancy web things, such as D3 charts.
+- 📜 [Using Live Activities in a React Native App](https://addjam.com/blog/2025-02-04/using-live-activities-react-native-app/)
+- 📜 [Building a BottomSheet from scratch in React Native](https://reactiive.io/articles/bottom-sheet-animation)
+- 📜 [Pre-built iOS Binaries: Reducing React Native Dev Start Time from Minutes to Seconds](https://www.monarchmoney.com/blog/pre-built-ios-binaries-reducing-react-native-dev-start-time-from-minutes-to)
+- 📜 [Supporting iOS Share Extensions & Android Intents on React Native](https://www.devas.life/supporting-ios-share-extensions-android-intents-on-react-native/)
+- 📦 [Audio API 0.4](https://github.com/software-mansion-labs/react-native-audio-api/releases/tag/0.4.0): Enables real-time waveform visualizations ([cool demo](https://x.com/sek_micha/status/1886814160735834540)).
+- 📦 [Bottom Tabs 0.8.4 \- Custom JS tabs](https://github.com/callstackincubator/react-native-bottom-tabs/releases/tag/react-native-bottom-tabs%400.8.4)
+- 📦 [Skia 1.11 \- Reconciler perf improvements](https://github.com/Shopify/react-native-skia/releases/tag/v1.11.0)
+- 📦 [Metro 0.81.1 \- Performance improvements and fixes](https://github.com/facebook/metro/releases/tag/v0.81.1)
+- 📦 [Screens 4.6 \- Important fixes](https://github.com/software-mansion/react-native-screens/releases/tag/4.6.0)
+- 📦 [Expo Open OTA \- A Go implementation of the Expo Updates protocol, designed for production](https://axelmarciano.github.io/expo-open-ota/)
+- 🎥 [Fernando Rojo \- Major 2025 Updates: Mix Blend Mode, CSS Animations, SwiftUI](https://www.youtube.com/watch?v=3V43hhMIUXE)
+- 🎥 [Dan’s Lab \- How to Create a Video Feed using Expo](https://www.youtube.com/watch?v=ym51mhxFvPQ)
+- 🎙️ [RNR 320 \- Silky Smooth Animations with Catlin Miron](https://www.reactnativeradio.com/episodes/rnr-320-silky-smooth-animations)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📜 [You should not use URLPattern to route HTTP requests on the server](https://adventures.nodeland.dev/archive/you-should-not-use-urlpattern-to-route-http/): The upcoming Node.js 23 URLPattern feature, based on regexp, is not scalable enough.
+- 📜 [From Rust to TypeScript: A New Chapter for Prisma ORM](https://www.prisma.io/blog/from-rust-to-typescript-a-new-chapter-for-prisma-orm)
+- 📦 [TypeScript 5.8 beta \- `erasableSyntaxOnly`, require(esm), dependent return type narrowing](https://devblogs.microsoft.com/typescript/announcing-typescript-5-8-beta/)
+- 📦 [ES Module Shims 2.0 \- Polyfill for native ES module features](https://guybedford.com/es-module-shims-2.0): Already supports TC39 Type Annotations stripping, letting you run TypeScript code with `erasableSyntaxOnly` natively in the browser today, similarly to Node.js\!
+- 📦 [Vite 6.1](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md#610-2025-02-05)
+- 📦 [Mentoss \- fetch() mocker for server/browser runtimes](https://humanwhocodes.com/blog/2025/01/introducing-mentoss-fetch-mocker/)
+- 🎥 [Angular: The Documentary](https://www.youtube.com/watch?v=cRC9DlH45lA)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/220/meme.jpg)](https://x.com/Steve8708/status/1886228651538264250)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/220/meme2.jpg)](https://x.com/byteab/status/1880222322071859586)
 
 See ya! 👋
