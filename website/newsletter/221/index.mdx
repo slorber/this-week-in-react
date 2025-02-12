@@ -1,6 +1,6 @@
 ---
 slug: /221
-title: "This Week In React #221: State of React, React Router, Rsbuild, ProseMirror, Redux, React Hook Form, Base UI, RSC, React Admin | AI & React Native, React Strict DOM, Polygen, Ignite, New Arch, Radon, Gesture Handler | TypeScript, Prettier, esbuild..."
+title: "This Week In React #221: State of React, React Router, Rsbuild, ProseMirror, Redux, React Hook Form, Base UI, RSC, React Admin | AI & React Native, React Strict DOM, Polygen, Ignite, New Arch, Radon, macOS, Gesture Handler | TypeScript, Prettier, esbuild..."
 authors: [cyrilbo, matthieugicquel]
 date: 02-12-2025
 unlisted: true
@@ -96,7 +96,7 @@ They’ll also show you how to **minimize reliance on Vercel’s premium feature
 
 **Building apps with AI**
 
-We try not to talk too much about LLMs in this newsletter (we guess you already hear about it more than enough 😅) but with all the announcements this week we thought it was a good time to give you an update.
+We don't talk too much about LLMs in this newsletter (we guess you already hear about it more than enough 😅) but with all the announcements this week we thought it was a good time to give you an update.
 
 The main thing: [Bolt and Expo have partnered](https://expo.dev/blog/bolt-expo-integration-announcement) to add (React-)Native mobile apps support to Bolt. Right now you can preview your AI-generated apps on the web, but you need to download the code to go further. They plan to add an integration with EAS to deploy to production in the future.
 
@@ -110,27 +110,27 @@ Some competitors also had things to announce:
 - 💸 [Codemagic - a great App Center alternative for React Native devs! 8x faster builds, CodePush, automated distribution. 1-month free trial!](https://codemagic.io/migration-from-app-center/?utm_source=newsletter&utm_medium=email&utm_campaign=app_center_this_week_react)
 - 🐦 [This is not React Native](https://x.com/mrousavy/status/1889358737930068051): Mark is working on a new UI library based based React, JSI and NitroModules but **without** React Native. It uses SwiftUI and Compose under the hood.
 - 🐦 [DeepSeek R1 running locally in a React App:](https://x.com/SzymonRybczak/status/1889412928694002004) The repo is open-sourced [here](https://github.com/callstackincubator/ai). Please note that it is highly experimental and may add up to 1GB to your app.
-- 🐦 [Evan Bacon just open-sourced an Expo AI chat app he built](https://x.com/Baconbrix/status/1889060293973827935)
-- 👀 [Production readiness and adoption of React Strict DOM](https://github.com/facebook/react-strict-dom/discussions/270): RSD is used in production by Meta.
+- 👀 [Expo Universal React Server Components + AI chat app demo](https://github.com/EvanBacon/expo-ai): Evan Bacon just open-sourced the app he demoed on various conf talks.
+- 💬 [React Strict DOM - Production readiness and adoption](https://github.com/facebook/react-strict-dom/discussions/270): Nicolas Gallagher shared an interesting update, mentioning RSD is used in production by Meta.
 - 🗓 [React Universe Conf](https://www.reactuniverseconf.com/?utm_campaign=RUC2025&utm_source=TWIRpartnership&utm_content=savethedate) \- 🇵🇱 Wrocław - 2-4 September. Call for Papers is now open! Get a 10% discount with code "TWIR".
 - 📜 [Bringing WebAssembly to React Native With Polygen](https://www.callstack.com/blog/bringing-webassembly-to-react-native-with-polygen): Polygen allows WebAssembly to run in React Native with near-native performance by compiling modules to native code, overcoming iOS JIT restrictions. This is a novel approach compared to existing solutions like react-native-webassembly, which relied on Wasm interpretation.
 - 📜 [Increase your Expo-nent power with Ignite Generators](https://expo.dev/blog/increase-your-expo-power-with-ignite-generators): Ignite is a well known React Native app boilerplate, but it can be leveraged as a generator in any React Native project, including Expo apps, to automate the creation of screens, components, and state slices.
-- 📜 [How does React Native's New Architecture affect performance?](https://dev.to/anishamalde/how-does-react-natives-new-architecture-affect-performance-1dkf): Anisha conducted a benchmark revealing performance improvements of up to 1000ms when enabling the new architecture for a React Native TV app, where performance is crucial.
+- 📜 [How does React Native's New Architecture affect performance?](https://dev.to/anishamalde/how-does-react-natives-new-architecture-affect-performance-1dkf): Anisha conducted a benchmark revealing performance improvements of up to 1000ms when enabling the New Architecture for a React Native TV app, where performance is crucial.
+- 📜 [Bridgeless Native Development](https://www.callstack.com/blog/bridgeless-native-development): Short summary of the methods used over the years to bridge native code (NativeModule, TurboModule, NitroModule).
 - 📜 [How to Profile Native Code in React Native Using Tracy](https://www.callstack.com/blog/how-to-profile-native-code-react-native-with-tracy)
 - 📜 [How to build a live activity with Expo, SwiftUI and React Native](https://christopher.engineering/en/blog/live-activity-with-react-native/)
-- 📜 [Bridgeless Native Development](https://www.callstack.com/blog/bridgeless-native-development): Short summary of the methods used over the years to bridge native code (NativeModule, TurboModule, NitroModule).
 - 📦 [Radon IDE v1.3](https://github.com/software-mansion/radon-ide/releases/tag/v1.3.0): built-in Network Inspector, Redux DevTools support, debugger improvements.
 - 📦 [React Native Gesture Handler v2.23](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.23.0): The old API will be deprecated.
 - 📦 [React Native macOS v0.77](https://github.com/microsoft/react-native-macos/releases/tag/react-native-macos%400.77.0)
-- 📦 [React Native Reanimated Carousel v4.0](https://rn-carousel.dev/migration-v4): Container Styling, Minimum Scroll Distance, Fixed Direction Scrolling, Progress Change Handling, Enhanced Pagination Components, Improved Web Support
+- 📦 [React Native Reanimated Carousel v4.0](https://rn-carousel.dev/migration-v4): Container Styling, Minimum Scroll Distance, Fixed Direction Scrolling, Progress Change Handling, Enhanced Pagination Components, Improved Web Support.
 - 🎙️ [RNR 321 \- Expo DOM with Evan Bacon](https://www.reactnativeradio.com/episodes/rnr-321-expo-dom-with-evan-bacon)
 
 ---
 
 ## 🔀 Other {#other}
 
-- 👀 [require(esm) has been backported to Node.js 20](https://github.com/nodejs/node/pull/56927)
-- 📜 [TypeScript: the \`satisfies\` operator](https://2ality.com/2025/02/satisfies-operator.html): Confirming object shape correctness without altering types, validating optional properties in objects, checking the structure of enum-like objects, ensuring proper object keys for APIs and more…
+- 👀 [`require(esm)` has been backported to Node.js 20](https://github.com/nodejs/node/pull/56927)
+- 📜 [TypeScript: the `satisfies` operator](https://2ality.com/2025/02/satisfies-operator.html): Confirming object shape correctness without altering types, validating optional properties in objects, checking the structure of enum-like objects, ensuring proper object keys for APIs and more…
 - 📜 [There are a lot of ways to break up long tasks in JavaScript](https://macarthur.me/posts/long-tasks/)
 - 📜 [Style-observer: JS to observe CSS property changes, for reals](https://lea.verou.me/blog/2025/style-observer/)
 - 📜 [Optimizing Images for Web Performance](https://frontendmasters.com/blog/optimizing-images-for-web-performance/)
