@@ -1,18 +1,22 @@
 ---
 slug: /221
-title: "This Week In React #221: ..."
-authors: [slorber]
+title: "This Week In React #221: State of React, React Router, rsbuild, React Admin, ProseMirror, Redux, Vercel, React Hook Form, Base UI, RSC | AI & React Native, React Strict DOM, Polygen, Ignite, New architecture, Radon, Gesture Handler | TypeScript, Prettier, esbuild..."
+authors: [cyrilbo, matthieugicquel]
 date: 02-12-2025
 unlisted: true
 ---
 
 Hi everyone!
 
-App.js CFP intro mention
+Cyril and Matthieu from [Theodo Apps](https://apps.theodo.com/en?utm_source=thisweekinreact) here 👋, standing in for Seb to bring you the latest news from React and React Native!
 
-One more thing - I forgot to include UTM for the links, would it be possible to switch the ones currently in the ad and title for this one: https://pagepro.co/nextjs-hosting-cost-optimization?utm_source=newsletter&utm_medium=email&utm_campaign=this-week-in-react-expert-session&utm_id=this-week-in-react
+This week we’ve been carefully reading the State of React results, and also found quite a few interesting articles. Things have been quieter when it comes to new releases.
+
+App.js, the biggest React Native conference, will take place between May 28th and May 30th. The CFP is currently open, you can apply from [their website](https://appjs.co). See you in Kraków?
 
 <Todo />
+
+One more thing - I forgot to include UTM for the links, would it be possible to switch the ones currently in the ad and title for this one: https://pagepro.co/nextjs-hosting-cost-optimization?utm_source=newsletter&utm_medium=email&utm_campaign=this-week-in-react-expert-session&utm_id=this-week-in-react
 
 - 🗓 [React Universe Conf](https://www.reactuniverseconf.com/?utm_campaign=RUC2025&utm_source=TWIRpartnership&utm_content=savethedate) \- 🇵🇱 Wrocław - 2-4 September. Call for Papers is now open! Get a 10% discount with code "TWIR"
 
@@ -32,9 +36,37 @@ import Support from "../_support.mdx";
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![State of React 2024](/emails/issues/221/state-of-react.png)](https://2024.stateofreact.com)
+
+**[State of React 2024](https://2024.stateofreact.com)**
+
+The results of State of React 2024 are out. It is a gold mine of information and we can’t possibly talk about everything here but here are a few highlights:
+
+- Of the “new” React features, Server components are the most popular with 40% of the ~7000 respondents having “used it”, probably thanks to Next.js…
+- Have you heard about React’s Taint API? It looks like 80% of React devs have not, which is understandable since it’s experimental.
+- There’s not that much movement in the \#1 spot: Next.js, TanStack Query, Axios, Jest, and Zod are still the most frequently used.
+- A few rising stars: Zustand and Vitest got more users, TanStack Start is \#1 in interest even though almost no one has used it yet.
+
+Seb wrote the conclusion of the survey, make sure to check it out 🙂.
+
+---
 
 - 💸 [Meet Harmony - An open source library for composing consistent and highly performant platforms from independent business features](https://bit.dev/blog/meet-harmony-a-practical-solution-for-composability?utm_source=This-Week-In-React&utm_id=7&utm_medium=newsletter)
+- 👀 [@rsbuild/plugin-react-router](https://github.com/rspack-contrib/rsbuild-plugin-react-router): This is not yet on npm, but may soon be a faster alternative to Vite for bundling React Router apps in framework mode.
+- 📜 [How React Router works under the hood](https://tigerabrodi.blog/how-react-router-works-under-the-hood): From initial request to hydration, client-side navigation and actions.
+- 📜 [Handling Relationships in React Admin](https://marmelab.com/blog/2025/02/06/handling-relationships-in-react-admin.html): The included components (`<ReferenceField>` and its friends) usually do what you need, but this also explains how to build custom ones.
+- 📜 [Why I rebuilt ProseMirror’s renderer in React](https://smoores.dev/post/why_i_rebuilt_prosemirror_view/): Prosemirror (a text editor) manages its own state and virtual DOM, and it did not play well with React. This is a deep dive on the issues it caused, and the solution: using React directly instead of trying to “bridge the gap”.
+- 📜 [Promises across the void: Streaming data with RSC](https://edspencer.net/2024/7/12/promises-across-the-void-react-server-components): React can send not-yet resolved promises from the server and finish awaiting them on the client. This article from a few months ago explains how this works.
+- 📜 [What Do We Do with You, Old React?](https://www.manuelsanchezdev.com/blog/what-to-do-with-old-react-upgrading-to-modern-react): Tips on upgrading codebases that still use class components and “old” Redux.
+- 📜 [We Replaced Our React Frontend with Go and WebAssembly](https://dagger.io/blog/replaced-react-with-go): They explain why this was the right choice for them, but probably don’t do this at home.
+- 📜 [The Future of Ionic’s Commercial Products](https://ionic.io/blog/important-announcement-the-future-of-ionics-commercial-products): Ionic is discontinuing sales and support for its commercial products, including Appflow and enterprise offerings.
+- 📜 [Redux Saga Is Hard Until You Look Under The Hood](https://www.reactsquad.io/blog/redux-saga-is-hard-until-you-look-under-the-hood)
+- 📜 [Master Redux Action Best Practices & Make Debugging Easy](https://janhesters.com/blog/master-redux-action-best-practices-and-make-debugging-easy)
+- 📜 [Vercel \- Faster deploy times for large builds](https://vercel.com/changelog/faster-deploy-times-for-large-builds)
+- 📦 [React Hook Form resolvers 4.0](https://github.com/react-hook-form/resolvers/releases/tag/v4.0.0): it adds a [standard-schema](https://github.com/standard-schema/standard-schema) resolver so you can switch easily between validation libraries that conform to the standard-schema specification.
+- 📦 [Base UI v1.0.0 alpha 6](https://github.com/mui/base-ui/releases/tag/v1.0.0-alpha.6): According to State of React, MUI is a very popular component library. Base UI, a collection of unstyled components by the same people, is making its way through the alpha phase.
+- 🎥 [Jack Herrington \- Proof That React With RSCs is 2X Faster\!](https://www.youtube.com/watch?v=AJvbnNFHx0A)
+- 🎙️ [Rocket Ship 60 \- Module Federation, RSCs & Universal Apps with Jack Herrington](https://share.transistor.fm/s/144c4947)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -48,22 +80,57 @@ import Support from "../_support.mdx";
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+
+[![Bolt x Expo](/emails/issues/221/bolt-expo.jpg)](https://expo.dev/blog/bolt-expo-integration-announcement)
+
+**Building apps with AI**
+
+We try not to talk too much about LLMs in this newsletter (we guess you already hear about it more than enough 😅) but with all the announcements this week we thought it was a good time to give you an update.
+
+The main thing: [Bolt and Expo have partnered](https://expo.dev/blog/bolt-expo-integration-announcement) to add (React-)Native mobile apps support to Bolt. Right now you can preview your AI-generated apps on the web, but you need to download the code to go further. They plan to add an integration with EAS to deploy to production in the future.
+
+Some competitors also had things to announce:
+
+- There's now an official Expo template in Replit, and [a demo video you can watch](https://www.youtube.com/watch?v=mTm_dCF53qk). Replit has an app, so you can build apps from an app.
+- A startup called a0 [launched a v0-like service](https://a0.dev) to generate RN apps.
+
+---
 
 - 💸 [Codemagic - a great App Center alternative for React Native devs! 8x faster builds, CodePush, automated distribution. 1-month free trial!](https://codemagic.io/migration-from-app-center/?utm_source=newsletter&utm_medium=email&utm_campaign=app_center_this_week_react)
+- 🐦 [This is not React Native](https://x.com/mrousavy/status/1889358737930068051): Mark is working on a new UI library based based React, JSI and NitroModules but **without** React Native. It uses SwiftUI and Compose under the hood.
+- 🐦 [DeepSeek R1 running locally in a React App:](https://x.com/SzymonRybczak/status/1889412928694002004) The repo is open-sourced [here](https://github.com/callstackincubator/ai). Please note that it is highly experimental and may add up to 1GB to your app.
+- 🐦 [Evan Bacon just open-sourced an Expo AI chat app he built](https://x.com/Baconbrix/status/1889060293973827935)
+- 👀 [Production readiness and adoption of React Strict DOM](https://github.com/facebook/react-strict-dom/discussions/270): RSD is used in production by Meta.
+- 📜 [Bringing WebAssembly to React Native With Polygen](https://www.callstack.com/blog/bringing-webassembly-to-react-native-with-polygen): Polygen allows WebAssembly to run in React Native with near-native performance by compiling modules to native code, overcoming iOS JIT restrictions. This is a novel approach compared to existing solutions like react-native-webassembly, which relied on Wasm interpretation.
+- 📜 [Increase your Expo-nent power with Ignite Generators](https://expo.dev/blog/increase-your-expo-power-with-ignite-generators): Ignite is a well known React Native app boilerplate, but it can be leveraged as a generator in any React Native project, including Expo apps, to automate the creation of screens, components, and state slices.
+- 📜 [How does React Native's New Architecture affect performance?](https://dev.to/anishamalde/how-does-react-natives-new-architecture-affect-performance-1dkf): Anisha conducted a benchmark revealing performance improvements of up to 1000ms when enabling the new architecture for a React Native TV app, where performance is crucial.
+- 📜 [How to Profile Native Code in React Native Using Tracy](https://www.callstack.com/blog/how-to-profile-native-code-react-native-with-tracy)
+- 📜 [How to build a live activity with Expo, SwiftUI and React Native](https://christopher.engineering/en/blog/live-activity-with-react-native/)
+- 📜 [Bridgeless Native Development](https://www.callstack.com/blog/bridgeless-native-development): Short summary of the methods used over the years to bridge native code (NativeModule, TurboModule, NitroModule).
+- 📦 [Radon IDE v1.3](https://github.com/software-mansion/radon-ide/releases/tag/v1.3.0): built-in Network Inspector, Redux DevTools support, debugger improvements.
+- 📦 [React Native Gesture Handler v2.23](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.23.0): The old API will be deprecated.
+- 📦 [React Native macOS v0.77](https://github.com/microsoft/react-native-macos/releases/tag/react-native-macos%400.77.0)
+- 📦 [React Native Reanimated Carousel v4.0](https://rn-carousel.dev/migration-v4): Container Styling, Minimum Scroll Distance, Fixed Direction Scrolling, Progress Change Handling, Enhanced Pagination Components, Improved Web Support
+- 🎙️ [RNR 321 \- Expo DOM with Evan Bacon](https://www.reactnativeradio.com/episodes/rnr-321-expo-dom-with-evan-bacon)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [require(esm) has been backported to Node.js 20](https://github.com/nodejs/node/pull/56927)
+- 📜 [TypeScript: the \`satisfies\` operator](https://2ality.com/2025/02/satisfies-operator.html): Confirming object shape correctness without altering types, validating optional properties in objects, checking the structure of enum-like objects, ensuring proper object keys for APIs and more…
+- 📜 [Vercel \- New execution duration limit for Edge Functions](https://vercel.com/changelog/new-execution-duration-limit-for-edge-functions): Streaming responses will be allowed for up to 300 seconds
+- 📜 [There are a lot of ways to break up long tasks in JavaScript](https://macarthur.me/posts/long-tasks/)
+- 📜 [Style-observer: JS to observe CSS property changes, for reals](https://lea.verou.me/blog/2025/style-observer/)
+- 📜 [Optimizing Images for Web Performance](https://frontendmasters.com/blog/optimizing-images-for-web-performance/)
+- 📜 [CSS Custom Functions experiments in Chrome Canary](https://www.bram.us/2025/02/09/css-custom-functions-teaser/)
+- 📦 [Prettier v3.5](https://prettier.io/blog/2025/02/09/3.5.0): New objectWrap option, experimentalOperatorPosition option and TS config file support
+- 📦 [ESBuild v0.25](https://github.com/evanw/esbuild/releases/tag/v0.25.0): introduces backwards-incompatible changes
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![React npm screenshot with downdloads at 0](/emails/issues/221/meme.jpg)](https://x.com/andrii_sherman/status/1887492134426558849)
 
 See ya! 👋
