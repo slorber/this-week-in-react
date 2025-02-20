@@ -49,7 +49,7 @@ With [PropelAuth](https://www.propelauth.com/?utm_source=newsletter&utm_campaign
 
 Long overdue, CRA has received the latest React 19 fixes and is now officially deprecated. This article explains the limits of the CRA and build tools regarding routing, waterfalls, code splitting, and more. The React team encourages us to adopt a framework like Next.js, React Router, or Expo to address these issues. However, you can still [build a React app from scratch](https://react.dev/learn/build-a-react-app-from-scratch) using Vite, Parcel, Rsbuild, or other modern build tools.
 
-The initial announcement sparked heated debates on X and GitHub, mainly because it overemphasized frameworks at the expense of build tools like Vite. It was [soon updated](https://github.com/reactjs/react.dev/pull/7624) to address these concerns. All this also led to potential collaboration opportunities between [Evan You (Vite) and the React team](https://github.com/facebook/react/pull/31768#issuecomment-2666856223) to work together on an opinionated "official" way to integrate with Vite, with a commitment to maintain this integration over time in the React repository.
+The initial announcement sparked heated debates on X and GitHub, mainly because it overemphasized frameworks at the expense of build tools like Vite. It was [soon updated](https://github.com/reactjs/react.dev/pull/7624) to address these concerns. All this also led to potential collaboration opportunities between [Evan You (Vite) and the React team](https://github.com/facebook/react/pull/31768#issuecomment-2666856223) to work together on an opinionated "official" way to integrate with Vite with React Server Components, with a commitment to maintain this integration over time in the React repository.
 
 Related news:
 
@@ -132,7 +132,7 @@ React 19 itself unlocks many cool things:
 
 - 💸 [Codemagic - a great App Center alternative for React Native devs! 8x faster builds, CodePush, automated distribution. 1-month free trial!](https://codemagic.io/migration-from-app-center/?utm_source=newsletter&utm_medium=email&utm_campaign=app_center_this_week_react)
 - 📣 [Expo support for React Native 0.78](https://expo.dev/changelog/react-native-78): Due to the React 19 upgrade, v0.78 will not be supported in SDK52, but will be in the canary version. SDK 53 is scheduled for this spring and will likely upgrade directly to 0.79.
-- 👀 [Gradle Plugin PR \- Add option to disable bundle compression](https://github.com/facebook/react-native/pull/49449): Marc Rousavy proposing a `react.enableBundleCompression=true` property. Turning it off could greatly optimize Android app startup time, but increases the app install size.
+- 👀 [Gradle Plugin PR \- Add option to disable bundle compression](https://github.com/facebook/react-native/pull/49449): Marc Rousavy proposing a `react.enableBundleCompression` Gradle property. Turning it off could greatly optimize Android app startup time became (and is now the new default), but it also increases the app install size.
 - 💬 [Making the JitPack Repository optional](https://github.com/react-native-community/discussions-and-proposals/discussions/877): Android apps With v0.78, Android apps have a new `react.includeJitpackRepository=true` Gradle property. Turning it off could improve supply chain security, and may become the default in the future.
 - 📜 [Checkbox Interactions \- The beauty of Layout Animations](https://reactiive.io/articles/checkbox-interactions)
 - 📜 [Universal App with Expo](https://www.premieroctet.com/blog/en/universal-app-with-expo)
