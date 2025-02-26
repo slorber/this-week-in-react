@@ -41,9 +41,32 @@ With 7 years in production and 1 million daily users, react-admin is a sure bet.
 
 ## ⚛️ React {#react}
 
-<Todo />
-
 - 💸 [AI coding benchmarks for backends](https://convex.link/thisweekbench)
+- 👀 [React Explorer \- Turns your React site into an interactive visualization](https://www.react-explorer.com/)
+- 📖 [Deno docs \- Build an app with Tanstack and Deno](https://docs.deno.com/examples/tanstack_tutorial/)
+- 📜 [How Preply improved INP on a Next.js application (without React Server Components and App Router)](https://medium.com/preply-engineering/how-preply-improved-inp-on-a-next-js-application-without-react-server-components-and-app-router-491713149875): A deep dive into this Core Web Vital metrics and various things Preply tried to improve it, using a data-driven approach.
+- 📜 [Avoiding Server Component Waterfall Fetching with React 19 cache()](https://aurorascharff.no/posts/avoiding-server-component-waterfall-fetching-with-react-19-cache/): You can use `React.cache()` to deduplicate requests and preload data as soon as possible to avoid request waterfalls. This works but creates an implicit coupling. I’d prefer a more explicit model, hoisting all requests and passing promises down as props.
+- 📜 [Armin's TanStack Router Notes](https://gist.github.com/mitsuhiko/555b45f020a8d7e389516b51f6d03534): Documents challenges encountered while trying to determine whether Sentry could adopt TanStack Router.
+- 📜 [There’s no such thing as an isomorphic layout effect](https://smoores.dev/post/no_such_thing_isomorphic_layout_effect/): A possible interpretation of the story behind the `useIsomorphicLayoutEffect` pattern.
+- 📜 [Debouncing in React Router v7](https://programmingarehard.com/2025/02/24/debouncing-in-react-router-v7.html/): Interesting technique relying on `clientLoader`
+- 📜 [How to Download a file from a React Router route](https://sergiodxa.com/tutorials/download-a-file-from-a-react-router-route): With/without dynamic params, with/without JS.
+- 📜 [Shadcn Registry: A Better Way to Manage Your UI Components](https://ouassim.tech/notes/shadcn-registry-a-better-way-to-manage-your-ui-components/)
+- 📜 [Throwing vs. Returning Redirects in React Router](https://sergiodxa.com/articles/throwing-vs-returning-redirects-in-react-router)
+- 📜 [Functional programming in React](https://www.56kode.com/posts/level-up-react-functional-programming-in-react/)
+- 📜 [React Performance: Common Problems & Their Solutions](https://blog.sentry.io/react-js-performance-guide/)
+- 📜 [Making Next.js Apps Faster: A Practical Performance Guide Beyond Next.js](https://tigerabrodi.blog/making-nextjs-apps-faster-a-practical-performance-guide-beyond-nextjs)
+- 📜 [Progressive forms with server actions](https://waku.gg/blog/progressive-forms)
+- 📦 [Create TanStack Router App 0.4 \- Add-ons, SolidJS support, MCP support](https://github.com/TanStack/create-tsrouter-app/releases/tag/v0.4.0)
+- 📦 [React Scan 0.2 \- Slowdown notifications, explanations and pre-generated prompts to fix them](https://github.com/aidenybai/react-scan/releases/tag/v0.2.0)
+- 📦 [React Scan Chrome Extension](https://github.com/jantimon/chrome-react-scan-inspector)
+- 📦 [Storybook 8.6 \- Storybook Test improvements](https://github.com/storybookjs/storybook/releases/tag/v8.6.0)
+- 📦 [React Admin 5.6 \- Black & white theme](https://github.com/marmelab/react-admin/releases/tag/v5.6.0)
+- 📦 [Bun 1.2.3](https://bun.sh/blog/bun-v1.2.3)
+- 🔨 [Laravel Starter Kits](https://laravel.com/starter-kits): Include a new official React 19 \+ Inertia 2 starter kit.
+- 🔨 [Remix Epic Stack update \- Passkeys, Helmets, and more\!](https://github.com/epicweb-dev/epic-stack/discussions/937)
+- 🎥 [Jack Herrington \- Fix Your Slow React App With React-Scan](https://www.youtube.com/watch?v=3EnathFYgz8)
+- 🎥 [Syntax \- Should You Use Signals with React?](https://www.youtube.com/watch?v=Diy4XRSFTiA)
+- 🎥 [Cosden \- Combining React Query With Server Components (Next.js)](https://www.youtube.com/watch?v=XcUpTPbY4Wg)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -67,22 +90,57 @@ This [post](https://www.meticulous.ai/blog/lessons-from-a-decade?utm_source=this
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[State of React Native 2024 \- Survey Results](https://results.stateofreactnative.com/)
+
+The survey results are out and I’m super proud that among all the React Native resources, this newsletter got the highest positivity score. Thank you ❤️!
+
+I can’t summarize the whole survey, but here are a few things I discovered:
+
+- 61% of RN devs came from React (web)
+- iOS and Android remain the most common RN targets, but the Web also has a 22% market share
+- Libraries with the most positive sentiment are: Reanimated, TanStack Query, Zustand, React Navigation, Expo Router, Skia.
+- No clear winner in terms of styling. Devs like the built-in APIs such as StyleSheet and inline styles.
+
+---
 
 - 💸 [PostHog - How we built mobile replay (and why it took so long)](https://dub.link/twir-feb26)
+- 📜 [How to build Custom Tabs with Expo Router UI](https://expo.dev/blog/how-to-build-custom-tabs-with-expo-router-ui)
+- 📦 [Nitro 0.23 \- Nitro Views](https://github.com/mrousavy/nitro/releases/tag/v0.23.0): A new convenient and perfomant way to integrate native Swift / Kotlin views into React Native apps. Requires 0.78+ and New Arch.
+- 📦 [Reanimated 3.17 \- Edge-to-Edge, LAB color space, animate `boxShadow`](https://github.com/software-mansion/react-native-reanimated/releases/tag/3.17.0): Support for RN 0.78 coming in 3.17.1 soon.
+- 📦 [React Native Boost \- A powerful Babel plugin that automatically optimizes React Native apps](https://github.com/kuatsu/react-native-boost): Apply safe AST micro-optimizations to boost performance, like using faster native Text/View components instead of the RN JS wrappers.
+- 📦 [AWS-LibCrypto](https://github.com/OP-Engineering/op-aws-lc): RN bindings to Rust AWS lib, with FIPS certification from the US government.
+- 📦 [Screens 4.8 \- Android 16 KB page size](https://github.com/software-mansion/react-native-screens/releases/tag/4.8.0)
+- 📦 [Screens 4.9 \- RN 0.78](https://github.com/software-mansion/react-native-screens/releases/tag/4.9.0)
+- 📦 [Gesture Handler 2.24 \- RN 0.78, Android 16 KB page size support](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.24.0)
+- 📦 [QuickPush \- A lightweight macOS menu bar utility for quickly testing Expo push notifications](https://github.com/betomoedano/quick-push)
+- 📦 [Metro 0.81.2 \- Package exports to clearly define public API surface, perf, experimental flags](https://github.com/facebook/metro/releases/tag/v0.81.2)
+- 🔨 [VSCode Extension for React Native Directory](https://marketplace.visualstudio.com/items?itemName=react-native-directory.vscode-react-native-directory): Find and install the right RND packages directly from your IDE.
+- 🎥 [Simon Grimm \- Your own iOS Widget in 12 Minutes](https://www.youtube.com/watch?v=00VwmqqXDik)
+- 🎙️ [RNR 322 \- Building React Native Libraries With Builder Bob](https://infinite.red/react-native-radio/rnr-322-building-react-native-libraries-with-builder-bob-6g-7gnty)
+- 🎙️ [Rocket Ship 61 \- Shipping Successful AI Apps with Your Average Tech Bro](https://share.transistor.fm/s/fde1972f)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [Chromium \- Intent to ship Observables API in Chrome 135](https://groups.google.com/a/chromium.org/g/blink-dev/c/stxSgTgMHog)
+- 🎮 [Anchoreum \- A game for learning CSS Anchor Positioning](https://anchoreum.com/): I didn’t expect Anchor Positioning to be as powerful. It’s in Interop 2025 and likely to land in all browsers this year, so now is a great time to learn\!
+- 📜 [TC39 Advances 3 Proposals to Stage 4: RegExp Escaping, Float16Array, and Redeclarable global eval vars](https://socket.dev/blog/tc39-advances-3-proposals-to-stage-4-regexp-escaping-float16array-and-redeclarable-global-eval)
+- 📜 [Extreme Server-Side Rendering](https://www.scd31.com/posts/extreme-server-side-rendering): Keeping the connection alive, a server can stream updates continuously to the client. The author implemented a Flappy Bird game relying on this technique, without any JS.
+- 📜 [Testing Web Authentication (WebAuthn)](https://www.heal.dev/docs/blog/testing-webauthn): TIL you can leverage Chrome DevTools features in Playwright.
+- 📜 [Speeding up the JavaScript ecosystem \- Rust and JavaScript Plugins](https://marvinh.dev/blog/speeding-up-javascript-ecosystem-part-11/)
+- 📜 [A Million Little Secrets \- Deconstructing the “Whimsical Animations” landing page](https://www.joshwcomeau.com/blog/whimsical-animations/)
+- 📜 [Subverting control with weak references](https://jlongster.com/subverting-control-weak-refs)
+- 🎥 [TypeScript types can run DOOM](https://www.youtube.com/watch?v=0mCsluv5FXA): Just 🤯.
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/223/meme.jpg)](https://bsky.app/profile/sebastienlorber.com/post/3lijm77wxdk2b)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/223/meme2.jpg)](https://x.com/schlimmson/status/1892257891870265830)
+
+[![alt](/emails/issues/223/meme3.jpg)](https://x.com/cramforce/status/1894781544851783754)
 
 See ya! 👋
