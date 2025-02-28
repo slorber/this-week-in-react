@@ -33,6 +33,7 @@ export default function middleware(request: Request, context: RequestContext) {
   }
 
   if (isBlacklistedIp(ip)) {
+    console.log(`[SPAMMER] Blacklisted ip ${ip}`);
     return new Response("Spammer go to hell", {
       status: 200,
     });
