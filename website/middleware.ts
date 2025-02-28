@@ -9,7 +9,7 @@ export const config = {
 };
 
 const BlacklistedIps = [
-  "86.77.184.19", // TODO remove, it's me
+  // "86.77.184.19", // remove, it's me
 
   // Ips from Feb 2025 fake subscriber attacks
   "134.202.152",
