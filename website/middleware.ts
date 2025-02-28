@@ -23,6 +23,7 @@ function isBlacklistedIp(ip: string) {
   return BlacklistedIps.some((blacklistedIp) => ip.startsWith(blacklistedIp));
 }
 
+// See https://vercel.com/docs/functions/edge-middleware/middleware-api
 export default function middleware(request: Request, context: RequestContext) {
   const { country } = geolocation(request);
   const ip = ipAddress(request);
