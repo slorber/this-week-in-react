@@ -29,7 +29,7 @@ export const AllQuotes = {
     theo: (
       <Quote
         url="https://www.youtube.com/clip/UgkxDdNASo6xNS710ODcjMx0WW4HtTxIYbrA"
-        handle="t3dotgg"
+        handle="theo"
         github="t3dotgg"
         name="Theo Browne"
         job="Founder of ping.gg - Youtuber"
