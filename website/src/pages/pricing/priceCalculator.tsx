@@ -85,11 +85,8 @@ export default function PriceCalculator(): ReactNode {
       <div>
         {createSlotLine("1st sponsor slots", "main")}
         {createSlotLine("2nd sponsor slots", "second")}
-        {createSlotLine("Quick Links React slots", "quickLinkReact")}
-        {createSlotLine(
-          "Quick Links React-Native slots",
-          "quickLinkReactNative"
-        )}
+        {createSlotLine("React Link slots", "quickLinkReact")}
+        {createSlotLine("React Native Link slots", "quickLinkReactNative")}
       </div>
 
       <div>

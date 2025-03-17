@@ -224,11 +224,11 @@ export function SponsoringTabsQuickLinkSponsor() {
         <SponsoringHeader />
         <ul>
           <li>
-            <b>⚛️ 4 Quick Links - React section</b>
+            <b>⚛️ 4 * React Links</b>
             <>: {Prices.quickLinkReact.x4}€</>
           </li>
           <li>
-            <b>📱 4 Quick Links - React-Native section</b>
+            <b>📱 4 * React Native Links</b>
             <>{" " + Prices.quickLinkReactNative.x4}€</>
           </li>
         </ul>
