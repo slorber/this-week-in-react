@@ -36,12 +36,40 @@ It covers topics like why deadlines suck, non-obvious behaviors that will kill y
 
 ## ⚛️ React {#react}
 
+[![Parcel v2.14.0](/emails/issues/226/parcel.jpg)](https://parceljs.org/blog/v2-14-0/)
+
+[**Parcel v2.14.0**](https://parceljs.org/blog/v2-14-0/)
+
+Parcel is an interesting thing: it’s a very robust and feature-complete bundler, but it’s not used/supported by any major React framework. It doesn’t prevent it from moving forward, with v2.14.0 adding a few big features:
+
+- Server Components with client, server, and static rendering
+- Integrated MDX support (using the rust lib `mdx-rs`)
+- A `create-parcel` CLI that can be a replacement for `create-react-app`
+- A new React error overlay
+
+If you’re “building your own framework” or have a niche use case, all this makes parcel even more attractive.
+
+---
+
 - 💸 [Convex launched an MCP Server](https://convex.link/thisweekmcp)
 - 💸 [VS Code extension: Get React component usage insights in VS Code](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-quick-link-mar-2025)
 - 🗓 [StrapiConf](https://conf.strapi.io/?utm_source=thisweekinreact) - 🇫🇷 Paris - 13 May. Discover the full lineup : Shruti Kapoor, Quentin de Quelen, Sebastien Chopin! And get a 10% discount with code "TWIR”
 - 🗓 [Future Frontend](https://futurefrontend.com/?utm_source=thisweekinreact) \- 🇫🇮 Espoo - 26-28 May. Web development/design and AI meet on a single track. Secure your spot today with a 10% discount using code "TWIR”
+- 🐦 [Support for streaming coming to React Query](https://bsky.app/profile/tkdodo.eu/post/3lkiuj7362k2a)
+- 🐦 [A shadcn-ui demo app that shadcn built to test tailwind v4](https://x.com/shadcn/status/1901708807434314186)
+- 📜 [Live Mode](https://www.openstatus.dev/blog/live-mode-infinite-query): Live data updates in React with TanStack's Infinite Queries.
+- 📜 [How we migrated MUI X to React 19](https://mui.com/blog/react-19-update/): They needed to maintain compatibility with React 18 even though there are a few breaking changes in React 19 (with refs and StrictMode).
+- 📜 [Writing static websites with Vite and React](https://blog.carlosn.com.br/post/writing-static-websites-with-vite-and-react/): The author describes how the experimental `vite-ssg-react` package he’s working on works, and what he plans for the future.
+- 📜 [SSR Deep Dive for React Developers](https://www.developerway.com/posts/ssr-deep-dive-for-react-developers): Your framework probably handles SSR for you, but you’ll learn how to implement it yourself, and how it works along the way
+- 📜 [Common React libraries architecture](https://www.felgus.dev/blog/common-react-lib-architecture#react-19)
+- 📦 [React Router v7.4.0](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v740)
+- 📦 [React Scan v0.3.0](https://github.com/aidenybai/react-scan/releases/tag/v0.3.0)
+- 📦 [TanStack Form v1.1.0](https://github.com/TanStack/form/releases/tag/v1.1.0)
+- 🎥 [Theo \- t3․gg \- Tanner just fixed forms (I'm so hyped)](https://www.youtube.com/watch?v=aezimBnSJqY)
+- 🎥 [Epic Web Dev \- Upgrading React Router](https://www.epicweb.dev/tips/upgrading-react-router)
+- 🎥 [Web Dev Simplified \- Next.js Finally Fixed Caching](https://www.youtube.com/watch?v=nHnw3pusFXw)
 
-<SubscribeFormEmbed placement="middle" />
+  <SubscribeFormEmbed placement="middle" />
 
 ---
 
@@ -51,7 +79,7 @@ It covers topics like why deadlines suck, non-obvious behaviors that will kill y
 
 **[Tests are dead - Meticulous is here](https://www.meticulous.ai?utm_source=thisweekinreact&utm_campaign=mar19th)**
 
-Meticulous creates and maintains an exhaustive suite of e2e ui tests with **zero** developer effort. 
+Meticulous creates and maintains an exhaustive suite of e2e ui tests with **zero** developer effort.
 
 Dropbox, Bilt Rewards, Lattice and hundreds of engineering organizations rely on Meticulous for their frontend testing.
 
@@ -63,22 +91,49 @@ This [post](https://www.meticulous.ai/blog/lessons-from-a-decade?utm_source=this
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![React Native Worklets RFC](/emails/issues/226/worklets.jpg)](https://github.com/software-mansion/react-native-reanimated/discussions/7264)
+
+[**React Native Worklets RFC**](https://github.com/software-mansion/react-native-reanimated/discussions/7264)
+
+React Native Worklets is a new library extracted from Reanimated that enables true multithreading in React Native. It lets you run JavaScript code on multiple runtimes. A new memory model introduces `Serializables`, `Shareables`, and `Synchronizables` to handle data across runtimes.
+
+By decoupling multithreading from animations, Reanimated becomes leaner, which is especially beneficial for web apps aiming for smaller bundle sizes. At the same time, developers can now use multithreading for non-UI tasks like async storage, database operations, real-time audio processing, or AI-powered computations — without depending on an animation library.
+
+---
 
 - 💸 [PostHog - How to set up a React Native remote config (with Expo Router)](https://dub.link/twir-mar19-rn)
+- 🐦 [React Native in Native apps: strategies and blockers](https://x.com/_atlj/status/1901990291306873047)
+- 🐦 [React Native Bottom Tabs integrate seamlessly with other native UI elements](https://x.com/o_kwasniewski/status/1884537940736393426)
+- 🐦 [expo/ui will launch with expo SDK 53](https://x.com/aleqsio/status/1902034184920584538): It will include fully native input components, iOS form sections, context menus and iOS previews.
+- 🐦 [React Server Functions in Expo Router](https://x.com/Baconbrix/status/1900547469374574966)
+- 📜 [We’re Building a New React Native Framework](https://www.callstack.com/blog/were-building-a-new-react-native-framework): Michał from callstack unveiled features of their React Native framework targeting large mobile teams, emphasizing fast native build caching. It's still not open sourced yet.
+- 📜 [FlatList Optimization: Avoid Re-Rendering When Adding or Removing Items](https://brainsandbeards.com/blog/2025-dont-rerender-new-flatlist-items/)
+- 📖 [Using push notifications \- Expo Documentation](https://docs.expo.dev/guides/using-push-notifications-services/): Fresh reminder on what services are available to implement push notifications in an Expo app.
+- 📖 [Ultimate Guide to React Native Optimization 2025](https://www.callstack.com/ebook/the-ultimate-guide-to-react-native-optimization)
+- 📖 [RevenueCat State of Subscription Apps 2025](https://www.revenuecat.com/state-of-subscription-apps-2025/): Cross-platform subscription apps have better performances in retention and monetization compared to native apps. The top-performing ones excel by optimizing onboarding, surfacing paywalls early, and leveraging hybrid monetization.
+- 📦 [Expo BackgroundTask Beta](https://docs.expo.dev/versions/latest/sdk/background-task/)
+- 📦 [create-react-native-library v0.48: Add template for nitro modules](https://github.com/callstack/react-native-builder-bob/releases/tag/create-react-native-library%400.48.0)
+- 📦 [Galeria v1.1: fix new architecture issues, support for edge-to-edge](https://github.com/nandorojo/galeria/releases/tag/v1.1.0)
+- 🎙️ [RNR 325 \- Legend List with Jay Meistrich](https://infinite.red/react-native-radio/rnr-325-legend-list-with-jay-meistrich)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 🐦 [Deno will likely integrate tsgo](https://x.com/rough__sea/status/1900744510453559762)
+- 📜 [Node.js Launches Official Community Space on Discord](https://nodejs.org/en/blog/announcements/official-discord-launch-announcement)
+- 📜 [Implications of Global Privacy Control](https://developer.mozilla.org/en-US/blog/global-privacy-control/)
+- 📜 [Support for CSS and Baseline has shipped in ESLint](https://web.dev/blog/eslint-baseline-integration?hl=en)
+- 📦 [Oxc Minifier Alpha](https://oxc.rs/blog/2025-03-13-minifier-alpha): A new minifier that already outperform esbuild and is used with Rolldown, which aims to become the next default bundler for Vite.
+- 📦 [Oxlint Beta](https://oxc.rs/blog/2025-03-15-oxlint-beta): It features over 500 built-in linting rules with significant performance boosts, allowing small to medium projects to fully replace ESLint. ESLint plugin & custom rules support should come in the next major release.
+- 📦 [Astro v5.5](https://astro.build/blog/astro-550/)
+- 📦 [Valibot v1.0](https://valibot.dev/blog/valibot-v1-the-1-kb-schema-library/)
+- 🎥 [Microsoft goes nuclear on TypeScript codebase](https://www.youtube.com/watch?v=PQ2WjtaPfXU)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![Rewrite TS in Rust](/emails/issues/226/ts-go.jpg)](https://x.com/IroncladDev/status/1899870309152342367)
 
 See ya! 👋
