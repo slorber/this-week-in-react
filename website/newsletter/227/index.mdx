@@ -43,7 +43,9 @@ And that’s just the beginning. With Convex, you can:
 
 ## ⚛️ React {#react}
 
-[Postmortem on Next.js Middleware bypass](https://vercel.com/blog/postmortem-on-next-js-middleware-bypass)
+[![Postmortem on Next.js Middleware bypass](/emails/issues/227/middleware.png)](https://vercel.com/blog/postmortem-on-next-js-middleware-bypass)
+
+**[Postmortem on Next.js Middleware bypass](https://vercel.com/blog/postmortem-on-next-js-middleware-bypass)**
 
 A few days ago, Vercel announced a critical 9.1 vulnerability in Next.js middleware system. With a simple but malicious `x-middleware-subrequest` header, you can bypass the middleware, possibly exposing sensitive information. Patches are available for Next.js 12/13/14/15. Note that this vulnerability only affects self-hosted apps using `output: ‘standalone’` and `next start` are affected. Customers of major serverless cloud providers are either not affected (Vercel, Netlify), or protection can be turned on (Cloudflare).
 
@@ -101,15 +103,51 @@ Clerk's new experimental package for using Clerk in your AI agent workflows. Man
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+![React Native turns 10](/emails/issues/227/rn-10.jpg)
+
+**React Native turns 10\! 🎉🤯**
+
+Believe it or not, React Native was [open-sourced exactly 10 years ago](https://engineering.fb.com/2015/03/26/android/react-native-bringing-modern-web-techniques-to-mobile/), and React Native is celebrating its first decade today\!
+
+A huge shoutout to everyone who made it happen\! Let’s take the opportunity to listen again to [this podcast episode with Christopher Chedeau](https://youtu.be/_cBqGenDCks?si=nrfF4D_FGEJhQsH3&t=1504) (Vjeux, co-creator of React Native) where he explains the backstory of React Native, and how this great project could easily have died without ambitious people willing to bet on it.
+
+Also a shoutout to the amazing React Native community—tight-knit, always pushing forward, tackling challenges, and building the future of native declarative UI together 🚀
+
+To the next promising decade\! 🥂
+
+---
 
 - 💸 [Codemagic - a great App Center alternative for React Native devs! 8x faster builds, CodePush, automated distribution. 1-month free trial!](https://codemagic.io/migration-from-app-center/?utm_source=newsletter&utm_medium=email&utm_campaign=app_center_this_week_react)
+- 👀 [Who's using Expo OSS in 2025](https://bacon.expo.app/blog/expo-apps): Evan just updated his list of 2,262 top apps using Expo or React Navigation.
+- 👀 [Plugin Pro](https://pluginpro.dev/): Preview of upcoming CLI that records your native platform changes and then generates an Expo config plugin. This reminds how patch-package works.
+- 👀 [Legend Photos \- Open source photo viewing app \- Built with React Native macOS](https://github.com/LegendApp/legend-photos)
+- 🐦 [Evan Bacon \- “What if you could just build mobile apps—on the go—from a mobile app?”](https://x.com/Baconbrix/status/1904548835143409948): This idea is quite interesting. Instead of using AI to generate server-driven UI, why not generating whole screens locally?
+- 📣 [EAS Build & Workflows \- Introducing M4 Pro \- 1.85x faster iOS builds](https://expo.dev/changelog/eas-build-workflows-m4-pro)
+- 📜 [Lynx Roadmap 2025](https://lynxjs.org/blog/lynx-open-source-roadmap-2025.html): The React Native competitor plans to open source desktop support for Windows, macOS, and OpenHarmony. New capabilities, UI elements and improved tooling are coming.
+- 📜 [Why Knowing Your App’s Bundle Contents Matters for React Native Performance](https://www.callstack.com/blog/knowing-your-apps-bundle-contents-native-performance): Explains how to use Expo Atlas, and a trick to make it work even when not using Expo\!
+- 📜 [Migrating from Firebase Dynamic Links: a practical guide](https://medium.com/@louis.lagrange/migrating-from-firebase-dynamic-links-a-practical-guide-9905bbb8f04d)
+- 📜 [React Native Modals in 2025](https://addjam.com/blog/2025-03-24/react-native-modals-2025-comprehensive-guide/)
+- 📦 [Reanimated 4 beta.3 \- CSS transitions shorthand, edge-to-edge, remove Old Arch code, depends on react-native-worklets](https://github.com/software-mansion/react-native-reanimated/releases/tag/4.0.0-beta.3)
+- 📦 [Bottom Tabs 0.9 \- Add `freezeOnBlur`, remove `ignoresTopSafeArea` (now it’s automatic)](https://github.com/callstackincubator/react-native-bottom-tabs/releases)
+- 📦 [Audio API 0.5 \- RN 0.78, pitch correction, in-memory audio decoding](https://github.com/software-mansion/react-native-audio-api/releases/tag/0.5.0)
+- 📦 [Tanstack Query DevTools Expo Plugin](https://github.com/LovesWorking/tanstack-query-dev-tools-expo-plugin)
+- 📦 [React Native Auto Skeleton \- Automatically generates skeleton based on your existing UI layout](https://github.com/pioner92/react-native-auto-skeleton)
+- 📦 [Expo Passkey \- A Better Auth plugin enabling secure, passwordless authentication](https://github.com/iosazee/expo-passkey)
+- 📦 [React Native Magic Scroll 0.1.25 \- Manage keyboards and ScrollViews on long forms \- New Arch, Expo 52 support](https://github.com/AppAndFlow/react-native-magic-scroll/releases/tag/v0.1.25)
+- 🎙️ [Rocket Ship 63 \- From Idea to App using Replit with Matt Palmer](https://podcast.galaxies.dev/episodes/063-from-idea-to-app-using-replit-with-matt-palmer)
+- 🎥 [Callstack Webinar \- Using React Native in Existing Apps for Faster Cross-Platform Features](https://www.youtube.com/watch?v=qlm1q0ZQ0ko)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [Node PR \- v24.0 release](https://github.com/nodejs/node/pull/57609): New Node.js LTS is in RC and should be released on April 22\. It upgrades V8 to 13.4, which should unlock new JS features such as `Promise.try`, `Intl.DurationFormat` and `Atomics.pause`.
+- 📜 [One Thing @scope Can Do is Reduce Concerns About Source Order](https://frontendmasters.com/blog/one-thing-scope-can-do-is-reduce-concerns-about-source-order/): TIL that `@scope` introduces a new concept of “scope proximity” to the CSS cascade\! It’s in Interop 2025 and should be in all browsers very soon.
+- 📜 [Chrome 135 \- Carousels with CSS](https://developer.chrome.com/blog/carousels-with-css)
+- 📜 [Chrome 135 \- The \<select\> element can now be customized with CSS](https://developer.chrome.com/blog/a-customizable-select)
+- 📜 [Hybrid Linters: The Best of Both Worlds](https://www.joshuakgoldberg.com/blog/hybrid-linters-the-best-of-both-worlds/)
+- 📦 [Rsdoctor 1.0 \- Build analyzer for webpack and Rspack](https://rsdoctor.dev/blog/release/release-note-1_0): A great tool I’m using on Docusaurus to find build time bottlenecks.
+- 📦 [Biome 2.0 beta \- Plugins, domains, multi-file analysis and more](https://biomejs.dev/blog/biome-v2-0-beta/)
 
 ---
 
