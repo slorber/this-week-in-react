@@ -10,7 +10,7 @@ Hi everyone!
 
 <Todo />
 
-*   🗓 [React-Summit](https://reactsummit.com/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇳🇱 Amsterdam - 13 & 17 June. Creators of React Query (Tanner Linsley), Expo Router (Evan Bacon), Million.js (Aiden Bai) & more will share knowledge at React Summit! Use promo code TWIR for 10% off tickets.
+- 🗓 [React-Summit](https://reactsummit.com/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇳🇱 Amsterdam - 13 & 17 June. Creators of React Query (Tanner Linsley), Expo Router (Evan Bacon), Million.js (Aiden Bai) & more will share knowledge at React Summit! Use promo code TWIR for 10% off tickets.
 
 <!-- truncate -->
 
@@ -32,14 +32,10 @@ This is because Convex is just TypeScript, allowing you to write [queries as co
 
 And that’s just the beginning. With Convex, you can:
 
-*   Easily schedule functions and write cron jobs
-    
-*   Set up file storage
-    
-*   Write efficient server functions
-    
-*   And so much more…
-    
+- Easily schedule functions and write cron jobs
+- Set up file storage
+- Write efficient server functions
+- And so much more…
 
 [Try a Quickstart today](https://docs.convex.dev/quickstarts)
 
@@ -47,10 +43,47 @@ And that’s just the beginning. With Convex, you can:
 
 ## ⚛️ React {#react}
 
-<Todo />
+[Postmortem on Next.js Middleware bypass](https://vercel.com/blog/postmortem-on-next-js-middleware-bypass)
+
+A few days ago, Vercel announced a critical 9.1 vulnerability in Next.js middleware system. With a simple but malicious `x-middleware-subrequest` header, you can bypass the middleware, possibly exposing sensitive information. Patches are available for Next.js 12/13/14/15. Note that this vulnerability only affects self-hosted apps using `output: ‘standalone’` and `next start` are affected. Customers of major serverless cloud providers are either not affected (Vercel, Netlify), or protection can be turned on (Cloudflare).
+
+It's worth noting that even though Next.js middleware shouldn’t have this vulnerability, it is [not the recommended place to manage user sessions and protect routes](https://nextjs.org/docs/pages/building-your-application/authentication#optimistic-checks-with-middleware-optional), and shouldn’t be the only line of defense in your Next.js app. The middleware is more designed to perform lightweight optimistic checks, eventually rewriting/redirecting without hitting any DB.
+
+This security event has caused a lot of drama in the ecosystem, which I'd rather not comment on much. Vercel could have handled the situation better, and they plan to do better in the future. I’ll let you make your own opinion based on various resources, and there’s too many, so this is just a subset:
+
+- 📜 [Next.js and the corrupt middleware: the authorizing artifact](https://zhero-web-sec.github.io/research-and-things/nextjs-and-the-corrupt-middleware): The original article from the security researchers who found the vulnerability.
+- 📜 [How to Think About Security in Next.js](https://nextjs.org/blog/security-nextjs-server-components-actions): Older post but still a relevant read today.
+- 📜 [Authorization in Next.js](https://www.robinwieruch.de/next-authorization/): Robin explains how he approaches authorization in Next.js projects, as close to the sensitive data as possible.
+- 📜 [You should know this before choosing Next.js](https://eduardoboucas.com/posts/2025-03-25-you-should-know-this-before-choosing-nextjs/): The perspective from Netlify’s Principal Engineer.
+- 🎥 [Theo \- Next.js security exploit](https://www.youtube.com/live/UbcrphhSAIs?si=QgihLKnhpyE3RxPO&t=8243): A 1h stream that on this topic, also explaining what Vercel did wrong.
+
+---
 
 - 💸 [Product for Engineers - Don't make these feature flag mistakes](https://dub.link/twir-mar26)
+- 👀 [Next.js PR \- `useLinkStatus()`](https://github.com/vercel/next.js/pull/77300): New hook to provide pending feedback during navigation transitions.
+- 👀 [Next.js PR \- Link `onNavigate` prop](https://github.com/vercel/next.js/pull/77209)
+- 📣 [Styled Components \- Thank you](https://opencollective.com/styled-components/updates/thank-you): The popular old-gen CSS-in-JS library is now in maintenance mode and not recommended for new projects.
+- 📜 [Experimenting with React View Transitions](https://frontendatscale.com/issues/43): Explains what View Transitions are and how React’s experimental `<ViewComponent>` API integrates this web feature. React starts view transitions automatically when using concurrent features, applies transition names automatically at the right time, and exposes convenient lifecycle props.
+- 📜 [Components Are Just Sparkling Hooks](https://www.bbss.dev/posts/sparkling-hooks/): Shows how a component can be transformed into a hook, how the 2 are related, and introduces the concept of hook-based headless components as a flexible primitive.
+- 📜 [Writing static websites with Vite and React](https://blog.carlosn.com.br/post/writing-static-websites-with-vite-and-react/): Carlos created a Vite plugin to implement a simple React-based static site generator, using React only as a server-side templating system.
+- 📜 [Next.js vs TanStack](https://www.kylegill.com/essays/next-vs-tanstack/): Kyle is done with Next.js complexity and thinks TanStack Start is the right abstraction.
+- 📜 [Passing TypeScript react components native HTML attributes](https://frontguys.fr/front-end/typescript-react-native-attributes/): Shows how to wrap a native input while keeping the ability to pass any native input prop.
+- 📜 [Storybook 9 sneak peek: Accessibility Addon refresh](https://storybook.js.org/blog/preview-the-new-accessibility-addon/)
+- 📜 [React Trends in 2025](https://www.robinwieruch.de/react-trends/)
+- 📜 [How does the use API work with Next 15 and React 19?](https://www.premieroctet.com/blog/en/how-does-the-use-api-work-with-next-15-and-react-19)
 - 💸 [Omlet for VS Code: Get React component usage insights in VS Code](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-quick-link-mar-2025)
+- 📦 [tRPC 11.0](https://trpc.io/blog/announcing-trpc-v11): This release brings many new React-related features, including TanStack Query v5 support, the new more native React Query integration based on `queryOptions`, improved Next.js/RSC support, the ability to download/upload binaries, and more.
+- 📦 [React Query 5.69 \- `streamedQuery`](https://github.com/TanStack/query/releases/tag/v5.69.0): React Query can now handle `AsyncIterable` types and receive chunks of data. It will be `pending` only while waiting for the first chunk. This looks particularly useful for building AI/LLM chats.
+- 📦 [Rsbuild Plugin React Router](https://github.com/rspack-contrib/rsbuild-plugin-react-router/releases/tag/rsbuild-plugin-react-router%400.0.1): Now available on npm, you can use React Router in framework mode with another bundler than Vite. It works well with all the React Router CLI templates and the Epic Stack.
+- 📦 [Material UI 7.0 \- Improved ESM support, consitent slot pattern implementation, `enableCssLayer`](https://mui.com/blog/material-ui-v7-is-here/)
+- 📦 [Base UI 1.0.0-alpha.7](https://github.com/mui/base-ui/releases/tag/v1.0.0-alpha.7): Another great release from the promising Radix UI challenger.
+- 📦 [Next Intl 4.0 \- Type-safe locales, ICU arguments, format and more](https://next-intl.dev/blog/next-intl-4-0)
+- 📦 [Merge Refs 2.0 \- Merges React refs into one](https://github.com/wojtekmaj/merge-refs)
+- 📦 [React-Admin 5.5 & 5.6 \- March 2025 Update](https://marmelab.com/blog/2025/03/24/react-admin-march-2025-update.html)
+- 📦 [Parcel React Server Components Examples \- Deno and Bun](https://github.com/parcel-bundler/rsc-examples)
+- 📦 [Unlocking Meteor 3.2: New Profiling Tool to Track Bundler Performance and Size](https://blog.meteor.com/unlocking-meteor-3-2-new-profiling-tool-to-track-bundler-performance-and-size-f1f223ffa49d)
+- 📦 [Ionic 8.5 \- React 19 support](https://ionic.io/blog/announcing-ionic-8-5)
+- 🎥 [React Paris 2025 Playlist](https://www.youtube.com/watch?v=-W3_dxNDHVw&list=PL53Z0yyYnpWitP8Zv01TSEQmKLvuRh_Dj)
 
 <SubscribeFormEmbed placement="middle" />
 
