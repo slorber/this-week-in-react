@@ -1,6 +1,6 @@
 ---
 slug: /228
-title: "This Week In React #228: React 19.1, NextJS Costs and Deployments, i18n-check, Rspack, React-Admin | RN 0.79, RN Executorch, Xcode 16.3 | TypeScript, TC39, WebKit, Intl.Collator, Vitest 3.1"
+title: "This Week In React #228: React 19.1, Next.js deployment, React-Email, Triplex, Tinybase, Rspack, i18n-check, React-Admin | 0.79 Golden RC, ExecuTorch, Unistyles, Xcode 16.3, macOS | TypeScript, TC39, WebKit, Intl.Collator, Vitest 3.1"
 authors: [matthieugicquel, cyrilbo]
 date: 04-02-2025
 unlisted: true
@@ -101,11 +101,12 @@ It’s been a quiet week in the React Native community—perhaps because all eye
 - 👀 [Lynx is exploring solutions for native plugin development](https://github.com/lynx-family/lynx/discussions/1#discussioncomment-12660488)
 - 🗓️ [App.js Conf](https://appjs.co/?utm_source=thisweekinreact) - 🇵🇱 Kraków - 28-30 May. We're thrilled to announce the first speakers for App.js Conf 2025: Charlie Cheever, Enzo Manuel Mangano & Delphine Bugner! Grab your ticket now with a 15% discount using the code "TWIR".
 - 📜 [SDK 52 patches for Xcode 16.3](https://expo.dev/changelog/xcode-16-3-patches): If you encountered build issues when upgrading to Xcode 16.3, you may have to install the latest SDK 52 patch and RN0.77. Or move back to Xcode 16.2 🫠
-- 📜 [React Native: 10 years](https://shift.infinite.red/react-native-10-years-db9eb36c5af6)
-- 📦 [React Native MacOS 0.78](https://github.com/microsoft/react-native-macos/releases/tag/v0.78.0)
+- 📜 [React Native: 10 years](https://shift.infinite.red/react-native-10-years-db9eb36c5af6): Infinite Red celebrates the birthday.
 - 📦 [React Native Screens 4.10](https://github.com/software-mansion/react-native-screens/releases/tag/4.10.0): iOS min supported version bumped to v15.1, experimental support for scrollview header when using formsheet, many android bug fixes.
+- 📦 [Unistyles 3.0 RC.1](https://github.com/jpudysz/react-native-unistyles/releases/tag/v3.0.0-rc.1): This has just been announced at React Native Connection conference, the library entered RC. Apart from the nice styling features, this version is quite exciting because it handles many things on the "Shadow Tree" of React Native using C++, allowing you to implement dynamic styles that do not need React to re-render components on the JS side when dependencies such as theme, signal, screen size/orientation and other dependencies change. This reminds how CSS works on the web: we don't need a React re-render when we cross a breakpoint.
+- 📦 [React Native MacOS 0.78](https://github.com/microsoft/react-native-macos/releases/tag/v0.78.0): The library caught up. We also heard it now supports Skia and WebGPU.
+- 📦 [React Native Builder Bob 0.39 - Upgrades to ESLint v9](https://github.com/callstack/react-native-builder-bob/releases/tag/react-native-builder-bob%400.39.0)
 - 📦 [React Native Gesture Handler 2.25](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.25.0)
-- 📦 [React Native Builder Bob 0.39](https://github.com/callstack/react-native-builder-bob/releases/tag/react-native-builder-bob%400.39.0): Migrate to ESLint v9.
 - 🎥 [William Candillon \- The Shader's Gambit](https://www.youtube.com/watch?v=wUsFNlas620): Don’t expect much talking in this video, but it shows how far you can go with react-native-skia.
 - 🎥 [Theo \- Android just changed forever](https://www.youtube.com/watch?v=ucZx1ArrIVQ)
 - 🎙️ [RNR 326 \- React Native Turns 10 🎉](https://infinite.red/react-native-radio/rnr-326-react-native-turns-10)
@@ -114,9 +115,9 @@ It’s been a quiet week in the React Native community—perhaps because all eye
 
 ## 🔀 Other {#other}
 
-- 👀 [PR on TypeScript by the ArkType maintainer](https://github.com/microsoft/TypeScript/pull/61505): A huge perf boost may be coming for codebases that use lots of “schemas” with eg zod or arktype
+- 👀 [PR on TypeScript by the ArkType maintainer](https://github.com/microsoft/TypeScript/pull/61505): A huge perf boost may be coming for codebases that use lots of “schemas” with eg Zod or ArkType.
+- 📜 [WebKit Features in Safari 18.4](https://webkit.org/blog/16574/webkit-features-in-safari-18-4/): Ships various things including 3 TC39 proposals. Iterator Helpers is now available in all browsers and Node.js!
 - 📜 [Summary of the February 2025 TC39 plenary](https://blogs.igalia.com/compilers/2025/03/27/summary-of-the-february-2025-tc39-plenary/)
-- 📜 [WebKit Features in Safari 18.4](https://webkit.org/blog/16574/webkit-features-in-safari-18-4/)
 - 📜 [Faster String Sorting with Intl.Collator](https://claritydev.net/blog/faster-string-sorting-intl-collator)
 - 📜 [Forbidden Request Headers](https://macarthur.me/posts/forbidden-request-headers/)
 - 📜 [Node.js API Security Vulnerabilities with Path Traversal in files-bucket-server](https://www.nodejs-security.com/blog/nodejs-api-security-vulnerabilities-path-traversal-files-bucket-server/)
