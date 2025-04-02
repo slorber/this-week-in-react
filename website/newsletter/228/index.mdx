@@ -44,8 +44,9 @@ Discover our 10-year story of pioneering composable architecture and how Harmony
 
 React 19.1 has been released this week, the most notable changes are:
 
-- A new `captureOwnerStack` API that will be used by frameworks to provide better error information in dev. It’s different from the existing component stacks in how it handles `children` and DOM nodes.
-- The “React side” of Server components support in Parcel, that works hand-in-hand with the new features in Parcel 2.14
+- A new [`captureOwnerStack()`](https://react.dev/reference/react/captureOwnerStack) API that will be used by frameworks to provide better error information in dev. It’s different from the existing component stacks in how it handles `children` and DOM nodes.
+- The “React side” of Server components support in Parcel, that works hand-in-hand with the new features in Parcel 2.14.
+- An experimental `unstable_prerender()` for prerendering React Server Components on the server.
 
 ## This release also includes a slew of minor changes and fixes, most of them related to Server components or Suspense boundaries.
 
