@@ -34,6 +34,23 @@ cyrilbo:
   socials:
     x: BonacciniCyril
 
+kacperkapusciak:
+  name: Kacper Kapuściak
+  title: Software Engineer at Software Mansion
+  url: https://x.com/kacperkapusciak
+  image_url: https://github.com/kacperkapusciak.png
+  page: true
+  socials:
+    x: kacperkapusciak
+
+tomekzaw:
+  name: Tomasz Zawadzki
+  title: Software Engineer at Software Mansion
+  url: https://x.com/tomekzaw_
+  image_url: https://github.com/tomekzaw.png
+  page: true
+  socials:
+    x: tomekzaw_
 
 # Note: don't forget to add newly added authors to the localized authors files
 # i18n/fr/docusaurus-plugin-content-blog-articles/authors.yml file
