@@ -1,6 +1,6 @@
 ---
 slug: /229
-title: "This Week In React #229: React Conf, React Router, Next.js RFC, Redwood, Apollo Client, Waku | React Native 0.79, React Native RFC, Builder Bob, Fingerprinting | Tailwind, Rspack, Rstest Turborepo, Bun"
+title: "This Week In React #229: React Conf, React Router, Next.js Adapters, Redwood, Apollo, Fastify, Vite, Waku | RN v0.79, Deep Imports, Builder Bob, Fingerprinting | TC39, Tailwind, Rspack, Rstest, Turborepo, Bun"
 authors: [kacperkapusciak, tomekzaw]
 date: 04-09-2025
 unlisted: true
@@ -8,7 +8,9 @@ unlisted: true
 
 Hi everyone!
 
-This time it’s Tomasz and Kacper from [Software Mansion](https://swmansion.com/?utm_source=thisweekinreact) – you may already know us from libraries like Reanimated or Gesture Handler. We're happy to be among the authors of the This Week in React newsletter!
+This week, we welcome 2 new contributors to help ensure the continuity of the newsletter throughout the year, even when Seb takes a break.
+
+**Tomasz and Kacper from [Software Mansion](https://swmansion.com/?utm_source=thisweekinreact)** here – you may already know us from libraries like Reanimated or Gesture Handler. We're happy to be among the authors of the This Week in React newsletter!
 
 We were about to call it a fairly calm week… until React Conf 2025 was officially announced and React Native 0.79 dropped with Swift-compatible native modules for iOS, faster app startup on Android, and many more. Let's dive in!
 
@@ -121,7 +123,7 @@ Recently, the React Native core team switched to more frequent release cycles, s
 - 👀 [Expo – React 19.1 `captureOwnerStack` will enable improved error messages](https://github.com/expo/expo/pull/35866#issuecomment-2789891297)
 - 💬 [React Native RFC – Removing deep imports from react-native](https://github.com/huntie/react-native-discussions-and-proposals/blob/proposal-deprecate-subpath-imports/proposals/0894-deprecate-subpath-imports.md): This change allows to define what functions are exported from packages shrinking the API surface area. The goal is to provide a more stable API throughout the ecosystem.
 - 🐦 [Ben Awad – describes his journey to reduce Application Not Responding (ANR) errors on Android](https://x.com/benawad/status/1908860185113665889)
-- ☂️ [Help React Native core team Kotlin-ify React Native tests](https://github.com/facebook/react-native/issues/50513): Great way to start contributing to an open source project
+- ☂️ [Help React Native core team Kotlin-ify React Native tests](https://github.com/facebook/react-native/issues/50513): Great way to start contributing to an open source project.
 - 📅 [React Native London Meetup – April 17th, 2025](https://guild.host/events/react-native-london-e0q1f1)
 - 📜 [Understanding and comparing fingerprints in Expo apps](https://expo.dev/blog/understanding-and-comparing-fingerprints-in-expo-apps): Using hashes to compare whether there was a change in a native build of a React Native & Expo app.
 - 📜 [Cut CI from 20 minutes to 6 with EAS Workflows and EAS Updates](https://shift.infinite.red/cut-ci-from-20-minutes-to-6-with-eas-workflows-and-eas-updates-8d928fe5dcfc): Infinite Red shows how they improved their CI time by fingerprinting native builds.
