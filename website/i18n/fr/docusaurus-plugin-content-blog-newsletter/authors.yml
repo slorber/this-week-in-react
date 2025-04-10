@@ -1,11 +1,14 @@
 slorber:
   name: Sébastien Lorber
-  title: Editeur - Mainteneur de Docusaurus
+  title: Newsletter creator - Docusaurus maintainer
   url: https://sebastienlorber.com
   image_url: https://github.com/slorber.png
   page: true
   socials:
     x: sebastienlorber
+    bluesky: sebastienlorber.com
+    github: slorber
+    linkedin: sebastienlorber
 
 bndkt:
   name: Benedikt Müller
@@ -15,41 +18,54 @@ bndkt:
   page: true
   socials:
     x: bndkt
+    bluesky: bndkt.com
+    github: bndkt
+    linkedin: benediktmueller
 
 matthieugicquel:
   name: Matthieu Gicquel
-  title: Staff Engineer chez Theodo
+  title: Staff Engineer - Theodo
   url: https://x.com/matthieu_g
   image_url: https://github.com/matthieugicquel.png
   page: true
   socials:
     x: matthieu_g
+    bluesky: matthieugc.bsky.social
+    github: matthieugicquel
+    linkedin: matthieugc
 
 cyrilbo:
   name: Cyril Bonaccini
-  title: Staff Engineer chez Theodo
+  title: Staff Engineer - Theodo
   url: https://x.com/BonacciniCyril
   image_url: https://github.com/cyrilbo.png
   page: true
   socials:
     x: BonacciniCyril
+    bluesky: cyrilbo.bsky.social
+    github: cyrilbo
+    linkedin: cyril-b-1ba240151
 
 kacperkapusciak:
   name: Kacper Kapuściak
-  title: Software Engineer at Software Mansion
+  title: Software Engineer - Software Mansion
   url: https://x.com/kacperkapusciak
   image_url: https://github.com/kacperkapusciak.png
   page: true
   socials:
     x: kacperkapusciak
+    bluesky: kacperkapusciak.bsky.social
     github: kacperkapusciak
+    linkedin: kacperkapusciak
 
 tomekzaw:
   name: Tomasz Zawadzki
-  title: Software Engineer at Software Mansion
+  title: Software Engineer - Software Mansion
   url: https://x.com/tomekzaw_
   image_url: https://github.com/tomekzaw.png
   page: true
   socials:
     x: tomekzaw_
+    bluesky: tomekzaw.bsky.social
     github: tomekzaw
+    linkedin: tomekzaw
