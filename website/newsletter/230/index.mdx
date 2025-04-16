@@ -30,15 +30,50 @@ They were (partially) wrong. They need product managers and couldn’t have ship
 
 What was needed was a **redefinition of how PMs and engineers work together**, optimized for speed and autonomy. [This post shares their exact playbook](https://go.posthog.com/twir-apr16).
 
-
 ---
 
 ## ⚛️ React {#react}
 
-<Todo />
+[Next.js 15.3](https://nextjs.org/blog/next-15-3)
+
+A new minor version of Next.js is out, with highlights:
+
+- Turbopack for builds (alpha): Faster production builds passing 8000+ tests (99%)
+- Community support for Rspack (experimental): Alternative bundler with Webpack compatibility
+- Client Instrumentation hook: Early monitoring and analytics setup
+- Navigation hooks: Control routing with `onNavigate` and `useLinkStatus`
+- TypeScript plugin improvements: Improved support for large codebases
+
+It’s great to see Next.js improving with faster bundling with Turbopack for builds, and opening up to Rspack as an alternative to Webpack. Both have different tradeoffs and use cases.
+
+See also these related resources:
+
+- 📦 [Rspack 1.3.5 \- Rspack joins the Next.js ecosystem](https://rspack.dev/blog/rspack-next-partner)
+- 🎥 [Theo \- Next.js 15.3: A Huge Change for Vercel](https://www.youtube.com/watch?v=jN0kB85rxGg)
+
+---
 
 - 💸 [Bit - A build system framework for development of composable software. Support NodeJS, React apps (with Vite), NextJS, and modern stack.](https://bit.dev/?utm_source=ThisWeekInReact&utm_id=8&utm_medium=newsletter)
+- 👀 [React Types PR \- `unstable_Activity`](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/72454): There’s a lot of `<Activity>` activity lately, including TypeScript typedefs added. This upcoming component, previously named `<Offscreen>`, has been [mentioned in React Labs updates since 2022](https://react.dev/blog/2022/06/15/react-labs-what-we-have-been-working-on-june-2022#offscreen), and may soon be ready for prime time? This low-level primitive is particularly exciting for frameworks to fully leverage Concurrent React.
+- 👀 [Next.js PR \- Experimental bfcache \- Restore state with `<Activity>`](https://github.com/vercel/next.js/pull/77992): Unsurprisingly, Next.js starts experimenting with the `<Activity>` component above, by implementing a back/forward cache feature that allows pressing the browser back button to instantly transition to the previous page while restoring its former React state. In the future, Next.js (and other React/RN frameworks too) will likely implement speculative pre-rendering: React could start rendering a target page as soon as you hover a link, even before you click it.
+- 👀 [React Core PR \- Add Suspensey Images behind a flag](https://github.com/facebook/react/pull/32819): An upcoming React feature could help ensure all images have loaded before transitioning to a new page. The rollout plan is still unclear: it might come in a minor or major.
+- 📜 [JSX Over The Wire](https://overreacted.io/jsx-over-the-wire/): Dan Abramov explains why you might want your API to send JSX back across the wire, through 3 different stories. The alternative could be to maintain parallel Component and ViewModel trees in both your client app and REST API. He also shares the some historical bits and technologies that led to the creation of the Server Components.
+- 📜 [Toast messages in React Server Components](https://buildui.com/posts/toast-messages-in-react-server-components): Shows how to trigger the display of toast messages from Next.js Server Actions using server cookies. This technique can be used for other kinds of flash messages.
+- 📜 [Memoizing components in React: a case for useMemo](https://gabrielpichot.fr/blog/memoizing-components-in-react-a-case-for-usememo/): This interactive article argues most `React.memo` can be replaced by `useMemo`, and it’s closer to what the React Compiler is doing.
+- 📜 [Avoid the State Synchronization Trap](https://ondrejvelisek.github.io/avoid-state-synchronization-trap/): This interactive article highlights 4 different ways to synchronize distinct React states and their tradeoffs so that what gets rendered is consistent.
+- 📜 [The new Cookie Store API](https://fotis.xyz/posts/the-new-cookie-store-api/): And how you could integrate this not-widely-supported API in React apps as a progressive enhancement.
+- 📜 [Building Reusable Components with React 19 Actions](https://aurorascharff.no/posts/building-reusable-components-with-react19-actions/)
+- 📜 [Scale Your Project with Layered React Structure](https://playfulprogramming.com/posts/layered-react-structure)
+- 📜 [View Transition API and its Integration in NextJS](https://www.premieroctet.com/blog/en/view-transition-api-in-next-js-and-react)
+- 📜 [Lazy load SVG icons with \<use/\> in React.js](https://www.jeantinland.com/blog/lazy-load-svg-icons-with-use-react-js/)
 - 💸 [Guide: Integrate Clerk with your Lovable application. Bonus feature add-ons for B2B, Waitlist, custom domain and more](https://go.clerk.com/EbcUjrv)
+- 📦 [oRPC 1.0 \- Typesafe APIs Made Simple](https://orpc.unnoq.com/blog/v1-announcement): An interesting alternative to tRPC, ts-rest & next-safe-action that comes with React bindings, framework integrations and Server Actions support.
+- 📦 [tweakcn \- A visual no-code editor for shadcn/ui components](https://github.com/jnsahaj/tweakcn): A convenient tool to create a custom shadcn/ui theme, or use a pre-built one.
+- 📦 [Astro 5.7 \- SVG Components, Sessions API, Config imports, experimental Fonts API](https://astro.build/blog/astro-570/)
+- 📦 [React Aria release \- Custom calendars, collections improvements, smaller bundle size](https://react-spectrum.adobe.com/releases/2025-04-11.html)
+- 🎥 [Jack Herrington \- tRPC v11 with TanStack Query on TanStack Start\!](https://www.youtube.com/watch?v=dLUyPLbvdY0)
+- 🎥 [Theo – Why is Next.js so slow?](https://www.youtube.com/watch?v=mMQCLQTky34)
+- 🎥 [Web Dev Simplified \- How I Recreated TanStack Router From Scratch](https://www.youtube.com/watch?v=b7uUWoS1Zro)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -52,12 +87,9 @@ What was needed was a **redefinition of how PMs and engineers work together**, o
 
 App.js Conf is **the** place to be if you want to meet the teams behind your favourite libraries & frameworks, pick their brains about the future of cross-platform development and connect with 500 like-minded devs and simply have fun!
 
-*   [confirmed speakers](https://appjs.co/#speakers) from Expo, Meta, Software Mansion, NFL, Amazon & more
-    
-*   8 practical workshops to choose from
-    
-*   3 days filled with knowledge, conference talks & networking
-    
+- [confirmed speakers](https://appjs.co/#speakers) from Expo, Meta, Software Mansion, NFL, Amazon & more
+- 8 practical workshops to choose from
+- 3 days filled with knowledge, conference talks & networking
 
 Join us for the biggest React Native & Expo event of the year! 🚀
 
@@ -65,22 +97,41 @@ Join us for the biggest React Native & Expo event of the year! 🚀
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
-
 - 💸 [WithFrame - Pre-Built React Native Templates](https://withfra.me)
+- 👀 [React Native Fantom](https://github.com/facebook/react-native/blob/main/packages/react-native-fantom/__docs__/README.md): A new experimental integration testing and benchmarking tool is being actively worked on. It’s a Jest test runner that runs C++ parts of RN, enabling to test things such as shadow nodes, layout, events, scheduling, and C++ state updates. This tool is primarily useful for testing the internals of React Native, but its scope may extend to testing library/product code in the future.
+- 📖 [Advanced Topics on Native Modules Development](https://reactnative.dev/docs/the-new-architecture/advanced-topics-modules) and [Advanced Topics on Native Components Development](https://reactnative.dev/docs/the-new-architecture/advanced-topics-components): Various docs pages for advanced New Architecture topics have recently been published, such as using Swift or invoking native commands.
+- 📜 [Profiling React Native Internals with Tracy for Peak Performance](https://www.callstack.com/blog/profiling-react-native-internals-with-tracy-for-peak-performance): Sometimes the perf bottleneck doesn’t come from your app, but comes from RN itself. This unified profiling solution works across all platforms.
+- 📜 [How to set React Native Core's feature flags on Android](https://andrei-calazans.com/posts/react-native-android-feature-flags/): Quick tip explaining how to turn on `enableFabricLogs` on Android.
+- 📜 [You Might Not Need react-native-svg](https://blog.swmansion.com/you-might-not-need-react-native-svg-b5c65646d01f): This lib is quite flexible, but depending on the SVG, it might create very large React component trees. Many alternatives exist with different tradeoffs.
+- 📜 [Creating Stunning Gradients in React Native with Skia](https://www.fabrizioduroni.it/blog/post/2025/04/02/react-native-skia-text-gradient)
+- 📦 [Expo SDK 53 beta](https://expo.dev/changelog/sdk-53-beta): The new SDK upgrades to React Native 0.79, React 19, turns the New Architecture on by default and includes a ton of new features. We’ll cover it in depth once it’s stable in \~2 weeks\!
+- 📦 [FlashList 2.0 alpha](https://github.com/Shopify/flash-list/tree/new-rlv-prototype): The new version of this optimized list component is now alpha and Shopify encourages the community to try it. Rebuilt from the ground up, it’s faster, leverages the New Arch, and doesn’t require size estimates anymore.
+- 📦 [Radon IDE 1.5 \- Radon AI Chat, improved EAS workflow, RN 0.79](https://github.com/software-mansion/radon-ide/releases/tag/v1.5.0)
+- 📦 [Bottom Sheet Stepper \- Manage beautiful multi-step flows in a bottom sheet](https://github.com/mahdidavoodi7/bottom-sheet-stepper)
+- 🎥 [Expo \- Introduction to Expo Router Layout Files](https://www.youtube.com/watch?v=Yh6Qlg2CYwQ): Expo’s first video of a new Expo Router fundamentals tutorial series.
+- 🎥 [Callstack \- Why You Need React Native Enterprise Framework](https://www.youtube.com/watch?v=yf-UZJ84-Gk)
+- 🎥 [Beto \- What’s new in Expo SDK 53: React 19, Expo UI, EAS Caching, Maps, and SQLite on Web](https://www.youtube.com/watch?v=uXi503z8p-g)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [TC39 107th meeting in progress](https://github.com/tc39/agendas/blob/main/2025/04.md): Happening right now. Exciting JS proposals progressed already: Composites (stage 1, supersedes Records & Tuples), Enums (stage 1, compatible with type stripping), Upsert (stage 2.7, Map update or insert operation).
+- 👀 [SpiderMonkey \- Shipping Temporal](https://spidermonkey.dev/blog/2025/04/11/shipping-temporal.html): Firefox 139 will be the very first browser to turn on the new Temporal feature.
+- 📜 [Custom CSS Functions in the Browser](https://www.oddbird.net/2025/04/11/custom-functions/): Exciting CSS feature, with a prototype now available in Chromium canary 136+.
+- 📜 [How Rolldown Works: Module Loading, Dependency Graphs, and Optimization Explained](https://www.atriiy.dev/blog/rolldown-module-loader-and-dependency-graph)
+- 📦 [Zod 4.0 beta \- faster, slimmer, more tsc-efficient, implements long-requested features](https://v4.zod.dev/v4)
+- 📦 [Bare \- Minimal JS runtime that actually runs everywhere](https://pears.com/news/introducing-bare-actually-run-javascript-everywhere/)
+- 📦 [Anime.js 4.0](https://animejs.com/): A complete rewrite of the animation library, launched with an impressive landing page.
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/230/meme.jpg)](https://x.com/sebastienlorber/status/1911715079919132842)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/230/meme2.jpg)](https://x.com/sebastienlorber/status/1910290087163670959)
+
+[![alt](/emails/issues/230/meme3.jpg)](https://x.com/PR0GRAMMERHUM0R/status/1910694354907263383)
 
 See ya! 👋
