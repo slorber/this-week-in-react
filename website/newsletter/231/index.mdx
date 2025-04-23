@@ -1,12 +1,20 @@
 ---
 slug: /231
-title: "This Week In React #231: ..."
-authors: [slorber]
+title: "This Week In React #231: React Compiler, React Router, Next.js, Tanstack Query, Tailwind, c15t, Redux Toolkit, Headless Tree, Module Federation, Base UI | LegendList, FlashList, Metro, ExecuTorch, React Native Brownfield, Expo Router | TC39, State of AI, Node.js, GitHub Actions, Rspack, tsdown"
+authors: [matthieugicquel, cyrilbo]
 date: 04-23-2025
 unlisted: true
 ---
 
 Hi everyone!
+
+Cyril and Matthieu from [Theodo Apps](https://apps.theodo.com/en?utm_source=thisweekinreact) here 👋, standing in for Seb to bring you the latest news from the React and React Native worlds.
+
+This week, the React Compiler is in RC (have you enabled it yet?) and the React team has a special announcement for you.
+
+We've also been reading a quite a few interesting blog posts from the "official" blogs and from the community.
+
+
 
 <Todo />
 
@@ -31,24 +39,46 @@ This is because Convex is just TypeScript, allowing you to write [queries as co
 And that’s just the beginning. With Convex, you can:
 
 *   Easily schedule functions and write cron jobs
-    
+
 *   Set up file storage
-    
+
 *   Write efficient server functions
-    
+
 *   And so much more…
-    
+
 
 [Try a Quickstart today](https://docs.convex.dev/quickstarts)
 
 
 ---
 
-## ⚛️ React {#react}
+## 📣 From the React team
 
 <Todo />
 
+---
+
+## ⚛️ React {#react}
+
+**React Compiler**
+<Todo />
+
+---
+
 - 💸 [How to build a multi-tenant app using Clerk + Supabase](https://go.clerk.com/j5M7vZt)
+- 📜 [Impossible Components](https://overreacted.io/impossible-components/): Dan Abramov continues his series of blog posts about RSC, this time detailing, among other things, how it squares with React’s top-down data flow.
+- 📜 [Faster Lazy Loading in React Router v7.5+](https://remix.run/blog/faster-lazy-loading): This was released a few weeks ago. Mark Dalgleish explains in this post why the new approach (lazy loading by route properties instead of the whole route) was necessary, especially when using middlewares.
+- 📜 [Performance tips with Next.js](https://vercel.com/blog/guide-to-fast-websites-with-next-js-tips-for-maximizing-server-speeds#how-to-speed-up-the-page-render-minimize-client-burden): A nice recap of all the available optimizations: pre-render, use caching, watch bundle size, lazy-load what can be, optimize fonts and images, use virtualization…
+- 📜 [Simplify TanStack React Query State Handling with Pattern Matching](https://gabrielpichot.fr/blog/simplify-tanstack-react-query-state-handling-with-pattern-matching/)
+- 📜 [Using Client Caches In Loaders](https://www.brenelz.com/posts/using-client-caches-in-loaders/)
+- 📜 [Life of a Request: Application-aware routing \- Vercel](https://vercel.com/blog/life-of-a-request-application-aware-routing)
+- 📜 [Tailwind vs Linaria: Performance Investigation](https://www.developerway.com/posts/tailwind-vs-linaria-performance)
+- 📦 [c15t](https://github.com/c15t/c15t): A new consent management framework coming with drop-in React components.
+- 📦 [Redux Toolkit 2.7](https://github.com/reduxjs/redux-toolkit/releases/tag/v2.7.0): Standard Schema for RTK query, improved infinite queries.
+- 📦 [Headless Tree 1.0](https://headless-tree.lukasbach.com/): A successor to React Complex tree, the author has a [blog post explaining the change](https://medium.com/@lukasbach/headless-tree-and-the-future-of-react-complex-tree-fc920700e82a).
+- 📦 [Module Federation Core 0.13](https://github.com/module-federation/core/releases/tag/v0.13.0): Better React 19 support and bug fixes.
+- 📦 [Base UI 1.0 alpha-8](https://github.com/mui/base-ui/releases/tag/v1.0.0-alpha.8): The new Radix UI alternative keeps progressing with new Toast and Meter components among many other things.
+- 🎙️ [Syntax.fm \- React Server Components: Where are we at?](https://syntax.fm/show/895/react-server-components-where-are-we-at)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -60,7 +90,7 @@ And that’s just the beginning. With Convex, you can:
 
 **[Self-service analytics and dashboards in your product](https://semaphor.cloud)**
 
-**Your engineers didn’t sign up to build dashboards.**  
+**Your engineers didn’t sign up to build dashboards.**
 Let them focus on features.
 
 With Semaphor, your data team can ship insights independently. No code changes, no front-end redeploys. Decouple analytics from your product code and move faster.
@@ -69,22 +99,53 @@ With Semaphor, your data team can ship insights independently. No code changes, 
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![LegendList 1.0](/emails/issues/231/legend-list.png)](https://bsky.app/profile/jayz.us/post/3lni5ofbuvs2s)
+
+**[LegendList 1.0](https://bsky.app/profile/jayz.us/post/3lni5ofbuvs2s)**
+
+Making long lists performant is a hard problem, and React Native’s old architecture wasn’t making it any easier with it’s asynchronous layout computation. We remember Margelo abandoning their `WishList` project.
+LegendList is now in version 1.0, and promises to be even faster than `FlashList`, all the while handling the "hard cases": bidirectional infinite lists, varying item sizes… And it's compatible with the old arch (though less performant and with possible glitches).
+
+As Seb mentioned last week, there’s also a v2 of `FlashList` in the works, which should be easier to use (no need to specify estimatedItemSize for instance).
+
+Thankfully, all those copy the API of `FlatList` so it’s easy to switch back and forth 🙂.
+
+---
+
 
 - 💸 [PostHog - How to set up React Native session replay](https://go.posthog.com/twir-apr23)
+- 🐦 [Prototype of Module Federation working with Metro Bundler](https://x.com/_jbroma/status/1912903068464594993)
+- 🐦 [An experiment of CSS support in React Native, including grid layout](https://x.com/mani3xis/status/1912947427864441144)
+- 📖 [React Native Versioning Policy](https://reactnative.dev/contributing/versioning-policy): This new page details the versioning scheme based on the `0.x.y` pattern. Even more importantly, this also explains the release process and what is considered a breaking change. This is part of an ongoing effort to clarify the public API surface and even reduce it (see the [Removing deep imports RFC](https://github.com/react-native-community/discussions-and-proposals/pull/894)). React Native is getting more stable, and maybe we’ll get a v1.0 one day?
+- 📜 [Best Practices for reducing lag in Expo apps](https://expo.dev/blog/best-practices-for-reducing-lag-in-expo-apps): Highlight React renders directly from the devtools, React Compiler, React 19, and multi-threading.
+- 📜 [Offline Text Recognition on Mobile: How We Brought EasyOCR to React Native ExecuTorch](https://blog.swmansion.com/bringing-easyocr-to-react-native-executorch-2401c09c2d0c)
+- 📜 [How to build universal app voice agents with Expo & ElevenLabs](https://expo.dev/blog/how-to-build-universal-app-voice-agents-with-expo-and-elevenlabs)
+- 📜 [Out with the old, in with the New Architecture (by default)](https://expo.dev/blog/out-with-the-old-in-with-the-new-architecture)
+- 📦 [React Native Brownfield 1.0](https://github.com/callstack/react-native-brownfield/releases/tag/v1.0.0): Adds support for SwiftUI, Jetpack Compose, and packaging as a framework.
+- 📦 [typegpu-confetti](https://github.com/software-mansion-labs/typegpu-confetti): Confetti animations for React Native, computed and rendered exclusively on the GPU with `react-native-webgpu` and TypeGPU.
+- 🎥 [Expo Router Tutorial](https://www.youtube.com/playlist?list=PLsXDmrmFV_AT17JDf-otXSNE_eH7s0uDD): The first 5 videos are available. It covers layout files, Stack & Tab navigators, modals, and Auth Flow.
+- 🎙️ [RNR 328 \- Flashlight with Alexandre Moureaux](https://infinite.red/react-native-radio/rnr-328-flashlight-with-alexandre-moureaux)
+- 🎙️ [Rocket Ship 65 \- Expo SDK 53 Preview, RevenueCat Paywalls, AI Images & Gemini](https://www.youtube.com/watch?v=evGUO_CN1Fc)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
-
+- 📣 [TC39 meeting 107th \- ECMA Proposal Updates](https://ecmascript-daily.github.io/ecmascript/2025/04/19/ecmascript-proposal-update): Summarizes the proposals that progressed last week. Sad to see Records & Tuples withdraw, but we also have new interesting proposals to watch, such as Enums and Composites.
+- 📊 [State of AI 2025 \- Survey results](https://2025.stateofai.dev)
+- 📜 [Optimizing Node.js Performance: V8 Memory Management & GC Tuning](https://blog.platformatic.dev/optimizing-nodejs-performance-v8-memory-management-and-gc-tuning)
+- 📜 [Launching the first ever State of Devs survey](https://dev.to/sachagreif/launching-the-first-ever-state-of-devs-survey-23il)
+- 📜 [Securing Your GitHub Actions](https://blog.rafaelgss.dev/securing-github-actions)
+- 📜 [An Introduction to JavaScript Bundler Rspack](https://blog.appsignal.com/2025/04/16/an-introduction-to-javascript-bundler-rspack.html)
+- 📦 [tsdown \- The Elegant Library Bundler \- Powered by Rolldown](https://tsdown.dev/)
+- 📦 [Node 22.15](https://nodejs.org/en/blog/release/v22.15.0)
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![Evan Bacon - Coming back to Expo after spending an hour in Android Studio - Photo of Katy Perry kissing the ground after returning from her space flight](/emails/issues/231/meme1.jpg)](https://x.com/Baconbrix/status/1913353166483058931)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![A huge vertical screen with "package.json" deps and huge horizontall screen with "tailwind class names"](/emails/issues/231/meme2.jpg)](https://x.com/trashh_dev/status/1893339204710539265)
+
 
 See ya! 👋
