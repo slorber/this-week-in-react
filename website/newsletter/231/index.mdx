@@ -1,6 +1,6 @@
 ---
 slug: /231
-title: "This Week In React #231: React Labs, Compiler, React Router, Next.js, TanStack Query, c15t, RTK, Base UI | Legend List, FlashList, Metro, ExecuTorch, Brownfield, Expo Router | TC39, State of AI, Node.js, GitHub Actions, Rspack, tsdown"
+title: "This Week In React #231: React Labs, Compiler, React Router, Next.js, TanStack Query, c15t, RTK, Base UI | Legend List, FlashList, Versioning, Metro, ExecuTorch, Brownfield, Expo Router | TC39, Surveys, Rspack, tsdown"
 authors: [matthieugicquel, cyrilbo]
 date: 04-23-2025
 unlisted: true
@@ -47,15 +47,35 @@ And that’s just the beginning. With Convex, you can:
 
 ## 📣 From the React team
 
-<Todo />
+[![React Labs: View Transitions, Activity, and more](/emails/issues/231/labs.jpg)](https://react.dev/blog/2025/04/23/react-labs-view-transitions-activity-and-more)
+
+**[React Labs: View Transitions, Activity, and more](https://react.dev/blog/2025/04/23/react-labs-view-transitions-activity-and-more)**
+
+The rumors you’ve heard that the React Team only cares about the server have been greatly exaggerated.
+
+In our [React Labs post](https://react.dev/blog/2025/04/23/react-labs-view-transitions-activity-and-more) today, we shared that [View Transitions](https://react.dev/reference/react/ViewTransition) and [Activity](https://react.dev/reference/react/Activity) are now ready to try out in our experimental channel, along with docs for each. These new features allow React running on the client to animate UI transitions, and hide and show parts of the UI as the user navigates client-side. They work with server features, but are aimed at solving problems on the client.
+
+We also [shared updates](https://react.dev/blog/2025/04/23/react-labs-view-transitions-activity-and-more#features-in-development) on problem areas we’re focusing on that impact client-rendered apps including better profiling tools, automatically compiling effect dependencies, a potential IDE extension, fragment refs, and yes even a concurrent store. These are problem areas we’ve wanted to address for a while, which recent features like the React Compiler and the `use` API allow us to finally tackle.
+
+These features are still early and might change significantly before they’re ready to try. You can follow along while we build these features, and this newsletter is a great way to stay up to date. But don’t stress about learning everything \- you can let us cook first.
+
+When we’re more confident a feature will ship, we’ll announce it on the blog and publish docs, like we’re doing today for View Transitions and Activity.
+
+Give the new experimental features a try, and check out the areas we’re working on in the [blog post](https://react.dev/blog/2025/04/23/react-labs-view-transitions-activity-and-more).
+
+\-[Ricky Hanlon](https://bsky.app/profile/ricky.fm)
 
 ---
 
 ## ⚛️ React {#react}
 
-**React Compiler**
+[![React Compiler RC](/emails/issues/231/compiler.jpg)](https://react.dev/blog/2025/04/21/react-compiler-rc)
 
-<Todo />
+**[React Compiler RC](https://react.dev/blog/2025/04/21/react-compiler-rc)**
+
+The React Labs post is not the only exciting update this week! The React Compiler is also in Release Candidate, in preparation of the compiler’s stable release.
+
+The Babel-free builds is a welcome improvement so that we can keep using the compiler with our modern Rust tooling!
 
 ---
 
