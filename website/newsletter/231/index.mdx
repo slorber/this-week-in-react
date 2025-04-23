@@ -1,6 +1,6 @@
 ---
 slug: /231
-title: "This Week In React #231: React Compiler, React Router, Next.js, Tanstack Query, Tailwind, c15t, Redux Toolkit, Headless Tree, Module Federation, Base UI | LegendList, FlashList, Metro, ExecuTorch, React Native Brownfield, Expo Router | TC39, State of AI, Node.js, GitHub Actions, Rspack, tsdown"
+title: "This Week In React #231: React Labs, Compiler, React Router, Next.js, TanStack Query, c15t, RTK, Base UI | Legend List, FlashList, Metro, ExecuTorch, Brownfield, Expo Router | TC39, State of AI, Node.js, GitHub Actions, Rspack, tsdown"
 authors: [matthieugicquel, cyrilbo]
 date: 04-23-2025
 unlisted: true
@@ -13,8 +13,6 @@ Cyril and Matthieu from [Theodo Apps](https://apps.theodo.com/en?utm_source=this
 This week, the React Compiler is in RC (have you enabled it yet?) and the React team has a special announcement for you.
 
 We've also been reading a quite a few interesting blog posts from the "official" blogs and from the community.
-
-
 
 <Todo />
 
@@ -38,17 +36,12 @@ This is because Convex is just TypeScript, allowing you to write [queries as co
 
 And that’s just the beginning. With Convex, you can:
 
-*   Easily schedule functions and write cron jobs
-
-*   Set up file storage
-
-*   Write efficient server functions
-
-*   And so much more…
-
+- Easily schedule functions and write cron jobs
+- Set up file storage
+- Write efficient server functions
+- And so much more…
 
 [Try a Quickstart today](https://docs.convex.dev/quickstarts)
-
 
 ---
 
@@ -61,11 +54,13 @@ And that’s just the beginning. With Convex, you can:
 ## ⚛️ React {#react}
 
 **React Compiler**
+
 <Todo />
 
 ---
 
 - 💸 [How to build a multi-tenant app using Clerk + Supabase](https://go.clerk.com/j5M7vZt)
+- 🗓 [Future Frontend](https://futurefrontend.com/?utm_source=thisweekinreact) \- 🇫🇮 Espoo \- 26-28 May. Dive into the future of frontend development with Aurora Scharff, Rachel Nabors, and others\! Use code "TWIR" for a 10% discount.
 - 📜 [Impossible Components](https://overreacted.io/impossible-components/): Dan Abramov continues his series of blog posts about RSC, this time detailing, among other things, how it squares with React’s top-down data flow.
 - 📜 [Faster Lazy Loading in React Router v7.5+](https://remix.run/blog/faster-lazy-loading): This was released a few weeks ago. Mark Dalgleish explains in this post why the new approach (lazy loading by route properties instead of the whole route) was necessary, especially when using middlewares.
 - 📜 [Performance tips with Next.js](https://vercel.com/blog/guide-to-fast-websites-with-next-js-tips-for-maximizing-server-speeds#how-to-speed-up-the-page-render-minimize-client-burden): A nice recap of all the available optimizations: pre-render, use caching, watch bundle size, lazy-load what can be, optimize fonts and images, use virtualization…
@@ -99,19 +94,18 @@ With Semaphor, your data team can ship insights independently. No code changes, 
 
 ## 📱 React-Native {#react-native}
 
-[![LegendList 1.0](/emails/issues/231/legend-list.png)](https://bsky.app/profile/jayz.us/post/3lni5ofbuvs2s)
+[![Legend List 1.0](/emails/issues/231/legend-list.png)](https://bsky.app/profile/jayz.us/post/3lni5ofbuvs2s)
 
-**[LegendList 1.0](https://bsky.app/profile/jayz.us/post/3lni5ofbuvs2s)**
+**[Legend List 1.0](https://bsky.app/profile/jayz.us/post/3lni5ofbuvs2s)**
 
 Making long lists performant is a hard problem, and React Native’s old architecture wasn’t making it any easier with it’s asynchronous layout computation. We remember Margelo abandoning their `WishList` project.
-LegendList is now in version 1.0, and promises to be even faster than `FlashList`, all the while handling the "hard cases": bidirectional infinite lists, varying item sizes… And it's compatible with the old arch (though less performant and with possible glitches).
+Legend List is now in version 1.0, and promises to be even faster than `FlashList`, all the while handling the "hard cases": bidirectional infinite lists, varying item sizes… And it's compatible with the old arch (though less performant and with possible glitches).
 
 As Seb mentioned last week, there’s also a v2 of `FlashList` in the works, which should be easier to use (no need to specify estimatedItemSize for instance).
 
 Thankfully, all those copy the API of `FlatList` so it’s easy to switch back and forth 🙂.
 
 ---
-
 
 - 💸 [PostHog - How to set up React Native session replay](https://go.posthog.com/twir-apr23)
 - 🐦 [Prototype of Module Federation working with Metro Bundler](https://x.com/_jbroma/status/1912903068464594993)
@@ -139,6 +133,7 @@ Thankfully, all those copy the API of `FlatList` so it’s easy to switch back a
 - 📜 [An Introduction to JavaScript Bundler Rspack](https://blog.appsignal.com/2025/04/16/an-introduction-to-javascript-bundler-rspack.html)
 - 📦 [tsdown \- The Elegant Library Bundler \- Powered by Rolldown](https://tsdown.dev/)
 - 📦 [Node 22.15](https://nodejs.org/en/blog/release/v22.15.0)
+
 ---
 
 ## 🤭 Fun {#fun}
@@ -146,6 +141,5 @@ Thankfully, all those copy the API of `FlatList` so it’s easy to switch back a
 [![Evan Bacon - Coming back to Expo after spending an hour in Android Studio - Photo of Katy Perry kissing the ground after returning from her space flight](/emails/issues/231/meme1.jpg)](https://x.com/Baconbrix/status/1913353166483058931)
 
 [![A huge vertical screen with "package.json" deps and huge horizontall screen with "tailwind class names"](/emails/issues/231/meme2.jpg)](https://x.com/trashh_dev/status/1893339204710539265)
-
 
 See ya! 👋
