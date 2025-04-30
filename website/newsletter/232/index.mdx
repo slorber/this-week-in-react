@@ -1,18 +1,12 @@
 ---
 slug: /232
-title: "This Week In React #232: ..."
+title: "This Week In React #232: React Router, Next.js, Vite, use client, MCP"
 authors: [slorber]
 date: 04-25-2025
 unlisted: true
 ---
 
 Hi everyone!
-
-<Todo />
-
-- 🗓️ [StrapiConf](https://conf.strapi.io/?utm_source=thisweekinreact) - 🇫🇷 Paris - 13 May. Last call to join us for a deep dive into the future of headless web development! Get a 10% discount with code "TWIR
-- 🗓️ [App.js Conf](https://appjs.co/?utm_source=thisweekinreact) - 🇵🇱 Kraków - 28-30 May. This is your final chance to join the biggest React Native & Expo event. Secure your seat now and enjoy a 15% discount using code "TWIR"
-- 🗓 [React-Summit](https://reactsummit.com/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇳🇱 Amsterdam - 13 & 17 June. Check out the full lineup with 60+ speakers at the biggest React conference worldwide! Use promo code TWIR for 10% off tickets.
 
 <!-- truncate -->
 
@@ -42,10 +36,12 @@ Start composing your existing code [**today**](https://bit.dev/?utm_source=ThisW
 - 🔐 [React Router vulnerabilities and v7.5.2 fixes](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v752): React Router v7 has 2 important security vulnerabilities that could lead to DOS and XSS attacks. They have been fixed in the latest v7.5.2 release. Various cloud providers have deployed a mitigation already (Vercel, Netlify, Cloudflare), but it remains useful to upgrade.
 - 👀 [Next.js Docs PR \- Remove Vercel mentions](https://github.com/vercel/next.js/pull/78557): The Next.js docs should now be less biased toward Vercel, and include its competitors more fairly. Personally, I think there's nothing wrong with offering your OSS software to the community and using it as a marketing vector for your paid offer (this is how many OSS projects become sustainable). Even for a larger company like Vercel, it's fair play to do that, but probably necessary to restore the broken trust with some of you.. A reminder that Vercel is not “taking over” the React team, and various client-side-only React Labs features announced last week are [implemented by Vercel employees](https://bsky.app/profile/ricky.fm/post/3lnvyuennss2b) (such as `<ViewTransition>`).
 - 👀 [Vite RSC Plan](https://github.com/hi-ogawa/vite-plugins/issues/748): A Vite contributor is [taking over](https://github.com/facebook/react/pull/31768#issuecomment-2823466684) the development of an upcoming `react-server-dom-vite` package. Many integration PRs have been sent to frameworks like Waku or RedwoodSDK.
+- 🗓 [React-Summit](https://reactsummit.com/?utm_source=Newsletter&utm_medium=thisweekinreact) - 🇳🇱 Amsterdam - 13 & 17 June. Check out the full lineup with 60+ speakers at the biggest React conference worldwide! Use promo code TWIR for 10% off tickets.
+- 🗓️ [StrapiConf](https://conf.strapi.io/?utm_source=thisweekinreact) - 🇫🇷 Paris - 13 May. Last call to join us for a deep dive into the future of headless web development! Get a 10% discount with code "TWIR
 - 📜 [What Does "use client" Do?](https://overreacted.io/what-does-use-client-do/): Dan Abramov explains RSCs have no API surfaces. The directives are module system features that open doors between 2 worlds and could even make sense beyond React. Speaking of Dan, he just [re-launched his YouTube channel](https://www.youtube.com/@overreacted-io), in case you want him to walk you through his blog posts.
 - 📜 [You can serialize a promise in React](https://twofoldframework.com/blog/you-can-serialize-a-promise-in-react): A great interactive article that explains how React is able to forward a Promise from the server to the client through a stream. To do so, it re-creates a tiny version of this mechanism.
 - 📜 [React Internals: Which useEffect runs first?](https://frontendmasters.com/blog/react-internals-which-useeffect-runs-first/): A good reminder that `useEffect` callbacks run bottom-up, from the deepest child to the root (unless you use `<Activity>,` but that’s a story for another time 🙈).
-- 📜 [Concurrent Optimistic Updates in React Query](https://tkdodo.eu/blog/concurrent-optimistic-updates-in-react-query): Dominik shares interesting patterns to avoid displaying an inconsistent UI when using React Query with concurrent mutations and optimistic updates. Tip: olly call `invalidateQueries()` when there’s a single in-flight mutation.
+- 📜 [Concurrent Optimistic Updates in React Query](https://tkdodo.eu/blog/concurrent-optimistic-updates-in-react-query): Dominik shares interesting patterns to avoid displaying an inconsistent UI when using React Query with concurrent mutations and optimistic updates. Tip: only call `invalidateQueries()` when there’s a single in-flight mutation.
 - 📜 [Parents & Owners in React: Context Providers](https://julesblom.com/writing/parent-owners-context): Explains the difference between parent and owner components. By restructuring the owner tree without changing the parent tree, we create more targeted “units of update”.
 - 📜 [From Next.js to Astro: A Page Size Comparison](https://alan.norbauer.com/articles/astro-vs-nextjs-page-size/): A quite fair numbers comparison after porting a small static Next.js site to Astro, reducing bundle size.
 - 📜 [Per-Route Documents in RedwoodSDK: Total Control Over Your HTML](https://rwsdk.com/blog/redwoodsdk-multiple-documents)
@@ -91,6 +87,7 @@ The Callstack project is now open source. It’s built as a drop-in replacement 
 - 💸 [Build a Modern Multi-User Chat App with React Native](https://go.clerk.com/Y0ne425)
 - 🐦 [RN 0.79 now has buit-in support for "aliases" (through Metro package.json `imports`)](https://x.com/satya164/status/1916095938604548366)
 - 📣 [Expo Changelog \- New Build Comparison Tool, Expo Router Landing Page, and UX Improvements](https://expo.dev/changelog/website-updates-4-29-2025)
+- 🗓️ [App.js Conf](https://appjs.co/?utm_source=thisweekinreact) - 🇵🇱 Kraków - 28-30 May. This is your final chance to join the biggest React Native & Expo event. Secure your seat now and enjoy a 15% discount using code "TWIR"
 - 📜 [Shopify Mobile Bridge: Making WebViews Feel Native](https://shopify.engineering/mobilebridge-native-webviews): As part of their transition to React Native, Shopify implemented a fast custom WebView solution that looks and feels native. Critical screens remain implemented using native technologies, but this Mobile Bridge powers many of their important but non-critical screens.
 - 📜 [Powering Native Apps with React Native Brownfield](https://www.callstack.com/blog/powering-native-apps-with-react-native-brownfield)
 - 📜 [React Native macOS \- The best way to include custom fonts](https://shift.infinite.red/the-best-way-to-include-custom-fonts-in-react-native-for-macos-in-2025-4cb235e2d6f7)
