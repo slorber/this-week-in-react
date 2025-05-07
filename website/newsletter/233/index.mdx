@@ -37,6 +37,32 @@ CodeRabbit has so far reviewed more than 5 million PRs, installed on 1 million r
 <Todo />
 
 - 💸 [Product for Engineers - What engineers get wrong about communication](https://go.posthog.com/twir-may7)
+- 👀 [Next.js Docs \- New `runAfterProductionCompile` lifecycle hook](https://nextjs.org/docs/architecture/nextjs-compiler#runafterproductioncompile): Upcoming (unreleased) feature already documented.
+- 💬 [React Compiler oxc plugin](https://github.com/oxc-project/oxc/issues/10048$): Interesting discussions between the React Compiler team and the oxc team to integrate the compiler as an oxc plugin for upcoming usage with Vite and Oxc/Rolldown. The React team suggests making it happen in 2 steps (make it work, then make it fast).
+- 🧵 [shadcn introducing the registry MCP \- One command to make any component registry mcp-compatible.](https://threadreaderapp.com/thread/1917597228513853603.html)
+- 📜 [Functional HTML](https://overreacted.io/functional-html/): Dan gradually reinvents the HTML he wants from first principles, leading to an RSC implementation.
+- 📜 [RSC for Astro Developers](https://overreacted.io/rsc-for-astro-developers/): RSC and Astro have 2 remarkably similar mental models, but Dan exposes some interesting subtle differences. RSCs may feel less intuitive at first, but they also solve some of Astro’s limitations.
+- 📜 [The future of AI interaction: Beyond just text](https://www.epicai.pro/the-future-of-ai-interaction-beyond-just-text-w22ps): Kent argues that MCPs could have a role to play in implementing generative UIs with React Server Components. He wants the protocol to allow richer return types like html and RSC payloads.
+- 📜 [Frontends are hard](https://sst.dev/blog/frontends-are-hard): The devs at SST reflect on the challenges of self-hosting modern meta-frameworks, including React ones, that led them to start the OpenNext initiative.
+- 📜 [Add a Color Scheme Toggle in React Router](https://sergiodxa.com/tutorials/add-a-color-scheme-toggle-in-react-router): This method avoids FOUC with a cookie instead of inlined JS.
+- 📜 [Robust Data Fetching Architecture For Complex React/Next.js Apps](https://www.trevorlasn.com/blog/fetching-data-for-complex-next-and-react-apps): Suggests using 3 layers: Server Components, React Query, and Optimistic Updates.
+- 📜 [Server Components Give You Optionality](https://saewitz.com/server-components-give-you-optionality): They give flexibility to choose in which environments your components run in (Server, Server+Client, or Client) and when.
+- 📜 [How We Fell Out of Love with Next.js and Back in Love with Ruby on Rails & Inertia.js](https://hardcover.app/blog/part-1-how-we-fell-out-of-love-with-next-js-and-back-in-love-with-ruby-on-rails-inertia-js)
+- 📜 [Why Kleinanzeigen.de Picked Astro Over Next.js](https://d13z.dev/blog/07-why-kleinanzeigen-picked-astro-over-nextjs/)
+- 📜 [When You Might Need to Override the Defaults in TanStack Query](https://www.kxlaa.com/articles/when-you-might-need-to-override-the-defaults-in-tanstack-query)
+- 📦 [Unhead 2.0 \- The full stack \<head\> package for any framework](https://unhead.unjs.io/v2): This framework-agnostic package from the UnJS ecosystem now includes React bindings. This could be a great drop-in alternative to `react-helmet` with React 19 support if the new built-in APIs are not good enough for you (see [my comment here](https://github.com/staylor/react-helmet-async/issues/239#issuecomment-2565685131)).
+- 📦 [Blade \- Build instant web apps with React](https://github.com/ronin-co/blade): A new opinionated React meta-framework with Server Components support, that purposefully doesn’t comply with the RSC spec.
+- 📦 [Relay 19.0 \- `@alias` required on conditional fragments, support React 19](https://relay.dev/blog/2025/04/02/relay-19/)
+- 📦 [Mantine 8.0 \- Updated dates package, new TimePicker, Heatmap, CodeHighlight components, nested menus and more](https://mantine.dev/changelog/8-0-0/)
+- 📦 [React Error Boundary 6.0 \- ESM-only](https://github.com/bvaughn/react-error-boundary/releases/tag/6.0.0)
+- 📦 [React Admin 5.8 \- InPlaceEditor, DataTable, AuthLayout, MUI v7, CSS vars, theming](https://github.com/marmelab/react-admin/releases/tag/v5.8.0)
+- 📦 [Unverceled Next.js \- A Next.js 15 Starter Kit Deployed to Cloudflare using OpenNext](https://github.com/ixahmedxi/unverceled-nextjs)
+- 📦 [Radix UI \- New unstable PasswordToggleField and Checkbox parts](https://www.radix-ui.com/primitives/docs/overview/releases#may-5-2025)
+- 📦 [React Router DevTools 5.0 \- Complete overhaul of the routes tab](https://github.com/forge-42/react-router-devtools/releases/tag/v5.0.0)
+- 📦 [MUI 7.1 \- Support for Tailwind CSS 4](https://github.com/mui/material-ui/releases/tag/v7.1.0)
+- 🎥 [Jack Herrington \- React's New Activity Component: Huge Performance Win\!](https://www.youtube.com/watch?v=gRKVL5w-2Lc)
+- 🎥 [Fireship \- The growing divide among React developers…](https://www.youtube.com/watch?v=lLJbHHeFSsE)
+- 🎙️ [Front-end Fire 93 \- React Activity, Storybook 9 Beta, and AI as a Collaborator](https://front-end-fire.com/episodes/93/)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -63,22 +89,77 @@ Speed up your work now! Tolgee helps with:
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[Expo SDK 53](https://expo.dev/changelog/sdk-53)
+
+This is quite an impressive Expo release, with highlights:
+
+- Upgrades to React Native 0.79, React 19, and RNW 0.20
+- Turns the New Arch on by default
+- Edge-to-edge on Android is enabled by default
+- New [Expo BackgroundTask](https://expo.dev/blog/goodbye-background-fetch-hello-expo-background-task), a modern, reliable, power-efficient, and future-proof way to run background tasks using Android `WorkManager` and iOS `BGTaskScheduler` system APIs
+- New [Expo Maps](https://expo.dev/blog/introducing-expo-maps-a-modern-maps-api-for-expo-developers) (alpha) built on Expo Modules API, using SwiftUI and Jetpack Compose, expose platform default Apple Maps and Google Maps components.
+- Metro `package.json#exports` resolution enabled by default
+- Deploy development builds to TestFlight with `npx testflight`
+- Improve Android build times up to 25% with prebuilt Expo Modules
+- And way more\!
+
+See also the [Expo Router v5](https://expo.dev/blog/expo-router-v5) related release with its own highlights:
+
+- Requires React 19 / Expo 53
+- Improves DX, error screen and logging, leverages React owner stacks
+- Deploy versioned API Routes in production with EAS Hosting
+- React Server Functions in beta
+- Protected routes
+
+---
+
+🎥 [Game On \- Bringing WebGPU to React Native](https://www.youtube.com/watch?v=Axb3hWv0zA8)
+
+In a 37-minute video packed with exciting announcements, William Candillon and guests gave us a glimpse into the future of drawing and animation. Supported by Shopify, he’s bringing modern WebGPU support (Vulkan and Metal) to React Native.
+
+By aligning to the web APIs, it's possible to copy/paste existing web examples (including Three.js) and make them work on all platforms. It also enables general-purpose use of the GPU (AI, TensorFlow.js), which you may achieve more easily thanks to a convenient low-level TypeGPU library.
+
+All this work was needed to create a new experimental Skia Graphite backend based on WebGPU. It enables composing and interleaving 2D/3D experiences in a performant way, like on the web, but across all platforms, with full Reanimated integration. Along the way, Skia doesn’t come with any new feature, but has significantly improved performance, reduced, crashes, and supports 3 new platforms: tvOS, macOS and Node. Keep massaging that octopus William\!
+
+---
 
 - 💸 [React Universe Conf 2025 adds new speakers: V. Morozov & K. Hosany (Microsoft), K. Hansen (MongoDB), Z. Chapple (Zephyr Cloud) and more.](https://www.reactuniverseconf.com/?utm_campaign=7310698-RUC%202025&utm_source=TWIR&utm_content=New%20Speakers)
+- ⚖️ [Epic Games Wins Major Victory as Apple is Ordered to Comply With App Store Anti-Steering Injunction](https://www.macrumors.com/2025/04/30/apple-app-store-anti-steering-injunction-violation/): A court judged that Apple purposefully did not comply with a former injunction to let apps use alternative payment methods and bypass the 30% fee on in-app purchases. “For this Court, there is no second bite at the apple”. A major event for the mobile industry that enables Fortnite to return, the Kindle app to finally sell e-books directly, and new business models. Check [Expo](https://expo.dev/blog/mobile-app-payment-processing-best-practices) and [Vercel](https://vercel.com/blog/ios-developers-can-now-offer-commission-free-payments-on-web) guides and starters to avoid the fee.
+- 👀 [React Core PR \- Add Fragment Refs to Fabric with intersection observer support](https://github.com/facebook/react/pull/33056): The recent React Labs post briefly mentioned an upcoming [Fragment Refs](https://react.dev/blog/2025/04/23/react-labs-view-transitions-activity-and-more#fragment-refs) feature. It looks like in the future we’ll be able to use a web-like IntersectionObserver to know when a React fragment enters the screen. Still research/work-in-progress, but exciting new features ahead.
+- 👀 [Reanimated PR \- Shared Elements Transitions on the New Architecture](https://github.com/software-mansion/react-native-reanimated/pull/7466): Exciting draft PR from Software Mansion that plans to stabilize Shared Elements Transitions for the New Architecture (that enables sharing C++ code between platforms).
+- 📜 [Sirens, Sagas, and Stack Traces: A React Native Upgrade Odyssey](https://shift.infinite.red/sirens-sagas-and-stack-traces-a-react-native-upgrade-odyssey-52db6beb0aac)
+- 🔨 [Package Checker \- Check for New Architecture compatibility](https://react-native-package-checker.vercel.app/)
+- 📦 [Compose Multiplatform 1.8 \- Compose Multiplatform for iOS Is Stable and Production-Ready](https://blog.jetbrains.com/kotlin/2025/05/compose-multiplatform-1-8-0-released-compose-multiplatform-for-ios-is-stable-and-production-ready/): The cross-platform UI toolkit from JetBrains enables code sharing between iOS and Android. Unlike React Native, the iOS (and web) support is based on Skia, not using UIKit native elements.
+- 📦 [Zustand 5.0.4 \+ Jotai 2.12.4](https://github.com/pmndrs/jotai/discussions/3041): Fixing an incompatibility issue with RN 0.79 / Expo 53 / Metro 0.82.
+- 📦 [Nitro Audio Manager \- Nitro module for AVAudioSession/AudioManager APIs](https://github.com/ChristopherGabba/react-native-nitro-audio-manager)
+- 📦 [Expo Build Disk Cache \- A plugin for Expo CLI to improve build time](https://github.com/WookieFPV/expo-build-disk-cache)
+- 📦 [Expo App Template \- Modern, sensible defaults and fast Expo app template](https://github.com/nkzw-tech/expo-app-template)
+- 📦 [React Native 0.80 rc.0](https://github.com/facebook/react-native/releases/tag/v0.80.0-rc.0)
+- 🎥 [Jamon Holmgren \- How to build a Mac app with React Native for macOS](https://www.youtube.com/watch?v=0h-owMCfy5s)
+- 🎥 [React Universe Meetup \- 3 new videos from April: Polygen, File-based router, native feel](https://www.youtube.com/playlist?list=PLZ3MwD-soTTEFaxmATqOTcitPEK5iaz1z)
+- 🎥 [Simon Grimm \- Finally React Native UI Components (Expo 53\)](http://youtube.com/watch?v=kGUrNO8WmCU)
+- 🎙️ [React Native Radio 330 \- and Accessibility with Karly Lamm](https://infinite.red/react-native-radio/rnr-330-react-native-and-accessibility-with-karly-lamm)
+- 🎙️ [Rocket Ship 67 \- Quitting RN, React Compiler, Legend List & RN Performance](https://share.transistor.fm/s/18111ecc)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [TypeScript 5.9 Iteration Plan](https://github.com/microsoft/TypeScript/issues/61648)
+- 📖 [Node.js Docs \- Publishing a package](https://nodejs.org/en/learn/modules/publishing-a-package): A new official guide that also covers ESM/CJS subtleties.
+- 📜 [Converting values to strings in JavaScript has pitfalls](https://2ality.com/2025/04/stringification-javascript.html)
+- 📜 [Seeking an Answer: Why can’t HTML alone do includes?](https://frontendmasters.com/blog/seeking-an-answer-why-cant-html-alone-do-includes/)
+- 📦 [Node 24.0](https://nodejs.org/en/blog/release/v24.0.0): The new Node.js version is out and set to become LTS in October, including npm 11, `AsyncLocalStorage` perf improvements, the `URLPattern` API and a major V8 upgrade to v13.6 that unlocks cool new JS APIs such as Explicit Resource Management (`using`) or `RegExp.escape()` (which is now [available everywhere](https://web-platform-dx.github.io/web-features-explorer/features/regexp-escape/)).
+- 📦 [GSAP 3.13 \- JS animations library \- Now 100% free, including all plugins](https://gsap.com/blog/3-13/)
+- 📦 [Deno 2.3 \- Improved deno compile, local npm packages, deno fmt in tagged templates, and more](https://deno.com/blog/v2.3)
+- 📦 [Prisma 6.7 \- ORM without Rust, multi-file schemas](https://github.com/prisma/prisma/releases/tag/6.7.0)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/233/meme.jpg)](https://x.com/sebastienlorber/status/1920045489371951117)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/233/meme2.jpg)](https://x.com/kzzzf/status/1920091355868520557)
 
 See ya! 👋
