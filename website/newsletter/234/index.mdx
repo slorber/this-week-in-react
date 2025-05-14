@@ -1,6 +1,6 @@
 ---
 slug: /234
-title: "This Week In React #234: TanStack DB, TanStack Query, React Router, Redux Toolkit, Parcel | 0.80 RC, Expo, RN Legal, Re.Pack, Skia 2.0, Radon IDE, Rive RN | Rslib, Lightning CSS, shape(), Accessibility"
+title: "This Week In React #234: TanStack DB, TanStack Query, React Router, Vite, Redux Toolkit, Parcel | 0.80 RC, Expo, RN Legal, Re.Pack, Skia 2.0, Radon IDE, Rive RN | Rslib, Lightning CSS, shape(), Accessibility"
 authors: [tboba, kacperkapusciak]
 date: 05-14-2025
 unlisted: true
@@ -8,7 +8,9 @@ unlisted: true
 
 Hi everyone!
 
-**Kacper and Tymek from [Software Mansion](https://swmansion.com/?utm_source=thisweekinreact)** here. With a slightly quieter week, we come mostly with great articles we think you might like, alongside a few interesting releases\! We're so excited about the Vite team working on RSC support, a new React Query proposal, in conjunction with incoming features coming in React Native 0.80, but there are still many new topics here to look at.
+**Kacper and Tymek from [Software Mansion](https://swmansion.com/?utm_source=thisweekinreact)** here 👋.
+
+With a slightly quieter week, we come mostly with great articles we think you might like, alongside a few interesting releases\! We're so excited about the Vite team working on RSC support, a new React Query proposal, in conjunction with the features coming in React Native 0.80, but there are still many new topics here to look at.
 
 Let's dive in\!
 
@@ -46,15 +48,14 @@ It is built on TanStack Store and is working with and alongside TanStack Query, 
 
 - 💸 [Build professional design system in less than a day, using Hope AI, new model by Bit.Cloud](https://bit.cloud/solutions/design-systems?utm_source=ThisWeekInReact&campaign=DesignSystem)
 - 👀 [React PR \- Integrate React RSC with Vite](https://github.com/facebook/react/pull/33152): An implementation of React Server Components support in Vite. There used to be a community proposal in the past but this time it's coming officially from the Vite team.
-- 👀 [React Query RFC \- Unified Imperative Query Methods](https://github.com/TanStack/query/discussions/9135): As the API of TanStack Query grows, the creators proposed to reduce the number of six functions with similar functionality to two unique methods \- `query` and `infiniteQuery`.
-- 📜 [React Hook Factory \- how to create custom hooks programmatically](https://tylur.blog/react-hook-factory/): A clever pattern to reduce boilerplate when setting up a new React Context.
-- 📜 [Dependency Inversion in React: Building Truly Testable Components](https://cekrem.github.io/posts/dependency-inversion-in-react/): Implementing a SOLID principle known from the object-oriented programming to the React world.
-- 📜 [Using OpenAuth with React Router](https://seanpaulcampbell.com/blog/openauth-react-router/): Comprehensive 2-part article explaining how to implement authentication using React Router, OpenAuth and SST.
-- 📜 [Client-Side React Rocks](https://marmelab.com/blog/2025/05/09/client-side-react-rocks.html): On the example of tabular layout the author argues client-side React features like \`useContext\` and \`createPortal\` provide better DX than Server Components.
+- 👀 [React Query RFC \- Unified Imperative Query Methods](https://github.com/TanStack/query/discussions/9135): As the API of TanStack Query grows, the creators proposed to reduce the number of six functions with similar functionality to two unique methods \- `query()` and `infiniteQuery()`.
 - 📜 [Static as a Server](https://overreacted.io/static-as-a-server/): Dan draws parallels between the Astro and built-time React Server Components for creating static sites without a server.
+- 📜 [React Hook Factory \- how to create custom hooks programmatically](https://tylur.blog/react-hook-factory/): A clever pattern to reduce boilerplate when setting up a new React Context.
+- 📜 [Dependency Inversion in React: Building Truly Testable Components](https://cekrem.github.io/posts/dependency-inversion-in-react/): Implementing the SOLID principle by passing dependencies as props.
+- 📜 [Using OpenAuth with React Router](https://seanpaulcampbell.com/blog/openauth-react-router/): Comprehensive 2-part tutorial explaining how to implement authentication using React Router, OpenAuth and deploying on AWS with SST.
+- 📜 [Client-Side React Rocks](https://marmelab.com/blog/2025/05/09/client-side-react-rocks.html): On the example of tabular layout, the author argues client-side React features like `useContext` and `createPortal` provide better DX than Server Components.
 - 📜 [The Limits of RSC: A Practitioner's Journey](https://www.nirtamir.com/articles/the-limits-of-rsc-a-practitioners-journey): Nir tried to implement infinite scrolling UI using Server Components, but ran into a wall. Spoiler: He used React Query instead.
 - 📜 [How to Build a Custom React Renderer](https://blog.swmansion.com/how-to-build-a-custom-react-renderer-595dc4a9cb1c): Using the `react-reconciler` package with Smelter as an example.
-- 📜 [Control Props: Give Your React Components Superpowers](https://www.epicreact.dev/control-props-give-your-react-components-superpowers-xitiw): Describes a common React pattern used to control state from outside a component. Generally associated with inputs, but often used by UI libraries.
 - 📜 [Patterns for state management with actors in React with XState](https://www.typeonce.dev/article/patterns-for-state-management-with-actors-in-react-with-xstate)
 - 📜 [How To Integrate React Query With AG Grid?](https://scientyficworld.org/how-to-integrate-react-query-with-ag-grid/)
 - 📦 [React Router 7.6 \- new `routeDiscovery` option](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v760): New config option introduced granting more control over the Lazy Route Discovery feature.
