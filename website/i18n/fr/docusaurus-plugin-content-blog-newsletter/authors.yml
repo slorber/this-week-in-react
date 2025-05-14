@@ -69,3 +69,15 @@ tomekzaw:
     bluesky: tomekzaw.bsky.social
     github: tomekzaw
     linkedin: tomekzaw
+
+tboba:
+  name: Tymoteusz Boba
+  title: Software Engineer - Software Mansion
+  url: https://x.com/tboba_
+  image_url: https://github.com/tboba.png
+  page: true
+  socials:
+    x: tboba_
+    bluesky: tboba.pl
+    github: tboba
+    linkedin: tymoteusz-boba-70503b157
