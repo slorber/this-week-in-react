@@ -1,14 +1,15 @@
 ---
 slug: /235
-title: "This Week In React #235: ..."
+title: "This Week In React #235: React Router, createStore, SuspenseList, Transition Indicator, Compiler, RenderHooks, Waku, React-Scan | Expo, Lava, Fortnite, Skia, AI, Lynx | TC39, using, Zod, Node, Deno"
 authors: [slorber]
 date: 05-21-2025
-unlisted: true
 ---
 
 Hi everyone!
 
-<Todo />
+This week, we're delighted to finally have a preview of React Server Components support in React Router. I've also found some very interesting PRs on the React repo, and give you a glimpse of what could be coming soon!
+
+The React Native ecosystem is surprisingly calm, but no doubt they keep everything secret for [App.js Conf](https://appjs.co/) next week!
 
 <!-- truncate -->
 
@@ -48,12 +49,11 @@ The feature is designed to be both incrementally adoptable by returning JSX in l
 
 **[Render Hooks](https://github.com/brandonmcconnell/render-hooks) and [With React](https://github.com/jacobparis/with-react)**
 
-Looks like the Render Props pattern is making a comeback, with 2 new projects proposing to expose React core hooks in a render callback. This can be a convenient trick in some situations, but it doesn’t solve any problem that can’t be solved by extracting a custom component. An interesting pattern to use sparingly.
+Looks like the Render Props pattern is making a comeback, with 2 new projects proposing to expose React core hooks in a render callback. This is a convenient trick in some situations, allowing you to "inline" a component while still respecting the rules of hooks, but it does not really solve any problem that can’t be solved by extracting a custom component. An interesting pattern to use sparingly.
 
 ---
 
 - 💸 [Product for Engineers - What engineers get wrong about communication](https://go.posthog.com/twir-may21)
-
 - 👀 [React Core PR \- `createStore()` skeleton API](https://github.com/facebook/react/pull/33215): Initial scaffolding work to implement the Concurrent Stores feature mentioned in the latest React Labs update. There’s no implementation yet, but I still find it interesting to check the signature/types of this upcoming API that should support both ad-hoc state updates and the reducer/actions pattern. What strikes me the most is that you can’t access the store value directly, apart from using the `use(store)` API, and this totally makes sense in a concurrent world. Remember, this is a work in progress, and things may change.
 - 👀 [React Core PRs \- `<SuspenseList>` being actively worked on](https://github.com/search?q=repo%3Afacebook%2Freact+SuspenseList&type=pullrequests&s=created&o=desc): It’s been a while since we last heard of this upcoming component that we thought would be in React 18\. It allows to coordinate Suspense boundaries and control their “reveal order” (forwards/backwards/together).
 - 👀 [React Core PR \- Transition indicator \+ `onDefaultTransitionIndicator` API](https://github.com/facebook/react/pull/33162): A feature being worked on should allow giving user feedback while React transitions are in progress. The default React-DOM implementation should show a native browser spinner, but it’s possible to opt out or provide a custom feedback.
