@@ -34,10 +34,51 @@ CodeRabbit has so far reviewed more than 5 million PRs, installed on 1 million r
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![React Router RSC Preview](/emails/issues/235/rr.jpg)](https://remix.run/blog/rsc-preview)
+
+**[React Router RSC Preview](https://remix.run/blog/rsc-preview)**
+
+The React Router team unveiled a preview of React Server Components support using the Parcel bundler. Stable support is blocked until Vite officially supports RSCs, but the good news is that React Router is becoming more framework-agnostic, and they expect to support other bundlers in the future with minimal effort.
+
+The feature is designed to be both incrementally adoptable by returning JSX in loaders/actions, but also to feel good on new greenfield projects looking to go all-in with Server Component Routes, `’use client’` and `’use server’` directives. They also explain how to solve N+1 query problems in RSCs (inspired by GraphQL / DataLoader).
+
+---
+
+[![Render Hooks](/emails/issues/235/renderhook.jpg)](https://github.com/brandonmcconnell/render-hooks)
+
+**[Render Hooks](https://github.com/brandonmcconnell/render-hooks) and [With React](https://github.com/jacobparis/with-react)**
+
+Looks like the Render Props pattern is making a comeback, with 2 new projects proposing to expose React core hooks in a render callback. This can be a convenient trick in some situations, but it doesn’t solve any problem that can’t be solved by extracting a custom component. An interesting pattern to use sparingly.
+
+---
 
 - 💸 [Product for Engineers - What engineers get wrong about communication](https://go.posthog.com/twir-may21)
+
+- 👀 [React Core PR \- `createStore()` skeleton API](https://github.com/facebook/react/pull/33215): Initial scaffolding work to implement the Concurrent Stores feature mentioned in the latest React Labs update. There’s no implementation yet, but I still find it interesting to check the signature/types of this upcoming API that should support both ad-hoc state updates and the reducer/actions pattern. What strikes me the most is that you can’t access the store value directly, apart from using the `use(store)` API, and this totally makes sense in a concurrent world. Remember, this is a work in progress, and things may change.
+- 👀 [React Core PRs \- `<SuspenseList>` being actively worked on](https://github.com/search?q=repo%3Afacebook%2Freact+SuspenseList&type=pullrequests&s=created&o=desc): It’s been a while since we last heard of this upcoming component that we thought would be in React 18\. It allows to coordinate Suspense boundaries and control their “reveal order” (forwards/backwards/together).
+- 👀 [React Core PR \- Transition indicator \+ `onDefaultTransitionIndicator` API](https://github.com/facebook/react/pull/33162): A feature being worked on should allow giving user feedback while React transitions are in progress. The default React-DOM implementation should show a native browser spinner, but it’s possible to opt out or provide a custom feedback.
+- 👀 [SWC PR \- Initialize `@swc/react-compiler`](https://github.com/swc-project/swc/pull/10475): A new package to integrate the React Compiler for all SWC-based projects is coming. It will still use Babel under the hood ([details](https://github.com/oxc-project/oxc/issues/10048#issuecomment-2837628965)), but it’s possible to optimize by only running it on relevant files (see what [Next.js is doing](https://nextjs.org/docs/app/api-reference/config/next-config-js/reactCompiler)), potentially using parallelization.
+- 👀 [Next.js PR \- Initial Segment Explorer devtool](https://github.com/vercel/next.js/pull/78858): The Next.js team started working on a tool to help you visualize parallel and interception route segments.
+- 🔐 [Next.js Race Condition to Cache Poisoning \- CVE-2025-32421](https://github.com/advisories/GHSA-qpjv-v59x-3qc4): Low-severity Pages Router vulnerability, already patched.
+- 📣 [Appwrite Sites: The open-source Vercel alternative](https://appwrite.io/blog/post/announcing-appwrite-sites): The AppWrite cloud platform can now deploy full-stack React meta-frameworks. It positions itself as a direct Vercel competitor, although there are differences (containers vs serverless). It’s a paid cloud product, but you can also self-host it for free.
+- 📜 [Concurrent Rendering](https://ui.dev/c/react/concurrent-rendering): Free interactive lesson on React transitions from the ui.dev course.
+- 📜 [Correctly infers from initial props](https://rena.to/blog/13): You don’t need to explicitly type your context value and can leverage type inference instead.
+- 📜 [Making Next.js Navigation Fast af](https://upstash.com/blog/fast-nextjs): Using React Router within your Next.js app works, but I doubt it’s a good idea, doesn’t permit you to use RSCs, and is likely to cause trouble if you use different routers on different pages.
+- 📜 [Mastering Focus Management in React with `flushSync`](https://www.epicreact.dev/mastering-focus-management-in-react-with-flush-sync-f5b38): By default, React uses batching and doesn’t flush state updates immediately to the DOM, and you can opt out of this behavior when needed.
+- 📜 [Preserving and Resetting State in React](https://www.epicreact.dev/preserving-and-resetting-state-in-react-l2dxl): Explains why conditionally wrapping a component may make it reset its state.
+- 📜 [Just F\*\*\*ing Use React](https://justfuckingusereact.com/): Entertaining read, also exists in a less profane [Just Use React](https://www.epicreact.dev/just-use-react-dk4e0) variant.
+- 📜 [The Past and Future of Render Optimization with React Context](https://newsletter.daishikato.com/p/the-past-and-future-of-render-optimization-with-react-context)
 - 💸 [Full-Stack Upgrade – Build real apps with auth, orgs & file uploads: The Road to Next is your next step as a full-stack React developer.](https://www.road-to-next.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_1)
+- 📦 [Waku 0.23 \- Fine-grained component render modes](https://waku.gg/blog/fine-grained-router-components): Makes it possible to statically pre-render parts of a dynamic page. I find the API a bit confusing, but the idea looks cool and simpler than Next.js Partial Pre-Rendering.
+- 📦 [React-Scan 0.3.4 \- Scan for React performance issues](https://github.com/aidenybai/react-scan/releases/tag/v0.3.4): A release that takes the opportunity to announce upcoming features and the availability of the [extension on the Chrome store](https://chromewebstore.google.com/detail/react-scan/anmmhkomejbdklkhoiloeaehppaffmdf).
+- 📦 [React Aria \- May 19 Release](https://react-spectrum.adobe.com/releases/2025-05-19.html)
+- 📦 [React-Admin \- May 2025 Update \- 5.7 & 5.8](https://marmelab.com/blog/2025/05/21/react-admin-may-2025-update.html)
+- 📦 [StyleX 0.13 \- New `defineConsts` and `positionTry` APIs](https://stylexjs.com/blog/v0.13.0)
+- 📦 [Shopify Hydrogen 2025.05 \- Upgrades to React Router 7](https://hydrogen.shopify.dev/update/may-2025)
+- 🎥 [Theo \- React Is the last framework](https://www.youtube.com/watch?v=P1FLEnKZTAE): Probably a quite controversial point of view that React runtime/syntax is less likely to change now (mainly due to AI). Innovation is moving an abstraction layer above with the React Compiler.
+- 🎥 [Alem Tuzlak \- Server Componets (RSC) in react-router are... actually good?](http://epicweb.dev/tips/server-componets-rsc-in-react-router-are-actually-good~n3u4j)
+- 🎙️ [Syntax 902 \- Fullstack Cloudflare with React and Vite \- RedwoodSDK with Peter Pistorius](https://syntax.fm/show/902/fullstack-cloudflare-with-react-and-vite-redwood-sdk)
+- 🎙️ [Front-end Fire 95 \-TanStack DB & The Rise of the Tannerverse](https://front-end-fire.com/episodes/95/)
 
 <SubscribeFormEmbed placement="middle" />
 
