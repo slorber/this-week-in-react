@@ -1,9 +1,8 @@
 ---
 slug: /236
-title: "This Week In React #236: Remix, TanStack, RSC, Storybook, Docusaurus, RedwoodSDK | EAS Hosting, Executorch, RN Screens, Radon IDE, Flashlist, Reanimated | Temporal TypeScript, ESlint, SolidJS, tsdown..."
+title: "This Week In React #236: Remix, TanStack, RSC, RedwoodSDK, Storybook, Docusaurus | ExecuTorch, Screens, FlashList, Reanimated, Expo, EAS, Radon | TypeScript, Temporal, Angular, JSPM, ESLint, tsdown"
 authors: [cyrilbo, matthieugicquel]
 date: 05-28-2025
-unlisted: true
 ---
 
 Hi everyone!
@@ -58,15 +57,16 @@ Their goal with Remix v3 is “reimagining what a web framework can be”. The p
 - 💸 [Product for Engineers - This is why you're not shipping](https://go.posthog.com/twir-may28)
 - 📜 [The Beauty of TanStack Router](https://tkdodo.eu/blog/the-beauty-of-tan-stack-router): Dominik goes through the features that differentiate Tanstack Router: Type-safe routing with StrictOrFrom principle, Search Param State Management, File-Based Routing, and Suspense support.
 - 📜 [Composing Server and Client Components: The Modern React's Superpower](https://www.epicreact.dev/composing-server-and-client-components-the-modern-reacts-superpower-08yn9): RSC contrasts sharply with the old days of script tags and global variables.
-- 📜 [Why React Error Boundaries Aren't Just Try/Catch for Components](https://www.epicreact.dev/why-react-error-boundaries-arent-just-try-catch-for-components-i6e2l): They are declarative components that only catch render errors. This article shares various pragmatic tips such as using ``react-error-boundary` package or how to plug a retry button.
+- 📜 [Why React Error Boundaries Aren't Just Try/Catch for Components](https://www.epicreact.dev/why-react-error-boundaries-arent-just-try-catch-for-components-i6e2l): They are declarative components that only catch render errors. This article shares various pragmatic tips such as using `react-error-boundary` package or how to plug a retry button.
 - 📜 [Next.js Server Actions are public-facing API endpoints](https://growl.dev/blog/nextjs-server-actions/): Server Actions can be called from Curl commands, the action ids can easily leak. They should be treated with the same security precautions as traditional public API endpoints.
 - 📜 [Your React Meta-Framework Feels Broken, Here's Why](https://rwsdk.com/blog/your-react-meta-framework-feels-broken): RedwoodSDK tries to remove useless abstraction layers, conventions and other magic things that exist in Next.js and Remix.
 - 📜 [Building with React Server Components and Client Components in RedwoodSDK](https://rwsdk.com/blog/react-rsc-redwoodsdk)
+- 📜 [SolidJS for React Developers](https://marmelab.com/blog/2025/05/28/solidjs-for-react-developper.html)
 - 📜 [Building a Hold to Delete Component](https://emilkowal.ski/ui/building-a-hold-to-delete-component)
 - 📜 [Understanding Hydration Errors by building a SSR React Project](https://www.propelauth.com/post/understanding-hydration-errors)
 - 📜 [Why Composition Beats Inheritance In React](https://thetshaped.dev/p/why-composition-beats-inheritance-react-projects-extensible-components)
 - 💸 [The Road to Next - Master Full-Stack Web Development with Next.js 15 and React 19](https://www.road-to-next.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_1.1)
-- 📦 [Docusaurus 3.8](https://docusaurus.io/blog/releases/3.8): Continues the work on faster builds, adds support for CSS Cascade layers, both behind a new “future flags” system.
+- 📦 [Docusaurus 3.8](https://docusaurus.io/blog/releases/3.8): Continues the work on faster builds, adds support for CSS Cascade layers, both behind “Future Flags”.
 - 📦 [Storybook 9.0](https://github.com/storybookjs/storybook/releases/tag/v9.0.0): After many betas/RCs, it's finally out, but no official blog post yet.
 - 📦 [TanStack Query v5.77](https://github.com/TanStack/query/releases/tag/v5.77.0): Adds `maxChunks` to keep in the cache for streamed queries.
 - 🎥 [Youssef Benlemlih - TanStack is Slowly Taking Over React](https://www.youtube.com/watch?v=u10Zlg_Un8I)
@@ -97,13 +97,14 @@ Enable Billing, drop in `<PricingTable/>` on your `/pricing` page and [start mon
 ## 📱 React-Native {#react-native}
 
 - 💸 [EAS Workflows is the standard for React Native CI/CD. Spend less time thinking about CI and more time building features.](https://expo.dev/eas/workflows?utm_source=twir+newsletter&utm_medium=email&utm_campaign=twir-workflows&utm_id=TWIR)
-- 📜 [Incremental EAS Hosting changes](https://expo.dev/changelog/incremental-eas-hosting-changes)
-- 📦 [RN Executorch 0.4.1 \- ​​More LLMs, tool calling, text embeddings, multilingual speech-to-text and OCR, and image segmentation](https://github.com/software-mansion/react-native-executorch/releases/tag/v0.4.1)
-- 📦 [RN Screens 4.11 \- react-native-edge-to-edge integration, \`pageSheet\` presentation](https://github.com/software-mansion/react-native-screens/releases/tag/4.11.0)
+- 📣 [Expo - Incremental EAS Hosting changes](https://expo.dev/changelog/incremental-eas-hosting-changes)
+- 📜 [Expo \- What every dev should know about using Environment Variables](https://expo.dev/blog/what-are-environment-variables)
+- 📜 [Expo - How to get your Bolt app to the App Store (No code required)](https://expo.dev/blog/how-to-get-your-ai-app-to-the-app-store)
+- 📦 [RN ExecuTorch 0.4.0 - More LLMs, tool calling, text embeddings, multilingual speech-to-text and OCR, and image segmentation](https://blog.swmansion.com/react-native-executorch-release-v0-4-0-262d4013ac10)
+- 📦 [RN Screens 4.11 \- react-native-edge-to-edge integration, `pageSheet` presentation](https://github.com/software-mansion/react-native-screens/releases/tag/4.11.0)
 - 📦 [Radon IDE 1.7 \- Lots of bugfixes](https://github.com/software-mansion/radon-ide/releases/tag/v1.7.0)
-- 📦 [Flashlist 2.0 RC1 \- No major changes since the last alpha](https://github.com/Shopify/flash-list/releases/tag/v2.0.0-rc.1)
+- 📦 [FlashList 2.0 RC1](https://github.com/Shopify/flash-list/releases/tag/v2.0.0-rc.1): No major changes since the last alpha, it's now a Release Candidate and already considered ready for production.
 - 📦 [Reanimated 4.0.0-beta.4 \- RN 0.78, 0.79, and 0.80 support, CSS animation fixes, stability improvements](https://github.com/software-mansion/react-native-reanimated/releases/tag/4.0.0-beta.4)
-- 🎥 [How to publish your AI app to the app store](https://www.youtube.com/watch?v=T1akm3DPNus) and [the associated article](https://expo.dev/blog/how-to-get-your-ai-app-to-the-app-store)
 - 🎥 [Expo - The Golden Workflows playlist](https://www.youtube.com/watch?v=u8MAJ0F18s0&list=PLsXDmrmFV_AQ1fp78TTKP51N_R-EW98oT)
 - 🎙️ [RNR 333 \- Expo Atlas with Cedric van Putten](https://infinite.red/react-native-radio/rnr-333-expo-atlas-with-cedric-van-putten)
 - 🎙️ [Rocket Ship 070 \- React Native Version Hell, React Server Components with Expo & Invoice App Updates](https://share.transistor.fm/s/b04dbb2b)
@@ -112,19 +113,21 @@ Enable Billing, drop in `<PricingTable/>` on your `/pricing` page and [start mon
 
 ## 🔀 Other {#other}
 
-- **🐦** [Firefox 139 has support for Temporal, the new JS date/time API](https://bsky.app/profile/robpalmer.bsky.social/post/3lq7jrniyn224)
 - 📜 [TypeScript Native Previews](https://devblogs.microsoft.com/typescript/announcing-typescript-native-previews/): Microsoft announced the go rewrite of TypeScript a few months ago. Nightly builds for this rewrite will now be published, and can be used with a CLI or a VS Code extension. JSX support has been added, and it’s still \~10 times faster than the JS version.
-- 📜 [Do NOT Assert on Requests](https://www.epicweb.dev/do-not-assert-on-requests): The creator of msw explains what he recommends instead of checking the body/header of sent requests in tests
-- 📜 [ESLint v9.0.0: A retrospective](https://eslint.org/blog/2025/05/eslint-v9.0.0-retrospective/)
-- 📜 [SolidJS for React Developers](https://marmelab.com/blog/2025/05/28/solidjs-for-react-developper.html)
+- 📜 [Do Not Assert on Requests](https://www.epicweb.dev/do-not-assert-on-requests): The creator of msw explains what he recommends instead of checking the body/header of sent requests in tests
+- 📜 [ESLint v9 Retrospective - A review of what went well, and what didn't](https://eslint.org/blog/2025/05/eslint-v9.0.0-retrospective/)
 - 📜 [Switching from tsup to tsdown](https://alan.norbauer.com/articles/tsdown-bundler/)
-- 📜 [Malicious npm Packages Target React, Vue, and Vite Ecosystems with Destructive Payloads](https://socket.dev/blog/malicious-npm-packages-target-react-vue-and-vite-ecosystems-with-destructive-payloads)
 - 📜 [A brief history of JavaScript](https://deno.com/blog/history-of-javascript)
+- 📦 [Firefox 139 - Temporal, `hidden=until-found`, `dialog.requestClose()`](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/139): The first browser to support the stage 3 Temporal API!
+- 📦 [JSPM 4.0 - Standards based import map package management](https://jspm.org/jspm-4.0-release): A quite innovative project for shipping frontends with no build step.
+- 📦 [Angular 20.0 - Reactivity, Resource API, SSR, Zoneless, Vitest, and more](https://medium.com/@mgechev/b5c9c06cf301)
 
 ---
 
 ## 🤭 Fun {#fun}
 
 [![Benjamin Lee tweet: Just hoping @tan_stack stays safe from RSC](/emails/issues/236/meme.jpg)](https://x.com/Benjamin_D_Lee/status/1926071667345822140)
+
+[![meme2](/emails/issues/236/meme2.jpg)](hhttps://x.com/alxfazio/status/1926731799226462646)
 
 See ya! 👋
