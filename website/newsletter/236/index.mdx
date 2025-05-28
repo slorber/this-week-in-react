@@ -1,6 +1,6 @@
 ---
 slug: /236
-title: "This Week In React #236: Remix, TanStack, RSC, RedwoodSDK, React Router, Docusaurus | EAS Hosting, Executorch, RN Screens, Radon IDE, Flashlist, Reanimated | Temporal TypeScript, ESlint, SolidJS, tsdown..."
+title: "This Week In React #236: Remix, TanStack, RSC, Storybook, Docusaurus, RedwoodSDK | EAS Hosting, Executorch, RN Screens, Radon IDE, Flashlist, Reanimated | Temporal TypeScript, ESlint, SolidJS, tsdown..."
 authors: [cyrilbo, matthieugicquel]
 date: 05-28-2025
 unlisted: true
@@ -58,18 +58,19 @@ Their goal with Remix v3 is “reimagining what a web framework can be”. The p
 - 💸 [Product for Engineers - This is why you're not shipping](https://go.posthog.com/twir-may28)
 - 📜 [The Beauty of TanStack Router](https://tkdodo.eu/blog/the-beauty-of-tan-stack-router): Dominik goes through the features that differentiate Tanstack Router: Type-safe routing with StrictOrFrom principle, Search Param State Management, File-Based Routing, and Suspense support.
 - 📜 [Composing Server and Client Components: The Modern React's Superpower](https://www.epicreact.dev/composing-server-and-client-components-the-modern-reacts-superpower-08yn9): RSC contrasts sharply with the old days of script tags and global variables.
-- 📜 [Mastering Focus Management in React with \`flushSync\`](https://www.epicreact.dev/mastering-focus-management-in-react-with-flush-sync-f5b38): If you try to focus something (eg an input) before React has actually committed it to the DOM, it won’t work, unless you use `flushSync`
+- 📜 [Why React Error Boundaries Aren't Just Try/Catch for Components](https://www.epicreact.dev/why-react-error-boundaries-arent-just-try-catch-for-components-i6e2l): They are declarative components that only catch render errors. This article shares various pragmatic tips such as using ``react-error-boundary` package or how to plug a retry button.
+- 📜 [Next.js Server Actions are public-facing API endpoints](https://growl.dev/blog/nextjs-server-actions/): Server Actions can be called from Curl commands, the action ids can easily leak. They should be treated with the same security precautions as traditional public API endpoints.
+- 📜 [Your React Meta-Framework Feels Broken, Here's Why](https://rwsdk.com/blog/your-react-meta-framework-feels-broken): RedwoodSDK tries to remove useless abstraction layers, conventions and other magic things that exist in Next.js and Remix.
 - 📜 [Building with React Server Components and Client Components in RedwoodSDK](https://rwsdk.com/blog/react-rsc-redwoodsdk)
-- 📜 [Why React Error Boundaries Aren't Just Try/Catch for Components](https://www.epicreact.dev/why-react-error-boundaries-arent-just-try-catch-for-components-i6e2l)
 - 📜 [Building a Hold to Delete Component](https://emilkowal.ski/ui/building-a-hold-to-delete-component)
-- 📜 [How to Debounce Loaders and Actions in React Router](https://sergiodxa.com/tutorials/debounce-loaders-and-actions-in-react-router)
 - 📜 [Understanding Hydration Errors by building a SSR React Project](https://www.propelauth.com/post/understanding-hydration-errors)
 - 📜 [Why Composition Beats Inheritance In React](https://thetshaped.dev/p/why-composition-beats-inheritance-react-projects-extensible-components)
 - 💸 [The Road to Next - Master Full-Stack Web Development with Next.js 15 and React 19](https://www.road-to-next.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_1.1)
 - 📦 [Docusaurus 3.8](https://docusaurus.io/blog/releases/3.8): Continues the work on faster builds, adds support for CSS Cascade layers, both behind a new “future flags” system.
+- 📦 [Storybook 9.0](https://github.com/storybookjs/storybook/releases/tag/v9.0.0): After many betas/RCs, it's finally out, but no official blog post yet.
 - 📦 [TanStack Query v5.77](https://github.com/TanStack/query/releases/tag/v5.77.0): Adds `maxChunks` to keep in the cache for streamed queries.
-- 🎥 [TanStack is Slowly Taking Over React](https://www.youtube.com/watch?v=u10Zlg_Un8I)
-- 🎥 [Understanding the cause of hydration issues in react-router](https://www.epicweb.dev/tips/understanding-the-cause-of-hydration-issues-in-react-router~si4z9)
+- 🎥 [Youssef Benlemlih - TanStack is Slowly Taking Over React](https://www.youtube.com/watch?v=u10Zlg_Un8I)
+- 🎥 [Alem Tuzlak - Understanding the cause of hydration issues in react-router](https://www.epicweb.dev/tips/understanding-the-cause-of-hydration-issues-in-react-router~si4z9)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -103,6 +104,7 @@ Enable Billing, drop in `<PricingTable/>` on your `/pricing` page and [start mon
 - 📦 [Flashlist 2.0 RC1 \- No major changes since the last alpha](https://github.com/Shopify/flash-list/releases/tag/v2.0.0-rc.1)
 - 📦 [Reanimated 4.0.0-beta.4 \- RN 0.78, 0.79, and 0.80 support, CSS animation fixes, stability improvements](https://github.com/software-mansion/react-native-reanimated/releases/tag/4.0.0-beta.4)
 - 🎥 [How to publish your AI app to the app store](https://www.youtube.com/watch?v=T1akm3DPNus) and [the associated article](https://expo.dev/blog/how-to-get-your-ai-app-to-the-app-store)
+- 🎥 [Expo - The Golden Workflows playlist](https://www.youtube.com/watch?v=u8MAJ0F18s0&list=PLsXDmrmFV_AQ1fp78TTKP51N_R-EW98oT)
 - 🎙️ [RNR 333 \- Expo Atlas with Cedric van Putten](https://infinite.red/react-native-radio/rnr-333-expo-atlas-with-cedric-van-putten)
 - 🎙️ [Rocket Ship 070 \- React Native Version Hell, React Server Components with Expo & Invoice App Updates](https://share.transistor.fm/s/b04dbb2b)
 
