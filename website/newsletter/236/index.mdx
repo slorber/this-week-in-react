@@ -1,14 +1,20 @@
 ---
 slug: /236
-title: "This Week In React #236: ..."
-authors: [slorber]
+title: "This Week In React #236: Remix, TanStack Router, RSC, RedwoodSDK, React Router, Docusaurus, TanStack Query | EAS Hosting, Executorch, RN Screens, Radon IDE, Flashlist, Reanimated | Temporal TypeScript, ESlint, SolidJS, tsdown..."
+authors: [cyrilbo, matthieugicquel]
 date: 05-28-2025
 unlisted: true
 ---
 
 Hi everyone!
 
-<Todo />
+Cyril and Matthieu from [Theodo Apps](https://apps.theodo.com/en?utm_source=thisweekinreact) here 👋.
+
+This week, there are big news from the Remix team. Microsoft also made it easier to try out the TypeScript Go rewrite.
+
+In the React Native world, there were a few minor but interesting releases, and the App.js config starts tomorrow. Seb will have more to tell you about it next week.
+
+Let's dive in!
 
 <!-- truncate -->
 
@@ -37,8 +43,33 @@ Learn More: [www.ag-grid.com/charts](https://www.ag-grid.com/charts?utm_source=t
 
 ## ⚛️ React {#react}
 
+[![Wake up Remix](/emails/issues/236/remix.jpg)](https://remix.run/blog/wake-up-remix)
+
+**[Wake up Remix - The plan for Remix v3](https://remix.run/blog/wake-up-remix)**
+
+This week you might have heard a rumor about [Remix moving on from React](https://x.com/AdamRackis/status/1925646909345058818). Ryan and Michael just published an official post describing the future of Remix.
+
+In a nutshell, React Router will still be fully maintained and a safe bet. In parallel, Remix v3 will be a new framework based on a fork of Preact, so that they control the full stack.
+
+Their goal with Remix v3 is “reimagining what a web framework can be”. The post describes the guiding principles this new framework will follow (optimize for LLMs, build on Web APIs, composition…)
+
+---
+
 - 💸 [Product for Engineers - This is why you're not shipping](https://go.posthog.com/twir-may28)
 - 💸 [The Road to Next - Master Full-Stack Web Development with Next.js 15 and React 19](https://www.road-to-next.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_1.1)
+- 📜 [The Beauty of TanStack Router](https://tkdodo.eu/blog/the-beauty-of-tan-stack-router): Dominik goes through the features that differentiate Tanstack Router: Type-safe routing with StrictOrFrom principle, Search Param State Management, File-Based Routing, and Suspense support.
+- 📜 [Composing Server and Client Components: The Modern React's Superpower](https://www.epicreact.dev/composing-server-and-client-components-the-modern-reacts-superpower-08yn9): RSC contrasts sharply with the old days of script tags and global variables.
+- 📜 [Mastering Focus Management in React with \`flushSync\`](https://www.epicreact.dev/mastering-focus-management-in-react-with-flush-sync-f5b38): If you try to focus something (eg an input) before React has actually committed it to the DOM, it won’t work, unless you use `flushSync`
+- 📜 [Building with React Server Components and Client Components in RedwoodSDK](https://rwsdk.com/blog/react-rsc-redwoodsdk)
+- 📜 [Why React Error Boundaries Aren't Just Try/Catch for Components](https://www.epicreact.dev/why-react-error-boundaries-arent-just-try-catch-for-components-i6e2l)
+- 📜 [Building a Hold to Delete Component](https://emilkowal.ski/ui/building-a-hold-to-delete-component)
+- 📜 [How to Debounce Loaders and Actions in React Router](https://sergiodxa.com/tutorials/debounce-loaders-and-actions-in-react-router)
+- 📜 [Understanding Hydration Errors by building a SSR React Project](https://www.propelauth.com/post/understanding-hydration-errors)
+- 📜 [Why Composition Beats Inheritance In React](https://thetshaped.dev/p/why-composition-beats-inheritance-react-projects-extensible-components)
+- 📦 [Docusaurus 3.8](https://docusaurus.io/blog/releases/3.8): Continues the work on faster builds, adds support for CSS Cascade layers, both behind a new “future flags” system.
+- 📦 [TanStack Query v5.77](https://github.com/TanStack/query/releases/tag/v5.77.0): Adds `maxChunks` to keep in the cache for streamed queries.
+- 🎥 [TanStack is Slowly Taking Over React](https://www.youtube.com/watch?v=u10Zlg_Un8I)
+- 🎥 [Understanding the cause of hydration issues in react-router](https://www.epicweb.dev/tips/understanding-the-cause-of-hydration-issues-in-react-router~si4z9)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -64,22 +95,35 @@ Enable Billing, drop in `<PricingTable/>` on your `/pricing` page and [start mon
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
-
 - 💸 [EAS Workflows is the standard for React Native CI/CD. Spend less time thinking about CI and more time building features.](https://expo.dev/eas/workflows?utm_source=twir+newsletter&utm_medium=email&utm_campaign=twir-workflows&utm_id=TWIR)
+- 🐦 [Replit has updated its template to Expo SDK 53](https://x.com/mattppal/status/1922653683424330061)
+- 📜 [Incremental EAS Hosting changes](https://expo.dev/changelog/incremental-eas-hosting-changes)
+- 📦 [RN Executorch 0.4.1 \- ​​More LLMs, tool calling, text embeddings, multilingual speech-to-text and OCR, and image segmentation](https://github.com/software-mansion/react-native-executorch/releases/tag/v0.4.1)
+- 📦 [RN Screens 4.11 \- react-native-edge-to-edge integration, \`pageSheet\` presentation](https://github.com/software-mansion/react-native-screens/releases/tag/4.11.0)
+- 📦 [Radon IDE 1.7 \- Lots of bugfixes](https://github.com/software-mansion/radon-ide/releases/tag/v1.7.0)
+- 📦 [Flashlist 2.0 RC1 \- No major changes since the last alpha](https://github.com/Shopify/flash-list/releases/tag/v2.0.0-rc.1)
+- 📦 [Reanimated 4.0.0-beta.4 \- RN 0.78, 0.79, and 0.80 support, CSS animation fixes, stability improvements](https://github.com/software-mansion/react-native-reanimated/releases/tag/4.0.0-beta.4)
+- 🎥 [How to publish your AI app to the app store](https://www.youtube.com/watch?v=T1akm3DPNus) and [the associated article](https://expo.dev/blog/how-to-get-your-ai-app-to-the-app-store)
+- 🎙️ [RNR 333 \- Expo Atlas with Cedric van Putten](https://infinite.red/react-native-radio/rnr-333-expo-atlas-with-cedric-van-putten)
+- 🎙️ [Rocket Ship 070 \- React Native Version Hell, React Server Components with Expo & Invoice App Updates](https://share.transistor.fm/s/b04dbb2b)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- **🐦** [Firefox 139 has support for Temporal, the new JS date/time API](https://bsky.app/profile/robpalmer.bsky.social/post/3lq7jrniyn224)
+- 📜 [TypeScript Native Previews](https://devblogs.microsoft.com/typescript/announcing-typescript-native-previews/): Microsoft announced the go rewrite of TypeScript a few months ago. Nightly builds for this rewrite will now be published, and can be used with a CLI or a VS Code extension. JSX support has been added, and it’s still \~10 times faster than the JS version.
+- 📜 [Do NOT Assert on Requests](https://www.epicweb.dev/do-not-assert-on-requests): The creator of msw explains what he recommends instead of checking the body/header of sent requests in tests
+- 📜 [ESLint v9.0.0: A retrospective](https://eslint.org/blog/2025/05/eslint-v9.0.0-retrospective/)
+- 📜 [SolidJS for React Developers](https://marmelab.com/blog/2025/05/28/solidjs-for-react-developper.html)
+- 📜 [Switching from tsup to tsdown](https://alan.norbauer.com/articles/tsdown-bundler/)
+- 📜 [Malicious npm Packages Target React, Vue, and Vite Ecosystems with Destructive Payloads](https://socket.dev/blog/malicious-npm-packages-target-react-vue-and-vite-ecosystems-with-destructive-payloads)
+- 📜 [A brief history of JavaScript](https://deno.com/blog/history-of-javascript)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![Benjamin Lee tweet: Just hoping @tan_stack stays safe from RSC](/emails/issues/236/meme.jpg)](https://x.com/Benjamin_D_Lee/status/1926071667345822140)
 
 See ya! 👋
