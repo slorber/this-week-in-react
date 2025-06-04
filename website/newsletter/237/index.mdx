@@ -8,11 +8,7 @@ unlisted: true
 
 Hi everyone!
 
-<Todo />
-
 <!-- truncate -->
-
-🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=Newsletter&utm_medium=ThisWeekinReact) -  🇬🇧 London - 28 Nov & 1 Dec. "It's one of my absolute favourite conferences here." *— Lenz Weber-Tronic, Apollo GraphQL*. 10% off with code "TWIR".
 
 import Support from "../_support.mdx";
 
@@ -32,17 +28,56 @@ Now they are excited to deliver AI code reviews directly in VS Code, Cursor, and
 
 Even better: code reviews in the IDE are free! That’s right: line-by-line reviews and one-click fixes, all in your IDE at no cost to you. 
 
-  
 [Install the extension](https://coderabbit.link/LszC1pB) and start vibe checking your code today!
 
 ---
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Storybook 9](/emails/issues/237/storybook.jpg)](https://storybook.js.org/blog/storybook-9/)
+
+**[Storybook 9](https://storybook.js.org/blog/storybook-9/)**
+
+Storybook looks set to become the ultimate component testing tool, integrating with Vitest and Playwright, covering:
+
+- Interaction tests: Verify functionality by simulating user behavior
+- Accessibility tests: Detect, diagnose, and fix WCAG violations
+- Visual tests: Check for appearance bugs down to the pixel
+- Coverage reports: Understand which code is tested at a glance
+- Test widget: Click to run a comprehensive test suite
+
+This release also includes:
+
+- 48% Leaner: Smaller install with optional docs and test packages
+- Story generation: Tools to write stories automatically
+- Tag-based organization: Filter and group stories by tag
+- Story globals: Set context (theme, viewport, locale) at the story level
+- Frameworks: Major updates for Svelte, Next.js, React Native, and more\!
 
 - 💸 [Product for Engineers - What nobody tells developers about documentation](https://go.posthog.com/twir-jun4)
+- 📖 [TanStack docs \- Migrate from Next.js](https://tanstack.com/start/latest/docs/framework/react/migrate-from-next-js)
+- 🔐 [Next.js CVE-2025-48068 \- Low-severity vulnerability in the dev server, fixed in v15.2.2](https://vercel.com/changelog/cve-2025-48068)
+- 🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=Newsletter&utm_medium=ThisWeekinReact) -  🇬🇧 London - 28 Nov & 1 Dec. "It's one of my absolute favourite conferences here." *— Lenz Weber-Tronic, Apollo GraphQL*. 10% off with code "TWIR".
+- 📜 [Progressive JSON](https://overreacted.io/progressive-json/): Dan uses various analogies to illustrate the difference between different data streaming strategies. The depth-first strategy \- used by JPEG, JSON and HTML \- streams the data in order and either delay the parsing or creates an arbitrary cutoff point. The breadth-first strategy streams data out-of-order, replacing nested data with placeholders that can be filled later. React Server Components use the breadth-first strategy. Suspense allows to intentionally reveal the UI, decoupled from data reception. A quite interesting post that also exists in [video format](https://www.youtube.com/watch?v=MaMQLNBZz64).
+- 📜 [One Roundtrip Per Navigation](https://overreacted.io/one-roundtrip-per-navigation/): Dan gives a comprehensive overview of the tradeoffs of the main React data fetching patterns. Using Server Components is quite similar to composing many Server Loaders into a single one, giving you the performance and co-location benefits of Relay while using vanilla JS code.
+- 📜 [RSC for LISP Developers](https://overreacted.io/rsc-for-lisp-developers/): The `’use client’` directive is similar to LISP quoting, marking a piece of code as data to be evaluated later.
+- 📜 [Why Does RSC Integrate with a Bundler?](https://overreacted.io/why-does-rsc-integrate-with-a-bundler/): Server Components need a way to serialize component modules from the server to the client. It’s technically possible to do so without a bundler, but it’s inefficient.
+- 📜 [Search Params Are State](https://tanstack.com/blog/search-params-are-state): Tanner gives good reason for TanStack Router to associate a search params schema with route definitions. This helps improve type-safety, optimizes re-renders, and prevents schema fragmentation.
+- 📜 [The Power in Pragmatism](https://tanstack.com/blog/power-in-pragmatism): Libraries from the TanStack ecosystem aren’t tied to any rendering framework, but focus on the core ideas.TanStack Start is a flexible framework that adapts to your needs instead of anticipating them.
+- 📜 [useSyncExternalStore: Demystified for Practical React Development](https://www.epicreact.dev/use-sync-external-store-demystified-for-practical-react-development-w5ac0): A good overview of one of my favorite hooks, including common mistakes.
+- 📜 [Directive prologues and JavaScript dark matter](https://macwright.com/2025/04/29/directive-prologues-and-javascript-dark-matter): Gives interesting context on various ways to control how JS is interpreted: JSX pragmas, directives, and magic comments.
 - 💸 [Join 1,000+ Developers – Learn full-stack web development in The Road to Next, the course for React devs ready to level up.](https://www.road-to-next.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_2)
+- 📦 [Lingo Compiler](https://lingo.dev/en/compiler): A free open-source compiler to automatically translate any React app at build time without touching the source code. It processes the React code AST and translates it automatically with LLMs, and even supports hot module replacement. A great innovation with first-class integrations for Next.js, React Router, Remix, and Vite apps. The [demo on X](https://x.com/MaxPrilutskiy/status/1929946504216932746) is impressive.
+- 📦 [LiveStore Beta](https://livestore.dev/): The creator of Prisma introduced a new client-centric state management solution with first-class support for React and Expo. Based on SQLite, event sourcing, and reactivity, it can also sync clients through various providers. The landing page is quite cool to check and explains how it all works.
+- 📦 [Base UI 1.0 Beta](https://github.com/mui/base-ui/releases/tag/v1.0.0-beta.0): The upcoming Radix UI contender is now in beta. This release includes new Menubar, NavigationMenu, and ContextMenu components.
+- 📦 [Ink 6.0 \- React renderer for CLIs \- React 19 support](https://github.com/vadimdemedes/ink/releases/tag/v6.0.0)
+- 📦 [TanStack Query 4.39 \- Backport some v5 APIs to v4](https://github.com/TanStack/query/releases/tag/v4.39.0)
+- 📦 [Lexical 0.32 \- Extensible text editor framework](https://github.com/facebook/lexical/releases/tag/v0.32.0)
+- 🎥 [Theo \- Remix is ditching React (and I think that's a good thing)](https://www.youtube.com/watch?v=y_64170hz0o)
+- 🎥 [Alem Tuzlak \- Remix.run woke up, did it sleep well?](https://www.youtube.com/watch?v=Y5t0ILcuxVc)
+- 🎥 [Ryan Carniato \- The 3 Ways JavaScript Frameworks Render the DOM](https://www.youtube.com/watch?v=0C-y59betmY)
+- 🎥 [React Miami 2025 Platlist](https://www.youtube.com/playlist?list=PL4mWVugy3a2il28mbeNmyjJDoHOvw4JTK)
+- 🎙️ [This Month in React \- Dan explains RSC. Remix v3? React core team WIP?](https://creators.spotify.com/pod/profile/reactiflux/episodes/TMiR-2025-05-Dan-explains-RSC--Remix-v3--React-core-team-WIP-e33nc5a)
 
 <SubscribeFormEmbed placement="middle" />
 
