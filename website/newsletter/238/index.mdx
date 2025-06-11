@@ -1,6 +1,6 @@
 ---
 slug: /238
-title: "This Week In React #238: ..."
+title: "This Week In React #238: React Router, RSC, shadcn/ui, React Aria, TanStack, ForesightJS, Cosmos | iOS 26, JSI, Nitro, WebView, Windows, Tabs, PencilKit | Node, Oxlint, Amaro, Jest, WebKit, pnpm"
 authors: [slorber]
 date: 06-11-2025
 unlisted: true
@@ -8,7 +8,11 @@ unlisted: true
 
 Hi everyone!
 
-<Todo />
+This week is relatively calm in the React ecosystem, but we still have various interesting blog posts and releases.
+
+On the React Native side, all the devs are already working on iOS 26 Liquid Glass support and other things announced by Apple yesterday. This new design thing is rather controversial and subject to a lot of mockery 😂. React Native 0.80 is just around the corner, I'll keep all this for later, but you can get a sneak peek in [Alex Hunt talk at App.js](https://www.youtube.com/live/UTaJlqhTk2g?t=6520s).
+
+The JS ecosystem has been rather active with Oxlint 1.0 and various interesting Node.js news.
 
 <!-- truncate -->
 
@@ -34,10 +38,30 @@ To address this injustice, [PostHog](https://go.posthog.com/twir-jun11-ph) share
 
 ## ⚛️ React {#react}
 
-<Todo />
-
 - 💸 [Build professional design system in less than a day, using Hope AI, new model by Bit.Cloud.](https://bit.cloud/solutions/design-systems?utm_source=ThisWeekInReact&campaign=DesignSystem)
+- 🦋 [React Conf \- First speakers announced](https://bsky.app/profile/react.dev/post/3lqxleaezcs2p): I guess we’ll have React Compiler news in October.
+- 📣 [React Router Open Governance](https://remix.run/blog/rr-governance): React Router gets more community-driven, forming a Steering Committee initially composed of Remix team members. RFCs will follow stages inspired by the TC39 process. This also gives a sneak peek of what you can expect in v8. See also [video comments from Alem Tuzlak](https://www.youtube.com/watch?v=qh2TRkNnyVw).
+- 📜 [How Imports Work in RSC](https://overreacted.io/how-imports-work-in-rsc/): Dan Abramov deep dives on module systems. The JS one creates singletons and is quite different from the C one, which creates duplication by default. RSCs permit creating a single program spanning across two computers, with two independent module systems. By the way, you can now have a [1:1 consulting call with Dan](https://overreacted.io/im-doing-a-little-consulting/).
+- 📜 [Reactivity is easy](https://romgrk.com/posts/reactivity-is-easy/): Nice interactive article showing how to let cells of a data grid read from React context without useless re-renders.
+- 📜 [useState should require a dependency array](https://bikeshedd.ing/posts/use_state_should_require_a_dependency_array/): Interesting interactive article advocating for `useState(initialState, deps)` with good arguments. I’m not sure I agree, though: using a `key` and splitting your UI into smaller components is probably enough, but curious to see what others think about this idea.
+- 📜 [Beware The URL Type-Safety Iceberg](https://nuqs.47ng.com/blog/beware-the-url-type-safety-iceberg): The author of the `nuqs` library warns of the hidden dangers of search parameters. You’d rather design beautiful URLs, stay within size limits, deal with URL update rate limits, validate params, and be able to migrate old URLs to a new validation schema.
+- 📜 [Use Async Local Storage to prevent props drilling in Next.js Route handlers](https://www.nico.fyi/blog/async-local-storage-to-prevent-props-drilling): It's like React Context but for Node.js functions.
+- 📜 [How to Integrate Plausible Analytics in a Next.js App](https://mxd.codes/articles/how-to-integrate-plausible-analytics-in-a-next-js-app-without-getting-blocked): Proxying analytics API calls makes them less likely to trigger ad-blocking extensions.
+- 📜 [How to Create Your Own Simple useState Hook](https://www.deepintodev.com/blog/how-to-create-your-own-simple-use-state-hook)
+- 📜 [How React Suspense Works Under the Hood: Throwing Promises and Declarative Async UI](https://www.epicreact.dev/how-react-suspense-works-under-the-hood-throwing-promises-and-declarative-async-ui-plbrh)
+- 📜 [Astro Integrations Explained](https://lou.gg/blog/astro-integrations-explained)
 - 💸 [Build a working reward flow in minutes — with Dynamo](https://whitelabel-loyalty.com/products/dynamo/?utm_source=email&utm_medium=newsletter&utm_campaign=react)
+- 📦 [TanStack Router 1.121](https://github.com/TanStack/router/discussions/2863#discussioncomment-13104960): Important milestone introducing a new `@tanstack/react-start` package. TanStack Start is now just a Vite plugin.
+- 📦 [shadcn/ui \- June 2025 updates](https://ui.shadcn.com/docs/changelog): Upgrades `Calendar` to the latest `react-day-picker`, introduces a new CLI command to migrate imports to the new unified `radix-ui` package.
+- 📦 [ForesightJS 2.0 \- Predict user intent to prefetch](https://foresightjs.com/): This library predicts mouse cursor and keyboard navigation to prefetch data earlier than mouse hover. Docs show how to integrate it with React Router and Next.js link components. TanStack will soon have a similar feature built in ([tweet](https://x.com/tannerlinsley/status/1908723776650355111)). This might also be useful in the future for pre-rendering with React `<Activity>`.
+- 📦 [React Aria \- June 5 release \- Drag and drop support in React Aria Tree](https://react-spectrum.adobe.com/releases/2025-06-05.html)
+- 📦 [Puck 0.19 \- Visual editor for React \- Slots API & performance gains](https://puckeditor.com/blog/puck-019)
+- 📦 [Astro 5.9 \- Experimental CSP support, render Markdown in content loaders](https://astro.build/blog/astro-590/)
+- 📦 [React Cosmos 7.0 \- Develop UI components in isolation \- Support React 19,](https://github.com/react-cosmos/react-cosmos/releases/tag/v7.0.0) [Next.js](http://Next.js) [15](https://github.com/react-cosmos/react-cosmos/releases/tag/v7.0.0)
+- 🎥 [Youssef \- The Most Common React Query Mistake](https://www.youtube.com/watch?v=JVcZLEFaC2M)
+- 🎥 [Jack Herrington \- Remix V3's Fatal Flaw](https://www.youtube.com/watch?v=5SPqO6NR_Bg)
+- 🎥 [Theo \- Why Tech Companies Are Moving Off React](https://www.youtube.com/watch?v=HBpOzj-iBUg)
+- 🎙️ [Syntax 908 \- Storybook Has Evolved w/ Jeppe Reinhold](https://syntax.fm/show/908/storybook-has-evolved-w-jeppe-reinhold)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -51,14 +75,10 @@ To address this injustice, [PostHog](https://go.posthog.com/twir-jun11-ph) share
 
 Learn how to architect a scalable, multi-tenant B2B SaaS app using Clerk and Supabase. This technical guide covers:
 
-*   🔐 Organization-level authentication
-    
-*   👥 Scoping Supabase data by tenant
-    
-*   🧩 Mapping users to organizations securely
-    
-*   🧑‍💻 Structuring your React app for clean multi-tenancy
-    
+- 🔐 Organization-level authentication
+- 👥 Scoping Supabase data by tenant
+- 🧩 Mapping users to organizations securely
+- 🧑‍💻 Structuring your React app for clean multi-tenancy
 
 🚀 Apply these patterns to solve real-world auth and data isolation challenges in modern SaaS development. [Read our step-by-step guide](https://go.clerk.com/vKxY0Sv).
 
@@ -66,22 +86,46 @@ Learn how to architect a scalable, multi-tenant B2B SaaS app using Clerk and Sup
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
-
-- 💸 [Radon IDE –  Debug Redux and React Query seamlessly inside your editor.](https://ide.swmansion.com/?utm_source=thisweekinreact.com)
+- 💸 [Radon IDE – Debug Redux and React Query seamlessly inside your editor.](https://ide.swmansion.com/?utm_source=thisweekinreact.com)
+- 🐦 [Introducing JSI's New Runtime Data APIs](https://x.com/tmikov/status/1932149053116313703): A new `jsi::Runtime:setRuntimeData(uuid,data)` C++ API to help library authors store custom data in the runtime that automatically manages the ownership and lifecycle.
+- 🐦 [New iOS 26 Liquid Glass UI works with Expo Router](https://x.com/Baconbrix/status/1932194950403232110)
+- 🐦 [Using Apple AI Foundation Models to generate React components offline on iOS](https://x.com/Baconbrix/status/1932385006321860909)
+- 🧵 ["Apple today took a shot at React Native"](https://x.com/jamonholmgren/status/1932200003096990131): Jamon Holmgren’s reply to Apple’s criticism of cross-platform solutions in a WWDC25 video.
+- 📜 [Building NeonCity: A fast-paced mobile game made with React Native, Reanimated, and Expo](https://expo.dev/blog/mobile-game-development-with-expo)
+- 📜 [Building a Live Activity Timer in Expo](https://tarikpinarci.com/blog/expo-live-activity-timer)
+- 📦 [Nitro Modules 0.26 \- RN 0.80 support, Date support](https://github.com/mrousavy/nitro/releases/tag/v0.26.0)
+- 📦 [WebView 13.15 \- Add support for Google Pay (Payment Request API)](https://github.com/react-native-webview/react-native-webview/releases/tag/v13.15.0)
+- 📦 [Bottom Tabs 0.9.2 \- Support iOS 26 Liquid Glass tabs, `useBottomTabBarHeight`](https://github.com/callstackincubator/react-native-bottom-tabs/releases/tag/react-native-bottom-tabs%400.9.2)
+- 📦 [Expo PencilKit UI \- Native Apple PencilKit integration for iOS drawing experiences](https://github.com/tarikfp/expo-pencilkit-ui)
+- 📦 [React Native Windows 0.79 \- Improving Fabric feature parity](https://github.com/microsoft/react-native-windows/releases/tag/react-native-windows_v0.79.0)
+- 📦 [Unistyles 3.0 RC5 \- Golden RC, release soon](https://github.com/jpudysz/react-native-unistyles/releases/tag/v3.0.0-rc.5)
+- 📦 [Expo GitHub Cache \- Remote build cache provider storing artifacts in GitHub releases](https://github.com/Robert27/expo-github-cache)
+- 📦 [Android 16](https://blog.google/products/android/android-16/)
+- 🎥 [Dan’s Lab \- 2D Game Physics with Matter.js, React Native Skia and Expo](https://www.youtube.com/watch?v=fxxaOu6pLnU)
+- 🎥 [Michał \- You’re Loading Too Much Unnecessary Hermes Polyfills](https://www.youtube.com/watch?v=_Yo1kHz7h_I)
+- 🎥 [Simon Grimm \- Is React Native the Future of Mobile Apps?](https://www.youtube.com/watch?v=r9pmtMmbHus)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📊 [State of CSS 2025 \- Survey went live](https://survey.devographics.com/en-US/survey/state-of-css/2025)
+- 📜 [Beware of End-of-Life Node.js Versions \- Upgrade or Seek Post-EOL Support](https://nodejs.org/en/blog/announcements/node-18-eol-support): The Node.js team recommends v18 users to skip v20 and upgrade to v22 directly.
+- 📦 [Oxlint 1.0](https://oxc.rs/blog/2025-06-10-oxlint-stable): The first stable version of the Rust linter claims to be 50-100x faster than ESLint and compatible with 500 rules already, including `eslint-plugin-react` and `eslint-plugin-react-hooks`.
+- 📦 [Amaro 1.0 \-](https://github.com/nodejs/amaro/releases/tag/v1.0.0) [Node.js](http://Node.js) [TypeScript wrapper and type stripper](https://github.com/nodejs/amaro/releases/tag/v1.0.0): To me, this is the “real” launch of native TypeScript support in Node.js. For Node 24.3, they are also [removing the scary experimental warning](https://github.com/nodejs/node/pull/58643) that made it awkward to use this feature in production for anything serious.
+- 📦 [WebKit in Safari 26 beta \- SVG icons, install every site as PWA, WebGPU, SwiftUI WebView, CSS anchor positioning and scrol-driven animations, JS `using` and more](https://webkit.org/blog/16993/news-from-wwdc25-web-technology-coming-this-fall-in-safari-26-beta/): An exciting release full of interesting things!
+- 📦 [Jest 30 \- Faster, uses less memory and comes with many new testing features](https://jestjs.io/blog/2025/06/04/jest-30)
+- 📦 [pnpm 10.12 \- New catalog features, new `enableGlobalVirtualStore` experimental flag](https://github.com/pnpm/pnpm/releases/tag/v10.12.1)
+- 📦 [Node 24.2 \- `import.meta.main` to detect app entrypoint](https://nodejs.org/en/blog/release/v24.2.0)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/238/meme.jpg)](https://x.com/thekitze/status/1932132390937530421)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/238/meme2.jpg)](https://x.com/cedric_dev/status/1932553258121457808)
+
+[![alt](/emails/issues/238/meme3.jpg)](https://x.com/thymikee/status/1932123405459075466)
 
 See ya! 👋
