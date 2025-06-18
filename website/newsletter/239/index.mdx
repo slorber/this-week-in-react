@@ -1,6 +1,6 @@
 ---
 slug: /239
-title: "This Week In React #239: React Compiler, Relay, Intl-T, React Final Form | RN 0.80, New Architecture, iOS prebuilds, Stable JS API, Strict TS API, Expo Router, InstantDB, Granite | TypeBuddy, Worker Threads, ES Modules, H3, Playwright, cosmos.gl"
+title: "This Week In React #239: ViewTransition, Suspense, TanStack, Zero, Compiler, Intl-T, Final Form | 0.80, Stable APIs, iOS prebuilds, shadcn, Expo Router, InstantDB, Granite | TypeBuddy, Worker Threads, ES Modules, H3, Playwright, cosmos.gl"
 authors: [piaskowyk, tomekzaw]
 date: 06-18-2025
 unlisted: true
@@ -9,8 +9,6 @@ unlisted: true
 Hi everyone! **Krzysztof and Tomasz from [Software Mansion](https://swmansion.com/?utm_source=thisweekinreact)** here 👋
 
 It's been a fairly calm week for the React ecosystem, but not for the React Native world. Meta has made an exciting announcement about the release of React Native 0.80, where they've decided to officially freeze the Old Architecture. Make sure you're ready to adapt your app to the New Architecture, as it seems like it could be the last moment to do so.
-
-🗓️ [React Summit US](https://reactsummit.us/?utm_source=Newsletter&utm_medium=ThisWeekinReact) - 🇺🇸 New York - 18 & 21 Nov. Final early bird opportunity! Join Addy Osmani (Google Chrome), Shaundai Person (Netflix), Shawn Swyx Wang & more!
 
 <!-- truncate -->
 
@@ -39,19 +37,20 @@ Even better: code reviews in the IDE are free! That’s right: line-by-line revi
 ## ⚛️ React {#react}
 
 - 💸 [Product for Engineers - The hidden benefits of being an open-source startup](https://go.posthog.com/twir-jun18)
-- 📊 [The State of React and the Community in 2025](https://blog.isquaredsoftware.com/2025/06/react-community-2025/)  
-- 📖 [React Compiler – The Mutability & Aliasing Model](https://github.com/facebook/react/blob/156b7a96f5669470182ad226306184576d6f150f/compiler/packages/babel-plugin-react-compiler/src/Inference/MUTABILITY_ALIASING_MODEL.md)  
-- 📜 [Bringing React's \<ViewTransition\> to vanilla JS](https://plainvanillaweb.com/blog/articles/2025-06-12-view-transitions/) – good explanation how view transitions are supposed to work and how you can implement them on your own.  
-- 📜 [Composable streaming with Suspense](https://twofoldframework.com/blog/composable-streaming-with-suspense): React's Suspense composition allows you to easily implement features like lazy loading or out-of-order rendering without complex configurations and external dependencies.  
-- 📜 [Real-Time Gesture Recognition in Videoconferencing](https://blog.swmansion.com/real-time-gesture-recognition-in-videoconferencing-4711855a1a53): browser-based video effects using MediaPipe, Fishjam and Smelter.  
-- 📜 [Zero is Not Local-First. It's Better.](https://jjenzz.com/zero-is-not-local-first-its-better/): Zero library is a new sync engine that offers "partial sync first" rather than a full "local-first" approach, meaning it only syncs the data your application actively queries and uses, making it efficient for apps with large datasets. You don't need to take care of cache invalidation because the server is still the source of truth.  
-- 📜 [TanStack Start: the Future of React Frameworks?](https://www.premieroctet.com/blog/en/tanstack-future-react-frameworks): Describes the advantages of the TanStack Start framework, which may potentially become a competitor to well-known frameworks like Remix or Next.js.  
-- 📜 [Building the Twitter 1.0 Web Experience](https://largeapps.dev/case-studies/twitter/): A case study on how Twitter Lite PWA was optimized over time and the benefits it brought.  
-- 📦 [Relay 20.0 – ESLint plugin update](https://github.com/facebook/relay/releases/tag/v20.0.0)  
-- 📦 [Intl-T – A Object-Typed Node-Based i18n Translation Library](https://github.com/nivandres/intl-t)  
-- 📦 [React Final Form 7.0 – All modules modernized to TypeScript](https://erikras.com/blog/final-form-to-typescript)  
-- 📦 [Meteor 3.3 – Faster Builds with SWC and Bundler Optimizations](https://dev.to/meteor/faster-builds-in-meteor-33-modern-build-stack-with-swc-and-bundler-optimizations-fm2) – 60% faster builds  
-- 🎥 [Shruti Kapoor – You’re Managing State Wrong in React](https://www.youtube.com/watch?v=c7FQP-tUn1U)  
+- 📊 [The State of React and the Community in 2025](https://blog.isquaredsoftware.com/2025/06/react-community-2025/)
+- 📖 [React Compiler – The Mutability & Aliasing Model](https://github.com/facebook/react/blob/156b7a96f5669470182ad226306184576d6f150f/compiler/packages/babel-plugin-react-compiler/src/Inference/MUTABILITY_ALIASING_MODEL.md)
+- 🗓️ [React Summit US](https://reactsummit.us/?utm_source=Newsletter&utm_medium=ThisWeekinReact) - 🇺🇸 New York - 18 & 21 Nov. Final early bird opportunity! Join Addy Osmani (Google Chrome), Shaundai Person (Netflix), Shawn Swyx Wang & more!
+- 📜 [Bringing React's \<ViewTransition\> to vanilla JS](https://plainvanillaweb.com/blog/articles/2025-06-12-view-transitions/): A good explanation how view transitions are supposed to work and how you can implement them on your own.
+- 📜 [Composable streaming with Suspense](https://twofoldframework.com/blog/composable-streaming-with-suspense): React's Suspense composition allows you to easily implement features like lazy loading or out-of-order rendering without complex configurations and external dependencies.
+- 📜 [Real-Time Gesture Recognition in Videoconferencing](https://blog.swmansion.com/real-time-gesture-recognition-in-videoconferencing-4711855a1a53): browser-based video effects using MediaPipe, Fishjam and Smelter.
+- 📜 [Zero is Not Local-First. It's Better.](https://jjenzz.com/zero-is-not-local-first-its-better/): Zero library is a new sync engine that offers "partial sync first" rather than a full "local-first" approach, meaning it only syncs the data your application actively queries and uses, making it efficient for apps with large datasets. You don't need to take care of cache invalidation because the server is still the source of truth.
+- 📜 [TanStack Start: the Future of React Frameworks?](https://www.premieroctet.com/blog/en/tanstack-future-react-frameworks): Describes the advantages of the TanStack Start framework, which may potentially become a competitor to well-known frameworks like Remix or Next.js.
+- 📜 [Building the Twitter 1.0 Web Experience](https://largeapps.dev/case-studies/twitter/): A case study on how Twitter Lite PWA was optimized over time and the benefits it brought.
+- 📦 [Relay 20.0 – ESLint plugin update](https://github.com/facebook/relay/releases/tag/v20.0.0)
+- 📦 [Intl-T – A Object-Typed Node-Based i18n Translation Library](https://github.com/nivandres/intl-t)
+- 📦 [React Final Form 7.0 – All modules modernized to TypeScript](https://erikras.com/blog/final-form-to-typescript)
+- 📦 [Meteor 3.3 – Faster Builds with SWC and Bundler Optimizations](https://dev.to/meteor/faster-builds-in-meteor-33-modern-build-stack-with-swc-and-bundler-optimizations-fm2) – 60% faster builds
+- 🎥 [Shruti Kapoor – You’re Managing State Wrong in React](https://www.youtube.com/watch?v=c7FQP-tUn1U)
 - 🎥 [Future Frontend Conf – YouTube Playlist](http://youtube.com/watch?v=xadj32ExtWo&list=PLKGgD1M40S4hHnZtFi_kPgRRjMay_2KMp)
 
 <SubscribeFormEmbed placement="middle" />
@@ -78,58 +77,58 @@ Full session timelines. Core Web Vitals and JS exceptions in context. User journ
 
 [**React Native 0.80**](https://reactnative.dev/blog/2025/06/12/react-native-0.80)
 
-This milestone release announces the goal of [Moving Towards a Stable JavaScript API](https://reactnative.dev/blog/2025/06/12/moving-towards-a-stable-javascript-api), an ongoing effort to accurately define the JS and TypeScript APIs. 
+This milestone release announces the goal of [Moving Towards a Stable JavaScript API](https://reactnative.dev/blog/2025/06/12/moving-towards-a-stable-javascript-api), an ongoing effort to accurately define the JS and TypeScript APIs.
 
 Here are the highlights:
 
-- React 19.1: Its new `captureOwnerStack()` API can improve the DX of error overlays.  
-- JavaScript deep imports deprecation: you’ll have to import everything from the root `’react-native’`   
-- Strict TypeScript API (opt in): The Strict TypeScript API is an opt-in preview offering more accurate TypeScript types for the react-native package, generated directly from source code.  
-- Legacy Architecture Freezing & Warnings: The React Native team will now focus on the New Architecture  
+- React 19.1: Its new `captureOwnerStack()` API can improve the DX of error overlays.
+- JavaScript deep imports deprecation: You’ll have to import everything from the root `’react-native’` exports.
+- Strict TypeScript API (opt in): The Strict TypeScript API is an opt-in preview offering more accurate TypeScript types for the react-native package, generated directly from source code.
+- Legacy Architecture Freezing & Warnings: The React Native team will now focus on the New Architecture.
 - iOS Prebuilds for React Native: iOS builds are roughly 12% faster thanks to shipping prebuilds for Folly and GLog rather than building them from source. In a future release, the rest of React Native core will be shipped as a prebuild.
 
 ---
 
 - 💸 [WithFrame - Pre-Built React Native Templates](https://withfra.me)
-- 📣 [Expo support for React Native 0.80](https://expo.dev/changelog/react-native-80): You’ll have to use the Expo 54 canary until it becomes stable later this summer, bumping directly to RN 0.81.  
-- 👀 [shadcn/ui CLI PR \- Support scaffolding components for Expo apps using the CLI and registry system](https://github.com/shadcn-ui/ui/pull/7540)   
-- 👀 [Bluesky mobile app PR – enable New Architecture](https://github.com/bluesky-social/social-app/pull/8295)  
-- 💬 [Flutter \- Support for iOS 26 “Liquid glass”](https://github.com/flutter/flutter/issues/170310): Interesting to know that Flutter will not add support for iOS 26 and Material 3 Expressive in core.  
-- 🐦 [Bring every iOS 26 Liquid Glass feature from WWDC to React Native](https://x.com/saul_sharma/status/1934467342576009254)  
-- 🐦 [Speed up iOS e2e test runs with Maestro](https://x.com/janicduplessis/status/1933589353714102511): Avoid generating recursive accessibility labels when not needed, will be shipped in 0.81.  
-- 📜 [Best React Native Debugging Tools in 2025](https://blog.swmansion.com/best-react-native-debugging-tools-in-2025-a95dcac7a014): An overview of the current state of debugging tools in the React Native ecosystem.  
-- 📜 [Simplifying auth flows in Expo Router with protected routes](https://expo.dev/blog/simplifying-auth-flows-with-protected-routes): How to use the new Expo Router's protected routes to control which screens users can see based on their authentication state – directly in your layout files.  
-- 📜 [Expo \+ InstantDB – What if useState was your backend?](https://expo.dev/blog/what-if-usestate-was-your-backend): The tutorial shows how, with InstantDB, you can simplify backend communication in your Expo app, providing a useState-like experience.  
-- 📦 [Granite – Brownfield-friendly React Native framework for microservice apps](https://github.com/toss/granite)  
-- 📦 [React Native Gesture Handler 2.26 \- RN 0.80 support, relation props in Pressable](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.26.0).  
-- 📦 [create-react-native-library 0.51 \- 16 KB page size on Android](https://github.com/callstack/react-native-builder-bob/releases/tag/create-react-native-library%400.51.0).  
-- 🎥 [Code with Beto – Liquid Glass Bottom Tabs](https://www.youtube.com/watch?v=L5f8Gy91Gv4)  
-- 🎥 [Michał Pierzchała – Shrinking Android app size with R8](https://www.youtube.com/watch?v=Ud6TSlnEzCc)  
-- 🎙️ [Rocket Ship 72 – The Frozen Arch, Killing my App & React Native World Domination](https://share.transistor.fm/s/43ce5c20)  
+- 📣 [Expo support for React Native 0.80](https://expo.dev/changelog/react-native-80): You’ll have to use the Expo 54 canary until it becomes stable later this summer, bumping directly to RN 0.81.
+- 👀 [shadcn/ui CLI PR \- Support scaffolding components for Expo apps using the CLI and registry system](https://github.com/shadcn-ui/ui/pull/7540)
+- 👀 [Bluesky mobile app PR – enable New Architecture](https://github.com/bluesky-social/social-app/pull/8295)
+- 💬 [Flutter \- Support for iOS 26 “Liquid glass”](https://github.com/flutter/flutter/issues/170310): Interesting to know that Flutter will not add support for iOS 26 and Material 3 Expressive in core.
+- 🐦 [Bring every iOS 26 Liquid Glass feature from WWDC to React Native](https://x.com/saul_sharma/status/1934467342576009254)
+- 🐦 [Speed up iOS e2e test runs with Maestro](https://x.com/janicduplessis/status/1933589353714102511): Avoid generating recursive accessibility labels when not needed, will be shipped in 0.81.
+- 📜 [Best React Native Debugging Tools in 2025](https://blog.swmansion.com/best-react-native-debugging-tools-in-2025-a95dcac7a014): An overview of the current state of debugging tools in the React Native ecosystem.
+- 📜 [Simplifying auth flows in Expo Router with protected routes](https://expo.dev/blog/simplifying-auth-flows-with-protected-routes): How to use the new Expo Router's protected routes to control which screens users can see based on their authentication state – directly in your layout files.
+- 📜 [Expo \+ InstantDB – What if useState was your backend?](https://expo.dev/blog/what-if-usestate-was-your-backend): The tutorial shows how, with InstantDB, you can simplify backend communication in your Expo app, providing a useState-like experience.
+- 📦 [Granite – Brownfield-friendly React Native framework for microservice apps](https://github.com/toss/granite)
+- 📦 [React Native Gesture Handler 2.26 \- RN 0.80 support, relation props in Pressable](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.26.0).
+- 📦 [create-react-native-library 0.51 \- 16 KB page size on Android](https://github.com/callstack/react-native-builder-bob/releases/tag/create-react-native-library%400.51.0).
+- 🎥 [Code with Beto – Liquid Glass Bottom Tabs](https://www.youtube.com/watch?v=L5f8Gy91Gv4)
+- 🎥 [Michał Pierzchała – Shrinking Android app size with R8](https://www.youtube.com/watch?v=Ud6TSlnEzCc)
+- 🎙️ [Rocket Ship 72 – The Frozen Arch, Killing my App & React Native World Domination](https://share.transistor.fm/s/43ce5c20)
 - 🎙️ [RNR 334 – React Native MacOS with Saad Najmi](https://infinite.red/react-native-radio/rnr-334-react-native-macos-with-saad-najmi)
 
 ---
 
 ## 🔀 Other {#other}
 
-- 💡 [TypeBuddy](https://github.com/typed-rocks/type-buddy) – write TypeScript types as functions ([playground](https://typed-rocks.github.io/type-buddy/))  
-- 📜 [A new way to style gaps in CSS](https://developer.chrome.com/blog/gap-decorations?hl=en) – gap decorations available for developer trial in Chrome and Edge 139  
-- 📜 [Safari at WWDC '25: The Ghost of Christmas Past](https://infrequently.org/2025/06/the-ghost-of-christmas-past/)   
-- 📜 [Worker Threads in Node.js: A Complete Guide for Multithreading in JavaScript](https://nodesource.com/blog/worker-threads-nodejs-multithreading-in-javascript)  
-- 📜 [Animating zooming using CSS: transform order is important](https://jakearchibald.com/2025/animating-zooming/)  
-- 📜 [Using await at the top level in ES modules](https://allthingssmitty.com/2025/06/16/using-await-at-the-top-level-in-es-modules/) – real-world use cases, constraints and gotchas  
-- 📜 [Dan Abramov – Suppressions of Suppressions](https://overreacted.io/suppressions-of-suppressions/) – some thoughts on linter suppressions and social contracts behind writing software  
-- 📦 [H3 v2 beta \- Fully rewritten on web standards, backward-compatible, faster](https://h3.dev/blog/v2-beta)  
-- 📦 [Playwright v1.52 & v1.53 – Fix with AI, Describable Locators](https://dev.to/playwright/whats-new-in-playwright-v152-v153-fix-with-ai-describable-locators-and-more-dl9)  
-- 📦 [cosmos.gl – High-Performance Graph Visualization Engine from the OpenJS Foundation](https://openjsf.org/blog/introducing-cosmos-gl) 
+- 💡 [TypeBuddy](https://github.com/typed-rocks/type-buddy) – write TypeScript types as functions ([playground](https://typed-rocks.github.io/type-buddy/))
+- 📜 [A new way to style gaps in CSS](https://developer.chrome.com/blog/gap-decorations?hl=en) – gap decorations available for developer trial in Chrome and Edge 139
+- 📜 [Safari at WWDC '25: The Ghost of Christmas Past](https://infrequently.org/2025/06/the-ghost-of-christmas-past/)
+- 📜 [Worker Threads in Node.js: A Complete Guide for Multithreading in JavaScript](https://nodesource.com/blog/worker-threads-nodejs-multithreading-in-javascript)
+- 📜 [Animating zooming using CSS: transform order is important](https://jakearchibald.com/2025/animating-zooming/)
+- 📜 [Using await at the top level in ES modules](https://allthingssmitty.com/2025/06/16/using-await-at-the-top-level-in-es-modules/) – real-world use cases, constraints and gotchas
+- 📜 [Dan Abramov – Suppressions of Suppressions](https://overreacted.io/suppressions-of-suppressions/) – some thoughts on linter suppressions and social contracts behind writing software
+- 📦 [H3 v2 beta \- Fully rewritten on web standards, backward-compatible, faster](https://h3.dev/blog/v2-beta)
+- 📦 [Playwright v1.52 & v1.53 – Fix with AI, Describable Locators](https://dev.to/playwright/whats-new-in-playwright-v152-v153-fix-with-ai-describable-locators-and-more-dl9)
+- 📦 [cosmos.gl – High-Performance Graph Visualization Engine from the OpenJS Foundation](https://openjsf.org/blog/introducing-cosmos-gl)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-[![alt](/emails/issues/239/meme1.jpg)](https://x.com/mrousavy/status/1922994477712453742)
-
 [![alt](/emails/issues/239/meme2.jpg)](https://www.linkedin.com/feed/update/urn:li:activity:7339605943137009664)
+
+[![alt](/emails/issues/239/meme1.jpg)](https://x.com/mrousavy/status/1922994477712453742)
 
 [![alt](/emails/issues/239/meme3.jpg)](https://nerdy.dev/fathers-day-2025)
 
