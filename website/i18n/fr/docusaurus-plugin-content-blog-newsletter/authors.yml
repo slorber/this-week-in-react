@@ -81,3 +81,15 @@ tboba:
     bluesky: tboba.pl
     github: tboba
     linkedin: tymoteusz-boba-70503b157
+
+piaskowyk:
+  name: Krzysztof Piaskowy
+  title: Software Engineer - Software Mansion
+  url: https://x.com/piaskowyk
+  image_url: https://github.com/piaskowyk.png
+  page: true
+  socials:
+    x: piaskowyk
+    bluesky: piaskowyk.bsky.social
+    github: piaskowyk
+    linkedin: krzysztof-piaskowy

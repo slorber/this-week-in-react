@@ -82,5 +82,17 @@ tboba:
     github: tboba
     linkedin: tymoteusz-boba-70503b157
 
+piaskowyk:
+  name: Krzysztof Piaskowy
+  title: Software Engineer - Software Mansion
+  url: https://x.com/piaskowyk
+  image_url: https://github.com/piaskowyk.png
+  page: true
+  socials:
+    x: piaskowyk
+    bluesky: piaskowyk.bsky.social
+    github: piaskowyk
+    linkedin: krzysztof-piaskowy
+
 # Note: don't forget to add newly added authors to the localized authors files
 # i18n/fr/docusaurus-plugin-content-blog-articles/authors.yml file
