@@ -1,9 +1,8 @@
 ---
 slug: /240
-title: "This Week In React #240: Radix, shadcn/ui, Next.js, RSC in Clojure, use-mcp, Vite 7.0, Apollo Client, Vercel Ship 2025 | Skia, WebGPU,  Radon IDE, React Navigation, Safe Area Context, Reddit iOS app optimization | Prettier, Node type-stripping support, Biome 2.0"
+title: "This Week In React #240: Radix, shadcn/ui, Next.js, MCP, Vite, RedwoodSDK, Apollo, Vercel, Recharts | Skia, WebGPU,  Radon IDE, React Navigation, Safe Area Context, iOS optimizations, Snapai | Prettier, Node, Biome, State of Devs"
 authors: [cyrilbo, matthieugicquel]
 date: 06-25-2025
-unlisted: true
 ---
 
 Hi everyone!
@@ -13,8 +12,6 @@ Cyril and Matthieu from [Theodo Apps](https://apps.theodo.com/en?utm_source=this
 This week in the React ecosystem, there's a bit of a stir around Radix and shadcn/ui. Some devs are weighing alternatives like Base UI, while shadcn highlights their long-term adaptability. We’ve also got fresh official guides from the Next.js team and some tooling updates like Vite 7, Apollo Client v4 RC, and Prettier 3.6’s fast CLI.
 
 On the React Native side, the graphics game is leveling up fast with WebGPU and Skia Graphite unlocking smoother 2D/3D rendering and broader platform support. And if you’re into performance tricks, don’t miss how Reddit shaved 20% off their iOS app size.
-
-🗓 [React Advanced](https://reactadvanced.com/canada/?utm_source=thisweekinreact) - 🇨🇦 Toronto - March 24 & 26. Have you heard? React Advanced is coming to Canada with an incredible lineup including Wes Bos, Josh Comeau, and Henri Helvetica! Get a 10% discount with code "TWIR".
 
 Let's dive in!
 
@@ -46,9 +43,9 @@ Learn More: [ag-grid.com](https://www.ag-grid.com/react-table?utm_source=thiswee
 ## ⚛️ React {#react}
 
 - 💸 [Strapi - Open-source headless CMS now with AI powered Content Modeling](https://strapi.link/twir2)
-- 💸 [React Certification is Live - Created and reviewed by React Experts - Early Bird offer: 54% off during the next 24h!](https://certificates.dev/react?friend=TWIR)
-- **👀** [The React community is re-evaluating Radix and shadcn/ui](https://x.com/colmtuite/status/1935629877069172861) due to concerns about Radix’s lack of recent development and active maintainership, with some developers exploring alternatives like Base UI. However, [shadcn emphasizes stability, urging teams not to switch libraries hastily and clarifying that shadcn/ui is a flexible, abstraction-driven system designed to evolve with or without Radix](https://x.com/shadcn/status/1936082723904565435). Theo also published a [video that distilled the topic](https://www.youtube.com/watch?v=vHFZFXtjKNE).
+- 🐦 [The React community is re-evaluating Radix and shadcn/ui](https://x.com/colmtuite/status/1935629877069172861) due to concerns about Radix’s lack of recent development and active maintainership, with some developers exploring alternatives like Base UI. However, [shadcn emphasizes stability, urging teams not to switch libraries hastily and clarifying that shadcn/ui is a flexible, abstraction-driven system designed to evolve with or without Radix](https://x.com/shadcn/status/1936082723904565435). Theo also published a [video that distilled the topic](https://www.youtube.com/watch?v=vHFZFXtjKNE).
 - 📖 New Next.js [Linking and Navigating](https://nextjs.org/docs/app/getting-started/linking-and-navigating) and [Prefetching](https://nextjs.org/docs/app/guides/prefetching) guides.
+- 🗓 [React Advanced](https://reactadvanced.com/canada/?utm_source=thisweekinreact) - 🇨🇦 Toronto - March 24 & 26. Have you heard? React Advanced is coming to Canada with an incredible lineup including Wes Bos, Josh Comeau, and Henri Helvetica! Get a 10% discount with code "TWIR".
 - 📜 [i18n-check: Validating your Next.js internationalization](https://lingual.dev/blog/validating-your-nextjs-internationalization/): An open-source tool to check for missing, invalid and unused translation keys
 - 📜 [Towards React Server Components in Clojure, Part 3](https://romanliutikov.com/blog/towards-react-server-components-in-clojure-part-3): You’re probably not using clojure in production (we aren’t), but that’s an interesting experiment and explainer
 - 📜 [Next.js 15.1+ is unusable outside of Vercel](https://omarabid.com/nextjs-vercel): The post title is a bit extreme, but Next.js changed how it handles meta tags and this might break your search engine rankings.
@@ -56,6 +53,7 @@ Learn More: [ag-grid.com](https://www.ag-grid.com/react-table?utm_source=thiswee
 - 📜 [How to take screenshots of your statically exported Next.js site in GitHub Actions workflow](https://www.nico.fyi/blog/how-to-take-screenshots-in-github-actions-workflow)
 - 📜 [Prefer Gaps To Margins](https://kyleshevlin.com/prefer-gaps-to-margins/)
 - 📜 [Frontend test coverage with Storybook 9](https://storybook.js.org/blog/frontend-test-coverage-with-storybook-9/)
+- 💸 [React Certification is Live - Created and reviewed by React Experts - Early Bird offer: 54% off during the next 24h!](https://certificates.dev/react?friend=TWIR)
 - 📦 [Vite 7.0 \- rolldown-vite package, dropped Node18, Default Browser Target Changed to Baseline Widely Available](https://vite.dev/blog/announcing-vite7.html)
 - 📦 [Recharts 3.0 - Custom React components inside a chart, portals for tooltips and legends](https://github.com/recharts/recharts/releases/tag/v3.0.0)
 - 📦 [Apollo Client 4.0-rc1](https://github.com/apollographql/apollo-client/releases/tag/%40apollo%2Fclient%404.0.0-rc.1): It will soon be stable, the biggest change being better bundle sizes with ESM and tree-shaking.
@@ -84,11 +82,11 @@ A practical guide to OAuth Scoped Access that walks through the Authorization Co
 
 [**The Future of React Native Graphics: WebGPU, Skia, and Beyond**](https://shopify.engineering/webgpu-skia-web-graphics)
 
-WebGPU and Skia Graphite are transforming React Native by enabling unified GPU-powered graphics, seamless 2D/3D rendering, and out-of-the-box support for libraries like Three.js and TensorFlow.js. These advancements bring massive performance gains, simplify shader development with TSL (Three.js Shading Language), and expand platform support to macOS, tvOS, and [Node.js](http://Node.js). Kudos to William Candillon and the Shopify team for this groundbreaking work \!
+WebGPU and Skia Graphite are transforming React Native by enabling unified GPU-powered graphics, seamless 2D/3D rendering, and out-of-the-box support for libraries like Three.js and TensorFlow.js. These advancements bring massive performance gains, simplify shader development with TSL (Three.js Shading Language), and expand platform support to macOS, tvOS, and Node.js. Kudos to William Candillon and the Shopify team for this groundbreaking work \!
 
 - 💸 [AppZung CodePush - Migrate millions of users from retired AppCenter or cut expo-updates costs](https://appzung.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_250625)
 - 👀 [Reddit cut its iOS app size by 20% and improved startup time by reorganizing its binary using LLVM’s Profile-Guided Optimization and temporal profiling.](https://www.reddit.com/r/RedditEng/comments/1l7gv4t/reddits_ios_app_binary_optimization/)
-- 🐦 [iOS 26 / macOS 26 brings two-way interop between Java and Swift](https://x.com/birch_js/status/1932608731671642200)
+- 🐦 [iOS 26 / macOS 26 brings two-way interop between Java and Swift - Useful for RN?](https://x.com/birch_js/status/1932608731671642200)
 - 📜 [How to build universal app voice agents with Expo & ElevenLabs](https://expo.dev/blog/how-to-build-universal-app-voice-agents-with-expo-and-elevenlabs)
 - 📜 [Open source tool to speed up iOS app launch](https://blog.sentry.io/open-source-tool-speed-up-ios-app-launch/) : Sentry open-sourced FaultOrdering, a Swift package that helps iOS apps launch faster by automatically generating order files to optimize binary layout.
 - 📜 [React Server Components in Expo: A Practical Guide](https://blog.codeminer42.com/react-server-components-in-expo/)
@@ -115,12 +113,14 @@ WebGPU and Skia Graphite are transforming React Native by enabling unified GPU-p
 - 📦 [Node 24.3](https://nodejs.org/en/blog/release/v24.3.0): Removes the scary experimental warning for TypeScript type-stripping support, and it may be unflagged for v22 soon\!
 - 📦 [Biome 2.0 \- Codename Biotype](https://biomejs.dev/fr/blog/biome-v2/): Type-aware linter that doesn’t rely on the TypeScript compiler.
 - 📦 [GraphiQL 5.0 \- Now powered by the Monaco editor](https://github.com/graphql/graphiql/releases/tag/graphiql%405.0.0)
-- 🎙️[Front-End Fire 101 \- Oxlint 1.0: The Linter That Leaves ESLint in the Dust](https://front-end-fire.com/episodes/101/)
+- 🎙️ [Front-End Fire 101 \- Oxlint 1.0: The Linter That Leaves ESLint in the Dust](https://front-end-fire.com/episodes/101/)
 
 ---
 
 ## 🤭 Fun {#fun}
 
 [![alt](/emails/issues/240/merge-pr.jpg)](https://x.com/Steve8708/status/1928211253744255039)
+
 [![alt](/emails/issues/240/expo-atlas.jpg)](https://x.com/schlimmson/status/1891533122774413587)
+
 See ya! 👋
