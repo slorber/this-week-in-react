@@ -1,6 +1,6 @@
 ---
 slug: /241
-title: "This Week In React #241: ..."
+title: "This Week In React #241: Remix, Next.js, Turbopack, Radix  DOM templating, Ultracite, Stack, StyleX | Nitro Week, Skia, App Generator, Swift, Kotlin | ES2025, Rspack, Babel, TypeScript, Effect, Deno, Three.js"
 authors: [slorber]
 date: 07-02-2025
 unlisted: true
@@ -8,7 +8,11 @@ unlisted: true
 
 Hi everyone!
 
-<Todo />
+It's been a hot C° week here, but pretty calm in terms of React news. We still got various little releases, interesting blog posts and weak signals that show us what the future might look like.
+
+On the React Native side, the community is adopting Nitro Modules in various libraries, and Skia got built-in support for Lottie animations.
+
+ES2025 has been approved, and TS 5.9 beta should come anytime soon.
 
 <!-- truncate -->
 
@@ -39,9 +43,9 @@ Try Embrace today and get your first 1 million sessions free. Learn more at [emb
 
 - 💸 [The Road to Next - Master Full-Stack Web Development with Next.js 15 and React 19](https://www.road-to-next.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_1.1)
 - 📖 [TanStack Start \- Cloudflare Workers docs](https://developers.cloudflare.com/workers/framework-guides/web-apps/tanstack/)
-- 🐦 [Radix kicking off a weekly stream to show how Radix is developed and maintained](https://x.com/radix_ui/status/1940123605272244674): It looks like a good transparency move from the WorkOS team, probably reacting to last week’s [“Radis is a liability”](https://x.com/ccccjjjjeeee/status/1935163290998722660) drama. Meanwhile, its strongest competitor BaseUI released [beta.1](https://github.com/mui/base-ui/releases/tag/v1.0.0-beta.1).
+- 🐦 [Radix kicking off a weekly stream to show how Radix is developed and maintained](https://x.com/radix_ui/status/1940123605272244674): A good transparency move from the WorkOS team, probably in reaction to last week’s [“Radis is a liability”](https://x.com/ccccjjjjeeee/status/1935163290998722660) drama. Meanwhile, its upcoming competitor BaseUI released [beta.1](https://github.com/mui/base-ui/releases/tag/v1.0.0-beta.1).
 - 🐦 [Guillermo Rauch \- “All areweturboyet.com tests are passing for Next.js production builds“](https://x.com/rauchg/status/1938668763525849298): So far, only dev builds were stable, but we can expect an upcoming Next.js release announcing much faster and production builds on Turbopack instead of Webpack. Note that [Rspack 1.4 also announced \~99% coverage of dev/production builds](https://rspack.rs/blog/announcing-1-4#next-rspack), and it will be interesting to see which tool performs faster once both bundlers are at 100%.
-- 🐦 [Ryan Florence is studying React alternativese](https://x.com/ryanflorence/status/1938994450035789941) and [Michael Jackson is growing increasingly disillusioned with React hooks](https://x.com/mjackson/status/1937979887815692465), and it looks like they are brainstorming publicly what they plan to build for Remix v3.
+- 🐦 [Ryan Florence is studying React alternativese](https://x.com/ryanflorence/status/1938994450035789941) and [Michael Jackson is growing increasingly disillusioned with React hooks](https://x.com/mjackson/status/1937979887815692465), and it looks like they are brainstorming publicly what they plan to build for Remix v3, likely based on a fork of Preact.
 - 😠 Alex Russell [rants about React Summit talks](https://infrequently.org/2025/06/conferences-clarity-and-smokescreens/) and Mario says [React Still Feels Insane](https://mbrizic.com/blog/react-is-insane/).
 - 📜 [Remixing Shopify's Admin: How We Made It 30% Faster and AI-Ready](https://shopify.engineering/remixing-admin): Interesting feedback from Shopify migrating their massive flagship Admin app to Remix. It looks to me many recent React Router features were things Shopify actually needed.
 - 📜 [The time is right for a DOM templating API](https://justinfagnani.com/2025/06/26/the-time-is-right-for-a-dom-templating-api/): Interesting thoughts on the lack of a templating language in JS from one of the original creators of Lit (Web Components), who also created a [proposal based on tagged template literals](https://justinfagnani.com/2025/06/30/what-should-a-dom-templating-api-look-like/). This also discusses how all this could integrate with React and JSX.
@@ -120,7 +124,7 @@ Designed specifically for testing, Wallaby features include a **Time Travel Debu
 - 📜 [The difference between ordinary functions and arrow functions in JavaScript?](https://jrsinclair.com/articles/2025/whats-the-difference-between-named-functions-and-arrow-functions/)
 - 📦 [Rspack 1.4 \- Run in the browser, Faster SWC, smaller bundles, incremental build, CSS chunking, multi lazyCompilation, inputFileSystem](https://rspack.dev/blog/announcing-1-4)
 - 📦 [Babel 7.28 \- TypeScript config file, `void` discard binding, enables `using` by default](https://babeljs.io/blog/2025/06/30/7.28.0)
-- 📦 [Deno 2.4](https://github.com/denoland/deno/releases/tag/v2.4.0)
+- 📦 [Deno 2.4 - deno bundle, bytes/text imports, OTel, `--preload` flag and more](https://deno.com/blog/v2.4)
 - 📦 [Three.js 178](https://github.com/mrdoob/three.js/releases/tag/r178)
 - 🎥 [Matt Pocock \- Effect: the unreadable library that captured my heart](https://www.youtube.com/watch?v=S2GChOwivwQ)
 - 🎙️ [PodRocket \- Node 24 with Rafael Gonzaga](https://podrocket.logrocket.com/node-24-rafael-gonzaga)
@@ -129,8 +133,8 @@ Designed specifically for testing, Wallaby features include a **Time Travel Debu
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/241/meme.jpg)](https://x.com/andrii_sherman/status/1939670935885259222)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/241/meme2.jpg)](https://x.com/birch_js/status/1939540713760563635)
 
 See ya! 👋
