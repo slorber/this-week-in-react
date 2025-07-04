@@ -147,11 +147,6 @@ function SponsoringHeader({
           <b>Next availability</b>: {nextSlot.date}
         </div>
       )}
-      {nextSlot && (
-        <div>
-          <b>Audience size projection</b>: ~{nextSlot.projectedAudienceSize}
-        </div>
-      )}
       <div>
         <b>Price:</b>
       </div>
