@@ -1,14 +1,20 @@
 ---
 slug: /242
-title: "This Week In React #242: ..."
-authors: [slorber]
+title: "This Week In React #242: Vite RSC, NuxtLabs, Next.js, Valtio Reactive, React Query, Shadcn, react-hook-from, TanStack/router, Lexical, React Email, Recharts, XState | Unistyles, React Native Rag, Shadow Insets, Ignite 11, Metro, RN 0.81 RC | CSS Gaps, TS Satisfies, TS 5.9 Beta, Browserlist-rs, Biome, Astro, esbuild"
+authors: [piaskowyk, kacperkapusciak]
 date: 07-09-2025
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone! **Kacper and Krzysztof from [Software Mansion](https://swmansion.com/?utm_source=thisweekinreact)** here! 👋
 
-<Todo />
+It definitely feels like everyone caught the lazy summer vibe as the whole world went on vacation but we still managed to carve out something interesting for you to read.
+
+We’ve learned how Meta renders React server-side (which is crazy, actually) and Vercel has made some interesting moves in the metaframework sphere by acquiring NuxtLabs.
+
+From the React Native ecosystem, we have React Native Unistyles 3.0, now marked as stable, and we’ve seen the first RC of React Native 0.81, although without any additional context whatsoever.
+
+Enjoy the read!
 
 <!-- truncate -->
 
@@ -40,10 +46,30 @@ import Support from "../_support.mdx";
 
 ## ⚛️ React {#react}
 
-<Todo />
-
 - 💸 [PostHog - We built an AI envoy, you can too](https://go.posthog.com/twir-jul9)
 - 💸 [Add secure digital signatures to your React app with Apryse SDK - simplify e-signing for contracts and more!](https://apryse.com/blog/integrate-digital-signatures-react-applications?utm_source=newsletter&utm_medium=email&utm_campaign=thisweekinreact_2025_07_09&utm_content=email_textlink)
+- 👀 [NuxtLabs joins Vercel](https://vercel.com/blog/nuxtlabs-joins-vercel): Vercel has acquired NuxtLab \- an organization responsible for maintaining Nitro and Nuxt. The creator of SolidJS pointed out that [many metaframeworks are now under Vercel’s influence](https://x.com/RyanCarniato/status/1942653782715949151).  
+- 👀 [Next.js PR – Generate route types manifest](https://github.com/vercel/next.js/pull/81396): A proposed change to Next.js to automatically generate types for all app's routes, making them globally available without needing imports. This would provide immediate type safety, an IDE autocompletion for page props and layout slots, which would help to catch routing errors early.  
+- 👀 [Next.js PR \- forward browser errors/logs to terminal](https://github.com/vercel/next.js/pull/80909)  
+- 🐦 Alex Sidorenko taught us [how to secure your Next.js server actions](https://x.com/asidorenko_/status/1941863623300645344)  
+- ​​💬 [How does Facebook serve React pages? (r/reactjs)](https://www.reddit.com/r/reactjs/comments/1ltbw2e/how_does_facebook_serve_react_pages/): Surprisingly, they use the Hermes engine \- the React Native runtime \- to run React web SSR\!  
+- 📜 [Introducing valtio-reactive: a Reactive Library Built on Valtio](https://newsletter.daishikato.com/p/introducing-valtio-reactive-a-reactive-library-built-on-valtio): Describes how the global state management library Valito is enriched with missing reactivity and observability features.  
+- 📜 [The History of React Through Code](https://playfulprogramming.com/posts/react-history-through-code): Great breakdown of how React has evolved into its mature form, highlighting the pros and cons of chosen approaches over time. It traces React's evolution from its early days with JSX and the Virtual DOM to modern features like Hooks, Suspense, and Server Components, demonstrating how each improvement builds upon core React principles.  
+- 📜 [How to test React Server Component](https://www.nico.fyi/blog/how-to-test-react-server-component): Since there is no official way to test RSC, people have come up with some crazy ideas on how to do it. This one is not a recommended approach; it's extremely hacky but clever enough to be worth seeing.  
+- ​​📜 [Infinite Queries in React Query](https://tigerabrodi.blog/infinite-queries-in-react-query): Showcase of how `useInfiniteQuery` from React Query can simplify implementing infinite scroll.  
+- 📜 [The Tyranny of Tiny Modules in React and Next.js codebases](https://javascript.plainenglish.io/the-tyranny-of-tiny-modules-d42cbd8e1e17): The author questions the "keep all React’s modules small" approach, pointing out that sanity should sometimes take precedence over overly restrictive rules \- choose what is best for your team. While I don't agree with everything the author said, I still think it can broaden someone's perspective.  
+- 📜 [Deep dive into state and useState](https://www.56kode.com/posts/level-up-react-deep-dive-into-state-and-usestate/): It covers the area of React’s state management that you might not need on a daily basis, but it's really good to know because this knowledge can help you solve edge cases.  
+- 📦 [@vitejs/plugin-rsc – React Server Components (RSC) support for Vite](https://github.com/vitejs/vite-plugin-react/issues/531): now officially available on npm under the `@vitejs` org  
+- 📦 [shadcn 2.8 – Init & add components, themes, hooks from local JSON files](https://github.com/shadcn-ui/ui/releases/tag/shadcn%402.8.0)   
+- 📦 [react-hook-form 7.60 – New keepFieldsRef option for avoiding re-registering input reference after reset()](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.60.0)   
+- 📦 [Lexical 0.33 \- Extensible text editor framework](https://github.com/facebook/lexical/releases/tag/v0.33.0)   
+- 📦 [TanStack/router 1.125 \- Selective SSR](https://tanstack.com/start/latest/docs/framework/react/selective-ssr): Gives the ability to define where the component renders and where `loader` and `beforeLoad` executes on a per route basis.  
+- 📦 [React-Email 4.1 \- Separate package for storing the preview server](https://github.com/resend/react-email/releases/tag/react-email%404.1.0)  
+- 📦 [Recharts 3.1 \- New `useOffset` and `usePlotArea`, `useActiveTooltipDataPoints`](https://github.com/recharts/recharts/releases/tag/v3.1.0)   
+- 📦 [XState/store 3.8 – Undo/redo functionality](https://github.com/statelyai/xstate/releases/tag/%40xstate%2Fstore%403.8.0)   
+- 🎥 [Theo – Review of “React feels insane” article](https://www.youtube.com/watch?v=DLa2FQQzCr4)  
+- 🎥 [Ryan Carniato – How Signals can improve React](https://www.youtube.com/watch?v=VgGl9i-OBBI)  
+- 🎙️ [React Universe On Air – The evolution of the TanStack ecosystem with Tanner Linslay](https://www.youtube.com/watch?v=2L4tlUIqLho)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -67,22 +93,51 @@ Get hands on with the Sentry engineering team to use Seer, Debug MCP, configure 
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Unistyles 3.0 overview](/emails/issues/242/unistyles_banner.jpg)](https://www.reactnativecrossroads.com/posts/introducing-unistyles-3)
+
+[**Unistyles 3.0**](https://www.reactnativecrossroads.com/posts/introducing-unistyles-3)
+
+React Native Unistyles 3.0 is now stable. It’s a styling library written in C++ that enables recomputing and updating only necessary styles and components based on dependency changes, eliminating unnecessary re-renders. The library is now powered by Nitro Modules and supports only the New Architecture. The 3.0 release features an updated API aligned with the React Native StyleSheet, Compound Variants, Scoped Themes, deep integration with React Native Reanimated, and much more.
+
+---
 
 - 💸 [React Universe Conf 2025 – Last call for the Regular Access ticket batch! Use code TWIR for 10% off and join us in September!](https://www.reactuniverseconf.com/?utm_campaign=12860425-RUC%202025%20-%20Regular%20Access%20Tickets&utm_source=TWIR&utm_medium=partnership)
+- 👀 [React Native PR – support for CSS blur filter on iOS](https://github.com/facebook/react-native/pull/52495)  
+- 👀 [Expo is working on a solution for handling modals and sheets](https://x.com/hirbod_dev/status/1941143002057252955)   
+- 🐦 [Shadow insets support for Expo 52+](https://x.com/Baconbrix/status/1940419440287600870)  
+- 🐦 Szymon demoed a [support for Redux DevTools in React Native DevTools](https://x.com/ChmalSzymon/status/1941853476952080632)  
+- 🎨 Enzo Manuel Mangano [showcased on X](https://x.com/reactiive_/status/1940822398963786033) a bunch of cool animation demos from his [App.js 2025 talk](https://www.youtube.com/watch?v=kaUamUQXeo0). He also [open-sourced them on GitHub](https://github.com/enzomanuelmangano/everybody-can-cook)   
+- 📜 [Introducing React Native RAG](https://blog.swmansion.com/introducing-react-native-rag-fbb62efa4991): On-device Retrieval-Augmented Generation library for React Native  
+- 📜 [Announcing Ignite 11: Bison](https://shift.infinite.red/announcing-ignite-11-bison-f2802a85f94d): Ignite 11 comes with support for the New Architecture only, Expo SDK 53, a custom state management solution, and more  
+- 📜 [The Universal Way: One Codebase, all platforms](https://www.paisanos.io/blog/the-universal-way-one-codebase-all-platforms): Creating Universal Multiplatform Apps isn't always as easy as we might hope, but using the right tools can increase your chances of success. The article describes the benefits you can gain by using universal tools like Solito, Expo Router, or Tamagui  
+- 📦 [Metro 0.82.5 – Fast refresh stability and performance improvements](https://github.com/facebook/metro/releases/tag/v0.82.5)  
+- 📦 [React Native 0.81.0 rc.0](https://github.com/facebook/react-native/releases/tag/v0.81.0-rc.0)  
+- 🎥 [Expo – Speed up your Expo Builds with Remote Build Cache](https://www.youtube.com/watch?v=5SmaC-JQS_k)   
+- 🎙️ [Rocket Ship 75 – Epic React Native Packages, Background Images, Skia and WebGPU Updates, Expo Router & The MCP Hype](https://share.transistor.fm/s/411fe792)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 🎨 [A visual, interactive interpretation of the behaviors in Effect.ts](https://effect.kitlangton.com/)  
+- 📜 [Stylable CSS gaps](https://css-tricks.com/the-gap-strikes-back-now-stylable/):  A new CSS feature, Gap Decorations, is being introduced to allow developers to easily style the "gap" areas between items in flex, grid, and multi-column layouts, addressing previous limitations  
+- 📜 [JavaScript scope hoisting is broken](https://devongovett.me/blog/scope-hoisting.html)   
+- 📜 [Satisfies in TypeScript](https://frontendmasters.com/blog/satisfies-in-typescript/)   
+- 📜 [List Reordering with View Transition](https://frontendmasters.com/blog/view-transition-list-reordering-with-a-kick-flip/)   
+- 📜 [Browserslist-rs Gets Major Refactor, Cutting Binary Size by Over 1MB](https://socket.dev/blog/browserslist-rs-gets-major-optimization)   
+- 📦 [TypeScript 5.9-beta \- `import defer` support, CLI configuration improvements, better descriptions for DOM APIs](https://devblogs.microsoft.com/typescript/announcing-typescript-5-9-beta/)  
+- 📦 [Biome 2.1 – faster scanner and type inference improvements](https://biomejs.dev/blog/biome-v2-1/%20)  
+- 📦 [Astro 5.11 \- Improve CSP support, disable HTML streaming](https://astro.build/blog/astro-5110/%20)  
+- 📦 [esbuild 0.25.6 – better tree-shaking, improved CSS selector support, configurable delay in watch mode](https://github.com/evanw/esbuild/releases/tag/v0.25.6)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/242/meme1.jpg)](https://x.com/kacperkapusciak/status/1940767250128294030)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/242/meme2.jpg)](https://x.com/DavidKPiano/status/1941261793864843575)
+
+[![alt](/emails/issues/242/meme3.jpg)](https://x.com/bunjavascript/status/1942400645757296705)
 
 See ya! 👋
