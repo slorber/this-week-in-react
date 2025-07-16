@@ -1,18 +1,17 @@
 ---
 slug: /243
-title: "This Week In React #243: Next.js, React Compiler, React Router, TanStack Query, TanStack Router | Node API, RNWallet, Bundle Mode, Apple LLM, Metro, Radon, RNEF | Nuxt, Deno, zshy, TypeGPU, Rspack"
+title: "This Week In React #243: Next.js, TanStack, Compiler, React Router, R3f | Node-API, Wallet, Worklets, Apple LLM, Metro, Skia, Radon, RNEF | Nuxt, Deno, zshy, TypeGPU, Rspack"
 authors: [tboba, tomekzaw]
 date: 07-16-2025
-unlisted: true
 ---
 
 Hi everyone! **Tomek and Tymek from [Software Mansion](https://swmansion.com/?utm_source=thisweekinreact)** here! 👋
 
-This week, we're coming with some interesting announcements and even more noteworthy news. Next.js 15.4 has been announced, bringing Turbopack support and stability improvements.
+This week, we're coming with some interesting announcements and even more noteworthy news. Next.js 15.4 has been announced, bringing full Turbopack support and stability improvements.
 
-On the React Native side, 0.81 is getting closer and closer to us as the new release candidate shows and there’s a couple of new announcements around react-native-worklets, react-native-wallet and Module Federation Metro and Node API support for React Native.
+On the React Native side, 0.81 is getting closer and closer to us as the new release candidate shows and there’s a couple of new announcements around react-native-worklets, react-native-wallet, and Module Federation Metro and Node API support for React Native.
 
-I hope you are already excited, because there is much more interesting news to come.
+We hope you are already excited because there is much more interesting news to come.
 
 Let's get into it!
 
@@ -54,21 +53,22 @@ Also, this release comes with an early preview of the Next.js 16. You can try up
 
 - 💸 [The Road to Next - Master Full-Stack Web Development with Next.js 15 and React 19](https://www.road-to-next.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_1.1)
 - 👀 [Next.js draft PR – Initial support for typed links](https://github.com/vercel/next.js/pull/81528): Introduces a new typed links API for Next.js that provides type-safe navigation built on top of the new `experimental.typedRoutes` feature. Great move from the team as type-safe navigation is always welcomed.
-- 👀 [React Compiler PR – full docs rewrite](https://github.com/reactjs/react.dev/pull/7868): Another signal that React Compiler is approaching to be announced as stable thus needs a fully-fledged documentation.
-- 📖 [New React Router middleware documentation](https://reactrouter.com/how-to/middleware): A refreshed version of the documentation of React Router’s middleware has appeared, which describes core concepts and common patterns along with many code examples.
+- 👀 [React Compiler PR – full docs rewrite](https://github.com/reactjs/react.dev/pull/7868): Another signal that React Compiler is approaching to be announced as stable thus needs a more prominent place in the documentation.
+- 📖 [React Router - Middleware docs](https://reactrouter.com/how-to/middleware): This new docs page describes core concepts and common patterns along with many code examples.
 - 🦋 Firefox review team [rejects further React DevTools updates](https://bsky.app/profile/ricky.fm/post/3ltkxpo5ewk2i) because the extension is using React from source.
-- 🐦 [TanStack Start will not exclusively rely on Nitro](https://x.com/tannerlinsley/status/1942979827566567807): TanStack start will still support Nitro, but is pointing towards “Vite native” to support any Vite plugin that uses the environment APIs to configure build output.
+- 🐦 [TanStack Start will not exclusively rely on Nitro](https://x.com/tannerlinsley/status/1942979827566567807): TanStack Start will not exclusively rely on the Nitro server and does not have a hard dependency on a package under Vercel ownership (a community concern following the Vercel acquisition of NuxtLabs). It is pointing towards "vite native" to support any Vite plugin that uses the environment APIs to configure build output.
 - 🐦 [Alex Sidorenko – How to reduce prefetching without sacrificing navigation speed in Next.js](https://x.com/asidorenko_/status/1944057336978391277)
-- 📜 [Lee Robinson – 5 things I learned from 5 years at Vercel](https://leerob.com/vercel): Lee Robinson, one of the main figures of Next.js is leaving Vercel. He decided to convey the 5 most important things he learned during his work. At the same time, [Sam Selikoff is joining the team](https://x.com/samselikoff/status/1943325592260092298), announcing work on new features, such as ViewTransitions, pre-rendering or the “use cache” declaration.
+- 👥 [Lee Robinson – 5 things I learned from 5 years at Vercel](https://leerob.com/vercel): Lee Robinson, one of the main figures of Next.js is leaving Vercel. He decided to convey the 5 most important things he learned during his work. At the same time, [Sam Selikoff is joining the team](https://x.com/samselikoff/status/1943325592260092298), announcing work on new features, such as ViewTransitions, pre-rendering or the “use cache” declaration.
 - 📜 [The Architect's Guide to Micro-Frontends: A Deep Dive into Module Federation with React and Angular](https://developersvoice.com/blog/frontend/micro-frontends-with-react-and-angular/): Traditional monolithic architecture could often bring limitations, such as slow development cycles and fragility. Learn from the widely described article how to use Module Federation as an encroaching standard for implementing micro-frontends.
 - 📜 [Architecting with Constraints: A Pragmatic Guide](https://www.lorenstew.art/blog/always-architect-with-contraints)
 - 📜 [How To Create Kinetic Image Animations with React-Three-Fiber](https://tympanus.net/codrops/2025/07/09/how-to-create-kinetic-image-animations-with-react-three-fiber/)
 - 📜 [Three.js Instances: Rendering Multiple Objects Simultaneously](https://tympanus.net/codrops/2025/07/10/three-js-instances-rendering-multiple-objects-simultaneously/)
 - 💸 [Convex launched a collaboration with Resend](https://convex.link/resendthiswk)
-- 📦 [TanStack Query 5.82.0 / 5.83.0 – new `mutationOptions` object](https://github.com/TanStack/query/releases/tag/v5.83.0)
-- 📦 [TanStack Router 1.26.0](https://github.com/TanStack/router/releases/tag/v1.126.0): New [custom React Vite plugin](https://github.com/TanStack/router/discussions/2863#discussioncomment-13713677), through which the library will soon stop auto-configuring React/Solid Vite plugins, thus increasing the possibilities of configuration on your own.
-- 📦 [TanStack Router 1.27.0 – seroval is being used for SSR](https://github.com/TanStack/router/releases/tag/v1.127.0): It permits to serialize data to JSONs that aren’t usually serializable.
-- 📦 [oxc 0.77 – support for styled-components plugin](https://github.com/oxc-project/oxc/pull/12234)
+- 📦 [TanStack Router 1.26](https://github.com/TanStack/router/releases/tag/v1.126.0): New [custom React Vite plugin](https://github.com/TanStack/router/discussions/2863#discussioncomment-13713677), through which the library will soon stop auto-configuring React/Solid Vite plugins, thus increasing the possibilities of configuration on your own.
+- 📦 [TanStack Query 5.82 / 5.83 – new `mutationOptions` object](https://github.com/TanStack/query/releases/tag/v5.83.0)
+- 📦 [TanStack Router 1.27 – Seroval is being used for SSR](https://github.com/TanStack/router/releases/tag/v1.127.0): It permits to serialize data to JSONs that aren’t usually serializable.
+- 📦 [oxc 0.77 – Support for styled-components transformer plugin](https://github.com/oxc-project/oxc/pull/12234)
+- 🎙️ [Podrocket – Storybook 9 is leveling up UI testing with Michael Shilman](https://podrocket.logrocket.com/storybook-9-leveling-up-ui-testing-michael-shilman)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -110,20 +110,18 @@ A new React Native library created by Expensify and Software Mansion. It streaml
 ---
 
 - 💸 [PostHog - How to set up React Native surveys](https://go.posthog.com/twir-jul16)
-- 👀 [react-native-keyboard-controller is now available in Expo Go](https://x.com/ziusko/status/1944717202617180409)
-- 🐦 [Legend List rewrite](https://x.com/jmeistrich/status/1944003988082364872): Improved performance, synchronous mounting
+- 🐦 [React-Native-Worklets - Bundle Mode preview](https://x.com/_tjzel/status/1945094982114705842): Experimental feature that makes it possible to use third-party npm packages inside worklets.
+- 🐦 [Legend List under big rewrite](https://x.com/jmeistrich/status/1944003988082364872): Improved performance, synchronous mounting.
+- 🐦 [React-Native-Keyboard-Controller is now available in Expo Go](https://x.com/ziusko/status/1944717202617180409)
 - 🐦 [Interactive comparison of Expo fingerprint components to better understand OTA updates](https://x.com/Baconbrix/status/1944817782727581834)
-- 🐦 [react-native-worklets Bundle Mode](https://x.com/_tjzel/status/1945094982114705842): experimental feature that makes it possible to use third-party npm packages inside worklets.
-- 📜 [Introducing react-native-wallet](https://blog.swmansion.com/introducing-react-native-wallet-90c1ee103d3e) – new library that streamlines the process of integrating payment cards into mobile apps (in-app provisioning) and ensures the integration follows the strict guidelines and best practices for both Apple and Google Wallet.
-- 📜 [Announcing Node-API Support for React Native](https://www.callstack.com/blog/announcing-node-api-support-for-react-native): allows native code to interface with JavaScript in a runtime-independent and stable way
-- 📜 [Chromium Blog – Introducing Skia Graphite](https://blog.chromium.org/2025/07/introducing-skia-graphite-chromes.html): Google has released a brand new rasterization backend, as the original Chromium engine, Skia, was struggling with performance issues. Thanks to the new solution, Graphite, Motionmark 1.3 scores increased by almost 15% (on a Macbook Pro M3) and led to improvements for real-world metrics, such as interaction to next paint time or time to largest contentful paint).
+- 📜 [Chromium Blog – Introducing Skia Graphite](https://blog.chromium.org/2025/07/introducing-skia-graphite-chromes.html): Google has released a new rasterization backend, as the original Chromium engine, Skia, was struggling with performance issues. Thanks to the new solution, Graphite, Motionmark 1.3 scores increased by almost 15% (on a Macbook Pro M3) and led to improvements for real-world metrics, such as interaction to next paint time or time to largest contentful paint). We should benefit from this in upcoming versions of React-Native-Skia.
 - 📜 [On-Device Apple LLM Support Comes to React Native](https://www.callstack.com/blog/on-device-apple-llm-support-comes-to-react-native): preview release of `@react-native-ai/apple` bringing on-device Apple foundation models to React Native.
-- 📦 [Metro 0.83.0 – Node 22.14.0 is now required](https://github.com/facebook/metro/releases/tag/v0.83.0)
-- 📦 [Module Federation Metro plugin](https://github.com/module-federation/metro): Callstack has made a new Metro plugin for Module Federation, which will help you to adapt React Native apps and start using Module Federation with Metro bundler.
+- 📦 [Metro 0.83 – Node 22.14 is now required](https://github.com/facebook/metro/releases/tag/v0.83.0)
+- 📦 [Module Federation - Metro plugin](https://github.com/module-federation/metro): Callstack has made a new Metro plugin for Module Federation, which will help you to adapt React Native apps and start using Module Federation with Metro bundler.
 - 📦 [Radon IDE 1.9 – Radon Connect, switch between different project configurations, camera output on Android](https://github.com/software-mansion/radon-ide/releases/tag/v1.9.0)
-- 📦 [React Native Enterprise Framework 0.8.0 – New visual representation, support for RN 0.80, RNC CLI 19.1](https://github.com/callstack/rnef/releases/tag/v0.8.0)
-- 📦 [react-native-apple-llm – React Native plugin for Apple Intelligence and Foundation Models](https://github.com/deveix/react-native-apple-llm)
-- 📦 [tinybase 6.4.0 – new persister-react-native-sqlite module](https://github.com/tinyplex/tinybase/releases/tag/v6.4.0)
+- 📦 [React Native Enterprise Framework 0.8 – New visual representation, support for RN 0.80, RNC CLI 19.1](https://github.com/callstack/rnef/releases/tag/v0.8.0)
+- 📦 [React Native Apple LLM – Plugin for Apple Intelligence and Foundation Models](https://github.com/deveix/react-native-apple-llm)
+- 📦 [Tinybase 6.4 – new persister-react-native-sqlite module](https://github.com/tinyplex/tinybase/releases/tag/v6.4.0)
 - 🎙️ [RNR 337 – Meta Quest for React Native with Markus Leyendecker](https://infinite.red/react-native-radio/rnr-337-meta-quest-for-react-native-w-markus-leyendecker)
 - 🎙️ [Rocket Ship 76 – Unistyles 3.0, SwiftUI Filters, Nitro Hype & the Expo Debate](https://share.transistor.fm/s/b24027ab)
 - 🎥 [Expo – How to build a Custom Expo Module](https://www.youtube.com/watch?v=zReFsPgUdMs)
@@ -133,16 +131,14 @@ A new React Native library created by Expensify and Software Mansion. It streaml
 
 ## 🔀 Other {#other}
 
-- 📜 [CSS Tip: `selection-index()` and `selection-count()`](https://css-tip.com/element-index/)
-- 📜 [grep.app no longer limited to the pre-indexed repos](https://vercel.com/changelog/search-any-public-github-repo-with-grep)
-- 📦 [zshy – A new no-bundler build tool for TypeScript libraries](https://github.com/colinhacks/zshy)
+- 📜 [CSS Tip - Get the index of an element within its parent - `selection-index()` and `selection-count()`](https://css-tip.com/element-index/)
 - 📦 [Nuxt 4.0 – `app/` directory, smarter data fetching, improved TS integration](https://nuxt.com/blog/v4)
 - 📦 [Deno 2.4 – `deno bundle`, new way to import assets, `--preload` flag](https://deno.com/blog/v2.4)
-- 📦 [TypeGPU 0.6.0](https://github.com/software-mansion/TypeGPU/releases/tag/v0.6.0)
 - 📦 [Rspack 1.4.8 – new Rust watcher, making Hot Module Replacement \~10% faster](https://github.com/web-infra-dev/rspack/releases/tag/v1.4.8)
+- 📦 [TypeGPU 0.6.0](https://github.com/software-mansion/TypeGPU/releases/tag/v0.6.0)
+- 📦 [zshy – A new no-bundler build tool for TypeScript libraries](https://github.com/colinhacks/zshy)
 - 🔗 [jsdate.wtf – “How well do you know JavaScript's Date class?”](https://jsdate.wtf/): An interesting 28-question quiz, testing how well you know the `Date` JS class.
 - 🔗 [A refreshed Matt Pocock’s mega-guide on how to create a npm package](https://www.totaltypescript.com/how-to-create-an-npm-package)
-- 🎙️ [Podrocket – Storybook 9 is leveling up UI testing with Michael Shilman](https://podrocket.logrocket.com/storybook-9-leveling-up-ui-testing-michael-shilman)
 
 ---
 
