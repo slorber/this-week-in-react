@@ -40,6 +40,24 @@ Next.js 15.4 has been released! This version includes updates to performance, st
 
 Also, this release comes with an early preview of the Next.js 16. You can try upcoming features right now, such as cache components, mentioned turbopack builds with the `next build --turbopack` command, optimized client-side routing and stable Node.js middleware.
 
+---
+
+- 👀 [Next.js draft PR – Initial support for typed links](https://github.com/vercel/next.js/pull/81528): Introduces a new typed links API for Next.js that provides type-safe navigation built on top of the new `experimental.typedRoutes` feature. Great move from the team as type-safe navigation is always welcomed.
+- 👀 [React Compiler PR – full docs rewrite](https://github.com/reactjs/react.dev/pull/7868): Another signal that React Compiler is approaching to be announced as stable thus needs a fully-fledged documentation.
+- 📖 [New React Router middleware documentation](https://reactrouter.com/how-to/middleware): A refreshed version of the documentation of React Router’s middleware has appeared, which describes core concepts and common patterns along with many code examples.
+- 🦋 Firefox review team [rejects further React DevTools updates](https://bsky.app/profile/ricky.fm/post/3ltkxpo5ewk2i) because the extension is using React from source.
+- 🐦 [TanStack Start will not exclusively rely on Nitro](https://x.com/tannerlinsley/status/1942979827566567807): TanStack start will still support Nitro, but is pointing towards “Vite native” to support any Vite plugin that uses the environment APIs to configure build output.
+- 🐦 [Alex Sidorenko – How to reduce prefetching without sacrificing navigation speed in Next.js](https://x.com/asidorenko_/status/1944057336978391277)
+- 📜 [Lee Robinson – 5 things I learned from 5 years at Vercel](https://leerob.com/vercel): Lee Robinson, one of the main figures of Next.js is leaving Vercel. He decided to convey the 5 most important things he learned during his work. At the same time, [Sam Selikoff is joining the team](https://x.com/samselikoff/status/1943325592260092298), announcing work on new features, such as ViewTransitions, pre-rendering or the “use cache” declaration.
+- 📜 [The Architect's Guide to Micro-Frontends: A Deep Dive into Module Federation with React and Angular](https://developersvoice.com/blog/frontend/micro-frontends-with-react-and-angular/): Traditional monolithic architecture could often bring limitations, such as slow development cycles and fragility. Learn from the widely described article how to use Module Federation as an encroaching standard for implementing micro-frontends.
+- 📜 [Architecting with Constraints: A Pragmatic Guide](https://www.lorenstew.art/blog/always-architect-with-contraints)
+- 📜 [How To Create Kinetic Image Animations with React-Three-Fiber](https://tympanus.net/codrops/2025/07/09/how-to-create-kinetic-image-animations-with-react-three-fiber/)
+- 📜 [Three.js Instances: Rendering Multiple Objects Simultaneously](https://tympanus.net/codrops/2025/07/10/three-js-instances-rendering-multiple-objects-simultaneously/)
+- 📦 [TanStack Query 5.82.0 / 5.83.0 – new mutationOptions object](https://github.com/TanStack/query/releases/tag/v5.83.0)
+- 📦 [TanStack Router 1.26.0](https://github.com/TanStack/router/releases/tag/v1.126.0): New [custom React Vite plugin](https://github.com/TanStack/router/discussions/2863#discussioncomment-13713677), through which the library will soon stop auto-configuring React/Solid Vite plugins, thus increasing the possibilities of configuration on your own.
+- 📦 [TanStack Router 1.27.0 – seroval is being used for SSR](https://github.com/TanStack/router/releases/tag/v1.127.0): It permits to serialize data to JSONs that aren’t usually serializable.
+- 📦 [oxc 0.77 – support for styled-components plugin](https://github.com/oxc-project/oxc/pull/12234)
+
 <SubscribeFormEmbed placement="middle" />
 
 ---
