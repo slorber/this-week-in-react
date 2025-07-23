@@ -25,7 +25,51 @@ import Support from "../_support.mdx";
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![React Router and React Server Components: The Path Forward](/emails/issues/244/reactrouter.jpg)](https://remix.run/blog/react-router-and-react-server-components)
+
+**[React Router and React Server Components: The Path Forward](https://remix.run/blog/react-router-and-react-server-components)**
+
+The new [React Router v7.7](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v770) release introduces experimental RSC APIs to use alongside RSC-compatible bundlers (Vite, Parcel) that you can now use in [Data Mode](https://reactrouter.com/start/modes#data), making it almost as powerful as the Framework Mode. In the future, the Framework Mode is also going to migrate to use React Router RSC APIs under the hood.
+
+Reading the [React Server Components docs](https://reactrouter.com/how-to/react-server-components), the integration doesn’t look so simple to understand, so I guess most React Router users may prefer waiting for RSC support in Framework Mode. However, it’s cool that they expose all primitives to bring RSCs to your existing app, and make it possible to create your own RSC-powered Framework Mode somehow.
+
+Other useful links:
+
+- 🐦 [@ReactRouter](https://x.com/ReactRouter): Brand new account to follow on X
+- 🎥 [Alem Tuzlak \- eact Server Components Are Finally Here in Vite and React Router\!](https://www.youtube.com/watch?v=33sAJbf-1NE)
+- 🎙️ [PodRocket \- React Router and why file-routing sucks with Brooks Lybrand](https://podrocket.logrocket.com/react-router-why-file-routing-sucks-brooks-lybrand)
+
+—
+
+![React Compiler being recommended on the useCallback docs](/emails/issues/244/compiler.png)
+
+**React Compiler getting ready for prime time?**
+
+Recently, the [React Compiler docs](https://react.dev/learn/react-compiler) have been completely rewritten, divided into several pages, and given a more prominent place on the React docs site. There’s also a new [API reference](https://react.dev/reference/react-compiler/configuration) section covering advanced configuration, directives and how to pre-compile a React library to optimize it before distribution.
+
+The React Compiler is now recommended in other places of the docs as a [better alternative to `React.memo`](https://react.dev/reference/react/memo#react-compiler-memo), `useMemo,` and `useCallback`. In the future, [eslint-plugin-react-hooks may enable the compiler rules by default](https://github.com/facebook/react/pull/33509). It’s still a Release Candidate, but I wouldn’t be surprised to see it become stable at [React Conf](https://conf.react.dev/) in October, given the line-up.
+
+---
+
+- 👀 [Remix v3 branch](https://github.com/remix-run/remix/tree/v3): Gives you a sneak peek of support packages that will probably be part of the upcoming Remix v3 framework (based on Preact), packages that were previously created on a [remix-the-web repo](https://github.com/mjackson/remix-the-web). We can notice for example that Remix v3 will have a more powerful [URL matching system](https://github.com/remix-run/remix/tree/v3/packages/route-pattern).
+- 🐦 [Next.js 15.4 \- devtoolSegmentExplorer demo](https://x.com/asidorenko_/status/1946228504112067050): New convenient experimental DX feature coming with the latest release.
+- 🐦 [Next.js 15.4 \- Forwarding browser logs to terminal](https://x.com/asidorenko_/status/1947304774249959470): This new feature `browserDebugInfoInTerminal` experimental feature is useful for DX, but also coding agents that can more easily see and fix the client-side errors.
+- 🐦 [TIL you can pass JSX elements as props without curly braces](https://x.com/sebastienlorber/status/1947289335662883188): Yep, `<div prop=<span>Hello</span></div>` is legal\!
+- 📖 [TanStack DB \- New Live Queries docs](https://tanstack.com/db/latest/docs/live-queries)
+- 📜 [How to Use Action Routes in React Router](https://sergiodxa.com/tutorials/use-action-routes-in-react-router): Shows how to centralize actions in one place so that you can call them from multiple places without duplication.
+- 📜 [Storybook bloat? Fixed](https://storybook.js.org/blog/storybook-bloat-fixed/): Storybook v9 greatly optimized the dependency graph, reducing install time and size significantly.
+- 📜 [Introducing Zustand](https://frontendmasters.com/blog/introducing-zustand/): Explains the advantages of Zustand over a vanilla React Context.
+- 📜 [Adding .md URLs for Raw Markdown Content in](https://www.bengubler.com/posts/2025-06-14-raw-markdown-urls-nextjs) [Next.js](http://Next.js): A Little trick that could be useful to feed LLMs.
+- 📜 [Leaving Next.js behind](https://www.jeantinland.com/blog/leaving-nextjs-behind/): Story of migrating a personal website to a simpler and lighter stack, relying on less JavaScript.
+- 📜 [The present and the future of SPAs in React](https://www.felgus.dev/blog/future-spa)
+- 📜 [React Server Components: How We Got Here](https://www.epicreact.dev/react-server-components-how-we-got-here-zcuxn)
+- 📦 [TanStack Router 1.128 \- Optional path params](https://tanstack.com/router/latest/docs/framework/solid/guide/path-params#optional-path-parameters)
+- 📦 [oxlint 1.8 \- Auto-fixer for react/exhaustive-deps](https://github.com/oxc-project/oxc/releases/tag/oxlint_v1.8.0)
+- 📦 [Astro 5.12 \- TOML support for content loaders, new Netlify DX, raw env values](https://astro.build/blog/astro-5120/)
+- 📦 [Reason-React 0.16 \- Support for React 19, expose React resource preloading APIs](https://github.com/reasonml/reason-react/releases/tag/0.16.0)
+- 📦 [React Admin 5.10](https://github.com/marmelab/react-admin/releases/tag/v5.10.0)
+- 🎥 [Wawa Sensei \- How to Create a Lenticular Material with TSL and WebGPU](https://www.youtube.com/watch?v=U4OjVL5NE3A)
+- 🎥 [Alem Tuzlak \- The best guide to rolling your own auth with react-router\!](https://www.youtube.com/watch?v=Qv_8j5PKPI4)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -39,20 +83,63 @@ import Support from "../_support.mdx";
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Reanimated 4 Stable Release — the Future of React Native Animations](/emails/issues/244/reanimated.jpg)](https://blog.swmansion.com/reanimated-4-stable-release-the-future-of-react-native-animations-ba68210c3713)
+
+**[Reanimated 4 Stable Release — the Future of React Native Animations](https://blog.swmansion.com/reanimated-4-stable-release-the-future-of-react-native-animations-ba68210c3713)**
+
+This is a massive release that greatly improves the Reanimated. Highlights include:
+
+- CSS Transitions and Animations: taking the best part of CSS animations a bringing it to React Native through a familiar and convenient declarative API, that improves performance and web/mobile cross-platform support along the way. It should be particularly useful for state-driven micro-interactions, but worklets aren’t going anywhere and remain the go-to choice for complex and gesture/scroll-driven animations.
+- Worklets have been extracted to a separate library that Reanimated depends on, starting \>= v3.17. Richer multi-threading APIs should come soon, with the ability to move heavy computation, data fetching/processing to a background thread, with the ability to use third-party libraries in worklets.
+- Reanimated has been split into many modular packages to help reduce bundle size
+- Shared Element Transitions coming in an upcoming v4.x version
+- Reanimated v4 is only compatible with the New Architecture
+
+---
+
+- 📣 [Callstack Secures Major US Private Equity Investment to Accelerate Global Growth](https://www.callstack.com/news/callstack-secures-major-us-private-equity-investment-to-accelerate-global-growth)
+- 📣 [Google confirms it's 'combining' Chrome OS and Android into a single platform](https://www.androidauthority.com/google-combine-chrome-os-android-3577035/)
+- 🐦 [Tzvetan Mikov \- Hermes v2 performance at end of June 2025](https://x.com/tmikov/status/1945348222110859500): A benchmark showing promising results against QuickJS and Hermes v1 on untyped JS. v2 will be released soon. Later, Static Hermes should further improve performance on typed code.
+- 🐦 [Tzvetan Mikov \- Hermes can generate a bytecode bundle that is more suitable for binary diffing (for OTA) based on a previous bundle](https://x.com/tmikov/status/1946248942859301226): A lesser-known feature of Hermes makes it possible to create new bundles based on former ones. For OTA updates, this makes it possible to send over the wire small binary diff patches and greatly reduce OTA payload sizes. I’m not sure anyone exploits that yet, but it looks like a nice feature Expo could leverage.
+- 🐦 [Fernando Rojo noticed that React Native is deprecating `pod install`](https://x.com/FernandoTheRojo/status/1946558304659841055)
+- 👀 [Expo PR \- New `@expo/app-integrity` package](https://github.com/expo/expo/pull/38109): This upcoming security package should help developers prevent fraud and abuse by determining if their apps are running on legitimate and uncompromised devices.
+- 👀 [React Native 0.81 PR \- Modal `allowSwipeDismissal` prop](https://github.com/facebook/react-native/pull/51483): This will let you close iOS modals with a swipe down gesture.
+- 📖 [Bring React Native Into Your App, One Step at a Time](https://www.callstack.com/ebooks/incremental-react-native-adoption-in-native-apps): Free e-book offered by Callstack to incrementally migrate your native app to a React Native brownfield app.
+- 📜 [How to Build 2D Game-Style Physics with Matter.js and React Native Skia](https://expo.dev/blog/build-2d-game-style-physics-with-matter-js-and-react-native-skia)
+- 📜 [Build and Run Node-API Modules in React Native](https://www.callstack.com/blog/build-and-run-node-api-modules-in-react-native)
+- 📦 [Keyboard Controller 1.18 \- Keyboard extensions or new way to interact with keyboard](https://kirillzyusko.github.io/react-native-keyboard-controller/blog/keyboard-extensions): This release brings significant improvements, letting you render custom UI elements that live within or alongside the keyboard area. It also fixes the iOS lag issue with keyboard preloading.
+- 📦 [Screens 4.13 \- Native tabs](https://github.com/software-mansion/react-native-screens/releases/tag/4.13.0): This is finally coming, native bottom tabs for Android and iOS (including iOS 26 liquid glass tabs) for both Legacy/New Arch\!
+- 📦 [Private Mind](https://github.com/software-mansion-labs/private-mind): Software Mansion is introducing an app to chat with local LLM models. An alternative to the ChatGPT app with no privacy concerns. It’s also open-source and based on React Native ExecuTorch.
+- 📦 [React Native Fast Shimmer \- Lightweight, performant, customizable library for creating elegant loading skeletons](https://www.callstack.com/blog/performant-and-cross-platform-shimmers-in-react-native-apps)
+- 📦 [Gesture Handler 2.27.2 \- Various bugfixes and improvements](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.27.2)
+- 📦 [Reanimated 3.19 \- Support for RN 0.81, many bugfixes](https://github.com/software-mansion/react-native-reanimated/releases/tag/3.19.0)
+- 📦 [Create React Native Library 0.52 \- Option to create Nitro views](https://github.com/callstack/react-native-builder-bob/releases/tag/create-react-native-library%400.52.0)
+- 📦 [NativeUI \- Beautiful, accessible components using the shadcn distribution model](https://www.nativeui.io/)
+- 🎥 [Beto \- How to Use Claude Code with React Native (Step-by-Step)](https://www.youtube.com/watch?v=nlMyplRL8V8)
+- 🎥 [Expo \- Repack Workflow Demo \- Cut React Native CI build times by up to 80%](https://www.youtube.com/watch?v=peZ36U87k-M)
+- 🎥 [Simon Grimm \- React Native Authentication with Expo Router v5](https://www.youtube.com/watch?v=HDDmaVEMv1w)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📣 [Shipping WebGPU on Windows in Firefox 141](https://mozillagfx.wordpress.com/2025/07/15/shipping-webgpu-on-windows-in-firefox-141/): A positive sign that WebGPU should be available everywhere in the near future?
+- 👀 [Agenda for the 109th meeting of Ecma TC39 \- 28-31 July](https://github.com/tc39/agendas/blob/main/2025/07.md): Another packed meeting with many interesting proposals set to progress, but also new ones to study.
+- 📊 [State of HTML \- Survey open](https://survey.devographics.com/en-US/survey/state-of-html/2025)
+- 📜 [A Friendly Introduction to SVG](https://www.joshwcomeau.com/svg/friendly-introduction-to-svg/)
+- 📜 [Faster Type-Aware Lint Rules: Biome vs. Oxlint](https://www.solberg.is/fast-type-aware-linting)
+- 📜 [Modern async iteration in JavaScript with Array.fromAsync()](https://allthingssmitty.com/2025/07/14/modern-async-iteration-in-javascript-with-array-fromasync/)
+- 📦 [tsgolint \- Experimental typescript-go powered JS/TS linter, \~30x faster than ESLint](https://github.com/typescript-eslint/tsgolint)
+- 📦 [Bun 1.2.19 \- pnpm-style isolated node_modules install, interactive upgrades, `bun why,` and more](https://bun.sh/blog/bun-v1.2.19)
+- 📦 [Better Auth 1.3 \- New SSO, OIDC, Stripe, Ethereum plugins](https://www.better-auth.com/blog/1-3)
+- 📦 [NAPI-RS 3.0 \- Building pre-compiled Node.js addons in Rust](http://napi.rs/blog/announce-v3)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/244/meme.jpg)](https://x.com/leerob/status/1947057848967467274)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/244/meme2.jpg)](https://x.com/gerzonzc/status/1944783458733048164)
 
 See ya! 👋
