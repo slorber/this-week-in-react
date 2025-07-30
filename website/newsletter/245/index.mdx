@@ -1,6 +1,6 @@
 ---
 slug: /245
-title: "This Week In React #245: ..."
+title: "This Week In React #245: TanStack, React Core, Next.js MCP, RSC, memo, Remix, Base UI, React Aria | Precompiled iOS, Rozenite, AI, Perf, Nitro, BottomSheet, Tinybase | TC39, TypeScript, Runtimes, Mocks"
 authors: [slorber]
 date: 07-30-2025
 unlisted: true
@@ -37,6 +37,7 @@ TanStack DB 0.1 is out in beta, 🐦 [completing the vision Tanner Linsley had f
 
 ---
 
+- 💸 [The Road to Next - Master Full-Stack Web Development with Next.js 15 and React 19](https://www.road-to-next.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_2.1)
 - 👀 [React Core PR \- Deprecate "Throw a Promise" technique](https://github.com/facebook/react/pull/34032): This old technique to trigger Suspense boundaries should be deprecated and emit a warning in an upcoming release. You’d rather migrate your code to `React.use(promise)` instead. Maintainers of libraries like React Query [wonder how to support both React v18 and v19](https://bsky.app/profile/tkdodo.eu/post/3lv4rhr4mrs2i).
 - 👀 [React Core PR \- Expose `cacheSignal()`](https://github.com/facebook/react/pull/33557): According to [newly merged typedefs](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/73243), an upcoming React canary could expose a way to retrieve an `AbortSignal` that triggers at the end of the `React.cache()` lifetime, letting you abort any outstanding network requests.
 - 👀 [Next.js PR \- Initial MCP implementation](https://github.com/vercel/next.js/pull/81770): Starting 15.4.2-canary.16, `next dev` can expose an MCP server if you use Turbopack and provide a `NEXT_EXPERIMENTAL_MCP_SECRET` env variable. Tools enable querying the module graph, entry points, and issues reported on routes.
@@ -46,6 +47,7 @@ TanStack DB 0.1 is out in beta, 🐦 [completing the vision Tanner Linsley had f
 - 📜 [We’ve moved from TanStack Start to](https://llmgateway.io/changelog/nextjs-migration?v=2) [Next.js](http://Next.js): It’s a product changelog entry, but you’ll find [more interesting discussions on X](https://x.com/tannerlinsley/status/1950310182451630384).
 - 📜 [Let's Write React Hooks From Scratch](https://playfulprogramming.com/posts/react-write-hooks-from-scratch)
 - 📜 [Component Test with Storybook and Vitest](https://storybook.js.org/blog/component-test-with-storybook-and-vitest/)
+- 💸 [Add DOCX editing to your React app with Apryse WebViewer - no office or server setup needed, just fast, native in-browser editing](https://apryse.com/blog/webviewer/how-to-embed-docx-editing-in-react-v2?utm_source=newsletter&utm_medium=email&utm_campaign=thisweekinreact_2025_07_30&utm_content=email_textlink)
 - 📦 [React 19.1.1 \- Bugfix release](https://github.com/facebook/react/releases/tag/v19.1.1)
 - 📦 [Remix 2.17 \- Redirect users to `create-react-router` instead of `create-remix`](https://github.com/remix-run/remix/blob/v2/CHANGELOG.md#v2170): Remix v2 is now in maintenance mode, and the init CLI prevents the creation of Remix v2 apps in favor of React Router apps.
 - 📦 [TanStack Router 1.130 \- Add `disableGlobalCatchBoundary` option](https://github.com/TanStack/router/releases/tag/v1.130.0): This lets errors bubble up, useful for tests or error reporting.
@@ -77,6 +79,7 @@ The result is impressive, **reducing the build time of the RNTester app by 10x**
 
 ---
 
+- 💸 [Product for Engineers - An engineer's guide to vibe design (with prompts)](https://go.posthog.com/twir-jul30)
 - 👀 [React Native PR \- Enable `enableEagerAlternateStateNodeCleanup`](https://github.com/facebook/react-native/pull/51856): React Native retains shadow nodes longer than it needs, and this eager cleanup could significantly reduce memory usage in upcoming versions of React Native.
 - 📣 [Expo Changelog \- Mid-July website updates: EAS Hosting, Workflows, Organizations, and more](https://expo.dev/changelog/mid-july-website-updates)
 - 📖 [Expo Docs \- New “dangerous mod” docs page](https://docs.expo.dev/config-plugins/dangerous-mods/): An escape hatch to create config plugins when existing mods are not enough.
