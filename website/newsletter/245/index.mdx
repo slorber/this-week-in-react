@@ -1,0 +1,121 @@
+---
+slug: /245
+title: "This Week In React #245: ..."
+authors: [slorber]
+date: 07-30-2025
+unlisted: true
+---
+
+Hi everyone!
+
+This week, we have a few interesting React releases, many of them from the TanStack ecosystem. I also found great articles and interesting PRs to look at.
+
+On the React Native side, reducing iOS build times will be a very welcome improvement, and Rozenite could significantly improve the React Native DX too\!
+
+The newsletter will be taking a well-deserved 2-week break 🏝️  
+We'll be back on August 20\. Until then, keep Reacting ✌️
+
+<!-- truncate -->
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+<Todo />
+
+---
+
+## ⚛️ React {#react}
+
+[Stop Re-Rendering — TanStack DB, the Embedded Client Database for TanStack Query](https://tanstack.com/blog/tanstack-db-0.1-the-embedded-client-database-for-tanstack-query)
+
+TanStack DB 0.1 is out in beta, 🐦 [completing the vision Tanner Linsley had for React Quey from day 1](https://x.com/tannerlinsley/status/1950262878852043103). Unlike Query, which treats data as isolated cache entries, DB provides the missing reactive layer and lets you create relationships between collections, using differential dataflow — a technique that only recomputes the parts of queries that actually changed. TanStack DB was designed from the ground up to support sync engines, but it is incrementally adoptable and compatible with REST, GraphQL or anything else.
+
+---
+
+- 👀 [React Core PR \- Deprecate "Throw a Promise" technique](https://github.com/facebook/react/pull/34032): This old technique to trigger Suspense boundaries should be deprecated and emit a warning in an upcoming release. You’d rather migrate your code to `React.use(promise)` instead. Maintainers of libraries like React Query [wonder how to support both React v18 and v19](https://bsky.app/profile/tkdodo.eu/post/3lv4rhr4mrs2i).
+- 👀 [React Core PR \- Expose `cacheSignal()`](https://github.com/facebook/react/pull/33557): According to [newly merged typedefs](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/73243), an upcoming React canary could expose a way to retrieve an `AbortSignal` that triggers at the end of the `React.cache()` lifetime, letting you abort any outstanding network requests.
+- 👀 [Next.js PR \- Initial MCP implementation](https://github.com/vercel/next.js/pull/81770): Starting 15.4.2-canary.16, `next dev` can expose an MCP server if you use Turbopack and provide a `NEXT_EXPERIMENTAL_MCP_SECRET` env variable. Tools enable querying the module graph, entry points, and issues reported on routes.
+- 📅 [Next.js Conf \- San Francisco \- Oct 23, 2025 \- The CFP is now open](https://vercel.typeform.com/to/KYobJh3C?typeform-source=ThisWeekInReact)
+- 📜 [The Useless useCallback](https://tkdodo.eu/blog/the-useless-use-callback): Shows how easy it is to inadvertently break your `React.memo` optimizations and your `useEffect` behavior due to referential stability issues. IMO, React optimizations should be encapsulated; they shouldn't depend on how a component/hook is used to work, but it’s easier said than done.
+- 📜 [How Parcel bundles React Server Components](https://devongovett.me/blog/parcel-rsc.html): Great overview of how a bundler like Parcel works, and how it splits code and preloads it efficiently in an RSC setup depending on dynamic imports and \`use client\` directives.
+- 📜 [We’ve moved from TanStack Start to](https://llmgateway.io/changelog/nextjs-migration?v=2) [Next.js](http://Next.js): It’s a product changelog entry, but you’ll find [more interesting discussions on X](https://x.com/tannerlinsley/status/1950310182451630384).
+- 📜 [Let's Write React Hooks From Scratch](https://playfulprogramming.com/posts/react-write-hooks-from-scratch)
+- 📜 [Component Test with Storybook and Vitest](https://storybook.js.org/blog/component-test-with-storybook-and-vitest/)
+- 📦 [React 19.1.1 \- Bugfix release](https://github.com/facebook/react/releases/tag/v19.1.1)
+- 📦 [Remix 2.17 \- Redirect users to `create-react-router` instead of `create-remix`](https://github.com/remix-run/remix/blob/v2/CHANGELOG.md#v2170): Remix v2 is now in maintenance mode, and the init CLI prevents the creation of Remix v2 apps in favor of React Router apps.
+- 📦 [TanStack Router 1.130 \- Add `disableGlobalCatchBoundary` option](https://github.com/TanStack/router/releases/tag/v1.130.0): This lets errors bubble up, useful for tests or error reporting.
+- 📦 [TanStack Form 1.15 \- New `withFieldGroup` API](https://github.com/TanStack/form/releases/tag/v1.15.0)
+- 📦 [React Hook Form 7.61 \- New `compute` prop for `useWatch()` subscription](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.61.0)
+- 📦 [Int 6.1 \- React CLI renderer \- Add `backgroundColor` support to Box component](https://github.com/vadimdemedes/ink/releases/tag/v6.1.0)
+- 📦 [React Aria \- July 22 Release \- Infinite scrolling, automatic form reset, support additional DOM events/attributes](https://react-spectrum.adobe.com/releases/2025-07-22.html)
+- 📦 [Base UI 1.0 beta.2](https://github.com/mui/base-ui/releases/tag/v1.0.0-beta.2): The library makes progress as a serious Radix UI alternative ([Next.js DevTools even adopted it](https://github.com/vercel/next.js/pull/82206)).
+- 📦 [Satori 0.16 \- Convert JSX to SVG \- Upgrades Yoga layout engine, supports more CSS rules](https://github.com/vercel/satori/releases/tag/0.16.0)
+- 📦 [Preact 10.27 \- Add ref callback cleanup function to typedefs](https://github.com/preactjs/preact/releases/tag/10.27.0)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+<Todo />
+
+---
+
+## 📱 React-Native {#react-native}
+
+[Precompiled React Native for iOS: Faster builds are coming in 0.81](https://expo.dev/blog/precompiled-react-native-for-ios)
+
+iOS React Native builds are about to become much faster. With 0.81, it will be possible to use precompiled versions of React Native and its dependencies, similarly to what is already done on Android. For now, it’s behind an opt-in flag in 0.81. But Expo 54, at the end of August, will use precompiled versions by default.
+
+The result is impressive, **reducing the build time of the RNTester app by 10x**. On a larger application such as Expo Go, results are more modest, with a \~37% improvement. Expo is not yet precompiling its Expo Modules, so we can expect Expo Go and real world Expo apps to build much faster soon. Third-party lib authors will also be encouraged to ship prebuilt versions.
+
+---
+
+- 👀 [React Native PR \- Enable `enableEagerAlternateStateNodeCleanup`](https://github.com/facebook/react-native/pull/51856): React Native retains shadow nodes longer than it needs, and this eager cleanup could significantly reduce memory usage in upcoming versions of React Native.
+- 📣 [Expo Changelog \- Mid-July website updates: EAS Hosting, Workflows, Organizations, and more](https://expo.dev/changelog/mid-july-website-updates)
+- 📖 [Expo Docs \- New “dangerous mod” docs page](https://docs.expo.dev/config-plugins/dangerous-mods/): An escape hatch to create config plugins when existing mods are not enough.
+- 📜 [Boost Your React Native App Start Time: Stop Shipping Lottie JSON Incorrectly](https://dev.to/retyui/boost-your-react-native-app-start-time-stop-shipping-lottie-json-incorrectly-2074): Keep large JSON files (Lottie, i18n) out of your app bundle, read them from the filesystem instead.
+- 📜 [Nativewind v5 Migration Guide](https://www.nativewind.dev/blog/v5-migration-guide): Although Nativewind v5 is not yet available, this guide can help prepare for the new version.
+- 📜 [On-Device Text Embeddings in React Native with Apple NLP framework](https://www.callstack.com/blog/on-device-ai-introducing-apple-embeddings-in-react-native)
+- 📜 [6 reasons to use EAS Update](https://expo.dev/blog/6-reasons-to-use-eas-update)
+- 📦 [Rozenite \- A Plugin Framework for React Native DevTools](https://www.callstack.com/blog/introducing-rozenite-a-plugin-framework-for-react-native-devtools): This new Callstack project lets you build and run custom panels directly inside React Native DevTools. It comes with pre-built plugins (React Query, MMKV, Redux, Expo Atlas, Network), and a plugin marketplace is coming. This looks like a good idea to have a modern alternative to Flipper.
+- 📦 [React Native AI 0.2 \- Apple Foundation Model improvements](https://www.callstack.com/blog/expanding-on-device-apple-llm-capabilities-introducing-tool-calling): Supports structured outputs, tool calling, and AI SDK v5 with streaming. Android support is coming soon.
+- 📦 [React Navigation Routers 7.5 \- Preserve params for `backBehavior=fullHistory`](https://github.com/react-navigation/react-navigation/releases/tag/%40react-navigation/routers%407.5.0)
+- 📦 [Nitro 0.27 \- New `dispose()` API, Swift classes are now `open`, Nitrogen is much faster](https://github.com/mrousavy/nitro/releases/tag/v0.27.0)
+- 📦 [Bottom Sheet 5.1.8 \- Support for Reanimated 4](https://github.com/gorhom/react-native-bottom-sheet/releases/tag/v5.1.8)
+- 📦 [Tinybase 6.5 \- New persister for MMKV store](https://github.com/tinyplex/tinybase/releases/tag/v6.5.0)
+- 🎥 [Kacper Kapuściak \- Reanimated 4 \- All you need to know about CSS Transition & Animations](https://www.youtube.com/live/37VmiH-jhTU)
+- 🎥 [Beto \- Create Stunning App Icons with AI (For iOS & Android in Minutes)](https://www.youtube.com/watch?v=R4hvt8iz_rE)
+- 🎥 [Beto \- React Native Charts for Beginners](https://www.youtube.com/watch?v=AkujZtOz9c4)
+- 🎙️ [RNR 338 \- React Native Enterprise Framework w/ Michał Pierzchała](https://infinite.red/react-native-radio/rnr-338-react-native-enterprise-framework-w-micha-pierzchaa)
+
+---
+
+## 🔀 Other {#other}
+
+- 👀 [TC39 meeting in progress](https://github.com/tc39/agendas/blob/main/2025/07.md): Many proposals progressed, including `Map.getOrInsert()`, `Math.sumPrecise()`, and Iterator sequencing. More to come, including new proposals.
+- 📜 [The many, many, many JavaScript runtimes of the last decade](https://buttondown.com/whatever_jamie/archive/the-many-many-many-javascript-runtimes-of-the-last-decade/): A comprehensive article that explains well what’s driving the runtime diversity and why there’s no one best runtime. React Native and Hermes are quite compelling solutions of this landscape.
+- 📜 [`vi.mock` Is a Footgun \- Why `vi.spyOn` Should Be Your Default](https://laconicwit.com/vi-mock-is-a-footgun-why-vi-spyon-should-be-your-default/): Helps understand how Vitest/Jest mocking features work. TIL about the ES module live binding concept.
+- 📜 [DNS Caching in NodeJS](https://marmelab.com/blog/2025/07/28/dns-in-nodejs.html): TIL like `axios` and `node-fetch` can overwhelm the thread pool due to DNS resolution.
+- 📜 [Treating types as values with type-level maps](https://gregros.dev/typescript/treating-types-as-values-with-type-level-maps)
+- 📜 [When Is WebAssembly Going to Get DOM Support?](https://queue.acm.org/detail.cfm?id=3746174)
+- 📦 [TypeScript 5.9 RC \- `import defer`, stable option for `require(esm)`, Expandable tooltips in IDEs, faster type instantiation](https://devblogs.microsoft.com/typescript/announcing-typescript-5-9-rc/)
+- 📦 [es-toolkit 1.39 \- Modern alternative to lodash, 2-3x faster, up to 97% smaller](https://github.com/toss/es-toolkit/releases/tag/v1.39.0): Achieves 100% compatibility with lodash thanks to a compat package.
+- 📦 [ArkType Attest \- A testing library that makes your TypeScript types available at runtime](https://github.com/arktypeio/arktype/tree/main/ark/attest): Makes it possible to snapshot TS autocompletion results, a great feature for lib authors that care about DX.
+- 📦 [npq \- Audit npm packages before you install them](https://github.com/lirantal/npq)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/245/meme.jpg)](https://x.com/nizzyabi/status/1949820138791793102)
+
+[![alt](/emails/issues/245/meme2.jpg)](https://x.com/rauchg/status/1950289066827927969)
+
+See ya! 👋
