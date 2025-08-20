@@ -1,6 +1,6 @@
 ---
 slug: /246
-title: "This Week In React #246: Next.js, React Router, TanStack Form, StyleX, TanStack Query, MUI, Relay | Flashlist 2, RN 0.81, Expo, Radon, Gesture Handler, Audio API, Skia, Nitro Modules | TypeScript, Astro, Storybook"
+title: "This Week In React #246: Next.js, React Router, TanStack, StyleX, MUI, Storybook | FlashList 2, RN 0.81, Expo, Radon, Gesture Handler, Audio, Skia, Nitro, Strict DOM | TypeScript, Astro, BIDC, SVG, Surveys"
 authors: [piaskowyk, kacperkapusciak]
 date: 08-20-2025
 unlisted: true
@@ -8,9 +8,9 @@ unlisted: true
 
 Hi everyone! **Kacper and Krzysztof from [Software Mansion](https://swmansion.com/?utm_source=thisweekinreact)** here! 👋
 
-After a short summer break we’re happy to say we’re back\! I think we could open a public swimming pool because we’re drowning in the amount of content this week.
+After a short summer break, we’re happy to say we’re back\! I think we could open a public swimming pool because we’re drowning in the amount of content this week.
 
-This week was full of big releases: Vercel released Next.js 15.5, React Native 0.81 was launched, and last but not least, we finally have the long-awaited Flashlist 2 with great performance and cool features.
+This week was full of big releases: Vercel released Next.js 15.5, React Native 0.81 was launched, and last but not least, we finally have the long-awaited FlashList 2 with great performance and cool features.
 
 So let’s get into it\!
 
@@ -34,35 +34,33 @@ import Support from "../_support.mdx";
 
 The new minor version of Next.js brings exciting improvements across many areas of the framework including:
 
-- `runtime: “nodejs”` in middleware now marked as stable  
-- Turbopack for production builds in beta  
-- Typed Routes for type-safe navigation  
-- Deprecation of `next lint` in order to provide Biome as a fast alternative to ESLint  
+- `runtime: “nodejs”` in middleware now marked as stable
+- Turbopack for production builds in beta
+- Typed Routes for type-safe navigation
+- Deprecation of `next lint` in order to provide Biome as a fast alternative to ESLint
 - Next.js 16 deprecation warnings
 
 ---
 
-- 🐦 Evan You pointed out that [Vite just passed Webpack in weekly npm downloads](https://x.com/youyuxi/status/1950234261573038444)  
-- 📜 [Lets not optimize your optimization](https://dev.to/abhishekkrpand1/lets-not-optimize-your-optimization-2he6): The article highlights (ab)using `useCallback` and `useMemo` isn’t free and excessive memoization can actually hurt your performance rather than improve it.   
-- 📜 [React Cache: It's about consistency](https://twofoldframework.com/blog/react-cache-its-about-consistency): React's `cache` is more than just a performance tool for limiting fetches. It ensures that components using the same data source have access to it at the same time, preventing inconsistencies in your UI.  
-- 📜 [Server and client component composition in practice](https://aurorascharff.no/posts/server-client-component-composition-in-practice/): A hands-on tutorial on the separation of concerns teaching how to retain the benefits of server components and opting into client components only when needed.  
-- 📜 [Can we use Local Storage instead of Context/Redux/Zustand?](https://www.developerway.com/posts/local-storage-instead-of-context) Short answer: No. Use local storage for what it was made for – persisting data in the browser. Nevertheless, the article is interesting as the author dived deeper into the whys.  
-- 📜 [React Query Selectors, Supercharged](https://tkdodo.eu/blog/react-query-selectors-supercharged): Fine-grained subscriptions using `select` explained by Dominik, the maintainer of React Query.  
-- 📜 [How to Handle deferred data in React Router](https://sergiodxa.com/tutorials/handle-deferred-data-in-react-router): React Router's `Await` combined with \`Suspense\` allows you to navigate to a component while the data is still being fetched.  
-- 📜 [Building testable Telegram bots with Zustand](https://zwit.link/posts/zustand-telegram-bot/): Proves how using Zustand as the backbone of app architecture allows you to create scalable, easy-to-test code. Full source code available at the end of the article.  
-- 📜 [How I built a full-stack React framework 4x faster than](https://ryanskinner.com/posts/how-i-built-a-full-stack-react-framework-4x-faster-than-nextjs-with-4x-more-throughput) [Next.js](http://Next.js): Rari is a React framework that replaces Node.js with direct access to the V8 runtime via Rust. It offers great performance for rendering, builds, and concurrent requests without sacrificing the developer experience.  
-- 📘 [React is Awful: A fun way to learn a bad thing](https://github.com/cloudstreet-dev/React-is-Awful) Surprisingly accurate (and funny\!) AI generated book about React. I feel insulted and impressed at the same time. The tone of voice in the book is a bit salty so take it with a pinch of salt.  
-- 📦 [React Router 7.8 \- new `loaderData` fields, stability improvements to `unstable_middleware`](https://reactrouter.com/changelog#v780)  
-- 📦 [TanStack Form 1.16 to 1.19 \- alternative validation methods, form identifiers](https://github.com/TanStack/form/releases/tag/v1.16.0)   
-- 📦 [StyleX 0.15 \- improved media query handling, dynamic styles optimization](https://stylexjs.com/blog/v0.15.0)  
-- 📦 [Puck 0.20 \- Inline text, overlay portals & resizable sidebars](https://puckeditor.com/blog/puck-020)  
-- 📦 [TanStack Query 5.84 \+ 5.85 \- improvements to devtools and fixes](https://github.com/TanStack/query/releases)  
-- 📦 [MUI 7.3 \- `nativeColor` unlocked all modern color spaces](https://github.com/mui/material-ui/releases/tag/v7.3.0)   
-- 📦 [Relay 20.1](https://github.com/facebook/relay/releases/tag/v20.1.0)   
-- 🎥 [Jack Herrington \- 3 amazing new TanStack Query features](https://www.youtube.com/watch?v=EujzNb2iu3w)    
-- 🎥 [Neciu Dan \- React Keys is not just for lists](https://www.youtube.com/watch?v=l-2zAVxdSDM)   
-- 🎥 [Cosden Solutions \- The problem with the React Compiler](https://www.youtube.com/watch?v=14MZJtGAiVs)  
-- 🎥 [Alem Tuzlak \- This new TanStack library will change your DX forever](https://www.youtube.com/watch?v=Em2MeE-GTK0)  
+- 📜 [React Cache: It's about consistency](https://twofoldframework.com/blog/react-cache-its-about-consistency): React's `cache` is more than just a performance tool for limiting fetches. It ensures that components using the same data source have access to it at the same time, preventing inconsistencies in your UI.
+- 📜 [Server and client component composition in practice](https://aurorascharff.no/posts/server-client-component-composition-in-practice/): A hands-on tutorial on the separation of concerns, teaching how to retain the benefits of server components and opting into client components only when needed.
+- 📜 [Can we use Local Storage instead of Context/Redux/Zustand?](https://www.developerway.com/posts/local-storage-instead-of-context) Short answer: No. Use local storage for what it was made for – persisting data in the browser. Nevertheless, the article is interesting as the author dived deeper into the whys.
+- 📜 [React Query Selectors, Supercharged](https://tkdodo.eu/blog/react-query-selectors-supercharged): Fine-grained subscriptions using `select` explained by Dominik, the maintainer of React Query.
+- 📜 [How to Handle deferred data in React Router](https://sergiodxa.com/tutorials/handle-deferred-data-in-react-router): React Router's `Await` combined with `Suspense` allows you to navigate to a component while the data is still being fetched.
+- 📜 [Building testable Telegram bots with Zustand](https://zwit.link/posts/zustand-telegram-bot/): Proves how using Zustand as the backbone of app architecture allows you to create scalable, easy-to-test code. Full source code available at the end of the article.
+- 📜 [How I built a full-stack React framework 4x faster than](https://ryanskinner.com/posts/how-i-built-a-full-stack-react-framework-4x-faster-than-nextjs-with-4x-more-throughput) [Next.js](http://Next.js): Rari is a React framework that replaces Node.js with direct access to the V8 runtime via Rust. It offers great performance for rendering, builds, and concurrent requests without sacrificing the developer experience.
+- 📘 [React is Awful - A fun way to learn a bad thing](https://github.com/cloudstreet-dev/React-is-Awful) Surprisingly accurate (and funny\!) AI generated book about React. I feel insulted and impressed at the same time. The tone of voice in the book is a bit salty so take it with a pinch of salt.
+- 📦 [React Router 7.8 \- New `loaderData` fields, stability improvements to `unstable_middleware`](https://reactrouter.com/changelog#v780)
+- 📦 [TanStack Form 1.16 to 1.19 \- Alternative validation methods, form identifiers](https://github.com/TanStack/form/releases/tag/v1.16.0)
+- 📦 [Storybook 9.1 \- Easier RN config, better monorepo support, `sb.mock`, DX improvements](https://github.com/storybookjs/storybook/releases/tag/v9.1.0)
+- 📦 [StyleX 0.15 \- Improved media query handling, dynamic styles optimization](https://stylexjs.com/blog/v0.15.0)
+- 📦 [Puck 0.20 \- Inline text, overlay portals & resizable sidebars](https://puckeditor.com/blog/puck-020)
+- 📦 [TanStack Query 5.84 \+ 5.85 \- improvements to devtools and fixes](https://github.com/TanStack/query/releases)
+- 📦 [MUI 7.3 \- `nativeColor` unlocked all modern color spaces](https://github.com/mui/material-ui/releases/tag/v7.3.0)
+- 🎥 [Jack Herrington \- 3 amazing new TanStack Query features](https://www.youtube.com/watch?v=EujzNb2iu3w)
+- 🎥 [Neciu Dan \- React Keys is not just for lists](https://www.youtube.com/watch?v=l-2zAVxdSDM)
+- 🎥 [Cosden Solutions \- The problem with the React Compiler](https://www.youtube.com/watch?v=14MZJtGAiVs)
+- 🎥 [Alem Tuzlak \- This new TanStack DevTools library will change your DX forever](https://www.youtube.com/watch?v=Em2MeE-GTK0)
 - 🎙️ [This Month in React \- July 2025 \- Vercel shakeups, new React Compiler docs](https://www.reactiflux.com/transcripts/tmir-2025-07)
 
 <SubscribeFormEmbed placement="middle" />
@@ -91,53 +89,45 @@ React Native version 0.81 introduces support for the new Android 16, which enfor
 
 ---
 
-- 👀 [React Native Core PR \- Remove possibility to newArchEnabled=false in 0.82](https://github.com/facebook/react-native/pull/53025): Starting from React Native 0.82 you won’t be able to revert back to the Legacy Architecture anymore. If you want to keep getting support and new features in React Native this is the last time to migrate.  
-- 👀 William Candillon works on [realtime Skia effects for native views](https://github.com/Shopify/react-native-skia/pull/3282).  
-- 👀 [Expo SDK 54 beta is now available](https://expo.dev/changelog/sdk-54-beta).  
-- 📣 [React Native Enterprise Framework is now Rock](https://www.callstack.com/blog/react-native-enterprise-framework-is-now-rock): A solid rename of the Callstack’s framework. aiming to capture the enterprise part of the `@react-native-community\cli` users.  
-- 💬 [Precompiled binary for React Native Core](https://github.com/react-native-community/discussions-and-proposals/discussions/923)  
-- 📖 [Using patch-project \- Expo docs](https://docs.expo.dev/config-plugins/patch-project/): An experimental tool that preserves custom changes made to the `android` and `ios` folders supporting Continues Native Generation. Think of it like a CNG-friendly patch-package. Now with proper documentation.  
-- 🐦 [Support for PlatformColor, DynamicColorIOS & CSS custom properties is coming to React Navigation's theming system](https://x.com/reactnavigation/status/1955382933528908127).  
-- 🐦 [`rozenite-preview`](https://github.com/matinzd/rozenite-preview): A React Native DevTools plugin that allows you to preview isolated components ([demo](https://x.com/matinzd/status/1950300526748565953)).  
-- 📜 [Perfetto to analyze app start performance in React Native android apps](https://andrei-calazans.com/posts/analyzing-app-start-android-systrace/).  
-- 📜 [Running Multiple Instances of React Native in Sandbox](https://www.callstack.com/blog/running-multiple-instances-of-react-native-in-sandbox): A demo of a new `react-native-sandbox` library for running fully isolated React Native instances within a single application. Only iOS at the moment.  
-- 📜 [Integrating React Native into iOS Apps](https://blog.codeminer42.com/integrating-react-native-into-ios-apps/): The story of why and how easily you can integrate React Native into your existing iOS app.  
-- 📜 [React Strict DOM vs React Native for Web in 2025](https://shift.infinite.red/react-strict-dom-vs-react-native-for-web-in-2025-bb91582ef261): Nicolas Gallagher, React Native for Web creator recommends starting new universal apps with React Strict DOM or incrementally adopting this technology in cases where you’re already using React Native for Web.  
-- 📜 [Migrating a React Native's Native Module to Turbo Module on Android](https://andrei-calazans.com/posts/migrating-native-module-to-turbo-module-android/)  
-- 📜 [How Node-API Works in React Native](https://www.callstack.com/blog/how-node-api-works-in-react-native-a-deep-dive): An explanation of the concepts behind how react-native-node-api makes it possible to use Node's native modules directly in a React Native app.  
-- 📜 [Why is Unistyles goated](https://www.ali-sh.com/posts/why-is-unistyles-goated): An author with a background in Flutter fell in love with React Native Unistyles for styling components, and he has good reasons for doing so.  
-- 📜 [React Native Web with Vite](https://dev.to/dannyhw/react-native-web-with-vite-1jg5): This article details the technical challenges of bundling React Native Web with Vite and shows how `vite-plugin-rnw` can help you achieve it.  
-- 📦 [Radon 1.10 \- Rotation, Audio, Reading .env files & React Native 0.81 support](https://ide.swmansion.com/docs/getting-started/changelog#1.10.x)  
-- 📦 [Gesture Handler 2.28 \- RN 0.81 Support, `gestureHandlerRootHOC` deprecation, bug fixes](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.28.0)  
-- 📦 [Audio Api 0.7 \- microphone input, custom C++ Processor Node, AudioBufferQueueSourceNode](https://github.com/software-mansion/react-native-audio-api/releases/tag/0.7.0)  
-- 📦 [React Native Testing Library 13.3 \- React Suspense support (`renderAsync`), `renderHookAsync`](https://github.com/callstack/react-native-testing-library/releases/tag/v13.3.0%20)  
-- 📦 [React Native Skia 2.2 \- support for non p3 colors on iOS](https://github.com/Shopify/react-native-skia/releases/tag/v2.2.0)  
-- 📦 [`react-native-screen-transitions` 2.0 \- new API and animations customisation](https://github.com/eds2002/react-native-screen-transitions/releases/tag/react-native-screen-transitions%402.0.2)  
-- 📦 [`react-native-nitro-screen-recorder` \- the new library powered by Nitro Modules](https://github.com/ChristopherGabba/react-native-nitro-screen-recorder)  
-- 📦 [Nitro Images \- stable release](https://github.com/mrousavy/react-native-nitro-image/releases/tag/v0.5.0)  
-- 📦 [Nitro Modules \- RN 0.81 support, stability improvements](https://github.com/mrousavy/nitro/releases/tag/v0.28.0)  
-- 📦 [ElevenLabs React Native SDK](https://elevenlabs.io/docs/conversational-ai/libraries/react-native)  
-- 🎥 [Expo \- When to use over the air updates](https://youtu.be/PMRekmaeb1o?si=Defo5WOkURpV9hz1)  
-- 🎥 [Simon Grimm \- 5 React Native Mistakes Web Devs Keep Making](https://www.youtube.com/watch?v=rBpz7lCjBI8)   
-- 🎙️ [Rocket Ship 77 \+ 78 \- FlashList v2, Future of React Native Animations, End of the Old Arch, Better Performance](https://podcast.galaxies.dev/)  
-- 🎙️[React Universe on Air \- Observability and OpenTelemetry in React Native](https://www.callstack.com/podcasts/observability-opentelemetry-in-react-native)  
-- 🎙️[RNR 339 \+ 340 \- React Native Web vs React Strict DOM: Part 1 & Part 2 w/ Nicolas Gallagher, Evan Bacon and James Ide](https://infinite.red/react-native-radio#recent-episodes)
+- 👀 [React Native Core PR \- Remove possibility to newArchEnabled=false in 0.82](https://github.com/facebook/react-native/pull/53025): Starting from React Native 0.82 you won’t be able to revert back to the Legacy Architecture anymore. If you want to keep getting support and new features in React Native this is the last time to migrate.
+- 👀 [Expo SDK 54 beta is now available](https://expo.dev/changelog/sdk-54-beta): The new SDK includes React Native 0.81, React 19.1, precompiled builds for iOS, Expo Router v6 beta, and much more that we'll cover in detail once it's stable.
+- 📣 [React Native Enterprise Framework is now Rock](https://www.callstack.com/blog/react-native-enterprise-framework-is-now-rock): A solid rename of the Callstack’s framework. aiming to capture the enterprise part of the `@react-native-community\cli` users.
+- 📖 [Using patch-project \- Expo docs](https://docs.expo.dev/config-plugins/patch-project/): An experimental tool that preserves custom changes made to the `android` and `ios` folders supporting Continues Native Generation. Think of it like a CNG-friendly patch-package. Now with proper documentation.
+- 📜 [Running Multiple Instances of React Native in Sandbox](https://www.callstack.com/blog/running-multiple-instances-of-react-native-in-sandbox): A demo of a new `react-native-sandbox` library for running fully isolated React Native instances within a single application. Only iOS at the moment.
+- 📜 [Integrating React Native into iOS Apps](https://blog.codeminer42.com/integrating-react-native-into-ios-apps/): The story of why and how easily you can integrate React Native into your existing iOS app.
+- 📜 [React Strict DOM vs React Native for Web in 2025](https://shift.infinite.red/react-strict-dom-vs-react-native-for-web-in-2025-bb91582ef261): Nicolas Gallagher, React Native for Web creator recommends starting new universal apps with React Strict DOM or incrementally adopting this technology in cases where you’re already using React Native for Web.
+- 📜 [How Node-API Works in React Native](https://www.callstack.com/blog/how-node-api-works-in-react-native-a-deep-dive): An explanation of the concepts behind how react-native-node-api makes it possible to use Node's native modules directly in a React Native app.
+- 📜 [Why is Unistyles goated](https://www.ali-sh.com/posts/why-is-unistyles-goated): An author with a background in Flutter fell in love with React Native Unistyles for styling components, and he has good reasons for doing so.
+- 📜 [React Native Web with Vite](https://dev.to/dannyhw/react-native-web-with-vite-1jg5): This article details the technical challenges of bundling React Native Web with Vite and shows how `vite-plugin-rnw` can help you achieve it.
+- 📜 [Migrating a React Native's Native Module to Turbo Module on Android](https://andrei-calazans.com/posts/migrating-native-module-to-turbo-module-android/)
+- 📜 [Perfetto to analyze app start performance in React Native android apps](https://andrei-calazans.com/posts/analyzing-app-start-android-systrace/).
+- 📦 [Rozenite Preview - DevTools plugin to preview components in isolation](https://github.com/matinzd/rozenite-preview)
+- 📦 [Radon 1.10 \- Rotation, Audio, Reading .env files & React Native 0.81 support](https://ide.swmansion.com/docs/getting-started/changelog#1.10.x)
+- 📦 [Gesture Handler 2.28 \- RN 0.81 Support, `gestureHandlerRootHOC` deprecation, bug fixes](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.28.0)
+- 📦 [Audio Api 0.7 \- microphone input, custom C++ Processor Node, AudioBufferQueueSourceNode](https://github.com/software-mansion/react-native-audio-api/releases/tag/0.7.0)
+- 📦 [Testing Library 13.3 \- React Suspense support (`renderAsync`), `renderHookAsync`](https://github.com/callstack/react-native-testing-library/releases/tag/v13.3.0)
+- 📦 [Skia 2.2 \- Support for non-p3 colors on iOS](https://github.com/Shopify/react-native-skia/releases/tag/v2.2.0)
+- 📦 [Screen Transitions 2.0 \- New API and animations customisation](https://github.com/eds2002/react-native-screen-transitions/releases/tag/react-native-screen-transitions%402.0.2)
+- 📦 [Nitro Modules 0.28 \- RN 0.81 support, stability improvements](https://github.com/mrousavy/nitro/releases/tag/v0.28.0)
+- 📦 [Nitro Images 0.5 - First stable release](https://github.com/mrousavy/react-native-nitro-image/releases/tag/v0.5.0)
+- 📦 [Nitro Screen Recorder alpha\- Capture in-app content or global screen recordings](https://github.com/ChristopherGabba/react-native-nitro-screen-recorder)
+- 🎙️ [Rocket Ship 77 \+ 78 \- FlashList v2, Future of React Native Animations, End of the Old Arch, Better Performance](https://podcast.galaxies.dev/)
+- 🎙️ [React Universe on Air \- Observability and OpenTelemetry in React Native](https://www.callstack.com/podcasts/observability-opentelemetry-in-react-native)
+- 🎙️ [RNR 339 \+ 340 \- React Native Web vs React Strict DOM: Part 1 & Part 2 w/ Nicolas Gallagher, Evan Bacon and James Ide](https://infinite.red/react-native-radio#recent-episodes)
 
 ---
 
 ## 🔀 Other {#other}
 
-- 📊 [State of CSS \- 2025 results](https://2025.stateofcss.com/en-US)  
-- 📊 [Stack Overflow Dev Survey \- 2025 results](https://survey.stackoverflow.co/2025)  
-- 👀 [Parallel linting that speeds up your CLI run by around 30%](https://github.com/eslint/eslint/pull/19794)  
-- 📜 [Better CSS layouts](https://ishadeed.com/article/time-layout) \- A tutorial on how to implement the hero section from Time.com.  
-- 📜 [How we made JSON.stringify more than twice as fast in V8](https://v8.dev/blog/json-stringify)   
-- 📜 [An Interactive Guide to SVG Paths](https://www.joshwcomeau.com/svg/interactive-guide-to-paths/): An SVG Path interactive tutorial by Josh Comeau.  
-- 📜 [Anatomy of a Web Component](https://dbushell.com/2025/08/01/anatomy-of-a-web-component/): The author argues that these custom elements are a powerful and lightweight alternative to large JavaScript frameworks.  
-- 📦 [vercel/bidc \- new library from Vercel for Bidirectional Channels communication for JavaScript](https://github.com/vercel/bidc)  
-- 📦 [TypeScript 5.9 \- \`import defer\` support](https://devblogs.microsoft.com/typescript/)  
-- 📦 [Astro 5.13 \- experimental improvement to environment variable handling](https://astro.build/blog/astro-5130/)  
-- 📦 [Storybook 9.1 \- better monorepo support, `sb.mock`, DX improvements](https://github.com/storybookjs/storybook/releases/tag/v9.1.0) 
+- 📊 [State of CSS 2025 - Survey results](https://2025.stateofcss.com/en-US)
+- 📊 [Stack Overflow Dev Survey 2025 - Survey results](https://survey.stackoverflow.co/2025)
+- 📜 [Better CSS layouts](https://ishadeed.com/article/time-layout) \- A tutorial on how to implement the hero section from Time.com.
+- 📜 [Anatomy of a Web Component](https://dbushell.com/2025/08/01/anatomy-of-a-web-component/): The author argues that these custom elements are a powerful and lightweight alternative to large JavaScript frameworks.
+- 📜 [V8 - How we made JSON.stringify more than twice as fast](https://v8.dev/blog/json-stringify)
+- 📜 [An Interactive Guide to SVG Paths](https://www.joshwcomeau.com/svg/interactive-guide-to-paths/)
+- 📦 [TypeScript 5.9 \- `import defer` support, expandable IDE tooltips, perf improvements](https://devblogs.microsoft.com/typescript/)
+- 📦 [Bidirectional Channels for JavaScript - Seamless communication between different JS execution contexts](https://github.com/vercel/bidc)
+- 📦 [Astro 5.13 \- multiple sitemaps, experimental improvement to environment variable handling](https://astro.build/blog/astro-5130/)
 
 ---
 
