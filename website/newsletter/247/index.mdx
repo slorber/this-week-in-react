@@ -1,6 +1,6 @@
 ---
 slug: /247
-title: "This Week In React #247: ..."
+title: "This Week In React #247: nuqs, Fragment Refs, Concurrent React, Apollo, shadcn, Streamdown, Waku, React-Aria | Expo Launch, Maestro, SPM, Screens, ExecuTorch, BottomSheet, Jest | Zod, Rspack, ESLint, CSS, Bun, Firefox"
 authors: [slorber]
 date: 12-31-2025
 unlisted: true
@@ -8,9 +8,9 @@ unlisted: true
 
 Hi everyone!
 
-<Todo />
+It seems that the React community is already back from vacation, as we have a whole series of interesting articles and releases. I also found interesting PRs and discussions to check out!
 
-🗓️ [React Summit US](https://reactsummit.us/?utm_source=Newsletter&utm_medium=ThisWeekinReact) -  🇺🇸 New York - 18 & 21 Nov. "JSNation & React Summit US were two of the best organized events I have ever come across." *— Addy Osmani, Google Chrome*. Save 10% with "TWIR"
+Nx user? Beware of the [current critical supply chain attack](https://github.com/nrwl/nx/security/advisories/GHSA-cxm3-wv7p-598c).
 
 <!-- truncate -->
 
@@ -41,8 +41,48 @@ Originally built to power AG Grid’s Integrated Charts, it now serves over **1M
 
 ## ⚛️ React {#react}
 
+[![nuqs 2.5 - Debounce, Standard Schema, TanStack Router, Key isolation, and more](/emails/issues/247/nuqs.jpg)](https://nuqs.47ng.com/blog/nuqs-2.5)
+
+**[nuqs 2.5 \- Debounce, Standard Schema, TanStack Router, Key isolation, and more](https://nuqs.47ng.com/blog/nuqs-2.5)**
+
+The type-safe search params state manager for React has just published a big release full of long-awaited features, bug fixes & improvements, including:
+
+- Debounce: only send network requests once users stop typing in search inputs
+- Standard Schema: connect validation & type inference to external tools (eg: tRPC)
+- Key isolation: only re-render components when their part of the URL changes
+- Experimental TanStack Router support with type-safe routing
+
+---
+
 - 💸 [The Road to Next - Master Full-Stack Web Development with Next.js 15 and React 19](https://www.road-to-next.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_2.2)
+- 👀 [React Context Selectors RFC update](https://github.com/reactjs/rfcs/pull/119#issuecomment-3214859601): Joe Savona from the React Compiler team shared an important update regarding fine-grained subscriptions in React to prevent re-renders. It reminds us why Context selectors do not scale well. They won’t pursue the “useContext in useMemo” plan anymore and instead focus on React Compiler and Concurrent Stores with selectors (but this plan may change).
+- 👀 [React Types PR \- Fragment Refs](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/72348/files): React fragments are set to become more powerful with this upcoming experimental feature, briefly mentioned in the latest React Labs post. The PR gives a sneak peek of the exposed Fragment Instance APIs. React Native should also expose dedicated APIs.
+- 👀 [React PR \- `name` prop for `<Suspense>` and `<Activity>`](https://github.com/facebook/react/pull/34135): This upcoming experimental prop looks mostly useful in React DevTools to quickly identify built-in components and search for them.
+- 👀 [Next.js PR \- `export const prefetch: ‘static’ | ‘runtime’`](https://github.com/vercel/next.js/pull/82905): This work-in-progress and unstable new API should let you control how path segments are prefetched.
+- 📖 [React docs \- Custom Elements](https://react.dev/reference/react-dom/components#custom-html-elements): New documentation teaching how to pass values and listen to events on custom HTML elements.
+- 🐦 [Remix v3 will explore a new JSX-based component model, not based on Preact anymore](https://x.com/mjackson/status/1955083457144762729)
+- 🗓️ [React Summit US](https://reactsummit.us/?utm_source=Newsletter&utm_medium=ThisWeekinReact) -  🇺🇸 New York - 18 & 21 Nov. "JSNation & React Summit US were two of the best organized events I have ever come across." *— Addy Osmani, Google Chrome*. Save 10% with "TWIR"
+- 📜 [React’s useTransition and state update reordering](https://jordaneldredge.com/notes/react-rebasing/): This documents a super interesting case to consider regarding the application order of `setState(incrementCounter)` updates when mixing synchronous and startTransition calls. I had the wrong intuition for the final counter value.
+- 📜 [Reflections on the React community](https://leerob.com/reflections): Lee Robinson, former Vercel/Next.js DevRel, shared various thoughts after leaving the company, including details on Vercel's incentives in pushing React forward.
+- 📜 [A Clock That Doesn't Snap](https://ethanniser.dev/blog/a-clock-that-doesnt-snap/): Explains the challenge of displaying the current time in a statically rendered React page that gets hydrated, and proposes a solution based on an inline script.
+- 📜 [Globally Manage Toast Notifications with Tanstack Query](https://spin.atomicobject.com/toast-notifications-tanstack-query/): Using `mutationMeta` like TkDodo recommends.
+- 📜 [React Server Components in React Router – First Impressions](https://raphaelbronsveld.com/blog/rsc-in-rr-first-impressions): Positive feedback after adopting React Router RSCs on a personal website.
+- 📜 [React Concurrent Features: An Overview](https://certificates.dev/blog/react-concurrent-features-an-overview?friend=TWIR)
+- 📜 [Unlocking Web Workers with React: A Step-by-Step Guide](https://www.rahuljuliato.com/posts/react-workers)
 - 💸 [Build a modern blog with React 19 and Strapi 5 in this step-by-step tutorial](https://strapi.io/blog/how-to-build-a-modern-blog-with-react-19-and-strapi-5?utm_campaign=19282052-Newsletter%20Sponsorships&utm_source=React&utm_medium=2nd%20sponsor&utm_term=tutorial)
+- 📦 [Apollo Client 4.0 \- Framework-agnostic, smaller bundler size, unified error handling, better TS support](https://github.com/apollographql/apollo-client/releases/tag/%40apollo/client%404.0.0): The GraphQL client becomes agnostic and introduces a new `@apollo/client/react` integration package. There are React-specific improvements, such as a new SSR `prerenderStatic` API, and the library ships precompiled with the React Compiler. Codemods can help you upgrade.
+- 📦 [Streamdown \- Drop-in replacement for react-markdown, designed for AI-powered streaming](https://streamdown.ai/): New Vercel library to support its React AI ecosystem. It particularly shines by its ability to parse/format unterminated Markdown blocks.
+- ​​📦 [Waku 0.24 / 0.25 / 0.26](https://waku.gg/blog): In recent releases, the React metaframework adopted the new official Vite RSC plugin and introduced a Slice Components API to replace the Page Parts API.
+- 📦 [shadcn CLI 3.0 - Namespaced registries, private registries, search and discovery, improved error handling](https://ui.shadcn.com/docs/changelog)
+- 📦 [React Aria \- August 25 release \- Improved Popover anim, GridListSection, autocomplete filtering](https://react-spectrum.adobe.com/releases/2025-08-25.html)
+- 📦 [Preact 11 beta \- Better hydration, refs forwarded by default, and more](https://preactjs.com/guide/v11/upgrade-guide/)
+- 🎥 [Alex Booker \- Better Auth with Next.js: A very good introduction](https://www.youtube.com/watch?v=ngzLhaT3IzQ)
+- 🎥 [Alem Tuzlak \- I blow your mind with TanStack Devtools in under 10 minutes.](https://www.youtube.com/watch?v=wQ-X501kgpg)
+- 🎥 [Theo \- Why every dev should avoid React](https://www.youtube.com/watch?v=wOHqwYtZ_90)
+- 🎥 [Jack Herrington \- AI SDK Version 5 on TanStack Start\!](https://www.youtube.com/watch?v=obppWNA4NyI)
+- 🎥 [Cosden Solutions \- The Wrong Way to Optimize Performance in React](https://www.youtube.com/watch?v=iFtF2jZX3uA)
+- 🎙️[PodRocket \- Concurrent Rendering & Actions with Aurora Sharff](https://podrocket.logrocket.com/modern-react-patterns-concurrent-rendering-actions-aurora-scharff)
+- 🎙️[PodRocket \- Beact beyond the DOM: exploring custom renderers with Erik Rasmussen](https://podrocket.logrocket.com/react-beyond-the-dom-custom-renderers-erik-rasmussen)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -66,20 +106,58 @@ Designed specifically for testing, Wallaby features include a **Time Travel Debu
 
 ## 📱 React-Native {#react-native}
 
+[![Introducing Expo Launch: a new way to get to the app store](/emails/issues/247/expo.jpg)](https://expo.dev/blog/introducing-expo-launch)
+
+**[Introducing Expo Launch: a new way to get to the app store](https://expo.dev/blog/introducing-expo-launch)**
+
+Expo introduced in beta a new way to deploy iOS apps to TestFlight directly from a website interface, without having to do anything with config and certificates. You can literally deploy a new native app from your mobile phone right now. It also supports web deployments, and Android support is coming.
+
+---
+
 - 💸 [React Universe Conf – T. Occhino, Ch. Nakazawa, Ch. Cheever, N. Corti & M. Grabowski on the “10 Years of React Native and Beyond” panel](https://www.reactuniverseconf.com?utm_campaign=10_years_panel&utm_source=TWIR&utm_medium=mail&utm_content=post_22_08_2025#panel)
+- 💬 [Progress on Swift Package Manager support](https://github.com/react-native-community/discussions-and-proposals/issues/587#issuecomment-3200592526): 0.81 prebuilds are already using SPM although apps are still using CocoaPods. Riccardo is working toward building the RNTester app with SPM.
+- 💬 [RFC \- Split Jest from React Native Core](https://github.com/react-native-community/discussions-and-proposals/pull/926): Extracts the Jest preset to a separate package to make it a truly optional choice, easing maintenance, and not forcing Vitest users to install Jest.
+- 💬 [Proposal \- Implementing missing CSS filters on iOS](https://github.com/react-native-community/discussions-and-proposals/issues/927): 2 approaches (CAFilter, Swift modifiers), presenting different tradeoffs implemented in 2 PRs.
+- 📜 [Bridging Trace API on Android](https://andrei-calazans.com/posts/bridging-trace-on-android/): Also read the previous post to capture Perfetto traces.
+- 📜 [Secure Communication Between Isolated React Native Instances](https://www.callstack.com/blog/secure-communication-between-isolated-react-native-instances)
+- 📜 [Create Development Builds Without an Apple Developer Program](https://yvainee.com/blog/create-development-builds-without-an-Apple-Developer-Program)
+- 📜 [EAS Workflows: React Native CI/CD built for your app](https://expo.dev/blog/expo-workflows-automate-your-release-process)
+- 📜 [On-Device Text To Speech on Apple Devices with AI SDK](https://www.callstack.com/blog/on-device-text-to-speech-on-apple-devices-with-ai-sdk)
+- 📜 [React Native performance tactics: Modern strategies and tools](https://blog.sentry.io/react-native-performance-strategies-tools)
+- 📦 [Maestro 2.0 \- Java 17, GraalJS by default, Maestro Studio Desktop, Web Testing, setOrientation](https://maestro.dev/blog/introducing-maestro-2-0-0): The studio looks super convenient to create RN e2e tests.
+- 📦 [Screens 4.15 \- Tabs improvements (external icons, system items, orientation, appearance types)](https://github.com/software-mansion/react-native-screens/releases/tag/4.15)
+- 📦 [React Native ExecuTorch 0.5 \- Faster Whisper transcriptions, Zod structured output, zero-copy data transfer](https://github.com/software-mansion/react-native-executorch/releases/tag/v0.5.0)
+- 📦 [React Native Parlant \- Build compliant Parlant AI chat agents with RN](https://github.com/watadarkstar/react-native-parlant)
+- 📦 [Bottom Sheet 5.2 \- `useBottomSheetScrollableCreator()` to integrate with LegendList/FlashList](https://github.com/gorhom/react-native-bottom-sheet/releases/tag/v5.2.0)
+- 📦 [Re.Pack 5.2 \- Faster Transforms, Support for TS config, RN 0.80/0.81 and Rozenite DevTools](https://www.callstack.com/blog/re-pack-5-2-faster-babel-transforms-support-for-rn-0-80-0-81-rozenite)
+- 📦 [React Native Reusables \- New CLI, redesigned docs with live previews, new Blocks](https://reactnativereusables.com/)
+- 🎥 [notJust.dev \- Expo SDK 54 (beta) is out\! Everything that's new](https://www.youtube.com/watch?v=zWSWurwPmVE)
+- 🎥 [Callstack \- Incremental React Native Adoption in iOS Apps](https://www.youtube.com/watch?v=siA6LuGxaAI)
+- 🎥 [Expo \- When to use over the air updates | Three important OTA use cases](https://www.youtube.com/watch?v=PMRekmaeb1o)
+- 🎥 [Simon Grimm \- Drawer Navigation with Nested Tabs using Expo Router](https://www.youtube.com/watch?v=A3NyYsNxMGM)
+- 🎙️ [RNR 341 \- Catching Up With Maestro Featuring Leland Takamine](https://infinite.red/react-native-radio/rnr-341-catching-up-with-maestro-featuring-leland-takamine)
+- 🎙️ [Rocket Ship 79 \- New Arch, AI Impact, and the Next Wave of RN Innovation with Jamon Holmgren](https://share.transistor.fm/s/d0d2fba0)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📜 [Big O notation \- A visual introduction](https://samwho.dev/big-o/): Pleasantly interactive article with JS-based examples.
+- 📜 [How we migrated our Rush.js monorepo to Node type stripping](https://blog.calm.com/engineering/how-we-migrated-our-rushjs-monorepo-to-node-type-stripping)
+- 📜 [Rolling the Dice with CSS random()](https://webkit.org/blog/17285/rolling-the-dice-with-css-random/)
+- 📜 [5 Useful CSS functions using the new @function rule](https://una.im/5-css-functions/)
+- 📦 [ESLint 9.34 \- Multithread Linting](https://socket.dev/blog/eslint-adds-support-for-parallel-linting): The community reports 30% to 380% speed improvements, making the historical linter more competitive against challengers (Biome, Oxlint, and Rslint).
+- 📦 [Zod 4.1 \- Codecs, bi-directional transformations with `encode()/decode()`](https://github.com/colinhacks/zod/releases/tag/v4.1.0): Much needed feature, more powerful than transforms.
+- 📦 [Rspack 1.5 \- Faster watchers, optimizations, browser support, virtual modules, Rust extensions, and more](https://rspack.rs/blog/announcing-1-5): They also take the opportunity present progress of the Rstack, notably to announce Rslint, a new Go linter based on TypeScript Go.
+- 📦 [Bun 1.2.21 \- Unified `Bun.SQL` client, YAML support, 500x faster `postMessage()`, `Bun.secrets`, security scanner, and more](https://bun.com/blog/bun-v1.2.21)
+- 📦 [Firefox 142.0 \- `URLPattern` API, `scheduler` API, and more](https://www.firefox.com/en-US/firefox/142.0/releasenotes/)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/247/meme.jpg)](https://x.com/PierreDeWulf/status/1958867174468018264)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/247/meme2.jpg)](https://x.com/sebastienlorber/status/1960258464170586158)
 
 See ya! 👋
