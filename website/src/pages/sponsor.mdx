@@ -412,14 +412,33 @@ We will let you know if publication dates are postponed, and look for a solution
 <details>
   <summary>Do you provide tracking / reporting?</summary>
 
-We don't provide any reporting by default, but you can ask for a basic reporting one week after the send.
+We don't provide any reporting by default, but you can ask for a basic reporting one week after the send, and we'll provide the raw stats that our email provider gives us (not many, only open rate and ad clicks).
 
-To measure the result of your newsletter campaign, we suggest:
+From our experience, email tracking (across all providers) is not very reliable for various reasons:
 
-- to add [`utm_` querystring parameters](https://en.wikipedia.org/wiki/UTM_parameters) (we automatically add some default utm parameters in case you don't provide them)
-- to provide your own tracking links to count clicks (please do not use [bit.ly](https://bit.ly/), it often flag emails as spam on some email clients, we prefer [dub.sh](https://dub.co/) using your own custom domain)
+- the open rate is not very reliable due to privacy features in email clients (Apple Mail, Gmail...), Gmail clipping behavior, and various other things
+- the ad clicks are not very reliable either, and can be inflated by corporate security bots or email clients
 
-In the future, we will look into providing a good reporting automatically.
+In addition to our emails, we also cross-post our content to various platforms that we do not track, leading to extra ad clicks from various sources:
+
+- [Website](https://thisweekinreact.com/newsletter)
+- [RSS feed](https://thisweekinreact.com/newsletter/rss.xml)
+- [Reddit](https://www.reddit.com/user/sebastienlorber/)
+- [LinkedIn](https://www.linkedin.com/in/sebastienlorber/recent-activity/all/)
+- [X](https://x.com/search?q=from%3Asebastienlorber%20thisweekinreact&src=typed_query&f=live)
+- [Bluesky](https://bsky.app/search?q=from%3Asebastienlorber+This+Week+In+React)
+- [Substack](http://substack.thisweekinreact.com/)
+- [Dev.to](https://dev.to/sebastienlorber)
+- [Daily.dev](https://app.daily.dev/sources/twir)
+- [Hashnode](https://daily.sebastienlorber.com/)
+- [Medium](https://medium.com/@sebastienlorber)
+- Discord and Slack communities
+
+For these reasons, we highly recommend tracking the ad performance on your side. For example, you can:
+
+- add [`utm_` querystring parameters](https://en.wikipedia.org/wiki/UTM_parameters) (we automatically add some default utm parameters in case you don't provide them)
+- use analytics tools to measure landing page traffic and audience engagement (we recommend PostHog)
+- provide your own tracking links to count clicks (please do not use [bit.ly](https://bit.ly/), it often flag emails as spam on some email clients, we prefer [dub.sh](https://dub.co/) using your own custom domain)
 
 </details>
 
