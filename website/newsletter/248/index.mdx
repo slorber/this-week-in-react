@@ -10,8 +10,6 @@ Hi everyone!
 
 <Todo />
 
-🗓 [React Advanced](https://reactadvanced.com/canada/?utm_source=thisweekinreact) - 🇨🇦 Toronto - March 24 & 26. Experience React stories in Toronto's cinema setting! Join the conference for deep dives into React — 50+ talks, 5+ workshops, and much more! Get a 10% discount with code "TWIR".
-
 <!-- truncate -->
 
 import Support from "../_support.mdx";
@@ -28,10 +26,34 @@ import Support from "../_support.mdx";
 
 ## ⚛️ React {#react}
 
-<Todo />
-
-- 💸 [ The Road to Next - Master Full-Stack Web Development with Next.js 15 and React 19](https://www.road-to-next.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_2.3)
+- 💸 [The Road to Next - Master Full-Stack Web Development with Next.js 15 and React 19](https://www.road-to-next.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_2.3)
+- 👀 [React PR \- eslint-plugin-react-hooks 6.0 rc.2 now includes the React Compiler rule by default](https://github.com/reactjs/react.dev/pull/7956)
+- 👀 [React Compiler PR \- Detect known incompatible libraries](https://github.com/facebook/react/pull/34027): The compiler should soon be able to report incompatible libraries and skip optimizing them. By default, it will report React-Hook-Form’s `watch()` and TanStack Table’s `useReactTable()` APIs. Mobx is also incompatible, and may be reported later.
+- 🐦 [React Aria \- Support the shadcn distribution model is coming](https://x.com/devongovett/status/1961782323529036028)
+- 🗓 [React Advanced](https://reactadvanced.com/canada/?utm_source=thisweekinreact) - 🇨🇦 Toronto - March 24 & 26. Experience React stories in Toronto's cinema setting! Join the conference for deep dives into React — 50+ talks, 5+ workshops, and much more! Get a 10% discount with code "TWIR".
+- 📅 [Upcoming JavaScript and React Conferences for 2025](https://thoughtbot.com/blog/upcoming-javascript-and-react-conferences-for-2025)
+- 📜 [React Server Components support without a framework](https://krasimirtsonev.com/blog/article/vanilla-react-server-components-with-no-framework): This introduces Forket, a tool that lets you use RSCs in a framework/bundler-agnostic way. At build time, it splits your app into client/server parts and then stitches everything together at runtime.
+- 📜 [Deriving Client State from Server State](https://tkdodo.eu/blog/deriving-client-state-from-server-state): Client/server state can get out of sync. TkDodo presents 2 underrated state derivation patterns that can replace `useEffect()` while keeping a consistent UI.
+- 📜 [Using Activity with Suspenseful data](https://www.simeongriggs.dev/use-the-activity-boundary-to-hide-suspenseful-components): We often filter lists on the server or top-level client components, but this article presents an interesting case where you might want list items themselves to decide if they should be visible. Using the `<Activity>` component can improve item data preloading and preserve state.
+- 📜 [The Complete Guide to Self-Hosting Next.js at Scale](https://dlhck.com/thoughts/the-complete-guide-to-self-hosting-nextjs-at-scale): Documents hard-won lessons from deploying Next.js applications at scale with multiple replicas.
+- 📜 [Building SSR with Vite: A Custom getStaticProps Replacement](https://www.patron.com/blog/post/vite-ssr-getstaticprops-replacement/): This ports some Next.js page router features to Vite. It works, but IMHO it’s less ergonomic, I would rather use React Router loaders with Vite instead.
+- 📜 [React Children and cloneElement: Component Patterns from the Docs](https://certificates.dev/blog/react-children-and-cloneelement-component-patterns-from-the-docs?friend=TWIR): The `cloneElement()` API can be used to implement compound components, but using it has pitfalls, and you’d rather use React Context.
+- 📜 [Next.js Is Infuriating](https://blog.meca.sh/3lxoty3shjc2z): A dev complains about the Next.js middleware system when used alongside `AsyncLocalStorage`.
+- 📜 [What’s New in ViteLand \- August 2025 Recap](https://voidzero.dev/posts/whats-new-aug-2025): Among other things, RSC support has officially landed (and Waku now uses it), the Vite React plugin v5 was released with Rolldown and Oxc integration, including Styled-Components transforms support.
 - 💸 [Sentry now with Logs. View logs, errors, and traces together to debug faster, spot root causes, and fix issues without switching tools.](https://sentry.io/product/logs/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=logs-fy26q3-logslaunch&utm_content=react-link-logs-ga-launch-trysentry)
+- 📦 [React Window 2.0 \- List virtualization library used by React DevTools](https://github.com/bvaughn/react-window/blob/master/CHANGELOG.md#200): A major rewrite coming with a more ergonomic API, automatic memoization, automatic sizing, native TypeScript support, and smaller bundle size.
+- 📦 [Apollo Client 4.0 \- Framework-agnostic core, smaller bundler size, unified error handling, better TS support](https://www.apollographql.com/blog/announcing-apollo-client-4-0): Already featured last week, there’s now an official release blog post.
+- 📦 [Base UI 1.0 beta.3 \- Autocomplete \+ Combobox components](https://base-ui.com/react/overview/releases#v1-0-0-beta-3)
+- 📦 [shadcn CLI 3.1 \- Improved MCP Server](https://ui.shadcn.com/docs/mcp)
+- 📦 [MCP-UI \- Allows MCP servers to return interactive UI snippets rendered by React components](https://mcpui.dev/)
+- 📦 [Uppy 5.0 \- Headless file uploader components and hooks](https://uppy.io/blog/uppy-5.0/)
+- 📦 [React pprof 1.0 \- Render profiling flamegraphs with React, WebGL-accelerated](https://blog.platformatic.dev/introducing-next-gen-flamegraphs-for-nodejs)
+- 📦 [Redux Toolkit 2.9 \- `builder.addAsyncThunk()` API, improved performance and request cancellation](https://github.com/reduxjs/redux-toolkit/releases/tag/v2.9.0)
+- 📦 [React-on-Rails 15.0 \- Full RSC support, early hydration](https://github.com/shakacode/react_on_rails/blob/master/docs/release-notes/15.0.0.md)
+- 📦 [Fresh 2.0 beta \- Preact framework for Deno \- Vite integration, improves HMR, `<Head>` component](https://deno.com/blog/fresh-and-vite)
+- 🎥 [Web Dev Simplified \- New Next.js TypeScript Features](https://www.youtube.com/watch?v=rVdR0_Ujgq4)
+- 🎥 [Ankita Kulkarni \- This One Line of Code Fixed My Slow Next.js App \- `after()`](https://www.youtube.com/watch?v=judEJxQFrZA)
+- 🎙️ [This Month in React 2025-08 \- Nx compromised; no more throwing promises; Remix-ing new component models](https://www.reactiflux.com/transcripts/tmir-2025-08)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -53,20 +75,57 @@ Frustrated with laggy data grids that crumble at scale, dictate your architectur
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![React Native 1.0 is on the horizon!](/emails/issues/248/rn1.0.jpg)](https://youtube.com/clip/UgkxNRvSqysWvHhAbISs741xfdSaJhvC_zDQ?si=mmAL0JFaxatwJVjB)
+
+🎥 **[React Native 1.0 is on the horizon\!](https://youtube.com/clip/UgkxNRvSqysWvHhAbISs741xfdSaJhvC_zDQ?si=mmAL0JFaxatwJVjB)**
+
+Jorge Cohen from the Meta team announced today at React Universe that React Native 1.0 is on the horizon. Recently, the React Native team:
+
+- streamlined the release process, moving from 2 releases in 2024 to 6 releases in 2025
+- stabilized, reduced, and clarified the public JS and native API surfaces
+- introduced automated workflows to catch RC bugs and breaking changes earlier
+
+All this work sets the foundations to make it possible to release 1.0. It probably won't happen this year, but they will share their 1.0 release plan soon.
+
+Make sure to watch the [React Universe Conf Live Streams](https://www.youtube.com/@CallstackEngineers/streams). This major RN event kicked off yesterday with the Core Contributor Summit and is currently underway until tomorrow. Many links below come directly from the event, and more are coming next week.
+
+---
+
+- 📣 [Introducing the React Native Nightly testing program](https://github.com/react-native-community/discussions-and-proposals/discussions/931): Maintainers of popular native libs can sign up for an automated testing program to ensure their lib keeps working against newer versions of React Native. The goal is to improve ecosystem stability and catch unexpected breaking changes early. As you can guess, this likely contributes to the 1.0 plan.
+- 📣 [Expo Changelog \- Xcode 26 beta support for EAS Build and Workflows](https://expo.dev/changelog/xcode-26-0-beta-support-for-eas-build-and-workflows)
+- 💬 [RFC \- Removal of the Legacy Architecture of React Native](https://github.com/react-native-community/discussions-and-proposals/pull/929): The timeline for the removal of the Legacy Architecture. The Legacy Arch is already frozen, and starting 0.82 (now in RC), you won’t be able to use it anymore. However, the Legacy Arch APIs will only be fully removed in 0.83 and 0.84. The APIs used by the Interop Layer will stay.
+- 💬 [Proposal \- Documentation for native code](https://github.com/react-native-community/discussions-and-proposals/discussions/932): This would help maintainers of native libraries discover native utility code they can use and rely on.
+- 📜 [Autolinking's broken promise \- Mending a thousand Expo apps’ dependency issues](https://kitten.sh/blog/autolinkings-broken-promise): A deep dive into Autolinking challenges, and how Expo SDK 54 improves things. All popular package managers — Bun, npm, pnpm, and Yarn — are now officially supported.
+- 📦 [Reanimated 4.1 \- partial support SVG shapes CSS animtions, Improved FlashList 2 integration, RN 0.81 and Expo 54 support](https://github.com/software-mansion/react-native-reanimated/releases/tag/4.1.0): Also note that [Shared Elements Transition may come behind a flag in Reanimated 4.2](https://x.com/BBloniarz_/status/1962873054800781452)\!
+- 📦 [Worklets 0.5 \- Event loop for worklet runtimes, new Synchronizable APIs](https://github.com/software-mansion/react-native-reanimated/releases/tag/worklets-0.5.0)
+- 📦 [React Native Ottrelite \- Unified, extensible, cross-language OTel-compatible tracing library](https://github.com/callstackincubator/ottrelite)
+- 📦 [React Native Liquid Glass \- Callstack brings the iOS 26 effect to React Native](https://github.com/callstack/liquid-glass)
+- 📦 [Radon IDE 1.11 \- Send files to device, Expo 54 support, improved network inspector](https://github.com/software-mansion/radon-ide/releases/tag/v1.11.0)
+- 🎥 [React Universe Conf \- YouTube Live Streams](https://www.youtube.com/@CallstackEngineers/streams): This major RN event kicked off yesterday with the Core Contributor Summit and is currently underway until tomorrow.
+- 🎥 [Simon Grimm \- Reanimated 4 \= CSS for React Native ?](https://www.youtube.com/watch?v=eshIq0EBLkI)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [WebMCP Proposal](https://patrickbrosset.com/articles/2025-08-28-ai-agents-and-the-web-a-proposal-to-keep-developers-in-the-loop/): Microsoft/Google proposed to expose web app functionalities as MCP tools that AI agents can use to control the app. The Edge team has started implementing a prototype.
+- 📜 [Why do browsers throttle JavaScript timers?](https://nolanlawson.com/2025/08/31/why-do-browsers-throttle-javascript-timers/) `setTimeout(cb,0)` might actually take more than 4ms.
+- 📜 [You no longer need JavaScript](https://lyra.horse/blog/2025/08/you-dont-need-js/): You can go a long way with modern CSS/HTML.
+- 📜 [The Basics of Anchor Positioning](https://ishadeed.com/article/anchor-positioning/)
+- 📦 [Ripple \- The elegant TypeScript UI framework](https://www.ripplejs.com/): Former React/Svelte core contributor Dominic Gannaway launched a new framework taking the best from React, Solid, and Svelte.
+- 📦 [Node.js 24.7 \- Post-Quantum Cryptography algorithms](https://nodejs.org/en/blog/release/v24.7.0)
+- 🔗 [vtbag \- The Bag of Tricks for View Transitions](https://vtbag.dev/)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/248/meme.jpg)](https://x.com/jamonholmgren/status/1633184883781828608)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/248/meme2.jpg)](https://x.com/EmersonfBraun/status/1963286702996299893)
+
+[![alt](/emails/issues/248/meme3.jpg)](https://x.com/Frriosn/status/1963210134441570620)
+
+[![alt](/emails/issues/248/meme4.jpg)](https://x.com/sebastienlorber/status/1963231962077798727)
 
 See ya! 👋
