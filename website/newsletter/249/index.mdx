@@ -8,10 +8,6 @@ unlisted: true
 
 Hi everyone!
 
-<Todo />
-
-🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=Newsletter&utm_medium=ThisWeekinReact) -  🇬🇧 London - 28 Nov & 1 Dec. Featuring: Kadi Kraman (Expo), Bela Bohlender (react-three), Mike Grabowski (RN Core Team), Jani Eväkallio & more! 10% discount code "TWIR".
-
 <!-- truncate -->
 
 import Support from "../_support.mdx";
@@ -38,10 +34,41 @@ Whether you're a startup founder or a lead dev, Shadcn Admin Kit helps you ship 
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![An Interactive Guide to TanStack DB](/emails/issues/249/tanstack-db.jpg)](https://frontendatscale.com/blog/tanstack-db/)
+
+**[An Interactive Guide to TanStack DB](https://frontendatscale.com/blog/tanstack-db/)**
+
+A greatly interactive article that shows how React Query can become verbose and complex, and how TanStack DB is designed to fill the gap with new primitives:
+
+- Collections: load large amounts of typed, relational data on the client
+- Live Queries: filter/process/join collections at incredible speed, with fewer React re-renders
+- Transactional Mutation: perform optimistic updates with less boilerplate and automatic rollbacks
+
+All this without changing your backend endpoints. And you can go even further and adopt a sync engine like ElectricSQL to benefit from real-time synchronization and handle larger datasets.
+
+---
 
 - 💸 [Learn how to build a video summarization app using Next.js 15 & Strapi in this step-by-step tutorial guide](https://strapi.io/blog/epic-next-js-15-tutorial-part-1-learn-next-js-by-building-a-real-life-project?utm_campaign=19282052-Newsletter%20Sponsorships&utm_source=React&utm_medium=2nd%20sponsor&utm_term=Epic-NextJS-tutorial)
+- 👀 [React Core PR \- Release `<Activity>` in Canary](https://github.com/facebook/react/pull/34374): The long-awaited React component is approaching prime time, has been battle-tested in production, and is becoming available in React's canary workflow for the community to try out and provide feedback. This exciting new primitive can hide a React subtree while preserving its state, and keep rendering it with lower priority. It also unlocks new pre-rendering patterns along the way.
+- 📣 [Vercel – Open SDK strategy](https://vercel.com/blog/open-sdk-strategy): Articulates the commitment to a new ‘Open SDK’ strategy, against platform lock-in, for Next.js in particular but all their other frameworks as well. It’s worth mentioning that SST/OpenNext folks [tweeted](https://x.com/thdxr/status/1963507144453509619) that the platform stickiness doesn’t seem intentional, and things have improved.
+- 🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=Newsletter&utm_medium=ThisWeekinReact) -  🇬🇧 London - 28 Nov & 1 Dec. Featuring: Kadi Kraman (Expo), Bela Bohlender (react-three), Mike Grabowski (RN Core Team), Jani Eväkallio & more! 10% discount code "TWIR".
+- 📜 [React Fast Refresh: Next-Gen Hot Reloading Explained](https://leapcell.io/blog/react-fast-refresh): A deep dive into how React implements hot reloading.
+- 📜 [Optional sections in MDX](https://remcohaszing.nl/blog/optional-sections-in-mdx): In MDX, you can use Markdown syntax in React component children, not in props, but there are tricks to get around this limitation.
+- 📜 [Using the node 18+ native test runner with TypeScript and React](https://matthewbrown.io/2025/09/04/node-test-runner): You can test React components with Testing Library using the built-in Node test runner, using the `tsx` loader to support JSX.
+- 📜 [I've tried Solid.js, now I'm starting to hate React](https://alemtuzlak.hashnode.dev/ive-tried-solidjs-now-im-starting-to-hate-react)
 - 💸 [Convex launched a collaboration with Resend](https://convex.link/resendthiswk)
+- 📦 [nuqs 2.6 \- `processUrlSearchParams`, documents usage with Zod 4.1 `codec()` API](https://github.com/47ng/nuqs/releases/tag/v2.6.0)
+- 📦 [TanStack Query 5.87 \- New `TimeoutManager` API](https://github.com/TanStack/query/releases/tag/v5.87.0): This may be useful if you notice event loop performance issues with thousands of queries, or want to set `gcTime/staleTime` above 24 days.
+- 📦 [Storybook 10 beta \- ESM-only, migration guide now available](https://storybook.js.org/docs/10/releases/migration-guide)
+- 📦 [AI Elements \- Component library and shadcn registry to help you build AI-native apps](https://github.com/vercel/ai-elements)
+- 📦 [Reshaped \- Professionally crafted React & Figma components, now open-source](https://reshaped.so/blog/reshaped-oss)
+- 📦 [MDX Lint \- A CLI to lint and format MDX content.](https://github.com/remcohaszing/mdxlint)
+- 📦 [React Window 2.1 \- Improved ARIA support](https://github.com/bvaughn/react-window/releases/tag/2.1.0)
+- 📦 [Lexical 0.35 \- Extensible text editor framework \- Improved RTL bidirectional text support](https://github.com/facebook/lexical/releases/tag/v0.35.0)
+- 📦 [React Three Timeline \- Write composable 3D behaviors like a story](https://github.com/pmndrs/timeline): A high-level API generator-based API to animate React-Three-Fiber scenes.
+- 🎥 [Coding in Public \- 3 ways to use React in Astro](https://www.youtube.com/watch?v=b9nbtjWQb5k)
+- 🎥 [Wawa Sensei \- How to Fake Godrays in Three.js (WebGPU \+ React)](https://www.youtube.com/watch?v=qCqt0E-NXqU)
+- 🎙️ [PodRocket \- The useless useCallback: React performance myths unpacked, with Dominik Dorfmeister](https://podrocket.logrocket.com/the-useless-usecallback-react-performance-myths-dominik-dorfmeister)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -63,22 +90,56 @@ Frustrated with laggy data grids that crumble at scale, dictate your architectur
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
-
 - 💸 [PostHog - React Native surveys are now generally available. Get 1,500 responses free per month.](https://go.posthog.com/twir-sept10)
+- 👀 Expo SDK 54 stable is about to be released.
+- 👀 [Unwind \- The fastest Tailwind bindings for React Native, powered by Nitro modules](https://uniwind.dev): The waitlist for a promising styling library presented at React Universe. There will be a free version and a faster paid version.
+- 📖 [Expo Docs \- Building SwiftUI apps with Expo UI](https://docs.expo.dev/guides/expo-ui-swift-ui/): This exciting feature brings SwiftUI primitives to Expo (SDK 54+) with a 1-1 mapping.
+- 🐦 [Marc Rousavy \- “My resume for React Universe 2025”](https://x.com/mrousavy/status/1964055020070154380)
+- 📜 [Shopify \- Migrating to React Native's New Architecture](https://shopify.engineering/react-native-new-architecture): Shopify successfully migrated their flagship Shopify Mobile and Point of Sale apps to the New Architecture. They share the migration strategy, how it went, and the impact it had.
+- 📜 [How to Add Custom JSI Bindings in Your TurboModule (and Why You Might Need Them)](https://www.callstack.com/blog/how-to-add-custom-jsi-bindings-in-your-turbomodule-and-why-you-might-need-them): You can add support for unsupported types (here, `ArrayBuffer`), and optimize data transfer without serialization.
+- 📜 [Expo SDK 54: Better. Faster. Simpler](https://shift.infinite.red/expo-sdk-54-better-faster-simpler-bf3c2a35269e): We are still waiting for a stable SDK release, but the folks at Infinite Red gave the beta a try and shared feedback after upgrading multiple apps, focusing on the impact of iOS prebuilds and smarter autolinking.
+- 📜 [E2E Testing with Maestro \- Automating Apple Maps](https://maestro.dev/blog/automating-apple-maps-simple-e2e-testing-with-maestro): Not specific to RN, but still useful to know how simple it can be.
+- 📜 [Building a Reusable Animated Button](https://brainsandbeards.com/blog/2025-buttons/)
+- 📜 [Things I wish I knew before switching to React Native](https://blog.codeminer42.com/things-i-wish-i-knew-before-switching-to-react-native/)
+- 📦 [Legend List 2.0 \- Faster, more accurate, Sticky headers, for Legacy/New Architecture](https://www.legendapp.com/open-source/list/api/version-2/): The list virtualization lib becomes much faster, and also [sparks healthy competition with FlashList](https://x.com/naqvitalha/status/1965090015270359044) (which also released v2 recently).
+- 📦 [Expo IAP \- In-App Purchase module in Expo that conforms to the OpenIAP spec](https://github.com/hyochan/expo-iap): Note there’s also the [react-native-iap package that continues to be maintained](https://github.com/hyochan/react-native-iap/discussions/2985) by the same author, now upgraded to Nitro Modules.
+- 📦 [Rock 0.10 \- RN framework for Enterprise \- Use RN 0.81 in template, change AppTheme parent to Material3](https://github.com/callstack/rock/releases/tag/v0.10.0)
+- 📦 [Screens 4.16 \- Dark mode in Android BottomTabs, iOS 26 search bar integration improvements](https://github.com/software-mansion/react-native-screens/releases/tag/4.16.0)
+- 📦 [React Native macOS \- 0.79.0](https://github.com/microsoft/react-native-macos/releases/tag/v0.79.0)
+- 📦 [React Native Animated Observer \- Convert between Animated \<-\> Reanimated values](https://github.com/satya164/react-native-animated-observer)
+- 📦 [Expo GlassEffect \- Native iOS liquid glass effect using UIVisualEffectView](https://docs.expo.dev/versions/unversioned/sdk/glass-effect/)
+- 📦 [React Native Enriched \- Rich text editor component based on a native uncontrolled text input](https://github.com/software-mansion-labs/react-native-enriched)
+- 📦 [React Native Navigation Bar \- Control your Android app's navigation bar](https://github.com/zoontek/react-native-navigation-bar)
+- 📦 [React Native Nitro Sound 0.2 \- Former package upgraded to Nitro modules, `useSound` hook](https://github.com/hyochan/react-native-nitro-sound/releases/tag/v0.2.0)
+- 📦 [React Native Audio API 0.8 \- Supports RN 0.82, more audio formats, and HLS streaming](https://github.com/software-mansion/react-native-audio-api/releases/tag/0.8.0)
+- 🎥 [React Universe Conf 2025 \- YouTube playlist](https://www.youtube.com/watch?v=9vc2tDf7FZc&list=PLZ3MwD-soTTGHD999pxTX1r_6JORpOr0C)
+- 🎥 [Dan's Lab \- How to make an Audio Visualizer with React Native Audio API and Skia](https://www.youtube.com/watch?v=gmW8KeMKXok)
+- 🎙️ [Callstack \- Incremental React Native Adoption in Android Apps](https://www.youtube.com/watch?v=NpnCel2l7_c)
+- 🎙️ [RNR 342 \- Ignite 11: Bison with Mark Rickert](https://infinite.red/react-native-radio/rnr-342-ignite-11-bison-with-mark-rickert)
+- 🎙️ [Rocket Ship 80 \- LegendList 2, Expo SDK 54, New Modules and React Native 1.0?](https://share.transistor.fm/s/8a4c3f58)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📣 [Interop 2026 is now open for proposals](https://github.com/web-platform-tests/interop/blob/main/proposal_guide.md): Your opportunity to help browsers figure out what they should work on next year.
+- 👀 [oxc RFC \- Design decisions for the upcoming oxfmt formatter](https://github.com/oxc-project/oxc/discussions/13608)
+- 📜 [You Don't Need Animations](https://emilkowal.ski/ui/you-dont-need-animations)
+- 📜 [Stress testing Biome's noFloatingPromises lint rule](https://vercel.com/blog/stress-testing-biomes-nofloatingpromises-lint-rule)
+- 📜 [Lean for JavaScript Developers](https://overreacted.io/lean-for-javascript-developers/)
+- 📜 [Color Shifting in CSS](https://www.joshwcomeau.com/animation/color-shifting/)
+- 📜 [The bloat of edge-case first libraries](https://43081j.com/2025/09/bloat-of-edge-case-libraries)
+- 📦 [ESLint 9.35 \- New lint rule to enforce usage of Error `cause`](https://eslint.org/blog/2025/09/eslint-v9.35.0-released/): If you don't follow this rule, I recommend you think about it.
+- 📦 [Safari Technology Preview 227](https://webkit.org/blog/17324/release-notes-for-safari-technology-preview-227/): Great features improvements coming in Safari: `commandfor`, Anchor Positioning, Navigation API, `scrollend` event, and way more.
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/249/meme.jpg)](https://x.com/thekitze/status/1965479622826697158)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/249/meme2.jpg)](https://x.com/thymikee/status/1962907819218243929)
+
+[![alt](/emails/issues/249/meme3.jpg)](https://shift.infinite.red/expo-sdk-54-better-faster-simpler-bf3c2a35269e)
 
 See ya! 👋
