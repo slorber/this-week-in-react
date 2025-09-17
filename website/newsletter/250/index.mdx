@@ -8,7 +8,9 @@ unlisted: true
 
 Hi everyone!
 
-<Todo />
+As promised, this week is quite exciting, with a very powerful React core `<Activity>` component now in canary, close to becoming stable. We also have a massive Expo SDK release!
+
+npm supply chain attacks continue, this time with a Shai-Hulud worm that infects open-source maintainers and automatically publish compromised packages. Great timing for pnpm 10.16 to come up with a new option to mitigate risks.
 
 <!-- truncate -->
 
@@ -40,11 +42,35 @@ Our blog [5 React Grid Examples to Transform Your Next Project](https://www.infr
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![](/emails/issues/250/activity.jpg)](https://github.com/facebook/react/pull/34374)
+
+**[React Core PR \- Release `<Activity>` in Canary](https://github.com/facebook/react/pull/34374)**
+
+This exciting new `<Activity>` component can hide a React subtree while preserving its state, and keep rendering it with lower priority. It unlocks new pre-rendering patterns along the way, and could speed up link clicks, tab clicks, back/forward navigation, stack navigation, and more. Read the [reference documentation](https://react.dev/reference/react/Activity), including many use cases with interactive examples..
+
+The long-awaited React component is approaching prime time, has been battle-tested in production by Meta, and is becoming available in React's canary workflow for the community to try out and provide feedback. You may see it appear soon in frameworks that follow the React Canary Workflow, such as Next.js App Router (coming in 15.6), which already leverages it internally in [an experimental back/forward cache feature](https://github.com/vercel/next.js/pull/77992).
+
+---
 
 - 💸 [The Road to Next - Master Full-Stack Web Development with Next.js 15 and React 19](https://www.road-to-next.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_2.3)
-- 💸 [CodeRabbit CLI - An AI code review tool that runs directly in your terminal, seamlessly integrating with Claude, Cursor, and other coding agents](https://coderabbit.link/thisweekinreact)
+- 👀 [Can I use React Server Components today?](https://rsc.krasimirtsonev.com/): Cool resource that tests major frameworks against 12 scenarios to report which RSC-related features are supported. Next.js, Vite, and Waku all have 100% support, while others are close but do not support inline server functions/actions.
+- 🐦 [We can't use React hooks conditionally, can we?](https://x.com/sebastienlorber/status/1967505994843611305): You may discover that it’s possible to call hooks conditionally if the condition remains stable over time, and that `useContext()` has always allowed conditional calls despite what ESLint says (but you’d rather use `use()` instead). There’s also a [React Nook](https://iwoplaza.dev/react-nook/) project that lets you call hooks conditionally.
+- 🌶 [Cloudflare had a major outage due to an `useEffect` infinite loop triggering API requests](https://blog.cloudflare.com/deep-dive-into-cloudflares-sept-12-dashboard-and-api-outage/): Yep, bad things can happen with this damn dependency array 😅.
 - 🗓 [React Paris 2026](https://react.paris/?utm_source=thisweekinreact) - 🇫🇷 Paris - 26 & 27 March. First speaker lineup just dropped! Tanner Linsley, Kitze, Una, Gabriel Pichot and Elise Patrikainen are part of the lineup, and CFP just opened today!
+- 📜 [styled-components maintenance mode: A 40% faster fork](https://www.sanity.io/blog/cut-styled-components-into-pieces-this-is-our-last-resort): Styled-Components is in maintenance mode, and the folks at Sanity forked it to make it much faster thanks to React 18's `useInsertionEffect` hook (among other things). Both Sanity and Linear are using the fork as a temporary solution until they fully migrate to a better one.
+- 📜 [Either Tailwind is CSS-in-JS or StyleX isn’t](https://nmn.sh/blog/2025-09-14-tailwind-is-css-in-js): 100% agree on this, zero-runtime CSS-in-JS libraries like StyleX and Linaria are very similar to Tailwind CSS, it’s just the API and tooling that differ, but the outcome is the same.
+- 📜 [React Won by Default – And It's Killing Frontend Innovation](https://www.lorenstew.art/blog/react-won-by-default/): A fair criticism of the React-by-default mindset. I agree that more framework diversity could help drive innovation, but I still believe in the technical advantages React has over competitors, for example, that new `<Activity>` component 😇. Let’s not forget that React works on every native platform. This framing doesn’t please everyone, but to me, React doesn’t need to be the best web framework to win; it simply has to be good enough everywhere (and yet it’s still pretty damn good everywhere).
+- 📜 [What tests to write for React](https://www.franciscomoretti.com/blog/what-tests-to-write-for-react): A quick overview of unit, integration, and end-to-end tests in React.
+- 📜 [Quick SEO Guidelines for Your Next.js App](https://playfulprogramming.com/posts/seo-nextjs-guide): A quick overview of metadata, structured data, sitemap, robots, and optimizations.
+- 💸 [CodeRabbit CLI - An AI code review tool that runs directly in your terminal, seamlessly integrating with Claude, Cursor, and other coding agents](https://coderabbit.link/thisweekinreact)
+- 📦 [React Router 7.9 \- Stable middleware and type-safe context APIs, client-side error reporting](https://remix.run/blog/middleware): It’s also great to see progress on RSC support, almost ready for the framework mode.
+- 📦 [TanStack Query 5.89 \- Add context parameter to mutation callbacks](https://github.com/TanStack/query/releases/tag/v5.89.0): This lets you conveniently access the Query Client in callbacks with `context.client`.
+- 📦 [React-Admin 5.9 to 5.11 \- Render props, headless core, shadcn-admin-kit, and more](https://marmelab.com/blog/2025/09/15/react-admin-september-2025-update.html)
+- 📦 [React Hook Form Persist \- Automatically save and restore form data to localStorage](https://github.com/liorp/react-hook-form-persist)
+- 📦 [Streamdown 1.3 \- React Markdown for AI streaming \- Improve perf, controls props, Mermaid config](https://github.com/vercel/streamdown/releases/tag/streamdown%401.3.0)
+- 🎥 [Alem Tuzlak \- React Router Middleware Is Finally Here\! Here's how to migrate\!](https://www.youtube.com/watch?v=70Mga9EsnH4)
+- 🎥 [Web Dev Simplified \- How To Handle Data Access Like a Senior Dev](https://www.youtube.com/watch?v=Av7KqJVLiYc)
+- 🎥 [ByteGrad \- Dockerize Next.js App & Deploy To VPS In 2025](https://www.youtube.com/watch?v=J1np6xA1Ty4)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -72,20 +98,65 @@ Whether you’re chasing a React error, a slow API query, or a third-party timeo
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Expo SDK 54](/emails/issues/250/expo.jpg)](https://expo.dev/changelog/sdk-54)
+
+**[Expo SDK 54](https://expo.dev/changelog/sdk-54)**
+
+The new Expo SDK is finally stable and will be the last SDK to support the Legacy Architecture. It is a massive release with too many things to highlight, including:
+
+- React Native 0.81, with Android 16 support, edge-to-edge default
+- React 19.1, with improved stack traces based on React Owner Stacks
+- Precompiled iOS for faster builds
+- [Expo UI to seamlessly integrate SwiftUI primitives with 1-1 mapping](https://expo.dev/blog/liquid-glass-app-with-expo-ui-and-swiftui), and Jetpack Compose support is coming later
+- [Expo Router v6](https://expo.dev/blog/expo-router-v6) with iOS/Android native tabs (material tabs and Liquid Glass support), iOS link previews/menus, server middleware, web modals, and more
+- iOS 26 Liquid Glass icons and views
+- Expo Updates and EAS improvements
+- Package managers and Autolinking improvements
+- Apple and Android TV improvements, experimental dev client support
+- Major [Expo File System improvements](https://expo.dev/blog/expo-file-system), new [App Integrity API](https://expo.dev/blog/expo-app-integrity), and so much more\!
+
+---
+
+- 👀 [React Native PR merged \- Blur filter on iOS](https://github.com/facebook/react-native/pull/52495): Historically, many iOS View style filters are unsupported. This PR adds the missing blur filter natively, with Animated support. We’ll probably get more iOS filters later, considering Meta has opted for the [SwiftUI modifiers solution](https://github.com/react-native-community/discussions-and-proposals/issues/927) for this PR.
+- 👀 [React Native Directory updated \- Now displays package size and number of dependencies](https://reactnative.directory/)
+- 👀 [Expo Go is now available on Meta Quest](https://www.meta.com/fr-fr/experiences/expo-go/25322546364000780/)
+- 🐦 [React Navigation preview \- New `navigation.pushParams()` API](https://x.com/reactnavigation/status/1966196243585196132): Create a navigation entry with new params, without opening a new screen. On a filtered list, you can push your filters and then revert them with the back button.
+- 📜 [Apple has a private CSS property to add Liquid Glass effects to web content](https://alastair.is/apple-has-a-private-css-property-to-add-liquid-glass-effects-to-web-content/): Apparently, Apple has a secret way to use liquid glass from `WKWebView` using CSS 🤯. They may be using more webviews than we think\! Interesting theory: “The main reason webviews in apps have such a bad reputation is because you don't notice the webviews that are integrated seamlessly”.
+- 📜 [Debugging Android Connectivity Issues with Metro Bundler](https://www.callstack.com/blog/debugging-android-connectivity-issues-with-metro-bundler)
+- 📜 [How to run private, on-device AI in your React Native app using Cactus](https://javascript.plainenglish.io/how-to-run-private-on-device-ai-in-your-react-native-app-using-cactus-4a3b87a757f4?gi=417c4c9dfcd6)
+- 📜 [Style Your React Native App with Unistyles](https://www.premieroctet.com/blog/en/style-your-react-native-app-with-unistyles)
+- 📜 [How To Use Liquid Glass in React Native](https://www.callstack.com/blog/how-to-use-liquid-glass-in-react-native)
+- 📜 [Recreating Apple & Google Photos in React Native for TV platforms](https://blog.swmansion.com/react-native-multiplatform-recreating-apple-google-photos-in-react-native-part-2-832398eb0d4c)
+- 📦 [Lynx 3.4 \- HarmonyOS, Windows development, new DevTools, better text input, list recycling, and animations](https://lynxjs.org/blog/lynx-3-4): This alternative cross-platform React framework from ByteDance also announced at React Universe conf that Web support is in beta. There’s also a new [BetterAuth Lynx integration](https://www.better-auth.com/docs/integrations/lynx).
+- 📦 [React Data List \- Building virtualized UIs declaratively](https://attio.com/engineering/blog/react-data-list-building-virtualized-uis-declaratively): This abstraction lets you use FlashList / LegendList in a more declarative JSX-based way instead of managing the `data` array yourself. Built primarily for React Native, also supports web.
+- 📦 [Fast-Squircle \- A performant component to render squares with a smooth, rounded appearance](https://github.com/fbeccaceci/react-native-fast-squircle)
+- 📦 [Swift 6.2 \- Approachable concurrency, memory safety, official VSCode extension, WASM, Subprocess API](https://www.swift.org/blog/swift-6.2-released/)
+- 📦 [React Native AI 0.8 & 0.9 \- Tool calling, Expo Config Plugin, MLC generation options and structured output](https://github.com/callstackincubator/ai/releases)
+- 🎥 [Simon Grimm \- Expo SDK 54 & React Native 0.81, why you should upgrade now](https://www.youtube.com/watch?v=oWVie6GVI-I)
+- 🎙️ [RNR 343 \- Discord's Journey to React Native with Chas Jhin](https://infinite.red/react-native-radio/rnr-343-discords-journey-to-react-native-with-chas-jhin)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [TC39 \- Agenda for the 110th meeting \- September 22-25](https://github.com/tc39/agendas/blob/main/2025/09.md)
+- 📜 [Behind The Scenes of Bun Install](https://bun.com/blog/behind-the-scenes-of-bun-install)
+- 📜 [Why using Bun in production (maybe) isn't the best idea](https://dev.to/wojtekmaj/why-using-bun-in-production-maybe-isnt-the-best-idea-3deb)
+- 📜 [How modern browsers work](https://addyo.substack.com/p/how-modern-browsers-work)
+- 📜 [Liquid Glass in the Browser: Refraction with CSS and SVG](https://kube.io/blog/liquid-glass-css-svg/)
+- 📜 [Fetch streams are great, but not for measuring upload/download progress](https://jakearchibald.com/2025/fetch-streams-not-for-progress/)
+- 📦 [pnpm 10.16 \- Delayed dependency updates](https://pnpm.io/blog/releases/10.16): A new `minimumReleaseAge` can help mitigate npm supply chain attacks by avoiding the installation of recently published packages. This may also be available in Yarn soon.
+- 📦 [Browserslist 4.26 \- Support for Baseline queries](https://github.com/browserslist/browserslist/pull/903): The popular “target browser” tool now supports simpler queries such as `”baseline widely available”`.
+- 📦 [WebKit Features in Safari 26.0](https://webkit.org/blog/17333/webkit-features-in-safari-26-0/): A massive release coming with CSS anchor positioning, scroll-driven animations, WebGPU, WebCodecs, `URLPattern()`, SVG icons, and more.
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/250/meme.jpg)](https://x.com/DavidKPiano/status/1967654653908472177)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/250/meme2.jpg)](https://x.com/threadripp/status/1967509505425719397)
+
+[![alt](/emails/issues/250/meme3.jpg)](https://x.com/kanavtwt/status/1967954620745216492)
 
 See ya! 👋
