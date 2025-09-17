@@ -1,6 +1,6 @@
 ---
 slug: /250
-title: "This Week In React #250: ..."
+title: "This Week In React #250: Activity, React Router, CSS-in-JS, RSC, React-Query | Expo, iOS blur, AI, Lynx, Squircle, DataList, Liquid Glass | TC39, pnpm, Bun, Browserslist, Webkit"
 authors: [slorber]
 date: 09-17-2025
 unlisted: true
@@ -57,14 +57,14 @@ The long-awaited React component is approaching prime time, has been battle-test
 - 🐦 [We can't use React hooks conditionally, can we?](https://x.com/sebastienlorber/status/1967505994843611305): You may discover that it’s possible to call hooks conditionally if the condition remains stable over time, and that `useContext()` has always allowed conditional calls despite what ESLint says (but you’d rather use `use()` instead). There’s also a [React Nook](https://iwoplaza.dev/react-nook/) project that lets you call hooks conditionally.
 - 🌶 [Cloudflare had a major outage due to an `useEffect` infinite loop triggering API requests](https://blog.cloudflare.com/deep-dive-into-cloudflares-sept-12-dashboard-and-api-outage/): Yep, bad things can happen with this damn dependency array 😅.
 - 🗓 [React Paris 2026](https://react.paris/?utm_source=thisweekinreact) - 🇫🇷 Paris - 26 & 27 March. First speaker lineup just dropped! Tanner Linsley, Kitze, Una, Gabriel Pichot and Elise Patrikainen are part of the lineup, and CFP just opened today!
-- 📜 [styled-components maintenance mode: A 40% faster fork](https://www.sanity.io/blog/cut-styled-components-into-pieces-this-is-our-last-resort): Styled-Components is in maintenance mode, and the folks at Sanity forked it to make it much faster thanks to React 18's `useInsertionEffect` hook (among other things). Both Sanity and Linear are using the fork as a temporary solution until they fully migrate to a better one.
+- 📜 [Styled-Components maintenance mode: A 40% faster fork](https://www.sanity.io/blog/cut-styled-components-into-pieces-this-is-our-last-resort): Styled-Components is in maintenance mode, and the folks at Sanity forked it to make it much faster thanks to React 18's `useInsertionEffect` hook (among other things). Both Sanity and Linear are using the fork as a temporary solution until they fully migrate to a better one.
 - 📜 [Either Tailwind is CSS-in-JS or StyleX isn’t](https://nmn.sh/blog/2025-09-14-tailwind-is-css-in-js): 100% agree on this, zero-runtime CSS-in-JS libraries like StyleX and Linaria are very similar to Tailwind CSS, it’s just the API and tooling that differ, but the outcome is the same.
 - 📜 [React Won by Default – And It's Killing Frontend Innovation](https://www.lorenstew.art/blog/react-won-by-default/): A fair criticism of the React-by-default mindset. I agree that more framework diversity could help drive innovation, but I still believe in the technical advantages React has over competitors, for example, that new `<Activity>` component 😇. Let’s not forget that React works on every native platform. This framing doesn’t please everyone, but to me, React doesn’t need to be the best web framework to win; it simply has to be good enough everywhere (and yet it’s still pretty damn good everywhere).
 - 📜 [What tests to write for React](https://www.franciscomoretti.com/blog/what-tests-to-write-for-react): A quick overview of unit, integration, and end-to-end tests in React.
 - 📜 [Quick SEO Guidelines for Your Next.js App](https://playfulprogramming.com/posts/seo-nextjs-guide): A quick overview of metadata, structured data, sitemap, robots, and optimizations.
 - 💸 [CodeRabbit CLI - An AI code review tool that runs directly in your terminal, seamlessly integrating with Claude, Cursor, and other coding agents](https://coderabbit.link/thisweekinreact)
 - 📦 [React Router 7.9 \- Stable middleware and type-safe context APIs, client-side error reporting](https://remix.run/blog/middleware): It’s also great to see progress on RSC support, almost ready for the framework mode.
-- 📦 [TanStack Query 5.89 \- Add context parameter to mutation callbacks](https://github.com/TanStack/query/releases/tag/v5.89.0): This lets you conveniently access the Query Client in callbacks with `context.client`.
+- 📦 [React Query 5.89 \- Add context parameter to mutation callbacks](https://github.com/TanStack/query/releases/tag/v5.89.0): This lets you conveniently access the Query Client in callbacks with `context.client`.
 - 📦 [React-Admin 5.9 to 5.11 \- Render props, headless core, shadcn-admin-kit, and more](https://marmelab.com/blog/2025/09/15/react-admin-september-2025-update.html)
 - 📦 [React Hook Form Persist \- Automatically save and restore form data to localStorage](https://github.com/liorp/react-hook-form-persist)
 - 📦 [Streamdown 1.3 \- React Markdown for AI streaming \- Improve perf, controls props, Mermaid config](https://github.com/vercel/streamdown/releases/tag/streamdown%401.3.0)
