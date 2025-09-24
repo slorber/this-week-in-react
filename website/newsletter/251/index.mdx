@@ -1,6 +1,6 @@
 ---
 slug: /251
-title: "This Week In React #251: TanStack Start, Router RSC Framework Mode, ESLint React Hooks, create-vite, tldraw, Isograph | Nitro Modules, Expo Workflows, Expo Live Activity, Nitro Fetch, IAP | W3C, Bloom Filters, WASM 3.0, knip, NPM"
+title: "This Week In React #251: TanStack, React Router, RSC, ESLint, Vite, tldraw, Isograph | Nitro Modules, Expo Workflows, Live Activity, Nitro Fetch, IAP | CSS, WASM, knip, NPM"
 authors: [tboba, piaskowyk]
 date: 09-24-2025
 unlisted: true
@@ -10,16 +10,14 @@ Hi everyone!
 
 **Krzysztof and Tymek from [Software Mansion](https://swmansion.com/?utm_source=thisweekinreact)** here\! 👋
 
-In this issue, as always, we have some great news prepared for you. On the React side, TanStack Start has been announced in Release Candidate, React Router expands RSC support to its Framework Mode, and the official ESLint plugin for React Hooks is now exhaustively documented. 
+In this issue, as always, we have some great news prepared for you. On the React side, TanStack Start has been announced in Release Candidate, React Router expands RSC support to its Framework Mode, and the official ESLint plugin for React Hooks is now exhaustively documented.
 
-However, on the React Native side, we have a bit less than usual news for you. Perhaps this is because autumn has begun (and the world overall has become gloomy), or maybe it's because there is a slight silence that heralds a storm in our React world? 
+However, on the React Native side, we have a bit less than usual news for you. Perhaps this is because autumn has begun (and the world overall has become gloomy), or maybe it's because there is a slight silence that heralds a storm in our React world?
 
 Well, as we know, React Conf is coming up, so everyone is probably postponing their announcements and releases until October 7\. 😉
 
 We hope you enjoy this edition and that during this cloudy season, each of you will stay healthy\!  
 Let's get started\! 🤗
-
-🗓️ [React Summit US](https://reactsummit.us/?utm_source=Newsletter&utm_medium=ThisWeekinReact) - 🇺🇸 New York - 18 & 21 Nov. The complete speaker roster is revealed! Grab your ticket with "TWIR" for 10% off.
 
 <!-- truncate -->
 
@@ -37,10 +35,10 @@ import Support from "../_support.mdx";
 
 AG Grid is a fast, free and fully customisable React Data Grid. Used by **90% of the Fortune 500**, AG Grid is **100% open source** with over **4 million npm downloads per month**:
 
-*   🆓 **Free:** Access 100s of features such as **Sorting**, **Filtering**, **Pagination**, **Cell Editing** and more, all for **free** - forever.
-*   **🚀 Fast:** Display **millions of cells** out of the box, without compromising on performance.
-*   **🎨 Customisable:** Add your own components to cells, rows & columns and use **100+ CSS variables** to style every element.
-*   🏢 **Enterprise Features:** Purchase a licence for lifetime access to advanced features including **Pivoting**, **Grouping**, **Master / Detail** and **Integrated Charts** (powered by our React Charting Library, [AG Charts](https://www.ag-grid.com/charts?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2025-email-5)). Try it for free - no trial license required.
+- 🆓 **Free:** Access 100s of features such as **Sorting**, **Filtering**, **Pagination**, **Cell Editing** and more, all for **free** - forever.
+- **🚀 Fast:** Display **millions of cells** out of the box, without compromising on performance.
+- **🎨 Customisable:** Add your own components to cells, rows & columns and use **100+ CSS variables** to style every element.
+- 🏢 **Enterprise Features:** Purchase a licence for lifetime access to advanced features including **Pivoting**, **Grouping**, **Master / Detail** and **Integrated Charts** (powered by our React Charting Library, [AG Charts](https://www.ag-grid.com/charts?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2025-email-5)). Try it for free - no trial license required.
 
 Learn More: [ag-grid.com](https://www.ag-grid.com/react-table?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2025-email-5)
 
@@ -50,7 +48,7 @@ Learn More: [ag-grid.com](https://www.ag-grid.com/react-table?utm_source=thiswee
 
 [![](/emails/issues/251/tanstackstart.jpg)](https://tanstack.com/blog/announcing-tanstack-start-v1)
 
-[**Announcing TanStack Start v1 Release Candidate**](https://tanstack.com/blog/announcing-tanstack-start-v1)
+[**Announcing TanStack Start 1.0 - Release Candidate**](https://tanstack.com/blog/announcing-tanstack-start-v1)
 
 On September 23, the TanStack team announced their new full-stack framework. TanStack Start is built on the widely known TanStack Router and was designed with server rendering, streaming, and production-ready deployments in mind.
 
@@ -64,36 +62,38 @@ You can try out TanStack Start today by installing the Release Candidate version
 
 [**React Router RSC Framework Mode Preview**](https://remix.run/blog/rsc-framework-mode-preview)
 
-We already had preview of React Server Components for the Data Mode in React Router 7.7. With the latest release v7.9.2, React Router completes this preview by expanding RSC support to its Framework Mode. 
+We already had preview of React Server Components for the Data Mode in React Router 7.7. With the latest release v7.9.2, React Router completes this preview by expanding RSC support to its Framework Mode.
 
-In case you are unfamiliar with React Router modes, the post gives a quick overview. The Data Mode is flexible, but more low-level. The Framework Mode gives a more streamlined developer experience, managing many things for you thanks to a new unstable `unstable_reactRouterRSC` Vite plugin that works alongside the new official Vite RSC plugin. Although full RSC support is coming later, these Vite plugins already make it possible to:
+In case you are unfamiliar with React Router modes, the post gives a quick overview. The Data Mode is flexible, but more low-level. The Framework Mode gives a more streamlined developer experience, managing many things for you thanks to a new unstable `unstable_reactRouterRSC` Vite plugin that works alongside the new official Vite RSC plugin.
 
-- Return RSCs for loaders and actions  
-- Create server component routes  
-- Use `”use client”` and `”use server”` directives
+Although full RSC support is coming later, these Vite plugins already enable the following features:
+
+- Return Server Components for loaders and actions.
+- Create Server Component routes.
+- Use `”use client”` (Client Component) and `”use server”` (Server Functions) directives.
 
 ---
 
-
 - 💸 [Ship a video summarizer app with Next.js 15 & Strapi — follow this practical, step-by-step guide](https://strapi.io/blog/epic-next-js-15-tutorial-part-1-learn-next-js-by-building-a-real-life-project?utm_campaign=19282052-Newsletter%20Sponsorships&utm_source=React&utm_medium=2nd%20sponsor&utm_term=Epic-NextJS-tutorial)
+- 👀 [create-vite PR - React compiler templates](https://github.com/vitejs/vite/pull/20704): New template variants, designed to support React Compiler, are coming for `create-vite`, a tool to start a new Vite project
+- 🦋 [Ricky’s thread about React’s true competitive advantage](https://bsky.app/profile/ricky.fm/post/3lyxjkguwic2q): Ricky from the Meta core team states that the real innovation in React revolves around scheduling. However, not everyone agrees with this thesis, as clearly shown by the interesting debate under [Seb's post](https://x.com/sebastienlorber/status/1968584425173623048) on X.
+- 📖 [React docs - ESLint Plugin React Hooks – API reference](https://react.dev/reference/eslint-plugin-react-hooks): The React team wrote exhaustive api ref documentation about the `eslint-plugin-react-hooks` plugin, which will help you catch violations of React’s rules at build time. All the rules are now documented on independent pages. v6.0 is in RC and now includes the rules provided by the React Compiler.
+- 🗓️ [React Summit US](https://reactsummit.us/?utm_source=Newsletter&utm_medium=ThisWeekinReact) - 🇺🇸 New York - 18 & 21 Nov. The complete speaker roster is revealed! Grab your ticket with "TWIR" for 10% off.
+- 📜 [Parallel and recursive route rendering](https://twofoldframework.com/blog/parallel-and-recursive-route-rendering-with-rsc): This interactive article explains how to prevent the "waterfall" issue for React Server Components. This is a common performance issue, where nested components wait for their parents to render before fetching data.
+- 📜 [React \<ViewTransition\>: Smooth Animations Made Simple](https://certificates.dev/blog/react-viewtransition-smooth-animations-made-simple): Presents various use cases for using the experimental `<ViewTransition>`, such as shared elements transitions, list filtering, and Suspense-based cross-fading
+- 📜 [Migrating to TanStack Start](https://catalins.tech/migrating-to-tanstack-start/): The story of a successful migration from a React SPA to a fully SSR app.
+- 📜 [How to Use Rive App to Animate Your Web and Mobile Interfaces](https://www.premieroctet.com/blog/en/how-to-use-rive-app-to-animate-your-web-and-mobile-interfaces): Including the React integration.
+- 📜 [Redux in 2025: A reliable choice for complex React projects](https://stefvanwijchen.com/react-and-redux-in-2025/)
 - 💸 [Sentry now with Logs. View logs, errors, and traces together to debug faster, spot root causes, and fix issues without switching tools.](https://sentry.io/product/logs/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=logs-fy26q3-logslaunch&utm_content=react-link-logs-ga-launch-trysentry)
-- 👀 [create-vite PR - React compiler templates](https://github.com/vitejs/vite/pull/20704): New template variants, designed to support React Compiler, are coming for `create-vite`, a tool to start a new Vite project  
-- 🦋 [Ricky’s thread about React’s true competitive advantage](https://bsky.app/profile/ricky.fm/post/3lyxjkguwic2q): Ricky from the Meta core team states that the real innovation in React revolves around scheduling. However, not everyone agrees with this thesis, as clearly shown by the interesting debate under [Seb's post](https://x.com/sebastienlorber/status/1968584425173623048) on X.  
-- 📖 [React docs - ESLint Plugin React Hooks – API reference](https://react.dev/reference/eslint-plugin-react-hooks): The React team wrote exhaustive api ref documentation about the `eslint-plugin-react-hooks` plugin, which will help you catch violations of React’s rules at build time. All the rules are now documented on independent pages. v6.0 is in RC and now includes the rules provided by the React Compiler.  
-- 📜 [Parallel and recursive route rendering](https://twofoldframework.com/blog/parallel-and-recursive-route-rendering-with-rsc): This interactive article explains how to prevent the "waterfall" issue for React Server Components. This is a common performance issue, where nested components wait for their parents to render before fetching data.  
-- 📜 [React \<ViewTransition\>: Smooth Animations Made Simple](https://certificates.dev/blog/react-viewtransition-smooth-animations-made-simple): Presents various use cases for using the experimental `<ViewTransition>`, such as shared elements transitions, list filtering, and Suspense-based cross-fading  
-- 📜 [Migrating to TanStack Start](https://catalins.tech/migrating-to-tanstack-start/): The story of a successful migration from a React SPA to a fully SSR app.  
-- 📜 [How to Use Rive App to Animate Your Web and Mobile Interfaces](https://www.premieroctet.com/blog/en/how-to-use-rive-app-to-animate-your-web-and-mobile-interfaces): Including the React integration.  
-- 📜 [Redux in 2025: A reliable choice for complex React projects](https://stefvanwijchen.com/react-and-redux-in-2025/)  
-- 📦 [TanStack Form 1.21 – Form DevTools](https://github.com/TanStack/form/releases/tag/v1.21.0)  
-- 📦 [TanStack DB 0.1.21 – Conditional queries, additional return types in `useLiveQuery` callback](https://github.com/TanStack/db/releases/tag/%40tanstack%2Freact-db%400.1.21)  
-- 📦 [ESLint Plugin – You Might Not Need An Effect](https://github.com/NickvanDyke/eslint-plugin-react-you-might-not-need-an-effect): A plugin that pinpoints where the `useEffect` hook can be safely replaced with a better alternative, [recently updated to cover even more edge](https://www.reddit.com/r/reactjs/comments/1nm09bq/update_eslint_plugin_to_catch_unnecessary/) cases and go beyond the famous React docs page.  
-- 📦 [tldraw 4.0 – Infinite canvas in React - New CLI and starter kits, improved accessibility, license changes](https://github.com/tldraw/tldraw/releases/tag/v4.0.0)  
-- 📦 [Isograph 0.4 – Modern GraphQL client – Introduces VSCode extension with syntax highlighting and "go to definition"](https://isograph.dev/blog/2025/09/17/isograph-0.4.0/)  
-- 🎥 [ThePrimeTime – The `useEffect` incident at Cloudflare](https://www.youtube.com/watch?v=gDVxBOGL99Q)  
-- 🎥 [Cosden Solutions – The Most Underrated React Hooh - useSyncExternalStore](https://www.youtube.com/watch?v=WBPUz1u2rZ8)  
-- 🎥 [Ben Holmes – Building desktop apps with React? Try Electron or Tauri](https://www.youtube.com/watch?v=9yPOXPFvQQs)   
-- 🎙️ [PodRocket – Mark Dalgeish on mastering RSCs with React Router](https://podrocket.logrocket.com/mark-dalgleish-mastering-rsc-react-router) 
+- 📦 [TanStack Form 1.21 – Form DevTools](https://github.com/TanStack/form/releases/tag/v1.21.0)
+- 📦 [TanStack DB 0.1.21 – Conditional queries, additional return types in `useLiveQuery` callback](https://github.com/TanStack/db/releases/tag/%40tanstack%2Freact-db%400.1.21)
+- 📦 [ESLint Plugin – You Might Not Need An Effect](https://github.com/NickvanDyke/eslint-plugin-react-you-might-not-need-an-effect): A plugin that pinpoints where the `useEffect` hook can be safely replaced with a better alternative, [recently updated to cover even more edge](https://www.reddit.com/r/reactjs/comments/1nm09bq/update_eslint_plugin_to_catch_unnecessary/) cases and go beyond the famous React docs page.
+- 📦 [tldraw 4.0 – Infinite canvas in React - New CLI and starter kits, improved accessibility, license changes](https://github.com/tldraw/tldraw/releases/tag/v4.0.0)
+- 📦 [Isograph 0.4 – Modern GraphQL client – Introduces VSCode extension with syntax highlighting and "go to definition"](https://isograph.dev/blog/2025/09/17/isograph-0.4.0/)
+- 🎥 [ThePrimeTime – The `useEffect` incident at Cloudflare](https://www.youtube.com/watch?v=gDVxBOGL99Q)
+- 🎥 [Cosden Solutions – The Most Underrated React Hooh - useSyncExternalStore](https://www.youtube.com/watch?v=WBPUz1u2rZ8)
+- 🎥 [Ben Holmes – Building desktop apps with React? Try Electron or Tauri](https://www.youtube.com/watch?v=9yPOXPFvQQs)
+- 🎙️ [PodRocket – Mark Dalgeish on mastering RSCs with React Router](https://podrocket.logrocket.com/mark-dalgleish-mastering-rsc-react-router)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -105,12 +105,12 @@ In case you are unfamiliar with React Router modes, the post gives a quick overv
 
 **[No breakpoints, no console.log — just AI & time travel](https://wallabyjs.com/?referrer=ThisWeekInReactSep25)**
 
-15x faster TypeScript and JavaScript debugging than with breakpoints and `console.log`, while upgrading your AI agent 🤖 into an expert debugger with real-time context.  
-  
-Wallaby.js runs your tests as you type, feeding your AI assistant real-time runtime values, code coverage, error details, and execution paths — all right next to your code.  
-  
-Designed specifically for testing, Wallaby features include a **Time Travel Debugger**, the ability to run only opened test files, full-context AI integration, smart test runs, and more. **Better context. Smarter debugging.**  
-  
+15x faster TypeScript and JavaScript debugging than with breakpoints and `console.log`, while upgrading your AI agent 🤖 into an expert debugger with real-time context.
+
+Wallaby.js runs your tests as you type, feeding your AI assistant real-time runtime values, code coverage, error details, and execution paths — all right next to your code.
+
+Designed specifically for testing, Wallaby features include a **Time Travel Debugger**, the ability to run only opened test files, full-context AI integration, smart test runs, and more. **Better context. Smarter debugging.**
+
 👉 **Check It Now:** [Here](https://wallabyjs.com/?referrer=ThisWeekInReactSep25)
 
 ---
@@ -118,36 +118,36 @@ Designed specifically for testing, Wallaby features include a **Time Travel Debu
 ## 📱 React-Native {#react-native}
 
 - 💸 [Product for Engineers - What we’ve learned about building AI-powered features](https://go.posthog.com/twir-sept24)
-- 🐦 Evan Bacon highlights [new Expo SDK 54 features as support for `localStorage` syntax](https://x.com/Baconbrix/status/1969095303417520165).  
-- 🐦 Marc Rousavy presents how [Nitro Modules speed up data passing](https://x.com/mrousavy/status/1970132070048342133).  
-- 🎨 Enzo Manuel Mangano from Reactiive [open-sourced his pack of great animations](https://reactiive.io/articles/open-sourcing-demos)**.** You can find them on [GitHub for free](https://github.com/enzomanuelmangano/demos).  
-- 📜 [We Thought React Native Was the Answer – Until Our App Hit 190% CPU](https://engineering.usemotion.com/we-thought-react-native-was-the-answer-until-our-app-hit-190-cpu-f0e849073334): The story of how the combination of JavaScript and native implementation can solve serious performance issues in your app.  
-- 📜 [EAS - TestFlight job type for Workflows](https://expo.dev/changelog/testflight-job-type-for-workflows): Expo describes a new type of workflow that you can use to publish your app to Test Flight.  
-- 📜 [Bridging Animated.Value and SharedValue in React Native](https://www.callstack.com/blog/bridging-animated-value-and-sharedvalue-in-react-native): The article introduces a new library, react-native-animated-observer, which brings compatibility between Animated.Value from React Native and SharedValue from Reanimated.  
-- 📜 [How to organize Expo app folder structure for clarity and scalability](https://expo.dev/blog/expo-app-folder-structure-best-practices)  
-- 📦 [expo-live-activity](https://github.com/software-mansion-labs/expo-live-activity): Software Mansion just released a new package, designed for use with Expo to manage and display Live Activities on iOS devices exclusively.  
-- 📦 [react-native-nitro-fetch](https://github.com/margelo/react-native-nitro-fetch): A new network fetching library for React Native with prefetching support by Margelo.  
-- 📦 [react-native-iap 14.4 – OpenIAP Core Stack adoption](https://hyochan.github.io/react-native-iap/blog/release-14.4.0/)  
-- 📦 [React Native 0.82.0 rc.4](https://github.com/facebook/react-native/releases/tag/v0.82.0-rc.4)  
-- 🎥 [Expo – Liquid Glass Tabs with Expo Router v6](https://www.youtube.com/watch?v=QqNZXdGFl44)  
-- 🎙️[Callstack – React Native Core Contributor Summit 2025 Highlights: Behind the Scenes](https://www.callstack.com/podcasts/core-contributor-summit-2025-highlights)  
-- 🎙️[RNR 344 – React Native 0.81](https://infinite.red/react-native-radio/rnr-344-react-native-081)   
+- 🐦 Evan Bacon highlights [new Expo SDK 54 features as support for `localStorage` syntax](https://x.com/Baconbrix/status/1969095303417520165).
+- 🐦 Marc Rousavy presents how [Nitro Modules speed up data passing](https://x.com/mrousavy/status/1970132070048342133).
+- 🎨 Enzo Manuel Mangano from Reactiive [open-sourced his pack of great animations](https://reactiive.io/articles/open-sourcing-demos)**.** You can find them on [GitHub for free](https://github.com/enzomanuelmangano/demos).
+- 📜 [We Thought React Native Was the Answer – Until Our App Hit 190% CPU](https://engineering.usemotion.com/we-thought-react-native-was-the-answer-until-our-app-hit-190-cpu-f0e849073334): The story of how the combination of JavaScript and native implementation can solve serious performance issues in your app.
+- 📜 [EAS - TestFlight job type for Workflows](https://expo.dev/changelog/testflight-job-type-for-workflows): Expo describes a new type of workflow that you can use to publish your app to Test Flight.
+- 📜 [Bridging Animated.Value and SharedValue in React Native](https://www.callstack.com/blog/bridging-animated-value-and-sharedvalue-in-react-native): The article introduces a new library, react-native-animated-observer, which brings compatibility between Animated.Value from React Native and SharedValue from Reanimated.
+- 📜 [How to organize Expo app folder structure for clarity and scalability](https://expo.dev/blog/expo-app-folder-structure-best-practices)
+- 📦 [expo-live-activity](https://github.com/software-mansion-labs/expo-live-activity): Software Mansion just released a new package, designed for use with Expo to manage and display Live Activities on iOS devices exclusively.
+- 📦 [react-native-nitro-fetch](https://github.com/margelo/react-native-nitro-fetch): A new network fetching library for React Native with prefetching support by Margelo.
+- 📦 [react-native-iap 14.4 – OpenIAP Core Stack adoption](https://hyochan.github.io/react-native-iap/blog/release-14.4.0/)
+- 📦 [React Native 0.82.0 rc.4](https://github.com/facebook/react-native/releases/tag/v0.82.0-rc.4)
+- 🎥 [Expo – Liquid Glass Tabs with Expo Router v6](https://www.youtube.com/watch?v=QqNZXdGFl44)
+- 🎙️[Callstack – React Native Core Contributor Summit 2025 Highlights: Behind the Scenes](https://www.callstack.com/podcasts/core-contributor-summit-2025-highlights)
+- 🎙️[RNR 344 – React Native 0.81](https://infinite.red/react-native-radio/rnr-344-react-native-081)
 - 🎙️[Rocket Ship 81 – Expo SDK 54, Expo Router v6 & Expo UI Beta for iOS with Beto Moedano](https://share.transistor.fm/s/4e190ca1)
 
 ---
 
 ## 🔀 Other {#other}
 
-- 👀 [W3C – Draft for CSS Environment Variables](https://www.w3.org/news/2025/first-public-working-draft-css-environment-variables-module-level-1/)   
-- 📜 [The Big Gotcha With @starting-style](https://www.joshwcomeau.com/css/starting-style/): `@starting style` can be your friend, but you need to use it correctly. Josh Comeau explains how to utilize it to leverage its benefits and compares it to the standard `@keyframe`.  
-- 📜 [What You Need to Know about Modern CSS (2025 Edition)](https://frontendmasters.com/blog/what-you-need-to-know-about-modern-css-2025-edition/)  
-- 📜 [Let’s Be Specific: CSS Specificity Explained](https://playfulprogramming.com/posts/css-specificity-explained): A quick overview of how to use CSS selectors.   
-- 📜 [Vercel – How we made global routing faster with Bloom filters](https://vercel.com/blog/how-we-made-global-routing-faster-with-bloom-filters)  
-- 📜 [Frontend complexity and the HTML renaissance](https://olliewilliams.xyz/blog/html-renaissance/): Modern web approaches are great, but sometimes you don't need to use a sledgehammer to crack a nut, especially with the new capabilities of HTML.  
-- 📜 [Exploring Service Workers: From Offline to Push Notifications](https://www.rahuljuliato.com/posts/react-service-workers)   
-- 📦 [Wasm 3.0 – 64-bit address space, multiple memories, garbage collection, native exception handling](https://webassembly.org/news/2025-09-17-wasm-3.0/)   
-- 📦 [knip 5.64 – adds Rstest and bump plugins](https://github.com/webpro-nl/knip/releases/tag/5.64.0)  
-- 🔗 [NPM Security](https://github.com/bodadotsh/npm-security-best-practices): A set of best practices on how to stay safe from NPM supply chain attacks.  
+- 👀 [W3C – Draft for CSS Environment Variables](https://www.w3.org/news/2025/first-public-working-draft-css-environment-variables-module-level-1/)
+- 📜 [The Big Gotcha With @starting-style](https://www.joshwcomeau.com/css/starting-style/): `@starting style` can be your friend, but you need to use it correctly. Josh Comeau explains how to utilize it to leverage its benefits and compares it to the standard `@keyframe`.
+- 📜 [What You Need to Know about Modern CSS (2025 Edition)](https://frontendmasters.com/blog/what-you-need-to-know-about-modern-css-2025-edition/)
+- 📜 [Let’s Be Specific: CSS Specificity Explained](https://playfulprogramming.com/posts/css-specificity-explained): A quick overview of how to use CSS selectors.
+- 📜 [Vercel – How we made global routing faster with Bloom filters](https://vercel.com/blog/how-we-made-global-routing-faster-with-bloom-filters)
+- 📜 [Frontend complexity and the HTML renaissance](https://olliewilliams.xyz/blog/html-renaissance/): Modern web approaches are great, but sometimes you don't need to use a sledgehammer to crack a nut, especially with the new capabilities of HTML.
+- 📜 [Exploring Service Workers: From Offline to Push Notifications](https://www.rahuljuliato.com/posts/react-service-workers)
+- 📦 [Wasm 3.0 – 64-bit address space, multiple memories, garbage collection, native exception handling](https://webassembly.org/news/2025-09-17-wasm-3.0/)
+- 📦 [knip 5.64 – adds Rstest and bump plugins](https://github.com/webpro-nl/knip/releases/tag/5.64.0)
+- 🔗 [NPM Security](https://github.com/bodadotsh/npm-security-best-practices): A set of best practices on how to stay safe from NPM supply chain attacks.
 - 🎙️ [Syntax – podcast with interview of Vite creator: Evan You](https://syntax.fm/show/939/creator-of-vite-evan-you)
 
 ---
