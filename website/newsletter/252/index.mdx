@@ -1,6 +1,6 @@
 ---
 slug: /252
-title: "This Week In React #252: ..."
+title: "This Week In React #252: React 19.2, Activity, useEffectEvent, Compiler, Astro, StyleX, Docusaurus | Vega OS, Voltra, NativeScript, Expo Router, NativeWind, Lynx, Maestro | TC39, Temporal, Baseline, State Of JS, Supply Chain, MCP"
 authors: [slorber]
 date: 10-01-2025
 unlisted: true
@@ -8,7 +8,14 @@ unlisted: true
 
 Hi everyone!
 
-<Todo />
+Wondering why the newsletter is late this week?
+
+Well, we had good reasons\!  
+React v19.2 has just been released with the highly anticipated `<Activity>` component, `useEffectEvent` hook, and more\!
+
+React Native also had exciting updates with an OS from Amazon with first-class React Native support, and upcoming solutions to integrate even more tightly with native platforms.
+
+Don't forget that React Conf starts next week, on October 7\. The [schedule](https://conf.react.dev/agenda) is online, full of interesting talks, and we can expect more exciting announcements\!
 
 <!-- truncate -->
 
@@ -28,11 +35,11 @@ Stop shipping preventable bugs. Sentry AI Code Review brings error and performan
 
 [**Why devs rely on it**](https://www.youtube.com/watch?v=1NzuerrWMfk):
 
-*   Automated detection of bugs, risks, and regressions
-*   Actionable insights, not distracting noise
-*   Tighter feedback loops for faster merges
-*   Context-aware checks tied to real Sentry data
-*   Less time debugging, more time building
+- Automated detection of bugs, risks, and regressions
+- Actionable insights, not distracting noise
+- Tighter feedback loops for faster merges
+- Context-aware checks tied to real Sentry data
+- Less time debugging, more time building
 
 Ship code that breaks less, review with confidence, and keep production stable. [**Try AI Code Review in Sentry**](https://sentry.io/product/ai-code-review/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=aicodereview-fy26q3-aicodereviewlaunch&utm_content=newsletter-ai-code-review-beta-learnmore).
 
@@ -40,10 +47,44 @@ Ship code that breaks less, review with confidence, and keep production stable. 
 
 ## ⚛️ React {#react}
 
-<Todo />
+React 19.2  
+[https://github.com/reactjs/react.dev/pull/8028](https://github.com/reactjs/react.dev/pull/8028)
+
+- `<Activity>` is to me the most exciting feature. It can hide a React subtree and unmount its effects while preserving its state, and keep rendering it with lower priority. It unlocks very exciting pre-rendering patterns along the way\! More Activity modes are coming.
+- `useEffectEvent(callback)` always sees the latest props and state, helping avoid the stale closure problem. Effect Events should only be called from `useEffect()` and can be omitted in the dependency array.
+- `cacheSignal()` returns a signal that triggers when `React.cache()` lifetime is over, letting you abort tasks in RSCs.
+- Performance Tracks helps you profile your app in Chrome DevTools. The Scheduler track shows React splits your code into different priorities. The Component track shows when a component renders and how long it takes.
+- `resume()` enables you to implement Partial Pre-Rendering. You can now pre-render the static parts of your app at build time, then resume rendering to complete the dynamic parts.
+- `eslint-plugin-react-hooks` v6 with flat config by default and opt-in for React Compiler powered rules.
+
+---
 
 - 💸 [Product for Engineers - Failure modes for engineering team leads](https://go.posthog.com/twir-oct1)
+- 🐦 [Tim Neutkens’ preview of upcoming Next.js improvements](https://x.com/search?q=from%3Atimneutkens%20%2Bmin_retweets%3A5%20%2Bfilter%3Alinks&src=typed_query&f=live): With Next.js Conf on October 22, it looks like the team is focusing on polishing the frameworks and optimizing various performance bottlenecks. Turbopack should become the default bundler in Next.js 16\.
+- 👀 [Next.js PR \- React Compiler integration marked as stable](https://github.com/vercel/next.js/pull/84220)
+- 📜 [React Frameworks and Server-Side Features: Beyond Client-Side Rendering](https://certificates.dev/blog/react-frameworks-and-server-side-features-beyond-client-side-rendering?friend=TWIR)
+- 📜 [The nuance of React rendering behaviour as it relates to children](https://blacksheepcode.com/posts/nuance_of_react_rendering_behaviour)
+- 📜 [React State Management in 2025: What You Actually Need](https://www.developerway.com/posts/react-state-management-2025)
+- 📜 [Everything I Hate About React, I Really Hate About JavaScript](https://chadnauseam.com/coding/pltd/react-is-good-javascript-is-the-problem)
+- 📜 [The Discipline of Constraints: What Elm Taught Me About React's useReducer](https://cekrem.github.io/posts/the-discipline-of-constraints-elm-usereducer-lessons/)
+- 📜 [You may be looking for a useSyncExternalStore](https://swizec.com/blog/you-may-be-looking-for-a-useSyncExternalStore/)
+- 📜 [How to Leverage React Router's Built-in Data Deduplication](https://sergiodxa.com/tutorials/leverage-react-router-s-built-in-data-deduplication): Pretty cool behavior, I wonder if it comes from React RSC/Flight integration, or is implemented in React Router itself.
+- 📜 [Activity, the new React component](https://www.premieroctet.com/blog/en/activity-new-react-component)
+- 📜 [Storybook is going ESM-only](https://storybook.js.org/blog/storybook-is-going-esm-only/)
 - 💸 [CodeRabbit CLI - An AI code review tool that runs directly in your terminal, seamlessly integrating with Claude, Cursor, and other coding agents AI](https://coderabbit.link/thisweekinreact)
+- 📦 [Astro 5.14 \- React 19 actions integration, routing improvements](https://astro.build/blog/astro-5140/)
+- 📦 [StyleX 0.16 \- Descendant/sibling selectors, `defineConsts` improvements](https://stylexjs.com/blog/v0.16.0)
+- 📦 [Conform 1.11 \- Progressively enhance HTML forms with React](https://github.com/edmundhung/conform/releases/tag/v1.11.0)
+- 📦 [Docusaurus 3.9 \- DocSearch v4, AskAI, i18n improvements](https://docusaurus.io/blog/releases/3.9): It’s great to present my own releases from time to time, although most of you probably don’t care about React-based docs frameworks 😅.
+- 📦 [oxlint 1.18 \- Support for `useEffectEvent`, not required in deps array](https://github.com/oxc-project/oxc/releases/tag/oxlint_v1.18.0)
+- 📦 [Bun v1.2.23 \- JSX config object for `Bun.build`, concurrent `bun tests`, and more](https://bun.com/blog/bun-v1.2.23): You can now configure the JSX bundling behavior, letting you use Preact among other things.
+- 📦 [Zustand Sync \- A simple, barebones "multiplayer" middleware for zustand](https://github.com/ryanntannn/zustand-sync)
+- 📦 [React Window 2.2 \- Dynamic row height](https://github.com/bvaughn/react-window/releases/tag/2.2.0)
+- 🎥 [Alem Tuzlak \- React Router just made RSC trivial to use\!](https://www.youtube.com/watch?v=o7t6HNnQE_k)
+- 🎥 [Backpine Labs \- TanStack Start is now my Go-To Framework](http://youtube.com/watch?v=TWWS_lo4kOA)
+- 🎥 [Ankita Kulkarni \- Dan Abramov Interview \- React Server Components, Leaving X and Future of](https://www.youtube.com/watch?v=ml2UiJ69gg8) [Next.js](http://Next.js)
+- 🎥 [Ryan Carniato \- Innovating React \- Stream with Ricky Hanlon](https://www.youtube.com/live/3vw6EAmruEU)
+- 🎙️ [This Month in React 2025-09 \- React 19.2 on the horizon; npm is still getting compromised](https://share.transistor.fm/s/5e21ada9)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -65,15 +106,37 @@ Ship code that breaks less, review with confidence, and keep production stable. 
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
-
-- 💸[React Certification - Take a supervised exam created by React expert Aurora Scharff, obtain your certificate to unlock career opportunities](https://certificates.dev/react?friend=TWIR)
+- 💸 [React Certification - Take a supervised exam created by React expert Aurora Scharff, obtain your certificate to unlock career opportunities](https://certificates.dev/react?friend=TWIR)
+- 📣 [Amazon Vega OS \- Powered by React Native](https://developer.amazon.com/apps-and-games/blogs/2025/09/announcing-vega-os): Amazon announced a Linux-based OS with React Native built in, set to power new devices, from small Fire TV sticks to on-device AI processing devices like the Echo Show. Amazon already uses React Native heavily, and it’s great to see it doubling down. You can already use [Storybook with Vega](https://community.amazondeveloper.com/t/react-native-storybook-for-vega/11437).
+- 🐦 [Preview of Direct iOS API access from React Native in JS](https://x.com/birch_js/status/1971619696991740259): Jamie has been working on bridging React Native with NativeScript for a long time, and his quest greatly progressed recently, thanks to the new Node-API support in React Native. Sooner or later, we’ll be able to do ad-hoc native platform calls directly from JS.
+- 🐦 [Preview of Voltra \- iOS extension targets made easy](https://x.com/saul_sharma/status/1972161677165473980): Another quite exciting innovation that should let you create Live Activities, Widgets, and more with hot reload support, directly from JS (no Xcode/Swift).
+- 👀 [Expo Router PR \- Add support for server data loaders](https://github.com/expo/expo/pull/39570): After API routes, Expo Router is expanding its full-stack features with a Remix-like loader API.
+- 📖 [NativeWind 5.0 preview docs](https://www.nativewind.dev/v5/getting-started/installation): It comes with Tailwind 4 support, simpler setup, and a new [React Native CSS](https://github.com/nativewind/react-native-css) library that aims to provide the most complete CSS support for React Native.
+- 📣 [Expo EAS \- Scheduled cron jobs for Workflows \- Expo Changelog](https://expo.dev/changelog/scheduled-workflows-for-workflows)
+- 📜 [How Maestro is Reinventing Mobile Test Automation](https://maestro.dev/blog/how-maestro-is-reinventing-mobile-test-automation): The React Native team also uses it to test core components in CI.
+- 📜 [Building beautiful components faster with Storybook 9 and Expo](https://expo.dev/blog/storybook-and-expo)
+- 📜 [Ported an app from .NET MAUI to React Native/Expo](https://gregstoll.wordpress.com/2025/09/24/ported-an-app-from-net-maui-to-react-native-expo/)
+- 📜 [From Swift tattoo to React Native migration lead: a business-first approach to mobile development](https://expo.dev/blog/swift-to-react-native)
+- 📦 [React Native 0.82 RC.5](https://github.com/facebook/react-native/releases/tag/v0.82.0-rc.5): Golden RC so 0.82 stable is coming very soon\!
+- 📦 [Worklets 0.6](https://github.com/software-mansion/react-native-reanimated/releases/tag/worklets-0.6.0)
+- 📦 [Lynx for HarmonyOS \- Public beta](https://lynxjs.org/blog/lynx-harmony.html)
+- 📦 [`npx create-lynxjs-app` \- Initialize native React Lynx apps for iOS/Android](https://github.com/lynx-community/cli)
+- 🎙️ [RNR 345 \- Expo SDK 54](https://infinite.red/react-native-radio/rnr-345-expo-sdk-54)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📣 [TC39 110th meeting \- Advancing Import Bytes, Iterator Chunking, `[].pushAll()`, and more](https://bsky.app/profile/tc39.es/post/3lzr5omofn62g)
+- 📣 [Baseline Monthly Digest \- September 2025](https://web.dev/blog/baseline-digest-sep-2025): Browserslist implements Baseline targets, 5 newly available, and 21 widely available Baseline features.
+- 📊 [State of JavaScript 2025 \- Survey is now open](https://survey.devographics.com/en-US/survey/state-of-js/2025?source=thisweekinreact)
+- 📜 [Speculation Rules at Shopify](https://performance.shopify.com/blogs/blog/speculation-rules-at-shopify)
+- 📜 [How Deno protects against npm exploits](https://deno.com/blog/deno-protects-npm-exploits)
+- 📦 [Temporal_rs \- The datetime library powering ES Temporal in Boa, Kiesel, V8](https://boajs.dev/blog/2025/09/24/temporal-release): And soon in Chromium 144\.
+- 📦 [Socket Firewall \- Free protection against npm supply chain attacks](https://socket.dev/blog/introducing-socket-firewall)
+- 📦 [Cap'n Web \- A new RPC system for browsers and web servers](https://blog.cloudflare.com/capnweb-javascript-rpc-library)
+- 📦 [Chrome DevTools MCP \- Let AI agents control Chrome and use DevTools through Puppeteer](https://addyosmani.com/blog/devtools-mcp/)
+- 📦 [Node 24.9 \- Worker heap profile API, sqlite integration improvements](https://nodejs.org/en/blog/release/v24.9.0)
 
 ---
 
