@@ -54,7 +54,7 @@ React 19.2
 - `useEffectEvent(callback)` always sees the latest props and state, helping avoid the stale closure problem. Effect Events should only be called from `useEffect()` and can be omitted in the dependency array.
 - `cacheSignal()` returns a signal that triggers when `React.cache()` lifetime is over, letting you abort tasks in RSCs.
 - Performance Tracks helps you profile your app in Chrome DevTools. The Scheduler track shows React splits your code into different priorities. The Component track shows when a component renders and how long it takes.
-- `resume()` enables you to implement Partial Pre-Rendering. You can now pre-render the static parts of your app at build time, then resume rendering to complete the dynamic parts.
+- `prerender()` and `resume()` enables you to implement Partial Pre-Rendering. You can now pre-render the static parts of your app at build time, then resume rendering to complete the dynamic parts.
 - `eslint-plugin-react-hooks` v6 with flat config by default and opt-in for React Compiler powered rules.
 
 ---
