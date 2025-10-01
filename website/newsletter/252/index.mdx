@@ -53,7 +53,7 @@ Ship code that breaks less, review with confidence, and keep production stable. 
 Just in time before React Conf, React 19.2 is out with several new features and improvements:
 
 - `<Activity>` is to me the most exciting feature. It can hide a React subtree and unmount its effects while preserving its state, and keep rendering it with lower priority. It unlocks very exciting pre-rendering patterns along the way\! More Activity modes are coming.
-- `useEffectEvent(callback)` always sees the latest props and state, helping avoid the stale closure problem. Effect Events should only be called from `useEffect()` and can be omitted in the dependency array.
+- `useEffectEvent(callback)` always sees the latest props and state, helping avoid the stale closure problem. Effect Events should only be called from Effects and can be omitted in the dependency array.
 - `cacheSignal()` returns a signal that triggers when `React.cache()` lifetime is over, letting you abort tasks in RSCs.
 - Performance Tracks helps you profile your app in Chrome DevTools. The Scheduler track shows React splits your code into different priorities. The Component track shows when a component renders and how long it takes.
 - `prerender()` and `resume()` enables you to implement Partial Pre-Rendering. You can now pre-render the static parts of your app at build time, then resume rendering to complete the dynamic parts.
