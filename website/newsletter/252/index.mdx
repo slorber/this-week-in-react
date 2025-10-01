@@ -3,17 +3,16 @@ slug: /252
 title: "This Week In React #252: React 19.2, Activity, useEffectEvent, Compiler, Astro, StyleX, Docusaurus | Vega OS, Voltra, NativeScript, Expo Router, NativeWind, Lynx, Maestro | TC39, Temporal, Baseline, State Of JS, Supply Chain, MCP"
 authors: [slorber]
 date: 10-01-2025
-unlisted: true
 ---
 
 Hi everyone!
 
-Wondering why the newsletter is late this week?
+Wondering why the newsletter is late this week?  
+Well, we had good reasons\!
 
-Well, we had good reasons\!  
 React v19.2 has just been released with the highly anticipated `<Activity>` component, `useEffectEvent` hook, and more\!
 
-React Native also had exciting updates with an OS from Amazon with first-class React Native support, and upcoming solutions to integrate even more tightly with native platforms.
+React Native also had exciting updates, notably an OS from Amazon with first-class React Native support, and upcoming solutions to integrate even more tightly with native platforms.
 
 Don't forget that React Conf starts next week, on October 7\. The [schedule](https://conf.react.dev/agenda) is online, full of interesting talks, and we can expect more exciting announcements\!
 
@@ -47,8 +46,11 @@ Ship code that breaks less, review with confidence, and keep production stable. 
 
 ## ⚛️ React {#react}
 
-React 19.2  
-[https://github.com/reactjs/react.dev/pull/8028](https://github.com/reactjs/react.dev/pull/8028)
+[![React 19.2](/emails/issues/252/react.jpg)](https://react.dev/blog/2025/10/01/react-19-2)
+
+**[React 19.2](https://react.dev/blog/2025/10/01/react-19-2)**
+
+Just in time before React Conf, React 19.2 is out with several new features and improvements:
 
 - `<Activity>` is to me the most exciting feature. It can hide a React subtree and unmount its effects while preserving its state, and keep rendering it with lower priority. It unlocks very exciting pre-rendering patterns along the way\! More Activity modes are coming.
 - `useEffectEvent(callback)` always sees the latest props and state, helping avoid the stale closure problem. Effect Events should only be called from `useEffect()` and can be omitted in the dependency array.
