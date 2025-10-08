@@ -10,8 +10,6 @@ Hi everyone!
 
 <Todo />
 
-🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=Newsletter&utm_medium=ThisWeekinReact) -  🇬🇧 London - 28 Nov & 1 Dec. Complete lineup now available! Code "TWIR" for 10% off.
-
 <!-- truncate -->
 
 import Support from "../_support.mdx";
@@ -32,10 +30,10 @@ This is because Convex is just TypeScript, allowing you to write [queries as co
 
 And that’s just the beginning. With Convex, you can:
 
-*   Easily schedule functions and write cron jobs
-*   Set up file storage
-*   Write efficient server functions
-*   And so much more…
+- Easily schedule functions and write cron jobs
+- Set up file storage
+- Write efficient server functions
+- And so much more…
 
 [Try a Quickstart today](https://docs.convex.dev/quickstarts)
 
@@ -43,10 +41,36 @@ And that’s just the beginning. With Convex, you can:
 
 ## ⚛️ React {#react}
 
-<Todo />
+React Conf is happening right now\! We already got [great announcements on day 1](https://www.youtube.com/watch?v=zyVRg2QR6LA) about React core features, and [day 2 is still live](https://www.youtube.com/watch?v=p9OcztRyDl0), focusing more on React Native and frameworks.
+
+Of course, we got an overview of the new exciting features coming with [React 19.2](https://react.dev/blog/2025/10/01/react-19-2) (covered last week), but that's not all—they also saved a few exclusive announcements for the conference:
+
+- [**`<ViewTransition>`**](https://react.dev/reference/react/ViewTransition) is now available in Canary\*\* and lets you animate elements that update inside a Transition, also supporting Shared Elements Transitions. It currently only works in the DOM, but they are working on adding support for React Native and other platforms
+- [**`<Fragment ref={...}>`**](https://react.dev/reference/react/Fragment#fragmentinstance) is now available in Canary\*\* and provides a new way to compose platform behaviors by exposing an imperative API to manipulate the children nodes of the Fragment
+- [**The React Foundation**](https://react.dev/blog/2025/10/07/introducing-the-react-foundation) – hosted under the Linux Foundation – to become the new home of React, React Native and JSX. It will support the community and its ecosystem through a new independent technical governance structure to ensure the future of React. The founding corporate members will be Amazon, Callstack, Expo, Meta, Microsoft, Software Mansion, and Vercel. It is part of the Linux Foundation
+- **React Compiler is now 1.0\!** It deeply understands your React code and should be able to optimize it for any platform, but also report problems through the new ESLint plugin integration. The React Compiler is recommended for all new apps, and existing apps can adopt it incrementally. The team also shared their research on new Compiler-based F-word React performance projects called Forest (a runtime based on signal-like lazy computation graph) and Fir (a constrained version of React, hybrid eager/lazy incremental rendering).
+- **React Native 0.82** – freshly announced and covered in the dedicated section – the very first version that only supports the New Architecture.
+
+---
 
 - 💸 [Learn how to build a modern blog with React 19 and Strapi 5](https://strapi.io/blog/how-to-build-a-modern-blog-with-react-19-and-strapi-5?utm_campaign=19282052-Newsletter%20Sponsorships&utm_source=React&utm_medium=2nd%20sponsor&utm_term=tutorial)
+- 🧵 [Ricky Hanlon \- "why do other libraries need an “untracked” concept?"](https://x.com/rickhanlonii/status/1974092972821262390): To a certain extent, `useEffectEvent` is a constrained form of untracking that all front-end frameworks have to opt out of reactivity.
+- 🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=Newsletter&utm_medium=ThisWeekinReact) -  🇬🇧 London - 28 Nov & 1 Dec. Complete lineup now available! Code "TWIR" for 10% off.
+- 📜 [OpenAI Apps SDK: Build Native Apps Inside ChatGPT](https://www.premieroctet.com/blog/en/openai-apps-sdk-build-native-apps-inside-chatgpt): A complete tutorial to leverage the brand new OpenAI Apps SDK. This lets you extend the ChatGPT experience with a custom UI widget using React.
+- 📜 [Concurrent Hydration with useSyncExternalStore](https://kurtextrem.de/posts/react-uses-hydration): Apparently, using `useDeferredValue()` could help make `useSyncExternalStore` work better with Concurrent Mode, a technique that Andrew Clark mentioned in an issue years ago.
+- 📜 [Quick look into the useEffectEvent](https://www.nico.fyi/blog/quick-look-use-effect-event): TIL that `useEffectEvent()` returns an unstable function on purpose.
+- 📜 [How to Build a Master-Detail UI with React Router](https://sergiodxa.com/tutorials/build-a-master-detail-ui-with-react-router)
+- 📜 [Why Next.js Falls Short on Software Engineering](https://blog.webf.zone/why-next-js-falls-short-on-software-engineering-d3575614bd08)
+- 📜 [Recreating Apple-style 3D scroll animations in Three.js and WebGL](https://www.builder.io/blog/webgl-scroll-animation)
 - 💸 [STRICH - Add lightning-fast barcode & QR scanning to your web app with a lean JS lib. Simple, predictable pricing, free trial and demo!](https://strich.io/?ref=twir)
+- 📦 [nuqs 2.7 \- Support for multi-parsers to handle repeated keys in URLs](https://github.com/47ng/nuqs/releases/tag/v2.7.0)
+- 📦 [React Aria \- October 2 release \- Multi-select, enhanced animation support](https://react-spectrum.adobe.com/releases/2025-10-02.html)
+- 📦 [shadcn/ui \- October 2025 update \- New components, ButtonGroup, InputGroup, Field, Item, Empty state, Spinner, kbd](https://ui.shadcn.com/docs/changelog)
+- 📦 [React Compiler Marker 1.1 \- VSCode extension, shows optimized components, compiler output preview](https://github.com/blazejkustra/react-compiler-marker)
+- 🎥 [Ankita Kulkarni \- React 19.2 Just Changed Everything (Again)](https://www.youtube.com/watch?v=vg0KOq0dHIo)
+- 🎥 [Theo \- React 19.2 Dropped Early???](https://www.youtube.com/watch?v=JMTSX7GdDxk)
+- 🎥 [Jack Herrington \- React Foundation: Solving Reacts Existential Problems](https://www.youtube.com/watch?v=qbvlcJ0WPuc)
+- 🎙️ [Syntax 943 \- Modern React with Ricky Hanlon (React Core Dev)](https://syntax.fm/show/943/modern-react-with-ricky-hanlon-react-core-dev)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -68,22 +92,57 @@ And that’s just the beginning. With Convex, you can:
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[React Native 0.82 \- A New Era](https://reactnative.dev/blog/2025/10/08/react-native-0.82)
+
+React Native now runs entirely on the New Architecture, and you cannot opt-out anymore. It’s a milestone release, and the start of a new era where there Legacy Architecture will be progressively removed.
+
+This new version also includes:
+
+- Experimental support for Hermes V1 – the next evolution of Hermes – as opt-in flag. More details in this Software Mansion article: [Welcoming the Next Generation of Hermes](https://blog.swmansion.com/welcoming-the-next-generation-of-hermes-67ab5679e184).
+- React 19.1.1 with full support for owner stacks (improving the debugging experience) and improving the reliability of `useDeferredValue` and `startTransition`.
+- DOM Nodes API: this one is quite exciting for cross-platform development\! The `<View ref>` will expose a DOM-like immutable Element node, exposing a subset of the DOM APIs to perform imperative operations on the UI tree.
+- Web Performance APIs: partial support in canary release level.
+- Support for Android `debugOptimized` build type.
+
+---
 
 - 💸 [PostHog - A/B test your way to a better React Native app with experimentation. First 1M requests per month are free.](https://go.posthog.com/twir-oct8)
+- 📜 [Cross-Platform TV Apps with React Native for tvOS, Android TV, and Tizen](https://www.callstack.com/blog/cross-platform-tv-apps-with-react-native-for-tvos-android-tv-and-tizen)
+- 📜 [From Unit to E2E: A Guide to Testing React Native TV in 2026](https://www.callstack.com/blog/testing-react-native-tv-apps)
+- 📜 [Learn Once, Write for VR: A React Native Showcase for Meta's HorizonOS](https://www.callstack.com/blog/learn-once-write-for-vr-a-react-native-showcase-for-metas-horizonos)
+- 📜 [Building Fully Native iOS Apps With Expo EAS](https://blog.swmansion.com/building-fully-native-ios-apps-with-expo-eas-760b5480d7c5)
+- 📜 [First look at Amazon Vega OS development](https://mlangendijk.medium.com/first-look-at-amazon-vega-os-development-21cc5cb1ed73)
+- 📜 [HelloFresh’s Brownfield Leap: One App to Feed Them All\!](https://engineering.hellofresh.com/hellofreshs-brownfield-leap-one-app-to-feed-them-all-56244a22ceeb)
+- 📦 [Keyboard Controller 1.19 \- Composable KeyboardToolbar API, instant dismiss, RN 0.80+](https://kirillzyusko.github.io/react-native-keyboard-controller/blog/compound-keyboard-toolbar)
+- 📦 [React Native IAP 14.4.12 \- Alternative Billing Support](https://hyochan.github.io/react-native-iap/blog/release-14.4.12/)
+- 📦 [React Native SMS Retriever Nitro Module \- Library to retrieve SMS One-Time-Passwords on Android](https://github.com/huytdps13400/react-native-sms-retriever-nitro-module)
+- 📦 [React Native Skia 2.3 \- Support for macOS Catalyst, image within svg images](https://github.com/Shopify/react-native-skia/releases/tag/v2.3.0)
+- 📦 [Metro 0.83.3 \- Improve `mergeConfig()`](https://github.com/facebook/metro/releases/tag/v0.83.3)
+- 📦 [Detox 20.43 \- Support RN 0.80](http://github.com/wix/Detox/releases/tag/20.43.0)
+- 📦 [iOS Simulator MCP Server 1.5 \- Tools to launch simulator, install and launch apps](https://github.com/joshuayoes/ios-simulator-mcp/releases/tag/v1.5.0)
+- 📦 [FlashList 2.1](https://github.com/Shopify/flash-list/releases/tag/v2.1.0)
+- 🎥 [React Native AI: Bringing On-Device LLMs With AI SDK by Szymon Rybczak](https://www.youtube.com/watch?v=ctj7hsJClnk)
+- 🎙️ [Rocket Ship 82 \- Expo App Structure, NativeWind v5, Expo Live Activity, Native APIs with JS & React Native Buoy](https://share.transistor.fm/s/e3b7ef52)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📜 [Birth of Prettier](https://blog.vjeux.com/2025/javascript/birth-of-prettier.html)
+- 📜 [How much do you really know about media queries?](https://frontendmasters.com/blog/learn-media-queries/)
+- 📜 [Touring New CSS Features in Safari 26](https://css-tricks.com/touring-new-css-features-in-safari-26/)
+- 📜 [Handling routes in JavaScript projects](https://www.seancdavis.com/posts/handling-routes-in-javascript-projects/)
+- 📜 [What's coming in ESLint v10](https://eslint.org/blog/2025/10/whats-coming-in-eslint-10.0.0/)
+- 📜 [15 Recent Node.js Features that Replace Popular npm Packages](http://nodesource.com/blog/nodejs-features-replacing-npm-packages)
+- 📜 [Building a JavaScript Runtime from Scratch using C programming: The Jade Runtime](https://devlogs.xyz/blog/building-a-javaScript-runtime)
+- 🎙️ [PodRocket \- Inside the Recent npm Supply Chain Attack...](https://socket.dev/blog/podrocket-podcast-npm-supply-chain-attacks)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/253/meme.jpg)](https://x.com/sebastienlorber/status/1975207745528922591)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/253/meme2.jpg)](https://x.com/DelphineBugner/status/1975639870921187682)
 
 See ya! 👋
