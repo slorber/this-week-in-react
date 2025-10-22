@@ -10,8 +10,6 @@ Hi everyone!
 
 <Todo />
 
-🗓 [RNLConf](https://www.reactnativelondon.co.uk/?utm_source=thisweekinreact) - 🇬🇧 London - 13-14 Nov. First speakers announced: Saad Najmi (Microsoft), Kadi Kraman (Expo), Jay Meistrich (Bravely), and Enzo Manuel Mangano (Reactive). Get a 10% discount with code "TWIR".
-
 <!-- truncate -->
 
 import Support from "../_support.mdx";
@@ -28,19 +26,65 @@ import Support from "../_support.mdx";
 
 In this tutorial, you will:
 
-*   Understand content modeling fundamentals
-*   Know when to use different Strapi content types such as collection types, single types, components, relations, and dynamic zones
-*   Have a production-ready content model for company websites
-*   Explore AI-powered workflows with Strapi AI and Vercel v0
+- Understand content modeling fundamentals
+- Know when to use different Strapi content types such as collection types, single types, components, relations, and dynamic zones
+- Have a production-ready content model for company websites
+- Explore AI-powered workflows with Strapi AI and Vercel v0
 
 ---
 
 ## ⚛️ React {#react}
 
-<Todo />
+[Next.js 16](https://nextjs.org/blog/next-16)
 
-- 💸 [Product for Engineers - Avoid these AI coding mistakes](https://go.posthog.com/twir-oct22)
+The new major version of Next.js just dropped as a stable release, just before [Next.js Conf 2025](https://www.youtube.com/watch?v=IdIgkiDu-94), which is currently taking place. We’ll cover the conf announcements next week, in particular the new Cache Components features that is quite an important piece to explore.
+
+The beta was already out 2 weeks ago with the following highlights:
+
+- Turbopack (stable): enabled by default. Promises up to 5-10x faster Fast Refresh, and 2-5x faster builds
+- Turbopack file system caching (beta): Faster startup and compile times
+- React Compiler Support (stable): need to be manually enabled
+- Optimized navigations and prefetching: Prefetching multiple URLs that share a layout now downloads that layout only once which cuts down on network transfer size.
+- Improved Caching APIs: New `updateTag()` and refined `revalidateTag()`
+- Build Adapters API (alpha): Create custom adapters to modify the build process
+- React 19.2: `<Activity>`, View Transitions, `useEffectEvent`
+
+Since the beta, they have also introduced new exciting features:
+
+- Cache Components: New model using Partial Pre-Rendering (PPR) and `’use cache’` for instant navigation.
+- Next.js Devtools MCP: Model Context Protocol integration for improved debugging and workflow
+- Proxy: Middleware replaced by `proxy.ts` to clarify the network boundary
+- DX: Improved logging for builds and development requests
+
+---
+
 - 💸 [The Road to Next - Master Full-Stack Web Development with Next.js 15 and React 19](https://www.road-to-next.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_3.2)
+
+- 👀 [Async React demo](https://github.com/rickhanlonii/async-react): The code and demo app of Rick Hanlon’s talk at React Conf, showing how to leverage async React features to obtain a great UX no matter the network conditions.
+- 📊 [The Pragmatic Engineer 2025 Survey](https://newsletter.pragmaticengineer.com/p/the-pragmatic-engineer-2025-survey-part-3): Results show React and React Natuve continue to be the most popular by far.
+- 📖 [shadcn/ui Forms documentation](https://ui.shadcn.com/docs/forms): shadcn/ui introduced new guides to build forms with various frameworks. It recently introduced a new `<Field>` component that you should now prefer over the `<Form>` component (not actively developed anymore). See also this [deep dive video on the new Field component](https://www.youtube.com/watch?v=gjrXeqgxbas) by Web Dev Simplified.
+- 📖 [TanStack DevTools \- Plugin Marketplace docs](https://tanstack.com/devtools/latest/docs/third-party-plugins): TanStack DevTools is offering first-party plugins but also let you contribute third-party plugins to a marketplace that users can install (see also this [tweet](https://x.com/AlemTuzlak/status/1979184573058531733))
+- 🐦 [Cloudflare engineers are criticizing React’s usage of exceptions for control flow, slowing down runtime performance](https://x.com/KentonVarda/status/1979317566695969003)
+- 🗓 [RNLConf](https://www.reactnativelondon.co.uk/?utm_source=thisweekinreact) - 🇬🇧 London - 13-14 Nov. First speakers announced: Saad Najmi (Microsoft), Kadi Kraman (Expo), Jay Meistrich (Bravely), and Enzo Manuel Mangano (Reactive). Get a 10% discount with code "TWIR".
+- 📜 [React Server Components: Do They Really Improve Performance?](https://www.developerway.com/posts/react-server-components-performance): A comprehensive and data-driven comparison of CSR, SSR, and RSC using the same app and test setup. The RSC version only improved performance by refactoring the app and introducing Suspense boundaries, and despite the optimizations, the client-side app still takes a long time to become interactive.
+- 📜 [One Year with Next.js App Router — Why We're Moving On](https://paperclover.net/blog/webdev/one-year-next-app-router): The dev who implemented RSC bundling in Bun expresses his frustration using Next.js and RSC in a well-documented and fair criticism, and how/why he migrated his company’s frontend to TanStack Start.
+- 📜 [React Conf 2025 Recap](https://react.dev/blog/2025/10/16/react-conf-2025-recap): The official blog post summary.
+- 📜 [Remix Jam 2025 Recap](https://remix.run/blog/remix-jam-2025-recap): Another official summary of the Remix conf. It introduces Remix v3 (not based on React anymore), but also covers React Router talks.
+- 📜 [Running Next.js inside ChatGPT: A deep dive into native app integration](https://vercel.com/blog/running-next-js-inside-chatgpt-a-deep-dive-into-native-app-integration): Vercel engineers figured out how to bridge the gap to get Next.js working inside ChatGPT through the new OpenAI Apps SDK, despite the triple-layer iframe protection. Many steps are involved, but they provide a template to get started asap.
+- 📜 [The killer feature of Web Components](https://daverupert.com/2025/10/custom-elements-manifest-killer-feature/): TIL about Custom Elements Manifest that gives the ability to automatically generate React wrapper components for using custom elements. A bit late, since this is mostly useful for React \< 19\.
+- 📜 [How to Transform FormData Between UI and Database in React Router](https://sergiodxa.com/tutorials/transform-formdata-between-ui-and-database-in-react-router): Good practices to improve separation of concerns and decouple the HTTP interface from your business logic and data layer.
+- 📜 [React Foundation Leader on What’s Next for the Framework](https://thenewstack.io/react-foundation-leader-on-whats-next-for-the-framework/)
+- 💸 [Product for Engineers - Avoid these AI coding mistakes](https://go.posthog.com/twir-oct22)
+- 📦 [TanStack Query 4.42 \- Add React 19 as peerDeps](https://github.com/TanStack/query/releases/tag/v4.42.0): For those still using the older React Query v4, it now officially supports React 19\.
+- 📦 [Triplex \- Visual workspace for building React / Three Fiber 2D/3D components](https://triplex.dev/blog/triplex-moves-to-pmndrs): The tool for creative React developers recently became open source, joining the Poimandres collective.
+- 📦 [UIKit 1.0 \- Build performant 3D user interfaces for Three.js and React Three Fiber](https://github.com/pmndrs/uikit/releases/tag/v1.0.46)
+- 📦 [Reactylon 3.3 \- Create immersive XR experiences with](https://github.com/simonedevit/reactylon/blob/main/CHANGELOG.md) [Babylon.js](http://Babylon.js) [\- Add microgestures](https://github.com/simonedevit/reactylon/blob/main/CHANGELOG.md)
+- 📦 [Module Federation 0.21 \- Add React Router v7 Support to Module Federation Bridge](https://github.com/module-federation/core/releases/tag/v0.21.0)
+- 📦 [Fumadocs 16.0 \- MDX plugins, remove deprecated features, React 19.2](https://fumadocs.dev/blog/v16)
+- 🎥 [Shruti Kapoor \- React’s useEffect Isn’t Bad \- Your Code Is. Fix It Now.](https://www.youtube.com/watch?v=yGOPO2V6MHI)
+- 🎥 [Jack Herrington \- Faster React 19.2 Async Everywhere](https://www.youtube.com/watch?v=KI4gjUrOfOs)
+- 🎥 [Ankita Kulkarni \- This React Feature Fixed 90% of your Bugs \- useEffectEvent](https://www.youtube.com/watch?v=RQFpsnLkcQE)
+- 🎥 [Youssef Benlemlih \- TanStack Changed How I Think About Functions \- Isomorphic Functions](https://www.youtube.com/watch?v=12HJvM3q48M)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -62,20 +106,59 @@ If you’re not looking for an invoice, start with LyteNyte Grid Core today.
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[Solito v5 – Bridging React Native and Next.js made simpler](https://solito.dev/v5)
+
+Solito, the library that connects React Native and Next.js navigation, has reached its fifth version and further simplifies life for cross-platform developers.
+
+This major upgrade removes the dependency on react-native-web: on the web side, Solito components now return native Next.js components, with direct support for DOM props. The goal is to let you write pure Next.js for the web, while maintaining an identical API on the mobile side, without any special configuration.
+
+This new version also includes:
+
+- No more react-native-web – Solito components such as `<Link>` , `<TextLink>` or `<NavigationProvider>` directly re-export Next.js components and accept className, style, etc.
+- Headless components on the web – no default styles; it's up to you to use Tailwind/CSS.
+- Support for Next.js 16 & Expo SDK 54 – the monorepo examples have been updated with Turbopack and the new versions of Next.js and Expo.
+- Fixes & improvements – the `useSearchParams` hook now works correctly on mobile, and .`web.tsx` files are being phased out in favour of `.native.tsx` for native code.
+
+---
+
+- 💬 [RFC: Strip Flow Types](https://github.com/react-native-community/discussions-and-proposals/pull/949) \- community proposal to remove all Flow annotations from React Native’s core codebase. This would simplify maintenance, reduce build complexity, and mark a full transition toward a TypeScript-first ecosystem.
+- 🐦 [React ImGui Demo](https://x.com/tmikov/status/1979771014340047088) \- Tzvetan Mikov shows a native app built with React and Dear ImGui using Static Hermes
+- 🐦 [Expo Skia Template](https://x.com/Baconbrix/status/1980040766560120955) \- starter for using Skia with Expo Router using Suspense to load Skia on web \- `”npx create-expo -e with skia”`
+- 🐦 [Expo UI – not about normalizing across platforms; it bridges SwiftUI & Jetpack Compose to Expo](https://x.com/kudochien/status/1978805681378807936)
+- 📖 [Birchdocs – React Native section](https://birchdocs.tokyo/dev/react-native) \- notes on build profiling, JSI modules, monorepos and more
+- 📜 [Building a Spotify Clone in React Native](https://blog.swmansion.com/building-a-spotify-clone-in-react-native-c1284b3a86ed) \- step‑by‑step tutorial using React Native Audio API for playback, background mode and controls
+- 📜 [Why Did My React Native App Stop Working After Migrating to the New Architecture?](https://blog.swmansion.com/why-did-my-app-stop-working-after-upgrading-to-the-new-architecture-f9e45406d6a9) \- common issues and fixes when adopting the New Architecture
+- 📜 [Become an AI‑native Developer with the Expo MCP Server](https://expo.dev/blog/become-an-ai-native-developer-with-the-expo-mcp-server) \- introducing a preview that connects AI assistants to your Expo project to fetch docs, install packages and test components
+- 📜 [Getting Started With Expo on Meta Quest](https://www.callstack.com/blog/getting-started-with-expo-on-meta-quest)
+- 📦 [React Native Bottom Tabs 1.0](https://github.com/callstackincubator/react-native-bottom-tabs/releases/tag/react-native-bottom-tabs%401.0.0) \- drops old architecture, simplifies build configuration, fully compatible with Expo Image
+- 📦 [React Native Screens 4.17](https://github.com/software-mansion/react-native-screens/releases/tag/4.17.0) \- Major update with iOS 26 improvements, and also adding support for [native iOS header items](https://github.com/software-mansion/react-native-screens/pull/2987), already integrated in the latest React Navigation release ([`unstable_headerItemLeft/Right`](https://reactnavigation.org/docs/native-stack-navigator/#header-items))
+- 📦 [React Native MMKV 4.0](https://github.com/mrousavy/react-native-mmkv/releases/tag/v4.0.0) \- adds React Native Harness, improved error handling, upgraded MMKVCore and Nitro, RN 0.82 support
+- 📦 [Nitro 0.31](https://github.com/mrousavy/nitro/releases/tag/v0.31.0) \- adds ObjectUtils helpers and variant ordering for type‑safe native modules
+- 📦 [Detox 20.44](https://github.com/wix/Detox/releases/tag/20.44.0) \- support for React Native 0.81/0.82 and new `device.resetAppState` API for fast app state reset
+- 🎙️[React Native Radio 346 – Shopify’s Transition to the New Architecture](https://infinite.red/react-native-radio/rnr-346-shopifys-transition-to-the-new-architecture)
+- 🎙️[Rocket Ship 83 – React Native 0.82, The React Foundation, DevTools App, CSS Support, Uniwind & Split View Layout](https://share.transistor.fm/s/7ec00a99)
+- 🎥 [Awesome \- Summary of React Native 0.82 changes](https://www.youtube.com/watch?v=57I6dXgf_eQ)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📣 [Same-document view transitions have become Baseline Newly available](https://web.dev/blog/same-document-view-transitions-are-now-baseline-newly-available)
+- 📣 [URLPattern is now Baseline Newly available](https://web.dev/blog/baseline-urlpattern)
+- 📜 [Build Your Own Database](https://www.nan.fyi/database)
+- 📜 [Importing vs fetching JSON](https://jakearchibald.com/2025/importing-vs-fetching-json/)
+- 📜 [Write Code That Runs in the Browser, or Write Code the Browser Runs](https://blog.jim-nielsen.com/2025/more-control-equals-less-performance/)
+- 📜 [The present and potential future of progressive image rendering](https://jakearchibald.com/2025/present-and-future-of-progressive-image-rendering/)
+- 📦 [Node.js 25.0 \- Upgrades to V8 14.1, major `JSON.stringify` performance improvements](https://nodejs.org/en/blog/release/v25.0.0)
+- 📦 [Lighthouse 13.0 \- Performance insights consolidation, scheduled for Chrome 143](https://developer.chrome.com/blog/lighthouse-13-0)
+- 📦 [Vitest 4.0 \- Browser Mode stable, Visual Regression testing, Playwright Trace support](https://voidzero.dev/posts/announcing-vitest-4)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/255/meme.jpg)](https://x.com/sebastienlorber/status/1980566462474408089)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/255/meme.jpg)](https://bsky.app/profile/matteogabriele.bsky.social/post/3m2m2sfi5bs2n)
 
 See ya! 👋
