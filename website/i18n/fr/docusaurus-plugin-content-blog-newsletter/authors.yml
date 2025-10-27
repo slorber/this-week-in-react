@@ -10,6 +10,16 @@ slorber:
     github: slorber
     linkedin: sebastienlorber
 
+armandpetit:
+  name: Armand Petit
+  title: React Native Developer - LinkedIn creator
+  image_url: https://github.com/VirtuozTM.png
+  page: true
+  socials:
+    x: armandpasgrand
+    github: VirtuozTM
+    linkedin: armandpetit
+
 bndkt:
   name: Benedikt Müller
   title: Indie Hacker
