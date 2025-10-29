@@ -1,6 +1,6 @@
 ---
 slug: /256
-title: "This Week In React #256: Next.js, directives, TanStack, Storybook, Waku, shadcn, Rari, Astro | Navigation, EAS, Expo Modules, Gesture Handler, Screens, Nitro Modules, IAP | ArkType, Biome, Svelte, Hono"
+title: "This Week In React #256: Next.js, directives, TanStack, Storybook, Waku, shadcn, Rari, Astro | Navigation, EAS, Expo Modules, Gesture Handler, Screens, Nitro, IAP | ArkType, Biome, Svelte, Hono"
 authors: [piaskowyk, filipkaminski]
 date: 10-29-2025
 unlisted: true
@@ -10,7 +10,7 @@ Hi everyone\! Filip and Krzysztof from Software Mansion here\! 👋
 
 This edition is special for at least four reasons:
 
-1. It's a very rounded anniversary edition \- issue `256` \- lets hope our counter can hold more then 8 bits 🤞
+1. It's a very rounded anniversary edition \- issue `256` \- let's hope our counter can hold more than 8 bits 🤞
 2. This is the first newsletter issue for Filip, who is improving React Native DX by developing Radon IDE.
 3. It was a great week, with a lot of excellent content emerging from the Next.js conf in the React world.
 4. React Native isn't far behind, as this week saw some cool stuff released, including updates for React Navigation, Uniwind, React Native Screens, and more.
@@ -55,12 +55,12 @@ Next.js conf was the main event of last week, with a keynote highlighting newly 
 - The Adapters API to interface Next.js with hosting platforms, built in collaboration with various partners and Vercel competitors
 - Cache Components: new fancy name of Partial Pre-Rendering, with more explicit APIs
 
-Let's take a step back to explore this [new flagship Cache Components feature](https://nextjs.org/docs/app/getting-started/cache-components). It is a new opt-in flag to turn on that lets you implement the Partial Pre-Rendering pattern. The goal is to keep your app/page shells static so that navigation feels instant. It nudges you to move dynamic (`searchParams()`, `headers()`...) and async calls (`fetch()`, DB access) within a `<Suspense>` boundary so that the page shell remains static and fast, while the dynamic/slow parts can stream into it. And when you really want to include an async component into the static shell, a new `’use cache’` directive to turn it into a Cache Component that lets Next.js pre-render it statically. Turning this feature on also enables a back/forward navigation cache powered by the new `<Activity>` component. This new mode offers a more composable, explicit and granular caching model, compared to the previous model based on route-level controls and aggressive implicit caching by default.
+Let's take a step back to explore this [new flagship Cache Components feature](https://nextjs.org/docs/app/getting-started/cache-components). It is a new opt-in flag to turn on that lets you implement the Partial Pre-Rendering pattern. The goal is to keep your app/page shells static so that navigation feels instant. It nudges you to move dynamic (`searchParams()`, `headers()`...) and async calls (`fetch()`, DB access) within a `<Suspense>` boundary so that the page shell remains static and fast, while the dynamic/slow parts can stream into it. And when you really want to include an async component in the static shell, a new `’use cache’` directive to turn it into a Cache Component that lets Next.js pre-render it statically. Turning this feature on also enables a back/forward navigation cache powered by the new `<Activity>` component. This new mode offers a more composable, explicit and granular caching model, compared to the previous model based on route-level controls and aggressive implicit caching by default.
 
-This event also led to various discussions in the community, following the introduction of [parametrized directives](https://nextjs.org/docs/app/api-reference/directives) (`’use cache: private’` / `’use cache: remote’`), and the introduction of a [Vercel `’use workflow’` directive](https://vercel.com/blog/introducing-workflow) the next day. Many developers argue it’s dangerous to use strings and would prefer function decorators or explicit typesafe API calls. We still need to think about it before making up our minds and take a side, but here are some related links worth checking out:
+This event also led to various discussions in the community, following the introduction of [parametrized directives](https://nextjs.org/docs/app/api-reference/directives) (`’use cache: private’` / `’use cache: remote’`), and the introduction of a [Vercel `’use workflow’` directive](https://vercel.com/blog/introducing-workflow) the next day. Many developers argue it’s dangerous to use strings and would prefer function decorators or explicit typesafe API calls. We still need to think about it before making up our minds and taking a side, but here are some related links worth checking out:
 
-- 🐦 [The `’use no memo’` drama](https://x.com/joshtriedcoding/status/1982630105613824123): The JS community is apparently offended by a 2 years old React Compiler escape hatch directive that is actually useful.
-- 📜 [Directives and the Platform Boundary](https://tanstack.com/blog/directives-and-the-platform-boundary): Tanner Linsley’s cautionary piece about the dangers of introducing directives without community wide standardization.
+- 🐦 [The `’use no memo’` drama](https://x.com/joshtriedcoding/status/1982630105613824123): The JS community is apparently offended by a 2-year-old React Compiler escape hatch directive that is actually useful.
+- 📜 [Directives and the Platform Boundary](https://tanstack.com/blog/directives-and-the-platform-boundary): Tanner Linsley’s cautionary piece about the dangers of introducing directives without community-wide standardization.
 - 🎥 [Theo \- This is good, actually (directives)](https://www.youtube.com/watch?v=tV8wTuY4b0E)
 
 ---
@@ -112,9 +112,9 @@ Ship code that breaks less, review with confidence, and keep production stable. 
 - 👀 The creator of Unistyle has [published benchmarks for his new library \- Uniwind](https://github.com/Unistyles-OSS/uniwind-benchmarks) (Tailwind bindings for React Native), which show promising results.
 - 📖 [React Navigation \- Improved Authentication flows](https://reactnavigation.org/docs/auth-flow/#handling-deep-links-after-auth): When using deep links, you may now handle a case where the user opens a deep link that requires authentication (see also this [tweet](https://x.com/reactnavigation/status/1982768669072728122))
 - 📖 [React Navigation docs \- Now supports native Bottom Tabs](https://reactnavigation.org/docs/native-bottom-tab-navigator)
-- 📜 [Setting up GitHub SSH Key on Expo EAS](https://blog.swmansion.com/setting-up-github-ssh-key-on-expo-eas-e678c134bf3f): A complex guide for set up SSH access to private GitHub repositories from an Expo EAS workflow \- especially useful when your app depends on private submodules.
-- 📜 [Faster, more reliable video uploads with Expo Modules](https://expo.dev/blog/faster-more-reliable-video-uploads-with-expo-modules): A case study on multipart video upload, featuring a success story about how custom native Expo Module can solve critical problems for your app.
-- 📜 [React Native (New) Architecture: Key Performance Boosts](https://blog.swmansion.com/react-native-new-architecture-key-performance-boosts-4ce68cc3cc9f): Recently, a lot has been said about The React Native Architecture, but it can be unclear how to use these insights to your advantage. This article focuses on how the capabilities of The Architecture can boost your app's performance.
+- 📜 [Setting up GitHub SSH Key on Expo EAS](https://blog.swmansion.com/setting-up-github-ssh-key-on-expo-eas-e678c134bf3f): A complex guide for setting up SSH access to private GitHub repositories from an Expo EAS workflow \- especially useful when your app depends on private submodules.
+- 📜 [Faster, more reliable video uploads with Expo Modules](https://expo.dev/blog/faster-more-reliable-video-uploads-with-expo-modules): A case study on multipart video upload, featuring a success story about how a custom native Expo Module can solve critical problems for your app.
+- 📜 [React Native (New) Architecture: Key Performance Boosts](https://blog.swmansion.com/react-native-new-architecture-key-performance-boosts-4ce68cc3cc9f): Recently, a lot has been said about the React Native Architecture, but it can be unclear how to use these insights to your advantage. This article focuses on how the capabilities of The Architecture can boost your app's performance.
 - 📦 [Gesture Handler 2.29 \- Proper support for iOS 26](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.29.0)
 - 📦 [React Native Screens 4.18 \- refined API around the new header items system](https://github.com/software-mansion/react-native-screens/releases/tag/4.18.0)
 - 📦 [Nitro Device Info \- A new library backed by Nitro Modules that provides synchronous access to device information](https://github.com/l2hyunwoo/react-native-nitro-device-info/releases/tag/v1.2.0)
