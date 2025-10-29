@@ -1,6 +1,6 @@
 ---
 slug: /256
-title: "This Week In React #256: Next.js, TanStack, Storybook, c15t, Astro, Rari, Waku | Navigation, EAS, Expo Modules, Gesture Handler, Screens, Nitro Modules, IAP | Ark, Hono, Biome"
+title: "This Week In React #256: Next.js, directives, TanStack, Storybook, Waku, shadcn, Rari, Astro | Navigation, EAS, Expo Modules, Gesture Handler, Screens, Nitro Modules, IAP | ArkType, Biome, Svelte, Hono"
 authors: [piaskowyk, filipkaminski]
 date: 10-29-2025
 unlisted: true
@@ -10,9 +10,9 @@ Hi everyone\! Filip and Krzysztof from Software Mansion here\! 👋
 
 This edition is special for at least four reasons:
 
-1. It's a very rounded anniversary edition \- issue `256` \- lets hope our counter can hold more then 8 bits 🤞  
-2. This is the first newsletter issue for Filip, who is improving React Native DX by developing Radon IDE.  
-3. It was a great week, with a lot of excellent content emerging from the Next.js conf in the React world.  
+1. It's a very rounded anniversary edition \- issue `256` \- lets hope our counter can hold more then 8 bits 🤞
+2. This is the first newsletter issue for Filip, who is improving React Native DX by developing Radon IDE.
+3. It was a great week, with a lot of excellent content emerging from the Next.js conf in the React world.
 4. React Native isn't far behind, as this week saw some cool stuff released, including updates for React Navigation, Uniwind, React Native Screens, and more.
 
 That's more than enough reasons to jump straight into the content \- enjoy the reading\!
@@ -51,34 +51,33 @@ Launch a multilingual app without breaking a sweat. Focus on features, not fight
 
 Next.js conf was the main event of last week, with a keynote highlighting newly released Next.js features, in particular:
 
-- Turbopack as the new default bundler, including beta support for file-system caching  
-- The Adapters API to interface Next.js with hosting platforms, built in collaboration with various partners and Vercel competitors  
+- Turbopack as the new default bundler, including beta support for file-system caching
+- The Adapters API to interface Next.js with hosting platforms, built in collaboration with various partners and Vercel competitors
 - Cache Components: new fancy name of Partial Pre-Rendering, with more explicit APIs
-
 
 Let's take a step back to explore this [new flagship Cache Components feature](https://nextjs.org/docs/app/getting-started/cache-components). It is a new opt-in flag to turn on that lets you implement the Partial Pre-Rendering pattern. The goal is to keep your app/page shells static so that navigation feels instant. It nudges you to move dynamic (`searchParams()`, `headers()`...) and async calls (`fetch()`, DB access) within a `<Suspense>` boundary so that the page shell remains static and fast, while the dynamic/slow parts can stream into it. And when you really want to include an async component into the static shell, a new `’use cache’` directive to turn it into a Cache Component that lets Next.js pre-render it statically. Turning this feature on also enables a back/forward navigation cache powered by the new `<Activity>` component. This new mode offers a more composable, explicit and granular caching model, compared to the previous model based on route-level controls and aggressive implicit caching by default.
 
 This event also led to various discussions in the community, following the introduction of [parametrized directives](https://nextjs.org/docs/app/api-reference/directives) (`’use cache: private’` / `’use cache: remote’`), and the introduction of a [Vercel `’use workflow’` directive](https://vercel.com/blog/introducing-workflow) the next day. Many developers argue it’s dangerous to use strings and would prefer function decorators or explicit typesafe API calls. We still need to think about it before making up our minds and take a side, but here are some related links worth checking out:
 
-- 🐦 [The `’use no memo’` drama](https://x.com/joshtriedcoding/status/1982630105613824123): The JS community is apparently offended by a 2 years old React Compiler escape hatch directive that is actually useful.  
-- 📜 [Directives and the Platform Boundary](https://tanstack.com/blog/directives-and-the-platform-boundary): Tanner Linsley’s cautionary piece about the dangers of introducing directives without community wide standardization.  
+- 🐦 [The `’use no memo’` drama](https://x.com/joshtriedcoding/status/1982630105613824123): The JS community is apparently offended by a 2 years old React Compiler escape hatch directive that is actually useful.
+- 📜 [Directives and the Platform Boundary](https://tanstack.com/blog/directives-and-the-platform-boundary): Tanner Linsley’s cautionary piece about the dangers of introducing directives without community wide standardization.
 - 🎥 [Theo \- This is good, actually (directives)](https://www.youtube.com/watch?v=tV8wTuY4b0E)
 
----  
+---
 
 - 💸 [5 React Grid Examples to Transform Your Next Project](https://www.infragistics.com/blogs/react-grid-examples/?utm_source=this-week-in-react&utm_medium=referral&utm_campaign=ignite-ui-react&utm_term=newsletter-sponsorship&utm_content=5-react-grid-examples)
-- 📜 [Introducing TanStack Start Middleware](https://frontendmasters.com/blog/introducing-tanstack-start-middleware/) \- A gentle introduction to Middleware, that teaches how to leverage a possibility of executing code in conjunction with your server-side operations.  
-- 📜 [Why developers are leaving Next.js for TanStack Start, and loving it](https://appwrite.io/blog/post/why-developers-leaving-nextjs-tanstack-start) \- An opinionated peace on the state of Next.js, it’s growing complexity and competition.  
-- 📜 [The Rari SSR Breakthrough: 12x Faster, 10x Higher Throughput Than](https://ryanskinner.com/posts/the-rari-ssr-breakthrough-12x-faster-10x-higher-throughput-than-nextjs) [Next.js](http://Next.js) \- Tanstack Start is apparently not the only competition Next.js should worry about, [Rari](https://github.com/rari-build/rari) has released some impressive benchmarks this week.  
-- 📜 [I Built the Same App 10 Times: Evaluating Frameworks for Mobile Performance](https://www.lorenstew.art/blog/10-kanban-boards) \- A deep-dive focusing on benchmarking bundle size and FCP performance of different frameworks. As it turns out the packages of react based solutions might be much larger than those of the competition.  
-- 📜 [React and Remix Choose Different Futures](https://laconicwit.com/react-and-remix-choose-different-futures/): Interesting reflections on the potential future of both frameworks. The author suggests that React is following a path of stability, even if it means sacrificing complexity, while Remix is choosing simplicity as their primary goal.  
+- 📜 [Introducing TanStack Start Middleware](https://frontendmasters.com/blog/introducing-tanstack-start-middleware/) \- A gentle introduction to Middleware, that teaches how to leverage a possibility of executing code in conjunction with your server-side operations.
+- 📜 [Why developers are leaving Next.js for TanStack Start, and loving it](https://appwrite.io/blog/post/why-developers-leaving-nextjs-tanstack-start) \- An opinionated peace on the state of Next.js, it’s growing complexity and competition.
+- 📜 [The Rari SSR Breakthrough: 12x Faster, 10x Higher Throughput Than](https://ryanskinner.com/posts/the-rari-ssr-breakthrough-12x-faster-10x-higher-throughput-than-nextjs) [Next.js](http://Next.js) \- Tanstack Start is apparently not the only competition Next.js should worry about, [Rari](https://github.com/rari-build/rari) has released some impressive benchmarks this week.
+- 📜 [I Built the Same App 10 Times: Evaluating Frameworks for Mobile Performance](https://www.lorenstew.art/blog/10-kanban-boards) \- A deep-dive focusing on benchmarking bundle size and FCP performance of different frameworks. As it turns out the packages of react based solutions might be much larger than those of the competition.
+- 📜 [React and Remix Choose Different Futures](https://laconicwit.com/react-and-remix-choose-different-futures/): Interesting reflections on the potential future of both frameworks. The author suggests that React is following a path of stability, even if it means sacrificing complexity, while Remix is choosing simplicity as their primary goal.
 - 💸 [STRICH - Add lightning-fast barcode & QR scanning to your web app with a lean JS lib. Simple, predictable pricing, free trial and demo!](https://strich.io/?ref=twir)
-- 📦 [Storybook 10.0 \- Major update with Module automocking and support for Next 16, Vitest 4, Svelte async components](https://github.com/storybookjs/storybook/releases/tag/v10.0.0)  
-- 📦 [Astro 5.15 \- Netlify skew protection](https://astro.build/blog/astro-5150/)   
-- 📦 [c15t 1.7 \- Cookie-banner and constant management framework \- Improved iFrame blocking and new solutions for tracking management](https://c15t.com/changelog/2025-10-11-v1.7.0)  
-- 📦 [shadcn-ui 3.5 \- Support for Next.js 16](https://github.com/shadcn-ui/ui/releases/tag/shadcn%403.5.0)   
-- 📦 [Waku 0.27 \- stabilizing the public API as they prepare for the v1 alpha](https://waku.gg/blog/more-extensibility-and-deploy-adapters)  
-- 🎥 [Jack Herrington \- React 19.2 New useEffectEvent Hook: Game Changer or Gimmick?](https://www.youtube.com/watch?v=hT2yWeHU37U)   
+- 📦 [Storybook 10.0 \- Major update with Module automocking and support for Next 16, Vitest 4, Svelte async components](https://github.com/storybookjs/storybook/releases/tag/v10.0.0)
+- 📦 [Astro 5.15 \- Netlify skew protection](https://astro.build/blog/astro-5150/)
+- 📦 [c15t 1.7 \- Cookie-banner and constant management framework \- Improved iFrame blocking and new solutions for tracking management](https://c15t.com/changelog/2025-10-11-v1.7.0)
+- 📦 [shadcn/ui 3.5 \- Support for Next.js 16](https://github.com/shadcn-ui/ui/releases/tag/shadcn%403.5.0)
+- 📦 [Waku 0.27 \- stabilizing the public API as they prepare for the v1 alpha](https://waku.gg/blog/more-extensibility-and-deploy-adapters)
+- 🎥 [Jack Herrington \- React 19.2 New useEffectEvent Hook: Game Changer or Gimmick?](https://www.youtube.com/watch?v=hT2yWeHU37U)
 - 🎥 [Ankita Kulkarni \- Next.js 16 Changed How to Fetch Data](https://www.youtube.com/watch?v=rn2oi2AM5wk)
 
 <SubscribeFormEmbed placement="middle" />
@@ -108,34 +107,34 @@ Ship code that breaks less, review with confidence, and keep production stable. 
 ## 📱 React-Native {#react-native}
 
 - 💸 [Set up, build and run Expo apps on Meta Quest — a hands-on guide for React Native developers](https://www.callstack.com/blog/getting-started-with-expo-on-meta-quest?utm_campaign=meta&utm_source=TWIR&utm_medium=mail&utm_content=link)
-- 👀 [Swift for Android preview](https://www.swift.org/blog/nightly-swift-sdk-for-android/): The Android workgroup announced a Swift SDK for Android app development.  
-- 👀 A [library with interactive shader backgrounds](https://x.com/blazejkustra_/status/1982365618352570728) powered by WebGPU is coming to React Native.  
-- 👀 The creator of Unistyle has [published benchmarks for his new library \- Uniwind](https://github.com/Unistyles-OSS/uniwind-benchmarks) (Tailwind bindings for React Native), which show promising results.  
-- 📖 [React Navigation \- Improved Authentication flows](https://reactnavigation.org/docs/auth-flow/#handling-deep-links-after-auth):  When using deep links, you may now handle a case where the user opens a deep link that requires authentication (see also this [tweet](https://x.com/reactnavigation/status/1982768669072728122))  
-- 📖 [React Navigation docs \- Now supports native Bottom Tabs](https://reactnavigation.org/docs/native-bottom-tab-navigator)  
-- 📜 [Setting up GitHub SSH Key on Expo EAS](https://blog.swmansion.com/setting-up-github-ssh-key-on-expo-eas-e678c134bf3f): A complex guide for set up SSH access to private GitHub repositories from an Expo EAS workflow \- especially useful when your app depends on private submodules.  
-- 📜 [Faster, more reliable video uploads with Expo Modules](https://expo.dev/blog/faster-more-reliable-video-uploads-with-expo-modules): A case study on multipart video upload, featuring a success story about how custom native Expo Module can solve critical problems for your app.  
-- 📜 [React Native (New) Architecture: Key Performance Boosts](https://blog.swmansion.com/react-native-new-architecture-key-performance-boosts-4ce68cc3cc9f): Recently, a lot has been said about The React Native Architecture, but it can be unclear how to use these insights to your advantage. This article focuses on how the capabilities of The Architecture can boost your app's performance.  
-- 📦 [Gesture Handler 2.29 \- Proper support for iOS 26](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.29.0)  
-- 📦 [React Native Screens 4.18 \- refined API around the new header items system](https://github.com/software-mansion/react-native-screens/releases/tag/4.18.0)  
-- 📦 [Nitro Device Info \- A new library backed by Nitro Modules that provides synchronous access to device information](https://github.com/l2hyunwoo/react-native-nitro-device-info/releases/tag/v1.2.0)  
-- 📦 [Liquid Glass \- Border support and compatibility with the Zeego context menu](https://github.com/callstack/liquid-glass/releases/tag/v0.5.0)   
-- 📦 [React Native IAP 14.4.33 \- Horizon OS Support](https://github.com/hyochan/react-native-iap/releases/tag/14.4.33)   
-- 🔗 [Awesome Nitro Modules](https://github.com/frankcalise/awesome-nitro-modules): An interesting collection of libraries built using nitro modules.  
-- 🎥 [Expo \- Learn how to use the new Icon Composer with Expo](https://www.youtube.com/watch?v=RZ_QMym3adw)  
-- 🎥 [Code with Beto \- How to Use OpenAI's Whisper in React Native](https://www.youtube.com/watch?v=FLTVh6ZBTa4)  
-- 🎥 [Simon Grimm \- Platform Specific Components, Layouts & Styling with React Native](https://www.youtube.com/watch?v=b8hKskhFt04)  
+- 👀 [Swift for Android preview](https://www.swift.org/blog/nightly-swift-sdk-for-android/): The Android workgroup announced a Swift SDK for Android app development.
+- 👀 A [library with interactive shader backgrounds](https://x.com/blazejkustra_/status/1982365618352570728) powered by WebGPU is coming to React Native.
+- 👀 The creator of Unistyle has [published benchmarks for his new library \- Uniwind](https://github.com/Unistyles-OSS/uniwind-benchmarks) (Tailwind bindings for React Native), which show promising results.
+- 📖 [React Navigation \- Improved Authentication flows](https://reactnavigation.org/docs/auth-flow/#handling-deep-links-after-auth): When using deep links, you may now handle a case where the user opens a deep link that requires authentication (see also this [tweet](https://x.com/reactnavigation/status/1982768669072728122))
+- 📖 [React Navigation docs \- Now supports native Bottom Tabs](https://reactnavigation.org/docs/native-bottom-tab-navigator)
+- 📜 [Setting up GitHub SSH Key on Expo EAS](https://blog.swmansion.com/setting-up-github-ssh-key-on-expo-eas-e678c134bf3f): A complex guide for set up SSH access to private GitHub repositories from an Expo EAS workflow \- especially useful when your app depends on private submodules.
+- 📜 [Faster, more reliable video uploads with Expo Modules](https://expo.dev/blog/faster-more-reliable-video-uploads-with-expo-modules): A case study on multipart video upload, featuring a success story about how custom native Expo Module can solve critical problems for your app.
+- 📜 [React Native (New) Architecture: Key Performance Boosts](https://blog.swmansion.com/react-native-new-architecture-key-performance-boosts-4ce68cc3cc9f): Recently, a lot has been said about The React Native Architecture, but it can be unclear how to use these insights to your advantage. This article focuses on how the capabilities of The Architecture can boost your app's performance.
+- 📦 [Gesture Handler 2.29 \- Proper support for iOS 26](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.29.0)
+- 📦 [React Native Screens 4.18 \- refined API around the new header items system](https://github.com/software-mansion/react-native-screens/releases/tag/4.18.0)
+- 📦 [Nitro Device Info \- A new library backed by Nitro Modules that provides synchronous access to device information](https://github.com/l2hyunwoo/react-native-nitro-device-info/releases/tag/v1.2.0)
+- 📦 [Liquid Glass \- Border support and compatibility with the Zeego context menu](https://github.com/callstack/liquid-glass/releases/tag/v0.5.0)
+- 📦 [React Native IAP 14.4.33 \- Horizon OS Support](https://github.com/hyochan/react-native-iap/releases/tag/14.4.33)
+- 🔗 [Awesome Nitro Modules](https://github.com/frankcalise/awesome-nitro-modules): An interesting collection of libraries built using nitro modules.
+- 🎥 [Expo \- Learn how to use the new Icon Composer with Expo](https://www.youtube.com/watch?v=RZ_QMym3adw)
+- 🎥 [Code with Beto \- How to Use OpenAI's Whisper in React Native](https://www.youtube.com/watch?v=FLTVh6ZBTa4)
+- 🎥 [Simon Grimm \- Platform Specific Components, Layouts & Styling with React Native](https://www.youtube.com/watch?v=b8hKskhFt04)
 - 🎥 [Oskar Kwaśniewski \- Building React Native TurboModules with Swift](https://www.youtube.com/watch?v=cMAgfQ6Fz9U)
 
 ---
 
 ## 🔀 Other {#other}
 
-- 💡 Ark introduces [ArkRegex](https://arktype.io/docs/blog/arkregex), a type-safe regex API  
-- 📜 [ViteConf 2025 Recap](https://voidzero.dev/posts/whats-new-viteconf-2025)   
-- 📜 [Springs and Bounces in Native CSS The magic of the linear() timing function](https://www.joshwcomeau.com/animation/linear-timing-function/)   
-- 📦 [Svelte 5.42 \- `New fork()` API](https://github.com/sveltejs/svelte/releases/tag/svelte%405.42.0): Enables preloading patterns akin to what React devs can do with `<Activity>`  
-- 📦 [Hono announcing a new CLI](https://blog.yusu.ke/hono-cli/)  
+- 💡 Ark introduces [ArkRegex](https://arktype.io/docs/blog/arkregex), a type-safe regex API
+- 📜 [ViteConf 2025 Recap](https://voidzero.dev/posts/whats-new-viteconf-2025)
+- 📜 [Springs and Bounces in Native CSS The magic of the linear() timing function](https://www.joshwcomeau.com/animation/linear-timing-function/)
+- 📦 [Svelte 5.42 \- `New fork()` API](https://github.com/sveltejs/svelte/releases/tag/svelte%405.42.0): Enables preloading patterns akin to what React devs can do with `<Activity>`
+- 📦 [Hono announcing a new CLI](https://blog.yusu.ke/hono-cli/)
 - 📦 [Biome 2.3 \- Tailwind compatibility, support for Svelte, Vue, Astro](https://x.com/biomejs/status/1981707894799101958)
 
 ---
