@@ -103,3 +103,15 @@ piaskowyk:
     bluesky: piaskowyk.bsky.social
     github: piaskowyk
     linkedin: krzysztof-piaskowy
+
+filipkaminski:
+  name: Filip Kamiński
+  title: Software Engineer - Software Mansion
+  url: https://x.com/FilipKaminski
+  image_url: https://pbs.twimg.com/profile_images/1933203713339904000/cvSRnMD__400x400.jpg
+  page: true
+  socials:
+    x: FilipKaminski
+    bluesky: filipkaminski.com
+    github: filip131311
+    linkedin: filip-kamiński-6987a0210
