@@ -1,6 +1,6 @@
 ---
 slug: /257
-title: "This Week In React #257: ..."
+title: "This Week In React #257: Navigation API, PPR, directives, micro-frontends, i18n, Storybook, Immer | Godot, Uniwind, RCE, iOS filters, Windows, GPU, Hermes, Meta Quest | Node LTS, Safari, Rspack, Vite, SWC, Remix"
 authors: [slorber]
 date: 11-05-2025
 unlisted: true
@@ -8,7 +8,7 @@ unlisted: true
 
 Hi everyone, [Seb](https://x.com/sebastienlorber) and [Armand](https://www.linkedin.com/in/armandpetit/) here\! 👋
 
-This week, we have no major React headline, but various interesting links about directives, Partial Pre-Rendering, performance, and other interesting things.
+This week, we found various interesting React releases and links about directives, Partial Pre-Rendering, performance, micro-frontends, i18n, among other things.
 
 On the React Native side, we had 2 major releases and various interesting weak signals. Beware of the RN Dev Server vulnerability, and make sure to upgrade if needed.
 
@@ -48,7 +48,6 @@ Want to see it in action? Watch [the on-demand workshop](https://sentry.io/resou
 - 📜 [Using Atomic State to Improve React Performance in Deeply Nested Component Trees](https://runharbor.com/blog/2025-10-26-improving-deeply-nested-react-render-performance-with-jotai-atomic-state): An interactive article showing how Jotai atoms can help prevent useless re-renders.
 - 📜 [Quality Assurance for i18n in React](https://lingual.dev/blog/quality-assurance-for-i18n-in-react/): Explores how tools like `i18n-check` can detect missing or unused translation keys and integrate validation into CI to improve translation quality and consistency across React and React Native apps.
 - 💸 [The Road to Next - Master Full-Stack Web Development with Next.js 15 and React 19](https://www.road-to-next.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_3.3)
-
 - 📦 [Immer 10.2](https://github.com/immerjs/immer/releases/tag/v10.2.0): Mark Erikson noticed a performance loss in recent versions of the popular state update library, and he’s on a journey to fix it. He also released [Redux Toolkit 2.10](https://github.com/reduxjs/redux-toolkit/releases/tag/v2.10.0), which picks up the initial set of Immer performance improvements.
 - 📦 [React Concurrent Store \- Ponyfill of experimental React concurrent stores](https://github.com/reactjs/rfcs/pull/271): A community-built version of the upcoming React Labs feature, whose goal is to test the integration into Redux and Relay. See this [related Redux PR](https://github.com/reduxjs/react-redux/pull/2263) for more context.
 - 📦 [Turborepo 2.6 \- Support for local microfrontend development, Bun package manager stable](https://turborepo.com/blog/turbo-2-6): It seems Vercel is working on features to improve microfrontend support. See also this [podcast with CTO Malte Ubi introducing Remote Components](https://www.youtube.com/watch?v=tgfjhAy85UI), which should be supported by Next.js later.
@@ -84,7 +83,9 @@ If you’re not looking for an invoice, start with [LyteNyte Grid Core today](ht
 
 ## 📱 React-Native {#react-native}
 
-[React Native \+ Godot — A new frontier for hybrid apps](https://github.com/borndotcom/react-native-godot)
+[![React Native + Godot — A new frontier for hybrid apps](/emails/issues/257/godot.jpg)](https://github.com/borndotcom/react-native-godot)
+
+**[React Native \+ Godot — A new frontier for hybrid apps](https://github.com/borndotcom/react-native-godot)**
 
 Born React Native Godot bridges the Godot game engine directly into React Native apps, letting you embed full 2D/3D scenes and physics worlds as native views. Built by Born and Migeran, it runs on iOS and Android with a dedicated engine thread, pause/resume controls, and complete Godot API access from TypeScript.
 
@@ -102,9 +103,9 @@ This release turns React Native into a true playground for interactive and game-
 
 ---
 
-Image : [https://reactnativecrossroads.b-cdn.net/10-introducing-uniwind/cover.webp](https://reactnativecrossroads.b-cdn.net/10-introducing-uniwind/cover.webp)
+[![Uniwind — The fastest Tailwind bindings for React Native️](/emails/issues/257/uniwind.jpg)](https://www.reactnativecrossroads.com/posts/introducing-uniwind-the-fastest-tailwind-bindings-for-react-native)
 
-[Uniwind — The fastest Tailwind bindings for React Native️](https://www.reactnativecrossroads.com/posts/introducing-uniwind-the-fastest-tailwind-bindings-for-react-native)
+**[Uniwind — The fastest Tailwind bindings for React Native️](https://www.reactnativecrossroads.com/posts/introducing-uniwind-the-fastest-tailwind-bindings-for-react-native)**
 
 Uniwind brings true Tailwind-style `className` support to React Native, offering build-time speed, seamless theming, and cross-platform styling across web, iOS, and Android.  
 Created by the team behind Unistyles, it’s designed to unify design systems, accelerate UI builds, and replace ad-hoc styling with a consistent, high-performance approach :
@@ -167,8 +168,8 @@ Created by the team behind Unistyles, it’s designed to unify design systems, a
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/257/meme.jpg)](https://x.com/sebastienlorber/status/1983108348494119093)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/257/meme2.jpg)](https://x.com/Baconbrix/status/1983593605706203577)
 
 See ya! 👋
