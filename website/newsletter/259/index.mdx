@@ -6,13 +6,15 @@ date: 11-19-2025
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) here\! 👋
 
-<Todo />
+It's been another quiet week in the ecosystem, probably because everyone was afraid to announce anything during the massive Cloudflare outage\! By the way, this one was not caused by `useEffect` 😆!
+
+We have a good variety of interesting links, but I’m not sure what could be the headline. The most important news was probably the announcement of the upcoming CSS grid support in Yoga and React Native, but it’s still a draft PR for now. Also excited by the TC39 proposals progressing.
+
+Make sure to take the [State of React 2025 survey](https://survey.devographics.com/en-US/survey/state-of-react/2025?source=thisweekinreact.com), which just opened today\!
 
 <!-- truncate -->
-
-🗓 [RNLConf](https://www.reactnativelondon.co.uk/?utm_source=thisweekinreact) - 🇬🇧 London - Thanks to everyone who made this year unforgettable! Tickets for RNLConf 2026 are now open. Get a 10% discount with code "TWIR".
 
 import Support from "../_support.mdx";
 
@@ -38,10 +40,34 @@ The best part? Components live in your repo. Modify them freely; no waiting for 
 
 ## ⚛️ React {#react}
 
-<Todo />
-
 - 💸 [Product for Engineers - Non-obvious pricing advice for startups](https://go.posthog.com/twir-nov19)
+- 👀 [Async React \- New `use()` docs for Promise subclasses](https://github.com/reactwg/async-react/discussions/3): When implementing a Suspense-enabled library, you can help React avoid unnecessarily suspending by setting `value/status/reason` attributes on a Promise, so that React can read it synchronously.
+- 👀 [Next.js MCP PR \- New `get_routes` tool](https://github.com/vercel/next.js/pull/85773): Gives AI agents access to a list of route handlers, available in v16.0.3.
+- 👀 [Next.js PR \- New `next analyze` CLI command](https://github.com/vercel/next.js/pull/85915): New built-in experimental bundle analyzer for Next.js and Turbopack. The [“import stack”](https://x.com/timneutkens/status/1990841104552357905) helps you figure out where a module is being used. Available in v16.0.2-canary.22, scheduled for v16.1.
+- 👀 [Next.js PR \- New `next upgrade` CLI command](https://github.com/vercel/next.js/pull/86120): New easy-to-remember command, just a convenient alias to the codemods that already exist, available in v16.0.2-canary.24.
+- 📊 [State of React 2025 \- Survey is now open](https://survey.devographics.com/en-US/survey/state-of-react/2025?source=thisweekinreact.com): Please take it, and don’t forget to vote for our newsletter at the end 😇.
 - 💸 [STRICH - Add lightning-fast 1D+2D barcode/QR scanning to your web app with a lean JS lib. Simple, predictable pricing, free trial and demo!](https://strich.io/?ref=twir)
+- 📜 [Just JavaScript](https://pedrocattori.com/posts/just-javascript/): A Remix maintainer gives their opinion on whether React Router, Remix 3, Svelte, and React are just JavaScript or not.
+- 📜 [React Server Components With Parcel](https://marmelab.com/blog/2025/11/14/react-server-components-with-parcel.html): Implements a simple task management application. I found it interesting to see how the Parcel integration works, starting from zero.
+- 📜 [Tooltip Components Should Not Exist](https://tkdodo.eu/blog/tooltip-components-should-not-exist): Explains that a generic `<Tooltip>` component is too low-level for a design system and leads to anti-patterns. Instead, it could be better to expose more specialized tooltip components.
+- 📜 [Testing async React RSC components](https://howtotestfrontend.com/resources/testing-async-react-rsc-components): Testing React Server Components looks challenging. It may be easier to avoid async components and leverage `use()` instead.
+- 📜 [Modal dialogs without React (or JavaScript)](https://laktek.com/modal-dialogs-without-react-javascript): This interactive article demonstrates that you might not need a third-party component library with a `<Modal>` component, thanks to modern Web API alternatives that are now widely supported.
+- 📜 [Vitest Browser Mode vs Playwright](https://www.epicweb.dev/vitest-browser-mode-vs-playwright): A great comparison of these tools, both of which can run React component tests with quite different tradeoffs. Vitest Browser Mode is the recommended approach.
+- 📦 [JSX Tools \- In-Browser React IDEs](https://www.ycombinator.com/launches/OnI-jsx-tool-in-browser-react-ide): Interesting new Y Combinator startup that turns your Chrome DevTools into an AI-powered IDE that understands React/JSX and lets you select UI elements to edit.
+- 📦 [React Grab \- Grab any element on in your app and give it to Cursor, Claude Code, etc](https://github.com/aidenybai/react-grab): It looks quite similar to JSX Tools above, except that you keep give the grabbed context to an external IDE.
+- 📦 [Base UI 1.0 beta.5 \- New button component, detached triggers, Autocomplete/Combobox improvements, and more](https://base-ui.com/react/overview/releases#v1-0-0-beta-5): The upcoming UI library from the former Radix UI team keeps progressing, and announced that the lib will be RC/stable in December.
+- 📦 [TanStack Router 1.136 \- New `createServerEntry()` API](https://github.com/TanStack/router/releases/tag/v1.136.0)
+- 📦 [Waku 0.27.1 \- Static pages/layouts/slices are now rendered at build time](https://newsletter.daishikato.com/p/what-s-new-in-waku-v0-27-1)
+- 📦 [StyleX 0.17 Add support for Unplugin, new `defineMarker()` API, ESLint improvements](https://github.com/facebook/stylex/releases/tag/0.17.0)
+- 📦 [nuqs 2.8 \- Add react-router v5 support](https://github.com/47ng/nuqs/releases/tag/v2.8.0)
+- 📦 [c15t 1.8 \- Content Management \- Hybrid consent storage, user identification. configurable legal links, and more](https://c15t.com/changelog/2025-10-27-v1.8.0)
+- 📦 [vite-plugin-react-fallback-throttle](https://bsky.app/profile/wojtekmaj.pl/post/3m5tfx5nrgs2i): Could help speed up your React 19 Suspense unit tests by removing a hardcoded 300ms delay.
+- 📦 [Storybook 10.1 alpha \- Storybook MCP sneak peek](https://storybook.js.org/blog/storybook-mcp-sneak-peek/)
+- 📦 [Streamdown 1.5 \- Markdown streaming renderer \- New docs, performance improvements, fullscreen view for diagrams](https://github.com/vercel/streamdown/releases/tag/streamdown%401.5.0)
+- 🎥 [CodeTV \- Hands On With Async React with Ricky Hanlon](https://www.youtube.com/watch?v=yc4yvjM72uE)
+- 🎥 [Ben Holmes \- I fixed Zustand's biggest problem](https://www.youtube.com/watch?v=gXz-lLIJbMI)
+- 🎥 [Youssef Benlemlih \- The Coolest TanStack Feature \- View Transitions](https://www.youtube.com/watch?v=LyKOB_xNXEY)
+- 🎥 [Jan Marshal \- TanStack Start Is Shockingly Good, 100% Typesafe\!](https://www.youtube.com/watch?v=qrqlHdevfOc)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -59,27 +85,56 @@ Frustrated with janky data grids that break down at scale, dictate your architec
 
 [**See LyteNyte Grid in action today**](https://www.1771technologies.com/demo)
 
-
 ---
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
-
 - 💸 [4 React Native app ideas for the Meta Horizon Start Dev Competition - submit your app by Dec 9, 2025 and win $25k.](https://www.callstack.com/blog/what-you-can-build-with-react-native-on-meta-quest?utm_campaign=meta&utm_source=TWIR&utm_medium=email&utm_content=what-you-can-build-with-react-native-on-meta-quest)
+- 👀 [Yoga PR \- CSS Grid support](https://github.com/facebook/yoga/pull/1865): A developer from the Expo team is implementing the CSS Grid specification into Yoga, the React Native layout engine\! This will also benefit many other tools and renderers that also use Yoga. 🎉
+- 🐦 [Reanimated preview \- Support for animating text inside `Animated.Text`](https://x.com/tomekzaw_/status/1989009271401426982)
+- 🐦 [Radon IDE now has a free plan for non-commercial usage](https://x.com/swmansion/status/1990801086622429568)
+- 📣 [Apple \- Mini Apps Partner Program](https://developer.apple.com/programs/mini-apps-partner/)
+- 🗓 [RNLConf](https://www.reactnativelondon.co.uk/?utm_source=thisweekinreact) - 🇬🇧 London - Thanks to everyone who made this year unforgettable! Tickets for RNLConf 2026 are now open. Get a 10% discount with code "TWIR".
+- 📜 [Nativewind: Speeding up Styling in React Native](https://hashrocket.com/blog/posts/nativewind-speeding-up-styling-in-react-native)
+- 📜 [Building an Integrated React Native Brownfield App Using Expo: Step-by-Step Android Guide](https://blog.swmansion.com/building-an-integrated-react-native-brownfield-app-using-expo-step-by-step-android-guide-ee341c0fd982)
+- 📜 [UI Freeze Workaround for React Native Expo OTA Updates](https://andrei-calazans.com/posts/expo-updates-stuck-on-android-when-force-update/)
+- 📜 [How to enable React Native Core's FLog logging on Android](https://andrei-calazans.com/posts/react-native-android-enabling-flog/)
+- 📜 [Building an AI-Powered Note-Taking App in React Native — Part 2: Image Semantic Search](https://blog.swmansion.com/building-an-ai-powered-note-taking-app-in-react-native-part-2-image-semantic-search-0456895cdf17)
+- 📜 [How to integrate EAS Workflows with GitHub Actions for faster mobile CI](https://expo.dev/blog/how-to-integrate-eas-workflows-with-github-actions)
+- 📜 [Going Universal: From a brownfield React Native and Next.js stack to one Expo app](https://expo.dev/blog/from-a-brownfield-react-native-and-next-js-stack-to-one-expo-app)
+- 📦 [Expo Brownfield Target \- Expo config plugin extending native projects for building app as a brownfield](https://github.com/software-mansion-labs/expo-brownfield-target/releases/tag/v0.0.1)
+- 📦 [React Navigation Stack 7.6.4 \- Fix gaps between animating screens bug under New Architecture](https://github.com/react-navigation/react-navigation/releases/tag/%40react-navigation%2Fstack%407.6.4)
+- 📦 [Detox 20.46 \- Configurable Android systemUI](https://github.com/wix/Detox/releases/tag/20.46.0)
+- 📦 [Nitro Torch \- Flashlight library for iOS and Android](https://github.com/irekrog/react-native-torch-nitro)
+- 📦 [Expo Speech Transcriber \- New iOS-only lib, supports iOS 26 SpeechAnalyzer, realtime transcription](https://github.com/DaveyEke/expo-speech-transcriber)
+- 📦 [Swift 6.3 dev snapshot \- Embedded Swift Improvements](https://www.swift.org/blog/embedded-swift-improvements-coming-in-swift-6.3/)
+- 📦 [Bootsplash 7.0 beta \- Revamped Expo plugin](https://github.com/zoontek/react-native-bootsplash/pull/730#issuecomment-3543026439)
+- 📦 [Streamdown RN \- Streaming markdown renderer based on Vercel's Streamdown](https://github.com/darkresearch/streamdown-rn)
+- 🎥 [Callstack Webinar \- Scaling React Native at Zalando: How Brownfield Migration Paid Off](https://www.youtube.com/watch?v=eH2zlBprK1k)
+- 🎥 [Software Mansion \- Meet React Native Worklets: Run JavaScript on Multiple Threads](https://www.youtube.com/watch?v=SHEyzLJ6hGY)
+- 🎙️ [Rocket Ship 85 \- Valdi vs React Native, Uniwind v1, WebGPU, Game Dev & AI Engineering](https://share.transistor.fm/s/34807619)
+- 🎙️ [RNR 347 \- Skylight: Smart Displays Powered by React Native](https://infinite.red/react-native-radio/rnr-347-skylight-smart-displays-powered-by-react-native)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 🦋 [TC39 meeting in progress \- Live updates from Rob Palmer](https://bsky.app/profile/robpalmer.bsky.social): The meeting is still in progress, but we already know great ES proposals that have changed stage. I’m particularly excited by `Promise.allKeyed()`, Import Text and `Object.keysLength()`.
+- 📜 [Faking Two-Phase View Transitions with the Navigation API’s precommitHandler](https://www.bram.us/2025/11/17/faking-two-phase-view-transitions-with-the-navigation-apis-precommithandler/): The problem with Cross-Document View Transitions is that the transition can be delayed until the navigation commits. A solution could be to transition immediately to an intermediate skeleton.
+- 📜 [The last couple years in v8's garbage collector](https://wingolog.org/archives/2025/11/13/the-last-couple-years-in-v8s-garbage-collector)
+- 📜 [Browserslist & Baseline](https://frontendmasters.com/blog/browserslist-baseline/)
+- 📜 [Perfecting Baseline](https://piccalil.li/blog/perfecting-baseline/)
+- 📦 [ESLint Plugin Baseline JS](https://github.com/3ru/eslint-plugin-baseline-js)
+- 📦 [ESLint v10.0.0-alpha.0](https://eslint.org/blog/2025/11/eslint-v10.0.0-alpha.0-released/)
+- 📦 [oxlint v1.29.0 & oxfmt v0.14.0](https://github.com/oxc-project/oxc/releases/tag/apps_v1.29.0)
+- 📦 [Prisma ORM 7.0 \- Rust-free client by default, smaller, faster](https://www.prisma.io/blog/announcing-prisma-orm-7-0-0)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/259/meme.jpg)](https://x.com/rauchg/status/1990792288071823723)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/259/meme2.jpg)](https://x.com/bobaekang/status/1990817961519493580)
 
 See ya! 👋
