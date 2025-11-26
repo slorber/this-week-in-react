@@ -1,14 +1,18 @@
 ---
 slug: /260
 title: "This Week In React #260: ..."
-authors: [slorber]
+authors: [tboba, kacperkapusciak]
 date: 11-26-2025
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone! Kacper and Tymek from **[Software Mansion](https://swmansion.com/?utm_source=thisweekinreact)** here! 👋
 
-<Todo />
+This week, TanStack Pacer debuts in Beta, a new framework-agnostic library for controlling function timing with a dedicated React adapter. Lots of interesting articles featuring a 20,000x improvement in TanStack Router route matching algorithm speed, tips to speeding up Next.js on Kubernetes, and tutorial for React 19 Actions for better component responsiveness.
+
+On the React Native side, we'd like to highlight an incredibly detailed blog post on Vercel's breakdown of building the v0 iOS app.
+
+Enjoy the read!
 
 <!-- truncate -->
 
@@ -36,10 +40,42 @@ How do you set up i18n in Next.js so it feels built-in — not bolted on? In [le
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![TanStack Pacer is now in Beta](/emails/issues/260/pacer.jpeg)](https://tanstack.com/pacer/latest)
+
+[**TanStack Pacer is now in Beta**](https://tanstack.com/pacer/latest)
+
+A new framework-agnostic library has just landed from the TanStack hands. It offers high-quality utilities for controlling function execution timing, including debouncing, throttling, rate limiting, batching, and more.
+
+It provides a dedicated React adapter (`@tanstack/react-pacer`), which gives you a set of easy-to-use hooks on top of the core Pacer utilities, such as `useDebouncedValue`, `useThrottledValue`, `useQueuedState,` or `useBatcher`.  
+It also gives you the ability to debug the code via [TanStack Devtools](https://tanstack.com/pacer/latest/docs/devtools).
+
+You can read more about the TanStack Pacer's adapter for React [here](https://tanstack.com/pacer/latest/docs/framework/react/adapter).
 
 - 💸 [[BLACK_FRIDAY for 50%] The Road to Next - Master Full-Stack Web Development with Next.js 15 and React 19](https://www.road-to-next.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_3.4)
+- 🐦 [Out-of-order HTML streaming proposal](https://x.com/mozhacks/status/1991176754476572999): Lets HTML be presented non-linearly, and a single file can update multiple parts of the page. Particularly useful for streaming in React while leveraging Suspense.
+- 🐦 [Melvynx \- An insightful discussion about choosing TanStack Start vs](https://x.com/melvynxdev/status/1992477735927885964) [Next.js](http://Next.js)
+- 📜 [TanStack Router \- How we accidentally made route matching more performant by aiming for correctness](https://tanstack.com/blog/tanstack-router-route-matching-tree-rewrite): TanStack Router’s route matching just became 20,000x faster by rewriting its algorithm to use a segment trie instead of a sorted list.
+- 📜 [The State of TanStack, Two Years of Full-Time OSS](https://tanstack.com/blog/tanstack-2-years): The story of a two-year adventure in creating open source libraries. Tanner Linsley, the creator and owner of TanStack, talks about the difficulties, effort, and growth of the company, as well as his reflections about maintaining the product, concluding with TanStack's plans.
+- 📜 [Building Reusable Components with React 19 Actions](https://certificates.dev/blog/building-reusable-components-with-react-19-actions?friend=TWIR): Demonstrating how to leverage React 19 features, especially new `useTransition` and `useOptimistic` hook to prevent the user from feeling the UI is unresponsive.
+- 📜 [93% Faster Next.js in (your) Kubernetes](https://blog.platformatic.dev/93-faster-nextjs-in-your-kubernetes): Optimized a 1,000 requests per second AWS-hosted Next.js app, making it more reliable using a separate Node.js application server called Watt.
+- 📜 [The Browser Has Everything You Need](https://jovidecroock.com/blog/platform/): Preloading the critical data upfront can drastically improve perceived performance and save you endless debates between SSR and SPA.
+- 📜 [Omit for Discriminated Unions in TypeScript](https://tkdodo.eu/blog/omit-for-discriminated-unions-in-type-script): Discussing a common pattern in React and TypeScript to create wrapper components that inherit props from a base component, and outlining the biggest problem with converting the base component into a discriminated union.
+- 📜 [One Canvas to Rule Them All: How INK Games’ New Site Handles Complex 3D](https://tympanus.net/codrops/2025/11/21/one-canvas-to-rule-them-all-how-ink-games-new-site-handles-complex-3d/): Using React Three Fiber and a single shared WebGL canvas.
+- 📜 [Moving Mountains: How We Migrated from Enzyme to React Testing Library](https://product.hubspot.com/blog/migrated-from-enzyme-to-react-testing-library): Migrate 76,000+ tests from Enzyme to React Testing Library, from planning to execution to modernize React codebase.
+- 📜 [Why Judging APIs by Syntax is Misleading You](https://jjenzz.com/judging-apis-by-syntax-is-misleading/): Using CSS-in-JS and directives, author illustrates that we tend to reject tools based on our familiarity with syntax, even if they solve problems at different levels of abstraction.
+- 📜 [Creating Wavy Infinite Carousels in React Three Fiber with GLSL Shaders](https://tympanus.net/codrops/2025/11/26/creating-wavy-infinite-carousels-in-react-three-fiber-with-glsl-shaders/)
+- 📜 [Automated Accessibility Testing for React \- Tools and Best Practices you can use](https://howtotestfrontend.com/resources/accessibility-testing-your-react-app)
+- 📜 [React Router's take on React Server Components](https://www.epicreact.dev/react-routers-take-on-react-server-components-4bj7q)
 - 💸 [React Certification - Up to 60% Off Mid / Senior prep & exam bundles. Exams by Aurora Scharff. Trusted by 680+ companies like IBM & PwC.](https://certificates.dev/react?friend=TWIR&utm_source=twir&utm_medium=email&utm_campaign=cert_bf2025_bf)
+- 📦 [Redux Toolkit 2.11 \- Immer v11 perf improvements, `refetchCachedPages` option](https://github.com/reduxjs/redux-toolkit/releases/tag/v2.11.0)
+- 📦 [ReScript 12 \- Improved React Support, new build system](https://rescript-lang.org/blog/release-12-0-0/)
+- 📦 [TanStack Router 1.39 \- Support for `vite preview`, prerender with Vite preview server](https://github.com/TanStack/router/releases/tag/v1.139.3)
+- 📦 [Streamdown 1.6 \- Static rendering mode (no streaming)](https://github.com/vercel/streamdown/releases/tag/streamdown%401.6.0)
+- 📦 [use-nemo](https://github.com/Ademking/use-nemo): A Vite plugin that enables React-like directives in JavaScript code.
+- 📦 [XState Store 3.12 \- Enable access to the previous value for computed atoms](https://github.com/statelyai/xstate/releases/tag/%40xstate%2Fstore%403.12.0)
+- 🎥 [Alem Tuzlak \- New useRoute() React Router Hook Explained](https://www.youtube.com/watch?v=9n-gLy9GfLs)
+- 🎥 [Shruti Kapoor \- Is TanStack Start the NextJS Killer?](https://www.youtube.com/watch?v=CFYJoYsNJp0)
+- 🎥 [Youssef Benlemlih \- TanStack DB is Getting Embarrassingly Good](https://www.youtube.com/watch?v=k0S3Dq0k1pA)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -61,22 +97,50 @@ Frustrated with janky data grids that break down at scale, dictate your architec
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Vercel - How we built the v0 iOS app](/emails/issues/260/v0.png)](https://vercel.com/blog/how-we-built-the-v0-ios-app)
+
+[Vercel \- How we built the v0 iOS app](https://vercel.com/blog/how-we-built-the-v0-ios-app)
+
+A detailed technical breakdown of the challenges they had to overcome to create a high-quality React Native app. The article is packed with visual explanations and code snippets of common RN headaches related to keyboard handling, lists, text input, and animations.
 
 - 💸 [Shipping to the Meta Horizon Store with React Native? See Callstack's release guide, then jump into Meta’s dev competition](https://www.callstack.com/blog/how-to-release-a-react-native-app-on-the-meta-horizon-store?utm_campaign=meta&utm_source=TWIR&utm_medium=email&utm_content=how-to-release-a-react-native-app-on-the-meta-horizon-store)
+- 👀 [Worklets PR \- custom serialization support](https://github.com/software-mansion/react-native-reanimated/pull/8600): A PR that adds a feature to register Custom Serializables just landed on main. It lets you transfer objects between runtimes that can't be trivially serialized or deserialized \- like primitives, or objects without circular references, containing only primitives.
+- 🐦 [VisionCamera V5 on Android has been achieved by the Margelo team](https://x.com/mrousavy/status/1992958223876559037)
+- 📣 [Expo \- Custom environments for EAS Environment Variables](https://expo.dev/changelog/custom-environment-variable-environments)
+- 📜 [You May Not Need Reanimated Measure](https://blog.swmansion.com/you-may-not-need-reanimated-measure-5b9c11d27ba4): You can now use React Native’s built-in `measure` to get the layout dimensions synchronously in the `useLayoutEffect` on the New Architecture.
+- 📜 [Going Universal: From a brownfield React Native and Next.js stack to one Expo app](https://expo.dev/blog/from-a-brownfield-react-native-and-next-js-stack-to-one-expo-app): The journey that one developer took, transforming two separate codebases step by step over several months into a single universal Expo app running on the web, iOS, and Android.
+- 📜 [How to create Apple Maps style liquid glass sheets in Expo (the real way)](https://expo.dev/blog/how-to-create-apple-maps-style-liquid-glass-sheets): An overview of 3 different implementations using Expo UI `BottomSheet`, Expo Router’s `formSheet`, and TrueSheet.
+- 📜 [Building an AI-Powered Note-Taking App in React Native \- Part 3: Local RAG](https://blog.swmansion.com/building-an-ai-powered-note-taking-app-in-react-native-part-3-local-rag-868ba75f818b): On-device Retrieval-Augmented Generation using React Native Executorch and React Native RAG.
+- 📜 [Integrating Swift Package Manager With React Native Libraries](https://www.callstack.com/blog/integrating-swift-package-manager-with-react-native-libraries)
+- 📦 [React Native Skia 2.4 \- zIndex support](https://github.com/Shopify/react-native-skia/releases/tag/v2.4.0): The zIndex can be animated.
+- 📦 [react-native-tailwind](https://github.com/mgcrea/react-native-tailwind): A fresh, compile-time Tailwind CSS library for React Native with zero runtime overhead and a TypeScript-first approach.
+- 📦 [React Navigation Native Stack 7.8 \- `pageSheet` presentation, `headerBackIcon` prop](https://github.com/react-navigation/react-navigation/releases/tag/%40react-navigation/native-stack%407.8.0)
+- 📦 [React Native Gifted Chat 3.0 \- Full rewrite in TS, better keyboard handling, enhanced customization options](https://github.com/FaridSafi/react-native-gifted-chat/blob/master/CHANGELOG.md)
+- 📦 [React Native Enriched 0.1.6 \- improved Android measurements, iOS HTML Entity Handling](https://github.com/software-mansion/react-native-enriched/releases/tag/v0.1.6)
+- 🎥 [Expo \- Pull Request previews in GitHub Actions](https://www.youtube.com/watch?v=7UVIrqrrrso)
+- 🎥 [Simon Grimm \- 7 Tips to Make Your React Native App Blazing Fast](https://www.youtube.com/watch?v=rSym-q9soFk)
+- 🎙️ [React Universe On Air \- React Native Goes VR: Inside the Meta Quest Platform](https://www.callstack.com/podcasts/bringing-react-native-to-vr-on-meta-quest)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 🦋 [TC39 \- Proposals are progressing](https://bsky.app/profile/robpalmer.bsky.social/post/3m62djhwj3k2i)
+- 📜 [Shai Hulud Strikes Again (v2)](https://socket.dev/blog/shai-hulud-strikes-again-v2): A major software supply chain attack on NPM affecting 70+ React & React Native packages.
+- 📜 [Brand New Layouts with CSS Subgrid](https://www.joshwcomeau.com/css/subgrid/)
+- 📜 [Understanding Sourcemaps: From Development to Production](https://www.thisdot.co/blog/understanding-sourcemaps-from-development-to-production)
+- 📜 [The Performance Inequality Gap, 2026](https://infrequently.org/2025/11/performance-inequality-gap-2026/)
+- 📦 [Playwright 1.57 \- Speedboard tab in HTML reporter, new `wait` field in `webServer` config](https://github.com/microsoft/playwright/releases/tag/v1.57.0)
+- 📦 [Bun 1.3.3 \- `CompressionStream` and `DecompressionStream`](https://bun.com/blog/bun-v1.3.3)
+- 📦 [Astro 5.16 \- experimental SVG optimization](https://astro.build/blog/astro-5160/)
+- 📦 [Better Auth 1.4 \- Stateless sessions, optimized queries, and more](https://www.better-auth.com/blog/1-4)
+- 🎙️ [Syntax \- CSS: Advanced and Obscure](https://syntax.fm/show/957/css-advanced-and-obscure)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/260/meme1.png)](https://x.com/wesbos/status/1990806466203169103)
+[![alt](/emails/issues/260/meme2.png)](https://x.com/wesbos/status/1990806466203169103)
 
 See ya! 👋
