@@ -63,10 +63,12 @@ export function SponsoringTabsStats({ children }: { children: ReactNode }) {
             <b>Subscribers count</b>:{" "}
             <span>{newsletterStats.all.subscribersCount}</span>
           </li>
+          {/*
           <li>
             <b>Monthly growth</b>:{" "}
             <span>+~ {newsletterStats.growthPerMonth}</span>
           </li>
+          */}
           <li>
             <b>Open-rate</b>: <span>{newsletterStats.all.openRate}%</span>
           </li>
@@ -142,11 +144,12 @@ function SponsoringHeader({
         </div>
       ) : null}
       */}
-      {nextSlot && (
+      {/*nextSlot && (
         <div>
           <b>Next availability</b>: {nextSlot.date}
         </div>
-      )}
+      )
+      */}
       <div>
         <b>Price:</b>
       </div>
