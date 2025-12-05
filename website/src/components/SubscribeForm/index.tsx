@@ -32,11 +32,12 @@ function prepareFormHiddenElements(form: HTMLFormElement) {
     addField(
       form,
       "qs_ref",
-      searchParams.get("ref") ?? searchParams.get("reference")
+      searchParams.get("ref") ?? searchParams.get("reference"),
     );
 
     addField(form, "document_referrer", document.referrer);
     addField(form, "pathname", window.location.pathname);
+    addField(form, "iframe", String(window.top !== window.self));
   } catch (e) {
     console.error("can't add ConvertKit hidden fields", e);
   }
