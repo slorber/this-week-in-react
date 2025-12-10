@@ -1,14 +1,20 @@
 ---
 slug: /262
-title: "This Week In React #262: ..."
+title: "This Week In React #262: React2Shell, Fate, TanStack AI, React Grab, Formisch | React Native 0.83, Reanimated 4.2, State of RN, Refined, Crypto, Worklets, Sheet Navigator | CSS, Temporal, Supply Chain, Firefox"
 authors: [slorber]
 date: 12-10-2025
-unlisted: true
 ---
 
 Hi everyone!
 
-<Todo />
+This week, it remains important for me to raise awareness about the React Server Components vulnerability, since an exploit is now widely available. Thankfully, we also have more positive React content to check with Fate, TanStack Alpha, React Grab, and more.
+
+It’s even hotter on the React Native side. We were patiently waiting for 0.83 to publish 😇 and it’s now out. You can now use `<Activity>` in React Native 🔥. Reanimated 4.2 is also out with Shared Elements Transition support 🔥.
+
+It’s the survey season, don’t forget to answer the 2 most important ones that are currently open:
+
+- [State of React](https://survey.devographics.com/en-US/survey/state-of-react/2025?source=thisweekinreact.com)
+- [State of React Native](https://survey.2025.stateofreactnative.com/?utm_source=thisweekinreact)
 
 <!-- truncate -->
 
@@ -37,7 +43,9 @@ TanStack Start is an open source React framework built by and for the community.
 
 ## ⚛️ React {#react}
 
-[React2Shell \- CVE-2025-55182](https://react2shell.com/)
+[![React2Shell - CVE-2025-55182](/emails/issues/262/react2shell.jpg)](https://react2shell.com/)
+
+**[React2Shell \- CVE-2025-55182](https://react2shell.com/)**
 
 In case you missed my email, a 10.0-scored [vulnerability affecting React Server Components](https://react.dev/blog/2025/12/03/critical-security-vulnerability-in-react-server-components) was unveiled last week. And it’s a really nasty one, enabling unauthenticated remote code execution with a simple HTTP request. Many React meta-frameworks and custom setups are affected, in particular Next.js (v14-canary, v15, v16). If your app is affected, you really need to upgrade now\!
 
@@ -91,11 +99,9 @@ I’ve found so many related links, so here’s my top selection:
 
 ## 📱 React-Native {#react-native}
 
-React Native 0.83
+[![React Native 0.83](/emails/issues/262/rn.jpg)](https://reactnative.dev/blog/2025/12/10/react-native-0.83)
 
-[https://reactnative.dev/blog/2025/12/10/react-native-0.83](https://reactnative.dev/blog/2025/12/10/react-native-0.83) ?????
-
-[https://deploy-preview-4917--react-native.netlify.app/blog/2025/12/10/react-native-0.83](https://deploy-preview-4917--react-native.netlify.app/blog/2025/12/10/react-native-0.83)
+**[React Native 0.83](https://reactnative.dev/blog/2025/12/10/react-native-0.83)**
 
 A new minor version of React Native has just been published. Without any user-facing breaking changes, it reflects the efforts to stabilize the framework, making it easier to upgrade and benefit from new, useful features.
 
@@ -110,7 +116,9 @@ The highlights are:
 
 ---
 
-[Reanimated 4.2 \- Shared Element Transitions](https://blog.swmansion.com/introducing-reanimated-4-2-0-71eea21ca861)
+[![Reanimated 4.2 - Shared Element Transitions](/emails/issues/262/reanimated.jpg)](https://blog.swmansion.com/introducing-reanimated-4-2-0-71eea21ca861)
+
+**[Reanimated 4.2 \- Shared Element Transitions](https://blog.swmansion.com/introducing-reanimated-4-2-0-71eea21ca861)**
 
 Software Mansion devs have finally reimplemented Shared Element Transitions – the most requested feature – on top of Reanimated 4 and the New Architecture. It makes it possible to animate views between two different screens, giving a feeling of continuity when navigating. This feature and other performance improvements are gated behind feature flags to collect feedback and finalize the implementation.
 
