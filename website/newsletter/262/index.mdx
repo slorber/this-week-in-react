@@ -10,8 +10,6 @@ Hi everyone!
 
 <Todo />
 
-*   🗓 [React Paris 2026](https://react.paris/?utm_source=thisweekinreact) \- 🇫🇷 Paris - 26 & 27 March. Full speaker lineup just dropped! Una Kravets, Gabriel Pichot and Kitze are part of the lineup, bringing cutting-edge React insights to the French capital. Get a 10% discount with code "TWIR".
-
 <!-- truncate -->
 
 import Support from "../_support.mdx";
@@ -25,13 +23,13 @@ import Support from "../_support.mdx";
 [![Learn how to build a TanStack Start project with Strapi](/emails/issues/262/strapi.jpg)](https://www.youtube.com/watch?v=pFZi5xA4_7E&utm_campaign=19282052-Newsletter%20Sponsorships&utm_source=React&utm_medium=1st-sponsor)
 
 **[Learn how to build a TanStack Start project with Strapi](https://www.youtube.com/watch?v=pFZi5xA4_7E&utm_campaign=19282052-Newsletter%20Sponsorships&utm_source=React&utm_medium=1st-sponsor)**
-  
+
 In this video tutorial, you'll learn how to create a fully dynamic, SEO-friendly landing page and blog website, which includes the following features:
 
-*   pagination
-*   search
-*   authentication
-*   comments
+- pagination
+- search
+- authentication
+- comments
 
 TanStack Start is an open source React framework built by and for the community.
 
@@ -39,10 +37,43 @@ TanStack Start is an open source React framework built by and for the community.
 
 ## ⚛️ React {#react}
 
-<Todo />
+[React2Shell \- CVE-2025-55182](https://react2shell.com/)
 
-- 💸[STRICH - Add lightning-fast barcode scanning to your app with a lean JS lib. Built-in UI, simple, predictable pricing, free trial and demo!](https://strich.io/?ref=twir)
-- 💸[React Certification - Last chance to get React certified at a deep discount; Bootcamp training bundles start at 60% OFF. Offer ends soon.](https://certificates.dev/react?friend=TWIR)
+In case you missed my email, a 10.0-scored [vulnerability affecting React Server Components](https://react.dev/blog/2025/12/03/critical-security-vulnerability-in-react-server-components) was unveiled last week. And it’s a really nasty one, enabling unauthenticated remote code execution with a simple HTTP request. Many React meta-frameworks and custom setups are affected, in particular Next.js (v14-canary, v15, v16). If your app is affected, you really need to upgrade now\!
+
+Although no exploit was initially shared, infosec researchers and hackers quickly reverse-engineered the patch, and an exploit has been circulating online only \~30 hours after the initial disclosure. Hackers around the world have already been exploiting it at scale. There are even browser extensions to detect and exploit vulnerable sites. It wouldn’t be surprising to see a worm exploiting it.
+
+I’ve found so many related links, so here’s my top selection:
+
+- 🐦 [Vercel CEO Guillermo Rauch explains how the exploit works](https://x.com/rauchg/status/1997362942929440937): It’s quite sophisticated and shows the talent of Lachlan and Sylvie, who disclosed it after hours of research. I learned a few things about “gadgets” in JS that could be exploited.
+- 👀 [React PR \- Patch FlightReplyServer with fixes from ReactFlightClient](https://github.com/facebook/react/pull/35277): The security patch that has been reverse-engineered.
+- 📜 [Red Herrings and AI Slop: Debunking React2Shell Misinformation](https://miggo.io/post/red-herrings-and-ai-slop-debunking-react2shell-misinformation): Explains the patch PR above has been deliberately misleading to buy time and let the community upgrade ASAP.
+- 📜 [Cloudflare outage on December 5, 2025](https://blog.cloudflare.com/5-december-2025-outage/): It was due to mitigation measures for the vulnerability 😅.
+- 🔐 [Next.js Security Advisory](https://nextjs.org/blog/CVE-2025-66478): Including a [command-line tool](https://github.com/vercel-labs/fix-react2shell-next) to help you patch your Next.js app. There’s also a [Vercel Security Bulletin](https://vercel.com/kb/bulletin/react2shell).
+- 📦 [Original Proof-of-Concepts for React2Shell](https://github.com/lachlan2k/React2Shell-CVE-2025-55182-original-poc)
+- 🎥 [Theo \- React got hacked. It's really, really bad](https://www.youtube.com/watch?v=UiCEejcV5N4)
+
+---
+
+- 💸 [STRICH - Add lightning-fast barcode scanning to your app with a lean JS lib. Built-in UI, simple, predictable pricing, free trial and demo!](https://strich.io/?ref=twir)
+- 🐦 [React Fiber explained](https://x.com/infinterenders/status/1997359890021634509): A fun but accurate explanation of how and why React re-implemented its own stack and scheduling system.
+- 🗓 [React Paris 2026](https://react.paris/?utm_source=thisweekinreact) \- 🇫🇷 Paris - 26 & 27 March. Full speaker lineup just dropped! Una Kravets, Gabriel Pichot and Kitze are part of the lineup, bringing cutting-edge React insights to the French capital. Get a 10% discount with code "TWIR".
+- 📜 [React 19.2. Further Advances INP Optimization](https://calendar.perfplanet.com/2025/react-19-2-further-advances-inp-optimization/): Focusing on Activity and the new DevTools performance tracks.
+- 📜 [Skeletons in My Codebase: Tanstack in Production](https://oscargabriel.dev/blog/skeletons-in-my-codebase): Pragmatic TanStack Router lessons learned through trial and error.
+- 📜 [Do's and Don'ts of useEffectEvent in React](https://slicker.me/react/useEffectEvent.html)
+- 📜 [TanStack Start: New competitor to Next.js](https://ondrejvelisek.github.io/tanstack-start-new-competitor-to-nextjs/)
+- 📜 [Bundle Size Investigation: A Step-by-Step Guide to Shrinking Your JavaScript](https://www.developerway.com/posts/bundle-size-investigation)
+- 📜 [Reatom: State Management That Grows With You](https://dev.to/artalar/reatom-state-management-that-grows-with-you-1i4)
+- 📜 [React Elements, Children as Props, and Re-Renders](https://shramko.dev/blog/react-elements-children)
+- 📜 [Controlled vs Uncontrolled Components in React](https://certificates.dev/blog/controlled-vs-uncontrolled-components-in-react)
+- 💸 [React Certification - Last chance to get React certified at a deep discount; Bootcamp training bundles start at 60% OFF. Offer ends soon.](https://certificates.dev/react?friend=TWIR)
+- 📦 [Fate alpha \- A modern data client for React & tRPC](https://fate.technology/posts/introducing-fate): A new declarative data fetching and state management solution for React is now in alpha, created by former Meta employee Christoph Nakazawa. Inspired by the Relay client, it brings useful features such as state co-location, data normalization, view composition, and data masking, without needing GraphQL.
+- 📦 [TanStack AI Alpha](https://tanstack.com/blog/tanstack-ai-alpha-your-ai-your-way): TanStack has unveiled its new AI package that is framework, language, and service agnostic. The official intro doesn’t share many details, but I liked this [community article](https://oscargabriel.dev/blog/tanstacks-open-ai-sdk) that compares it to the Vercel AI SDK. It should have a great integration with TanStack Start and also ship a headless chat UI library. Also watch this [walkthrough video](https://www.youtube.com/watch?v=XX0-R4BEyw4) from one of its creator, Alem Tuzlak.
+- 📦 [React Grab for Agents](https://www.react-grab.com/blog/agent): This lets you assign concurrent UI-related tasks to AI agents directly from your browser with a nice user experience. You automatically share the right context (file path, component stack…) to clearly communicate your intent to AI agents so that they don’t lose time figuring things out.
+- 📦 [Formisch \- Modular and type-safe form library for any framework](https://github.com/open-circle/formisch): Initially built for Solid, now includes React bindings.
+- 📦 [SVAR React DataGrid \- Fast, feature-rich React datagrid with sorting, filtering, virtual scrolling, and more](https://github.com/svar-widgets/react-grid)
+- 📦 [Base UI 1.0 rc.0](https://github.com/mui/base-ui/releases/tag/v1.0.0-rc.0)
+- 🎙️ [PodRocket \- Whats new in React 19.2 with Shruti Kapoor](https://podrocket.logrocket.com/react-19-1-shruti-kapoor)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -53,29 +84,79 @@ TanStack Start is an open source React framework built by and for the community.
 [![Make your AI code guidelines stick with CodeRabbit](/emails/issues/262/coderabbit.jpg)](https://coderabbit.link/F8zN5Km)
 
 **[Make your AI code guidelines stick with CodeRabbit](https://coderabbit.link/F8zN5Km)**
-  
+
 > You already tuned your AI agents with .cursorrules, CLAUDE.md, Agents.md, and Copilot-instructions. CodeRabbit reads those guideline files and uses them to enforce code quality in every PR review, so comments line up with the rules you have already written.
 
 ---
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+React Native 0.83
 
-- 💸[[Free Workshop] Improve React Native Performance using Tracing and Logs with Sentry](https://www.youtube.com/watch?v=h2SWq6Msnpk)
+[https://reactnative.dev/blog/2025/12/10/react-native-0.83](https://reactnative.dev/blog/2025/12/10/react-native-0.83) ?????
+
+[https://deploy-preview-4917--react-native.netlify.app/blog/2025/12/10/react-native-0.83](https://deploy-preview-4917--react-native.netlify.app/blog/2025/12/10/react-native-0.83)
+
+A new minor version of React Native has just been published. Without any user-facing breaking changes, it reflects the efforts to stabilize the framework, making it easier to upgrade and benefit from new, useful features.
+
+The highlights are:
+
+- React 19.2, enabling support for `<Activity>` and `useEffectEvent`
+- DevTools with Network and Performance panels, and a new desktop app
+- Intersection Observers (Canary), another DOM API coming to React Native
+- Web Performance APIs are now stable
+- Hermes V1 performance improvements
+- Experimental iOS feature flags to compile out the Legacy Architecture, and debug precompiled binaries
+
+---
+
+[Reanimated 4.2 \- Shared Element Transitions](https://blog.swmansion.com/introducing-reanimated-4-2-0-71eea21ca861)
+
+Software Mansion devs have finally reimplemented Shared Element Transitions – the most requested feature – on top of Reanimated 4 and the New Architecture. It makes it possible to animate views between two different screens, giving a feeling of continuity when navigating. This feature and other performance improvements are gated behind feature flags to collect feedback and finalize the implementation.
+
+---
+
+- 💸 [[Free Workshop] Improve React Native Performance using Tracing and Logs with Sentry](https://www.youtube.com/watch?v=h2SWq6Msnpk)
+- 📊 [State of React Native 2025](https://survey.2025.stateofreactnative.com/): The annual community survey is now live. Please answer it\! 🙏
+- 🔐 [Expo \- Mitigating the Critical Security Vulnerability in React Server Components](https://expo.dev/changelog/mitigating-critical-security-vulnerability-in-react-server-components)
+- 💬 [React Native issue \- How to mitigate React2Shell in React Native](https://github.com/facebook/react-native/issues/54772#issuecomment-3617929832): The community tried to update React after the vulnerability was revealed, which led to version mismatch issues with React Native. Ricky explains that React itself is not vulnerable, and only RSC packages are.
+- 💬 [React Native RFC \- Library codegen as prefab on Android](https://github.com/react-native-community/discussions-and-proposals/pull/963): A suggestion that could help improve Android build times, and benefit to recently launched [RNRepo](https://rnrepo.org/) project.
+- 🐦 [iOS bottom accessory support is coming](https://x.com/Baconbrix/status/1998438240291049931): It should be released soon in Screens 4.19 and probably later in Expo Router 7 / SDK 55\. Other features are coming to Expo Router, such as [Zoom Transitions on iOS](https://github.com/expo/expo/pull/41083).
+- 📜 [Kotlin Multiplatform: Benefits, Limitations & Our Contributions](https://blog.swmansion.com/kotlin-multiplatform-benefits-limitations-our-contributions-560a148d28c9): Software Mansion created a team centered around KMP, which has already published a few open-source packages. They break down what it does well, where it falls short, and compare it to React Native.
+- 📜 [What Changes When You Bring React Native to VR on Meta Quest](https://www.callstack.com/blog/mobile-vs-vr-key-differences-in-features-ui-and-ux): List of things to consider in terms of responsive design, accessibility, and interactivity.
+- 📜 [How to swap between React Native Storybook 10 and your app](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-10-and-your-app-e9e)
+- 📜 [Large header title in Expo Router](https://amanhimself.dev/blog/large-header-title-in-expo-router/)
+- 📦 [Sheet Navigator \- Custom React Navigation navigator integration for True Sheet](https://sheet.lodev09.com/blog/sheet-navigator): Makes navigating to a sheet as seamless as if it were a stack screen.
+- 📦 [Refined \- ESLint plugin for your React Native styles](https://reactiive.io/articles/introducing-refined): This could help make your app look more polished.
+- 📦 [Worklets 0.7 \- Register custom Serializable (useful for Nitro Objects), scheduling APIs, n new Synchronizable docs](https://github.com/software-mansion/react-native-reanimated/releases/tag/worklets-0.7.1)
+- 📦 [Quick Crypto 1.0 \- Rewritten with Nitro Modules](https://github.com/margelo/react-native-quick-crypto/releases/tag/v1.0.0)
+- 📦 [IAP 14.5 \- Built-in Purchase Verification (aka Receipt Validation), IAPKit integration](https://hyochan.github.io/react-native-iap/blog/release-14.5.0/)
+- 📦 [Expo Speech Transcriber 0.1.6 \- Support for Android real-time transcriptions](https://github.com/DaveyEke/expo-speech-transcriber/releases/tag/v0.1.6)
+- 📦 [MMKV 4.1 \- New instance APIs, existsMMKV, deleteMMKV, importAllFrom](https://github.com/mrousavy/react-native-mmkv/releases/tag/v4.1.0)
+- 📦 [Uniwind 1.2 \- Vite/RNW support, improve React Compiler support](https://github.com/uni-stack/uniwind/releases/tag/v1.2.0)
+- 🎥 [Beto \- I Tried Snap’s Valdi – Is It Better Than React Native?](https://www.youtube.com/watch?v=PW4kDmEH0bI)
+- 🎙️ [RNR 348 \- From Ionic Evangelist to React Native Content Creator: Simon Grimm](https://infinite.red/react-native-radio/rnr-348)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📜 [CSS Wrapped 2025](https://chrome.dev/css-wrapped-2025/): A greatly presented overview of all the new web/CSS features that landed in Chrome this year. Including cool things you've probably never heard of.
+- 📜 [How We're Protecting Our Newsroom from npm Supply Chain Attacks](https://pnpm.io/blog/2025/12/05/newsroom-npm-supply-chain-security): Using 3 layers of pnpm security controls.
+- 📜 [Protect yourself from malicious NPM packages with a system-wide dev container](https://zwyx.dev/blog/docker-dev)
+- 📜 [TypeScript Types as a Programming Language](https://marmelab.com/blog/2025/12/04/typescript-type-as-a-programming-language.html)
+- 📜 [The Case for Effect](https://ryanhunter.io/the-case-for-effect/)
+- 📦 [Chrome 144 beta](https://developer.chrome.com/blog/chrome-144-beta): Includes the Temporal API\!
+- 📦 [Bun 1.3.4 \- URLPattern](https://bun.com/blog/bun-v1.3.4)
+- 📦 [Oxlint Type-Aware Linting Alpha](https://oxc.rs/blog/2025-12-08-type-aware-alpha.html)
+- 📦 [Firefox 146 \- @scope, symbols as WeakMap keys, Navigation API (nightly), and more](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/146)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/262/meme.jpg)](https://bsky.app/profile/samuel.fm/post/3m7ajul77yc2u)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/262/meme2.jpg)](https://x.com/sebastienlorber/status/1996310446358381017)
 
 See ya! 👋
