@@ -1,6 +1,6 @@
 ---
 slug: /265
-title: "React Hebdo #265: ..."
+title: "React Hebdo #265: React Skills, json-render, ViewTransition, Base UI, shadcn, Store, MDX, GTK | RN Windows/macOS/Harmony, Brownie, Enriched, Navigation, Teleport, Nitro | TC39, Astro, jQuery, Node.js"
 authors: [slorber]
 date: 01-21-2026
 unlisted: true
@@ -8,9 +8,9 @@ unlisted: true
 
 Hi everyone!
 
-<Todo />
+This week, we saw a lot of activity on X about the new AI skills system. Personally, what excited me most is the new Firefox release that unlocks interesting things for React developers.
 
-🗓 [React Paris](https://react.paris/?utm_source=thisweekinreact) - 🇫🇷 Paris & Online - 26–27 March - React Paris is already 50% sold out - Secure your spot at this premier React event before prices increase by €200 and save an extra 10% with code "TWIR".
+The React Native ecosystem is also super active, with many interesting releases. And I’m sure Expo 55 beta will drop just after we send our email 😅, so make sure to check their blog because it’s coming soon.
 
 <!-- truncate -->
 
@@ -36,10 +36,56 @@ Join Sentry's hands-on workshop where Sergiy Dybskiy will dives into how these p
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Agent Skills](/emails/issues/265/skills.jpg)](https://agentskills.io/)
+
+**[Agent Skills](https://agentskills.io/)**
+
+A new Anthropic spec is gaining traction in the AI dev community. Skills let agents acquire capabilities on demand via progressive disclosure—lazy-loading only what’s needed to keep context slim. It’s been a hot topic in React this week, with multiple projects shipping open-source skills and tooling:
+
+- [Skills.sh](https://skills.sh/), a platform launched by Vercel to discover popular open source skills
+- [React Best Practices](https://vercel.com/blog/introducing-react-best-practices) by Vercel for React and Next.js skills. I also liked the related article from one of the authors ([Performance Is Not a Technical Problem](https://x.com/shuding/status/2013632751568851233)).
+- [React Native Best Practices](https://www.callstack.com/blog/announcing-react-native-best-practices-for-ai-agents) by Callstack, including many React Native optimization skills
+- [Expo Skills](https://github.com/expo/skills) for Expo apps and EAS projects
+- [Remotion Skills](https://x.com/Remotion/status/2013626968386765291) are trending on X, showing that you can vibe code videos with React 🤪
+
+---
+
+[![Firefox 147](/emails/issues/265/firefox.jpg)](https://www.firefox.com/en-US/firefox/147.0/releasenotes/)
+
+**[Firefox 147](https://www.firefox.com/en-US/firefox/147.0/releasenotes/)**
+
+You might wonder why Firefox is the headline of the React section? It turns out this release is quite important for React developers, unlocking 3 new APIs that are now available in all browsers 🎉:
+
+- [View transition types](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API/Using_types) \- React is relying on it (`document.startViewTransition({update, types})`) to conditionally enable its `<ViewTransition>` component. That component is still canary, but once unflagged, it should now work in all recent browsers\!
+- [CSS anchor positioning](https://developer.chrome.com/blog/anchor-positioning-api) \- An awesome addition to CSS that should replace the need for JS-based positioning libraries many React apps used for dropdowns and tooltips, such as Tether, Popper.js, Floating UI…
+- [Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/) \- This completely redefines the APIs used to build client-side routers / SPAs, providing a clean, centralized way to intercept navigation events, instead of using the clunky `history` API.
+
+---
 
 - 💸 [10 Real-World React App Examples to Inspire Your Next Project](https://www.infragistics.com/blogs/react-app-examples/?utm_source=this-week-in-react&utm_medium=referral&utm_campaign=ignite-ui-react&utm_term=newsletter-sponsorship&utm_content=10-react-grid-examples)
+- 👀 [React RFC PR \- useStore/createStore APIs](https://github.com/facebook/react/pull/35449) \- A POC of implementing a React Store that is compatible with concurrent rendering, for discussion purposes.
+- 👀 [Prettier PR \- Upgrade MDX parser](https://github.com/prettier/prettier/pull/18533) \- Support for MDX v3 is finally coming.
+- 🔨 [TanStack Builder alpha](https://tanstack.com/builder): A website to let you assemble your own TanStack visually. It looks like a convenient visual wrapper around `create-tanstack-app`.
+- 🗓 [React Paris](https://react.paris/?utm_source=thisweekinreact) - 🇫🇷 Paris & Online - 26–27 March - React Paris is already 50% sold out - Secure your spot at this premier React event before prices increase by €200 and save an extra 10% with code "TWIR".
+- 📜 [useOptimistic Won't Save You](https://www.columkelly.com/blog/use-optimistic) \- An interactive article showing that it’s not so easy to implement optimistic UI correctly, even with the new `useOptimistic` and `useActionState` APIs. This requires a good understanding of how React transitions work.
+- 📜 [Inside Turbopack: Building Faster by Building Less](https://nextjs.org/blog/turbopack-incremental-computation) \- Deep dive into the new default bundler of Next.js and its fine-grained and automatic incremental caching system.
+- 📜 [Front-end testing at Preply: shifting left towards component testing](https://medium.com/preply-engineering/front-end-testing-at-preply-shifting-left-towards-component-testing-3e83c8608235) \- Reorganizing front-end testing at scale by moving toward a Storybook-centric component testing approach.
+- 📜 [Adapting Library Logic for React Compiler](https://playfulprogramming.com/posts/react-compiler-library-support/) \- The author of TanStack Form explains a problem encountered with the React Compiler that was not reported by the ESLint plugin. Using the compiler `panicThreshold` helped detect this problem more reliably.
+- 📜 [Node.js \- Mitigating Denial-of-Service Vulnerability from Unrecoverable Stack Space Exhaustion for React, Next.js, and APM Users](https://nodejs.org/en/blog/vulnerability/january-2026-dos-mitigation-async-hooks) \- Node.js servers relying on `AsyncLocalStorage` (used by React RSC and Next.js) can eventually be crashed with a single request containing a deeply nested JSON payload processed recursively. They mitigated the issue in v24.13, but still recommend removing potential attack vectors from your app.
+- 📜 [Rebuilding the GitHub pull request experience](https://wtbb.vercel.app/i-love-dogs) \- This dev explores how GitHub’s PR UI could be much faster, especially for large PRs, and shares lessons learned. His Next.js \+ React 19 demo shows impressive performance compared to GitHub’s current experience.
+- 📜 [React Slot/asChild Composition Pattern](https://boda.sh/blog/react-slot-aschild-pattern/) \- The article also highlights how [Base UI composition pattern differs from Radix UI](https://base-ui.com/react/utils/use-render#migrating-from-radix-ui).
+- 📜 [Can You Fetch Data with React Server Actions?](https://www.developerway.com/posts/server-actions-for-data-fetching) \- Not recommended, but technically possible, with caveats: no caching, requests are POST-only and generally processed sequentially by frameworks.
 - 💸 [Make React apps fast where it actually matters. Learn how to diagnose real bottlenecks and fix slow, janky React apps using modern React 19 patterns.](https://frontendmasters.com/courses/react-performance-v2/?utm_source=reactweekly&utm_medium=email&utm_campaign=reactperf)
+- 📦 [json-render \- AI-generated UI with guardrails](https://json-render.dev/) \- Vercel introduced a new generative UI library. It lets users generate more complex dashboards, widgets, apps, and data visualizations from prompts, using a React component catalog you provide.
+- 📦 [TanStack Router 1.152 \- Allow custom `fetch()` implementation for server functions](https://github.com/TanStack/router/releases/tag/v1.152.0) \- This is useful for interceptors, auth, retry, testing and more ([docs](https://tanstack.com/start/latest/docs/framework/react/guide/middleware#custom-fetch-implementation)).
+- 📦 [Base UI 1.1 \- New features for Autocomplete, Combobox, Select, Field, various bugfixes](https://base-ui.com/react/overview/releases#v1-1-0) \- By the way, we recently announced Base UI support in shadcn, and Base UI components are now [officially documented](https://ui.shadcn.com/docs/changelog#:~:text=updates%20and%20announcements.-,January%202026%20%2D%20Base%20UI%20Documentation,-We%27ve%20shipped%20full).
+- 📦 [shadcn 3.7 \- New `npx shadcn registry add` command](https://github.com/shadcn-ui/ui/releases/tag/shadcn%403.7.0)
+- 📦 [GTKX \- Build native GTK4 desktop apps with React and TypeScript](http://github.com/eugeniodepalo/gtkx)
+- 📦 [Puck 0.21 \- Visual editor for React \- AI page generation, rich text editing, new Plugin interface](https://puckeditor.com/blog/puck-021)
+- 📦 [Warper \- Fast React virtualization library powered by Rust and WebAssembly](https://warper.tech/)
+- 📦 [React Error Boundary 6.1 \- Fix error type (`Error` \-\> `unknown`), add `getErrorMessage(e)` helper](https://github.com/bvaughn/react-error-boundary/releases/tag/6.1.0)
+- 📦 [Apollo Client 4.1](https://github.com/apollographql/apollo-client/releases/tag/%40apollo/client%404.1.0)
+- 🎥 [Maximilian Schwarzmüller \- Is TanStack Start better than Next.js?](https://www.youtube.com/watch?v=JO2L6MfiQtY)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -63,22 +109,49 @@ Built for testing, Wallaby includes a **Time Travel Debugger**, the ability to r
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
-
 - 💸 [Radon PRO – everything you need in one React Native IDE: debugger, element inspector, router integration & more. Try it now for free!](https://radon.swmansion.com/?utm_source=TWIR)
+- 📅 [React Universe Meetup at Zalando \- January 29, Berlin](https://www.callstack.com/events/react-universe-meetup-x-zalando-berlin?utm_source=thisweekinreact)
+- 📜 [Huawei x Software Mansion: Bringing React Native Support to HarmonyOS NEXT](https://blog.swmansion.com/huawei-x-software-mansion-bringing-react-native-support-to-harmonyos-next-82e02bd75549) \- Software Mansion helps Huawei bring RN support to their OpenHarmony OS (already powering 27 million devices), ensuring their famous libraries are also compatible (Reanimated, Screens, Gesture Handler…)
+- 📜 [Channel surfing for Expo Updates: How to switch update channels at runtime](https://expo.dev/blog/channel-surfing-for-expo-updates-how-to-switch-update-channels-at-runtime) \- A technique to let your app’s user decide which Expo update channel to use on their own. You can limit this feature to your employees, for example.
+- 📜 [Making AI feel human in a mobile app with Expo, Reanimated, and Skia](https://expo.dev/blog/making-ai-feel-human-in-a-mobile-app-with-expo-reanimated-and-skia)
+- 📦 [React Native Windows 0.81](https://devblogs.microsoft.com/react-native/%F0%9F%9A%80react-native-windows-v0-81-is-here/) and [React Native macOS 0.81](https://github.com/microsoft/react-native-macos/releases/tag/v0.81.0) \- Out-of-tree platforms are catching up, enabling the New Architecture by default.
+- 📦 [Brownie \- Type-Safe Shared State for React Native Brownfield Apps](https://www.callstack.com/blog/introducing-brownie-type-safe-shared-state-for-react-native-brownfield-apps) \- Creates a single source of truth that lives on the native side, accessible from both TypeScript and Swift. Support for Kotlin is coming soon.
+- 📦 [Enriched 0.3 \- Rich Text Editor \- H1-\>H6 heading styles, text selection API, custom links detection, and more](https://github.com/software-mansion/react-native-enriched/releases/tag/v0.3.0) \- See also the newly-released sister project [Enriched Markdown](https://github.com/software-mansion-labs/react-native-enriched-markdown) that renders Markdown content as native text.
+- 📦 [React Navigation 8.0 alpha \- Native Bottom Tabs by default, improved types, access to parent screen state, `pushParams`, and more](https://reactnavigation.org/blog/2025/12/19/react-navigation-8.0-alpha) \- Note that since this initial alpha release, [alpha.1](https://github.com/react-navigation/react-navigation/releases/tag/%40react-navigation%2Fnative%408.0.0-alpha.1) has been published and includes even more features: automatic deep links, SFSymbols/Material Symbols, improved screen preloading.
+- 📦 [Screens 4.20 \- formSheet dynamic content size, a11y & testing improvements](https://github.com/software-mansion/react-native-screens/releases/tag/4.20.0)
+- 📦 [RNSec 1.1 \- Path exclusion, incremental scanning, cleaner output, rule ignoring, and more](https://github.com/adnxy/rnsec/releases/tag/v1.1.0)
+- 📦 [Audio API 0.11 \- Recording to file, new Web Audio API nodes, DX improvements](https://github.com/software-mansion/react-native-audio-api/releases/tag/0.11.0)
+- 📦 [Teleport \- The missing native portal implementation for React Native](https://github.com/kirillzyusko/react-native-teleport)
+- 📦 [Bottom Sheet Stack \- Stack manager for Bottom Sheet \- Preserves React context, Portal-based API](https://github.com/arekkubaczkowski/react-native-bottom-sheet-stack)
+- 📦 [Nitro 0.32 & 0.33 \- View recycling, custom `UIView` subclasses, Performance & DX improvements](https://github.com/mrousavy/nitro/releases)
+- 📦 [Expo iCloud Storage \- React Native wrapper for iCloud's `NSUbiquitousKeyValueStore`](https://github.com/okwasniewski/expo-icloud-storage)
+- 📦 [React Native Testing Library 14.0 beta \- React19+, async APIs, new renderer, migration guide available](https://github.com/callstack/react-native-testing-library/releases/tag/v14.0.0-beta.0)
+- 📦 [Native Spring Shaders \- High-performance native shader effects for React Native and Expo](https://github.com/MatthewSRC/native-springs-shaders)
+- 📦 [Header Motion \- An abstraction for scroll-driven header animations](https://github.com/pawicao/react-native-header-motion)
+- 🎥 [Callstack \- Understanding Threads and Queues in Swift TurboModules](https://www.youtube.com/watch?v=Sc2o-2p-kd0)
+- 🎥 [Expo \- AI mobile app development with Replit and Expo](https://www.youtube.com/watch?v=Zm4z-8i7PgA)
+- 🎙️ [React Universe on Air \- Shipping v0 iOS: React Native Without Compromises](https://www.callstack.com/podcasts/building-v0-ios-and-fixing-react-native-along-the-way)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📣 [The Astro Technology Company joins Cloudflare](https://astro.build/blog/joining-cloudflare/) \- Interesting to see another popular framework join a tech giant. It will remain free, open source and MIT-licensed.
+- 👀 [TC39 \- Agenda for the 112th meeting](https://github.com/tc39/agendas/blob/main/2026/01.md) \- Currently in progress, some JS proposals already progressed, such as `map.getOrInsert()` (stage 4\) and `import.sync()` (stage 2).
+- 📜 [The Curious Case of the Shallow Session SPAs](https://calendar.perfplanet.com/2025/the-curious-case-of-the-shallow-session-spas/): Alex Russell argues that most SPAs shouldn’t be. Data shows that, on average, users produce a single soft navigation after the initial load, and that the upfront cost we pay is probably not worth it.
+- 📜 [Stop turning everything into arrays (and do less work instead)](https://allthingssmitty.com/2026/01/12/stop-turning-everything-into-arrays-and-do-less-work-instead/) \- Pragmatic introduction tio iterators.
+- 📜 [Web dependencies are broken. Can we fix them?](https://lea.verou.me/blog/2026/web-deps/)
+- 📜 [JavaScript Frameworks \- Heading into 2026](https://dev.to/this-is-learning/javascript-frameworks-heading-into-2026-2hel)
+- 📦 [Node.js 25.4 \- `require(esm)`, compile cache, and various other APIs are now stable](https://nodejs.org/en/blog/release/v25.4.0)
+- 📦 [jQuery 4.0 \- Remove IE11 support and deprecated methods, slimmer](https://blog.jquery.com/2026/01/17/jquery-4-0-0/)
+- 🔗 [Node.js package examples](https://nodejs.github.io/package-examples/) \- The Node.js team created a guide on package shipping patterns and how to handle CJS/ESM.
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/265/meme1.jpg)](https://x.com/RhysSullivan/status/2012354346063684034)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/265/meme2.jpg)](https://x.com/sebastienlorber/status/2013204855842550038)
 
 See ya! 👋
