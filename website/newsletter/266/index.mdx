@@ -1,18 +1,17 @@
 ---
 slug: /266
-title: "This Week In React #266: ..."
+title: "This Week In React #266: DoS, shadcn, Skills, Rspack, React Aria, TanStack, Remotion, ChartGPU | Expo 55 beta, Hermes, Router, Widgets, CSS, AI, Bootsplash, Detox | TC39, Rolldown, Yarn, Nodde, Mermaid, Unplugin"
 authors: [slorber]
 date: 01-28-2026
-unlisted: true
 ---
 
 Hi everyone!
 
-<Todo />
+This week, the community continued to publish React-related Agent skills. React RSCs and Next.js are hit by another set of DoS vulnerabilities, and it’s recommended to upgrade immediately.
+
+The React Native side is more exciting, with Expo SDK 55 in beta and upcoming support for new CSS features. We now have 2 distinct libraries implementing home screen widgets, and need to understand the trade-offs of each approach.
 
 <!-- truncate -->
-
-🗓 [React Summit](https://reactsummit.com/?utm_source=thisweekinreact) - 🇳🇱 Amsterdam - 12 & 16 Jun. The world's biggest React conference is back! Knowledge you'll use, people you'll remember, and an after-party you won't forget. Reserve your spot to with promo code TWIR (-10%)
 
 import Support from "../_support.mdx";
 
@@ -28,9 +27,9 @@ import Support from "../_support.mdx";
 
 Stop treating i18n as a deployment bottleneck🛑 **Crowdin** automates your React localization workflow. Sync content to Crowdin, translate with AI and human proofreaders, and auto-sync the translations back to your git.
 
-*   **Repo Integration:** Connect directly to GitHub/GitLab repo. Localization becomes a simple, continuous part of your CI/CD pipeline.
-*   **Context Harvester:** Our open-source CLI uses Agentic AI to scan your JSX. It automatically provides translators with the exact UI context for every string.
-*   **Over-The-Air (OTA) Updates:** Fix a typo in real-time. With OTA SDK, you can push updates to your React Native app instantly. No rebuilds or App Store reviews required.⚡
+- **Repo Integration:** Connect directly to GitHub/GitLab repo. Localization becomes a simple, continuous part of your CI/CD pipeline.
+- **Context Harvester:** Our open-source CLI uses Agentic AI to scan your JSX. It automatically provides translators with the exact UI context for every string.
+- **Over-The-Air (OTA) Updates:** Fix a typo in real-time. With OTA SDK, you can push updates to your React Native app instantly. No rebuilds or App Store reviews required.⚡
 
 **Focus on your components. Crowdin handles the translation.** 🚀
 
@@ -38,10 +37,34 @@ Stop treating i18n as a deployment bottleneck🛑 **Crowdin** automates your Rea
 
 ## ⚛️ React {#react}
 
-<Todo />
-
 - 💸 [Make React apps fast where it actually matters. Learn how to diagnose real bottlenecks and fix slow, janky React apps using modern React 19 patterns.](https://frontendmasters.com/courses/react-performance-v2/?utm_source=reactweekly&utm_medium=email&utm_campaign=reactperf)
+- 🔐 [React CVE-2026-23864](https://github.com/facebook/react/security/advisories/GHSA-83fc-fqcc-2hmg) \- More Denial-of-Service vulnerabilities have been found in the React RSC-related packages, and have already patched in all React 19 minor versions. All RSC frameworks can be affected. It’s recommended to update immediately.
+- 🔐 [Next.js DoS CVEs](https://vercel.com/changelog/summaries-of-cve-2025-59471-and-cve-2025-59472) \- In addition to the CVE above, Next.js also published fixes for 2 medium-severity DoS vulnerabilities affecting the Image Optimizer and PPR in self-hosted deployments.
+- 👀 [React PR \- Init Claude config](https://github.com/facebook/react/pull/35617) \- It seems like the React core team is planning to leverage AI more.
+- 👀 [React-DOM Types PR \- Properly type form-related events](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/74383) \- Narrowing the type of `event.target` to its underlying element, for example, `HTMLInputElement`.
+- 👀 [React Aria PR \- Add `render` prop to allow customizing DOM element](https://github.com/adobe/react-spectrum/pull/9499) \- React Aria chose the render prop pattern (following Ariakia and Base UI) and not the `asChild` pattern popularized by Radix UI.
+- 🗓 [React Summit](https://reactsummit.com/?utm_source=thisweekinreact) - 🇳🇱 Amsterdam - 12 & 16 Jun. The world's biggest React conference is back! Knowledge you'll use, people you'll remember, and an after-party you won't forget. Reserve your spot to with promo code TWIR (-10%)
+- 📜 [The Incredible Overcomplexity of the Shadcn Radio Button](http://paulmakeswebsites.com/writing/shadcn-radio-button/) \- A fair criticism, questioning the need for abstraction layers and repurposing HTML elements, instead of just styling `<input type="radio">`.
+- 📜 [Single Flight Mutations in TanStack Start](https://frontendmasters.com/blog/single-flight-mutations-in-tanstack-start-part-1/) \- Explains how to mutate the data and refresh the UI in a single network round trip. The first article shows the big picture with a simple implementation, while the second makes it more robust and scalable using middleware.
+- 📜 [StyleX \- New Year, New Website](https://stylexjs.com/blog/a-new-year-2026) \- The modern CSS-in-JS library gives an overview of 2025, covering project adoption outside Meta, new APIs, and easier integration. They rebuilt the docs with Waku to dogfood the project and its compatibility with RSCs.
+- 📜 [Designing Glean for accessibility – design system and compliance](https://www.glean.com/blog/designing-glean-for-accessibility-design-compliance) \- Positive feedback after migrating their design system to Base UI.
+- 📜 [Open-sourcing our microfrontend React bridge](https://alexocallaghan.com/open-sourcing-mfe-react-bridge) \- A simple alternative to the Module Federation bridge to help you manage microfrontends using distinct React versions.
 - 💸 [Product for Engineers - How startups lose their edge](https://go.posthog.com/twir-jan28)
+- 📦 [Rspack 2.0.0-alpha.1 \- Built-in support for React Server Components](https://github.com/web-infra-dev/rspack/releases/tag/v2.0.0-alpha.1) \- RSC support also comes with a higher-level [RSC plugin for Rsbuild](https://github.com/rstackjs/rsbuild-plugin-rsc).
+- 📦 [ChartGPU \- Beautiful, open source, TypeScript WebGPU-based charting library, with React bindings](https://github.com/ChartGPU/ChartGPU) \- This new library should be fast for large datasets. However, we are still waiting for Firefox to support WebGPU.
+- 📦 [ESLint Plugin React Unhookify](https://github.com/ospm-app/eslint-plugin-react-signals-hooks/tree/main/packages/eslint-plugin-react-unhookify) \- Now that we have the React Compiler, this plugin contains rules to remove useless memoizations and suggests a compiler adoption strategy.
+- 📦 [Conform 1.16 \- New `configureForms` future API](https://github.com/edmundhung/conform/releases/tag/v1.16.0)
+- 📦 [shadcn/ui Changelog \- January 2026 \- Inline Start and End Styles for Base UI components](https://ui.shadcn.com/docs/changelog/2026-01-inline-side-styles)
+- 📦 [React Router 7.13 \- Add `crossOrigin` prop to Links component](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v7130)
+- 📦 [Storybook 10.2 \- New Viewports and Zoom UI, MDX support for Storybook MCP](https://github.com/storybookjs/storybook/releases/tag/v10.2.0)
+- 📦 [Next-SEO 7.1 \- New HowToJsonLd component for tutorials SEO](https://github.com/garmeeh/next-seo/releases/tag/next-seo%407.1.0)
+- 🤖 [Next.js Skills \- Newly published Vercel Agent skills for common Next.js workflows](https://github.com/vercel-labs/next-skills) \- Skills for the App Router, Cache Components, performance, and more.
+- 🤖 [The Missing Next.js AGENTS.md File](https://www.solberg.is/the-missing-nextjs-agents-file) \- Relatedly, Vercel has found that [AGENTS.md outperforms Skills in evals](https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals) for general framework knowledge.
+- 🤖 [React Email Agent Skills](https://github.com/resend/react-email/tree/canary/skills/react-email)
+- 🤖 [AI Code Elements \- Vercel components to build the next generation of IDEs](https://vercel.com/changelog/ai-code-elements)
+- 🎥 [Jonny Burger \- Creating videos just from prompting \- Claude Code and Remotion](https://www.youtube.com/watch?v=Xtd4DjU9AU8) \- Vibe coding videos with Remotion is trending lately. A trend also supported by motion designer trolls posting their hand-made videos as if it only required a single prompt. Here’s a demo from its author. See also this [feedback on X](https://x.com/rameerez/status/2015859121661059569) from someone who rendered a real product launch video.
+- 🎥 [Delba \- Next.js Patterns: Public pages with personalization](https://www.youtube.com/watch?v=F6romq71KtI) \- Greatly explains the usefulness of Cache Components to keep navigation fast. By the way, Delba uses Remotion.
+- 🎥 [Shruti Kapoor \- React Performance Optimizations: How to Fix a Slow App](https://www.youtube.com/watch?v=AZ9i3eoyrnE)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -57,13 +80,10 @@ Stop context switching between your code editor and native IDEs. Radon helps you
 
 **Why developers are choosing Radon:**
 
-**🦾 Built-in previews:** Radon runs iOS Simulator and Android emulator directly in your VS Code or Cursor project.
-
-**🔍 Element Inspector:** You can jump directly from preview to a file where your React Native component is defined. It can't really get simpler than that.
-
-**⏯️ Instant Replays (PRO):** Missed a bug during a manual test? Rewatch the last 30 seconds of device interaction.
-
-**🤖 Radon AI (PRO):** your coding assistant with the latest React Native knowledge.
+- **🦾 Built-in previews:** Radon runs iOS Simulator and Android emulator directly in your VS Code or Cursor project.
+- **🔍 Element Inspector:** You can jump directly from preview to a file where your React Native component is defined. It can't really get simpler than that.
+- **⏯️ Instant Replays (PRO):** Missed a bug during a manual test? Rewatch the last 30 seconds of device interaction.
+- **🤖 Radon AI (PRO):** your coding assistant with the latest React Native knowledge.
 
 [Discover all the features](https://radon.swmansion.com/features?umt_source=TWIR&utm_medium=2ndsp) & turn your code editor into a React Native IDE you'll actually enjoy using.
 
@@ -71,22 +91,65 @@ Stop context switching between your code editor and native IDEs. Radon helps you
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Expo SDK 55 Beta](/emails/issues/266/expo.jpg)](https://expo.dev/changelog/sdk-55-beta)
+
+**[Expo SDK 55 Beta](https://expo.dev/changelog/sdk-55-beta)**
+
+It's been longer than usual since the last SDK, so this new SDK 55 looks like a significant update. The stable version will be released in about two weeks; until then, you can already check the beta release notes with a long list of highlights:
+
+- React 19.2, unlocking `<Activity>`, `useEffectEvent()`
+- React Native 0.83.1, unlocking DOM Node APIs, new DevTools features, Intersection Observers (experimental)
+- New Architecture only, Legacy Architecture removed
+- Revamped project template, using native Tabs by default
+- Hermes v1 opt-in flag, for performance improvements (but slower native build times)
+- Hermes bytecode diffing opt-in flag, for \~75% smaller incremental OTA updates
+- AI tooling, MCP server, Agent skills
+- Expo Router 7 beta with more native features ([preview tweet](https://x.com/Baconbrix/status/2014480349066305953)) and web SSR (alpha)
+- Expo brownfield integration to existing native apps
+- Expo UI improvements, support for Jetpack Compose coming
+- Expo Widgets alpha for iOS home screen widgets and Live Activities
+- … and more
+
+---
 
 - 💸 [10 Real-World React App Examples to Inspire Your Next Project](https://www.infragistics.com/blogs/react-app-examples/?utm_source=this-week-in-react&utm_medium=referral&utm_campaign=ignite-ui-react&utm_term=newsletter-sponsorship&utm_content=10-react-grid-examples)
+- 🐦 [Synchronous TextInput validation in React Native and Expo UI](https://x.com/nishanbende/status/2016367516759867849)
+- 🐦 [CSS `calc()` support coming to React Native?](https://x.com/_ikswodarap/status/2014677703266288082)
+- 📜 [Bringing CSS Clipping to React Native](https://www.callstack.com/blog/bringing-css-clipping-to-react-native) \- A great deep-dive article that explores what it would take to support masking with CSS `clip-path()` natively on iOS and Android, covering the whole rendering stack. What a great way to announce upcoming support, with PRs being under review\!
+- 📜 [Expo EAS \- Compiler cache for builds and Workflows](https://expo.dev/changelog/compiler-cache-for-builds) \- Set an env variable to get 30% faster builds.
+- 📦 [Voltra 1.1 \- Android widget support, iOS Enhancements](https://github.com/callstackincubator/voltra/releases/tag/v1.1.0)
+- 📦 [Bootsplash 7.0 \- Edge-to-edge by default, improved Expo plugin](https://github.com/zoontek/react-native-bootsplash/releases/tag/7.0.0)
+- 📦 [create-react-native-library 0.57 \- Improved templates, more example app types](https://github.com/callstack/react-native-builder-bob/releases/tag/create-react-native-library%400.57.0)
+- 📦 [Nitro MLX 0.3 \- Tool calling](https://github.com/corasan/react-native-nitro-mlx/releases/tag/v0.3.0)
+- 📦 [Detox 20.47 \- Support for RN 0.83 and iOS 26, new `by.type()` API for semantic matching](https://github.com/wix/Detox/releases/tag/20.47.0)
+- 📦 [Expo AI Chatbot 2.0 \- Incognito mode, long-term memory, upgrades to Expo 54 and AI SDK 5](https://www.expoaichatbot.com/changelog#v2-release)
+- 🤖 [Vercel React Native Skills \- Agent Skills extracted from lessons of building v0 for iOS, and the upcoming Vercel app](https://skills.sh/vercel-labs/agent-skills/vercel-react-native-skills)
+- 🎥 [Software Mansion \- First Look at Expo Widgets: iOS Widgets Without Native Code](https://www.youtube.com/watch?v=tDdtHG3z1jQ)
+- 🎥 [Software Mansion \- Introducing Expo Brownfield Target – Automate Brownfield Setup in Your Expo App](https://www.youtube.com/watch?v=fCpI0IM3niU)
+- 🎙️ [RNR 351 \- Transforming Packages to Nitro with Marc Rousavy](https://infinite.red/react-native-radio/rnr-351-transforming-packages-to-nitro-with-marc-rousavy)
+- 🎙️ [RocketShip 90 \- Expo SDK 55, AI Agent Skills, Tiny Harvest Revenue & Industrial Revolution of Software](https://share.transistor.fm/s/59b3e1c0)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 🦋 [TC39 \- Proposals progressing after the 112th meeting](https://bsky.app/profile/robpalmer.bsky.social/post/3mcz334l4ck27) \- Upsert, import sync, Error options, and more.
+- 📜 [Anchor Interpolated Morph](https://nerdy.dev/anchor-interpolated-morphing) \- A FLIP-inspired animation technique using modern CSS.
+- 📦 [Rolldown 1.0 RC](https://voidzero.dev/posts/announcing-rolldown-rc) \- The next-gen high-performance Rust bundler now has a stable API. It should become the default bundler of Vite 8\.
+- 📦 [Remix Component 0.3 \- Updated Component API, no stateless component, new setup prop](https://github.com/remix-run/remix/releases/tag/%40remix-run/component%400.3.0) \- Interesting to see how the Remix component model evolves and differs from React.
+- 📦 [Better All \- Better `Promise.all` with automatic dependency optimization](https://github.com/shuding/better-all) \- A clever way to minimize async waterfalls and maximize parallelization.
+- 📦 [Yarn 6 Preview \- Complete rewrite in Rust, strict compatibility, Yarn Switch, Lazy Installs](https://yarn6.netlify.app/blog/2026-01-28-yarn-6-preview/) \- Benchmarks show the Rust rewritten version is now faster than pnpm.
+- 📦 [Node.js 25.5 \- Simplifies building Single Executable Applications (SEA)](https://nodejs.org/en/blog/release/v25.5.0) \- See also this [deep-dive blog post](https://joyeecheung.github.io/blog/2026/01/26/improving-single-executable-application-building-for-node-js/) from the PR author.
+- 📦 [Rstest 0.8 \- Browser Mode (experimental)](https://github.com/web-infra-dev/rstest/releases/tag/v0.8.0)
+- 📦 [Mermaid Rust Renderer \- Much faster than the official Mermaid CLI, no headless browser overhead](https://github.com/1jehuang/mermaid-rs-renderer)
+- 📦 [Unplugin 3.0 \- Unified bundler plugin system \- Add Bun plugin support, drop Node 18 and CJS build](https://github.com/unjs/unplugin/releases/tag/v3.0.0)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/266/meme.jpg)](https://x.com/sebastienlorber/status/1999255728478171629)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/266/meme2.jpg)](https://x.com/Rasmic/status/2013235876176749012)
 
 See ya! 👋
