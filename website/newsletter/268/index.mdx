@@ -28,10 +28,10 @@ Most AI coding tools only see your source code. [**Seer, Sentry's AI debugging a
 
 **How it works:**
 
-*   Seer scans & analyzes issues using all Sentry's available context.
-*   In development, Seer debugs alongside you as you build
-*   In review, Seer alerts you to bugs that are likely to break production
-*   In production, Seer can find a bug's root cause, suggest a fix, open a PR automatically, or send the fix to your preferred IDE.
+- Seer scans & analyzes issues using all Sentry's available context.
+- In development, Seer debugs alongside you as you build
+- In review, Seer alerts you to bugs that are likely to break production
+- In production, Seer can find a bug's root cause, suggest a fix, open a PR automatically, or send the fix to your preferred IDE.
 
 [Try Sentry for free](https://sentry.io/product/seer/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=seer-fy27q1-seerlaunch&utm_content=newsletter-product-trysentry) ➡️
 
@@ -39,10 +39,30 @@ Most AI coding tools only see your source code. [**Seer, Sentry's AI debugging a
 
 ## ⚛️ React {#react}
 
-<Todo />
+[Building Bulletproof React Components](https://shud.in/thoughts/build-bulletproof-react-components)
+
+A great read from an experienced Vercel engineer sharing various lessons to harden your React components so that they survive real-world usage (SSR, hydration, multiple instances, concurrency, portals, etc.) rather than just working on the happy path.
+
+---
 
 - 💸 [FormEngine Core – Lightweight React JSON Schema form builder library for MUI with true cross-app reuse. No deep React knowledge required](https://formengine.io/lightweight-react-json-schema-form-builder-library-for-mui?utm_source=thisweekinreact&utm_medium=link&utm_campaign=mui&utm_content=lightweight&utm_term=nodeepreactknowledgerequired)
+- 📜 [A React trick to improve exit animations](https://barvian.me/react-exit-animations) \- A trick to free the component’s content while it’s animating to avoid visual glitches.
+- 📜 [The Recent CVEs in React and Node.js Were Found by an AI](https://winfunc.com/blog/recent-0-days-in-nodejs-and-react-were-found-by-an-ai) \- Interesting to see the process of security researchers to find the recent RSC DoS vulnerability, and how it can be automated.
+- 📜 [React Compiler and why class objects can work against memoization](https://anita-app.com/blog/articles/react-compiler-and-why-class-objects-work-against-memoization.html) \- Prefer plain data and pure helpers that the React compiler can observe as inputs.
+- 📜 [The logo soup problem (and how to solve it)](https://www.sanity.io/blog/the-logo-soup-problem) \- Brand logos come in various logo shapes, aspect ratios, padding, and weights. Creating a visually aesthetic logo grid is surprisingly complex, but we now have a React library to help normalize them.
+- 📜 [Next.js at Enterprise Level](https://techhub.iodigital.com/articles/nextjs-at-enterprise-level)
+- 📜 [Authenticated Routes with TanStack Router](https://spin.atomicobject.com/authenticated-routes-tanstack-router/)
 - 💸 [Product for Engineers - How I actually get good advice](https://go.posthog.com/twir-feb11)
+- 📦 [Tambo 1.0 \- Generative UI SDK for React](https://tambo.co/blog/posts/introducing-tambo-generative-ui) \- An interesting full-stack solution for generative UI with React, tackling problems such as UI state persistence, streaming, and more. Comes with a backend that you can deploy on their cloud or self-host.
+- 📦 [eslint-plugin-react-render-types \- Brings Flow's Render Types to TypeScript via JSDoc](https://github.com/HorusGoul/eslint-plugin-react-render-types) \- Render Types is a really cool feature of Flow that lets you express constraints on React composition patterns, loved by many engineers at Meta. TypeScript doesn’t support this capability natively, but this ESLint plugin enables it.
+- 📦 [React Compiler Marker \- Universal IDE extension, shows which components are optimized by the Compiler](https://github.com/blazejkustra/react-compiler-marker) \- Recently switched to an LSP, unlocking support for additional IDEs: IntelliJ/WebStorm/Neovim.
+- 📦 [React2AWS \- Write AWS infrastructure like you write React components](https://github.com/mmarinovic/React2AWS) \- Generates production-ready Terraform from JSX components and Tailwind-inspired classNames 🤪, fun idea.
+- 📦 [Ink 6.7 CLI renderer \- Add support for React concurrent rendering, synchronized updates](https://github.com/vadimdemedes/ink/releases/tag/v6.7.0)
+- 📦 [shadcn/ui \- All blocks now available for both Radix and Base UI](https://ui.shadcn.com/docs/changelog/2026-02-blocks)
+- 📦 [Visual Agentic Dev \- Immersive React dev environment that lives within the browser](https://github.com/brucetoo/visual-agentic-dev)
+- 📦 [Streamdown 2.2 \- Animated streaming, improves support for custom HTML elements, completes ReactMarkdown props](https://github.com/vercel/streamdown/releases/tag/streamdown%402.2.0)
+- 🎥 [Wawa Sensei \- 3 React Three Fiber Mistakes I'll Never Make Again](https://www.youtube.com/watch?v=GlaFgKgtJM4)
+- 🎙️ [This Week in React \- Oops more CVEs. AI has React "skills", Astro exits and Tailwind struggles](https://www.reactiflux.com/transcripts/tmir-2026-01)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -76,22 +96,67 @@ An advanced performance course from **Steve Kinney**, focused on diagnosing real
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[React Native 0.84](https://reactnative.dev/blog/2026/02/11/react-native-0.84)
+
+A new version of React Native just dropped. The highlights:
+
+- Hermes V1 is now enabled by default for automatic performance gains and reduced memory usage
+- Precompiled binaries on iOS by default for faster builds, with an opt-out to build from source
+- Legacy Architecture Components removed for both iOS and Android
+
+---
+
+[Gesture Handler 3.0 beta \- Hook-Based API, Deeper Reanimated Integration & More](https://blog.swmansion.com/introducing-gesture-handler-3-0-hook-based-api-deeper-reanimated-integration-more-9185b0c8e305)
+
+This new major version has been overhauled internally. It drops support for the Legacy Architecture, unlocking new capabilities, such as attaching gestures to text fragments. No APIs were removed, but a new hooks-based API makes it compatible with the React Compiler. They also improved the integration with Reanimated and Animated.
+
+---
 
 - 💸 [Radon by Software Mansion - Join 42k+ React Native developers using Radon for faster, more efficient React Native development.](https://radon.swmansion.com/?utm_source=TWIR3)
+- 👀 [React Native PR \- Support React Portal with Fabric](https://github.com/facebook/react-native/pull/55463) \- React Native portals have been all the rage lately. Teleport just launched 1.0 last week, and we now have an experimental PR that kicks off the discussion of bringing first-class portal support to React Native, at the shadow-tree level (cross-platform).
+- 🐦 [William Candillon sharing WebGPU \+ Skia demos](https://x.com/wcandillon/status/2020814389142605857) \- You can seamlessly interleave one into the other from both sides.
+- 📅 [App.js Conf is looking for speakers\! Apply to share your insights and stories about building with React Native & Expo\!](https://appjs.co/#speak) \- The CFP is open until 28th February, and you can also get a 10% discount on tickets with our code “TWIR”.
+- 📜 [Building Rozenite: The injection](https://www.chmal.it/blog/building-rozenite-the-injection/) \- Explains how Rozenite is able to add specialized panels to the React Native DevTools, by hijacking a request.
+- 📜 [Faster, cheaper, messier: lessons from our switch to self-hosted GitHub Actions](https://theguardian.engineering/blog/faster-cheaper-messier-lessons-from-switch-to-self-hosted-github-actions) \- Feedback from The Guardian after migrating their iOS app build from GitHub cloud runners to a self-hosted Mac Mini.
+- 📜 [How to modernize mobile retail apps with Expo](https://expo.dev/blog/how-to-modernize-mobile-retail-apps-with-expo)
+- 📦 [React Native Storybook Tools](https://github.com/dannyhw/react-native-storybook-tools) \- RN Storybook maintainer created a new VSCode extension that lets you seamlessly navigate from/to your stories, and a Rozenite devtool plugin.
+- 📦 [JSON Render 0.5 \- Support for React Native](https://github.com/vercel-labs/json-render/releases/tag/%40json-render%2Fcore%400.5.0) \- The generative UI library from Vercel now comes with a React Native integration. See also this [X video demo](https://x.com/ctatedev/status/2020767354108453020).
+- 📦 [React Native Video Feed](https://github.com/TheWidlarzGroup/react-native-video-feed) \- Starter for building TikTok-style video feeds, based on react-native-video v7 (still in beta).
+- 📦 [Expo Apple Target 4.0 \- Add support for 20+ new targets](https://github.com/EvanBacon/expo-apple-targets)
+- 📦 [React Native Material Palette \- Android Palette API, extracts prominent colors from images](https://github.com/callstack/react-native-material-palette)
+- 📦 [React Native ExecuTorch 0.7 \- Local speech synthesis](https://github.com/software-mansion/react-native-executorch/releases/tag/v0.7.0) \- If you are excited about offline-first AI, check also their [roadmap toward v1](https://github.com/software-mansion/react-native-executorch/discussions/736).
+- 📦 [Expo Paste Input \- Paste images and GIFs directly from the system clipboard, flexible native wrapper around `TextField`](https://github.com/arunabhverma/expo-paste-input)
+- 📦 [True Sheet 3.9 \- Side Sheets for iPad and Tablets](https://sheet.lodev09.com/blog/side-sheets)
+- 📦 [Expo OpenClaw Chat \- Minimal SDK for Expo apps to connect to OpenClaw gateway](https://github.com/brunobar79/expo-openclaw-chat)
+- 📦 [React Native IAP 14.7.9 \- 14.7.9 \- tvOS, macOS & watchOS Support](https://hyochan.github.io/react-native-iap/blog/14.7.9/)
+- 🤖 [Callstack Agent Skills updated \- New skills to upgrade React Native / Expo](https://github.com/callstackincubator/agent-skills/tree/main/skills/upgrading-react-native)
+- 🎥 [Beto \- Expo Router iOS 26 Tutorial: Native Tabs, Toolbars, Zoom Transitions (SDK 55\)](https://www.youtube.com/watch?v=_XGlN4jvIaA)
+- 🎥 [Software Mansion \- Radon, An IDE for React Native & Expo](https://www.youtube.com/watch?v=CIlrfQSSkyc)
+- 🎥 [Callstack \- What Is the React Native AI SDK? A Complete Intro & Quickstart](https://www.youtube.com/watch?v=7EaQlJaFV4I)
+- 🎙️ [RNR 353 \- Node-API Support for React Native with Kræn Hansen](https://infinite.red/react-native-radio/rnr-353-node-api-support-for-react-native-with-krn-hansen)
+- 🎙️ [Rocket Ship 91 \- Gesture Handler v3, AI Agents Everywhere, Animated Components & Tiny Harvest Momentum](https://share.transistor.fm/s/41aa2d87)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [TypeScript 6.0 Iteration Plan](https://github.com/microsoft/TypeScript/issues/63085) \- The last JS-based version (no 6.1 planned) is about to drop in beta. A bridge release that prepares us for the faster 7.0 Go rewrite. One notable change is to turn strict mode on by default.
+- 👀 [Webpack \- Roadmap 2026](https://webpack.js.org/blog/2026-04-02-roadmap-2026/) \- The historical bundler plans to ship several new features, such as native CSS module, TS loader, multi-threading support, a universal runtime target, a unified minimizer API, and more. They also published v5.105 recently, with support for `tsconfig.json` alias resolution.
+- 📖 [Vitest 4.1 beta \- Test tags](https://main.vitest.dev/guide/test-tags.html) \- This upcoming feature lets you categorize tests under tags that you can configure independently. For example, you could tag a test as flaky to assign it a specific retry/timeout policy.
+- 📜 [The Wrong Work, Done Beautifully](https://domenic.me/jsdom-claude-code/) \- The author of `jsdom` reflects on the usefulness of his popular library compared to headless browsers. However, Claude Code restored his enthusiasm for maintaining the project. By the way, v28.0 is out.
+- 📜 [How Rolldown Works: High-Performance Code Splitting with Bitset Logic](https://www.atriiy.dev/blog/rolldown-high-performance-code-splitting)
+- 📦 [Almostnode \- Node.js in your browser](https://almostnode.dev/) \- This lightweight and open alternative to WebContainers can run Next.js and Vite apps.
+- 📦 [Chrome 145 \- `Map.prototype.getOrInsert()`, CSS `text-justify`, `letter-spacing`](https://developer.chrome.com/release-notes/145) \- They also announced an [early preview of WebMCP](https://developer.chrome.com/blog/webmcp-epp) in Chrome 146, letting you expose tools for AI agents to interact with your websites/apps.
+- 📦 [ESLint 10.0 \- Improves JSX references tracking, removes eslintrc configuration, smaller](https://eslint.org/blog/2026/02/eslint-v10.0.0-released/)
+- 📦 [Bun 1.3.9 \- `bun run –parallel / –sequential`](https://bun.com/blog/bun-v1.3.9)
+- 📦 [VSCode 1.109 \- Improved Agent UX and extensibility](https://code.visualstudio.com/updates/v1_109)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/268/meme.jpg)](https://x.com/RhysSullivan/status/1994068153253679563)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/268/meme2.jpg)](https://x.com/Swizec/status/2020980360973349277)
 
 See ya! 👋
