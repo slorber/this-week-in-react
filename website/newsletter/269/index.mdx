@@ -1,6 +1,6 @@
 ---
 slug: /269
-title: "This Week In React #269: ..."
+title: "This Week In React #269: State of React, TanStack, Next.js, Tailwind, Base UI, Doctor | Hermes, Sparkling, Yoga, Enriched, Voltra, AI | Interop, Electrobun, Module Federation, Biome, pnpm"
 authors: [slorber]
 date: 02-18-2026
 unlisted: true
@@ -8,7 +8,7 @@ unlisted: true
 
 Hi everyone!
 
-Huge thanks ❤️ — we just hit [\#1 resource](https://2025.stateofreact.com/en-US/resources/#blogs_news_magazines) on the State of React 2025 survey. Wild.
+Huge thanks ❤️ — **we just hit [\#1 resource](https://2025.stateofreact.com/en-US/resources/#blogs_news_magazines)** on the State of React 2025 survey. Wild.
 
 This week leans heavily into TanStack and Next.js content, plus a few notable releases worth your time.
 
@@ -44,7 +44,9 @@ CodeRabbit is free for all open-source repo's.
 
 ## ⚛️ React {#react}
 
-[State of React 2025 \- Survey Results](https://2025.stateofreact.com/)
+[![State of React 2025 - Survey Results](/emails/issues/269/stateofreact.jpg)](https://2025.stateofreact.com/)
+
+**[State of React 2025 \- Survey Results](https://2025.stateofreact.com/)**
 
 The State of React 2025 survey results are out. It’s impossible to summarize it all here, but here's what I've taken away:
 
@@ -72,7 +74,6 @@ Read also the [breakdown from Aurora Scharff](https://certificates.dev/blog/brea
 - 📦 [Tailwind 4.2 \- Webpack plugin, new utilities and color palettes](https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.2.0) \- The Webpack plugin has been contributed by Tim Neutkens and should lead to [significant](https://x.com/timneutkens/status/2024140710786523301) performance improvements for frameworks like Next.js (even for Turbopack).
 - 📦 [Base UI 1.2 \- Drawer component, support lazy/async components in `render`, new `useFilteredItems` hook](https://base-ui.com/react/overview/releases/v1-2-0) \- The new Drawer component is in preview ([docs](https://base-ui.com/react/components/drawer)) for now. Unlike Radix, it’s not based on Vaul (now unmaintained).
 - 📦 [TanStack Hotkeys alpha](https://tanstack.com/hotkeys/latest) \- This brand-new TanStack library is framework-agnostic, but initially comes with a first-class React integration. It provides a type-safe API, normalizes modifiers across platforms, supports multi-step keyboard sequences, and more.
-- 📦 [Module Federation 2.0 \- Micro-Frontend Architecture](https://module-federation.io/blog/v2-stable-version.html) \- Adds support for SSR among many other things. They also plan to add support for React Server Components later.
 - 📦 [TanStack Start 1.161 \- Import protection](https://tanstack.com/start/latest/docs/framework/react/guide/import-protection) \- Ensures your code runs in the right client/server environment.
 - 📦 [Preact 11.0 beta.1](https://github.com/preactjs/preact/releases/tag/11.0.0-beta.1) \- By the way, TanStack query now [supports Preact](https://github.com/TanStack/query/releases/tag/%40tanstack%2Fpreact-query%405.91.0).
 - 📦 [React Doctor \- Scan your codebase, let coding agents diagnose/fix your React code](https://github.com/millionco/react-doctor)
@@ -101,13 +102,19 @@ This free 4-part workshop series covers the full workflow: production error tria
 
 ## 📱 React-Native {#react-native}
 
-[WebAssembly Comes to Hermes](https://x.com/tmikov/status/2023821160241393839)
+[![WebAssembly Comes to Hermes](/emails/issues/269/hermes.jpg)](https://x.com/tmikov/status/2023821160241393839)
+
+**[WebAssembly Comes to Hermes](https://x.com/tmikov/status/2023821160241393839)**
 
 An exciting early preview of WebAssembly support in Hermes, unlocking new ways to integrate C, C++, Rust, and more into your React Native app. It’s even possible to precompile WASM to Hermes bytecode `.hbc` files.
 
 ---
 
-[Sparkling \- Unlocks Lynx at TikTok Scale](https://tiktok.github.io/sparkling/) \- ByteDance unveiled Lynx last year as an interesting framework-agnostic alternative to React Native. So far, the DX has been limited, and there has been no easy way to build a new Lynx app from scratch. Sparkling changes that, and offers the tooling that Lynx apps deserve. By the way, [Lynx 3.6](https://lynxjs.org/blog/lynx-3-6) is out, improving support for React, AI, and CSS.
+[![Sparkling - Unlocks Lynx at TikTok Scale](/emails/issues/269/lynx.jpg)](https://tiktok.github.io/sparkling/)
+
+**[Sparkling \- Unlocks Lynx at TikTok Scale](https://tiktok.github.io/sparkling/)**
+
+ByteDance unveiled Lynx last year as an interesting framework-agnostic alternative to React Native. So far, the DX has been limited, and there has been no easy way to create a new Lynx app from scratch. Sparkling changes that, and offers the tooling that Lynx apps deserve. By the way, [Lynx 3.6](https://lynxjs.org/blog/lynx-3-6) is out, improving support for React, AI, and CSS.
 
 See also:
 
@@ -142,6 +149,7 @@ See also:
 - 👀 [Selectors Level 5 \- W3C First Public Working Draft](https://www.w3.org/TR/2026/WD-selectors-5-20260217/) \- Preview of new CSS selectors and pseudo-classes being worked.
 - 📜 [Fun with TypeScript Generics](https://frontendmasters.com/blog/fun-with-typescript-generics/)
 - 📜 [Fastest Frontend Tooling for Humans & AI](https://cpojer.net/posts/fastest-frontend-tooling)
+- 📦 [Module Federation 2.0 \- Micro-Frontend Architecture](https://module-federation.io/blog/v2-stable-version.html) \- Adds support for SSR among many other things. They also plan to add support for React Server Components later.
 - 📦 [Electrobun 1.0 \- Build ultra fast, tiny, and cross-platform desktop apps with TypeScript](https://blackboard.sh/blog/electrobun-v1/) \- An alternative to Tauri based on Bun/Zig.
 - 📦 [Chrome 145 DevTools](https://developer.chrome.com/blog/new-in-devtools-145) \- The performance panel now includes Soft Navigation markers, improving the DX when troubleshooting client-side navigation (SPA/CSR apps).
 - 📦 [Biome 2.4 \- Embedded Snippets, HTML Accessibility, and Better Framework Support](https://biomejs.dev/blog/biome-v2-4/)
