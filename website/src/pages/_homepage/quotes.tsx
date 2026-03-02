@@ -405,7 +405,7 @@ export const AllQuotes = {
         handle="Danny_H_W"
         github="dannyhw"
         name="Daniel Williams"
-        job="Senior Frontend developer - Coverflex"
+        job="Senior Frontend developer - Callstack"
       >
         Your weekly newsletter is my favourite source of tech news
       </Quote>
