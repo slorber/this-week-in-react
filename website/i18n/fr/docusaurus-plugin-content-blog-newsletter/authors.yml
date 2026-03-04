@@ -115,3 +115,15 @@ filipkaminski:
     bluesky: filipkaminski.com
     github: filip131311
     linkedin: filip-kamiński-6987a0210
+
+janjaworski:
+  name: Jan Jaworski
+  title: React Native Developer
+  url: https://x.com/jaworek3211
+  image_url: https://github.com/jaworek.png
+  page: true
+  socials:
+    x: jaworek3211
+    bluesky: jwr.ski
+    github: jaworek
+    linkedin: jan-jaworski/
