@@ -162,38 +162,40 @@ The newsletter has 5 main sections:
 
 We usually pick:
 
-- 1 React headline
-- 1 React Native headline
+- 1-2 React headline
+- 1-2 React Native headline
 
 Each headline usually has a top banner image.
 It’s preferable to pick one that represents something meaningful visually (such as a code screenshot) but a beautiful social card is ok too.
 
-Sometimes there is no clear headline for a section, sometimes there are 2\.
-Sometimes we pick a headline for the Other section.
+We can make exceptions:
+
+- Sometimes there is no clear headline for a section, sometimes there are 2.
+- Sometimes we pick a headline for the Other section.
 
 ### Formatting
 
 All links usually follow the following convention for most links:
 
-- \<Emoji\> [Link title](https://example.com): Optional subjective comment.
+- \<Emoji\> [Link title](https://example.com) - Optional subjective comment.
 
-If a title is too long, click-baity or weirdly capitalized, feel free to refactor it so that all titles are relatively consistent.
+If a title is too long, click-bait or weirdly capitalized, refactor it so that all titles are consistent.
 
-For releases, we drop the “v” and the patch number (3.1, not v3.1.9). Include the major release highlight keywords directly in the link, separated with a dash `-`. Don’t include a release if there’s nothing interesting to highlight, which is often the case for patch releases. What’s “inside” the link is the “objective” part (the highlights), what’s “outside” is your subjective comment (if any). Examples:
+For releases, we drop the “v” and the patch number (3.1, not v3.1.9). Include the major release highlight keywords directly in the link, separated with a dash `-`. Don’t include a release if there’s nothing interesting to highlight, which is often the case for patch releases. What’s “inside” the link is the “objective” part (the highlights or formal project description), what’s “outside” is your subjective comment (if any). Examples:
 
-- 📦 [Astro 5.2 \- Tailwind 4 support, trailing slash redirects, option to disable React streaming](https://astro.build/blog/astro-520/): Streaming might be incompatible with runtime CSS-in-JS libraries.
+- 📦 [Astro 5.2 \- Tailwind 4 support, trailing slash redirects, option to disable React streaming](https://astro.build/blog/astro-520/) - Streaming might be incompatible with runtime CSS-in-JS libraries.
 - 📦 [Nextra 4.0 \- Now using App Router](https://the-guild.dev/blog/nextra-4)
 - 📦 [React Scan 0.1.2 \- Re-render history, components tree](https://github.com/aidenybai/react-scan/releases/tag/v0.1.2)
 
-If it’s a rather new project featured for the first time, you can avoid the version number, and replace keywords by an objective project description (inspired by GitHub repo description, landing page, SEO tags):
+If it’s a new project or something we feature for the first time, and replace keywords by an objective project description (inspired by GitHub repo description, landing page, SEO tags). Even if there's an introduction blog post, we format it as a release. Examples:
 
-- 📦 [Polygen \- Run WebAssembly modules in your apps, statically, without interpreting](https://github.com/callstackincubator/polygen): This Callstack package in preview converts Wasm to C and then call it through JSI to deliver great performance.
-- 📦 [React Three Handles](https://pmndrs.github.io/xr/docs/handles/introduction): A new convenient package to build React XR interactions.
+- 📦 [Polygen \- Run WebAssembly modules in your apps, statically, without interpreting](https://github.com/callstackincubator/polygen) - This Callstack package in preview converts Wasm to C and then call it through JSI to deliver great performance.
+- 📦 [React Three Handles](https://pmndrs.github.io/xr/docs/handles/introduction) - A new convenient package to build React XR interactions.
 - 📦 [mdx-prompt \- Composable LLM Prompts with JSX](https://edspencer.net/2025/2/3/mdx-prompt-composable-prompts-with-jsx)
 
 Here’s the emoji palette we generally use
 
-- 💸: sponsors
+- 💸: sponsored links
 - 👀: preview, PR, weak signals
 - 💬: RFC, community discussion
 - 📊: survey, benchmark
@@ -206,6 +208,7 @@ Here’s the emoji palette we generally use
 - 📜: articles
 - 📦: releases, npm packages plugins, repositories
 - 🔗: resources
+- 🤖: tools for AI / agents (skills, CLIs, MCPs ...)
 - 🎥: videos
 - 🎙️: podcasts
 
@@ -219,12 +222,12 @@ We usually respect more or less this “emoji ordering”, leading to a consiste
 Example:
 
 - 💸 [Add a collaborative document editor to your app](https://convex.link/0dtC5qE)
-- 👀 [Remix PR \- Split Route Modules](https://github.com/remix-run/react-router/pull/11871): Introduce new `future.unstable_splitRouteModules` flag so that the route component and its clientLoader can be downloaded in parallel instead of sequentially.
-- 🗓️ [Paris TypeScript La Conf'](https://la-conf.typescript.paris/?utm_source=thisweekinreact) \- 🇫🇷 Paris \- 28 February \- Last call to join the first ever TypeScript conference in the heart of Paris\! Get 20% off tickets with code "TWIR"\!
-- 📖 [Integrate Motion with Radix](https://motion.dev/docs/radix): New docs page presenting integration examples for exit and layout animations.
-- 📜 [Single Responsibility Principle in React: The Art of Component Focus](https://cekrem.github.io/posts/single-responsibility-principle-in-react/): I agree with this practice of designing your React app in “layers”.
-- 📜 [Persisting Form Data in React: A Modern Approach with Nuqs](https://armand-salle.fr/post/persisting-form-data-in-react-a-modern-approach-with-nuqs/): Introduces a convenient lib to use search parameters in a typesafe way with integrations for Next.js and React Router.
-- 📦 [Astro 5.2 \- Tailwind 4 support, trailing slash redirects, option to disable React streaming](https://astro.build/blog/astro-520/): Streaming might be incompatible with runtime CSS-in-JS libraries.
+- 👀 [Remix PR \- Split Route Modules](https://github.com/remix-run/react-router/pull/11871) - Introduce new `future.unstable_splitRouteModules` flag so that the route component and its clientLoader can be downloaded in parallel instead of sequentially.
+- 🗓️ [Paris TypeScript La Conf'](https://la-conf.typescript.paris/?utm_source=thisweekinreact) - 🇫🇷 Paris, 28 February - Last call to join the first ever TypeScript conference in the heart of Paris\! Get 20% off tickets with code "TWIR"\!
+- 📖 [Integrate Motion with Radix](https://motion.dev/docs/radix) - New docs page presenting integration examples for exit and layout animations.
+- 📜 [Single Responsibility Principle in React: The Art of Component Focus](https://cekrem.github.io/posts/single-responsibility-principle-in-react/) - I agree with this practice of designing your React app in “layers”.
+- 📜 [Persisting Form Data in React: A Modern Approach with Nuqs](https://armand-salle.fr/post/persisting-form-data-in-react-a-modern-approach-with-nuqs/) - Introduces a convenient lib to use search parameters in a typesafe way with integrations for Next.js and React Router.
+- 📦 [Astro 5.2 \- Tailwind 4 support, trailing slash redirects, option to disable React streaming](https://astro.build/blog/astro-520/) - Streaming might be incompatible with runtime CSS-in-JS libraries.
 - 📦 [React Scan 0.1.2 \- Re-render history, components tree](https://github.com/aidenybai/react-scan/releases/tag/v0.1.2)
 - 🎥 [Theo \- Create React App is finally dead](https://www.youtube.com/watch?v=aujVi7ipkfM)
 - 🎥 [Jack Herrington \- Stop Using Recoil, Use This Instead\!](https://www.youtube.com/watch?v=QepeuHTxiLo)
@@ -235,10 +238,10 @@ Example:
 Some general rules to follow:
 
 - It’s not needed to comment on everything.
-- For a given emoji, what we comment usually appears first.
-- It's better not to comment on something than to make the wrong comment.
+- For a given "emoji group", put the most interesting links first, usually with a comment
+- It's better not to comment on something than to make the wrong comment, or a useless comment.
 - Comments have to be concise and to the point.
-- Use a simple language.
+- Use simple language.
 - Don’t add useless fluff words.
 
 ## Conclusion
