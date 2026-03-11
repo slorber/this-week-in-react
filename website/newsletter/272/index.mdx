@@ -6,13 +6,13 @@ date: 03-11-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone\! **Filip and Tymek from [Software Mansion](https://swmansion.com/?utm_source=thisweekinreact)** here\! 👋
 
-<Todo />
+Hope your week is going well 😄 In today's news, we bring you a slightly calmer React section, but there is much more going on in React Native. Astro 6.0 has been released, Expo announces an agentic platform and new SDK for observability and metrics, and React Navigation developers are planning to add a new way to load data in screens.
 
-Let's dive in!
+There's more — interesting canary PRs for Next.js, React Native Evals, TypeScript 6.0 RC announcement, new guides from Expo, and beyond\!
 
-🗓️ [React Native Paradise](https://paradise.swmansion.com/?utm_source=newsletter&utm_medium=affiliate) –  🇭🇷 Vir, Croatia – April & May. A week-long React Native workshop in a villa, in small groups, led by experienced devs from Software Mansion. Mention "TWIR" during your reservation and get 100 EUR off per person.
+Let's dive deep into the content 🎉
 
 <!-- truncate -->
 
@@ -32,10 +32,10 @@ When [Next.js builds your app](https://sentry.io/for/nextjs/?utm_source=thisweek
 
 This blog walks through how **source maps** and **debug IDs** wire things together, and how to configure Sentry to show real file names and line numbers in production.
 
-*   What actually happens to your code during build
-*   Why dev tools show readable traces but Sentry shows chunks
-*   How to simulate a production build so Sentry gets your source maps
-*   Troubleshooting missing or stale source maps
+- What actually happens to your code during build
+- Why dev tools show readable traces but Sentry shows chunks
+- How to simulate a production build so Sentry gets your source maps
+- Troubleshooting missing or stale source maps
 
 [**Read the guide ➡️**](https://blog.sentry.io/setting-up-next-js-source-maps-sentry/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=nextjs-fy27q1-nextjs&utm_content=newsletter-first-sponsor-blog-sourcemaps-learnmore)
 
@@ -43,10 +43,44 @@ This blog walks through how **source maps** and **debug IDs** wire things togeth
 
 ## ⚛️ React {#react}
 
-<Todo />
+[Astro 6.0](https://astro.build/blog/astro-6/)
+
+Astro 6.0 is out with a redesigned dev server, built-in font optimization, live content collections, and stable CSP support. It requires Node 22+, Vite 7, and Zod 4\.
+
+Here's what's new:
+
+- Rebuilt on Vite's Environment API web server, so you now run your exact production runtime locally.
+- Built-in Fonts API \- configure fonts from local files or providers like Google. Astro handles backbone logic, including downloading, caching, and preloading links.
+- Stable CSP support \- with one config flag, Astro auto-hashes scripts and styles, and generates headers.
+- Experimental Rust compiler \- drop-in replacement for the Go-based compiler with better performance and diagnostics via `@astrojs/compiler-rs`.
+- Experimental queued rendering and route caching.
+
+To upgrade to the latest Astro version, all you need to do is execute `npx @astrojs/upgrade` \- an interactive CLI will handle the rest.
+
+---
 
 - 💸 [Product for Engineers - The hidden danger of shipping fast](https://go.posthog.com/twir-mar11)
+- 👀 [Next.js PR \- Add Link `transitionTypes` prop](https://github.com/vercel/next.js/pull/90701) \- Calls `React.addTransitionType` for each type during navigation, making it easy to trigger custom View Transitions per link.
+- 🐦 [Joe Savona \- "React Compiler: Rust edition is coming soon"](https://x.com/en_JS/status/2031606726689173846) \- They are apparently porting the TypeScript-based compiler to Rust using AI.
+- 🗓️ [React Native Paradise](https://paradise.swmansion.com/?utm_source=newsletter&utm_medium=affiliate) – 🇭🇷 Vir, Croatia – April & May. A week-long React Native workshop in a villa, in small groups, led by experienced devs from Software Mansion. Mention "TWIR" during your reservation and get 100 EUR off per person.
+- 📜 [How state updates work internally](https://inside-react.vercel.app/blog/how-state-updates-work-internally) \- A detailed technical explanation of why `setState` doesn't update the value immediately. Walks through Fiber's linked-list hook storage and shows why setting state via function versus value behaves differently when called multiple times.
+- 📜 [Seven Years to TypeScript: Migrating 11,000 Files at Patreon](https://www.patreon.com/posts/seven-years-to-typescript-152144830) \- Documents Patreon's full frontend migration from JS to TS across 11,000 files and 1M+ lines of code, including old React conventions, patterns, and APIs (React Classes, PropTypes, HOC). The real work came in phases \- building typed foundations first, then combining codemods and AI workflows.
+- 📜 [Cloudflare rewrites Next.js as AI rewrites commercial open source](https://newsletter.pragmaticengineer.com/p/the-pulse-cloudflare-rewrites-nextjs) \- A well-sourced summary of Cloudflare’s Vinext situation. It will likely take more than a rewrite to make it a viable solution.
+- 📜 [What Claude Code Actually Chooses](https://amplifying.ai/research/claude-code-picks) \- Analyzed 2,430 real Claude Code sessions across 20 tool categories. Depicts which React libs Claude picks, driving extra growth.
+- 📜 [Building Dynamic Forms In React And Next.js](https://www.smashingmagazine.com/2026/03/building-dynamic-forms-react-next-js/) \- Compares two approaches to complex forms: component-driven versus schema-driven (SurveyJS).
+- 📜 [React: Singletons aren't as evil as you think](https://dev.to/link2twenty/react-singletons-arent-as-evil-as-you-think-44m8) \- Shows the better solution for the popular Singleton pattern in React by using the approach with `TypedEvent` and `useSyncExternalStore`.
+- 📜 [How to Access React Router Context with AsyncLocalStorage](https://sergiodxa.com/tutorials/access-react-router-context-with-asynclocalstorage) \- Shows how to use Node's `AsyncLocalStorage` to store request-scoped data. Cleaner than prop-drilling through your whole route tree.
+- 📜 [React Compiler and Beyond: Capability Boundaries of Compiler-Driven UI Frameworks](https://dev.to/unadlib/react-compiler-and-beyond-capability-boundaries-of-compiler-driven-ui-frameworks-4928) \- A comparison between the React Compiler and Fict, a compiler-first framework that moves dependency tracking to compile time and propagates updates through a signal graph instead.
 - 💸 [Certificates.dev - React Docs Refresh: useActionState and useOptimistic by Aurora Scharff](https://certificates.dev/blog/react-docs-refresh-useactionstate-and-useoptimistic-if-you-tried-learning-useactionstate-or-useoptimistic-from-the-original-react-19-docs-and-came-away-confused-now-is-a-great-time-to-go-back-both-pages-have-been-completely-reworked-with-ne?friend=TWIR)
+- 📦 [shadcn/cli 4.0 \- Skills, presets, dry-run, diff, monorepo, updated primitives](https://ui.shadcn.com/docs/changelog/2026-03-cli-v4)
+- 📦 [React Helmet Async 3.0 \- React 19 support](https://github.com/staylor/react-helmet-async/pull/260)
+- 📦 [React Aria 1.16 \- Multi-select ComboBox, Tree Sections](https://react-aria.adobe.com/releases/v1-16-0.html)
+- 📦 [React Spectrum 1.2 \- ListView, unavailable menu items](https://react-spectrum.adobe.com/releases/v1-2-0.html)
+- 📦 [Streamdown 2.4 \- Customization hooks, accessibility features](https://vercel.com/changelog/streamdown-2-4)
+- 📦 [Preact 10.29 \- Implement `flushSync`](https://github.com/preactjs/preact/releases/tag/10.29.0)
+- 🎥 [Web Dev Simplified \- New Tanstack Hotkeys Library is Amazing](https://youtu.be/S26VdcWQzRQ?si=m6t816zB122EMecU)
+- 🎥 [Shruti Kapoor \- Image Asset Optimizations: Performance Optimizations in React](https://youtu.be/uNR28b8fgpg?si=teXS3mVQD4ic7wk_)
+- 🎙️ [Hamed Bahram \- TanStack Start: Server Components Without the Mental Gymnastics](https://youtu.be/U7ghineC5Zs?si=kApMVYx6yGaXFvOZ)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -58,14 +92,14 @@ This blog walks through how **source maps** and **debug IDs** wire things togeth
 
 **[Still writing tests manually?](https://www.meticulous.ai?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=26q1&utm_content=1st)**
 
-Notion, Dropbox, Wiz, and LaunchDarkly have found a new testing paradigm - and they can't imagine working without it. Built by [ex-Palantir engineers](https://www.meticulous.ai?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=26q1&utm_content=2nd), Meticulous autonomously creates a continuously evolving suite of E2E UI tests that delivers [near-exhaustive coverage](https://www.meticulous.ai?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=26q1&utm_content=2nd) with *zero developer effort* - impossible to deliver by any other means. 
+Notion, Dropbox, Wiz, and LaunchDarkly have found a new testing paradigm - and they can't imagine working without it. Built by [ex-Palantir engineers](https://www.meticulous.ai?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=26q1&utm_content=2nd), Meticulous autonomously creates a continuously evolving suite of E2E UI tests that delivers [near-exhaustive coverage](https://www.meticulous.ai?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=26q1&utm_content=2nd) with _zero developer effort_ - impossible to deliver by any other means. 
 
 It works like magic in the background:
 
-*   Near-exhaustive coverage on every test run
-*   No test creation
-*   **No maintenance (seriously)**
-*   Zero flakes (built on a deterministic browser)
+- Near-exhaustive coverage on every test run
+- No test creation
+- **No maintenance (seriously)**
+- Zero flakes (built on a deterministic browser)
 
 **🤨** Curious? [Book in a time to learn more](https://www.meticulous.ai?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=26q1&utm_content=2nd)
 
@@ -73,15 +107,60 @@ It works like magic in the background:
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[React Navigation 8 \- March Progress Report](https://reactnavigation.org/blog/2026/03/10/react-navigation-8.0-march-progress/)
+
+This week, the React Navigation team shares a progress update on the upcoming 8.0 release, which has been in alpha since December 2025\.
+
+The version bumps the minimum requirements to React 19 and React Native 0.83, unlocking native APIs like Activity and Suspense. Here's what's new:
+
+- `inactiveBehavior` option \- allows control over how offscreen screens are handled
+- Deep links by default \- static config now auto-converts screen names to URL paths, no explicit setup needed
+- Schema validation support \- deep link params can be parsed and typed with Zod, Valibot, or ArkType
+- Native symbols \- new SFSymbol and MaterialSymbol components for iOS and Android icon systems
+- Material Design 3 themes \- MaterialLightTheme and MaterialDarkTheme using Android's dynamic PlatformColor
+
+The beta will be released once the rewritten React Native Screens integration lands.
+
+---
 
 - 💸 [Make React apps fast where it actually matters. Learn how to diagnose real bottlenecks and fix slow, janky React apps using modern React 19 patterns.](https://frontendmasters.com/courses/react-performance-v2/?utm_source=reactweekly&utm_medium=email&utm_campaign=reactperf)
+- 📣 [Introducing Expo Agent (private beta): build real, production-quality native apps from your browser](https://expo.dev/blog/expo-agent-beta) \- Expo is launching in private beta a new offer that lets you implement cross-platform apps directly from a web UI, with great DX. This looks particularly useful to have an agent trained to leverage the native platforms (SwiftUI/Jetpack Compose) or the scripting layer (RN/OTA) when appropriate.
+- 📣 [Introducing Expo Observe (private preview)](https://expo.dev/changelog/introducing-expo-observe) \- New observability tool in private preview to track real-world app performance in production. Lets you compare across builds to catch regressions and drill into individual sessions for device info and P90/P99 percentiles.
+- 📣 [Google is expanding billing choice on Google Play for users and developers](https://android-developers.googleblog.com/2026/03/a-new-era-for-choice-and-openness.html) \- Google now allows alternative billing systems on Google Play, cuts fees to 15–20% for apps and 10% for subscriptions, and simplifies sideloading of alternative app stores.
+- 👀 [React Navigation PR \- Data Loading](https://github.com/react-navigation/react-navigation/pull/13001) \- The library plans to tackle data loading, and prototyping new APIs such as `UNSTABLE_loader` and `UNSTABLE_getLoaderForRoute` to do so. This could help prefetch data for a route before navigating to it, improving the perceived performance and UX.
+- 🐦 [Tzvetan Mikov \- “Hermes finally has native support for stripping erasable TypeScript annotations”](https://x.com/tmikov/status/2029355999086493953) \- Once released, Hermes will be able to run TypeScript code natively, without transpilation, similarly to what Node.js and Bun are doing.
+- 📜 [Home screen widgets and Live Activities in Expo](https://expo.dev/blog/home-screen-widgets-and-live-activities-in-expo) \- An intro to expo-widgets, currently in alpha for iOS. This new widget solution leverages Expo UI to create a tree that maps directly to SwiftUI primitives.
+- 📜 [Keeping Screens Visible With `<Activity mode="hidden>"`](https://www.callstack.com/blog/keeping-screens-visible-with-activity-mode-hidden) \- How to freeze effects on a hidden screen without breaking swipe-back gestures.
+- 📜 [App Flavors with Expo & EAS](https://bitglow.de/blog/app-flavors-with-expo-eas/) \- Useful to create variants of your app and white labelling.
+- 📜 [Expo brownfield: How to add Expo to your existing native app without a rewrite](https://expo.dev/blog/expo-brownfield-how-to-add-expo-to-your-existing-native-app-without-a-rewrite)
+- 📜 [Adding Haptic Feedback to Expo Router Native Tabs](https://codewithbeto.dev/blog/haptic-feedback-expo-router-native-tabs)
+- 📦 [React Native 0.85 rc.0 \- Removed `Stylesheet.absoluteFill`, dropped support for EOL Node.js versions](https://github.com/facebook/react-native/releases/tag/v0.85.0-rc.0)
+- 📦 [Enriched Markdown 0.4 \- LaTeX Support, Image caching](https://github.com/software-mansion-labs/react-native-enriched-markdown/releases/tag/0.4.0)
+- 📦 [Unistyles 3.1 \- Smaller babel plugin, StyleSheet.addChangeListener, optional edge-to-edge, Nitro 0.35+](https://github.com/jpudysz/react-native-unistyles/releases/tag/v3.1.0)
+- 📦 [FlashList 2.3 \- New `inverted` prop](https://github.com/Shopify/flash-list/releases/tag/v2.3.0)
+- 📦 [MMKV 4.2 \- `.length`, new encryption features](https://github.com/mrousavy/react-native-mmkv/releases/tag/v4.2.0)
+- 📦 [Uniwind 1.5 \- tv selectorn, focus selector for pressables](https://github.com/uni-stack/uniwind/releases/tag/v1.5.0)
+- 📦 [React Native View Recorder \- Capture any React Native View to a video or an imager](https://github.com/Rednegniw/react-native-view-recorder)
+- 📦 [React Native Reshuffled \- High-performance, Nitro-powered grid layout](https://github.com/Guccio163/react-native-reshuffled%20)
+- 📦 [Rozenite 1.4 \- Storage-plugin, improved redux-devtools-plugin](https://github.com/callstackincubator/rozenite/releases/tag/v1.4.0)
+- 📦 [Rozenite Navigation Inspector \- DevTools plugin for inspecting navigation state](https://github.com/IronTony/rozenite-navigation-inspector)
+- 🔗 [React Native Evals](https://www.callstack.com/blog/announcing-react-native-evals) \- A proposition for a standardised benchmark of AI models against common React Native development tasks.
+- 🎥 [Beto \- 6 Expo UI Tricks That Save You Hours of Debugging](https://www.youtube.com/watch?v=dhN7eeqOVeE)
+- 🎙️ [RNR 355 \- React Native Skia for High-Performance UI with William Candillon](https://infinite.red/react-native-radio/rnr-355-react-native-skia-for-high-performance-ui-with-william-candillon)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📣 [Node.js is moving to one major release per year, starting with Node 27](https://nodejs.org/en/blog/announcements/evolving-the-nodejs-release-schedule)
+- 📜 [Source Maps: Shipping Features Through Standards](https://bloomberg.github.io/js-blog/post/standardizing-source-maps/) \- How Bloomberg helped standardize source maps, and a sneak peek at 5 improvement ideas being worked on.
+- 📜 [Unknown to Typed](https://www.solberg.is/unknown-to-typed) \- How to deal with `unknown` data that arrives at your boundary. Every `as` in your TypeScript is a small lie and should be a conscious decision.
+- 📜 [TypeGPU \- Breaking out the jelly slider](https://blog.swmansion.com/breaking-down-the-jelly-slider-9ab9239f6d80) \- A breakdown of the jelly slider, which has recently attracted a lot of attention, from idea to implementation.
+- 📦 [TanStack Intent \- A distribution model for agent skills](https://tanstack.com/blog/from-docs-to-agents) \- Framework-agnostic CLI that lets library maintainers ship versioned "Agent Skills" alongside npm packages.
+- 📦 [TypeScript 6.0 RC](https://devblogs.microsoft.com/typescript/announcing-typescript-6-0-rc/) \- The last JS-based release before the native Go port in 7.0. In many ways, it will act as the bridge between TypeScript 5.9 and 7.0.
+- 📦 [ArkType 2.2 \- Validated functions, type-safe regex](https://arktype.io/docs/blog/2.2)
+- 📦 [Lightning CSS 1.32 \- Mark imports as external, mix-blend-mode support, visitors can add dependencies](https://github.com/parcel-bundler/lightningcss/releases/tag/v1.32.0)
+- 📦 [View-Transitions-Mock \- A non-visual Polyfill for Same-Document View Transitions](https://www.bram.us/2026/03/11/view-transitions-mock-is-a-non-visual-polyfill-for-same-document-view-transitions/)
 
 ---
 
