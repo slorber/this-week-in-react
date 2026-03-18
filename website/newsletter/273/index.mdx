@@ -1,16 +1,18 @@
 ---
 slug: /273
 title: "This Week In React #273: ..."
-authors: [slorber]
+authors: [slorber, janjaworski]
 date: 03-18-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋!
 
-<Todo />
+This week, RedwoodSDK 1.0 dropped, and other meta-frameworks improved their SSR performance. A bunch of content related to Async React and the TanStack too!
 
-🗓 [React Paris - Workshop Day](https://react.paris/?utm_source=thisweekinreact) - 🇫🇷 Paris - 25 Mar. Deep-dive into React Query and/or nuqs with industry experts. Limited seats available — get 50% off with code "TWIR\_WS".
+On the React Native side, Expo UI support for Jetpack Compose is quite exciting. A new animation library could also be an interesting alternative to Reanimated CSS transitions.
+
+Temporal has finally reached stage 4\! We also have great announcements from the Vue.js conf that remain relevant for React developers, notably Vite 8\.
 
 Let's dive in!
 
@@ -28,11 +30,11 @@ import Support from "../_support.mdx";
 
 **[Cut Code Review Time & Bugs in Half](https://coderabbit.link/twir)**
 
-Code reviews are critical but time-consuming. CodeRabbit acts as your AI co-pilot, providing instant Code review comments and potential impacts of every pull request.  
+Code reviews are critical but time-consuming. CodeRabbit acts as your AI co-pilot, providing instant Code review comments and potential impacts of every pull request.
 
-Beyond just flagging issues, CodeRabbit provides one-click fix suggestions and lets you define custom code quality rules using AST Grep patterns, catching subtle issues that traditional static analysis tools might miss.  
+Beyond just flagging issues, CodeRabbit provides one-click fix suggestions and lets you define custom code quality rules using AST Grep patterns, catching subtle issues that traditional static analysis tools might miss.
 
-CodeRabbit reviews 1 million PRs every week across 3 million repositories and is used by 100 thousand Open-source projects.  
+CodeRabbit reviews 1 million PRs every week across 3 million repositories and is used by 100 thousand Open-source projects.
 
 CodeRabbit is free for all open-source repo's.
 
@@ -42,10 +44,37 @@ CodeRabbit is free for all open-source repo's.
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![RedwoodSDK 1.0](/emails/issues/273/redwood.jpg)](https://rwsdk.com/)
+
+**[RedwoodSDK 1.0](https://rwsdk.com/)**
+
+The former RedwoodJS meta-framework has [pivoted to RedwoodSDK](https://rwsdk.com/blog/redwoodjs-to-redwoodsdk), and it now has its first stable release. This time, it bets on Vite, React Server Components, and Cloudflare (using Durable Objects for its `useSyncedState()` realtime feature). It promises explicit APIs for clarity (no convention, no magic behavior) through composable web-based primitives.
+
+The choice of being tightly coupled to Cloudflare might surprise you, but they explain it in this [article](https://rwsdk.com/blog/why-cloudflare-unified-platform). They are building abstractions on top of Cloudflare Bindings and Durable Objects to become service-agnostic while remaining platform-optimized. Similarly, Evan You has recently announced [Void.cloud](https://void.cloud/) – a Vite-native deployment platform based on Cloudflare – and explained that [“the lock-in is what makes the DX possible”](https://x.com/youyuxi/status/2032501581644497139). Time will tell how this story compares to Next.js and OpenNext 🤪.
+
+---
 
 - 💸 [PlanetScale - Faster apps start with a faster database. Get started with the fastest benchmarked Postgres and MySQL.](https://pscale.link/rw)
+- 👀 [Next.js PR \- Update vercel/og and Satori](https://github.com/vercel/next.js/pull/90933) \- This greatly improves the performance of `ImageResponse` and unlocks new features.
+- 🗓 [React Paris - Workshop Day](https://react.paris/?utm_source=thisweekinreact) - 🇫🇷 Paris - 25 Mar. Deep-dive into React Query and/or nuqs with industry experts. Limited seats available — get 50% off with code "TWIR_WS".
+- 📜 [Why we rolled our own React Server Components framework](https://www.aha.io/engineering/articles/why-we-rolled-our-own-rsc-framework) \- The Aha\! engineering team built their own customizable RSC framework. The Vite RSC plugin absorbs much of the complexity. This article shows how you can do it too, and when it could make sense to do so.
+- 📜 [Why we banned React's useEffect](https://x.com/alvinsng/status/2033969062834045089) \- The Factory team chose to forbid direct usage of `useEffect()` through an ESLint rule, reducing bugs and complexity. Its usage often compensates for something React already gives better primitives for.
+- 📜 [Two React Design Choices Developers Don’t Like—But Can’t Avoid](https://dev.to/playfulprogramming/two-react-design-choices-developers-dont-like-but-cant-avoid-d6g) \- Ryan Carniato explains why React defers state updates and has an effect dependency array. While designing Solid 2.0, he realized that the Async world has constraints that even signal-based frameworks need to take into consideration.
+- 📜 [React SSR Benchmark: TanStack, React Router, Next.js](https://blog.platformatic.dev/react-ssr-framework-benchmark-tanstack-start-react-router-nextjs) \- A stress-test of popular React meta-frameworks that led framework authors to fix many performance bottlenecks.
+- 📜 [TanStack Start \- 5x SSR Throughput after profiling SSR Hot Paths](https://tanstack.com/blog/tanstack-start-5x-ssr-throughput) \- Based on the benchmark above, the TanStack team explains the methodology used to uncover SSR bottlenecks and how they significantly improved the performance under heavy load.
+- 📜 [From Fiber to Async React](https://www.nonsoo.com/posts/async-react) \- An interactive deep dive into React Async features.
+- 📜 [Making sense of 'key' prop in React](https://inside-react.vercel.app/blog/making-sense-of-key-prop-in-react) \- A refresher on why keys matter and how `index` or `Math.random()` can break state and reconciliation.
 - 💸 [Product for Engineers - The engineeringification of everything](https://go.posthog.com/twir-mar18)
+- 📦 [Next.js 16.2 \- AI Improvements](https://nextjs.org/blog/next-16-2-ai) \- Agents are asked to read versioned docs at `node_modules/next/dist/docs/`, browser logs can be forwarded to the terminal, Dev Server lockfile, and a new experimental agent DevTools CLI.
+- 📦 [Reveal.js 6.0 \- Presentation Framework \- New `@revealjs/react` integration package](https://github.com/hakimel/reveal.js/releases/tag/6.0.0)
+- 📦 [Base UI 1.3 \- Drawer is stable, Label for Combobox/Select/Slider, and more](https://base-ui.com/react/overview/releases/v1-3-0)
+- 📦 [Streamdown 2.5 \- Inline KaTeX support, staggered streaming animations, and more](https://vercel.com/changelog/streamdown-2-5)
+- 📦 [AI Elements 1.9 \- New JSXPreview to render incomplete JSX, agent skills, and more](https://vercel.com/changelog/ai-elements-1-9)
+- 📦 [TanStack Query 5.91 \- New `environmentManager` API](https://github.com/TanStack/query/releases/tag/%40tanstack/query-core%405.91.0)
+- 🕹️ [Can’t Maintain \- React Component API Game](https://cant-maintain.saschb2b.com/) \- A fun interactive quiz to teach you component API design lessons.
+- 🎥 [Alem Tuzlak \- TanStack AI Just Got a Huge Upgrade: Generation Hooks, Lazy Tools, Realtime & Middleware](https://www.youtube.com/watch?v=9yI5cgFAhTw) \- On the [TanStack blog](https://tanstack.com/blog), you’ll find many updates about their AI packages. Not strictly about React, but you’ll learn about React-specific integrations such as a `useRealtimeChat()` that hides the complexity of connecting directly to a voice AI provider, or generation hooks that integrate nicely with TanStack Start.
+- 🎥 [Austin Davis \- I Tried TanStack Form and I'm Not Going Back](https://www.youtube.com/watch?v=yti156CvGlc)
+- 🎙️ [Syntax.fm 988 \- Cloudflare’s Next.js Slop Fork](https://syntax.fm/show/988/cloudflare-s-next-js-slop-fork)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -61,9 +90,9 @@ CodeRabbit is free for all open-source repo's.
 
 Use this tutorial to connect LogTape + Sentry and make every log searchable, queryable, and connected to your traces. When something breaks, you'll get the full picture: log events, error context, and Session Replay, all linked by trace ID.
 
-*   Filter by user ID, order ID, or any custom field
-*   Attach context once, inherit it everywhere
-*   Alert when log patterns spike before users notice
+- Filter by user ID, order ID, or any custom field
+- Attach context once, inherit it everywhere
+- Alert when log patterns spike before users notice
 
 [See the full recipe ➡️](https://sentry.io/cookbook/structured-logging-logtape/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=logs-fy27q1-cookbook&utm_content=newsletter-logtape-secondary-trysentry)
 
@@ -71,22 +100,63 @@ Use this tutorial to connect LogTape + Sentry and make every log searchable, que
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Expo UI in SDK 55](/emails/issues/273/expoui.jpg)](https://expo.dev/blog/expo-ui-in-sdk-55-jetpack-compose-now-available-for-react-native-apps)
+
+**[Expo UI in SDK 55 \- Jetpack Compose now available](https://expo.dev/blog/expo-ui-in-sdk-55-jetpack-compose-now-available-for-react-native-apps)**
+
+Expo SDK 55 brings major updates to Expo UI, moving Jetpack Compose support to beta and refining SwiftUI APIs to match Apple's official conventions more closely. Instead of reimplementing native components in JavaScript, Expo UI exposes the native UI frameworks directly to React Native.
+
+- **Jetpack Compose support:** now includes enough Material Design 3 components (like `LazyColumn`, `ModalBottomSheet`, and `DockedSearchBar`) to build complete apps, which was validated by building a full Wikipedia clone.
+- **SwiftUI: now it feels like SwiftUI:** renamed and restructured SwiftUI components to match their SwiftUI counterparts. `DateTimePicker` is now `DatePicker`, `Switch` is now `Toggle`, and `CircularProgress` is now `ProgressView`.
+- **Familiar API surface:** It uses React's compound component pattern (e.g., `ListItem.Leading`) to express Compose's composable lambdas in JSX, and aligns the modifier system so it works consistently across platforms.
+- **AI-Friendly:** Because the APIs intentionally mirror native Compose and SwiftUI documentation, AI assistants can easily generate correct Expo UI code relying on their existing native training data.
+
+---
+
+[![React Native Ease - Lightweight declarative animations powered by platform APIs](/emails/issues/273/rnease.jpg)](https://github.com/AppAndFlow/react-native-ease)
+
+**[React Native Ease \- Lightweight declarative animations powered by platform APIs](https://github.com/AppAndFlow/react-native-ease)**
+
+New animation library designed to handle simple transitions with maximum performance. While Reanimated is incredibly flexible, it runs JS on every frame on the UI thread, which can be overkill and cause flickering if the thread lags. `react-native-ease` solves this by leveraging Core Animation on iOS and Animator on Android directly, resulting in zero JS overhead.
+
+- **CSS-like API:** Offers a highly simplified, declarative API inspired by CSS transitions. You simply wrap elements in an `<EaseView>` component and pass an `animate` prop.
+- **Built for the basics:** Perfect for non-layout properties like opacity, transforms, background color, and border radius. It prevents the need to create hundreds of shared values just for simple press animations in lists.
+- **AI Migration Skill:** It includes an AI agent skill that can automatically scan your codebase, identify simple Animated/Reanimated implementations, and migrate them over to `react-native-ease`.
+
+---
 
 - 💸 [Make React apps fast where it actually matters. Learn how to diagnose real bottlenecks and fix slow, janky React apps using modern React 19 patterns.](https://frontendmasters.com/courses/react-performance-v2/?utm_source=reactweekly&utm_medium=email&utm_campaign=reactperf)
+- 📜 [The next generation of Expo APIs: MediaLibrary and Contacts](https://expo.dev/blog/the-next-generation-of-expo-apis-medialibrary-and-contacts) \- Following the Filesystem update, Contacts and Media Library are getting the new object-oriented API treatment. The use of Shared Objects and Shared Refs offers better performance and simpler querying through deeper native module integration.
+- 📜 [Handling Navigation in React Native Brownfield Apps](https://www.callstack.com/blog/handling-navigation-in-react-native-brownfield-apps) \- Navigation for brownfield apps can be tricky. \``@callstack/brownfield-navigation`\` aims to simplify this process by wiring navigation in a clean, typed, and maintainable way.
+- 📦 [Keyboard Controller 1.2 \- Chat Scroll View](https://kirillzyusko.github.io/react-native-keyboard-controller/blog/chat-scroll-view) \- Tackles layout thrashing during keyboard animations. This [related article](https://medium.com/@iosemagno/how-we-eliminated-keyboard-animation-stutter-in-flutter-and-why-the-same-problem-haunts-react-2e15c37438b0) explains why Flutter and React Native suffer from the same keyboard animation stutter.
+- 📦 [Fast Flow Transform \- Strip Flow types 20x faster than with Babel](https://github.com/jbroma/fast-flow-transform) \- This tool might help remove Babel entirely from your React Native pipeline and adopt a full Rust-based toolchain. Note that SWC is also working on [Flow types stripping](https://github.com/swc-project/swc/pull/11702).
+- 📦 [React Native Sandbox 0.5 \- Now supports Android](https://github.com/callstackincubator/react-native-sandbox/releases/tag/v0.5.0) \- Allows you to run multiple, isolated React Native instances within a single application
+- 📦 [Agent Device 0.8.4 \- Screenshot diff support](https://github.com/callstackincubator/agent-device/pull/214) \- CLI tool for pixel-level image comparison.
+- 📦 [React Native Streamdown \- Markdown streaming for React Native](https://github.com/software-mansion-labs/react-native-streamdown) \- Can render incomplete Markdown documents, useful for streaming LLM chats.
+- 📦 [React Native Reanimated DnD 2.0 \- Drag-and-drop library using Reanimated 4 and Gesture Handler](https://github.com/entropyconquers/react-native-reanimated-dnd)
+- 📦 [Vite Plugin RNW 0.0.11 \- Vite 8 support for React Native Web](https://github.com/dannyhw/vite-plugin-rnw/releases/tag/v0.0.11)
+- 🎥 [Simon Grimm \- How to Build Smart TV Apps with React Native (Vega OS Guide)](https://www.youtube.com/watch?v=Z3FoZ4r_WY8)
+- 🎥 [Beto \- This New React Native Animation Library Is Insane (Ease)](https://www.youtube.com/watch?v=oAIqn44Y63c)
+- 🎙️ [Software Mansion Podcast 1 \- AI Made 20 Years of Learning Obsolete in 2 Months – Simon Grimm x Tomek Zawadzki](https://www.youtube.com/watch?v=uI_8SP7awsA&list=PLSk21zn8fFZDX-LeaD7C3HjUr-R7a6-Kg) \- SWM is launching its new React Native podcast, while Rocket Ship is [taking a break](https://podcast.galaxies.dev/episodes/why-i-m-pausing-the-rocket-ship-podcast-for-now).
+- 🎙️ [React Native Radio 356 \- How Vercel Built the v0 App with React Native](https://infinite.red/react-native-radio/rnr-356-how-vercel-built-the-v0-app-with-react-native)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📣 [TC39 Advances Temporal to Stage 4 Alongside Several ECMAScript Proposals](https://socket.dev/blog/tc39-advances-temporal-to-stage-4) \- Great news for Temporal, being standardized in ECMAScript 2026\. Import Text is also super useful and now stage 3\.
+- 📜 [Temporal: The 9-Year Journey to Fix Time in JavaScript](https://bloomberg.github.io/js-blog/post/temporal/) \- From the origins of the Date API to the backstory of how Temporal got standardized. Remains to define how it will integrate with existing Web APIs, such as date inputs.
+- 📜 [Why Node.js Needs a Virtual File System](https://blog.platformatic.dev/why-nodejs-needs-a-virtual-file-system) \- A `node:vfs` API should land as experimental in Node 24, and polyfills are already available for Node 22\. Being able to load code generated at runtime can be quite useful\!
+- 📦 [Vite 8.0 \- Faster Rust-based Rolldown bundler](https://vite.dev/blog/announcing-vite8) \- A major Vite release just dropped, based on the new unified Rust-based toolchain. The React plugin is also updated, and there’s a compatibility preset for the React Compiler.
+- 📦 [Vite+ Alpha \- The Unified Toolchain for the Web](https://voidzero.dev/posts/announcing-vite-plus-alpha) \- The Void0 company finally decided that it will be free and under MIT license.
+- 📦 [Oxlint JS Plugins Alpha](https://oxc.rs/blog/2026-03-11-oxlint-js-plugins-alpha) \- Oxlint is already compatible with many ESLint rules, including React hooks and React Compiler rules. What’s most interesting is how they achieve good performance thanks to the low-level “raw transfer” mechanism.
+- 📦 [Vitest 4.1 \- Support for Vite 8, test tags, new `aroundEach/All` hooks, and more](https://vitest.dev/blog/vitest-4-1.html)
+- 📦 [Bun 1.3.11 \- `Bun.cron`, smaller on Linux, many bugfixes](https://bun.com/blog/bun-v1.3.11)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/273/meme.jpg)](https://x.com/AdamRackis/status/2033586304181502019)
 
 See ya! 👋
