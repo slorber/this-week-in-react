@@ -6,11 +6,15 @@ date: 03-25-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, Seb here 👋\!
 
-<Todo />
+This week: a new Next.js release, a React Aria-based UI library, Remotion updates, Storybook MCP, and more.
 
-Let's dive in!
+On React Native, multi-threading keeps improving (Worklets, Reanimated). React Navigation v8 looks close and keeps improving.
+
+Sorry for the weird duplicate email last week, it was just a mistake 😅
+
+Enjoy\!
 
 <!-- truncate -->
 
@@ -26,14 +30,14 @@ import Support from "../_support.mdx";
 
 **[Still writing tests manually?](https://www.meticulous.ai?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=26q1&utm_content=1st)**
 
-Notion, Dropbox and LaunchDarkly have found a new testing paradigm - and they can't imagine working without it. Built by [ex-Palantir engineers](https://www.meticulous.ai?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=11march&utm_content=2nd), Meticulous autonomously creates a continuously evolving suite of E2E UI tests that delivers [near-exhaustive coverage](https://www.meticulous.ai?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=11march&utm_content=2nd) with *zero developer effort* - impossible to deliver by any other means. 
+Notion, Dropbox and LaunchDarkly have found a new testing paradigm - and they can't imagine working without it. Built by [ex-Palantir engineers](https://www.meticulous.ai?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=11march&utm_content=2nd), Meticulous autonomously creates a continuously evolving suite of E2E UI tests that delivers [near-exhaustive coverage](https://www.meticulous.ai?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=11march&utm_content=2nd) with _zero developer effort_ - impossible to deliver by any other means. 
 
 It works like magic in the background:
 
-*   Near-exhaustive coverage on every test run
-*   No test creation
-*   **No maintenance (seriously)**
-*   Zero flakes (built on a deterministic browser)
+- Near-exhaustive coverage on every test run
+- No test creation
+- **No maintenance (seriously)**
+- Zero flakes (built on a deterministic browser)
 
 **🤨** Curious? [Book in a time to learn more](https://www.meticulous.ai?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=11march&utm_content=2nd)
 
@@ -41,10 +45,44 @@ It works like magic in the background:
 
 ## ⚛️ React {#react}
 
-<Todo />
+[Next.js 16.2](https://nextjs.org/blog/next-16-2)
+
+A great minor release that comes with significant performance improvements, but also impactful DX improvements and new interesting features:
+
+- \~400% faster `next dev` startup
+- \~50% faster rendering thanks to a React core RSC contribution
+- Redesigned error page
+- Server Function logging in dev
+- `next dev --inspect` to attach a Node.js debugger
+- Link `transitionTypes`
+- Dev Overlay now renders `Error.cause` and a hydration diff indicator to identify client/server
+- Many new experimental features
+- [AI improvements](https://nextjs.org/blog/next-16-2-ai): generates `AGENTS.md` to read versioned docs for agents, browser log forwarding, agent devtools CLI.
+- [Turbopack improvements](https://nextjs.org/blog/next-16-2-turbopack): Faster builds, Server Fast Refresh, tree shaking of dynamic imports, PostCSS config, Subresource Integrity, inline loader config, and more.
+
+Related resources:
+
+- 📜[Implementing Next.js 16 'use cache' with next-intl Internationalization](https://aurorascharff.no/posts/implementing-nextjs-16-use-cache-with-next-intl-internationalization/) \- Recently updated to include usage of the new `experimental.rootParams` feature, letting cached components read the locale directly instead of receiving it as a prop.
+- 📜 [Error Handling in Next.js with catchError](https://aurorascharff.no/posts/error-handling-in-nextjs-with-catch-error) \- This new `unstable_catchError()` API is a framework-aware alternative to `react-error-boundary` that discards Next.js control flow errors and can refetch RSC data.
+- 🎥 [Ankita Kulkarni \- Next.js 16.2 Just Changed AI Coding Forever](https://www.youtube.com/watch?v=PXq6awYzfT8)
+
+---
 
 - 💸 [Product for Engineers - WTF does a product manager do? (and why engineers should care)](https://go.posthog.com/twir-mar25)
+- 📜 [Start naming your useEffect functions, you will thank me later](https://neciudan.dev/name-your-effects) \- Advocates for giving an inline name to Effect functions to convey your intent, even if it’s encapsulated within a custom hook. If you can’t find a decent name, maybe the Effect does too much or should not exist.
+- 📜 [use(): The Hook That Breaks the Rules (On Purpose)](https://saschb2b.com/blog/use-hook-react)
+- 📜 [Test IDs are an a11y smell](https://tkdodo.eu/blog/test-ids-are-an-a11y-smell)
+- 📜 [Type Safety in React Router](https://raphaelbronsveld.com/blog/type-safety-in-react-router)
+- 📜 [Post-React Compiler React Coding Guide (For AI Agents)](https://pavi2410.com/blog/post-react-compiler-coding-guide/)
 - 💸 [Sentry - Why your Next.js stack traces point to random chunks (and how to fix it)](https://blog.sentry.io/setting-up-next-js-source-maps-sentry/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=nextjs-fy27q1-nextjs&utm_content=newsletter-link-blog-sourcemaps-learnmore)
+- 📦 [React Router 7.13.1 & 7.13.2](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v7132) \- Recent patches introduced new unstable APIs such as the `getRequest()` API for RSCs, and a future flag to access “pass-through” (un-normalized) `Request` objects. The `<Link unstable_mask>` makes it easier to implement URL masking, letting you replicate Instagram-like UX: open gallery images in a modal, and render them full screen on refresh.
+- 📦 [HeroUI 3.0](https://heroui.com/docs/react/releases/v3-0-0) \- We usually don’t feature most UI libraries, but this one, based on React Aria and Tailwind, has been cooking for a while, and looks more polished than the average UI lib. Although it’s not a cross-platform abstraction, it offers a React Native variant using similar composition patterns and design tokens.
+- 📦 [Storybook 10.3 \- MCP, Vite 8, Next.js 16.2, ESLint 10](https://github.com/storybookjs/storybook/releases/tag/v10.3.0%20) \- There’s a dedicated article on the [Storybook MCP for React](https://storybook.js.org/blog/storybook-mcp-for-react/)**.**
+- 📦 [Lucide Icons 1.0](https://lucide.dev/guide/version-1) \- Quite popular icon solution in React and shacn/ui.
+- 📦 [Lexical 0.42 \- Extensible text editor framework from Meta](https://github.com/facebook/lexical/releases/tag/v0.42.0)
+- 📦 [Hiraki \- Zero-dependency React drawer component](https://github.com/ddoemonn/hiraki)
+- 📦 [json-render Ink \- Generative UI for the terminal, comes with 27 React components](https://github.com/vercel-labs/json-render/pull/240)
+- 🎥 [Jonny Burger \- Remotion is getting even better\!](https://www.youtube.com/watch?v=EayVHo7XTEg) \- Cool features landed recently in the React video creation tool, such as Light Leaks, Sound Effects, Rspack, and AI-related improvements. Let’s not forget the [integration with Vercel Sandbox](https://www.youtube.com/watch?v=ppYO5COPGXk): I wouldn’t be surprised if we could soon fully vibe-code videos directly in the cloud.
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -58,13 +96,10 @@ It works like magic in the background:
 
 Your existing React Native codebase can now run on Fire TV with minimal changes, thanks to Amazon Developer’s new operating system, Vega. What’s included:   
 
-*   40+ open-source libraries you already rely on, like reanimated  
-
-*   Reduced bundle size - React Native is built into the OS and dynamically linked  
-
-*   Vega Module Resolver Preset (VMRP) to automatically replace libraries with their Vega-platform ported equivalencies  
-
-*   Vega Studio, a VS code-extension, for building, testing, and optimizing Vega apps  
+- 40+ open-source libraries you already rely on, like reanimated  
+- Reduced bundle size - React Native is built into the OS and dynamically linked  
+- Vega Module Resolver Preset (VMRP) to automatically replace libraries with their Vega-platform ported equivalencies  
+- Vega Studio, a VS code-extension, for building, testing, and optimizing Vega apps  
 
 Ready to reach new audiences? Check out our getting started guide.
 
@@ -72,22 +107,49 @@ Ready to reach new audiences? Check out our getting started guide.
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[Worklets 0.8 \- Shareable, Bundle mode improvements](https://github.com/software-mansion/react-native-reanimated/releases/tag/worklets-0.8.0) \-
+
+It’s now easier to use the Bundle mode, which unlocks running [more complex things in background threads](https://x.com/swmansion/status/2036489933490110922). Also read the dedicated article on [Shareable – shared memory's missing piece](https://x.com/swmansion/status/2034667004297183312), a runtime-bound shared memory primitive that was extracted from Reanimated, and that you can now use for non-animation use cases too!
+
+---
 
 - 💸 [Make React apps fast where it actually matters. Learn how to diagnose real bottlenecks and fix slow, janky React apps using modern React 19 patterns.](https://frontendmasters.com/courses/react-performance-v2/?utm_source=reactweekly&utm_medium=email&utm_campaign=reactperf)
+- 🔐 [Glassworm Strikes Popular React Native Phone Number Packages in Supply Chain Attack](https://www.aikido.dev/blog/glassworm-strikes-react-packages-phone-numbers) \- Affects `react-native-country-select` and `react-native-international-phone-number`.
+- 📜 [Glow Effect on TextInput with Reanimated CSS Animations](https://codewithbeto.dev/blog/glow-input-reanimated-css)
+- 📜 [From skeptic to convert: how Fieldy adopted Expo for their AI wearable](https://expo.dev/blog/how-fieldy-adopted-expo-for-their-ai-wearable)
+- 📦 [Reanimated 4.3 \- CSS animations for SVG, Shared Values on multiple threads, typesafety](https://github.com/software-mansion/react-native-reanimated/releases)
+- 📦 [React Navigation 7.17 \- New `.with()` method on static config to add a wrapper around the navigator](https://github.com/react-navigation/react-navigation/releases/tag/%40react-navigation%2Fcore%407.17.0) \- Also available in v8.alpha. React Navigation [wants us to use the Static API](https://x.com/reactnavigation/status/2036819119194964031) more. It unlocks automatic type inference and deep linking, and yet covers most dynamic use cases.
+- 📦 [React Native Navigation SDK](https://github.com/googlemaps/react-native-navigation-sdk) \- TIL that Google provides an official React Native library for Google Maps (in beta).
+- 📦 [Swift 6.3 \- C interop, module selectors, Swift Build preview, Android SDK, and more](https://www.swift.org/blog/swift-6.3-released/)
+- 📦 [Nitro Fetch 0.2 \- Add support for Streaming, formData, AbortController, RN 0.85](https://github.com/margelo/react-native-nitro-fetch/releases/tag/v0.2.0)
+- 📦 [React Native Windows 0.82 \- New-Architecture only](https://github.com/microsoft/react-native-windows/releases/tag/react-native-windows_v0.82.0)
+- 📦 [Rozenite 1.5 & 1.6 \- DevTools for AI Agents, new File System plugin](https://github.com/callstackincubator/rozenite/releases)
+- 📦 [MMKV 4.3 \- MMKV upgrade, `compareBeforeSet` optimization, configure default log level at build time](https://github.com/mrousavy/react-native-mmkv/releases/tag/v4.3.0)
+- 📦 [Uniwind 1.6 \- Border curve utilities](https://github.com/uni-stack/uniwind/releases/tag/v1.6.0)
+- 📦 [Detox 20.48-50 \- Support simulator launch `--arch`, liquidGlass overlay](https://github.com/wix/Detox/releases)
+- 📦 [Agent Device 0.10 \- Can control macOS apps](https://github.com/callstackincubator/agent-device/releases/tag/v0.10.0)
+- 🎥 [Beto \- React Navigation v8 Crash Course — Liquid Glass, Tabs & More](https://www.youtube.com/watch?v=zUfPhL_EU2Y)
+- 🎥 [notJust.dev \- State of React Native \- What's new in 2026](https://www.youtube.com/watch?v=OwgUx22bU0U)
+- 🎙️ [RNR 357 \- React Native 0.82–0.84 & Expo 55](https://infinite.red/react-native-radio/rnr-357-react-native-082084-expo-55)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📜 [Fix Flaky Jest Tests in CI with maxWorkers (and why it works)](https://shift.infinite.red/fix-flaky-jest-tests-in-ci-with-maxworkers-and-why-it-works-e3d3189f35a4) \- Tests parallelization can lead to timeouts, but you can fine-tune parameters to reduce test time and flakiness.
+- 📜 [Who Is Responsible for AI-Generated Code?](https://adventures.nodeland.dev/archive/who-is-responsible-for-ai-generated-code/) \- Will Node.js ban AI-generated code from its core, even when there’s a human in the loop?
+- 📜 [The Three Pillars of JavaScript Bloat](https://43081j.com/2026/03/three-pillars-of-javascript-bloat)
+- 📦 [TypeScript 6.0](https://devblogs.microsoft.com/typescript/announcing-typescript-6-0/) \- A “bridge” release toward the 7.0 Go rewrite, which is almost complete. This release also changes defaults (`strict: true`, `types: []`...), improves subpath imports, adds types for Temporal and upsert, and more.
+- 📦 [Mixed Signals \- Bridging the Server-Client Boundary with Signals](https://jovidecroock.com/blog/mixed-signals/) \- The Preact team is working on a new transport-agnostic solution in which the reactive signal graph spans the network boundary.
+- 📦 [Edge.js \- Running Node apps inside a WebAssembly Sandbox](https://wasmer.io/posts/edgejs-safe-nodejs-using-wasm-sandbox)
+- 📦 [Zero 1.0 \- Sync engine is now stable e](https://zero.rocicorp.dev/docs/release-notes/1.0)
+- 📦 [ArrowJS \- UI framework for the agentic era](https://arrow-js.com/)
+- 📦 [Valibot 1.3 \- Smarter pipelines, result caching, and new validators](https://valibot.dev/blog/valibot-v1.3-release-notes/)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/274/meme.jpg)](https://x.com/sebastienlorber/status/2036735446722527741)
 
 See ya! 👋
