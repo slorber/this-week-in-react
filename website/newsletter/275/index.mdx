@@ -1,9 +1,8 @@
 ---
 slug: /275
-title: "This Week In React #275: ..."
+title: "This Week In React #275: ⚛️ Next.js, TanStack, React Compiler, Inertia, Astro, XSS | 📱 ExecuTorch, Unistyles, RN.run, Preflight, Confetti, AI, Lynx | 🔀 Pretext, Axios, Node, Playwright, Turborepo"
 authors: [slorber]
 date: 04-01-2026
-unlisted: true
 ---
 
 Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
@@ -45,7 +44,9 @@ It works like magic in the background:
 
 ## ⚛️ React {#react}
 
-[Next.js Across Platforms: Adapters, OpenNext, and Our Commitments](https://nextjs.org/blog/nextjs-across-platforms)
+[![Next.js Across Platforms: Adapters, OpenNext, and Our Commitments](/emails/issues/275/nextjs.jpg)](https://nextjs.org/blog/nextjs-across-platforms)
+
+**[Next.js Across Platforms: Adapters, OpenNext, and Our Commitments](https://nextjs.org/blog/nextjs-across-platforms)**
 
 Next.js 16.2 now ships with a stable, typed, versioned Adapter API. It was built in collaboration with many partners: OpenNext, Netlify, Cloudflare, AWS Amplify, and Google Cloud. This helps ensure Next.js works well on every platform across all its features. There’s now a public test suite to verify your adapter, and Vercel also relies on it.
 
@@ -53,7 +54,9 @@ The [Next.js Ecosystem Working Group](https://nextjs.org/ecosystem-working-group
 
 ---
 
-🎥 [TanStart Start RSC preview](https://youtu.be/8XGcc-FRPuo?si=VnH91DpiPI35PFB4&t=1167)
+[![TanStart Start RSC preview](/emails/issues/275/tanstack.jpg)](https://youtu.be/8XGcc-FRPuo?si=VnH91DpiPI35PFB4&t=1167)
+
+🎥 **[TanStart Start RSC preview](https://youtu.be/8XGcc-FRPuo?si=VnH91DpiPI35PFB4&t=1167)**
 
 Tanner Linsley gave a talk at React Paris last week. The 2nd part unveils for the first time what React Server Components will look like in TanStack Start, to be released very soon.
 
@@ -63,7 +66,7 @@ My highlights:
 - **Composite Components**: You don’t need `’use client’` directives, although they are supported. This new concept creates an explicit boundary between the server and the client. I assume it should be possible to co-locate client/server components in the same file.
 - **No Server Actions**: A design decision for security reasons, but you can use server functions with validation.
 
-What strikes me is just how different this is from Next.js. It feels more like a library than a framework, and it seems more in sync with the philosophy that initially attracted me to React: you make your own decisions. But sometimes more flexibility means more glue code and ways to shoot yourself in the foot. In any case, I agree with Tanner: we deserve another React meta-framework—one that’s less opinionated and innovates in a different direction.
+What strikes me is just how different this is from Next.js. It feels more like a library than a framework, and it seems more in sync with the philosophy that initially attracted me to React: you make your own decisions, even though sometimes more flexibility means more glue code and ways to shoot yourself in the foot. In any case, I agree with Tanner: we deserve another React meta-framework—one that’s less opinionated and innovates in a different direction.
 
 ---
 
@@ -112,7 +115,9 @@ Why settle for a black box SaaS when you can own the entire platform? [Deploy At
 
 ## 📱 React-Native {#react-native}
 
-[RN ExecuTorch 0.8](https://github.com/software-mansion/react-native-executorch/releases/tag/v0.8.0)
+[![RN ExecuTorch 0.8](/emails/issues/275/executorch.jpg)](https://github.com/software-mansion/react-native-executorch/releases/tag/v0.8.0)
+
+**[RN ExecuTorch 0.8](https://github.com/software-mansion/react-native-executorch/releases/tag/v0.8.0)**
 
 Software Mansion just dropped the biggest release to date for React Native ExecuTorch. Version 0.8 expands the library's capabilities far beyond its initial scope, introducing official support for bare React Native applications (no longer strictly tied to Expo) and deep integration with Vision Camera.
 
@@ -130,7 +135,7 @@ Software Mansion just dropped the biggest release to date for React Native Execu
 - 🗓️ [App.js Conf](https://appjs.co/?utm_source=thisweekinreact) - 🇵🇱 Kraków - 27-29 May - Join Charlie Cheever, William Candillon, Jay Meistrich, Perttu Lähteenlahti, and more! Prices increase in May—secure your seat now. Get a 15% discount with code "TWIR".
 - 📜 [Fig case study](https://expo.dev/blog/how-fig-keeps-millions-eating-safely-with-a-five-engineer-team-and-expo) \- How five engineers can scale to millions of users with Expo to provide crucial info about dietary needs.  
   📦 [Preflight \- Simplify Maestro E2E testing for React Native](https://github.com/RamboWasReal/react-native-preflight) \- deep link to any screen, inject state, compare visual regressions with reports, router agnostic.
-- 📦 [Fast Confetti 2.0](https://github.com/AlirezaHadjar/react-native-fast-confetti/releases/tag/v2.0.0-beta.2) \- Rewritten composition API, more customization and natural feeling animations, more about rewrite on 🐦[X](https://x.com/alireza_hadjar/status/2038618570695819719).
+- 📦 [Fast Confetti 2.0](https://github.com/AlirezaHadjar/react-native-fast-confetti/releases/tag/v2.0.0-beta.2) \- Rewritten composition API and physics engine, more customization and natural feeling animations.
 - 📦 [ReactNative.run](https://www.reactnative.run/) \- Run React Native in a browser, Metro bundler mapped to the web. Similar concept to Expo Snack.
 - 📦 [Agent Device 0.11](https://github.com/callstackincubator/agent-device/releases/tag/v0.11.0%20) \- iOS Simulator no longer takes focus from the current window \+ lots of fixes and small features
 - 📦 [Brownie 3.5 \- Shared-State Workflow for Brownfield now with Android support.](https://www.callstack.com/blog/brownie-a-type-safe-shared-state-workflow-for-brownfield-react-native)
