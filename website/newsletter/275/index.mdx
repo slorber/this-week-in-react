@@ -6,14 +6,15 @@ date: 04-01-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
-<Todo />
+This week, we have news about popular React meta-frameworks. Next.js Adapters API should help host it anywhere without compromise. TanStack Start unveils a preview of its React Server Components. The React Compiler port to Rust is being actively worked on.
+
+No major announcement in the React Native world, but still many interesting releases. React Native v0.85 should be released next week.
+
+Axios has been compromised in a major supply chain attack. Stay safe and make sure to adopt security best practices\!
 
 Let's dive in!
-
-*   🗓️ [App.js Conf](https://appjs.co/?utm_source=thisweekinreact) - 🇵🇱 Kraków - 27-29 May - Join Charlie Cheever, William Candillon, Jay Meistrich, Perttu Lähteenlahti, and more! Prices increase in May—secure your seat now. Get a 15% discount with code "TWIR".
-*   🗓️ [dotJS 2026](https://www.dotjs.io/?utm_source=twir&utm_medium=newsletter&utm_campaign=EB) \-  🇫🇷 Paris - 18 September - Early bird tickets are available until April 14th 6 PM CET, save 100€ on the next price. dotJS comes with dotAI on September 17, book now your early bird ticket for each conference, or a combo to attend both.
 
 <!-- truncate -->
 
@@ -29,14 +30,14 @@ import Support from "../_support.mdx";
 
 **[Still writing tests manually?](https://www.meticulous.ai?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=11march&utm_content=1st)**
 
-Notion, Dropbox and LaunchDarkly have found a new testing paradigm - and they can't imagine working without it. Built by [ex-Palantir engineers](https://www.meticulous.ai?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=11march&utm_content=2nd), Meticulous autonomously creates a continuously evolving suite of E2E UI tests that delivers [near-exhaustive coverage](https://www.meticulous.ai?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=11march&utm_content=2nd) with *zero developer effort* - impossible to deliver by any other means. 
+Notion, Dropbox and LaunchDarkly have found a new testing paradigm - and they can't imagine working without it. Built by [ex-Palantir engineers](https://www.meticulous.ai?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=11march&utm_content=2nd), Meticulous autonomously creates a continuously evolving suite of E2E UI tests that delivers [near-exhaustive coverage](https://www.meticulous.ai?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=11march&utm_content=2nd) with _zero developer effort_ - impossible to deliver by any other means. 
 
 It works like magic in the background:
 
-*   Near-exhaustive coverage on every test run
-*   No test creation
-*   **No maintenance (seriously)**
-*   Zero flakes (built on a deterministic browser)
+- Near-exhaustive coverage on every test run
+- No test creation
+- **No maintenance (seriously)**
+- Zero flakes (built on a deterministic browser)
 
 **🤨** Curious? [Book in a time to learn more](https://www.meticulous.ai?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=11march&utm_content=2nd)
 
@@ -44,10 +45,44 @@ It works like magic in the background:
 
 ## ⚛️ React {#react}
 
-<Todo />
+[Next.js Across Platforms: Adapters, OpenNext, and Our Commitments](https://nextjs.org/blog/nextjs-across-platforms)
+
+Next.js 16.2 now ships with a stable, typed, versioned Adapter API. It was built in collaboration with many partners: OpenNext, Netlify, Cloudflare, AWS Amplify, and Google Cloud. This helps ensure Next.js works well on every platform across all its features. There’s now a public test suite to verify your adapter, and Vercel also relies on it.
+
+The [Next.js Ecosystem Working Group](https://nextjs.org/ecosystem-working-group) explains Vercel’s commitment. Partners will not participate in Next.js design decisions and roadmap, but can still impact it through feedback. They will be kept in the loop early, have time to adapt, and get direct support to fix adapter breakage.
+
+---
+
+🎥 [TanStart Start RSC preview](https://youtu.be/8XGcc-FRPuo?si=VnH91DpiPI35PFB4&t=1167)
+
+Tanner Linsley gave a talk at React Paris last week. The 2nd part unveils for the first time what React Server Components will look like in TanStack Start, to be released very soon.
+
+My highlights:
+
+- **Primitives**: You have full flexibility to decide how to compose these RSC APIs, and can adopt them incrementally. RSC flight payloads are just streams of text; you can sync/cache/persist/manipulate these on your own terms.
+- **Composite Components**: You don’t need `’use client’` directives, although they are supported. This new concept creates an explicit boundary between the server and the client. I assume it should be possible to co-locate client/server components in the same file.
+- **No Server Actions**: A design decision for security reasons, but you can use server functions with validation.
+
+What strikes me is just how different this is from Next.js. It feels more like a library than a framework, and it seems more in sync with the philosophy that initially attracted me to React: you make your own decisions. But sometimes more flexibility means more glue code and ways to shoot yourself in the foot. In any case, I agree with Tanner: we deserve another React meta-framework—one that’s less opinionated and innovates in a different direction.
+
+---
 
 - 💸 [Lingui - Lightweight, developer-first i18n tooling for modern product teams](https://crowdin.info/AII2d2o)
+- 👀 [React Compiler PR \- WIP port of React Compiler to Rust](https://github.com/facebook/react/pull/36173) \- As previously announced, the React Compiler is being ported to Rust through AI. The algorithm is the same, based on a Rust-based Babel AST, already passing 100% of the Babel integration fixture tests. The goal is to integrate nicely with Babel, SWC, and OXC.
+- 👀 [React PR \- Enable Trusted Types integration](https://github.com/facebook/react/pull/35816) \- The browser Trusted Types API is now Baseline Newly Available, and React now integrates with it to prevent XSS and force you to sanitize unsafe inputs. For example, with `dangerouslySetInnerHTML={{__html: policy.createHTML(text)}}`.
+- 👀 [Next.js PR \- `experimental.useOffline with retries + hook to show offline indicator`](https://github.com/vercel/next.js/pull/92012)
+- 👀 [TanStack Query ESLint PR \- Add `prefer-query-options` rule](https://github.com/TanStack/query/pull/10359)
+- 🗓️ [dotJS 2026](https://www.dotjs.io/?utm_source=twir&utm_medium=newsletter&utm_campaign=EB) \-  🇫🇷 Paris - 18 September - Early bird tickets are available until April 14th 6 PM CET, save 100€ on the next price. dotJS comes with dotAI on September 17, book now your early bird ticket for each conference, or a combo to attend both.
+- 📜 [TanStack Router's New Reactive Core: A Signal Graph](https://tanstack.com/blog/tanstack-router-signal-graph) \- They refactored the router state store, splitting it into many small stores using signals, leading to more efficient fine-grained subscriptions. The original `router.state` is still a public API, but now derived from the smaller store.
+- 📜 [When Do You Really Need startTransition?](https://tigerabrodi.blog/when-do-you-really-need-starttransition) \- When an update triggers expensive rendering.
+- 📜 [Hoistable SVG Defs in React](https://julesblom.com/writing/colocated-svg-defs) \- How to colocate SVG `<defs>` with components instead of centralizing them.
+- 📜 [Making React ProseMirror really, really fast](https://handlewithcare.dev/blog/making_react_prosemirror_really_really_fast/)
+- 📜 [Build your own shimmer skeleton that never goes out of sync](https://neciudan.dev/lets-build-dynamic-shimmer-skeletons)
+- 📜 [How Does React Fiber Render Your UI](https://inside-react.vercel.app/blog/how-does-react-fiber-render-your-ui)
 - 💸 [Product for Engineers - WTF does a product manager do? (and why engineers should care)](https://go.posthog.com/twir-apr1)
+- 📦 [Inertia 3.0 \- Build React/modern SPAs with server-based routers](https://laravel.com/blog/inertia-v3-whats-changed-since-the-first-beta) \- This solution to integrate React and other frontend frameworks with traditional backends (optimized for Laravel) now comes with a Vite 8 plugin, SSR in dev, optimistic updates, and more.
+- 📦 [TanStack DB 0.6 \- Persistence, Offline Support, and Hierarchical Data](https://tanstack.com/blog/tanstack-db-0.6-app-ready-with-persistence-and-includes)
+- 📦 [Astro 6.1 \- Improved image optimization, markdown config, expose i18n fallback routes](https://astro.build/blog/astro-610/)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -65,11 +100,11 @@ It’s the only toolkit that combines a high-end user experience with data sover
 
 Everything you need is already there:
 
-*   **Native Mobile App** for on-the-go access.
-*   **Intuitive Kanban Boards** for pipeline management.
-*   **Built-in Email Tracking** to stay on top of leads.
-*   **Free SSO** for seamless team integration.
-*   **MCP Server Integration** for productivity gains.
+- **Native Mobile App** for on-the-go access.
+- **Intuitive Kanban Boards** for pipeline management.
+- **Built-in Email Tracking** to stay on top of leads.
+- **Free SSO** for seamless team integration.
+- **MCP Server Integration** for productivity gains.
 
 Why settle for a black box SaaS when you can own the entire platform? [Deploy Atomic CRM](https://marmelab.com/atomic-crm/) on your own infrastructure in minutes and regain control over your most valuable asset: your data.
 
@@ -77,15 +112,52 @@ Why settle for a black box SaaS when you can own the entire platform? [Deploy At
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[RN ExecuTorch 0.8](https://github.com/software-mansion/react-native-executorch/releases/tag/v0.8.0)
+
+Software Mansion just dropped the biggest release to date for React Native ExecuTorch. Version 0.8 expands the library's capabilities far beyond its initial scope, introducing official support for bare React Native applications (no longer strictly tied to Expo) and deep integration with Vision Camera.
+
+**Key callouts:**
+
+- **Vision Camera Integration:** You can now seamlessly run ExecuTorch models directly on camera frames in real-time.
+- **New Computer Vision Models:** The release introduces powerful new CV hooks, such as `useInstanceSegmentation` and `useSemanticSegmentation`.
+- **Bare RN Support:** You can now use ExecuTorch in bare React Native apps by utilizing the bare React Native resource fetcher instead of the Expo one.
+- **Expanded NLP:** Continues to grow its Natural Language Processing suite with implementations for Speech-to-Text, Text-to-Speech, Text Embeddings, and more.
+
+---
 
 - 💸 [Make React apps fast where it actually matters. Learn how to diagnose real bottlenecks and fix slow, janky React apps using modern React 19 patterns.](https://frontendmasters.com/courses/react-performance-v2/?utm_source=reactweekly&utm_medium=email&utm_campaign=reactperf)
+- 👀 [Lynx Vue](https://vue.lynxjs.org/) \- Vue \+ Lynx \= Vue Native? An AI-powered attempt to bridge native development with a popular framework.
+- 🗓️ [App.js Conf](https://appjs.co/?utm_source=thisweekinreact) - 🇵🇱 Kraków - 27-29 May - Join Charlie Cheever, William Candillon, Jay Meistrich, Perttu Lähteenlahti, and more! Prices increase in May—secure your seat now. Get a 15% discount with code "TWIR".
+- 📜 [Fig case study](https://expo.dev/blog/how-fig-keeps-millions-eating-safely-with-a-five-engineer-team-and-expo) \- How five engineers can scale to millions of users with Expo to provide crucial info about dietary needs.  
+  📦 [Preflight \- Simplify Maestro E2E testing for React Native](https://github.com/RamboWasReal/react-native-preflight) \- deep link to any screen, inject state, compare visual regressions with reports, router agnostic.
+- 📦 [Fast Confetti 2.0](https://github.com/AlirezaHadjar/react-native-fast-confetti/releases/tag/v2.0.0-beta.2) \- Rewritten composition API, more customization and natural feeling animations, more about rewrite on 🐦[X](https://x.com/alireza_hadjar/status/2038618570695819719).
+- 📦 [ReactNative.run](https://www.reactnative.run/) \- Run React Native in a browser, Metro bundler mapped to the web. Similar concept to Expo Snack.
+- 📦 [Agent Device 0.11](https://github.com/callstackincubator/agent-device/releases/tag/v0.11.0%20) \- iOS Simulator no longer takes focus from the current window \+ lots of fixes and small features
+- 📦 [Brownie 3.5 \- Shared-State Workflow for Brownfield now with Android support.](https://www.callstack.com/blog/brownie-a-type-safe-shared-state-workflow-for-brownfield-react-native)
+- 📦 [Reshuffled 0.2 \- Nitro-powered grid layout \- onDragEnd worklet callbacks](https://github.com/Guccio163/react-native-reshuffled)
+- 📦 [Reactotron 3.9 \- MCP server integration](https://github.com/infinitered/reactotron/releases/tag/reactotron-app%403.9.0)
+- 📦 [React Native Header Motion 1.0 \- New context-first header API, explicit navigation bridging, better performance](https://github.com/pawicao/react-native-header-motion/releases/tag/v1.0.0)
+- 📦 [Unistyles 3.2 \- Add support for dropShadow, Suspense trees, RTL ShadowTree updates on Android](https://github.com/jpudysz/react-native-unistyles/releases/tag/v3.2.0)
+- 📦 [Morph Card \- Native card-to-modal morph transition](https://github.com/MeliValesca/react-native-morph-card)
+- 🤖 [Software Mansion skills](https://github.com/software-mansion-labs/skills/tree/main/skills/react-native-best-practices) \- Best practices, AI skills for animations, gestures, SVG, and libraries maintained by SWM.
+- 🤖 [React Navigation AI skills](https://github.com/react-navigation/skills) \- Official guidelines that help with migration to newer versions and static config.
+- 🤖 [Codex plugins for React Native development](https://www.callstack.com/blog/announcing-codex-plugins-for-react-native-development) \- Build and test RN apps in Codex.
+- 🎥 [William Candillon \- React Native WebGPU in 100 seconds](https://www.youtube.com/watch?v=t3rTRMDoev8)
+- 🎥 [Beto \- react-i18next in React Native & Expo](https://www.youtube.com/watch?v=EWZZ-qekCW0)
+- 🎙️ [React Native Radio 358 \- React Native for Meta Quest Part 2: Developer Friendly](https://infinite.red/react-native-radio/rnr-358-react-native-for-meta-quest-part-2-developer-friendly)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- ⚠️ [axios Compromised on npm \- Malicious Versions Drop Remote Access Trojan](https://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan) \- `axios@1.14.1` and `axios@0.30.4` have been compromised for approximately 4 hours on 30 March, and you might have too if you installed dependencies during that time frame. Even if you don’t use it directly, it’s probably a transitive dependency in your projects. Make sure to follow the defensive measures, such as adding `min-release-age=7d` to your `.npmrc`.
+- 📜 [Signals, the push-pull based algorithm](https://willybrauner.com/journal/signal-the-push-pull-based-algorithm)
+- 📦 [Pretext \- Text measurement and layout algorithm in pure TypeScript](https://github.com/chenglou/pretext) \- This innovative lib went viral this week, with fun/impressive but useless demos everywhere. However, the lib unlocks real new possibilities that are impossible or inefficient to achieve with DOM/CSS, as explained in this related article: [You're Looking at the Wrong Pretext Demo](https://denodell.com/blog/youre-looking-at-the-wrong-pretext-demo).
+- 📦 [Chrome 147 \- `Element.startViewTransition()`](https://developer.chrome.com/blog/element-scoped-view-transitions) \- The first browser to ship element-scoped view transitions, enabling multiple view transitions to run simultaneously.
+- 📦 [Playwright 1.59 \- Screencast recording, observability for agents, `await using`](https://github.com/microsoft/playwright/releases/tag/v1.59.0) \- New features that could be helpful to give feedback to AI agents, and post review videos in PRs.
+- 📦 [Turborepo 2.9 \- 96% faster with agents, sandboxes, and humans](https://vercel.com/blog/making-turborepo-ninety-six-percent-faster-with-agents-sandboxes-and-humans)
+- 📦 [Transformers.js 4.0 \- Machine Learning for the web \- New WebGPU backend](https://github.com/huggingface/transformers.js/releases/tag/4.0.0)
+- 📦 [Node.js 25.9 \- Test runner module mocking improvements, `using` \+ AsyncLocalStorage, `stream/iter` API](https://nodejs.org/en/blog/release/v25.9.0)
 
 ---
 
