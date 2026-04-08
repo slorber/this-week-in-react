@@ -6,11 +6,13 @@ date: 04-08-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi there, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
-- 🗓 [React Summit](https://reactsummit.com/?utm_source=thisweekinreact) - 🇳🇱 Amsterdam - 12 & 16 Jun. Catch the latest in React with inspiring talks, networking, and Amsterdam adventures. Save on tickets with promo code TWIR (-10%) !
+This week brings a collection of smaller, yet still noteworthy, React releases and articles.
 
-<Todo />
+On the React Native side, v0.85 just dropped with a new Shared Animation backend. Speaking of animations, we have a little sneak peek of exciting things coming, such as `<ViewTransition>` and Skia Graphite.
+
+With the recent surge in npm supply chain attacks, it’s worth reviewing the [npm Security Best Practices](https://github.com/lirantal/npm-security-best-practices) guide to secure your setup.
 
 Let's dive in!
 
@@ -43,10 +45,33 @@ It works like magic in the background:
 
 ## ⚛️ React {#react}
 
-<Todo />
+[Boneyard \- Auto-generated skeleton screens](https://boneyard.vercel.app/)
+
+Instead of manually creating skeleton screens for loading states, this innovative library snapshots your real UI at various breakpoints and captures skeleton "bones" \- positioned, sized rectangles that mirror the layout exactly. It supports React, React Native, and other frameworks.
+
+---
 
 - 💸 [Platano - Ship a revenue-ready AI image app this weekend. You know React? That's all you need to launch on the App Store.](https://cwb.sh/platano?r=seb)
+- 🗓 [React Summit](https://reactsummit.com/?utm_source=thisweekinreact) - 🇳🇱 Amsterdam - 12 & 16 Jun. Catch the latest in React with inspiring talks, networking, and Amsterdam adventures. Save on tickets with promo code TWIR (-10%) !
+- 📜 [The Precompute Pattern: Encoding Dynamic Data into URLs in](https://aurorascharff.no/posts/the-precompute-pattern-encoding-dynamic-data-into-urls-in-nextjs/) [Next.js](http://Next.js) \- An advanced technique to maximize the ability for Next.js to pre-render pages. It works particularly well for low cardinality variants such as feature flags and auth status.
+- 📜 [Under the hood of MDN's new frontend](https://developer.mozilla.org/en-US/blog/mdn-front-end-deep-dive/) \- MDN launched a new frontend, replacing their old and difficult-to-maintain React CRA app for a new stack. They implemented their own Server Components system on top of Lit and Custom Elements, using Declarative Shadow DOM as a progressive enhancement.
+- 📜 [Moving Railway's Frontend Off](https://blog.railway.com/p/moving-railways-frontend-off-nextjs) [Next.js](http://Next.js) \- Feedback on migrating a Page Router app with 200+ routes to TanStack Start in 2 PRs with zero downtime. Their app now builds faster, has a more explicit model, and layout composition is easier.
+- 📜 [You really, really, really don't need an effect\! I swear\!](https://neciudan.dev/you-really-really-dont-need-an-effect) \- And even when you need one (data fetching), someone already wrote that effect better than you will (React Query).
+- 📜 [How to implement spring physics buttons with Framer Motion](https://tigerabrodi.blog/how-to-implement-spring-physics-buttons-with-framer-motion)
 - 💸 [Certificates.dev - Go beyond tutorials. Get certified with real-world React coding exams prepped by Aurora Scharff. Trusted by 680 companies](https://certificates.dev/react?friend=TWIR&utm_source=twir&utm_medium=newsletter&utm_campaign=partner)
+- 📦 [Ink 7.0 \- React renderer for CLIs](https://github.com/vadimdemedes/ink/releases/tag/v7.0.0) \- Unsurprisingly, this package has become quite popular with the rise of AI and terminal apps. This major version upgrades to Node 22, React 19.2, and adds many new hooks, features, and props.
+- 📦 [Comark \- Fast, streaming-ready Markdown parser with support for React and more](https://comark.dev/) \- An interesting alternative to Streamdown or MDX, coming from the Nuxt team.
+- 📦 [Docusaurus 3.10 \- Security, Docusaurus Faster stable, VCS API, Strict MDX, Site Storage stable](https://docusaurus.io/blog/releases/3.10) \- A milestone release to prepare for Docusaurus v4.
+- 📦 [Shaders beta \- The component library for creative WebGPU effects in the browser](https://shaders.com/) \- A nice solution for modern creative web dev, coming with first-class React components. Commercial usage of React components is free, although there’s a paid offering.
+- 📦 [React Hook Form 7.72 \- Built-in form-level validation](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.72.0) \- Useful feature for cross-field validation.
+- 📦 [Conform 1.18 \- Progressively enhance HTML forms with React](https://github.com/edmundhung/conform/releases/tag/v1.18.0)
+- 📦 [React Router 7.14 \- Support for Vite 8, unstable RSC Framework Mode improvements](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v7140)
+- 📦 [shadcn CLI 4.2 \- New `shadcn apply` command to switch presets easily](https://ui.shadcn.com/docs/changelog/2026-04-shadcn-apply)
+- 📦 [Material UI 9.0 \- Accessibility improvements, sx prop performance, and cleanup of deprecated APIs](https://github.com/mui/material-ui/releases/tag/v9.0.0)
+- 📦 [Mantine 9.0 \- New components: Scheduling, FloatingWindow, OverflowList, Marquee, and more](https://mantine.dev/changelog/9-0-0/)
+- 📦 [Next-Intl 4.9 \- Support `<Link transitionTypes>`](https://github.com/amannn/next-intl/releases/tag/v4.9.0)
+- 🎥 [Web Dev Simplified \- You Need To Start Using This Underrated React Hook \- `useSyncExternalStore`](https://www.youtube.com/watch?v=NBjycPpPHQQ)
+- 🎥 [React Paris 2026 \- YouTube Playlist](https://www.youtube.com/playlist?list=PL53Z0yyYnpWhsizNWtlnyM7XWFUSw437J)
 
 <SubscribeFormEmbed placement="middle" />
 
