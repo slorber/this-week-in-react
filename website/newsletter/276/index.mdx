@@ -95,22 +95,49 @@ Built for testing, Wallaby includes a **Time Travel Debugger**, the ability to r
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[React Native 0.85](https://reactnative.dev/blog/2026/04/07/react-native-0.85)
+
+React Native 0.85 notably ships with a new Shared Animation Backend built in collaboration with Software Mansion, alongside a few other improvements and breaking changes:
+
+- **Shared Animation Backend**: This new internal engine will soon be enabled in React Native 0.85.1 and power both Animated and Reanimated. It enables performance benefits for Reanimated, and the core Animated API will finally animate layout props through the native driver\!
+- **DevTools Improvements**: Multiple simultaneous CDP connections allow you to debug with DevTools, VS Code, and AI agents simultaneously without sessions dropping.
+- **Metro TLS Support**: HTTPS and WSS during development for testing secure APIs.
+- **Breaking Changes**: Jest preset moved to `@react-native/jest-preset`, dropped EOL Node versions, and removed `StyleSheet.absoluteFillObject`.
+
+---
 
 - 💸 [Product for Engineers - What we wish we knew about building AI agents](https://go.posthog.com/twir-apr8)
+
+- 👀 [React PR \- ViewTransition support for React Native Fabric](https://github.com/facebook/react/pull/35764) \- Behind a flag, not ready for prime time, but this is one of many PRs showing that `<ViewTransition>` for React Native is being actively worked on\!
+- 👀 [React Native Skia \- First Graphite pre-release](https://github.com/Shopify/react-native-skia/pull/3813)\- Google's next-gen Skia renderer (Vulkan/Metal/Dawn) comes to RN Skia, now available in the `@next` distribution channel.
+- 📜 [Expo brownfield: How to add Expo to your existing native app without a rewrite](https://expo.dev/blog/expo-brownfield-how-to-add-expo-to-your-existing-native-app-without-a-rewrite) \- SDK 55 introduced a new “isolated” approach to integrate Expo in an existing native app. The Expo app is built ahead of time and distributed as a native binary artifact
+- 📜 [React Native JSI Deep Dive Series](https://heartit.tech/react-native-jsi-deep-dive-part-1-the-runtime-you-never-see/) \- Comprehensive 12-part series covering JSI internals, from C++ architecture to TurboModule integration.
+- 📜 [How We Optimized Agent Device for Mobile App Automation](https://www.callstack.com/blog/how-we-optimized-agent-device-for-mobile-app-automation) \- Deep dive on reducing LLM token usage by 50% for AI-driven mobile testing through accessibility snapshots and smarter context management.
+- 📦 [RN Windows 0.82 \- Fabric-only, XAML UI Hosting](https://devblogs.microsoft.com/react-native/%F0%9F%9A%80react-native-windows-v0-82-is-here/) \- Community modules can now embed native XAML controls directly in Fabric. New accessibility override API gives third-party modules fine-grained control over screen reader behavior.
+- 📦 [Create React Native Library 0.60 \- Experimental C++ TurboModule, Vite web support for examples](https://github.com/callstack/react-native-builder-bob/releases/tag/create-react-native-library%400.60.0) \- New templates can now scaffold experimental C++ TurboModules for native development. You can now test both native and web support without custom configuration.
+- 📦 [Maestro CLI 2.4 \- iOS 26 support, new `list-device` commands for easier device selection](https://maestro.dev/blog/maestro-cli-2-4-0)
+- 📦 [True Sheet 3.10 \- iOS 26 scroll edge effects, grabber accessibility](https://sheet.lodev09.com/blog/release-3-10)
+- 📦 [Nitro Player 1.0 \- Audio player with playlist management, playback controls, and support for Android Auto and CarPlay](https://nitroplayer.riteshshukla.in/)
+- 📦 [Skia 2.6 \- New immutable Path API](https://github.com/Shopify/react-native-skia/releases/tag/v2.6.0)
+- 📦 [Gesture Handler 2.31 \- Various bug fixes, fix unresponsive handlers](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/v2.31.0)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [JSIR \- A High-Level IR for JavaScript (RFC)](https://discourse.llvm.org/t/rfc-jsir-a-high-level-ir-for-javascript/90456) \- Google's new JavaScript IR (Intermediate Representation) proposal for static analysis. Already used internally for code analysis and deobfuscation, notably decompiling Hermes bytecode.
+- 📜 [The Hidden Blast Radius of the Axios Compromise](https://socket.dev/blog/hidden-blast-radius-of-the-axios-compromise) \- Last week, the popular `axios` library got compromised through a [sophisticated social engineering attack](https://socket.dev/blog/axios-maintainer-confirms-social-engineering-behind-npm-compromise). Even if your app doesn’t depend on the library, you may still be affected through transitive dependencies or using `npx` in critical CI workflows.
+- 📜 [What To Know in JavaScript (2026 Edition)](https://frontendmasters.com/blog/what-to-know-in-javascript-2026-edition/) \- Comprehensive roundup covering ES2025/2026 features, framework updates, runtime landscape, and build tools.
+- 📜 [The Intl API: The best browser API you're not using](https://polypane.app/blog/the-intl-api-the-best-browser-api-youre-not-using/)
+- 📦 [View Transitions Toolkit \- Utility functions for View Transitions](https://www.bram.us/2026/04/02/view-transitions-toolkit/) \- Filling in gaps for advanced View Transitions patterns. Feature detection, animation optimization, playback control, and automatic navigation types.
+- 📦 [ESLint 10.2 \- Language-aware rules, Temporal support](https://eslint.org/blog/2026/04/eslint-v10.2.0-released/)
+- 📦 [esbuild 0.28 \- Import Text proposal, integrity checks](https://github.com/evanw/esbuild/releases/tag/v0.28.0)
+- 📦 [Ky 2.0 \- JavaScript HTTP client based on the Fetch API](https://github.com/sindresorhus/ky/releases/tag/v2.0.0)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/276/meme.jpg)](https://x.com/DavidKPiano/status/2041818750337348040)
 
 See ya! 👋
