@@ -12,8 +12,6 @@ Hi everyone!
 
 Let's dive in!
 
-- 🗓️ [dotJS 2026](https://www.dotjs.io/speak?utm_source=twir&utm_medium=newsletter&utm_campaign=CFP) \- 🇫🇷 Paris - 18 September - Call For Papers for dotJS is open until April 28th 6 PM CET, submit now your talk proposals for the conference!
-
 <!-- truncate -->
 
 import Support from "../_support.mdx";
@@ -45,10 +43,43 @@ With PlanetScale, you get:
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![TanStack - React Server Components Your Way](/emails/issues/277/tanstack.jpg)](https://tanstack.com/blog/react-server-components)
+
+**[TanStack \- React Server Components Your Way](https://tanstack.com/blog/react-server-components)**
+
+Two weeks ago, we covered the TanStack Start RSC sneak peek that Tanner offered us at React Paris. And now, they are available as an experimental feature\!
+
+My highlights remain mostly the same:
+
+- **Primitives**: RSCs are supported through 3 primitive APIs that permit to manipulate RSCs as any other stream of data, immediately compatible with existing tools such as React Query, TanStack Router loaders, localStorage, CDNs and HTTP caches. It is entirely opt-in and does not impose a server-first approach nor any framework convention, giving you total freedom on how to compose those primitives.
+- **Composite Components**: The server renders a RSC with slots that get filled by the client. You don’t need `’use client’` directives, although they are supported. This new concept creates an explicit boundary between the server and the client. It should be possible to co-locate client/server components in the same file this way.
+- **No Server Actions**: A design decision for security reasons. Recent React CVEs affecting other RSC frameworks were due to Server Functions handling Flight payloads and don't apply to TanStack Start, as [Jack Herrington explains in this video](https://www.youtube.com/watch?v=-dbvAMsRKi0).
+
+What strikes me is just how different this is from Next.js. It feels more like a library than a framework, and more in sync with the philosophy that initially attracted me to React.
+
+---
 
 - 💸 [PostHog - How we built automatic clustering for LLM traces](https://go.posthog.com/twir-apr15)
+- 🔐 [React2DoS (CVE-2026-23869): When the Flight Protocol Crashes at Takeoff](https://www.imperva.com/blog/react2dos-cve-2026-23869-when-the-flight-protocol-crashes-at-takeoff/) \- A new Denial-of-Service vulnerability affects the React Flight Protocol when deserializing Server Functions payloads. If you use Server Functions, upgrade asap to React 19.2.5 or [Next.js 16.2.3](https://github.com/vercel/next.js/releases/tag/v16.2.3)
+- 👀 [Next.js PR \- Node.js streams: Fork points](https://github.com/vercel/next.js/pull/92252) \- The SSR/RSC throughput is limited due to the use of standard Web Streams. The PR shows ongoing work to provide support for faster but non-standard Node.js streams, though the `experimental.useNodeStreams` feature flag. Accordingly to this former [Vercel article about Web Streams](https://vercel.com/blog/we-ralph-wiggumed-webstreams-to-make-them-10x-faster), the outcome could be quite significant.
+- 🗓️ [dotJS 2026](https://www.dotjs.io/speak?utm_source=twir&utm_medium=newsletter&utm_campaign=CFP) \- 🇫🇷 Paris - 18 September - Call For Papers for dotJS is open until April 28th 6 PM CET, submit now your talk proposals for the conference!
+- 📜 [GitHub \- The uphill climb of making diff lines performant](https://github.blog/engineering/architecture-optimization/the-uphill-climb-of-making-diff-lines-performant/) \- GitHub cut the rendering cost their React-based PR diff view. What worked includes using fewer DOM nodes and event handler, simpler CSS selectors, TanStack Virtual for large PRs, removing scattered useEffect, and more.
+- 📜 [If You Can't See the Boundary, You Can't Reason About the System](https://valentinprugnaud.dev/posts/2026/04/if-you-cant-see-the-boundary-you-cant-reason-about-the-system) \- Explains the need to visually see the boundary of Client/Server components on the current page, and introduces a Next.js App Router tool to highlight those boundaries.
+- 📜 [Contributing Callsite Revalidation Opt-out to React Router](https://programmingarehard.com/2026/04/11/contributing-to-react-router.html/) \- Explains how React Router and React Query behave differently regarding revalidation after a mutation, and motivations to contribute a new `unstable_defaultShouldRevalidate` API to React Router.
+- 📜 [The Vertical Codebase](https://tkdodo.eu/blog/the-vertical-codebase) \- Colocate files by vertical features to scale your React codebase.
+- 📜 [Logging in Next.js with LogLayer: Instrumentation, Console Override, and Structured Logs](https://yurimutti.com/posts/logging-nextjs-loglayer-instrumentation-console-override-structured-logs) \- Gives you one logging model across all runtimes.
+- 📜 [Now more then ever, you need to master custom ESLint rules](https://neciudan.dev/master-eslint-rules) \- Deep dive into writing custom ESLint rules, with concrete React-focused examples, such as preventing useEffect antipatterns).
+- 📜 [Next.js use cache: remote: A Distributed Cache in One Line](https://tigerabrodi.blog/next-js-use-cache-remote-a-distributed-cache-in-one-line) \- By default, the Cache Components feature works in memory, but it’s possible to cache data across serverless instances to increase cache hits.
 - 💸 [Certificates.dev - Boost your skills with up to 6 live bootcamps led by Aurora Scharff and get React certified with our Mid & Senior bundles](https://certificates.dev/react?friend=TWIR&utm_source=twir&utm_medium=newsletter&utm_campaign=partner)
+- 📦 [Material UI and MUI X 9.0](https://mui.com/blog/introducing-mui-v9/) \- This large release re-aligns the versions of the core design system and the advanced components. MUI moves from v7 straight to v9, and introduces the first Base UI-backed primitives in the codebase with new `NumberField` and `Menubar` components. MUI X also received several improvements, adding new Chat and Scheduler components in alpha.
+- 📦 [Base UI 1.4 \- One-Time Password field (preview), update a Toast, many bug fixes](https://base-ui.com/react/overview/releases/v1-4-0)
+- 📦 [Unhead 3.0 \- Streaming `<head>` component for any framework](https://github.com/unjs/unhead/releases/tag/v3.0.0)
+- 📦 [Storm \- Terminal UI framework based on React](https://github.com/orchetron/storm) \- This new TUI addresses limitations of Ink, with cell-level diffing and dual-speed rendering architecture.
+- 📦 [Styled Components 6.4 \- React Server Components support, performance optimizations, RN improvements, and more](https://github.com/styled-components/styled-components/releases/tag/styled-components%406.4.0) \- The historical CSS-in-JS lib is in “maintenance mode” and yet it received a quite significant update\!
+- 📦 [React Aria 1.17 \- Expandable rows in Table, window scrolling in Virtualizer, dependency consolidation, sub-path imports](https://react-aria.adobe.com/releases/v1-17-0)
+- 📦 [Isolet \- Package any component into a self-contained, isolated widget](https://github.com/millionco/isolet)
+- 📦 [Remocn \- Production-ready animations, transitions, and scenes for Remotion](https://github.com/kapishdima/remocn)
+- 🎙️ [Syntax.fm 955 \- Next.js Vendor Lock-in No More](https://syntax.fm/show/995/next-js-vendor-lock-in-no-more)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -75,22 +106,64 @@ It works like magic in the background:
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Pulsar - Haptic Feedback Library](/emails/issues/277/pulsar.jpg)](https://docs.swmansion.com/pulsar/)
+
+**[Pulsar \- Haptic Feedback Library](https://docs.swmansion.com/pulsar/)**
+
+Meet Pulsar, a new library from Software Mansion that makes implementing haptic feedback much easier. Comes with SDKs for React Native, native iOS, and Android. See also the [intro video](https://www.youtube.com/watch?v=RAunnxSlvhM).
+
+- 150+ patterns to browse, filter, preview, and ship
+- Live Preview Playground app for testing on a physical device
+- Multiplatform SDKs
+- Audio preview for testing in a simulator
+- Pulsar Studio – coming later – will allow the design of custom haptic sequences
+
+---
 
 - 💸 [Sentry - A tutorial to debugging undefined properties in React Native by correlating frontend and backend logs](https://sentry.io/cookbook/debug-undefined-react-native/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=mobile-fy27q1-cookbook&utm_content=newsletter-rn-link-rn-logs-trysentry)
+- 👀 [SWC PR \- Complete Hermes Flow stripping parity](https://github.com/swc-project/swc/pull/11702) \- Currently, Babel is needed to strip non-TS code in React Native. The newly released [Flow support in SWC](https://swc.rs/docs/usage/flow) could help you adopt an alternative toolchain, leading to build time improvements or faster unit tests.
+- 💬 [React Native Proposal \- Allow opting in to specific feature flags via public APIs](https://github.com/react-native-community/discussions-and-proposals/issues/993) \- Community proposal to expose experimental feature flags for testing before broad rollout.
+- 📜 [How to keep your OTA updates lean and fast](https://expo.dev/blog/how-to-keep-your-ota-updates-lean-and-fast) \- Why smaller updates matter, how to ship them effectively, and how to monitor your usage.
+- 📜 [React Native 0.85 changelog dive](https://reactnativecrossroads.com/posts/react-native-085-changelog-dive/) \- Analysis of 0.85's Shadow Tree commit branching, Animation Backend changes, and breaking changes for library authors.
+- 📜 [Zero re-renders on theme change: Introducing Uniwind Pro](https://reactnativecrossroads.com/posts/uniwind-pro-1-release/) \- A look into first stable release, the C++ Shadow Tree Engine, className Animations with Reanimated, Animated Theme Transitions, pricing, and more.
+- 📜 [The Complete Guide to React Native Build Optimization](https://themythicalengineer.com/the-complete-guide-to-react-native-build-optimization.html) \- How to improve build times with Gradle/Metro parallelization and C++ compiler caching.
+- 📦 [RN 0.85.1 \- Animation backend as experimental](https://github.com/facebook/react-native/releases/tag/v0.85.1) \- Enables the new Shared Animation Backend in the [experimental Release Level](https://reactnative.dev/docs/releases/release-levels).
+- 📦 [Nitro Fetch 1.0 \- Fast networking library, drop-in replacement for fetch](https://github.com/margelo/react-native-nitro-fetch/releases/tag/v1.0.0) \- This Margelo library supports HTTP/3, Prefetching, Steaming, FormData, WebSockets, worklets, and more. Demo on 🐦 [X](https://x.com/margelo_com/status/2043674988062859608) shows the impressive performance impact on the Bluesky app.
+- 📦 [Agent React DevTools \- Give AI Agents Access to React Internals](https://www.callstack.com/blog/agent-react-devtools-give-ai-agents-access-to-react-internals) \- New CLI from Callstack that exposes React component tree and profiling data to AI agents, enabling deeper debugging beyond UI trees.
+- 📦 [Expo Pretext \- Text layout primitive React Native](https://github.com/JubaKitiashvili/expo-pretext) \- Add Pretext support to React Native, unlocking new layouts currently difficult to achieve with CSS or Skia.
+- 📦 [Nitro Vector \- C++ vector path engine powered by Nitro Modules](https://github.com/gideon-del/react-native-nitro-vector) \- 104x faster bezier math, boolean ops, path analysis, and SVG parsing — all in C++ off the JS thread.
+- 📦 [Metro MCP \- MCP server for React Native debugging & automation](https://github.com/steve228uk/metro-mcp) \- Plugin-based MCP server connecting to Metro via CDP — exposes console logs, network, Redux, components, test recording, and more. Works alongside Chrome DevTools.
+- 📦 [Galeria 3.0 \- New Architecture only, iOS 16+](https://github.com/nandorojo/galeria/releases/tag/v3.0.0)
+- 📦 [CRNL 0.62 \- RN 0.85, Expo SDK 55 support](https://github.com/callstack/react-native-builder-bob/releases/tag/create-react-native-library%400.62.0)
+- 📦 [Metro 0.84.3 \- TLS support, Fast Refresh heartbeat, optimized cache](https://github.com/facebook/metro/releases/tag/v0.84.3)
+- 📦 [Harness 1.1 \- CI improvements, unified GitHub Action, plugin system](https://github.com/callstackincubator/react-native-harness/releases/tag/v1.1.0)
+- 📦 [Rozenite 1.7 \- Metro-backed agent workflow, SQLite plugin, Webpack web support](https://github.com/callstackincubator/rozenite/releases/tag/v1.7.0)
+- 📦 [React Native Ease 0.7 \- Animated borderColor, shadow properties](https://github.com/AppAndFlow/react-native-ease/releases/tag/v0.7.0)
+- 📦 [Voltra 1.4 \- Android theme-aware widget colors, Android ongoing (persistent) notifications](https://github.com/callstackincubator/voltra/releases/tag/v1.4.0)
+- 🎥 [Beto \- 5 React Native Styles Your AI Is Getting Wrong](https://www.youtube.com/watch?v=J8hmOaA5uzc) \- Linear Gradient (experimental), filter, boxShadow, gap, mixBlendMode, are available in RN, no need for external libraries.
+- 🎥 [Callstack \- AI-Assisted Migrations to React Native: From Months to Days](https://www.youtube.com/watch?v=99ESJ-_CeWg) \- Reducing migration using AI in real React Native workflows. Practical strategies for modernizing existing apps without starting from scratch.
+- 🎙️ [RNR 359 \- The AI Apocalypse? The past, present, and future of software](https://infinite.red/react-native-radio/rnr-359-the-ai-apocalypse-the-past-present-and-future-of-software)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [GitHub Stacked PRs in private preview](https://github.github.com/gh-stack/) \- A much-anticipated feature lets you break large changes into small, focused PRs that build on each other.
+- 📜 [You can't cancel a JavaScript promise (except sometimes you can)](https://www.inngest.com/blog/hanging-promises-for-control-flow) \- Using never-resolving promises to interrupt async functions.
+- 📜 [What We Learned Building a Rust Runtime for TypeScript](https://encore.dev/blog/rust-runtime) \- How Encore built a Rust runtime embedded in Node.js via napi-rs, moving infrastructure concerns (HTTP, DB, pub/sub) out of the JS event loop. Benchmarks show 9x Express throughput with 80% less latency.
+- 📦 [Chrome 148 Beta \- Name-only container queries in CSS, Prompt API, Web Serial API on Android, and more](https://developer.chrome.com/blog/chrome-148-beta) \- Notably includes an origin trial for the [HTML-in-Canvas](https://github.com/WICG/html-in-canvas) API that led to many impressive demos.
+- 📦 [Yuku \- High-performance JS/TS toolchain in Zig](https://github.com/yuku-toolchain/yuku) \- Already full spec compliance, competitive with Oxc on raw parsing speed.
+- 📦 [Webpack 5.106 \- Plugin validation hooks, CSS runtime injection, smarter tree shaking, experimental Oxc parser](https://webpack.js.org/blog/2026-04-08-webpack-5-106/)
+- 📦 [Bun 1.3.12 \- WebView headless browser, Markdown in terminal, in-process Cron scheduler](https://bun.com/blog/bun-v1.3.12)
+- 📦 [Syncpack 14.0 \- CLI for managing npm dependency versions, rewritten in Rust](https://github.com/JamieMason/syncpack/releases/tag/14.0.0)
+- 📦 [Phantom UI \- Structure-aware skeleton loader for every framework, based on Web Component](https://aejkatappaja.github.io/phantom-ui/)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/277/meme.jpg)](https://x.com/ThisWeekInReact/status/2042171782195536326)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/277/meme2.jpg)](https://x.com/mrousavy/status/2044072110209819032)
 
 See ya! 👋
