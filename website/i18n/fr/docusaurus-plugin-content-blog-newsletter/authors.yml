@@ -127,3 +127,15 @@ janjaworski:
     bluesky: jwr.ski
     github: jaworek
     linkedin: jan-jaworski
+
+filipsolecki:
+  name: Filip Solecki
+  title: Software Engineer - Software Mansion
+  url: https://x.com/f_solecki
+  image_url: https://github.com/filip-solecki.png
+  page: true
+  socials:
+    x: f_solecki
+    bluesky: filip-solecki.bsky.social
+    github: filip-solecki
+    linkedin: filip-solecki

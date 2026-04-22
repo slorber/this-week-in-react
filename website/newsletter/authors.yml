@@ -128,5 +128,17 @@ janjaworski:
     github: jaworek
     linkedin: jan-jaworski
 
+filipsolecki:
+  name: Filip Solecki
+  title: Software Engineer - Software Mansion
+  url: https://x.com/f_solecki
+  image_url: https://github.com/filip-solecki.png
+  page: true
+  socials:
+    x: f_solecki
+    bluesky: filip-solecki.bsky.social
+    github: filip-solecki
+    linkedin: filip-solecki
+
 # Note: don't forget to add newly added authors to the localized authors files
 # i18n/fr/docusaurus-plugin-content-blog-articles/authors.yml file
