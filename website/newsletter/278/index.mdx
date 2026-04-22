@@ -1,6 +1,6 @@
 ---
 slug: /278
-title: "This Week In React #278: ..."
+title: "This Week In React #278: React Email, TSRX, ESLint, Rspack, TanStack, Hook Form | Vision Camera, Expo, Nano Icons, ExecuTorch, Argent, Audio API, CSS | TypeScript, Node.js, Bun, Hono"
 authors: [slorber]
 date: 04-22-2026
 unlisted: true
@@ -8,11 +8,16 @@ unlisted: true
 
 Hi everyone!
 
-<Todo />
+Hi everyone, Krzysztof and Filip from [Software Mansion](https://swmansion.com/) here 👋\!
 
-*   **🗓️** [React Norway](https://reactnorway.com/?utm_medium=social&utm_source=ThisWeekReact) \- 🇳🇴 Oslo - 5 June. Check out the stellar lineup featuring Dominik Dorfmeister, Aurora Scharff, and Jack Herrington at the legendary Rockefeller music venue. -10% with code "TWIR".
+Big releases anchor the week. React Email 6.0 consolidates a fragmented ecosystem into one package, unlocking an embeddable editor and more reliable HTML rendering across mailboxes.
 
-Let's dive in!
+On mobile, Marc Rousavy shipped VisionCamera v5 with a full Nitro Modules rewrite, Worklets integration, pro controls, and a modular plugin architecture.  
+Heads up on the Vercel April 2026 incident: rotate your integration tokens if you use third-party integrations.
+
+Also inside: Expo’s Series B, Seth Webster joining Expo, the Doctolib WebView-to-Native migration, and fresh releases from TanStack, React Hook Form, ExecuTorch, TS Go beta, Rspack RSC, and more.
+
+Let’s dive in\!
 
 <!-- truncate -->
 
@@ -43,10 +48,35 @@ It works like magic in the background:
 
 ## ⚛️ React {#react}
 
-<Todo />
+[React Email 6.0](https://resend.com/blog/react-email-6)
+
+React email matures with a major release that cleans up a fragmented ecosystem. It makes version management much easier and stops the CLI and components from getting out of sync.
+
+Key technical shifts:
+
+- Embeddable Editor: You can use the preview tool as a React component to show users how their emails will look directly in your own app.
+- Reliable HTML: The engine that turns React into email HTML handles more different mailboxes quirks.
+- Faster HMR: Faster switching between templates and preview, even with complex layouts
+
+Moving away from modularization into one big package is a big step toward making the library stable and more capable. While it might slightly increase bundle size, it enables complex features blocked before, like the embeddable preview and advanced layout transformations.
+
+---
 
 - 💸 [Sentry - Stop flying blind in Next.js. This free workshop covers logs, tracing, and how to connect both in production. Register today.](https://sentry.io/resources/nextjs-may-workshop/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=nextjs-fy27q1-nextjsworkshop&utm_content=newsletter-react-link-register)
+- 🔐 [Vercel April 2026 security incident](https://vercel.com/kb/bulletin/vercel-april-2026-security-incident) \- A few environment variables were accidentally exposed because of a security breach linked to a third-party AI tool. Since some secrets are stored in plain text, it is recommended to rotate them manually as soon as possible.
+- 🗓️ [React Norway](https://reactnorway.com/?utm_medium=social&utm_source=ThisWeekReact) \- 🇳🇴 Oslo - 5 June. Check out the stellar lineup featuring Dominik Dorfmeister, Aurora Scharff, and Jack Herrington at the legendary Rockefeller music venue. -10% with code "TWIR".
+- 📜 [Building a Blog in TanStack](https://frontendmasters.com/blog/building-a-blog-in-tanstack-part-1-of-2/) \- Building a markdown blog with TanStack Start, then going fully static via pre-rendering and static server functions to avoid Shiki's cold-start cost.
+- 📜 [Build with React, Run on Salesforce: Introducing Salesforce Multi-Framework](https://developer.salesforce.com/blogs/2026/04/build-with-react-run-on-salesforce-introducing-salesforce-multi-framework) \- A story about the benefits of React that convinced Salesforce to drop their custom solution in favor of React development on their platform. Currently in Beta.
+- 📜 [AI-Generated UI Is Inaccessible by Default](https://frontendmasters.com/blog/ai-generated-ui-is-inaccessible-by-default/) \- Common accessibility pitfalls in AI-generated code and ways to ensure correct standards through linting, testing and CI.
 - 💸 [PlanetScale - Faster apps start with a faster database. Get started with the fastest benchmarked Postgres and MySQL.](https://pscale.link/rw)
+- 📦 [TSRX \- A TypeScript language extension for building declarative UIs](https://tsrx.dev/) \- A spiritual successor to JSX. A new framework-agnostic solution created by former React core team member Dominic Gannaway, can compile to React/Solid/Ripple.
+- 📦 [Rspack 2.0](https://rspack.rs/blog/announcing-2-0) \- The Rust bundler keeps improving on performance and features while remaining compatible with webpack. This new major also includes experimental React Server Components support, with plans to add support for TanStack RSC.
+- 📦 [TanStack Store 0.11 \- New `useAtom`, `useSelector`, and `createStoreContext` hooks](https://github.com/TanStack/store/releases/tag/%40tanstack/react-store%400.11.0) - `useStore` is now deprecated in favor of `useSelector`.
+- 📦 [Eslint Plugin React Hooks 7.1 \- Support for ESLint v10, performance and linting improvements](https://github.com/facebook/react/releases/tag/eslint-plugin-react-hooks%407.1.0)
+- 📦 [Lingui 6.0 \- i18n for React, RN, and more \- Technical improvements and modernization](https://lingui.dev/blog/2026/04/22/announcing-lingui-6.0)
+- 📦 [React Hook Form 7.73 \- Memoized `submit`, faster `deepEqual`, enhanced type-safety for deeply nested fields](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.73.1)
+- 📦 [shadcn/ui \- Sera, a new typography-first style](https://ui.shadcn.com/docs/changelog/2026-04-sera)
+- 🎥 [Ankita Kulkani \- Next.js finally has Page Transitions Now](https://www.youtube.com/watch?v=OlViBcLX-fA)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -60,10 +90,10 @@ It works like magic in the background:
 
 Take control of your workflow with **SVAR React Gantt**, a native React component for task scheduling. Add custom Gantt diagrams to your apps – from simple timelines to complex projects with thousands of tasks.
 
-*   **Pure React architecture** for full customization
-*   **Drag-and-drop** timeline and easy task editing
-*   **Optimized rendering** for large datasets
-*   **Easy integration** with Next.js and state libraries
+- **Pure React architecture** for full customization
+- **Drag-and-drop** timeline and easy task editing
+- **Optimized rendering** for large datasets
+- **Easy integration** with Next.js and state libraries
 
 MIT-licensed core. PRO Edition for critical path, baselines, export, and auto-scheduling.
 
@@ -73,15 +103,60 @@ MIT-licensed core. PRO Edition for critical path, baselines, export, and auto-sc
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[Vision Camera v5](https://blog.margelo.com/whats-new-in-visioncamera-v5)
+
+Marc Rousavy has released a massive update for VisionCamera. This major upgrade to the camera module includes many new features and improvements. Let’s take a closer look at the main highlights:
+
+- Nitro Modules Backend \- The complete rewrite using Nitro Modules results in significant performance improvements.
+- Worklets Integration: Now uses [`react-native-worklets`](https://docs.swmansion.com/react-native-worklets/) for smoother frame processing.
+- Pro Camera Controls \- Full manual support for Exposure, Focus, and White Balance, plus RAW format support.
+- Depth & Multi-Cam \- You can now stream LiDAR/ToF data and record with front and back cameras simultaneously.
+
+This release comes with a new modular architecture \- VisionCamera is no longer one giant package. You can now pick and choose only the plugins you need to keep your bundle size small:
+
+- [`react-native-vision-camera-skia`](https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-skia) \- Real-time filters and overlays
+- [`react-native-vision-camera-barcode-scanner`](https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-barcode-scanner) \- MLKit integration out of the box
+- [`react-native-vision-camera-resizer`](https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-resizer) \- GPU-accelerated resizing for ML tasks
+- [`react-native-vision-camera-location`](https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-location) \- Automatic EXIF tagging
+
+—-----------------------------
 
 - 💸 [PostHog - A beginner's guide to testing AI agents](https://go.posthog.com/twir-apr22)
+- 📣 [Expo raised $45 million in a Series B funding round.](https://expo.dev/blog/what-expo-s-series-b-funding-means-for-you) They also [hired Seth Webster](https://x.com/expo/status/2044808498765353113), who previously led the React team and kickstarted the React Foundation. They are [betting on an agentic future](https://thenewstack.io/expo-bets-big-on-react-natives-agentic-future/), at a moment where the React Native ecosystem is expanding faster than ever.
+- 🐦 [The Reanimated team is working on pseudo-selector support for CSS animations](https://x.com/wisniewskij514/status/2043720838646477185)
+- 🐦 [The Hermes team is working on JSI support for TypedArrays](https://x.com/tomekzaw_/status/2044690191072309360)
+- 🐦 Evan Bacon demod an [iOS simulator running inside of Codex desktop](https://x.com/Baconbrix/status/2045207510039322668%20)
+- 🐦 [The Codex Expo plugin is now available](https://x.com/JI/status/2044887303890583953)
+- 📜 [How Margelo Helped Discord Improve React Native's New Architecture Performance](https://blog.margelo.com/margelo-discord-react-native-performance) \-  
+  A deep dive into concrete low-level optimizations that made the Discord app. Some of these were upstreamed into Reanimated feature flags and the new Shared Animation Backend in React Native core.
+- 📜 [How to Build Your React Native App Locally (APK and .app)](https://codewithbeto.dev/blog/building-expo-apps-locally) \- A technical walkthrough for generating local iOS and Android artifacts (.app/.apk) directly from an Expo project using xcodebuild and gradlew.
+- 📜 [Rebuilding the Doctolib Homepage from Webview to Native](https://medium.com/doctolib/rebuilding-the-doctolib-homepage-from-webview-to-native-27937ea71801) \- Architectural migration from a WebView using a Backend for Frontend architecture. Time to Interactive dropped \~50% on both iOS and Android after the migration.
+- 📜 [On-device AI vs Cloud TTS – Kokoro, react-native-executorch](https://swmansion.com/blog/on-device-ai-beats-cloud-for-tts-heres-why/) \- How on-device AI can reduce the cost of TTS without sacrificing quality.
+- 📜 [Deferred Deep Linking for Mobile Developers with Detour](https://swmansion.com/blog/deferred-deep-linking-for-mobile-developers-with-detour/) \- An explanation of when deep linking is a relevant use case for your app and how Detour implements that concept.
+- 📦 [Nano Icons \- Use any SVG as font. High-performance, build-time icon font generation for React Native & Expo](https://github.com/software-mansion-labs/react-native-nano-icons)
+- 📦 [Argent \- An agentic toolkit to control, debug, and profile iOS apps from Software Mansion](https://github.com/software-mansion/argent)
+- 📦 [React Native ExecuTorch 0.8 - Vision Camera v5 integration, Vision Language Models support, Whisper model up to 3x faster](https://github.com/software-mansion/react-native-executorch/releases/tag/v0.8.0)
+- 📦 [Maplibre 11.0 \- Dropped legacy React architecture support; aligned API with MapLibre GL](https://github.com/maplibre/maplibre-react-native/releases/tag/v11.0.0)
+- 📦 [Graph 1.2 \- Support for latest RN, Reanimated & Skia](https://github.com/margelo/react-native-graph/releases/tag/v1.2.0)
+- 📦 [Test Renderer 1.0 \- Successor to the deprecated react-test-renderer](https://github.com/mdjastrzebski/test-renderer/releases/tag/v1.0.0) \- Each minor version tracks React 19 line. 1.0.x for React 19.0, 1.1.x for 19.1 (Owner Stacks, CSS-safe useId), 1.2.x for 19.2 (\<Activity\>, useEffectEvent).
+- 📦 [RNSec 1.3 \- New security rules and native code vulnerability scanner](https://reactnative.directory/package/rnsec)
+- 📦 [Expo Pretext 1.1 \- Brings CSS `text-wrap: balance/pretty` to RN](https://github.com/JubaKitiashvili/expo-pretext/releases/tag/v1.1.0)
+- 📦 [Audio API 0.12 \- Mac Catalyst support, Android ducking, universal resampler, rotating file writer for long recordings](https://github.com/software-mansion/react-native-audio-api/releases/tag/0.12.0)
+- 🎥 [Beto \- Expo Router v55 Crash Course](https://www.youtube.com/watch?v=FXw9OoiddMg)
+- 🎙️ [RNR 360 \- TanStack Native Router with Tanner Linsley](https://infinite.red/react-native-radio/rnr-360)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📜 [Building a UI Without Breakpoints](https://frontendmasters.com/blog/building-a-ui-without-breakpoints/)
+- 📜 [Shopify Speed Optimization: Fixing The Real Bottlenecks](https://www.debugbear.com/blog/shopify-speed-optimization)
+- 📜 [Most Apps Are Slower Than They Need to Be](https://dev.to/sylwia-lask/most-apps-are-slower-than-they-need-to-be-heres-why-live-demo-2hh8)
+- 📦 [TypeScript 7.0 Beta](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0-beta/) \- The first beta of the Go rewrite is out\! It has great compatibility with 6.0 and should be \~10x faster thanks to parallelization.
+- 📦 [Node.js 24.15 \- require(esm) marked as stable](https://nodejs.org/en/blog/release/v24.15.0)
+- 📦 [Bun 1.3.13 \- Fast parallel and isolated tests, faster bun install](https://bun.com/blog/bun-v1.3.13)
+- 📦 [Fast-Check 4.7 \- Property-based testing framework](https://fast-check.dev/blog/2026/04/18/whats-new-in-fast-check-4-7-0/)
+- 📦 [Hono](https://github.com/honojs/node-server/releases/tag/v2.0.0) [Node.js](http://Node.js) [Adapter 2.0 \- Up to 2.3x faster](https://github.com/honojs/node-server/releases/tag/v2.0.0)
 
 ---
 
