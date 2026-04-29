@@ -182,6 +182,7 @@ const config: Config = {
         blogDescription: "Articles published on the This Week In React blog",
         blogSidebarTitle: "Articles",
         blogSidebarCount: "ALL",
+        onUntruncatedBlogPosts: "ignore",
         postsPerPage: 10,
         feedOptions: {
           title: "This Week In React - Articles",
@@ -201,6 +202,7 @@ const config: Config = {
           "Weekly issues of the This Week In React curation newsletter",
         blogSidebarTitle: "Issues",
         blogSidebarCount: "ALL",
+        onInlineAuthors: "ignore",
         postsPerPage: 10,
         beforeDefaultRemarkPlugins: [remarkPluginImage, remarkPluginBadLinks],
         feedOptions: {
