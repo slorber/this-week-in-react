@@ -71,12 +71,6 @@ const config: Config = {
   baseUrl: "/",
   onBrokenLinks: "throw",
 
-  markdown: {
-    hooks: {
-      onBrokenMarkdownLinks: "warn",
-    },
-  },
-
   // See https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
   // favicon: "/favicon/favicon.ico",
   headTags: [
@@ -126,6 +120,12 @@ const config: Config = {
   },
 
   markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
+    mdx1Compat: {
+      // TODO disable them
+    },
     parseFrontMatter: async (params) => {
       // Reuse the default parser
       const result = await params.defaultParseFrontMatter(params);
