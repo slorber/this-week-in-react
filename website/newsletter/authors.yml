@@ -140,5 +140,16 @@ filipsolecki:
     github: filip-solecki
     linkedin: filip-solecki
 
+konradarmatys:
+  name: Konrad Armatys
+  title: Software Engineer - Software Mansion
+  url: https://x.com/Konrad_Armatys
+  image_url: https://github.com/Konrad-Armatys.png
+  page: true
+  socials:
+    x: Konrad_Armatys
+    github: Konrad-Armatys
+    linkedin: konrad-armatys
+
 # Note: don't forget to add newly added authors to the localized authors files
 # i18n/fr/docusaurus-plugin-content-blog-articles/authors.yml file
