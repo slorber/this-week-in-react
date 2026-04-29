@@ -1,6 +1,6 @@
 ---
 slug: /279
-title: "This Week In React #279: Hook Form, ToolTip, Shadcn, Xstate, StyleX, Chakra, Inertia, Mantine, TanStack | SimCam, Quick Crypto, Enriched Markdown, Agent Device, Navigation SDK, Paste Input, Nitro Mix, Jail Monkey | pnpm, Aube, Fresh"
+title: "This Week In React #279: Compiler, TSRX, StyleX, XState, Hook Form, TanStack, shadcn CLI, Chakra, Inertia, Tooltip, Mantine | SPM, SimCam, Quick Crypto, Enriched Markdown, Agent Device, Navigation SDK, JSI, Paste Input, Nitro MLX, Jail Monkey | pnpm, Aube, Fresh, Node.js"
 authors: [kacperkapusciak, konradarmatys]
 date: 04-29-2026
 unlisted: true
@@ -8,9 +8,9 @@ unlisted: true
 
 Hi everyone, **Konrad and Kacper from [Software Mansion](https://swmansion.com/?utm_source=thisweekinreact)** here\! 👋
 
-This week brings a couple of solid articles and releases in the React ecosystem. On the React side, we have a WIP Rust port confirmed in testing at Meta, an 18-month retrospective on the React Compiler, a deep dive into how React streams UI, and a step-by-step guide for migrating from Radix UI to Base UI. There's also a fresh batch of releases, including React Hook Form, Chakra UI, Mantine 9.1, and TanStack Query.
+A quiet week — no big headlines — but still a couple of solid articles and releases in the React ecosystem. On the React side, we have a WIP Rust port confirmed in testing at Meta, an 18-month retrospective on the React Compiler, a deep dive into how React streams UI, and a step-by-step guide for migrating from Radix UI to Base UI. There's also a fresh batch of releases, including React Hook Form, Chakra UI, Mantine 9.1, and TanStack Query.
 
-On the React Native front, an RFC has landed proposing SPM support to replace CocoaPods, and React Navigation v8 will gain a `retain` API to keep screens mounted after going back. Don't miss the blog on making pure JSI code faster.
+On the React Native front, an RFC has landed proposing Swift Package Manager support to replace CocoaPods, and React Navigation v8 will gain a `retain` API to keep screens mounted after going back. Don't miss the blog on making pure JSI code faster.
 
 Let's dive in!
 
@@ -53,7 +53,7 @@ It works like magic in the background:
 - 💸 [Product for Engineers - The golden rules of agent-first product engineering](https://go.posthog.com/twir-apr29)
 - 📦 [React Hook Form 7.74 \- `setValues` update multiple fields at once](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.74.0)
 - 📦 [React Tooltip 6.0 \- `portalRoot` and `autoClose` props, React 19 support, removed HTML string API](https://github.com/ReactTooltip/react-tooltip/releases/tag/v6.0.0)
-- 📦 [Shadcn CLI 4.5 \- Add \--pointer option to cli](https://github.com/shadcn-ui/ui/releases/tag/shadcn%404.5.0) \- Re-enables `cursor: pointer` on buttons.
+- 📦 [shadcn CLI 4.5 \- Add \--pointer option to cli](https://github.com/shadcn-ui/ui/releases/tag/shadcn%404.5.0) \- Re-enables `cursor: pointer` on buttons.
 - 📦 [XState 5.31 \- Add `mapState(snapshot, mapper)` and `maxIterations` option](https://github.com/statelyai/xstate/releases/tag/xstate%405.31.0)
 - 📦 [StyleX 0.18 \- New `sx={}` JSX prop, `stylex.env` compile-time constants, `create-stylex-app` CLI, DevTools extension, Bun support](https://stylexjs.com/blog/v0.18)
 - 📦 [Chakra UI 3.35 \- new release for: react, charts, cli, panda-presets and codemod packages](https://github.com/chakra-ui/chakra-ui/releases/tag/%40chakra-ui%2Freact%403.35.0) \- This release adds a Splitter component, React 19 support, and new CLI commands for docs/props.
@@ -94,13 +94,13 @@ Built for testing, Wallaby includes a **Time Travel Debugger**, the ability to r
 - 📜 [Integrating Deferred Deep Linking in React Native Apps](https://swmansion.com/blog/integrating-deferred-deep-linking-in-react-native-apps-1/) \- React Native Detour SDK walkthrough with Expo Router.
 - 📜 [When to Use Apple Foundation Models on Mobile](https://www.callstack.com/blog/when-to-use-apple-foundation-models-on-mobile) \- Hybrid approach where local models handle latency-sensitive tasks and cloud models handle complex reasoning. Use local first and escalate to cloud when needed.
 - 📦 [SimCam \- Camera Testing for the iOS Simulator](https://simcam.swmansion.com/)
-- 📦 [React Native Quick Crypto 1.1 \- simdutf for faster string encoding/decoding, Buffer semantics now match](https://github.com/margelo/react-native-quick-crypto/releases/tag/v1.1.0) [Node.js](http://Node.js) [semantics, OpenSSL-Universal CocoaPods dep](https://github.com/margelo/react-native-quick-crypto/releases/tag/v1.1.0)
-- 📦 [RN Enriched Markdown 0.5 \- Support macOS, web, `EnrichedMarkdownTextInput`, spoiler elements, auto-link detection, VoiceOver/TalkBack improvements](https://github.com/software-mansion-labs/react-native-enriched-markdown/releases/tag/v0.5.0)
-- 📦 [agent-device 0.13 \- React DevTools passthrough, parametrise .ad replay scripts](https://github.com/callstackincubator/agent-device/releases/tag/v0.13.0)
-- 📦 [ios-simulator-mcp 1.6 \- Added `ui_find_element` tool, `launch_app` env variable and `record_video` UDID support](https://github.com/joshuayoes/ios-simulator-mcp/releases/tag/1.6.0)
+- 📦 [Quick Crypto 1.1 \- simdutf for faster string encoding/decoding, Buffer semantics now match](https://github.com/margelo/react-native-quick-crypto/releases/tag/v1.1.0) [Node.js](http://Node.js) [semantics, OpenSSL-Universal CocoaPods dep](https://github.com/margelo/react-native-quick-crypto/releases/tag/v1.1.0)
+- 📦 [Enriched Markdown 0.5 \- Support macOS, web, `EnrichedMarkdownTextInput`, spoiler elements, auto-link detection, VoiceOver/TalkBack improvements](https://github.com/software-mansion-labs/react-native-enriched-markdown/releases/tag/v0.5.0)
+- 📦 [Agent Device 0.13 \- React DevTools passthrough, parametrise .ad replay scripts](https://github.com/callstackincubator/agent-device/releases/tag/v0.13.0)
+- 📦 [iOS Simulator MCP 1.6 \- Added `ui_find_element` tool, `launch_app` env variable and `record_video` UDID support](https://github.com/joshuayoes/ios-simulator-mcp/releases/tag/1.6.0)
 - 📦 [Google Maps RN Navigation SDK 0.15 \- Breaking changes to continueToNextDestination and mapStyle; various iOS/Android crash fixes](https://github.com/googlemaps/react-native-navigation-sdk/releases/tag/v0.15.0)
-- 📦 [react-native-nitro-mix 0.5 \- Expo 55 support, added Embeddings module, ChatSession API, and streaming downloads](https://github.com/corasan/react-native-nitro-mlx/releases/tag/v0.5.0)
-- 📦 [expo-paste-input 0.2 \- Animated GIF stickers, preserve animation instead of converting to static images](https://github.com/arunabhverma/expo-paste-input/releases/tag/v0.2.0)
+- 📦 [Nitro MLX 0.5 \- Expo 55 support, added Embeddings module, ChatSession API, and streaming downloads](https://github.com/corasan/react-native-nitro-mlx/releases/tag/v0.5.0)
+- 📦 [Expo Paste Input 0.2 \- Animated GIF stickers, preserve animation instead of converting to static images](https://github.com/arunabhverma/expo-paste-input/releases/tag/v0.2.0)
 - 📦 [Jail Monkey 3.0 \- New Architecture support, added iOS/Android mock location detection](https://github.com/GantMan/jail-monkey/releases/tag/v3.0.0) \- Detect jailbroken/rooted device, mocked locations, and on Android apps running from external storage.
 - 🤖 [Software Mansion React Native JSI Skills](https://github.com/software-mansion-labs/skills/tree/main/skills/react-native-best-practices/references/jsi)
 - 🎥 [Beto \- React Native UI Testing Without the Pain](https://www.youtube.com/watch?v=kN8fuEPf20A)
@@ -115,7 +115,7 @@ Built for testing, Wallaby includes a **Time Travel Debugger**, the ability to r
 - 📜 [The Web Is Fun Again: First Experiments with HTML in Canvas](https://frontendmasters.com/blog/the-web-is-fun-again-first-experiments-with-html-in-canvas/) \- Showcases a new API, with its limitations and interesting ways to use it.
 - 📜 [New to the web platform in April](https://web.dev/blog/web-platform-04-2026?hl=en) \- `contrast-color()`, animation-range, and `Math.sumPrecise` became Baseline Newly Available, while Firefox and Chrome added various new APIs.
 - 📦 [pnpm 11.0 \- SQLite-backed store, supply-chain protection on by default, native publishing, ESM-only](https://pnpm.io/blog/releases/11.0)
-- 📦 [Aube \- Drop-in Node.js package manager that reads existing lockfiles](https://aube.en.dev/) \- Claims to be 9.2x faster than pnpm and 2.7x faster than bun.
+- 📦 [Aube \- Drop-in Node.js package manager that reads existing lockfiles](https://aube.en.dev/) \- Claims to be 9.2x faster than pnpm and 2.7x faster than Bun.
 - 📦 [Fresh 2.3 \- Preact framework \- Zero JS by default, View Transitions, and Temporal support](https://deno.com/blog/fresh-2.3)
 - 🎙️ [Syntax.fm 999 \- Writing Maintainable CSS](https://syntax.fm/show/999/writing-maintainable-css)
 
