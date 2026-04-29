@@ -56,7 +56,13 @@ function remarkPluginImage() {
 
 const config: Config = {
   future: {
-    experimental_faster: true,
+    v4: {
+      fasterByDefault: true,
+      removeLegacyPostBuildHeadAttribute: true,
+      siteStorageNamespacing: true,
+      useCssCascadeLayers: true,
+      mdx1CompatDisabledByDefault: false, // TODO enable this later
+    },
   },
 
   title: "This Week In React",
@@ -64,7 +70,12 @@ const config: Config = {
   url: "https://thisweekinreact.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
+  },
 
   // See https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
   // favicon: "/favicon/favicon.ico",
