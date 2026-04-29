@@ -1,0 +1,23 @@
+version: 2
+updates:
+  ########################
+  # GITHUB ACTIONS UPDATES
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 99
+
+  ########################
+  # NPM VERSION UPDATES
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    # Do not spam too much, we'll adjust this setting if needed
+    open-pull-requests-limit: 5
+    cooldown:
+      default-days: 5
+      semver-major-days: 30
+      semver-minor-days: 10
+      semver-patch-days: 10
