@@ -10,18 +10,28 @@ const TwitterSvg =
 // Make email images easier to copy/paste into ConvertKit editor
 function remarkPluginBadLinks() {
   const visit = require("unist-util-visit");
+
+  function isJSDomain(url: string) {
+    // Double check for perf, because the .js could be a legit pathname suffix
+    // URL.hostname is reliable, but slower
+    return (
+      url.toLowerCase().endsWith(".js") &&
+      new URL(url.toLowerCase()).hostname.endsWith(".js")
+    );
+  }
+
   return async (tree, file) => {
     visit(tree, "link", (node) => {
       if (node.url) {
-        if (node.url.toLowerCase().endsWith("//next.js")) {
+        if (isJSDomain(node.url)) {
           throw new Error(
             `
             
 This Week In React - Newsletter bug!            
             
-Your newsletter Markdown content contains a bad link to 'next.js'.
+Your newsletter Markdown content contains a bad link to '${node.url}'.
 
-This happens because Google Docs automatically creates links for 'next.js', leading to a broken newsletter link.
+This happens because Google Docs automatically creates links for '${node.url}', leading to a broken newsletter link.
 Please fix the link below in file ${file.path} at line ${node.position?.start?.line ?? "???"}:
 ${node.url}
 
