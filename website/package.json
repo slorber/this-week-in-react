@@ -26,7 +26,7 @@
     "@vercel/edge": "^1.2.2",
     "clsx": "^2.1.1",
     "facebook-nodejs-business-sdk": "^17.0.3",
-    "posthog-js": "^1.91.1",
+    "posthog-js": "^1.369.3",
     "prism-react-renderer": "^2.4.1",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
