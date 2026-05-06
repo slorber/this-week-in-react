@@ -41,10 +41,23 @@ It works like magic in the background:
 
 ## ⚛️ React {#react}
 
-<Todo />
-
 - 💸 [Ship faster with PlanetScale - Blazing fast managed Postgres and MySQL, built for applications of any scale](https://planetscale.com)
+- ⚠️ [Malicious npm Package Brand-Squats TanStack to Exfiltrate Environment Variables](https://socket.dev/blog/tanstack-brandsquat-compromise) \- Make sure to not install the `tanstack` package because it’s not owned by the TanStack organization.
+- 📜 [Who Owns the Tree? RSC as a Protocol, Not an Architecture](https://tanstack.com/blog/who-owns-the-tree) \- The traditional RSC architecture – as found in Next.js – is server-driven. TanStack Start frames RSC as a protocol, enabling both server-owned and client-owned composition models.
+- 📜 [Introducing TanStack Form](https://frontendmasters.com/blog/introducing-tanstack-form/) \- A pragmatic intro to this strongly typed and flexible form library.
+- 📜 [Time to Yield \- An SSG benchmark across five React frameworks](https://dev.to/lazarv/time-to-yield-20m8) \- The author’s solution uses generators and yields the static routes to render, making it possible to render the first page sooner.
+- 📜 [Next.js Link as a Button](https://kittygiraudel.com/2026/05/02/nextjs-link-as-a-button/) \- Still requires `<Link legacyBehavior>` for now, but apparently a solution based on Fragment Refs is coming.
+- 📜 [React Miami 2026](https://brookslybrand.com/posts/react-miami-2026.html) \- Conf feedback by Brooks Lybrand. Also explains that interest in React features is at an all time low, and clears up the confusion surrounding React Router and Remix.
 - 💸 [React Certification - Ready for a Senior role? Take the assessment: 135 minutes, 40 MCQs, and 2 Coding challenges. Get Senior Certified!](https://certificates.dev/react?friend=TWIR)
+- 📦 [Remotion 4.0.455 \- New `<HtmlInCanvas>` component](https://github.com/remotion-dev/remotion/releases/v4.0.455) \- This component unlocks new impressive capabilities for the React programmatic video framework, letting you interleave regular HTML with fancy canvas-based effects using shaders ([demos](https://github.com/remotion-dev/html-in-canvas)).
+- 📦 [Remix 3 Beta Preview](https://remix.run/blog/remix-3-beta-preview) \- The new version of Remix is now in beta preview. It’s not based on React nor React Router, but still relies on JSX. It uses a different component model where you explicitly trigger re-renders, Frames that you can reload, and doesn’t bundle your app.
+- 📦 [React Router 7.15 \- Stabilizing APIs to prepare for React Router v8, Route matching optimizations](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v7150)
+- 📦 [Trees \- File tree UI library, performant, flexible, with React or vanilla JS](https://trees.software/)
+- 📦 [Pracht \- Preact framework with explicit routing, per-route render modes, cloud adapters](https://pracht.resynapse.dev/)
+- 📦 [shadcn CLI 4.7 \- Package Imports and Target Aliases](https://ui.shadcn.com/docs/changelog/2026-05-package-imports-target-aliases)
+- 🎥 [Jack Herrington \- 5 Ways To SSR/RSC on TanStack Start](https://www.youtube.com/watch?v=PX3QlADinIE)
+- 🎥 [Josef Bender \- This `<Link preload>` Trick Makes TanStack Start Blazing Fast\!](https://www.youtube.com/watch?v=KpoEflQ3u1A)
+- 🎙️ [PodRocket \- Next.js works everywhere now, Jimmy Lai tells us how](https://podrocket.logrocket.com/nextjs-works-everywhere-now-jimmy-lai-tells-us-how)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -66,22 +79,48 @@ Lingui v6 modernizes the stack with ESM-only distribution, a smaller installatio
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
-
 - 💸 [PostHog - The 7 best session replay tools for mobile apps](https://go.posthog.com/twir-may6)
+- 👀 [Expo Go and the App Store in May 2026](https://expo.dev/changelog/expo-go-and-app-store-may-2026) \- Update on a state of Expo Go support for SDK 55 being blocked by AppStore approval.
+- 👀 [Gradle cache for Android builds](https://expo.dev/changelog/gradle-cache) \- EAS builds now support Gradle caching with \~50% reduction in build times.
+- 📜 [The real cost of React Native animations: benchmarking every approach](https://expo.dev/blog/the-real-cost-of-react-native-animations-benchmarking-every-approach) \- A look into how popular animation solutions run under the hood, how they perform on real devices, and why they differ in per-frame cost.
+- 📜 [React Native production lessons from React Universe Meetup x Zalando](https://www.callstack.com/blog/react-native-production-lessons-from-react-universe-meetup-x-zalando) \- Four practical patterns from Zalando: measuring brownfield migrations with Meaningful Render, stabilizing video feeds, using RN to bridge web API gaps, and handling on-device LLM hardware variance.
+- 📜 [Making JSI Faster with more Efficient Data Structures](https://blog.margelo.com/make-jsi-run-faster-2) \- Use proper tools for a given task as wrong data representation can make your code 30x slower. The article features concrete benchmarks across array shapes and string construction.
+- 📜 [How react-native-ease runs animations with no JavaScript loop](https://www.peterp.me/articles/how-react-native-ease-runs-animations-with-no-javascript-loop/) \- Analysis how the library takes a different approach than most RN animation libraries to avoid being tied to JS thread.
+- 📜 [Building custom transitions with react-native-screen-transitions](https://reactnavigation.org/blog/2026/04/27/building-custom-screen-transitions/) \- How to make custom screen transitions to make your app experience stand out.
+- 📜 [Extending Expo UI with SwiftUI: Building a Native swipeActions Modifier](https://blog.manikagnish.com/extending-expo-ui-with-swiftui-building-a-native-swipeactions-modifier) \- Walkthrough of building a local Expo module to add SwiftUI's swipeActions modifier to @expo/ui.
+- 📜 [What's actually happening inside Legend List](https://www.peterp.me/articles/legend-list-engine-simulator/) \- Explains what formula does Legend List use to display items optimally and what role optimisation props play in it.
+- 📜 [Expo to Meta Quest \- AI-powered VR development](https://swmansion.com/blog/expo-to-meta-quest-ai-powered-vr-development/) \- A migration skill that, combined with Meta's Horizon Debug Bridge MCP, enables an agentic dev loop for VR. Covers Expo workflow setup, resizable VR windows, and performance optimization.
+- 📦 [Radon IDE 1.17 \- Native View Hierarchy Inspector on iOS, Android Network Inspector now captures native traffic, RN 0.85 support, and clipboard sync between computer and device](https://github.com/software-mansion/radon-ide/releases/tag/v1.17.0)
+- 📦 [Baguette \- Headless iOS Simulator manager/farm \+ host-side input injection for iOS 26 — taps, swipes, multi-finger gestures, and 60 fps streaming](https://github.com/tddworks/baguette)
+- 📦 [Rozenite 1.8 \- Nitro traffic support in the network activity plugin, SQLite agent tools, and a Rozenite for Agents SDK](https://github.com/callstackincubator/rozenite/releases/tag/v1.8.0)
+- 📦 [Agent CDP \- CLI for Chrome DevTools Protocol, debug targets, console, traces, heap snapshots, profiling for Chrome, Node.js, and React Native](https://github.com/callstackincubator/agent-cdp) \- Part of the agent-tools family from Callstack.
+- 📦 [Agent Device 0.14 \- Android snapshot helper, skillgym tests, and replaces bulky skills with versioned CLI help](https://github.com/callstackincubator/agent-device/releases/tag/v0.14.0)
+- 📦 [Reactotron 3.3 \- Adds an MCP server for Claude Code integration](https://github.com/infinitered/reactotron/releases/tag/reactotron-core-server%403.3.0)
+- 📦 [RN Enriched 0.7 \- EnrichedText component for HTML rendering and experimental web support](https://github.com/software-mansion/react-native-enriched/releases/tag/v0.7.0) \- Now a complete rich-text solution where inputs and display text use the same format.
+- 📦 [Nitro Geolocation \- Nitro-powered geolocation with a compat API for `@react-native-community/geolocation`](https://github.com/jingjing2222/react-native-nitro-geolocation) \- Includes a Rozenite DevTools plugin for mocking locations and an Agent Skills migration playbook.
+- 🎥 [Beto \- How React Native Builds Actually Work (APK, AAB, IPA, APP)](https://www.youtube.com/watch?v=1o0pEjYGUWM)
+- 🎥 [notJust.dev \- Let's build a Podcast app for Fire TV using Vega OS & React Native](https://www.youtube.com/watch?v=IzrhMN94gEE)
+- 🎙️ [React Native at Scale with Kadi Kraman | Expo, Mobile Development, EAS, OTA Updates](https://creators.spotify.com/pod/profile/dan-neciu/episodes/React-Native-at-Scale-with-Kadi-Kraman--Software-Developer-at-Expo--Mobile-Development--EAS--OTA-Updates-e3iqbdu)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📜 [The end of responsive images](https://piccalil.li/blog/the-end-of-responsive-images/) \- You don’t need to define explicit breakpoints anymore. With `<img loading=”lazy” sizes=”auto”>`, all modern browsers will figure out the appropriate image size based on `srcset`.
+- 📜 [Media Queries Range Syntax](https://ishadeed.com/article/range-syntax/) \- CSS range queries such as `@media (300px <= width <= 500px)` are widely supported by all browsers.
+- 📜 [Why “Trusted Publishing” Can’t Save Us from Social Engineering](https://adventures.nodeland.dev/archive/why-trusted-publishing-can-t-save-us/) \- npm Trusted Publishing and provenance features do not protect against attackers publishing on behalf of a compromised maintainer.
+- 📜 [The O(n^2) Bug That Looked Like Clean Code](https://dev.to/aralroca/the-on2-bug-that-looked-like-clean-code-3556) \- Highlights several JS patterns that seem fine at first glance but lead to quadratic complexity.
+- 📦 [Node.js 26.0](https://nodejs.org/en/blog/release/v26.0.0) \- This major release unlocks exciting new APIs such as `Temporal` and `Map.getOrInsert()`. It also upgrades the HTTP client. Let’s take the opportunity to remind that [the Node.js release schedule is evolving](http://Node.js) and dropping the even/odd distinction after this release: v27 will become LTS.
+- 📦 [Datatype \- Variable font that turns text into charts](https://franktisellano.github.io/datatype/) \- A really cool idea, relying on font ligatures\!. This might be an efficient way to show little inline charts in grid/list views.
+- 📦 [tsz \- TypeScript compiler in Rust](https://tsz.dev/) \- WIP but nearly complete, faster than tsgo, drop-in replacement.
+- 📦 [Astro 6.2 \- SVG optimizer, experimental Logger and `getFontFileURL()` APIs](https://astro.build/blog/astro-620/) \- Also a sneak peek of Astro v7 now in alpha, including Vite 8 and stable Rust compiler.
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/280/meme.jpg)](https://x.com/NaturalNeonRain/status/2032937391485313152)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/280/meme2.jpg)](https://x.com/sebastienlorber/status/2051264162508996626)
 
 See ya! 👋
