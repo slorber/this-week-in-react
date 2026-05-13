@@ -57,8 +57,8 @@ The attack vector was sneaky. A GitHub Action with a `pull_request_target` trigg
 
 Given the increasing number of supply chain vulnerabilities affecting npm packages, it’s good to highlight measures that maintainers and users can take to stay safe:
 
-- 📜 [Hardening TanStack After the npm Compromise](https://tanstack.com/blog/incident-followup) \- Gives a good overview of what maintainers can do to reduce the supply chain risk. Low hanging fruits include avoiding the use of the very dangerous `pull_request_target` trigger, and removing usage of shared caches in their release workflow (note: actions such as `setup-node` use a cache by default).
-- 🔗 [npm package manager Security Best Practices](https://github.com/lirantal/npm-security-best-practices) \- A canonical resource to protect yourself as a npm package consumer, giving pragmatic recommendation for each package manager. IMHO, combining the Socket Firewall with pnpm 11 is likely the best option right now.
+- 📜 [Hardening TanStack After the npm Compromise](https://tanstack.com/blog/incident-followup) \- Gives a good overview of what maintainers can do to reduce the supply chain risk. Low-hanging fruits include avoiding the very dangerous `pull_request_target` trigger, and removing usage of shared caches in sensitive workflow (note: actions such as `setup-node` using a cache by default).
+- 🔗 [npm package manager Security Best Practices](https://github.com/lirantal/npm-security-best-practices) \- A canonical resource to protect yourself as an npm package consumer, giving pragmatic recommendations for each package manager. IMHO, combining the Socket Firewall with pnpm 11 is likely the best option right now.
 
 ---
 
