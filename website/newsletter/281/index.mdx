@@ -1,16 +1,15 @@
 ---
 slug: /281
-title: "This Week In React #281: ..."
+title: "This Week In React #281: Next.js, TanStack, Security, Redact, React Router, Waku, HTML React Parser | Redraw, Expo, Tabs, Screens, Pressable, Activity, Strict DOM, Rock, SWC, Argent Rozenite | TC39, Rolldown, Node, Jest, Bun, npm, Playwright"
 authors: [slorber, janjaworski]
 date: 05-13-2026
-unlisted: true
 ---
 
 Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
-This week, security is making headlines, as two major React frameworks have announced vulnerabilities and compromised of packages\!
+This week, security is making headlines, as two major React frameworks have announced vulnerabilities and compromised npm packages\!
 
-William Candillon unveiling his secret project: a new set of 2D primitives for React Native and the web.
+William Candillon unveiled his secret project: a new set of 2D primitives for React Native and the web.
 
 It’s also an exciting week full of interesting releases all around the JS ecosystem\!
 
@@ -64,8 +63,7 @@ Given the increasing number of supply chain vulnerabilities affecting npm packag
 ---
 
 - 💸 [Product for Engineers - Great companies are built in hackathons](https://go.posthog.com/twir-may13)
-
-- 📜 [Projecting React](https://tannerlinsley.com/posts/projecting-react) \- Tanner Linsley wants React to be slimmer, tried Preact without success. He compares React API to database tables, and its implementation to a materialized view. With AI, he’s creating a different projection, one that is more optimized for TanStack Start, significantly smaller, and already powers `tanstack.com`. It’s a narrow experiment, not something he plans to market as an alternative to React. In the future, more devs will likely build optimized projections of the libraries they depend on.
+- 📜 [Projecting React](https://tannerlinsley.com/posts/projecting-react) \- Tanner Linsley wants React to be slimmer, tried Preact without success. He compares React API to database tables, and its implementation to a materialized view. With AI, he’s creating a different `@@tanstack/redact` projection, one optimized for TanStack Start, significantly smaller, that already powers `tanstack.com`. It’s a narrow experiment, not something he plans to market as an alternative to React. In the future, more devs will likely build optimized projections of the libraries they depend on.
 - 📜 [RSC Server Functions Are Not An API Boundary](https://longho.dev/posts/rsc-server-functions-are-not-an-api-boundary/) \- Server Functions are not a replacement for stable, observable, versioned, shared APIs. The generated Server Function ID can change over time as you refactor code, leading to version skew problems on redeploys. Note: cloud providers have skew protection features to mitigate this.
 - 📜 [Untangling dialogs in React Router](https://programmingarehard.com/2026/05/06/react-router-dialogs.html/) \- Everything you need to know to simplify your code by using a parent `<Outlet>` and making each dialog live on its own dedicated route. Covers data revalidation, flash session toasts, dialog exit animations and more.
 - 📜 [Animating Container Bounds](https://www.userinterface.wiki/animating-container-bounds) \- How to smoothly animate an element’s width/height based on its inner content with Motion.
@@ -103,7 +101,9 @@ This [post](https://www.meticulous.ai/blog/lessons-from-a-decade?utm_source=this
 
 ## 📱 React-Native {#react-native}
 
-[Redraw \- 2D graphics primitives, powered by WebGPU](https://wcandillon.github.io/redraw/)
+[![Redraw - 2D graphics primitives, powered by WebGPU](/emails/issues/281/redraw.jpg)](https://wcandillon.github.io/redraw/)
+
+**[Redraw \- 2D graphics primitives, powered by WebGPU](https://wcandillon.github.io/redraw/)**
 
 In an [amazing introduction video](https://www.youtube.com/watch?v=nGLCmY7tdz4), William Candillon presented what he’s been secretly working on for months: a new grade of 2D graphics primitives, powered by WebGPU. It’s still a technical preview and not open-source yet, but William is looking to make it source-available soon with a license that makes it sustainable.
 
