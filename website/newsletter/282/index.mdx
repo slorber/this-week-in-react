@@ -6,13 +6,21 @@ date: 05-20-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
-<Todo />
+It looks like security is going to be a hot topic this year\! 😅  
+More packages are being compromised, and blog posts are also covering recent RSC vulnerabilities.  
+Maybe we’re reaching a tipping point, and better security practices will consolidate this year.
+
+On the React Native side, Hermes-node is quite exciting, although it’s very early.
+
+An exciting TC39 meeting is currently underway, and several proposals have already progressed.  
+Yarn and npm are improving on the security side.  
+Bun and pnpm are being ported to Rust.
 
 Let's dive in!
 
-*   **🗓️** [React Norway](https://reactnorway.com/?utm_medium=social&utm_source=ThisWeekReact) - 🇳🇴 Oslo - 5 June - Experience the "Rock & React" atmosphere in a unique one-track full-stack festival with 350+ passionate developers. -10% with code "TWIR".
+- **🗓️** [React Norway](https://reactnorway.com/?utm_medium=social&utm_source=ThisWeekReact) - 🇳🇴 Oslo - 5 June - Experience the "Rock & React" atmosphere in a unique one-track full-stack festival with 350+ passionate developers. -10% with code "TWIR".
 
 <!-- truncate -->
 
@@ -28,16 +36,16 @@ import Support from "../_support.mdx";
 
 **[Ship AI generated code safely with Meticulous.](https://www.meticulous.ai/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=26q2&utm_content=1st)**
 
-Claude writes your code. Claude reviews your code. Claude fixes the review comments. And somehow, *you're* the one getting paged at 2am when it breaks in prod.
+Claude writes your code. Claude reviews your code. Claude fixes the review comments. And somehow, _you're_ the one getting paged at 2am when it breaks in prod.
 
 Fortunately, top AI-driven teams like Dropbox, Notion, LaunchDarkly, and Wiz rely on Meticulous to run 1000s of e2e UI tests autonomously, covering every user flow, edge case, role and permutation. Built by ex-Palantir engineers, [Meticulous gives you near-exhaustive coverage in weeks, without any developer effort](https://www.meticulous.ai/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=26q2&utm_content=1st). 
 
 It works like magic in the background:
 
-*   Near-exhaustive coverage on every test run
-*   No test creation
-*   No maintenance (seriously)
-*   Zero flakes (built on a deterministic browser)
+- Near-exhaustive coverage on every test run
+- No test creation
+- No maintenance (seriously)
+- Zero flakes (built on a deterministic browser)
 
 **Check it out** - and see why one engineering leader at Dropbox said that “[once we started using Meticulous, we couldn’t imagine working without it](https://www.meticulous.ai/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=26q2&utm_content=1st#:~:text=Once%20we%20started%20using%20Meticulous%2C%20we%20couldn%27t%20imagine%20working%20without%20it.).”
 
@@ -45,10 +53,34 @@ It works like magic in the background:
 
 ## ⚛️ React {#react}
 
-<Todo />
+🔐 [Mini Shai-Hulud worm keeps digging](https://www.wiz.io/blog/mini-shai-hulud-teampcp-hits-antv-supply-chain)
+
+Remember last week’s TanStack Router compromise? The dangerous worm from TeamPCP keeps compromising users and maintainers across ecosystems, affecting popular packages such as `echarts-for-react` and `@antv`, and GitHub actions such as `actions-cool/issues-helper`. [OpenAI employees got compromised](https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack/), leading them to regenerate code signing certificates. The Million.js repository was also [briefly compromised](https://github.com/aidenybai/million/issues/1186), but they seem to have gotten lucky: it apparently didn’t affect anyone.
+
+Rumors also link this worm to the [Nx Console VSCode extension compromise](https://github.com/nrwl/nx-console/security/advisories/GHSA-c9j4-9m59-847w), and possibly connected to a major [GitHub internal repo breach](https://x.com/H4ckmanac/status/2057032154601709611). This story isn’t over — “Mini” feels like a very questionable name 😅!
+
+---
 
 - 💸 [PlanetScale - Faster apps start with a faster database. Get started with the fastest benchmarked Postgres and MySQL.](https://pscale.link/rw)
+- 📜 [React Server Components in TanStack](https://frontendmasters.com/blog/react-server-components-in-tanstack/) \- A pragmatic intro to TanStack’s flexible RSC model, CompositeComponent, and how much it could save in terms of client bundle size.
+- 📜 [Structural sharing, selectAtom, and why your jotai atoms re-render too much](https://www.peterp.me/articles/jotai-structural-sharing-vs-selectatom/) \- Explains how deriving atoms, decomposing into primitive atoms, and structural sharing can help avoid re-renders.
+- 📜 [The React2Shell Story](https://lachlan.nz/blog/the-react2shell-story) \- 2 articles from the duo who reported the security flaw allowing remote code execution in RSC.
+- 📜 [The Flight Protocol Made Your DoS My Problem](https://saschb2b.com/blog/flight-protocol-dos) \- React/Next.js recently patched various CVEs. One of them could block your Node process in a single HTTP request.
 - 💸 [Certificates.dev - React Free Weekend is coming. Get unlimited access to mid-level training, incl. coding challenges + trial exam for 48H.](https://certificates.dev/react/free-weekend?friend=TWIR)
+- 📦 [Fate 1.0 \- The first full Async React Metaframework](https://fate.technology/posts/fate-1.0) \- Fate is a Relay-inspired framework (not based on GraphQL) supporting view composition, normalized caching, data masking, Async React features, live views through Server-Sent Events, Drizzle, garbage collection, and more.
+- 📦 [TanStack Router releases \- Deferred hydration capabilities, route matching priority](https://github.com/TanStack/router/releases/tag/release-2026-05-20-1004) \- Deferred Hydration (experimental, [docs](https://tanstack.com/start/latest/docs/framework/react/guide/deferred-hydration)) could help improve your page's perceived performance by making it interactive sooner. They also recently introduced [CSS inlining](https://tanstack.com/start/latest/docs/framework/react/guide/css-styling#inline-route-css-in-production) and a [CSRF middleware](https://tanstack.com/start/latest/docs/framework/react/guide/middleware#csrf-middleware).
+- 📦 [TanStack AI releases \- `useChat()` supports streaming structured output](https://tanstack.com/blog/streaming-structured-output)
+- 📦 [React Redux 9.3 \- `connect` API deprecated, Trusted Publishing fixed](https://github.com/reduxjs/react-redux/releases/tag/v9.3.0) \- The old HOC API is not removed, but it’s recommended to migrate to `useSelector/useDispatch`
+- 📦 [Redux Toolkit 2.12 \- TypeScript Improvements, Skills](https://github.com/reduxjs/redux-toolkit/releases/tag/v2.12.0)
+- 📦 [Base UI 1.5 \- Major mount perf improvements for popovers/dialogs/tooltips/menus](https://base-ui.com/react/overview/releases/v1-5-0)
+- 📦 [React Hook Form 7.76 \- Improved `isDirty` and `useFieldArray`](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.76.0)
+- 📦 [Relay 21.0 \- First-party TypeScript support, experimental RSC support, improved error handling](https://github.com/facebook/relay/releases/tag/v21.0.0)
+- 📦 [Storybook 10.4 \- TanStack React, React Native isolation, agentic setup, review filters](https://storybook.js.org/blog/storybook-10-4/)
+- 📦 [React Doctor 0.2 \- Your agent writes bad React. This catches it.](https://github.com/millionco/react-doctor)
+- 📦 [React Router 7.15.1 \- New `unstable_useRouterState` consolidation API](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v7151)
+- 🎥 [Nuno Maduro \- Why React Developers Are Leaving Next.js for TanStack, with Tanner Linsley](https://www.youtube.com/watch?v=6moPS3AAbe4)
+- 🎥 [Fireship \- A single PR just hijacked the NPM registry...](https://www.youtube.com/watch?v=gwTQLZSIlsU)
+- 🎙️ [Syntax.fm 1005 \- Programatic and Skill based Video Creation with Remotion](https://syntax.fm/show/1005/programatic-and-skill-based-video-creation-with-remotion)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -68,22 +100,45 @@ Last chance to save your spot. [**Register today.**](https://sentry.io/resources
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
-
 - 💸 [PostHog - The 7 best session replay tools for mobile apps](https://go.posthog.com/twir-may20)
+- 📜 [Unlocking Expo Updates in an Isolated Brownfield Architecture with SDK 55](https://www.callstack.com/blog/unlocking-expo-updates-in-an-isolated-brownfield-architecture-with-sdk-55) \- Running Expo Updates in Isolated Brownfield was always a challenge. Thanks to recent updates, it is a thing of the past.
+- 📜 [Changes to project loading behavior in Expo Go](https://expo.dev/changelog/expo-go-loading-changes-may-2026) \- Breaking change for EAS Update users: Expo Go now enforces ownership checks. Self-hosted updates can no longer serve Hermes bytecode bundles.
+- 📜 [WTF does `.box()` do in Nitro Modules?](https://www.peterp.me/articles/wtf-does-box-do-in-nitro-modules/) \- It converts `NativeState`\-backed objects into `HostObjects` so they can cross worklet runtime boundaries.
+- 📜 [Build fast, no matter what: how Expo is optimizing for speed (and how you can, too)](https://expo.dev/blog/build-fast-no-matter-what-how-expo-is-optimizing-for-speed) \- Deep dive into Expo's build speed optimizations: hardware scaling, Gradle caching, prebuilt binaries, and fingerprint-based workflows that avoid full rebuilds for JS-only changes.
+- 📜 [Using TurboModule Substitution to Build Safer React Native Plugin Systems](https://www.callstack.com/blog/using-turbomodule-substitution-to-build-safer-react-native-plugin-systems) \- Explains how React Native Sandbox 0.6 offers granular sandboxing capabilities.
+- 📦 [Hermes Node \- Node.js built-in module compatibility layer for the Hermes JS engine](https://github.com/tmikov/hermes-node) \- The creator of Hermes published an AI-driven prototype of a new JS/TS runtime built on Hermes, compatible with Node.js. It won’t outperform Node.js/V8 today, but Static Hermes could make it way faster in the future.
+- 📦 [Skia Lab \- Beautiful react-native-skia demo](https://github.com/daehyeonmun2021/react-native-skia-lab) \- A collection of painting, physics, shaders, and gesture interactions demos.
+- 📦 [ViroReact 2.55 \- Ship as a native VR experience on Meta Quest](https://updates.reactvision.xyz/meta-quest-lands-studio-scenes-drop-in-whats-new-in-viroreact-2-55-0-a8876564047a)
+- 📦 [Harness 1.2 \- iOS code coverage, permission automation, external xctest commands](https://github.com/callstackincubator/react-native-harness/releases/tag/v1.2.0)
+- 📦 [Expo Speech Recognition 56 \- Expo SDK 56 support](https://github.com/jamsch/expo-speech-recognition/releases/tag/v56.0.0)
+- 📦 [TypeGPU Confetti 0.3 \- Rewritten to use TypeGPU](https://github.com/software-mansion-labs/typegpu-confetti/releases/tag/v0.3.0)
+- 📦 [Nitro Fetch 1.3 \- Removed box/unbox, fixed binary responses, performance improvements](https://github.com/margelo/react-native-nitro-fetch/releases/tag/v1.3.0)
+- 📦 [Agent Device 0.15 \- Faster boot and test replay, iOS replay speedup, MCP discovery-only](https://github.com/callstackincubator/agent-device/releases/tag/v0.15.0)
+- 📦 [View Shot 5.1 \- iOS 17 compatibility, Windows support \+ example, Android ScrollView fix](https://github.com/gre/react-native-view-shot/releases)
+- 📦 [Rozenite DevTools 1.10 \- Network, Performance, Vite plugin improvements](https://github.com/callstackincubator/rozenite/releases/tag/v1.10.0)
+- 🎥 [William Candillon \- Debriefing Redraw & TypeGPU](https://www.youtube.com/watch?v=aP8GSJ7oTuc)
+- 🎥 [Beto \- Everything new in Expo SDK 56](https://www.youtube.com/watch?v=ywvywq0AGPM)
+- 🎥 [React Native Live Ep 11 \- Building High-Performance UI with React Native Skia / William Candillon](https://www.youtube.com/watch?v=GChgKhfuzYA)
+- 🎙️ [RNR 353 \- Building React Native Apps in the AI Era](https://infinite.red/react-native-radio/rnr-353-building-react-native-apps-in-the-ai-era)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [Explicit Resource Management reached TC39 stage 4](https://github.com/tc39/proposal-explicit-resource-management) \- A TC39 meeting is in progress, and many proposals have progressed. The most “user-facing” one – `using` – is going to be part of the standard and simplify your resource cleanup logic. I take the opportunity to show you [how to leverage it immediately in Vitest/Jest tests](https://x.com/sebastienlorber/status/2057033638827483236).
+- 👀 [npm RFC \- Make install scripts opt-in](https://github.com/npm/rfcs/pull/868) \- It’s great to see npm finally looking to catch up on security\! They’d like to introduce an `allowScripts` map in `package.json` to help mitigate the recent supply chain attacks.
+- 👀 [Bun PR \- Rewrite Bun in Rust](https://github.com/oven-sh/bun/pull/30412) \- The bold, AI-driven PR landed in just one week, making Bun’s migration from Zig to Rust official. 🤯
+- 📜 [Declarative partial updates](https://developer.chrome.com/blog/declarative-partial-updates) \- New exciting APIs may come to the web platform: out-of-order streaming, and new HTML insertion methods supporting streaming. Already available in Chrome 148 behind an experimental flag.
+- 📜 [QUIC and HTTP/3 Come To Node.js (finally)](https://www.jasnell.me/posts/quic-comes-to-node) \- A 5-part deep dive on the experimental `node:quic` API.
+- 📦 [pnpm 11.12 \- Experimental Rust install engine](https://github.com/pnpm/pnpm/releases/tag/v11.2.0) \- pnpm is also [migrating to Rust](https://github.com/pnpm/pnpm/tree/main/pacquet), with an incremental strategy. This release introduces an opt-in for the new Rust engine to power the install phase.
+- 📦 [Yarn 4.15 \- Add `npmMinimalAgeGate: 1d` release cooldown by default](https://github.com/yarnpkg/berry/releases/tag/%40yarnpkg%2Fcli%2F4.15.0) \- Another package manager adopts better security defaults. BTW, Yarn is also being rewritten in Rust.
+- 📦 [Node 26.2 \- `stream.compose` stable, `fs.stat()` returns `Temporal.Instant`](https://nodejs.org/en/blog/release/v26.2.0)
+- 📦 [Webpack 5.107 \- Experimental HTML modules, experimental native TS support](https://webpack.js.org/blog/2026-05-19-webpack-5-107/)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/282/meme.jpg)](https://x.com/sebastienlorber/status/2057113058200178880)
 
 See ya! 👋
