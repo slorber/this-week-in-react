@@ -3,12 +3,11 @@ slug: /284
 title: "This Week In React #284: TanStack Start, Compiler, React Router, Forms, TypeGPU, React Aria, shadcn, XState | App.js, Gesture Handler, SPM, Expo, Runtimes, Legend List, Desktop | npm, Node.js, Astro"
 authors: [filipsolecki, kacperkapusciak]
 date: 06-03-2026
-unlisted: true
 ---
 
 Hi everyone, Kacper and Filip from [Software Mansion](https://swmansion.com/) here.
 
-React Router and Remix shipped a security patch covering 7 CVEs \- update immediately. There's also a fresh batch of releases from TanStack Form, XState Store, and React Spectrum, plus some great reads on CSS @function and dialog animations.
+This week, TanStack Start is once again in the spotlight. The React Compiler in Rust is on its way. React Router and Remix shipped important security patches – update immediately. There's also a fresh batch of releases from TanStack Form, XState Store, shadcn, React Aria, and more.
 
 On the React Native side this week was dominated by [App.js Conf 2026](http://appjs.co) in Kraków. Gesture Handler 3.0, Swift Package Manager support for React Native, and Legend List 3.0 were among the highlights, alongside Expo announcements like EAS Observe.
 
@@ -46,11 +45,22 @@ Why settle for a black box SaaS when you can own the entire platform? [Deploy At
 
 ## ⚛️ React {#react}
 
+![TanStack + Rspack](/emails/issues/284/tanstack.jpg)
+
+**TanStack Start Gaining Momentum:**
+
+- 📜 [TanStack Start Adds First-Class Rsbuild Support](https://tanstack.com/blog/start-adds-rsbuild-support) \- TanStack Start now supports Rsbuild / Rspack alongside Vite via a new plugin adapter, covering SSR, streaming, HMR, Server Functions, and RSC.
+- 📜 [Lovable \- Building apps using TanStack Start](https://lovable.dev/fr/blog/building-apps-using-tanstack-start) \- The AI App builder is now using TanStack Start with SSR by default for all new projects.
+- 📜 [The Conductor Rewrite: What They Changed to Make It Fast](https://performance.dev/the-conductor-rewrite) \- Migrating their Tauri desktop app from React Router to TanStack Router significantly reduced re-renders thanks to its built-in structural sharing and stable refs.
+- 📜 [TanStack Start authentication: A developer's guide for 2026](https://workos.com/blog/tanstack-start-authentication-guide) \- Why `beforeLoad` doesn't protect server functions, the double-guard pattern, sessions, and middleware.
+
+---
+
 - 💸 [SVAR React Gantt – Build project timelines with a pure React API and advanced scheduling (MIT & PRO)](https://svar.dev/react/gantt/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=may)
+- 👀 [React Compiler update \- The Rust compiler PR to be merged soon](https://github.com/facebook/react/pull/36173#issuecomment-4608356402) \- It already produces at 99.9% the same output as the original TS compiler. You can try it already through a local PR checkout. The Oxc team is already working on an integration ([PR](https://github.com/oxc-project/oxc/pull/22942)).
+- 📅 [Next.js Nights \- The Next.js team on tour (9 June SF, 11 June Amsterdam, 18 June London)](https://nextjs.org/nights) \- They also [teased us](https://x.com/nextjs/status/2059997719197098425) about an upcoming v16.3 release, including Instant Navigations and new AI-related features.
 - 🔐 [React Router & Remix v2 \- 7 CVEs published](https://x.com/ReactRouter/status/2061839906834395649) \- Includes RCE, CSRF, XSS, and DoS vulnerabilities. Update to React Router v7.16.0 / v6.30.4 or Remix v2.17.5.
 - 📜 [Deprecating a React component using TypeScript Overload](https://dev.to/mbarzeev/deprecating-a-react-component-using-typescript-overload-2ka) \- How to ship a breaking component redesign without renaming it with the usage of TS overload, mark the old API as `@deprecated`, and let consumers opt into the new version by adding a `new` prop.
-- 📜 [TanStack Start authentication: A developer's guide for 2026](https://workos.com/blog/tanstack-start-authentication-guide) \- Why `beforeLoad` doesn't protect server functions, the double-guard pattern, sessions, and middleware.
-- 📜 [TanStack Start Adds First-Class Rsbuild Support](https://tanstack.com/blog/start-adds-rsbuild-support) \- TanStack Start now supports Rsbuild 2 alongside Vite via a new plugin adapter, covering SSR, streaming, HMR, Server Functions, and RSC
 - 💸 [PostHog - PostHog Code and the self-driving product](https://go.posthog.com/twir-jun3)
 - 📦 [TanStack Form 1.33 \- `FormGroup` API to simplify multi-step forms](https://github.com/TanStack/form/releases/tag/%40tanstack/react-form%401.33.0)
 - 📦 [React Hook Form 7.77 \- new `resetDefaultValues` API](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.77.0)
@@ -59,12 +69,12 @@ Why settle for a black box SaaS when you can own the entire platform? [Deploy At
 - 📦 [Lexical 0.45 \- New composable DOMImportExtension replacing importDOM, backspace now preserves block type, canUndo/canRedo signals on HistoryExtension.](https://github.com/facebook/lexical/releases/tag/v0.45.0)
 - 📦 [React Aria Components 1.18 \- `Calendar` multi-date selection, month/year pickers, new `TableFooter` and `SliderFill` components](https://github.com/adobe/react-spectrum/releases/tag/react-aria-components%401.18.0) \- Checkbox, Radio, and Switch now support description and error message slots.
 - 📦 [React Spectrum 1.4 \- drag & drop in ListView and similar, TableView highlight selection & TableFooter, custom prefixes in ComboBox/TextField, multi-date Calendar selection](https://react-spectrum.adobe.com/releases/v1-4-0.html)
-- 📦 [shadcn CLI 4.9 & 4.10 \- GitHub registries, `npx shadcn eject`](https://ui.shadcn.com/docs/changelog)
+- 📦 [Shadcn UI 4.9 & 4.10 \- GitHub registries, `npx shadcn eject` to extract any component into your codebase](https://ui.shadcn.com/docs/changelog)
 - 📦 [Next Intl 4.13 \- `useExtracted` function now generates message keys using URL-safe base64](https://github.com/amannn/next-intl/releases/tag/v4.13.0)
 - 📦 [React Flow 12.11 \- new `autoPanOnSelection` prop](https://github.com/xyflow/xyflow/releases/tag/%40xyflow/react%4012.11.0)
 - 📦 [XState Store 4.0 \- `createStoreLogic` for reusable stores, `enq.trigger` for chaining events, Standard Schema support, `store.can` for event checking.](https://github.com/statelyai/xstate/releases/tag/%40xstate%2Fstore%404.0.0)
 - 📦 [React Archer 5.0 \- Draw arrows between elements \- Add React 19 support](https://github.com/pierpo/react-archer/releases/tag/v5.0.0)
-- 📦 [ESLint – React – You Might Not Need An Effect](https://github.com/nickjvandyke/eslint-plugin-react-you-might-not-need-an-effect/blob/main/CHANGELOG.md#100-2026-05-31)
+- 📦 [ESLint Plugin React ”You Might Not Need An Effect” 1.0](https://github.com/nickjvandyke/eslint-plugin-react-you-might-not-need-an-effect/blob/main/CHANGELOG.md#100-2026-05-31)
 - 🎥 [Jack Herrington \- All 17 TanStack Projects In ONE App\!](https://www.youtube.com/watch?v=J4kzovOTNKw)
 - 🎙️ [Señors at Scale \- Redux at Scale with Mark Erikson](https://www.youtube.com/watch?v=dbe0wC9Y8bo)
 
