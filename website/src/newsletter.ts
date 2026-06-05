@@ -41,11 +41,11 @@ const all: NewsletterSegment & NewsletterFuture = {
 
   // TODO improve this!
   nextMainSlot: {
-    date: "September 2025",
+    date: "October 2026",
     // projectedAudienceSize: 45000,
   },
   nextSecondSlot: {
-    date: "September 2025",
+    date: "September 2026",
     // projectedAudienceSize: 45000,
   },
 };
