@@ -73,6 +73,17 @@ export const AllQuotes = {
         My favorite resource for keeping up with the React community!
       </Quote>
     ),
+    marcrousavy: (
+      <Quote
+        url="https://x.com/mrousavy/status/2062945033917997106"
+        handle="mrousavy"
+        github="mrousavy"
+        name="Marc Rousavy"
+        job="CEO - Margelo"
+      >
+        I know I'm in for a good read when a newsletter gets sent out
+      </Quote>
+    ),
     grabbou: (
       <Quote
         url="https://x.com/grabbou/status/1829126194022715617"
@@ -606,6 +617,7 @@ export default function HomepageQuotes() {
         </>
       )}
       {AllQuotes.en.kzzzf}
+      {AllQuotes.en.marcrousavy}
       {AllQuotes.en.grabbou}
       {AllQuotes.en.threepointone}
       {AllQuotes.en.sebmarkbage}
