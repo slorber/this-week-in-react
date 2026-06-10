@@ -48,10 +48,38 @@ It works like magic in the background:
 
 ## ⚛️ React {#react}
 
-<Todo />
+**[The React.Foundation website**](https://react.foundation/)\*\*
+
+The React Foundation was [announced nearly a year ago](https://react.dev/blog/2025/10/07/introducing-the-react-foundation), and you may be wondering what actions it has taken so far. Did you know the React Foundation had a website? Although it’s still a work-in-progress ([source code](https://github.com/react-foundation-dev/react.foundation)), it’s already up and running and worth taking a look at to discover what’s planned, such as:
+
+- A system to fund maintainers of critical ecosystem libraries
+- An official React merchandise store
+- Quarterly transparent reports with revenue details, maintainer funding, and more
+
+Earlier today, most React-related repositories also moved from the `facebook` GitHub organization to the [`react` GitHub organization](https://github.com/react), reflecting the transition to the React Foundation. This includes React, React Native, Yoga, JSX, Metro, React-Strict-DOM, Create-React-App, and more.
+
+It’s not `facebook/react` anymore, but `react/react`: end of an era\!
+
+---
 
 - 💸 [PlanetScale - Low-latency queries, branch and deploy like code, and best-in-class reliability. All in one database.](https://pscale.link/rw)
-- 💸 [Certificates.dev: Certification AMA Workshop. Ask our expert how exams are built, graded, proctored, and impacts careers. JOIN for FREE](https://frontendnation.com/workshops/inside-developer-certifications-an-ama-with-alain-chautard?utm_source=twir&utm_medium=newsletter&utm_campaign=frontend_nation_certification_workshop_2026&friend=TWIR)
+- 👀 [React Core PR \- Port React Compiler to Rust](https://github.com/react/react/pull/36173) \- The PR has been officially merged, although no Rust crate or npm package has been published yet. The [Oxc integration](https://github.com/oxc-project/oxc/pull/22942) is available in Rust crate v0.135, and it’s being integrated [in Rolldown](https://github.com/rolldown/rolldown/pull/9671) and [in Oxlint](https://github.com/oxc-project/oxc/pull/23202). See also the [SWC integration PR](https://github.com/swc-project/swc/pull/11917) and the [Bun integration PR](https://github.com/oven-sh/bun/pull/31785).
+- 👀 [React RFC \- Support using disposable as useEffect cleanup](https://github.com/reactjs/rfcs/pull/278) \- A proposal for `useEffect` to integrate with the new ES feature Explicit Resource Management / `using`, allowing to return a disposable resource like `{[Symbol.dispose]: myEffectCleanupFunction}`.
+- 📜 [Flow for TypeScript Users in 2026](https://medium.com/flow-type/flow-for-typescript-users-in-2026-ad07ac0a2d92) \- Flow’s syntax has converged with TypeScript to the point where it’s hard to tell them apart anymore. It’s stricter and offers features TypeScript lacks, including pattern matching and component/hook/renders syntax. I don’t know if Flow is ready for an official comeback, but I like its direction. Note that its compiler is also being ported to Rust,
+- 📜 [Building an Active NavLink Component in Next.js](https://aurorascharff.no/posts/building-an-active-navlink-component-in-nextjs/) \- Building a production-grade reusable `NavLink` component for the App Router with an `isActive/className` render prop API inspired by React Router. It’s surprisingly not so easy: you need to deal with initial paint flickering and need to use Suspense for Cache Components.
+- 📜 [The Best Loading States Are No Loading States](https://jjenzz.com/best-loading-states-are-no-loading-states/) \- Route transitions, route loaders, preloading, and global fallbacks can make loading states mostly disappear.
+- 📜 [How React Server Components Integrate with Bundler](https://reactjs-maxxing.vercel.app/blog/how-react-server-component-integrate-with-bundler)
+- 📜 [When React parent components need to know their children](https://www.jayfreestone.com/writing/updating-react-parents-in-response-to-changes-in-children/)
+- 📜 [The problem with useEffect – React Doctor can help](https://www.react.doctor/blog/the-problem-with-useeffect)
+- 💸 [Certificates.dev: Certification AMA Workshop. Ask our expert how exams are built, graded, proctored, and impacts careers. Join for free!](https://frontendnation.com/workshops/inside-developer-certifications-an-ama-with-alain-chautard?utm_source=twir&utm_medium=newsletter&utm_campaign=frontend_nation_certification_workshop_2026&friend=TWIR)
+- 📦 [Sätteri \- Flexible Rust-based Markdown / MDX engine](https://satteri.bruits.org/) \- A faster Rust-based alternative to the Unified ecosystem and the JS-based implementation of MDX. It could [become Astro’s default parser](https://github.com/withastro/roadmap/pull/1364) in the future, and already [integrates with Starlight](https://github.com/withastro/starlight/releases/tag/%40astrojs%2Fstarlight%400.40.0).
+- 📦 [Motion 12.40 \- Support for `arc()` motions](https://motion.dev/docs/arc) \- This lets you animate elements along curved paths.
+- 📦 [TanStack Table 9.0 beta \- State management and perf improvements, tree-shakable, extendable, composable](https://tanstack.com/blog/tanstack-table-v9-taking-form) \- TanStack Table took inspiration from TanStack Form state management to rebuild its state management on top of TanStack Store and atoms, preventing useless re-renders and becoming compatible with the React Compiler along the way.
+- 📦 [React Router 8.0 prerelease](https://github.com/remix-run/react-router/blob/v8/CHANGELOG.md#v800-pre0) \- The next major version is now available for early adopters to try. It’s a relatively boring release, in a good way: the v8 future flags are gone, and their behaviors are now enabled by default. It also bumps runtime requirements, drops CJS and the `react-router-dom` package.
+- 📦 [React Router 7.17 \- Ship Markdown docs for AI agents](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v7170)
+- 📦 [React 19.2.7, 19.1.8, 19.0.7 \- Fix a Server Actions FormData regression](https://github.com/facebook/react/releases/tag/v19.2.7)
+- 🔗 [This Month in React \- Who even is on the Core team anymore, TanStack got pwn'd bad](https://share.transistor.fm/s/dd8e79de)
+- 🔗 [Señors at Scale \- Routing at Scale with TanStack Router's Nicolas Beaussart](https://creators.spotify.com/pod/profile/dan-neciu/episodes/Routing-at-Scale-with-TanStack-Routers-Nicolas-Beaussart--React-Router-Migration--Monorepos--PayFit-e3keqv9)
 
 <SubscribeFormEmbed placement="middle" />
 
