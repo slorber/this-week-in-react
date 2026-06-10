@@ -99,9 +99,47 @@ The last Early Bird Tickets are still available. Get an extra **10% off** with p
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![React Native Runtimes](/emails/issues/285/runtimes.jpg)](https://github.com/margelo/react-native-runtimes)
+
+**[React Native Runtimes](https://github.com/margelo/react-native-runtimes)**
+
+Margelo, in collaboration with Callstack, introduced a new package to add a multi-runtime layer to React Native apps. It’s a great solution for performance-heavy features and business logic isolation to avoid blocking interaction.
+
+If your app has features that jank on mount, slow first-open screens, background hydration or decoding, state logic competing with animation, it might be worth checking it out.
+
+Key features:
+
+- Run selected components, screens, and headless tasks.
+- Share state across runtimes through a native Zustand-style C++ singleton.
+- Prewarm runtimes to avoid cold-start lag.
+- Call a typed function on a specific runtime and await the result.
+- Expo support with a config plugin.
+
+---
 
 - 💸 [Product for Engineers - The golden rules of agent-first product engineering](https://go.posthog.com/twir-jun10)
+- 👀 [React Native RFC \- Android Gradle Plugin v9 adoption](https://github.com/react-native-community/discussions-and-proposals/pull/1006) \- This drafts a three-phase AGP v9 adoption strategy to keep up with Android, doing the required changes to support [built-in Kotlin](https://developer.android.com/build/migrate-to-built-in-kotlin) before the opt-outs are removed in AGP v10.
+- 👀 [Static Hermes \- What's new in the next stable release](https://github.com/facebook/hermes/blob/static_h/doc/blog/2026-06-05-new-hermes-stable-release.md) \- This blog post announces many new ES features to be supported natively, including Set operations, Iterator helpers, `groupBy`, `TextDecoder`, and more. It will also be faster and support built-in TypeScript type-stripping\!
+- 👀 [Standard Navigation integration PRs](https://github.com/react-navigation/standard-navigation) \- Remember [Expo Router 56 forking React Navigation](https://expo.dev/blog/expo-router-v56-decoupling-from-react-navigation)? Fortunately, we have a shared abstraction for creating navigators that can work with both routing libraries, and should help reduce ecosystem fragmentation. It has already been integrated into React Navigation ([PR](https://github.com/react-navigation/react-navigation/pull/13122)) and Expo Router ([PR](https://github.com/expo/expo/pull/46456)).
+- 📅 [React Native & AI meet-up by Software Mansion](https://luma.com/20df5csq) \- June 18th, NYC 🇺🇸
+- 📜 [Talking to JSI in Swift: what changed in SDK 56](https://expo.dev/blog/talking-to-jsi-in-swift) \- In SDK 56, Expo's native modules call JSI directly on Apple platforms. The Objective-C++ layer is gone, and calls are 1.6–2.3x faster.
+- 📜 [Moving away from `@expo/vector-icons`](https://expo.dev/blog/moving-away-from-expo-vector-icons) \- Explanation on why the icons package is deprecated in favor of a better alternative, and the benefits of switching.
+- 📜 [Exploring Inlined Requires](https://andrei-calazans.com/posts/2026-06-01-exploring-inlined-requires/) \- A 3-part series of Metro’s `inlineRequires`: the transform mechanics, when flipping the flag doesn’t improve cold start, and how Expo Router solves it with lazy loading.
+- 📜 [On-device AI after WWDC 2026: What's new?](https://www.callstack.com/blog/on-device-ai-after-wwdc-2026-whats-new) \- A look into new AI features from Apple and how React Native will make use of them.
+- 📜 [AI-Supported Brownfield Migration to React Native](https://www.callstack.com/blog/ai-supported-brownfield-migration-to-react-native)
+- 📜 [What happened at AppJS 2026? Highlights, new products, and plans for the future](https://expo.dev/blog/expo-highlights-new-products-and-plans-for-the-future)
+- 📦 [React Native Testing Library 14.0 \- React 19, async APIs, Test Renderer replacement](https://github.com/callstack/react-native-testing-library/releases/tag/v14.0.0)
+- 📦 [React Native Windows 0.83 \- Performance Testing Framework, Richer Pointer Event Support, Fabric Component Parity](https://devblogs.microsoft.com/react-native/%F0%9F%9A%80react-native-windows-v0-83-is-here/)
+- 📦 [React Native DocuSign \- Native captive signing for React Native & Expo](https://github.com/IronTony/react-native-docusign)
+- 📦 [Lynx 3.8 \- WebAssembly on Android, Adaptive Layout, Line-aware Auto Font Sizing, monthly release cadence](https://lynxjs.org/next/blog/lynx-3-8)
+- 📦 [Livechart \- High-performance live line & candlestick charts for React Native, built on Skia and Reanimated](https://github.com/brandtnewlabs/react-native-livechart)
+- 📦 [Nitro Fetch 1.4 \- Support for local and non-HTTP URLs](https://github.com/margelo/react-native-nitro-fetch/releases/tag/v1.4.0)
+- 📦 [Data Scanner \- Fast one-shot QR/Barcode scanning, powered by Nitro and native scanner UIs](https://github.com/mrousavy/react-native-data-scanner)
+- 📦 [Agent Device 0.17 \- iOS runner stability, perf metrics, replay test sharding](https://github.com/callstack/agent-device/releases/tag/v0.17.0)
+- 📦 [Rozenite 1.12 \- DevTools middleware fixes, compose sections across hook instances, support Expo bundle asset listings](https://github.com/callstackincubator/rozenite/releases/tag/v1.12.0)
+- 📦 [Bottom Tabs 1.3 \- Liquid Glass tint color improvements](https://github.com/callstack/react-native-bottom-tabs/releases/tag/react-native-bottom-tabs%401.3.0)
+- 🎥 [Simon Grimm \- I used Expo and Vega OS to make a Fire TV App](https://www.youtube.com/watch?v=j4V3XwQ65s8)
+- 🎥 [Daniel Friyia Jr \- Intro to 3D Graphics with WebGPU and Expo](https://www.youtube.com/watch?v=vons_XypdQw)
 
 ---
 
