@@ -1,6 +1,6 @@
 ---
 slug: /285
-title: "This Week In React #285: ..."
+title: "This Week In React #285: React.foundation, React Compiler, Sätteri, Motion, TanStack Table, React Router, Flow, NavLink | Runtimes, JSI, Standard Navigation, Testing Library, Static Hermes, BottomTabs, AGP, AI, Windows | VoidZero, npm, Rolldown, Angular"
 authors: [slorber]
 date: 06-10-2026
 unlisted: true
@@ -11,11 +11,6 @@ Hi everyone!
 <Todo />
 
 Let's dive in!
-
-- 🗓️ [Chain React](https://ti.to/chainreact/chainreact2026/discount/TWIR) - 🇺🇸 Portland - 30-31 July. Incredible speaker lineup featuring Charlie Cheever (Expo), Seth Webster (React Foundation), Kacper Kapuściak (Software Mansion), Mazen Chami (Infinite Red) and more. Get a 15% discount with code "TWIR".
-
-- 🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=thisweekinreact) - 🇬🇧 London - 23 & 26 Oct. Call for Papers is open until June 22! Submit your talk and share your advanced React insights with the community. Get a 10% discount with code "TWIR".
-- 🗓️ [React Native Connection](https://reactnativeconnection.io/?utm_source=thisweekinreact.com) - 🇫🇷 Paris - 24 Sept. The premier French React Native conference is back! Secure your spot early and get a 15% discount with code "TWIR". Call for Papers closes June 14.
 
 <!-- truncate -->
 
@@ -48,13 +43,16 @@ It works like magic in the background:
 
 ## ⚛️ React {#react}
 
-**[The React.Foundation website**](https://react.foundation/)\*\*
+[![The React.Foundation website](/emails/issues/285/foundation.jpg)](https://react.foundation/)
+
+**[The React.Foundation website](https://react.foundation/)**
 
 The React Foundation was [announced nearly a year ago](https://react.dev/blog/2025/10/07/introducing-the-react-foundation), and you may be wondering what actions it has taken so far. Did you know the React Foundation had a website? Although it’s still a work-in-progress ([source code](https://github.com/react-foundation-dev/react.foundation)), it’s already up and running and worth taking a look at to discover what’s planned, such as:
 
 - A system to fund maintainers of critical ecosystem libraries
-- An official React merchandise store
+- An official React merchandise store with profits redistributed to maintainers
 - Quarterly transparent reports with revenue details, maintainer funding, and more
+- A logged-in “Contributor Status” page, adding a cool gamification layer
 
 Earlier today, most React-related repositories also moved from the `facebook` GitHub organization to the [`react` GitHub organization](https://github.com/react), reflecting the transition to the React Foundation. This includes React, React Native, Yoga, JSX, Metro, React-Strict-DOM, Create-React-App, and more.
 
@@ -65,6 +63,7 @@ It’s not `facebook/react` anymore, but `react/react`: end of an era\!
 - 💸 [PlanetScale - Low-latency queries, branch and deploy like code, and best-in-class reliability. All in one database.](https://pscale.link/rw)
 - 👀 [React Core PR \- Port React Compiler to Rust](https://github.com/react/react/pull/36173) \- The PR has been officially merged, although no Rust crate or npm package has been published yet. The [Oxc integration](https://github.com/oxc-project/oxc/pull/22942) is available in Rust crate v0.135, and it’s being integrated [in Rolldown](https://github.com/rolldown/rolldown/pull/9671) and [in Oxlint](https://github.com/oxc-project/oxc/pull/23202). See also the [SWC integration PR](https://github.com/swc-project/swc/pull/11917) and the [Bun integration PR](https://github.com/oven-sh/bun/pull/31785).
 - 👀 [React RFC \- Support using disposable as useEffect cleanup](https://github.com/reactjs/rfcs/pull/278) \- A proposal for `useEffect` to integrate with the new ES feature Explicit Resource Management / `using`, allowing to return a disposable resource like `{[Symbol.dispose]: myEffectCleanupFunction}`.
+- 🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=thisweekinreact) - 🇬🇧 London - 23 & 26 Oct. Call for Papers is open until June 22! Submit your talk and share your advanced React insights with the community. Get a 10% discount with code "TWIR".
 - 📜 [Flow for TypeScript Users in 2026](https://medium.com/flow-type/flow-for-typescript-users-in-2026-ad07ac0a2d92) \- Flow’s syntax has converged with TypeScript to the point where it’s hard to tell them apart anymore. It’s stricter and offers features TypeScript lacks, including pattern matching and component/hook/renders syntax. I don’t know if Flow is ready for an official comeback, but I like its direction. Note that its compiler is also being ported to Rust,
 - 📜 [Building an Active NavLink Component in Next.js](https://aurorascharff.no/posts/building-an-active-navlink-component-in-nextjs/) \- Building a production-grade reusable `NavLink` component for the App Router with an `isActive/className` render prop API inspired by React Router. It’s surprisingly not so easy: you need to deal with initial paint flickering and need to use Suspense for Cache Components.
 - 📜 [The Best Loading States Are No Loading States](https://jjenzz.com/best-loading-states-are-no-loading-states/) \- Route transitions, route loaders, preloading, and global fallbacks can make loading states mostly disappear.
@@ -121,6 +120,8 @@ Key features:
 - 👀 [React Native RFC \- Android Gradle Plugin v9 adoption](https://github.com/react-native-community/discussions-and-proposals/pull/1006) \- This drafts a three-phase AGP v9 adoption strategy to keep up with Android, doing the required changes to support [built-in Kotlin](https://developer.android.com/build/migrate-to-built-in-kotlin) before the opt-outs are removed in AGP v10.
 - 👀 [Static Hermes \- What's new in the next stable release](https://github.com/facebook/hermes/blob/static_h/doc/blog/2026-06-05-new-hermes-stable-release.md) \- This blog post announces many new ES features to be supported natively, including Set operations, Iterator helpers, `groupBy`, `TextDecoder`, and more. It will also be faster and support built-in TypeScript type-stripping\!
 - 👀 [Standard Navigation integration PRs](https://github.com/react-navigation/standard-navigation) \- Remember [Expo Router 56 forking React Navigation](https://expo.dev/blog/expo-router-v56-decoupling-from-react-navigation)? Fortunately, we have a shared abstraction for creating navigators that can work with both routing libraries, and should help reduce ecosystem fragmentation. It has already been integrated into React Navigation ([PR](https://github.com/react-navigation/react-navigation/pull/13122)) and Expo Router ([PR](https://github.com/expo/expo/pull/46456)).
+- 🗓️ [Chain React](https://ti.to/chainreact/chainreact2026/discount/TWIR) - 🇺🇸 Portland - 30-31 July. Incredible speaker lineup featuring Charlie Cheever (Expo), Seth Webster (React Foundation), Kacper Kapuściak (Software Mansion), Mazen Chami (Infinite Red) and more. Get a 15% discount with code "TWIR".
+- 🗓️ [React Native Connection](https://reactnativeconnection.io/?utm_source=thisweekinreact.com) - 🇫🇷 Paris - 24 Sept. The premier French React Native conference is back! Secure your spot early and get a 15% discount with code "TWIR". Call for Papers closes June 14.
 - 📅 [React Native & AI meet-up by Software Mansion](https://luma.com/20df5csq) \- June 18th, NYC 🇺🇸
 - 📜 [Talking to JSI in Swift: what changed in SDK 56](https://expo.dev/blog/talking-to-jsi-in-swift) \- In SDK 56, Expo's native modules call JSI directly on Apple platforms. The Objective-C++ layer is gone, and calls are 1.6–2.3x faster.
 - 📜 [Moving away from `@expo/vector-icons`](https://expo.dev/blog/moving-away-from-expo-vector-icons) \- Explanation on why the icons package is deprecated in favor of a better alternative, and the benefits of switching.
@@ -145,14 +146,16 @@ Key features:
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📣 [VoidZero is Joining Cloudflare](https://voidzero.dev/posts/voidzero-cloudflare) \- Cloudflare acquired the company behind Vite, Vitest, Rolldown, Oxc, Oxfmt, Oxlint, and Vite+. These tools will remain open-source, MIT-licensed, and community-driven. Cloudflare promises no lock-in and plans to build its new `cf` CLI around Vite.
+- 📣 [GitHub \- Upcoming breaking changes for npm v12](https://github.blog/changelog/2026-06-09-upcoming-breaking-changes-for-npm-v12/) \- GitHub announces that npm v12 (scheduled for July) will improve security-related default behaviors, blocking install lifecycle scripts by default\!
+- 📜 [Why does tsgo use so much memory?](https://zackoverflow.dev/writing/why-does-tsgo-use-so-much-memory) \- It runs one type checker per thread.
+- 📦 [Rolldown 1.1 \- Enables lazy barrel optimization, aligns TS `references` resolution with tsc](https://github.com/rolldown/rolldown/releases/tag/v1.1.0)
+- 📦 [Angular 22.0 \- Signal Forms, Angular Aria, OnPush-by-default, async DI, IA, and more](https://blog.angular.dev/announcing-angular-v22-c52bb83a4664)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/285/meme.jpg)](https://x.com/sebastienlorber/status/2064657668044640285)
 
 See ya! 👋
