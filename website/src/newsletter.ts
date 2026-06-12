@@ -36,7 +36,7 @@ export type NewsletterFuture = {
 const all: NewsletterSegment & NewsletterFuture = {
   name: "All",
   subscribersCount: 40297,
-  openRate: 59,
+  openRate: 56,
   clickRate: 11,
 
   // TODO improve this!
