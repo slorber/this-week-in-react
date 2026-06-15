@@ -19,9 +19,9 @@ const Prices = {
   },
   quickLinkReactNative: {
     x1: 200,
-    x2: 350, // 175 €/slot
-    x4: 500, // 125 €/slot
-    x8: 900, // 112 €/slot
+    x2: 400, // 200 €/slot
+    x4: 600, // 150 €/slot
+    x8: 1000, // 125 €/slot
   },
 } as const;
 
