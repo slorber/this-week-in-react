@@ -16,8 +16,6 @@ Let's dive in!
 
 <!-- truncate -->
 
-🗓️ [Chain React](https://ti.to/chainreact/chainreact2026/discount/TWIR) - 🇺🇸 Portland - 30-31 July. Don't miss talks from experts at Expo, React Foundation, Software Mansion, and Infinite Red! Get a 15% discount with code "TWIR".
-
 import Support from "../_support.mdx";
 
 <Support />
@@ -47,7 +45,11 @@ It works like magic in the background:
 
 ## ⚛️ React {#react}
 
+![React Compiler in Rust](/emails/issues/286/compiler.jpg)
+
 **React Compiler in Rust rollout**
+
+The integration has finally started to land in mainstream libs, starting with Oxlint, but may others are following:
 
 - 📦 [Oxlint 1.70 \- Add a `react/react-compiler` rule](https://oxc.rs/docs/guide/usage/linter/rules/react/react-compiler.html) \- This experimental rule leverages the Rust port of the React Compiler and surfaces the same diagnostics as `eslint-plugin-react-compiler`. Early adopters ([React Spectrum](https://github.com/adobe/react-spectrum/pull/10203), [Sanity](https://github.com/sanity-io/sanity/pull/13114)) have already reported significant (x5-6) performance improvements.
 - 👀 [Rolldown PR \- Expose React Compiler options](https://github.com/rolldown/rolldown/pull/9801) \- PR already merged, so Vite and Rolldown users will soon be able to use the `transform.reactCompiler` option.
@@ -98,7 +100,9 @@ Use this tutorial to connect LogTape + Sentry and make every log searchable, que
 
 ## 📱 React-Native {#react-native}
 
-[React Native 0.86](https://reactnative.dev/blog/2026/06/11/react-native-0.86)
+[![React Native 0.86](/emails/issues/286/rn.jpg)](https://reactnative.dev/blog/2026/06/11/react-native-0.86)
+
+**[React Native 0.86](https://reactnative.dev/blog/2026/06/11/react-native-0.86)**
 
 The new React Native release is out\! This time, there are no major features or changes. It’s focused on fixes and stability improvements. Although it might not seem that exciting, the good news is that there are no breaking changes, which should make upgrading that much easier. Especially, with all the AI tools that can assist in it. 😉
 
@@ -117,6 +121,7 @@ Related news:
 ---
 
 - 💸 [Maestro - Write React Native UI tests with Cursor or Claude Code, see them run live in Maestro Viewer.](https://docs.maestro.dev/get-started/maestro-mcp?utm_source=this-week-in-react&utm_medium=newsletter&utm_campaign=mcp-viewer-jun17)
+- 🗓️ [Chain React](https://ti.to/chainreact/chainreact2026/discount/TWIR) - 🇺🇸 Portland - 30-31 July. Don't miss talks from experts at Expo, React Foundation, Software Mansion, and Infinite Red! Get a 15% discount with code "TWIR".
 - 📜 [Four Years of React Native Quick Crypto: From Wallets to Node Parity](https://blog.margelo.com/four-years-of-react-native-quick-crypto) \- A history of a JSI-based hash-and-HMAC library written for Web3 boom, its evolution into full Node crypto implementation on mobile, Nitro rewrite, and more.
 - 📜 [React Native, Hermes bytecode, and the Kindle homepage](https://sighery.com/posts/patching-kindle-homepage/) \- Amazon e-readers use RN to power their homepage. The author, a Kindle modder, dives into Hermes bytecode to patch the Kindle homepage and remove carousel ads.
 - 📜 [Faster iOS Builds with Precompiled XCFrameworks](https://expo.dev/blog/faster-ios-builds-with-precompiled-xcframeworks) \- prebuild Expo modules are now enabled by default, a step towards moving away from CocoaPods and reducing the amount of native compilation steps. It’s a part of a broader modernization effort.
