@@ -6,9 +6,11 @@ date: 06-17-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
-<Todo />
+This week, the React Compiler in Rust is rolling out, and early adopters have already reported significant speedups.
+
+React Native 0.86 finally came out with edge-to-edge fixes in core. It’s retro-compatible, and Expo SDK 56 should be able to upgrade.
 
 Let's dive in!
 
@@ -28,16 +30,16 @@ import Support from "../_support.mdx";
 
 **[Ship AI generated code safely with Meticulous.](https://www.meticulous.ai/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=26q2&utm_content=1st)**
 
-Claude writes your code. Claude reviews your code. Claude fixes the review comments. And somehow, *you're* the one getting paged at 2am when it breaks in prod.
+Claude writes your code. Claude reviews your code. Claude fixes the review comments. And somehow, _you're_ the one getting paged at 2am when it breaks in prod.
 
 Fortunately, top AI-driven teams like Dropbox, Notion, LaunchDarkly, and Wiz rely on Meticulous to run 1000s of e2e UI tests autonomously, covering every user flow, edge case, role and permutation. Built by ex-Palantir engineers, [Meticulous gives you near-exhaustive coverage in weeks, without any developer effort](https://www.meticulous.ai/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=26q2&utm_content=1st). 
 
 It works like magic in the background:
 
-*   Near-exhaustive coverage on every test run
-*   No test creation
-*   No maintenance (seriously)
-*   Zero flakes (built on a deterministic browser)
+- Near-exhaustive coverage on every test run
+- No test creation
+- No maintenance (seriously)
+- Zero flakes (built on a deterministic browser)
 
 **Check it out** - and see why one engineering leader at Dropbox said that “[once we started using Meticulous, we couldn’t imagine working without it](https://www.meticulous.ai/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=26q2&utm_content=1st#:~:text=Once%20we%20started%20using%20Meticulous%2C%20we%20couldn%27t%20imagine%20working%20without%20it.).”
 
@@ -45,10 +47,32 @@ It works like magic in the background:
 
 ## ⚛️ React {#react}
 
-<Todo />
+**React Compiler in Rust rollout**
+
+- 📦 [Oxlint 1.70 \- Add a `react/react-compiler` rule](https://oxc.rs/docs/guide/usage/linter/rules/react/react-compiler.html) \- This experimental rule leverages the Rust port of the React Compiler and surfaces the same diagnostics as `eslint-plugin-react-compiler`. Early adopters ([React Spectrum](https://github.com/adobe/react-spectrum/pull/10203), [Sanity](https://github.com/sanity-io/sanity/pull/13114)) have already reported significant (x5-6) performance improvements.
+- 👀 [Rolldown PR \- Expose React Compiler options](https://github.com/rolldown/rolldown/pull/9801) \- PR already merged, so Vite and Rolldown users will soon be able to use the `transform.reactCompiler` option.
+- 👀 [SWC PR \- Add React Compiler](https://github.com/swc-project/swc/pull/11917) \- The PR has been merged and released in Rust crate v68.1, exposing a new `jsc.transform.reactCompiler` configuration option.
+- 👀 [Rspack PR \- Bump SWC to support the React Compiler](https://github.com/web-infra-dev/rspack/pull/14435) \- In the next v2.1 release (the beta drops tomorrow), `builtin:swc-loader` will support the React Compiler in Rust. The Rspack team reported that the Rust version is 7-13x faster than the Babel one ([tweet](https://x.com/jiahan_c/status/2067120712587092090)).
+- 👀 [Next.js PR \- Add experimental Turbopack React Compiler support](https://github.com/vercel/next.js/pull/94573) \- This adds a new `experimental.turbopackRustReactCompiler` option. Available in Next.js v16.3.0-canary.52, and likely to be released very soon in Next.js 16.4.
+
+—
 
 - 💸 [Product for Engineers - The stuff nobody tells you about startup marketing](https://go.posthog.com/twir-jun17)
-- 💸 [Certificates.dev: Free React Weekend. Unlimited access to 9 chapters, 49 quiz questions, 13 coding challenges, and a trial exam. 27-28 June.](https://certificates.dev/react/free-weekend?utm_source=twir&utm_medium=newsletter&utm_campaign=react_free_weekend_june_2026&friend=TWIR)
+- 👀 [HTML proposal \- Localized time formatting without JavaScript](https://github.com/whatwg/html/issues/12591) \- Have you ever come across date-related SSR/SSG hydration errors in React or any other framework? Apparently, browser vendors agree that these problems need to be solved, and here’s an initial proposal based on declarative HTML attributes.
+- 👀 WordPress [\- React 19 upgrade temporarily reverted in Gutenberg](https://make.wordpress.org/core/2026/06/05/react-19-upgrade-temporarily-reverted-in-gutenberg/) \- WordPress initially announced a React 19 upgrade for the Gutenberg plugin and WordPress. They encountered JSX runtime compatibility issues between React v18/v19 and had to revert. Support for v19 is still planned for WordPress 7.1.
+- 📜 [Rethinking TSRX](https://tsrx.dev/blog/rethinking-tsrx) \- The TSRX (TypeScript Render Extensions) syntax has been redesigned to be backward-compatible with JSX, easing its adoption and making its proprietary features more explicit. An interesting project to watch this year, coming from Dominic Gannaway (React, Svelte, Inferno), offering an ergonomic shared UI syntax compatible with various framework runtimes.
+- 📜 [TanStack Start: A Mental Model for Next.js Developers](https://www.adarsha.dev/blog/tanstack-mental-model-for-nextjs-developers) \- A deep dive into the differences, covering typesafety, isomorphic loaders, RSC-as-data mental model, and more.
+- 📜 [Module System Dependency Injection in React & Friends](https://www.jayfreestone.com/writing/module-level-dependency-injection-react/) \- An interesting overview of Dependency Injection across React meta-frameworks, and a critique of Next.js suggestion to use the module system for DI in RSCs.
+- 📜 [Building an LLM safe design system](https://polar.sh/blog/orbit-llm-safe-design-system) \- Polar’s new design system relies on a single polymorphic `<Box>` component with typesafe props accepting StyleX design tokens. They forbid the usage of Tailwind or primitive HTML elements, so that AI agents always respect their design decisions.
+- 💸 [Certificates.dev: Free React Weekend. Unlimited access to 9 chapters, 49 quiz questions, 13 coding challenges, and a trial exam. 27-28 June](https://certificates.dev/react/free-weekend?utm_source=twir&utm_medium=newsletter&utm_campaign=react_free_weekend_june_2026&friend=TWIR)
+- 📦 [Hydrogen developer preview](https://hydrogen.shopify.dev/update/hydrogen-developer-preview) \- Shopify’s framework, initially leaning on Remix/React, is becoming a framework/runtime agnostic toolkit, designed in partnership with the Next.js team.
+- 📦 [StyleX 0.19 \- `@stylexjs/atoms` for Tailwind-like inline atomic styles, ESLint 10 compatibility](https://github.com/facebook/stylex/blob/main/CHANGELOG.md#0190-jun-14-2026)
+- 📦 [React Doctor GitHub Action](https://www.react.doctor/docs/ci-and-prs/github-actions-setup)
+- 📦 [Visx 4.0 \- Low-level visualization components from Airbnb \- Support for React 19](https://github.com/airbnb/visx/releases/tag/v4.0.0)
+- 📦 [Remotion 4.0.475 \- Interactively change your code with Remotion Studio](https://github.com/remotion-dev/remotion/releases/v4.0.475)
+- 📦 [Rsbuild Plugin React Router 0.2 \- Support for Rsbuild/Rspack v2](https://github.com/rstackjs/rsbuild-plugin-react-router/releases/tag/rsbuild-plugin-react-router%400.2.0)
+- 📦 [Ink 7.1 \- CLI renderer \- Add `suspendTerminal()` to hand the terminal to a child process](https://github.com/vadimdemedes/ink)
+- 📦 [TanStack AI Beta \- The Switzerland of AI Tooling Grows Up](https://tanstack.com/blog/tanstack-ai-beta) \- Comes with first-class React support.
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -64,9 +88,9 @@ It works like magic in the background:
 
 Use this tutorial to connect LogTape + Sentry and make every log searchable, queryable, and connected to your traces. When something breaks, you'll get the full picture: log events, error context, and Session Replay, all linked by trace ID.
 
-*   Filter by user ID, order ID, or any custom field
-*   Attach context once, inherit it everywhere
-*   Alert when log patterns spike before users notice
+- Filter by user ID, order ID, or any custom field
+- Attach context once, inherit it everywhere
+- Alert when log patterns spike before users notice
 
 [See the full recipe ➡️](https://sentry.io/cookbook/structured-logging-logtape/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=logs-fy27q1-cookbook&utm_content=newsletter-logtape-secondary-trysentry)
 
