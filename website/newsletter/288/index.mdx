@@ -6,15 +6,13 @@ date: 07-01-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
-<Todo />
+This week, the Next.js 16.3 preview makes the headlines, while the React Compiler remains a hot topic.
+
+On the React Native side, Expo unexpectedly shipped a new SDK.
 
 Let's dive in!
-
-*   🗓️ [Chain React](https://ti.to/chainreact/chainreact2026/discount/TWIR) - 🇺🇸 Portland - 30-31 July. Last call to secure your ticket! Join the React Native community for 2 days of amazing talks and networking. Get a 15% discount with code "TWIR".
-
-*   🗓️ [React Summit US](https://reactsummit.us/?utm_source=thisweekinreact) - 🇺🇸 New York - 17 & 20 Nov. Call for Papers is open until July 9! Don't miss your chance to share your React stories on stage. Get a 10% discount with code "TWIR".
 
 <!-- truncate -->
 
@@ -47,7 +45,51 @@ It works like magic in the background:
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Next.js 16.3 Preview - Instant Navigations](/emails/issues/288/next.jpg)](https://nextjs.org/blog/next-16-3-instant-navigations)
+
+**[Next.js 16.3 Preview - Instant Navigations](https://nextjs.org/blog/next-16-3-instant-navigations)**
+
+Next.js 16.3 is now in preview and will be stabilized in the coming weeks. This sneak peek focuses on a new opt-in feature called Instant Navigations, improving on top of Cache Components. This addresses the loudest criticism of the App Router: server-driven navigations feel like clicking a website, not an app.
+
+With this new feature, you will have to make a very explicit choice whenever you `await` some data on the server, nicely presented in an Instant Insights dev panel to surface slow navigations:
+
+- Stream with `<Suspense>`
+- Cache with `’use cache’`
+- Block with `export const instant = false;`
+
+There’s more:
+
+- Playwright `instant()` test helper \- Assert what must be instantly visible after a link click.
+- Partial Prefetching \- Instead of prefetching a page per link in the viewport, Next.js will now prefetch a reusable shell per route. You can still prefetch links more aggressively (opt-in).
+
+Also related:
+
+- 🦋 [Dan Abramov joined the Next.js team at Vercel, part-time](https://bsky.app/profile/danabra.mov/post/3mp5b3nd3ws2k)
+- 📜 [Next.js 16.3: AI Improvements](https://nextjs.org/blog/next-16-3-ai-improvements) \- Bundled docs, first-party skills, Agent Browser with React introspection, actionable errors, improved MCP server, and docs as Markdown.
+- 📜 [Turbopack: What's New in Next.js 16.3](https://nextjs.org/blog/next-16-3-turbopack) \- Reducing dev server memory by up to 90%, up to 5.5x faster rebuilds with persistent cache, experimental React Compiler in Rust, `import.meta.glob` API, faster HMR and dev startup.
+
+---
+
+- 🗓️ [React Summit US](https://reactsummit.us/?utm_source=thisweekinreact) - 🇺🇸 New York - 17 & 20 Nov. Call for Papers is open until July 9! Don't miss your chance to share your React stories on stage. Get a 10% discount with code "TWIR".
+- 👀 [React Docs \- `use()` API Reference](https://react.dev/reference/react/use) \- This React API docs page has been entirely rewritten, also explaining important concepts such as how Promises must be cached on the client.
+- 👀 [ESLint Plugin React \- ESLint v10 compatibility progress](https://github.com/jsx-eslint/eslint-plugin-react/pull/3979) \- React users of this ESLint plugin have been stuck on ESLint v9 for a while. Thankfully, v10 support has just been merged into the Import plugin, which should also unlock the React plugin compatibility.
+- 👀 [Vercel and Shopify are rebuilding Hydrogen](https://vercel.com/blog/vercel-and-shopify-are-rebuilding-hydrogen) \- Vercel is helping Shopify improve its proprietary Hydrogen e-commerce framework. Initially based on React/Remix, the new version should be more portable, supporting Svelte, Nuxt, Next.js, and various server runtimes.
+- 📜 [Rolldown Pulls Rust React Compiler Integration After Binary Size Increase](https://socket.dev/blog/rolldown-pulls-rust-react-compiler-integration) \- Nicely summarize the tradeoffs of integrating Rust extensions in frontend tools, and whether it’s a good idea for a framework-agnostic tool to have a first-class integration with React. Oxc blocked the integration until it’s slimmed down (in progress), while Rspack chose to ship the Compiler now and optimize incrementally.
+- 📜 [React Compiler Is A Retrofit](https://longho.dev/posts/react-compiler-is-a-retrofit/) \- Argues that, unlike Solid/Svelte, the React Compiler optimizes a runtime model that was not initially designed around a compiler. It can increase bundle size and make the memoization contract of your APIs less explicit. It is safer to use it as a linter rather than a compiler.
+- 📜 [Different hydration and rendering strategies](https://neciudan.dev/hydration-and-rendering-strategies) \- Explains how much JS runs between "looks ready" and "actually works", across every rendering strategy, including non-React ones.
+- 📜 [React Testing Questions That Trip Up Engineers](https://howtotestfrontend.com/resources/react-testing-interview-questions) \- Covering the role of `act()`, testing implementation details, overmocking, and challenges like testing IntersectionObserver or drag-and-drop.
+- 📜 [Open a Modal Dialog in React with the Invoker Commands API](https://sergiodxa.com/tutorials/open-a-modal-dialog-in-react-with-the-invoker-commands-api) \- For simple modal dialogs, modern browsers support opening/closing of a `<dialog>` with a declarative HTML API, no need for `useState()` nor any JS.
+- 📦 [Astryx \- Meta’s open-source design system, built on React and StyleX](https://astryx.atmeta.com/) \- Meta released an OSS beta version of their design system, built over 8 years and powering 13000+ internal apps, using StyleX atomic CSS-in-JS library. It’s not a headless lib, but highly themable with design tokens and the ability to eject the components to customize them entirely.
+- 📦 [Rspack 2.1 \- React Compiler in Rust, TanStack Start support, perf improvements, TypeScript 7, `import.meta.glob()`, and more](https://rspack.rs/blog/announcing-2-1) \- Rspack now has a first-class integration with the React Compiler through SWC, reporting it being 7-13x faster than the Babel version. Also, TanStack Start now supports Rsbuild 2.1 through a plugin.
+- 📦 [shadcn/ui \- Chat interface components, `@shadcn/react`](https://ui.shadcn.com/docs/changelog/2026-06-chat-components) \- This Chat UI update also takes the opportunity to introduce a new package for unstyled, headless React components. For now, there’s only a single `<MessageScroller>` primitive, but more could come later?
+- 📦 [Storybook for TanStack React](https://storybook.js.org/blog/storybook-for-tanstack-react/) \- A dedicated Storybook framework for TanStack-powered React apps. This provides first-class, type-safe support for TanStack Router, Start, and Query.
+- 📦 [Takumi 2.0 RC \- Render JSX to images with a single Rust binary](https://takumi.kane.tw/) \- A quite compelling alternative to Satori.
+- 📦 [Vinext 0.2 \- Revamped init command, prerender, image optimizations, fixes](https://github.com/cloudflare/vinext/releases/tag/vinext%400.2.0) \- Cloudflare’s fork of Next.js has been under active development since its initial announcement.
+- 📦 [React-Router 8.1 \- Agent Skills Installation, Observability Metadata](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v810)
+- 📦 [nuqs 2.9 \- Support for React-Router v8, add history to adapters `defaultOptions`](https://github.com/47ng/nuqs/releases/tag/v2.9.0)
+- 📦 [Frond \- Effect-powered frontend runtime for React and MobX-facing application state](https://frondruntime.dev/)
+- 📦 [RedwoodSDK 1.5 \- Vite 8 support](https://github.com/redwoodjs/sdk/releases/tag/v1.5.0)
+- 🎥 [The Build Log S1E02 \- Tanner Linsley Built TanStack to Outlive Him](https://codetv.dev/series/build-log/miami/tanner-linsley)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -69,23 +111,64 @@ By the way, Atomic CRM ships with free SSO and you can host it anywhere, so your
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Expo SDK 57](/emails/issues/288/expo.jpg)](https://expo.dev/changelog/sdk-57)
+
+**[Expo SDK 57](https://expo.dev/changelog/sdk-57)**
+
+It feels like Expo SDK 56 just got released, and we’re already on SDK 57, even skipping the beta phase\!?
+
+Since RN 0.86 got released with no breaking changes, the Expo team decided to cut the new release sooner than usual. It’s a test of a new release cadence that will follow RN releases more closely. React Native’s move towards stability should make it easier to offer the latest changes almost immediately. Why not do it as a part of the SDK 56 update, then? There are still many changes, and it’s better to make the upgrade intentional to avoid unexpected errors.
+
+RN 0.86 features are now available in Expo: first-class edge-to-edge support on Android, light/dark mode emulation in React Native DevTools, and rendering, layout, and animation fixes. Expo 57 also comes with a list of various Expo-related improvements.
+
+---
 
 - 💸 [PostHog - Karpathy's Autoresearch found a 3-year-old bug in our query engine (and improved performance by 11%)](https://go.posthog.com/twir-jul1)
+- 👀 [Expo PR \- App Intents \- iOS Apple Intelligence, App Shortcuts, Siri](https://github.com/expo/expo/pull/47207) \- An early plan and work to support intents in Expo with data provided from JS.
+- 👀 [Expo Workflow \- Maestro Testing: Insights, Clearer Results, and Faster Retries](https://expo.dev/changelog/maestro-testing-improvements)
+- 📖 [Callstack \- Ultimate Guide to React Native Optimization \- 2026 Edition](https://www.callstack.com/ebooks/the-ultimate-guide-to-react-native-optimization)
+- 🗓️ [Chain React](https://ti.to/chainreact/chainreact2026/discount/TWIR) - 🇺🇸 Portland - 30-31 July. Last call to secure your ticket! Join the React Native community for 2 days of amazing talks and networking. Get a 15% discount with code "TWIR".
+- 📜 [Less Boilerplate, More Type Safety: React Navigation 8's Typed Hooks](https://www.callstack.com/blog/less-boilerplate-more-type-safety-react-navigation-8s-typed-hooks) \- Explaining hooks type-safety improvements coming in React Navigation v8, a significant upcoming release currently in alpha.
+- 📜 [Chasing a Phantom Jump: How We Made Pingo's Animations Smooth on Low-End Android](https://blog.margelo.com/profiling-skia-reanimated-low-end-android)
+- 📜 [How Expensify Uses Agent-Device for Mobile Bug Evidence and Profiling](https://www.callstack.com/blog/how-expensify-uses-agent-device-for-mobile-bug-evidence-and-profiling)
+- 📜 [Lynx × Rspack 2.0: Faster, Smaller, Closer to the Web](https://lynxjs.org/next/blog/lynx-rspack-2)
 - 💸 [Drizz: E2E testing for React Native that doesn't break every release. No selectors, no Appium, no XPaths. Just plain English + AI](https://www.drizz.dev?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=twir_w2&utm_content=rn-testing)
+- 📦 [React Native Windows 0.84 \- Aligns with RN 0.84.1, onClick/onAuxClick, Imperative Focus, Theme-Aware Text, Input-Handling Parity](https://devblogs.microsoft.com/react-native/react-native-windows-v0-84-is-here/)
+- 📦 [VisionCamera 5.1 \- Better support for external Cameras, Scan QR codes in images, native default Camera selection](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v5.1.0)
+- 📦 [Rollipop \- Rolldown-Powered Metro Alternative for React Native (Alpha)](https://github.com/rollipop-dev/rollipop)
+- 📦 [Legend List 3.2 & 3.3 \- onFirstVisibleItemChanged, experimental_adaptiveRender improvements, Fabric performance improvements](https://github.com/LegendApp/legend-list/releases/tag/v3.2.0)
+- 📦 [Hermes 260318099 \- JSON 2.7-3.4x Faster, Set Ops, Iterator Helpers, TS Transform](https://github.com/facebook/hermes/blob/static_h/doc/blog/2026-06-05-new-hermes-stable-release.md)
+- 📦 [Uniwind 1.10 \- RTL safe area classes, CSS min()](https://github.com/uni-stack/uniwind/releases/tag/v1.10.0)
+- 📦 [Nitro 0.36 \- Union Enum Variants Support](https://github.com/mrousavy/nitro/releases/tag/v0.36.0)
+- 📦 [Sentry 8.16 \- Expo Router ErrorBoundary Capture](https://github.com/getsentry/sentry-react-native/releases/tag/8.16.0)
+- 📦 [RN CLI 20.2 \- Support DeviceHub for Xcode 27+, CVE and Bug Fixes](https://github.com/react-native-community/cli/releases/tag/v20.2.0)
+- 📦 [Argent 0.12 & 0.12 \- Physical Android support, Vega device support, Electron support, `await-ui-element` tool](https://github.com/software-mansion/argent/releases/tag/v0.13.0)
+- 📦 [Agent Device 0.18 \- CDP Remote Bridge, Web Screen Recording, Device Leasing](https://github.com/callstack/agent-device/releases/tag/v0.18.0)
+- 📦 [Better Maps 1.0 \- Nitro Modules Maps Library, Native Marker Clustering, Unified Map API](https://github.com/gmi-software/react-native-better-maps)
+- 📦 [Better Clustering 1.0 \- Nitro Powered Alternative for react-native-map-clustering with the Same API](https://github.com/gmi-software/react-native-better-clustering)
+- 📦 [Super Calendar 2.0 \- Universal, gesture-driven, virtualized calendar and date picker, built on top of Reanimated and Legend List](https://github.com/afonsojramos/super-calendar/)
+- 🎥 [Callstack \- Redraw for Effects Beyond Skia | Interview With William Candillon](https://www.youtube.com/watch?v=dYEaN7ZqFmo)
+- 🎙️ [Software Mention Podcast \- How Partiful Became Google's Best App & Why They Chose React Native | Alex Chou & Tomek Zawadzki](https://www.youtube.com/watch?v=I4Wlu2BZEsw)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📜 [VSCode \- Iterating faster with TypeScript 7](https://code.visualstudio.com/blogs/2026/06/26/iterating-faster-with-ts-7) \- VSCode migrated to the TS 7 native compiler incrementally, type checking dropped from 36s to 5s.
+- 📜 [Blocking Install Scripts Is Not a Silver Bullet](https://nodesource.com/blog/npm-v12-install-scripts-not-a-silver-bullet) \- Package managers blocking postinstall scripts prevent a whole class of supply chain attacks, but malware can move to import time.
+- 📦 [Node.js 26.4 \- Package Maps, VirtualFileSystem](https://nodejs.org/en/blog/release/v26.4.0) \- New exciting experimental features just landed\! Providing a Package Map, emitted by your package manager, can make Node.js module resolution more reliable and skip costly file-system scanning. VirtualFileSystem lets you create module graphs in-memory that you can import.
+- 📦 [pnpm 11.8 & 11.9 \- Dry runs, Node.js package maps, SBOM improvements, tarball integrity](https://pnpm.io/blog/releases/11.8) \- pnpm is following Yarn, bringing support for the Node.js Package Maps described above. pnpm is also working on [pnpr](https://pnpm.io/pnpr/), its own Rust-based registry server/proxy that can resolve dependency graphs server-side.
+- 📦 [Prettier 3.9 \- Major parser upgrades (Markdown, YAML, Flow, GraphQL), Formatting improvements](https://prettier.io/blog/2026/06/27/3.9.0) \- They are also working on upgrading the MDX parser to v3.
+- 📦 [Deno 2.9 \- Deno Desktop for WebView apps, Node.js and package managers compatibility, performance, CSS module imports, and more](https://deno.com/blog/v2.9)
+- 📦 [Webpack 5.108 \- Universal target, Bun and Deno targets, HTML entrypoints, and more](https://webpack.js.org/blog/2026-06-25-webpack-5-108/)
+- 📦 [Flow 0.319 \- Porting the Compiler from OCaml to Rust, 2x faster type-checking](https://medium.com/flow-type/flows-ocaml-to-rust-port-78b95bcf49e9)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/288/meme.jpg)](https://x.com/ItsPatrickU/status/2070248041689620740)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/288/meme2.jpg)](https://x.com/birch_js/status/2071929847346258210)
 
 See ya! 👋
