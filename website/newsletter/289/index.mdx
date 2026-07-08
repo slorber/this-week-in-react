@@ -1,18 +1,19 @@
 ---
 slug: /289
-title: "This Week In React #289: ..."
+title: "This Week In React #289: Base UI, shadcn, Vinext, Next.js WS, ChatGPT, Takumi, Shaders, Unlayer Elements | RN cleanup, Navigation, Agents, Sniffler, Metro, Tapflow, ADK, Voltra, WebView, Iso, Audio | TypeScript, ES2026, HTTP QUERY, Node.js"
 authors: [slorber]
 date: 07-08-2026
-unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
-<Todo />
+Things are relatively calm on the React side this week, but it's still worth highlighting Base UI becoming the default headless lib in shadcn, and Vinext getting close to production-ready.
 
-Let's dive in!
+On the mobile side, React Native 0.87 went full Marie Kondo. We also have a nice preview of React Navigation 8 and the relentless stream of AI tooling updates.
 
--  🗓️ [React Native Connection](https://reactnativeconnection.io/?utm_source=thisweekinreact.com) -  🇫🇷 Paris - 24 Sept. Amazing lineup featuring Cédric Van Putten (Expo), Satyajit Sahoo (React Navigation), Jay Meistrich (Legend List), and Filip Kamiński (Argent)! Get a 15% discount with code "TWIR.
+TypeScript 7.0 is out, and it's 10x faster. Ecma has officially approved ES2026, and HTTP is finally getting its long-awaited QUERY method.
+
+Enjoy!
 
 <!-- truncate -->
 
@@ -37,7 +38,22 @@ Without a trace, you're stuck reproducing locally, adding logs, and guessing. Wi
 ## ⚛️ React {#react}
 
 - 💸 [Formity – Multi-step forms as programmable flows with branching, loops, jumps, and variables.](https://formity.app/)
+- 👀 [Next.js RFC \- First-class WebSocket support in App Router Route Handlers](https://github.com/vercel/next.js/discussions/95514) \- This proposes a `NextResponse.upgrade()` to bring WS support in Route Handlers, based on CrossWS. Note that [Vercel recently added WebSocket support](https://vercel.com/changelog/websocket-support-is-now-in-public-beta), and it should also work for self-hosted setups and compatible deployment adapters.
+- 📜 [Reverse Engineering ChatGPT Web: How OpenAI Built for a Billion Users](https://performance.dev/chatgpt) \- An independent analysis of the ChatGPT stack: Tailwind v4, Radix, TanStack Query, and their migration story from Next.js to React Router v7 in Framework Mode. They optimize toward making the chat input interactive as soon as possible.
+- 📜 [I let React Compiler handle memoization: Here's what actually broke](https://blog.logrocket.com/react-compiler-memoization-what-actually-broke/) \- The Compiler broke the app due to React Hook Form’s `watch()` method, and Chart.js event handler got stale data. The DevTools Memo ✨ badge can be misleading: it only means the component was processed, and not necessarily perfectly optimized.
+- 📜 [Hidden Cost of Hydration Mismatches](https://3perf.com/blog/hydration-mismatch/) \- A single mismatch can push your Largest Contentful Paint (LCP) from green to red, even more if a font loads and resizes text. It’s important to fix those hydration mismatches, but `<Suspense>` can also limit the damage.
+- 📜 [Using TanStack Start with Cloudflare Workers](https://master.dev/blog/cloudflare-workers-and-hyperdrive-with-tanstack-start/) \- A practical 2-part intro to hosting TanStack Start on Cloudflare Workers, also explaining how to connect efficiently to a DB with Hyperdrive and connection pooling.
 - 💸 [Product for Engineers - 24 tips for giving S-tier demos](https://go.posthog.com/twir-jul8)
+- 📦 [Vinext 1.0 Beta \- Next.js on Vite](https://github.com/cloudflare/vinext/releases/tag/vinext%401.0.0-beta.0) \- Cloudflare’s fork of Next.js is almost ready for prime time, removing the experimental label. Faster builds, smaller bundles, increased parity with Next.js, and improved cross-platform support. 1.0 announced for later this year, focusing on reliability, security, and complete Next.js compatibility.
+- 📦 [shadcn 4.13 \- Base UI as the Default](https://ui.shadcn.com/docs/changelog/2026-07-base-ui-default) \- After wide community adoption, Base UI is now the default headless lib in the shadcn CLI and documentation. It replaces Radix, which remains supported. Reminder: the same devs who created Radix now work on Base UI.
+- 📦 [Takumi 2.0 \- Renders JSX/HTML to images without a browser, using a single Rust binary](https://github.com/kane50613/takumi/releases/tag/takumi%402.0.0) \- Major release for this lib challenging Satori and `next/og` on JSX-based social card rendering.
+- 📦 [Paper Shaders \- Zero-dependency canvas shaders for React and vanilla JS](https://shaders.paper.design/) \- Now free and fully open source.
+- 📦 [Unlayer Elements \- React components for Emails, Web pages, and PDFs](https://github.com/unlayer/elements) \- Target 3 platforms from the same component tree.
+- 📦 [React Hook Form 7.81 \- New `<FieldArray>` component, performance improvements](https://github.com/react-hook-form/react-hook-form/releases#release-v7.81.0)
+- 📦 [React Google Maps 1.9 \- Keyboard events on `AdvancedMarker`, 3D Map example](https://github.com/visgl/react-google-maps/releases/tag/v1.9.0)
+- 📦 [React Doctor 0.7 \- Caching and warm rescan performance improvements](https://github.com/millionco/react-doctor/releases/tag/react-doctor%400.7.0)
+- 🎙️ [This Month in React 2026-06 \- React Compiler is getting rusty, what does AI mean for engineering culture](https://www.reactiflux.com/transcripts/tmir-2026-06)
+- 🎙️ [Señors At Scale \- URL State at Scale with François Best | nuqs, React, Typescript](https://www.youtube.com/watch?v=b3AYuuRdyf4)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -66,23 +82,81 @@ It works like magic in the background:
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![React Navigation 8.0 - July Progress Report](/emails/issues/289/rnav.jpg)](https://reactnavigation.org/blog/2026/07/08/react-navigation-8.0-july-progress/)
+
+[**React Navigation 8.0 \- July Progress Report**](https://reactnavigation.org/blog/2026/07/08/react-navigation-8.0-july-progress/)
+
+A new progress report dropped from the React Navigation team. It’s even bigger than the last one shared in March.
+
+Highlights include:
+
+- **Suspense-enabled navigation** \- Navigation state updates are compatible with concurrent rendering, and navigation actions are wrapped in transitions that can wait for pending data loadings or be interrupted.
+- **Experimental data loaders** \- This lets you prefetch data before a screen renders, using your favorite data fetching libraries.
+- **Typed hooks in dynamic navigators**
+- **Simpler types for custom navigators**
+- **Standard Navigation for library authors** \- A compatibility layer for RN routers to make it possible to create universal custom navigators that work with both React Navigation and the recent Expo Router fork
+
+And more\! Check out the full report to learn about all the upcoming features and changes.
+
+---
+
+**The rise of native cloud agentic tooling**
+
+Running AI agents on native apps has previously been limited to local devices. Native dependencies, simulator management, and heavy build tools have been a major bottleneck for cloud-based agent infrastructure. That gap is closing fast thanks to simultaneous updates from Callstack and Software Mansion:
+
+- 📜 [Closing the Agent Loop: Autonomous React Native Bug Reproduction with Argent](https://swmansion.com/blog/closing-the-agent-loop-autonomous-react-native-bug-reproduction-with-argent/)
+- 🐦 [Argent Lens](https://x.com/swmansion/status/2074150320251318507) \- New design review tool to help you experiment with multiple design variants to get the look you want.
+- 📦 [Argent 0.14](https://github.com/software-mansion/argent/releases/tag/v0.14.0) \- Argent Lens, tvOS, Android TV, Vega OS, and make it a big update that unlocks cloud agents and expands support beyond mobile to TV platforms.
+- 📦 [Agent Device 0.19](https://github.com/callstack/agent-device/releases/tag/v0.19.0) \- BrowserStack, AWS Device Farm, 6x faster relaunch, derive command, interaction guarantees. The new out-of-viewport coordinate tap warnings will be useful for ensuring consistency in automated QA testing.
+
+---
 
 - 💸 [Maestro MCP - Let your AI agent write, run, and maintain mobile E2E tests](https://maestro.dev/mcp?utm_source=this-week-in-react)
+- 👀 [React Native 0.87 RC.0 \- Big cleanup release](https://github.com/react/react-native/blob/main/CHANGELOG.md#v0870-rc0) \- This upcoming release cleans up a lot of things, removing many deprecated APIs such as `InteractionManager` or `<SafeAreaView>`, and restricting deep path imports. New deprecations land too, such as `<ImageBackground>`, to be removed later. See also this umbrella issue: [Remove deprecated APIs](https://github.com/react/react-native/issues/57384). All these moves React Native closer to v1 – still “on the horizon” – by reducing its API surface.
+- 🗓️ [React Native Connection](https://reactnativeconnection.io/?utm_source=thisweekinreact.com) -  🇫🇷 Paris - 24 Sept. Amazing lineup featuring Cédric Van Putten (Expo), Satyajit Sahoo (React Navigation), Jay Meistrich (Legend List), and Filip Kamiński (Argent)! Get a 15% discount with code "TWIR".
+- 📜 [We Built the Same App in KMP and React Native – Here's What We Found](https://swmansion.com/blog/we-built-the-same-app-in-kmp-and-react-native-here-s-what-we-found/) \- KMP is faster on Android, slightly similar to React Native iOS.
+- 📜 [Mobile Module Federation with Re.Pack: When Runtime Delivery Is Worth the Complexity](https://www.callstack.com/blog/mobile-module-federation-with-re-pack-when-runtime-delivery-is-worth-the-complexity) \- Module Federation pays off when multiple teams need independent JS release cadences within the same app.
+- 📜 [How we made Hybrid iOS apps compile 39% faster with React Native Brownfield](https://www.callstack.com/blog/how-we-made-hybrid-ios-apps-compile-39-faster-with-react-native-brownfield) \- Using prebuilt xcframework.
 - 💸 [Drizz - Tired of rewriting test scripts after every UI change? Describe your test in plain English and let Vision AI handle the rest](https://www.drizz.dev?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=twir_w3&utm_content=ui-change-pain)
+- 📦 [Sniffler \- Run only the E2E tests your changes can affect](https://www.callstack.com/blog/introducing-sniffler-run-only-the-e2e-tests-your-changes-can-affect) \- New Callstack tool to map your code diff to E2E tests it can affect, so your CI can skip unaffected tests.
+- 📦 [Tapflow \- Self-hosted iOS & Android simulator streaming for the whole team](https://github.com/jo-duchan/tapflow)
+- 📦 [AI ADK \- On-device Gemini Nano or cloud Gemini with tool calling and multi-turn sessions](https://github.com/callstackincubator/ai/tree/main/packages/adk)
+- 📦 [Enriched Markdown 0.7 \- Switch to RaTeX for faster rendering, improved RTL support, highlight spans, and better accessibility with VoiceOver/TalkBack labels](https://github.com/software-mansion/react-native-enriched-markdown/releases/tag/v0.7.0)
+- 📦 [Sentry 8.17 \- Experimental Turbo Module performance tracking, Expo Router ErrorBoundary auto-wrap, standalone app start tracing](https://github.com/getsentry/sentry-react-native/releases/tag/8.17.0)
+- 📦 [Nitro Fetch 1.5 \- Support fetch `credentials` option](https://github.com/margelo/react-native-nitro-fetch/releases/tag/v1.5.0)
+- 📦 [Voltra 2.1.0 \- Dynamic Widgets with native-side rendering](https://github.com/callstackincubator/voltra/releases/tag/v2.1.0)
+- 📦 [WebView 15.0 \- Windows New Architecture support and requirement (breaking change)](https://github.com/react-native-webview/react-native-webview/releases/tag/v15.0.0)
+- 📦 [Metro 0.86.0 \- Source maps use 50% less memory and serve 2x faster](https://github.com/react/metro/releases/tag/v0.86.0)
+- 📦 [Iso \- Isolated React Native dev environments per project or worktree](https://github.com/janicduplessis/rn-iso)
+- 📦 [Bottom Sheet 0.16 \- Improved drag behavior](https://github.com/software-mansion-labs/react-native-bottom-sheet/releases/tag/v0.16.0)
+- 📦 [RN Audio 0.13 \- Stable `<Audio/>` component, MediaElementAudioSourceNode for custom effects, filters, and signal processing](https://github.com/software-mansion/react-native-audio-api/releases/tag/0.13.0)
+- 📦 [Rock 0.14 \- Add support for generating XCFramework from static library](https://github.com/callstackincubator/rock/releases/tag/v0.14.0-latest)
+- 📦 [Nitro Vision Kit \- On-Device background removal & image classification](https://github.com/sagawrr/react-native-nitro-vision-kit)
+- 🎥 [Where Reanimated Goes Next | Interview With Bartłomiej Błoniarz](https://www.youtube.com/watch?v=T3ov18PfZRU)
+- 🎥 [Why Nitro Is More Than a Faster Bridge | Interview With Marc Rousavy](https://www.youtube.com/watch?v=HueOt0ctSGQ)
+- 🎙️ [React Universe On Air \- React Native Ease: Faster Native Animations with Janic Duplessis](https://www.callstack.com/podcasts/react-native-ease-platform-native-animations-without-the-extra-work)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📣 [Ecma International approved ES2026](https://ecma-international.org/news/ecma-international-approves-new-standards-14/) \- Now that it’s officially approved, let’s remind you [what's new in ECMAScript 2026](https://pawelgrzybek.com/whats-new-in-ecmascript-2026/), including `Array.fromAsync()`, `Error.isError()`, and `Map.getOrInsert()`.
+- 📣 [The HTTP QUERY Method is now an IETF Proposed Standard](https://www.rfc-editor.org/info/rfc10008/) \- HTTP now officially has a QUERY method. It’s similar to GET (safe, idempotent, cacheable) but allows a body/payload. Don’t be fooled by RFC / Proposed Standard: many things you use are at this stage, including HTTP 2\.
+- 📜 [Staged publishing for supply-chain security](https://nuqs.dev/blog/staged-publishing-for-supply-chain-security) \- After the TanStack compromise, `nuqs` hardened its release pipeline, adopting the new npm staged publishing feature with a `draft->validate->finalize` flow and the ability to check tarball integrity locally, sharing many other security tips along the way.
+- 📜 [Getting Started with CSS Anchor Positioning](https://www.joshwcomeau.com/css/anchor-positioning/) \- This lets you position a floating element (tooltip, dropdown) near another element in pure CSS, with overflow flipping behavior. This interactive blog post focuses on the critical parts of this large API. With 81% browser support, it’s a good time to learn it\!
+- 📦 [TypeScript 7.0 \- 10x faster native port of TypeScript](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/) \- Here it is\! The battle-tested, production-ready, much faster TypeScript port in Go is officially live. Up to 16x type-checking speed with parallelization. It also moves to `strict: true` by default, removes deprecations, and improves watch mode.
+- 📦 [Node 26.5 \- Support for Import Text (experimental), `blob.textStream`, `ReadableStreamTee`](https://nodejs.org/en/blog/release/v26.5.0) \- Import Text is quite exciting for docs sites looking to document code snippets. Unfortunately, behind a flag for now.
+- 📦 [Vite+ Beta \- Unifies the runtime, package manager, and frontend tools](https://voidzero.dev/posts/announcing-vite-plus-beta) \- Stable, but not yet feature-complete.
+- 📦 [ESLint Plugin TailwindCSS 4.0 \- Support for Tailwind v4](https://github.com/francoismassart/eslint-plugin-tailwindcss/releases/tag/v4.0.3)
+- 📦 [Webpack Dev Server 6.0 \- Express v5, Node.js 22.15+, ESM-only](https://github.com/webpack/webpack-dev-server/releases/tag/v6.0.0)
+- 📦 [pnpm 11.10 \- `_auth` setting for CI, `pnpm self-update` can update to v12 (the Rust port)](https://pnpm.io/blog/releases/11.10)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/289/meme.jpg)](https://x.com/colinhacks/status/2072815472970735652)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/289/meme2.jpg)](https://x.com/sebastienlorber/status/2074919497824194980)
 
 See ya! 👋
