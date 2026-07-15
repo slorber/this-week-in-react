@@ -6,9 +6,13 @@ date: 07-15-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, Konrad and Szymon from [Software Mansion](https://swmansion.com/) here.
 
-<Todo />
+This week, the React team documented how it was reorganized around working groups, a few thoughtful posts weighed React against lighter alternatives like HTMX and SolidJS, and the docs got a new section on what actually activates a Suspense boundary.
+
+On the React Native side, two RFCs caught our eye, media queries in StyleSheet and ViewTransition support, plus a Nitro Modules rewrite of Rive that's up to 94x faster.
+
+Also worth your time: the newest version of npm blocks install scripts by default.
 
 Let's dive in!
 
@@ -44,7 +48,25 @@ It works like magic in the background:
 ## ⚛️ React {#react}
 
 - 💸 [SVAR React Gantt — A modern React Gantt chart for project scheduling, from simple timelines to enterprise planning](https://svar.dev/react/gantt/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=jul15)
+- 👀 [Meet the new React Team \- Reorganized by Working Groups](https://react.dev/community/team) \- The newly refreshed team page now reflects React Foundation governance: a Leadership Council with one representative per Working Group, and members contributing to Working Groups clearly identified with a badge.
+- 📖 [React Docs \- What activates a Suspense boundary](https://react.dev/reference/react/Suspense#what-activates-a-suspense-boundary) \- New React docs section with live examples covering lazy loading, reading promises with `use()`, stylesheets/fonts/images loading, streaming SSR, deferred CPU work. Includes a side-by-side of reading a Promise with use vs fetching in an Effect. TIL React reveals suspended content at most once every 300ms.
+- 🔐 [Next.js Security Release and Our Next Patch Release](https://nextjs.org/blog/next-security-release-program) \- The Next.js team plans to publish security patches roughly once a month, with advance notice of timeline and severity, so teams can plan accordingly.
+- 📣 [Better Auth is joining Vercel](https://better-auth.com/blog/better-auth-joins-vercel) \- The framework-agnostic auth library, which already acquired NextAuth/Auth.js, is now under Vercel. They're pivoting toward an "Agent Auth Protocol" for agentic workflows.
+- 📜 [Cache Components in Next.js 16](https://certificates.dev/blog/cache-components-in-nextjs) \- Flips the App Router to dynamic-by-default, letting you opt into caching with "use cache", cacheLife, and cacheTag primitives that replace legacy caching APIs to power Instant Navigations.
+- 📜 [React Compiler explained](https://neciudan.dev/react-compiler-explained) \- Shows the Compiler's actual output and how it differs from hand-written memoization, plus how to enable it.
+- 📜 [useOptimistic Already Handles Rollback in Next.js 16](https://dev.to/shubhradev/my-nextjs-16-optimistic-ui-looked-perfect-then-someone-clicked-it-five-times-fast-b2c) \- It auto-reverts to base state on a failed transition, so the manual rollback in your catch block is often redundant.
+- 📜 [HTMX and Web Components Instead of React](https://kore-nordmann.de/blog/htmx-and-web-components-instead-of-react.html) \- Mentions the issue with React being the default frontend solution and when it is an overengineering.
+- 📜 [Async hydration in Preact](https://jovidecroock.com/blog/resumed-hydration-preact/) \- Deep dive into how Preact hydration compares to React. Preact v10 can already pause hydration at Suspense boundaries, and v11 will make this more reliable with Hydration 2.0.
+- 📜 [SolidJS 2.0: A React Developer's First Look](https://morello.dev/blog/solidjs-2-react-developers-first-look) \- An overview of Solid's signals and their benefits: no dependency arrays, no stale closures, native async in the reactive graph.
+- 📜 [Exporting Next.js Server Traces with OpenTelemetry](https://blog.sentry.io/nextjs-export-traces-opentelemetry/) \- Next.js already emits server-side traces. With little work you can ship them to any OTLP endpoint, any vendor.
 - 💸 [Formity – Build onboarding, checkout, surveys, lead generation, and more with programmable multi-step forms](https://formity.app/)
+- 📦 [React Router 8.2 \- adds a Web Streams default server entry for non-Node Framework mode apps, nub package manager support](https://github.com/remix-run/react-router/releases/tag/react-router%408.2.0) \- Non-Node apps now default to renderToReadableStream; Node 22+ can opt in behind a flag.
+- 📦 [Storybook 10.5 \- Agentic Review, one-click Claude/Codex plugins, `storybook ai` MCP command, Angular-Vite preview](https://github.com/storybookjs/storybook/releases/tag/v10.5.0) \- Makes Storybook a first-class citizen for coding agents — the MCP passthrough exposes component metadata directly to AI tools.
+- 📦 [Astryx 0.1.3 \- Meta design system, built with StyleX \- Better tables, keyboard navigation, and accessibility](https://astryx.atmeta.com/blog/astryx-v0-1-3)
+- 📦 [React Email 6.7 \- Enable custom export extensions via \--extension](https://github.com/resend/react-email/releases/tag/react-email%406.7.0)
+- 🎥 [Jack Herrington Can’t Think of a Reason to Choose Next.js Anymore](https://www.youtube.com/watch?v=PpyepQmLDTY)
+- 🎥 [Ankita Kulkarni \- Next.js 16.3 Finally Fixed Slow Navigations](https://www.youtube.com/watch?v=ngIdL-fNNzw)
+- 🎙️ [Podrocket \- Async React with Vercel's Aurora Scharff](https://podrocket.logrocket.com/async-react-with-vercels-aurora-scharff)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -82,15 +104,41 @@ Book your spot at [agent.sh](https://www.agent.sh/?utm_campaign=agent&utm_source
 ## 📱 React-Native {#react-native}
 
 - 💸 [PostHog - A guide to growth metrics for startups that don't fit in](https://go.posthog.com/twir-jul15)
+- 💬 [RFC: Media query support in StyleSheet](https://github.com/react-native-community/discussions-and-proposals/pull/1010) \- Borrows StyleX syntax: a style property can hold a default plus `@media` branches for orientation and color scheme. Styles resolve natively on the UI thread, so switching to dark mode no longer triggers React re-renders.
+- 💬 [RFC: ViewTransition support in React Native](https://github.com/react-native-community/discussions-and-proposals/pull/1011) \- Discussion to bring React's `<ViewTransition>` component to Fabric for shared, enter, and exit transitions, an alternative to Reanimated's layout and shared element animations.
+- 💬 [Proposal \- React Native out-of-tree platform API](https://github.com/react-native-community/discussions-and-proposals/discussions/1009) \- Doug Lowder, maintainer of react-native-tvos, proposed a new `Platform.Variant` API (mobile, desktop, tv, headset, web), so that react-native forks don’t have to override the Platform API.
+- 🎨 [Expo Demos \- Gallery of 30 community-built UI demos](https://expo.dev/demos) \- Covers WebGPU, shaders, Live Activities, and the new SDK 55 Stack API. Good reference material for advanced UI patterns in mobile apps.
+- 📜 [Rewriting Rive React Native with Nitro Modules: up to 94× Faster Multi-View Loads](https://blog.margelo.com/rewriting-rive-react-native-with-nitro-modules) \- Nitro’s HybridObjects turn a loaded .riv asset into a native object you preload once and share across views, instead of re-parsing per view \- 94 times faster multi-view loads and 4.7 times less memory than the old TurboModules SDK.
+- 📜 [Building balanced mobile layouts: nesting tabs and drawers with Expo Router](https://expo.dev/blog/nesting-tabs-and-drawers-with-expo) \- Wrapping bottom tabs in a drawer is a common layout that's tricky to get right in file-based routing \- the article focuses on theming and gesture handling that won't fight the tabs.
+- 📜 [Notification Actions in Expo: Let Users Respond Without Opening Your App](https://codewithbeto.dev/blog/expo-notification-actions) \- Let users respond to notifications without opening the app.
+- 📜 [Migrating to native stack navigation, with a surprise from iOS 26](https://thoughtbot.com/blog/migrating-to-native-stack-navigation-with-a-surprise-from-ios-26) \- Switching to native stack made the app inherit Liquid Glass styling on iOS 26\. The `UIDesignRequiresCompatibility` Info.plist key opts out, and watch out: native headers clip anything taller than 44pt.
+- 📜 [Expo \- Moving away from @expo/vector-icons](https://expo.dev/blog/moving-away-from-expo-vector-icons?utm_source=twitter&utm_medium=social&utm_campaign=sdk-56) \- The `@expo/vector-icons` wrapper package will be deprecated in favor of direct `@react-native-vector-icons/*` usage.
 - 💸 [Drizz - One test suite for Android and iOS. No platform-specific selectors, no XPaths. Plain English tests on real devices, powered by AI](https://www.drizz.dev?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=twir_w4&utm_content=cross-platform)
-
-<Todo />
+- 📦 [React Native Screens 4.26 \- Stable Tabs API, faster iOS header updates, requires React Native 0.84+](https://github.com/software-mansion/react-native-screens/releases/tag/4.26.0) \- The native Tabs component is now stable. Experimental work on standalone FormSheet and Stack v5 toolbar menus continues.
+- 📦 [Keyboard Controller 1.22 \- New `KeyboardEffects` component to customize the iOS keyboard background](https://github.com/kirillzyusko/react-native-keyboard-controller/releases/tag/1.22.0) \- You can disable translucency or apply brand colors.
+- 📦 [Sentry React Native 8.18 \- Consume sentry-cocoa as a prebuilt xcframework on iOS](https://github.com/getsentry/sentry-react-native/releases/tag/8.18.0). The prebuilt xcframework downloads from GitHub instead of building from source, which should speed up iOS builds.
+- 📦 [React Native Auth0 5.9 \- Passwordless OTP for database connections](https://github.com/auth0/react-native-auth0/releases/tag/v5.9.0)
+- 📦 [Unistyles 3.3 \- `transformOrigin` support for shadow tree updates, background image props on Android, react-navigation inactive behavior support](https://github.com/jpudysz/react-native-unistyles/releases/tag/v3.3.0)
+- 📦 [React Native Webview 16.0 \- Removes legacy architecture support](https://github.com/react-native-webview/react-native-webview/releases/tag/v16.0.0)
+- 📦 [React Native Toast Message 2.4 \- Configurable enter/exit animations via `animationConfig`, `onShow` callback now receives `ToastShowParams`](https://github.com/calintamas/react-native-toast-message/releases/tag/v2.4.0)
+- 📦 [React Native Skia 2.8 \- `Paragraph.getPath()` and `extendedVisit()`, Reanimated is now optional, lower WASM memory use on web](https://github.com/Shopify/react-native-skia/releases/tag/v2.8.0)
+- 📦 [React Native Bottom Tabs 1.4 \- Icon rendering mode to preserve original icon colors, focused icon shown on hover with iOS Liquid Glass, tab testIDs exposed to Android E2E tools](https://github.com/callstack/react-native-bottom-tabs/releases/tag/react-native-bottom-tabs%401.4.0)
+- 📦[React Native Boost 1.6 \- Babel optimizing plugin \- Add opt-in Image optimizer](https://github.com/kuatsu/react-native-boost/releases/tag/v1.6.0)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [TC39 \- Agenda for the 115th meeting \- July 20-23](https://github.com/tc39/agendas/blob/main/2026/07.md) \- Next week, many proposals could advance, including `Promise.allKeyed()`, `JSON.parseImmutable()`, `Error.code`, `Map.take()`, Declarations in Conditionals, RegExp linear matching.
+- 💬 [pnpm RFC \- Native Monorepo Versioning](https://github.com/pnpm/rfcs/pull/18) \- Built-in release management coming to pnpm \- a native changesets alternative with per-package prerelease lanes that changesets can't structurally express. Merged this week.
+- 📜 [Rewriting Bun in Rust](https://bun.com/blog/bun-in-rust) \- Jarred Sumner used \~64 parallel Claude instances with adversarial code review to port \~535k lines of Zig, landing v1.4.0 with fewer memory bugs and \~20% smaller binaries. A striking case study in AI-driven large-scale rewrites. It cost \~$165k in API spend vs. an estimated year of engineer time.
+- 📜 [Node’s phantom dependency problem and the path to a 5x faster package manager](https://nubjs.com/blog/unblocking-the-global-virtual-store) \- The Nub team documents the challenges of using a global virtual store and node_module symlinks, already tried by pnpm and Bun. They found a way to make it reliable with a mix of symlinks and hardlinks, leading to warm installs \~5x faster than Bun. However Next.js / Turbopack and React Native / Metro present other challenges.
+- 📜 [Fetch Needs Error Codes](https://www.jasnell.me/posts/fetch-needs-error-codes) \- In-depth analysis on how fetch API drops HTTP/2 and HTTP/3 error codes, plus an ongoing proposal on how to fix it.
+- 📜 [The Siren Song of ariaNotify()](https://css-tricks.com/the-siren-song-of-arianotify/) \- The new API pushes announcements straight to screen readers, replacing brittle aria-live hacks, but like alert(), its simplicity invites overuse.
+- 📜 [Do we still need build tools?](https://olliewilliams.xyz/blog/no-build/) \- A look at common bundler tasks, and how native web standards now cover them. Bundling still wins for complex projects.
+- 📜 [Proxy and Reflect](https://piccalil.li/blog/proxy-and-reflect/?ref=main-rss-feed) \- The APIs behind proxy-based state libraries like Valtio and MobX.
+- 📦 [Native SDK \- Author native desktop apps in TypeScript or Zig](https://native-sdk.dev/) \- Vercel Labs' toolkit compiles TS and declarative markup to a single native binary \- no browser, no WebView, no JS engine, no GC. Supports macOS, Linux, Windows, and Mobile (experimental).
+- 📦 [npm 12.0 \- Install scripts opt-in by default, 2FA-bypass token deprecation](https://socket.dev/blog/npm-12) \- Install-time code execution (preinstall/install/postinstall) is blocked by default with a soft-fail approach \- major supply-chain hardening.
 
 ---
 
