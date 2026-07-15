@@ -150,3 +150,14 @@ konradarmatys:
     x: Konrad_Armatys
     github: Konrad-Armatys
     linkedin: konrad-armatys
+
+szymonbanys:
+  name: Szymon Banyś
+  title: Software Engineer - Software Mansion
+  url: https://x.com/banys0
+  image_url: https://github.com/borys3kk.png
+  page: true
+  socials:
+    x: banys0
+    github: borys3kk
+    linkedin: szymon-banys
