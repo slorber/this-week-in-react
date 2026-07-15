@@ -1,9 +1,8 @@
 ---
-slug: /ISSUENUMBER
-title: "This Week In React #290: ..."
+slug: /290
+title: "This Week In React #290: Suspense, Working Groups, Next.js, React Router, Storybook, Astryx | Media-query, ViewTransition, Platform.Variant, Nitro, Screens, KeyboardController, Skia | TC39, Bun, Nub, npm, Native SDK"
 authors: [konradarmatys, szymonbanys]
 date: 07-15-2026
-unlisted: true
 ---
 
 Hi everyone, Konrad and Szymon from [Software Mansion](https://swmansion.com/) here.
@@ -104,8 +103,8 @@ Book your spot at [agent.sh](https://www.agent.sh/?utm_campaign=agent&utm_source
 ## 📱 React-Native {#react-native}
 
 - 💸 [PostHog - A guide to growth metrics for startups that don't fit in](https://go.posthog.com/twir-jul15)
-- 💬 [RFC: Media query support in StyleSheet](https://github.com/react-native-community/discussions-and-proposals/pull/1010) \- Borrows StyleX syntax: a style property can hold a default plus `@media` branches for orientation and color scheme. Styles resolve natively on the UI thread, so switching to dark mode no longer triggers React re-renders.
-- 💬 [RFC: ViewTransition support in React Native](https://github.com/react-native-community/discussions-and-proposals/pull/1011) \- Discussion to bring React's `<ViewTransition>` component to Fabric for shared, enter, and exit transitions, an alternative to Reanimated's layout and shared element animations.
+- 💬 [RFC - Media query support in StyleSheet](https://github.com/react-native-community/discussions-and-proposals/pull/1010) \- Borrows StyleX syntax: a style property can hold a default plus `@media` branches for orientation and color scheme. Styles resolve natively on the UI thread, so switching to dark mode no longer triggers React re-renders.
+- 💬 [RFC - ViewTransition support in React Native](https://github.com/react-native-community/discussions-and-proposals/pull/1011) \- Discussion to bring React's `<ViewTransition>` component to Fabric for shared, enter, and exit transitions, an alternative to Reanimated's layout and shared element animations.
 - 💬 [Proposal \- React Native out-of-tree platform API](https://github.com/react-native-community/discussions-and-proposals/discussions/1009) \- Doug Lowder, maintainer of react-native-tvos, proposed a new `Platform.Variant` API (mobile, desktop, tv, headset, web), so that react-native forks don’t have to override the Platform API.
 - 🎨 [Expo Demos \- Gallery of 30 community-built UI demos](https://expo.dev/demos) \- Covers WebGPU, shaders, Live Activities, and the new SDK 55 Stack API. Good reference material for advanced UI patterns in mobile apps.
 - 📜 [Rewriting Rive React Native with Nitro Modules: up to 94× Faster Multi-View Loads](https://blog.margelo.com/rewriting-rive-react-native-with-nitro-modules) \- Nitro’s HybridObjects turn a loaded .riv asset into a native object you preload once and share across views, instead of re-parsing per view \- 94 times faster multi-view loads and 4.7 times less memory than the old TurboModules SDK.
