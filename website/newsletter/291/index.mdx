@@ -1,0 +1,119 @@
+---
+slug: /291
+title: "This Week In React #291: ..."
+authors: [slorber, janjaworski]
+date: 07-22-2026
+unlisted: true
+---
+
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
+
+This week we have React and Next.js security patches. React Aria becomes first-class in shadcn. A benchmark grades coding agents at real React tasks. The rise of TSRX and its upcoming framework.
+
+On the mobile side, Swift Package Manager support is finally coming.
+
+Oxlint type-aware linting is ready for prime-time, based on TypeScript v7. Meanwhile, Yuku explains how it outperforms Oxc at parsing JS.
+
+Let's dive in!
+
+<!-- truncate -->
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+<Todo />
+
+---
+
+## ⚛️ React {#react}
+
+- 🐦 [Pete Hunt joins Vercel to lead Next.js and run Frameworks](https://x.com/rauchg/status/2077870043833229692) \- The React pioneer is back\! He is the one who bet early on React for Instagram Web and convinced many of us to try it despite a lukewarm initial public reception.
+- 🐦 [Tim Neutkens about TypeScript 7 support in Next.js 16.3](https://x.com/timneutkens/status/2076771696745345363) \- `next build` uses the TS API, which will only be available in TypeScript 7.1. Until it’s released, you will be able to use `experimental.useTypeScriptCli`: typechecking will happen through the `tsc` CLI.
+- 🔐 [React \- Denial of Service in Server Functions](https://github.com/react/react/security/advisories/GHSA-wx67-qw84-cm4g) \- A high vulnerability patched in 19.0.8, 19.1.9, 19.2.8.
+- 🔐 [Next.js \- July 2026 Security Release](https://nextjs.org/blog/july-2026-security-release) \- Next.js shipping its first pre-announced monthly security release, fixing 4 high and 5 medium vulnerabilities patched in v16.2.11 and v15.5.21.
+- 👀 [React.dev PR \- Dynamic OG images for docs pages](https://github.com/reactjs/react.dev/pull/8527) \- The React website now has dynamic social cards rendered with Satori.
+- 📊 [ReactBench \- Evaluates frontier coding agents on production React work](https://www.reactbench.com/blog) \- The Million.js team (React Scan, React Doctor) launches a benchmark grading coding agents on real React tasks, checking behavior, performance, accessibility, and code quality. GPT 5.6 leads and is 6x more cost-efficient than Fable 5\.
+- 📜 [TSRX in TanStack Start: what we like, and three bugs we filed](https://www.jxd.dev/blog/tsrx-tanstack-start) \- Pragmatic feedback on TSRX, a TypeScript-based JSX extension, using TanStack Start and React. By the way, Dominic Gannaway (creator of TSRX and former React/Svelte core team member) is working on [Octane.js](https://octanejs.dev/), a promising framework based on TSRX, keeping React's programming model while compiling everything ahead of time.
+- 📜 [Inside TanStack Table V9 Reactivity](https://tanstack.com/blog/tanstack-table-v9-reactivity) \- Deep dive into TanStack Table's new reactive and framework-agnostic core, built on a shared atom interface that each adapter implements with its framework's primitives. React isn't signal-based, so its adapter uses TanStack Store instead. This enables granular updates through selectors and unlocks React Compiler compatibility.
+- 📜 [React Hook Form Avoids State. TanStack Form Scopes It](https://www.adarsha.dev/blog/react-hook-form-and-tanstack-form-state-models) \- Comparing 2 different form models: native registered inputs vs controlled inputs with fine-grained updates.
+- 📜 [Do we need state management libraries anymore?](https://neciudan.dev/do-we-need-state-management-libraries) \- Nearly all state management libs converge on `useSyncExternalStore,` and you can implement one in \~50 lines you understand.
+- 📜 [Props, Composers, and Providers: the composition pattern we're converging on](https://backstage.orus.eu/react-composition-patterns-at-orus) \- An opinionated React composition ladder with a naming convention that makes the intent explicit.
+- 📜 [Advanced React State Boundaries in a Real Next.js App](https://www.nirtamir.com/articles/advanced-react-questions)
+- 📜 [Weaponizing And Defending The React Flight Protocol: Deserialization Sinks In RSCs](https://www.smashingmagazine.com/2026/07/weaponizing-defending-react-flight-protocol/)
+- 📦 [shadcn CLI 4.13.1 \- Add React Aria support](https://ui.shadcn.com/docs/changelog/2026-07-react-aria) \- The shadcn CLI, ui library, and docs now have first-class support for the React Aria headless primitive library, alongside Base UI and Radix UI. Use the `shadcn create/init --base aria` flag at
+- 📦 [dx-styles \- zero-runtime CSS-in-TS library with typed recipes, token contracts, and RSC support](https://dx-styles.dev/blog/why-dx-styles/) \- The maintainer of Linaria and Pigment CSS explains why `styled(Component)` is a design mistake and introduces a new CSS-in-TS library based on years of experience in this field.
+- 📦 [Vite Plugin React 0.5.28 \- RSC runtime optimizations](https://github.com/vitejs/vite-plugin-react/blob/plugin-rsc@0.5.28/packages/plugin-rsc/CHANGELOG.md#0528-2026-07-17)
+- 📦 [GTKX 1.0 RC \- The React framework for Linux](https://gtkx.dev/blog/gtkx-1-0-rc-1) \- A general platform for driving GLib and GObject from TypeScript.
+- 📦 [React Hook Form 7.82 \- Add `setValue({delayError})`, improve `getDirtyFields` perf](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.82.0)
+- 📦 [Jotai 3.0 alpha \- Modernizing the package, ESM, React 18+](https://github.com/pmndrs/jotai/releases/tag/v3.0.0-alpha.0)
+- 📦 [TanStack Devtools Rspack 0.1 \- Devtools supports Rspack, full feature parity to Vite](https://github.com/TanStack/devtools/releases/tag/%40tanstack%2Fdevtools-rspack%400.1.0)
+- 📦 [Astryx 0.1.5 \- AspectRatio fit, useHotkeys, CollapsibleGroup dividers/density, per-block CodeBlock, and more](https://github.com/facebook/astryx/releases/tag/v0.1.5)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+<Todo />
+
+---
+
+## 📱 React-Native {#react-native}
+
+- 👀 [React Native PR \- Swift Package Manager cherry-picked and backported to RN 0.87](https://github.com/react/react-native/pull/57332) \- Long-awaited support finally available in v0.87 rc.2.
+- 💬 [React Native RFC \- Binary Props \- Phasing folly::dynamic out of Fabric's Android update pipeline](https://github.com/bartlomiejbloniarz/discussions-and-proposals/blob/binary-props/proposals/1013-binary-props-pipeline.md) \- When RN updates props on Android, it serializes every changed prop into a `folly::dynamic object`. The proposed fix will write prop diffs into a single shared binary. The result is \~257 µs → \~36 µs per view per frame on an entry-level phone. For 200 animated views: 64.3ms → 17.1ms total.
+- 🎨 [Redraw Playground Examples \- Interactive gallery of vector rendering examples: variable strokes, distance-field effects, SVG rendering, and GPU shaders](https://wcandillon.github.io/redraw/examples/)
+- 🎨 [Keyframer Animation Recipes \- A collection of interactive examples where animations run on Reanimated v4 and Gesture Handler](https://keyframer.dev/blog)
+- 📣 [Expo Agent \- Ending the closed beta and winding the project down](https://expo.dev/changelog/expo-agent-ending-the-closed-beta-and-winding-the-project-down)
+- 📜 [How Worklets Bundle Mode accidentally fixed Hermes V1 memory regression](https://swmansion.com/blog/how-worklets-bundle-mode-accidentally-fixed-Hermes-v1-memory-regression/) \- Hermes V1 attaches debugging metadata to eval calls, which Worklets rely on for production animations. Bundle Mode bypasses eval by exposing the precompiled bundle directly to UI runtimes.
+- 📜 [Which React Native Animation Library Should You Use for Performance?](https://andrei-calazans.com/posts/2026-07-15-which-react-native-animation-library/) \- A look into how Animated, Reanimated, and Ease perform under different animation types. The animation test harness collects data on how each one of them runs under real-world scenarios. Collected data compares UI \+ JS frame drops, memory, and JS-CPU busyness.
+- 📜 [What Does a Server-State Client Cost You Per Request?](https://andrei-calazans.com/posts/2026-07-18-cost-of-graphql-client-server-state/) \- Measure the CPU overhead of using Relay, Zustand, React Query, and RTK Query within a React Native app.
+- 📜 [Building a ChatGPT-Style AI Chat App in React Native with RAG & Streaming](https://blog.margelo.com/building-native-llm-chat-app-with-rag) \- Margelo showing how to build a native-feeling chat UI in React Native.
+- 📜 [How I Added NFC Habit Verification to a React Native App](https://codewithbeto.dev/blog/nfc-habit-verification-react-native)
+- 📜 [A Step-By-Step Guide to Super App Development With Re.Pack 5](https://www.callstack.com/blog/step-by-step-guide-to-super-app-development)
+- 📜 [How to Use React Native Libraries in Your Amazon Vega OS App](https://community.amazondeveloper.com/t/how-to-use-react-native-libraries-in-your-vega-app/28721)
+- 📦 [Vision Camera 5.1 \- Locked focus adaptiveness on Android, CameraX upgrade](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v5.1.1)
+- 📦 [Gesture Handler 3.1 \- Hover support in Touchable, keyboard tap persistence fix](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/v3.1.0)
+- 📦 [Metro 0.87 \- Optional dependencies enabled by default, \~5% faster cold builds](https://github.com/react/metro/releases/tag/v0.87.0)
+- 📦 [Worklets 0.11 \- Bytecode worklets in Legacy Eval Mode, Hermes V1 memory workaround](https://github.com/software-mansion/react-native-reanimated/releases/tag/worklets-0.11.0)
+- 📦 [Agent Device 0.20 \- Redesigned gesture execution, Maestro compatibility through a typed engine, reusable and replayable scripts](https://github.com/callstack/agent-device/releases/tag/v0.20.0)
+- 📦 [Skia 2.9 \- Font.measureText on Web, OpenGL graceful failure](https://github.com/Shopify/react-native-skia/releases/tag/v2.9.0)
+- 📦 [WebGPU 0.6 \- YUV conversion for Android camera frames, iOS simulator fixes](https://github.com/wcandillon/react-native-webgpu/releases/tag/v0.6.0)
+- 📦 [Sentry 8.19 \- Aggregate TurboModule call counts, historical tombstones from Android's `ApplicationExitInfo`](https://github.com/getsentry/sentry-react-native/releases/tag/8.19.0)
+- 📦 [Argent 0.16 \- Tool-server event log, end-to-end flows without agent, tar-upload for remote files](https://github.com/software-mansion/argent/releases/tag/v0.16.0)
+- 📦 [Whisper.rn \- React Native bindings for OpenAI Whisper and NVIDIA Parakeet automatic speech recognition (ASR) through whisper.cpp](https://github.com/mybigday/whisper.rn)
+- 📦 [Expo Apple Targets 5.0 \- Easier target variants](https://github.com/EvanBacon/expo-apple-targets)
+- 📦 [Nitro Godot \- Embed Godot Engine in React Native via Nitro Modules](https://github.com/hung-yueh/react-native-nitro-godot)
+- 📦 [Playback Controls \- System media UI control without audio playback](https://github.com/V3RON/react-native-playback-controls)
+- 📦 [Expo Libghostty \- Ghostty terminal view for Expo/React Native](https://github.com/arcboxlabs/expo-libghostty)
+- 📦 [RN Date \- High-performance native date library, powered by C++ and Nitro Modules](https://github.com/bbernag/react-native-date)
+- 🤖 [Metrognome \- An AI Agent for Measured React Native Performance Fixes](https://www.callstack.com/blog/an-ai-agent-for-measured-react-native-performance-fixes)
+- 🤖 [Pure Module Skill \- Scaffold pure JSI/C++ modules from TurboModule templates](https://github.com/op-engineering/pure-module-skill)
+- ️🎙️ [RNR 367 \- Ask Us Anything](https://infinite.red/react-native-radio/rnr-367-ask-us-anything-ama-_a_bxt_5) \- Robin and Mazen tackle listener questions on React Native, AI, mobile development, Expo Router, Flutter, performance, and consulting.
+
+---
+
+## 🔀 Other {#other}
+
+- 📜 [Fetch Is Not Enough](https://www.jasnell.me/posts/fetch-is-not-enough) \- Why `Request/Response` fall short for servers, and a proposal for a unified `serve()` API that would work across Node, Deno, Bun, and Workers.
+- 📜 [Engineering Yuku’s High-Performance Parsers with Data-Oriented Design](https://www.arshad.fyi/writings/engineering-high-performance-parsers) \- Yuku outperforms the Oxc parser by using data-oriented design. The textbook AST node optimizes for developer readability but is not machine-efficient. Yuku designs the AST nodes' data structure to optimize their memory layout and access patterns.
+- 📦 [Oxlint 1.75 \- Type-Aware Linting Stable](https://oxc.rs/blog/2026-07-22-type-aware-linting-stable) \- The Oxc team released a stable version of tsgolint 7.0, based on TypeScript v7 and following its versioning scheme. This enables the `--type-aware` and `--type-check` flags in Oxlint, as well as 43 additional type-aware rules.
+- 📦 [pnpm 11.11-11.14 \- Workspace release management, `pnpm doctor`, `pnpm access`](https://pnpm.io/blog/releases/11.11-11.14) \- pnpm can now version and release a monorepo workspace, supporting `.changesets`
+- 📦 [Rolldown 1.2 \- HMR, watcher, tree-shaking, sourcemaps improvements and many fixes](https://github.com/rolldown/rolldown/releases/tag/v1.2.0)
+- 📦 [Astro 7.1 \- Pagination URLs control, CSP control for inline scripts/styles, run multiple dev servers](https://astro.build/blog/astro-710/)
+- 📦 [Lightning CSS 1.33 \- Support for `alpha()`, `@position-try`, `::search-text`, `::highlight`](https://github.com/parcel-bundler/lightningcss/releases/tag/v1.33.0)
+- 📦 [magic-string 1.0 \- Small, fast utility for manipulating source code strings and generating sourcemaps](https://github.com/Rich-Harris/magic-string/releases/tag/v1.0.0)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/291/meme.jpg)](https://x.com/sebastienlorber/status/2079905846587162634)
+
+See ya! 👋
