@@ -1,9 +1,8 @@
 ---
 slug: /291
-title: "This Week In React #291: ..."
+title: "This Week In React #291: ReactBench, Security, TSRX, React Aria, dx-styles, TanStack, Forms, GTKX | SPM, Binary Props, Bundle Mode, Metro, Worklets, Metrognome, Whisper | Oxlint, Yuku, pnpm, Rolldown, Astro, Lightning, magic-string"
 authors: [slorber, janjaworski]
 date: 07-22-2026
-unlisted: true
 ---
 
 Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
@@ -12,7 +11,7 @@ This week we have React and Next.js security patches. React Aria becomes first-c
 
 On the mobile side, Swift Package Manager support is finally coming.
 
-Oxlint type-aware linting is ready for prime-time, based on TypeScript v7. Meanwhile, Yuku explains how it outperforms Oxc at parsing JS.
+A TC39 meeting is in progress, we'll share the proposal updates next week. Oxlint type-aware linting is ready for prime-time. Meanwhile, Yuku explains how it outperforms Oxc at parsing JS.
 
 Let's dive in!
 
@@ -47,6 +46,7 @@ With PlanetScale, you get:
 
 ## ⚛️ React {#react}
 
+- 💸 [Product for Engineers - LLMs are picking winners. Here’s how to become one](https://go.posthog.com/twir-jul22)
 - 🐦 [Pete Hunt joins Vercel to lead Next.js and run Frameworks](https://x.com/rauchg/status/2077870043833229692) \- The React pioneer is back\! He is the one who bet early on React for Instagram Web and convinced many of us to try it despite a lukewarm initial public reception.
 - 🐦 [Tim Neutkens about TypeScript 7 support in Next.js 16.3](https://x.com/timneutkens/status/2076771696745345363) \- `next build` uses the TS API, which will only be available in TypeScript 7.1. Until it’s released, you will be able to use `experimental.useTypeScriptCli`: typechecking will happen through the `tsc` CLI.
 - 🔐 [React \- Denial of Service in Server Functions](https://github.com/react/react/security/advisories/GHSA-wx67-qw84-cm4g) \- A high vulnerability patched in 19.0.8, 19.1.9, 19.2.8.
@@ -59,7 +59,7 @@ With PlanetScale, you get:
 - 📜 [Do we need state management libraries anymore?](https://neciudan.dev/do-we-need-state-management-libraries) \- Nearly all state management libs converge on `useSyncExternalStore,` and you can implement one in \~50 lines you understand.
 - 📜 [Props, Composers, and Providers: the composition pattern we're converging on](https://backstage.orus.eu/react-composition-patterns-at-orus) \- An opinionated React composition ladder with a naming convention that makes the intent explicit.
 - 📜 [Advanced React State Boundaries in a Real Next.js App](https://www.nirtamir.com/articles/advanced-react-questions)
-- 📜 [Weaponizing And Defending The React Flight Protocol: Deserialization Sinks In RSCs](https://www.smashingmagazine.com/2026/07/weaponizing-defending-react-flight-protocol/)
+- 💸 [Puter.js - The backend for AI-generated apps. One-shot builds with up to 90% fewer tokens. Auth, Storage, DB, AI & more. No API keys needed](https://developer.puter.com/?utm_source=this-week-in-react&utm_medium=sponsored-email&utm_campaign=puter-2026-07-22&utm_content=puter-js)
 - 📦 [shadcn CLI 4.13.1 \- Add React Aria support](https://ui.shadcn.com/docs/changelog/2026-07-react-aria) \- The shadcn CLI, ui library, and docs now have first-class support for the React Aria headless primitive library, alongside Base UI and Radix UI. Use the `shadcn create/init --base aria` flag at
 - 📦 [dx-styles \- zero-runtime CSS-in-TS library with typed recipes, token contracts, and RSC support](https://dx-styles.dev/blog/why-dx-styles/) \- The maintainer of Linaria and Pigment CSS explains why `styled(Component)` is a design mistake and introduces a new CSS-in-TS library based on years of experience in this field.
 - 📦 [Vite Plugin React 0.5.28 \- RSC runtime optimizations](https://github.com/vitejs/vite-plugin-react/blob/plugin-rsc@0.5.28/packages/plugin-rsc/CHANGELOG.md#0528-2026-07-17)
@@ -96,6 +96,7 @@ It works like magic in the background:
 
 ## 📱 React-Native {#react-native}
 
+- 💸 [Sentry - How Simon Grimm debugs a real React Native app in production. Watch on demand.](https://sentry.io/resources/react-native-workshop-2026/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=mobile-fy27q2-reactnativeworkshop&utm_content=newsletter-rn-quick-link-on-demand-register)
 - 👀 [React Native PR \- Swift Package Manager cherry-picked and backported to RN 0.87](https://github.com/react/react-native/pull/57332) \- Long-awaited support finally available in v0.87 rc.2.
 - 💬 [React Native RFC \- Binary Props \- Phasing folly::dynamic out of Fabric's Android update pipeline](https://github.com/bartlomiejbloniarz/discussions-and-proposals/blob/binary-props/proposals/1013-binary-props-pipeline.md) \- When RN updates props on Android, it serializes every changed prop into a `folly::dynamic object`. The proposed fix will write prop diffs into a single shared binary. The result is \~257 µs → \~36 µs per view per frame on an entry-level phone. For 200 animated views: 64.3ms → 17.1ms total.
 - 🎨 [Redraw Playground Examples \- Interactive gallery of vector rendering examples: variable strokes, distance-field effects, SVG rendering, and GPU shaders](https://wcandillon.github.io/redraw/examples/)
@@ -107,7 +108,7 @@ It works like magic in the background:
 - 📜 [Building a ChatGPT-Style AI Chat App in React Native with RAG & Streaming](https://blog.margelo.com/building-native-llm-chat-app-with-rag) \- Margelo showing how to build a native-feeling chat UI in React Native.
 - 📜 [How I Added NFC Habit Verification to a React Native App](https://codewithbeto.dev/blog/nfc-habit-verification-react-native)
 - 📜 [A Step-By-Step Guide to Super App Development With Re.Pack 5](https://www.callstack.com/blog/step-by-step-guide-to-super-app-development)
-- 📜 [How to Use React Native Libraries in Your Amazon Vega OS App](https://community.amazondeveloper.com/t/how-to-use-react-native-libraries-in-your-vega-app/28721)
+- 💸 [Drizz - AI writes 50% of your code now. Why are you still writing test scripts by hand? Vision AI mobile testing for iOS and Android](https://www.drizz.dev?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=twir_w5&utm_content=ai-testing)
 - 📦 [Vision Camera 5.1 \- Locked focus adaptiveness on Android, CameraX upgrade](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v5.1.1)
 - 📦 [Gesture Handler 3.1 \- Hover support in Touchable, keyboard tap persistence fix](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/v3.1.0)
 - 📦 [Metro 0.87 \- Optional dependencies enabled by default, \~5% faster cold builds](https://github.com/react/metro/releases/tag/v0.87.0)
@@ -131,8 +132,8 @@ It works like magic in the background:
 
 ## 🔀 Other {#other}
 
-- 📜 [Fetch Is Not Enough](https://www.jasnell.me/posts/fetch-is-not-enough) \- Why `Request/Response` fall short for servers, and a proposal for a unified `serve()` API that would work across Node, Deno, Bun, and Workers.
 - 📜 [Engineering Yuku’s High-Performance Parsers with Data-Oriented Design](https://www.arshad.fyi/writings/engineering-high-performance-parsers) \- Yuku outperforms the Oxc parser by using data-oriented design. The textbook AST node optimizes for developer readability but is not machine-efficient. Yuku designs the AST nodes' data structure to optimize their memory layout and access patterns.
+- 📜 [Fetch Is Not Enough](https://www.jasnell.me/posts/fetch-is-not-enough) \- Why `Request/Response` fall short for servers, and a proposal for a unified `serve()` API that would work across Node, Deno, Bun, and Workers.
 - 📦 [Oxlint 1.75 \- Type-Aware Linting Stable](https://oxc.rs/blog/2026-07-22-type-aware-linting-stable) \- The Oxc team released a stable version of tsgolint 7.0, based on TypeScript v7 and following its versioning scheme. This enables the `--type-aware` and `--type-check` flags in Oxlint, as well as 43 additional type-aware rules.
 - 📦 [pnpm 11.11-11.14 \- Workspace release management, `pnpm doctor`, `pnpm access`](https://pnpm.io/blog/releases/11.11-11.14) \- pnpm can now version and release a monorepo workspace, supporting `.changesets`
 - 📦 [Rolldown 1.2 \- HMR, watcher, tree-shaking, sourcemaps improvements and many fixes](https://github.com/rolldown/rolldown/releases/tag/v1.2.0)
