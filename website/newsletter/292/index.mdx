@@ -1,9 +1,8 @@
 ---
 slug: /292
-title: "This Week In React #292: ..."
+title: "This Week In React #292: Octane, TanStack, StableRef, Next.js, Canvas UI, Reassure, CSS-in-JS | Workers, SafeAreaView, backgroundImage, WebGPU, VisionCamera, React Navigation, Canvas Kit, Nitro | TC39, Web Vitals, Playwright, Webpack, npm"
 authors: [slorber, janjaworski]
 date: 07-29-2026
-unlisted: true
 ---
 
 Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
@@ -64,7 +63,7 @@ This looks like a quite serious React challenger using the same mental model. It
 - 🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=thisweekinreact) - 🇬🇧 London - 23 & 26 Oct. First speakers announced: TanStack Maintainer, Engineer at Vercel, Apollo TypeScript Client maintainer & more. All in a historic ex-brewery. Get 10% off with code "TWIR".
 - 📜 [TanStack \- We Stopped Using RSC on](https://tanstack.com/blog/we-stopped-using-rsc-on-tanstack-com) [TanStack.com](http://TanStack.com) \- Tanner explains why the TanStack website adopted RSC in the first place, keeping heavy dependencies like the Shiki syntax highlighter on the server. But the maths change if the heavy libraries become smaller: it’s better to use SSR, ship a small lib once and render multiple times on the client than to render each blog post on the server and ship an RSC/Flight payload. To achieve better performance with SSR, TanStack had to introduce 2 new deliberately small projects: [TanStack Markdown and TanStack Highlight](https://tanstack.com/blog/introducing-tanstack-markdown-and-highlight), available in alpha. In TanStack Start, you can freely decide to use SSR or RSC when it makes sense.
 - 📜 [Making Referential Stability a Type](https://www.jovidecroock.com/blog/referential-stability-types/) \- A really cool idea to tag memoized values directly in the type system with `Stable<T>`. With `stableref/react`, you can enforce APIs to use memoized values and get compilation errors if props or dependency array elements are not memoized.
-- 📜 [Experimenting with RSCs for Performance and UX in](https://aurorascharff.no/posts/experimenting-with-rsc-for-performance-and-ux-in-nextjs/) [Next.js](http://Next.js) \- 3 Next.js 16.3 experiments to keep work on the server: pagination via `?page=`, a search field that keeps focus while results stream, JSX from actions.
+- 📜 [Experimenting with RSCs for Performance and UX in Next.js](https://aurorascharff.no/posts/experimenting-with-rsc-for-performance-and-ux-in-nextjs/) \- 3 Next.js 16.3 experiments to keep work on the server: pagination via `?page=`, a search field that keeps focus while results stream, JSX from actions.
 - 📜 [How to find a Next.js memory leak in production](https://xabierlameiro.com/blog/nextjs/nextjs-memory-leak-in-production) \- 3 memory leaks in Next.js and how to spot each in heap snapshots. These have recently been fixed by Dan Abramov for v16.3.
 - 📜 [The state of zero-runtime CSS-in-JS, mid-2026](https://dx-styles.dev/blog/state-of-zero-runtime-css-in-js/) \- A recent field map of compile-time CSS-in-JS covering Vanilla-Extract, Panda CSS, StyleX, next-yak, Linaria, dx-styles.
 - 📜 [How to Think in Remix UI Instead of React](https://sergiodxa.com/tutorials/think-in-remix-ui-instead-of-react) \- A pragmatic intro to Remix v3 from a React perspective. Components run once, return a render closure, and you re-render with `this.update()`. This gives you more control than React hooks, but requires more boilerplate.
@@ -110,7 +109,7 @@ Your developers own the platform. Your business teams manage the forms. 🙂
 - 👀 [React Navigation PR \- v8 will work on Web without React Native Web](https://github.com/react-navigation/react-navigation/pull/13195)
 - 📖 [React Navigation 8 \- New docs on Suspense and pending UI](https://reactnavigation.org/docs/8.x/suspense/)
 - 📜 [From Expo Router to Detour: Deferred deep linking the right way](https://expo.dev/blog/deferred-deep-linking-the-right-way) \- Standard deep links break at the store boundary, causing an Installation Gap when the app is not installed yet. The solution is to use deferred deep linking to capture user intent and replay it on the app’s first launch.
-- 📜[Marc Rousavy just wanted to build react-native libraries but ended up fixing bugs in Apple/Swift compiler...](https://x.com/mrousavy/status/2080675696335077457) \- A compiler bug caused iOS 16 to crash the app in production. The optimizer hoisted a weakly imported constant above its `#available` guard. Although the issue is real, it was possible to work around it, requiring an upstream compiler fix.
+- 📜 [Marc Rousavy just wanted to build react-native libraries but ended up fixing bugs in Apple/Swift compiler...](https://x.com/mrousavy/status/2080675696335077457) \- A compiler bug caused iOS 16 to crash the app in production. The optimizer hoisted a weakly imported constant above its `#available` guard. Although the issue is real, it was possible to work around it, requiring an upstream compiler fix.
 - 📜 [Install dev and production side by side with app variants](https://expo.dev/blog/app-variants-side-by-side) \- A guide to setting up app variants for improved dev experience.
 - 📜 [Why We Did Not Move MMKV Writes to a Worklet: The Serialization Cost](https://andrei-calazans.com/posts/2026-07-28-mmkv-writes-worklet-serialization-cost/)
 - 💸 [ConfigCat - Release React Native Features with Feature Flags, Without Redeploying](https://configcat.com/blog/using-feature-flags-in-react-native/?utm_source=thisweekinreact_newsletter&utm_medium=sponsor&utm_campaign=reactnative_202607)
