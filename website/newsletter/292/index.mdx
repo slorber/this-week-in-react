@@ -1,0 +1,121 @@
+---
+slug: /292
+title: "This Week In React #292: ..."
+authors: [slorber, janjaworski]
+date: 07-29-2026
+unlisted: true
+---
+
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
+
+This week we have an interesting React challenger, keeping its mental model but compiled ahead of time. Also various major announcements from the TanStack side.
+
+On the mobile side, we have interesting RN 0.87 PRs to look at, discussions around workers / worklets, a WebGPU/Skia integration, and React Navigation 8 / Screens 5 progress.
+
+Last week, many proposals progressed during a TC39 meeting. npm is going to scan for malware at publish time. Core Web Vitals will now measure SPA soft navigation.
+
+Let's dive in!
+
+<!-- truncate -->
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+<Todo />
+
+---
+
+## ⚛️ React {#react}
+
+Dominic Gannaway – former React/Svelte team member, creator of Inferno – unveiled his new project, Octane, as a successor to Inferno.
+
+It keeps React’s programming model, but compiles Hooks, Suspense, and Actions ahead of time. It improves performance, removing the Virtual DOM and using native browser events. You don’t need to respect the rules of hooks or to maintain dependency arrays manually. You can use it with JSX/TSX, but it also supports [TSRX](https://tsrx.dev/) to improve your developer experience.
+
+This looks like a quite serious React challenger using the same mental model. It comes from day 1 with integrations for libraries such as TanStack, React Three Fiber, Lynx, StyleX, and has already received contributions from various project maintainers.
+
+- 👀 [Next.js docs preview \- Offline support](https://preview.nextjs.org/docs/app/guides/offline-support) \- With `experimental.useOffline` enabled, Next.js will no longer throw when the network is down, keeping requests pending with a retry.
+- 📜 [TanStack \- We Stopped Using RSC on](https://tanstack.com/blog/we-stopped-using-rsc-on-tanstack-com) [TanStack.com](http://TanStack.com) \- Tanner explains why the TanStack website adopted RSC in the first place, keeping heavy dependencies like the Shiki syntax highlighter on the server. But the maths change if the heavy libraries become smaller: it’s better to use SSR, ship a small lib once and render multiple times on the client than to render each blog post on the server and ship an RSC/Flight payload. To achieve better performance with SSR, TanStack had to introduce 2 new deliberately small projects: [TanStack Markdown and TanStack Highlight](https://tanstack.com/blog/introducing-tanstack-markdown-and-highlight), available in alpha. In TanStack Start, you can freely decide to use SSR or RSC when it makes sense.
+- 📜 [Making Referential Stability a Type](https://www.jovidecroock.com/blog/referential-stability-types/) \- A really cool idea to tag memoized values directly in the type system with `Stable<T>`. With `stableref/react`, you can enforce APIs to use memoized values and get compilation errors if props or dependency array elements are not memoized.
+- 📜 [Experimenting with RSCs for Performance and UX in](https://aurorascharff.no/posts/experimenting-with-rsc-for-performance-and-ux-in-nextjs/) [Next.js](http://Next.js) \- 3 Next.js 16.3 experiments to keep work on the server: pagination via `?page=`, a search field that keeps focus while results stream, JSX from actions.
+- 📜 [How to find a Next.js memory leak in production](https://xabierlameiro.com/blog/nextjs/nextjs-memory-leak-in-production) \- 3 memory leaks in Next.js and how to spot each in heap snapshots. These have recently been fixed by Dan Abramov for v16.3.
+- 📜 [The state of zero-runtime CSS-in-JS, mid-2026](https://dx-styles.dev/blog/state-of-zero-runtime-css-in-js/) \- A recent field map of compile-time CSS-in-JS covering Vanilla-Extract, Panda CSS, StyleX, next-yak, Linaria, dx-styles.
+- 📜 [How to Think in Remix UI Instead of React](https://sergiodxa.com/tutorials/think-in-remix-ui-instead-of-react) \- A pragmatic intro to Remix v3 from a React perspective. Components run once, return a render closure, and you re-render with `this.update()`. This gives you more control than React hooks, but requires more boilerplate.
+- 📜 [The Absolute State of Management](https://infrequently.org/2026/07/state-management/) \- Alex Russel argues React's state management libs don't manage state; they only propagate it with pub/sub. Real state management needs time and ordering: CRDTs, sync engines, vector clocks.
+- 📦 [Canvas UI \- Creative components based on WebGPU and HTML-in-canvas](https://canvasui.dev/) \- A cool project for creative work. Framework-agnostic, coming with first-class React integration.
+- 📦 [TanStack Table v9 beta.58 \- Support Cell Selection and Keyboard Navigation](https://tanstack.com/table/beta/docs/framework/react/guide/cell-selection)
+- 📦 [React Router 8.3 \- RSC Entry Updates](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v830)
+- 📦 [Reassure 1.6 \- Performance testing for React and React Native \- Stability measures](https://github.com/callstack/reassure/releases/tag/reassure%401.6.0)
+- 📦 [Astryx 0.1.8 & 0.1.9](https://github.com/facebook/astryx/releases#release-v0.1.9)
+- 🎥 [Jack Herrington \- TanStack is Doing What?](https://www.youtube.com/watch?v=2aKGR4RECj0) \- Stream announcing TanStack changes with guests. [TanStack now has a new look](https://tanstack.com/blog/tanstack-has-a-new-look), a design system, and a lead designer.
+- 🎥 [Shruti Kapoor \- React Debugging with Performance Tracks](https://www.youtube.com/watch?v=B_w1xFbRvCg)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+<Todo />
+
+---
+
+## 📱 React-Native {#react-native}
+
+- 💬 [React Native RFC \- CSS `calc()` in React Native](https://github.com/react-native-community/discussions-and-proposals/pull/1014) \- A proposal to add a C++ implementation, so host platforms do not need to be aware of its existence. Aligns more closely with the web, avoiding `onLayout` and useless render passes.
+- 👀 [React Native PR \- Add SafeAreaProvider, safe-area hooks, and SafeAreaView edges/mode](https://github.com/react/react-native/pull/57500) \- 2 recent PRs show that SafeAreaView will either be removed from core, or improved to catch up with `react-native-safe-area-context` features. We are still not sure which PR will be merged; stay tuned.
+- 👀 [RN Screens 5.0 Alpha \- Rewritten Stack implementation, Android based on Material Design 3](https://github.com/software-mansion/react-native-screens/releases/tag/5.0.0-alpha.1) \- The first release of an upcoming rewrite of RN Screens. The redesign of the Native Stack addresses shortcomings of the v4 model and will be an important piece for React Navigation v8.
+- 👀 [React Native PR \- `backgroundImage` stable in RN 0.87](https://github.com/react/react-native-website/pull/5191) \- linear and radial gradients will officially work without the need for 3rd-party dependencies.
+- 👀 [React Navigation PR \- v8 will work on Web without React Native Web](https://github.com/react-navigation/react-navigation/pull/13195)
+- 📖 [React Navigation 8 \- New docs on Suspense and pending UI](https://reactnavigation.org/docs/8.x/suspense/)
+- 📜 [From Expo Router to Detour: Deferred deep linking the right way](https://expo.dev/blog/deferred-deep-linking-the-right-way) \- Standard deep links break at the store boundary, causing an Installation Gap when the app is not installed yet. The solution is to use deferred deep linking to capture user intent and replay it on the app’s first launch.
+- 📜[Marc Rousavy just wanted to build react-native libraries but ended up fixing bugs in Apple/Swift compiler...](https://x.com/mrousavy/status/2080675696335077457) \- A compiler bug caused iOS 16 to crash the app in production. The optimizer hoisted a weakly imported constant above its `#available` guard. Although the issue is real, it was possible to work around it, requiring an upstream compiler fix.
+- 📜 [Install dev and production side by side with app variants](https://expo.dev/blog/app-variants-side-by-side) \- A guide to setting up app variants for improved dev experience.
+- 📜 [Why We Did Not Move MMKV Writes to a Worklet: The Serialization Cost](https://andrei-calazans.com/posts/2026-07-28-mmkv-writes-worklet-serialization-cost/)
+- 📦 [RN Workers 1.0 Alpha](https://ammarahm-ed.github.io/react-native-workers/blog/introducing-react-native-workers/) \- Separate Hermes runtimes created on a dedicated thread to enable real multithreading. Each worker has its own bundle. Communication between them is using messages via a structured-clone codec. This [discussion](https://x.com/tjzeldev/status/2081673853831430226) explain differences with Worklets. Hermes also [supports WebWorkers](https://x.com/tmikov/status/2081759040087151082) out of the box (unstable) that will be in a public release soon.
+- 📦 [React Native WebGPU 0.7 \- `importDevice()`](https://wcandillon.github.io/react-native-webgpu/docs/integrations/react-native-skia) \- This lets you import the RN Skia Graphite WebGPU device. It’s the foundation for zero-copy interop between the two worlds, letting you use WebGPU textures in Skia efficiently.
+- 📦 [Skia 2.10 \- Migrates from HostObject to JSI NativeState, requires Reanimated v4](https://github.com/Shopify/react-native-skia/releases/tag/v2.10.0) \- Related: Tzvetan Mikov previously explained [why the Hermes team strongly favors JSI NativeState over HostObject](https://x.com/tmikov/status/1820266381545468200).
+- 📦 [VisionCamera 5.2 \- New SkiaCamera controls (zoom, exposure, torch), stretch GPU Resizer mode](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v5.2.0)
+- 📦 [Nitro 0.36.2 & 0.36.3 \- Faster Record\<K,V\> conversion, RN 0.87 support, drops @FastNative from Sync callbacks](https://github.com/mrousavy/nitro/releases#release-v0.36.3)
+- 📦 [Expo Open OTA 3.0 \- Self-hosted Expo Updates server with multi-app, rollouts, A/B testing](https://www.mercuretechnologies.com/blog/expo-open-ota-v3)
+- 📦 [Argent 0.17 \- Screen recording tools, pinch gesture, Windows support for Android and Chromium](https://github.com/software-mansion/argent/releases/tag/v0.17.0)
+- 📦 [Canvas Kit \- A batteries-included 2D canvas framework built on RN Skia](https://github.com/adithyavis/react-native-canvas-kit)
+- 📦 [React Native Social Auth \- Sign in with Google for Android, iOS, Expo](https://thoughtbot.com/blog/sign-in-with-google-for-react-native)
+- 📦 [Memory Footprint \- Measure React Native app's memory footprint on iOS and Android](https://github.com/mdjastrzebski/react-native-memory-footprint)
+- 📦 [Maestro 2.7 \- MCP tool to debug Cloud runs with your AI agent, per-flow debug artifacts](https://maestro.dev/blog/maestro-cli-2-7-0)
+- 📦 [Radon 1.18 \- Send props, styles, state & errors from element inspector to AI chat context](https://github.com/software-mansion/radon-ide/releases/tag/v1.18.0)
+- 📦 [Agent Device 0.20.1 \- Vega OS support, broader physical iOS support, secret-safe replay and recording improvements](https://github.com/callstack/agent-device/releases/tag/v0.20.1)
+- 📦 [Screen Transitions 3.9 \- Teleport-powered handoff and escapeClipping, simplified Boundary API, navigation zoom](https://screen-transitions.esjr.org/changelog/updating-to-3-9)
+- 📦 [Sentry 8.20 \- iOS screenshot regression fix, Gradle Configuration Cache compatibility](https://github.com/getsentry/sentry-react-native/releases/tag/8.20.0)
+- 📦 [Nitro Fetch 1.5.3 \- 3x faster streaming via shared URLSession](https://github.com/margelo/react-native-nitro-fetch/releases/tag/v1.5.3)
+- 🤖 [Maestro CLI 2.7 \- MCP for AI Coding Agents](https://maestro.dev/blog/maestro-mcp-for-ai-coding-agents)
+- 🎥 [Expo \- How to add an iOS Widget to your app](https://www.youtube.com/watch?v=3r_OHePTCcI)
+- 🎙️ [RNR 368 \- RNR Explains: Fabric](https://infinite.red/react-native-radio/rnr-368-rnr-explains-fabric) \- A look into how the Fabric renderer works. How it speeds up mobile apps and unlocks concurrent React features.
+
+---
+
+## 🔀 Other {#other}
+
+- 🦋 [TC39 advanced `Promise.allKeyed`, `Error.code`, `Map.take`, RegExp Linear Matching, and more](https://bsky.app/profile/tc39.es/post/3mrdjr6uq2t2i) \- I reply and explain why I’m excited about `allKeyed`, RegExp Linear Matching, and Composites moving to an interning-based approach (getting closer to the former Records & Tuples proposal).
+- 📣 [Core Web Vitals \- Measuring soft navigations](https://developer.chrome.com/docs/web-platform/soft-navigations) \- Measuring SPA soft navigations (page transitions with `history.pushState`) will be enabled by default in Chrome 151, and integrated into DevTools, the `web-vitals` package, Lighthouse, PageSpeed Insights, and Real User Monitoring tools.
+- 📣 [GitHub \- npm publish-time malware scanning and dual-use metadata](https://github.blog/changelog/2026-07-28-npm-publish-time-malware-scanning-and-dual-use-metadata/) \- Newly published packages will be automatically scanned before they become available, introducing a delay of 5-15 minutes between publishing and availability.
+- 📊 [State of CSS \- Survey results](https://2026.stateofcss.com/en-US)
+- 📜 [ECMAScript Deferred Module Evaluation with `import defer`](https://nitayneeman.com/blog/introducing-import-defer-in-ecmascript/) \- This lazy module evaluation feature is stage 3, already implemented in most tools, and close to becoming part of the standard.
+- 📜 [Your SPA Is Leaking Memory. Soak Test It](https://denodell.com/blog/your-spa-is-leaking-memory-soak-test-it) \- A practical Playwright recipe to catch SPA memory leaks. Loop a user flow, read Chrome's node/listener counts before and after, assert.
+- 📦 [Playwright 1.62 \- New component testing model, AbortSignal, WebP screenshots, isolated retries](https://github.com/microsoft/playwright/releases/tag/v1.62.0)
+- 📦 [Webpack 5.109 \- Built-in CSS, HTML, TypeScript support enabled by default, Vite-compatible `import.meta` APIs, asset query suffixes](https://webpack.js.org/blog/2026-07-24-webpack-5-109/)
+- 📦 [Firefox 153 \- Picture-in-Picture, import as text, popover="hint"](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/153)
+
+---
+
+## 🤭 Fun {#fun}
+
+<Todo />
+
+[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+
+See ya! 👋
