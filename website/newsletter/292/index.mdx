@@ -32,11 +32,17 @@ import Support from "../_support.mdx";
 
 ## ⚛️ React {#react}
 
+[![Octane – React's programming model, compiled](/emails/issues/292/octane.jpg)](https://octanejs.dev/)
+
+**[Octane – React's programming model, compiled](https://octanejs.dev/)**
+
 Dominic Gannaway – former React/Svelte team member, creator of Inferno – unveiled his new project, Octane, as a successor to Inferno.
 
 It keeps React’s programming model, but compiles Hooks, Suspense, and Actions ahead of time. It improves performance, removing the Virtual DOM and using native browser events. You don’t need to respect the rules of hooks or to maintain dependency arrays manually. You can use it with JSX/TSX, but it also supports [TSRX](https://tsrx.dev/) to improve your developer experience.
 
 This looks like a quite serious React challenger using the same mental model. It comes from day 1 with integrations for libraries such as TanStack, React Three Fiber, Lynx, StyleX, and has already received contributions from various project maintainers.
+
+---
 
 - 👀 [Next.js docs preview \- Offline support](https://preview.nextjs.org/docs/app/guides/offline-support) \- With `experimental.useOffline` enabled, Next.js will no longer throw when the network is down, keeping requests pending with a retry.
 - 📜 [TanStack \- We Stopped Using RSC on](https://tanstack.com/blog/we-stopped-using-rsc-on-tanstack-com) [TanStack.com](http://TanStack.com) \- Tanner explains why the TanStack website adopted RSC in the first place, keeping heavy dependencies like the Shiki syntax highlighter on the server. But the maths change if the heavy libraries become smaller: it’s better to use SSR, ship a small lib once and render multiple times on the client than to render each blog post on the server and ship an RSC/Flight payload. To achieve better performance with SSR, TanStack had to introduce 2 new deliberately small projects: [TanStack Markdown and TanStack Highlight](https://tanstack.com/blog/introducing-tanstack-markdown-and-highlight), available in alpha. In TanStack Start, you can freely decide to use SSR or RSC when it makes sense.
