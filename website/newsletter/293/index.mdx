@@ -1,14 +1,18 @@
 ---
 slug: /293
-title: "This Week In React #293: ..."
-authors: [slorber]
+title: "This Week In React #293: Next.js 16.3, browser() API, useOptimistic, Generative UI, MobX, SWR, React Aria, TanStack Charts | PlainText, Vision Camera, Gesture Handler, Expo Simulators, Firebase | Stacked PRs, Node, Vite, pnpm, Hono"
+authors: [jakubkowalski, katarzynapodmokla]
 date: 08-05-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, Kasia and Kuba from [Software Mansion](https://swmansion.com/) here.
 
-<Todo />
+This week, Next.js 16.3 officially shipped, bringing Instant Navigations to the App Router and cutting dev server RAM usage by up to 90%.
+
+On the React Native side, a new, faster PlainText component and a deep dive into Vision Camera v5.
+
+Across the broader dev ecosystem, GitHub stacked PRs finally entered public preview with native base retargeting and a gh-stack CLI.
 
 Let's dive in!
 
@@ -43,10 +47,37 @@ It works like magic in the background:
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![Next.js 16.3 Released: Instant Navigations & 90% RAM Reduction](/emails/issues/293/next.jpg)](https://nextjs.org/blog/next-16-3)
+[Next.js 16.3 Released: Instant Navigations & 90% RAM Reduction](https://nextjs.org/blog/next-16-3)
+
+Next.js 16.3 officially shipped with major engine and runtime upgrades.
+Long dev sessions now use up to 90% less RAM, repeat builds leverage
+artifact caching, and SSR handles up to 22% more requests. TypeScript 7
+is supported natively out of the box, alongside built-in glob imports
+via Turbopack.
+
+The core release focuses on Instant Navigations (built on top of Cache
+Components) to give server-driven apps the snappy responsiveness of an
+SPA. This signals a clear architectural shift for Next.js: returning to
+a dynamic-by-default model with fully explicit, predictable caching.
 
 - 💸 [TrustedRouter - Build AI features with hundreds of models through one OpenAI-compatible API with failover and no prompt or output logs](https://trustedrouter.com/openai-compatible-llm-api?utm_source=thisweekinreact&utm_medium=sponsored_newsletter&utm_campaign=react_link_20260805&utm_content=react_link_openai_compatible)
 - 💸 [build mode - Stop being the code review bottleneck](https://go.posthog.com/twir-aug5)
+- 👀 [React Core PR - browser() API](https://github.com/react/react/pull/37143): Exposes a client-only react-dom API to safely suspend SSR for browser-specific components, eliminating hacky server error-suppression workarounds.
+- 📜 [React 19's useActionState: Preventing Sequenced Double Submits](https://shubhra.dev/tutorials/react-19-useactionstate) \- explains how React 19's `useActionState` queue behaves and how to correctly handle `isPending` states to prevent duplicate submits.
+- 📜 [Next.js 16 useOptimistic: Fixing Rapid-Click Race Conditions & Auto-Rollbacks](https://shubhra.dev/tutorials/nextjs-16-useoptimistic-rollback-pattern) \- covers React 19 optimistic UI edge cases, demonstrating why manual rollback logic is redundant, how to prevent overlapping requests per item, and how to handle Next.js 16 cache revalidation with `updateTag`.
+- 📜 [Visual Regression Testing: The Most Important Test You're Not Running](https://howtotestfrontend.com/resources/visual-regression-testing-introduction-guide) \- demonstrates how visual regression tests catch layout and CSS bugs missed by functional tests, with setup examples for E2E test runners and component environments.
+- 📜 [React Arven: Optimizing React Context Performance for Complex Local State](https://granat.blog/posts/2026-07-24-react-arven/) \- introduces a 1.4 kB dependency-free library that uses `useSyncExternalStore` and stable action refs to eliminate React Context re-renders when orchestrating complex local state.
+- 📜 [Architectural Patterns for Generative UI in React](https://boda.sh/blog/generative-ui/) \- break down of three approaches to letting LLMs build UI dynamically — schema-constrained output, a declarative JSON spec (A2UI/AG-UI), and open-ended sandboxed code generation.
+- 📦 [TanStack Charts \- Minimal (\~8 KiB core), framework-agnostic charting primitives on D3, with first-class React bindings \- Pre-alpha, but shipping daily updates.](https://github.com/TanStack/charts)
+- 📦 [use-webmcp-tool \- React abstraction for exposing client-side tools to browser AI agents via WebMCP](https://github.com/GoogleChromeLabs/use-webmcp-tool)
+- 📦 [Astryx 0.2 \- RTL auto-mirroring with a dedicated ESLint rule, tooltip status variant for inputs, scriptable CLI engine APIs, removed TabList orientation and CLI JSON types](https://github.com/facebook/astryx/releases/tag/v0.2.0)
+- 📦 [MobX 7.0 \- Drops legacy compatibility, cutting ESM bundle size to 13.96 KiB gzip (10.32 KiB tree-shaken) while maintaining the mobx-react-lite vs mobx-react architecture](https://github.com/mobxjs/mobx/releases/tag/mobx%407.0.0)
+- 📦 [SWR 2.5 \- Adds experimental RSC data preloading to hydrate client cache without duplicate requests, plus a new `unload()` API to purge cache and abort in-flight queries](https://github.com/vercel/swr/releases/tag/v2.5.0)
+- 📦 [React Aria 1.20 \- Adds PreviewTrigger popovers, TokenField for inline tags, native context menus, interactive table rows, and Next.js 16 RSC collection support](https://react-aria.adobe.com/releases/v1-20-0)
+- 📦 [React Three Fiber 9.7 \- Hardens its reconciler to align with react-dom, fixing child desyncs, prop resets, and event priority](https://github.com/pmndrs/react-three-fiber/releases/tag/v9.7.0)
+- 📦 [React Hook Form 7.84 \- Enhanced \<Form /\> submit behavior, better performance and smaller bundle size](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.84.0)
+- 📦 [BaseUI 1.7 \- Reduces bundle size (\~3%), enhances mobile UX and \<ScrollArea.Thumb\> overscroll feedback, and bundles accessibility and bug fixes](https://base-ui.com/react/overview/releases/v1-7-0)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -75,12 +106,37 @@ Your developers own the platform. Your business teams manage the forms. 🙂
 
 - 💸 [Crisp - Add customer support chat to your React Native app with our SDK for iOS, Android and Expo](https://crisp.chat/?utm_source=twir&utm_medium=newsletter&utm_campaign=crisp_q3_nl&utm_content=5aug26)
 - 💸 [ConfigCat - Run A/B Tests in React Native Apps with Feature Flags and Amplitude](https://configcat.com/blog/ab-testing-react-native-apps-with-feature-flags/?utm_source=thisweekinreact_newsletter&utm_medium=sponsor&utm_campaign=reactnative_20260805)
+- 👀 [Faster touchables in Gesture Handler coming soon](https://x.com/swmansion/status/2082488629167841415?s=20) \- RNGH's Touchable rendered \~300ms faster than RN's Pressable in a list with 1000 buttons in one of the benchmarks, definitely worth keeping an eye on this!
+- 👀 [Simulators for agents from Expo coming soon](https://expo.dev/services/simulators) \- Expo announced an early access waitlist for on-demand cloud simulators for AI agents to build, run, and visually verify app changes.
+- 📖 [Gesture Handler \- New interactive docs on callbacks & events](https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/callbacks-events/#gestureevent-callbacks) \- you can now see the callbacks chain and get better understanding on how they resolve.
+- 🐦 [React Native Plain Text](https://x.com/mdj_dev/status/2082453726707478622) \- a faster, lower memory alternative to use for simple texts. See how it performs in comparison to RawText in [the author's benchmark](https://x.com/mdj_dev/status/2082461349196534119). It's limited to static, single-style text right now, but something to keep an eye on!
+- 📜 [Building a Real-Time Face Recognition App in React Native with VisionCamera](https://blog.margelo.com/on-device-face-recognition-react-native) \- a full on-device pipeline built on VisionCamera's frame processors, ONNX Runtime, and OpenCV \- with real benchmarks and hard-won lessons like mirrored-frame bugs.
+- 📜 [Migration to React Native in 2026 Starts With a Delivery Question](https://www.callstack.com/blog/migration-to-react-native-in-2026-starts-with-a-delivery-question) \- brownfield vs. greenfield migration is a choice around how you ship. Also, a useful take on where AI agents help the port \- and where they don't.
+- 📦 [Enriched HTML 1.1 is out \- Stable web support with full feature parity](https://github.com/software-mansion/react-native-enriched-html/releases/tag/v1.1.0)
+- 📦 [React Native Firebase App 26.1 \- Migrated to Turbo Modules, requires new architecture](https://github.com/invertase/react-native-firebase/blob/main/packages/app/CHANGELOG.md)
+- 📦 [React Native System Navigation Bar 3.0 \- Rewritten on new architecture](https://github.com/kadiraydinli/react-native-system-navigation-bar/releases/tag/v3.0.0)
+- 📦 [React Native Blur 5.0 \- Requires new architecture and RN 0.80+, raw native components deprecated, added ref forwarding and react-native-web support](https://github.com/sbaiahmed1/react-native-blur/releases/tag/v5.0.0)
+- 📦 [Sentry 8.21 \- Improved session replay details](https://github.com/getsentry/sentry-react-native/releases/tag/8.21.0)
+- 📦 [Argent 0.18 \- Rotate directive for flow automation, single-element snapshot diffs, human-readable tool-server logging, CSS combinator flow selectors](https://github.com/software-mansion/argent/releases/tag/v0.18.0)
+- 📦 [Voltra 2.2 \- Improved build stability, runtime props support](https://github.com/callstackincubator/voltra/releases/tag/v2.2.0)
+- 📦 [React Native Purchases 10.6 \- Supports multipage paywalls](https://github.com/RevenueCat/react-native-purchases/releases/tag/10.6.0)
+- 📦 [react-native-ease 0.8 \- Initial velocity for spring transitions, iOS retain-cycle fix](https://github.com/appandflow/react-native-ease/releases/tag/v0.8.0)
+- 🎥 [Build a React Native News Agent With Eve](https://www.youtube.com/watch?v=fEn-PQXBp28)
+- 🎥 [Vision Camera 5 under the hood](https://www.youtube.com/watch?v=xI3egb3_ihI)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📣 [GitHub stacked PRs are now in public preview! Adding native PR stacking with automatic base retargeting, partial merges, and official CLI (gh-stack) integration.](https://github.blog/changelog/2026-07-30-stacked-pull-requests-are-now-in-public-preview/)
+- 📜 [Styling the Navigation: Declarative Route and Navigation Matching in CSS](https://www.bram.us/2026/07/30/styling-the-navigation-declarative-route-and-navigation-matching-in-css/) \- Bramus walks through a proposed CSS spec that moves route-based view-transition logic out of JS.
+- 📜 [Disrupting supply chain attacks on npm and GitHub Actions](https://github.blog/security/supply-chain-security/disrupting-supply-chain-attacks-on-npm-and-github-actions/) \- summary of the changes shipped across npm and GitHub Actions in the past few months, aimed to disrupt supply chain attack techniques and limit their impact.
+- 📦 [Node 24.19 \- Stabilized `stream.compose`, new TLS/TCP configuration options and `--experimental-import-text` flag, custom buffers in `fs.readFile()`](https://nodejs.org/en/blog/release/v24.19.0)
+- 📦 [Flue 2.0 \- "React for Agents"](https://flueframework.com/blog/flue-2/) \- introduces a hooks-based architecture (`useModel`, `useTool`, `usePersistentState`) that replaces static configuration with dynamic agents capable of swapping models and capabilities at runtime.
+- 📦 [scriptc \- Compile TypeScript to tiny native binaries (no Node/V8)](https://scriptc.dev/)
+- 📦 [pnpm 11.20 \- Fixes multi-registry package substitution vulnerability with registry-qualified keys](https://pnpm.io/blog/releases/11.20)
+- 📦 [Vite 8.2 \- Adds a top-level input option (bypassing `build.rolldownOptions`), warnings for unsupported native loader features, PostCSS config types, and dev URLs labeled by interface](https://github.com/vitejs/vite/blob/v8.2.0/packages/vite/CHANGELOG.md#820-2026-07-30)
+- 📦 [Hono 4.13 \- Delivers up to 1.25x performance gains, adds HTTP QUERY method support, a Method Not Allowed middleware, and various core improvements](https://github.com/honojs/hono/releases/tag/v4.13.0)
 
 ---
 
@@ -88,6 +144,6 @@ Your developers own the platform. Your business teams manage the forms. 🙂
 
 <Todo />
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/293/meme.jpg)](https://x.com/damovisa/status/2082945188578882026/photo/1)
 
 See ya! 👋
