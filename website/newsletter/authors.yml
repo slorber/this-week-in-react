@@ -162,5 +162,27 @@ szymonbanys:
     github: borys3kk
     linkedin: szymon-banys
 
+jakubkowalski:
+  name: Jakub Kowalski
+  title: Software Engineer - Software Mansion
+  url: https://x.com/kowalskijakub20
+  image_url: https://github.com/kowalskijakub.png
+  page: true
+  socials:
+    x: kowalskijakub20
+    github: kowalskijakub
+    linkedin: jakub-kowalski-289292207
+
+katarzynapodmokla:
+  name: Katarzyna Podmokła
+  title: Software Engineer - Software Mansion
+  url: https://x.com/katPodm
+  image_url: https://github.com/katPo.png
+  page: true
+  socials:
+    x: katPodm
+    github: katPo
+    linkedin: katarzyna-podmokła-677766427
+
 # Note: don't forget to add newly added authors to the localized authors files
 # i18n/fr/docusaurus-plugin-content-blog-articles/authors.yml file
