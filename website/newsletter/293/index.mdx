@@ -1,6 +1,6 @@
 ---
 slug: /293
-title: "This Week In React #293: Next.js 16.3, browser() API, useOptimistic, Generative UI, MobX, SWR, React Aria, TanStack Charts | PlainText, Vision Camera, Gesture Handler, Expo Simulators, Firebase | Stacked PRs, Node, Vite, pnpm, Hono"
+title: "This Week In React #293: Next.js 16.3, browser(), TanStack Charts, React Aria, MobX, SWR, useOptimistic, Generative UI | PlainText, Vision Camera, Gesture Handler, Expo Simulators, Firebase | Stacked PRs, Node, Vite, pnpm, Hono"
 authors: [jakubkowalski, katarzynapodmokla]
 date: 08-05-2026
 unlisted: true
@@ -15,6 +15,8 @@ On the React Native side, a new, faster PlainText component and a deep dive into
 Across the broader dev ecosystem, GitHub stacked PRs finally entered public preview with native base retargeting and a gh-stack CLI.
 
 Let's dive in!
+
+**🏝️FYI: we’re taking a break next week; see you soon!**
 
 <!-- truncate -->
 
@@ -48,7 +50,8 @@ It works like magic in the background:
 ## ⚛️ React {#react}
 
 [![Next.js 16.3 Released: Instant Navigations & 90% RAM Reduction](/emails/issues/293/next.jpg)](https://nextjs.org/blog/next-16-3)
-[Next.js 16.3 Released: Instant Navigations & 90% RAM Reduction](https://nextjs.org/blog/next-16-3)
+
+**[Next.js 16.3 Released: Instant Navigations & 90% RAM Reduction](https://nextjs.org/blog/next-16-3)**
 
 Next.js 16.3 officially shipped with major engine and runtime upgrades.
 Long dev sessions now use up to 90% less RAM, repeat builds leverage
@@ -62,13 +65,13 @@ SPA. This signals a clear architectural shift for Next.js: returning to
 a dynamic-by-default model with fully explicit, predictable caching.
 
 - 💸 [TrustedRouter - Build AI features with hundreds of models through one OpenAI-compatible API with failover and no prompt or output logs](https://trustedrouter.com/openai-compatible-llm-api?utm_source=thisweekinreact&utm_medium=sponsored_newsletter&utm_campaign=react_link_20260805&utm_content=react_link_openai_compatible)
-- 💸 [build mode - Stop being the code review bottleneck](https://go.posthog.com/twir-aug5)
 - 👀 [React Core PR - browser() API](https://github.com/react/react/pull/37143): Exposes a client-only react-dom API to safely suspend SSR for browser-specific components, eliminating hacky server error-suppression workarounds.
 - 📜 [React 19's useActionState: Preventing Sequenced Double Submits](https://shubhra.dev/tutorials/react-19-useactionstate) \- explains how React 19's `useActionState` queue behaves and how to correctly handle `isPending` states to prevent duplicate submits.
 - 📜 [Next.js 16 useOptimistic: Fixing Rapid-Click Race Conditions & Auto-Rollbacks](https://shubhra.dev/tutorials/nextjs-16-useoptimistic-rollback-pattern) \- covers React 19 optimistic UI edge cases, demonstrating why manual rollback logic is redundant, how to prevent overlapping requests per item, and how to handle Next.js 16 cache revalidation with `updateTag`.
 - 📜 [Visual Regression Testing: The Most Important Test You're Not Running](https://howtotestfrontend.com/resources/visual-regression-testing-introduction-guide) \- demonstrates how visual regression tests catch layout and CSS bugs missed by functional tests, with setup examples for E2E test runners and component environments.
 - 📜 [React Arven: Optimizing React Context Performance for Complex Local State](https://granat.blog/posts/2026-07-24-react-arven/) \- introduces a 1.4 kB dependency-free library that uses `useSyncExternalStore` and stable action refs to eliminate React Context re-renders when orchestrating complex local state.
 - 📜 [Architectural Patterns for Generative UI in React](https://boda.sh/blog/generative-ui/) \- break down of three approaches to letting LLMs build UI dynamically — schema-constrained output, a declarative JSON spec (A2UI/AG-UI), and open-ended sandboxed code generation.
+- 💸 [build mode - Stop being the code review bottleneck](https://go.posthog.com/twir-aug5)
 - 📦 [TanStack Charts \- Minimal (\~8 KiB core), framework-agnostic charting primitives on D3, with first-class React bindings \- Pre-alpha, but shipping daily updates.](https://github.com/TanStack/charts)
 - 📦 [use-webmcp-tool \- React abstraction for exposing client-side tools to browser AI agents via WebMCP](https://github.com/GoogleChromeLabs/use-webmcp-tool)
 - 📦 [Astryx 0.2 \- RTL auto-mirroring with a dedicated ESLint rule, tooltip status variant for inputs, scriptable CLI engine APIs, removed TabList orientation and CLI JSON types](https://github.com/facebook/astryx/releases/tag/v0.2.0)
