@@ -6,11 +6,15 @@ date: 08-19-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here!
 
-<Todo />
+Back after a little break to cover news from the last two weeks. A lot is going on, apparently not everyone is on holiday because we still have many interesting releases, including many RCs from upcoming major versions.
 
-Let's dive in!
+The native React Compiler rollout continues, React v19.3 seems around the corner, and there’s plenty of content related to TanStack Start and Next.js.
+
+React Native 0.87 is now out, paving the way for v1.0.
+
+🏝️ We’ll be taking a another break next week so see you in September 👋
 
 - 🗓️ [React Native Connection](https://reactnativeconnection.io/?utm_source=thisweekinreact.com) - 🇫🇷 Paris - 24 Sept. Deep dive into mobile development with top-tier experts from Expo, Software Mansion and Callstack. Regular ticket window closing August 31. Save 15% on your ticket with code "TWIR".
 - 🗓️ [React Summit US](https://reactsummit.us/?utm_source=thisweekinreact) - 🇺🇸 New York - 17 & 20 Nov. Incredible lineup announced featuring Kent C. Dodds, Shaundai Person, Ken Wheeler, Tanner Linsley, and Seth Webster! Get a 10% discount with code "TWIR".
@@ -40,10 +44,47 @@ True story. Dan Mindru got a GitHub notification at the dentist, skimmed a green
 
 ## ⚛️ React {#react}
 
-<Todo />
+**The React Compiler rollout**
+
+The rollout of the Rust-based compiler continues:
+
+- [Oxlint 1.79 just added support](https://oxc.rs/blog/2026-08-18-react-compiler-support). The new `oxc-transform-react` package also unlocks automatic memoization and will soon be supported in `@vitejs/plugin-react` ([PR](https://github.com/vitejs/vite-plugin-react/pull/1419) already merged). Along the way, they made many improvements to performance and behavior over the original Rust port and even found bugs in the Babel version.
+- [Biome 2.5.8](https://github.com/biomejs/biome/releases/tag/%40biomejs%2Fbiome%402.5.8) is out with a new `useReactCompiler` nursery/experimental rule, although it’s an initial version and there’s [remaining work](https://github.com/biomejs/biome/issues/10974) to be done such as splitting the rule into many smaller ones.
+- [Bun 1.4 will include React Compiler support](https://github.com/oven-sh/bun/issues/24356#issuecomment-5276435139) through `--react-compiler` and `Bun.build({reactCompiler: true})`.
+
+---
 
 - 💸 [build mode - Why we're bullish on loops](https://go.posthog.com/twir-aug19)
-- 💸 [TrustedRouter - Add every AI model to your React app through one OpenAI-compatible API with automatic failover and no prompt or output logs](https://trustedrouter.com/openai-compatible-llm-api?utm_source=thisweekinreact&utm_medium=sponsored_newsletter&utm_campaign=react_link_20260819&utm_content=react_link_every_model)
+  logs](https://trustedrouter.com/openai-compatible-llm-api?utm_source=thisweekinreact&utm_medium=sponsored_newsletter&utm_campaign=react_link_20260819&utm_content=react_link_every_model)
+- 👀 [React PR \- Enable parallel transitions flag everywhere](https://github.com/react/react/pull/37290) \- Parallel transitions are already used in production at Meta, and are likely to come in v19.3 for both React and React Native.
+- 👀 [TanStack Router reimplemented](https://github.com/TanStack/router/discussions/8087) \- Prominent Node.js contributor Yagiz Nizipli reimplemented TanStack Router APIs, claiming a drop-in replacement up to 19x faster. Tanner Linsley answers.
+- 💬 [Next.js team \- Ask us anything on Reddit](https://www.reddit.com/r/nextjs/comments/1vnlcsk/were_the_nextjs_team_ask_us_anything/) \- Apart from the Next.js discussions, happy to hear that Fragment refs and ViewTransition will be stable in React 19.3\!
+- 💬 [React Change Proposals from Andrew Clark](https://github.com/reactwg/react/discussions/categories/rcp?discussions_q=is%3Aopen+category%3ARCP+sort%3Atop+created%3A%3E%3D2026-07-19) \- 5 proposals being presented in the React Working Group related to Async React, Optimistic Updates, Transitions, and Server References.
+- 💬 [React Router \- Changes planned for v9](https://github.com/remix-run/react-router/discussions/15371) \- This discussion will keep track of what’s coming in the next major, scheduled for mid-2027.
+- 🐦 [Cursor completed its migration from Solid (v1) to React and StyleX](https://x.com/poteto/status/2089227731305464150) \- In practice, signal-based approaches created perf footguns. Their new product “Bot” forbids the direct usage of `useEffect`.
+- 📜 [Impersonating the DOM](https://julesblom.com/writing/hoistable-svg-defs-ii) \- A quite interesting lib design technique used by React Aria. `createPortal(children, fakeDocument)` lets you eavesdrop on the reconciler operations and get access to the rendered children. This pattern lets you do various things, such as hoisting/deduplicating SVG `<defs>`.
+- 📜 [How Lovable.dev moved from Next.js to TanStack Start](https://lovable.dev/blog/how-we-migrated-lovable-dev-away-from-nextjs) \- Lovable builds and hosts primarily TanStack Start apps, so they decided to adopt the framework for their flagship app to dogfood their own platform and turn it into a typical Lovable app. This describes the incremental migration approach: making the code framework-agnostic, using agents, migrating related routes together, and ensuring both frameworks can run simultaneously. The migration brought better DX/AX and simpler abstractions, but TanStack Start requires more bundler customization.
+- 📜 [Making Navigations Instant in v0](https://nextjs.org/blog/making-v0-navigations-instant) \- Next.js 16.3 now supports pre-rendering dynamic content at runtime, making navigation feel instantaneous. Assert this behavior with a new Playwright `instant()` helper, and let your AI agents fix the failing tests with the provided skill.
+- 📜 [Reliable Query Prefetching with TanStack Router](https://tkdodo.eu/blog/reliable-query-prefetching-with-tanstack-router) \- Reliable prefetching requires using the same query options in the route loader prefetches and component queries, which may diverge at scale. Put query options in Route Context to keep them in sync.
+- 📜 [Inside a TanStack Router Navigation](https://tanstack.com/blog/tanstack-router-navigation-lanes) \- Explains the lifecycle of a navigation and how edge cases are handled, such as using a transaction and private lane system to handle race conditions.
+- 📜 [Building App-like Experiences with Next.js 16.3](https://nextjs.org/blog/building-app-like-experiences-with-nextjs-16-3) \- A nice overview of all the cutting-edge Next.js features useful to build modern web apps, illustrated through 4 open source app demos.
+- 📜 [Coordinating Optimistic Updates in](https://aurorascharff.no/posts/coordinating-optimistic-updates-in-nextjs/) [Next.js](http://Next.js) \- Use `useActionState` and `useOptimistic` to coordinate overlapping transitions with an Action queue, a reducer, and optimistic state with automatic rollbacks. Not so easy to wire, but this pattern can be learned once and applied in many places.
+- 📜 [Using `next/root-params` in Next.js 16.3](https://next-intl.dev/blog/nextjs-root-params) \- A game-changer for `next-intl`, that can now read a `[locale]` param of a root layout in all Server Components.
+- 💸 [TrustedRouter - Add every AI model to your React app through one OpenAI-compatible API with automatic failover and no prompt or output
+- 📦 [OXC for TSRX \- Parse, lint, format `.tsrx` files with Oxc](https://compiled.run/oxc-tsrx) \- This promising spiritual successor to JSX now has a fast Rust-based toolchain.
+- 📦 [GTKX 1.0 \- The React framework for Linux, declarative layer on top of GTK4](https://gtkx.dev/blog/gtkx-1-0)
+- 📦 [Unhead 3.3 \- Framework-agnostic `<head>` component \- Support `<Fragment>`, various React fixes](https://github.com/unjs/unhead/releases/tag/v3.3.0)
+- 📦 [Astryx 0.3 & 0.4 \- Meta’s fully customizable design system based on StyleX](https://github.com/facebook/astryx/release)
+- 📦 [React-Hook-Form 7.85 \- Support React `<Activity>`](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.85.0)
+- 📦 [shadcn React 0.3 \- New `<Questionnaire>` component for multi-step question flows](https://ui.shadcn.com/docs/changelog/2026-08-questionnaire)
+- 📦 [Fig \- A small TypeScript UI runtime based on React Fiber.](https://www.bengubler.com/posts/2026-08-14-introducing-fig-ui-runtime)
+- 📦 [Rshono \- Minimalist web framework based on Hono, Rspack and React Server Components](https://github.com/rshono/rshono)
+- 📦 [Sugar High 2.0 \- Lightweight, composable syntax highlighter with React bindings](https://github.com/huozhi/sugar-high/releases/tag/v2.0.0)
+- 📦 [TanStack Form 2.0 alpha \- Redesigned APIs, new validation pipeline, performance and type-safety improvements](https://tanstack.com/blog/announcing-tanstack-form-v2-alpha)
+- 📦 [Preact 11.0 RC \- `use()`, `createPortal()`, `useEffectEvent()`, and more](https://github.com/preactjs/preact/releases/tag/11.0.0-rc.0)
+- 📦 [Humid 1.0 \- React server-side rendering in Rails using V8 / mini_racer](https://thoughtbot.com/blog/humid-1-0-react-server-side-rendering-in-rails-can-be-easy)
+- 🎥 [Lucas Barake \- The state library that made me drop Zustand](https://www.youtube.com/watch?v=397MsJf8HGg) \- Effect v4 is [now in RC](https://www.effect.website/blog/releases/effect/40-rc), comes with a reactive Atom implementation including first-class React bindings.
+- 🎙️ [This Month in React \- July 2026 \- React-alikes, governance, and state management](https://share.transistor.fm/s/55d1846a)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -74,23 +115,69 @@ Conference tickets are available at [agent.sh](https://www.agent.sh/).
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[**React Native 0.87**](https://reactnative.dev/blog/2026/08/11/react-native-0.87)
+
+Like clockwork, React Native 0.87 is out\! It's the biggest step towards RN 1.0 in a long time, coming with intentional breaking changes, so it deserves more than a routine upgrade note.
+
+- **Strict TypeScript API by default**: Types are generated automatically from source and scoped to the package's root, so internal file changes are no longer breaking changes. Dedicated `*Instance` types (e.g. `ViewInstance`, `TextInputInstance`) improve `ref` typing of built-in components, and doc comments now flow straight into your IDE. Alex Hunt [goes into detail](https://x.com/huntie/status/2087221384422592629) about the work that went into this: compatibility fixes for Tailwind, Uniwind, and Expo Web, plus an upstream TypeScript fix for hidden `Libraries/` subpaths.
+- **Faster, leaner Metro**: Source map generation is now 2x faster and uses half of the memory. Support for TypeScript and ESM config files.  
+  **Experimental Swift Package Manager support for iOS**: Opt-in and additive: Xcode is enough — no Ruby, no Bundler, no CocoaPods. CocoaPods remains the default path.
+- **Android Gradle Plugin (AGP) v9**: First RN release to support AGP 9, with recommended opt-outs for built-in Kotlin and the new DSL until AGP 10.x.
+- **API surface cleanup**: Many deprecated APIs have been removed, including flagship ones like `InteractionManager`. New APIs are marked as deprecated and scheduled to be removed later. `AbortController` is now complete and `backgroundImage: linear-gradient/radial-gradient` is now stable.
+- **New requirements**: The minimum toolchain requirements is now Node.js 22, AGP 9, and Kotlin 2.0+.
+
+—
 
 - 💸 [Crisp - Add in-app customer support to your React Native or Expo app in just a few lines of code ](https://crisp.chat/?utm_source=twir&utm_medium=newsletter&utm_campaign=crisp_q3_nl&utm_content=19aug26)
+- 📖 [RN docs \- Strict TypeScript API guide updated for 0.87: ref types, setup-env, FAQs](https://github.com/react/react-native-website/pull/5111)
+- 📜 [Fitting RAG in Your Pocket: Local Retrieval in React Native](https://margelo.com/blog/fitting-RAG-in-your-pocket) \- How to build on-device data retrieval for your apps using `@react-native-ai/llama` and native vector search with `nitro-sqlite` \+ `sqlite-vec`
+- 📜 [The Memory Hermes Can't See: Stale Shadow Nodes in React Native](https://swmansion.com/blog/the-memory-hermes-cant-see-stale-shadow-nodes-in-react-native/) \- Recent Hermes V1 memory regression triggered additional experiments that surfaced a fascinating finding about the Shadow Tree. Unmounting views causes the React component and the objects attached to it to still exist in memory, which can only be cleaned up by GC run.
+- 📜 [How we raised mobile end-to-end test stability to 98%](https://shopify.engineering/mobile-e2e-testing) \- Shopify stopped patching their Appium E2E suite to fix flaky tests with an opinionated wrapper. They moved away from testing implementation details with TestIDs to using computer vision.
+- 📜 [How to build a resilient activity tracker with Expo](https://expo.dev/blog/how-to-build-a-resilient-activity-tracker-with-expo) \- Build an Expo app with sessions that survive backgrounding, app kills, and crashes.
+- 📜 [Scanning Barcodes in React Native Apps: The Complete Guide (2026)](https://margelo.com/blog/react-native-barcode-scanner)
+- 📜 [Fable 5 vs GPT-5.6 Sol: I spent $2,000 and 2 billion tokens to find out who wins](https://expo.dev/blog/fable-5-vs-gpt-5-6-sol-expo-apps)
+- 📜 [Haptic Feedback on the Web: Why the Web Deliberately Refuses to Be as Tactile as Native Apps](https://swmansion.com/blog/haptic-feedback-on-the-web-why-the-web-deliberately-refuses-to-be-as-tactile-as-native-apps/)
 - 💸 [ConfigCat - Release React Native Features with Feature Flags, Without Redeploying](https://configcat.com/blog/ab-testing-react-native-apps-with-feature-flags/?utm_source=thisweekinreact_newsletter&utm_medium=sponsor&utm_campaign=reactnative_20260819)
+- 📦 [Firebase 26 \- New architecture foundation: TurboModules, TypeScript parity, modular API](https://invertase.io/blog/react-native-firebase-v26-release)
+- 📦 [Skia 2.11 \- Updates Skia engine, drive multiple animated props from one shared value](https://github.com/Shopify/react-native-skia/releases/tag/v2.11.0)
+- 📦 [Rozenite 2.1 \- Unified plugin UI, feature flags plugin, agent skills CLI](https://github.com/callstackincubator/rozenite/releases/tag/v2.1.0)
+- 📦 [Sentry 8.23 \- Swift pod migration](https://github.com/getsentry/sentry-react-native/releases/tag/8.23.0) \- Action required for RN \< 0.75, `use_modular_headers!` is required in the Podfile now that RNSentry ships Swift
+- 📦 [Screens 4.27 \- RN 0.87 support, experimental `ScrollToTopGuard`](https://github.com/software-mansion/react-native-screens/releases/tag/4.27.0)
+- 📦 [Maestro 2.8 \- Swipe from a point inside an element, variables in permissions, screenshot tresholds, and Maestro Cloud improvements](https://maestro.dev/blog/maestro-cli-2-8-0)
+- 📦 [Enriched Markdown 1.0 \- First stable release: block-editing input pipeline, iOS SwiftUI renderer](https://github.com/software-mansion/enriched-markdown/releases/tag/v1.0.0)
+- 📦 [Pager View 9.0 \- Replaces legacy pager implementation with Jetpack Compose on Android](https://github.com/callstack/react-native-pager-view/releases/tag/v9.0.0)
+- 📦 [Gesture Handler 3.2 \- `Pressable` on `Touchable`, hover callbacks, Strict TS API, AGP 9](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/v3.2.0)
+- 📦 [Worklets 0.12 \- WeakRef on worklet runtimes, Bundle Mode loading on par with RN, `enableLocking` option](https://github.com/software-mansion/react-native-reanimated/releases/tag/worklets-0.12.0)
+- 📦 [Nitro Fetch 1.6 \- tvOS support, shared iOS URLCache, prefetch cache fixes](https://github.com/margelo/react-native-nitro-fetch/releases/tag/v1.6.0)
+- 📦 [Expo Pretext 1.2 \- Fixes Android module that never compiled, web font measurement fix](https://github.com/JubaKitiashvili/expo-pretext/releases/tag/v1.2.0)
+- 📦 [Argent 0.20 \- Concurrent flow recordings, Chromium per launch step, MCP registry, .env secrets](https://github.com/software-mansion/argent/releases/tag/v0.20.0)
+- 📦 [Safe Area Context 5.9 \- AGP 9 support, web resize/inset fixes](https://github.com/appandflow/react-native-safe-area-context/releases/tag/v5.9.0)
+- 🤖 [Expo Tuft \- Higher-order agent reachable from Slack/iMessage, runs on an always-on machine](https://expo.dev/services/tuft) \- Technical preview of a new Expo AI product.
+- 🤖 [MargeloChat \- Open-source ChatGPT-style RN AI chat app with RAG and streaming](https://github.com/margelo/ai-chat-demo)
+- 🤖 [iOS Simulator MCP 2.1 \- App lifecycle tools: terminate_app, open_url, list_apps](https://github.com/joshuayoes/ios-simulator-mcp/releases/tag/v2.1.0)
+- 🎥 [Callstack \- Can a Specialized Model Beat Frontier Models at React Native?](https://www.youtube.com/watch?v=eiGcqvji4nk)
+- 🎙️ [RNR 369 \- AppRegistry Explained](https://infinite.red/react-native-radio/rnr-369-rnr-explains-appregistry) \- Breaks down RN’s AppRegistry. What’s under the hood. From Expo and app entry points to brownfield apps and more.
+- 🎙️ [RNR 370 \- CopilotKit with Mike Ryan](https://infinite.red/react-native-radio/rnr-370-copilotkit-with-mike-ryan) \- Bringing AI agents to RN apps. Breaks down of AG-UI, generative UI, shared state, and the guardrails needed for trustworthy experiences.
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📜 [CSS: the bomb inside your inbox](https://portswigger.net/research/css-the-bomb-inside-your-inbox) \- Novel hacking techniques showing how CSS sanitizers in Gmail/Outlook/Fastmail can be worked around to steal tokens, hijack clicks, or keylog passwords.
+- 📜 [How Variable Mangling Works in Oxc Minifier](https://green.sapphi.red/blog/how-variable-mangling-works-in-oxc-minifier) \- Replacing original variable names with shorter ones with a slot assignment algorithm.
+- 📦 [Node.js 26.7 \- Perfetto tracing support](https://nodejs.org/en/blog/release/v26.7.0)
+- 📦 [Astro 7.2 \- Incremental static builds, opt out of session support](https://astro.build/blog/astro-720/)
+- 📦 [pnpm 12.0 RC](https://pnpm.io/blog/whats-different-in-pnpm-12) \- pnpm 12 has been rewritten in Rust and should be easy to adopt, apart from 5 things that differ.
+- 📦 [Vitest 5.0 RC \- Clear mocks by default, fake timers now mock Temporal, and more](https://main.vitest.dev/guide/migration.html#vitest-5) \- Stable version expected in 2-3 weeks, check the full v5 migration guide.
+- 📦 [Solid 2.0 RC \- First-class async support, new Rust-based compiler toolchain, simpler API surface](https://www.solidjs.com/blog/solid-2-0-rc-the-big-reveal)
+- 📦 [SvelteKit 3.0 RC \- Vite 8 \+ Rolldown, error boundaries, validated env vars, remote functions](https://svelte.dev/blog/sveltekit-3-release-candidate)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/294/meme.jpg)](https://x.com/jxnlco/status/1931003015051518077)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/294/meme2.jpg)](https://x.com/samlambert/status/2089352497794277639)
 
 See ya! 👋
