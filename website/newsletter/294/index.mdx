@@ -16,9 +16,6 @@ React Native 0.87 is now out, paving the way for v1.0.
 
 🏝️ We’ll be taking a another break next week so see you in September 👋
 
-- 🗓️ [React Native Connection](https://reactnativeconnection.io/?utm_source=thisweekinreact.com) - 🇫🇷 Paris - 24 Sept. Deep dive into mobile development with top-tier experts from Expo, Software Mansion and Callstack. Regular ticket window closing August 31. Save 15% on your ticket with code "TWIR".
-- 🗓️ [React Summit US](https://reactsummit.us/?utm_source=thisweekinreact) - 🇺🇸 New York - 17 & 20 Nov. Incredible lineup announced featuring Kent C. Dodds, Shaundai Person, Ken Wheeler, Tanner Linsley, and Seth Webster! Get a 10% discount with code "TWIR".
-
 <!-- truncate -->
 
 import Support from "../_support.mdx";
@@ -62,6 +59,7 @@ The rollout of the Rust-based compiler continues:
 - 💬 [React Change Proposals from Andrew Clark](https://github.com/reactwg/react/discussions/categories/rcp?discussions_q=is%3Aopen+category%3ARCP+sort%3Atop+created%3A%3E%3D2026-07-19) \- 5 proposals being presented in the React Working Group related to Async React, Optimistic Updates, Transitions, and Server References.
 - 💬 [React Router \- Changes planned for v9](https://github.com/remix-run/react-router/discussions/15371) \- This discussion will keep track of what’s coming in the next major, scheduled for mid-2027.
 - 🐦 [Cursor completed its migration from Solid (v1) to React and StyleX](https://x.com/poteto/status/2089227731305464150) \- In practice, signal-based approaches created perf footguns. Their new product “Bot” forbids the direct usage of `useEffect`.
+- 🗓️ [React Summit US](https://reactsummit.us/?utm_source=thisweekinreact) - 🇺🇸 New York - 17 & 20 Nov. Incredible lineup announced featuring Kent C. Dodds, Shaundai Person, Ken Wheeler, Tanner Linsley, and Seth Webster! Get a 10% discount with code "TWIR".
 - 📜 [Impersonating the DOM](https://julesblom.com/writing/hoistable-svg-defs-ii) \- A quite interesting lib design technique used by React Aria. `createPortal(children, fakeDocument)` lets you eavesdrop on the reconciler operations and get access to the rendered children. This pattern lets you do various things, such as hoisting/deduplicating SVG `<defs>`.
 - 📜 [How Lovable.dev moved from Next.js to TanStack Start](https://lovable.dev/blog/how-we-migrated-lovable-dev-away-from-nextjs) \- Lovable builds and hosts primarily TanStack Start apps, so they decided to adopt the framework for their flagship app to dogfood their own platform and turn it into a typical Lovable app. This describes the incremental migration approach: making the code framework-agnostic, using agents, migrating related routes together, and ensuring both frameworks can run simultaneously. The migration brought better DX/AX and simpler abstractions, but TanStack Start requires more bundler customization.
 - 📜 [Making Navigations Instant in v0](https://nextjs.org/blog/making-v0-navigations-instant) \- Next.js 16.3 now supports pre-rendering dynamic content at runtime, making navigation feel instantaneous. Assert this behavior with a new Playwright `instant()` helper, and let your AI agents fix the failing tests with the provided skill.
@@ -130,6 +128,7 @@ Like clockwork, React Native 0.87 is out\! It's the biggest step towards RN 1.0 
 
 - 💸 [Crisp - Add in-app customer support to your React Native or Expo app in just a few lines of code ](https://crisp.chat/?utm_source=twir&utm_medium=newsletter&utm_campaign=crisp_q3_nl&utm_content=19aug26)
 - 📖 [RN docs \- Strict TypeScript API guide updated for 0.87: ref types, setup-env, FAQs](https://github.com/react/react-native-website/pull/5111)
+- 🗓️ [React Native Connection](https://reactnativeconnection.io/?utm_source=thisweekinreact.com) - 🇫🇷 Paris - 24 Sept. Deep dive into mobile development with top-tier experts from Expo, Software Mansion and Callstack. Regular ticket window closing August 31. Save 15% on your ticket with code "TWIR".
 - 📜 [Fitting RAG in Your Pocket: Local Retrieval in React Native](https://margelo.com/blog/fitting-RAG-in-your-pocket) \- How to build on-device data retrieval for your apps using `@react-native-ai/llama` and native vector search with `nitro-sqlite` \+ `sqlite-vec`
 - 📜 [The Memory Hermes Can't See: Stale Shadow Nodes in React Native](https://swmansion.com/blog/the-memory-hermes-cant-see-stale-shadow-nodes-in-react-native/) \- Recent Hermes V1 memory regression triggered additional experiments that surfaced a fascinating finding about the Shadow Tree. Unmounting views causes the React component and the objects attached to it to still exist in memory, which can only be cleaned up by GC run.
 - 📜 [How we raised mobile end-to-end test stability to 98%](https://shopify.engineering/mobile-e2e-testing) \- Shopify stopped patching their Appium E2E suite to fix flaky tests with an opinionated wrapper. They moved away from testing implementation details with TestIDs to using computer vision.
