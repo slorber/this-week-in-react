@@ -1,6 +1,6 @@
 ---
 slug: /294
-title: "This Week In React #294: ..."
+title: "This Week In React #294: React Compiler, TanStack Start/Router/Query/Form, Next.js, GTKX, Effect, RHF, shadcn, Preact | RN 0.87, Screens, RNGH, Worklets, Skia, Firebase, Tuft, Nitro Fetch, Pager View | Node, Astro, pnpm, Vitest, Solid, SvelteKit"
 authors: [slorber, janjaworski]
 date: 08-19-2026
 unlisted: true
@@ -10,11 +10,11 @@ Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jawore
 
 Back after a little break to cover news from the last two weeks. A lot is going on, apparently not everyone is on holiday because we still have many interesting releases, including many RCs from upcoming major versions.
 
-The native React Compiler rollout continues, React v19.3 seems around the corner, and there’s plenty of content related to TanStack Start and Next.js.
+The native React Compiler rollout continues. React v19.3 seems around the corne. Plenty of TanStack Router/Start and Next.js content.
 
 React Native 0.87 is now out, paving the way for v1.0.
 
-🏝️ We’ll be taking a another break next week so see you in September 👋
+🏝️ We’ll be taking a another break next week. See you in September. 👋
 
 <!-- truncate -->
 
@@ -66,7 +66,7 @@ The rollout of the Rust-based compiler continues:
 - 📜 [Reliable Query Prefetching with TanStack Router](https://tkdodo.eu/blog/reliable-query-prefetching-with-tanstack-router) \- Reliable prefetching requires using the same query options in the route loader prefetches and component queries, which may diverge at scale. Put query options in Route Context to keep them in sync.
 - 📜 [Inside a TanStack Router Navigation](https://tanstack.com/blog/tanstack-router-navigation-lanes) \- Explains the lifecycle of a navigation and how edge cases are handled, such as using a transaction and private lane system to handle race conditions.
 - 📜 [Building App-like Experiences with Next.js 16.3](https://nextjs.org/blog/building-app-like-experiences-with-nextjs-16-3) \- A nice overview of all the cutting-edge Next.js features useful to build modern web apps, illustrated through 4 open source app demos.
-- 📜 [Coordinating Optimistic Updates in](https://aurorascharff.no/posts/coordinating-optimistic-updates-in-nextjs/) [Next.js](http://Next.js) \- Use `useActionState` and `useOptimistic` to coordinate overlapping transitions with an Action queue, a reducer, and optimistic state with automatic rollbacks. Not so easy to wire, but this pattern can be learned once and applied in many places.
+- 📜 [Coordinating Optimistic Updates in Next.js](https://aurorascharff.no/posts/coordinating-optimistic-updates-in-nextjs/) \- Use `useActionState` and `useOptimistic` to coordinate overlapping transitions with an Action queue, a reducer, and optimistic state with automatic rollbacks. Not so easy to wire, but this pattern can be learned once and applied in many places.
 - 📜 [Using `next/root-params` in Next.js 16.3](https://next-intl.dev/blog/nextjs-root-params) \- A game-changer for `next-intl`, that can now read a `[locale]` param of a root layout in all Server Components.
 - 💸 [TrustedRouter - Add every AI model to your React app through one OpenAI-compatible API with automatic failover and no prompt or output
 - 📦 [OXC for TSRX \- Parse, lint, format `.tsrx` files with Oxc](https://compiled.run/oxc-tsrx) \- This promising spiritual successor to JSX now has a fast Rust-based toolchain.
