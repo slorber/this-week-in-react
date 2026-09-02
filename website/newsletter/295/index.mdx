@@ -1,19 +1,19 @@
 ---
 slug: /295
-title: "This Week In React #295: ..."
-authors: [slorber]
+title: "This Week In React #295: StyleX, browser(), Next.js, React Compiler, Vite, Bun, Astryx, React-Aria, TanStack | C++ API, Margelo, Observe, Reanimated, Teleport, Nitro, Screen Transitions | Zod, pnpm, vgpu, Remix, Rspack, Webpack"
+authors: [slorber, janjaworski]
 date: 09-02-2026
-unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
-<Todo />
+Back from our summer break, we’ll cover news from the last two weeks.
+
+React v19.3 is getting closer. The React Compiler in Rust is now available in Vite and Bun. CSS-in-JS is set to make a comeback.
+
+On the mobile side, React Native keeps refining its public API surface, an important step toward v1.0. Callstack acquired Margelo.
 
 Let's dive in!
-
-*   🗓️ [React Native Connection](https://reactnativeconnection.io/?utm_source=thisweekinreact.com) - 🇫🇷 Paris - 24 Sept. Last call to grab your ticket and join the React Native community in Paris! Get a 15% discount with code "TWIR".
-*   🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=thisweekinreact) - 🇬🇧 London - 23 & 26 Oct. 40+ talks and 5+ hands-on workshops on modern React & AI tooling for React devs. A great place to catch up with the community - all inside London's historic ex-brewery. Save 10% on your ticket with code "TWIR".
 
 <!-- truncate -->
 
@@ -31,12 +31,12 @@ import Support from "../_support.mdx";
 
 Agents ship React features faster than ever. They also ship unindexed queries, N+1s, and schema decisions made at 2am by a model that will never get paged.
 
-Fortunately, agents can *fix* database problems too. They just need production data, and that's what the PlanetScale MCP server gives them. Hook up an agent, and the loop looks like this:
+Fortunately, agents can _fix_ database problems too. They just need production data, and that's what the PlanetScale MCP server gives them. Hook up an agent, and the loop looks like this:
 
-*   PlanetScale flags a slow query
-*   The agent traces it back to the code in your repo
-*   The agent opens a PR with the fix
-*   You review and merge
+- PlanetScale flags a slow query
+- The agent traces it back to the code in your repo
+- The agent opens a PR with the fix
+- You review and merge
 
 Run it once, or put it on a schedule.
 
@@ -48,10 +48,43 @@ Underneath it all: the fastest, most scalable cloud Postgres and MySQL, with opt
 
 ## ⚛️ React {#react}
 
-<Todo />
+![stylex social card](/emails/issues/295/stylex.png)
+
+[StyleX](https://stylexjs.com/), the atomic CSS-in-JS library from Meta, has been all the rage on X recently. This probably follows the 𝕏 [Cursor migration from Tailwind to StyleX](https://x.com/poteto/status/2089227731305464150). Or maybe it’s related to Meta open-sourcing [Astryx](https://astryx.atmeta.com/), the extensible, agent-friendly design system built on top and powering thousands of their apps for years.
+
+Anyway, we already covered all that, so here are the recent resources to check out:
+
+- 📜 [Styling Linear for the future with StyleX](https://linear.app/now/styling-linear-for-the-future-stylex) \- Linear completed its styled-components to StyleX migration. They don’t explicitly mention Tailwind but still highlight where StyleX does better: strong type-safe constraints, deterministic and performant merging of styles, styling-at-a-distance deliberately hard.
+- 📜 [A deep dive into StyleX](https://flaviocopes.com/stylex/) \- Hands-on introduction and opinionated conclusion: Tailwind’s terse syntax is better for humans, while StyleX's stronger constraints are better for agents.
+- 📦 [Tailwind-StyleX \- Use Tailwind’s default design tokens directly in StyleX](https://github.com/aidenybai/tailwind-stylex)
+- 🎙️ [Syntax.fm \- Why everyone is moving to Stylex?](https://syntax.fm/show/1035/why-everyone-is-moving-to-stylex)
+
+---
 
 - 💸 [Lingui - New agent skills teach your AI agent to ship production-ready React i18n in one prompt](https://dub.sh/dyFMVkR)
+- 👀 [React Types PR \- Types for React 19.3](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/75429) \- We already had a hint of what’s coming in the last issue. This DefinitelyTyped PR is still a draft but cautiously confirms the upcoming highlights. A new React DOM `browser()` API is coming. `<ViewTransition>` and `<Fragment ref>` will be stable for React DOM usage, designed to be extended by other platform/renderers, with React Native support likely coming later.
+- 📖 [React DOM Docs \- New `use(browser(reason))` API](https://react.dev/reference/react-dom/browser) \- This new API coming in v19.3 lets you mark a component as browser-only during server rendering. Must be called from a Client Component, within a Suspense boundary. There’s also a new `onBrowserBailout()` server API introduced for reporting.
+- 📖 [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel) \- TanStack and Vercel are teaming up to make Vercel a first-class home for TanStack Start, leveraging the Nitro Vite plugin.
+- 🔐 [Next.js August 2026 Security Release](https://nextjs.org/blog/august-2026-security-release) \- v16.3.3 and v15.5.24 now available, fixing critical severity vulnerabilities.
+- 🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=thisweekinreact) - 🇬🇧 London - 23 & 26 Oct. 40+ talks and 5+ hands-on workshops on modern React & AI tooling for React devs. A great place to catch up with the community - all inside London's historic ex-brewery. Save 10% on your ticket with code "TWIR".
+- 📜 [Making React Testing Library Tests 43% Faster](https://sigh.dev/posts/making-react-testing-library-faster/) \- The story of using Codex to find performance gains in RTL `getByRole()` and landing fixes upstream in jsdom.
+- 📜 [SSG for React with Vite](https://tendto.github.io/en/posts/ssg-for-react-with-vite/) \- Argues SSG should be the default over CSR and shows how to implement that with a tiny Vite plugin.
 - 💸 [build mode - We used context engineering to 5x conversion and 2x activation](https://go.posthog.com/twir-sept2)
+- 📦 [Vite Plugin React 6.1 \- New `{compiler: true}` option to use the Oxc React Compiler](https://github.com/vitejs/vite-plugin-react/releases/tag/plugin-react%406.1.0) \- After landing in Oxlint, the faster Oxc Rust-based React Compiler comes to Vite through a new optional `oxc-transform-react` package. More than 10x faster than the Babel plugin\!
+- 📦 [Bun 1.4](https://bun.com/blog/bun-v1.4) \- The Rust rewrite is ready, alongside so many other things that the blog post probably takes hours to read, so we’ll focus on the React-related updates only. Built-in support for the React Compiler in Rust. A new `Bun.markdown.react()` turns Markdown into a React Element, supporting component substitution. Node.js compatibility improvements, Next.js 16 compatibility, reduced memory usage.
+- 📦 [Formisch 1.0 \- Schema-first, framework-agnostic form library](https://formisch.dev/blog/formisch-v1/) \- The form library coming from the Valibot ecosystem supports React and React Native. Includes migration guides from React Hook Form, Formik, and TanStack Form.
+- 📦 [TanStack Query 5.102 \- Simplify Query Methods](https://github.com/TanStack/query/releases/tag/release-2026-08-22-1856) \- An important release for TanStack Query that finally implemented its RFC to merge 6 former imperative query methods under only 2 unified APIs: `query()` and `infiniteQuery()`.
+- 📦 [GPUIX \- React renderer for Zed’s GPUI](https://github.com/remorses/gpuix) \- A new performant alternative to Electron with no WebView to build GPU-accelerated desktop apps.
+- 📦 [Satori 0.29+ \- `corner-shape`, `backdrop-filter`, HarfBuzz text shaping, and more](https://github.com/vercel/satori/releases) \- This popular tool widely used to generate OpenGraph images received many interesting updates lately, soon available in Next.js `ImageResponse` API.
+- 📦 [React Aria 1.21 \- NavigationTree component, Menu async loading](https://react-aria.adobe.com/releases/v1-21-0)
+- 📦 [Astryx 0.5 \- 30 locales, one Escape key, and bottom sheets in core](https://astryx.atmeta.com/blog/astryx-v0-5-0)
+- 📦 [Waku 1.0 RC \- Public API fixed, type-safe and instant navigation](https://waku.gg/blog/waku-v1-rc)
+- 📦 [TanStack Charts 0.16 \- Officially in alpha, ready to be field-tested](https://github.com/TanStack/charts/releases/tag/v0.16.0)
+- 📦 [Nuqs 2.10 \- The React SPA adapter is now SSR-compatible for Astro, Inertia, Fastify](https://nuqs.dev/docs/changelog#v2.10.0)
+- 📦 [Fumapress 1.0 \- Waku-based content site generator](https://github.com/fuma-nama/fumapress/releases/tag/fumapress%401.0.0)
+- 📦 [React Input Format & Mask 1.0 \- Hook/component for building formatted/masked inputs](https://github.com/TrySound/rifm/releases/tag/v1.0.0)
+- 📦 [React Hook Form 7.86 & 7.87 \- Typesafe `getErrors()`, trigger `shouldTouch`, opaque type registry](https://github.com/react-hook-form/react-hook-form/releases#release-v7.86.0)
+- 🎙️ [This Month in React \- Release candidate season; is that an asteroid hitting web educators?](https://share.transistor.fm/s/f48613c6)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -75,23 +108,73 @@ Use Wallaby with Codex, Claude Code, GitHub Copilot, Cursor, Windsurf, and other
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[**React Native RFC \- Reducing the C/C++ public API**](https://github.com/react-native-community/discussions-and-proposals/pull/1018)
 
-- 💸[Crisp - React Native chat SDK with TypeScript, push notifications, event listeners and Helpdesk integration](https://crisp.chat/?utm_source=twir&utm_medium=newsletter&utm_campaign=crisp_q3_nl&utm_content=2sep26)
-- 💸[ConfigCat - Run A/B Tests in React Native Apps with Feature Flags and Amplitude](https://configcat.com/blog/ab-testing-react-native-apps-with-feature-flags/?utm_source=thisweekinreact_newsletter&utm_medium=sponsor&utm_campaign=reactnative_202609)
+React Native 1.0 is still on the horizon, but to respect Semantic Versioning, it first needs to clearly define its public API surface. Following the work on stable JS/TS and Java/Kotlin APIs, it’s now the turn of the C++ APIs to be clarified.
+
+Until now, there has been no clear distinction between public and private C++ APIs. As a result, community libraries and frameworks sometimes depend on APIs that were never intended to be public. This can cause libraries to break when upgrading React Native, or force the core team to preserve backward compatibility for internal APIs to avoid breaking the ecosystem.
+
+This RFC introduces a new three-tier visibility model for C++ APIs:
+
+- **Public:** Stable within major versions, safe for libraries to depend on, and exposed through a single umbrella header.
+- **Framework:** Stable within minor versions. Regular usage emits a suppressible warning.
+- **Private:** No stability guarantees. Regular usage emits a suppressible error.
+
+There’s existing tooling to take a snapshot of existing C++ APIs, that it will be adapted to take into accoun this new visibility model. All this will greatly help stabilize the C++ APIs and ensure React Native doesn’t ship unintended breaking changes.
+
+Work is already in progress to apply this visibility model to all C++ APIs. This will be rolled out gradually, first opt-in through a `RN_STRICT_API` build flag, then opt-out after a grace period, giving time for the public API consumers to migrate to the new umbrella headers. Most APIs have already been categorized, so if your library depends on private or framework APIs, now is probably a good time to chime in.
+
+---
+
+- 💸 [Crisp - React Native chat SDK with TypeScript, push notifications, event listeners and Helpdesk integration](https://crisp.chat/?utm_source=twir&utm_medium=newsletter&utm_campaign=crisp_q3_nl&utm_content=2sep26)
+- 📣 [Margelo Joins Callstack to Advance High-Performance React Native Engineering](https://margelo.com/blog/margelo-joins-callstack) \- 2 major and complementary React Native consulting companies joining forces. Congrats to Mike, Marc, and all others.
+- 📣 [EAS Observe \- Performance monitoring for Expo apps, now generally available](https://expo.dev/blog/introducing-observe)
+- 📣 [OpenIAP \- Now backed by Amazon Developer, bringing IAP to Fire OS and Vega OS](https://www.openiap.dev/docs/updates/announcements#2026-08-19-amazon-fireos-vega)
+- 👀 [React Native PR \- ResizeObserver](https://github.com/react/react-native/pull/57723) \- A Web API spec-compliant implementation has been recently merged, but still behind a flag. More capable than `onLayout`.
+- 📖 [The React Native Developer's Security Guide](https://github.com/stephanww/rn-dev-security-guide) \- How to secure the developer's workstation, toolchain, repository, and CI.
+- 🗓️ [React Native Connection](https://reactnativeconnection.io/?utm_source=thisweekinreact.com) - 🇫🇷 Paris - 24 Sept. Last call to grab your ticket and join the React Native community in Paris! Get a 15% discount with code "TWIR".
+- 📜 [Speeding up Expensify's networking with NitroFetch](https://margelo.com/blog/speeding-up-expensifys-networking-with-nitro-fetch) \- Prefetching on the native side, before the JS bundle is even loaded, reduced startup time by at least 15%.
+- 📜 [Building a 3D AI assistant using React Native and GPT-Realtime](https://margelo.com/blog/building-a-3d-ai-avatar-in-react-native) \- How to use `react-native-filament` to render 3D characters and sync its animations with AI responses.
+- 📜 [Pasting images into TextInput should not be this hard](https://expo.dev/blog/pasting-images-into-textinput-should-not-be-this-hard) \- Pasting an image into a chat input is surprisingly hard. Wrapping `TextInput` turned out to be the best decision to avoid reimplementing well-known behaviors and APIs.
+- 📜 [Gesture Handler's Touchable: The Button We Wish We Had Sooner](https://swmansion.com/blog/react-native-gesture-handler-s-touchable-the-button-we-wish-we-had-sooner/) \- The old nice button components are deprecated and replaced with the new Touchable component. Per-state scale, opacity, and underlay with custom transition times. Hover support on mobile via mouse and pencil, all without writing a single animation.
+- 📜 [Working With the React Native Super App Showcase Repository](https://www.callstack.com/blog/working-with-the-react-native-super-app-showcase-repository) \- How to work with super apps with non-trivial examples. App lifecycle, federation setup, monorepo management.
+- 📜 [React Native Bridgeless, race conditions with concurrent JS runtimes](https://ospfranco.com/concurrent-engines-crash/) \- New Architecture changes how a reload instantiates a new runtime when doing an OTA update. This caused the query to run on the wrong thread, resulting in a crash.
+- 💸 [ConfigCat - Run A/B Tests in React Native Apps with Feature Flags and Amplitude](https://configcat.com/blog/ab-testing-react-native-apps-with-feature-flags/?utm_source=thisweekinreact_newsletter&utm_medium=sponsor&utm_campaign=reactnative_202609)
+- 📦 [GTKX \- React Navigation on Linux rendered by native libadwaita widgets](https://gtkx.dev/blog/gtkx-1-4) \- The platform-agnostic core of React Navigation now renders to GNOME. Interesting signal for where navigation abstractions can go.
+- 📦 [Reanimated 4.6 \- CSS lifecycle callbacks on native, contrastColor, RN 0.87 support](https://github.com/software-mansion/react-native-reanimated/releases/tag/4.6.0)
+- 📦 [Teleport 1.2 \- Fast reparenting on Android, no more empty frames](https://kirillzyusko.github.io/react-native-teleport/blog/1-2-0-android-fast-reparenting)
+- 📦 [Nitro 0.37 \- Props move into core via C++ templates, immutable View prop snapshots](https://github.com/margelo/nitro/releases/tag/v0.37.0)
+- 📦 [Screen Transitions 4.0 \- React 19.2 Activity, Reanimated 4, and a v3 migration guide](https://screen-transitions.esjr.org/migrating-from-v3)
+- 📦 [Maestro CLI 2.9 \- Test light and dark mode in one flow, Android WebView inspection](https://maestro.dev/blog/maestro-cli-2-9-0)
+- 📦 [Uniwind 1.11 \- Filter support on iOS and RN 0.87, scoped variables](https://github.com/uni-stack/uniwind/releases/tag/v1.11.0)
+- 📦 [Argent 0.21 \- Shake tool for simulators and emulators, profiler fixes](https://github.com/software-mansion/argent/releases/tag/v0.21.0)
+- 📦 [Rozenite 2.3 \- Lynx support, agent tooling, and plugin testing utilities](https://github.com/callstackincubator/rozenite/releases/tag/v2.3.0)
+- 📦 [Agent Device 0.20.10 \- AI SDK and MCP integrations, improved iOS snapshots, better Android visibility and gestures, Web hover automation](https://github.com/callstack/agent-device/releases/tag/v0.20.10)
+- 📦 [Nitro MLX 0.6 \- Turn-scoped inference on iOS, simplify agent chat experience, normalize LLM generation outcomes, configurable TTS](https://github.com/henrypldev/react-native-nitro-mlx/releases/tag/v0.6.0)
+- 🤖 [Expo Cloud Simulators \- Agents that reproduce TestFlight feedback, fix bugs, and open PRs](https://expo.dev/services/simulators)
+- 🤖 [Dactyl \- Vibe coding platform for native apps that simulates SwiftUI in your browser](https://x.com/rough__sea/status/2091755677974983025)
+- 🎙️ [RNR 371 \- PanResponder and the anatomy of RN gestures](https://infinite.red/react-native-radio/rnr-371-rnr-explains-pan-responder)
+- 🎙️ [RNR 372 \- Looking back on Chain React 2026](https://infinite.red/react-native-radio/rnr-372-looking-back-on-chain-react-2026)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [CSS \- Class Prefix Selector](https://www.bram.us/2026/08/20/the-future-of-css-target-multiple-classes-with-the-class-prefix-selector/) \- Not implemented anywhere yet, but CSS will support `.prefix-*` selectors, letting you target multiple CSS classes at once.
+- 👀 [HTML Spec PR \- Out-of-order streaming](https://bsky.app/profile/did:plc:hxmev3uady7j4litwnr5fzbg/post/3muk7eu23w22b) \- This exciting feature is already in Chrome/Edge and has been
+- 📦 [pnpm 12.0 \- Rust rewrite, project-aware global bins, registry revisions, and more](https://pnpm.io/blog/releases/12.0) \- The upgrade from v11 seems easy, leading to significantly faster installs.
+- 📦 [Zod 4.5 \- Ahead-of-time schema compilation, method memoization, new parsing features](https://zod.dev/blog/zod-4-5) \- Precompiled schemas parse 3-9x faster. Significant schema memory footprint improvements\!
+- 📦 [vgpu \- WebGPU library, designed for agents](https://vgpu.sh/) \- The creative library Vercel developed to ship performant shaders. Agents can verify their work with a CLI, even in sandboxes without a GPU.
+- 📦 [Remix 3.0 RC \- Full-stack, single dependency, composable JS framework based on web primitives](https://remix.run/blog/remix-3-release-candidate) \- I t’s time for the team to freeze feature development and commit to SemVer.
+- 📦 [Rspack 2.2 \- Performance, HMR and `import.meta` improvements, Browserslist Baseline targets](https://rspack.rs/blog/announcing-2-2)
+- 📦 [Webpack 5.110 \- Performance Hints, built-in CSS/HTML minification, native CSS recommended](https://webpack.js.org/blog/2026-08-29-webpack-5-110/)
+- 📦 [Node.js 26.8 \- Built-in ZIP archive support, REPL inline syntax highlighting](https://nodejs.org/en/blog/release/v26.8.0)
+- 📦 [Jest 30.5 \- `whenCalledWith()`, describe-level retries, new file watcher, perf and ESM fixes](https://github.com/jestjs/jest/releases/tag/v30.5.0)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/295/meme.jpg)](https://x.com/zkochan/status/2088249796171575375)
 
 See ya! 👋
