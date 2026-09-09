@@ -1,14 +1,18 @@
 ---
 slug: /296
 title: "This Week In React #296: ..."
-authors: [slorber]
+authors: [slorber, janjaworski]
 date: 09-09-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
-<Todo />
+We could feel it was coming, and here it is, ~~delaying~~ just in time for the newsletter\! 😇
+
+**React 19.3 is finally out**, with View Transitions and Fragment Refs now stable, among many other things. It looks like new devtools are also coming soon.
+
+We also got a sneak peek of React Native 0.88 and Expo Modules 2.0.
 
 Let's dive in!
 
@@ -36,9 +40,46 @@ And when the customizations start piling up, delegate them: Atomic CRM ships wit
 
 ## ⚛️ React {#react}
 
-<Todo />
+[![React 19.3](/emails/issues/296/react.jpg)](https://react.dev/blog/2026/09/09/react-19-3)
+
+**[React 19.3](https://react.dev/blog/2026/09/09/react-19-3)**
+
+The new minor version of React is finally out, and it’s a great one\!
+
+If you read us regularly, we already disclosed everything 😇, but here’s a reminder of the highlights:
+
+- **View Transitions**: now stable\! Also including the `addTransitionType` API that lets you customize the animation directly from the code triggering it.
+- **Fragment Refs**: now stable\! This lets you get a ref of a `<Fragment>` and manipulate its underlying children DOM nodes. A quite useful feature unlocking new composition patterns that were previously difficult or requiring a wrapper DOM node.
+- `use(browser())`: a first-class API to opt out a subtree of server-side rendering, replacing patterns based on `typeof window` and `useEffect`.
+- Trusted Types: security feature to use in conjunction with Content-Security-Policy to prevent XSS attacks.
+- RSC can render `<Context>`: no need to create a wrapper `<ContextProvider>` component anymore.
+
+Make sure to read that blog post because it contains interactive examples worth taking a look at, in particular to understand View Transitions and Fragment Refs.
+
+---
 
 - 💸 [Sentry - How to wire a custom metric into a Next.js app, chart it, and alert on it. Learn how. ](https://sentry.io/cookbook/custom-metrics-dashboard-alerts-nextjs/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=nextjs-fy27q3-cookbook&utm_content=newsletter-react-link-nextjs-metrics-dashboard-trysentry)
+- 👀 [React DevTools 8.0 \- Suspense Tab enabled, React Element panel, remove Timeline profiler in favor of Performance tracks, display dimmed Activity subtree](https://github.com/react/react/blob/main/packages/react-devtools/CHANGELOG.md#800) \- The v8 changelog is already merged and gives a sneak peek. Not published yet on npm or extension stores.
+- 👀 [React DevTools CDT MCP](https://github.com/react/react/tree/main/packages/react-devtools-cdt-mcp) \- Speaking of DevTools, the React team is also experimenting with a new package, recently published to npm. It’s not an MCP server, but lets Chrome DevTools discover/register/expose React tools useful for agents to understand and profile your app at runtime.
+- 👀 [React.dev PR \- Document missing SSR and hydration options](https://github.com/reactjs/react.dev/pull/8632) \- Adding the missing API ref documentation for SSR options such as `formState`, `importMap`, `maxHeadersLength`.
+- 👀 [Next.js PR \- Upgrade web-vitals to v6 and report soft navigations](https://github.com/vercel/next.js/pull/97232) \- `useReportWebVitals()` will soon report SPA soft navigations, recently included in Core Web Vitals.
+- 📜 [React Now Rusted All The Way Out](https://blog.master.dev/react-now-rusted-all-the-way-out/) \- An overview of the React Compiler in Rust landing in Vite, reporting a 17x speedup over the Babel version, and giving an alternative solution for React Router framework mode users.
+- 📜 [Replacing Next.js with a vibe-coded "framework"](https://maxleiter.com/blog/thank-u-next) \- Replacing Next.js on a personal site with a 5k-line framework Claude architected. Still React/MDX on the server, Preact islands on the client, with 99% less JS shipped. This shows meta-frameworks could eventually die out: their knowledge can be distilled into skills instead, and custom frameworks can be created on demand.
+- 📜 [Next.js \- How Turbopack chunks your JavaScript](https://nextjs.org/blog/turbopack-chunking) \- Explains the trade-offs behind code splitting strategies and the heuristics used to minimize both download size and request count. Next.js 16.3 comes with experimental options to optimize chunking and fine-tune heuristics based on your site access patterns.
+- 📜 [Next.js- How we closed 1,500 GitHub issues in one month](https://nextjs.org/blog/how-we-closed-1500-github-issues) \- No React lesson here: they built an agent to analyze backlog issues to help maintainers close thousands of issues with confidence.
+- 💸 [Prepathon by Cloudways \- Virtual Event \- Sep 22 & 23 \- Two days of sessions and hands-on activities on AI-assisted building, modern deployment, and what's actually working for developers shipping fast right now. Free to join from anywhere in the world. Register now to save your spot.](https://www.cloudways.com/en/prepathon.php?utm_source=weekinreact&utm_medium=newsletter&utm_campaign=Prepathon&utm_content=Community)
+- 📦 [React Google Maps 1.10 \- New new 3d components](https://github.com/visgl/react-google-maps/releases/tag/v1.10.0) \- The library completed its existing Google Maps 3D support with declarative components for GLB models, HTML markers, polylines, polygons, terrain flattening, and circular paths. A demo is worth a thousand words, so check this [3D Maps Markers demo](https://visgl.github.io/react-google-maps/examples/map-3d-markers) to see fancy 3D markers, including an animated Model3D Balloon.
+- 📦 [cn \- A new engine for Tailwind class merging and conflict resolution](https://github.com/shadcn-ui/cn) \- Claims to be 30x faster than tailwind-merge \+ clsx with the same APIs. Already integrated in [shadcn 4.21](https://github.com/shadcn-ui/ui/releases/tag/shadcn%404.21.0). Use `npx shadcn migrate cn` to migrate. Faster, but 26 KB minified; can be reduced with `cn build`.
+- 📦 [Effective RSC \- An experimental, Effect-native React Server Components framework for Bun](https://www.nikhilsnayak.dev/blog/introducing-effective-rsc) \- Ideas are worth taking a look at. RSC pages are `Effect.fn()` functions with Schema-decoded route params. Effect unlocks various benefits for RSCs, such as type-safe dependency injection and error handling, or request abortion propagation.
+- 📦 [Vidact \- Compiles React code to direct DOM operations](https://www.vidact.dev/) \- In beta, supporting a growing subset of React 19\. Components run only once when they mount.
+- 📦 [uf \- Unified Toolchain for Flow and React](https://docs.uniflowed.dev/) \- A Rust-based toolchain comparable to Vite+, improving DX for React and Flow. The author’s arguments are worth reading: Flow is a more precise type system than TypeScript for describing React code.
+- 📦 [DevJar 1.0 \- React live code playgrounds](https://github.com/huozhi/devjar) \- An interesting alternative to CodeSandbox to embed interactive React-based experiences on your site.
+- 📦 [Bamboo CSS \- Zero-runtime CSS-in-JS](https://bamboocss.com/docs/overview/getting-started) \- A Vite compiler erases the runtime, prunes unused tokens, and fails the build on invalid tokens.
+- 📦 [Base UI 1.8 \- Improves mount perf for Menu/Popover, `Combobox.createItems()` API, Avatar lazy-loading](https://base-ui.com/react/overview/releases/v1-8-0)
+- 📦 [Rsbuild Plugin React Router 0.6 \- Support React Router 8 and its RSC mode](https://github.com/rstackjs/rsbuild-plugin-react-router/releases/tag/rsbuild-plugin-react-router%400.6.0)
+- 📦 [Storybook 10.6 \- TanStack / NextJS-Vite framework fixes, CLI bindings for agent tools/skills, performance improvements](https://github.com/storybookjs/storybook/releases/tag/v10.6.0)
+- 📦 [React Window 2.3 \- New optional `rowKey/columnKey` props](https://github.com/bvaughn/react-window/releases/tag/2.3.0)
+- 📦 [Jotai 3.0 \- Modernized ESM-only package, removing deprecated APIs](https://github.com/pmndrs/jotai/releases/tag/v3.0.0)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -50,35 +91,58 @@ And when the customizations start piling up, delegate them: Atomic CRM ships wit
 
 **[Build Custom Forms and Surveys in React](https://surveyjs.io/?utm_source=this-week-in-react&utm_medium=email)**
 
-[SurveyJS](https://surveyjs.io/?utm_source=this-week-in-react&utm_medium=email) is a set of UI libraries for building, rendering, and analyzing forms and surveys directly inside your React application. Create everything from simple registration forms to complex surveys and multi-step wizards, connect your forms to any backend, and match them to your existing design system with custom themes or *style adapters for Bootstrap, shadcn/ui, and Material UI*.  
-  
+[SurveyJS](https://surveyjs.io/?utm_source=this-week-in-react&utm_medium=email) is a set of UI libraries for building, rendering, and analyzing forms and surveys directly inside your React application. Create everything from simple registration forms to complex surveys and multi-step wizards, connect your forms to any backend, and match them to your existing design system with custom themes or _style adapters for Bootstrap, shadcn/ui, and Material UI_.
+
 • Embed a drag-and-drop form builder for business users  
 • Update forms without shipping a new release  
-• Reuse one JSON schema across the builder, renderer, PDF exports, and analytics  
-  
+• Reuse one JSON schema across the builder, renderer, PDF exports, and analytics
+
 Developers control the architecture. Business teams manage forms. Your company retains full control over the UI and user data. 🚀
 
 ---
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
-
 - 💸 [build mode - Stop being the code review bottleneck](https://go.posthog.com/twir-sept9)
+- 👀 [RN 0.88 RC \- SwiftPM tooling, DevTools screenshots, ArrayBuffer in TurboModules, Babel Platform inlining improvement, iOS SceneDelegate lifecycle](https://github.com/react/react-native/releases/tag/v0.88.0-rc.0) \- A sneak peek of the upcoming version from its changelog. Set up SwiftPM via `npx react-native spm`. Opt-in flags to drop legacy module/component interop will become the default later. Improved `Platform.OS/select()` inlining unlocks more platform-specific dead code elimination, around 𝕏 [17.7KB on iOS and 19.6KB on Android](https://x.com/tell_me_mur/status/2097352229833379960)**.**
+- 📣 [Expo Go \- Login is now required to run projects](https://expo.dev/changelog/expo-go-57-login) \- iOS-only for now. Will also be applied to Android later.
+- 📊 [React Native Navigation Benchmarks](https://andrei-calazans.com/posts/2026-06-05-state-of-rn-navigation/) \- Benchmarks the same app rebuilt 4x with different routers, covering cold start, RAM, FPS, and JS measurements. Android tests highlight the most common RN bottleneck.
+- 📜 [An early look at Expo Modules 2.0](https://expo.dev/blog/an-early-look-at-expo-modules-2-0) \- Modules become plain annotated Swift/Kotlin with no `definition()` DSL to learn. Sync calls run 2.5-5.6x faster than 1.0 on the same SDK and beat TurboModules in the Expo chart. Experimental, iOS-only. Android in progress.
 - 💸 [Codemagic Patch - The easiest way to run your own OTA update server, including dashboard and fingerprinting](https://patch.codemagic.io/?utm_source=newsletter&utm_medium=referral&utm_campaign=twir)
+- 📦 [RN QuickJS alpha \- Hermes-compatible JSI runtime](https://github.com/react-native-quickjs/quickjs) \- An alternative to Hermes. A tiny (\~1.5MB) JavaScript engine that compiles to small bytecode bundles for faster startup, with a compatibility layer so most Hermes-dependent libs like Reanimated keep working without changes.
+- 📦 [Goldie \- App Store screenshot generator for coding agents and humans](https://github.com/kacperkapusciak/goldie) \- Useful framework-agnostic mobile tool. Argent replays flows; Goldie prepares store-compliant screenshots and preview videos.
+- 📦 [RN Continued Task \- Background tasks that keep running after your app is backgrounded](https://github.com/mahdidavoodi7/react-native-continued-task) \- One typed API over iOS 26 `BGContinuedProcessingTask` (Live Activity) \+ Android `WorkManager` foreground service, via Nitro. Useful for long-running user-initiated tasks like large exports, uploads, or encoding.
+- 📦 [Boost 1.7 \- Image optimizer now default, RN 0.86 support](https://github.com/kuatsu/react-native-boost/releases/tag/v1.7.0)
+- 📦 [Rozenite 2.4 \- Auto-inject Lynx runtime, one endpoint for debug targets](https://github.com/callstackincubator/rozenite/releases/tag/v2.4.0)
+- 📦 [Sentry 8.25 \- Feature flag info on native crashes, app.start vitals propagation](https://github.com/getsentry/sentry-react-native/releases/tag/8.25.0)
+- 📦 [Argent 0.24 \- Physical iOS device support](https://github.com/software-mansion/argent/releases/tag/v0.24.0)
+- 📦 [Uniwind 1.12 \- Drop-shadow filter](https://github.com/uni-stack/uniwind/releases/tag/v1.12.0)
+- 📦 [Streamdown 0.3 \- Worklets 0.10 support](https://github.com/software-mansion-labs/react-native-streamdown/releases/tag/0.3.0)
+- 📦 [Metro MCP 0.15 \- MCP SDK v2, safer CDP reconnects pinned to same app, Hermes eval, Appium test gen](https://github.com/steve228uk/metro-mcp/releases/tag/v0.15.0)
+- 📦 [Agent-Device 0.21 \- Human takeovers in remote sessions, faster iOS Simulator opens, install size halved](https://github.com/callstack/agent-device/releases/tag/v0.21.0)
+- 📦 [ReactLynx 0.126 \- Now on Preact 11, 14% faster background renders, use() support](https://github.com/lynx-family/lynx-stack/releases/tag/@lynx-js/react@0.126.0)
+- 📦 [Screen Choreography 0.4 \- Shared-element transitions for Expo Router](https://github.com/DorianMazur/react-native-screen-choreography)
+- 🎙️ [React Universe on Air \- Running AI in the Browser With Transformers.js](https://www.callstack.com/podcasts/running-ai-in-the-browser-with-transformers-js)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 🗳️ [Interop 2027 \- Submit and vote for your favorite proposals](https://web.dev/blog/interop-2027-proposals)
+- 📜 [Running zod Schemas on simdjson](https://altinmert.co/blog/running-zod-schemas-on-simdjson/) \- Combining zod with ata, a JSON Schema engine using simdjson native core, and the benefits this brings.
+- 📜 [Half Past Fetch](https://blog.gaborkoos.com/posts/2026-09-08-Half-Past-Fetch/) \- `await fetch()` only waits for the headers, not the actual body, and other interesting details.
+- 📜 [Async Solid \- 3-part series: reads, writes, and network](https://www.solidjs.com/blog/async-solid-one-graph-two-machines)
+- 📦 [gpu-lexer \- Language-agnostic WebGPU syntax highlighter](https://gpu-lexer.vercel.app/) \- Crazy idea\! Highlighting is not based on language grammars but on a small AI model trained for this purpose.
+- 📦 [Rslib 1.0 \- Multiple output formats, multi-framework support, bundled or bundleless, style/asset support, and more](https://rslib.rs/blog/v1-0) \- Looks like an interesting tool, in particular for publishing a component library across many frameworks.
+- 📦 [Vitest 5.0 \- Perf improvements, `vi.when`, Trace View in Browser Mode, benchmarking API, better defaults, and more](https://vitest.dev/blog/vitest-5)
+- 📦 [htmx 4.0 \- fetch() replaces XHR, explicit inheritance, swaps all HTTP responses, and other breaking changes](https://four.htmx.org/docs/whats-new-in-htmx-4)
+- 📦 [NestJS 12.0 \- ESM-first, Rspack replacing webpack, Standard Schema validation, observability SDK](https://trilon.io/blog/nestjs-12-is-now-available)
+- 📦 [Playwright 1.63 \- Test locks, Locator improvements, aria/screen snapshots in traces, and more](https://github.com/microsoft/playwright/releases/tag/v1.63.0)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/296/meme.jpg)](https://x.com/saltyAom/status/2095186260998648182)
 
 See ya! 👋
