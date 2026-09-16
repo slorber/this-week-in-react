@@ -1,14 +1,15 @@
 ---
 slug: /297
-title: "This Week In React #297: ..."
-authors: [slorber]
+title: "This Week In React #297: DevTools, Motion, Apollo, React Router, Hook Form, shadcn lint | Shopify, Expo 58 beta, ExecuTorch, Screenmap, Voltra, SPM, Stim, Lynx, Metro, AI | pnpm, oj, Zod, Devframe, Safari, Webpack"
+authors: [slorber, janjaworski]
 date: 09-16-2026
-unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
-<Todo />
+Following the React v19.3 release, DevTools v8 is now officially published. Motion shipped a ViewTransition wrapper. React Router optimized re-renders. Apollo Client finally has custom scalars.
+
+On mobile, we have a lot of releases. RN 0.88 will use React v19.3. Shopify is moving away from React Native\!
 
 Let's dive in!
 
@@ -34,15 +35,26 @@ On **October 14**, Ryan and Serge show how Sentry engineers debug their own agen
 
 Both sessions are free. [**Register for the series**](https://sentry.io/resources/agent-tracing-series/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=agenttracing-fy27q3-agenttracingseries&utm_content=newsletter-primary-workshop-series-register).
 
-
 ---
 
 ## ⚛️ React {#react}
 
-<Todo />
-
 - 💸 [build mode - 2030-shaped software](https://go.posthog.com/twir-sept16)
-- 💸 [💰The Amazon Developer Hackathon: Win up to $40k for the Fire TV track! 8 weeks to build and explore new agentic tools. Register now!](https://fandf.co/4gEhH4E)
+- 👀 [React DevTools 8.0 on the Chrome Web Store](https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) \- If you use Chrome, you probably got the new version automatically. You should now see a new `Elements > ⚛️React Element` pane when inspecting elements in Chrome DevTools, and also a new top-level `⚛️Suspense` tab.
+- 👀 [StyleX RFC \- Add compile-time CSS enums and exhaustive matching](https://github.com/facebook/stylex/pull/1865)
+- 📜 [The Cost of Abstraction for Humans and AI Agents](https://ondrejvelisek.github.io/the-cost-of-abstraction-for-humans-and-ai-agents/) \- The author created the same React app with different levels of abstraction, then measured the cost of editing each app with Sonnet 5\. He estimates that an over-abstracted codebase costs 30% more in AI agent bill and time. Also includes 6 abstraction patterns often seen in React codebases that you can probably inline.
+- 📜 [React Server Functions Are More Than Mutations](https://www.nikhilsnayak.dev/blog/react-server-functions) \- An interactive exploration of using Server Functions for reads via HTTP QUERY, then streaming values, while working on an Effect-based RSC framework.
+- 📜 [SolidJS, It’s the Little Things](https://www.brenelz.com/posts/solidjs-its-the-little-things/) \- Walks through 6 small Solid 2.0 DX details, from `isPending()` to optimistic stores, each compared side by side with the React equivalent.
+- 📜 [Fixing INP in a Massive React Dropdown](https://dev.to/subito/from-1256ms-to-96ms-fixing-inp-in-a-massive-react-dropdown-16l7) \- Opening a MultiSelect with \~1,200 options mounted at once blocks the main thread. Since all rows share the same height, a custom 90-line virtualization hook is enough to bring INP from 1,256ms down to 96ms.
+- 📜 [TSRX \- Removing lazy destructuring](https://tsrx.dev/blog/removing-lazy-destructuring) \- Preparing for v1.0, TSRX dropped its `&{}` destructuring syntax. This reflects its positioning as a JSX extension, rather than a new language that humans and LLMs would have to learn.
+- 💰 [The Amazon Developer Hackathon: Win up to $40k for the Fire TV track! 8 weeks to build and explore new agentic tools. Register now!](https://fandf.co/4gEhH4E)
+- 📦 [Motion 13.4 \- New `<AnimateView>` component](https://motion.dev/docs/react-animate-view) \- Wraps React's `<ViewTransition>`, adding support for spring support, dynamic targets, animation controls, and a simple props API. Interesting to see the lib pushing back on React docs' claims about View Transition performance compared to layout animations.
+- 📦 [shadcn lint \- An agent-first linter for Tailwind design systems](https://github.com/shadcn-ui/lint) \- Since `className` is just a string, design system rules are hard to enforce with types. This ESLint/Oxlint plugin lets you define per-component rules and emit actionable errors to guide your agents.
+- 📦 [Oxlint 1.83 \- Update lint rules for React 19.3](https://github.com/oxc-project/oxc/releases/tag/apps_v1.83.0) \- This fixes false-positive lint errors you may get by adopting React 19.3 features such as Fragment refs or newly supported DOM props.
+- 📦 [React Router 8.4 \- Fewer re-renders, faster route matching (unstable)](https://reactrouter.com/changelog#v840) \- The internal router state has been split into 4 contexts, so hooks like `useLocation()` will re-render less.
+- 📦 [Apollo Client 4.3 \- Custom scalars, type-safety improvements](https://www.apollographql.com/blog/whats-new-in-apollo-client-4-3) \- The GraphQL client finally ships built-in custom scalar support, its most requested feature: parse/serialize values like `Date` in one place
+- 📦 [React Hook Form 7.88 \- Built-in `<ErrorMessage>` component](https://react-hook-form.com/docs/useformstate/errormessage) \- This lets you render one or many validation error messages for a given field.
+- 📦 [Astryx 0.6 \- Responsive theme rules, adaptable selection, reworked Neutral palette](https://astryx.atmeta.com/blog/astryx-v0-6-0)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -62,10 +74,10 @@ In one production release, an 18 Mb full package became **100 to 500 Kb** patche
 
 After the switch, the team released more often. Update downloads increased, yet egress fell 💰.
 
-*   SDK compatible with React Native and Expo
-*   Binary diff updates from the first OTA release
-*   Enterprise-grade security, with SOC 2 Type II
-*   Advanced release analytics
+- SDK compatible with React Native and Expo
+- Binary diff updates from the first OTA release
+- Enterprise-grade security, with SOC 2 Type II
+- Advanced release analytics
 
 [See the production results](https://revopush.org/react-native-ota-payloads-binary-diffs?utm_source=this_week_in_react)
 
@@ -73,23 +85,79 @@ After the switch, the team released more often. Update downloads increased, yet 
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+[![Shopify is moving away from React Native to native](/emails/issues/297/shopify.jpg)](https://shopify.engineering/back-to-native)
+
+**[Shopify is moving away from React Native to native](https://shopify.engineering/back-to-native)**
+
+An unexpected announcement from Shopify shook the React Native ecosystem. They’re moving away from React Native to native Swift and Kotlin\!
+
+So what’s their reason? Not because RN failed, but because coding agents changed the economics. Building twice no longer costs twice.
+
+They [started with a 12-week case study to migrate their flagship Shop app](https://shopify.engineering/shop-app-migration) to native with 6 engineers, leading to the following improvements:
+
+- improve startup time \- iOS startup 3200ms → 2466ms (-23%), Android 4433ms → 2233ms (-50%)
+- session stability \- 99.5% → 99.95% (10x reduction)
+- runtime performance on Android \- 120 FPS on a Pixel device
+
+It’s important to note that the app was 𝕏 [not using to New Architecture](https://x.com/jamonholmgren/status/2098235125419135339), which was built to fix those problems.
+
+Does it mean [React Native is dead](https://codewithbeto.dev/blog/is-react-native-dead-shopify-native)? Does not seem so. A shared application and UI layer remains useful, and React Native still has major benefits such as Over-The-Air updates and good foundations for server-driven UI, useful for the agentic era.
+
+---
 
 - 💸 [Crisp - Customize your in-app support experience with our React Native SDK and flexible integration options](https://crisp.chat/?utm_source=twir&utm_medium=newsletter&utm_campaign=crisp_q3_nl&utm_content=16sep26)
+- 👀 [React Native 0.88 RC.1 cherry-picked React 19.3 \- Stable ViewTransition, Fragment refs, browser(), Trusted Types](https://github.com/react/react-native/releases/tag/v0.88.0-rc.1) \- This upgrade doesn’t look like a major change for RN devs on its own, but ViewTransitions and Fragment refs are React core features and may become supported on the RN side? 🤫
+- 📜 [You don't need a Mac to develop iOS apps anymore](https://expo.dev/blog/build-ios-apps-on-windows-with-cloud-simulators) \- EAS runs iOS simulators in the cloud, letting you test and build apps from any OS or browser. Android is also supported.
+- 📜 [Legend State: The Fastest React State Library You’re Probably Not Using](https://shift.infinite.red/legend-state-the-fastest-react-state-library-youre-probably-not-using-e791171a61b7) \- React's built-in state management can often be a source of performance problems. State managers such as Legend State help reduce re-renders thanks to `observables`.
+- 📜 [How Does KMP with SwiftUI Scale on iOS?](https://andrei-calazans.com/posts/2026-09-14-how-kmp-with-swiftui-scales-on-ios/) \- Sharing logic in Kotlin sounds ideal. The problem? iOS consumes one static framework. Does this cause a full rebuild on every change? Fortunately, no, but there's still a cost.
+- 📜 [Is Your App Ready for iPhone Duo?](https://codewithbeto.dev/blog/is-your-app-ready-for-iphone-duo) \- A new mobile form factor is coming to iOS. Taking care of screen edges, safe areas, and adaptive layout is more important than ever.
+- 📜 [What It Actually Takes to Migrate Discord to React Native's New Architecture](https://swmansion.com/blog/what-it-actually-takes-to-migrate-discord-to-react-native-s-new-architecture/) \- Migrating a complex app to the New Architecture is not just a flip of a switch. There’s a long tail of issues and assumptions that need to be taken care of.
 - 💸 [Codemagic Patch - The easiest way to run your own OTA update server, complete with dashboard and fingerprinting](https://patch.codemagic.io/?utm_source=newsletter&utm_medium=referral&utm_campaign=twir)
+- 📦 [ExecuTorch 0.10 \- Ground-up rewrite, TS pipelines, Core ML/MLX/Vulkan acceleration](https://github.com/software-mansion/react-native-executorch/releases/tag/v0.10.0) \- Orchestration moves to inspectable TypeScript with Core API for custom models without C++, worklets support for VisionCamera live streams, on-demand native binaries to trim bundle size, and a legacy entrypoint for gradual migration.
+- 📦 [Expo SDK 58 Beta \- iOS 27 support, RN 0.88 RC, Expo Modules 2.0 beta, App Intents alpha, agent CLI, Android widgets, stable Expo Router data loaders and native tabs, and more](https://expo.dev/changelog/sdk-58-beta) \- Another exciting Expo release that we’ll cover in depth once stable in 3-4 weeks\!
+- 📦 [Screenmap \- Visual navigation maps for Expo / React Native apps](https://screenmap.dev/) \- A promising tool to add to your CI workflows: takes a screenshot of every app screen and posts a map to your mobile PRs, highlighting what has changed.
+- 📦 [Screens 4.28 \- Android Tabs/Stack fixes, tab bar layout, and MenuItem IDs](https://github.com/software-mansion/react-native-screens/releases/tag/4.28.0) \- Small bugfix release, but here’s a 𝕏 [sneak peek](https://x.com/swmansion/status/2098417302026825814) of upcoming support for iPhone Duo
+- 📦 [Swift 6.4](https://www.swift.org/blog/swift-6.4-released/) \- Swift Build is now the default in SPM. Improved language, Foundation, and standard library. Improved C++ and Java interoperability.
+- 📦 [Metro 0.87 \- Scheme resolvers, babel-runtime resolution, Watcher memory cuts](https://github.com/react/metro/releases/tag/v0.87.1)
+- 📦 [Nitro ZXing \- Barcode scanner for VisionCamera written in C++, up to 10x faster than MLKit, and 2.6x faster for live camera frames](https://github.com/margelo/react-native-nitro-zxing)
+- 📦 [Lynx 4.0 \- AI docs for agents, generative UI using AI2UI renderer and OpenUI skill, dynamic elements, unified debug metadata, media queries](https://lynxjs.org/blog/lynx-4-0)
+- 📦 [WebGPU 0.10 \- Chrome 154, SPM support, implicit device sync by default](https://github.com/wcandillon/react-native-webgpu/releases/tag/v0.10.0)
+- 📦 [Gesture Handler 3.3 \- Swipeable, Drawer, ScrollView and button press fixes](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/v3.3.0)
+- 📦 [Skia 2.12 \- SPM support, handle invalid SVG parse results](https://github.com/Shopify/react-native-skia/releases/tag/v2.12.0)
+- 📦 [Boost 2.0 \- Metro plugin replaces Babel, Animated/ActivityIndicator/StyleSheet/Platform optimizers, Uniwind support](https://github.com/kuatsu/react-native-boost/releases/tag/v2.0.0)
+- 📦 [Screen Choreography 0.5 \- defineTransition recipes, native forward preparation, live shared content](https://github.com/DorianMazur/react-native-screen-choreography/releases/tag/v0.5.0)
+- 📦 [Harness 1.5 \- Windows platform support, `harness ci` commands, Metro config enhancer](https://github.com/callstackincubator/react-native-harness/releases/tag/v1.5.0)
+- 📦 [Voltra 2.3 \- Server-driven Dynamic Widgets, configurable Android widgets, experimental Dynamic Live Activities](https://github.com/callstackincubator/voltra/releases/tag/v2.3.0)
+- 📦 [Radon IDE 1.19 \- Share booted devices with AI agents via Argent](https://github.com/software-mansion/radon-ide/releases/tag/v1.19.0)
+- 📦 [Argent 0.25 \- WebView DOM in describe on Android, external device providers, script steps in flows](https://github.com/software-mansion/argent/releases/tag/v0.25.0)
+- 📦 [Agent Device 0.21 \- scroll-until finder, in-place iOS web sign-in, Maestro evalScript, 27–40% faster iOS opens, human takeover of remote sessions](https://github.com/callstack/agent-device/releases/tag/v0.21.2)
+- 📦 [Stim 1.0 \- Run several coding agents in parallel on RN apps, with build optimizations across worktrees](https://github.com/appandflow/stim/releases)
+- 📦 [Nitro Wakeword \- On-device wake word detection for React Native, using the openWakeWord pipeline with ONNX Runtime](https://github.com/FerRiv3ra/react-native-nitro-wakeword)
+- 📦 [Face Detector 2.1 \- Auto-mode scaling fix for any frame/screen resolution](https://github.com/luicfrr/react-native-vision-camera-face-detector/releases/tag/v2.1.0)
+- 📦 [Nitro Fetch 1.7 \- Fix reject aborted requests when native finishes before cancel, multipart encoding, React Query/RTK examples](https://github.com/margelo/react-native-nitro-fetch/releases/tag/v1.7.0)
+- 🎥 [Code with Beto \- How Marc Rousavy Turned Open Source Into a €20M+ Agency](https://www.youtube.com/watch?v=0A4aehDmOXk)
+- 🎙️ [RNR 373 \- Real Life React Native: Chime](https://infinite.red/react-native-radio/rnr-373-real-life-react-native-mark-goldstein)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📜 [De-phantoming the npm ecosystem](https://nubjs.com/blog/phantom-dependencies-package-extensions) \- Using Nub to find phantom (undeclared) dependencies in the top 10k npm packages.
+- 📜 [New Things You Should Know About HTML Here in Mid 2026](https://blog.master.dev/new-things-you-should-know-about-html-here-in-mid-2026/) \- Good overview of modern HTML from Chris Coyier.
+- 📦 [pnpm 12.4 \- Support for Rust and Python dependencies, new `pnpm pipeline` task runner](https://pnpm.io/blog/releases/12.4) \- Bold move: pnpm expands beyond JS and can now install Cargo crates and PyPI packages alongside npm deps. The ability to run cached task graphs makes it a lightweight Turborepo/Nx alternative.
+- 📦 [Safari 27 \- Fix top-level await, `import defer`, customizable `<select>`, `ariaNotify()`, CSS improvements, `ReadableStream` improvements, MCP server, JSPI, and more](https://developer.apple.com/documentation/safari-release-notes/safari-27-release-notes) \- Major release\! The ES module loader has been entirely rewritten, [fixing long-standing top-level await](https://webkit.org/blog/18227/fixing-top-level-await-in-safari/) bugs. JSPI (JavaScript Promise Integration for WebAssembly) is now available in all major browsers: an important primitive letting synchronous code compiled to Wasm (C++, Rust…) call async JS APIs. You can now [connect your AI agent to Safari](https://developer.apple.com/documentation/safari-developer-tools/connecting-an-ai-agent-to-safari) through the new MCP server.
+- 📦 [Modern Web Types](https://philipwalton.com/articles/modern-web-types/) \- TIL TypeScript only types DOM APIs shipped in 2+ browser engines. This lib lowers the threshold to 1 engine, letting you use the newest APIs as progressive enhancements without losing type-safety.
+- 📦 [oj \- The Vite dev server reimplemented in Rust](https://rapha.land/introducing-oj/) \- This alternative offers different trade-offs. Will [soon power the Lovable sandbox previews](https://lovable.dev/blog/faster-previews-oj), resulting in 4x better memory usage and 2x faster cold starts.
+- 📦 [Devframe \- Framework for building pluggable, extensible, and playful DevTools](https://devfra.me/posts/pluggable-extensible-playful-devtools) \- It powers Vite DevTools and Nuxt DevTools v4, and there’s a Next.js DevTools prototype.
+- 📦 [Zod 4.6 \- `z.validate()`, `z.properties()`, `z.iban()`, `z.fromJSONSchema()` improvements](https://zod.dev/blog/zod-4-6) \- The new `z.validate()` method fails fast, returns false on error, up to 35x faster than `z.safeParse()`.
+- 📦 [Webpack 5.111 \- Stable ESM output, `output.copy` for static files, CSS minimizer improvements](https://webpack.js.org/blog/2026-09-14-webpack-5-111/)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[![alt](/emails/issues/297/meme.jpg)](https://x.com/sebastienlorber/status/2098329441722065312)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/297/meme2.jpg)](https://x.com/SimonDepelchin/status/2099494508069019722)
 
 See ya! 👋
