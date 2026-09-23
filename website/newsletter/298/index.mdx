@@ -6,11 +6,16 @@ date: 09-23-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
-<Todo />
+This week is rather quiet on the web side, but a few things are worth keeping an eye on: Astro's React integration keeps ramping up, and Redux is working on significant performance improvements for large apps.
 
-*   🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=thisweekinreact) - 🇬🇧 London - 23 & 26 Oct. Last call for London's most in-depth React conference! Two days, 50+ advanced sessions, next to Big Ben. Don't miss it—get 10% off with code "TWIR.
+On mobile, we still have a steady flow of interesting releases. We're especially happy to see the Xcode project format finally moving to JSON\!
+
+We asked on 𝕏: [Do average devs still care about React?](https://x.com/sebastienlorber/status/2101990551457263880)  
+Thanks to everyone who answered this existential question\!  
+If fewer devs care about implementation details, including frameworks like React, what's the future of this newsletter?  
+Reply by email and tell us how we can best serve you in this new AI-driven world.
 
 Let's dive in!
 
@@ -30,12 +35,12 @@ import Support from "../_support.mdx";
 
 Agents ship React features faster than ever. They also ship unindexed queries, N+1s, and schema decisions made at 2am by a model that will never get paged.
 
-Fortunately, agents can *fix* database problems too. They just need production data, and that's what the PlanetScale MCP server gives them. Hook up an agent, and the loop looks like this:
+Fortunately, agents can _fix_ database problems too. They just need production data, and that's what the PlanetScale MCP server gives them. Hook up an agent, and the loop looks like this:
 
-*   PlanetScale flags a slow query
-*   The agent traces it back to the code in your repo
-*   The agent opens a PR with the fix
-*   You review and merge
+- PlanetScale flags a slow query
+- The agent traces it back to the code in your repo
+- The agent opens a PR with the fix
+- You review and merge
 
 Run it once, or put it on a schedule.
 
@@ -47,7 +52,21 @@ Underneath it all: the fastest, most scalable cloud Postgres and MySQL, with opt
 
 ## ⚛️ React {#react}
 
-<Todo />
+- 👀 [React docs \- New `<img>` API ref page](https://react.dev/reference/react-dom/components/img) \- The humble image component does more than just displaying images. It also generates preload hints during SSR by default, and integrates nicely with `<ViewTransition>` animations.
+- 👀 [React Flight PR \- Server References for arbitrary object types](https://github.com/react/react/pull/37636) \- Experimental Flight protocol feature, enabling Server References to point to an object and not just a function.
+- 🔐 [Next.js 16.3.6 \- Security Update](https://nextjs.org/blog/nextjs-security-update-september-22-2026) \- Fixing a critical remote code execution vulnerability for those using `ImageResponse` with the Node runtime with dynamic user-controlled SVG inputs.
+- 🗓️ [React Advanced London](https://reactadvanced.com/?utm_source=thisweekinreact) - 🇬🇧 London - 23 & 26 Oct. Last call for London's most in-depth React conference! Two days, 50+ advanced sessions, next to Big Ben. Don't miss it—get 10% off with code "TWIR.
+- 📜 [Do Frameworks Matter Anymore?](https://brookslybrand.com/posts/do-frameworks-matter-anymore/) \- If LLMs are great at React but nobody reads the `.tsx` files anymore, why even use an abstraction? Will the industry stick with React forever, or is there room for platform primitives (Web Components) and new ideas (Remix 3)? Kinda related to my existential crisis. 😆
+- 📜 [React Activity: When A Render No Longer Guarantees an Effect](https://hackernoon.com/react-activity-when-a-render-no-longer-guarantees-an-effect) \- Blindly replacing conditional rendering with `<Activity>` can expose subtle bugs in legacy code relying on the render/Effect/cleanup sequence.
+- 📜 [Frontend for systems engineers](https://tj-zhang.com/blog/frontend-for-systems-engineers/) \- Explains React through familiar systems concepts
+- 📦 [Astro React 7.0 \- Replaces Babel with Oxc, upgrades to Vite Plugin React v6](https://docs.astro.build/en/guides/integrations-guide/react/#upgrading-the-react-integration-to-v700) \- It now has opt-in support for the React Compiler through Oxc experimental support.
+- 📦 [React Redux 9.4 alpha \- `useSignalSelector()` hook, `<SignalProvider>` component, `react-redux/signals` entrypoint](https://github.com/reduxjs/react-redux/releases/tag/v9.4.0-alpha.0) \- Drop-in optimization for large apps with thousands of connected components. Opt-in, but \+7kB gzip. A proxy tracks selector state access, so only affected selectors re-run on dispatch.
+- 📦 [Redact 0.1 \- Add React 19.3 APIs, improve runtime compatibility, keep sync rendering contract](http://releases)\- TanStack's lightweight, synchronous reimplementation of React is now on GitHub and ships its first minor.
+- 📦 [React Three Fiber 9.8 \- Support for React 19.3, roots configured synchronously, Strict Mode fixed](https://github.com/pmndrs/react-three-fiber/releases/tag/v9.8.0) \- For 3D enthusiasts, Poimandres also released [Glyph](https://github.com/pmndrs/glyph), a GPU-first typography engine with R3F bindings.
+- 📦 [TanStack React Hotkeys 0.11 \- Improved physical key support, recorder validation, conflict detection, cross-layout fixes](https://github.com/TanStack/hotkeys/releases/tag/%40tanstack%2Freact-hotkeys%400.11.0)
+- 📦 [React Simple Maps 5.0 \- Composable SVG map charts for data visualization in React](https://www.react-simple-maps.io/)
+- 📦 [React Resizable Panels 4.13 \- Deferred panel resizing, panel expand/collapse threshold](https://bsky.app/profile/bvaughn.me/post/3mvxpohs3vs2n)
+- 📦 [react-zoom-pan-pinch 4.2 \- Zooming, panning, pinching images and html elements, the easy way](https://github.com/BetterTyped/react-zoom-pan-pinch/releases/tag/v4.2.0)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -67,10 +86,10 @@ In one production release, an 18 Mb full package became **100 to 500 Kb** patche
 
 After the switch, the team released more often. Update downloads increased, yet egress fell 💰.
 
-*   SDK compatible with React Native and Expo
-*   Binary diff updates from the first OTA release
-*   Enterprise-grade security, with SOC 2 Type II
-*   Advanced release analytics
+- SDK compatible with React Native and Expo
+- Binary diff updates from the first OTA release
+- Enterprise-grade security, with SOC 2 Type II
+- Advanced release analytics
 
 [See the production results](https://revopush.org/react-native-ota-payloads-binary-diffs?utm_source=this_week_in_react)
 
@@ -78,23 +97,57 @@ After the switch, the team released more often. Update downloads increased, yet 
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
-
 - 💸 [build mode - How much can you delegate to agents?](https://go.posthog.com/twir-sept23)
+- 👀 [React Native RFC \- Secondary JavaScript runtimes in React Native](https://github.com/react-native-community/discussions-and-proposals/pull/1023) \- Worklet maintainer requesting a first-class C++ API to create secondary Hermes runtimes. This should help make the integration with libraries such as Reanimated/Worklets more robust, address debugging/inspector/HMR pain points, and more.
+- 📜 [Shopify Helix \- The internal tool powering our native migration](https://shopify.engineering/helix) \- Agents are powerful, but getting consistent results is difficult. Their solution needed tooling and guardrails.
+- 📜 [Deep Dive into ReactLynx: From Background Rendering to Instant First-Frame Rendering](https://lynxjs.org/next/blog/reactlynx-instant-first-frame-rendering) \- Start of the series to answer how Lynx runs React on two threads, enables IFR and Main Thread Script.
+- 📜 [The KMP-on-iOS Scaling Problem That Rust UniFFI Fixes](https://andrei-calazans.com/posts/2026-09-19-the-kmp-ios-scaling-problem-rust-uniffi-fixes/) \- A follow-up to last week’s KMP post and its challenge of scaling on iOS and how Rust's UniFFI fixes it.
+- 📜 [React Native in an Industry That's Changing](https://x.com/ryanlanciaux/status/2098434962915573971) \- A look into how working with agents changes the decision process on where to draw the line between native and cross-platform.
+- 📜 [What Does Shared Business Logic in Rust Look Like on iOS & Android?](https://andrei-calazans.com/posts/2026-09-18-shared-business-logic-in-rust/)
+- 📜 [Exploring Jev for AI-Driven QA with agent-device](https://www.callstack.com/blog/exploring-jev-for-mobile-qa-with-agent-device)
 - 💸 [Codemagic Patch - Self-hosted OTA updates, complete with fingerprinting, release metrics and online dashboard](https://patch.codemagic.io/?utm_source=newsletter&utm_medium=referral&utm_campaign=twir)
+- 📦 [Xcode 27.2 beta \- JSON project format `.xcproj`](https://developer.apple.com/documentation/xcode/updating-your-xcode-project-configuration-file-format) \- A new JSON format that’s more human-readable, editable by coding agents, and merge-friendly. Already the default for new projects.
+- 📦 [Reanimated 4.7 \- New layout animations engine by default, animated `backgroundImage`, more Android CSS transitions](https://swmansion.com/changelog/reanimated-4-7-0/)
+- 📦 [Worklets 0.13 \- Networking module for Bundle Mode runtimes, OXC Babel plugin port, SPM support](https://swmansion.com/changelog/worklets-0-13-0/)
+- 📦 [Screens 5.0 alpha 3 \- Stack v5 header customization on Android and iOS, FormSheet stacking, SPM support](https://swmansion.com/changelog/react-native-screens-5-0-0-alpha-3/)
+- 📦 [Expo Infinite Media \- Native paged media feed, `AVFoundation` on iOS, `Media3` on Android](https://github.com/rbayuokt/expo-infinite-media)
+- 📦 [Numeric Text \- SwiftUI's `numericText` on iOS, frame-measured native renderer on Android](https://github.com/AmatoGiulio/react-native-numeric-text)
+- 📦 [Secure Webview \- Explicit origin allowlists. Native navigation enforcement. Blocked redirects. Deep-link protection. Fail-closed by default.](https://github.com/adnxy/react-native-secure-webview) \- Built for security-critical flows like payments, OAuth, authentication, and 3-D Secure.
+- 📦 [Screen Choreography 0.6 \- Declarative Enter/Exit reveals, duration-based springs, interactive gesture lifecycle](https://github.com/DorianMazur/react-native-screen-choreography/releases/tag/v0.6.0)
+- 📦 [View Shot 6.0 \- RN 0.80+ required, 0.87 Strict TypeScript API support, `html2canvas-pro` optional on web](https://github.com/gre/react-native-view-shot/releases/tag/v6.0.0)
+- 📦 [Nitro SQLite 9.8 \- iOS Application Support storage, performance mode, thread safety](https://github.com/margelo/react-native-nitro-sqlite/releases/tag/v9.8.0)
+- 📦 [Sentry 8.27 \- Session Replay runtime controls, per-class masking, iOS hang workaround](https://github.com/getsentry/sentry-react-native/releases/tag/8.27.0)
+- 📦 [Test Renderer 1.3 \- React 19.3 support](https://github.com/mdjastrzebski/test-renderer/releases/tag/v1.3.0)
+- 📦 [Legend List 3.4 \- Scroll readiness callback, end-following fixes, direction-aware row preparation](https://github.com/LegendApp/legend-list/releases/tag/v3.4.0)
+- 📦 [Arrangement View 0.1 \- Adaptive split/overlay panes and hinge observation for foldables, early iPhone Duo support, Android coming soon](https://github.com/thiagobrez/react-native-arrangement-view)
+- 📦 [Skia Layout \- Flexbox layouts for React Native Skia powered by Yoga](https://github.com/ifeoluwak/react-native-skia-layout)
+- 📦 [Pulsar Studio \- Visual editor for custom haptic patterns, timeline design, audio and Lottie generation](https://pulsar.swmansion.com/studio)
+- 📦 [Enriched Markdown iOS 0.3 \- LaTeX math, spoilers, highlights, GitHub alerts, better VoiceOver](https://github.com/software-mansion/enriched-markdown/blob/main/packages/enriched-markdown-ios/README.md)
+- 📦 [Agent Device 0.21.12 \- Foldable simulator posing, recording contact sheets, Maestro permissions](https://github.com/callstack/agent-device/releases/tag/v0.21.12)
+- 📦 [Delacour UI \- shadcn-style component kit for RN: Uniwind styling, Reanimated interaction, Pulsar haptics](https://github.com/delacournz/delacour-ui)
+- 🤖 [Apex \- Callstack's React Native coding model](https://apex.callstack.com/) \- Based on Gemma 4, fine-tuned with SFT \+ GRPO on curated RN ecosystem data. Will be launched soon.
+- 🎥 [Beto \- What's new in Expo SDK 58](https://www.youtube.com/watch?v=mK6QKSyPCvk)
+- 🎥 [Expo \- Introduction to agentic self-healing apps](https://www.youtube.com/watch?v=MUFlnOXi-o4)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [TC39 \- Agenda for the 116th meeting](https://github.com/tc39/agendas/blob/main/2026/09.md) \- Happening next Tuesday. Many Iterator proposals will likely progress to stage 4\. I’m particularly excited to see if Composites will progress to stage 2\!
+- 📦 [Chrome 154 \- Responsive iframe resizing](https://www.bram.us/2026/09/23/responsive-iframes/) \- Iframes can now resize themselves based on the size of their embedded document 🤯. Haven't all widget/extension authors dreamed of this for years, as an alternative to `postMessage()`?
+- 📦 [Edge 151-153](https://blogs.windows.com/msedgedev/2026/09/21/new-in-edge-for-developers-create-better-components-and-make-your-site-agent-ready/) \- My favorite newly-supported features are WebMCP (origin trial) and OpaqueRange to highlight in inputs/textarea (see my [syntax-highlighted textarea demo](https://x.com/sebastienlorber/status/2099883816718323949)).
+- 📦 [pnpm 12.6 \- Automatic dedupe, automatic type installation, `file:/link` catalogs, and more](https://pnpm.io/blog/releases/12.6) \- You may not need to run `pnpm dedupe` as part of your CI anymore\! And wtf we had to figure out manually whether a lib has bundled types or is using DefinitelyTyped? Not anymore\!
+- 📦 [Turborepo 2.11 \- Native support for Rust/Python/Go, faster startup, nub/aube support](https://turborepo.dev/blog/2-11) \- It’s interesting to see that both Turborepo and pnpm have become polyglot tools lately. Maybe the start of a new trend that AI now enables?
+- 📦 [Node.js 26.9- & 26.10 \- Web Workers support, VFS improvements, enable `ffi`, add `bench`, `debounce/throttle`](https://nodejs.org/en/blog) \- Native support for throttle/debounce surprised me, RIP Lodash 😄
+- 📦 [jsdom 30.1 \- Major performance, memory, and correctness improvements](https://github.com/jsdom/jsdom/releases/tag/v30.1.0)
+- 📦 [Rstest 0.12 \- Playwright E2E testing, Module Federation testing, faster jsdom tests, new JS API](https://rstest.rs/blog/announcing-0-12)
+- 📦 [tRPC 11.19 \- Better request cancellation, TanStack Query `skipToken` fix](https://github.com/trpc/trpc/releases/tag/v11.19.0)
+- 📦 [ESLint 10.11 \- Perf improvements: 20-25% faster initialization, faster rule execution](https://eslint.org/blog/2026/09/eslint-v10.11.0-released/)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![alt](/emails/issues/298/meme.jpg)](https://x.com/markjaquith/status/2101341256743813558)
 
 See ya! 👋
