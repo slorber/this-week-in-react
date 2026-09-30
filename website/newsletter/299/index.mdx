@@ -6,11 +6,13 @@ date: 09-30-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
-<Todo />
+This week we have 2 major releases in the React ecosystem: Panda CSS v2 and Vinext v1.
 
-*   🗓️ [React Summit US](https://reactsummit.us/?utm_source=thisweekinreact) - 🇺🇸 New York – Nov 17 & 20. Join the creator of React Query, the Executive Director of the React Foundation, and other amazing speakers to dive into the React ecosystem. Save 10% on your ticket with code “TWIR”.
+On the mobile side, RN is getting support for variable font and Android Activity Result. Lynx v4 is out. Lucent is a new way to write native modules.
+
+I’m particularly excited about the TC39 meeting happening right now. Many proposals progressed, including my favorite one: Composites moved to stage 2\!
 
 Let's dive in!
 
@@ -28,8 +30,8 @@ import Support from "../_support.mdx";
 
 **[The React framework for MCP Apps](https://www.skybridge.tech/?utm_source=ThisWeekInReact&utm_medium=newsletter)**
 
-MCP apps let you display interactive UI directly inside AI assistants like ChatGPT or Claude. Use the Skybridge framework to build your  MCP app from a single React codebase and reach every platform.  
-  
+MCP apps let you display interactive UI directly inside AI assistants like ChatGPT or Claude. Use the Skybridge framework to build your  MCP app from a single React codebase and reach every platform.
+
 Type-safe end to end, hot reload, a local emulator for ChatGPT and Claude, and useful ecommerce & travel templates to start from.  
 Agent ready, live in 5 seconds & trusted by teams at PGA of America and Datadog. 100K+ npm downloads a month.  
 **npm create skybridge** · [Read the docs](https://www.skybridge.tech/) · [Star on GitHub](https://github.com/alpic-ai/skybridge)
@@ -38,9 +40,40 @@ Agent ready, live in 5 seconds & trusted by teams at PGA of America and Datadog.
 
 ## ⚛️ React {#react}
 
-<Todo />
+[Panda CSS 2.0 \- Same styling API, a new engine underneath](https://panda-css.com/blog/panda-css-v2)
+
+This new major version of the type-safe, build-time CSS-in-JS library is the biggest update since launch. Here’s what you need to know:
+
+- The CSS authoring experience doesn't change much.
+- The compiler has been rewritten in Rust on top of Oxc.
+- DX and builds get dramatically faster, and output better CSS.
+- With source transforms, Panda integrates with the bundler so that `css()`, style props, recipes and patterns are compiled to plain class strings at build time. [The styling runtime disappears from your bundle](https://panda-css.com/blog/zero-runtime-all-the-way-down), not just the style-insertion logic.
+- You get many new features to play with: a [typography preset](https://panda-css.com/blog/typography-preset), publishing your Panda design system and [visualize it in Studio](https://panda-css.com/blog/see-your-design-system), new CSS functions, a better CLI, an official ESLint plugin, and more
+
+---
+
+[Vinext 1.0 \- Next.js applications, powered by Vite](https://blog.cloudflare.com/vinext-nextjs-on-vite/)
+
+Cloudflare's Vite-based reimplementation of Next.js goes stable, supports both App and Pages Router and claims 99%+ compatibility with the Next.js test suite (minus Cache Components). They also have a different opinion of how ISR should work.
+
+What started as a one-off slopfork experiment is now becoming an AI-driven software factory able to keep up with new features landing in the official Next.js implementation. Interesting time\!
+
+---
 
 - 💸 [PostHog - I wrote a 70x faster SQL parser while barely looking at the code](https://go.posthog.com/twir-sept30)
+- 🔐 [Next.js September Security \- 16.3.8 and 15.5.27](https://nextjs.org/blog/september-2026-security-release) \- New security releases, covering 1 critical, 2 high, 5 medium vulnerabilities.
+- 🗓️ [React Summit US](https://reactsummit.us/?utm_source=thisweekinreact) - 🇺🇸 New York – Nov 17 & 20. Join the creator of React Query, the Executive Director of the React Foundation, and other amazing speakers to dive into the React ecosystem. Save 10% on your ticket with code “TWIR”.
+- 📜 [GitHub \- Improving site performance by shipping more CSS](https://github.blog/engineering/architecture-optimization/improving-site-performance-by-shipping-more-css/) \- The multi-year story of an incremental migration from styled-components to CSS modules.
+- 📜 [Rebuilding React Router's Global Hooks in Next.js](https://aurorascharff.no/posts/rebuilding-react-routers-global-hooks-in-nextjs/) \- Explains how Next.js and React Router chose to manage state differently. Next.js has no `useNavigation()` or `useBlocker()` but you can rebuild them with a Context provider.
+- 📜 [Props Are Not a Design System](https://vitonsky.net/blog/2026/09/18/design-system/) \- Style props and Tailwind class walls are just inline styles in disguise. Use named variants and modifiers instead.
+- 📜 [How we made claude.ai 3x faster in two weeks](https://claude.dev/blog/how-we-made-claude-ai-faster/) \- Practical AI-driven perf work on a real React codebase. For example, their client-side app now renders a static composer so users can type before React even initializes. React commit counts, among many other metrics, serve as deterministic benchmarks for agents.
+- 📜 [AI, Open Source, and the Long Road to TanStack Charts](https://tannerlinsley.com/posts/ai-open-source-and-the-long-road-to-tanstack-charts) \- Recap of an X Space with Tanner Linsley. Not directly actionable, but interesting to see how he built a new charting library with AI in less than a week, reusing years of experience with Chart.js, react-charts, and Observable Plot.
+- 📜 [How to Sync a Design System with Claude Design](https://nitayneeman.com/blog/how-to-sync-a-design-system-with-claude-design/)
+- 📦 [Preact 11.0 \- ESM-only, TS 5.1+, Hydration 2.0 with streaming SSR, refs as props, Object.is hook deps, React compat improvements](https://preactjs.com/blog/preact-11/) \- The first major in 6+ years, shipping necessary breaking changes to move the project forward.
+- 📦 [React Resizable Panels 4.14 \- Grid layout components](https://react-resizable-panels.vercel.app/examples/grid-basics)
+- 📦 [Redux Toolkit 2.13 \- TypeScript 7 support, long list of bug fixes, new unified docs site](https://github.com/reduxjs/redux-toolkit/releases/tag/v2.13.0)
+- 📦 [Oxlint 1.86 \- `only-export-components` now supports compound component, 2 React Compiler fixes](https://github.com/oxc-project/oxc/releases/tag/oxlint_v1.86.0)
+- 🎥 [James Quick \- Vinext 1.0 \- A New Alternative to Next.js](https://www.youtube.com/watch?v=eFFH_4aD6Ig)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -62,10 +95,31 @@ Want to see how? [Read the technical deep dive on our blog](https://margelo.com/
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
-
 - 💸 [DeployPulse - Hosted OTA updates for React Native. A drop-in replacement for CodePush and EAS Update.](https://deploypulse.io/)
+
+- 📖 [React Native docs \- `fontVariationSettings` \- Variable font support](https://reactnative.dev/docs/next/text-style-props#fontvariationsettings) \- RN 0.88 will support configuring variation axes of a variable font.
+- 📜 [React Native Modules Cannot Use Android's Activity Result API](https://www.matinzd.dev/blog/activity-result-api-for-react-native-modules/) \- Modules load after the Activity starts, so the modern API was unusable from native code. Fix is coming in RN 0.89. No manual setup of `MainActivity` steps needed.
+- 📜 [Shipping super-calendar](https://afonsojramos.me/blog/super-calendar/) \- A story about building a performant solution for RN and web. Virtualized rendering of visible dates only, and Reanimated shared values to skip re-renders.
+- 📜 [5 react-native-enriched-html Use Cases You Might Not Know About](https://swmansion.com/blog/5-react-native-enriched-html-use-cases-you-might-not-know-about/) \- More than a rich text editor: text processing like the emoji picker runs fully native, avoiding JS-side FPS drops on low-end devices.
+- 📜 [Agentic CI for Expo apps with TesterArmy](https://expo.dev/blog/agentic-ci-for-expo-apps-with-testerarmy) \- Code output outpaced review capacity, so merges ship with low confidence. Testing like a real user using agents restores it.
 - 💸 [Maestro MCP - A practical guide to mobile UI testing with coding agents](https://maestro.dev/blog/mobile-ui-testing-with-coding-agents?utm_source=this-week-in-react)
+- 📦 [React Navigation 7.23 \- Add `tabBarRepeatedPressBehavior`](https://github.com/react-navigation/react-navigation/releases/tag/%40react-navigation%2Fcore%407.23.0) \- Defines the behavior when pressing an already-focused tab. Can scroll content to top and/or pop nested stack screens.
+- 📦 [Lynx 4.0 \- Foldables, Media Queries, Liquid Glass & Blur, WebView, ReactLynx improvements, Generative UI](https://lynxjs.org/next/blog/lynx-4-0)
+- 📦 [Lucent \- Write native modules in TypeScript, compiled to C++ and called through JSI](https://github.com/Fausto95/lucent)
+- 📦 [React Native macO 0.83](https://github.com/microsoft/react-native-macos/releases/tag/react-native-macos%400.83.0)
+- 📦 [Appduct \- Expose app tools to agents and tests, no debug menus in the binary](https://github.com/callstackincubator/appduct)
+- 📦 [Nitro SQLite 10 \- Independent database handles, reusable prepared statements, macOS support](https://github.com/margelo/react-native-nitro-sqlite/releases/tag/v10.0.0)
+- 📦 [Legend List 3.6 \- Add `viewPositionFallback` for oversized list items](https://github.com/LegendApp/legend-list/releases/tag/v3.6.0)
+- 📦 [Angular Native \- Build native iOS and Android apps with Angular, built and shipped with Expo](https://github.com/ng-native/ng-native)
+- 📦 [Nitro RTMP \- Live streaming as a VisionCamera 5 output](https://github.com/bhyoo99/react-native-nitro-rtmp)
+- 📦 [Plain Text 0.9 \- Faster, drop-in remplacement for Text component, proper hyphenation, writingDirection](https://github.com/mdjastrzebski/react-native-plain-text/releases/tag/v0.9.0)
+- 📦 [Re.Pack 5.4 \- Lazy per-platform Rspack builds, unified commands entry point, RN 0.87 support](https://github.com/callstack/repack/releases/tag/%40callstack/repack%405.4.0)
+- 📦 [ViroReact 3.0 \- visionOS, Web AR, co-location multiplayer, Studio and MCP tooling](https://www.reactvision.xyz/updates/viroreact-3-0-0-five-platforms-one-codebase/)
+- 📦 [Skia 2.13 \- Legacy architecture support removed, `android.surfaceType` to select the backing view, SPM support](https://github.com/Shopify/react-native-skia/releases/tag/v2.13.0)
+- 📦 [Sentry 8.28 \- Native breadcrumb off-switches, PII accessibility identifier opt-out, MetricKit raw payloads](https://github.com/getsentry/sentry-react-native/releases/tag/8.28.0)
+- 📦 [Legend List 3.5 \- scrollElement to share an ancestor scrollbar on web, less layout work for single-column lists](https://github.com/LegendApp/legend-list/releases/tag/v3.5.0)
+- 📦 [Argent 0.26 \- iPhone Duo simulator support, clearer simulator-server exit errors, Xcode Device Hub for booted simulators](https://github.com/software-mansion/argent/releases/tag/v0.26.0)
+- 📦 [Agent Device 0.21.15 \- iOS 27 SDK and Xcode 27 support, visionOS simulators, richer Android accessibility snapshots](https://github.com/callstack/agent-device/releases/tag/v0.21.15)
 
 ---
 
