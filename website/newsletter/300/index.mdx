@@ -6,9 +6,15 @@ date: 10-07-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
-<Todo />
+Wow, 300 issues already\! Time flies, and thanks for reading along 🙏
+
+It's a fairly quiet week on the React side, apart from a batch of TanStack releases, so we took the opportunity to put the spotlight on recent React Foundation activity.
+
+On mobile, Skia 3.0 is out\! Shopify and Coinbase both recently announced moving away from React Native, a trend worth watching. Callstack officially launched an AI model specialized in React Native.
+
+There are other exciting releases to dig into, including e2e, Effect v4, and Remix v3.
 
 Let's dive in!
 
@@ -26,17 +32,43 @@ import Support from "../_support.mdx";
 
 **[Fewer findings. Only real risks.](https://coderabbit.link/ad-twir-003)**
 
-AI-generated code can introduce vulnerabilities that are easy to miss in a pull request. **CodeRabbit Security** continuously reviews your codebase for complex bugs and security risks, using full-codebase context to follow data flows, dependencies, and patterns beyond the latest diff.  
-  
+AI-generated code can introduce vulnerabilities that are easy to miss in a pull request. **CodeRabbit Security** continuously reviews your codebase for complex bugs and security risks, using full-codebase context to follow data flows, dependencies, and patterns beyond the latest diff.
+
 [Run CodeRabbit Security on your own repositories today](https://coderabbit.link/ad-twir-003)
 
 ---
 
 ## ⚛️ React {#react}
 
-<Todo />
+[**TanStack Charts 1.0**](https://tanstack.com/blog/tanstack-charts-1-0)
+
+The new TanStack charting library is officially stable. Small bundles, fast updates, composable, type-safe. Similar to other TanStack libraries, it comes with a framework-agnostic core and a [React Adapter](https://tanstack.com/charts/latest/docs/framework/react/adapter).
+
+Speaking of TanStack, see also 𝕏 [TanStack Markdown \+ Highlight 1.0](https://x.com/tan_stack/status/2105549976025915676): a tiny, fast Markdown renderer for docs and AI streams, with its companion syntax highlighter. Framework-agnostic, comes with a `<Markdown>` component.
+
+---
+
+**React Foundation news**
+
+We haven’t heard much of the React Foundation since the [launch of its website](https://thisweekinreact.com/newsletter/285#react) in June, but that is likely to change in light of recent activity:
+
+- 🐦 [Barbara Markiewicz joined the React Foundation as our Director of Community](https://x.com/sethwebster/status/2105422444529963495) \- Formerly at Callstack, she organized events such as React Conf and React Universe Conf.
+- 📅 [React Foundation Contributors Summit \- 10–12 Nov 2026, London](https://www.react.foundation/summit) \- A React Foundation gathering is scheduled next month at Meta's King's Cross office in London. Invite-only, but ecosystem contributors can self-apply.
+- 📅 [React Conf Ghana \- 4–5 Nov 2026, Accra](https://reactghana.react.foundation/) \- As far as I know, it’s the first React conference officially organized by the React Foundation.
+
+---
 
 - 💸 [Testing Frontend - Lessons from over a million lines of TypeScript at Palantir - Skip component tests and let Meticulous do the rest](https://www.meticulous.ai/blog/lessons-from-a-decade)
+- 👀 [Next.js PR \- `unstable_paramMatching` API \- Configure matching separately from build-time prerenders](https://github.com/vercel/next.js/pull/97393)
+- 🔐 [TanStack Start security update: CVE-2026-102989](https://tanstack.com/blog/tanstack-start-security-update-cve-2026-102989) \- Fixing a 9.3 XSS vulnerability.
+- 📜 [Making React Context Cheap with React Compiler](https://jjenzz.com/making-react-context-cheap/) \- How to work around the lack of context selectors in React in various ways. Benchmarking 5,000 `<input type=”radio”>` connected to the same state, showing that the React Compiler already achieves benefits similar to context selectors.
+- 📜 [React's New browser API: Rendering Components Only in the Browser](https://certificates.dev/blog/reacts-new-browser-api-rendering-components-only-in-the-browser)
+- 📦 [Ink 8.0 \- React CLI renderer \- React 19.3+, scrollable Box views, any Node stream for stdio, many rendering fixes](https://github.com/vadimdemedes/ink/releases/tag/v8.0.0)
+- 📦 [Streamdown 2.7 \- AI Markdown streaming renderer \- Faster, incremental code highlighting, block reuse, non-blocking Mermaid](https://github.com/vercel/streamdown/releases/tag/streamdown%402.7.0)
+- 📦 [stableref 0.2 \- Type-level referential stability for React/Preact \- Export branded `useSyncExternalStore`](https://github.com/JoviDeCroock/stableref/releases/tag/v0.2.0)
+- 📦 [Medula \- Headless devtools for agents, based on Devframes, React and Next.js support](https://github.com/posva/medula)
+- 📦 [Shaders \- WebGPU effects as components for React, Vue, Svelte, Solid and JavaScript](https://shaders.com/updates/shaders-is-open-source)
+- 📦 [Klipp \- Camera toolkit for the web, comes with React Three Fiber bindings](https://github.com/pmndrs/klipp)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -53,24 +85,68 @@ Your AI feature works in the demo. In prod, users get weird answers and you can'
 On **October 14**, Ryan and Serge show how Sentry engineers debug the agents behind Sentry's own AI features, with real production traces. 🔍 You'll see:  
 ✅ How they instrument and trace their agents  
 ✅ How **user frustration** signals point to broken runs  
-✅ How to find failures when there are too many traces to read one by one  
-  
+✅ How to find failures when there are too many traces to read one by one
+
 [👉 **Save your spot**](https://sentry.io/resources/agent-tracing-series/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=agenttracing-fy27q3-agenttracingseries&utm_content=newsletter-secondary-workshop-2-register)
 
 ---
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+🎥 [**React Native Skia 3.0 \- Hello Graphite**](https://www.youtube.com/watch?v=L-PNQi1nBSA)
 
-- 💸 [PostHog - Why we rebuilt our data warehouse on DuckDB over ClickHouse](https://go.posthog.com/twir-oct7)
-- 💸 [Codemagic Patch - Self-hosted OTA updates, complete with fingerprinting, release metrics and online dashboard](https://patch.codemagic.io/?utm_source=newsletter&utm_medium=referral&utm_campaign=twir)
+William Candillon just shipped the biggest release of React Native Skia to date\!
+
+Version 3.0 is rebuilt on **Skia Graphite**, Skia's new backend for modern GPU APIs. The old OpenGL-centric design came with stability and performance pains. Graphite fixes both. And because its design is symmetric with WebGPU, Skia and the rest of the web ecosystem can now run together on the same GPU.
+
+Here's what that brings:
+
+- **Multi-threading by default** \- A Skia drawing can be created on any dedicated thread. Only presenting the work runs on the UI thread.
+- **Symmetric with WebGPU** \- React Native Skia and React Native WebGPU share the same WebGPU instance.
+- **Zero-copy Three.js interop** \- A Three.js scene can be used as a regular Skia image with Skia effects on top, and Skia can draw onto Three.js scenes.
+- **Video & camera on GPU** \- `importExternalTexture` brings video and camera feeds into Skia zero-copy, easy on the battery.
+- **Lottie on WebGPU** \- Customizable Lottie animations, now with video imports.
+- **Android platform work** \- An experimental CanvasView (API 29+) and view snapshotting over WebGPU.
+
+The release is mostly backward compatible with v2, except for the system requirements: Android minSDK is now 26, and OpenGL is no longer supported (Vulkan only).
+
+Shopify will keep [sponsoring the project until the end of the year](https://x.com/mustafa01ali/status/2107530860555608339), despite migrating its apps away from React Native.
 
 ---
 
+- 💸 [PostHog - Why we rebuilt our data warehouse on DuckDB over ClickHouse](https://go.posthog.com/twir-oct7)
+- 🐦 [Coinbase is going native too](https://x.com/mustafa01ali/status/2105705415111835745) \- After last week’s announcement from Shopify, this time it’s Coinbase announcing migrating away from React Native. We have seen a few devs here and there reporting that today developing 2 native apps and keeping them in sync is becoming easier. Let’s see how this trend evolves\!
+- 📜 [Why has Shopify dropped React Native?](https://newsletter.pragmaticengineer.com/p/shopify-native-mobile) \- A deep dive into the decision process about moving away from RN, and why migration to New Architecture was not enough.
+- 📜 [Native views in TypeScript: SwiftUI and Jetpack Compose from Lucent](https://www.lucent-lang.dev/blog/native-views/) \- React Native renders through a host tree; Lucent compiles the JSX away entirely.
+- 📜 [Live Activities with Expo, End-to-End: Client and Backend](https://expo.dev/blog/live-activities-with-expo-end-to-end-client-and-backend) \- A missing manual on how to implement Live Activities, its gotchas, including backend.
+- 📜 [Introducing Mobile Dev: full mobile dev tooling right in your Codex app](https://www.callstack.com/blog/introducing-mobile-dev-full-mobile-dev-tooling-right-in-your-codex-app) \- An agent supervision tooling with Simulator, Instruments, logcat, and Metro, all in one place.
+- 💸 [Codemagic Patch - Self-hosted OTA updates, complete with fingerprinting, release metrics and online dashboard](https://patch.codemagic.io/?utm_source=newsletter&utm_medium=referral&utm_campaign=twir)
+- 📦 [Stim Desktop 0.1 \- Watch and steer your agents' React Native work: live devices, replay, logs, build cache stats](https://stim.appandflow.com/docs/desktop)
+- 📦 [Nitro Markdown 0.14 \- RaTeX math rendering now optional dependency, RN 0.77 floor, streaming/StrictMode fixes](https://github.com/JoaoPauloCMarra/react-native-nitro-markdown/releases/tag/v0.14.0)
+- 📦 [Maestro CLI 2.11 \- Android 17 support, video scrubbing fixes, YAML validation changes](https://maestro.dev/blog/maestro-cli-2-11-0)
+- 📦 [Unistyles 3.5.0 \- Theme propagation fixes, reload memory leaks, frozen screens no longer blocking JS](https://github.com/jpudysz/react-native-unistyles/releases/tag/v3.5.0)
+- 📦 [React Native Deploy \- EAS-compatible builds on GitHub Actions runners, free for public repos](https://reactnativefeel.com/deploy)
+- 📦 [React Native Enriched Markdown 1.1 \- Notion-like input shortcuts, native video rendering, GitHub admonitions, nestable block quotes, `numberOfLines`, and more](https://swmansion.com/changelog/react-native-enriched-markdown-1-1-0/)
+- 📦 [Sentry React Native 8.29 \- Swift Package Manager integration](https://github.com/getsentry/sentry-react-native/releases/tag/8.29.0)
+- 📦 [Voltra 2.4 \- Android improvements, native modifiers for SwiftUI and Jetpack Glance](https://github.com/callstackincubator/voltra/releases/tag/v2.4.0)
+- 📦 [Baton \- Relay GraphQL client for SwiftUI and Compose](https://github.com/shergin/baton)
+- 📦 [Screen Choreography 0.7 \- Hybrid transition handoff, transition preparation overlay, .0](https://github.com/DorianMazur/react-native-screen-choreography/releases/tag/v0.7.0)
+- 📦 [Nitro Fetch 1.8 \- Support request priority, support `formData()` for urlencoded Request/Responsed](https://github.com/margelo/react-native-nitro-fetch/releases/tag/v1.8.0)
+- 🤖 [Apex \- Agentic coding model specialized in React \- Now generally available](https://www.callstack.com/blog/apex-agetic-coding-for-mobile-and-web-spcialied-in-react) \- Callstack coding agent shines for React Native and Next.js development.
+- 🎙️ [RNR 374 \- Building "Dreaming: Language Learning" with React Native](https://infinite.red/react-native-radio/rnr-374-building-dreaming-language-learning-with-react-native)
+
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [TypeScript 7.1 \- Iteration Plan \- Support for LSP, Content Mapper, Emit APIs, and more](https://github.com/microsoft/TypeScript/issues/63703) \- The beta is delayed but should come out soon. This should unlock support for [TS7 in TypeScript-ESLint](https://github.com/typescript-eslint/typescript-eslint/issues/10940#issuecomment-5900712238).
+- 👀 [TC39 \- 116th meeting outcome](https://bsky.app/profile/robpalmer.bsky.social/post/3mwshmpvhak24) \- JS proposals progressing include Composites, new Iterator methods, `export defer`, JSON parse options, and more.
+- 📜 [The Remix Way](https://sergiodxa.com/articles/the-remix-way) \- Pragmatic feedback after rebuilding a personal blog and 10 other apps on Remix v3 over 6 months.
+- 📜 [Enforcing Best Practices with Jev as a Linter](https://charpeni.com/blog/enforcing-best-practices-with-jev-as-a-linter) \- Turns plain-English best practices into Oxlint rules using Jev.
+- 📦 [e2e \- Next generation agentic end-to-end testing framework for web and mobile apps](https://github.com/tester-army/e2e) \- This lets you define actions and assertions in plein language, that you can interleave with more classic deterministic APIs. Model responses are cached so repeated runs are fast and inexpensive. The engine seems quite flexible, it can probably adapt to any UI. I like the idea, it should help make tests more portable and less fragile, not relying on selectors or accessibility roles.
+- 📦 [Effect 4.0 \- Fully rebuilt, dependency-free core, long-term support](https://effect.website/blog/releases/effect/40) \- Effect is gaining momentum as a way to make your TypeScript code more robust, providing additional guardrails for humans and AI agents. Up to 5x smaller bundles now make it even more compelling for client-side code. See also the now-official [Effect Atom React](https://effect.website/docs/v4/api/atom-react) bindings for state management.
+- 📦 [pnpm 12.9 & 12.10 \- experimental 'loaded' linker, resolution settings in lockfile, StackBlitz WebContainers support, per-registry concurrency, faster caching, security fixes](https://pnpm.io/blog)
+- 📦 [h3 2.0 \- Minimal HTTP server framework for high performance, portability and composability](https://h3.dev/blog/v2)
+- 📦 [SvelteKit 3.0 \- Svelte meta-framework for rapidly developing robust, performant web applications](https://svelte.dev/blog/sveltekit-3-is-here)
+- 🎥 [Remix Jam 2026](https://www.youtube.com/watch?v=TaKBQnYm9tM) \- Conference announcing the first stable release of Remix v3.
 
 ---
 
