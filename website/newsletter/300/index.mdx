@@ -1,16 +1,15 @@
 ---
 slug: /300
-title: "This Week In React #300: ..."
+title: "This Week In React #300: Next.js, TanStack, React Foundation, Compiler, Ink, Streamdown, Shaders | Skia, Live Activities, Lucent, Voltra, Apex, Coinbase, Stim Desktop, Unistyles | TC39, e2e, Effect, Remix, h3, SvelteKit, TypeScript"
 authors: [slorber, janjaworski]
 date: 10-07-2026
-unlisted: true
 ---
 
 Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
 Wow, 300 issues already\! Time flies, and thanks for reading along 🙏
 
-It's a fairly quiet week on the React side, apart from a batch of TanStack releases, so we took the opportunity to put the spotlight on recent React Foundation activity.
+It's a big week, with major releases from the Next.js and TanStack teams. We also put the spotlight on recent React Foundation activity.
 
 On mobile, Skia 3.0 is out\! Shopify and Coinbase both recently announced moving away from React Native, a trend worth watching. Callstack officially launched an AI model specialized in React Native.
 
@@ -44,16 +43,15 @@ AI-generated code can introduce vulnerabilities that are easy to miss in a pull 
 
 [**Next.js 16.4**](https://nextjs.org/blog/next-16-4)
 
-Cache Components are reaching maturity, now recommended for every Next.js app. The new programming model is enabled by default in `create-next-app`, and will become the default in v17. Partial Prefetching is now considered part of the model.
+Cache Components are reaching maturity and are now recommended for every Next.js app. The new programming model is enabled by default in `create-next-app`, and will become the default in v17. Partial Prefetching is now considered part of the model.
 
 Alongside this milestone, this release introduces:
 
-- Static output guarantees: `export const ensureStatic`: fail the build if dynamic content sneaks into a route's shell, prefetch, or navigation.
-- Granular prefetching control: `await navigation()` to exclude content from a prefetch.
+- Static guarantees: `export const ensureStatic` fails the build if dynamic content sneaks into a route.
+- Prefetching control: `await navigation()` excludes content from a prefetch.
 - Agent-guided upgrades and feedback.
 - React 19.3: stable View Transitions, Fragment Refs, `browser()` API.
-- Faster experimental Rust React Compiler.
-- Many DX, Turbopack and bundle improvements.
+- Many DX, Turbopack, bundle size and React Compiler improvements.
 
 ---
 
@@ -136,8 +134,8 @@ Shopify will keep [sponsoring the project until the end of the year](https://x.c
 ---
 
 - 💸 [PostHog - Why we rebuilt our data warehouse on DuckDB over ClickHouse](https://go.posthog.com/twir-oct7)
-- 🐦 [Coinbase is going native too](https://x.com/mustafa01ali/status/2105705415111835745) \- After last week’s announcement from Shopify, this time it’s Coinbase announcing migrating away from React Native. We have seen a few devs here and there reporting that today developing 2 native apps and keeping them in sync is becoming easier. Let’s see how this trend evolves\!
-- 📜 [Why has Shopify dropped React Native?](https://newsletter.pragmaticengineer.com/p/shopify-native-mobile) \- A deep dive into the decision process about moving away from RN, and why migration to New Architecture was not enough.
+- 🐦 [Coinbase is going native too](https://x.com/mustafa01ali/status/2105705415111835745) \- After last week’s announcement from Shopify, this time it’s Coinbase announcing it's migrating away from React Native. We have seen a few devs here and there reporting that today developing 2 native apps and keeping them in sync is becoming easier. Let’s see how this trend evolves\!
+- 📜 [Why has Shopify dropped React Native?](https://newsletter.pragmaticengineer.com/p/shopify-native-mobile) \- A deep dive into the decision process about moving away from RN, and why migration to the New Architecture was not enough.
 - 📜 [Native views in TypeScript: SwiftUI and Jetpack Compose from Lucent](https://www.lucent-lang.dev/blog/native-views/) \- React Native renders through a host tree; Lucent compiles the JSX away entirely.
 - 📜 [Live Activities with Expo, End-to-End: Client and Backend](https://expo.dev/blog/live-activities-with-expo-end-to-end-client-and-backend) \- A missing manual on how to implement Live Activities, its gotchas, including backend.
 - 📜 [Introducing Mobile Dev: full mobile dev tooling right in your Codex app](https://www.callstack.com/blog/introducing-mobile-dev-full-mobile-dev-tooling-right-in-your-codex-app) \- An agent supervision tooling with Simulator, Instruments, logcat, and Metro, all in one place.
@@ -162,7 +160,7 @@ Shopify will keep [sponsoring the project until the end of the year](https://x.c
 - 👀 [TC39 \- 116th meeting outcome](https://bsky.app/profile/robpalmer.bsky.social/post/3mwshmpvhak24) \- JS proposals progressing include Composites, new Iterator methods, `export defer`, JSON parse options, and more.
 - 📜 [The Remix Way](https://sergiodxa.com/articles/the-remix-way) \- Pragmatic feedback after rebuilding a personal blog and 10 other apps on Remix v3 over 6 months.
 - 📜 [Enforcing Best Practices with Jev as a Linter](https://charpeni.com/blog/enforcing-best-practices-with-jev-as-a-linter) \- Turns plain-English best practices into Oxlint rules using Jev.
-- 📦 [e2e \- Next generation agentic end-to-end testing framework for web and mobile apps](https://github.com/tester-army/e2e) \- This lets you define actions and assertions in plein language, that you can interleave with more classic deterministic APIs. Model responses are cached so repeated runs are fast and inexpensive. The engine seems quite flexible, it can probably adapt to any UI. I like the idea, it should help make tests more portable and less fragile, not relying on selectors or accessibility roles.
+- 📦 [e2e \- Next-generation agentic end-to-end testing framework for web and mobile apps](https://github.com/tester-army/e2e) \- This lets you define actions and assertions in plain language, that you can interleave with more classic deterministic APIs. Model responses are cached so repeated runs are fast and inexpensive. The engine seems quite flexible, it can probably adapt to any UI. Interesting idea: it should help make tests more portable and less fragile, not relying on selectors or accessibility roles.
 - 📦 [Effect 4.0 \- Fully rebuilt, dependency-free core, long-term support](https://effect.website/blog/releases/effect/40) \- Effect is gaining momentum as a way to make your TypeScript code more robust, providing additional guardrails for humans and AI agents. Up to 5x smaller bundles now make it even more compelling for client-side code. See also the now-official [Effect Atom React](https://effect.website/docs/v4/api/atom-react) bindings for state management.
 - 📦 [pnpm 12.9 & 12.10 \- experimental 'loaded' linker, resolution settings in lockfile, StackBlitz WebContainers support, per-registry concurrency, faster caching, security fixes](https://pnpm.io/blog)
 - 📦 [h3 2.0 \- Minimal HTTP server framework for high performance, portability and composability](https://h3.dev/blog/v2)
