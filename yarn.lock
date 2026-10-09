@@ -10441,6 +10441,11 @@ electron-to-chromium@^1.5.328:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.344.tgz#6437cc08a7d9b914a98120e182f37793c9eaffd4"
   integrity sha512-4MxfbmNDm+KPh066EZy+eUnkcDPcZ35wNmOWzFuh/ijvHsve6kbLTLURy88uCNK5FbpN+yk2nQY6BYh1GEt+wg==
 
+email-validator@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/email-validator/-/email-validator-2.0.4.tgz#b8dfaa5d0dae28f1b03c95881d904d4e40bfe7ed"
+  integrity sha512-gYCwo7kh5S3IDyZPLZf6hSS0MnZT8QmJFqYvbqlDZSbwdZlY6QZWxJ4i/6UhITOJ4XzyI647Bm2MXKCLqnJ4nQ==
+
 emittery@^0.10.2:
   version "0.10.2"
   resolved "https://registry.yarnpkg.com/emittery/-/emittery-0.10.2.tgz#902eec8aedb8c41938c46e9385e9db7e03182933"
@@ -11505,13 +11510,14 @@ external-editor@^3.0.3:
     iconv-lite "^0.4.24"
     tmp "^0.0.33"
 
-facebook-nodejs-business-sdk@^17.0.3:
-  version "17.0.3"
-  resolved "https://registry.yarnpkg.com/facebook-nodejs-business-sdk/-/facebook-nodejs-business-sdk-17.0.3.tgz#10a2ca6723b5a07ff575cfda74e4c69b58f14fc1"
-  integrity sha512-WGSSt+WKs2leujJIMQiCmxDlrPOl1A7BDHmzuI6hfwUq9fk6OoVii83HHBNkzz7OSFh0YLdWOxrYDwCvIhrVaA==
+facebook-nodejs-business-sdk@^24.0.1:
+  version "24.0.1"
+  resolved "https://registry.yarnpkg.com/facebook-nodejs-business-sdk/-/facebook-nodejs-business-sdk-24.0.1.tgz#c09bc53be165fd16375e90f235ef90b1234396bb"
+  integrity sha512-31uR42FO+V3ikQfVZyrnoc34pVYzxo4PE+BnKt1ziX9nGhSwsS7ogGDsMJQk7A3SdoWPIGgR2G4UbAY2s9zNVQ==
   dependencies:
     axios "^1.4.0"
     currency-codes "^1.5.1"
+    email-validator "^2.0.4"
     iso-3166-1 "^2.1.1"
     js-sha256 "^0.9.0"
     mixwith "~0.1.1"

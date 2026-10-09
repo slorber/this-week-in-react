@@ -25,7 +25,7 @@
     "@slorber/twitter-lite": "^1.1.2",
     "@vercel/edge": "^1.2.2",
     "clsx": "^2.1.1",
-    "facebook-nodejs-business-sdk": "^17.0.3",
+    "facebook-nodejs-business-sdk": "^24.0.1",
     "posthog-js": "^1.369.3",
     "prism-react-renderer": "^2.4.1",
     "react": "^19.2.5",
