@@ -1,14 +1,18 @@
 ---
 slug: /301
-title: "This Week In React #301: ..."
+title: "This Week In React #301: TanStack Start, React Aria, Base UI, Satori, Next.js, Vitest RSC, MobX | RN Web, Tamagui, One, Skia, Expo Observe, Screens, Hot Updater, Nano Icons | Deno, JPEG XL, Bun, TypeScript, AsyncContext, Playwright, pnpm, Partytown"
 authors: [slorber, janjaworski]
 date: 10-14-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
-<Todo />
+TanStack Start 1.0 is finally stable, a client-first alternative to server-first React frameworks.
+
+On mobile, Expo will maintain React Native Web, under the React Foundation. Tamagui v3 and One v2 are out. React Native 0.88 is at RC5, so it should land very soon\!
+
+Deno is joining Cloudflare. JPEG XL lands in Chrome and Firefox. TypeScript is getting ported to Rust, twice.
 
 Let's dive in!
 
@@ -36,8 +40,42 @@ Open source, with automatic provider failover. [Get your API key and try your fi
 
 ## ⚛️ React {#react}
 
+![TanStack Start 1.0](/emails/issues/301/tanstack-start.jpg)
+
+[**TanStack Start 1.0**](https://tanstack.com/blog/tanstack-start-1-0)
+
+The full-stack framework is officially stable and production-ready, supporting both React and Solid. It has already been used on millions of apps during its beta/RC phase. As its 𝕏 [launch video](https://x.com/tan_stack/status/2110022759338422327) puts it: "Feels like building a SPA. With the whole server behind you".
+
+- **Client-first:** SPA-style routing, state and caching, with server rendering, streaming and typed server functions.
+- **Type-safe end to end:** route params, search params, loader data and server function inputs are all typed, keeping changes consistent for both humans and agents. Type checking speed has been thoroughly optimized.
+- **Agent-ready:** packages ship TanStack Intent skills, so agents can learn Start's APIs and best practices.
+- **RSC is opt-in:** supported, but the team removed it from tanstack.com because it made the codebase harder to reason about.
+- **Deploy anywhere** with Vite and Nitro. Rsbuild is also supported.
+
+---
+
 - 💸 [Lingui - React i18n macros now compile natively in Vite, 2.5x faster than SWC and nearly 30x faster than Babel](https://dub.sh/3jnUg5C)
+- 💬 [React RFC \- React work counters](https://github.com/reactjs/rfcs/pull/284) \- Suggests improving the production observability of React by exposing metrics such as number of re-renders, setState calls or commits. I like the idea of giving metrics for agents to hill-climb and optimize against.
+- 👀 [MobX PR \- MobX React plugin](https://github.com/mobxjs/mobx/pull/4735) \- An upcoming bundler plugin will help MobX and the React Compiler coexist. Wraps components in `observer()`, adds `"use no memo"` directives, turns `async` methods into MobX flows.
+- 👀 [Next.js PR \- `eslint-config-next` supports ESLint 10](https://github.com/vercel/next.js/pull/99628) \- `eslint-plugin-react` [still doesn't support ESLint 10](https://github.com/jsx-eslint/eslint-plugin-react/pull/4022), so Next.js 16.5 canary patches it in place. Next.js users can finally upgrade.
+- 🔐 [Next.js \- Upcoming security update](https://nextjs.org/blog/upcoming-nextjs-security-update-october-2026) \- Planned for October 14: 2 critical and 1 high severity vulnerabilities in upstream dependencies.
+- 📜 [Can we Make React Faster using the React Compiler?](https://jimmyhmiller.com/what-does-the-react-compiler-even-do) \- Explains what the compiler outputs, how it works, and then prototypes various optimizations: component inlining, Million.js-style blocks, Solid-like list selection, automatic context and Zustand selectors...
+- 📜 [className Considered Harmful](https://mattrothenberg.com/notes/classname-considered-harmful/) \- How design systems drift when components accept `className`, and how popular design systems restrict it. Why not a `DANGEROUS_className` prop 🤔.
+- 📜 [How we made a 9 MB WebAssembly module feel faster without removing a single byte](https://bra31k.dev/en/blog/same-bytes-17-percent-faster) \- A chain of suspending components delayed the loading of a large WASM file. Preloading it made the first canvas render 15-19% faster.
+- 📜 [A visual notation for React's parent and owner trees](https://julesblom.com/writing/react-visual-notation) \- A diagram format for showing component structure, ownership, and context at a glance.
+- 📜 [Debugging Suspense with the React Suspense Panel](https://certificates.dev/blog/debugging-suspense-with-the-react-suspense-panel) \- A practical tour of the new React DevTools 8.0 Suspense tab.
 - 💸 [Sentry - Stop scrubbing replays. Learn the sampling, filters, and React hooks that find the right session, live on Nov 5th. Save your spot](https://sentry.io/resources/201-session-replays/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=replay-fy27q3-sessionreplayworkshop&utm_content=newsletter-react-link-register)
+- 📦 [React Aria 1.22 \- New Sheet component, virtual-keyboard-aware overlays](https://react-aria.adobe.com/releases/v1-22-0) \- The new swipeable [Sheet component](https://react-aria.adobe.com/blog/sheet) uses no JS touch handlers, only CSS scroll snapping and view timelines.
+- 📦 [Satori 0.36 → 0.55 \- Converts JSX/HTML and CSS to SVG](https://github.com/vercel/satori/releases) \- Lots of releases this week, notably switching its layout engine from Yoga to Taffy, unlocking many new features like CSS grid and more.
+- 📦 [Vitest Plugin RSC 0.3 \- Run Next.js App Router apps in Vitest Browser Mode](https://github.com/storybookjs/vitest-plugin-rsc/releases/tag/v0.3.0) \- Lets you test the full RSC pipeline (server render, hydration, Server Actions) of a component or a whole route. Requires Next.js 16.4+.
+- 📦 [Base UI 1.9 \- Filterable Menu, faster Select/Combobox/Menu, improved Drawer gestures](https://base-ui.com/react/overview/releases/v1-9-0)
+- 📦 [Styled Components 6.6 \- `StyledComponent` type for `isolatedDeclarations`, faster type-checking, RSC global styles fix](https://github.com/styled-components/styled-components/releases/tag/styled-components%406.6.0)
+- 📦 [React Hook Form 7.90 \- Many bug fixes and perf improvements](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.90.0)
+- 📦 [Astryx 0.7 \- Easier form styling, better mobile and touch support, spacing in rem](https://astryx.atmeta.com/blog/astryx-v0-7-0)
+- 📦 [Vinext 1.1 \- Next.js parity fixes, stale-while-revalidate for `"use cache"`](https://github.com/cloudflare/vinext/releases/tag/vinext%401.1.0)
+- 📦 [Remocn Studio 1.0 \- A macOS app where your coding agent makes Remotion videos](https://remocn.studio/)
+- 🎥 [Ankita Kulkarni \- Next.js 16.4 Is Built for Agents (Here's Why)](https://www.youtube.com/watch?v=paQbukUXE8w)
+- 🎙️ [This Month in React \- September 2026 \- React 19.3, a eulogy to software engineering?](https://share.transistor.fm/s/0c8a4fc2)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -61,23 +99,53 @@ Works with your existing JavaScript, TypeScript, and Python tests in Codex, Clau
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
-
 - 💸 [PostHog - 10,000 PRs a month is easy: How devex is evolving at PostHog](https://go.posthog.com/twir-oct14)
+- 👀 [Expo to maintain React Native Web, moving to React Foundation](https://github.com/necolas/react-native-web/discussions/2872)
+- 👀 [RNTester moves to native UITabBarController for iPhone Duo support](https://github.com/react/react-native/pull/58664)
+- 📜 [Your skills need an evaluation mechanism](https://expo.dev/blog/your-skills-need-an-evaluation-mechanism) \- Direct invocation doesn't prove discovery. Evals must test normal prompts and traces.
+- 📜 [Sharing a TypeScript Domain Layer Between Next.js and Expo](https://www.dainemawer.com/shared-typescript-nextjs-expo-monorepo) \- Share types, validation schemas and thin API client. Keep navigation, UI, storage and session handling app-local.
+- 📜 [You Don’t Need a Rewrite: Expo’s New Brownfield React Native Story](https://shift.infinite.red/you-dont-need-a-rewrite-expo-s-new-brownfield-react-native-story-c072b4e971dd) \- Brownfield has historically been hard, but things changed with Expo SDK 54\. Covers myths vs. realities.
 - 💸 [Maestro MCP - Open-source MCP server for mobile UI testing with AI agents](https://maestro.dev/blog/maestro-mcp-for-ai-coding-agents?utm_source=this-week-in-react)
+- 📦 [Skia 3.1 → 3.4 \- New snapshot API, shared WebGPU instance via Dawn, tvOS and Mac Catalyst support](https://github.com/wcandillon/react-native-skia/releases)
+- 📦 [RNTL 14.1 \- `fireEvent.layout`, `userEvent.pullToRefresh`, `userEvent.accessibilityAction`, RN 0.88 support](https://github.com/callstack/react-native-testing-library/releases/tag/v14.1.0)
+- 📦 [Tamagui 3 \- New C++ native runtime, Rust compiler, Strict DOM, flat style props, Tailwind syntax](https://tamagui.dev/blog/version-three)
+- 📦 [One 2.0 \- All-in-one RN framework, Bun for cross-platform, Rust bundler, SwiftUI and Compose generated](https://onestack.dev)
+- 📦 [Better PDF 1.0 \- PDFKit and PdfRenderer, Native viewer on Nitro Views, no WebView or JS in scroll path](https://github.com/gmi-software/react-native-better-pdf) \- 91ms for 1,000 pages, 8x faster than react-native-pdf on large docs per author benchmark.
+- 📦 [Expo Native Variants \- Generate Xcode schemes and Android flavors using an Expo config plugin in one prebuild](https://github.com/chrispader/expo-native-variants)
+- 📦 [WiFi Aware \- Peer-to-peer discovery and high-bandwidth data over Wi-Fi Aware](https://github.com/mahdidavoodi7/react-native-wifi-aware)
+- 📦 [Hot Updater 1.0 \- Shared release catalog, insights, remote config, plugins](https://github.com/gronxb/hot-updater/releases/tag/v1.0.0)
+- 📦 [Sentry 8.30 \- Cellular generation in connection type, Hermes Expo trace fixes](https://github.com/getsentry/sentry-react-native/releases/tag/8.30.0)
+- 📦 [Nano Icons 1.0 \- Hot reload Metro plugin, native tab bar symbols, animatable size and color](https://swmansion.com/changelog/react-native-nano-icons-1-0-0/)
+- 📦 [Screens 4.29 \- iOS Tabs move to UITab API, search tab, sidebar placement, custom icons](https://swmansion.com/changelog/react-native-screens-4-29-0/) \- Pairs well with Nano Icons.
+- 📦 [Argent 0.28 \- iOS launch arguments, flows over a link, failed-step screenshots](https://github.com/software-mansion/argent/releases/tag/v0.28.0)
+- 📦 [Expo Observe \- Native crash reporting on Android and iOS, no setup, AI handoff](https://expo.dev/changelog/native-crash-reporting-in-eas-observe)
+- 📦 [Rozenite 2.5 \- Lynx project detection, XHR-first network capture, Redux action filters, agent grammar v3](https://github.com/callstackincubator/rozenite/releases/tag/v2.5.0)
+- 📦 [Galeria 3.1 \- Photo and video galleries on iOS, Android and web](https://github.com/nandorojo/galeria/releases/tag/v3.1.0)
+- 🎥 [Callstack \- Ten Agents Waiting for Input: Tzvetan Mikov on AI Coding and Hermes](https://www.youtube.com/watch?v=dj6fhEwXZ6I)
+- 🎙️ [RNR 375 \- RNR Explains: EAS Update](https://infinite.red/react-native-radio/rnr-375-rnr-explains-ota-updates)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [HTML PR \- AsyncContext integration](https://github.com/whatwg/html/pull/13063) \- Still TC39 stage 2, this exciting feature is actively worked on, in particular its integration with web platform APIs.
+- 📣 [Deno is joining Cloudflare](https://deno.com/blog/cloudflare) \- The Deno team is joining to work on the Workers and toward making the Durable Objects programming model self-hostable. The Deno runtime and Deno Deploy will be sunset.
+- 📜 [The best way to use icons in Web UIs](https://lea.verou.me/blog/2026/icons/) \- Using icons as CSS design tokens, inserted and tweaked with pseudo-elements, masks, and style queries.
+- 📜 [Iframes that finally fit their content](https://alfy.blog/2026/10/09/iframe-that-finally-fit-their-content.html) \- Chrome 154 ships `frame-sizing: content-height`. Iframes can now adjust their size without the `postMessage` \+ `ResizeObserver` dance.
+- 📜 JPEG XL finally lands in [Chrome 155](https://tonisagrista.com/blog/2026/chrome-jpegxl/) and [Firefox 158](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/158). Safari already has partial support.
+- 📦 [Bun 1.4.3 \- `bun check` type checker, 67% lower idle CPU in servers, `Bun.FetchSession`, faster `JSON.parse`](https://bun.com/blog/bun-v1.4.3) \- Includes a port of typescript-go running 3-6x faster. No emit, no LSP. Coming next: 𝕏 [`bun lint` with 1,000+ built-in rules](https://x.com/jiahan_c/status/2109561168822251634) and 𝕏 [`bun fmt`, a 320x faster Prettier alternative](https://x.com/bunjavascript/status/2109861465100632567).
+- 📦 [tsc-rs \- Rust port of the TypeScript 7 compiler, type checker, and LSP](https://github.com/pingdotgg/ts-rust) \- Theo’s agent-driven port of TS, with the Effect language service diagnostics built in.
+- 📦 [Playwright 1.64 \- WebMCP testing APIs, better videos (custom fps, CSS-styled actions, VP9), `--shuffle`, `locator.within()`](https://github.com/microsoft/playwright/releases/tag/v1.64.0)
+- 📦 [pnpm 12.11 → 12.13 \- Agent skills linking, remote cache for task results and builds](https://pnpm.io/blog?type=releases)
+- 📦 [Partytown 1.0 \- Run third-party scripts in a web worker, now stable](https://github.com/QwikDev/partytown/releases/tag/v1.0.0)
+- 📦 [Safari Technology Preview 254 \- `calc-size()`, `interpolate-size`, CSS linked parameters, and more](https://webkit.org/blog/18420/release-notes-for-safari-technology-preview-254/)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+[!["Centered" content on Duo is fascinating](/emails/issues/301/meme.jpg)](https://x.com/huntie/status/2105972772619092072)
 
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+[![How it feels to get better at AI coding](/emails/issues/301/meme2.jpg)](https://x.com/JLarky/status/2107542681538756965)
 
 See ya! 👋
