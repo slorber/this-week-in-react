@@ -1,14 +1,18 @@
 ---
 slug: /302
-title: "This Week In React #302: ..."
+title: "This Week In React #302: Next.js, React Router, DevTools, Security, shadcn, Hydrogen, Vinext, Mutative, R3F | RN 0.88, Expo 58, Navigation, FastImage, Screens, Device Hub, Edge to Edge | TypeScript, PHP, CrUX, JPEG XL, Rsdoctor, Astro"
 authors: [slorber, janjaworski]
 date: 10-21-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
-<Todo />
+It’s a heavy security week, with patches from React and Next.js. Not React, but a very bad “php2shell” vulnerability has also been disclosed. Upgrade now\!
+
+On mobile, React Native 0.88 is out, switching to the web event model with no breaking changes. Expo SDK 58 ships with tons of features, ready for iOS 27 and iPhone Duo.
+
+Outside React, TypeScript makes the headlines. v7.1 is in beta, with a new API to build devtools upon. A Rust port of the type checker is now backed by Cloudflare/VoidZero, and already faster than the official Go version.
 
 Let's dive in!
 
@@ -43,9 +47,26 @@ NobodyWho is a library for running LLMs locally & offline on any OS. GPU-acceler
 
 ## ⚛️ React {#react}
 
-<Todo />
-
 - 💸 [build mode - What nobody tells you about writing agent skills](https://go.posthog.com/twir-oct21)
+- 🔐 [React vulnerability \- Unauthenticated Remote Code Execution in React Server Components](https://github.com/react/react/security/advisories/GHSA-xqc2-xf4c-x3h3) \- Patched in React 19.3.1 and the 19.0.9, 19.1.10 and 19.2.9 backports, together with a Server Functions DoS. In Next.js, the RCE affects `"use cache"` functions returning multiple typed arrays. Upgrade to [16.4.1 or 15.5.28](https://nextjs.org/blog/nextjs-security-update-october-14-2026), which also fixes a critical RCE in sharp via SVG images.
+- 📅 [React Foundation Meetup \- Nov 11, London](https://luma.com/g9q690i2) \- We [recently mentioned](https://thisweekinreact.com/newsletter/300#react:~:text=React%20Foundation%20news) a React Foundation contributor summit, invite-only. But there’s also the first official React Foundation public meetup happening the same week at Meta King’s Cross.
+- 👀 [Next.js PR \- `<Link prefetch="navigation">`](https://github.com/vercel/next.js/pull/99871) \- Adds a way to prefetch past the recently-introduced `await navigation()` boundaries for links users are likely to click.
+- 👀 [React docs \- React DevTools for agents](https://react.dev/reference/dev-tools/react-devtools-cdt-mcp) \- The experimental `react-devtools-cdt-mcp` package is now documented, with a live sandbox. Registers 12 additional React-specific tools with the Chrome DevTools MCP.
+- 📜 [Improving navigation experience in v0 with Next.js 16.4](https://nextjs.org/blog/improving-navigation-experience-in-v0-with-nextjs-16-4) \- The `next-partial-prefetching-optimizer` skill helps your agent refactor until an `instant()` test proves the UI is ready before the click.
+- 📜 [Building a filterable menu that works for everyone](https://base-ui.com/blog/building-a-filterable-menu) \- Adding an input to a menu is easy, making it accessible isn’t. Base UI explains its ARIA choices (dialog, not combobox), keyboard and submenu UX.
+- 📜 [Pure UI in the Agentic Era](https://mattrothenberg.com/notes/pure-ui-agentic-era/) \- Practical advice for reviewing agent-written UI: make components pure, pass state as explicit inputs, render every combination as a grid.
+- 📦 [React Router 8.5 \- Deprecated view transition APIs, unstable API-only mode](https://reactrouter.com/changelog#v850) \- Now recommends React 19.3’s `<ViewTransition>`, wrapped around an `<Outlet>`. The new API-only mode serves prerendered HTML from a CDN, while loaders and actions run on a server that can live on another origin.
+- 📦 [React Three Fiber 10.0 alpha 6 \- WebGPU renderer by default, better React 19 support](https://github.com/pmndrs/react-three-fiber/releases/tag/v10.0.0-alpha.6) \- The upcoming major now works with `<Activity>` and `<ViewTransition>`. StrictMode and Fast Refresh no longer rebuild the Canvas.
+- 📦 [Hydrogen 2026-10](https://hydrogen.shopify.dev/update/hydrogen-2026-10-now-available) \- Shopify Hydrogen is now a library, not a framework. Bring Shopify commerce to your existing Next.js or React Router app, with skills for coding agents. Built-in WebMCP support.
+- 📦 [shadcn/ui \- AI Elements, Trace and Code Block](https://ui.shadcn.com/docs/changelog/2026-10-ai-elements) \- 21 copy-paste patterns for agent UIs. They replace Vercel’s AI SDK Elements, which will be deprecated.
+- 📦 [Vinext 1.2 → 1.3 \- 69% fewer JS requests per page, 5x faster cold starts, cache key collision fixes](https://vinext.dev/blog)
+- 📦 [Mutative 2.0 \- Faster updates, safer patches](https://mutative.js.org/blog/releases/2.0) \- Same API, 3.6x faster than Immer on their benchmarks, for a bigger bundle (7.9 vs 3.6 kB).
+- 📦 [Immer 11.2 \- `isModified()` helper](https://github.com/immerjs/immer/releases/tag/v11.2.0)
+- 📦 [React Window 2.4 \- Server rendering improvements](https://github.com/bvaughn/react-window/releases/tag/2.4.0)
+- 📦 [Astryx RichText \- Lexical-based rich text field with lossless Markdown](https://astryx.atmeta.com/blog/introducing-astryx-richtext)
+- 📦 [React Bits 2.0 \- 215 animated React components, rebuilt design tools](https://x.com/davidhaz/status/2110662315959803905)
+- 📦 [c15t v3 \- One consent engine for 8 frameworks, banner in the server HTML](https://c15t.com/changelog/3.0.0)
+- 📦 [React Trees Playground \- Paste React code, see its parent and owner trees](https://julesblom.com/react-trees)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -71,16 +92,74 @@ Developers control the UI and data. Business users update forms visually without
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+![React Native 0.88](/emails/issues/302/react-native-088.jpg)
+
+[**React Native 0.88**](https://reactnative.dev/blog/2026/10/19/react-native-0.88)
+
+The new release is out with one of the largest runtime changes in years\! Events are now dispatched through the W3C [`EventTarget`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) API by default. This is the same model as on the web, making it possible to share event handling code between web and native. This opens the path to web-compatible imperative APIs in the future. And yet, it’s a third release with no user-facing breaking changes, after 0.83 and 0.86.
+
+Other key highlights include:
+
+- **SceneDelegate on iOS** \- support for the `UIScene` lifecycle required by the iOS 27 SDK, added additively.
+- **Variable fonts** \- `fontVariationSettings` on `Text` and `TextInput`, on Android and iOS, in object or CSS string form.
+- **ArrayBuffer for Java TurboModules** \- binary data no longer needs base64 or number-array encoding, and synchronous calls can borrow JavaScript memory instead of copying it.
+- **Swift Package Manager improvements** \- still experimental, but iOS versions now come from the app's deployment target, and Xcode builds no longer break for libraries shipping their own `Package.swift`. 0.89 targets SwiftPM as the default.
+
+---
+
+![Expo SDK 58](/emails/issues/302/expo-sdk-58.jpg)
+
+[**Expo SDK 58**](https://expo.dev/changelog/sdk-58)
+
+A React Native release is not enough\! Expo SDK 58 is out with React Native 0.88, built for iOS 27 and ready for iPhone Duo on day one, and it comes with a long list of improvements of its own. Too many to list them all, so here are the highlights:
+
+- **Expo Modules 2.0 (beta)** \- plain Swift and Kotlin classes with annotations, with sync calls 2.5-5.6x faster than the DSL on iOS and faster than TurboModules in all twelve Android microbenchmarks.
+- **Faster builds and faster modules** \- prebuilt `expo-modules-core` Android libraries cut a clean four-ABI debug build from about 80 seconds to about 39, and iOS calls passing long strings are up to 3.8x faster.
+- [**App Intents**](https://expo.dev/blog/introducing-expo-app-intents) **(alpha)** \- `expo-app-intents` exposes your app to Siri, Shortcuts, Spotlight, and Apple Intelligence.
+- **Expo UI and Android home screen widgets** \- lists recycle rows now, iOS gains NavigationStack and Toolbar, and `expo-widgets` runs on Android with its own Hermes runtime.
+- **A CLI built for agents** \- the experimental `@expo/agent-cli` wraps Expo CLI, EAS CLI, and `expo-doctor`.
+- **Expo Router** \- data loaders, SSR and middleware are now stable, alongside native tabs and a reworked navigation core.
+
+And a few more: an experimental Rust transformer for roughly 2x faster cold bundling, SwiftPM groundwork for Expo apps, and Expo Observe gaining control over automatic error recording.
+
+---
 
 - 💸 [DeployPulse - Hosted OTA updates for React Native. A drop-in replacement for CodePush and EAS Update.](https://deploypulse.io/)
+- 💬 [RFC \- API removal strategy in React Native](https://github.com/react-native-community/discussions-and-proposals/pull/1027) \- Removed APIs like `InteractionManager` throw on access. This proposes alternatives so that library authors can more easily use feature detection to keep supporting older React Native versions.
+- 📣 [React Native Edge to Edge is now deprecated](https://github.com/zoontek/react-native-edge-to-edge) \- RN 0.86+ ships the fixes natively: set `edgeToEdgeEnabled=true` in `gradle.properties` instead.
+- 📜 [Icons and iOS 27 updates in React Navigation 8](https://x.com/reactnavigation/status/2110358651449868302) \- Native tabs now accept custom SF Symbols and VectorDrawables. With Nano Icons, you can use SVG icons in native tabs without hurting performance. Also includes filled Material Symbols and the iOS 27 prominent tab.
+- 📜 [OpenIAP adds support for Amazon](https://dev.to/amazonappdev/openiap-adds-supports-for-amazon-33b) \- `react-native-iap` and `expo-iap` can now sell on Fire OS and Vega OS with the same APIs.
+- 📜 [Relaunching TeamReach: how OTA updates saved a 5,000,000-user cutover](https://expo.dev/blog/teamreach-ota-updates-relaunch)
+- 📜 [Multi-Window React Native Apps With the Meta VR Layout SDK](https://www.callstack.com/blog/multi-window-react-native-apps-with-the-meta-vr-layout-sdk)
+- 📜 [Control App Test Conditions With Appduct for AI QA Agents](https://www.callstack.com/blog/give-qa-agents-the-controls-they-need-with-appduct)
 - 💸 [Maestro MCP - Let your coding agent write, run and debug your UI tests](https://docs.maestro.dev/get-started/maestro-mcp?utm_source=this-week-in-react)
+- 📦 [expo-device-hub \- Your simulators and emulators in a browser tab](https://expo.dev/blog/xcode-27-device-hub-expo-device-hub) \- Also fixes the Expo CLI `i` shortcut, broken by Xcode 27 after the removal of `Simulator.app`.
+- 📦 [FastImage 10.0 \- New Architecture rewrite, `objectFit` replaces `resizeMode`, `objectPosition` added](https://github.com/DylanVann/react-native-fast-image/releases/tag/v10.0.0) \- The original library is actively maintained again.
+- 📦 [Screens 4.30 \- iPhone Duo support, opaque headers fixed on iOS 26+, `prominentScreenKey` for Tabs](https://swmansion.com/changelog/react-native-screens-4-30-0/)
+- 📦 [Gesture Handler 3.4 \- iOS SPM support, `immediatePressOut` prop](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/v3.4.0)
+- 📦 [Bottom Sheet 0.17 \- Scroll handoff with nested scrollables, percentage detents](https://github.com/software-mansion-labs/react-native-bottom-sheet/releases/tag/v0.17.0)
+- 📦 [Uniwind 1.13 \- CSS cascade order on native](https://github.com/uni-stack/uniwind/releases/tag/v1.13.0)
+- 📦 [Nitro Fetch 1.9 \- iOS WebSockets on `Network.framework` (\~30% faster), built-in SSL pinning, Android perf fixes](https://github.com/margelo/react-native-nitro-fetch/releases/tag/v1.9.0)
+- 📦 [RN GPUI \- Render React Native components natively with GPUI, Zed's Rust UI framework (macOS only)](https://github.com/natew/react-native-gpui)
+- 📦 [Better PDF 1.1 \- Several files as one document, base64 sources, cheaper long documents](https://github.com/gmi-software/react-native-better-pdf/releases/tag/v1.1.0)
+- 📦 [Babel Plugin RN Direct Imports \- Rewrite react-native barrel imports into direct module imports, so your bundle only includes the APIs you use](https://github.com/retyui/babel-plugin-react-native-direct-imports)
+- 📦 [Skia WebGPU Video 0.1 Beta \- Video playback, composition and export for React Native Skia 3 and WebGPU](https://github.com/batical/react-native-skia-webgpu-video)
+- 📦 [Xcode 27.1 \- Swift 6.4, iOS 27.1 SDKs, iPhone Duo support](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_1-release-notes)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 📣 [Experimental soft navigation metrics now available in CrUX](https://web.dev/blog/crux-experimental-soft-navs/) \- Exciting news for SPA / client-side routing frameworks\! Core Web Vitals takes into account soft navigations, measuring the full navigation session instead of only the initial page load, and the Chrome User Experience Report dataset now exposes these metrics as experimental. Use the [CrUX Vis](https://cruxvis.withgoogle.com/#/?view=cwvsummary&url=https%3A%2F%2Freact.dev%2F&identifier=origin&device=PHONE&periodStart=0&periodEnd=-1&display=p75s) tool and check the “Include soft navigations” toggle to see the score impact on any site. The React site’s score is improving because subsequent navigations are faster than the initial page load.
+- 🔐 [PHP \- Critical remote code execution vulnerabilities](https://www.php.net/archive/2026.php#2026-10-21-5) \- These 2 “php2shell” RCEs look really bad: no login needed, affecting PHP since 5.4. Yes, that includes your WordPress and Laravel sites. Upgrade now\!
+- 📜 [The Future of CSS](https://www.joshwcomeau.com/css/interop-2027/) \- Josh Comeau’s top 10 picks for Interop 2027, nicely presented with browser support and interactive demos.
+- 📜 [JPEG XL vs AVIF for web use-cases](https://jakearchibald.com/2026/jpeg-xl-vs-avif/) \- JPEG XL recently landed in all browsers. AVIF remains better for lossy compression, but JPEG XL wins for lossless compression and recompressing existing JPEGs.
+- 📦 [TypeScript 7.1 beta \- New TypeScript API, Import Attributes in Ambient Modules, stable `es2026` lib/target, performance improvements](https://devblogs.microsoft.com/typescript/announcing-typescript-7-1-beta/) \- The real highlight is the new TypeScript API, unlocking ecosystem tools such as TypeScript-ESLint to integrate with TypeScript 7. Content Mappers are a game changer for improving the type safety of external files such as MDX, Astro, CSS Modules, Vue, and more.
+- 📦 [tsrs \- Rust port of the TypeScript 7 type checker and LSP](https://blog.cloudflare.com/typescript-rust-port/) \- There have been a lot of TypeScript ports to Rust recently. The most promising one is already much faster than tsgo. It’s now supported by Cloudflare/VoidZero, incubating under the Oxc toolchain umbrella. Not a fork: they are actively collaborating with the TypeScript team and plan to keep it aligned with the reference implementation. The [backstory](https://building.owner.com/tsrs) is also interesting, and shows the port will also speed up Oxlint type-aware linting.
+- 📦 [Node.js 24.22 LTS \- `util.throttle()` and `util.debounce()`, crypto improvements](https://nodejs.org/en/blog/release/v24.22.0)
+- 📦 [Rsdoctor 2.0 \- Now Rspack-only, Agent CLI, 57% faster analysis, 56% smaller install, multi-compiler reports](https://rsdoctor.rs/blog/release/release-note-2_0)
+- 📦 [Webpack 5.112 \- SSR asset manifest, source map scopes, multi-entry library exports, async `DefinePlugin` values](https://webpack.js.org/blog/2026-10-13-webpack-5-112/)
+- 📦 [Astro 7.4 \- Build timings, separate build/runtime image services, parallel prerendering (experimental)](https://astro.build/blog/astro-740/)
 
 ---
 
