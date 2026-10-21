@@ -263,6 +263,17 @@
       "permanent": true
     },
     {
+      "source": "/calendar/2026",
+      "destination": "https://docs.google.com/spreadsheets/d/16aQqZV4pJbrm0zvvT9qFm0B1NwLUPQuVFzijt4zSJCk/edit?gid=1148357017#gid=1148357017",
+      "permanent": true
+    },
+    {
+      "source": "/calendar/2027",
+      "destination": "https://docs.google.com/spreadsheets/d/16aQqZV4pJbrm0zvvT9qFm0B1NwLUPQuVFzijt4zSJCk/edit?gid=1471707696#gid=1471707696",
+      "permanent": true
+    },
+
+    {
       "source": "/buildinpublic",
       "destination": "https://docs.google.com/spreadsheets/d/1Mlx78hLGflLKEbqbqeahkl5-2GW6t4m90ZL9zknZLb8/edit",
       "permanent": true
