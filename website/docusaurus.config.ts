@@ -43,6 +43,83 @@ ${node.url}
   };
 }
 
+function textOf(node) {
+  return node.value ?? node.children?.map(textOf).join("") ?? "";
+}
+
+// Strip the "🤖 <type emoji>" context sub-items that agents add under links in drafts
+// (see .agents/skills/twir-link-context). Top-level 🤖 items are AI tools: keep them
+function remarkPluginStripAgentSubItems() {
+  const visit = require("unist-util-visit");
+
+  function isAgentItem(listItem, file) {
+    const firstNode = listItem.children[0]?.children?.[0];
+    if (firstNode?.type !== "text" || !firstNode.value.startsWith("🤖")) {
+      return false;
+    }
+    if (/^🤖\s*\p{Extended_Pictographic}/u.test(firstNode.value)) {
+      return true;
+    }
+    throw new Error(
+      `
+
+This Week In React - Newsletter bug!
+
+A nested list item starts with 🤖 but no type emoji follows it.
+It's ambiguous: an AI/agent link featured as a sub-item, or an agent context note missing its type emoji ("🤖 ✅ …").
+Please review it manually in file ${file.path} at line ${listItem.position?.start?.line ?? "???"}:
+${textOf(listItem.children[0])}
+
+`,
+    );
+  }
+
+  return async (tree, file) => {
+    visit(tree, "listItem", (node) => {
+      node.children = node.children.filter((child) => {
+        if (child.type !== "list") {
+          return true;
+        }
+        child.children = child.children.filter(
+          (item) => !isAgentItem(item, file),
+        );
+        return child.children.length > 0;
+      });
+    });
+  };
+}
+
+// Stop the build when a published issue still has "🚧 <emoji>" agent work that an
+// editor hasn't reviewed. Old issues used "🚧 [link]" as an item emoji: allow it
+function remarkPluginUnreviewedAgentWork() {
+  const visit = require("unist-util-visit");
+
+  return async (tree, file) => {
+    if (file.data.frontMatter?.unlisted) {
+      return;
+    }
+    visit(tree, "paragraph", (node) => {
+      const firstNode = node.children[0];
+      if (
+        firstNode?.type === "text" &&
+        /^🚧\s*\p{Extended_Pictographic}/u.test(firstNode.value)
+      ) {
+        throw new Error(
+          `
+
+This Week In React - Newsletter bug!
+
+This published issue still contains agent work in progress (🚧) that an editor hasn't reviewed.
+Review it, then remove the "🚧 " prefix, in file ${file.path} at line ${node.position?.start?.line ?? "???"}:
+${textOf(node)}
+
+`,
+        );
+      }
+    });
+  };
+}
+
 // Make email images easier to copy/paste into ConvertKit editor
 function remarkPluginImage() {
   const visit = require("unist-util-visit");
@@ -225,7 +302,13 @@ const config: Config = {
         blogSidebarCount: "ALL",
         onInlineAuthors: "ignore",
         postsPerPage: 10,
-        beforeDefaultRemarkPlugins: [remarkPluginImage, remarkPluginBadLinks],
+        beforeDefaultRemarkPlugins: [
+          // First, so the other plugins don't check links that get stripped
+          remarkPluginStripAgentSubItems,
+          remarkPluginUnreviewedAgentWork,
+          remarkPluginImage,
+          remarkPluginBadLinks,
+        ],
         feedOptions: {
           title: "This Week In React - Newsletter",
           description:
