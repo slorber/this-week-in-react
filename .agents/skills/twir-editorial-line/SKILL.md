@@ -93,6 +93,8 @@ Rule (#302): watch the link count. Gmail clips emails over about 102KB of HTML, 
 
 **Rule (#302): several releases of one project = one link.** Title it with an arrow range, e.g. `Vinext 1.2 → 1.3`, `pnpm 12.11 → 12.13`, `Satori 0.36 → 0.55`. Link to the blog index or the GitHub releases page (`vinext.dev/blog`, `github.com/<org>/<repo>/releases`), so readers can reach every release from that one link, and first check that the index shows those releases at the top. The keywords and the comment cover what's new across the whole range.
 
+**Rule: two resources on the same topic = one link.** Feature the best one and drop the other, even when they come from different authors. Prefer the most authoritative first-party source: the project's own blog post, release notes or docs, the author's own post. Pick a third-party resource only when the first-party one reads much worse, like a raw changelog, a long spec or a sprawling thread next to a clear write-up. Tell the editors which link you dropped, so they can swap them.
+
 ## Judging an item: checklist
 
 1. Did I read it in full (see `twir-reading-links`)? If not, say so.
@@ -100,5 +102,5 @@ Rule (#302): watch the link count. Gmail clips emails over about 102KB of HTML, 
 3. Does the public page say to look for it, or to filter it out?
 4. Is it free and platform-agnostic, or tied to a vendor?
 5. Is it significant enough to spend a link on, compared with the rest of the section?
-6. Does it duplicate another item? Merge release ranges, and merge closely related links into one item.
+6. Does it duplicate another item? Merge release ranges, merge closely related links into one item, and keep one link per topic (see "Link budget").
 7. Which space tier does it deserve?

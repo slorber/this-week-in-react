@@ -130,7 +130,7 @@ Other key highlights include:
 
 ## Grouping and deduplication
 
-- **One item per piece of news.** A blog post, a release and a social post about the same thing become one item. The main link is, in order of preference: the official blog post or announcement, the release notes, the docs, a social post. A single post can be the main link when it holds everything, like a video demo (see `twir-reading-links`). Check which link past items of the same project used.
+- **One link per topic.** A blog post, a release and a social post about the same thing become one item. So does a third-party article on the same topic: it's dropped, not drafted as its own item. Pick the most authoritative first-party source as the main link, in this order: the official blog post or announcement, the release notes, the docs, a social post. Pick a third-party one only when the first-party source reads much worse (see "Link budget" in `twir-editorial-line`). List the dropped links in ℹ️, marked "dropped", so the editors can swap them. A single post can be the main link when it holds everything, like a video demo (see `twir-reading-links`). Check which link past items of the same project used.
 - **Several releases of one project** become one `→` range item that links to the releases page (see "Link budget" in `twir-editorial-line`).
 - **The same URL twice** (tracking parameters, `twitter.com` vs `x.com`, a trailing slash) is merged silently, and listed once in ℹ️.
 - **Links on the same line, or joined with `+`** (often with a short comment), are links the editor considered related: they stay one item. Don't split them on your own. When the connection isn't obvious, say so in a ⚠️ sub-item and in chat, and ask the editors.
