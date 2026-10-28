@@ -1,14 +1,18 @@
 ---
 slug: /303
-title: "This Week In React #303: ..."
+title: "This Week In React #303: TanStack, Next.js, Vinext, Motion, React Hook Form, React Window | Expo Desktop, Legend Spark, RNW 0.85, Nitro, Exact, Skia, Screens, Unistyles | Node.js, Bun, SWC, Reylo, pnpm, Biome, Firefox, Safari"
 authors: [slorber, janjaworski]
 date: 10-28-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
-<Todo />
+This week is full of TanStack releases with Redact, AI, and DB. Redact is a smaller, synchronous version of React.
+
+On mobile, it's an interesting week for native desktop app development and Nitro. Expo founders are cooking something new 👀.
+
+Node v26 is now LTS. SWC’s next version is much faster. Bun now ships a code formatter.
 
 Let's dive in!
 
@@ -34,9 +38,32 @@ Prioritize your PR flood with [**CodeRabbit Triage**](https://coderabbit.link/tw
 
 ## ⚛️ React {#react}
 
-<Todo />
+![TanStack Redact](/emails/issues/303/redact.jpg)
+
+[**TanStack Redact**](https://tanstack.com/blog/introducing-tanstack-redact)
+
+Tanner Linsley's AI-driven React projection experiment is now a real TanStack project adopted in production. Redact is a smaller React-compatible runtime for the browser. Already working with Start, Next.js, Vinext, and Vite. On the server, nothing changes: React still handles SSR and Server Components.
+
+Although it’s smaller, the main tradeoff is that Redact renders synchronously, without React's time slicing features. The blog post acknowledges that “a heavy render can still delay input”.
+
+---
 
 - 💸 [Sentry - 41 companies have now funded $8.4M through the Open Source Pledge. See how we're supporting OSS.](https://blog.sentry.io/another-year-another-1-000-000-to-open-source-maintainers/)
+- 🔐 [Next.js \- Upcoming November security release](https://nextjs.org/blog/upcoming-nextjs-security-release-november-2026) \- Planned for November 3: 7 medium-severity vulnerabilities.
+- 📜 [Owner \- Moving 10K+ restaurant websites from Next.js to Astro](https://building.owner.com/project-speed) \- React now only runs in islands. Their p75 menu-page LCP went from 5.4s to 0.7s.
+- 📜 [Design Systems Should Be Fast by Default](https://denodell.com/blog/design-systems-should-be-fast-by-default) \- Timed 10 design systems opening a 249-country select and checking 100 checkboxes. Among the 4 React ones, React Spectrum was the slowest to open (227ms), and Ant Design took 6x longer than MUI to check them all.
+- 📜 [Optimizing the sh\*t out of TanStack Start](https://sarthakmishra.com/blog/optimizing-tanstack-start)
+- 📜 [What Is a Hydration Mismatch Error and How Do You Fix It?](https://www.gmoniava.com/blog/hydration-mismatch-errors-and-how-to-fix-them)
+- 📜 [AI Writes Forms Pretty Well; Here's Why We'd Still Hand It a Library](https://formisch.dev/blog/ai-writes-forms-hand-it-a-library/)
+- 📦 [TanStack AI 1.0 \- Stable core APIs, 23 provider adapters, subagents, MCP servers, experimental agent harness](https://tanstack.com/blog/tanstack-ai-1-0) \- The framework-agnostic AI interface removed deprecated APIs and commits to API stability. Comes with first-class React bindings and hooks such as `useChat()`.
+- 📦 [Motion 13.5 → 14.7 \- `scopeMotion()`, `animateLayout()` for vanilla JS, keyboard reordering, `stagger` grids, exit transitions](https://motion.dev/changelog) \- The new [`useScopeMotion()`](https://motion.dev/docs/react-use-scope-motion) hook groups animations, gestures, and scroll listeners. Then you can stop/cancel them together. Called automatically when a component unmounts.
+- 📦 [Vinext 1.4 \- Less server work, faster hydration, and lighter prefetching](https://vinext.dev/blog/vinext-1-4)
+- 📦 [TanStack DB 1.0 RC \- Going All In on Oracles](https://tanstack.com/blog/tanstack-db-1.0-rc1-going-all-in-on-oracles)
+- 📦 [React Hook Form 7.91 \- Field array, async validation and `<Form />` submission fixes, fewer re-renders](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.91.0)
+- 📦 [React Window 2.5 \- Page scrolling with `scrollElement`, headless `useVirtualizer()` hook, `useIsScrolling()`, `scroll-padding` support](https://github.com/bvaughn/react-window/releases/tag/2.5.0)
+- 📦 [React Resizable Panels 4.15 \- `useParentGroup()`, `useParentPanel()` and `useParentGrid()` hooks, imperative resizing takes space from neighbors](https://github.com/bvaughn/react-resizable-panels/releases/tag/4.15.0)
+- 📦 [Module Federation for TanStack Start \- Micro-frontends with federated SSR, for Vite and Rsbuild](https://github.com/module-federation/tanstack)
+- 🤖 [Next.js skill \- next-bundle-optimizer](https://nextjs.org/blog/ship-less-javascript-with-ai) \- This new Vercel skill for Next.js 16.4 gives your agent the Turbopack module graph to optimize your app. It can find imports that defeat lazy loading, duplicated dependencies, and failed tree shaking.
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -66,23 +93,83 @@ Try it out with the local evaluation stack, which installs the full stack with o
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+![React Native on Desktop](/emails/issues/303/expo-desktop.jpg)
+
+**React Native on Desktop**
+
+React Native on macOS and Windows had a big week, with 3 related releases:
+
+📦 [**React Native Windows 0.85**](https://devblogs.microsoft.com/react-native/react-native-windows-v0-85-is-here/) is out, completing the move to the New Architecture.
+
+📦 [**Expo Desktop v1**](https://expo-desktop-docs.vercel.app) is an independent project from Jamie Birch, not endorsed or maintained by Expo:
+
+- Best-effort macOS and Windows support for Expo apps: create an app with `npx expo-desktop create-app`, then run Prebuild, CNG, and `run macos/windows` commands
+- One Expo codebase targets iOS, Android, web, macOS, and Windows
+- Currently running on Expo SDK 55 until the native macOS (RN 0.83) catches up.
+
+📦 [**Legend Spark**](https://legend.so/spark) is a desktop framework from Jay Meistrich built right on top of it, aiming to ease the migration from Electron/Tauri:
+
+- Desktop modules included: window management, menu bar icons, and friends
+- No Xcode or native build to get started: new apps open in a prebuilt runner, like Expo Go for desktop. Upgrade to a custom build when you need new modules or want to publish.
+- Patches libraries that don't support desktop yet
+- Dogfooded: all of the Legend apps (Diff, Code, Music, Chat History, Photos) already run on Spark.
+- Windows support in progress.
+
+---
+
+**Nitro breaks out of React Native**
+
+Interesting week for Nitro too:
+
+- 🐦 [Nitro v1 enters alpha](https://x.com/mrousavy/status/2113257713169821719): HybridObject becomes an actual class, with a new API and better performance.
+- 🐦 [Decoupled from React Native](https://x.com/mrousavy/status/2111448600878215398): the new `nitro-core` package needs only JSI, opening the door to Lynx, NativeScript, and any JSI runtime.
+- 🐦 [Nitro Modules on Node.js](https://x.com/birch_js/status/2114726433734156536): runs on Node through `node-api-jsi`, ABI-stable prebuilt binaries, early WIP.
+
+---
 
 - 💸 [PostHog - 6-7 loops we use every day to make PostHog self-driving](https://go.posthog.com/twir-oct28)
 - 💸 [Maestro MCP - Let your coding agent write, run and debug your UI tests](https://docs.maestro.dev/get-started/maestro-mcp?utm_source=this-week-in-react)
+- 👀 [Exact \- Write an app once, run it natively on the web, macOS, iOS, and Linux, and let an agent build, run, see, and test it](https://github.com/ccheever/exact2) \- Expo founders are actively working on a new native and agentic cross-platform development solution. Not React, using a Contract UI/interaction DSL. This has been lightly 𝕏 [teased by Charlie Cheever](https://x.com/ccheever/status/2113554158074949749), and we’ll probably have an announcement soon. The repo is already public, so you can have a sneak peek of what’s cooking here.
+- 🐦 [React Native perf updates in the works \- 24% less JS thread CPU, 40% fewer scroll hitches on iOS, 86% less Yoga layout work](https://x.com/tomekzaw_/status/2112627064025358658)
+- 📜 [Hello, Graphite: Performance](https://wcandillon.dev/article/hello-graphite-performance) \- The move from Ganesh to Graphite improved performance of RN Skia. Reaching 120fps on much more complex scenes is achievable now.
+- 📜 [Introducing ScrollViewMarker in react-native-screens](https://swmansion.com/blog/introducing-scroll-view-marker-in-react-native-screens/) \- Upcoming Screens 5 fixes tabs not minimizing when scrolling by letting you declare the content scroll view.
+- 📜 [A 30,000-line Rust GPU engine on Expo, and 120,000 installs without ads](https://expo.dev/blog/doodraw-rust-gpu-engine-expo-config-plugin-100k-installs) \- Case study of a 2-person team shipping to iOS, Android, and Windows with one Expo codebase and a Rust engine wrapped in native modules and a config plugin.
+- 📜 [Expo \- How to ready your app for iPhone Duo: SDK 58 changes, Expo Router, and new APIs](https://expo.dev/blog/supporting-iphone-duo) \- New horizontal safe area insets for the rail, plus new APIs for the rest of the hardware, `expo-hinge` for the angle, reserved regions for the fold, and `ArrangementView` for two-pane layouts.
+- 📜 [How React Native Works Under the Hood](https://codewithbeto.dev/blog/how-react-native-works-under-the-hood)
+- 📦 [Unistyles 3.6 \- Experimental zero-config Metro integration, 2x faster plain view re-renders, Reanimated CSS transitions follow theme changes](https://github.com/jpudysz/react-native-unistyles/releases/tag/v3.6.0)
+- 📦 [Actions Sheet 11.0 \- UI-thread gesture engine, velocity-based snapping, SheetGestureBlocker for maps and WebViews](https://github.com/ammarahm-ed/react-native-actions-sheet/releases/tag/v11.0.0)
+- 📦 [Bottom Tabs 1.5 \- RN 0.87 support, Swift Package Manager, prominent tab role on iOS 27+, AGP 9 fixes](https://github.com/callstack/react-native-bottom-tabs/releases)
+- 📦 [Radon 1.20 \- iPhone Duo simulator support, React Native 0.88, Expo SDK 58](https://github.com/software-mansion/radon-ide/releases/tag/v1.20.0)
+- 📦 [CRNL 0.64 \- C++ template graduates from experimental, React Native 0.88, Expo SDK 58](https://github.com/callstack/react-native-builder-bob/releases/tag/create-react-native-library%400.64.0)
+- 📦 [Keyframer Inspector \- Animation debugger for dev builds: dropped frames, slow motion, spring tuning written back to code](https://keyframer.dev/inspector)
+- 📦 [Legend List 3.7 \- Reliable programmatic scrolling, new cancelScroll, scrollToKey and anchorVisibleContent ref methods](https://github.com/LegendApp/legend-list/releases/tag/v3.7.0)
+- 📦 [RNSEC 1.4 \- 18 new security rules, CI integrations with SARIF and baselines, fewer false positives](https://github.com/adnxy/rnsec/releases/tag/v1.4.0)
+- 📦 [Sentry 8.32 \- Traces linked into embedded WebViews and Expo DOM components](https://github.com/getsentry/sentry-react-native/releases/tag/8.32.0)
+- 🤖 [Expo Agent CLI](https://expo.dev/blog/introducing-expo-agent-cli) \- Helps coding agents understand Expo projects, use npm package co-located skills, run apps and development workflows.
+- 🤖 [Argent 0.30 \- Fold Android emulators, capture XMLHttpRequest and axios traffic, flows renamed to e2e](https://github.com/software-mansion/argent/releases/tag/v0.30.0)
+- 🤖 [Agent Device 0.21.32 \- React components inspectable through Metro, Fire TV and native macOS app support, multi-touch and hardware buttons](https://github.com/callstack/agent-device/releases)
+- 🤖 [ExecuTorch 0.11 \- LLM sampler with constrained decoding, 16k context, depth estimation, image inpainting, on-device vector store](https://github.com/software-mansion/react-native-executorch/releases/tag/v0.11.0)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 🔐 [Node.js security releases \- “Node2Shell” remote code execution in Brotli decoder](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases) \- Upgrade your Node.js (or Bun) now if your app decodes Brotli data under someone else's control.
+- 📜 [The AI cost of JavaScript frameworks](https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/) \- Building the same Pokédex app with Claude in 12 frameworks, with a conformance test suite.
+- 📦 [Node.js 26.13 \- New "Lithium" LTS](https://nodejs.org/en/blog/release/v26.13.0) \- v26 just transitioned into Long Term Support.
+- 📦 [Bun 1.4.4 \- `bun fmt`, faster `bun check`, and more](https://bun.com/blog/bun-v1.4.4) \- Comes with a new Prettier-compatible code formatter and many other improvements. Also fixes the Node2Shell vulnerability.
+- 📦 [SWC Next \- Flat ESTree-based AST, up to 3x faster native parsing, up to 10x faster through the JS API](https://github.com/swc-project/swc-next) \- The next version of SWC will be much faster. Takes inspiration from the Yuku parser architecture. Coming in Rspack 2.3.
+- 📦 [Reylo \- Import `.sql` files into TypeScript with full type inference](https://reylo.dev/) \- The creator of Zod leverages the brand-new TS 7.1 (beta) content mappers to infer types from SQL files. He also released [Motherload](https://github.com/colinhacks/motherload), which does the same and provides type safety for TOML, YAML, CSV, Markdown front matter, `.env`, and other data files.
+- 📦 [pnpm 12.14 → 12.16 \- `pnpm-workspace.yml` includes, tar-based lockfile integrity, zstd registry responses, global `--env-file`, security fixes](https://pnpm.io/blog?type=releases) \- As a heavy catalogs user, I particularly like the ability to split my large config file into multiple smaller and focused parts.
+- 📦 [Biome 2.6 \- Markdown, YAML and SCSS support, JavaScript plugins (preview), Tailwind v4 class sorting, `biome inspect`, new type inference engine](https://biomejs.dev/blog/biome-v2-6/)
+- 📦 [Firefox 159 \- Scroll-driven animations, scoped custom element registries, streaming HTML sanitization](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/159) \- CSS scroll-driven animations are now available in all browsers\!
+- 📦 [Safari 27.1 → 27.2 \- iPhone Duo, Device Posture and Viewport Segments APIs behind flags](https://webkit.org/blog/)
+- 📦 [Remix 3.1 \- 2x faster SSR, frame prefetching with `prefetch()`, streaming file uploads (future API)](https://github.com/remix-run/remix/releases/tag/remix%403.1.0)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-[![alt](/emails/issues/215/meme.jpg)](https://twitter.com/TODOTODOTODOTODOTODOTODOTODOTODOTODOTODO)
+![Jamie Birch: Finally, we can write native apps in SwiftUI (quoting "SwiftUI finally has a native WebView in iOS 26")](/emails/issues/303/meme.jpg)
 
 See ya! 👋
