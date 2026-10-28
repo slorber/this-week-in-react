@@ -52,7 +52,7 @@ The public page defines the sections. Details observed in past issues:
 
 **Rule: for a browser release, check whether a new CSS, JS or HTML feature in it unlocks cross-browser support.** That's often what matters most to our readers. It deserves a mention in the keywords or the comment, and sometimes a headline when React devs benefit: on #265, Firefox made view transition types, anchor positioning and the Navigation API available in all browsers.
 
-- **Check each new feature in the other engines**: Chromium (Chrome, Edge…), Gecko (Firefox) and WebKit (Safari). Use the MDN compatibility table, caniuse or webstatus.dev. A feature that ships in the last engine becomes "Baseline Newly available".
+- **Check each new feature in the other browsers**, with the MDN compatibility table, caniuse or webstatus.dev. "Available in all browsers" means Baseline: Chrome, Edge, Firefox and Safari, on desktop and mobile. Don't infer it from the engines alone, since Safari on iOS or Firefox on Android can lag behind.
 - **Check the other browser releases of the same issue too**: together, two releases can make a feature available everywhere.
 - **Say it plainly**: "Unlocks cross-browser support for CSS `shape()`, `position-try-order`, and Trusted Types" (Firefox 148 in #271), "the Navigation API that is now supported across all browsers" (Safari 26.2 in #263).
 
