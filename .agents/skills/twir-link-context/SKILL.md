@@ -34,7 +34,7 @@ Output only the items you prepared, grouped by section: the others stay in the D
 ## Steps
 
 1. **List every URL** in the input. Leave the 💸 sponsor content, the 🤭 Fun section, TODOs, and the items that are ready or waiting for review alone (see "Partially handled drafts").
-2. **Read each link in full.** Name the ones you couldn't read. Then, when it can help, **do a quick web search** on its subject: the community often adds context the link doesn't have. The Node.js security release never says "node2shell", but many posts call its Brotli RCE that way, and that's what the editor's hint meant. A search can also turn up reactions, known problems or a better main link. It adds to reading the link, never replaces it: read in full each result you use, and list it in ℹ️. When a hint names something your sources don't, search before you disagree with it.
+2. **Read each link in full.** Name the ones you couldn't read. Then, when it can help, **do a quick web search** on its subject: the community often adds context the link doesn't have. The Node.js security release never says "node2shell", but many posts call its Brotli RCE that way, and that's what the editor's hint meant. A search can also turn up reactions, known problems or a better main link. It adds to reading the link, never replaces it: read in full each result you use, and list it in ℹ️. When a hint names something your sources don't, search before you disagree with it. Search with public terms only, like the project, the release or the hint. Never put a reader's name, an email's content or news that isn't public yet in a query.
 3. **Group and deduplicate** (rules below).
 4. **Check past coverage**: search `website/newsletter/*/index.mdx` for the URL, the repo and the project name. For a release, find the previous version's item: its link choice, its title, and whether this one repeats it.
 5. **Write each item**: the top line with its `🚧` marker, then its 🤖 sub-items (format below). Write headline candidates as headline drafts instead.
@@ -140,7 +140,7 @@ Other key highlights include:
 
 ## Examples
 
-Real inputs live in [`examples/`](examples/), one file per issue, each with the shapes it shows and the decisions expected. Read them when an input shape is unclear. After changing a rule in this skill, run the skill on them, check the expected decisions, and update the ones the change affects. Their content is a past week: never use it as current news.
+Real inputs live in [`examples/`](examples/), one file per issue, each with the shapes it shows and the decisions expected. Read them when an input shape is unclear. After changing a rule in this skill, run the skill on them, check the expected decisions, and update the ones the change affects. Their content is a past week: never use it as current news. When you rerun one, ignore sources published after its issue, such as the published issue itself.
 
 ## Cleanup before publication
 
