@@ -4,7 +4,7 @@ export const sponsorshipCalendarLink = "https://thisweekinreact.com/calendar";
 export const testimonialsLink = "https://thisweekinreact.com/testimonials";
 
 // TODO automate this!
-export const lastIssueLink = "/newsletter/302";
+export const lastIssueLink = "/newsletter/303";
 
 ///////////////////////////////////////////////
 
@@ -35,17 +35,17 @@ export type NewsletterFuture = {
 
 const all: NewsletterSegment & NewsletterFuture = {
   name: "All",
-  subscribersCount: 40297,
-  openRate: 56,
+  subscribersCount: 39697,
+  openRate: 55,
   clickRate: 11,
 
   // TODO improve this!
   nextMainSlot: {
-    date: "October 2026",
+    date: "January 2027",
     // projectedAudienceSize: 45000,
   },
   nextSecondSlot: {
-    date: "September 2026",
+    date: "January 2027",
     // projectedAudienceSize: 45000,
   },
 };
