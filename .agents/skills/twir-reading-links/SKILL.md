@@ -21,8 +21,10 @@ Why it matters: on #302, an agent "verified" a pre-written line about a Next.js 
 Some fetch tools pass the page through a smaller model, and return a summary or an answer to your question instead of the page. Details and numbers get lost or distorted. To judge an item, get the actual text:
 
 - download the page (`curl -sL <url>`) and extract its main content,
-- or use a raw source: the Markdown on GitHub, the site's RSS/Atom feed, an API (see below),
+- or use a raw source: the Markdown on GitHub, an API (see below), the site's RSS/Atom feed,
 - or open it in a real browser (a browser automation tool) and extract the page text.
+
+**A feed entry may only contain a summary or an excerpt.** Always check the entry's source URL (its `<link>`) too, and read the page itself when the feed's text is shorter.
 
 If you could only use a summarizing tool, say so.
 
@@ -42,7 +44,7 @@ If you could only use a summarizing tool, say so.
 **Client-side rendered pages**, in order of preference:
 
 1. Data embedded in the HTML: a `<script id="__NEXT_DATA__">` JSON payload, or `<script type="application/ld+json">`.
-2. The site's RSS or Atom feed (`/rss.xml`, `/feed.xml`, `/atom.xml`, or the `<link rel="alternate">` in the HTML), which often contains the full post.
+2. The site's RSS or Atom feed (`/rss.xml`, `/feed.xml`, `/atom.xml`, or the `<link rel="alternate">` in the HTML). It sometimes contains the full post, but may only contain a summary: compare it with the page at the entry's source URL.
 3. The source Markdown, when the blog is open source on GitHub.
 4. A real browser: let the page render, then extract the text.
 
@@ -83,7 +85,16 @@ For important or surprising items, also look at the replies and quote posts: a m
 
 ## GitHub
 
-The unauthenticated API allows 60 requests per hour.
+The unauthenticated API allows 60 requests per hour. When the GitHub CLI (`gh`) is installed and logged in, you can use it instead: its requests are authenticated (5,000 per hour) and it handles pagination. For example:
+
+```bash
+gh release view <tag> --repo <owner>/<repo>
+gh pr view <n> --repo <owner>/<repo>              # description
+gh pr view <n> --repo <owner>/<repo> --comments   # discussion only
+gh api 'repos/<owner>/<repo>/releases?per_page=5'
+```
+
+Without `gh`:
 
 | What | How |
 | --- | --- |
