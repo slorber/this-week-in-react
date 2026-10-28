@@ -34,7 +34,7 @@ Output only the items you prepared, grouped by section: the others stay in the D
 ## Steps
 
 1. **List every URL** in the input. Leave the 💸 sponsor content, the 🤭 Fun section, TODOs, and the items that are ready or waiting for review alone (see "Partially handled drafts").
-2. **Read each link in full.** Name the ones you couldn't read.
+2. **Read each link in full.** Name the ones you couldn't read. Then, when it can help, **do a quick web search** on its subject: the community often adds context the link doesn't have. The Node.js security release never says "node2shell", but many posts call its Brotli RCE that way, and that's what the editor's hint meant. A search can also turn up reactions, known problems or a better main link. It adds to reading the link, never replaces it: read in full each result you use, and list it in ℹ️. When a hint names something your sources don't, search before you disagree with it.
 3. **Group and deduplicate** (rules below).
 4. **Check past coverage**: search `website/newsletter/*/index.mdx` for the URL, the repo and the project name. For a release, find the previous version's item: its link choice, its title, and whether this one repeats it.
 5. **Write each item**: the top line with its `🚧` marker, then its 🤖 sub-items (format below). Write headline candidates as headline drafts instead.
@@ -89,7 +89,7 @@ Every sub-item is `- 🤖 <type emoji> <text>`, nested under its item, on one li
 | 📝 | When the input had a note or question from the editor | The note, quoted, then the answer |
 | 🔁 | When the repo has past coverage | The issues that covered it, and what that means for this item |
 | ⚠️ | When needed | Couldn't read or only partially read, a claim the sources don't support, vendor-tied, paywalled, only on X, links grouped by the editor with no obvious connection |
-| ℹ️ | Always, last | Every input URL merged into this item, labeled by type, the main link marked, and what was read in full |
+| ℹ️ | Always, last | Every input URL merged into this item, then the links you found and used (search results, a better main link), each labeled by type, the main link marked, and what was read in full |
 
 Score scale:
 
