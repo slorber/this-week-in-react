@@ -37,7 +37,7 @@ Output only the items you prepared, grouped by section: the others stay in the D
 2. **Read each link in full.** Name the ones you couldn't read. Then, when it can help, **do a quick web search** on its subject: the community often adds context the link doesn't have. The Node.js security release never says "node2shell", but many posts call its Brotli RCE that way, and that's what the editor's hint meant. A search can also turn up reactions, known problems or a better main link. It adds to reading the link, never replaces it: read in full each result you use, and list it in ℹ️. When a hint names something your sources don't, search before you disagree with it. Search with public terms only, like the project, the release or the hint. Never put a reader's name, an email's content or news that isn't public yet in a query.
 3. **Group and deduplicate** (rules below).
 4. **Check past coverage**: search `website/newsletter/*/index.mdx` for the URL, the repo and the project name. For a release, find the previous version's item: its link choice, its title, and whether this one repeats it. Past coverage also tells you whether freshness matters (see "Freshness" in `twir-editorial-line`).
-5. **Write each item**: the top line with its `🚧` marker, then its 🤖 sub-items (format below). Write headline candidates as headline drafts instead.
+5. **Write each item**: the top line with its `🚧` marker, then its 🤖 sub-items (format below). Write headline candidates as headline drafts instead. For a browser release, first check which of its features become cross-browser, alone or with the other browser releases of the input (see "Browser releases" in `twir-editorial-line`).
 6. **Keep the sections, and order** the items as `twir-editorial-line` says. Within an emoji group, higher scores first. Never move an item to another section on your own. When you think it belongs elsewhere, say so in its 🎯 sub-item and in chat. Links that come without a section heading get one from you: once you've read a link, pick ⚛️ React, 📱 React Native or 🔀 Other as the "Sections" part of the public editorial line defines them, give it in 🎯, and group the output by section.
 7. **Run the email size check** (`twir-email-size`) on the whole issue with these items. The script ignores the 🤖 sub-items. From 95%, propose cuts, lowest scores first.
 
@@ -68,6 +68,8 @@ Writing straight into the Doc isn't supported yet. The Docs API rejects writes t
 `- 🚧 <emoji> [<title>](<main link>)`: a complete item following `twir-writing-style` (emoji, title format for its type, main link), behind the review marker. Keep the comment out of it: comment ideas go in ✍️, and the editor adds one if he wants.
 
 Put one space between emojis, and between the last emoji and the link or text: `- 🚧 📦 [link](url)`, `- 🤖 ✅ Keep…`, never `- 🚧📦[link](url)`.
+
+Leave a blank line after each top-level item, its sub-items included: with the 🤖 sub-items, the list is long, and the blank lines make it easier to scan. They must go before publication (see "Cleanup before publication").
 
 **`🚧` marks AI work in progress that an editor must review.** Put it on every item and headline you prepare. The editor removes it once the item is ready for publication, and may delete the 🤖 sub-items or leave them (the website strips them).
 
@@ -149,5 +151,7 @@ Real inputs live in [`examples/`](examples/), one file per issue, each with the 
 Nothing to do for the 🤖 sub-items. The website's `remarkPluginStripAgentSubItems` (in `website/docusaurus.config.ts`) strips every **nested** list item that starts with `🤖` followed by an emoji, and the email size script ignores them too. Top-level `🤖` items are kept: 🤖 is also the palette emoji for AI tools.
 
 **A nested item that starts with `🤖` but has no emoji after it stops the build.** It's ambiguous: an AI/agent link featured as a sub-item, or a note missing its type emoji. An editor must review it: add the type emoji, or move the link to a top-level item.
+
+**Remove the blank lines between items** when converting the draft to MDX. A single blank line makes the whole list loose: every item gets wrapped in a paragraph, which adds spacing on the website and in the email. Published issues use tight lists.
 
 **Sub-items without 🤖 are published.** A note an editor adds under a link must start with 🤖 too, or be deleted before publication.
