@@ -1,6 +1,6 @@
 ---
 name: twir-link-context
-description: Pre-contextualize raw links for a This Week In React (TWIR) draft - group and deduplicate a messy list of links, then turn each group into a 🚧 draft item line followed by 🤖 context sub-items (verdict, section, score, comment ideas, past coverage, warnings, sources) that editors use to finalize each item fast, and delimited blocks into 🚧 headline drafts. Use when given raw links, a messy draft section or a Google Doc draft to pre-contextualize, group, deduplicate, annotate or prepare for the editors.
+description: Pre-contextualize raw links for a This Week In React (TWIR) draft - group and deduplicate a messy list of links, then turn each group into a 🚧 draft item line followed by 🤖 context sub-items (verdict, section, score, AI slop score, comment ideas, past coverage, warnings, sources) that editors use to finalize each item fast, and delimited blocks into 🚧 headline drafts. Use when given raw links, a messy draft section or a Google Doc draft to pre-contextualize, group, deduplicate, annotate or prepare for the editors.
 ---
 
 # Pre-contextualizing links
@@ -34,7 +34,7 @@ Output only the items you prepared, grouped by section: the others stay in the D
 ## Steps
 
 1. **List every URL** in the input. Leave the 💸 sponsor content, the 🤭 Fun section, TODOs, and the items that are ready or waiting for review alone (see "Partially handled drafts").
-2. **Read each link in full.** Name the ones you couldn't read. Then, when it can help, **do a quick web search** on its subject: the community often adds context the link doesn't have. The Node.js security release never says "node2shell", but many posts call its Brotli RCE that way, and that's what the editor's hint meant. A search can also turn up reactions, known problems or a better main link. It adds to reading the link, never replaces it: read in full each result you use, and list it in ℹ️. When a hint names something your sources don't, search before you disagree with it. Search with public terms only, like the project, the release or the hint. Never put a reader's name, an email's content or news that isn't public yet in a query.
+2. **Read each link in full.** Name the ones you couldn't read. For an article, also open the blog's index and the author's bio or GitHub profile: they help spot AI-generated content (see "Spotting AI-generated content" in `twir-editorial-line`). Then, when it can help, **do a quick web search** on its subject: the community often adds context the link doesn't have. The Node.js security release never says "node2shell", but many posts call its Brotli RCE that way, and that's what the editor's hint meant. A search can also turn up reactions, known problems or a better main link. It adds to reading the link, never replaces it: read in full each result you use, and list it in ℹ️. When a hint names something your sources don't, search before you disagree with it. Search with public terms only, like the project, the release or the hint. Never put a reader's name, an email's content or news that isn't public yet in a query.
 3. **Group and deduplicate** (rules below).
 4. **Check past coverage**: search `website/newsletter/*/index.mdx` for the URL, the repo and the project name. For a release, find the previous version's item: its link choice, its title, and whether this one repeats it. Past coverage also tells you whether freshness matters (see "Freshness" in `twir-editorial-line`).
 5. **Write each item**: the top line with its `🚧` marker, then its 🤖 sub-items (format below). Write headline candidates as headline drafts instead. For a browser release, first check which of its features become cross-browser, alone or with the other browser releases of the input (see "Browser releases" in `twir-editorial-line`).
@@ -87,6 +87,7 @@ Every sub-item is `- 🤖 <type emoji> <text>`, nested under its item, on one li
 | ✅ / 🤔 / ❌ | Always | Keep / judgment call / suggest cut, with a one-line reason based on the editorial line |
 | 🎯 | Always | The group in its list (news, articles, releases, AI tools, media), and the section you'd suggest if it seems to belong elsewhere |
 | 💯 | Always | The score, `n/5` (scale below), and the space tier it implies |
+| 🗑️ | Every 📜 article, and any other link that shows signals | The slop score, `n/5`, and the signals seen (see "Spotting AI-generated content" in `twir-editorial-line`) |
 | ✍️ | When a comment would add something | A proposed comment |
 | 📝 | When the input had a note or question from the editor | The note, quoted, then the answer |
 | 🔁 | When the repo has past coverage | The issues that covered it, and what that means for this item |

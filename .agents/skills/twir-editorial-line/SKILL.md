@@ -104,6 +104,44 @@ Severe security advisories go first among the news.
 
 Check past coverage before calling something old. On #303, neither Biome 2.6 (blog post from two weeks earlier, not featured yet) nor a Video.js post (three weeks old, Video.js never featured) was too old.
 
+## Spotting AI-generated content
+
+**Rule: flag AI-generated articles.** The public page filters out content produced by AI. One signal rarely proves it: look for several, in the article, the blog's index and the author's profile. Judge the text, not the person.
+
+The writing:
+
+- **Convoluted past-tense sentences**, often in headings: "The Boilerplate That Quietly Went Away", "Where the Re-renders Actually Came From". A plain "I tested it on three apps" is fine.
+- **A punchy cadence**: short contrast lines ("It didn't.", "That's not a bug. It's the design."), a bold one-liner closing each section, tics like "worth calling out" or "here's the thing".
+- **Many dashes (– —) or semicolons.** Newer AI text often avoids dashes, and leaves comma splices instead.
+
+The structure:
+
+- A TL;DR or "The short answer" at the top, a "Key takeaways" box, a recap at the end that repeats them.
+- A "Common mistakes" list, a checklist table, bullet lists of bare nouns.
+- An FAQ at the end, often an accordion, with questions phrased like searches. Headings phrased like searches too.
+
+The content:
+
+- **It restates an authoritative source**, like react.dev or a framework's docs, and adds nothing. Links to the docs after each claim don't make it original.
+- **A stale premise**: old news presented as current or upcoming, like a post on a major version's beta published after the next two majors shipped.
+- Placeholder code, appeals to unnamed experience ("in the production apps I've worked on"), a product plug at the end.
+- Clickbait contrast titles, or "(Tested)" and "Benchmarked" with oddly precise numbers and no method.
+
+The site and the author:
+
+- **The posting rate**: a long post every day or two across unrelated stacks, or an archive that suddenly speeds up after years of occasional posts.
+- **The bio or GitHub profile**, like "AI engineer specialized in automations". It only supports other signals: plenty of good authors use AI tools.
+
+Give a **slop score**, and explain it with the signals you saw, quoting a heading or a sentence:
+
+| Slop | Meaning | Verdict |
+| --- | --- | --- |
+| 1/5 | Reads human | Judge it on its content |
+| 2/5 | One or two weak signals | Judge it on its content, and name the signals |
+| 3/5 | Several signals, hard to tell | 🤔: the editors decide |
+| 4/5 | Clearly templated, with some original substance | ❌, score 1/5 |
+| 5/5 | Templated, and only restates docs or generic advice | ❌, score 1/5 |
+
 ## Link budget (email)
 
 Rule (#302): watch the link count. Gmail clips emails over about 102KB of HTML, which hides the end of the issue (Other, Fun) behind "View entire message". The email is sent with Kit (ConvertKit), which rewrites every link into a long tracked URL, so the number of links is the main driver of email size. Inline links inside comments count too.
@@ -118,7 +156,7 @@ Rule (#302): watch the link count. Gmail clips emails over about 102KB of HTML, 
 
 1. Did I read it in full (see `twir-reading-links`)? If not, say so.
 2. Is it in scope for its section, and fresh enough (see "Freshness")?
-3. Does the public page say to look for it, or to filter it out?
+3. Does the public page say to look for it, or to filter it out? For an article, does it read as AI-generated (see "Spotting AI-generated content")?
 4. Is it free and platform-agnostic, or tied to a vendor?
 5. Is it significant enough to spend a link on, compared with the rest of the section?
 6. Does it duplicate another item? Merge release ranges, merge closely related links into one item, and keep one link per topic (see "Link budget").
