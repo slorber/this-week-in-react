@@ -85,6 +85,17 @@ Observed usual order (#290–#302):
 
 Severe security advisories go first among the news.
 
+## Freshness
+
+**Rule: freshness only applies to what we actively track**, like the regular releases of projects we cover often. Don't be strict about it:
+
+- A release 2–4 weeks old that no issue featured yet is worth featuring: we missed it, and stumbled upon it later.
+- For a project never featured in any issue, the date doesn't matter.
+- For content you just stumbled upon, the date matters less than its interest.
+- Past a month, tracked news is probably old: flag it and let the editors decide.
+
+Check past coverage before calling something old. On #303, neither Biome 2.6 (blog post from two weeks earlier, not featured yet) nor a Video.js post (three weeks old, Video.js never featured) was too old.
+
 ## Link budget (email)
 
 Rule (#302): watch the link count. Gmail clips emails over about 102KB of HTML, which hides the end of the issue (Other, Fun) behind "View entire message". The email is sent with Kit (ConvertKit), which rewrites every link into a long tracked URL, so the number of links is the main driver of email size. Inline links inside comments count too.
@@ -98,7 +109,7 @@ Rule (#302): watch the link count. Gmail clips emails over about 102KB of HTML, 
 ## Judging an item: checklist
 
 1. Did I read it in full (see `twir-reading-links`)? If not, say so.
-2. Is it fresh, and in scope for its section?
+2. Is it in scope for its section, and fresh enough (see "Freshness")?
 3. Does the public page say to look for it, or to filter it out?
 4. Is it free and platform-agnostic, or tied to a vendor?
 5. Is it significant enough to spend a link on, compared with the rest of the section?
