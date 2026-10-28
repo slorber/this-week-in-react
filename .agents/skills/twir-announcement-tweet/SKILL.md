@@ -7,7 +7,7 @@ description: Draft the weekly This Week In React (TWIR) announcement tweet - exa
 
 The announcement tweet only announces the issue: it should make people stop scrolling, not go viral. Separate tweets cover individual news.
 
-Before drafting, read 2–4 recent announcement tweets with the fxtwitter API (see "Reading links" in `twir-curation-workflow`): `curl -s https://api.fxtwitter.com/sebastienlorber/status/<id>`. Recent ones: #301 `2110084331414937771`, #299 `2105550694665376198`, #297 `2100499004232450143`, #296 `2097766984549007694`.
+Before drafting, read 2–4 recent announcement tweets with the fxtwitter API (see `twir-reading-links`): `curl -s https://api.fxtwitter.com/sebastienlorber/status/<id>`. Recent ones: #301 `2110084331414937771`, #299 `2105550694665376198`, #297 `2100499004232450143`, #296 `2097766984549007694`.
 
 ## Template
 
@@ -61,6 +61,7 @@ This Week In React 301
 
 - 6–8 per section, at least 5 + 5.
 - Names people recognize instantly when skimming: big libraries and frameworks.
+- **Order matters: most impactful first**, ranked by coreness and impact. React core, RN core, Expo and Next.js news usually come first, but a tiny React core change ranks below a major TanStack Query or Base UI release. See "Ranking by impact" in `twir-writing-style`: it's the same rule as for the issue title.
 - Versions only for majors (`Tamagui 3`, `Expo 58`). React Native releases are written bare: `0.88`, `0.88 RC`.
 - Short angles are fine: `R3F WebGPU`, `RNav SVG icons`, `Satori Yoga -> Taffy`.
 - Known abbreviations: RNav, RNW, RSC, R3F.

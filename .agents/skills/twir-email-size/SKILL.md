@@ -90,16 +90,16 @@ What gets counted: the body after the frontmatter, with `_support.mdx` inlined, 
 
 ## Calibration data
 
-Measured on 2026-10-21, during issue #302.
+The model was fit on 2026-10-21, during issue #302, on its only clipped data point: **#294 (93 links including the support links, about 2,050 words) was clipped by Gmail right at the footer.** The editor later confirmed that #271, #257 and #295 were not clipped.
 
-**The single calibration point: #294 (93 links including the support links, about 2,050 words) was clipped by Gmail right at the footer.** So its weight is the limit, about 101% in the model.
+The known outcomes agree with the model: #271 went through at 99.6% and #294 was clipped at 100.7%, so the real limit sits between those two values in the model.
 
 | Issue | Links | Words | Estimate | Known outcome |
 | --- | --- | --- | --- | --- |
-| #294 | 93 | 2,046 | 101% | Clipped at the footer |
-| #271 | 82 | 2,073 | 100% | – |
-| #257 | 86 | 1,817 | 97% | – |
-| #295 | 85 | 2,054 | 97% | – |
+| #294 | 93 | 2,046 | 100.7% | Clipped at the footer |
+| #271 | 82 | 2,073 | 99.6% | Not clipped |
+| #257 | 86 | 1,817 | 97.4% | Not clipped |
+| #295 | 85 | 2,054 | 96.7% | Not clipped |
 | #286 | 88 | 1,645 | 95% | – |
 | #297 | 82 | 1,867 | 93% | – |
 | #302 | 71 | 1,895 | 89% | – |
@@ -108,16 +108,16 @@ Measured on 2026-10-21, during issue #302.
 | #298 | 73 | 1,458 | 83% | – |
 | #299 | 70 | 1,485 | 81% | – |
 
-Still unknown: whether #271, #257 and #295 were clipped. Ask the editor if it comes up.
-
 Over the last 100 issues (#203–#302), the median issue has 70 links and 1,350 words. With a 5% margin, the maximum is about **88 links at 1,400 words** and about **80 links at 2,000 words**.
 
 ## Improving the calibration
 
-With a single calibration point, treat the percentages as ±5%. To refine the model:
+The model is only fit on estimates, not on real email sizes. To make it exact:
 
-1. Get Kit `.eml` exports of past issues (the editor has #294 and #301), copied to a folder the agent can read. Don't commit them.
-2. Measure the size of their HTML part, once decoded.
-3. Fit `K`, `T` and `B` to the exact sizes, update the constants in `scripts/email-size.mjs`, and update the table above.
+1. Get `.eml` files of sent issues (the editor has #294 and #301), copied to a folder the agent can read.
+2. Measure the size of their HTML part, once decoded, and record it in the table above.
+3. Fit `K`, `T` and `B` to the measured sizes, then update the constants in `scripts/email-size.mjs` and the estimates in the table.
+
+**Never commit the `.eml` files themselves**: this repo is public, and a received email contains the recipient's address and their personal tracking and unsubscribe links. Commit the measured sizes only.
 
 When the editor says whether an issue was clipped, add it to the table: each known outcome makes the model more reliable. As with any rule (see `AGENTS.md`), propose the edit in chat first.

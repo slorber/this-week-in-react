@@ -74,28 +74,31 @@ Observed: titles have a median length of 70 characters, and 90% are under 110 (#
 
 ## Emoji palette
 
-The curator guide's palette, with the usage count in #290–#302:
+The official palette, with the usage count in #290–#302. The curator guide has the same list: keep both in sync.
 
 | Emoji | Meaning | Count |
 | --- | --- | --- |
 | 💸 | Sponsored links (never touch) | 45 |
+| 🔐 | Security advisories | 10 |
+| 📣 | Announcements: launches, acquisitions, deprecations | 12 |
 | 👀 | Preview, PR, weak signals | 40 |
 | 💬 | RFC, community discussion | 9 |
 | 📊 | Survey, benchmark | 3 |
+| 🗳️ | Polls, votes | 1 |
 | 💡 | Interesting idea | 0 |
 | 📖 | Docs | 8 |
 | 🦋 | Bluesky links | 1 |
 | 🐦 | X/Twitter links (avoid if possible) | 7 |
 | 🎨 | Visual demos (posted outside X) | 3 |
 | 📅 | Events, conference partnerships | 3 |
+| 🗓️ | Conferences | 2 |
+| 💰 | Contests and hackathons with prizes | 1 |
 | 📜 | Articles | 151 |
 | 📦 | Releases, npm packages, plugins, repositories | 373 |
 | 🔗 | Resources | 0 |
 | 🤖 | Tools for AI / agents (skills, CLIs, MCPs…) | 11 |
 | 🎥 | Videos | 15 |
 | 🎙️ | Podcasts | 15 |
-
-Also used, outside the palette: 🔐 security advisories (10), 📣 announcements such as launches, acquisitions or deprecations (12), 🗓️ conferences (2, same as 📅), 🗳️ polls (1), 💰 a hackathon with prizes (1).
 
 When an item fits several, pick the one that tells readers what they'll find when they click: a blog post announcing a release or a new project is 📦, a PR is 👀 even if it's big news.
 
@@ -116,7 +119,7 @@ Other key highlights include:
 ---
 ```
 
-- A top banner image, then the bold title link. Prefer an image showing something meaningful, like a code screenshot (curator guide). Image rules are in the `twir-issue-file` skill.
+- A top banner image, then the bold title link. Prefer an image showing something meaningful, like a code screenshot (curator guide). Image rules are in the `twir-issue-images` skill.
 - Then one paragraph with the big picture (what it is, why it's a big deal), and usually 3–6 bullets with a **bold label** and a short explanation. It can end with a catch-all line: "And a few more: …".
 - `---` separates headlines from each other, and the last headline from the list.
 - The tone can be more enthusiastic here: "A React Native release is not enough!".
@@ -125,13 +128,12 @@ Other key highlights include:
 
 Rules:
 
-- When Jan co-authors (check `authors` in the frontmatter), it opens with: `Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋!`. Guest authors write their own opening, e.g. `Hi everyone, Kasia and Kuba from [Software Mansion](https://swmansion.com/) here.` (#293).
+- When Jan co-authors (check `authors` in the frontmatter), it opens with: `Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋!`.
 - It **always ends with `Let's dive in!`**. Include that line in every intro draft.
-- In between come short paragraphs: React first, then mobile, then Other.
+- In between, it covers the week's biggest stories: React first, then mobile, then Other. Most often that's one short paragraph per section, but it's not mandatory.
 
 Observed:
 
-- 2–4 paragraphs of 1–3 sentences each, covering the week's biggest stories.
 - It sets the mood of the week: "This week is rather quiet on the web side", "It's a heavy security week".
 - Some personality: "Wow, 300 issues already!", "Upgrade now!". Bold is used sparingly for the main news (**React 19.3 is finally out**).
 - Community asks happen occasionally (a poll, "reply by email").
@@ -145,8 +147,17 @@ title: "This Week In React #302: Next.js, React Router, DevTools, Security, shad
 - Three keyword groups (React | React Native | Other), separated by ` | `, with keywords separated by `, `.
 - 5–10 keywords per group, usually 6–8 (observed).
 - Short names readers recognize at a glance: projects, libraries, topics ("Security", "Design Systems"). Versions rarely, mostly for RN and Expo (`RN 0.88`, `Expo 58`).
-- Most important first, roughly following the section order.
+- **Most impactful first** within each group: see "Ranking by impact" below.
 - Never put a backslash escape in it (`\#`, `\-`): it's a double-quoted YAML string.
+
+## Ranking by impact
+
+Rule (editor): **keyword order matters**, in the issue title and in the announcement tweet. Put the most important news first, the news that impacts the most readers.
+
+- **Core news ranks high**: React core, React Native core, Expo, Next.js and other major frameworks. In #302's React Native group, `RN 0.88` comes first, then `Expo 58`.
+- **But weigh coreness and impact together.** A tiny React core change ranks below a major release of a popular third-party library, like TanStack Query or Base UI.
+
+The same principle orders 📦 releases inside a section list.
 
 ## Typography
 

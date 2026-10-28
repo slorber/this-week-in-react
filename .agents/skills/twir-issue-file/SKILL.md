@@ -1,6 +1,6 @@
 ---
 name: twir-issue-file
-description: The technical anatomy of a This Week In React (TWIR) issue - MDX file layout, frontmatter, section skeleton, MDX components, email image rules (JPEG conversion commands), MDX pitfalls, build check, commit, publishing and deploy troubleshooting. Use when you create or edit website/newsletter/<n>/index.mdx, add images under website/static/emails/issues/<n>/, add an author, build the site, commit an issue or debug a deploy.
+description: The technical anatomy of a This Week In React (TWIR) issue - MDX file layout, frontmatter, section skeleton, MDX components, MDX pitfalls, build check, commit, publishing and deploy troubleshooting. Use when you create or edit website/newsletter/<n>/index.mdx, add an author, build the site, commit an issue or debug a deploy.
 ---
 
 # TWIR issue file
@@ -10,7 +10,7 @@ description: The technical anatomy of a This Week In React (TWIR) issue - MDX fi
 | What | Where |
 | --- | --- |
 | Issue content | `website/newsletter/<n>/index.mdx` |
-| Issue images | `website/static/emails/issues/<n>/`, referenced as `/emails/issues/<n>/<file>.jpg` |
+| Issue images | `website/static/emails/issues/<n>/`, referenced as `/emails/issues/<n>/<file>.jpg`: see the `twir-issue-images` skill |
 | Template for a new issue | `website/newsletter/_template/index.mdx` |
 | Social links + top subscribe form | `website/newsletter/_support.mdx` (imported by every issue) |
 | Authors | `website/newsletter/authors.yml` **and** `website/i18n/fr/docusaurus-plugin-content-blog-newsletter/authors.yml` |
@@ -33,8 +33,8 @@ unlisted: true
 
 - `slug`: `/<n>`.
 - `title`: see "The issue title" in the `twir-writing-style` skill. It's a double-quoted YAML string, so never put a backslash escape in it: `\#` is invalid YAML there.
-- `authors`: keys from `authors.yml`. Guest issues list their own authors (e.g. `[jakubkowalski, katarzynapodmokla]` on #293).
-- `date`: `MM-DD-YYYY`, the Wednesday the issue is published.
+- `authors`: keys from `authors.yml`.
+- `date`: `MM-DD-YYYY`, the day the issue is published: a Wednesday, or a Tuesday from 2027.
 - `unlisted: true` until publication. **Publishing = removing that line**, and the editor does it himself.
 
 ## Body skeleton
@@ -96,29 +96,7 @@ See ya! 👋
 
 ## Images
 
-Images are sent in emails, so (rules):
-
-- **JPEG only**: never WebP or PNG. **No alpha channel.**
-- **Headline images**: under 1200px wide and under 200KB. Resize only if needed.
-- **Other images** (memes…): about 1000px wide, ideally ≤150KB, never more than 250KB. Never upscale small images.
-- **Sponsor creatives** are left as the sponsor provided them.
-- **Fun memes** are plain images named `meme.jpg`, `meme2.jpg`…, **never wrapped in a link** to their source tweet (that saves link budget).
-- Use short kebab-case names: `react-native-088.jpg`, `expo-sdk-58.jpg`.
-
-Convert with ImageMagick:
-
-```bash
-# Photos, memes, general images
-magick in.png -background white -alpha remove -alpha off -resize '1000x>' -strip -sampling-factor 4:2:0 -interlace JPEG -define jpeg:extent=150KB out.jpg
-
-# Text-heavy headline images (code screenshots): keeps text crisp, RN 0.88's image ended up 1200×675, 108KB
-magick in.png -background white -alpha remove -alpha off -resize '1200x>' -strip -quality 90 out.jpg
-
-# Check the result: format, size, channels (no alpha), weight
-magick identify -format '%m %wx%h %[channels] %b\n' out.jpg
-```
-
-Docusaurus throws on missing Markdown images, so every referenced image must exist in the repo before you build.
+See the `twir-issue-images` skill: email-safe JPEG rules, conversion commands, headline images, sponsors, memes and the template placeholder.
 
 ## MDX pitfalls
 
@@ -126,7 +104,7 @@ Docusaurus throws on missing Markdown images, so every referenced image must exi
 | --- | --- | --- |
 | Bare `<Tag>` in text | MDX compile error | Wrap it in backticks: `` `<Activity>` `` |
 | Bare `{` or `}` in text | MDX parses it as a JS expression | Wrap it in backticks |
-| Google Docs autolinks `Next.js`, `Three.js`… to `http://next.js` | Build stops with "This Week In React - Newsletter bug!" and the file and line | Remove the link, keep the text |
+| Google Docs autolinks project names ending in `.js` (`Next.js` becomes a link to `http://next.js`). These links are never intended, and those `.js` domains don't exist in practice | A remark plugin stops the build with "This Week In React - Newsletter bug!", with the file and line | Remove the link, keep the text |
 | `\#` in the frontmatter `title` | Invalid YAML escape | Remove the backslash |
 | Missing image | Build error | Add the file, check the path |
 
@@ -137,7 +115,7 @@ The other Google Docs escapes (`\-`, `\!`, `\~`, `7\.`) are harmless in the body
 Run it before committing an issue:
 
 ```bash
-cd website && ./node_modules/.bin/docusaurus build
+yarn build
 ```
 
 Then check the output contains the key items:
@@ -146,7 +124,7 @@ Then check the output contains the key items:
 grep -c "React Native 0.88" website/build/newsletter/302/index.html
 ```
 
-`yarn build` from the repo root does the same. Some sandboxed agents can't run it, because yarn reads `~/.yarnrc.yml` and sandboxes often block that file. Calling the Docusaurus binary directly avoids that. For live preview, use `yarn start` (http://localhost:3000/newsletter/<n>).
+For live preview, use `yarn start` (http://localhost:3000/newsletter/<n>).
 
 In production builds, a remark plugin rewrites `/emails/...` image URLs (and the separator images) to absolute `https://thisweekinreact.com/...` URLs. The rendered page can then be copy-pasted into the Kit (ConvertKit) email editor.
 
@@ -154,8 +132,8 @@ In production builds, a remark plugin rewrites `/emails/...` image URLs (and the
 
 - **Never commit or push unless asked.** Drafting and reviews happen in chat first (see `AGENTS.md`).
 - **Maintainers** commit issue changes directly to `main`. The commit message is just the issue number (`302`), and several commits with the same number per issue are normal.
-- **External contributors and guest authors** open a pull request instead (e.g. #45 for issue #293).
-- Vercel deploys every push to `main`. The issue stays hidden until `unlisted: true` is removed.
+- **Other contributors** open a pull request instead.
+- Vercel deploys every push to `main`. The issue stays hidden until `unlisted: true` is removed: the maintainer does it at the very end, once they have reviewed everything.
 
 ### Deploy troubleshooting
 
@@ -163,5 +141,3 @@ If a push doesn't trigger a Vercel deploy:
 
 1. Check the commit status: `https://api.github.com/repos/slorber/this-week-in-react/commits/<sha>/status`. Vercel posts "Deployment has completed" there.
 2. Check [githubstatus.com](https://www.githubstatus.com/) for Webhooks incidents. On #302, a GitHub webhook delay was the cause.
-
-A `Co-Authored-By` trailer in the commit message doesn't block deploys.
