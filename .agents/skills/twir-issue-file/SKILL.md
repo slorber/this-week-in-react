@@ -92,6 +92,7 @@ See ya! 👋
 - `<!-- truncate -->` ends the excerpt shown on the newsletter index page.
 - `<SubscribeFormEmbed placement="middle" />` closes the React section.
 - `<Todo />` renders a big TODO image. The template is full of them: none may remain in a published issue.
+- A top-level item that starts with `🚧` followed by its emoji (`- 🚧 📦 [...]`), or a paragraph that starts with `🚧` (a headline draft), is agent work that an editor hasn't reviewed yet (see `twir-link-context`): none may remain in a published issue either. Once `unlisted: true` is removed, the build stops on a `🚧` followed by an emoji, but not on a headline draft's `🚧 [**Title**]`: check those by hand.
 - `---` renders as an image separator, both on the site and in the email.
 
 ## Images
@@ -105,6 +106,8 @@ See the `twir-issue-images` skill: email-safe JPEG rules, conversion commands, h
 | Bare `<Tag>` in text | MDX compile error | Wrap it in backticks: `` `<Activity>` `` |
 | Bare `{` or `}` in text | MDX parses it as a JS expression | Wrap it in backticks |
 | Google Docs autolinks project names ending in `.js` (`Next.js` becomes a link to `http://next.js`). These links are never intended, and those `.js` domains don't exist in practice | A remark plugin stops the build with "This Week In React - Newsletter bug!", with the file and line | Remove the link, keep the text |
+| A nested item starts with `🤖` but no type emoji follows (`  - 🤖 [Some MCP](…)`) | A remark plugin stops the build with "This Week In React - Newsletter bug!", with the file and line | Add the type emoji (`🤖 ✅ …`) if it's an agent note, or move the AI tool link to a top-level item (see `twir-link-context`) |
+| A published issue still has `🚧` followed by an emoji (`- 🚧 📦 [...]`) | A remark plugin stops the build with "This Week In React - Newsletter bug!", with the file and line | Have an editor review the item, then remove the `🚧 ` prefix |
 | `\#` in the frontmatter `title` | Invalid YAML escape | Remove the backslash |
 | Missing image | Build error | Add the file, check the path |
 

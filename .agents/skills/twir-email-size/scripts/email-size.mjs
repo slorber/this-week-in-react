@@ -42,11 +42,13 @@ function readIssue(arg) {
 }
 
 // Turns the MDX into what ends up in the email: support partial inlined,
-// site-only components and heading ids removed
+// site-only components, heading ids and 🤖 context sub-items removed
 function emailBody(raw) {
   const frontMatter = raw.match(/^---\n[\s\S]*?\n---\n/);
   return (frontMatter ? raw.slice(frontMatter[0].length) : raw)
     .replace(/^import .*$/gm, "")
+    // Nested "🤖 <type emoji>" only, like the remark plugin: top-level 🤖 items are AI tools
+    .replace(/^[ \t]+([-*•]|\d+\.)[ \t]+🤖[ \t]*\p{Extended_Pictographic}.*(\n|$)/gmu, "")
     .replaceAll("<Support />", () => support)
     .replace(/<SubscribeFormEmbed[^>]*\/>/g, "")
     .replaceAll("<!-- truncate -->", "")

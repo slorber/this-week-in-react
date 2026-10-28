@@ -86,7 +86,7 @@ per-link = 83 + ⌈4/3 × average URL length⌉ + A + 4
 | `X` | 1.10 | Text expansion (entities, inline styles) |
 | `K` | 1.29 | Calibration scale, fit on #294 |
 
-What gets counted: the body after the frontmatter, with `_support.mdx` inlined, and without `<SubscribeFormEmbed />`, `<!-- truncate -->` and heading ids. Image URLs are not counted as links.
+What gets counted: the body after the frontmatter, with `_support.mdx` inlined, and without `<SubscribeFormEmbed />`, `<!-- truncate -->`, heading ids and the nested 🤖 context sub-items (see `twir-link-context`). Image URLs are not counted as links.
 
 ## Calibration data
 

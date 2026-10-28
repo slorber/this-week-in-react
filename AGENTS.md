@@ -14,7 +14,7 @@ This repo is the Docusaurus website, and its main content is the weekly newslett
 
 1. A skeleton `website/newsletter/<n>/index.mdx` is created from `website/newsletter/_template/`, with `unlisted: true` and the sponsors filled in.
 2. Curation starts on Monday. Links are sourced from X, RSS feeds and organic sources, collected in a shared Google Doc, then filtered, formatted and commented.
-3. Agents help in chat: reading and summarizing links, preformatting sections, reviewing drafts.
+3. Agents help in chat: reading and summarizing links, pre-contextualizing raw links with 🤖 sub-items, preformatting sections, reviewing drafts.
 4. The approved draft is exported from Google Docs to Markdown and converted to MDX. Images are added, the build is checked, the changes are committed.
 5. The issue is published on Wednesday (on Tuesday from 2027): the editor removes `unlisted: true`, Vercel deploys, the email goes out with Kit (about 17:00 UTC), and the announcement tweet is posted.
 
@@ -40,6 +40,7 @@ Detailed instructions live in [Agent Skills](https://agentskills.io) under `.age
 | [`twir-writing-style`](.agents/skills/twir-writing-style/SKILL.md) | draft, rewrite or review any TWIR text: item lines, comments, headlines, intro, issue title |
 | [`twir-reading-links`](.agents/skills/twir-reading-links/SKILL.md) | need the content of any link: articles, client-side rendered pages, X and Bluesky posts, threads, replies, GitHub, videos |
 | [`twir-curation-workflow`](.agents/skills/twir-curation-workflow/SKILL.md) | summarize a link, preformat a section, review a draft, go from an approved draft to publication |
+| [`twir-link-context`](.agents/skills/twir-link-context/SKILL.md) | turn raw or messy links into grouped, deduplicated draft items with 🤖 context sub-items for the editors |
 | [`twir-email-size`](.agents/skills/twir-email-size/SKILL.md) | review or preformat anything for an issue (proactively), or get asked about Gmail clipping or the link budget |
 | [`twir-issue-file`](.agents/skills/twir-issue-file/SKILL.md) | edit an issue's MDX, add authors, build, commit, publish, debug a deploy |
 | [`twir-issue-images`](.agents/skills/twir-issue-images/SKILL.md) | add, convert, check or choose an image for an issue |
@@ -60,7 +61,7 @@ The formatting rules and the emoji palette come from the [curator guide](website
 | `website/i18n/fr/` | French translations (stopped at #201, but the French build still runs) |
 | `website/src/pages/` | Static pages: editorial line, sponsor, curator guide, pricing… |
 | `website/src/theme/MDXComponents/` | MDX components available in issues (`<Todo />`, `<SubscribeFormEmbed />`…) |
-| `website/docusaurus.config.ts` | Site config. Its remark plugins make email image URLs absolute, and stop the build on links that Google Docs creates by mistake: it autolinks names like `Next.js` to `http://next.js`, a domain that doesn't exist |
+| `website/docusaurus.config.ts` | Site config. Its remark plugins strip the nested `🤖 <type emoji>` context sub-items of drafts (and stop the build on ambiguous nested `🤖` items, or on unreviewed `🚧 <emoji>` agent work in a published issue), make email image URLs absolute, and stop the build on links that Google Docs creates by mistake: it autolinks names like `Next.js` to `http://next.js`, a domain that doesn't exist |
 | `website/api/`, `website/middleware.ts`, `website/vercel.json` | Vercel functions (signup confirmation), edge middleware, redirects |
 
 ## Commands

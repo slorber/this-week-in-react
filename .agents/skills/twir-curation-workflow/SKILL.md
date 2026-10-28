@@ -21,6 +21,8 @@ The working agreements of `AGENTS.md` apply to every workflow below, chat first 
 
 Input: raw links, often grouped by section, sometimes with notes from the editor.
 
+To prepare raw links for the editors instead (draft items with 🤖 context sub-items to paste into the Doc), use `twir-link-context`.
+
 1. Read every link in full.
 2. Triage with `twir-editorial-line`. Don't silently drop or write up questionable items (out of scope, vendor-tied, minor, duplicates). List them as **suggested cuts**, each with a one-line reason.
 3. Merge several releases of the same project into one `→` range link.
