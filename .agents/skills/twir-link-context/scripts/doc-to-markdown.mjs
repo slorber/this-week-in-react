@@ -8,6 +8,10 @@ import { readFileSync } from "node:fs";
 const json = JSON.parse(readFileSync(process.argv[2], "utf8"));
 const doc = json.content ?? json;
 
+// <url> keeps the link valid when the URL has spaces or parentheses (CommonMark)
+const linkDestination = (url) =>
+  /[\s()<>]/.test(url) ? `<${url.replace(/[<>]/g, encodeURIComponent)}>` : url;
+
 function inlineMarkdown(elements) {
   const segments = [];
   for (const element of elements) {
@@ -34,7 +38,7 @@ function inlineMarkdown(elements) {
       if (!url || !text.trim() || text.trim() === url) {
         return text;
       }
-      return `[${text}](${url})`;
+      return `[${text.replace(/[[\]]/g, "\\$&")}](${linkDestination(url)})`;
     })
     .join("");
 }
