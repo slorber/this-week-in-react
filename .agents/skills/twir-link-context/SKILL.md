@@ -11,9 +11,9 @@ The working agreements of `AGENTS.md` apply. Read every link in full (`twir-read
 
 ## Input
 
-Expect a mess: bare URLs, blank lines, several URLs on one line or joined with `+` across lines, short hints before a link ("action sheet v11", "crnl"), `???` and editor notes ("framer motion 14.5 ?", "What is Charlie Cheever working on???", `# Did Jamie publish something better?` after a link), reader submissions, `—` separators, TODOs ("Verify slot sentry"), and items already written by an editor (leave those alone: see "The top line"). Links are often already grouped under section headings. A block at the top of a section closed by a delimiter is a headline candidate (see "Headline drafts").
+Expect a mess: bare URLs, blank lines, several URLs on one line or joined with `+` across lines, short hints before a link ("action sheet v11", "crnl"), `???` and editor notes ("framer motion 14.5 ?", "What is Charlie Cheever working on???", `# Did Jamie publish something better?` after a link), reader submissions, `—` separators, TODOs ("Verify sponsor slot"), and items already written by an editor (leave those alone: see "The top line"). Links are often already grouped under section headings, but the input can also be a partial list with no heading (see step 6). A block at the top of a section closed by a delimiter is a headline candidate (see "Headline drafts").
 
-It comes pasted in chat, or as a Google Doc. To read a Doc, call the Google Docs connector's `read_doc` with the ID from its URL (`docs.google.com/document/d/<id>/edit`). It works on native Docs and on `.md` files. Large drafts don't fit in the tool output and get saved to a file: convert that file to Markdown with the bundled script.
+It comes pasted in chat, as Markdown or any other text (one URL per line, text copied from X or Slack…), or as a Google Doc. To read a Doc, call the Google Docs connector's `read_doc` with the ID from its URL (`docs.google.com/document/d/<id>/edit`). It works on native Docs and on `.md` files. Large drafts don't fit in the tool output and get saved to a file: convert that file to Markdown with the bundled script.
 
 ```bash
 node .agents/skills/twir-link-context/scripts/doc-to-markdown.mjs <read_doc result file>
@@ -38,7 +38,7 @@ Output only the items you prepared, grouped by section: the others stay in the D
 3. **Group and deduplicate** (rules below).
 4. **Check past coverage**: search `website/newsletter/*/index.mdx` for the URL, the repo and the project name. For a release, find the previous version's item: its link choice, its title, and whether this one repeats it.
 5. **Write each item**: the top line with its `🚧` marker, then its 🤖 sub-items (format below). Write headline candidates as headline drafts instead.
-6. **Keep the sections, and order** the items as `twir-editorial-line` says. Within an emoji group, higher scores first. Never move an item to another section on your own. When you think it belongs elsewhere, say so in its 🎯 sub-item and in chat. Only links that have no section get one from you.
+6. **Keep the sections, and order** the items as `twir-editorial-line` says. Within an emoji group, higher scores first. Never move an item to another section on your own. When you think it belongs elsewhere, say so in its 🎯 sub-item and in chat. Links that come without a section heading get one from you: once you've read a link, pick ⚛️ React, 📱 React Native or 🔀 Other as the "Sections" part of the public editorial line defines them, give it in 🎯, and group the output by section.
 7. **Run the email size check** (`twir-email-size`) on the whole issue with these items. The script ignores the 🤖 sub-items. From 95%, propose cuts, lowest scores first.
 
 ## Output
