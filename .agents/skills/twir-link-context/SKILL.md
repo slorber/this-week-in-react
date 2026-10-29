@@ -39,7 +39,8 @@ Output only the items you prepared, grouped by section: the others stay in the D
 4. **Check past coverage**: search `website/newsletter/*/index.mdx` for the URL, the repo and the project name. For a release, find the previous version's item: its link choice, its title, and whether this one repeats it. Past coverage also tells you whether freshness matters (see "Freshness" in `twir-editorial-line`).
 5. **Write each item**: the top line with its `🚧` marker, then its 🤖 sub-items (format below). Write headline candidates as headline drafts instead. For a browser release, first check which of its features become cross-browser, alone or with the other browser releases of the input (see "Browser releases" in `twir-editorial-line`).
 6. **Keep the sections, and order** the items as `twir-editorial-line` says. Within an emoji group, higher scores first. Never move an item to another section on your own. When you think it belongs elsewhere, say so in its 🎯 sub-item and in chat. Links that come without a section heading get one from you: once you've read a link, pick ⚛️ React, 📱 React Native or 🔀 Other as the "Sections" part of the public editorial line defines them, give it in 🎯, and group the output by section.
-7. **Run the email size check** (`twir-email-size`) on the whole issue with these items. The script ignores the 🤖 sub-items. From 95%, propose cuts, lowest scores first.
+7. **Trim to the typical size.** When a section goes over its typical size (see "Section details" in `twir-editorial-line`), propose a trimmed list at that size in chat, lowest scores out first.
+8. **Run the email size check** (`twir-email-size`) on the whole issue with these items. The script ignores the 🤖 sub-items. When the issue is still mostly empty, project it with the previous issue's missing sections. From 95%, propose cuts, lowest scores first.
 
 ## Output
 
@@ -51,13 +52,15 @@ Reply in chat with Markdown ready to paste into the Doc, grouped by section, hea
 - 🚧 📦 [RN Windows 0.85 - Legacy architecture removed, Visual Studio 2026 and .NET 10, faster text rendering](https://devblogs.microsoft.com/react-native/react-native-windows-v0-85-is-here/)
   - 🤖 ✅ Keep: regular RNW release, we cover every one (0.84 in #288)
   - 🤖 🎯 React Native, among the 📦 releases
-  - 🤖 💯 3/5: title only. Matters for Windows apps, minor for most RN devs
+  - 🤖 💯 4/5: with a comment. The end of the legacy architecture matters to every RNW app
   - 🤖 ✍️ Apps still on the legacy architecture must migrate to Fabric before upgrading.
   - 🤖 🔁 0.84 in #288. 0.82 was already titled "New-Architecture only" in #274, so "Legacy architecture removed" is more precise for 0.85
   - 🤖 ℹ️ Sources, read in full: [blog post](https://devblogs.microsoft.com/react-native/react-native-windows-v0-85-is-here/) (main link), [GitHub release](https://github.com/microsoft/react-native-windows/releases/tag/react-native-windows_v0.85.0) (same content, with PR links)
 ```
 
 After the Markdown block, give the notes on each headline draft, then your questions for the editors (unclear groupings, suggested section moves), then list what you didn't process (links you couldn't read, TODOs left as they were), then the email size line.
+
+**Ask only questions whose answer changes the output**, and give the reason in the question. On #303, a question comparing two unrelated items only got "???" back.
 
 **Every input URL ends up in exactly one ℹ️ line or headline draft, or in the "not processed" list.** Nothing gets dropped silently.
 
@@ -88,7 +91,7 @@ Every sub-item is `- 🤖 <type emoji> <text>`, nested under its item, on one li
 | 🎯 | Always | The group in its list (news, articles, releases, AI tools, media), and the section you'd suggest if it seems to belong elsewhere |
 | 💯 | Always | The score, `n/5` (scale below), and the space tier it implies |
 | 🗑️ | Every 📜 article, and any other link that shows signals | The slop score, `n/5`, and the signals seen (see "Spotting AI-generated content" in `twir-editorial-line`) |
-| ✍️ | When a comment would add something | A proposed comment |
+| ✍️ | From 4/5. At 3/5, only for one specific angle, like cross-browser support | A proposed comment |
 | 📝 | When the input had a note or question from the editor | The note, quoted, then the answer |
 | 🔁 | When the repo has past coverage | The issues that covered it, and what that means for this item |
 | ⚠️ | When needed | Couldn't read or only partially read, a claim the sources don't support, vendor-tied, paywalled, only on X, links grouped by the editor with no obvious connection |
@@ -101,7 +104,7 @@ Score scale:
 | 5/5 | Headline candidate: one of the biggest stories of the section |
 | 4/5 | List item that deserves a comment |
 | 3/5 | Title-only list item |
-| 2/5 | Weak: first to cut when over the email budget |
+| 2/5 | Weak: first to cut when over the email budget or the section's typical size. In Other, articles and niche tools that don't stand out |
 | 1/5 | Suggest cutting it (goes with ❌) |
 
 Comments: one sentence by default (see `twir-writing-style`). For larger releases and blog posts, write a longer comment, and you can add a second ✍️ with a different angle: for example, one on the main change and one on who should care or the React angle.
@@ -134,7 +137,7 @@ Other key highlights include:
 ## Grouping and deduplication
 
 - **One link per topic.** A blog post, a release and a social post about the same thing become one item. So does a third-party article on the same topic: it's dropped, not drafted as its own item. Pick the most authoritative first-party source as the main link, in this order: the official blog post or announcement, the release notes, the docs, a social post. Pick a third-party one only when the first-party source reads much worse (see "Link budget" in `twir-editorial-line`). List the dropped links in ℹ️, marked "dropped", so the editors can swap them. A single post can be the main link when it holds everything, like a video demo (see `twir-reading-links`). Check which link past items of the same project used.
-- **Several releases of one project** become one `→` range item that links to the releases page (see "Link budget" in `twir-editorial-line`).
+- **Several releases of one project** become one `→` range item that links to the releases page (see "Link budget" in `twir-editorial-line`). That index stays the main link, even when one release post reads better: list the post in ℹ️ as an alternative. On #303, the editor kept `webkit.org/blog/` for Safari 27.1 → 27.2.
 - **The same URL twice** (tracking parameters, `twitter.com` vs `x.com`, a trailing slash) is merged silently, and listed once in ℹ️.
 - **Links on the same line, or joined with `+`** (often with a short comment), are links the editor considered related: they stay one item. Don't split them on your own. When the connection isn't obvious, say so in a ⚠️ sub-item and in chat, and ask the editors.
 - **Related but distinct news** stays separate, like two unrelated posts from the same project.

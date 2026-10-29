@@ -32,6 +32,9 @@ The Other section is kept short:
 
 - On #302, the editor went from the 20 items drafted for him to about 10. He kept big releases (TypeScript 7.1 beta, tsrs, webpack, Rsdoctor, Node.js LTS), a few strong articles and one exciting PR.
 - He cut niche or opinion articles, minor packages (maplint, Extension.js, pnpm patch notes), experiments (Handwired) and conference replays.
+- On #303, he went from the 15 items drafted for him to 9, without being asked. He cut all three articles (Doctolib's move to pnpm, an essay on a GPU lexer, a CSS grid lanes explainer) and three niche tools (Verdaccio 7, a ts-loader beta, Highlights), all scored 3/5. The only article in the published section is Nolan Lawson's, added later.
+
+**Rule (#303): in Other, articles and niche tools score 2/5 unless they stand out.**
 
 ## Section details
 
@@ -47,6 +50,8 @@ The public page defines the sections. Details observed in past issues:
 | 📱 React-Native | 0–2 headlines, 20–32 list items |
 | 🔀 Other | 8–10 list items, rarely a headline |
 | 🤭 Fun | 1–2 images |
+
+**Rule (#303): when a section's drafts go over its typical size, propose a trimmed list at that size**, not only cut candidates: the editor trims to it anyway.
 
 ## Browser releases
 
