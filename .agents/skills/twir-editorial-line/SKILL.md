@@ -32,6 +32,9 @@ The Other section is kept short:
 
 - On #302, the editor went from the 20 items drafted for him to about 10. He kept big releases (TypeScript 7.1 beta, tsrs, webpack, Rsdoctor, Node.js LTS), a few strong articles and one exciting PR.
 - He cut niche or opinion articles, minor packages (maplint, Extension.js, pnpm patch notes), experiments (Handwired) and conference replays.
+- On #303, he went from the 15 items drafted for him to 9, without being asked. He cut all three articles (Doctolib's move to pnpm, an essay on a GPU lexer, a CSS grid lanes explainer) and three niche tools (Verdaccio 7, a ts-loader beta, Highlights), all scored 3/5. The only article in the published section is Nolan Lawson's, added later.
+
+**Rule (#303): in Other, articles and niche tools score 2/5 unless they stand out.**
 
 ## Section details
 
@@ -47,6 +50,16 @@ The public page defines the sections. Details observed in past issues:
 | 📱 React-Native | 0–2 headlines, 20–32 list items |
 | 🔀 Other | 8–10 list items, rarely a headline |
 | 🤭 Fun | 1–2 images |
+
+**Rule (#303): when a section's drafts go over its typical size, propose a trimmed list at that size**, not only cut candidates: the editor trims to it anyway.
+
+## Browser releases
+
+**Rule: for a browser release, check whether a new CSS, JS or HTML feature in it unlocks cross-browser support.** That's often what matters most to our readers. It deserves a mention in the keywords or the comment, and sometimes a headline when React devs benefit: on #265, Firefox made view transition types, anchor positioning and the Navigation API available in all browsers.
+
+- **Check each new feature in the other browsers**, with the MDN compatibility table, caniuse or webstatus.dev. "Available in all browsers" means Baseline: Chrome, Edge, Firefox and Safari, on desktop and mobile. Don't infer it from the engines alone, since Safari on iOS or Firefox on Android can lag behind.
+- **Check the other browser releases of the same issue too**: together, two releases can make a feature available everywhere.
+- **Say it plainly**: "Unlocks cross-browser support for CSS `shape()`, `position-try-order`, and Trusted Types" (Firefox 148 in #271), "the Navigation API that is now supported across all browsers" (Safari 26.2 in #263).
 
 List item counts include the 💸 sponsored links.
 
@@ -85,6 +98,55 @@ Observed usual order (#290–#302):
 
 Severe security advisories go first among the news.
 
+## Freshness
+
+**Rule: freshness only applies to what we actively track**, like the regular releases of projects we cover often. Don't be strict about it:
+
+- A release 2–4 weeks old that no issue featured yet is worth featuring: we missed it, and stumbled upon it later.
+- For a project never featured in any issue, the date doesn't matter.
+- For content you just stumbled upon, the date matters less than its interest.
+- Past a month, tracked news is probably old: flag it and let the editors decide.
+
+Check past coverage before calling something old. On #303, neither Biome 2.6 (blog post from two weeks earlier, not featured yet) nor a Video.js post (three weeks old, Video.js never featured) was too old.
+
+## Spotting AI-generated content
+
+**Rule: flag AI-generated articles.** The public page filters out content produced by AI. One signal rarely proves it: look for several, in the article, the blog's index and the author's profile. Judge the text, not the person.
+
+The writing:
+
+- **Convoluted past-tense sentences**, often in headings: "The Boilerplate That Quietly Went Away", "Where the Re-renders Actually Came From". A plain "I tested it on three apps" is fine.
+- **A punchy cadence**: short contrast lines ("It didn't.", "That's not a bug. It's the design."), a bold one-liner closing each section, tics like "worth calling out" or "here's the thing".
+- **Many dashes (– —) or semicolons.** Newer AI text often avoids dashes, and leaves comma splices instead.
+
+The structure:
+
+- A TL;DR or "The short answer" at the top, a "Key takeaways" box, a recap at the end that repeats them.
+- A "Common mistakes" list, a checklist table, bullet lists of bare nouns.
+- An FAQ at the end, often an accordion, with questions phrased like searches. Headings phrased like searches too.
+
+The content:
+
+- **It restates an authoritative source**, like react.dev or a framework's docs, and adds nothing. Links to the docs after each claim don't make it original.
+- **A stale premise**: old news presented as current or upcoming, like a post on a major version's beta published after the next two majors shipped.
+- Placeholder code, appeals to unnamed experience ("in the production apps I've worked on"), a product plug at the end.
+- Clickbait contrast titles, or "(Tested)" and "Benchmarked" with oddly precise numbers and no method.
+
+The site and the author:
+
+- **The posting rate**: a long post every day or two across unrelated stacks, or an archive that suddenly speeds up after years of occasional posts.
+- **The bio or GitHub profile**, like "AI engineer specialized in automations". It only supports other signals: plenty of good authors use AI tools.
+
+Give a **slop score**, and explain it with the signals you saw, quoting a heading or a sentence:
+
+| Slop | Meaning | Verdict |
+| --- | --- | --- |
+| 1/5 | Reads human | Judge it on its content |
+| 2/5 | One or two weak signals | Judge it on its content, and name the signals |
+| 3/5 | Several signals, hard to tell | 🤔: the editors decide |
+| 4/5 | Clearly templated, with some original substance | ❌, score 1/5 |
+| 5/5 | Templated, and only restates docs or generic advice | ❌, score 1/5 |
+
 ## Link budget (email)
 
 Rule (#302): watch the link count. Gmail clips emails over about 102KB of HTML, which hides the end of the issue (Other, Fun) behind "View entire message". The email is sent with Kit (ConvertKit), which rewrites every link into a long tracked URL, so the number of links is the main driver of email size. Inline links inside comments count too.
@@ -93,12 +155,14 @@ Rule (#302): watch the link count. Gmail clips emails over about 102KB of HTML, 
 
 **Rule (#302): several releases of one project = one link.** Title it with an arrow range, e.g. `Vinext 1.2 → 1.3`, `pnpm 12.11 → 12.13`, `Satori 0.36 → 0.55`. Link to the blog index or the GitHub releases page (`vinext.dev/blog`, `github.com/<org>/<repo>/releases`), so readers can reach every release from that one link, and first check that the index shows those releases at the top. The keywords and the comment cover what's new across the whole range.
 
+**Rule: two resources on the same topic = one link.** Feature the best one and drop the other, even when they come from different authors. Prefer the most authoritative first-party source: the project's own blog post, release notes or docs, the author's own post. Pick a third-party resource only when the first-party one reads much worse, like a raw changelog, a long spec or a sprawling thread next to a clear write-up. Tell the editors which link you dropped, so they can swap them.
+
 ## Judging an item: checklist
 
 1. Did I read it in full (see `twir-reading-links`)? If not, say so.
-2. Is it fresh, and in scope for its section?
-3. Does the public page say to look for it, or to filter it out?
+2. Is it in scope for its section, and fresh enough (see "Freshness")?
+3. Does the public page say to look for it, or to filter it out? For an article, does it read as AI-generated (see "Spotting AI-generated content")?
 4. Is it free and platform-agnostic, or tied to a vendor?
 5. Is it significant enough to spend a link on, compared with the rest of the section?
-6. Does it duplicate another item? Merge release ranges, and merge closely related links into one item.
+6. Does it duplicate another item? Merge release ranges, merge closely related links into one item, and keep one link per topic (see "Link budget").
 7. Which space tier does it deserve?

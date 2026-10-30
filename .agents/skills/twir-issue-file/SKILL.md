@@ -108,6 +108,7 @@ See the `twir-issue-images` skill: email-safe JPEG rules, conversion commands, h
 | Google Docs autolinks project names ending in `.js` (`Next.js` becomes a link to `http://next.js`). These links are never intended, and those `.js` domains don't exist in practice | A remark plugin stops the build with "This Week In React - Newsletter bug!", with the file and line | Remove the link, keep the text |
 | A nested item starts with `🤖` but no type emoji follows (`  - 🤖 [Some MCP](…)`) | A remark plugin stops the build with "This Week In React - Newsletter bug!", with the file and line | Add the type emoji (`🤖 ✅ …`) if it's an agent note, or move the AI tool link to a top-level item (see `twir-link-context`) |
 | A published issue still has `🚧` followed by an emoji (`- 🚧 📦 [...]`) | A remark plugin stops the build with "This Week In React - Newsletter bug!", with the file and line | Have an editor review the item, then remove the `🚧 ` prefix |
+| Blank lines between list items, as in `twir-link-context` drafts | No error, but the whole list turns loose: each item is wrapped in a `<p>`, with more spacing on the website and in the email | Remove the blank lines |
 | `\#` in the frontmatter `title` | Invalid YAML escape | Remove the backslash |
 | Missing image | Build error | Add the file, check the path |
 
