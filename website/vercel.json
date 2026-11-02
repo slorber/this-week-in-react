@@ -94,7 +94,7 @@
     },
 
     {
-      "source": "/player-card/:path*",
+      "source": "/player-card(/.*)?",
       "headers": [
         {
           "key" : "Content-Security-Policy",
