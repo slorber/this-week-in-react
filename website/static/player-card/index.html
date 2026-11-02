@@ -202,14 +202,32 @@
         font-size: 0.85rem;
       }
 
+      .success h2:focus {
+        outline: none;
+      }
+
       /* Kit's spam check, shown when a subscription comes back "quarantined" */
       .guard {
         position: fixed;
         inset: 0;
+        background: #fff;
+      }
+
+      .guard iframe {
         width: 100%;
         height: 100%;
         border: 0;
-        background: #fff;
+      }
+
+      .guard button {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        min-height: 2rem;
+        padding: 0 0.75rem;
+        background: var(--bg);
+        color: var(--text);
+        font-size: 0.85rem;
       }
 
       .visually-hidden {
@@ -259,7 +277,7 @@
         </div>
 
         <div class="success" hidden>
-          <h2>Almost there!</h2>
+          <h2 tabindex="-1">Almost there!</h2>
           <p><strong>Check your inbox</strong> and confirm your email address to finalize your subscription.</p>
           <p>The email comes from sebastien@thisweekinreact.com. Can't find it? Check your spam folder.</p>
         </div>
@@ -282,9 +300,9 @@
       // Mirrors prepareFormHiddenElements() in src/components/SubscribeForm, without the localStorage history
       function getSearchParams() {
         const params = new URLSearchParams({
+          ...Object.fromEntries(new URLSearchParams(location.search)),
           initial_referrer: document.referrer,
           initial_url: location.href,
-          ...Object.fromEntries(new URLSearchParams(location.search)),
         });
         params.sort();
         return params.toString().toLowerCase();
@@ -313,17 +331,22 @@
       addField("pathname", location.pathname);
       addField("iframe", String(window.top !== window.self));
 
+      // crypto.randomUUID() needs Safari 15.4+, older in-app browsers may lack it
+      function randomId() {
+        return crypto.randomUUID?.() ?? `${Date.now().toString(16)}-${Math.random().toString(16).slice(2)}`;
+      }
+
       // Same visitor id key as Kit's ck.js, but storage can be blocked inside X's iframe
       function getKitUserId() {
         try {
           let id = localStorage.getItem("ckid");
           if (!id) {
-            id = crypto.randomUUID();
+            id = randomId();
             localStorage.setItem("ckid", id);
           }
           return id;
         } catch {
-          return crypto.randomUUID();
+          return randomId();
         }
       }
 
@@ -334,39 +357,68 @@
 
       function showSuccess() {
         document.getElementById("subscribe").hidden = true;
-        document.querySelector(".success").hidden = false;
+        const success = document.querySelector(".success");
+        success.hidden = false;
+        // The status line is hidden with the form: focus the heading so screen readers announce the result
+        success.querySelector("h2").focus();
       }
 
-      // Kit asks some subscribers to pass a check in an iframe, then posts "ckjs:guard:confirmed"
+      // Kit asks some subscribers to pass a check in an iframe, which posts "ckjs:guard:size" once loaded,
+      // then "ckjs:guard:confirmed"
       function showGuard(url) {
-        const guard = document.createElement("iframe");
+        const guard = document.createElement("div");
         guard.className = "guard";
-        guard.title = "Confirm your subscription";
-        guard.src = url;
-        window.addEventListener("message", function onMessage(event) {
-          if (event.data?.name === "ckjs:guard:confirmed") {
-            window.removeEventListener("message", onMessage);
-            guard.remove();
+        const frame = document.createElement("iframe");
+        frame.title = "Confirm your subscription";
+        frame.src = url;
+        const cancel = document.createElement("button");
+        cancel.type = "button";
+        cancel.textContent = "Cancel";
+        guard.append(frame, cancel);
+
+        function closeGuard(confirmed) {
+          clearTimeout(failureTimer);
+          window.removeEventListener("message", onMessage);
+          guard.remove();
+          if (confirmed) {
             showSuccess();
+          } else {
+            showStatus("Subscription not confirmed. Please try again.", "error");
+            button.focus();
           }
-        });
+        }
+
+        function onMessage(event) {
+          if (event.source !== frame.contentWindow) {
+            return;
+          }
+          clearTimeout(failureTimer);
+          if (event.data?.name === "ckjs:guard:confirmed") {
+            closeGuard(true);
+          }
+        }
+
+        // Same failure delay as ck.js: the guard never loaded if it hasn't posted anything by then
+        const failureTimer = setTimeout(() => closeGuard(false), 10_000);
+        cancel.addEventListener("click", () => closeGuard(false));
+        window.addEventListener("message", onMessage);
         document.body.appendChild(guard);
       }
 
       // Same request as Kit's ck.js, so the response is the JSON it handles
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
-        const body = new FormData(form);
-        body.append("token", "");
-        body.append("referrer", document.referrer);
-        body.append("host", location.href);
-        body.append("search", location.search);
-        body.append("user", getKitUserId());
-        body.append("ckjs_version", "6");
-
         button.disabled = true;
         showStatus("Subscribing…");
         try {
+          const body = new FormData(form);
+          body.append("token", "");
+          body.append("referrer", document.referrer);
+          body.append("host", location.href);
+          body.append("search", location.search);
+          body.append("user", getKitUserId());
+          body.append("ckjs_version", "6");
+
           const response = await fetch(form.action, {
             method: "POST",
             body,
