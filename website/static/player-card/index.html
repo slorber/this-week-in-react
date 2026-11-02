@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Subscribe to This Week In React</title>
+    <meta
+      name="description"
+      content="A weekly newsletter to stay up-to-date with React and React Native. 1 email per week, 100% free."
+    />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#282c34" />
+    <link rel="icon" href="/img/favicon.ico" />
+
+    <!-- X player card: X loads twitter:player in an inline iframe, sized like twitter:image -->
+    <meta name="twitter:card" content="player" />
+    <meta name="twitter:site" content="@sebastienlorber" />
+    <meta name="twitter:title" content="This Week In React" />
+    <meta
+      name="twitter:description"
+      content="The latest React and React Native news, 1 email per week. Subscribe right here."
+    />
+    <meta
+      name="twitter:player"
+      content="https://thisweekinreact.com/player-card/?utm_source=twitter&amp;utm_medium=player-card"
+    />
+    <meta name="twitter:player:width" content="480" />
+    <meta name="twitter:player:height" content="480" />
+    <meta name="twitter:image" content="https://thisweekinreact.com/img/TWIR_LOGO_SIMPLE.jpg" />
+    <meta
+      name="twitter:image:alt"
+      content="The This Week In React logo: a cyan React atom around an inbox tray holding a letter."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://thisweekinreact.com/player-card/" />
+    <meta property="og:title" content="This Week In React" />
+    <meta
+      property="og:description"
+      content="A weekly newsletter to stay up-to-date with React and React Native. 1 email per week, 100% free."
+    />
+    <meta property="og:image" content="https://thisweekinreact.com/img/TWIR_LOGO_SIMPLE.jpg" />
+
+    <style>
+      :root {
+        --bg: #282c34;
+        --surface: #1f2228;
+        --border: #3e4451;
+        --text: #ffffff;
+        --muted: #abb2bf;
+        --faint: #9aa1ad;
+        --primary: #00c8ff;
+        --primary-hover: #4dd8ff;
+        --on-primary: #10141a;
+        --danger: #ff7b72;
+        color-scheme: dark;
+      }
+
+      /* The X iframe is square and scales with the timeline width: size everything from vmin */
+      html {
+        font-size: clamp(12px, 3.4vmin, 17px);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      main {
+        min-height: 100%;
+        display: grid;
+        place-items: center;
+        padding: 1.5rem;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 26rem;
+        text-align: center;
+      }
+
+      .logo {
+        width: 3.25rem;
+        height: 3.25rem;
+      }
+
+      h1 {
+        margin: 0.6rem 0 0.2rem;
+        font-size: 1.9rem;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .tagline {
+        margin: 0 0 1.1rem;
+        color: var(--muted);
+      }
+
+      form {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      input,
+      button {
+        font: inherit;
+        border-radius: 8px;
+        min-height: 2.75rem;
+      }
+
+      input {
+        flex: 1;
+        min-width: 0;
+        padding: 0 0.85rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        color: var(--text);
+      }
+
+      input::placeholder {
+        color: var(--faint);
+      }
+
+      input:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgb(0 200 255 / 0.25);
+      }
+
+      button {
+        padding: 0 1.1rem;
+        border: 0;
+        background: var(--primary);
+        color: var(--on-primary);
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: var(--primary-hover);
+      }
+
+      button:focus-visible {
+        outline: 2px solid var(--text);
+        outline-offset: 2px;
+      }
+
+      button:disabled {
+        opacity: 0.6;
+        cursor: progress;
+      }
+
+      .meta {
+        margin: 0.75rem 0 0;
+        color: var(--faint);
+        font-size: 0.85rem;
+      }
+
+      .meta[data-kind="error"] {
+        color: var(--danger);
+      }
+
+      .success h2 {
+        margin: 0.75rem 0 0.5rem;
+        font-size: 1.4rem;
+      }
+
+      .success p {
+        margin: 0 0 0.5rem;
+        color: var(--muted);
+      }
+
+      .success strong {
+        color: var(--text);
+      }
+
+      a {
+        color: var(--primary);
+      }
+
+      .site-link {
+        display: inline-block;
+        margin-top: 1rem;
+        font-size: 0.85rem;
+      }
+
+      .success h2:focus {
+        outline: none;
+      }
+
+      /* Kit's spam check, shown when a subscription comes back "quarantined" */
+      .guard {
+        position: fixed;
+        inset: 0;
+        background: #fff;
+      }
+
+      .guard iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .guard button {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        min-height: 2rem;
+        padding: 0 0.75rem;
+        background: var(--bg);
+        color: var(--text);
+        font-size: 0.85rem;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="card">
+        <svg class="logo" viewBox="0 0 100 100" aria-hidden="true">
+          <g fill="none" stroke="#00c8ff" stroke-width="5">
+            <ellipse cx="50" cy="50" rx="44" ry="16" />
+            <ellipse cx="50" cy="50" rx="44" ry="16" transform="rotate(60 50 50)" />
+            <ellipse cx="50" cy="50" rx="44" ry="16" transform="rotate(120 50 50)" />
+          </g>
+          <circle cx="50" cy="50" r="9" fill="#00c8ff" />
+        </svg>
+        <h1>This Week In React</h1>
+
+        <div id="subscribe">
+          <p class="tagline">The latest React and React Native news, directly in your inbox.</p>
+          <!-- Same Kit form as the homepage: src/components/SubscribeForm -->
+          <form action="https://app.convertkit.com/forms/3472133/subscriptions" method="post">
+            <label class="visually-hidden" for="email">Email address</label>
+            <input
+              id="email"
+              name="email_address"
+              type="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+          <!-- Doubles as the status line: the card must fit in about 300×300 on phones -->
+          <p class="meta" role="status">1 email per week · 100% free · Unsubscribe anytime</p>
+        </div>
+
+        <div class="success" hidden>
+          <h2 tabindex="-1">Almost there!</h2>
+          <p><strong>Check your inbox</strong> and confirm your email address to finalize your subscription.</p>
+          <p>The email comes from sebastien@thisweekinreact.com. Can't find it? Check your spam folder.</p>
+        </div>
+
+        <a
+          class="site-link"
+          href="https://thisweekinreact.com/?utm_source=twitter&amp;utm_medium=player-card"
+          target="_blank"
+          rel="noopener"
+          >thisweekinreact.com ↗</a
+        >
+      </div>
+    </main>
+
+    <script>
+      const form = document.querySelector("form");
+      const button = form.querySelector("button");
+      const status = document.querySelector(".meta");
+
+      // Mirrors prepareFormHiddenElements() in src/components/SubscribeForm, without the localStorage history
+      function getSearchParams() {
+        const params = new URLSearchParams({
+          ...Object.fromEntries(new URLSearchParams(location.search)),
+          initial_referrer: document.referrer,
+          initial_url: location.href,
+        });
+        params.sort();
+        return params.toString().toLowerCase();
+      }
+
+      function addField(name, value) {
+        if (!value) {
+          return;
+        }
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = `fields[${name}]`;
+        input.value = value;
+        form.appendChild(input);
+      }
+
+      const search = getSearchParams();
+      const searchParams = new URLSearchParams(search);
+      for (const name of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"]) {
+        addField(name, searchParams.get(name));
+      }
+      addField("qs_ad", searchParams.get("ad"));
+      addField("qs_params", search);
+      addField("qs_ref", searchParams.get("ref") ?? searchParams.get("reference"));
+      addField("document_referrer", document.referrer);
+      addField("pathname", location.pathname);
+      addField("iframe", String(window.top !== window.self));
+
+      // crypto.randomUUID() needs Safari 15.4+, older in-app browsers may lack it
+      function randomId() {
+        return crypto.randomUUID?.() ?? `${Date.now().toString(16)}-${Math.random().toString(16).slice(2)}`;
+      }
+
+      // Same visitor id key as Kit's ck.js, but storage can be blocked inside X's iframe
+      function getKitUserId() {
+        try {
+          let id = localStorage.getItem("ckid");
+          if (!id) {
+            id = randomId();
+            localStorage.setItem("ckid", id);
+          }
+          return id;
+        } catch {
+          return randomId();
+        }
+      }
+
+      function showStatus(message, kind) {
+        status.textContent = message;
+        status.dataset.kind = kind ?? "";
+      }
+
+      function showSuccess() {
+        document.getElementById("subscribe").hidden = true;
+        const success = document.querySelector(".success");
+        success.hidden = false;
+        // The status line is hidden with the form: focus the heading so screen readers announce the result
+        success.querySelector("h2").focus();
+      }
+
+      // Kit asks some subscribers to pass a check in an iframe, which posts "ckjs:guard:size" once loaded,
+      // then "ckjs:guard:confirmed"
+      function showGuard(url) {
+        const guard = document.createElement("div");
+        guard.className = "guard";
+        const frame = document.createElement("iframe");
+        frame.title = "Confirm your subscription";
+        frame.src = url;
+        const cancel = document.createElement("button");
+        cancel.type = "button";
+        cancel.textContent = "Cancel";
+        guard.append(frame, cancel);
+
+        function closeGuard(confirmed) {
+          clearTimeout(failureTimer);
+          window.removeEventListener("message", onMessage);
+          guard.remove();
+          if (confirmed) {
+            showSuccess();
+          } else {
+            showStatus("Subscription not confirmed. Please try again.", "error");
+            button.focus();
+          }
+        }
+
+        function onMessage(event) {
+          if (event.source !== frame.contentWindow) {
+            return;
+          }
+          clearTimeout(failureTimer);
+          if (event.data?.name === "ckjs:guard:confirmed") {
+            closeGuard(true);
+          }
+        }
+
+        // Same failure delay as ck.js: the guard never loaded if it hasn't posted anything by then
+        const failureTimer = setTimeout(() => closeGuard(false), 10_000);
+        cancel.addEventListener("click", () => closeGuard(false));
+        window.addEventListener("message", onMessage);
+        document.body.appendChild(guard);
+      }
+
+      // Same request as Kit's ck.js, so the response is the JSON it handles
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        button.disabled = true;
+        showStatus("Subscribing…");
+        try {
+          const body = new FormData(form);
+          body.append("token", "");
+          body.append("referrer", document.referrer);
+          body.append("host", location.href);
+          body.append("search", location.search);
+          body.append("user", getKitUserId());
+          body.append("ckjs_version", "6");
+
+          const response = await fetch(form.action, {
+            method: "POST",
+            body,
+            headers: { Accept: "application/json", "X-CKJS-Version": "6" },
+          });
+          if (!response.ok) {
+            throw new Error(response.statusText || `HTTP ${response.status}`);
+          }
+          const result = await response.json();
+          if (result.status === "success") {
+            if (result.consent?.enabled) {
+              showGuard(result.consent.url);
+            } else {
+              showSuccess();
+            }
+          } else if (result.status === "quarantined") {
+            showGuard(result.url);
+          } else {
+            throw new Error(result.errors?.messages?.join(" ") || "Unknown error");
+          }
+        } catch (error) {
+          console.error("Kit subscription failed", error);
+          showStatus(`Couldn't subscribe: ${error.message}. Please try again.`, "error");
+        } finally {
+          button.disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>
