@@ -42,20 +42,20 @@ The public page defines the sections. Details observed in past issues:
 
 - **📱 React Native** also covers native platform news that affects RN apps, such as Xcode and iOS SDK releases (Xcode 27.1 in #302). Neighboring cross-platform news fits when RN devs should know about it: Lynx, companies moving away from RN (Shopify and Coinbase in #300), RN-like renderers. This section is usually the longest, and most of it is 📦 releases.
 - **🔀 Other** covers TypeScript, runtimes (Node.js, Deno, Bun), bundlers and tooling (webpack, Rspack, Vite, Oxc), the web platform, CSS and HTML, TC39, and major security issues outside React (the PHP "php2shell" RCEs in #302).
-- **Headlines** (curator guide): usually 1–2 for React and 1–2 for React Native, each with a top banner image. Sometimes a section has none, sometimes the Other section gets one. The editor decides which items get one.
+- **Headlines** (curator guide): usually 1–2 for React and 1–2 for React Native, each with a top banner image. Sometimes a section has none. The editor decides which items get one.
 
 | Section | Typical size (#290–#302) |
 | --- | --- |
 | ⚛️ React | 0–2 headlines, 13–28 list items |
 | 📱 React-Native | 0–2 headlines, 20–32 list items |
-| 🔀 Other | 8–10 list items, rarely a headline |
+| 🔀 Other | 8–10 list items |
 | 🤭 Fun | 1–2 images |
 
 **Rule (#303): when a section's drafts go over its typical size, propose a trimmed list at that size**, not only cut candidates: the editor trims to it anyway.
 
 ## Browser releases
 
-**Rule: for a browser release, check whether a new CSS, JS or HTML feature in it unlocks cross-browser support.** That's often what matters most to our readers. It deserves a mention in the keywords or the comment, and sometimes a headline when React devs benefit: on #265, Firefox made view transition types, anchor positioning and the Navigation API available in all browsers.
+**Rule: for a browser release, check whether a new CSS, JS or HTML feature in it unlocks cross-browser support.** That's often what matters most to our readers. It deserves a mention in the keywords or the comment.
 
 - **Check each new feature in the other browsers**, with the MDN compatibility table, caniuse or webstatus.dev. "Available in all browsers" means Baseline: Chrome, Edge, Firefox and Safari, on desktop and mobile. Don't infer it from the engines alone, since Safari on iOS or Firefox on Android can lag behind.
 - **Check the other browser releases of the same issue too**: together, two releases can make a feature available everywhere.
