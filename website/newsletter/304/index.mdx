@@ -1,9 +1,8 @@
 ---
 slug: /304
-title: "This Week In React #304: Next.js, Security, Redux Toolkit, Compiler, Suspense, Resizable Panels, Preact | RN 0.89 RC, Vega OS, Screens, Hermes, WebView, Unistyles, tgfx, Pager View | Actions, Node.js, Parcel, Rspack, Vitest, jsdom, HTML-in-Canvas"
+title: "This Week In React #304: Next.js, Security, Redux Toolkit, Compiler, Suspense, Resizable Panels, Preact | RN 0.89 RC, Vega OS, Screens, Hermes, WebView, Unistyles, tgfx, Pager View | Node.js, Parcel, Rspack, Actions, Vitest, jsdom, HTML-in-Canvas"
 authors: [slorber, janjaworski]
 date: 11-04-2026
-unlisted: true
 ---
 
 Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋!
@@ -49,7 +48,7 @@ Self-hosted, with **full control over your data** and no per-end-user fees.
 - 🐦 [Remotion \- New Studio editing experience](https://x.com/Remotion/status/2117615187339673650) \- A better, more interactive timeline that’s still code-based but now matches the UX of video editing tools better.
 - 👀 [React Compiler PR \- Preserve source locations for accurate source maps](https://github.com/react/react/pull/36921) \- This should help fix source map issues when using the React Compiler, bug reports in various downstream projects.
 - 👀 [React Concurrent Store PR \- Ricky Hanlon runs React's own state tests against the unofficial ponyfill](https://github.com/thejustinwalsh/react-concurrent-store/pull/27)
-- 👀 [Next.js PR \- `router.experimental_prepare()` to start a navigation on pointerdown and commit it on click](https://github.com/vercel/next.js/pull/101050) \- This is quite an exciting feature I’ve been wanting for years. There’s a delay between pointerdown and click events. Now you can “prepare” a navigation ahead of time, even if the user hasn’t really clicked your link yet. Once the click is confirmed, you commit the pre-warmed navigation that should feel faster. This will eventually be integrated directly into the `<Link>` component.
+- 👀 [Next.js PR \- `router.experimental_prepare()` to start a navigation on pointerdown and commit it on click](https://github.com/vercel/next.js/pull/101050) \- This is quite an exciting feature I’ve been wanting for years. There’s a delay between pointerdown and click events. Now you can “prepare” a navigation ahead of time, even if the user hasn’t really clicked your link yet. Once the click is confirmed, you commit the pre-warmed navigation that should feel faster. This may be integrated into the `<Link>` component eventually.
 - 👀 [Next.js PR \- `create-next-app` always uses the App Router, no router choice prompt](https://github.com/vercel/next.js/pull/100850)
 - 👀 [Next.js PR \- Experimental Go Route Handlers with `route.go` files](https://github.com/vercel/next.js/pull/100130) \- The Next.js team is prototyping native language support for CPU-intensive server work next to your React app, starting with Route Handlers and Proxy in Go.
 - 📜 [React.lazy, Suspense and the Hidden 300 ms Delay](https://tabwidgets.com/blog/react-lazy-suspense-delay) \- A `React.lazy` component always suspends on its first render, and React throttles Suspense reveals to 300ms to avoid flicker, which can be a problem in some cases.
@@ -139,14 +138,14 @@ It also brings native APIs, agent-assisted migrations, and stable minors with on
 ## 🔀 Other {#other}
 
 - 🔐 [GitHub Actions \- `pull_request_target` blocked by default in public repositories from December 2](https://github.blog/changelog/2026-11-02-pull_request_target-blocked-by-default-december-2/) \- Good news for supply chain security. This “feature” led to compromises like TanStack, PostHog, Nx, and more.
-- 📦 [Chrome 157 \- HTML-in-Canvas stable: Interactive DOM inside 2D, WebGL, and WebGPU](https://developer.chrome.com/blog/html-in-canvas) \- Chrome 157 is out today, including this exciting feature that unlocks many creative use cases.
-- 📦 [Node.js 27.0 alpha \- V8 15.6, npm 12.1, default heap size changes, `--allow-env` permission, native `fs.glob`, `net/promises API`](https://nodejs.org/en/blog/release/v27.0.0-alpha.0.0.0) \- The first Alpha of the new release model, not based on even/odd numbers anymore. It becomes Current in April 2027 and LTS in October 2027\.
+- 📦 [Chrome 157 \- HTML-in-Canvas stable: Interactive DOM inside 2D, WebGL, and WebGPU](https://developer.chrome.com/blog/html-in-canvas) \- Chrome 157 is now out, including this exciting feature (unflagged) that unlocks many creative use cases.
+- 📦 [Node.js 27.0 alpha \- V8 15.6, npm 12.1, default heap size changes, `--allow-env` permission, native `fs.glob`, `net/promises` API](https://nodejs.org/en/blog/release/v27.0.0-alpha.0.0.0) \- The first Alpha of the new release model, not based on even/odd numbers anymore. It becomes Current in April 2027 and LTS in October 2027\.
 - 📦 [jsdom 31.0 \- New CSS engine](https://github.com/jsdom/jsdom/releases/tag/v31.0.0) \- Faster selector queries and repeated style reads. Now supports many new CSS features such as cascade layers, nesting, scoping, and more.
 - 📦 [Parcel 3.0 alpha \- Rust rewrite, up to 100x faster, standalone binary, native plugins, smarter code splitting](https://v3.parceljs.org/blog/v3-alpha/)
 - 📦 [Rspack 2.3 \- SWC Next parser, 5–20% faster builds, up to 27% lower memory, less duplicate code across chunks, CSS improvements, new cache (experimental)](https://rspack.rs/blog/announcing-2-3)
 - 📦 [Vitest 5.1 \- `--since-last-run`, interactive snapshot review, Trace View on failure by default, faster Browser Mode mocking, 5–10x faster Istanbul instrumentation](https://vitest.dev/blog/vitest-5-1)
 - 📦 [Babel 8.1 \- Import Bytes/Text, filtered namespaces, source map range mappings (experimental), `@babel/eslint-plugin` configs](https://babeljs.io/blog/2026/11/02/8.1.0)
-- 📦 [tRPC 11.23 → 11.24 \- Per-procedure error formatters with `.errors()`, stable `localLink`, TanStack Query handles (unstable), Next.js App Router cache tags](https://github.com/trpc/trpc/releases)
+- 📦 [tRPC 11.20 → 11.24 \- Per-procedure error formatters with `.errors()`, stable `localLink`, TanStack Query handles (unstable), Next.js App Router cache tags](https://github.com/trpc/trpc/releases)
 - 📦 [x18n \- Lint, view and manage i18n files for any framework](https://x18n.dev/)
 
 ---
