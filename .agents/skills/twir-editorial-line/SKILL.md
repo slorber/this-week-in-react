@@ -111,7 +111,7 @@ Check past coverage before calling something old. On #303, neither Biome 2.6 (bl
 
 ## Spotting AI-generated content
 
-**Rule: flag AI-generated articles.** The public page filters out content produced by AI. One signal rarely proves it: look for several, in the article, the blog's index and the author's profile. Judge the text, not the person.
+**Rule: AI-generated articles are never worth featuring.** AI-built projects are fine (Bun, tsrs, Vinext, Redact): judge them like any other project (see "New projects"). One signal rarely proves an article is AI-generated: look for several, in the article, the blog's index and the author's profile. Judge the text, not the person.
 
 The writing:
 
@@ -147,6 +147,10 @@ Give a **slop score**, and explain it with the signals you saw, quoting a headin
 | 4/5 | Clearly templated, with some original substance | ❌, score 1/5 |
 | 5/5 | Templated, and only restates docs or generic advice | ❌, score 1/5 |
 
+## New projects
+
+**Rule: a brand-new side project that may not be maintained for long isn't worth featuring**, AI-built or not. Focus on the mainstream ones. Exceptions: a project that clearly pushes the state of the art, or gets massive traction right away. Check the repo's age and commit history, its traction, and the author's track record.
+
 ## Link budget (email)
 
 Rule (#302): watch the link count. Gmail clips emails over about 102KB of HTML, which hides the end of the issue (Other, Fun) behind "View entire message". The email is sent with Kit (ConvertKit), which rewrites every link into a long tracked URL, so the number of links is the main driver of email size. Inline links inside comments count too.
@@ -163,6 +167,6 @@ Rule (#302): watch the link count. Gmail clips emails over about 102KB of HTML, 
 2. Is it in scope for its section, and fresh enough (see "Freshness")?
 3. Does the public page say to look for it, or to filter it out? For an article, does it read as AI-generated (see "Spotting AI-generated content")?
 4. Is it free and platform-agnostic, or tied to a vendor?
-5. Is it significant enough to spend a link on, compared with the rest of the section?
+5. Is it significant enough to spend a link on, compared with the rest of the section? For a new project, see "New projects".
 6. Does it duplicate another item? Merge release ranges, merge closely related links into one item, and keep one link per topic (see "Link budget").
 7. Which space tier does it deserve?

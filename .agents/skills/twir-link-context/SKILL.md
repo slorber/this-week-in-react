@@ -90,7 +90,7 @@ Every sub-item is `- 🤖 <type emoji> <text>`, nested under its item, on one li
 | ✅ / 🤔 / ❌ | Always | Keep / judgment call / suggest cut, with a one-line reason based on the editorial line |
 | 🎯 | Always | The group in its list (news, articles, releases, AI tools, media), and the section you'd suggest if it seems to belong elsewhere |
 | 💯 | Always | The score, `n/5` (scale below), and the space tier it implies |
-| 🗑️ | Every 📜 article, and any other link that shows signals | The slop score, `n/5`, and the signals seen (see "Spotting AI-generated content" in `twir-editorial-line`) |
+| 🗑️ | Every 📜 article | The slop score, `n/5`, and the signals seen (see "Spotting AI-generated content" in `twir-editorial-line`) |
 | ✍️ | From 4/5. At 3/5, only for one specific angle, like cross-browser support | A proposed comment |
 | 📝 | When the input had a note or question from the editor | The note, quoted, then the answer |
 | 🔁 | When the repo has past coverage | The issues that covered it, and what that means for this item |
