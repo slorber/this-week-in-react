@@ -40,7 +40,7 @@ The ` \- ` separator comes from the Google Docs export and renders exactly like 
 | 👀 PR | `<Project> PR - <what>` | `` Next.js PR - `<Link prefetch="navigation">` ``, `React Native PR - ResizeObserver` |
 | 👀 / 📖 Docs | `<Project> docs - <topic>` | `React docs - React DevTools for agents` |
 | 💬 RFC | `<Project> RFC - <topic>` | `React RFC - React work counters` |
-| 🔐 Security | `<Project> vulnerability - <what>` | `React vulnerability - Unauthenticated Remote Code Execution in React Server Components` |
+| 🔐 Security | `<Project> vulnerability - <what>` | `React vulnerability - Unauthenticated Remote Code Execution in React Server Components`, `Node.js security releases - “Node2Shell” remote code execution in Brotli decoder` |
 | 📅 Event | `<Event> - <date>, <city>` | `React Foundation Meetup - Nov 11, London` |
 | 🎥 / 🎙️ Media | `<Channel or show> - <episode title>` | `Syntax.fm - Why everyone is moving to Stylex?` |
 | 🐦 / 🦋 Social post | The news, as a short headline | `Dan Abramov joined the Next.js team at Vercel, part-time` |
@@ -55,6 +55,12 @@ New projects, or projects featured for the first time (curator guide): replace t
 
 Articles (curator guide): if a title is too long, click-bait or weirdly capitalized, rewrite it so that all titles are consistent.
 
+Security items (#302, #303):
+
+- **Use the name the community gave the vulnerability**, in curly quotes, even when the advisory doesn't use it: “php2shell” (#302), “Node2Shell” (#303). A web search finds it.
+- **Say who must upgrade**: "Upgrade your Node.js (or Bun) now if your app decodes Brotli data under someone else's control."
+- **When another item of the issue fixes the same flaw, both items mention each other.** On #303, the Node.js item names Bun, and the Bun 1.4.4 item says "Also fixes the Node2Shell vulnerability."
+
 Observed: titles have a median length of 70 characters, and 90% are under 110 (#294–#302).
 
 ### Comments
@@ -62,6 +68,7 @@ Observed: titles have a median length of 70 characters, and 90% are under 110 (#
 - **Optional** (curator guide): it's not needed to comment on everything, and it's better not to comment than to make a wrong or useless comment. About half the items have none (observed).
 - **What the title doesn't say**: why it matters, the main change, who should care. Never repeat the title.
 - **Length** (observed): median 138 characters, rarely more than 270. One sentence by default, two or three for items that deserve it (see "How much space an item gets" in `twir-editorial-line`).
+- **Who adopts it next** (#303): for a new tool or a big rewrite, say so when the sources do, like "Coming in Rspack 2.3" for SWC Next.
 - **Lead with the angle** for important items: "Exciting news for SPA / client-side routing frameworks!", "The real highlight is…", "Upgrade now!" for severe vulnerabilities.
 - **Inline links sparingly**, since each one costs link budget: `Upgrade to [16.4.1 or 15.5.28](…)`, `The [backstory](…) is also interesting`.
 - **Link back to past issues** with a text fragment that jumps to the item: `We [recently mentioned](https://thisweekinreact.com/newsletter/300#react:~:text=React%20Foundation%20news) a React Foundation contributor summit`. The pattern is `https://thisweekinreact.com/newsletter/<n>#<section-id>:~:text=<url-encoded words>`.
