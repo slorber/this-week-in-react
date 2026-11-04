@@ -157,9 +157,13 @@ Rule (#302): watch the link count. Gmail clips emails over about 102KB of HTML, 
 
 **Check it with the `twir-email-size` skill**: its calibrated script estimates the email size and says how many links to cut. Rough orders of magnitude: #294 (93 links) was clipped. With a 5% margin, an issue fits about 88 links at 1,400 words, and about 80 at 2,000 words. The median issue has 70 links.
 
-**Rule (#302): several releases of one project = one link.** Title it with an arrow range, e.g. `Vinext 1.2 → 1.3`, `pnpm 12.11 → 12.13`, `Satori 0.36 → 0.55`. Link to the blog index or the GitHub releases page (`vinext.dev/blog`, `github.com/<org>/<repo>/releases`), so readers can reach every release from that one link, and first check that the index shows those releases at the top. The keywords and the comment cover what's new across the whole range.
+**Rule (#302): several releases of one project = one link.** Title it with an arrow range, e.g. `Vinext 1.2 → 1.3`, `pnpm 12.11 → 12.13`, `Satori 0.36 → 0.55`. Link to the blog index when the project posts its releases there, otherwise to the GitHub releases page (`vinext.dev/blog`, `github.com/<org>/<repo>/releases`), so readers can reach every release from that one link, and first check that the index shows those releases at the top. The keywords and the comment cover what's new across the whole range.
 
-**Rule: two resources on the same topic = one link.** Feature the best one and drop the other, even when they come from different authors. Prefer the most authoritative first-party source: the project's own blog post, release notes or docs, the author's own post. Pick a third-party resource only when the first-party one reads much worse, like a raw changelog, a long spec or a sprawling thread next to a clear write-up. Tell the editors which link you dropped, so they can swap them.
+**Rule: a releases index, or several releases of one project, covers every release no issue featured yet**: since the last issue, or since the last release of that project an issue featured. Check the index for the releases missing from the input, and aggregate them all into the range: `📦 [tRPC 11.23 → 11.24 - <highlights>](https://github.com/trpc/trpc/releases)`. When only one release is left to feature, link to it directly: the index is only there to save links, and a direct link is always better. Check the index for a single release link too, but a release missing from the input is probably one the editors skipped: suggest adding it only when it looks important.
+
+**Usually, two resources on the same topic = one link.** It's a default, not a strict rule. Feature the best one and drop the other, even when they come from different authors. When both are worth featuring, keep both and say why. Tell the editors which link you dropped, so they can swap them.
+
+**Rule: look for the canonical resource.** A social post, GitHub release notes or a changelog often isn't one: search for the official blog post or announcement of the same news. Then pick the main link on two criteria that weigh the same: being canonical, and the most polished reading experience. A good GitHub release or social post beats a poor blog post, and a clear write-up can beat a raw changelog, a long spec or a sprawling thread. On #303, the editors featured the Biome 2.6 blog post over an X post, and the Firefox 159 MDN release notes over a Bluesky post.
 
 ## Judging an item: checklist
 
@@ -168,5 +172,5 @@ Rule (#302): watch the link count. Gmail clips emails over about 102KB of HTML, 
 3. Does the public page say to look for it, or to filter it out? For an article, does it read as AI-generated (see "Spotting AI-generated content")?
 4. Is it free and platform-agnostic, or tied to a vendor?
 5. Is it significant enough to spend a link on, compared with the rest of the section? For a new project, see "New projects".
-6. Does it duplicate another item? Merge release ranges, merge closely related links into one item, and keep one link per topic (see "Link budget").
+6. Does it duplicate another item? Merge release ranges, merge closely related links into one item, and usually keep one link per topic (see "Link budget").
 7. Which space tier does it deserve?

@@ -27,7 +27,7 @@ These rules apply to every agent, in every session:
 3. **Follow the editorial line and the style** described in the skills below. When unsure whether an item fits, flag it with a reason instead of deciding silently.
 4. **Leave the 💸 sponsor content and the 🤭 Fun section alone** unless asked: the editor handles them.
 5. **Watch the email size without being asked.** Whenever an issue or a draft has content, run the Gmail clipping check (`twir-email-size`) and report it. From 95% of the limit, propose specific links to cut.
-6. **Never commit or push unless asked.** Maintainers commit issue changes directly to `main`, and the commit message is just the issue number (`302`). Other contributors open a pull request.
+6. **Never commit or push unless asked.** Maintainers commit issue changes directly to `main`, and the commit message is just the issue number (`302`). Other contributors open a pull request. Once a pull request is open for the work, commit and push follow-up changes to it without asking.
 7. **Keep the rules in this repo, not in your private memory.** When the editor states a new rule or corrects your work in a way that should apply next time, propose an edit to the matching skill (or to this file) in chat, and apply it once approved. That way every contributor and every agent gets it. Label it as a rule, add the issue number, and add the example that motivated it when it helps. Changes to the editorial line itself go to its public page (see below). Personal setup stays out of the repo: your own API keys and tokens, local paths, sandbox workarounds.
 
 ## Skills
