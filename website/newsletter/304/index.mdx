@@ -1,6 +1,6 @@
 ---
 slug: /304
-title: "This Week In React #304: Next.js, Security, RTK, Compiler, Suspense, Resizable Panels, Preact | RN 0.89 RC, Vega OS, Screens, Hermes, WebView, Unistyles, tgfx, Pager View | Actions, Node.js, Parcel, Rspack, Vitest, jsdom, HTML-in-Canvas"
+title: "This Week In React #304: Next.js, Security, Redux Toolkit, Compiler, Suspense, Resizable Panels, Preact | RN 0.89 RC, Vega OS, Screens, Hermes, WebView, Unistyles, tgfx, Pager View | Actions, Node.js, Parcel, Rspack, Vitest, jsdom, HTML-in-Canvas"
 authors: [slorber, janjaworski]
 date: 11-04-2026
 unlisted: true
@@ -45,7 +45,6 @@ Self-hosted, with **full control over your data** and no per-end-user fees.
 ## ⚛️ React {#react}
 
 - 💸 [Testing Frontend - Lessons from over a million lines of TypeScript at Palantir - Skip component tests and let Meticulous do the rest](https://www.meticulous.ai/blog/lessons-from-a-decade?utm_source=this_week_in_react&utm_medium=newsletter&utm_campaign=26q3_2&utm_term=react_link)
-- 💸 [PropelAuth - How to Build a Good Consent Screen for OAuth And MCP](https://www.propelauth.com/post/good-consent-screen-for-oauth-and-mcp?utm_source=twir&utm_campaign=nov4&utm_medium=newsletter)
 - 🔐 [Next.js November security releases 16.4.5 & 15.5.29 \- Fixing 7 medium vulnerabilities](https://nextjs.org/blog/november-2026-security-release)
 - 🐦 [Remotion \- New Studio editing experience](https://x.com/Remotion/status/2117615187339673650) \- A better, more interactive timeline that’s still code-based but now matches the UX of video editing tools better.
 - 👀 [React Compiler PR \- Preserve source locations for accurate source maps](https://github.com/react/react/pull/36921) \- This should help fix source map issues when using the React Compiler, bug reports in various downstream projects.
@@ -57,6 +56,7 @@ Self-hosted, with **full control over your data** and no per-end-user fees.
 - 📜 [Async React & Progressive Server Actions](https://ebey.dev/blog/3myyseusgd22h) \- When using Server Actions with client-side optimistic UI, it’s easy to break your form progressive enhancement behavior. Thankfully, you can restore it with a simple trick: only wire the optimistic action after hydration.
 - 📜 [Understanding React internals](https://www.alexandretrotel.org/articles/understanding-react-internals) \- A 6-chapter tour, from Fizz and Flight on the server to hydration, lanes and the commit phase, with code taken from React's source.
 - 📜 [Writable Derived State: Stop Synchronizing State](https://playfulprogramming.com/posts/writable-derived-state/) \- Instead of syncing server data into local client data with `useEffect`, you could simply use `clientData ?? serverData`. The client data can be null after a server refresh.
+- 💸 [PropelAuth - How to Build a Good Consent Screen for OAuth And MCP](https://www.propelauth.com/post/good-consent-screen-for-oauth-and-mcp?utm_source=twir&utm_campaign=nov4&utm_medium=newsletter)
 - 📦 [Redux Toolkit 2.14 \- Faster dispatch, RTK Query cache entry selectors, DevTools action sanitizer, many RTK Query fixes](https://github.com/reduxjs/redux-toolkit/releases/tag/v2.14.0) \- There’s also a new [2.x and 3.0 roadmap](https://github.com/reduxjs/redux-toolkit/discussions/5536) that announces what’s coming next.
 - 📦 [React Resizable Panels 4.16 → 4.18 \- New `<Workspace>` component for IDE-like layouts, draggable and collapsible tabsets](https://github.com/bvaughn/react-resizable-panels/releases)
 - 📦 [Preact 11.1 \- `preact/compat/compiler-runtime` for React Compiler apps](https://github.com/preactjs/preact/releases/tag/11.1.0)
@@ -109,13 +109,13 @@ It also brings native APIs, agent-assisted migrations, and stable minors with on
 ---
 
 - 💸 [build mode - What happens to engineers when AI writes all the code?](https://go.posthog.com/twir-nov4)
-- 💸 [Maestro MCP - How to get your coding agent to verify UI changes on iOS and Android](https://maestro.dev/blog/verify-ui-changes-with-your-coding-agent?utm_source=this-week-in-react&utm_medium=newsletter&utm_campaign=verify-ui-changes)
 - 👀 [RN 0.89 RC \- Faster text layout and native module calls, legacy bridge APIs removed, `useAppState()` hook, `experimental_onSafeAreaInsetsChange`, global `structuredClone`](https://github.com/react/react-native/releases/tag/v0.89.0-rc.0) \- A sneak peek of the upcoming version, due Dec 7, with lots of performance work and legacy architecture cleanup.
 - 👀 [React Native PR \- Public visual regression testing for RNTester in CI](https://github.com/react/react-native/pull/59115) \- Rendering regressions now surface on public PRs. Unlocks porting the rest of the internal jest-e2e rendering tests.
 - 🔐 [Better Auth security release \- Including a critical fix in the Expo integration](https://better-auth.com/blog/security-release-2026-11-03)
 - 🐦 [Full Intl implementation for Hermes, based on ICU4X](https://x.com/tmikov/status/2115687027303928162) \- \~19MB per platform for complete Intl. RN podspec needs to be updated, so this is only a preview.
 - 📜 [Apple Developer Program explained: free vs paid](https://expo.dev/blog/apple-developer-program-explained-free-vs-paid) \- Breakdown of tiers and how Expo keeps costs at \$0 until you're ready to publish.
 - 📜 [A WebGPU cat puzzle game shipped in three days on Expo, with an AI agent as the QA team](https://expo.dev/blog/purrkour-webgpu-typegpu-game-expo-three-days) \- Case study of a solo dev shipping a GPU game to the App Store and web in 3 days with one TypeScript engine, TypeGPU shaders, and agent testing.
+- 💸 [Maestro MCP - How to get your coding agent to verify UI changes on iOS and Android](https://maestro.dev/blog/verify-ui-changes-with-your-coding-agent?utm_source=this-week-in-react&utm_medium=newsletter&utm_campaign=verify-ui-changes)
 - 📦 [Screens 5.0 beta \- RN 0.88, iOS contained modals, Android Stack v5 animation presets, iOS 27 header minimization controls, Liquid Glass opt-out for form sheets](https://swmansion.com/changelog/react-native-screens-5-0-0-beta-1/)
 - 📦 [WebView 17.0 → 17.1 \- Public RN codegen APIs, RN 0.80+ required, Android `profile` prop for isolated cookie jars](https://github.com/react-native-webview/react-native-webview/releases)
 - 📦 [Nitro Fetch 1.10 \- `XMLHttpRequest` bridge, non-persisted native `prefetch()`, pre-warmed Cronet engine with configurable cache](https://github.com/margelo/react-native-nitro-fetch/releases/tag/v1.10.0)
