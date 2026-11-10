@@ -75,7 +75,7 @@ Writing straight into the Doc isn't supported yet. The Docs API rejects writes t
 
 Put one space between emojis, and between the last emoji and the link or text: `- 🚧 📦 [link](url)`, `- 🤖 ✅ Keep…`, never `- 🚧📦[link](url)`.
 
-**Separate items with a blank line, after their last 🤖 sub-item**: with the 🤖 sub-items, the list is long, and the blank lines make it easier to scan. Never leave a blank line between the top line and its sub-items, or between sub-items. The blank lines between items must go before publication (see "Cleanup before publication").
+**Separate items with a blank line, after their last 🤖 sub-item.** Rule (#306): with the 🤖 sub-items, the list is long, and the blank lines make it easier to scan. Never leave a blank line between the top line and its sub-items, or between sub-items. The blank lines between items must go before publication (see "Cleanup before publication").
 
 **`🚧` marks AI work in progress that an editor must review.** Put it on every item and headline you prepare. The editor removes it once the item is ready for publication, and may delete the 🤖 sub-items or leave them (the website strips them).
 
