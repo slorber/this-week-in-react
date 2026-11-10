@@ -48,7 +48,9 @@ The ` \- ` separator comes from the Google Docs export and renders exactly like 
 Releases (curator guide):
 
 - **Drop the "v" and the patch number**: `3.1`, not `v3.1.9`. Spell out prereleases: `10.0 alpha 6`, `7.1 beta`, `0.88 RC`. Patch numbers only when the patch is the news (security fixes).
-- **Put the major highlights as keywords inside the link**, after a dash. Rule (#302): short keyword phrases separated by commas, never sentences. Mark experimental features with "(experimental)". When the editor points to an official tweet or post, pick the same highlights it chose, compressed into keywords. He approved this one on #302: `Astro 7.4 \- Build timings, separate build/runtime image services, parallel prerendering (experimental)`.
+- **Put the major highlights as keywords inside the link**, after a dash. Rule (#302): short keyword phrases separated by commas, never sentences. Mark experimental features with "(experimental)". He approved this one on #302: `Astro 7.4 \- Build timings, separate build/runtime image services, parallel prerendering (experimental)`.
+- **Use the highlights the authors chose.** Rule (#306): when the release post, changelog, or announcement tweet names its highlights, pick the same ones and compress them into keywords. The authors know better than us what's worth highlighting, so don't try to be clever. Choose your own only when the authors don't name any. When other authoritative sources (the project's maintainers or employees, or respected industry experts) add a different angle, for example Expo founders quoting Expo's tweet, combine their highlights with the official ones. Ignore the angles of other sources.
+- **Most important highlight first.** Rule (#306): usually that's the order the sources use: an authoritative source rarely puts its biggest highlight at the end, after many small details.
 - Don't include a release with nothing interesting to highlight.
 
 New projects, or projects featured for the first time (curator guide): replace the keywords with an **objective project description**, inspired by the GitHub repo description, the landing page or the SEO tags. Format it as a release even if there's an introduction blog post.
@@ -127,7 +129,7 @@ Other key highlights include:
 ```
 
 - A top banner image, then the bold title link. Prefer an image showing something meaningful, like a code screenshot (curator guide). Image rules are in the `twir-issue-images` skill.
-- Then one paragraph with the big picture (what it is, why it's a big deal), and usually 3–6 bullets with a **bold label** and a short explanation. It can end with a catch-all line: "And a few more: …".
+- Then one paragraph with the big picture (what it is, why it's a big deal), and usually 3–6 bullets with a **bold label** and a short explanation. It can end with a catch-all line: "And a few more: …". Choose the bullets the way you choose release highlights: the authors' highlights first (see "Releases").
 - `---` separates headlines from each other, and the last headline from the list.
 - The tone can be more enthusiastic here: "A React Native release is not enough!".
 
