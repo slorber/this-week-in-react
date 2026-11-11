@@ -73,7 +73,7 @@ Observed: titles have a median length of 70 characters, and 90% are under 110 (#
 - **Who adopts it next** (#303): for a new tool or a big rewrite, say so when the sources do, like "Coming in Rspack 2.3" for SWC Next.
 - **Lead with the angle** for important items: "Exciting news for SPA / client-side routing frameworks!", "The real highlight is…", "Upgrade now!" for severe vulnerabilities.
 - **Inline links sparingly**, since each one costs link budget: `Upgrade to [16.4.1 or 15.5.28](…)`, `The [backstory](…) is also interesting`.
-- **Prefix links to X with 𝕏**, outside the link, so readers know where it goes. Rule (#306), for every link to X inside a comment, a headline or the intro: `As its 𝕏 [launch video](https://x.com/…) shows`, never `[𝕏 launch video](…)`.
+- **Prefix links to X with 𝕏**, outside the link, so readers know where it goes. Rule (#306), for every link to X inside a comment, a headline or the intro: `As its 𝕏 [launch video](https://x.com/…) shows`, never `[𝕏 launch video](…)`. Except the intro's co-author greeting (see "The intro"), which keeps its links as they are.
 - **Link back to past issues** with a text fragment that jumps to the item: `We [recently mentioned](https://thisweekinreact.com/newsletter/300#react:~:text=React%20Foundation%20news) a React Foundation contributor summit`. The pattern is `https://thisweekinreact.com/newsletter/<n>#<section-id>:~:text=<url-encoded words>`.
 
 ### Code, names and abbreviations
