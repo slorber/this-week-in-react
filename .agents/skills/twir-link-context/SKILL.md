@@ -94,7 +94,7 @@ Every sub-item is `- 🤖 <type emoji> <text>`, nested under its item, on one li
 | 🎯 | Always | The group in its list (news, articles, releases, AI tools, media), and the section you'd suggest if it seems to belong elsewhere |
 | 💯 | Always | The score, `n/5` (scale below), and the space tier it implies |
 | 🗑️ | Every 📜 article | The slop score, `n/5`, and the signals seen (see "Spotting AI-generated content" in `twir-editorial-line`) |
-| ✍️ | From 4/5. At 3/5, only for one specific angle, like cross-browser support | A proposed comment |
+| ✍️ | From 2/5. Rule (#306): at 2/5 and 3/5 too, even if the item ends up title-only: it tells the editors what the item is about | A proposed comment |
 | 📝 | When the input had a note or question from the editor | The note, quoted, then the answer |
 | 🔁 | When the repo has past coverage | The issues that covered it, and what that means for this item |
 | ⚠️ | When needed | Couldn't read or only partially read, a claim the sources don't support, vendor-tied, paywalled, only on X, links grouped by the editor with no obvious connection |
