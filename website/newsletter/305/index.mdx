@@ -1,14 +1,18 @@
 ---
 slug: /305
-title: "This Week In React #305: ..."
+title: "This Week In React #305: X, Forms, e18e, Next.js, TanStack Start, Storybook, MobX, Zustand, XState | Exact, Discord, Shopify, Expo Modules, Audio API, Bottom Sheet, Keychain, Gesture Handler | Node.js, Safari, Rolldown, Playwright"
 authors: [slorber, janjaworski]
 date: 11-11-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
-<Todo />
+This week, X explained how it rebuilt its flagship app with streaming SSR, Suspense and Relay. e18e launched independent benchmarks for 9 meta-frameworks.
+
+On mobile, Discord follows Shopify and leaves React Native for native and Rust. Meanwhile, Expo’s co-founder previewed Exact, an agent-native app framework written in Rust. We also have many releases: Audio API 1.0, Bottom Sheet 0.18, Keychain 11, Gesture Handler 3.5…
+
+Elsewhere, Node.js shipped security releases, Safari 27.3 beta brings Temporal and `using`, and the State of JS survey is open: if you like our work, please mention us 🙏.
 
 Let's dive in!
 
@@ -41,10 +45,42 @@ Engineers at Notion save 5 hours per week and feel like they work twice as fast.
 
 ## ⚛️ React {#react}
 
-<Todo />
+![Rebuilding the global town square from scratch](/emails/issues/305/x-town-square.jpg)
+
+[**X Engineering \- Rebuilding the global town square from scratch**](https://blog.x.com/en/engineering/rebuilding-the-global-town-square-from-scratch)
+
+One of the world's largest React apps is currently rolling out a major rewrite. Logged-out users and crawlers already see the new app, and signed-in users are moving over one country at a time. Since Twitter Lite (2017), X has been a client-side React app: the browser downloads JavaScript, then asks for data, then renders, leading to performance issues. Additional SSR servers handled search crawlers and link-preview bots. The new architecture uses a single server for people, crawlers and link-preview bots, and optimizes its response according to who's asking.
+
+The article is a detailed write-up sharing various lessons learned and impressive performance results, in particular on slow connections, where a profile's first post now shows in 2.7s instead of 23.9s. Since we are a React newsletter, here's what is likely to interest you the most:
+
+- **New stack** \- The new app is built on Vite, React, Relay and Fastify. The former stack already used Relay/GraphQL, which remains interesting for colocating data requirements with components and making preloading easy.
+- **Streaming SSR with Suspense** \- The server sends the page shell right away, then streams each part as its data arrives. Profiles and posts download no JavaScript before the first post shows.
+- **Hydrating before the stream ends** \- With an async module entry, React hydrates the shell immediately, then each boundary as it streams in. They also prioritize the loading of the render-blocking stylesheet: even if it slightly delays React hydration, it gives a better First Contentful Paint on slow connections.
+- **Relay without refetching** \- Route loaders start the GraphQL queries while the server renders. The page carries each response once as JSON, and the browser replays it into an empty Relay store.
+- **Intent preloading** \- Links preload their route's code and data on hover or focus so that navigation feels fast.
+- **AI usage** \- Five engineers built the first version in under six months. Agents helped with the implementation, porting behaviors of the old servers to the new architecture, with scripts to ensure parity.
+
+---
 
 - 💸 [PropelAuth - Don’t Trust Your AI Agent. Scope It.](https://www.propelauth.com/post/dont-trust-your-ai-agent-scope-it?utm_source=twir&utm_campaign=nov11&utm_medium=newsletter)
+- 📖 [React `<form>` docs improvements](https://react.dev/reference/react-dom/components/form#preserve-form-values-after-an-action) \- React 19 resets uncontrolled fields after a successful form Action, which surprised many devs. The `<form>` docs now explain how to keep values (`defaultValue` from state or `useActionState`, even before JS loads), skip or schedule the reset with `requestFormReset`, pass extra data to Server Functions, and get `useFormStatus` pending state from an `onSubmit` handler.
+- 📊 [e18e Framework Performance project \- Benchmarks for 9 meta-frameworks, including Next.js, TanStack Start and React Router](https://e18e.dev/blog/launching-the-framework-performance-project.html) \- This independent initiative, built with each framework's maintainers, makes comparisons fairer and has already led to upstream perf fixes, such as [75% faster RSC payload parsing](https://github.com/react/react/pull/35776) in React.
+- 📅 [React Foundation Contributors Summit 2026 \- 10–12 Nov \- London](https://www.react.foundation/summit) \- The first contributor summit is happening right now. Since we are not there, please let us know if you have any insider scoop 🥹.
+- 📜 [How we cut Next.js memory from \~5GB to \~1GB: the React-Query timer holding every SSR request](https://rohitpotato.xyz/thoughts/ssr-requests-still-alive) \- An interesting memory leak case and methodology used to fix it. Any `setTimeout` created during SSR captures the `AsyncLocalStorage` contexts. Here, the React Query GC timer led to that leak, capturing the Next.js Request store. Query v4/v5 disables the GC on the server, so beware of not re-enabling it by passing an explicit `gcTime`.
+- 📜 [Why we finally left Next.js for TanStack Start](https://harrisonmilbradt.com/writing/nextjs-to-tanstack-start) \- Positive feedback on migrating a large app to TanStack Start, following recurring memory leaks in Next.js. Abstracting the `next/*` framework imports behind a thin layer made it possible to run both frameworks side by side using build-time aliases.
 - 💸 [PostHog - WTF is a forward deployed engineer? (and why everyone is hiring them)](https://go.posthog.com/twir-nov11)
+- 📦 [MobX React Plugin 1.0 \- Automatic `observer()`, `"use no memo"` for React Compiler, `async` methods turned into flows](https://github.com/mobxjs/mobx/tree/main/packages/mobx-react-plugin) \- This new official Vite/Babel plugin fixes a long-standing MobX incompatibility with the React Compiler.
+- 📦 [Storybook 11 beta \- Official agent skills, headless `storybook tools` CLI, type-safe CSF 4 stories, `react-component-meta` docgen](https://storybook.js.org/blog/storybook-11-beta/)
+- 📦 [Zustand 5.1 \- Async `persist` storage and migrations, awaitable `rehydrate()`, dispatch actions from Redux DevTools](https://github.com/pmndrs/zustand/releases/tag/v5.1.0)
+- 📦 [XState 6 beta \- Transitions as plain functions, Standard Schema types, `xstate/fsm` is back, durable execution (experimental), CLI](https://stately.ai/blog/2026-11-05-xstate-v6-beta)
+- 📦 [Text.js 1.0 \- React framework for apps that render inside `console.log`](https://textjs.org/)
+- 📦 [Preact 11.2 \- Scoped custom element registries in shadow roots, smaller bundle](https://github.com/preactjs/preact/releases/tag/11.2.0)
+- 📦 [mdx-content-mapper 0.0.3 → 0.0.4 \- Type-check MDX files with `tsc`, using TypeScript 7.1 content mappers](https://github.com/remcohaszing/mdx-content-mapper)
+- 📦 [React Hook Form 7.92 \- Bug fixes for validation, field arrays, `reset()` and `useController`, fewer form state clones](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.92.0)
+- 📦 [React Resizable Panels 4.19 → 4.21 \- Tear-off tabs, drag tabs between windows, floating tabsets, collapse and maximize buttons](https://github.com/bvaughn/react-resizable-panels/releases)
+- 📦 [Astryx 0.7.1 → 0.7.13 \- iOS-like Lightbox gestures, reorderable lists, table virtualization, keyboard-aware `ChatLayout`](https://github.com/meta/astryx/releases)
+- 📦 [dx-styles 1.5 \- Faster builds, upgrades wyw-in-js, reproducible CSS-in-JS benchmark](https://dx-styles.dev/blog/dx-styles-1-5-build-time/)
+- 📦 [Next-Intl 4.15 \- Support `intl-messageformat` 12, lazy-loaded SWC in the message extractor, middleware fixes](https://github.com/amannn/next-intl/releases/tag/v4.15.0)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -58,7 +94,7 @@ Engineers at Notion save 5 hours per week and feel like they work twice as fast.
 
 Meet Mobile Dev: full mobile tooling inside Codex, Claude, and your favorite ADE.
 
-Launch and interact with iOS & Android simulators, emulators, and physical devices right in your agent UI. Stream logs, debug issues, and monitor CPU, memory & FPS. Guided performance recordings reveal bottlenecks and highlight potential fixes. Your agent picks the right tools, investigates root causes, and implements fixes using real performance data. It can then re-run tests to verify the improvements. You can also inspect your app’s UI, highlight elements, and prompt your agent to make changes with precise visual context.
+Launch and interact with iOS & Android simulators, emulators, and physical devices right in your agent UI. Stream logs, debug issues, and monitor CPU, memory & FPS. Guided performance recordings reveal bottlenecks and highlight potential fixes. Your agent picks the right tools, investigates root causes, and implements fixes using real performance data. It can then re-run tests to verify the improvements. You can also inspect your app’s UI, highlight elements, and prompt your agent to make changes with precise visual context.
 
 [Try Mobile Dev in the ChatGPT Plugin Store.](https://chatgpt.com/plugins/plugins_6ac4c117f76881918d3676e851fa4005?open_in_app)
 
@@ -66,23 +102,77 @@ Launch and interact with iOS & Android simulators, emulators, and physical devic
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+![A preview of Exact](/emails/issues/305/exact.jpg)
+
+[**Exact \- Agent-native app framework in Rust**](https://ccheever.expo.app/)
+
+Expo co-founder Charlie Cheever shared a pre-alpha preview of Exact. It's a cross-platform app framework written in Rust, designed for agents to write, run and test apps. You describe the UI in 𝕏 [Contract](https://x.com/JI/status/2119779463827431853), a new declarative language, and write the logic in TypeScript or Rust. Models have never seen Contract, but it's small and constrained on purpose, so agents learn it quickly. Exact promises near-instant startup, smooth scrolling, edits applied in about 100ms, and the same test running unchanged on web, mobile and desktop.
+
+Related resources:
+
+- 📜 [First Impressions of Expo Exact, a New Rust-Powered App Runtime](https://rnw.kazutoyo.jp/en/posts/expo-exact-first-impression/)
+- 🎥 [Simon Grimm \- Expo's CEO Just Built a React Native Alternative](https://www.youtube.com/watch?v=l738pHcezds)
+
+---
+
+🧵 [**Discord follows Shopify, leaving React Native for native and Rust**](https://x.com/svishnevskiy/status/2118081920194203799)
+
+Another big app is moving away from React Native\! Discord is dropping both Electron and React Native, extending its shared Rust core. On desktop, the UI moves to GPUI. On mobile, the Rust core now drives native views.
+
+It comes only two months after Shopify left React Native, but the approach is quite different. Shopify went back to separate Swift and Kotlin apps, betting that agents make writing the code twice affordable. This week, they explained [how they rebuilt the app in 12 weeks](https://shopify.engineering/shopify-app-rebuild) with Helix, Reflex and remote dev. With [Reflex](https://shopify.engineering/reflex), a single behavior test suite runs against headless ViewModels, without a simulator, to keep iOS and Android in sync.
+
+Related resources:
+
+- 📜 [Trying Shopify's Reflex Architecture in Swift and Kotlin](https://rnw.kazutoyo.jp/en/posts/reflex-native-swift-kotlin/)
+- 🎥 [Beto \- Discord leaving RN?](https://www.youtube.com/watch?v=XpEMvOXQ1Wo)
+
+---
 
 - 💸 [Sentry - Find the slow request in your React Native checkout flow. Get the recipe](https://sentry.io/cookbook/track-checkout-performance-react-native/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=mobile-fy27q4-cookbook&utm_content=newsletter-rn-link-rn-checkout-trysentry)
+- 🐦 [Expo plugin back in Codex \- Skills and MCP server in one plugin](https://x.com/expo/status/2119811098928914752)
+- 📜 [Inside the new JNI layer in Expo Modules 2.0](https://expo.dev/blog/expo-modules-2-0-new-jni-layer) \- Up to 51 times faster C++ calls than `fbjni`. JS Objects reach Kotlin 3 to 5 times faster, improving the slowest part of every call between Kotlin and C++ on Android.
+- 📜 [React Native vs Swift and Kotlin: How We Choose the Stack](https://swmansion.com/blog/react-native-vs-native/) \- Before choosing a stack, ask what the product needs to do, how fast it must ship, and who maintains it. Gobi moved to native in stages once bridging cost more than rewriting.
+- 📜 [How to Speed Up Your Maestro Tests: A Practical Guide](https://maestro.dev/blog/speed-up-maestro-tests)
 - 💸 [Bitrise - The best practices behind safe React Native OTA updates.](https://bitrise.io/blog/post/react-native-ota-updates-best-practices?utm_campaign=cp_promotion_2026-sponsorships_all_2026-09-09&utm_source=thisweekinreact&utm_medium=newsletter-1-20261111)
+- 📦 [Google Maps Navigation SDK 0.19 \- iOS 17 minimum, Android SDK 8, iOS SDK 11.3, route-token-only destinations, ROUTING\_TIMEOUT support](https://github.com/googlemaps/react-native-navigation-sdk/releases/tag/v0.19.0) \- Route token only setup (iOS) avoids waypoint drift plus a new timeout status to handle (Android).
+- 📦 [Keyboard Controller 1.23 \- Precise input tracking, preload artifact fix, transparent KeyboardExtender](https://kirillzyusko.github.io/react-native-keyboard-controller/blog/release-1-23)
+- 📦 [Gesture Handler 3.5 \- `Begin`, `Deactivate` and `Finalize` events, `Pan` velocity and `Pressable` fixes](https://swmansion.com/changelog/react-native-gesture-handler-3-5-0/)
+- 📦 [React Native Keychain 11 \- TurboModules and New Architecture only, Swift Package Manager (preview), `getAllInternetCredentialServers()`](https://github.com/oblador/react-native-keychain/releases/tag/v11.0.0)
+- 📦 [Screen Transitions 4.1 → 4.2 \- Smoother transitions and gestures, built-in clipping, stable Expo Router integration](https://screen-transitions.esjr.org/changelog/)
+- 📦 [Sentry 8.34 \- iOS JS hang tracking, Hermes samples in Android profiles, long task metric](https://github.com/getsentry/sentry-react-native/releases/tag/8.34.0)
+- 📦 [Skia 3.10 \- `SkShapeBlob` \+ `canvas.drawShapes` for static shape batching, replay allocation cuts, Skia m158](https://github.com/wcandillon/react-native-skia/releases/tag/v3.10.0)
+- 📦 [True Sheet 4.1 \- `dimBlur` backdrop, stacked sheet fixes, Android gesture fixes](https://github.com/lodev09/react-native-true-sheet/releases/tag/v4.1.0)
+- 📦 [Bottom Sheet 0.18 \- Web support, floating cards, lazy mounting and snapping overhaul](https://github.com/software-mansion-labs/react-native-bottom-sheet/releases/tag/v0.18.0)
+- 📦 [Audio API 1.0 \- First stable, spatial audio, Recorder 2.0, worklets split out](https://swmansion.com/changelog/react-native-audio-api-1-0-0/)
+- 🤖 [Simlock 0.6 \- Named device baselines, seed based simulators and emulators, MCP enrolled phones](https://github.com/callstackincubator/simlock/releases/tag/v0.6.0)
+- 🤖 [Argent 0.32 \- Android network inspector, physical iPhone gestures, remote simulator recording](https://github.com/software-mansion/argent/releases/tag/v0.32.0)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 🔐 [Node.js security releases \- High severity fixes for the 22, 24 and 26 lines](https://nodejs.org/en/blog/vulnerability/november-2026-security-releases)
+- 💬 [Mermaid v13 RFC \- Full rewrite, DOM-free rendering, SSR, plugin system and smaller bundle](https://github.com/orgs/mermaid-js/discussions/8685) \- With all the recent diagram lib competitors, Mermaid is finally planning to catch up.
+- 📊 [State of JavaScript 2026 \- Survey is now open](https://survey.devographics.com/en-US/survey/state-of-js/2026?source=thisweekinreact) \- Last year, we ranked among the top 5 newsletters. If you like our work, please mention us in the resources section 🙏
+- 📜 [Notable V8 changes from Node.js 26 to 27 (Alpha)](https://nodejs.org/en/blog/announcements/notable-v8-changes-from-node-js-26-to-27-alpha) \- For once, we get a detailed official blog post of what’s coming with the V8 upgrade (14.6 → 15.6) related to Iterator, Math and more.
+- 📦 [Rolldown 1.3 \- Import attributes (experimental), agent-friendly build report (experimental), `@rolldown/perf-kit`](https://github.com/rolldown/rolldown/releases/tag/v1.3.0) \- The new [Perf Kit](https://rolldown.rs/in-depth/perf-kit) could help your agent make your app faster.
+- 📦 [Safari 27.3 beta \- `Temporal`, `using`, CSS `@function`, `if()`, `attr()`, `corner-shape`, `popover="hint"`, `closedby`, and more](https://developer.apple.com/documentation/safari-release-notes/safari-27_3-release-notes) \- Many of these features are going to be in all browsers soon, including `Temporal` and `using`\!
+- 📦 [Playwright 1.65 \- Run tests with Bun, `onlyFailures` reports, `-exclusive-` test lock](https://github.com/microsoft/playwright/releases/tag/v1.65.0)
+- 📦 [Prettier 3.10 \- New Yuku high-performance JS/TS parser plugin, new Flow syntax, support for new JS proposals](https://prettier.io/blog/2026/11/11/3.10.0)
+- 📦 [pnpm 12.17 → 12.19 \- `pnpm fund`, per-skill approval of agent skills, `pnpm store add` for offline installs, JSON-like lockfile format (experimental), security fix](https://pnpm.io/blog?type=releases)
+- 📦 [`ESLint Shell` \- Language plugin for Bash, POSIX sh and mksh scripts](https://eslint.org/blog/2026/11/eslint-shell-plugin-announcement/)
+- 🤖 [Modern Web Guidance 1.0 \- Chrome's web platform skills for coding agents are stable, Firefox and Edge join the project](https://developer.chrome.com/blog/modern-web-guidance-v1)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+![I wake up, another company leaves React Native](/emails/issues/305/meme.jpg)
 
-![alt](/emails/issues/ISSUENUMBER/meme.jpg)
+![Leaving React Native: maybe I'm not leaving, maybe I'm going home](/emails/issues/305/meme2.jpg)
+
+![AI voice dictation is not ready for French accents: did you mean "migrate this repository to pnpm 12"?](/emails/issues/305/meme3.jpg)
+
+![My agent returning with a "small fix"](/emails/issues/305/meme4.jpg)
 
 See ya! 👋
