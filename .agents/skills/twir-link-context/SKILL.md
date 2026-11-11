@@ -110,7 +110,7 @@ Score scale:
 | 2/5 | Weak: first to cut when over the email budget or the section's typical size. In Other, articles and niche tools that don't stand out |
 | 1/5 | Suggest cutting it (goes with ❌) |
 
-Comments: one sentence by default (see `twir-writing-style`). For larger releases and blog posts, write a longer comment, and you can add a second ✍️ with a different angle: for example, one on the main change and one on who should care or the React angle.
+Comments: one sentence by default (see `twir-writing-style`). For larger releases and blog posts, write a longer comment, and you can add a second ✍️ with a different angle: for example, one on the main change and one on who should care or the React angle. Rule (#306): write the comment straight after the emoji, never behind a label like `✍️ Other angle:`.
 
 Write notes you'd be fine with the project's authors reading: the 🤖 sub-items stay in the issue's MDX, and this repo is public.
 
