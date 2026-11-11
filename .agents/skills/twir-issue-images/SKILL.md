@@ -16,6 +16,7 @@ From the editor:
 - **Other images** (memes…): about 1000px wide, ideally ≤150KB, never more than 250KB. Never upscale small images.
 - **Sponsor creatives** are usually prepared and resized by the team already. Leave them as provided, unless one is over 250KB.
 - **Fun memes** are plain images named `meme.jpg`, `meme2.jpg`…, **never wrapped in a link** to their source post. That saves link budget (#302).
+- **Which memes to feature**: only the 1 or 2 memes at the top of the Fun section, before its `Backlog:` list. Rule (#306): the backlog holds memes the editor bookmarked in previous weeks, for a week with nothing better. Never pick one from it.
 - **Names**: short and kebab-case, e.g. `react-native-088.jpg`, `expo-sdk-58.jpg`.
 
 ## Choosing a headline image
