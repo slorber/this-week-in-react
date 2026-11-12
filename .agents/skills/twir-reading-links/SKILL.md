@@ -7,7 +7,7 @@ description: How to read a link for This Week In React (TWIR) before writing or 
 
 ## The rule: read everything, in full
 
-Rules from the editor (#302):
+Rules from the editor:
 
 - **Read the whole content** before writing or judging an item. Not its headings, not its intro, not a keyword search. **Never skim.**
 - **Never infer content from the URL, slug, title or link text.** Two posts with similar titles can say very different things.

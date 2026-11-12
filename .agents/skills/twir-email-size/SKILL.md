@@ -13,7 +13,7 @@ The editor copy-pastes the website page into Kit (ConvertKit) to send it. Kit's 
 
 ## When to run it
 
-Rule (#302): the editor wants an advance warning, so he can remove links before sending. **Run the check without being asked:**
+The editor wants an advance warning, so he can remove links before sending. **Run the check without being asked:**
 
 - after preformatting a section for an issue,
 - when reviewing a draft or an issue,
@@ -45,7 +45,7 @@ The exit code is 1 when an estimate reaches 95%. A file path works with or witho
 
 **Estimate the whole issue.** A draft with only some sections underestimates the email. Combine it with the rest of the issue file in the temporary copy, or say that the estimate is partial.
 
-**Rule (#303): when the issue is still mostly empty, project it.** Fill each missing section with the previous issue's, and say so: "projected with #302's React and React Native sections". On #303, the skeleton alone gave a meaningless 53%, while the projections gave 95%, 90% and 87% as the draft grew, and the published issue was at 86%.
+**When the issue is still mostly empty, project it.** Fill each missing section with the previous issue's, and say so: "projected with #302's React and React Native sections". On #303, the skeleton alone gave a meaningless 53%, while the projections gave 95%, 90% and 87% as the draft grew, and the published issue was at 86%.
 
 ## Thresholds
 
