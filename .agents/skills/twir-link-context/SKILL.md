@@ -75,7 +75,7 @@ Writing straight into the Doc isn't supported yet. The Docs API rejects writes t
 
 Put one space between emojis, and between the last emoji and the link or text: `- 🚧 📦 [link](url)`, `- 🤖 ✅ Keep…`, never `- 🚧📦[link](url)`.
 
-**Separate items with a blank line, after their last 🤖 sub-item.** Rule (#306): with the 🤖 sub-items, the list is long, and the blank lines make it easier to scan. Never leave a blank line between the top line and its sub-items, or between sub-items. The blank lines between items must go before publication (see "Cleanup before publication").
+**Separate items with a blank line, after their last 🤖 sub-item.** With the 🤖 sub-items, the list is long, and the blank lines make it easier to scan. Never leave a blank line between the top line and its sub-items, or between sub-items. The blank lines between items must go before publication (see "Cleanup before publication").
 
 **`🚧` marks AI work in progress that an editor must review.** Put it on every item and headline you prepare. The editor removes it once the item is ready for publication, and may delete the 🤖 sub-items or leave them (the website strips them).
 
@@ -94,7 +94,7 @@ Every sub-item is `- 🤖 <type emoji> <text>`, nested under its item, on one li
 | 🎯 | Always | The group in its list (news, articles, releases, AI tools, media), and the section you'd suggest if it seems to belong elsewhere |
 | 💯 | Always | The score, `n/5` (scale below), and the space tier it implies |
 | 🗑️ | Every 📜 article | The slop score, `n/5`, and the signals seen (see "Spotting AI-generated content" in `twir-editorial-line`) |
-| ✍️ | From 2/5. Rule (#306): at 2/5 and 3/5 too, even if the item ends up title-only: it tells the editors what the item is about | A proposed comment |
+| ✍️ | From 2/5, even if the item ends up title-only: it tells the editors what the item is about | A proposed comment |
 | 📝 | When the input had a note or question from the editor | The note, quoted, then the answer |
 | 🔁 | When the repo has past coverage | The issues that covered it, and what that means for this item |
 | ⚠️ | When needed | Couldn't read or only partially read, a claim the sources don't support, vendor-tied, paywalled, only on X, links grouped by the editor with no obvious connection |
@@ -110,7 +110,7 @@ Score scale:
 | 2/5 | Weak: first to cut when over the email budget or the section's typical size. In Other, articles and niche tools that don't stand out |
 | 1/5 | Suggest cutting it (goes with ❌) |
 
-Comments: one sentence by default (see `twir-writing-style`). For larger releases and blog posts, write a longer comment, and you can add a second ✍️ with a different angle: for example, one on the main change and one on who should care or the React angle. Rule (#306): write the comment straight after the emoji, never behind a label like `✍️ Other angle:`.
+Comments: one sentence by default (see `twir-writing-style`). For larger releases and blog posts, write a longer comment, and you can add a second ✍️ with a different angle: for example, one on the main change and one on who should care or the React angle. Write the comment straight after the emoji, never behind a label like `✍️ Other angle:`.
 
 Write notes you'd be fine with the project's authors reading: the 🤖 sub-items stay in the issue's MDX, and this repo is public.
 

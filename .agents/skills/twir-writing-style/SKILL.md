@@ -5,15 +5,15 @@ description: How This Week In React (TWIR) items are written - list item anatomy
 
 # TWIR writing style
 
-Same sources as the `twir-editorial-line` skill: **rules** come from the editor, either in the curator guide ([`website/src/pages/curator.mdx`](../../../website/src/pages/curator.mdx)) or from issue work (marked with the issue number). **Observed patterns** were measured on issues #290–#302. All examples come from published issues.
+Same sources as the `twir-editorial-line` skill: **rules** come from the editor, either in the curator guide ([`website/src/pages/curator.mdx`](../../../website/src/pages/curator.mdx)) or from issue work. **Observed patterns** were measured on issues #290–#302. All examples come from published issues.
 
 ## Wording rules
 
 - **Simple language, concise, to the point, no fluff words** (curator guide).
-- **Never use "plus" as a connector** ("SSR, plus server functions"). The editor says it reads like AI-generated content. Use "with", "and", or restructure the sentence. (#302)
-- **One short, plain sentence** that says why the item matters to React devs. The editor rejected dense, jargon-heavy lines several times. (#302)
-- **Never copy an announcement's sentences or verbosity.** Compress them into keywords (titles) or your own short sentence (comments). (#302)
-- **Call out the React angle** of significant releases rather than generic features. For the R3F v10 alpha: works with React 19 `<Activity>`, StrictMode no longer rebuilds the Canvas. (#302)
+- **Never use "plus" as a connector** ("SSR, plus server functions"). The editor says it reads like AI-generated content. Use "with", "and", or restructure the sentence.
+- **One short, plain sentence** that says why the item matters to React devs. The editor rejected dense, jargon-heavy lines several times.
+- **Never copy an announcement's sentences or verbosity.** Compress them into keywords (titles) or your own short sentence (comments).
+- **Call out the React angle** of significant releases rather than generic features. For the R3F v10 alpha: works with React 19 `<Activity>`, StrictMode no longer rebuilds the Canvas.
 - **Never quote a number out of context.** On #302, a "2.9% lower cost" figure was quoted from a post that said the whole-app numbers weren't attributable to the work being described.
 
 ## The list item
@@ -48,16 +48,16 @@ The ` \- ` separator comes from the Google Docs export and renders exactly like 
 Releases (curator guide):
 
 - **Drop the "v" and the patch number**: `3.1`, not `v3.1.9`. Spell out prereleases: `10.0 alpha 6`, `7.1 beta`, `0.88 RC`. Patch numbers only when the patch is the news (security fixes).
-- **Put the major highlights as keywords inside the link**, after a dash. Rule (#302): short keyword phrases separated by commas, never sentences. Mark experimental features with "(experimental)". He approved this one on #302: `Astro 7.4 \- Build timings, separate build/runtime image services, parallel prerendering (experimental)`.
-- **Use the highlights the authors chose.** Rule (#306): when the release post, changelog, or announcement tweet names its highlights, pick the same ones and compress them into keywords. The authors know better than us what's worth highlighting, so don't try to be clever. Choose your own only when the authors don't name any. When other authoritative sources (the project's maintainers or employees, or respected industry experts) add a different angle, for example Expo founders quoting Expo's tweet, combine their highlights with the official ones. Ignore the angles of other sources.
-- **Most important highlight first.** Rule (#306): usually that's the order the sources use: an authoritative source rarely puts its biggest highlight at the end, after many small details.
+- **Put the major highlights as keywords inside the link**, after a dash. Short keyword phrases separated by commas, never sentences. Mark experimental features with "(experimental)". He approved this one on #302: `Astro 7.4 \- Build timings, separate build/runtime image services, parallel prerendering (experimental)`.
+- **Use the highlights the authors chose.** When the release post, changelog, or announcement tweet names its highlights, pick the same ones and compress them into keywords. The authors know better than us what's worth highlighting, so don't try to be clever. Choose your own only when the authors don't name any. When other authoritative sources (the project's maintainers or employees, or respected industry experts) add a different angle, for example Expo founders quoting Expo's tweet, combine their highlights with the official ones. Ignore the angles of other sources.
+- **Most important highlight first.** Usually that's the order the sources use: an authoritative source rarely puts its biggest highlight at the end, after many small details.
 - Don't include a release with nothing interesting to highlight.
 
 New projects, or projects featured for the first time (curator guide): replace the keywords with an **objective project description**, inspired by the GitHub repo description, the landing page or the SEO tags. Format it as a release even if there's an introduction blog post.
 
 Articles (curator guide): if a title is too long, click-bait or weirdly capitalized, rewrite it so that all titles are consistent.
 
-Security items (#302, #303):
+Security items:
 
 - **Use the name the community gave the vulnerability**, in curly quotes, even when the advisory doesn't use it: “php2shell” (#302), “Node2Shell” (#303). A web search finds it.
 - **Say who must upgrade**: "Upgrade your Node.js (or Bun) now if your app decodes Brotli data under someone else's control."
@@ -70,10 +70,10 @@ Observed: titles have a median length of 70 characters, and 90% are under 110 (#
 - **Optional** (curator guide): it's not needed to comment on everything, and it's better not to comment than to make a wrong or useless comment. About half the items have none (observed).
 - **What the title doesn't say**: why it matters, the main change, who should care. Never repeat the title.
 - **Length** (observed): median 138 characters, rarely more than 270. One sentence by default, two or three for items that deserve it (see "How much space an item gets" in `twir-editorial-line`).
-- **Who adopts it next** (#303): for a new tool or a big rewrite, say so when the sources do, like "Coming in Rspack 2.3" for SWC Next.
+- **Who adopts it next**: for a new tool or a big rewrite, say so when the sources do, like "Coming in Rspack 2.3" for SWC Next.
 - **Lead with the angle** for important items: "Exciting news for SPA / client-side routing frameworks!", "The real highlight is…", "Upgrade now!" for severe vulnerabilities.
 - **Inline links sparingly**, since each one costs link budget: `Upgrade to [16.4.1 or 15.5.28](…)`, `The [backstory](…) is also interesting`.
-- **Prefix links to X with 𝕏**, outside the link, so readers know where it goes. Rule (#306), for every link to X inside a comment, a headline or the intro: `As its 𝕏 [launch video](https://x.com/…) shows`, never `[𝕏 launch video](…)`. Except the intro's co-author greeting (see "The intro"), which keeps its links as they are.
+- **Prefix links to X with 𝕏**, outside the link, so readers know where it goes, for every link to X inside a comment, a headline or the intro: `As its 𝕏 [launch video](https://x.com/…) shows`, never `[𝕏 launch video](…)`. Except the intro's co-author greeting (see "The intro"), which keeps its links as they are.
 - **Link back to past issues** with a text fragment that jumps to the item: `We [recently mentioned](https://thisweekinreact.com/newsletter/300#react:~:text=React%20Foundation%20news) a React Foundation contributor summit`. The pattern is `https://thisweekinreact.com/newsletter/<n>#<section-id>:~:text=<url-encoded words>`.
 
 ### Code, names and abbreviations
@@ -171,6 +171,6 @@ The same principle orders 📦 releases inside a section list.
 
 ## Typography
 
-- The Google Docs Markdown export adds escapes: `\-`, `\!`, `\#`, `\~`, `7\.`, `https\://`. They're harmless in the body and **must never be flagged in reviews** (#302). You don't need to add them when you write MDX yourself.
+- The Google Docs Markdown export adds escapes: `\-`, `\!`, `\#`, `\~`, `7\.`, `https\://`. They're harmless in the body and **must never be flagged in reviews**. You don't need to add them when you write MDX yourself.
 - Curly quotes and apostrophes also come from Google Docs. Both curly and straight are fine.
 - Use `→` for version ranges.
