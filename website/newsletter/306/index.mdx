@@ -1,16 +1,20 @@
 ---
 slug: /306
-title: "This Week In React #306: ..."
+title: "This Week In React #306: UI SDK, Fate, RSC, Next.js, Dragology, Helmet, React Flow, Virtualized, Anatomy | Expo Simulators, Exact, Bottom Sheet, Node-API, Graphite, Navigation, Nitro SQLite, Trading Charts | Solid, webpack, Node.js, Oxlint, npm, pnpm"
 authors: [slorber, janjaworski]
 date: 11-18-2026
 unlisted: true
 ---
 
-Hi everyone!
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋\!
 
-<Todo />
+This week Vercel released the UI SDK: headless behaviors that your agent combines to build your own components. We also have an interesting experiment to stop sending static RSC markup twice. Also various interesting releases such as Fate 2.0, React Flow 13, React Virtualized 10\.
 
-Let's dive in!
+On mobile, Expo launched Cloud Simulators that any agent can drive, and Exact introduced its build and install services.
+
+Elsewhere, Solid 2.0 is finally out. Webpack now handles CSS and HTML natively. Node.js experiments with green threads.
+
+Let's dive in\!
 
 <!-- truncate -->
 
@@ -36,9 +40,32 @@ Don’t know where to start? [Check out this recipe for automated debugging with
 
 ## ⚛️ React {#react}
 
-<Todo />
+![Vercel UI SDK beta](/emails/issues/306/ui-sdk.jpg)
+
+[**Vercel UI SDK beta \- Headless UI behaviors for agents to build components**](https://ui-sdk.dev/docs/core/changelog/introducing-ui-sdk)
+
+This new SDK includes 50+ accessible, composable behaviors like `createPopup`, `createTypeahead` or `createRovingFocus`. Your agent combines them to build your own components. It also ships 50+ unstyled components for React, Vue, Svelte, Solid and Web Components. And agents can use the UI too: with `createAgent()` or WebMCP, they read the page and press, type and pick directly, without screenshots.
+
+It's not the first time we've seen behaviors extracted out of component libraries: React Aria has headless hooks, and Chakra UI has Zag state machines. But this one looks quite promising, in particular for the agentic era.
+
+---
 
 - 💸 [Nexity - open source system to start and grow Next.js + Sanity sites. Includes 9 agents, 16 skills and rules that keep agents on track. MIT](https://github.com/Pagepro/nexity)
+- 👀 [HTML-first React \- An unofficial experiment to stop sending static Server Component markup twice](https://html-first-react.pages.dev/summary/) \- An attempt to solve one of the things I like least about RSCs. On first load, an RSC page sends its static content twice: as HTML, and again in the Flight payload. This experimental React fork adds a flag to remove the static content from the Flight payload. It's tested with patched Next.js and Waku versions, and handles about 3x more requests per second on a big table page.
+- 📜 [How we're using AI to make Next.js more secure](https://nextjs.org/blog/how-were-using-ai-to-make-nextjs-more-secure) \- AI made vulnerabilities cheap to find, leading to 51 advisories this year. Every Next.js PR now gets an adversarial security agent review. Run `npx next@canary upgrade --agent` to let your coding agent move your app to the latest safe release.
+- 📜 [Remix v3: Fast Pages, Thin Ecosystem](https://marmelab.com/blog/2026/11/12/remix-v3-fast-pages-thin-ecosystem.html) \- Comparing Remix v3 to TanStack Start after building the same real estate app in both frameworks. Performance is similar, but the authors still recommend TanStack Start for most projects. What they missed most in Remix is the integration with common tools, like Vite plugins (for Tailwind) and Vitest.
+- 📜 [The Invisible Shape](https://sorenblank.com/craft/the-invisible-shape) \- An interactive deep dive into how sub-menus stay open while your cursor moves diagonally, with a playground comparing every approach. From the Mac's 1980s algorithm and Amazon's patent to the safe triangles of Base UI and React Aria. An OpenUI discussion suggests browsers may eventually handle this algorithm natively.
+- 📜 [When an import becomes a zip bomb: bundle regressions in Next.js](https://bra31k.dev/en/blog/bundle-size-regressions/) \- Introduces CI and CLI tooling to define a per-route bundle size budget for Next.js builds.
+- 📦 [Fate 2.0 \- Modern data client \- Client state, reactive memo fields, GraphQL, persistence and offline mutations](https://fate.technology/posts/whats-new-in-fate-2.0) \- Christoph Nakazawa's Relay-inspired data client now also manages client state and works with existing GraphQL APIs. Paired with Meta's Astryx design system, it fully bets on Async React to deliver a fluid and interruptible user experience. It's not widely adopted yet, but has many interesting ideas and is worth a look.
+- 📦 [Dragology \- Declarative drag-and-drop for React SVG interfaces](https://github.com/declarative-dragging/dragology) \- Pushes the state of the art with its declarative dragging concept. Instead of writing imperative drag handlers, you list the states an element can be dragged to, and the library does the rest: smooth movement, snapping and animations.
+- 📦 [React Virtualized 10.0 \- TypeScript rewrite, function components with hooks, `scrollElement` replaces `WindowScroller`](https://github.com/bvaughn/react-virtualized/releases/tag/10.0.0) \- Rewrite for React 18+, fixing long-standing bugs like StrictMode and React 19 crashes. Comes with a 10-step migration guide and a new docs site.
+- 📦 [React Resizable Panels 4.22 → 4.24 \- Workspace popout windows, external drops, blockable changes, lazy tab content](https://github.com/bvaughn/react-resizable-panels/releases) \- Also, moving a tab no longer reloads its iframes or pauses its media, in browsers that support `element.moveBefore()`, one of my favorite new browser feature that can also benefit 𝕏 [React siblings reconciliation](https://x.com/sebastienlorber/status/1899817895489577043).
+- 📦 [React Helmet Async 3.1 \- Nested `<Helmet>` merging restored on React 19, `<meta charset>` priority, 2 dependencies removed](https://github.com/staylor/react-helmet-async/releases/tag/v3.1.0) \- On React 19, it deduplicates titles and meta tags again, unlike React’s built-in support.
+- 📦 [React Flow 13 \- Split stores and `useNode`/`useEdge` hooks for fewer re-renders, ESM-only, React 18+, automatic dark mode](https://xyflow.com/blog/react-flow-13-major-release) \- TIL that this lib to build Node-based workflow UIs is at \~8% of all React core npm downloads, which the team ties to AI-built apps.
+- 📦 [React Anatomy \- Browser DevTools panel showing a React page's components as 3D layers](https://react-anatomy.com/) \- This is similar to XCode view debugger, but for any React web app. Explodes the page into layers that follow the component tree.
+- 📦 [A2UI 1.0 \- Google protocol for generative UI, with React, Angular, Lit, Flutter and SwiftUI renderers](https://developers.googleblog.com/a2ui-10-build-delightful-fast-reliable-agentic-experiences/)
+- 📦 [React Router 8.5.1 \- `<Await unstable_promise>` built on React's `use()`, fetcher revalidation fixes](https://reactrouter.com/changelog#v851)
+- 🎥 [Remotion \- Make videos programmatically, interactively and agentically](https://www.remotion.dev/blog/make-videos-programmatically-interactively-and-agentically) \- Remotion Studio is now fully interactive: select, drag, trim and crop elements, then switch back to code or to your agent.
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -58,23 +85,78 @@ The race starts [here](https://www.thefastest.app/?utm_source=this_week_in_react
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+![Expo Simulators](/emails/issues/306/expo-simulators.jpg)
+
+**Mobile development is being rebuilt for agents**
+
+Coding agents are becoming the primary users of our development tools, and the infrastructure is being rebuilt around them. The bottleneck is no longer writing code: it's verifying, building, and shipping it.
+
+Expo just launched [Expo Simulators](https://expo.dev/blog/introducing-expo-simulators-cloud-simulators-built-for-agents): cloud iOS Simulators and Android Emulators that any agent can drive. Each session runs on an isolated VM so parallel agents never collide, and streams live to the browser where you can watch or take over.
+
+Key callouts:
+
+- **Proof on the PR** \- every session ends with a recording, screenshots, and logs the agent can attach, so instead of skimming a diff and trusting it looks right, the reviewer watches the change working.
+- **Agents with eyes** \- an agent can run the app it just built, spot visual issues like overflowing labels, and fix them in the same session.
+- **Runs where agents run** \- sessions start from cloud sandboxes, CI, or Linux and Windows machines, and self-terminate on timeout.
+- **Framework-agnostic** \- any app that builds for a simulator runs: Expo, SwiftUI, Flutter, Unity, or anything else.
+
+Exact, the new agent-native Rust framework from Expo, introduced two services in alpha: [Exact Build](https://exact.appdrop.app/), a high-speed Linux-based iOS build service, and [AppDrop](https://appdrop.app/), which signs and installs any iOS app. Together with Expo Simulators they close the loop: an agent takes an issue, writes the code, builds it, verifies it on a cloud simulator, and ships it to your phone, while humans move up to reviewing evidence.
+
+Related resources:
+
+- 📜 [How to set up agentic workflows on Expo](https://expo.dev/blog/how-to-set-up-agentic-workflows)
+- 🎥 [Expo Simulators launch video](https://youtu.be/QRWdR6Ng7cc)
+
+---
 
 - 💸 [build mode - Read this before deleting your AGENTS.md](https://go.posthog.com/twir-nov18)
 - 💸 [Bitrise - The complete guide to React Native OTA updates in 2026 and beyond.](https://bitrise.io/guides/react-native-ota-updates-complete-guide?utm_campaign=cp_guide_the-complete-guide-to-react-native-ota-updates_all_2026-11-09&utm_source=This%20Week%20in%20React%20Native&utm_medium=newsletter-november-18)
+- 💬 [RFC: Node-API addons in React Native \- `dlopen` from `react-native/node-api`, stable ABI, prebuilt binaries](https://github.com/react-native-community/discussions-and-proposals/pull/1030)
+- 📜 [Hello, Graphite: WebGPU](https://wcandillon.dev/article/hello-graphite-webgpu) \- One shared Dawn device for Skia, Three.js, and ML: draw 3D scenes on Skia canvases, use Skia art as Three.js textures, and run models on camera frames.
+- 📜 [React Native Form Validation in 2026: Step-by-Step Tutorial with Example](https://formisch.dev/blog/react-native-form-validation/) \- On the web the browser handles forms for you. React Native doesn't. This tutorial walks through the full setup with Formisch and Valibot.
+- 📜 [Migrating from React Native to Swift and Kotlin, One Feature at a Time – the Gobi Story](https://swmansion.com/blog/react-native-to-native-migration-gobi/) \- Software Mansion's practical follow-up to their stack-choice guide. Moving with React islands, agent-written rewrites, and screenshot-parity checks.
+- 📦 [Bottom Sheet 1.0 \- First stable, unified modal dismissal across iOS, Android, web](https://swmansion.com/changelog/react-native-bottom-sheet-1-0-0/)
+- 📦 [React Navigation 7.25 \- `GenericNavigation` type, nested route types fix in linking](https://github.com/react-navigation/react-navigation/releases/tag/%40react-navigation%2Fcore%407.25.0)
+- 📦 [React Navigation Bottom Tabs 7.22 \- `tabBarTransparent` option, web focus-ring fix](https://github.com/react-navigation/react-navigation/releases/tag/%40react-navigation%2Fbottom-tabs%407.22.0)
+- 📦 [Screen Choreography 0.9 \- Simpler shared-transition setup, tab-to-stack pairing, fewer re-renders](https://github.com/DorianMazur/react-native-screen-choreography/releases/tag/v0.9.0)
+- 📦 [Enriched Markdown 1.2 \- Code block panels with copy button, link pills, LaTeX math, streaming repair](https://github.com/software-mansion/enriched-markdown/releases/tag/v1.2.0)
+- 📦 [Argent 0.33 \- Drive native Mac apps by default, leaner agent prompts, profiler fixes](https://github.com/software-mansion/argent/releases/tag/v0.33.0)
+- 📦 [Boost 2.1 \- React Native 0.89 and Metro 0.83 support](https://github.com/kuatsu/react-native-boost/releases/tag/v2.1.0)
+- 📦 [Ease 0.10 \- iOS Swift Package Manager support](https://github.com/appandflow/react-native-ease/releases/tag/v0.10.0)
+- 📦 [Trading Charts \- Native GPU candlestick charts with streaming data and indicators](https://kirill3333.github.io/react-native-trading-charts/) \- Unlike most charting libraries based on Skia, this one uses direct GPU rendering to maximize performance.
+- 📦 [Backtick \- A toolchain for fully server-driven React Native apps](https://github.com/backtickjs/backtick)
+- 📦 [Screen Time \- Screen Time API, app blocking and schedules on iOs and Android](https://github.com/magrinj/expo-screen-time)
+- 📦 [Rozenite 2.6 \- Keychain storage adapter, SDK 58 support, Nitro timestamp fix](https://github.com/callstackincubator/rozenite/releases/tag/v2.6.0)
+- 📦 [RN WebGPU 0.22 \- Prebuilt Dawn binaries on Android, macOS compile/shutdown fixes](https://github.com/wcandillon/react-native-webgpu/releases/tag/v0.22.0)
+- 📦 [Sentry 8.36 \- Android SDK start fix, Metro symbolication fallback](https://github.com/getsentry/sentry-react-native/releases/tag/8.36.0)
+- 📦 [Simlock 0.8 \- Auto-enroll plugged-in phones, foldable streaming, one shared capture per device](https://github.com/callstackincubator/simlock/releases/tag/v0.8.0)
+- 📦 [Uniwind 1.14 \- `platform-color()` system colors, text break props, native style caching](https://github.com/uni-stack/uniwind/releases/tag/v1.14.0)
+- 📦 [Nitro SQLite 10.4 \- Drizzle driver, SEE encryption, statement caching, Expo config plugins](https://github.com/margelo/react-native-nitro-sqlite/releases/tag/v10.4.0)
+- 🤖 [Expo Explore \- Experimental tool mapping every screen of your app, with visual PR reviews](https://github.com/expo/explore)
+- 🤖 [LLP \- Linked Literate Programming, keep humans in markdown, let AI write the code, the methodology behind Exact](https://github.com/ccheever/llp)
+- 🤖 [RN AI 0.13 \- Apple Core AI and Gemini Nano packages, all providers on AI SDK 7](https://github.com/callstackincubator/ai/releases/tag/v0.13.0)
+- 🎥 [Beto \- Is React Native Still Worth Learning in 2027?](https://www.youtube.com/watch?v=fnvx2_ItPLM)
+- 🎙️ [RNR 377 \- A11y and Animations](https://infinite.red/react-native-radio/rnr-377)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [Node.js green threads \- Experimental `node:green_threads` PR, cheaper than workers, built-in CPU and memory limits](https://www.jasnell.me/posts/green-threads-in-node) \- Early but promising middle ground between worker threads and `vm`, with constraints to consider such as no access to Node.js APIs.
+- 💬 [npm RFC \- Package Variants](https://github.com/npm/rfcs/pull/928) \- Now that package managers no longer run install scripts by default, a new `variants` field would let package managers pick the right prebuilt binary and link it directly, with no install script and no Node.js shim.
+- 📣 [Webpack \- CSS and HTML Are Built In](https://webpack.js.org/blog/2026-11-16-css-and-html-are-built-in/) \- Webpack 5.109 unlocked native CSS, CSS Modules and HTML entries. Various loaders or plugins are now deprecated.
+- 📜 [Fixing a WebKit bug to see if promises are made of train tracks](https://alistair.sh/thenables) \- Deep dive into a Bun/Safari/JSC bug. Explains thenables, why "resolved" isn't a promise state, and why TypeScript has no `Promise<T,E>` type.
+- 📜 [Your JS Error Is Lying to You](https://blog.gaborkoos.com/posts/2026-11-12-Your-JS-Error-Is-Lying-to-You/) \- All the things to consider when dealing with JS errors, covering cause chains, stacks, serialization, cycles, aggregates and more.
+- 📦 [Solid 2.0 \- Async reactive graph, Server Functions in core, diagnostics for agents, smaller API, SolidStart retired, framework-agnostic Vite plugin](https://www.solidjs.com/blog/solid-2-0-the-long-hold/) \- Computations can now return promises or async iterators, and Solid handles loading states, race conditions and optimistic rollbacks for you.
+- 📦 [Oxlint 1.92 \- Faster type-aware linting with tsrs](https://oxc.rs/blog/2026-11-17-faster-type-aware-linting-with-tsrs) \- The new opt-in tsrs backend makes type-aware linting up to 7x faster, with up to 75% less memory.
+- 📦 [pnpm 12.20 → 12.22 \- `globalPackagesConfig`, `pnpm why --ranges`, `pnpm store add` for tarball and git dependencies, lockfile v13 improvements and security fixes](https://pnpm.io/blog?type=releases)
+- 📦 [unkernel \- Real Linux kernel compiled to WebAssembly, runs unmodified Linux programs in Node.js and browsers](https://github.com/pithings/unkernel)
+- 📦 [type-fest 6.0 \- 120 new types, requires TypeScript 6 and `exactOptionalPropertyTypes`, performance and correctness fixes](https://github.com/sindresorhus/type-fest/releases/tag/v6.0.0)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
-
-![alt](/emails/issues/ISSUENUMBER/meme.jpg)
+![pnpm 12](/emails/issues/306/meme.jpg)
 
 See ya! 👋
