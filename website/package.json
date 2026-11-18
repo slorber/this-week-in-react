@@ -20,7 +20,7 @@
     "@docusaurus/plugin-vercel-analytics": "3.10.0",
     "@docusaurus/preset-classic": "3.10.0",
     "@docusaurus/theme-common": "3.10.0",
-    "@docusaurus/theme-live-codeblock": "3.10.0",
+    "@docusaurus/theme-live-codeblock": "3.10.1",
     "@mdx-js/react": "^3.1.1",
     "@slorber/twitter-lite": "^1.1.2",
     "@vercel/edge": "^1.2.2",
