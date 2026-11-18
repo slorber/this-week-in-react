@@ -57,7 +57,7 @@ Releases (curator guide):
 
 New projects, or projects featured for the first time (curator guide): replace the keywords with an **objective project description**, inspired by the GitHub repo description, the landing page or the SEO tags. Format it as a release even if there's an introduction blog post.
 
-Articles (curator guide): if a title is too long, click-bait or weirdly capitalized, rewrite it so that all titles are consistent.
+Articles (curator guide): if a title is too long, click-bait or weirdly capitalized, rewrite it so that all titles are consistent. **Title case isn't weird capitalization**: keep the original title case of an article or announcement, like webpack's "CSS and HTML Are Built In", instead of lowercasing it to match the other items, and don't flag it in reviews. Rewrite only truly odd casing, like all caps or random capitals.
 
 Security items:
 
