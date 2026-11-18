@@ -39,6 +39,7 @@ The editor drafts in Google Docs, exports to Markdown, and pastes a section or t
 Ignore:
 
 - The Google Docs escapes (`\-`, `\!`, `\#`, `\~`, `7\.`, `https\://`). Never mention them.
+- Anything a formatter like Prettier or Oxfmt fixes on its own, like an extra space at the end of a sentence. Never mention it.
 - The 💸 sponsor blocks and links, and the 🤭 Fun section.
 
 Check:
