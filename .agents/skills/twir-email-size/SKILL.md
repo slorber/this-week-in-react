@@ -64,7 +64,7 @@ Cheapest wins first:
 1. **Merge release series**: several releases of one project become one `→` range link (see "Link budget" in `twir-editorial-line`). This saves one link per extra release, without losing content.
 2. **Inline links in comments** that aren't essential. Each one costs a full link.
 3. **Items carrying several links**, and recaps.
-4. **Minor releases** with little to highlight: patches, small libraries.
+4. **Minor releases** with little to highlight: patches with only fixes, small libraries. A patch with a new API, even an unstable one, has something to highlight. Age is never a reason to cut a release: if a newer one shipped since, merge them into a range (1.).
 5. **Weak items in the longest lists.** React Native is usually the longest list, and Other is trimmed hard anyway.
 6. **Items the editorial line filters out**: niche or opinion articles, experiments, conference replays (see "What to filter out" in `twir-editorial-line`).
 

@@ -26,7 +26,11 @@ Free and platform-agnostic:
 The React section is about React itself:
 
 - A **"How ChatGPT Intelligent UI works"** teardown was cut from #302: it describes a React-style reconciler, but it isn't React.
-- **OpenUI** was cut twice on #302 (from Other, then from React), even with its React bindings.
+
+**Rule: a framework-agnostic project with an official React SDK or renderer fits the React section.** Its React package makes it relevant to React devs. Judge it on its merit, like any other item.
+
+- On #306, the editor kept **A2UI 1.0** (Google's generative UI protocol) in React: it ships an official React renderer, next to Angular, Lit, Flutter and SwiftUI ones.
+- On #302, the editor cut **OpenUI** twice (from Other, then from React). That was a call on that item, not a rule against projects with React bindings.
 
 The Other section is kept short:
 
@@ -108,6 +112,8 @@ Severe security advisories go first among the news.
 - Past a month, tracked news is probably old: flag it and let the editors decide.
 
 Check past coverage before calling something old. On #303, neither Biome 2.6 (blog post from two weeks earlier, not featured yet) nor a Video.js post (three weeks old, Video.js never featured) was too old.
+
+**Rule: never call a missed release weak or stale only because of its age.** Judge it on its content, like a fresh one. A new API, even an unstable one, is reason enough to feature a patch release. If a newer patch shipped since, suggest a range (see "Link budget"), not a cut. On #306, the editor kept React Router 8.5.1, three weeks old: no issue featured it yet, and it adds a new unstable API (`<Await unstable_promise>`, built on React's `use()`).
 
 ## Spotting AI-generated content
 
