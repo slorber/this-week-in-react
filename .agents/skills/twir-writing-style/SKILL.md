@@ -10,7 +10,7 @@ Same sources as the `twir-editorial-line` skill: **rules** come from the editor,
 ## Wording rules
 
 - **Simple language, concise, to the point, no fluff words** (curator guide).
-- **Never use "plus" as a connector** ("SSR, plus server functions"). The editor says it reads like AI-generated content. Use "with", "and", or restructure the sentence.
+- **Never use "plus" as a connector** ("SSR, plus Server Functions"). The editor says it reads like AI-generated content. Use "with", "and", or restructure the sentence.
 - **One short, plain sentence** that says why the item matters to React devs. The editor rejected dense, jargon-heavy lines several times.
 - **Never copy an announcement's sentences or verbosity.** Compress them into keywords (titles) or your own short sentence (comments).
 - **Call out the React angle** of significant releases rather than generic features. For the R3F v10 alpha: works with React 19 `<Activity>`, StrictMode no longer rebuilds the Canvas.
@@ -57,7 +57,7 @@ Releases (curator guide):
 
 New projects, or projects featured for the first time (curator guide): replace the keywords with an **objective project description**, inspired by the GitHub repo description, the landing page or the SEO tags. Format it as a release even if there's an introduction blog post.
 
-Articles (curator guide): if a title is too long, click-bait or weirdly capitalized, rewrite it so that all titles are consistent.
+Articles (curator guide): if a title is too long, click-bait or weirdly capitalized, rewrite it so that all titles are consistent. **Title case isn't weird capitalization**: keep the original title case of an article or announcement, like webpack's "CSS and HTML Are Built In", instead of lowercasing it to match the other items, and don't flag it in reviews. Rewrite only truly odd casing, like all caps or random capitals.
 
 Security items:
 
@@ -82,6 +82,7 @@ Observed: titles have a median length of 70 characters, and 90% are under 110 (#
 
 - Wrap APIs, components, packages, file names and config keys in backticks: `<Activity>`, `"use cache"`, `gradle.properties`, `react-devtools-cdt-mcp`. **This is mandatory for anything that looks like a JSX tag**: MDX breaks on a bare `<Tag>`.
 - Use the names projects use themselves: "React Native", "Expo SDK 58", "Next.js", "TypeScript".
+- **Technical terms keep the case of their official docs**, and are usually capitalized, especially in React. The React docs [capitalize React concepts](https://github.com/reactjs/react.dev/pull/6712): Hooks, Effects, Transitions, Actions, Server Components, Client Components, Server Functions, View Transitions, Activity, Suspense boundaries. We do too, in titles and comments: never "server functions". Plain words stay lowercase, as in the docs: component, ref, context. When a blog post mixes cases, follow the project's docs. For Solid 2.0, the editor kept "Server Functions in core" capitalized, as in parts of Solid's own post. In reviews, never flag these capitalized terms as mistakes: they aren't the "weirdly capitalized" titles that need a rewrite.
 - Common abbreviations: RSC, RN, RNW (React Native Web), R3F (React Three Fiber), RNav (React Navigation). They're mostly for the issue title and the announcement tweet, less for item text.
 
 ## Emoji palette
