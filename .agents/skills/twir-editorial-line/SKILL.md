@@ -28,6 +28,10 @@ The React section is about React itself:
 - A **"How ChatGPT Intelligent UI works"** teardown was cut from #302: it describes a React-style reconciler, but it isn't React.
 - **OpenUI** was cut twice on #302 (from Other, then from React), even with its React bindings.
 
+Headless UI libraries are in scope:
+
+- On #306, the editor kept **UI SDK** by Vercel Labs, a library of headless UI behaviors for agents, because behavior libraries are headless.
+
 The Other section is kept short:
 
 - On #302, the editor went from the 20 items drafted for him to about 10. He kept big releases (TypeScript 7.1 beta, tsrs, webpack, Rsdoctor, Node.js LTS), a few strong articles and one exciting PR.
