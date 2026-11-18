@@ -1,6 +1,6 @@
 ---
 name: twir-issue-images
-description: Rules and commands for This Week In React (TWIR) issue images - email-safe JPEG conversion, size limits, choosing a headline image, sponsor creatives, Fun memes, naming, MDX syntax and the template placeholder. Use whenever you add, convert, check or choose an image for a TWIR issue.
+description: Rules and commands for This Week In React (TWIR) issue images - email-safe JPEG conversion, size limits, choosing a headline image, sponsor creatives, Fun memes, screenshots of X posts, naming, MDX syntax and the template placeholder. Use whenever you add, convert, check, choose or screenshot an image for a TWIR issue, including when given an X post URL for a meme.
 ---
 
 # TWIR issue images
@@ -30,6 +30,17 @@ Where to find one:
 - a screenshot of the key code or feature.
 
 The alt text is the headline title, e.g. `![React Native 0.88](/emails/issues/302/react-native-088.jpg)`.
+
+## Screenshots of X posts (memes)
+
+**When the editor gives you an X post URL for a meme, take the screenshot yourself.** Save it as the meme image (see "Rules"), then convert it (see "Converting").
+
+- **Browser**: use your own browser. Use the editor's browser only when yours can't show the post, and only temporarily: open your own tab, close it when done, and change none of the editor's settings.
+- **Dark mode**: emulate the dark color scheme, or switch the theme of your own browser session.
+- **Capture the post only**: the author's name, avatar and **@username** (always), the text and the media. Not the date and stats bar, nor the action bar below it.
+- **Clean up the DOM before capturing**: remove the follow, subscribe or boost button, and the top-right menu and Grok buttons. Remove trailing line breaks at the end of the text, to reduce the height.
+- **Padding**: the same small padding on all four sides (about 16px), in the dark background color. Add it with CSS before the capture, or with `magick … -bordercolor black -border 16` after a tight crop.
+- **Check the result**: look at the image before saving it. Nothing cut off, nothing extra, padding even on every side.
 
 ## Converting
 

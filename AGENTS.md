@@ -44,7 +44,7 @@ Detailed instructions live in [Agent Skills](https://agentskills.io) under `.age
 | [`twir-link-context`](.agents/skills/twir-link-context/SKILL.md) | turn raw or messy links into grouped, deduplicated draft items with 🤖 context sub-items for the editors |
 | [`twir-email-size`](.agents/skills/twir-email-size/SKILL.md) | review or preformat anything for an issue (proactively), or get asked about Gmail clipping or the link budget |
 | [`twir-issue-file`](.agents/skills/twir-issue-file/SKILL.md) | edit an issue's MDX, add authors, build, commit, publish, debug a deploy |
-| [`twir-issue-images`](.agents/skills/twir-issue-images/SKILL.md) | add, convert, check or choose an image for an issue |
+| [`twir-issue-images`](.agents/skills/twir-issue-images/SKILL.md) | add, convert, check or choose an image for an issue, or screenshot an X post for a meme |
 | [`twir-announcement-tweet`](.agents/skills/twir-announcement-tweet/SKILL.md) | draft the weekly announcement tweet |
 
 **The editorial line is public**: [`website/src/pages/editorial-line.mdx`](website/src/pages/editorial-line.mdx), served at https://thisweekinreact.com/editorial-line. It's written for readers too, for example to explain why a submitted link doesn't fit. It's the single source of truth: the `twir-editorial-line` skill only adds internal examples and measured patterns on top of it.
