@@ -12,6 +12,7 @@ Same sources as the `twir-editorial-line` skill: **rules** come from the editor,
 - **Simple language, concise, to the point, no fluff words** (curator guide).
 - **Never use "plus" as a connector** ("SSR, plus Server Functions"). The editor says it reads like AI-generated content. Use "with", "and", or restructure the sentence.
 - **One short, plain sentence** that says why the item matters to React devs. The editor rejected dense, jargon-heavy lines several times.
+- **Write like the editor: short, simple sentences, as a non-native English speaker would.** Prefer two short sentences over one with a relative clause. Name the thing instead of using a vague "it": "a flag to remove the static content from the Flight payload", not "a flag that leaves it out of the payload".
 - **Never copy an announcement's sentences or verbosity.** Compress them into keywords (titles) or your own short sentence (comments).
 - **Call out the React angle** of significant releases rather than generic features. For the R3F v10 alpha: works with React 19 `<Activity>`, StrictMode no longer rebuilds the Canvas.
 - **Never quote a number out of context.** On #302, a "2.9% lower cost" figure was quoted from a post that said the whole-app numbers weren't attributable to the work being described.
