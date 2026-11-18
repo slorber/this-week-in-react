@@ -134,10 +134,14 @@ In production builds, a remark plugin rewrites `/emails/...` image URLs (and the
 
 ## Commit and publish
 
-- **Never commit or push unless asked.** Drafting and reviews happen in chat first (see `AGENTS.md`).
-- **Maintainers** commit issue changes directly to `main`. The commit message is just the issue number (`302`), and several commits with the same number per issue are normal.
-- **Other contributors** open a pull request instead.
-- Vercel deploys every push to `main`. The issue stays hidden until `unlisted: true` is removed: the maintainer does it at the very end, once they have reviewed everything.
+**Rule: one pull request per issue.** Reviewing an issue and preparing its MDX always happen in one dedicated pull request for the whole issue.
+
+- **Title it with the issue number** (`306`). Before creating it, look for an open one: `gh pr list --search "306 in:title"`. Reuse it, and never open a second one for the same issue.
+- **Open it when you first write to the issue's MDX**, which happens only when asked (see `AGENTS.md`). Then commit and push each change to it without asking.
+- **Commit messages are just the issue number** (`306`). Several commits with the same number are normal.
+- **The editor merges it** and publishes the issue by removing `unlisted: true`, at the very end, once they have reviewed everything. Don't do either yourself unless asked.
+- **After the merge and the publication**, fixes go directly to `main`, still with the issue number as the commit message.
+- Vercel deploys every push to `main`. The issue stays hidden until `unlisted: true` is removed.
 
 ### Deploy troubleshooting
 

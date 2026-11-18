@@ -58,6 +58,6 @@ Only when asked:
 1. Write the content into `website/newsletter/<n>/index.mdx` following `twir-issue-file`. Always drop `\#` in the frontmatter title, and feel free to drop the other Google Docs escapes.
 2. Add and convert the images (`twir-issue-images`).
 3. Run the build check and the email size check (`twir-email-size`).
-4. Commit only if asked. Maintainers use the issue number as the commit message.
+4. Commit and push to the issue's pull request, with the issue number as the commit message (see "Commit and publish" in `twir-issue-file`).
 5. The editor may ask for the announcement tweet: see `twir-announcement-tweet`.
 6. At the very end, once they have reviewed everything, the maintainer publishes the issue by removing `unlisted: true` from the frontmatter. Don't do it yourself unless asked.
