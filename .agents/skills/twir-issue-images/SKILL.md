@@ -47,7 +47,7 @@ How it worked in the built-in browser of the Claude desktop app, logged out:
 
 - The logged-out page has no `data-testid`. The first `<article>` is the post: its first child holds the header, an optional "Show translation" row, the text, the media and the date row, and its second child is the action bar. Remove the translation row too.
 - Move the `<article>` into a new `position: fixed; inset: 0` black overlay, inside a wrapper with the padding, then capture the wrapper's region.
-- Hide the page scrollbar (`document.documentElement.style.overflow = 'hidden'`). The overlay doesn't cover it, and it shows as a grey bar on the right edge (#62).
+- Hide the page scrollbar (`document.documentElement.style.overflow = 'hidden'`). The overlay doesn't cover it, and it shows as a grey bar on the right edge.
 - Captures are at most 800px wide, whatever the viewport size. Emulate a 1000px-wide viewport, scale the wrapper with CSS `zoom` until it fills that width, and capture the full 800px width.
 - Convert with `-background black`, not white.
 
