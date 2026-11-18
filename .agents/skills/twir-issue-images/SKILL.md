@@ -41,13 +41,14 @@ The alt text is the headline title, e.g. `![React Native 0.88](/emails/issues/30
 - **Clean up the DOM before capturing**: remove the follow, subscribe or boost button, and the top-right menu and Grok buttons. Remove trailing line breaks at the end of the text, to reduce the height.
 - **Padding**: the same small padding on all four sides (about 16px), in the dark background color. Add it with CSS before the capture, or with `magick … -bordercolor black -border 16` after a tight crop.
 - **Width: at least 800px.** Capture larger when you can: the conversion resizes it down to 1000px.
-- **Check the result**: look at the image before saving it. At least 800px wide, nothing cut off, nothing extra, padding even on every side.
+- **Check the result**: look at the image before saving it. At least 800px wide, nothing cut off, nothing extra, padding even on every side. Then check that each edge is pure black, since a thin grey bar is easy to miss by eye: `magick in.png -crop 1x<height>+<width-1>+0 +repage -colorspace gray -format '%[max]' info:` must print `0`, and the same for the other three edges.
 
 How it worked in the built-in browser of the Claude desktop app, logged out:
 
 - The logged-out page has no `data-testid`. The first `<article>` is the post: its first child holds the header, an optional "Show translation" row, the text, the media and the date row, and its second child is the action bar. Remove the translation row too.
 - Move the `<article>` into a new `position: fixed; inset: 0` black overlay, inside a wrapper with the padding, then capture the wrapper's region.
-- The capture is limited to the pane's width. Scale the wrapper with CSS `zoom` until it fills the viewport width, and check that the capture reaches 800px. If it doesn't, ask the editor to widen the browser pane.
+- Hide the page scrollbar (`document.documentElement.style.overflow = 'hidden'`). The overlay doesn't cover it, and it shows as a grey bar on the right edge (#62).
+- Captures are at most 800px wide, whatever the viewport size. Emulate a 1000px-wide viewport, scale the wrapper with CSS `zoom` until it fills that width, and capture the full 800px width.
 - Convert with `-background black`, not white.
 
 ## Converting
