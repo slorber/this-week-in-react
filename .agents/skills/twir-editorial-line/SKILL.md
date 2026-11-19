@@ -93,14 +93,16 @@ Rule (curator guide): roughly follow the emoji ordering, for a consistent readin
 
 Observed usual order (#290–#302):
 
-1. 💸 sponsored link(s)
+1. 💸 the first sponsored link
 2. News and weak signals: 🔐 security, 📣 announcements, 📅 events, 🐦/🦋 social posts, 👀 PRs and previews, 💬 RFCs and discussions, 📖 docs, 📊 benchmarks and surveys
 3. 📜 articles
-4. A second 💸 slot, sometimes
+4. 💸 the second sponsored link, when there is one
 5. 📦 releases, most impactful first (see "Ranking by impact" in `twir-writing-style`)
 6. 🤖 AI tools, 🎥 videos, 🎙️ podcasts
 
 Severe security advisories go first among the news.
+
+Rule (editor): **in the ⚛️ React and 📱 React Native lists, a second 💸 link goes between the 📜 articles and the 📦 releases**, never at the top next to the first one. On #306, the second 💸 link of the React Native list sat at the top with the first one, and the editor moved it after the articles.
 
 ## Freshness
 
