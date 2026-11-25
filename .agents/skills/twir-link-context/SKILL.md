@@ -92,7 +92,7 @@ Every sub-item is `- 🤖 <type emoji> <text>`, nested under its item, on one li
 
 | Type | When | Content |
 | --- | --- | --- |
-| ✅ / 🤔 / ❌ | Always | Keep / judgment call / suggest cut, with a one-line reason based on the editorial line. A 👀 PR that isn't concrete yet gets `🤔 Postpone to a later issue: <what would make it ready>`, a score lowered by 1, and a ⚠️ saying why it's too early (see "Pull requests" in `twir-editorial-line`) |
+| ✅ / 🤔 / ❌ | Always | Keep / judgment call / suggest cut, with a one-line reason based on the editorial line. A 👀 PR that isn't concrete yet gets `🤔 Postpone to a later issue: <what would make it ready>`, a score lowered by 1 but never below 2/5, and a ⚠️ saying why it's too early (see "Pull requests" in `twir-editorial-line`) |
 | 🎯 | Always | The group in its list (news, articles, releases, AI tools, media), and the section you'd suggest if it seems to belong elsewhere |
 | 💯 | Always | The score, `n/5` (scale below), and the space tier it implies |
 | 🗑️ | Every 📜 article | The slop score, `n/5`, and the signals seen (see "Spotting AI-generated content" in `twir-editorial-line`) |
