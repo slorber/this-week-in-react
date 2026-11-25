@@ -147,7 +147,7 @@ Rules:
 - When Jan co-authors (check `authors` in the frontmatter), it opens with: `Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋!`.
 - It **always ends with `Let's dive in!`**. Include that line in every intro draft.
 - In between, it covers the week's biggest stories: React first, then mobile, then Other. Most often that's one short paragraph per section, but it's not mandatory.
-- It's **skimmable**: short sentences, one per story, are the norm, not a flaw (see "Wording rules").
+- It's **skimmable**: readers scan it, they don't read it as prose. Short sentences, one per story, are the norm, not a flaw (see "Wording rules"). On #307, the editor kept "TanStack Query shared its v6 roadmap. Next.js is experimenting with a Go server." as two sentences.
 
 Observed:
 
