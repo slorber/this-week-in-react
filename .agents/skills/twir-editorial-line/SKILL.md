@@ -187,6 +187,8 @@ Watch the link count. Gmail clips emails over about 102KB of HTML, which hides t
 
 **Rule: look for the canonical resource.** A social post, GitHub release notes or a changelog often isn't one: search for the official blog post or announcement of the same news. Then pick the main link on two criteria that weigh the same: being canonical, and the most polished reading experience. A good GitHub release or social post beats a poor blog post, and a clear write-up can beat a raw changelog, a long spec or a sprawling thread. On #303, the editors featured the Biome 2.6 blog post over an X post, and the Firefox 159 MDN release notes over a Bluesky post.
 
+**Rule: feature the original, never a repost.** A post republished on another site (a company blog, Medium, dev.to, a newsletter) is a duplicate of its canonical version, and a repost of a post we already featured is already covered. On #307, a certificates.dev repost of Aurora Scharff's "Coordinating Optimistic Updates" was a shortened copy of the post featured in #294.
+
 ## Judging an item: checklist
 
 1. Did I read it in full (see `twir-reading-links`)? If not, say so.

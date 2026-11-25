@@ -50,6 +50,8 @@ If you could only use a summarizing tool, say so.
 
 **Bot-protected pages** (mattrothenberg.com was behind a Cloudflare challenge on #302): use a real browser.
 
+**Find the canonical version of every post.** Check the `<link rel="canonical">` tag, and the text itself, at the top or the bottom: "Originally published on…", "This post first appeared on…". The tag isn't enough: reposts often point it to themselves. On #307, the certificates.dev copy of Aurora Scharff's post only said "Originally published on aurorascharff.no" in its first line. When you find an original, read it too, and compare both.
+
 ## X / Twitter
 
 x.com can't be read without logging in. The fxtwitter API is a public mirror that works without an account:
