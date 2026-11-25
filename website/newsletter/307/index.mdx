@@ -35,7 +35,24 @@ AI-generated code can introduce vulnerabilities that are easy to miss in a pull 
 ## ⚛️ React {#react}
 
 - 💸 [Nexity - Next.js + Sanity with AI workflows built in. 16 skills, 9 agents, project-specific rules and read-only code reviewers. MIT.](https://github.com/Pagepro/nexity)
+- 🐦 [Ricky Hanlon leaves Meta after 8 years on React](https://x.com/rickyfm/status/2125593907048091950) \- Most of the React core team has already left Meta. He will keep working on React at a new company.
+- 🔐 [React Router vulnerabilities \- 4 high and 3 moderate advisories, upgrade to 7.18.6 or 8.5.2](https://github.com/remix-run/react-router/security)
+- 🔐 [React2STEAL \- Automated campaign exploits unpatched React2Shell servers from hijacked GitHub accounts](https://opensourcemalware.com/blog/react2steal-github-actions) \- At least 1,281 servers still on vulnerable React 19.0–19.2 or Next.js versions were hit, and their env vars, `.env` files and API keys were committed to public GitHub repos. If you're still on a vulnerable version, upgrade and rotate your secrets.
+- 👀 [Next.js PR \- Switchyard, an experimental Go server in front of `next start`](https://github.com/vercel/next.js/pull/101695) \- For now, it only forwards requests to Node. Routing could move to it over time, and requests to the experimental [Go Route Handlers](https://levelupgo.dev/blog/nextjs-go-route-handlers) would skip Node entirely.
+- 💬 [TanStack Query v6 roadmap](https://github.com/TanStack/query/discussions/12669) \- Planning a small major with few breaking changes. ESM-only, React 19 minimum to use `use()` for Suspense, scheduler using microtasks, deprecated APIs removed, stable `streamedQuery`. Considering the removal of `enabled` in favor of `skipToken`.
+- 📜 [React Testing Library is faster when it's part of the DOM](https://sigh.dev/posts/vibecoding-faster-react-tests/) \- What if a DOM implementation had built-in Testing Library queries? `@ctrl/dom` is a drop-in replacement for `jsdom` that runs existing RTL test suites 32–54% faster. Node 26+ and React 19 only.
+- 📜 [Your Tools are Hiding npm Audits from You](https://www.zachleat.com/web/npm-audit-report/) \- A fresh Next.js app reports 0 vulnerabilities. But its 139 dependencies bundled in `next/dist/compiled` have 3 critical and 19 high ones, which `npm audit` can't see.
+- 📜 [React Forms Beyond onSubmit](https://www.gmoniava.com/blog/react-forms-beyond-onsubmit) \- Compares `onSubmit`, `onSubmit` with `useTransition`, and the `action` prop on a newsletter subscription form, with a summary table.
+- 📜 [On Drawing Icons](https://pierre.computer/writing/on-drawing-icons) \- The Figma-to-React pipeline behind Pierre icons.
 - 💸 [The Joy of React - Build an intuition for how React really works through an interactive learning experience. On sale for Black Friday!](http://joyofreact.com/?couponCode=TWIR)
+- 📦 [Pierre Words \- Streaming Markdown renderer written in WebAssembly, with a React renderer](https://diffs.com/words) \- Built for streamed AI replies. Its own benchmark against Streamdown highlights 6x less streaming work, 20x less memory, and a 65% smaller React renderer.
+- 📦 [Talata 0.4 \- Drop-in faster replacement for remark \- Now parses MDX](https://github.com/lxsmnsyc/talata/releases/tag/talata%400.4.0) \- It claims to parse MDX 4x faster than `remark-mdx`.
+- 📦 [Redux Toolkit 2.15 \- Per-store RTK Query runtime, `initiate()` promises resolve with their own result, function `pollingInterval`, `startReason`, readable type hovers](https://github.com/reduxjs/redux-toolkit/releases/tag/v2.15.0)
+- 📦 [Material UI 9.6 \- Experimental `unstable_enhanceDensity` theme enhancer, focus visible customization](https://github.com/mui/material-ui/releases/tag/v9.6.0)
+- 📦 [Styled Components 6.7 \- `configureServerStyles()` sets stylis plugins for every Server Component, styles no longer lost under concurrent requests](https://github.com/styled-components/styled-components/releases/tag/styled-components%406.7.0)
+- 📦 [Unhead 3.5 \- 23% faster hydration, experimental lazy head mode](https://github.com/unjs/unhead/releases/tag/v3.5.0)
+- 📦 [ESLint Plugin React “You Might Not Need An Effect” 1.2 → 1.3 \- Broader derived state detection, third-party effect wrappers, context values treated as props, TypeScript-only syntax support](https://github.com/nickjvandyke/eslint-plugin-react-you-might-not-need-an-effect/releases)
+- 📦 [react-zoom-pan-pinch 4.3 → 4.4 \- Minimap, rubber-band overscroll, fix many long-standing issues](https://github.com/BetterTyped/react-zoom-pan-pinch/releases)
 
 <SubscribeFormEmbed placement="middle" />
 
@@ -55,23 +72,69 @@ AI-generated code can introduce vulnerabilities that are easy to miss in a pull 
 
 ## 📱 React-Native {#react-native}
 
-<Todo />
+![Reanimated 4.8](/emails/issues/307/reanimated-48.jpg)
+
+[**Reanimated 4.8 \- Shared Element Transitions stable**](https://swmansion.com/blog/shared-element-transitions-in-reanimated-4-8-0/)
+
+One of the most anticipated features is finally stable, and enabled by default\! Tag two views with the same `sharedTransitionTag`, put them in two `<SharedTransitionBoundary>` components, and when the target boundary becomes active, the view travels to it. Think of an album cover moving from a song list into the now-playing screen. It's a small detail, but it makes transitions feel much more natural.
+
+Transitions are no longer tied to navigation, so they also work between tabs, or between two views on the same screen. The moving view is the actual view, not a snapshot, so its content keeps running during the transition. On iOS, it even follows your finger during a swipe-back gesture. When the two views have different children, the new `SharedTransition.fadeContent()` modifier fades them out and in.
+
+Other key highlights include:
+
+- **Animated text** \- Support for `<Animated.Text>{sharedValue}</Animated.Text>`. The UI thread updates text without any React re-render.
+- **CSS animations** \- CSS animations and transitions interpolate `backgroundImage` gradients, and can animate `borderCurve`, `writingDirection`, `verticalAlign` and `objectFit`.
+- **Lighter animations** \- Cutting a lot of unnecessary work from every frame.
+- [Worklets 0.14 \- WebSocket on Worklet Runtimes, abortable runtimes, `runOnRNSync` from other runtimes, new docs with a visual Learn section](https://github.com/software-mansion/react-native-reanimated/releases/tag/worklets-0.14.0) \- Supports React Native 0.87 → 0.89, pairs with Reanimated 4.8.x
+
+---
 
 - 💸 [PostHog - Are agents really killing UI?](https://go.posthog.com/twir-nov25)
+- 📣 [Expo Services App \- Workflows, Observe and Simulators (iOS-only) on your phone](https://expo.dev/changelog/expo-services-app) \- The official app to manage your Expo services. The iOS version is built with Exact.
+- 💬 [React Native RFC \- Platform-agnostic core, with iOS and Android as separate packages](https://github.com/react-native-community/discussions-and-proposals/pull/1037) \- An important proposal to make out-of-tree platforms like macOS, Windows or tvOS easier to maintain. Core would only hold shared C++ and one host platform interface, implemented by every platform, iOS and Android included. Nothing changes for apps.
+- 👀 [Screens 5.0 beta 2 \- `Stack.Host` navigates a `Split` column, `PageSheet` and `ContainedModalReplacingContent`, header customization for Stack v5](https://github.com/software-mansion/react-native-screens/releases/tag/5.0.0-beta.2)
+- 📜 [Expo \- Agentic Workflows with Expo Simulators](https://expo.dev/blog/agentic-workflows-with-expo-simulators) \- Practical ideas for putting your agents to work: a bug-fixing trigger, a PR assistant, and a parallel QA swarm.
+- 📜 [Argent \- How to Measure React Native Performance Deterministically?](https://argent.swmansion.com/blog/how-to-measure-react-native-performance-deterministically/) \- A repeatable method to benchmark RN screens with Argent, applied to FlatList, FlashList and Legend List on a budget Android phone. FlatList uses the most memory and misses far `scrollToIndex` jumps.
+- 📜 [Sentry \- More ways to debug Expo apps with the React Native SDK](https://blog.sentry.io/expo-router-react-native-sdk/) \- Automatic Expo Router tracking, better performance signals, and network request traces restored for Expo SDK 56's native `fetch`.
 - 💸 [Codemagic Patch - Self-hosted OTA updates, complete with fingerprinting, release metrics and online dashboard](https://patch.codemagic.io/?utm_source=newsletter&utm_medium=referral&utm_campaign=twir)
+- 📦 [Skia 3.11 → 3.13 \- Prebuilt binaries downloaded from GitHub releases at build time, `Surface.flushAsync()`, `Skia.purgeGpuResources()`](https://github.com/wcandillon/react-native-skia/releases) \- Skia's prebuilt Android and Apple binaries are no longer heavy npm dependencies taking 1GB on disk: only the platforms being built get downloaded. Also worth mentioning: Shopify's sponsorship ends this year, but Expo already backs the project, and you can help keep it sustainable with [GitHub Sponsors](https://github.com/sponsors/wcandillon).
+- 📦 [WebGPU 0.22 → 0.26 \- Prebuilt binaries downloaded from GitHub releases, `NativeBufferView` for native buffers, display-paced `requestAnimationFrame` on every runtime, `purgeGpuResources()`](https://github.com/wcandillon/react-native-webgpu/releases)
+- 📦 [Keyboard Controller 1.24 \- SPM support, on-demand Android view managers](https://kirillzyusko.github.io/react-native-keyboard-controller/blog/release-1-24)
+- 📦 [Voltra 2.5 → 2.7 \- Dynamic Widget render-failure views, `backgroundImage` gradients on iOS, Android widget borders and `gap`, Live Activity push tokens, Android launch crash fix](https://github.com/callstackincubator/voltra/releases)
+- 📦 [TypeGPU Kit \- Ready-made building blocks for 3D graphics and effects in web and React Native apps](https://docs.swmansion.com/typegpu-kit/)
+- 📦 [Teleport 1.3 \- Portals measured from the shadow tree, `Pressable` and `measure()` fixed after scroll, RN 0.78+ required](https://kirillzyusko.github.io/react-native-teleport/blog/1-3-0-measurements-rewrite)
+- 📦 [Bottom Sheet 1.1 \- `maxWidth` and `placement` for wide screens, smoother detent settling on iOS, Android, and web](https://swmansion.com/changelog/react-native-bottom-sheet-1-1-0/)
+- 📦 [View Shot 6.3 \- `sizeUnit` option, iOS `fileName` support, Android `captureScreen` with PixelCopy](https://github.com/gre/react-native-view-shot/releases/tag/v6.3.0)
+- 📦 [Legend List 3.8 → 3.9 \- `showImmediately` renders before layout, prepend autoscroll threshold, chat-list and KeyboardAware fixes](https://github.com/LegendApp/legend-list/releases)
+- 📦 [Effects 0.4 \- WebGPU shader effects for RN, new effects catalog, `ShaderView` texture prop and `onFirstFrame`](https://github.com/blazejkustra/react-native-effects/releases/tag/v0.4.0)
+- 📦 [Unistyles 3.9 \- Babel plugin deprecated, experimental Re.Pack and Rspack integration, theme fixes for frozen screens, concurrent renders and React Compiler](https://github.com/jpudysz/react-native-unistyles/releases/tag/v3.9.0)
+- 📦 [Nitro Markdown 0.15 → 0.17 \- `streaming` mode hides unfinished blocks and half-typed syntax, faster streamed updates, table renderers and style keys, MD4C 0.6](https://github.com/JoaoPauloCMarra/react-native-nitro-markdown/releases)
+- 🤖 [Agent Device 0.21.33 → 0.21.43 \- iOS and Android accessibility audits, watchOS simulators, LG webOS and Samsung Tizen TV apps](https://github.com/callstack/agent-device/releases)
+- 🤖 [Argent 0.34 \- Profile macOS apps with the native and React profiler, E2E script steps run JS and TS, leaner MCP element trees](https://github.com/software-mansion/argent/releases/tag/v0.34.0)
+- 🎥 [Simon Grimm \- React Native vs Swift in 2027: What I'd Pick After Shipping Both](https://www.youtube.com/watch?v=0rEfoLc9MQY)
 
 ---
 
 ## 🔀 Other {#other}
 
-<Todo />
+- 👀 [TC39 \- Agenda for the 117th meeting \- Nov 30 – Dec 3](https://github.com/tc39/agendas/blob/main/2026/11.md) \- Next week, Import Text could reach stage 4, Immutable ArrayBuffers stage 3, and `error.code` stage 2.7. TIL that `AbortController` is actually a DOM API, and could start moving to the JS spec (stage 2).
+- 👀 [Node.js PR \- Heap size warning, ahead of pointer compression by default](https://github.com/nodejs/node/pull/67468) \- Node.js wants to enable pointer compression by default, to use less memory. Each thread (main and workers) would then be limited to a 4 GB heap. A coming release will warn apps whose heap reaches 6.5 GB.
+- 📊 [State of HTML 2026 \- Survey Results](https://2026.stateofhtml.com/en-US) \- Devs love declarative HTML features like customizable select, invoker commands and `popover`.
+- 📜 [Chrome prerendering is weird](https://tombennet.dev/blog/chrome-prerendering-is-weird) \- TIL that when typing in the address bar, Chrome can fully prerender the page of the top suggestion and run its JS. Check `document.prerendering` before running "once per visit" side effects.
+- 📦 [Firefox 161 \- CSS `random()`, CSS Typed Object Model, Compression Dictionary Transport, custom clipboard formats](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/161) \- CSS `random()` and the CSS Typed Object Model are now available in all browsers.
+- 📦 [Parcel 3.0 alpha 3 \- Markdown, layouts and includes, HTML macros, naming rules, faster builds](https://v3.parceljs.org/blog/v3-alpha3/) \- Parcel can now build static sites like docs and blogs on its own, without a separate static site generator.
+- 📦 [Nudeps \- Use npm dependencies in the browser with import maps, no bundler](https://lea.verou.me/blog/2026/nudeps/) \- Copies your dependencies to a deployable `client_modules/` folder and generates an import map.
+- 📦 [Webpack 5.113 \- CSS Modules in HTML, SVG optimization, `sourceTest` to skip loaders, better CommonJS tree shaking](https://webpack.js.org/blog/2026-11-19-webpack-5-113/)
+- 📦 [Express \- Built-in `TracingChannel` for observability, no monkey patching](https://expressjs.com/en/blog/2026-11-17-express-tracing-channels/)
+- 📦 [tRPC 11.25 → 11.31 \- TanStack `streamedQuery` changes, `subscribe()` as async iterable, `createTRPCNext` migration in the upgrade tool, security fixes](https://github.com/trpc/trpc/releases)
+- 🤖 [node-skills \- Agent skills from James Snell (Node.js TSC) covering features newer than the models' training data](https://github.com/jasnell/node-skills)
 
 ---
 
 ## 🤭 Fun {#fun}
 
-<Todo />
+![meme](/emails/issues/307/meme.jpg)
 
-![alt](/emails/issues/ISSUENUMBER/meme.jpg)
+![meme2](/emails/issues/307/meme2.jpg)
 
 See ya! 👋
