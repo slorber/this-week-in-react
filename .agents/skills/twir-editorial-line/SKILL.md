@@ -161,7 +161,7 @@ Give a **slop score**, and explain it with the signals you saw, quoting a headin
 
 ## New projects
 
-**Rule: a brand-new side project that may not be maintained for long isn't worth featuring**, AI-built or not. Focus on the mainstream ones. Exceptions: a project that clearly pushes the state of the art, or gets massive traction right away. Check the repo's age and commit history, its traction, and the author's track record.
+**Rule: a brand-new side project that may not be maintained for long isn't worth featuring**, AI-built or not. The goal is to filter out projects likely to be abandoned soon, not new projects as such: cover the ones with a chance to succeed and be maintained for the long term. Exceptions, each enough on its own: a project from a reputable open source maintainer or company (that's where long-term maintenance happens most), strong initial traction, or a project that clearly pushes the state of the art. On #307, Pierre Words, a 0.3 beta from the team behind Diffs (#284) and Trees, fit through its track record: verdict ✅, not 🤔. Check the repo's age and commit history, its traction, and the author's track record.
 
 ## Pull requests
 
