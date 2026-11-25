@@ -37,10 +37,10 @@ AI-generated code can introduce vulnerabilities that are easy to miss in a pull 
 - 💸 [Nexity - Next.js + Sanity with AI workflows built in. 16 skills, 9 agents, project-specific rules and read-only code reviewers. MIT.](https://github.com/Pagepro/nexity)
 - 🐦 [Ricky Hanlon leaves Meta after 8 years on React](https://x.com/rickyfm/status/2125593907048091950) \- Most of the React core team has already left Meta. He will keep working on React at a new company.
 - 🔐 [React Router vulnerabilities \- 4 high and 3 moderate advisories, upgrade to 7.18.6 or 8.5.2](https://github.com/remix-run/react-router/security)
-- 🔐 [React2STEAL \- Automated campaign exploits unpatched React2Shell servers from hijacked GitHub accounts](https://opensourcemalware.com/blog/react2steal-github-actions) \- At least 1,281 servers still on vulnerable React 19.0–19.2 or Next.js versions were hit, and their env vars, `.env` files and API keys were committed to public GitHub repos. If you're still on a vulnerable version, upgrade and rotate your secrets.
+- 🔐 [React2STEAL \- Automated campaign exploits unpatched React2Shell servers from hijacked GitHub accounts](https://opensourcemalware.com/blog/react2steal-github-actions) \- At least 1,281 servers still vulnerable to React2Shell (React 19.0–19.2) or to the Next.js middleware bypass were hit, and their env vars, `.env` files and API keys were committed to public GitHub repos. If you're still on a vulnerable version, upgrade and rotate your secrets.
 - 👀 [Next.js PR \- Switchyard, an experimental Go server in front of `next start`](https://github.com/vercel/next.js/pull/101695) \- For now, it only forwards requests to Node. Routing could move to it over time, and requests to the experimental [Go Route Handlers](https://levelupgo.dev/blog/nextjs-go-route-handlers) would skip Node entirely.
 - 💬 [TanStack Query v6 roadmap](https://github.com/TanStack/query/discussions/12669) \- Planning a small major with few breaking changes. ESM-only, React 19 minimum to use `use()` for Suspense, scheduler using microtasks, deprecated APIs removed, stable `streamedQuery`. Considering the removal of `enabled` in favor of `skipToken`.
-- 📜 [React Testing Library is faster when it's part of the DOM](https://sigh.dev/posts/vibecoding-faster-react-tests/) \- What if a DOM implementation had built-in Testing Library queries? `@ctrl/dom` is a drop-in replacement for `jsdom` that runs existing RTL test suites 32–54% faster. Node 26+ and React 19 only.
+- 📜 [React Testing Library is faster when it's part of the DOM](https://sigh.dev/posts/vibecoding-faster-react-tests/) \- What if a DOM implementation had built-in Testing Library queries? `@ctrl/dom` replaces `jsdom` for component tests, and made the existing RTL suites of Sentry, Base UI, React Router and React Hook Form 32–54% faster. It skips navigation, `fetch` and image loading. Node 26+ and React 19 only.
 - 📜 [Your Tools are Hiding npm Audits from You](https://www.zachleat.com/web/npm-audit-report/) \- A fresh Next.js app reports 0 vulnerabilities. But its 139 dependencies bundled in `next/dist/compiled` have 3 critical and 19 high ones, which `npm audit` can't see.
 - 📜 [React Forms Beyond onSubmit](https://www.gmoniava.com/blog/react-forms-beyond-onsubmit) \- Compares `onSubmit`, `onSubmit` with `useTransition`, and the `action` prop on a newsletter subscription form, with a summary table.
 - 📜 [On Drawing Icons](https://pierre.computer/writing/on-drawing-icons) \- The Figma-to-React pipeline behind Pierre icons.
@@ -133,8 +133,8 @@ Other key highlights include:
 
 ## 🤭 Fun {#fun}
 
-![meme](/emails/issues/307/meme.jpg)
+![Everywhere I go: the Metro red error screen, even on a phone in a video game](/emails/issues/307/meme.jpg)
 
-![meme2](/emails/issues/307/meme2.jpg)
+![Designing Data-Intensive Applications left on a table](/emails/issues/307/meme2.jpg)
 
 See ya! 👋
