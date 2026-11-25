@@ -163,6 +163,16 @@ Give a **slop score**, and explain it with the signals you saw, quoting a headin
 
 **Rule: a brand-new side project that may not be maintained for long isn't worth featuring**, AI-built or not. Focus on the mainstream ones. Exceptions: a project that clearly pushes the state of the art, or gets massive traction right away. Check the repo's age and commit history, its traction, and the author's track record.
 
+## Pull requests
+
+**Rule: propose to postpone a 👀 PR to a later issue, once it's more concrete**, unless one of these holds:
+
+- It's merged.
+- There's a clear intent to merge it: a maintainer says it will land, it's approved, or it's planned for a release.
+- It's a really exciting mainstream weak signal with a possible wide impact: a new API, a perf improvement…
+
+Typical PRs to postpone: drafts that may never be merged, experiments that may never land, and changes the average dev can't understand. Read the PR's state before judging: draft or not, merged or not, reviews, labels, maintainer comments. Don't cut it on your own: propose the postponement in chat with the reason, and say what would make it ready, like its merge or a release. The editor decides.
+
 ## Link budget (email)
 
 Watch the link count. Gmail clips emails over about 102KB of HTML, which hides the end of the issue (Other, Fun) behind "View entire message". The email is sent with Kit (ConvertKit), which rewrites every link into a long tracked URL, so the number of links is the main driver of email size. Inline links inside comments count too.
@@ -183,6 +193,6 @@ Watch the link count. Gmail clips emails over about 102KB of HTML, which hides t
 2. Is it in scope for its section, and fresh enough (see "Freshness")?
 3. Does the public page say to look for it, or to filter it out? For an article, does it read as AI-generated (see "Spotting AI-generated content")?
 4. Is it free and platform-agnostic, or tied to a vendor?
-5. Is it significant enough to spend a link on, compared with the rest of the section? For a new project, see "New projects".
+5. Is it significant enough to spend a link on, compared with the rest of the section? For a new project, see "New projects". For a 👀 PR, is it concrete enough, or should it wait (see "Pull requests")?
 6. Does it duplicate another item? Merge release ranges, merge closely related links into one item, and usually keep one link per topic (see "Link budget").
 7. Which space tier does it deserve?
