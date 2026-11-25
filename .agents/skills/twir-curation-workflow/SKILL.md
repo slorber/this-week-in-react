@@ -63,3 +63,4 @@ Only when asked:
 4. Commit and push to the issue's pull request, with the issue number as the commit message (see "Commit and publish" in `twir-issue-file`).
 5. The editor may ask for the announcement tweet: see `twir-announcement-tweet`.
 6. At the very end, once they have reviewed everything, the maintainer publishes the issue by removing `unlisted: true` from the frontmatter. Don't do it yourself unless asked.
+7. Once the issue is published, the editor may ask for the LinkedIn post: see `twir-linkedin-post`.
