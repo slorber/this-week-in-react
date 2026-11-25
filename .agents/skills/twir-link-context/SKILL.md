@@ -13,6 +13,8 @@ The working agreements of `AGENTS.md` apply. Read every link in full (`twir-read
 
 Expect a mess: bare URLs, blank lines, several URLs on one line or joined with `+` across lines, short hints before a link ("action sheet v11", "crnl"), `???` and editor notes ("framer motion 14.5 ?", "What is Charlie Cheever working on???", `# Did Jamie publish something better?` after a link), reader submissions, `—` separators, TODOs ("Verify sponsor slot"), and items already written by an editor (leave those alone: see "The top line"). Links are often already grouped under section headings, but the input can also be a partial list with no heading (see step 6). A block at the top of a section closed by a delimiter is a headline candidate (see "Headline drafts").
 
+The skill's arguments are usually the issue number and the section, like `307 React`. First name the session after them, `307 - React`, never after the links (rule 9 of `AGENTS.md`).
+
 It comes pasted in chat, as Markdown or any other text (one URL per line, text copied from X or Slack…), or as a Google Doc. To read a Doc, call the Google Docs connector's `read_doc` with the ID from its URL (`docs.google.com/document/d/<id>/edit`). It works on native Docs and on `.md` files. Large drafts don't fit in the tool output and get saved to a file: convert that file to Markdown with the bundled script.
 
 ```bash
