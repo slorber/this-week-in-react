@@ -92,14 +92,14 @@ Every sub-item is `- 🤖 <type emoji> <text>`, nested under its item, on one li
 
 | Type | When | Content |
 | --- | --- | --- |
-| ✅ / 🤔 / ❌ | Always | Keep / judgment call / suggest cut, with a one-line reason based on the editorial line. A 👀 PR that isn't concrete yet gets `🤔 Postpone to a later issue: <reason>` (see "Pull requests" in `twir-editorial-line`) |
+| ✅ / 🤔 / ❌ | Always | Keep / judgment call / suggest cut, with a one-line reason based on the editorial line. A 👀 PR that isn't concrete yet gets `🤔 Postpone to a later issue: <what would make it ready>`, a score lowered by 1, and a ⚠️ saying why it's too early (see "Pull requests" in `twir-editorial-line`) |
 | 🎯 | Always | The group in its list (news, articles, releases, AI tools, media), and the section you'd suggest if it seems to belong elsewhere |
 | 💯 | Always | The score, `n/5` (scale below), and the space tier it implies |
 | 🗑️ | Every 📜 article | The slop score, `n/5`, and the signals seen (see "Spotting AI-generated content" in `twir-editorial-line`) |
 | ✍️ | From 2/5, even if the item ends up title-only: it tells the editors what the item is about | A proposed comment |
 | 📝 | When the input had a note or question from the editor | The note, quoted, then the answer |
 | 🔁 | When the repo has past coverage | The issues that covered it, and what that means for this item |
-| ⚠️ | When needed | Couldn't read or only partially read, a claim the sources don't support, vendor-tied, paywalled, only on X, links grouped by the editor with no obvious connection |
+| ⚠️ | When needed | Couldn't read or only partially read, a claim the sources don't support, vendor-tied, paywalled, only on X, links grouped by the editor with no obvious connection, a 👀 PR that's too early (draft, experiment, hard to understand) |
 | ℹ️ | Always, last | Every input URL merged into this item, then the links you found and used (search results, a better main link), each labeled by type, the main link marked, and what was read in full |
 
 Score scale:

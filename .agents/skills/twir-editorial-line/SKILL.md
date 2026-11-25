@@ -171,7 +171,7 @@ Give a **slop score**, and explain it with the signals you saw, quoting a headin
 - There's a clear intent to merge it: a maintainer says it will land, it's approved, or it's planned for a release.
 - It's a really exciting mainstream weak signal with a possible wide impact: a new API, a perf improvement…
 
-Typical PRs to postpone: drafts that may never be merged, experiments that may never land, and changes the average dev can't understand. Read the PR's state before judging: draft or not, merged or not, reviews, labels, maintainer comments. Don't cut it on your own: propose the postponement in chat with the reason, and say what would make it ready, like its merge or a release. The editor decides.
+Typical PRs to postpone: drafts that may never be merged, experiments that may never land, and changes the average dev can't understand. Read the PR's state before judging: draft or not, merged or not, reviews, labels, maintainer comments. Don't cut it on your own: lower its score by 1, add a warning saying why it's too early, and suggest postponing it, with what would make it ready, like its merge or a release. The editor decides.
 
 ## Link budget (email)
 
