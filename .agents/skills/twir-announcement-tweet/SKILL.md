@@ -60,6 +60,8 @@ This Week In React 301
 ## Keywords
 
 - 6–8 per section, at least 5 + 5.
+- **Start from the issue title's keywords**, in the same order. Expand one when the tweet has room and a word makes it clearer (`Security` → `React2STEAL`, `Next.js` → `Next.js Go`), and drop the last ones of a group to fit the limit.
+- **Keywords must mean something on their own.** Name what changes, not the document type: on #307, the editor rejected `RN Core RFC` for `Agnostic core`.
 - Names people recognize instantly when skimming: big libraries and frameworks.
 - **Order matters: most impactful first**, ranked by coreness and impact. React core, RN core, Expo and Next.js news usually come first, but a tiny React core change ranks below a major TanStack Query or Base UI release. See "Ranking by impact" in `twir-writing-style`: it's the same rule as for the issue title.
 - Versions only for majors (`Tamagui 3`, `Expo 58`). React Native releases are written bare: `0.88`, `0.88 RC`.

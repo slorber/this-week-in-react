@@ -161,7 +161,17 @@ Give a **slop score**, and explain it with the signals you saw, quoting a headin
 
 ## New projects
 
-**Rule: a brand-new side project that may not be maintained for long isn't worth featuring**, AI-built or not. Focus on the mainstream ones. Exceptions: a project that clearly pushes the state of the art, or gets massive traction right away. Check the repo's age and commit history, its traction, and the author's track record.
+**Rule: a brand-new side project that may not be maintained for long isn't worth featuring**, AI-built or not. The goal is to filter out projects likely to be abandoned soon, not new projects as such: cover the ones with a chance to succeed and be maintained for the long term. Exceptions, each enough on its own: a project from a reputable open source maintainer or company (that's where long-term maintenance happens most), strong initial traction, or a project that clearly pushes the state of the art. On #307, Pierre Words, a 0.3 beta from the team behind Diffs (#284) and Trees, fit through its track record: verdict ✅, not 🤔. Check the repo's age and commit history, its traction, and the author's track record.
+
+## Pull requests
+
+**Rule: when a 👀 PR isn't concrete yet, propose to postpone it to a later issue**, unless one of these holds:
+
+- It's merged.
+- There's a clear intent to merge it: a maintainer says it will land, it's approved, or it's planned for a release.
+- It's a really exciting mainstream weak signal with a possible wide impact: a new API, a perf improvement…
+
+Typical PRs to postpone: drafts that may never be merged, experiments that may never land, and changes the average dev can't understand. Read the PR's state before judging: draft or not, merged or not, reviews, labels, maintainer comments. Don't cut it on your own: lower its score by 1, never below 2/5 (1/5 goes with ❌, and a postponed PR keeps 🤔), add a warning saying why it's too early, and suggest postponing it, with what would make it ready, like its merge or a release. The editor decides.
 
 ## Link budget (email)
 
@@ -173,9 +183,13 @@ Watch the link count. Gmail clips emails over about 102KB of HTML, which hides t
 
 **Rule: a releases index, or several releases of one project, covers every release no issue featured yet**: since the last issue, or since the last release of that project an issue featured. Check the index for the releases missing from the input, and aggregate them all into the range: `📦 [tRPC 11.23 → 11.24 - <highlights>](https://github.com/trpc/trpc/releases)`. When only one release is left to feature, link to it directly: the index is only there to save links, and a direct link is always better. Check the index for a single release link too, but a release missing from the input is probably one the editors skipped: suggest adding it only when it looks important.
 
+**Exception: a range may start at a release an issue already featured** when that release is part of the story the item tells. On #307, the editor featured WebGPU 0.22 → 0.26 although #306 covered 0.22: 0.22 brought the Android prebuilt binaries, and the later releases the Apple ones, so the item shows both together.
+
 **Usually, two resources on the same topic = one link.** It's a default, not a strict rule. Feature the best one and drop the other, even when they come from different authors. When both are worth featuring, keep both and say why. Tell the editors which link you dropped, so they can swap them.
 
 **Rule: look for the canonical resource.** A social post, GitHub release notes or a changelog often isn't one: search for the official blog post or announcement of the same news. Then pick the main link on two criteria that weigh the same: being canonical, and the most polished reading experience. A good GitHub release or social post beats a poor blog post, and a clear write-up can beat a raw changelog, a long spec or a sprawling thread. On #303, the editors featured the Biome 2.6 blog post over an X post, and the Firefox 159 MDN release notes over a Bluesky post.
+
+**Rule: feature the original, never a repost.** A post republished on another site (a company blog, Medium, dev.to, a newsletter) is a duplicate of its canonical version, and a repost of a post we already featured is already covered. On #307, a certificates.dev repost of Aurora Scharff's "Coordinating Optimistic Updates" was a shortened copy of the post featured in #294.
 
 ## Judging an item: checklist
 
@@ -183,6 +197,6 @@ Watch the link count. Gmail clips emails over about 102KB of HTML, which hides t
 2. Is it in scope for its section, and fresh enough (see "Freshness")?
 3. Does the public page say to look for it, or to filter it out? For an article, does it read as AI-generated (see "Spotting AI-generated content")?
 4. Is it free and platform-agnostic, or tied to a vendor?
-5. Is it significant enough to spend a link on, compared with the rest of the section? For a new project, see "New projects".
+5. Is it significant enough to spend a link on, compared with the rest of the section? For a new project, see "New projects". For a 👀 PR, is it concrete enough, or should it wait (see "Pull requests")?
 6. Does it duplicate another item? Merge release ranges, merge closely related links into one item, and usually keep one link per topic (see "Link budget").
 7. Which space tier does it deserve?

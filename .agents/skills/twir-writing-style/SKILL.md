@@ -10,6 +10,7 @@ Same sources as the `twir-editorial-line` skill: **rules** come from the editor,
 ## Wording rules
 
 - **Simple language, concise, to the point, no fluff words** (curator guide).
+- **Save readers' time over polishing prose.** Short sentences in a row, one per news item, are fine and easy to skim, in the intro too: "TanStack Query shared its v6 roadmap. Next.js is experimenting with a Go server." Never merge them with "and" or connectors just to make the text flow, and never flag them as choppy in a review.
 - **Never use "plus" as a connector** ("SSR, plus Server Functions"). The editor says it reads like AI-generated content. Use "with", "and", or restructure the sentence.
 - **One short, plain sentence** that says why the item matters to React devs. The editor rejected dense, jargon-heavy lines several times.
 - **Write like the editor: short, simple sentences, as a non-native English speaker would.** Prefer two short sentences over one with a relative clause. Name the thing instead of using a vague "it": "a flag to remove the static content from the Flight payload", not "a flag that leaves it out of the payload".
@@ -83,6 +84,7 @@ Observed: titles have a median length of 70 characters, and 90% are under 110 (#
 
 - Wrap APIs, components, packages, file names and config keys in backticks: `<Activity>`, `"use cache"`, `gradle.properties`, `react-devtools-cdt-mcp`. **This is mandatory for anything that looks like a JSX tag**: MDX breaks on a bare `<Tag>`.
 - Use the names projects use themselves: "React Native", "Expo SDK 58", "Next.js", "TypeScript".
+- **In the 📱 React Native section, drop the "React Native" or "RN" prefix of library names**: `Skia 2.6`, `WebGPU 0.22`, `Reanimated 4.3`, `Screens 4.9`, `Gesture Handler 2.24`, not `RN Skia` or `React Native Reanimated`. The section already says it, so readers know `WebGPU` is React Native WebGPU, not the web standard. Keep it for React Native core itself (`React Native 0.89`, `React Native PR - …`), and when the short name alone reads as something else entirely, like an OS or a generic word (`RN Windows 0.85`, `RN AI 0.13`).
 - **Technical terms keep the case of their official docs**, and are usually capitalized, especially in React. The React docs [capitalize React concepts](https://github.com/reactjs/react.dev/pull/6712): Hooks, Effects, Transitions, Actions, Server Components, Client Components, Server Functions, View Transitions, Activity, Suspense boundaries. We do too, in titles and comments: never "server functions". Plain words stay lowercase, as in the docs: component, ref, context. When a blog post mixes cases, follow the project's docs. For Solid 2.0, the editor kept "Server Functions in core" capitalized, as in parts of Solid's own post. In reviews, never flag these capitalized terms as mistakes: they aren't the "weirdly capitalized" titles that need a rewrite.
 - Common abbreviations: RSC, RN, RNW (React Native Web), R3F (React Three Fiber), RNav (React Navigation). They're mostly for the issue title and the announcement tweet, less for item text.
 
@@ -145,6 +147,7 @@ Rules:
 - When Jan co-authors (check `authors` in the frontmatter), it opens with: `Hi everyone, [Seb](https://x.com/sebastienlorber) and [Jan](https://x.com/jaworek3211) here 👋!`.
 - It **always ends with `Let's dive in!`**. Include that line in every intro draft.
 - In between, it covers the week's biggest stories: React first, then mobile, then Other. Most often that's one short paragraph per section, but it's not mandatory.
+- It's **skimmable**: readers scan it, they don't read it as prose. Short sentences, one per story, are the norm, not a flaw (see "Wording rules"). On #307, the editor kept "TanStack Query shared its v6 roadmap. Next.js is experimenting with a Go server." as two sentences.
 
 Observed:
 
@@ -170,6 +173,7 @@ Rule (editor): **keyword order matters**, in the issue title and in the announce
 
 - **Core news ranks high**: React core, React Native core, Expo, Next.js and other major frameworks. In #302's React Native group, `RN 0.88` comes first, then `Expo 58`.
 - **But weigh coreness and impact together.** A tiny React core change ranks below a major release of a popular third-party library, like TanStack Query or Base UI.
+- **Popularity isn't impact.** Rank by how many readers the news can change something for, not by the project's install count. A styled UI library release (Material UI) ranks low, even when it's popular: the editorial line keeps those at the edge of scope. A tool that could replace part of a widely used pipeline ranks higher, even when it's small. On #307, the editor kept Talata (a faster drop-in replacement for remark, now parsing MDX) in the title over Material UI 9.6.
 
 The same principle orders 📦 releases inside a section list.
 

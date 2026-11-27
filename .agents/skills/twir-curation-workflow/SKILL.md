@@ -42,6 +42,7 @@ Ignore:
 - Missing links or backticks in a pasted item: copying from Google Docs often drops them. Never mention it. Review the item as if they were there, and put them back in the lines you propose.
 - Anything a formatter like Prettier or Oxfmt fixes on its own, like an extra space at the end of a sentence. Never mention it.
 - The 💸 sponsor blocks and links, and the 🤭 Fun section.
+- Short sentences in a row, in the intro or a comment. They're skimmable on purpose: never call them choppy (see "Wording rules" in `twir-writing-style`).
 
 Check:
 

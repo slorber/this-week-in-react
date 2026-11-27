@@ -13,6 +13,8 @@ The working agreements of `AGENTS.md` apply. Read every link in full (`twir-read
 
 Expect a mess: bare URLs, blank lines, several URLs on one line or joined with `+` across lines, short hints before a link ("action sheet v11", "crnl"), `???` and editor notes ("framer motion 14.5 ?", "What is Charlie Cheever working on???", `# Did Jamie publish something better?` after a link), reader submissions, `—` separators, TODOs ("Verify sponsor slot"), and items already written by an editor (leave those alone: see "The top line"). Links are often already grouped under section headings, but the input can also be a partial list with no heading (see step 6). A block at the top of a section closed by a delimiter is a headline candidate (see "Headline drafts").
 
+The skill's arguments are usually the issue number and the section, like `307 React`. First name the session after them, `307 - React`, never after the links (rule 9 of `AGENTS.md`).
+
 It comes pasted in chat, as Markdown or any other text (one URL per line, text copied from X or Slack…), or as a Google Doc. To read a Doc, call the Google Docs connector's `read_doc` with the ID from its URL (`docs.google.com/document/d/<id>/edit`). It works on native Docs and on `.md` files. Large drafts don't fit in the tool output and get saved to a file: convert that file to Markdown with the bundled script.
 
 ```bash
@@ -90,14 +92,14 @@ Every sub-item is `- 🤖 <type emoji> <text>`, nested under its item, on one li
 
 | Type | When | Content |
 | --- | --- | --- |
-| ✅ / 🤔 / ❌ | Always | Keep / judgment call / suggest cut, with a one-line reason based on the editorial line |
+| ✅ / 🤔 / ❌ | Always | Keep / judgment call / suggest cut, with a one-line reason based on the editorial line. A 👀 PR that isn't concrete yet gets `🤔 Postpone to a later issue: <what would make it ready>`, a score lowered by 1 but never below 2/5, and a ⚠️ saying why it's too early (see "Pull requests" in `twir-editorial-line`) |
 | 🎯 | Always | The group in its list (news, articles, releases, AI tools, media), and the section you'd suggest if it seems to belong elsewhere |
 | 💯 | Always | The score, `n/5` (scale below), and the space tier it implies |
 | 🗑️ | Every 📜 article | The slop score, `n/5`, and the signals seen (see "Spotting AI-generated content" in `twir-editorial-line`) |
 | ✍️ | From 2/5, even if the item ends up title-only: it tells the editors what the item is about | A proposed comment |
 | 📝 | When the input had a note or question from the editor | The note, quoted, then the answer |
 | 🔁 | When the repo has past coverage | The issues that covered it, and what that means for this item |
-| ⚠️ | When needed | Couldn't read or only partially read, a claim the sources don't support, vendor-tied, paywalled, only on X, links grouped by the editor with no obvious connection |
+| ⚠️ | When needed | Couldn't read or only partially read, a claim the sources don't support, vendor-tied, paywalled, only on X, links grouped by the editor with no obvious connection, a 👀 PR that's too early (draft, experiment, hard to understand) |
 | ℹ️ | Always, last | Every input URL merged into this item, then the links you found and used (search results, a better main link), each labeled by type, the main link marked, and what was read in full |
 
 Score scale:
@@ -142,6 +144,7 @@ Other key highlights include:
 - **Usually one link per topic.** A blog post, a release and a social post about the same thing become one item. A third-party article on the same topic is usually dropped too: draft it as its own item only when both are worth featuring, and say why in chat. Pick the main link on two criteria that weigh the same: the canonical resource (the official blog post or announcement, then the release notes, the docs, a social post), and the most polished reading experience. A good GitHub release or social post beats a poor blog post (see "Link budget" in `twir-editorial-line`). List the dropped links in ℹ️, marked "dropped", so the editors can swap them. A single post can be the main link when it holds everything, like a video demo (see `twir-reading-links`). Check which link past items of the same project used.
 - **Look for the canonical resource**: when an item only has a social post, release notes or a changelog, search for an official blog post or announcement of the same news (see "Link budget" in `twir-editorial-line`). When you find one, pick the main link on both criteria (above), and list the other links in ℹ️. When there's none, say so in ℹ️.
 - **Several releases of one project, or its releases index** (`…/releases/tag/v11.23.0 + …/releases/tag/v11.24.0`, or `github.com/trpc/trpc/releases`), become one `→` range item that links to the index. List the recent releases on it (see GitHub in `twir-reading-links`), find the last one an issue featured (step 4), and aggregate every release after it (see "Link budget" in `twir-editorial-line`). When only one release is left to feature, link to that release, not the index: the index only saves links. For a single release link, check the index too, and suggest a missing release only when it looks important. That index stays the main link, even when one release post reads better: list the post in ℹ️ as an alternative. On #303, the editor kept `webkit.org/blog/` for Safari 27.1 → 27.2.
+- **Reposts and cross-posts** (a company blog, Medium, dev.to, a newsletter republishing a post) are duplicates of their canonical version (see "Articles and blog posts" in `twir-reading-links`). Make the original the main link, and search past coverage (step 4) with its URL and title too. A repost of a post an issue already featured gets ❌, score 1/5, with the issue in 🔁.
 - **The same URL twice** (tracking parameters, `twitter.com` vs `x.com`, a trailing slash) is merged silently, and listed once in ℹ️.
 - **Links on the same line, or joined with `+`** (often with a short comment), are links the editor considered related: they stay one item. Don't split them on your own. When the connection isn't obvious, say so in a ⚠️ sub-item and in chat, and ask the editors.
 - **Related but distinct news** stays separate, like two unrelated posts from the same project.
